@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="net.bitplane.android.microphone">
+    <application android:debuggable="false" android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:label="@string/app_name" android:name=".MicrophoneActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <service android:name=".MicrophoneService">
+            <intent-filter>
+                <action android:name="net.bitplane.android.microphone.STOP"/>
+                <data android:scheme="null"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+    </application>
+    <supports-screens/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+</manifest>

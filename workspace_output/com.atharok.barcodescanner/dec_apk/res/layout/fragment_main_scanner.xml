@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:layout_gravity="center" android:id="@id/fragment_main_scanner_camera_permission_text_view" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/standard_margin" android:text="@string/camera_permission_denied" android:textAlignment="center" style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
+    <com.budiyev.android.codescanner.CodeScannerView android:id="@id/fragment_main_scanner_code_scanner_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" app:autoFocusButtonVisible="false" app:flashButtonVisible="false" app:frameAspectRatioHeight="1.0" app:frameAspectRatioWidth="1.0" app:frameColor="@android:color/white" app:frameCornersRadius="0.0dip" app:frameCornersSize="50.0dip" app:frameSize="0.75" app:frameThickness="2.0dip" app:maskColor="#88000000" />
+    <com.google.android.material.slider.Slider android:value="0" android:layout_gravity="center|top" android:id="@id/fragment_main_scanner_camera_slider" android:visibility="invisible" android:layout_width="275.0dip" android:layout_height="48.0dip" android:stepSize="1.0" android:contentDescription="@string/slider_description_zoom" android:valueFrom="0" android:valueTo="10" app:labelBehavior="gone" app:tickVisible="false" />
+    <FrameLayout android:layout_gravity="bottom|center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/x_large_margin">
+        <TextView android:textColor="@android:color/white" android:id="@id/fragment_main_scanner_information_text_view" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/scan_information_label" style="@style/AppTheme.TextView.Appearance.Standard.Primary" />
+    </FrameLayout>
+</FrameLayout>

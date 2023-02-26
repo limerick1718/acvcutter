@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/fragment_barcode_matrix_email_address_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:id="@id/fragment_barcode_matrix_email_address_label" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/matrix_email_recipient_label" style="@style/AppTheme.TextView.Appearance.Title.Variant" />
+        <TextView android:id="@id/fragment_barcode_matrix_email_address_text_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/fragment_barcode_matrix_email_address_label" style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/fragment_barcode_matrix_email_cc_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/x_large_margin" android:layout_below="@id/fragment_barcode_matrix_email_address_layout">
+        <TextView android:id="@id/fragment_barcode_matrix_email_cc_label" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/matrix_email_cc_label" style="@style/AppTheme.TextView.Appearance.Title.Variant" />
+        <TextView android:id="@id/fragment_barcode_matrix_email_cc_text_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/fragment_barcode_matrix_email_cc_label" style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/fragment_barcode_matrix_email_bcc_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/x_large_margin" android:layout_below="@id/fragment_barcode_matrix_email_cc_layout">
+        <TextView android:id="@id/fragment_barcode_matrix_email_bcc_label" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/matrix_email_bcc_label" style="@style/AppTheme.TextView.Appearance.Title.Variant" />
+        <TextView android:id="@id/fragment_barcode_matrix_email_bcc_text_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/fragment_barcode_matrix_email_bcc_label" style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/fragment_barcode_matrix_email_subject_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/x_large_margin" android:layout_below="@id/fragment_barcode_matrix_email_bcc_layout">
+        <TextView android:id="@id/fragment_barcode_matrix_email_subject_label" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/matrix_subject_label" style="@style/AppTheme.TextView.Appearance.Title.Variant" />
+        <TextView android:id="@id/fragment_barcode_matrix_email_subject_text_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/fragment_barcode_matrix_email_subject_label" style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/fragment_barcode_matrix_email_body_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/x_large_margin" android:layout_below="@id/fragment_barcode_matrix_email_subject_layout">
+        <TextView android:id="@id/fragment_barcode_matrix_email_body_label" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/matrix_body_label" style="@style/AppTheme.TextView.Appearance.Title.Variant" />
+        <TextView android:id="@id/fragment_barcode_matrix_email_body_text_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/fragment_barcode_matrix_email_body_label" style="@style/AppTheme.TextView.Appearance.Standard.Secondary.Italic" />
+    </RelativeLayout>
+</RelativeLayout>

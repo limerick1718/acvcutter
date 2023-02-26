@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="@string/settings_title_API">
+        <PreferenceScreen android:summary="@string/settings_description_API" />
+        <Preference android:title="@string/registerTKbutton" android:key="register" />
+        <EditTextPreference android:title="@string/settings_title_API_key" android:key="API_key_value" android:defaultValue="@string/settings__API_key_default" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settings_title_display_options">
+        <ListPreference android:entries="@array/searchRadiusArray" android:title="@string/settings_search_radius" android:key="pref_searchRadius" android:defaultValue="3" android:entryValues="@array/searchRadiusValues" app:useSimpleSummaryProvider="true" />
+        <ListPreference android:entries="@array/types" android:title="@string/settings_type" android:key="pref_type" android:defaultValue="all" android:entryValues="@array/typesValues" app:useSimpleSummaryProvider="true" />
+        <SwitchPreference android:title="@string/settings_sort" android:key="pref_sort" android:summary="@string/settings_sort_summary" android:defaultValue="false" />
+        <org.woheller69.preferences.EditTextSwitchPreference android:title="@string/preferred_brands" android:selectable="true" android:key="prefBrandsString" app:SwitchKey="prefBrands" app:SwitchKeyDefaultValue="false" app:useSimpleSummaryProvider="true" />
+        <ListPreference android:entries="@array/refreshIntervalArray" android:title="@string/settings_update_interval" android:key="pref_updateInterval" android:defaultValue="15" android:entryValues="@array/refreshIntervalValues" app:useSimpleSummaryProvider="true" />
+        <SwitchPreference android:title="@string/settings_darkmode" android:key="pref_DarkMode" android:defaultValue="false" />
+        <SwitchPreference android:title="@string/settings_time24h" android:key="pref_TimeFormat" android:summary="@string/summary_time24h" android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settings_position">
+        <SwitchPreference android:title="@string/settings_GPS_position" android:key="pref_GPS" android:summary="@string/settings_GPS_summary" android:defaultValue="false" />
+        <SwitchPreference android:title="@string/settings_GPS_manual" android:key="pref_GPS_manual" android:defaultValue="false" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:layout_gravity="center" android:id="@id/fragment_main_camera_x_scanner_camera_permission_text_view" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/standard_margin" android:text="@string/camera_permission_denied" android:textAlignment="center" style="@style/AppTheme.TextView.Appearance.Standard.Secondary" />
+    <androidx.camera.view.PreviewView android:id="@id/fragment_main_camera_x_scanner_preview_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.atharok.barcodescanner.presentation.customView.ScanOverlay android:id="@id/fragment_main_camera_x_scanner_scan_overlay" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" app:overlay_mask_color="@color/overlay_mask" app:viewfinder_corner_color="@android:color/white" app:viewfinder_corner_thickness="4.0dip" app:viewfinder_radius="50.0dip" />
+    <FrameLayout android:layout_gravity="end|center" android:orientation="vertical" android:layout_width="48.0dip" android:layout_height="275.0dip" android:layout_marginEnd="@dimen/large_margin">
+        <com.google.android.material.slider.Slider android:value="0.5" android:layout_gravity="center" android:id="@id/fragment_main_camera_x_scanner_slider" android:visibility="gone" android:layout_width="275.0dip" android:layout_height="48.0dip" android:contentDescription="@string/slider_description_zoom" android:valueFrom="0.0" android:valueTo="1" android:rotation="270.0" app:labelBehavior="gone" />
+    </FrameLayout>
+</FrameLayout>

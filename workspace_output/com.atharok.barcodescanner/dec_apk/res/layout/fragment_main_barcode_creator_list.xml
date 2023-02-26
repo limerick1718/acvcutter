@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/fragment_main_create_barcode_list_outer_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/light_margin" android:animateLayoutChanges="true">
+        <com.atharok.barcodescanner.presentation.customView.ExpandableView android:orientation="vertical" android:id="@id/fragment_main_create_barcode_list_qr_expandable_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:animateLayoutChanges="true" app:iconHeaderId="@id/fragment_main_create_barcode_list_header_icon_image_view" app:open="false">
+            <com.google.android.material.card.MaterialCardView android:layout_width="fill_parent" android:layout_height="@dimen/card_generator_item_height" android:layout_margin="@dimen/light_margin" app:cardCornerRadius="@dimen/card_generator_item_corner_radius" app:cardUseCompatPadding="false">
+                <RelativeLayout android:padding="@dimen/standard_margin" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <ImageView android:id="@id/fragment_main_create_barcode_list_bar_code_icon_image_view" android:background="@drawable/circle" android:layout_width="@dimen/icon_large_size" android:layout_height="@dimen/icon_large_size" android:src="@drawable/baseline_qr_code_24" android:layout_centerVertical="true" android:contentDescription="@string/image_view_description_icon" android:layout_alignParentStart="true" app:backgroundTint="?colorPrimary" app:tint="?colorOnPrimary" />
+                    <TextView android:id="@id/fragment_main_create_barcode_list_header_title_text_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/barcode_qr_code_label" android:layout_centerVertical="true" android:layout_marginStart="@dimen/standard_margin" android:layout_toStartOf="@id/fragment_main_create_barcode_list_header_icon_image_view" android:layout_toEndOf="@id/fragment_main_create_barcode_list_bar_code_icon_image_view" style="@style/AppTheme.TextView.Appearance.Title.Primary.Min" />
+                    <ImageView android:id="@id/fragment_main_create_barcode_list_header_icon_image_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/baseline_keyboard_arrow_down_24" android:layout_centerVertical="true" android:contentDescription="@string/image_view_description_icon" android:layout_marginEnd="@dimen/standard_margin" android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <FrameLayout android:id="@id/fragment_main_create_barcode_list_qr_frame_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:orientation="vertical" android:id="@id/fragment_main_create_barcode_list_qr_linear_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/x_large_margin" />
+            </FrameLayout>
+        </com.atharok.barcodescanner.presentation.customView.ExpandableView>
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/thin_margin" android:layout_below="@id/fragment_main_create_barcode_list_qr_expandable_view">
+            <LinearLayout android:orientation="vertical" android:id="@id/fragment_main_create_barcode_list_barcode_linear_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </FrameLayout>
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

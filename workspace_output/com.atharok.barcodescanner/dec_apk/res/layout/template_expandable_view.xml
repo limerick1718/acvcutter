@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.atharok.barcodescanner.presentation.customView.ExpandableView android:orientation="vertical" android:id="@id/template_expandable_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/standard_margin" android:animateLayoutChanges="true" app:iconHeaderId="@id/template_expandable_view_header_icon_image_view" app:open="true" xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/template_expandable_view_header_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/standard_margin">
+        <FrameLayout android:id="@id/template_expandable_view_header_frame_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toStartOf="@id/template_expandable_view_header_icon_image_view" android:layout_alignParentStart="true" />
+        <ImageView android:id="@id/template_expandable_view_header_icon_image_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/baseline_keyboard_arrow_down_24" android:layout_centerVertical="true" android:contentDescription="@string/image_view_description_icon" android:layout_marginStart="@dimen/standard_margin" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <FrameLayout android:id="@id/template_expandable_view_body_frame_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/standard_margin" android:layout_below="@id/template_expandable_view_header_layout" />
+</com.atharok.barcodescanner.presentation.customView.ExpandableView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/fragment_barcode_analysis_information_about_barcode_entitled_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <include android:id="@id/fragment_barcode_analysis_information_about_barcode_entitled_text_view_template" layout="@layout/template_text_view_subtitle" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/fragment_barcode_analysis_information_barcode_contents_frame_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/fragment_barcode_analysis_information_about_barcode_entitled_layout" />
+    <FrameLayout android:id="@id/fragment_barcode_analysis_information_about_barcode_frame_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/fragment_barcode_analysis_information_barcode_contents_frame_layout" />
+    <FrameLayout android:id="@id/fragment_barcode_analysis_information_barcode_actions_entitled_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/fragment_barcode_analysis_information_about_barcode_frame_layout">
+        <include android:id="@id/fragment_barcode_analysis_information_barcode_actions_entitled_text_view_template" layout="@layout/template_text_view_subtitle" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/fragment_barcode_analysis_information_actions_barcode_frame_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/fragment_barcode_analysis_information_barcode_actions_entitled_layout" />
+</RelativeLayout>

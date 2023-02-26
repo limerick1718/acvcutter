@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/activity_veggie_toolbar" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/template_toolbar" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/standard_margin" android:layout_below="@id/activity_veggie_toolbar">
+        <TextView android:id="@id/activity_veggie_no_ingredients_text_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/standard_margin" android:text="@string/ingredients_no_information_found_label" style="@style/AppTheme.TextView.Appearance.Subtitle.Secondary" />
+        <RelativeLayout android:id="@id/activity_veggie_ingredients_list_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <FrameLayout android:id="@id/activity_veggie_ingredients_list_entitled_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <include android:id="@id/activity_veggie_ingredients_list_entitled_text_view_template" layout="@layout/template_text_view_subtitle" />
+            </FrameLayout>
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/activity_veggie_recycler_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/standard_margin" android:layout_below="@id/activity_veggie_ingredients_list_entitled_layout" />
+        </RelativeLayout>
+    </FrameLayout>
+</RelativeLayout>

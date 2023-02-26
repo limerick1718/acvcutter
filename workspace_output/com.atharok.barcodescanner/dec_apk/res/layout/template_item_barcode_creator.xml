@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView android:layout_width="fill_parent" android:layout_height="@dimen/card_generator_item_height" android:layout_margin="@dimen/light_margin" android:transitionName="@string/animation_activity_transition" app:cardCornerRadius="@dimen/card_generator_item_corner_radius" app:cardUseCompatPadding="false"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:padding="@dimen/standard_margin" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/template_item_barcode_creator_image_view" android:background="@drawable/circle" android:layout_width="@dimen/icon_large_size" android:layout_height="@dimen/icon_large_size" android:layout_centerVertical="true" android:contentDescription="@string/image_view_description_icon" app:backgroundTint="?colorPrimary" app:tint="?colorOnPrimary" />
+        <TextView android:id="@id/template_item_barcode_creator_text_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="@dimen/standard_margin" android:layout_toEndOf="@id/template_item_barcode_creator_image_view" style="@style/AppTheme.TextView.Appearance.Title.Primary.Min" />
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

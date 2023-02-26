@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="32" android:compileSdkVersionCodename="12" package="org.woheller69.spritpreise" platformBuildVersionCode="32" platformBuildVersionName="12">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <application android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:extractNativeLibs="false" android:fontFamily="sans-serif-light" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <activity android:exported="true" android:name="org.woheller69.spritpreise.activities.SplashActivity" android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/activity_manage" android:launchMode="singleTop" android:name="org.woheller69.spritpreise.activities.ManageLocationsActivity" android:parentActivityName="org.woheller69.spritpreise.activities.CityGasPricesActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTop" android:name="org.woheller69.spritpreise.activities.CityGasPricesActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/about" android:name="org.woheller69.spritpreise.activities.AboutActivity" android:parentActivityName="org.woheller69.spritpreise.activities.CityGasPricesActivity" android:theme="@style/AppTheme.NoActionBar">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.woheller69.spritpreise.activities.CityGasPricesActivity"/>
+        </activity>
+        <activity android:label="@string/activity_settings_title" android:name="org.woheller69.spritpreise.activities.SettingsActivity" android:parentActivityName="org.woheller69.spritpreise.activities.CityGasPricesActivity" android:theme="@style/AppTheme.NoActionBar">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.woheller69.spritpreise.activities.CityGasPricesActivity"/>
+        </activity>
+        <activity android:name="org.woheller69.spritpreise.firststart.TutorialActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <service android:exported="false" android:name="org.woheller69.spritpreise.services.UpdateDataService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="org.woheller69.spritpreise.widget.Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_info"/>
+        </receiver>
+        <provider android:authorities="org.woheller69.spritpreise.androidx-startup" android:exported="false" android:name="androidx.startup.InitializationProvider">
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+        </provider>
+        <uses-library android:name="androidx.window.extensions" android:required="false"/>
+        <uses-library android:name="androidx.window.sidecar" android:required="false"/>
+    </application>
+</manifest>

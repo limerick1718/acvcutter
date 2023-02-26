@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingStart="@dimen/standard_margin" android:paddingEnd="@dimen/standard_margin" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/fragment_book_analysis_outer_view" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <FrameLayout android:id="@id/fragment_book_analysis_overview_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" />
+        <FrameLayout android:id="@id/fragment_book_analysis_summary_frame_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/fragment_book_analysis_overview_layout" />
+        <FrameLayout android:id="@id/fragment_book_analysis_more_entitled_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/fragment_book_analysis_summary_frame_layout">
+            <include android:id="@id/fragment_book_analysis_more_entitled_text_view_template" layout="@layout/template_text_view_subtitle" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/fragment_book_analysis_categories_frame_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/fragment_book_analysis_more_entitled_layout" />
+        <FrameLayout android:id="@id/fragment_book_analysis_nb_pages_frame_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/fragment_book_analysis_categories_frame_layout" />
+        <FrameLayout android:id="@id/fragment_book_analysis_contributions_frame_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/fragment_book_analysis_nb_pages_frame_layout" />
+        <FrameLayout android:id="@id/fragment_book_analysis_publication_date_frame_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/fragment_book_analysis_contributions_frame_layout" />
+        <FrameLayout android:id="@id/fragment_book_analysis_original_title_frame_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/fragment_book_analysis_publication_date_frame_layout" />
+        <FrameLayout android:id="@id/fragment_book_analysis_about_barcode_frame_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/fragment_book_analysis_original_title_frame_layout" />
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

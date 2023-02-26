@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/baseline_save_24" android:id="@id/menu_activity_barcode_details_save" android:title="@string/save_label" app:showAsAction="ifRoom" />
+    <item android:icon="@drawable/baseline_share_24" android:id="@id/menu_activity_barcode_details_share" android:title="@string/share_label" app:showAsAction="ifRoom">
+        <menu>
+            <item android:id="@id/menu_activity_barcode_details_share_image" android:title="@string/share_image_label" app:showAsAction="ifRoom|withText" />
+            <item android:id="@id/menu_activity_barcode_details_share_text" android:title="@string/share_text_label" app:showAsAction="ifRoom|withText" />
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="?listPreferredItemPaddingLeft" android:paddingRight="?listPreferredItemPaddingRight" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="?listPreferredItemHeight" android:paddingStart="?listPreferredItemPaddingLeft" android:paddingEnd="?listPreferredItemPaddingRight"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textAppearance="?textAppearanceListItem" android:ellipsize="marquee" android:gravity="start|center" android:id="@id/repo_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/unverified" android:ellipsize="marquee" android:gravity="start|center" android:id="@id/repo_unverified" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/unverified" android:singleLine="true" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/unsigned" android:ellipsize="marquee" android:gravity="start|center" android:id="@id/repo_unsigned" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/unsigned" android:singleLine="true" />
+    </LinearLayout>
+    <com.google.android.material.switchmaterial.SwitchMaterial android:id="@id/repo_switch" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+</LinearLayout>

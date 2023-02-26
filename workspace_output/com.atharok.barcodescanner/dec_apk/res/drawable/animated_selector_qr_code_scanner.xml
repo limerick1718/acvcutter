@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true" android:id="@id/state_on" android:drawable="@drawable/baseline_qr_code_scanner_avd_anim_24" />
+    <item android:id="@id/state_off" android:drawable="@drawable/baseline_qr_code_scanner_24" />
+    <transition android:drawable="@drawable/baseline_qr_code_scanner_avd_anim_24" android:toId="@id/state_on" android:fromId="@id/state_off" />
+</animated-selector>

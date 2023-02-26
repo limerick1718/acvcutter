@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout android:id="@id/drawer_layout" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include layout="@layout/toolbar" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="?actionBarSize">
+            <TextView android:layout_gravity="center" android:id="@id/noCitySelectedText" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/error_no_city_selected" />
+            <com.google.android.material.tabs.TabLayout android:layout_gravity="center_horizontal" android:id="@id/tab_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" app:tabGravity="start" app:tabMode="scrollable" />
+            <androidx.viewpager2.widget.ViewPager2 android:id="@id/viewPager2" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <com.google.android.material.navigation.NavigationView android:layout_gravity="start" android:id="@id/nav_view" android:fitsSystemWindows="true" android:layout_width="wrap_content" android:layout_height="fill_parent" app:headerLayout="@layout/nav_header_main" app:menu="@menu/activity_main_drawer" />
+</androidx.drawerlayout.widget.DrawerLayout>

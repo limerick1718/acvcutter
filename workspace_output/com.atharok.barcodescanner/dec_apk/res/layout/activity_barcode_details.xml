@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/activity_barcode_image_toolbar" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/template_toolbar" />
+    <androidx.core.widget.NestedScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/activity_barcode_image_toolbar" android:paddingStart="@dimen/standard_margin" android:paddingEnd="@dimen/standard_margin">
+        <RelativeLayout android:id="@id/activity_barcode_image_outer_view" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <androidx.cardview.widget.CardView android:id="@id/activity_barcode_image_image_rounded" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_centerHorizontal="true">
+                <ImageView android:id="@id/activity_barcode_image_image_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:adjustViewBounds="true" android:contentDescription="@string/image_view_description_bar_code" />
+            </androidx.cardview.widget.CardView>
+            <FrameLayout android:id="@id/activity_barcode_image_about_barcode_entitled_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/activity_barcode_image_image_rounded">
+                <include android:id="@id/activity_barcode_image_about_barcode_entitled_text_view_template" layout="@layout/template_text_view_subtitle" />
+            </FrameLayout>
+            <FrameLayout android:id="@id/activity_barcode_image_barcode_contents_frame_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/activity_barcode_image_about_barcode_entitled_layout" />
+            <FrameLayout android:id="@id/activity_barcode_image_about_barcode_frame_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/activity_barcode_image_barcode_contents_frame_layout" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>
