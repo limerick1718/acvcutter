@@ -30,10 +30,13 @@ def install(new_apk_path):
 
 def uninstall(package):
     logging.info("uninstalling")
-    cmd = '{} uninstall "{}"'.format(config.adb_path, package)
-    out = request_pipe(cmd)
+    try:
+        cmd = '{} uninstall "{}"'.format(config.adb_path, package)
+        out = request_pipe(cmd)
 
-    logging.info(out)
+        logging.info(out)
+    except:
+        pass
 
 def request_pipe(cmd):
     pipe = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
@@ -364,7 +367,7 @@ def apply_ignore_filter(smali_tree, ignore_filter):
 
 def sign_align_apk(instrumented_package_path, output_apk):
     aligned_apk_path = instrumented_package_path.replace('.apk', '_signed_tmp.apk')
-    align_cmd = '"{}" -f 4 "{}" "{}"'.format(config.zipalign, instrumented_package_path, aligned_apk_path)
+    align_cmd = '{} -f 4 "{}" "{}"'.format(config.zipalign, instrumented_package_path, aligned_apk_path)
     request_pipe(align_cmd)
 
     apksigner_cmd = '{} sign --ks {} --ks-pass pass:{} --out {} {}'\

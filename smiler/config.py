@@ -76,4 +76,4 @@ class config(object):
             sys.exit()
 
 cf = config()
-cf.check_tools()
+# cf.check_tools()
