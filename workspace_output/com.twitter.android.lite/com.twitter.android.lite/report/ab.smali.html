@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> ab.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Lab;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
+.implements Lla;
+
+
+.field private static final f:Ljava/util/Map;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/Map<",
+"Ljava/lang/String;",
+"Lab;",
+">;"
+}
+.end annotation
+.end field
+.field private final a:Landroid/content/SharedPreferences;
+.field private final b:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
+.field private final c:Ljava/lang/Object;
+.field private volatile d:Ljava/util/Map;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/Map<",
+"Ljava/lang/String;",
+"*>;"
+}
+.end annotation
+.end field
+.field private final e:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Lia;",
+">;"
+}
+.end annotation
+.end field
+
+
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	new-instance v0, Lk;</span>
+<span class="cov">	invoke-direct {v0}, Lk;-><init>()V</span>
+<span class="cov">	sput-object v0, Lab;->f:Ljava/util/Map;</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method private constructor &lt;init&gt;(Landroid/content/SharedPreferences;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	new-instance v0, Ldb;</span>
+<span class="missed">	invoke-direct {v0, p0}, Ldb;-><init>(Lab;)V</span>
+<span class="missed">	iput-object v0, p0, Lab;->b:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;</span>
+<span class="missed">	new-instance v0, Ljava/lang/Object;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lab;->c:Ljava/lang/Object;</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lab;->e:Ljava/util/List;</span>
+<span class="missed">	iput-object p1, p0, Lab;->a:Landroid/content/SharedPreferences;</span>
+<span class="missed">	iget-object v0, p0, Lab;->b:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;</span>
+<span class="missed">	invoke-interface {p1, v0}, Landroid/content/SharedPreferences;->registerOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method static a(Landroid/content/Context;Ljava/lang/String;)Lab;
+<span class="">	.locals 2</span>
+
+<span class="">	invoke-static {}, Lda;->a()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string v0, "direct_boot:"</span>
+<span class="">	invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	invoke-static {p0}, Lda;->a(Landroid/content/Context;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const-class v0, Lab;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	sget-object v1, Lab;->f:Ljava/util/Map;</span>
+<span class="">	invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, Lab;</span>
+<span class="missed">	if-nez v1, :cond_2</span>
+<span class="missed">	new-instance v1, Lab;</span>
+<span class="">	invoke-static {p0, p1}, Lab;->b(Landroid/content/Context;Ljava/lang/String;)Landroid/content/SharedPreferences;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	invoke-direct {v1, p0}, Lab;-><init>(Landroid/content/SharedPreferences;)V</span>
+<span class="missed">	sget-object p0, Lab;->f:Ljava/util/Map;</span>
+<span class="missed">	invoke-interface {p0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	:cond_2</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-object v1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw p0</span>
+.end method
+
+<span class="cov">.method static declared-synchronized a()V</span>
+<span class="">	.locals 4</span>
+
+<span class="cov">	const-class v0, Lab;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	sget-object v1, Lab;->f:Ljava/util/Map;</span>
+<span class="exec">	invoke-interface {v1}, Ljava/util/Map;->values()Ljava/util/Collection;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="cov">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Lab;</span>
+<span class="missed">	iget-object v3, v2, Lab;->a:Landroid/content/SharedPreferences;</span>
+<span class="missed">	iget-object v2, v2, Lab;->b:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;</span>
+<span class="missed">	invoke-interface {v3, v2}, Landroid/content/SharedPreferences;->unregisterOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	sget-object v1, Lab;->f:Ljava/util/Map;</span>
+<span class="cov">	invoke-interface {v1}, Ljava/util/Map;->clear()V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="exec">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	throw v1</span>
+.end method
+
+.method private static b(Landroid/content/Context;Ljava/lang/String;)Landroid/content/SharedPreferences;
+<span class="">	.locals 3</span>
+
+<span class="">	invoke-static {}, Landroid/os/StrictMode;->allowThreadDiskReads()Landroid/os/StrictMode$ThreadPolicy;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v1, "direct_boot:"</span>
+<span class="">	invoke-virtual {p1, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="">	invoke-static {}, Lda;->a()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Landroid/content/Context;->createDeviceProtectedStorageContext()Landroid/content/Context;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/16 v1, 0xc</span>
+<span class="">	invoke-virtual {p1, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p0, p1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V</span>
+<span class="">	return-object p0</span>
+<span class="">	:try_start_1</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {p0, p1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="missed">	invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V</span>
+<span class="">	return-object p0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p0</span>
+<span class="missed">	invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V</span>
+<span class="">	throw p0</span>
+.end method
+
+.method public final a(Ljava/lang/String;)Ljava/lang/Object;
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-object v0, p0, Lab;->d:Ljava/util/Map;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	iget-object v1, p0, Lab;->c:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lab;->d:Ljava/util/Map;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	invoke-static {}, Landroid/os/StrictMode;->allowThreadDiskReads()Landroid/os/StrictMode$ThreadPolicy;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_1</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	iget-object v2, p0, Lab;->a:Landroid/content/SharedPreferences;</span>
+<span class="">	invoke-interface {v2}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	iput-object v2, p0, Lab;->d:Ljava/util/Map;</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	:try_start_2</span>
+<span class="missed">	invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V</span>
+<span class="missed">	move-object v0, v2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	monitor-exit v1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catchall_1</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit v1</span>
+<span class="">	:try_end_2</span>
+<span class="missed">	.catchall {:try_start_2 .. :try_end_2} :catchall_1</span>
+<span class="">	throw p1</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="">	invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method final synthetic a(Landroid/content/SharedPreferences;Ljava/lang/String;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	iget-object p1, p0, Lab;->c:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter p1</span>
+<span class="missed">	const/4 p2, 0x0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iput-object p2, p0, Lab;->d:Ljava/util/Map;</span>
+<span class="missed">	invoke-static {}, Lva;->c()V</span>
+<span class="missed">	monitor-exit p1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_1</span>
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	iget-object p1, p0, Lab;->e:Ljava/util/List;</span>
+<span class="">	invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result p2</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	check-cast p2, Lia;</span>
+<span class="missed">	invoke-interface {p2}, Lia;->a()V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	throw p1</span>
+<span class="">	:catchall_1</span>
+<span class="missed">	move-exception p2</span>
+<span class="">	:try_start_2</span>
+<span class="missed">	monitor-exit p1</span>
+<span class="">	:try_end_2</span>
+<span class="missed">	.catchall {:try_start_2 .. :try_end_2} :catchall_1</span>
+<span class="">	throw p2</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

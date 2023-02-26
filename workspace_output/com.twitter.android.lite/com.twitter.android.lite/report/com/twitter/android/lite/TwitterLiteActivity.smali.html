@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.twitter.android.lite</a></li>
+        <li><i class="ico ico-class"></i> TwitterLiteActivity.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Lcom/twitter/android/lite/TwitterLiteActivity;
+.super Landroid/app/Activity;
+.source "TwitterLiteActivity.java"
+
+
+.field private a:Landroid/webkit/WebView;
+.field private b:Lcom/twitter/android/lite/c;
+.field private c:Ljava/lang/String;
+.field private d:Landroid/widget/FrameLayout;
+
+
+<span class="cov">.method public constructor &lt;init&gt;()V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Landroid/app/Activity;-><init>()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method static synthetic a(Lcom/twitter/android/lite/TwitterLiteActivity;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->c()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method static synthetic b(Lcom/twitter/android/lite/TwitterLiteActivity;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->d()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private c()V</span>
+<span class="">	.locals 3</span>
+
+<span class="exec">	invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	return-void</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->e()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_1</span>
+<span class="missed">	iget-object v1, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "openApkPushNotification("</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v0, ")"</span>
+<span class="missed">	invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	invoke-virtual {v1, v0, v2}, Landroid/webkit/WebView;->evaluateJavascript(Ljava/lang/String;Landroid/webkit/ValueCallback;)V</span>
+<span class="cov">	:cond_1</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private d()V</span>
+<span class="">	.locals 3</span>
+
+<span class="exec">	invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	if-eqz v0, :cond_1</span>
+<span class="exec">	invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v0}, Landroid/content/Intent;->getData()Landroid/net/Uri;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Landroid/content/Intent;->getData()Landroid/net/Uri;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {v0}, Lvw;->b(Landroid/net/Uri;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="missed">	iget-object v1, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "openApkDeeplink(\'"</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v0, "\')"</span>
+<span class="missed">	invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	invoke-virtual {v1, v0, v2}, Landroid/webkit/WebView;->evaluateJavascript(Ljava/lang/String;Landroid/webkit/ValueCallback;)V</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private e()Ljava/lang/String;</span>
+<span class="">	.locals 4</span>
+
+<span class="exec">	invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "notification"</span>
+<span class="">	invoke-virtual {v0, v1}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v3, ""</span>
+<span class="missed">	invoke-virtual {v2, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;</span>
+<span class="">	return-object v0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method private f()V</span>
+<span class="">	.locals 5</span>
+<span class="">	.annotation build Landroid/annotation/SuppressLint;</span>
+<span class="">	value = {</span>
+<span class="">	"SetJavaScriptEnabled"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return-void</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/high16 v0, 0x7f070000</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	invoke-virtual {p0, v0}, Landroid/app/Activity;->setContentView(I)V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Landroid/util/AndroidRuntimeException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="cov">	const v0, 0x7f050040</span>
+<span class="exec">	invoke-virtual {p0, v0}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	check-cast v0, Landroid/webkit/WebView;</span>
+<span class="cov">	iput-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="exec">	invoke-static {p0}, Lcom/twitter/android/lite/b;->a(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-static {v0}, Lpw;->b(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_1</span>
+<span class="missed">	new-instance v0, Landroid/app/AlertDialog$Builder;</span>
+<span class="missed">	invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V</span>
+<span class="missed">	const v1, 0x7f0b003a</span>
+<span class="">	invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const v1, 0x7f0b0038</span>
+<span class="">	invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const v1, 0x7f0b0039</span>
+<span class="missed">	new-instance v2, Lcom/twitter/android/lite/a;</span>
+<span class="missed">	invoke-direct {v2, p0}, Lcom/twitter/android/lite/a;-><init>(Lcom/twitter/android/lite/TwitterLiteActivity;)V</span>
+<span class="">	invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V</span>
+<span class="">	return-void</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	iget-object v2, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="exec">	invoke-virtual {v2}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	invoke-virtual {v2, v1}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V</span>
+<span class="cov">	iget-object v2, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="cov">	new-instance v3, Lcom/twitter/android/lite/webinterface/ApkRwebInterface;</span>
+<span class="cov">	invoke-direct {v3, p0}, Lcom/twitter/android/lite/webinterface/ApkRwebInterface;-><init>(Landroid/content/Context;)V</span>
+<span class="cov">	const-string v4, "apkInterface"</span>
+<span class="cov">	invoke-virtual {v2, v3, v4}, Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V</span>
+<span class="cov">	iget-object v2, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="exec">	invoke-virtual {v2}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	invoke-virtual {v2, v1}, Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V</span>
+<span class="cov">	iget-object v2, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="exec">	invoke-virtual {v2}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	invoke-virtual {v2, v1}, Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V</span>
+<span class="cov">	iget-object v1, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="exec">	invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	invoke-virtual {v1, v0}, Landroid/webkit/WebSettings;->setUserAgentString(Ljava/lang/String;)V</span>
+<span class="cov">	iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="cov">	new-instance v1, Lcom/twitter/android/lite/TwitterLiteActivity$a;</span>
+<span class="cov">	invoke-direct {v1, p0}, Lcom/twitter/android/lite/TwitterLiteActivity$a;-><init>(Lcom/twitter/android/lite/TwitterLiteActivity;)V</span>
+<span class="cov">	invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V</span>
+<span class="cov">	new-instance v0, Lcom/twitter/android/lite/c;</span>
+<span class="cov">	invoke-direct {v0, p0}, Lcom/twitter/android/lite/c;-><init>(Lcom/twitter/android/lite/TwitterLiteActivity;)V</span>
+<span class="cov">	iput-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->b:Lcom/twitter/android/lite/c;</span>
+<span class="cov">	iget-object v1, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="cov">	invoke-virtual {v1, v0}, Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V</span>
+<span class="cov">	iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="cov">	invoke-virtual {p0, v0}, Landroid/app/Activity;->registerForContextMenu(Landroid/view/View;)V</span>
+<span class="exec">	invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v0}, Landroid/content/Intent;->getAction()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "android.intent.action.SEND"</span>
+<span class="exec">	invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="">	invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Landroid/content/Intent;->getType()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "text/plain"</span>
+<span class="">	invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="missed">	iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="">	invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "android.intent.extra.TEXT"</span>
+<span class="">	invoke-virtual {v1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-static {v1}, Lcom/twitter/android/lite/e;->a(Ljava/lang/String;)Landroid/net/Uri;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1}, Landroid/net/Uri;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="exec">	invoke-static {}, Lcom/twitter/android/lite/e;->a()Landroid/net/Uri;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-virtual {v1}, Landroid/net/Uri;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return-void</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	invoke-static {v0}, Lsw;->a(Ljava/lang/Throwable;)V</span>
+<span class="missed">	const v0, 0x7f0b0001</span>
+<span class="">	invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/widget/Toast;->show()V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method private g()V</span>
+<span class="">	.locals 2</span>
+
+<span class="exec">	invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v0}, Landroid/content/Intent;->getData()Landroid/net/Uri;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-static {v0}, Lvw;->e(Landroid/net/Uri;)Landroid/net/Uri;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "mat_click_id"</span>
+<span class="">	invoke-virtual {v0, v1}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-static {v0}, Lcom/twitter/android/lite/webinterface/ApkRwebInterface;->setReferrerUrl(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-static {v1}, Lcom/twitter/android/lite/webinterface/ApkRwebInterface;->setMatClickId(Ljava/lang/String;)V</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method  a()Landroid/widget/FrameLayout;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->d:Landroid/widget/FrameLayout;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public synthetic a(Landroid/content/DialogInterface;I)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V</span>
+<span class="missed">	invoke-static {p0}, Lpw;->b(Landroid/content/Context;)V</span>
+<span class="missed">	invoke-virtual {p0}, Landroid/app/Activity;->finish()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method  b()Landroid/webkit/WebView;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method protected onActivityResult(IILandroid/content/Intent;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->b:Lcom/twitter/android/lite/c;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-virtual {v0, p1}, Lcom/twitter/android/lite/c;->a(I)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object p1, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->b:Lcom/twitter/android/lite/c;</span>
+<span class="missed">	invoke-virtual {p1, p2, p3}, Lcom/twitter/android/lite/c;->a(ILandroid/content/Intent;)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onActivityResult(IILandroid/content/Intent;)V</span>
+<span class="">	:goto_1</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public onBackPressed()V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="exec">	invoke-virtual {v0}, Landroid/webkit/WebView;->canGoBack()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="cov">	invoke-virtual {v0}, Landroid/webkit/WebView;->goBack()V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-super {p0}, Landroid/app/Activity;->onBackPressed()V</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public onContextItemSelected(Landroid/view/MenuItem;)Z
+<span class="">	.locals 4</span>
+
+<span class="">	invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	const v3, 0x7f05001a</span>
+<span class="missed">	if-ne v0, v3, :cond_1</span>
+<span class="missed">	iget-object p1, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->c:Ljava/lang/String;</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="">	invoke-static {p0, p1}, Lqw;->a(Landroid/app/Activity;Ljava/lang/String;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	iput-object v1, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->c:Ljava/lang/String;</span>
+<span class="">	:cond_0</span>
+<span class="">	return v2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const v3, 0x7f050031</span>
+<span class="missed">	if-ne v0, v3, :cond_3</span>
+<span class="missed">	iget-object p1, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->c:Ljava/lang/String;</span>
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	new-instance p1, Landroid/content/Intent;</span>
+<span class="missed">	invoke-direct {p1}, Landroid/content/Intent;-><init>()V</span>
+<span class="missed">	const-string v0, "android.intent.action.VIEW"</span>
+<span class="missed">	invoke-virtual {p1, v0}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;</span>
+<span class="missed">	iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->c:Ljava/lang/String;</span>
+<span class="">	invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v3, "image/*"</span>
+<span class="missed">	invoke-virtual {p1, v0, v3}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;</span>
+<span class="missed">	invoke-virtual {p0, p1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iput-object v1, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->c:Ljava/lang/String;</span>
+<span class="">	return v2</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-super {p0, p1}, Landroid/app/Activity;->onContextItemSelected(Landroid/view/MenuItem;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+<span class="cov">.method protected onCreate(Landroid/os/Bundle;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V</span>
+<span class="cov">	invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->g()V</span>
+<span class="cov">	invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->f()V</span>
+<span class="cov">	const p1, 0x7f050021</span>
+<span class="exec">	invoke-virtual {p0, p1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	check-cast p1, Landroid/widget/FrameLayout;</span>
+<span class="cov">	iput-object p1, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->d:Landroid/widget/FrameLayout;</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V</span>
+<span class="missed">	instance-of p3, p2, Landroid/webkit/WebView;</span>
+<span class="missed">	if-eqz p3, :cond_1</span>
+<span class="missed">	check-cast p2, Landroid/webkit/WebView;</span>
+<span class="">	invoke-virtual {p2}, Landroid/webkit/WebView;->getHitTestResult()Landroid/webkit/WebView$HitTestResult;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	if-eqz p2, :cond_1</span>
+<span class="">	invoke-virtual {p2}, Landroid/webkit/WebView$HitTestResult;->getType()I</span>
+<span class="missed">	move-result p3</span>
+<span class="missed">	const/4 v0, 0x5</span>
+<span class="missed">	if-eq p3, v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x6</span>
+<span class="missed">	if-eq p3, v0, :cond_0</span>
+<span class="missed">	const/16 v0, 0x8</span>
+<span class="missed">	if-eq p3, v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p2}, Landroid/webkit/WebView$HitTestResult;->getExtra()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	iput-object p2, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->c:Ljava/lang/String;</span>
+<span class="">	invoke-static {p2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="">	invoke-static {p2}, Lpw;->a(Landroid/net/Uri;)Z</span>
+<span class="missed">	move-result p2</span>
+<span class="missed">	if-eqz p2, :cond_1</span>
+<span class="">	invoke-virtual {p0}, Landroid/app/Activity;->getMenuInflater()Landroid/view/MenuInflater;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	const/high16 p3, 0x7f080000</span>
+<span class="missed">	invoke-virtual {p2, p3, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected onNewIntent(Landroid/content/Intent;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroid/app/Activity;->onNewIntent(Landroid/content/Intent;)V</span>
+<span class="missed">	invoke-virtual {p0, p1}, Landroid/app/Activity;->setIntent(Landroid/content/Intent;)V</span>
+<span class="missed">	invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->c()V</span>
+<span class="missed">	invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->d()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected onPause()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	invoke-super {p0}, Landroid/app/Activity;->onPause()V</span>
+<span class="missed">	iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/webkit/WebView;->onPause()V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public onRequestPermissionsResult(I[Ljava/lang/String;[I)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-ne p1, v0, :cond_1</span>
+<span class="missed">	array-length v1, p3</span>
+<span class="missed">	if-lez v1, :cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	aget v1, p3, v1</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->c:Ljava/lang/String;</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	invoke-static {p0, v1}, Lqw;->a(Landroid/app/Activity;Ljava/lang/String;)Z</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->c:Ljava/lang/String;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const v1, 0x7f0b002b</span>
+<span class="">	invoke-static {p0, v1, v0}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/widget/Toast;->show()V</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onRequestPermissionsResult(I[Ljava/lang/String;[I)V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method protected onResume()V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	invoke-super {p0}, Landroid/app/Activity;->onResume()V</span>
+<span class="cov">	iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	invoke-virtual {v0}, Landroid/webkit/WebView;->onResume()V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->f()V</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	new-instance v0, Lcom/twitter/android/lite/notification/c;</span>
+<span class="exec">	invoke-virtual {p0}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	invoke-direct {v0, v1}, Lcom/twitter/android/lite/notification/c;-><init>(Landroid/content/Context;)V</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	new-array v1, v1, [Ljava/lang/Void;</span>
+<span class="cov">	invoke-virtual {v0, v1}, Landroid/os/AsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;</span>
+<span class="exec">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

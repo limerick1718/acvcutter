@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> bp$t$a.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Lbp$t$a;
+.super Ljava/lang/Object;
+.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.implements Ljava/util/concurrent/Callable;
+
+.annotation system Ldalvik/annotation/EnclosingMethod;
+value = Lbp$t;->a(Ljava/lang/Boolean;)Lgn;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x0
+name = null
+.end annotation
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/Object;",
+"Ljava/util/concurrent/Callable<",
+"Lgn<",
+"Ljava/lang/Void;",
+">;>;"
+}
+.end annotation
+
+.field final synthetic a:Ljava/lang/Boolean;
+.field final synthetic b:Lbp$t;
+
+
+.method constructor &lt;init&gt;(Lbp$t;Ljava/lang/Boolean;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-object p1, p0, Lbp$t$a;->b:Lbp$t;</span>
+<span class="missed">	iput-object p2, p0, Lbp$t$a;->a:Ljava/lang/Boolean;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public call()Lgn;
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/lang/Exception;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Lgn<",</span>
+<span class="">	"Ljava/lang/Void;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lbp$t$a;->b:Lbp$t;</span>
+<span class="missed">	iget-object v0, v0, Lbp$t;->c:Lbp;</span>
+<span class="">	invoke-static {v0}, Lbp;->a(Lbp;)Lgs;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lgs;->b()Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lbp$t$a;->a:Ljava/lang/Boolean;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Reports are being deleted."</span>
+<span class="missed">	invoke-virtual {v1, v2}, Lmo;->a(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v1, p0, Lbp$t$a;->b:Lbp$t;</span>
+<span class="missed">	iget-object v1, v1, Lbp$t;->c:Lbp;</span>
+<span class="">	invoke-static {v1}, Lbp;->a(Lbp;)Lgs;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v1, v0}, Lgs;->a(Ljava/util/List;)V</span>
+<span class="missed">	iget-object v0, p0, Lbp$t$a;->b:Lbp$t;</span>
+<span class="missed">	iget-object v0, v0, Lbp$t;->c:Lbp;</span>
+<span class="">	invoke-static {v0}, Lbp;->k(Lbp;)Lwp;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {v0}, Lwp;->b()V</span>
+<span class="missed">	iget-object v0, p0, Lbp$t$a;->b:Lbp$t;</span>
+<span class="missed">	iget-object v0, v0, Lbp$t;->c:Lbp;</span>
+<span class="missed">	iget-object v0, v0, Lbp;->y:Lhn;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-virtual {v0, v1}, Lhn;->b(Ljava/lang/Object;)Z</span>
+<span class="">	invoke-static {v1}, Ljn;->a(Ljava/lang/Object;)Lgn;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Reports are being sent."</span>
+<span class="missed">	invoke-virtual {v1, v2}, Lmo;->a(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v1, p0, Lbp$t$a;->a:Ljava/lang/Boolean;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	iget-object v2, p0, Lbp$t$a;->b:Lbp$t;</span>
+<span class="missed">	iget-object v2, v2, Lbp$t;->c:Lbp;</span>
+<span class="">	invoke-static {v2}, Lbp;->m(Lbp;)Lip;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-virtual {v2, v1}, Lip;->a(Z)V</span>
+<span class="missed">	iget-object v2, p0, Lbp$t$a;->b:Lbp$t;</span>
+<span class="missed">	iget-object v2, v2, Lbp$t;->c:Lbp;</span>
+<span class="">	invoke-static {v2}, Lbp;->n(Lbp;)Lap;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v2}, Lap;->b()Ljava/util/concurrent/Executor;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	iget-object v3, p0, Lbp$t$a;->b:Lbp$t;</span>
+<span class="missed">	iget-object v3, v3, Lbp$t;->a:Lgn;</span>
+<span class="missed">	new-instance v4, Lbp$t$a$a;</span>
+<span class="missed">	invoke-direct {v4, p0, v0, v1, v2}, Lbp$t$a$a;-><init>(Lbp$t$a;Ljava/util/List;ZLjava/util/concurrent/Executor;)V</span>
+<span class="">	invoke-virtual {v3, v2, v4}, Lgn;->a(Ljava/util/concurrent/Executor;Lfn;)Lgn;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public bridge synthetic call()Ljava/lang/Object;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/lang/Exception;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0}, Lbp$t$a;->call()Lgn;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

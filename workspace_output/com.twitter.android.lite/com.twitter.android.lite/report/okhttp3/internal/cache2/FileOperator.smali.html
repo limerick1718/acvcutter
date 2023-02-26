@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">okhttp3.internal.cache2</a></li>
+        <li><i class="ico ico-class"></i> FileOperator.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Lokhttp3/internal/cache2/FileOperator;
+.super Ljava/lang/Object;
+.source "FileOperator.java"
+
+
+.field private final fileChannel:Ljava/nio/channels/FileChannel;
+
+
+.method constructor &lt;init&gt;(Ljava/nio/channels/FileChannel;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/internal/cache2/FileOperator;->fileChannel:Ljava/nio/channels/FileChannel;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public read(JLex;J)V
+<span class="">	.locals 9</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	cmp-long v2, p4, v0</span>
+<span class="missed">	if-ltz v2, :cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	cmp-long v2, p4, v0</span>
+<span class="missed">	if-lez v2, :cond_0</span>
+<span class="missed">	iget-object v3, p0, Lokhttp3/internal/cache2/FileOperator;->fileChannel:Ljava/nio/channels/FileChannel;</span>
+<span class="missed">	move-wide v4, p1</span>
+<span class="missed">	move-wide v6, p4</span>
+<span class="missed">	move-object v8, p3</span>
+<span class="">	invoke-virtual/range {v3 .. v8}, Ljava/nio/channels/FileChannel;->transferTo(JJLjava/nio/channels/WritableByteChannel;)J</span>
+<span class="missed">	move-result-wide v2</span>
+<span class="missed">	add-long/2addr p1, v2</span>
+<span class="missed">	sub-long/2addr p4, v2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/IndexOutOfBoundsException;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public write(JLex;J)V
+<span class="">	.locals 13</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	cmp-long v2, p4, v0</span>
+<span class="missed">	if-ltz v2, :cond_1</span>
+<span class="">	invoke-virtual/range {p3 .. p3}, Lex;->v()J</span>
+<span class="missed">	move-result-wide v2</span>
+<span class="missed">	cmp-long v4, p4, v2</span>
+<span class="missed">	if-gtz v4, :cond_1</span>
+<span class="missed">	move-wide v2, p1</span>
+<span class="missed">	move-wide/from16 v11, p4</span>
+<span class="">	:goto_0</span>
+<span class="missed">	cmp-long v4, v11, v0</span>
+<span class="missed">	if-lez v4, :cond_0</span>
+<span class="missed">	move-object v4, p0</span>
+<span class="missed">	iget-object v5, v4, Lokhttp3/internal/cache2/FileOperator;->fileChannel:Ljava/nio/channels/FileChannel;</span>
+<span class="missed">	move-object/from16 v6, p3</span>
+<span class="missed">	move-wide v7, v2</span>
+<span class="missed">	move-wide v9, v11</span>
+<span class="">	invoke-virtual/range {v5 .. v10}, Ljava/nio/channels/FileChannel;->transferFrom(Ljava/nio/channels/ReadableByteChannel;JJ)J</span>
+<span class="missed">	move-result-wide v5</span>
+<span class="missed">	add-long/2addr v2, v5</span>
+<span class="missed">	sub-long/2addr v11, v5</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	move-object v4, p0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="missed">	move-object v4, p0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IndexOutOfBoundsException;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/IndexOutOfBoundsException;-><init>()V</span>
+<span class="">	throw v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../.resources/report.js"></script>
+</body>
+</html>

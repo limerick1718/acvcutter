@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> ng.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Lng;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+
+
+.field private static final a:Lpg;
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-static {}, Llg;->a()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-static {}, Llg;->b()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-static {}, Lyb;->a()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	new-instance v0, Lqg;</span>
+<span class="missed">	invoke-direct {v0}, Lqg;-><init>()V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v0, Log;</span>
+<span class="missed">	invoke-direct {v0}, Log;-><init>()V</span>
+<span class="">	:goto_1</span>
+<span class="missed">	sput-object v0, Lng;->a:Lpg;</span>
+<span class="">	return-void</span>
+.end method
+
+.method static synthetic a(I)I
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-static {p0}, Lng;->b(I)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method static synthetic a(II)I
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-static {p0, p1}, Lng;->b(II)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method static synthetic a(III)I
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-static {p0, p1, p2}, Lng;->b(III)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method static a(Ljava/lang/CharSequence;)I
+<span class="">	.locals 8</span>
+
+<span class="">	invoke-interface {p0}, Ljava/lang/CharSequence;->length()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v2, v0, :cond_0</span>
+<span class="">	invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	const/16 v4, 0x80</span>
+<span class="missed">	if-ge v3, v4, :cond_0</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	move v3, v0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ge v2, v0, :cond_6</span>
+<span class="">	invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	const/16 v5, 0x800</span>
+<span class="missed">	if-ge v4, v5, :cond_1</span>
+<span class="missed">	rsub-int/lit8 v4, v4, 0x7f</span>
+<span class="missed">	ushr-int/lit8 v4, v4, 0x1f</span>
+<span class="missed">	add-int/2addr v3, v4</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-interface {p0}, Ljava/lang/CharSequence;->length()I</span>
+<span class="missed">	move-result v4</span>
+<span class="">	:goto_2</span>
+<span class="missed">	if-ge v2, v4, :cond_5</span>
+<span class="">	invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	if-ge v6, v5, :cond_2</span>
+<span class="missed">	rsub-int/lit8 v6, v6, 0x7f</span>
+<span class="missed">	ushr-int/lit8 v6, v6, 0x1f</span>
+<span class="missed">	add-int/2addr v1, v6</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_2</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x2</span>
+<span class="missed">	const v7, 0xd800</span>
+<span class="missed">	if-gt v7, v6, :cond_4</span>
+<span class="missed">	const v7, 0xdfff</span>
+<span class="missed">	if-gt v6, v7, :cond_4</span>
+<span class="">	invoke-static {p0, v2}, Ljava/lang/Character;->codePointAt(Ljava/lang/CharSequence;I)I</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	const/high16 v7, 0x10000</span>
+<span class="missed">	if-lt v6, v7, :cond_3</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_3</span>
+<span class="missed">	new-instance p0, Lrg;</span>
+<span class="missed">	invoke-direct {p0, v2, v4}, Lrg;-><init>(II)V</span>
+<span class="">	throw p0</span>
+<span class="">	:goto_3</span>
+<span class="">	:cond_4</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_5</span>
+<span class="missed">	add-int/2addr v3, v1</span>
+<span class="">	:cond_6</span>
+<span class="missed">	if-lt v3, v0, :cond_7</span>
+<span class="">	return v3</span>
+<span class="">	:cond_7</span>
+<span class="missed">	new-instance p0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	int-to-long v0, v3</span>
+<span class="missed">	const-wide v2, 0x100000000L</span>
+<span class="missed">	add-long/2addr v0, v2</span>
+<span class="missed">	const/16 v2, 0x36</span>
+<span class="missed">	new-instance v3, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V</span>
+<span class="missed">	const-string v2, "UTF-8 length does not fit in int: "</span>
+<span class="missed">	invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
+.end method
+
+.method static a(Ljava/lang/CharSequence;[BII)I
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lng;->a:Lpg;</span>
+<span class="">	invoke-virtual {v0, p0, p1, p2, p3}, Lpg;->a(Ljava/lang/CharSequence;[BII)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method public static a([B)Z
+<span class="">	.locals 3</span>
+
+<span class="missed">	sget-object v0, Lng;->a:Lpg;</span>
+<span class="missed">	array-length v1, p0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	invoke-virtual {v0, p0, v2, v1}, Lpg;->b([BII)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method public static a([BII)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lng;->a:Lpg;</span>
+<span class="">	invoke-virtual {v0, p0, p1, p2}, Lpg;->b([BII)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method private static b(I)I
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/16 v0, -0xc</span>
+<span class="missed">	if-le p0, v0, :cond_0</span>
+<span class="missed">	const/4 p0, -0x1</span>
+<span class="">	:cond_0</span>
+<span class="">	return p0</span>
+.end method
+
+.method private static b(II)I
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/16 v0, -0xc</span>
+<span class="missed">	if-gt p0, v0, :cond_1</span>
+<span class="missed">	const/16 v0, -0x41</span>
+<span class="missed">	if-le p1, v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	shl-int/lit8 p1, p1, 0x8</span>
+<span class="missed">	xor-int/2addr p0, p1</span>
+<span class="">	return p0</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 p0, -0x1</span>
+<span class="">	return p0</span>
+.end method
+
+.method private static b(III)I
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/16 v0, -0xc</span>
+<span class="missed">	if-gt p0, v0, :cond_1</span>
+<span class="missed">	const/16 v0, -0x41</span>
+<span class="missed">	if-gt p1, v0, :cond_1</span>
+<span class="missed">	if-le p2, v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	shl-int/lit8 p1, p1, 0x8</span>
+<span class="missed">	xor-int/2addr p0, p1</span>
+<span class="missed">	shl-int/lit8 p1, p2, 0x10</span>
+<span class="missed">	xor-int/2addr p0, p1</span>
+<span class="">	return p0</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 p0, -0x1</span>
+<span class="">	return p0</span>
+.end method
+
+.method static b([BII)Ljava/lang/String;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ltd;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	sget-object v0, Lng;->a:Lpg;</span>
+<span class="">	invoke-virtual {v0, p0, p1, p2}, Lpg;->a([BII)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method static synthetic c([BII)I
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-static {p0, p1, p2}, Lng;->d([BII)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method private static d([BII)I
+<span class="">	.locals 3</span>
+
+<span class="missed">	add-int/lit8 v0, p1, -0x1</span>
+<span class="missed">	aget-byte v0, p0, v0</span>
+<span class="missed">	sub-int/2addr p2, p1</span>
+<span class="missed">	if-eqz p2, :cond_2</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-eq p2, v1, :cond_1</span>
+<span class="missed">	const/4 v2, 0x2</span>
+<span class="missed">	if-ne p2, v2, :cond_0</span>
+<span class="missed">	aget-byte p2, p0, p1</span>
+<span class="missed">	add-int/2addr p1, v1</span>
+<span class="missed">	aget-byte p0, p0, p1</span>
+<span class="">	invoke-static {v0, p2, p0}, Lng;->b(III)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p0, Ljava/lang/AssertionError;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/AssertionError;-><init>()V</span>
+<span class="">	throw p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	aget-byte p0, p0, p1</span>
+<span class="">	invoke-static {v0, p0}, Lng;->b(II)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-static {v0}, Lng;->b(I)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

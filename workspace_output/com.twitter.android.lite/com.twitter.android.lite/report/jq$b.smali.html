@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> jq$b.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Ljq$b;
+.super Lzq$d$b;
+.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Ljq;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x18
+name = "b"
+.end annotation
+
+.field private a:Ljava/lang/String;
+.field private b:Ljava/lang/String;
+.field private c:Ljava/lang/Long;
+.field private d:Ljava/lang/Long;
+.field private e:Ljava/lang/Boolean;
+.field private f:Lzq$d$a;
+.field private g:Lzq$d$f;
+.field private h:Lzq$d$e;
+.field private i:Lzq$d$c;
+.field private j:Lar;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lar<",
+"Lzq$d$d;",
+">;"
+}
+.end annotation
+.end field
+.field private k:Ljava/lang/Integer;
+
+
+<span class="cov">.method constructor &lt;init&gt;()V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Lzq$d$b;-><init>()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method private constructor &lt;init&gt;(Lzq$d;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	invoke-direct {p0}, Lzq$d$b;-><init>()V</span>
+<span class="">	invoke-virtual {p1}, Lzq$d;->e()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Ljq$b;->a:Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p1}, Lzq$d;->g()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Ljq$b;->b:Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p1}, Lzq$d;->j()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Ljq$b;->c:Ljava/lang/Long;</span>
+<span class="">	invoke-virtual {p1}, Lzq$d;->c()Ljava/lang/Long;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Ljq$b;->d:Ljava/lang/Long;</span>
+<span class="">	invoke-virtual {p1}, Lzq$d;->l()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Ljq$b;->e:Ljava/lang/Boolean;</span>
+<span class="">	invoke-virtual {p1}, Lzq$d;->a()Lzq$d$a;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Ljq$b;->f:Lzq$d$a;</span>
+<span class="">	invoke-virtual {p1}, Lzq$d;->k()Lzq$d$f;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Ljq$b;->g:Lzq$d$f;</span>
+<span class="">	invoke-virtual {p1}, Lzq$d;->i()Lzq$d$e;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Ljq$b;->h:Lzq$d$e;</span>
+<span class="">	invoke-virtual {p1}, Lzq$d;->b()Lzq$d$c;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Ljq$b;->i:Lzq$d$c;</span>
+<span class="">	invoke-virtual {p1}, Lzq$d;->d()Lar;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Ljq$b;->j:Lar;</span>
+<span class="">	invoke-virtual {p1}, Lzq$d;->f()I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Ljq$b;->k:Ljava/lang/Integer;</span>
+<span class="">	return-void</span>
+.end method
+
+.method synthetic constructor &lt;init&gt;(Lzq$d;Ljq$a;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0, p1}, Ljq$b;-><init>(Lzq$d;)V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public a(I)Lzq$d$b;</span>
+<span class="">	.locals 0</span>
+
+<span class="exec">	invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	iput-object p1, p0, Ljq$b;->k:Ljava/lang/Integer;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public a(J)Lzq$d$b;</span>
+<span class="">	.locals 0</span>
+
+<span class="exec">	invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	iput-object p1, p0, Ljq$b;->c:Ljava/lang/Long;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+.method public a(Lar;)Lzq$d$b;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lar<",</span>
+<span class="">	"Lzq$d$d;",</span>
+<span class="">	">;)",</span>
+<span class="">	"Lzq$d$b;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iput-object p1, p0, Ljq$b;->j:Lar;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a(Ljava/lang/Long;)Lzq$d$b;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-object p1, p0, Ljq$b;->d:Ljava/lang/Long;</span>
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method public a(Ljava/lang/String;)Lzq$d$b;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	if-eqz p1, :cond_0</span>
+<span class="cov">	iput-object p1, p0, Ljq$b;->a:Ljava/lang/String;</span>
+<span class="exec">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "Null generator"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public a(Lzq$d$a;)Lzq$d$b;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	if-eqz p1, :cond_0</span>
+<span class="cov">	iput-object p1, p0, Ljq$b;->f:Lzq$d$a;</span>
+<span class="exec">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "Null app"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public a(Lzq$d$c;)Lzq$d$b;</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iput-object p1, p0, Ljq$b;->i:Lzq$d$c;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public a(Lzq$d$e;)Lzq$d$b;</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iput-object p1, p0, Ljq$b;->h:Lzq$d$e;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+.method public a(Lzq$d$f;)Lzq$d$b;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-object p1, p0, Ljq$b;->g:Lzq$d$f;</span>
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method public a(Z)Lzq$d$b;</span>
+<span class="">	.locals 0</span>
+
+<span class="exec">	invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	iput-object p1, p0, Ljq$b;->e:Ljava/lang/Boolean;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public a()Lzq$d;</span>
+<span class="">	.locals 17</span>
+
+<span class="cov">	move-object/from16 v0, p0</span>
+<span class="cov">	iget-object v1, v0, Ljq$b;->a:Ljava/lang/String;</span>
+<span class="cov">	const-string v2, ""</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v2, " generator"</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v1, v0, Ljq$b;->b:Ljava/lang/String;</span>
+<span class="missed">	if-nez v1, :cond_1</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v2, " identifier"</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	iget-object v1, v0, Ljq$b;->c:Ljava/lang/Long;</span>
+<span class="missed">	if-nez v1, :cond_2</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v2, " startedAt"</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	iget-object v1, v0, Ljq$b;->e:Ljava/lang/Boolean;</span>
+<span class="missed">	if-nez v1, :cond_3</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v2, " crashed"</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="cov">	:cond_3</span>
+<span class="cov">	iget-object v1, v0, Ljq$b;->f:Lzq$d$a;</span>
+<span class="missed">	if-nez v1, :cond_4</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v2, " app"</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="cov">	:cond_4</span>
+<span class="cov">	iget-object v1, v0, Ljq$b;->k:Ljava/lang/Integer;</span>
+<span class="missed">	if-nez v1, :cond_5</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v2, " generatorType"</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="cov">	:cond_5</span>
+<span class="exec">	invoke-virtual {v2}, Ljava/lang/String;->isEmpty()Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	if-eqz v1, :cond_6</span>
+<span class="cov">	new-instance v1, Ljq;</span>
+<span class="cov">	iget-object v4, v0, Ljq$b;->a:Ljava/lang/String;</span>
+<span class="cov">	iget-object v5, v0, Ljq$b;->b:Ljava/lang/String;</span>
+<span class="cov">	iget-object v2, v0, Ljq$b;->c:Ljava/lang/Long;</span>
+<span class="exec">	invoke-virtual {v2}, Ljava/lang/Long;->longValue()J</span>
+<span class="cov">	move-result-wide v6</span>
+<span class="cov">	iget-object v8, v0, Ljq$b;->d:Ljava/lang/Long;</span>
+<span class="cov">	iget-object v2, v0, Ljq$b;->e:Ljava/lang/Boolean;</span>
+<span class="exec">	invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="cov">	move-result v9</span>
+<span class="cov">	iget-object v10, v0, Ljq$b;->f:Lzq$d$a;</span>
+<span class="cov">	iget-object v11, v0, Ljq$b;->g:Lzq$d$f;</span>
+<span class="cov">	iget-object v12, v0, Ljq$b;->h:Lzq$d$e;</span>
+<span class="cov">	iget-object v13, v0, Ljq$b;->i:Lzq$d$c;</span>
+<span class="cov">	iget-object v14, v0, Ljq$b;->j:Lar;</span>
+<span class="cov">	iget-object v2, v0, Ljq$b;->k:Ljava/lang/Integer;</span>
+<span class="exec">	invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I</span>
+<span class="cov">	move-result v15</span>
+<span class="cov">	const/16 v16, 0x0</span>
+<span class="cov">	move-object v3, v1</span>
+<span class="cov">	invoke-direct/range {v3 .. v16}, Ljq;-><init>(Ljava/lang/String;Ljava/lang/String;JLjava/lang/Long;ZLzq$d$a;Lzq$d$f;Lzq$d$e;Lzq$d$c;Lar;ILjq$a;)V</span>
+<span class="exec">	return-object v1</span>
+<span class="">	:cond_6</span>
+<span class="missed">	new-instance v1, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	new-instance v3, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "Missing required properties:"</span>
+<span class="missed">	invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v1</span>
+.end method
+
+<span class="cov">.method public b(Ljava/lang/String;)Lzq$d$b;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	if-eqz p1, :cond_0</span>
+<span class="cov">	iput-object p1, p0, Ljq$b;->b:Ljava/lang/String;</span>
+<span class="exec">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "Null identifier"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

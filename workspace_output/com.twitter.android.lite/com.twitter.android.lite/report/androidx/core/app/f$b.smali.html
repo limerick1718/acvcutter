@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.core.app</a></li>
+        <li><i class="ico ico-class"></i> f$b.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Landroidx/core/app/f$b;
+.super Landroidx/core/app/f$e;
+.source "NotificationCompat.java"
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Landroidx/core/app/f;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x9
+name = "b"
+.end annotation
+
+.field private e:Landroid/graphics/Bitmap;
+.field private f:Landroid/graphics/Bitmap;
+.field private g:Z
+
+
+.method public constructor &lt;init&gt;()V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Landroidx/core/app/f$e;-><init>()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public a(Landroid/graphics/Bitmap;)Landroidx/core/app/f$b;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-object p1, p0, Landroidx/core/app/f$b;->f:Landroid/graphics/Bitmap;</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="missed">	iput-boolean p1, p0, Landroidx/core/app/f$b;->g:Z</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a(Landroidx/core/app/e;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x10</span>
+<span class="missed">	if-lt v0, v1, :cond_1</span>
+<span class="missed">	new-instance v0, Landroid/app/Notification$BigPictureStyle;</span>
+<span class="">	invoke-interface {p1}, Landroidx/core/app/e;->a()Landroid/app/Notification$Builder;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {v0, p1}, Landroid/app/Notification$BigPictureStyle;-><init>(Landroid/app/Notification$Builder;)V</span>
+<span class="missed">	iget-object p1, p0, Landroidx/core/app/f$e;->b:Ljava/lang/CharSequence;</span>
+<span class="">	invoke-virtual {v0, p1}, Landroid/app/Notification$BigPictureStyle;->setBigContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$BigPictureStyle;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/f$b;->e:Landroid/graphics/Bitmap;</span>
+<span class="">	invoke-virtual {p1, v0}, Landroid/app/Notification$BigPictureStyle;->bigPicture(Landroid/graphics/Bitmap;)Landroid/app/Notification$BigPictureStyle;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-boolean v0, p0, Landroidx/core/app/f$b;->g:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/f$b;->f:Landroid/graphics/Bitmap;</span>
+<span class="missed">	invoke-virtual {p1, v0}, Landroid/app/Notification$BigPictureStyle;->bigLargeIcon(Landroid/graphics/Bitmap;)Landroid/app/Notification$BigPictureStyle;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-boolean v0, p0, Landroidx/core/app/f$e;->d:Z</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/f$e;->c:Ljava/lang/CharSequence;</span>
+<span class="missed">	invoke-virtual {p1, v0}, Landroid/app/Notification$BigPictureStyle;->setSummaryText(Ljava/lang/CharSequence;)Landroid/app/Notification$BigPictureStyle;</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+.end method
+
+.method public b(Landroid/graphics/Bitmap;)Landroidx/core/app/f$b;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-object p1, p0, Landroidx/core/app/f$b;->e:Landroid/graphics/Bitmap;</span>
+<span class="">	return-object p0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../.resources/report.js"></script>
+</body>
+</html>

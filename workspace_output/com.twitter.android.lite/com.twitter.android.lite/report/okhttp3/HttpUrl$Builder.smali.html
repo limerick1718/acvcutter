@@ -1,0 +1,1655 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">okhttp3</a></li>
+        <li><i class="ico ico-class"></i> HttpUrl$Builder.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Lokhttp3/HttpUrl$Builder;
+.super Ljava/lang/Object;
+.source "HttpUrl.java"
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Lokhttp3/HttpUrl;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x19
+name = "Builder"
+.end annotation
+
+.field static final INVALID_HOST:Ljava/lang/String; = "Invalid URL host"
+.field  encodedFragment:Ljava/lang/String;
+.annotation runtime Ljavax/annotation/Nullable;
+.end annotation
+.end field
+.field  encodedPassword:Ljava/lang/String;
+.field final encodedPathSegments:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.end field
+.field  encodedQueryNamesAndValues:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.annotation runtime Ljavax/annotation/Nullable;
+.end annotation
+.end field
+.field  encodedUsername:Ljava/lang/String;
+.field  host:Ljava/lang/String;
+.annotation runtime Ljavax/annotation/Nullable;
+.end annotation
+.end field
+.field  port:I
+.field  scheme:Ljava/lang/String;
+.annotation runtime Ljavax/annotation/Nullable;
+.end annotation
+.end field
+
+
+<span class="cov">.method public constructor &lt;init&gt;()V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	const-string v0, ""</span>
+<span class="cov">	iput-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedUsername:Ljava/lang/String;</span>
+<span class="cov">	iput-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedPassword:Ljava/lang/String;</span>
+<span class="cov">	const/4 v1, -0x1</span>
+<span class="cov">	iput v1, p0, Lokhttp3/HttpUrl$Builder;->port:I</span>
+<span class="cov">	new-instance v1, Ljava/util/ArrayList;</span>
+<span class="cov">	invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="cov">	iput-object v1, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="cov">	invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method private addPathSegments(Ljava/lang/String;Z)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 8</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const-string v2, "/\\"</span>
+<span class="">	invoke-static {p1, v3, v1, v2}, Lokhttp3/internal/Util;->delimiterOffset(Ljava/lang/String;IILjava/lang/String;)I</span>
+<span class="missed">	move-result v7</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-ge v7, v1, :cond_1</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	move-object v1, p0</span>
+<span class="missed">	move-object v2, p1</span>
+<span class="missed">	move v4, v7</span>
+<span class="missed">	move v6, p2</span>
+<span class="missed">	invoke-direct/range {v1 .. v6}, Lokhttp3/HttpUrl$Builder;->push(Ljava/lang/String;IIZZ)V</span>
+<span class="missed">	add-int/lit8 v3, v7, 0x1</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-le v3, v1, :cond_0</span>
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method private static canonicalizeHost(Ljava/lang/String;II)Ljava/lang/String;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="exec">	invoke-static {p0, p1, p2, v0}, Lokhttp3/HttpUrl;->percentDecode(Ljava/lang/String;IIZ)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	invoke-static {p0}, Lokhttp3/internal/Util;->canonicalizeHost(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method private isDot(Ljava/lang/String;)Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const-string v0, "."</span>
+<span class="exec">	invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-nez v0, :cond_1</span>
+<span class="cov">	const-string v0, "%2e"</span>
+<span class="exec">	invoke-virtual {p1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 p1, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="cov">	:goto_1</span>
+<span class="exec">	return p1</span>
+.end method
+
+<span class="cov">.method private isDotDot(Ljava/lang/String;)Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const-string v0, ".."</span>
+<span class="exec">	invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-nez v0, :cond_1</span>
+<span class="cov">	const-string v0, "%2e."</span>
+<span class="exec">	invoke-virtual {p1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-nez v0, :cond_1</span>
+<span class="cov">	const-string v0, ".%2e"</span>
+<span class="exec">	invoke-virtual {p1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-nez v0, :cond_1</span>
+<span class="cov">	const-string v0, "%2e%2e"</span>
+<span class="exec">	invoke-virtual {p1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 p1, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="cov">	:goto_1</span>
+<span class="exec">	return p1</span>
+.end method
+
+.method private static parsePort(Ljava/lang/String;II)I
+<span class="">	.locals 10</span>
+
+<span class="missed">	const/4 v0, -0x1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v4, ""</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="missed">	const/4 v7, 0x0</span>
+<span class="missed">	const/4 v8, 0x1</span>
+<span class="missed">	const/4 v9, 0x0</span>
+<span class="missed">	move-object v1, p0</span>
+<span class="missed">	move v2, p1</span>
+<span class="missed">	move v3, p2</span>
+<span class="">	invoke-static/range {v1 .. v9}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	if-lez p0, :cond_0</span>
+<span class="missed">	const p1, 0xffff</span>
+<span class="missed">	if-gt p0, p1, :cond_0</span>
+<span class="">	return p0</span>
+<span class="">	:cond_0</span>
+<span class="">	:catch_0</span>
+<span class="">	return v0</span>
+.end method
+
+.method private pop()V
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	add-int/lit8 v1, v1, -0x1</span>
+<span class="">	invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ljava/lang/String;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const-string v1, ""</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	add-int/lit8 v2, v2, -0x1</span>
+<span class="missed">	invoke-interface {v0, v2, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method private static portColonOffset(Ljava/lang/String;II)I</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	:goto_0</span>
+<span class="cov">	if-ge p1, p2, :cond_3</span>
+<span class="exec">	invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	const/16 v1, 0x3a</span>
+<span class="cov">	if-eq v0, v1, :cond_2</span>
+<span class="cov">	const/16 v1, 0x5b</span>
+<span class="cov">	if-eq v0, v1, :cond_0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/lit8 p1, p1, 0x1</span>
+<span class="missed">	if-ge p1, p2, :cond_1</span>
+<span class="">	invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/16 v1, 0x5d</span>
+<span class="missed">	if-ne v0, v1, :cond_0</span>
+<span class="cov">	:goto_1</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	add-int/lit8 p1, p1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="">	return p1</span>
+<span class="cov">	:cond_3</span>
+<span class="exec">	return p2</span>
+.end method
+
+<span class="cov">.method private push(Ljava/lang/String;IIZZ)V</span>
+<span class="">	.locals 9</span>
+
+<span class="cov">	const-string v3, " \"<>^`{}|/\\?#"</span>
+<span class="cov">	const/4 v5, 0x0</span>
+<span class="cov">	const/4 v6, 0x0</span>
+<span class="cov">	const/4 v7, 0x1</span>
+<span class="cov">	const/4 v8, 0x0</span>
+<span class="cov">	move-object v0, p1</span>
+<span class="cov">	move v1, p2</span>
+<span class="cov">	move v2, p3</span>
+<span class="cov">	move v4, p5</span>
+<span class="exec">	invoke-static/range {v0 .. v8}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	invoke-direct {p0, p1}, Lokhttp3/HttpUrl$Builder;->isDot(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result p2</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="">	return-void</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-direct {p0, p1}, Lokhttp3/HttpUrl$Builder;->isDotDot(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result p2</span>
+<span class="missed">	if-eqz p2, :cond_1</span>
+<span class="missed">	invoke-direct {p0}, Lokhttp3/HttpUrl$Builder;->pop()V</span>
+<span class="">	return-void</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	iget-object p2, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="exec">	invoke-interface {p2}, Ljava/util/List;->size()I</span>
+<span class="cov">	move-result p3</span>
+<span class="cov">	add-int/lit8 p3, p3, -0x1</span>
+<span class="exec">	invoke-interface {p2, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object p2</span>
+<span class="cov">	check-cast p2, Ljava/lang/String;</span>
+<span class="exec">	invoke-virtual {p2}, Ljava/lang/String;->isEmpty()Z</span>
+<span class="cov">	move-result p2</span>
+<span class="cov">	if-eqz p2, :cond_2</span>
+<span class="cov">	iget-object p2, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="exec">	invoke-interface {p2}, Ljava/util/List;->size()I</span>
+<span class="cov">	move-result p3</span>
+<span class="cov">	add-int/lit8 p3, p3, -0x1</span>
+<span class="cov">	invoke-interface {p2, p3, p1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object p2, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {p2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	if-eqz p4, :cond_3</span>
+<span class="cov">	iget-object p1, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="cov">	const-string p2, ""</span>
+<span class="cov">	invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	:cond_3</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method private removeAllCanonicalQueryParameters(Ljava/lang/String;)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	add-int/lit8 v0, v0, -0x2</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ltz v0, :cond_1</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="">	invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="missed">	add-int/lit8 v2, v0, 0x1</span>
+<span class="missed">	invoke-interface {v1, v2}, Ljava/util/List;->remove(I)Ljava/lang/Object;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {v1, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="">	invoke-interface {v1}, Ljava/util/List;->isEmpty()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/lit8 v0, v0, -0x2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method private resolvePath(Ljava/lang/String;II)V</span>
+<span class="">	.locals 10</span>
+
+<span class="cov">	if-ne p2, p3, :cond_0</span>
+<span class="exec">	return-void</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-virtual {p1, p2}, Ljava/lang/String;->charAt(I)C</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	const/16 v1, 0x2f</span>
+<span class="cov">	const-string v2, ""</span>
+<span class="cov">	const/4 v3, 0x1</span>
+<span class="missed">	if-eq v0, v1, :cond_2</span>
+<span class="missed">	const/16 v1, 0x5c</span>
+<span class="missed">	if-ne v0, v1, :cond_1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	sub-int/2addr v1, v3</span>
+<span class="missed">	invoke-interface {v0, v1, v2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;</span>
+<span class="exec">	goto :goto_1</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="cov">	invoke-interface {v0}, Ljava/util/List;->clear()V</span>
+<span class="cov">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="cov">	invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="exec">	goto :goto_3</span>
+<span class="cov">	:goto_1</span>
+<span class="cov">	:cond_3</span>
+<span class="cov">	move v6, p2</span>
+<span class="cov">	if-ge v6, p3, :cond_5</span>
+<span class="cov">	const-string p2, "/\\"</span>
+<span class="exec">	invoke-static {p1, v6, p3, p2}, Lokhttp3/internal/Util;->delimiterOffset(Ljava/lang/String;IILjava/lang/String;)I</span>
+<span class="cov">	move-result p2</span>
+<span class="cov">	if-ge p2, p3, :cond_4</span>
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="exec">	goto :goto_2</span>
+<span class="cov">	:cond_4</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	:goto_2</span>
+<span class="cov">	const/4 v9, 0x1</span>
+<span class="cov">	move-object v4, p0</span>
+<span class="cov">	move-object v5, p1</span>
+<span class="cov">	move v7, p2</span>
+<span class="cov">	move v8, v0</span>
+<span class="cov">	invoke-direct/range {v4 .. v9}, Lokhttp3/HttpUrl$Builder;->push(Ljava/lang/String;IIZZ)V</span>
+<span class="cov">	if-eqz v0, :cond_3</span>
+<span class="cov">	:goto_3</span>
+<span class="cov">	add-int/lit8 p2, p2, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="cov">	:cond_5</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private static schemeDelimiterOffset(Ljava/lang/String;II)I</span>
+<span class="">	.locals 7</span>
+
+<span class="cov">	sub-int v0, p2, p1</span>
+<span class="cov">	const/4 v1, -0x1</span>
+<span class="cov">	const/4 v2, 0x2</span>
+<span class="missed">	if-ge v0, v2, :cond_0</span>
+<span class="">	return v1</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	const/16 v2, 0x5a</span>
+<span class="cov">	const/16 v3, 0x7a</span>
+<span class="cov">	const/16 v4, 0x41</span>
+<span class="cov">	const/16 v5, 0x61</span>
+<span class="cov">	if-lt v0, v5, :cond_1</span>
+<span class="missed">	if-le v0, v3, :cond_2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	if-lt v0, v4, :cond_7</span>
+<span class="missed">	if-le v0, v2, :cond_2</span>
+<span class="exec">	goto :goto_1</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	add-int/lit8 p1, p1, 0x1</span>
+<span class="cov">	if-ge p1, p2, :cond_7</span>
+<span class="exec">	invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-lt v0, v5, :cond_3</span>
+<span class="missed">	if-le v0, v3, :cond_2</span>
+<span class="cov">	:cond_3</span>
+<span class="missed">	if-lt v0, v4, :cond_4</span>
+<span class="missed">	if-le v0, v2, :cond_2</span>
+<span class="cov">	:cond_4</span>
+<span class="cov">	const/16 v6, 0x30</span>
+<span class="cov">	if-lt v0, v6, :cond_5</span>
+<span class="cov">	const/16 v6, 0x39</span>
+<span class="cov">	if-le v0, v6, :cond_2</span>
+<span class="cov">	:cond_5</span>
+<span class="cov">	const/16 v6, 0x2b</span>
+<span class="cov">	if-eq v0, v6, :cond_2</span>
+<span class="cov">	const/16 v6, 0x2d</span>
+<span class="cov">	if-eq v0, v6, :cond_2</span>
+<span class="cov">	const/16 v6, 0x2e</span>
+<span class="missed">	if-ne v0, v6, :cond_6</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_6</span>
+<span class="cov">	const/16 p0, 0x3a</span>
+<span class="cov">	if-ne v0, p0, :cond_7</span>
+<span class="exec">	return p1</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_7</span>
+<span class="">	return v1</span>
+.end method
+
+<span class="cov">.method private static slashCount(Ljava/lang/String;II)I</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	if-ge p1, p2, :cond_1</span>
+<span class="exec">	invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	const/16 v2, 0x5c</span>
+<span class="cov">	if-eq v1, v2, :cond_0</span>
+<span class="cov">	const/16 v2, 0x2f</span>
+<span class="cov">	if-ne v1, v2, :cond_1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	add-int/lit8 v0, v0, 0x1</span>
+<span class="cov">	add-int/lit8 p1, p1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="cov">	:cond_1</span>
+<span class="exec">	return v0</span>
+.end method
+
+.method public addEncodedPathSegment(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 6</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	move-object v0, p0</span>
+<span class="missed">	move-object v1, p1</span>
+<span class="missed">	invoke-direct/range {v0 .. v5}, Lokhttp3/HttpUrl$Builder;->push(Ljava/lang/String;IIZZ)V</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "encodedPathSegment == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public addEncodedPathSegments(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	invoke-direct {p0, p1, v0}, Lokhttp3/HttpUrl$Builder;->addPathSegments(Ljava/lang/String;Z)Lokhttp3/HttpUrl$Builder;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "encodedPathSegments == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public addEncodedQueryParameter(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;</span>
+<span class="">	.locals 7</span>
+<span class="">	.param p2    # Ljava/lang/String;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+
+<span class="cov">	if-eqz p1, :cond_2</span>
+<span class="cov">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="cov">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="cov">	const/4 v3, 0x1</span>
+<span class="cov">	const/4 v4, 0x0</span>
+<span class="cov">	const/4 v5, 0x1</span>
+<span class="cov">	const/4 v6, 0x1</span>
+<span class="cov">	const-string v2, " \"\'<>#&="</span>
+<span class="cov">	move-object v1, p1</span>
+<span class="exec">	invoke-static/range {v1 .. v6}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	iget-object p1, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="cov">	if-eqz p2, :cond_1</span>
+<span class="cov">	const/4 v2, 0x1</span>
+<span class="cov">	const/4 v3, 0x0</span>
+<span class="cov">	const/4 v4, 0x1</span>
+<span class="cov">	const/4 v5, 0x1</span>
+<span class="cov">	const-string v1, " \"\'<>#&="</span>
+<span class="cov">	move-object v0, p2</span>
+<span class="exec">	invoke-static/range {v0 .. v5}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 p2, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="exec">	return-object p0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string p2, "encodedName == null"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public addPathSegment(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 6</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="missed">	move-object v0, p0</span>
+<span class="missed">	move-object v1, p1</span>
+<span class="missed">	invoke-direct/range {v0 .. v5}, Lokhttp3/HttpUrl$Builder;->push(Ljava/lang/String;IIZZ)V</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "pathSegment == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public addPathSegments(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	invoke-direct {p0, p1, v0}, Lokhttp3/HttpUrl$Builder;->addPathSegments(Ljava/lang/String;Z)Lokhttp3/HttpUrl$Builder;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "pathSegments == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public addQueryParameter(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 7</span>
+<span class="">	.param p2    # Ljava/lang/String;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	const/4 v6, 0x1</span>
+<span class="missed">	const-string v2, " !\"#$&\'(),/:;<=>?@[]\\^`{|}~"</span>
+<span class="missed">	move-object v1, p1</span>
+<span class="">	invoke-static/range {v1 .. v6}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	iget-object p1, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="missed">	if-eqz p2, :cond_1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	const-string v1, " !\"#$&\'(),/:;<=>?@[]\\^`{|}~"</span>
+<span class="missed">	move-object v0, p2</span>
+<span class="">	invoke-static/range {v0 .. v5}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 p2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string p2, "name == null"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public build()Lokhttp3/HttpUrl;</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->scheme:Ljava/lang/String;</span>
+<span class="cov">	if-eqz v0, :cond_1</span>
+<span class="cov">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->host:Ljava/lang/String;</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	new-instance v0, Lokhttp3/HttpUrl;</span>
+<span class="cov">	invoke-direct {v0, p0}, Lokhttp3/HttpUrl;-><init>(Lokhttp3/HttpUrl$Builder;)V</span>
+<span class="exec">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v1, "host == null"</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v1, "scheme == null"</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+<span class="cov">.method  effectivePort()I</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget v0, p0, Lokhttp3/HttpUrl$Builder;->port:I</span>
+<span class="cov">	const/4 v1, -0x1</span>
+<span class="cov">	if-eq v0, v1, :cond_0</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->scheme:Ljava/lang/String;</span>
+<span class="exec">	invoke-static {v0}, Lokhttp3/HttpUrl;->defaultPort(Ljava/lang/String;)I</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return v0</span>
+.end method
+
+.method public encodedFragment(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 6</span>
+<span class="">	.param p1    # Ljava/lang/String;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="missed">	const-string v1, ""</span>
+<span class="missed">	move-object v0, p1</span>
+<span class="">	invoke-static/range {v0 .. v5}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/HttpUrl$Builder;->encodedFragment:Ljava/lang/String;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public encodedPassword(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 6</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	const-string v1, " \"\':;<=>@[]^`{}|/\\?#"</span>
+<span class="missed">	move-object v0, p1</span>
+<span class="">	invoke-static/range {v0 .. v5}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/HttpUrl$Builder;->encodedPassword:Ljava/lang/String;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "encodedPassword == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public encodedPath(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 3</span>
+
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="missed">	const-string v0, "/"</span>
+<span class="">	invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	invoke-direct {p0, p1, v0, v1}, Lokhttp3/HttpUrl$Builder;->resolvePath(Ljava/lang/String;II)V</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "unexpected encodedPath: "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "encodedPath == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public encodedQuery(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;</span>
+<span class="">	.locals 6</span>
+<span class="">	.param p1    # Ljava/lang/String;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	const-string v1, " \"\'<>#"</span>
+<span class="missed">	move-object v0, p1</span>
+<span class="">	invoke-static/range {v0 .. v5}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1}, Lokhttp3/HttpUrl;->queryStringToNamesAndValues(Ljava/lang/String;)Ljava/util/List;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 p1, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	iput-object p1, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+.method public encodedUsername(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 6</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	const-string v1, " \"\':;<=>@[]^`{}|/\\?#"</span>
+<span class="missed">	move-object v0, p1</span>
+<span class="">	invoke-static/range {v0 .. v5}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/HttpUrl$Builder;->encodedUsername:Ljava/lang/String;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "encodedUsername == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public fragment(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 6</span>
+<span class="">	.param p1    # Ljava/lang/String;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="missed">	const-string v1, ""</span>
+<span class="missed">	move-object v0, p1</span>
+<span class="">	invoke-static/range {v0 .. v5}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/HttpUrl$Builder;->encodedFragment:Ljava/lang/String;</span>
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method public host(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	if-eqz p1, :cond_1</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="exec">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="cov">	move-result v1</span>
+<span class="exec">	invoke-static {p1, v0, v1}, Lokhttp3/HttpUrl$Builder;->canonicalizeHost(Ljava/lang/String;II)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	iput-object v0, p0, Lokhttp3/HttpUrl$Builder;->host:Ljava/lang/String;</span>
+<span class="exec">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "unexpected host: "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "host == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method  parse(Lokhttp3/HttpUrl;Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;</span>
+<span class="">	.locals 21</span>
+<span class="">	.param p1    # Lokhttp3/HttpUrl;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+
+<span class="cov">	move-object/from16 v0, p0</span>
+<span class="cov">	move-object/from16 v1, p1</span>
+<span class="cov">	move-object/from16 v10, p2</span>
+<span class="exec">	invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->length()I</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	const/4 v8, 0x0</span>
+<span class="exec">	invoke-static {v10, v8, v2}, Lokhttp3/internal/Util;->skipLeadingAsciiWhitespace(Ljava/lang/String;II)I</span>
+<span class="cov">	move-result v9</span>
+<span class="exec">	invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->length()I</span>
+<span class="cov">	move-result v2</span>
+<span class="exec">	invoke-static {v10, v9, v2}, Lokhttp3/internal/Util;->skipTrailingAsciiWhitespace(Ljava/lang/String;II)I</span>
+<span class="cov">	move-result v11</span>
+<span class="exec">	invoke-static {v10, v9, v11}, Lokhttp3/HttpUrl$Builder;->schemeDelimiterOffset(Ljava/lang/String;II)I</span>
+<span class="cov">	move-result v12</span>
+<span class="cov">	const/4 v13, -0x1</span>
+<span class="cov">	if-eq v12, v13, :cond_2</span>
+<span class="cov">	const/4 v3, 0x1</span>
+<span class="cov">	const/4 v6, 0x0</span>
+<span class="cov">	const/4 v7, 0x6</span>
+<span class="cov">	const-string v5, "https:"</span>
+<span class="cov">	move-object/from16 v2, p2</span>
+<span class="cov">	move v4, v9</span>
+<span class="exec">	invoke-virtual/range {v2 .. v7}, Ljava/lang/String;->regionMatches(ZILjava/lang/String;II)Z</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	if-eqz v2, :cond_0</span>
+<span class="cov">	const-string v2, "https"</span>
+<span class="cov">	iput-object v2, v0, Lokhttp3/HttpUrl$Builder;->scheme:Ljava/lang/String;</span>
+<span class="cov">	add-int/lit8 v9, v9, 0x6</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 v3, 0x1</span>
+<span class="cov">	const/4 v6, 0x0</span>
+<span class="cov">	const/4 v7, 0x5</span>
+<span class="cov">	const-string v5, "http:"</span>
+<span class="cov">	move-object/from16 v2, p2</span>
+<span class="cov">	move v4, v9</span>
+<span class="exec">	invoke-virtual/range {v2 .. v7}, Ljava/lang/String;->regionMatches(ZILjava/lang/String;II)Z</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	if-eqz v2, :cond_1</span>
+<span class="cov">	const-string v2, "http"</span>
+<span class="cov">	iput-object v2, v0, Lokhttp3/HttpUrl$Builder;->scheme:Ljava/lang/String;</span>
+<span class="cov">	add-int/lit8 v9, v9, 0x5</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v3, "Expected URL scheme \'http\' or \'https\' but was \'"</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v10, v8, v12}, Ljava/lang/String;->substring(II)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v3, "\'"</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	if-eqz v1, :cond_12</span>
+<span class="missed">	iget-object v2, v1, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;</span>
+<span class="missed">	iput-object v2, v0, Lokhttp3/HttpUrl$Builder;->scheme:Ljava/lang/String;</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	invoke-static {v10, v9, v11}, Lokhttp3/HttpUrl$Builder;->slashCount(Ljava/lang/String;II)I</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	const/4 v3, 0x2</span>
+<span class="cov">	const/16 v12, 0x3f</span>
+<span class="cov">	const/16 v14, 0x23</span>
+<span class="missed">	if-ge v2, v3, :cond_5</span>
+<span class="missed">	if-eqz v1, :cond_5</span>
+<span class="missed">	iget-object v3, v1, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;</span>
+<span class="missed">	iget-object v4, v0, Lokhttp3/HttpUrl$Builder;->scheme:Ljava/lang/String;</span>
+<span class="">	invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-nez v3, :cond_3</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-virtual/range {p1 .. p1}, Lokhttp3/HttpUrl;->encodedUsername()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	iput-object v2, v0, Lokhttp3/HttpUrl$Builder;->encodedUsername:Ljava/lang/String;</span>
+<span class="">	invoke-virtual/range {p1 .. p1}, Lokhttp3/HttpUrl;->encodedPassword()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	iput-object v2, v0, Lokhttp3/HttpUrl$Builder;->encodedPassword:Ljava/lang/String;</span>
+<span class="missed">	iget-object v2, v1, Lokhttp3/HttpUrl;->host:Ljava/lang/String;</span>
+<span class="missed">	iput-object v2, v0, Lokhttp3/HttpUrl$Builder;->host:Ljava/lang/String;</span>
+<span class="missed">	iget v2, v1, Lokhttp3/HttpUrl;->port:I</span>
+<span class="missed">	iput v2, v0, Lokhttp3/HttpUrl$Builder;->port:I</span>
+<span class="missed">	iget-object v2, v0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {v2}, Ljava/util/List;->clear()V</span>
+<span class="missed">	iget-object v2, v0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="">	invoke-virtual/range {p1 .. p1}, Lokhttp3/HttpUrl;->encodedPathSegments()Ljava/util/List;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-interface {v2, v3}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z</span>
+<span class="missed">	if-eq v9, v11, :cond_4</span>
+<span class="">	invoke-virtual {v10, v9}, Ljava/lang/String;->charAt(I)C</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-ne v2, v14, :cond_e</span>
+<span class="">	:cond_4</span>
+<span class="">	invoke-virtual/range {p1 .. p1}, Lokhttp3/HttpUrl;->encodedQuery()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Lokhttp3/HttpUrl$Builder;->encodedQuery(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;</span>
+<span class="exec">	goto/16 :goto_7</span>
+<span class="cov">	:goto_1</span>
+<span class="cov">	:cond_5</span>
+<span class="cov">	add-int/2addr v9, v2</span>
+<span class="cov">	move v2, v9</span>
+<span class="cov">	const/16 v16, 0x0</span>
+<span class="cov">	const/16 v17, 0x0</span>
+<span class="cov">	:goto_2</span>
+<span class="cov">	const-string v1, "@/\\?#"</span>
+<span class="exec">	invoke-static {v10, v2, v11, v1}, Lokhttp3/internal/Util;->delimiterOffset(Ljava/lang/String;IILjava/lang/String;)I</span>
+<span class="cov">	move-result v9</span>
+<span class="cov">	if-eq v9, v11, :cond_6</span>
+<span class="exec">	invoke-virtual {v10, v9}, Ljava/lang/String;->charAt(I)C</span>
+<span class="cov">	move-result v1</span>
+<span class="exec">	goto :goto_3</span>
+<span class="cov">	:cond_6</span>
+<span class="cov">	const/4 v1, -0x1</span>
+<span class="cov">	:goto_3</span>
+<span class="cov">	if-eq v1, v13, :cond_b</span>
+<span class="cov">	if-eq v1, v14, :cond_b</span>
+<span class="cov">	const/16 v3, 0x2f</span>
+<span class="missed">	if-eq v1, v3, :cond_b</span>
+<span class="missed">	const/16 v3, 0x5c</span>
+<span class="missed">	if-eq v1, v3, :cond_b</span>
+<span class="missed">	if-eq v1, v12, :cond_b</span>
+<span class="missed">	const/16 v3, 0x40</span>
+<span class="missed">	if-eq v1, v3, :cond_7</span>
+<span class="">	goto/16 :goto_5</span>
+<span class="">	:cond_7</span>
+<span class="missed">	const-string v8, "%40"</span>
+<span class="missed">	if-nez v16, :cond_a</span>
+<span class="missed">	const/16 v1, 0x3a</span>
+<span class="">	invoke-static {v10, v2, v9, v1}, Lokhttp3/internal/Util;->delimiterOffset(Ljava/lang/String;IIC)I</span>
+<span class="missed">	move-result v7</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="missed">	const/16 v18, 0x0</span>
+<span class="missed">	const/16 v19, 0x1</span>
+<span class="missed">	const/16 v20, 0x0</span>
+<span class="missed">	const-string v4, " \"\':;<=>@[]^`{}|/\\?#"</span>
+<span class="missed">	move-object/from16 v1, p2</span>
+<span class="missed">	move v3, v7</span>
+<span class="missed">	move v15, v7</span>
+<span class="missed">	move/from16 v7, v18</span>
+<span class="missed">	move-object v14, v8</span>
+<span class="missed">	move/from16 v8, v19</span>
+<span class="missed">	move v12, v9</span>
+<span class="missed">	move-object/from16 v9, v20</span>
+<span class="">	invoke-static/range {v1 .. v9}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	if-eqz v17, :cond_8</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	iget-object v3, v0, Lokhttp3/HttpUrl$Builder;->encodedUsername:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v2, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:cond_8</span>
+<span class="missed">	iput-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedUsername:Ljava/lang/String;</span>
+<span class="missed">	if-eq v15, v12, :cond_9</span>
+<span class="missed">	add-int/lit8 v2, v15, 0x1</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="missed">	const/4 v7, 0x0</span>
+<span class="missed">	const/4 v8, 0x1</span>
+<span class="missed">	const/4 v9, 0x0</span>
+<span class="missed">	const-string v4, " \"\':;<=>@[]^`{}|/\\?#"</span>
+<span class="missed">	move-object/from16 v1, p2</span>
+<span class="missed">	move v3, v12</span>
+<span class="">	invoke-static/range {v1 .. v9}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iput-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedPassword:Ljava/lang/String;</span>
+<span class="missed">	const/16 v16, 0x1</span>
+<span class="">	:cond_9</span>
+<span class="missed">	const/16 v17, 0x1</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_a</span>
+<span class="missed">	move-object v14, v8</span>
+<span class="missed">	move v12, v9</span>
+<span class="missed">	new-instance v15, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	iget-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedPassword:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {v15, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v15, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="missed">	const/4 v7, 0x0</span>
+<span class="missed">	const/4 v8, 0x1</span>
+<span class="missed">	const/4 v9, 0x0</span>
+<span class="missed">	const-string v4, " \"\':;<=>@[]^`{}|/\\?#"</span>
+<span class="missed">	move-object/from16 v1, p2</span>
+<span class="missed">	move v3, v12</span>
+<span class="">	invoke-static/range {v1 .. v9}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v15, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iput-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedPassword:Ljava/lang/String;</span>
+<span class="">	:goto_4</span>
+<span class="missed">	add-int/lit8 v2, v12, 0x1</span>
+<span class="">	:goto_5</span>
+<span class="missed">	const/16 v12, 0x3f</span>
+<span class="missed">	const/16 v14, 0x23</span>
+<span class="exec">	goto/16 :goto_2</span>
+<span class="cov">	:cond_b</span>
+<span class="cov">	move v12, v9</span>
+<span class="exec">	invoke-static {v10, v2, v12}, Lokhttp3/HttpUrl$Builder;->portColonOffset(Ljava/lang/String;II)I</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	add-int/lit8 v3, v1, 0x1</span>
+<span class="cov">	const/16 v4, 0x22</span>
+<span class="missed">	if-ge v3, v12, :cond_d</span>
+<span class="">	invoke-static {v10, v2, v1}, Lokhttp3/HttpUrl$Builder;->canonicalizeHost(Ljava/lang/String;II)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="missed">	iput-object v5, v0, Lokhttp3/HttpUrl$Builder;->host:Ljava/lang/String;</span>
+<span class="">	invoke-static {v10, v3, v12}, Lokhttp3/HttpUrl$Builder;->parsePort(Ljava/lang/String;II)I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	iput v5, v0, Lokhttp3/HttpUrl$Builder;->port:I</span>
+<span class="missed">	if-eq v5, v13, :cond_c</span>
+<span class="">	goto :goto_6</span>
+<span class="">	:cond_c</span>
+<span class="missed">	new-instance v1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v5, "Invalid URL port: \""</span>
+<span class="missed">	invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v10, v3, v12}, Ljava/lang/String;->substring(II)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v1</span>
+<span class="cov">	:cond_d</span>
+<span class="exec">	invoke-static {v10, v2, v1}, Lokhttp3/HttpUrl$Builder;->canonicalizeHost(Ljava/lang/String;II)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	iput-object v3, v0, Lokhttp3/HttpUrl$Builder;->host:Ljava/lang/String;</span>
+<span class="cov">	iget-object v3, v0, Lokhttp3/HttpUrl$Builder;->scheme:Ljava/lang/String;</span>
+<span class="exec">	invoke-static {v3}, Lokhttp3/HttpUrl;->defaultPort(Ljava/lang/String;)I</span>
+<span class="cov">	move-result v3</span>
+<span class="cov">	iput v3, v0, Lokhttp3/HttpUrl$Builder;->port:I</span>
+<span class="cov">	:goto_6</span>
+<span class="cov">	iget-object v3, v0, Lokhttp3/HttpUrl$Builder;->host:Ljava/lang/String;</span>
+<span class="cov">	if-eqz v3, :cond_11</span>
+<span class="cov">	move v9, v12</span>
+<span class="cov">	:goto_7</span>
+<span class="cov">	:cond_e</span>
+<span class="cov">	const-string v1, "?#"</span>
+<span class="exec">	invoke-static {v10, v9, v11, v1}, Lokhttp3/internal/Util;->delimiterOffset(Ljava/lang/String;IILjava/lang/String;)I</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	invoke-direct {v0, v10, v9, v1}, Lokhttp3/HttpUrl$Builder;->resolvePath(Ljava/lang/String;II)V</span>
+<span class="missed">	if-ge v1, v11, :cond_f</span>
+<span class="">	invoke-virtual {v10, v1}, Ljava/lang/String;->charAt(I)C</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	const/16 v3, 0x3f</span>
+<span class="missed">	if-ne v2, v3, :cond_f</span>
+<span class="missed">	const/16 v2, 0x23</span>
+<span class="">	invoke-static {v10, v1, v11, v2}, Lokhttp3/internal/Util;->delimiterOffset(Ljava/lang/String;IIC)I</span>
+<span class="missed">	move-result v12</span>
+<span class="missed">	add-int/lit8 v2, v1, 0x1</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="missed">	const/4 v7, 0x1</span>
+<span class="missed">	const/4 v8, 0x1</span>
+<span class="missed">	const/4 v9, 0x0</span>
+<span class="missed">	const-string v4, " \"\'<>#"</span>
+<span class="missed">	move-object/from16 v1, p2</span>
+<span class="missed">	move v3, v12</span>
+<span class="">	invoke-static/range {v1 .. v9}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-static {v1}, Lokhttp3/HttpUrl;->queryStringToNamesAndValues(Ljava/lang/String;)Ljava/util/List;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iput-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="missed">	move v1, v12</span>
+<span class="cov">	:cond_f</span>
+<span class="missed">	if-ge v1, v11, :cond_10</span>
+<span class="">	invoke-virtual {v10, v1}, Ljava/lang/String;->charAt(I)C</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	const/16 v3, 0x23</span>
+<span class="missed">	if-ne v2, v3, :cond_10</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	add-int/2addr v2, v1</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="missed">	const/4 v7, 0x0</span>
+<span class="missed">	const/4 v8, 0x0</span>
+<span class="missed">	const/4 v9, 0x0</span>
+<span class="missed">	const-string v4, ""</span>
+<span class="missed">	move-object/from16 v1, p2</span>
+<span class="missed">	move v3, v11</span>
+<span class="">	invoke-static/range {v1 .. v9}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iput-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedFragment:Ljava/lang/String;</span>
+<span class="cov">	:cond_10</span>
+<span class="exec">	return-object v0</span>
+<span class="">	:cond_11</span>
+<span class="missed">	new-instance v3, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v5, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v6, "Invalid URL host: \""</span>
+<span class="missed">	invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v10, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v3, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v3</span>
+<span class="">	:cond_12</span>
+<span class="missed">	new-instance v1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v2, "Expected URL scheme \'http\' or \'https\' but no colon was found"</span>
+<span class="missed">	invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v1</span>
+.end method
+
+.method public password(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 6</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	const-string v1, " \"\':;<=>@[]^`{}|/\\?#"</span>
+<span class="missed">	move-object v0, p1</span>
+<span class="">	invoke-static/range {v0 .. v5}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/HttpUrl$Builder;->encodedPassword:Ljava/lang/String;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "password == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public port(I)Lokhttp3/HttpUrl$Builder;</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	if-lez p1, :cond_0</span>
+<span class="cov">	const v0, 0xffff</span>
+<span class="cov">	if-gt p1, v0, :cond_0</span>
+<span class="cov">	iput p1, p0, Lokhttp3/HttpUrl$Builder;->port:I</span>
+<span class="exec">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "unexpected port: "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public query(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 6</span>
+<span class="">	.param p1    # Ljava/lang/String;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	const-string v1, " \"\'<>#"</span>
+<span class="missed">	move-object v0, p1</span>
+<span class="">	invoke-static/range {v0 .. v5}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1}, Lokhttp3/HttpUrl;->queryStringToNamesAndValues(Ljava/lang/String;)Ljava/util/List;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method  reencodeForUri()Lokhttp3/HttpUrl$Builder;</span>
+<span class="">	.locals 10</span>
+
+<span class="cov">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="exec">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	if-ge v2, v0, :cond_0</span>
+<span class="cov">	iget-object v3, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="exec">	invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	move-object v4, v3</span>
+<span class="cov">	check-cast v4, Ljava/lang/String;</span>
+<span class="cov">	iget-object v3, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="cov">	const/4 v6, 0x1</span>
+<span class="cov">	const/4 v7, 0x1</span>
+<span class="cov">	const/4 v8, 0x0</span>
+<span class="cov">	const/4 v9, 0x1</span>
+<span class="cov">	const-string v5, "[]"</span>
+<span class="exec">	invoke-static/range {v4 .. v9}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	invoke-interface {v3, v2, v4}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	add-int/lit8 v2, v2, 0x1</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ge v1, v0, :cond_2</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="">	invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	move-object v3, v2</span>
+<span class="missed">	check-cast v3, Ljava/lang/String;</span>
+<span class="missed">	if-eqz v3, :cond_1</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	const/4 v6, 0x1</span>
+<span class="missed">	const/4 v7, 0x1</span>
+<span class="missed">	const/4 v8, 0x1</span>
+<span class="missed">	const-string v4, "\\^`{|}"</span>
+<span class="">	invoke-static/range {v3 .. v8}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-interface {v2, v1, v3}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	:cond_1</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="exec">	goto :goto_1</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	iget-object v2, p0, Lokhttp3/HttpUrl$Builder;->encodedFragment:Ljava/lang/String;</span>
+<span class="missed">	if-eqz v2, :cond_3</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="missed">	const/4 v7, 0x0</span>
+<span class="missed">	const-string v3, " \"#<>\\^`{|}"</span>
+<span class="">	invoke-static/range {v2 .. v7}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedFragment:Ljava/lang/String;</span>
+<span class="cov">	:cond_3</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+.method public removeAllEncodedQueryParameters(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 7</span>
+
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	const/4 v6, 0x1</span>
+<span class="missed">	const-string v2, " \"\'<>#&="</span>
+<span class="missed">	move-object v1, p1</span>
+<span class="">	invoke-static/range {v1 .. v6}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {p0, p1}, Lokhttp3/HttpUrl$Builder;->removeAllCanonicalQueryParameters(Ljava/lang/String;)V</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "encodedName == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public removeAllQueryParameters(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 7</span>
+
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	const/4 v6, 0x1</span>
+<span class="missed">	const-string v2, " !\"#$&\'(),/:;<=>?@[]\\^`{|}~"</span>
+<span class="missed">	move-object v1, p1</span>
+<span class="">	invoke-static/range {v1 .. v6}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {p0, p1}, Lokhttp3/HttpUrl$Builder;->removeAllCanonicalQueryParameters(Ljava/lang/String;)V</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "name == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public removePathSegment(I)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;</span>
+<span class="missed">	iget-object p1, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="">	invoke-interface {p1}, Ljava/util/List;->isEmpty()Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	iget-object p1, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="missed">	const-string v0, ""</span>
+<span class="missed">	invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method public scheme(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	if-eqz p1, :cond_2</span>
+<span class="cov">	const-string v0, "http"</span>
+<span class="exec">	invoke-virtual {p1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/HttpUrl$Builder;->scheme:Ljava/lang/String;</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const-string v0, "https"</span>
+<span class="exec">	invoke-virtual {p1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	if-eqz v1, :cond_1</span>
+<span class="cov">	iput-object v0, p0, Lokhttp3/HttpUrl$Builder;->scheme:Ljava/lang/String;</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return-object p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "unexpected scheme: "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "scheme == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public setEncodedPathSegment(ILjava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 9</span>
+
+<span class="missed">	if-eqz p2, :cond_1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-virtual {p2}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="missed">	const/4 v7, 0x1</span>
+<span class="missed">	const/4 v8, 0x0</span>
+<span class="missed">	const-string v3, " \"<>^`{}|/\\?#"</span>
+<span class="missed">	move-object v0, p2</span>
+<span class="">	invoke-static/range {v0 .. v8}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {v1, p1, v0}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	invoke-direct {p0, v0}, Lokhttp3/HttpUrl$Builder;->isDot(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="">	invoke-direct {p0, v0}, Lokhttp3/HttpUrl$Builder;->isDotDot(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v1, "unexpected path segment: "</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string p2, "encodedPathSegment == null"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public setEncodedQueryParameter(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 0</span>
+<span class="">	.param p2    # Ljava/lang/String;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+
+<span class="missed">	invoke-virtual {p0, p1}, Lokhttp3/HttpUrl$Builder;->removeAllEncodedQueryParameters(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;</span>
+<span class="missed">	invoke-virtual {p0, p1, p2}, Lokhttp3/HttpUrl$Builder;->addEncodedQueryParameter(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setPathSegment(ILjava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 9</span>
+
+<span class="missed">	if-eqz p2, :cond_1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-virtual {p2}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="missed">	const/4 v7, 0x1</span>
+<span class="missed">	const/4 v8, 0x0</span>
+<span class="missed">	const-string v3, " \"<>^`{}|/\\?#"</span>
+<span class="missed">	move-object v0, p2</span>
+<span class="">	invoke-static/range {v0 .. v8}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-direct {p0, v0}, Lokhttp3/HttpUrl$Builder;->isDot(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="">	invoke-direct {p0, v0}, Lokhttp3/HttpUrl$Builder;->isDotDot(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="missed">	iget-object p2, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {p2, p1, v0}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v1, "unexpected path segment: "</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string p2, "pathSegment == null"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public setQueryParameter(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 0</span>
+<span class="">	.param p2    # Ljava/lang/String;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+
+<span class="missed">	invoke-virtual {p0, p1}, Lokhttp3/HttpUrl$Builder;->removeAllQueryParameters(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;</span>
+<span class="missed">	invoke-virtual {p0, p1, p2}, Lokhttp3/HttpUrl$Builder;->addQueryParameter(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;</span>
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method public toString()Ljava/lang/String;</span>
+<span class="">	.locals 4</span>
+
+<span class="cov">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="cov">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->scheme:Ljava/lang/String;</span>
+<span class="cov">	if-eqz v1, :cond_0</span>
+<span class="cov">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="cov">	const-string v1, "://"</span>
+<span class="cov">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const-string v1, "//"</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->encodedUsername:Ljava/lang/String;</span>
+<span class="exec">	invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	const/16 v2, 0x3a</span>
+<span class="cov">	if-eqz v1, :cond_1</span>
+<span class="cov">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->encodedPassword:Ljava/lang/String;</span>
+<span class="exec">	invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z</span>
+<span class="cov">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_3</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->encodedUsername:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->encodedPassword:Ljava/lang/String;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_2</span>
+<span class="missed">	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->encodedPassword:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/16 v1, 0x40</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="cov">	:cond_3</span>
+<span class="cov">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->host:Ljava/lang/String;</span>
+<span class="cov">	const/4 v3, -0x1</span>
+<span class="cov">	if-eqz v1, :cond_5</span>
+<span class="exec">	invoke-virtual {v1, v2}, Ljava/lang/String;->indexOf(I)I</span>
+<span class="cov">	move-result v1</span>
+<span class="missed">	if-eq v1, v3, :cond_4</span>
+<span class="missed">	const/16 v1, 0x5b</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->host:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const/16 v1, 0x5d</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="exec">	goto :goto_1</span>
+<span class="cov">	:cond_4</span>
+<span class="cov">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->host:Ljava/lang/String;</span>
+<span class="cov">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="cov">	:goto_1</span>
+<span class="cov">	:cond_5</span>
+<span class="cov">	iget v1, p0, Lokhttp3/HttpUrl$Builder;->port:I</span>
+<span class="cov">	if-ne v1, v3, :cond_6</span>
+<span class="cov">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->scheme:Ljava/lang/String;</span>
+<span class="cov">	if-eqz v1, :cond_8</span>
+<span class="cov">	:cond_6</span>
+<span class="exec">	invoke-virtual {p0}, Lokhttp3/HttpUrl$Builder;->effectivePort()I</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	iget-object v3, p0, Lokhttp3/HttpUrl$Builder;->scheme:Ljava/lang/String;</span>
+<span class="cov">	if-eqz v3, :cond_7</span>
+<span class="exec">	invoke-static {v3}, Lokhttp3/HttpUrl;->defaultPort(Ljava/lang/String;)I</span>
+<span class="cov">	move-result v3</span>
+<span class="missed">	if-eq v1, v3, :cond_8</span>
+<span class="">	:cond_7</span>
+<span class="missed">	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="cov">	:cond_8</span>
+<span class="cov">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;</span>
+<span class="cov">	invoke-static {v0, v1}, Lokhttp3/HttpUrl;->pathSegmentsToString(Ljava/lang/StringBuilder;Ljava/util/List;)V</span>
+<span class="cov">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="cov">	if-eqz v1, :cond_9</span>
+<span class="cov">	const/16 v1, 0x3f</span>
+<span class="cov">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="cov">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;</span>
+<span class="cov">	invoke-static {v0, v1}, Lokhttp3/HttpUrl;->namesAndValuesToQueryString(Ljava/lang/StringBuilder;Ljava/util/List;)V</span>
+<span class="cov">	:cond_9</span>
+<span class="cov">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->encodedFragment:Ljava/lang/String;</span>
+<span class="missed">	if-eqz v1, :cond_a</span>
+<span class="missed">	const/16 v1, 0x23</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/HttpUrl$Builder;->encodedFragment:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="cov">	:cond_a</span>
+<span class="exec">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method public username(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
+<span class="">	.locals 6</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	const-string v1, " \"\':;<=>@[]^`{}|/\\?#"</span>
+<span class="missed">	move-object v0, p1</span>
+<span class="">	invoke-static/range {v0 .. v5}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/HttpUrl$Builder;->encodedUsername:Ljava/lang/String;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "username == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../.resources/report.js"></script>
+</body>
+</html>

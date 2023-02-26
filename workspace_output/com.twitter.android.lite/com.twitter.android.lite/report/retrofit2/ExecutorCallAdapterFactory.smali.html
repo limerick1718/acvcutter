@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">retrofit2</a></li>
+        <li><i class="ico ico-class"></i> ExecutorCallAdapterFactory.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Lretrofit2/ExecutorCallAdapterFactory;
+.super Lretrofit2/CallAdapter$Factory;
+.source "ExecutorCallAdapterFactory.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lretrofit2/ExecutorCallAdapterFactory$ExecutorCallbackCall;
+}
+.end annotation
+
+.field final callbackExecutor:Ljava/util/concurrent/Executor;
+
+
+<span class="cov">.method constructor &lt;init&gt;(Ljava/util/concurrent/Executor;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Lretrofit2/CallAdapter$Factory;-><init>()V</span>
+<span class="cov">	iput-object p1, p0, Lretrofit2/ExecutorCallAdapterFactory;->callbackExecutor:Ljava/util/concurrent/Executor;</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public get(Ljava/lang/reflect/Type;[Ljava/lang/annotation/Annotation;Lretrofit2/Retrofit;)Lretrofit2/CallAdapter;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/reflect/Type;",</span>
+<span class="">	"[",</span>
+<span class="">	"Ljava/lang/annotation/Annotation;",</span>
+<span class="">	"Lretrofit2/Retrofit;",</span>
+<span class="">	")",</span>
+<span class="">	"Lretrofit2/CallAdapter<",</span>
+<span class="">	"**>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {p1}, Lretrofit2/CallAdapter$Factory;->getRawType(Ljava/lang/reflect/Type;)Ljava/lang/Class;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	const-class p3, Lretrofit2/Call;</span>
+<span class="missed">	if-eq p2, p3, :cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {p1}, Lretrofit2/Utils;->getCallResponseType(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	new-instance p2, Lretrofit2/ExecutorCallAdapterFactory$1;</span>
+<span class="missed">	invoke-direct {p2, p0, p1}, Lretrofit2/ExecutorCallAdapterFactory$1;-><init>(Lretrofit2/ExecutorCallAdapterFactory;Ljava/lang/reflect/Type;)V</span>
+<span class="">	return-object p2</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../.resources/report.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> i$a.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Li$a;
+.super Ljava/lang/Object;
+.source "CustomTabsIntent.java"
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Li;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x19
+name = "a"
+.end annotation
+
+.field private final a:Landroid/content/Intent;
+.field private b:Ljava/util/ArrayList;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/ArrayList<",
+"Landroid/os/Bundle;",
+">;"
+}
+.end annotation
+.end field
+.field private c:Landroid/os/Bundle;
+.field private d:Ljava/util/ArrayList;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/ArrayList<",
+"Landroid/os/Bundle;",
+">;"
+}
+.end annotation
+.end field
+.field private e:Z
+
+
+.method public constructor &lt;init&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	invoke-direct {p0, v0}, Li$a;-><init>(Lj;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public constructor &lt;init&gt;(Lj;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	new-instance v0, Landroid/content/Intent;</span>
+<span class="missed">	const-string v1, "android.intent.action.VIEW"</span>
+<span class="missed">	invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V</span>
+<span class="missed">	iput-object v0, p0, Li$a;->a:Landroid/content/Intent;</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-object v0, p0, Li$a;->b:Ljava/util/ArrayList;</span>
+<span class="missed">	iput-object v0, p0, Li$a;->c:Landroid/os/Bundle;</span>
+<span class="missed">	iput-object v0, p0, Li$a;->d:Ljava/util/ArrayList;</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	iput-boolean v1, p0, Li$a;->e:Z</span>
+<span class="missed">	if-nez p1, :cond_1</span>
+<span class="missed">	new-instance v1, Landroid/os/Bundle;</span>
+<span class="missed">	invoke-direct {v1}, Landroid/os/Bundle;-><init>()V</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="missed">	const-string p1, "android.support.customtabs.extra.SESSION"</span>
+<span class="missed">	invoke-static {v1, p1, v0}, Landroidx/core/app/c;->a(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/IBinder;)V</span>
+<span class="missed">	iget-object p1, p0, Li$a;->a:Landroid/content/Intent;</span>
+<span class="missed">	invoke-virtual {p1, v1}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {p1}, Lj;->a()Landroid/os/IBinder;</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	invoke-virtual {p1}, Lj;->b()Landroid/content/ComponentName;</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public a(I)Li$a;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Li$a;->a:Landroid/content/Intent;</span>
+<span class="missed">	const-string v1, "android.support.customtabs.extra.TOOLBAR_COLOR"</span>
+<span class="missed">	invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a(Z)Li$a;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Li$a;->a:Landroid/content/Intent;</span>
+<span class="missed">	const-string v1, "android.support.customtabs.extra.TITLE_VISIBILITY"</span>
+<span class="missed">	invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a()Li;
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-object v0, p0, Li$a;->b:Ljava/util/ArrayList;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Li$a;->a:Landroid/content/Intent;</span>
+<span class="missed">	const-string v2, "android.support.customtabs.extra.MENU_ITEMS"</span>
+<span class="missed">	invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putParcelableArrayListExtra(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Li$a;->d:Ljava/util/ArrayList;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	iget-object v1, p0, Li$a;->a:Landroid/content/Intent;</span>
+<span class="missed">	const-string v2, "android.support.customtabs.extra.TOOLBAR_ITEMS"</span>
+<span class="missed">	invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putParcelableArrayListExtra(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v0, p0, Li$a;->a:Landroid/content/Intent;</span>
+<span class="missed">	iget-boolean v1, p0, Li$a;->e:Z</span>
+<span class="missed">	const-string v2, "android.support.customtabs.extra.EXTRA_ENABLE_INSTANT_APPS"</span>
+<span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;</span>
+<span class="missed">	new-instance v0, Li;</span>
+<span class="missed">	iget-object v1, p0, Li$a;->a:Landroid/content/Intent;</span>
+<span class="missed">	iget-object v2, p0, Li$a;->c:Landroid/os/Bundle;</span>
+<span class="missed">	invoke-direct {v0, v1, v2}, Li;-><init>(Landroid/content/Intent;Landroid/os/Bundle;)V</span>
+<span class="">	return-object v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

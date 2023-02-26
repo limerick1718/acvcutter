@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> o0.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Lo0;
+.super Ljava/lang/Object;
+.source "FragmentState.java"
+.implements Landroid/os/Parcelable;
+
+
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Landroid/os/Parcelable$Creator<",
+"Lo0;",
+">;"
+}
+.end annotation
+.end field
+.field final a:Ljava/lang/String;
+.field final b:I
+.field final c:Z
+.field final d:I
+.field final e:I
+.field final f:Ljava/lang/String;
+.field final g:Z
+.field final h:Z
+.field final i:Landroid/os/Bundle;
+.field final j:Z
+.field  k:Landroid/os/Bundle;
+.field  l:Lf0;
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lo0$a;</span>
+<span class="missed">	invoke-direct {v0}, Lo0$a;-><init>()V</span>
+<span class="missed">	sput-object v0, Lo0;->CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="">	return-void</span>
+.end method
+
+.method constructor &lt;init&gt;(Landroid/os/Parcel;)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lo0;->a:Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iput v0, p0, Lo0;->b:I</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iput-boolean v0, p0, Lo0;->c:Z</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iput v0, p0, Lo0;->d:I</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iput v0, p0, Lo0;->e:I</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lo0;->f:Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	iput-boolean v0, p0, Lo0;->g:Z</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_2</span>
+<span class="missed">	iput-boolean v0, p0, Lo0;->h:Z</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lo0;->i:Landroid/os/Bundle;</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_3</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_3</span>
+<span class="missed">	iput-boolean v1, p0, Lo0;->j:Z</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Lo0;->k:Landroid/os/Bundle;</span>
+<span class="">	return-void</span>
+.end method
+
+.method constructor &lt;init&gt;(Lf0;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lo0;->a:Ljava/lang/String;</span>
+<span class="missed">	iget v0, p1, Lf0;->e:I</span>
+<span class="missed">	iput v0, p0, Lo0;->b:I</span>
+<span class="missed">	iget-boolean v0, p1, Lf0;->m:Z</span>
+<span class="missed">	iput-boolean v0, p0, Lo0;->c:Z</span>
+<span class="missed">	iget v0, p1, Lf0;->x:I</span>
+<span class="missed">	iput v0, p0, Lo0;->d:I</span>
+<span class="missed">	iget v0, p1, Lf0;->y:I</span>
+<span class="missed">	iput v0, p0, Lo0;->e:I</span>
+<span class="missed">	iget-object v0, p1, Lf0;->z:Ljava/lang/String;</span>
+<span class="missed">	iput-object v0, p0, Lo0;->f:Ljava/lang/String;</span>
+<span class="missed">	iget-boolean v0, p1, Lf0;->C:Z</span>
+<span class="missed">	iput-boolean v0, p0, Lo0;->g:Z</span>
+<span class="missed">	iget-boolean v0, p1, Lf0;->B:Z</span>
+<span class="missed">	iput-boolean v0, p0, Lo0;->h:Z</span>
+<span class="missed">	iget-object v0, p1, Lf0;->g:Landroid/os/Bundle;</span>
+<span class="missed">	iput-object v0, p0, Lo0;->i:Landroid/os/Bundle;</span>
+<span class="missed">	iget-boolean p1, p1, Lf0;->A:Z</span>
+<span class="missed">	iput-boolean p1, p0, Lo0;->j:Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method public a(Lj0;Lh0;Lf0;Lm0;Landroidx/lifecycle/r;)Lf0;
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-object v0, p0, Lo0;->l:Lf0;</span>
+<span class="missed">	if-nez v0, :cond_3</span>
+<span class="">	invoke-virtual {p1}, Lj0;->c()Landroid/content/Context;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lo0;->i:Landroid/os/Bundle;</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="">	invoke-virtual {v0}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-virtual {v1, v2}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-eqz p2, :cond_1</span>
+<span class="missed">	iget-object v1, p0, Lo0;->a:Ljava/lang/String;</span>
+<span class="missed">	iget-object v2, p0, Lo0;->i:Landroid/os/Bundle;</span>
+<span class="">	invoke-virtual {p2, v0, v1, v2}, Lh0;->a(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Lf0;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	iput-object p2, p0, Lo0;->l:Lf0;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object p2, p0, Lo0;->a:Ljava/lang/String;</span>
+<span class="missed">	iget-object v1, p0, Lo0;->i:Landroid/os/Bundle;</span>
+<span class="">	invoke-static {v0, p2, v1}, Lf0;->a(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Lf0;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	iput-object p2, p0, Lo0;->l:Lf0;</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object p2, p0, Lo0;->k:Landroid/os/Bundle;</span>
+<span class="missed">	if-eqz p2, :cond_2</span>
+<span class="">	invoke-virtual {v0}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {p2, v0}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V</span>
+<span class="missed">	iget-object p2, p0, Lo0;->l:Lf0;</span>
+<span class="missed">	iget-object v0, p0, Lo0;->k:Landroid/os/Bundle;</span>
+<span class="missed">	iput-object v0, p2, Lf0;->b:Landroid/os/Bundle;</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object p2, p0, Lo0;->l:Lf0;</span>
+<span class="missed">	iget v0, p0, Lo0;->b:I</span>
+<span class="missed">	invoke-virtual {p2, v0, p3}, Lf0;->a(ILf0;)V</span>
+<span class="missed">	iget-object p2, p0, Lo0;->l:Lf0;</span>
+<span class="missed">	iget-boolean p3, p0, Lo0;->c:Z</span>
+<span class="missed">	iput-boolean p3, p2, Lf0;->m:Z</span>
+<span class="missed">	const/4 p3, 0x1</span>
+<span class="missed">	iput-boolean p3, p2, Lf0;->o:Z</span>
+<span class="missed">	iget p3, p0, Lo0;->d:I</span>
+<span class="missed">	iput p3, p2, Lf0;->x:I</span>
+<span class="missed">	iget p3, p0, Lo0;->e:I</span>
+<span class="missed">	iput p3, p2, Lf0;->y:I</span>
+<span class="missed">	iget-object p3, p0, Lo0;->f:Ljava/lang/String;</span>
+<span class="missed">	iput-object p3, p2, Lf0;->z:Ljava/lang/String;</span>
+<span class="missed">	iget-boolean p3, p0, Lo0;->g:Z</span>
+<span class="missed">	iput-boolean p3, p2, Lf0;->C:Z</span>
+<span class="missed">	iget-boolean p3, p0, Lo0;->h:Z</span>
+<span class="missed">	iput-boolean p3, p2, Lf0;->B:Z</span>
+<span class="missed">	iget-boolean p3, p0, Lo0;->j:Z</span>
+<span class="missed">	iput-boolean p3, p2, Lf0;->A:Z</span>
+<span class="missed">	iget-object p1, p1, Lj0;->d:Ll0;</span>
+<span class="missed">	iput-object p1, p2, Lf0;->r:Ll0;</span>
+<span class="missed">	sget-boolean p1, Ll0;->E:Z</span>
+<span class="missed">	if-eqz p1, :cond_3</span>
+<span class="missed">	new-instance p1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string p2, "Instantiated fragment "</span>
+<span class="missed">	invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object p2, p0, Lo0;->l:Lf0;</span>
+<span class="missed">	invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string p2, "FragmentManager"</span>
+<span class="missed">	invoke-static {p2, p1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	:cond_3</span>
+<span class="missed">	iget-object p1, p0, Lo0;->l:Lf0;</span>
+<span class="missed">	iput-object p4, p1, Lf0;->u:Lm0;</span>
+<span class="missed">	iput-object p5, p1, Lf0;->v:Landroidx/lifecycle/r;</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public describeContents()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public writeToParcel(Landroid/os/Parcel;I)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	iget-object p2, p0, Lo0;->a:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V</span>
+<span class="missed">	iget p2, p0, Lo0;->b:I</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget-boolean p2, p0, Lo0;->c:Z</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget p2, p0, Lo0;->d:I</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget p2, p0, Lo0;->e:I</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget-object p2, p0, Lo0;->f:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V</span>
+<span class="missed">	iget-boolean p2, p0, Lo0;->g:Z</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget-boolean p2, p0, Lo0;->h:Z</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget-object p2, p0, Lo0;->i:Landroid/os/Bundle;</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V</span>
+<span class="missed">	iget-boolean p2, p0, Lo0;->j:Z</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget-object p2, p0, Lo0;->k:Landroid/os/Bundle;</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

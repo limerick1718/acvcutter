@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> qm.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Lqm;
+.super Lp5;
+
+
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Landroid/os/Parcelable$Creator<",
+"Lqm;",
+">;"
+}
+.end annotation
+.end field
+.field private final a:I
+.field private final b:Lc5;
+.field private final c:Lcom/google/android/gms/common/internal/s;
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lrm;</span>
+<span class="missed">	invoke-direct {v0}, Lrm;-><init>()V</span>
+<span class="missed">	sput-object v0, Lqm;->CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public constructor &lt;init&gt;(I)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	new-instance p1, Lc5;</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	const/16 v1, 0x8</span>
+<span class="missed">	invoke-direct {p1, v1, v0}, Lc5;-><init>(ILandroid/app/PendingIntent;)V</span>
+<span class="missed">	invoke-direct {p0, p1, v0}, Lqm;-><init>(Lc5;Lcom/google/android/gms/common/internal/s;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method constructor &lt;init&gt;(ILc5;Lcom/google/android/gms/common/internal/s;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Lp5;-><init>()V</span>
+<span class="missed">	iput p1, p0, Lqm;->a:I</span>
+<span class="missed">	iput-object p2, p0, Lqm;->b:Lc5;</span>
+<span class="missed">	iput-object p3, p0, Lqm;->c:Lcom/google/android/gms/common/internal/s;</span>
+<span class="">	return-void</span>
+.end method
+
+.method private constructor &lt;init&gt;(Lc5;Lcom/google/android/gms/common/internal/s;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 p2, 0x1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	invoke-direct {p0, p2, p1, v0}, Lqm;-><init>(ILc5;Lcom/google/android/gms/common/internal/s;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final f()Lc5;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lqm;->b:Lc5;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final g()Lcom/google/android/gms/common/internal/s;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lqm;->c:Lcom/google/android/gms/common/internal/s;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+<span class="">	.locals 4</span>
+
+<span class="">	invoke-static {p1}, Lr5;->a(Landroid/os/Parcel;)I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iget v1, p0, Lqm;->a:I</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	invoke-static {p1, v2, v1}, Lr5;->a(Landroid/os/Parcel;II)V</span>
+<span class="missed">	iget-object v1, p0, Lqm;->b:Lc5;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x2</span>
+<span class="missed">	invoke-static {p1, v3, v1, p2, v2}, Lr5;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V</span>
+<span class="missed">	iget-object v1, p0, Lqm;->c:Lcom/google/android/gms/common/internal/s;</span>
+<span class="missed">	const/4 v3, 0x3</span>
+<span class="missed">	invoke-static {p1, v3, v1, p2, v2}, Lr5;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V</span>
+<span class="missed">	invoke-static {p1, v0}, Lr5;->a(Landroid/os/Parcel;I)V</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

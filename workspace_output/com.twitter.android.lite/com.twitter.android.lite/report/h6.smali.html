@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> h6.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Lh6;
+.super Ljava/lang/Object;
+
+
+.field static final a:[Le6;
+
+
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	const/4 v0, 0x2</span>
+<span class="cov">	new-array v0, v0, [Le6;</span>
+<span class="cov">	new-instance v1, Li6;</span>
+<span class="cov">	const-string v2, "0\u0082\u0004C0\u0082\u0003+\u00a0\u0003\u0002\u0001\u0002\u0002\t\u0000\u00c2\u00e0\u0087FdJ0\u008d0"</span>
+<span class="exec">	invoke-static {v2}, Le6;->a(Ljava/lang/String;)[B</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	invoke-direct {v1, v2}, Li6;-><init>([B)V</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	aput-object v1, v0, v2</span>
+<span class="cov">	new-instance v1, Lj6;</span>
+<span class="cov">	const-string v2, "0\u0082\u0004\u00a80\u0082\u0003\u0090\u00a0\u0003\u0002\u0001\u0002\u0002\t\u0000\u00d5\u0085\u00b8l}\u00d3N\u00f50"</span>
+<span class="exec">	invoke-static {v2}, Le6;->a(Ljava/lang/String;)[B</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	invoke-direct {v1, v2}, Lj6;-><init>([B)V</span>
+<span class="cov">	const/4 v2, 0x1</span>
+<span class="cov">	aput-object v1, v0, v2</span>
+<span class="cov">	sput-object v0, Lh6;->a:[Le6;</span>
+<span class="exec">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

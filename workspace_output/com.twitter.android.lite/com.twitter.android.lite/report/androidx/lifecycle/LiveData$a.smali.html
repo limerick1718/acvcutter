@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.lifecycle</a></li>
+        <li><i class="ico ico-class"></i> LiveData$a.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Landroidx/lifecycle/LiveData$a;
+.super Ljava/lang/Object;
+.source "LiveData.java"
+.implements Ljava/lang/Runnable;
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Landroidx/lifecycle/LiveData;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x0
+name = null
+.end annotation
+
+.field final synthetic a:Landroidx/lifecycle/LiveData;
+
+
+.method constructor &lt;init&gt;(Landroidx/lifecycle/LiveData;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-object p1, p0, Landroidx/lifecycle/LiveData$a;->a:Landroidx/lifecycle/LiveData;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public run()V
+<span class="">	.locals 4</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/LiveData$a;->a:Landroidx/lifecycle/LiveData;</span>
+<span class="missed">	iget-object v0, v0, Landroidx/lifecycle/LiveData;->a:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/lifecycle/LiveData$a;->a:Landroidx/lifecycle/LiveData;</span>
+<span class="missed">	iget-object v1, v1, Landroidx/lifecycle/LiveData;->e:Ljava/lang/Object;</span>
+<span class="missed">	iget-object v2, p0, Landroidx/lifecycle/LiveData$a;->a:Landroidx/lifecycle/LiveData;</span>
+<span class="missed">	sget-object v3, Landroidx/lifecycle/LiveData;->i:Ljava/lang/Object;</span>
+<span class="missed">	iput-object v3, v2, Landroidx/lifecycle/LiveData;->e:Ljava/lang/Object;</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/LiveData$a;->a:Landroidx/lifecycle/LiveData;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroidx/lifecycle/LiveData;->a(Ljava/lang/Object;)V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../.resources/report.js"></script>
+</body>
+</html>

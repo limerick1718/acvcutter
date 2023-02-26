@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">retrofit2</a></li>
+        <li><i class="ico ico-class"></i> ServiceMethod.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Lretrofit2/ServiceMethod;
+.super Ljava/lang/Object;
+.source "ServiceMethod.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lretrofit2/ServiceMethod$Builder;
+}
+.end annotation
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<R:",
+"Ljava/lang/Object;",
+"T:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;"
+}
+.end annotation
+
+.field static final PARAM:Ljava/lang/String; = "[a-zA-Z][a-zA-Z0-9_-]*"
+.field static final PARAM_NAME_REGEX:Ljava/util/regex/Pattern;
+.field static final PARAM_URL_REGEX:Ljava/util/regex/Pattern;
+.field private final baseUrl:Lokhttp3/HttpUrl;
+.field final callAdapter:Lretrofit2/CallAdapter;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lretrofit2/CallAdapter<",
+"TR;TT;>;"
+}
+.end annotation
+.end field
+.field final callFactory:Lokhttp3/Call$Factory;
+.field private final contentType:Lokhttp3/MediaType;
+.field private final hasBody:Z
+.field private final headers:Lokhttp3/Headers;
+.field private final httpMethod:Ljava/lang/String;
+.field private final isFormEncoded:Z
+.field private final isMultipart:Z
+.field private final parameterHandlers:[Lretrofit2/ParameterHandler;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"[",
+"Lretrofit2/ParameterHandler<",
+"*>;"
+}
+.end annotation
+.end field
+.field private final relativeUrl:Ljava/lang/String;
+.field private final responseConverter:Lretrofit2/Converter;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lretrofit2/Converter<",
+"Lokhttp3/ResponseBody;",
+"TR;>;"
+}
+.end annotation
+.end field
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	const-string v0, "\\{([a-zA-Z][a-zA-Z0-9_-]*)\\}"</span>
+<span class="">	invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lretrofit2/ServiceMethod;->PARAM_URL_REGEX:Ljava/util/regex/Pattern;</span>
+<span class="missed">	const-string v0, "[a-zA-Z][a-zA-Z0-9_-]*"</span>
+<span class="">	invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lretrofit2/ServiceMethod;->PARAM_NAME_REGEX:Ljava/util/regex/Pattern;</span>
+<span class="">	return-void</span>
+.end method
+
+.method constructor &lt;init&gt;(Lretrofit2/ServiceMethod$Builder;)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lretrofit2/ServiceMethod$Builder<",</span>
+<span class="">	"TR;TT;>;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iget-object v0, p1, Lretrofit2/ServiceMethod$Builder;->retrofit:Lretrofit2/Retrofit;</span>
+<span class="">	invoke-virtual {v0}, Lretrofit2/Retrofit;->callFactory()Lokhttp3/Call$Factory;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lretrofit2/ServiceMethod;->callFactory:Lokhttp3/Call$Factory;</span>
+<span class="missed">	iget-object v0, p1, Lretrofit2/ServiceMethod$Builder;->callAdapter:Lretrofit2/CallAdapter;</span>
+<span class="missed">	iput-object v0, p0, Lretrofit2/ServiceMethod;->callAdapter:Lretrofit2/CallAdapter;</span>
+<span class="missed">	iget-object v0, p1, Lretrofit2/ServiceMethod$Builder;->retrofit:Lretrofit2/Retrofit;</span>
+<span class="">	invoke-virtual {v0}, Lretrofit2/Retrofit;->baseUrl()Lokhttp3/HttpUrl;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lretrofit2/ServiceMethod;->baseUrl:Lokhttp3/HttpUrl;</span>
+<span class="missed">	iget-object v0, p1, Lretrofit2/ServiceMethod$Builder;->responseConverter:Lretrofit2/Converter;</span>
+<span class="missed">	iput-object v0, p0, Lretrofit2/ServiceMethod;->responseConverter:Lretrofit2/Converter;</span>
+<span class="missed">	iget-object v0, p1, Lretrofit2/ServiceMethod$Builder;->httpMethod:Ljava/lang/String;</span>
+<span class="missed">	iput-object v0, p0, Lretrofit2/ServiceMethod;->httpMethod:Ljava/lang/String;</span>
+<span class="missed">	iget-object v0, p1, Lretrofit2/ServiceMethod$Builder;->relativeUrl:Ljava/lang/String;</span>
+<span class="missed">	iput-object v0, p0, Lretrofit2/ServiceMethod;->relativeUrl:Ljava/lang/String;</span>
+<span class="missed">	iget-object v0, p1, Lretrofit2/ServiceMethod$Builder;->headers:Lokhttp3/Headers;</span>
+<span class="missed">	iput-object v0, p0, Lretrofit2/ServiceMethod;->headers:Lokhttp3/Headers;</span>
+<span class="missed">	iget-object v0, p1, Lretrofit2/ServiceMethod$Builder;->contentType:Lokhttp3/MediaType;</span>
+<span class="missed">	iput-object v0, p0, Lretrofit2/ServiceMethod;->contentType:Lokhttp3/MediaType;</span>
+<span class="missed">	iget-boolean v0, p1, Lretrofit2/ServiceMethod$Builder;->hasBody:Z</span>
+<span class="missed">	iput-boolean v0, p0, Lretrofit2/ServiceMethod;->hasBody:Z</span>
+<span class="missed">	iget-boolean v0, p1, Lretrofit2/ServiceMethod$Builder;->isFormEncoded:Z</span>
+<span class="missed">	iput-boolean v0, p0, Lretrofit2/ServiceMethod;->isFormEncoded:Z</span>
+<span class="missed">	iget-boolean v0, p1, Lretrofit2/ServiceMethod$Builder;->isMultipart:Z</span>
+<span class="missed">	iput-boolean v0, p0, Lretrofit2/ServiceMethod;->isMultipart:Z</span>
+<span class="missed">	iget-object p1, p1, Lretrofit2/ServiceMethod$Builder;->parameterHandlers:[Lretrofit2/ParameterHandler;</span>
+<span class="missed">	iput-object p1, p0, Lretrofit2/ServiceMethod;->parameterHandlers:[Lretrofit2/ParameterHandler;</span>
+<span class="">	return-void</span>
+.end method
+
+.method static boxIfPrimitive(Ljava/lang/Class;)Ljava/lang/Class;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;)",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	sget-object v0, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	if-ne v0, p0, :cond_0</span>
+<span class="missed">	const-class p0, Ljava/lang/Boolean;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sget-object v0, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	if-ne v0, p0, :cond_1</span>
+<span class="missed">	const-class p0, Ljava/lang/Byte;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	sget-object v0, Ljava/lang/Character;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	if-ne v0, p0, :cond_2</span>
+<span class="missed">	const-class p0, Ljava/lang/Character;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	sget-object v0, Ljava/lang/Double;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	if-ne v0, p0, :cond_3</span>
+<span class="missed">	const-class p0, Ljava/lang/Double;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	sget-object v0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	if-ne v0, p0, :cond_4</span>
+<span class="missed">	const-class p0, Ljava/lang/Float;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_4</span>
+<span class="missed">	sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	if-ne v0, p0, :cond_5</span>
+<span class="missed">	const-class p0, Ljava/lang/Integer;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_5</span>
+<span class="missed">	sget-object v0, Ljava/lang/Long;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	if-ne v0, p0, :cond_6</span>
+<span class="missed">	const-class p0, Ljava/lang/Long;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_6</span>
+<span class="missed">	sget-object v0, Ljava/lang/Short;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	if-ne v0, p0, :cond_7</span>
+<span class="missed">	const-class p0, Ljava/lang/Short;</span>
+<span class="">	:cond_7</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method static parsePathParameters(Ljava/lang/String;)Ljava/util/Set;
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	")",</span>
+<span class="">	"Ljava/util/Set<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	sget-object v0, Lretrofit2/ServiceMethod;->PARAM_URL_REGEX:Ljava/util/regex/Pattern;</span>
+<span class="">	invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	new-instance v0, Ljava/util/LinkedHashSet;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	invoke-virtual {p0, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method varargs toRequest([Ljava/lang/Object;)Lokhttp3/Request;
+<span class="">	.locals 10</span>
+<span class="">	.param p1    # [Ljava/lang/Object;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance v9, Lretrofit2/RequestBuilder;</span>
+<span class="missed">	iget-object v1, p0, Lretrofit2/ServiceMethod;->httpMethod:Ljava/lang/String;</span>
+<span class="missed">	iget-object v2, p0, Lretrofit2/ServiceMethod;->baseUrl:Lokhttp3/HttpUrl;</span>
+<span class="missed">	iget-object v3, p0, Lretrofit2/ServiceMethod;->relativeUrl:Ljava/lang/String;</span>
+<span class="missed">	iget-object v4, p0, Lretrofit2/ServiceMethod;->headers:Lokhttp3/Headers;</span>
+<span class="missed">	iget-object v5, p0, Lretrofit2/ServiceMethod;->contentType:Lokhttp3/MediaType;</span>
+<span class="missed">	iget-boolean v6, p0, Lretrofit2/ServiceMethod;->hasBody:Z</span>
+<span class="missed">	iget-boolean v7, p0, Lretrofit2/ServiceMethod;->isFormEncoded:Z</span>
+<span class="missed">	iget-boolean v8, p0, Lretrofit2/ServiceMethod;->isMultipart:Z</span>
+<span class="missed">	move-object v0, v9</span>
+<span class="missed">	invoke-direct/range {v0 .. v8}, Lretrofit2/RequestBuilder;-><init>(Ljava/lang/String;Lokhttp3/HttpUrl;Ljava/lang/String;Lokhttp3/Headers;Lokhttp3/MediaType;ZZZ)V</span>
+<span class="missed">	iget-object v0, p0, Lretrofit2/ServiceMethod;->parameterHandlers:[Lretrofit2/ParameterHandler;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	array-length v2, p1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	array-length v3, v0</span>
+<span class="missed">	if-ne v2, v3, :cond_2</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ge v1, v2, :cond_1</span>
+<span class="missed">	aget-object v3, v0, v1</span>
+<span class="missed">	aget-object v4, p1, v1</span>
+<span class="missed">	invoke-virtual {v3, v9, v4}, Lretrofit2/ParameterHandler;->apply(Lretrofit2/RequestBuilder;Ljava/lang/Object;)V</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {v9}, Lretrofit2/RequestBuilder;->build()Lokhttp3/Request;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v3, "Argument count ("</span>
+<span class="missed">	invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v2, ") doesn\'t match expected count ("</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	array-length v0, v0</span>
+<span class="missed">	invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v0, ")"</span>
+<span class="missed">	invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method  toResponse(Lokhttp3/ResponseBody;)Ljava/lang/Object;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lokhttp3/ResponseBody;",</span>
+<span class="">	")TR;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lretrofit2/ServiceMethod;->responseConverter:Lretrofit2/Converter;</span>
+<span class="">	invoke-interface {v0, p1}, Lretrofit2/Converter;->convert(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../.resources/report.js"></script>
+</body>
+</html>

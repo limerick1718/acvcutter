@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> gg.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Lgg;
+.super Ljava/util/AbstractList;
+.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.implements Lee;
+.implements Ljava/util/RandomAccess;
+
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/AbstractList<",
+"Ljava/lang/String;",
+">;",
+"Lee;",
+"Ljava/util/RandomAccess;"
+}
+.end annotation
+
+.field private final a:Lee;
+
+
+.method public constructor &lt;init&gt;(Lee;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Lgg;->a:Lee;</span>
+<span class="">	return-void</span>
+.end method
+
+.method static synthetic a(Lgg;)Lee;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iget-object p0, p0, Lgg;->a:Lee;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public final a(Lfc;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	new-instance p1, Ljava/lang/UnsupportedOperationException;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public final b(I)Ljava/lang/Object;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lgg;->a:Lee;</span>
+<span class="">	invoke-interface {v0, p1}, Lee;->b(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public final d()Ljava/util/List;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"*>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lgg;->a:Lee;</span>
+<span class="">	invoke-interface {v0}, Lee;->d()Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final e()Lee;
+<span class="">	.locals 0</span>
+
+<span class="">	return-object p0</span>
+.end method
+
+.method public final synthetic get(I)Ljava/lang/Object;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lgg;->a:Lee;</span>
+<span class="">	invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Ljava/lang/String;</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/util/Iterator<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance v0, Lig;</span>
+<span class="missed">	invoke-direct {v0, p0}, Lig;-><init>(Lgg;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final listIterator(I)Ljava/util/ListIterator;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(I)",</span>
+<span class="">	"Ljava/util/ListIterator<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance v0, Ljg;</span>
+<span class="missed">	invoke-direct {v0, p0, p1}, Ljg;-><init>(Lgg;I)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final size()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lgg;->a:Lee;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

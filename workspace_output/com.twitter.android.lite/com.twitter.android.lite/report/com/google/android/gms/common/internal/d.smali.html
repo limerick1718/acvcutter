@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.google.android.gms.common.internal</a></li>
+        <li><i class="ico ico-class"></i> d.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Lcom/google/android/gms/common/internal/d;
+.super Ljava/lang/Object;
+
+
+.field private static final a:Lo;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lo<",
+"Ljava/lang/String;",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.annotation build Ljavax/annotation/concurrent/GuardedBy;
+value = "sCache"
+.end annotation
+.end field
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lo;</span>
+<span class="missed">	invoke-direct {v0}, Lo;-><init>()V</span>
+<span class="missed">	sput-object v0, Lcom/google/android/gms/common/internal/d;->a:Lo;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public static a(Landroid/content/Context;)Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="">	invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-static {p0}, Lz5;->a(Landroid/content/Context;)Ly5;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1, v0}, Ly5;->b(Ljava/lang/String;)Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	.catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object p0</span>
+<span class="">	:catch_0</span>
+<span class="">	nop</span>
+<span class="">	invoke-virtual {p0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	iget-object p0, p0, Landroid/content/pm/ApplicationInfo;->name:Ljava/lang/String;</span>
+<span class="">	invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static a(Landroid/content/Context;I)Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-eq p1, v0, :cond_2</span>
+<span class="missed">	const/4 v0, 0x2</span>
+<span class="missed">	if-eq p1, v0, :cond_1</span>
+<span class="missed">	const/4 v0, 0x3</span>
+<span class="missed">	if-eq p1, v0, :cond_0</span>
+<span class="missed">	const p1, 0x104000a</span>
+<span class="">	invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sget p1, La5;->common_google_play_services_enable_button:I</span>
+<span class="">	invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	sget p1, La5;->common_google_play_services_update_button:I</span>
+<span class="">	invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	sget p1, La5;->common_google_play_services_install_button:I</span>
+<span class="">	invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method private static a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+<span class="">	.locals 4</span>
+
+<span class="missed">	sget-object v0, Lcom/google/android/gms/common/internal/d;->a:Lo;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	sget-object v1, Lcom/google/android/gms/common/internal/d;->a:Lo;</span>
+<span class="">	invoke-virtual {v1, p1}, Lo;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, Ljava/lang/String;</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-object v1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {p0}, Lj5;->c(Landroid/content/Context;)Landroid/content/res/Resources;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	if-nez p0, :cond_1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-object v1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const-string v2, "string"</span>
+<span class="missed">	const-string v3, "com.google.android.gms"</span>
+<span class="">	invoke-virtual {p0, p1, v2, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-nez v2, :cond_3</span>
+<span class="missed">	const-string p0, "GoogleApiAvailability"</span>
+<span class="missed">	const-string v2, "Missing resource: "</span>
+<span class="">	invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-eqz v3, :cond_2</span>
+<span class="">	invoke-virtual {v2, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/String;</span>
+<span class="missed">	invoke-direct {p1, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-static {p0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-object v1</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-virtual {p0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_5</span>
+<span class="missed">	const-string p0, "GoogleApiAvailability"</span>
+<span class="missed">	const-string v2, "Got empty resource: "</span>
+<span class="">	invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-eqz v3, :cond_4</span>
+<span class="">	invoke-virtual {v2, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_4</span>
+<span class="missed">	new-instance p1, Ljava/lang/String;</span>
+<span class="missed">	invoke-direct {p1, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V</span>
+<span class="">	:goto_1</span>
+<span class="missed">	invoke-static {p0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-object v1</span>
+<span class="">	:cond_5</span>
+<span class="missed">	sget-object v1, Lcom/google/android/gms/common/internal/d;->a:Lo;</span>
+<span class="missed">	invoke-virtual {v1, p1, p0}, Lo;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-object p0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw p0</span>
+.end method
+
+.method private static a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="">	invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	if-nez p0, :cond_0</span>
+<span class="missed">	sget p0, Lm5;->common_google_play_services_unknown_issue:I</span>
+<span class="">	invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object p1, p1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	new-array v0, v0, [Ljava/lang/Object;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	aput-object p2, v0, v1</span>
+<span class="">	invoke-static {p1, p0, v0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static b(Landroid/content/Context;)Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	sget v0, La5;->common_google_play_services_notification_channel_name:I</span>
+<span class="">	invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static b(Landroid/content/Context;I)Ljava/lang/String;
+<span class="">	.locals 5</span>
+
+<span class="">	invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {p0}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	if-eq p1, v3, :cond_7</span>
+<span class="missed">	const/4 v4, 0x2</span>
+<span class="missed">	if-eq p1, v4, :cond_5</span>
+<span class="missed">	const/4 v4, 0x3</span>
+<span class="missed">	if-eq p1, v4, :cond_4</span>
+<span class="missed">	const/4 v4, 0x5</span>
+<span class="missed">	if-eq p1, v4, :cond_3</span>
+<span class="missed">	const/4 v4, 0x7</span>
+<span class="missed">	if-eq p1, v4, :cond_2</span>
+<span class="missed">	const/16 v4, 0x9</span>
+<span class="missed">	if-eq p1, v4, :cond_1</span>
+<span class="missed">	const/16 v4, 0x14</span>
+<span class="missed">	if-eq p1, v4, :cond_0</span>
+<span class="">	packed-switch p1, :pswitch_data_0</span>
+<span class="missed">	sget p0, Lm5;->common_google_play_services_unknown_issue:I</span>
+<span class="missed">	new-array p1, v3, [Ljava/lang/Object;</span>
+<span class="missed">	aput-object v1, p1, v2</span>
+<span class="">	invoke-virtual {v0, p0, p1}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_0</span>
+<span class="missed">	sget p0, La5;->common_google_play_services_updating_text:I</span>
+<span class="missed">	new-array p1, v3, [Ljava/lang/Object;</span>
+<span class="missed">	aput-object v1, p1, v2</span>
+<span class="">	invoke-virtual {v0, p0, p1}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_1</span>
+<span class="missed">	const-string p1, "common_google_play_services_sign_in_failed_text"</span>
+<span class="">	invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_2</span>
+<span class="missed">	const-string p1, "common_google_play_services_api_unavailable_text"</span>
+<span class="">	invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const-string p1, "common_google_play_services_restricted_profile_text"</span>
+<span class="">	invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	sget p0, La5;->common_google_play_services_unsupported_text:I</span>
+<span class="missed">	new-array p1, v3, [Ljava/lang/Object;</span>
+<span class="missed">	aput-object v1, p1, v2</span>
+<span class="">	invoke-virtual {v0, p0, p1}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const-string p1, "common_google_play_services_network_error_text"</span>
+<span class="">	invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const-string p1, "common_google_play_services_invalid_account_text"</span>
+<span class="">	invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_4</span>
+<span class="missed">	sget p0, La5;->common_google_play_services_enable_text:I</span>
+<span class="missed">	new-array p1, v3, [Ljava/lang/Object;</span>
+<span class="missed">	aput-object v1, p1, v2</span>
+<span class="">	invoke-virtual {v0, p0, p1}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_5</span>
+<span class="">	invoke-static {p0}, Lcom/google/android/gms/common/util/i;->c(Landroid/content/Context;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_6</span>
+<span class="missed">	sget p0, La5;->common_google_play_services_wear_update_text:I</span>
+<span class="">	invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_6</span>
+<span class="missed">	sget p0, La5;->common_google_play_services_update_text:I</span>
+<span class="missed">	new-array p1, v3, [Ljava/lang/Object;</span>
+<span class="missed">	aput-object v1, p1, v2</span>
+<span class="">	invoke-virtual {v0, p0, p1}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_7</span>
+<span class="missed">	sget p0, La5;->common_google_play_services_install_text:I</span>
+<span class="missed">	new-array p1, v3, [Ljava/lang/Object;</span>
+<span class="missed">	aput-object v1, p1, v2</span>
+<span class="">	invoke-virtual {v0, p0, p1}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	nop</span>
+<span class="">	:pswitch_data_0</span>
+<span class="">	.packed-switch 0x10</span>
+<span class="">	:pswitch_2</span>
+<span class="">	:pswitch_1</span>
+<span class="">	:pswitch_0</span>
+<span class="">	.end packed-switch</span>
+.end method
+
+.method public static c(Landroid/content/Context;I)Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x6</span>
+<span class="missed">	if-ne p1, v0, :cond_0</span>
+<span class="">	invoke-static {p0}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v0, "common_google_play_services_resolution_required_text"</span>
+<span class="">	invoke-static {p0, v0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->b(Landroid/content/Context;I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static d(Landroid/content/Context;I)Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x6</span>
+<span class="missed">	if-ne p1, v0, :cond_0</span>
+<span class="missed">	const-string p1, "common_google_play_services_resolution_required_title"</span>
+<span class="">	invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->e(Landroid/content/Context;I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-nez p1, :cond_1</span>
+<span class="">	invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	sget p1, La5;->common_google_play_services_notification_ticker:I</span>
+<span class="">	invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:cond_1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public static e(Landroid/content/Context;I)Ljava/lang/String;
+<span class="">	.locals 3</span>
+
+<span class="">	invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	const-string v2, "GoogleApiAvailability"</span>
+<span class="">	packed-switch p1, :pswitch_data_0</span>
+<span class="">	:pswitch_0</span>
+<span class="missed">	const/16 p0, 0x21</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0, p0}, Ljava/lang/StringBuilder;-><init>(I)V</span>
+<span class="missed">	const-string p0, "Unexpected error code "</span>
+<span class="missed">	invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	return-object v1</span>
+<span class="">	:pswitch_1</span>
+<span class="missed">	const-string p1, "The current user profile is restricted and could not use authenticated features."</span>
+<span class="missed">	invoke-static {v2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	const-string p1, "common_google_play_services_restricted_profile_title"</span>
+<span class="">	invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_2</span>
+<span class="missed">	const-string p1, "The specified account could not be signed in."</span>
+<span class="missed">	invoke-static {v2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	const-string p1, "common_google_play_services_sign_in_failed_title"</span>
+<span class="">	invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_3</span>
+<span class="missed">	const-string p0, "One of the API components you attempted to connect to is not available."</span>
+<span class="missed">	invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	return-object v1</span>
+<span class="">	:pswitch_4</span>
+<span class="missed">	const-string p0, "The application is not licensed to the user."</span>
+<span class="missed">	invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	return-object v1</span>
+<span class="">	:pswitch_5</span>
+<span class="missed">	const-string p0, "Developer error occurred. Please see logs for detailed information"</span>
+<span class="missed">	invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	return-object v1</span>
+<span class="">	:pswitch_6</span>
+<span class="missed">	const-string p0, "Google Play services is invalid. Cannot recover."</span>
+<span class="missed">	invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	return-object v1</span>
+<span class="">	:pswitch_7</span>
+<span class="missed">	const-string p0, "Internal error occurred. Please see logs for detailed information"</span>
+<span class="missed">	invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	return-object v1</span>
+<span class="">	:pswitch_8</span>
+<span class="missed">	const-string p1, "Network error occurred. Please retry request later."</span>
+<span class="missed">	invoke-static {v2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	const-string p1, "common_google_play_services_network_error_title"</span>
+<span class="">	invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_9</span>
+<span class="missed">	const-string p1, "An invalid account was specified when connecting. Please provide a valid account."</span>
+<span class="missed">	invoke-static {v2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	const-string p1, "common_google_play_services_invalid_account_title"</span>
+<span class="">	invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_a</span>
+<span class="">	return-object v1</span>
+<span class="">	:pswitch_b</span>
+<span class="missed">	sget p0, La5;->common_google_play_services_enable_title:I</span>
+<span class="">	invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_c</span>
+<span class="missed">	sget p0, La5;->common_google_play_services_update_title:I</span>
+<span class="">	invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_d</span>
+<span class="missed">	sget p0, La5;->common_google_play_services_install_title:I</span>
+<span class="">	invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	nop</span>
+<span class="">	:pswitch_data_0</span>
+<span class="">	.packed-switch 0x1</span>
+<span class="">	:pswitch_d</span>
+<span class="">	:pswitch_c</span>
+<span class="">	:pswitch_b</span>
+<span class="">	:pswitch_a</span>
+<span class="">	:pswitch_9</span>
+<span class="">	:pswitch_a</span>
+<span class="">	:pswitch_8</span>
+<span class="">	:pswitch_7</span>
+<span class="">	:pswitch_6</span>
+<span class="">	:pswitch_5</span>
+<span class="">	:pswitch_4</span>
+<span class="">	:pswitch_0</span>
+<span class="">	:pswitch_0</span>
+<span class="">	:pswitch_0</span>
+<span class="">	:pswitch_0</span>
+<span class="">	:pswitch_3</span>
+<span class="">	:pswitch_2</span>
+<span class="">	:pswitch_a</span>
+<span class="">	:pswitch_0</span>
+<span class="">	:pswitch_1</span>
+<span class="">	.end packed-switch</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../../../.resources/report.js"></script>
+</body>
+</html>

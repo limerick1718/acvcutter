@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.core.app</a></li>
+        <li><i class="ico ico-class"></i> f$d.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Landroidx/core/app/f$d;
+.super Ljava/lang/Object;
+.source "NotificationCompat.java"
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Landroidx/core/app/f;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x9
+name = "d"
+.end annotation
+
+.field  A:Ljava/lang/String;
+.field  B:Landroid/os/Bundle;
+.field  C:I
+.field  D:I
+.field  E:Landroid/app/Notification;
+.field  F:Landroid/widget/RemoteViews;
+.field  G:Landroid/widget/RemoteViews;
+.field  H:Landroid/widget/RemoteViews;
+.field  I:Ljava/lang/String;
+.field  J:I
+.field  K:Ljava/lang/String;
+.field  L:J
+.field  M:I
+.field  N:Landroid/app/Notification;
+.field public O:Ljava/util/ArrayList;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/ArrayList<",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+.end field
+.field public a:Landroid/content/Context;
+.field public b:Ljava/util/ArrayList;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/ArrayList<",
+"Landroidx/core/app/f$a;",
+">;"
+}
+.end annotation
+.end field
+.field  c:Ljava/util/ArrayList;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/ArrayList<",
+"Landroidx/core/app/f$a;",
+">;"
+}
+.end annotation
+.end field
+.field  d:Ljava/lang/CharSequence;
+.field  e:Ljava/lang/CharSequence;
+.field  f:Landroid/app/PendingIntent;
+.field  g:Landroid/app/PendingIntent;
+.field  h:Landroid/widget/RemoteViews;
+.field  i:Landroid/graphics/Bitmap;
+.field  j:Ljava/lang/CharSequence;
+.field  k:I
+.field  l:I
+.field  m:Z
+.field  n:Z
+.field  o:Landroidx/core/app/f$e;
+.field  p:Ljava/lang/CharSequence;
+.field  q:[Ljava/lang/CharSequence;
+.field  r:I
+.field  s:I
+.field  t:Z
+.field  u:Ljava/lang/String;
+.field  v:Z
+.field  w:Ljava/lang/String;
+.field  x:Z
+.field  y:Z
+.field  z:Z
+
+
+.method public constructor &lt;init&gt;(Landroid/content/Context;)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation runtime Ljava/lang/Deprecated;</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	invoke-direct {p0, p1, v0}, Landroidx/core/app/f$d;-><init>(Landroid/content/Context;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public constructor &lt;init&gt;(Landroid/content/Context;Ljava/lang/String;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/core/app/f$d;->b:Ljava/util/ArrayList;</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/core/app/f$d;->c:Ljava/util/ArrayList;</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	iput-boolean v0, p0, Landroidx/core/app/f$d;->m:Z</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-boolean v0, p0, Landroidx/core/app/f$d;->x:Z</span>
+<span class="missed">	iput v0, p0, Landroidx/core/app/f$d;->C:I</span>
+<span class="missed">	iput v0, p0, Landroidx/core/app/f$d;->D:I</span>
+<span class="missed">	iput v0, p0, Landroidx/core/app/f$d;->J:I</span>
+<span class="missed">	iput v0, p0, Landroidx/core/app/f$d;->M:I</span>
+<span class="missed">	new-instance v1, Landroid/app/Notification;</span>
+<span class="missed">	invoke-direct {v1}, Landroid/app/Notification;-><init>()V</span>
+<span class="missed">	iput-object v1, p0, Landroidx/core/app/f$d;->N:Landroid/app/Notification;</span>
+<span class="missed">	iput-object p1, p0, Landroidx/core/app/f$d;->a:Landroid/content/Context;</span>
+<span class="missed">	iput-object p2, p0, Landroidx/core/app/f$d;->I:Ljava/lang/String;</span>
+<span class="">	invoke-static {}, Ljava/lang/System;->currentTimeMillis()J</span>
+<span class="missed">	move-result-wide p1</span>
+<span class="missed">	iput-wide p1, v1, Landroid/app/Notification;->when:J</span>
+<span class="missed">	iget-object p1, p0, Landroidx/core/app/f$d;->N:Landroid/app/Notification;</span>
+<span class="missed">	const/4 p2, -0x1</span>
+<span class="missed">	iput p2, p1, Landroid/app/Notification;->audioStreamType:I</span>
+<span class="missed">	iput v0, p0, Landroidx/core/app/f$d;->l:I</span>
+<span class="missed">	new-instance p1, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Landroidx/core/app/f$d;->O:Ljava/util/ArrayList;</span>
+<span class="">	return-void</span>
+.end method
+
+.method private a(IZ)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="missed">	iget-object p2, p0, Landroidx/core/app/f$d;->N:Landroid/app/Notification;</span>
+<span class="missed">	iget v0, p2, Landroid/app/Notification;->flags:I</span>
+<span class="missed">	or-int/2addr p1, v0</span>
+<span class="missed">	iput p1, p2, Landroid/app/Notification;->flags:I</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object p2, p0, Landroidx/core/app/f$d;->N:Landroid/app/Notification;</span>
+<span class="missed">	iget v0, p2, Landroid/app/Notification;->flags:I</span>
+<span class="missed">	not-int p1, p1</span>
+<span class="missed">	and-int/2addr p1, v0</span>
+<span class="missed">	iput p1, p2, Landroid/app/Notification;->flags:I</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method private b(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+<span class="">	.locals 9</span>
+
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x1b</span>
+<span class="missed">	if-lt v0, v1, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/f$d;->a:Landroid/content/Context;</span>
+<span class="">	invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sget v1, Lq;->compat_notification_large_icon_max_width:I</span>
+<span class="">	invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	sget v2, Lq;->compat_notification_large_icon_max_height:I</span>
+<span class="">	invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-gt v2, v1, :cond_1</span>
+<span class="">	invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-gt v2, v0, :cond_1</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	int-to-double v1, v1</span>
+<span class="">	invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="">	invoke-static {v4, v3}, Ljava/lang/Math;->max(II)I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	int-to-double v5, v3</span>
+<span class="missed">	div-double/2addr v1, v5</span>
+<span class="missed">	int-to-double v5, v0</span>
+<span class="">	invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-static {v4, v0}, Ljava/lang/Math;->max(II)I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	int-to-double v7, v0</span>
+<span class="missed">	div-double/2addr v5, v7</span>
+<span class="">	invoke-static {v1, v2, v5, v6}, Ljava/lang/Math;->min(DD)D</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	int-to-double v2, v2</span>
+<span class="missed">	mul-double v2, v2, v0</span>
+<span class="">	invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D</span>
+<span class="missed">	move-result-wide v2</span>
+<span class="missed">	double-to-int v2, v2</span>
+<span class="">	invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	int-to-double v5, v3</span>
+<span class="missed">	mul-double v5, v5, v0</span>
+<span class="">	invoke-static {v5, v6}, Ljava/lang/Math;->ceil(D)D</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="missed">	double-to-int v0, v0</span>
+<span class="">	invoke-static {p1, v2, v0, v4}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:cond_2</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method protected static d(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+<span class="">	.locals 2</span>
+
+<span class="missed">	if-nez p0, :cond_0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-interface {p0}, Ljava/lang/CharSequence;->length()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/16 v1, 0x1400</span>
+<span class="missed">	if-le v0, v1, :cond_1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	invoke-interface {p0, v0, v1}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	:cond_1</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a()Landroid/app/Notification;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Landroidx/core/app/g;</span>
+<span class="missed">	invoke-direct {v0, p0}, Landroidx/core/app/g;-><init>(Landroidx/core/app/f$d;)V</span>
+<span class="">	invoke-virtual {v0}, Landroidx/core/app/g;->b()Landroid/app/Notification;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public a(I)Landroidx/core/app/f$d;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput p1, p0, Landroidx/core/app/f$d;->C:I</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a(III)Landroidx/core/app/f$d;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/f$d;->N:Landroid/app/Notification;</span>
+<span class="missed">	iput p1, v0, Landroid/app/Notification;->ledARGB:I</span>
+<span class="missed">	iput p2, v0, Landroid/app/Notification;->ledOnMS:I</span>
+<span class="missed">	iput p3, v0, Landroid/app/Notification;->ledOffMS:I</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="missed">	if-eqz p3, :cond_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object p2, p0, Landroidx/core/app/f$d;->N:Landroid/app/Notification;</span>
+<span class="missed">	iget p3, p2, Landroid/app/Notification;->flags:I</span>
+<span class="missed">	and-int/lit8 p3, p3, -0x2</span>
+<span class="missed">	or-int/2addr p1, p3</span>
+<span class="missed">	iput p1, p2, Landroid/app/Notification;->flags:I</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)Landroidx/core/app/f$d;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/f$d;->b:Ljava/util/ArrayList;</span>
+<span class="missed">	new-instance v1, Landroidx/core/app/f$a;</span>
+<span class="missed">	invoke-direct {v1, p1, p2, p3}, Landroidx/core/app/f$a;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a(J)Landroidx/core/app/f$d;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/f$d;->N:Landroid/app/Notification;</span>
+<span class="missed">	iput-wide p1, v0, Landroid/app/Notification;->when:J</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a(Landroid/app/PendingIntent;)Landroidx/core/app/f$d;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-object p1, p0, Landroidx/core/app/f$d;->f:Landroid/app/PendingIntent;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a(Landroid/graphics/Bitmap;)Landroidx/core/app/f$d;
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-direct {p0, p1}, Landroidx/core/app/f$d;->b(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Landroidx/core/app/f$d;->i:Landroid/graphics/Bitmap;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a(Landroid/net/Uri;)Landroidx/core/app/f$d;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/f$d;->N:Landroid/app/Notification;</span>
+<span class="missed">	iput-object p1, v0, Landroid/app/Notification;->sound:Landroid/net/Uri;</span>
+<span class="missed">	const/4 p1, -0x1</span>
+<span class="missed">	iput p1, v0, Landroid/app/Notification;->audioStreamType:I</span>
+<span class="missed">	sget p1, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x15</span>
+<span class="missed">	if-lt p1, v1, :cond_0</span>
+<span class="missed">	new-instance p1, Landroid/media/AudioAttributes$Builder;</span>
+<span class="missed">	invoke-direct {p1}, Landroid/media/AudioAttributes$Builder;-><init>()V</span>
+<span class="missed">	const/4 v1, 0x4</span>
+<span class="">	invoke-virtual {p1, v1}, Landroid/media/AudioAttributes$Builder;->setContentType(I)Landroid/media/AudioAttributes$Builder;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const/4 v1, 0x5</span>
+<span class="">	invoke-virtual {p1, v1}, Landroid/media/AudioAttributes$Builder;->setUsage(I)Landroid/media/AudioAttributes$Builder;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Landroid/media/AudioAttributes$Builder;->build()Landroid/media/AudioAttributes;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, v0, Landroid/app/Notification;->audioAttributes:Landroid/media/AudioAttributes;</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a(Landroidx/core/app/f$e;)Landroidx/core/app/f$d;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/f$d;->o:Landroidx/core/app/f$e;</span>
+<span class="missed">	if-eq v0, p1, :cond_0</span>
+<span class="missed">	iput-object p1, p0, Landroidx/core/app/f$d;->o:Landroidx/core/app/f$e;</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	invoke-virtual {p1, p0}, Landroidx/core/app/f$e;->a(Landroidx/core/app/f$d;)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a(Ljava/lang/CharSequence;)Landroidx/core/app/f$d;
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-static {p1}, Landroidx/core/app/f$d;->d(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Landroidx/core/app/f$d;->e:Ljava/lang/CharSequence;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a(Ljava/lang/String;)Landroidx/core/app/f$d;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-object p1, p0, Landroidx/core/app/f$d;->I:Ljava/lang/String;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a(Z)Landroidx/core/app/f$d;
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/16 v0, 0x10</span>
+<span class="missed">	invoke-direct {p0, v0, p1}, Landroidx/core/app/f$d;->a(IZ)V</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a([J)Landroidx/core/app/f$d;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/f$d;->N:Landroid/app/Notification;</span>
+<span class="missed">	iput-object p1, v0, Landroid/app/Notification;->vibrate:[J</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public b()Landroid/os/Bundle;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/f$d;->B:Landroid/os/Bundle;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	new-instance v0, Landroid/os/Bundle;</span>
+<span class="missed">	invoke-direct {v0}, Landroid/os/Bundle;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/core/app/f$d;->B:Landroid/os/Bundle;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/f$d;->B:Landroid/os/Bundle;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public b(I)Landroidx/core/app/f$d;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/f$d;->N:Landroid/app/Notification;</span>
+<span class="missed">	iput p1, v0, Landroid/app/Notification;->defaults:I</span>
+<span class="missed">	and-int/lit8 p1, p1, 0x4</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	iget p1, v0, Landroid/app/Notification;->flags:I</span>
+<span class="missed">	or-int/lit8 p1, p1, 0x1</span>
+<span class="missed">	iput p1, v0, Landroid/app/Notification;->flags:I</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public b(Landroid/app/PendingIntent;)Landroidx/core/app/f$d;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/f$d;->N:Landroid/app/Notification;</span>
+<span class="missed">	iput-object p1, v0, Landroid/app/Notification;->deleteIntent:Landroid/app/PendingIntent;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public b(Ljava/lang/CharSequence;)Landroidx/core/app/f$d;
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-static {p1}, Landroidx/core/app/f$d;->d(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Landroidx/core/app/f$d;->d:Ljava/lang/CharSequence;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public b(Z)Landroidx/core/app/f$d;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-boolean p1, p0, Landroidx/core/app/f$d;->x:Z</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public c(I)Landroidx/core/app/f$d;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput p1, p0, Landroidx/core/app/f$d;->k:I</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public c(Ljava/lang/CharSequence;)Landroidx/core/app/f$d;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/f$d;->N:Landroid/app/Notification;</span>
+<span class="">	invoke-static {p1}, Landroidx/core/app/f$d;->d(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, v0, Landroid/app/Notification;->tickerText:Ljava/lang/CharSequence;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public d(I)Landroidx/core/app/f$d;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput p1, p0, Landroidx/core/app/f$d;->l:I</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public e(I)Landroidx/core/app/f$d;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/f$d;->N:Landroid/app/Notification;</span>
+<span class="missed">	iput p1, v0, Landroid/app/Notification;->icon:I</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public f(I)Landroidx/core/app/f$d;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput p1, p0, Landroidx/core/app/f$d;->D:I</span>
+<span class="">	return-object p0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../.resources/report.js"></script>
+</body>
+</html>

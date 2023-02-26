@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> bp$t$a$a.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Lbp$t$a$a;
+.super Ljava/lang/Object;
+.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.implements Lfn;
+
+.annotation system Ldalvik/annotation/EnclosingMethod;
+value = Lbp$t$a;->call()Lgn;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x0
+name = null
+.end annotation
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/Object;",
+"Lfn<",
+"Lct;",
+"Ljava/lang/Void;",
+">;"
+}
+.end annotation
+
+.field final synthetic a:Ljava/util/List;
+.field final synthetic b:Z
+.field final synthetic c:Ljava/util/concurrent/Executor;
+.field final synthetic d:Lbp$t$a;
+
+
+.method constructor &lt;init&gt;(Lbp$t$a;Ljava/util/List;ZLjava/util/concurrent/Executor;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-object p1, p0, Lbp$t$a$a;->d:Lbp$t$a;</span>
+<span class="missed">	iput-object p2, p0, Lbp$t$a$a;->a:Ljava/util/List;</span>
+<span class="missed">	iput-boolean p3, p0, Lbp$t$a$a;->b:Z</span>
+<span class="missed">	iput-object p4, p0, Lbp$t$a$a;->c:Ljava/util/concurrent/Executor;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public a(Lct;)Lgn;
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/lang/Exception;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lct;",</span>
+<span class="">	")",</span>
+<span class="">	"Lgn<",</span>
+<span class="">	"Ljava/lang/Void;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v1, "Received null app settings, cannot send reports during app startup."</span>
+<span class="missed">	invoke-virtual {p1, v1}, Lmo;->d(Ljava/lang/String;)V</span>
+<span class="">	invoke-static {v0}, Ljn;->a(Ljava/lang/Object;)Lgn;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v1, p0, Lbp$t$a$a;->a:Ljava/util/List;</span>
+<span class="">	invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_2</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Lks;</span>
+<span class="">	invoke-interface {v2}, Lks;->e()Lks$a;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	sget-object v4, Lks$a;->a:Lks$a;</span>
+<span class="missed">	if-ne v3, v4, :cond_1</span>
+<span class="missed">	iget-object v3, p1, Lct;->e:Ljava/lang/String;</span>
+<span class="">	invoke-interface {v2}, Lks;->f()Ljava/io/File;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-static {v3, v2}, Lbp;->a(Ljava/lang/String;Ljava/io/File;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object v1, p0, Lbp$t$a$a;->d:Lbp$t$a;</span>
+<span class="missed">	iget-object v1, v1, Lbp$t$a;->b:Lbp$t;</span>
+<span class="missed">	iget-object v1, v1, Lbp$t;->c:Lbp;</span>
+<span class="">	invoke-static {v1}, Lbp;->b(Lbp;)Lhs$b;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-interface {v1, p1}, Lhs$b;->a(Lct;)Lhs;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iget-object v2, p0, Lbp$t$a$a;->a:Ljava/util/List;</span>
+<span class="missed">	iget-boolean v3, p0, Lbp$t$a$a;->b:Z</span>
+<span class="missed">	iget-object v4, p0, Lbp$t$a$a;->d:Lbp$t$a;</span>
+<span class="missed">	iget-object v4, v4, Lbp$t$a;->b:Lbp$t;</span>
+<span class="missed">	iget v4, v4, Lbp$t;->b:F</span>
+<span class="missed">	invoke-virtual {v1, v2, v3, v4}, Lhs;->a(Ljava/util/List;ZF)V</span>
+<span class="missed">	iget-object v1, p0, Lbp$t$a$a;->d:Lbp$t$a;</span>
+<span class="missed">	iget-object v1, v1, Lbp$t$a;->b:Lbp$t;</span>
+<span class="missed">	iget-object v1, v1, Lbp$t;->c:Lbp;</span>
+<span class="">	invoke-static {v1}, Lbp;->k(Lbp;)Lwp;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iget-object v2, p0, Lbp$t$a$a;->c:Ljava/util/concurrent/Executor;</span>
+<span class="">	invoke-static {p1}, Ljp;->a(Lct;)Ljp;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {v1, v2, p1}, Lwp;->a(Ljava/util/concurrent/Executor;Ljp;)V</span>
+<span class="missed">	iget-object p1, p0, Lbp$t$a$a;->d:Lbp$t$a;</span>
+<span class="missed">	iget-object p1, p1, Lbp$t$a;->b:Lbp$t;</span>
+<span class="missed">	iget-object p1, p1, Lbp$t;->c:Lbp;</span>
+<span class="missed">	iget-object p1, p1, Lbp;->y:Lhn;</span>
+<span class="missed">	invoke-virtual {p1, v0}, Lhn;->b(Ljava/lang/Object;)Z</span>
+<span class="">	invoke-static {v0}, Ljn;->a(Ljava/lang/Object;)Lgn;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public bridge synthetic a(Ljava/lang/Object;)Lgn;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/lang/Exception;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	check-cast p1, Lct;</span>
+<span class="">	invoke-virtual {p0, p1}, Lbp$t$a$a;->a(Lct;)Lgn;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

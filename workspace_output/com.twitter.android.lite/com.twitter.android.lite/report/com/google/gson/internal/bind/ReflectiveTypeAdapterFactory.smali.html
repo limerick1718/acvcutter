@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.google.gson.internal.bind</a></li>
+        <li><i class="ico ico-class"></i> ReflectiveTypeAdapterFactory.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;
+.super Ljava/lang/Object;
+.source "ReflectiveTypeAdapterFactory.java"
+.implements Lwv;
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$b;,
+Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$c;
+}
+.end annotation
+
+.field private final a:Lcom/google/gson/internal/c;
+.field private final b:Lev;
+.field private final c:Lcom/google/gson/internal/Excluder;
+.field private final d:Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;
+
+
+<span class="cov">.method public constructor &lt;init&gt;(Lcom/google/gson/internal/c;Lev;Lcom/google/gson/internal/Excluder;Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a:Lcom/google/gson/internal/c;</span>
+<span class="cov">	iput-object p2, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->b:Lev;</span>
+<span class="cov">	iput-object p3, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->c:Lcom/google/gson/internal/Excluder;</span>
+<span class="cov">	iput-object p4, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->d:Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private a(Lfv;Ljava/lang/reflect/Field;Ljava/lang/String;Ldw;ZZ)Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$c;</span>
+<span class="">	.locals 13</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lfv;",</span>
+<span class="">	"Ljava/lang/reflect/Field;",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ldw<",</span>
+<span class="">	"*>;ZZ)",</span>
+<span class="">	"Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$c;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	move-object v11, p0</span>
+<span class="cov">	move-object v8, p1</span>
+<span class="cov">	move-object/from16 v9, p4</span>
+<span class="exec">	invoke-virtual/range {p4 .. p4}, Ldw;->a()Ljava/lang/Class;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-static {v0}, Lcom/google/gson/internal/h;->a(Ljava/lang/reflect/Type;)Z</span>
+<span class="cov">	move-result v10</span>
+<span class="cov">	const-class v0, Lyv;</span>
+<span class="cov">	move-object v5, p2</span>
+<span class="exec">	invoke-virtual {p2, v0}, Ljava/lang/reflect/Field;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	check-cast v0, Lyv;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v1, v11, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->d:Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;</span>
+<span class="missed">	iget-object v2, v11, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a:Lcom/google/gson/internal/c;</span>
+<span class="">	invoke-virtual {v1, v2, p1, v9, v0}, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;->a(Lcom/google/gson/internal/c;Lfv;Ldw;Lyv;)Lvv;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	const/4 v6, 0x1</span>
+<span class="exec">	goto :goto_1</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	const/4 v6, 0x0</span>
+<span class="cov">	:goto_1</span>
+<span class="cov">	if-nez v0, :cond_2</span>
+<span class="exec">	invoke-virtual {p1, v9}, Lfv;->a(Ldw;)Lvv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	move-object v7, v0</span>
+<span class="cov">	new-instance v12, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$a;</span>
+<span class="cov">	move-object v0, v12</span>
+<span class="cov">	move-object v1, p0</span>
+<span class="cov">	move-object/from16 v2, p3</span>
+<span class="cov">	move/from16 v3, p5</span>
+<span class="cov">	move/from16 v4, p6</span>
+<span class="cov">	move-object v5, p2</span>
+<span class="cov">	move-object v8, p1</span>
+<span class="cov">	move-object/from16 v9, p4</span>
+<span class="cov">	invoke-direct/range {v0 .. v10}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$a;-><init>(Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;Ljava/lang/String;ZZLjava/lang/reflect/Field;ZLvv;Lfv;Ldw;Z)V</span>
+<span class="exec">	return-object v12</span>
+.end method
+
+<span class="cov">.method private a(Ljava/lang/reflect/Field;)Ljava/util/List;</span>
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/reflect/Field;",</span>
+<span class="">	")",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	const-class v0, Lzv;</span>
+<span class="exec">	invoke-virtual {p1, v0}, Ljava/lang/reflect/Field;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	check-cast v0, Lzv;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->b:Lev;</span>
+<span class="">	invoke-interface {v0, p1}, Lev;->a(Ljava/lang/reflect/Field;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-interface {v0}, Lzv;->value()Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	invoke-interface {v0}, Lzv;->alternate()[Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	array-length v1, v0</span>
+<span class="cov">	if-nez v1, :cond_1</span>
+<span class="exec">	invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	return-object p1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v1, Ljava/util/ArrayList;</span>
+<span class="missed">	array-length v2, v0</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="missed">	invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V</span>
+<span class="missed">	invoke-interface {v1, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	array-length p1, v0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v2, p1, :cond_2</span>
+<span class="missed">	aget-object v3, v0, v2</span>
+<span class="missed">	invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="">	return-object v1</span>
+.end method
+
+<span class="cov">.method private a(Lfv;Ldw;Ljava/lang/Class;)Ljava/util/Map;</span>
+<span class="">	.locals 23</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lfv;",</span>
+<span class="">	"Ldw<",</span>
+<span class="">	"*>;",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;)",</span>
+<span class="">	"Ljava/util/Map<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$c;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	move-object/from16 v7, p0</span>
+<span class="cov">	new-instance v8, Ljava/util/LinkedHashMap;</span>
+<span class="cov">	invoke-direct {v8}, Ljava/util/LinkedHashMap;-><init>()V</span>
+<span class="exec">	invoke-virtual/range {p3 .. p3}, Ljava/lang/Class;->isInterface()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return-object v8</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-virtual/range {p2 .. p2}, Ldw;->b()Ljava/lang/reflect/Type;</span>
+<span class="cov">	move-result-object v9</span>
+<span class="cov">	move-object/from16 v10, p2</span>
+<span class="cov">	move-object/from16 v11, p3</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	const-class v0, Ljava/lang/Object;</span>
+<span class="cov">	if-eq v11, v0, :cond_7</span>
+<span class="exec">	invoke-virtual {v11}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;</span>
+<span class="cov">	move-result-object v12</span>
+<span class="cov">	array-length v13, v12</span>
+<span class="cov">	const/4 v14, 0x0</span>
+<span class="cov">	const/4 v15, 0x0</span>
+<span class="cov">	:goto_1</span>
+<span class="cov">	if-ge v15, v13, :cond_6</span>
+<span class="cov">	aget-object v6, v12, v15</span>
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="exec">	invoke-virtual {v7, v6, v0}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a(Ljava/lang/reflect/Field;Z)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="exec">	invoke-virtual {v7, v6, v14}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a(Ljava/lang/reflect/Field;Z)Z</span>
+<span class="cov">	move-result v16</span>
+<span class="missed">	if-nez v1, :cond_1</span>
+<span class="missed">	if-nez v16, :cond_1</span>
+<span class="exec">	goto/16 :goto_5</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	invoke-virtual {v6, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V</span>
+<span class="exec">	invoke-virtual {v10}, Ldw;->b()Ljava/lang/reflect/Type;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v6}, Ljava/lang/reflect/Field;->getGenericType()Ljava/lang/reflect/Type;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="exec">	invoke-static {v0, v11, v2}, Lcom/google/gson/internal/b;->a(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;</span>
+<span class="cov">	move-result-object v17</span>
+<span class="exec">	invoke-direct {v7, v6}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a(Ljava/lang/reflect/Field;)Ljava/util/List;</span>
+<span class="cov">	move-result-object v5</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="exec">	invoke-interface {v5}, Ljava/util/List;->size()I</span>
+<span class="cov">	move-result v4</span>
+<span class="cov">	move-object v3, v0</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	:goto_2</span>
+<span class="cov">	if-ge v2, v4, :cond_4</span>
+<span class="exec">	invoke-interface {v5, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	check-cast v0, Ljava/lang/String;</span>
+<span class="missed">	if-eqz v2, :cond_2</span>
+<span class="missed">	const/16 v18, 0x0</span>
+<span class="exec">	goto :goto_3</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	move/from16 v18, v1</span>
+<span class="cov">	:goto_3</span>
+<span class="exec">	invoke-static/range {v17 .. v17}, Ldw;->a(Ljava/lang/reflect/Type;)Ldw;</span>
+<span class="cov">	move-result-object v19</span>
+<span class="cov">	move-object v1, v0</span>
+<span class="cov">	move-object/from16 v0, p0</span>
+<span class="cov">	move-object/from16 p2, v1</span>
+<span class="cov">	move-object/from16 v1, p1</span>
+<span class="cov">	move/from16 v20, v2</span>
+<span class="cov">	move-object v2, v6</span>
+<span class="cov">	move-object v14, v3</span>
+<span class="cov">	move-object/from16 v3, p2</span>
+<span class="cov">	move/from16 v21, v4</span>
+<span class="cov">	move-object/from16 v4, v19</span>
+<span class="cov">	move-object/from16 v19, v5</span>
+<span class="cov">	move/from16 v5, v18</span>
+<span class="cov">	move-object/from16 v22, v6</span>
+<span class="cov">	move/from16 v6, v16</span>
+<span class="exec">	invoke-direct/range {v0 .. v6}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a(Lfv;Ljava/lang/reflect/Field;Ljava/lang/String;Ldw;ZZ)Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$c;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	move-object/from16 v1, p2</span>
+<span class="exec">	invoke-interface {v8, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	check-cast v0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$c;</span>
+<span class="cov">	if-nez v14, :cond_3</span>
+<span class="cov">	move-object v3, v0</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_3</span>
+<span class="missed">	move-object v3, v14</span>
+<span class="cov">	:goto_4</span>
+<span class="cov">	add-int/lit8 v2, v20, 0x1</span>
+<span class="cov">	move/from16 v1, v18</span>
+<span class="cov">	move-object/from16 v5, v19</span>
+<span class="cov">	move/from16 v4, v21</span>
+<span class="cov">	move-object/from16 v6, v22</span>
+<span class="cov">	const/4 v14, 0x0</span>
+<span class="exec">	goto :goto_2</span>
+<span class="cov">	:cond_4</span>
+<span class="cov">	move-object v14, v3</span>
+<span class="cov">	if-nez v14, :cond_5</span>
+<span class="cov">	:goto_5</span>
+<span class="cov">	add-int/lit8 v15, v15, 0x1</span>
+<span class="cov">	const/4 v14, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_5</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v2, " declares multiple JSON fields named "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v2, v14, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$c;->a:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+<span class="cov">	:cond_6</span>
+<span class="exec">	invoke-virtual {v10}, Ldw;->b()Ljava/lang/reflect/Type;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v11}, Ljava/lang/Class;->getGenericSuperclass()Ljava/lang/reflect/Type;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-static {v0, v11, v1}, Lcom/google/gson/internal/b;->a(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-static {v0}, Ldw;->a(Ljava/lang/reflect/Type;)Ldw;</span>
+<span class="cov">	move-result-object v10</span>
+<span class="exec">	invoke-virtual {v10}, Ldw;->a()Ljava/lang/Class;</span>
+<span class="cov">	move-result-object v11</span>
+<span class="">	goto/16 :goto_0</span>
+<span class="cov">	:cond_7</span>
+<span class="exec">	return-object v8</span>
+.end method
+
+<span class="cov">.method static a(Ljava/lang/reflect/Field;ZLcom/google/gson/internal/Excluder;)Z</span>
+<span class="">	.locals 1</span>
+
+<span class="exec">	invoke-virtual {p0}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {p2, v0, p1}, Lcom/google/gson/internal/Excluder;->a(Ljava/lang/Class;Z)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="exec">	invoke-virtual {p2, p0, p1}, Lcom/google/gson/internal/Excluder;->a(Ljava/lang/reflect/Field;Z)Z</span>
+<span class="cov">	move-result p0</span>
+<span class="cov">	if-nez p0, :cond_0</span>
+<span class="cov">	const/4 p0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return p0</span>
+.end method
+
+<span class="cov">.method public a(Lfv;Ldw;)Lvv;</span>
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<T:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Lfv;",</span>
+<span class="">	"Ldw<",</span>
+<span class="">	"TT;>;)",</span>
+<span class="">	"Lvv<",</span>
+<span class="">	"TT;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="exec">	invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-class v1, Ljava/lang/Object;</span>
+<span class="exec">	invoke-virtual {v1, v0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	return-object p1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a:Lcom/google/gson/internal/c;</span>
+<span class="exec">	invoke-virtual {v1, p2}, Lcom/google/gson/internal/c;->a(Ldw;)Lcom/google/gson/internal/g;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	new-instance v2, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$b;</span>
+<span class="exec">	invoke-direct {p0, p1, p2, v0}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a(Lfv;Ldw;Ljava/lang/Class;)Ljava/util/Map;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	invoke-direct {v2, v1, p1}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$b;-><init>(Lcom/google/gson/internal/g;Ljava/util/Map;)V</span>
+<span class="exec">	return-object v2</span>
+.end method
+
+<span class="cov">.method public a(Ljava/lang/reflect/Field;Z)Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->c:Lcom/google/gson/internal/Excluder;</span>
+<span class="exec">	invoke-static {p1, p2, v0}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a(Ljava/lang/reflect/Field;ZLcom/google/gson/internal/Excluder;)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="exec">	return p1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../../.resources/report.js"></script>
+</body>
+</html>

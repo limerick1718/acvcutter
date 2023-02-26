@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.google.android.gms.common.api</a></li>
+        <li><i class="ico ico-class"></i> GoogleApiActivity.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Lcom/google/android/gms/common/api/GoogleApiActivity;
+.super Landroid/app/Activity;
+.implements Landroid/content/DialogInterface$OnCancelListener;
+
+.annotation build Lcom/google/android/gms/common/annotation/KeepName;
+.end annotation
+
+.field private a:I
+
+
+.method public constructor &lt;init&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	invoke-direct {p0}, Landroid/app/Activity;-><init>()V</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I</span>
+<span class="">	return-void</span>
+.end method
+
+.method public static a(Landroid/content/Context;Landroid/app/PendingIntent;I)Landroid/app/PendingIntent;
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	invoke-static {p0, p1, p2, v0}, Lcom/google/android/gms/common/api/GoogleApiActivity;->a(Landroid/content/Context;Landroid/app/PendingIntent;IZ)Landroid/content/Intent;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const/4 p2, 0x0</span>
+<span class="missed">	const/high16 v0, 0x8000000</span>
+<span class="">	invoke-static {p0, p2, p1, v0}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static a(Landroid/content/Context;Landroid/app/PendingIntent;IZ)Landroid/content/Intent;
+<span class="">	.locals 2</span>
+
+<span class="missed">	new-instance v0, Landroid/content/Intent;</span>
+<span class="missed">	const-class v1, Lcom/google/android/gms/common/api/GoogleApiActivity;</span>
+<span class="missed">	invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V</span>
+<span class="missed">	const-string p0, "pending_intent"</span>
+<span class="missed">	invoke-virtual {v0, p0, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;</span>
+<span class="missed">	const-string p0, "failing_client_id"</span>
+<span class="missed">	invoke-virtual {v0, p0, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;</span>
+<span class="missed">	const-string p0, "notify_manager"</span>
+<span class="missed">	invoke-virtual {v0, p0, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method protected onActivityResult(IILandroid/content/Intent;)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onActivityResult(IILandroid/content/Intent;)V</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-ne p1, v1, :cond_2</span>
+<span class="">	invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v2, "notify_manager"</span>
+<span class="">	invoke-virtual {p1, v2, v1}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	iput v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I</span>
+<span class="missed">	invoke-virtual {p0, p2, p3}, Landroid/app/Activity;->setResult(ILandroid/content/Intent;)V</span>
+<span class="missed">	if-eqz p1, :cond_3</span>
+<span class="">	invoke-static {p0}, Lcom/google/android/gms/common/api/internal/b;->a(Landroid/content/Context;)Lcom/google/android/gms/common/api/internal/b;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const/4 p3, -0x1</span>
+<span class="missed">	if-eq p2, p3, :cond_1</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p2, Lc5;</span>
+<span class="missed">	const/16 v0, 0xd</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-direct {p2, v0, v1}, Lc5;-><init>(ILandroid/app/PendingIntent;)V</span>
+<span class="">	invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "failing_client_id"</span>
+<span class="">	invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I</span>
+<span class="missed">	move-result p3</span>
+<span class="missed">	invoke-virtual {p1, p2, p3}, Lcom/google/android/gms/common/api/internal/b;->a(Lc5;I)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/b;->a()V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 v1, 0x2</span>
+<span class="missed">	if-ne p1, v1, :cond_3</span>
+<span class="missed">	iput v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I</span>
+<span class="missed">	invoke-virtual {p0, p2, p3}, Landroid/app/Activity;->setResult(ILandroid/content/Intent;)V</span>
+<span class="">	:cond_3</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {p0}, Landroid/app/Activity;->finish()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public onCancel(Landroid/content/DialogInterface;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	iput p1, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I</span>
+<span class="missed">	invoke-virtual {p0, p1}, Landroid/app/Activity;->setResult(I)V</span>
+<span class="missed">	invoke-virtual {p0}, Landroid/app/Activity;->finish()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected onCreate(Landroid/os/Bundle;)V
+<span class="">	.locals 9</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const-string v0, "resolution"</span>
+<span class="">	invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	iput p1, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget p1, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-eq p1, v0, :cond_4</span>
+<span class="">	invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v1, "GoogleApiActivity"</span>
+<span class="missed">	if-nez p1, :cond_1</span>
+<span class="missed">	const-string p1, "Activity started without extras"</span>
+<span class="missed">	invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	invoke-virtual {p0}, Landroid/app/Activity;->finish()V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const-string v2, "pending_intent"</span>
+<span class="">	invoke-virtual {p1, v2}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Landroid/app/PendingIntent;</span>
+<span class="missed">	const-string v3, "error_code"</span>
+<span class="">	invoke-virtual {p1, v3}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Ljava/lang/Integer;</span>
+<span class="missed">	if-nez v2, :cond_2</span>
+<span class="missed">	if-nez p1, :cond_2</span>
+<span class="missed">	const-string p1, "Activity started without resolution"</span>
+<span class="missed">	invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	invoke-virtual {p0}, Landroid/app/Activity;->finish()V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	if-eqz v2, :cond_3</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-virtual {v2}, Landroid/app/PendingIntent;->getIntentSender()Landroid/content/IntentSender;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="missed">	const/4 v7, 0x0</span>
+<span class="missed">	const/4 v8, 0x0</span>
+<span class="missed">	move-object v2, p0</span>
+<span class="missed">	invoke-virtual/range {v2 .. v8}, Landroid/app/Activity;->startIntentSenderForResult(Landroid/content/IntentSender;ILandroid/content/Intent;III)V</span>
+<span class="missed">	iput v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-void</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	const-string v0, "Failed to launch pendingIntent"</span>
+<span class="missed">	invoke-static {v1, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="missed">	invoke-virtual {p0}, Landroid/app/Activity;->finish()V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-static {}, Lf5;->a()Lf5;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	const/4 v2, 0x2</span>
+<span class="missed">	invoke-virtual {v1, p0, p1, v2, p0}, Lf5;->b(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Z</span>
+<span class="missed">	iput v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I</span>
+<span class="">	:cond_4</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected onSaveInstanceState(Landroid/os/Bundle;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I</span>
+<span class="missed">	const-string v1, "resolution"</span>
+<span class="missed">	invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V</span>
+<span class="missed">	invoke-super {p0, p1}, Landroid/app/Activity;->onSaveInstanceState(Landroid/os/Bundle;)V</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../../../.resources/report.js"></script>
+</body>
+</html>

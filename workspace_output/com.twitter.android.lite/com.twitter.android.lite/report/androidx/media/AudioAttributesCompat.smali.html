@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.media</a></li>
+        <li><i class="ico ico-class"></i> AudioAttributesCompat.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Landroidx/media/AudioAttributesCompat;
+.super Ljava/lang/Object;
+.source "AudioAttributesCompat.java"
+.implements Landroidx/versionedparcelable/c;
+
+
+.field private static final b:Landroid/util/SparseIntArray;
+.field  a:Landroidx/media/a;
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 4</span>
+
+<span class="missed">	new-instance v0, Landroid/util/SparseIntArray;</span>
+<span class="missed">	invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V</span>
+<span class="missed">	sput-object v0, Landroidx/media/AudioAttributesCompat;->b:Landroid/util/SparseIntArray;</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	const/4 v2, 0x5</span>
+<span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/util/SparseIntArray;->put(II)V</span>
+<span class="missed">	sget-object v0, Landroidx/media/AudioAttributesCompat;->b:Landroid/util/SparseIntArray;</span>
+<span class="missed">	const/4 v2, 0x2</span>
+<span class="missed">	const/4 v3, 0x6</span>
+<span class="missed">	invoke-virtual {v0, v3, v2}, Landroid/util/SparseIntArray;->put(II)V</span>
+<span class="missed">	sget-object v0, Landroidx/media/AudioAttributesCompat;->b:Landroid/util/SparseIntArray;</span>
+<span class="missed">	const/4 v3, 0x7</span>
+<span class="missed">	invoke-virtual {v0, v3, v2}, Landroid/util/SparseIntArray;->put(II)V</span>
+<span class="missed">	sget-object v0, Landroidx/media/AudioAttributesCompat;->b:Landroid/util/SparseIntArray;</span>
+<span class="missed">	const/16 v2, 0x8</span>
+<span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/util/SparseIntArray;->put(II)V</span>
+<span class="missed">	sget-object v0, Landroidx/media/AudioAttributesCompat;->b:Landroid/util/SparseIntArray;</span>
+<span class="missed">	const/16 v2, 0x9</span>
+<span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/util/SparseIntArray;->put(II)V</span>
+<span class="missed">	sget-object v0, Landroidx/media/AudioAttributesCompat;->b:Landroid/util/SparseIntArray;</span>
+<span class="missed">	const/16 v2, 0xa</span>
+<span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/util/SparseIntArray;->put(II)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method constructor &lt;init&gt;()V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method static a(ZII)I
+<span class="">	.locals 3</span>
+
+<span class="missed">	and-int/lit8 v0, p1, 0x1</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-ne v0, v1, :cond_1</span>
+<span class="missed">	if-eqz p0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x7</span>
+<span class="">	:goto_0</span>
+<span class="">	return v1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v0, 0x4</span>
+<span class="missed">	and-int/2addr p1, v0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-ne p1, v0, :cond_3</span>
+<span class="missed">	if-eqz p0, :cond_2</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 v2, 0x6</span>
+<span class="">	:goto_1</span>
+<span class="">	return v2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const/4 p1, 0x3</span>
+<span class="">	packed-switch p2, :pswitch_data_0</span>
+<span class="">	:pswitch_0</span>
+<span class="missed">	if-nez p0, :cond_6</span>
+<span class="">	return p1</span>
+<span class="">	:pswitch_1</span>
+<span class="">	return v1</span>
+<span class="">	:pswitch_2</span>
+<span class="missed">	const/16 p0, 0xa</span>
+<span class="">	return p0</span>
+<span class="">	:pswitch_3</span>
+<span class="missed">	const/4 p0, 0x2</span>
+<span class="">	return p0</span>
+<span class="">	:pswitch_4</span>
+<span class="missed">	const/4 p0, 0x5</span>
+<span class="">	return p0</span>
+<span class="">	:pswitch_5</span>
+<span class="">	return v0</span>
+<span class="">	:pswitch_6</span>
+<span class="missed">	if-eqz p0, :cond_4</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_4</span>
+<span class="missed">	const/16 v2, 0x8</span>
+<span class="">	:pswitch_7</span>
+<span class="">	:goto_2</span>
+<span class="">	return v2</span>
+<span class="">	:pswitch_8</span>
+<span class="">	return p1</span>
+<span class="">	:pswitch_9</span>
+<span class="missed">	if-eqz p0, :cond_5</span>
+<span class="missed">	const/high16 p1, -0x80000000</span>
+<span class="">	:cond_5</span>
+<span class="">	return p1</span>
+<span class="">	:cond_6</span>
+<span class="missed">	new-instance p0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance p1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v0, "Unknown usage value "</span>
+<span class="missed">	invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string p2, " in audio attributes"</span>
+<span class="missed">	invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
+<span class="">	:pswitch_data_0</span>
+<span class="">	.packed-switch 0x0</span>
+<span class="">	:pswitch_9</span>
+<span class="">	:pswitch_8</span>
+<span class="">	:pswitch_7</span>
+<span class="">	:pswitch_6</span>
+<span class="">	:pswitch_5</span>
+<span class="">	:pswitch_4</span>
+<span class="">	:pswitch_3</span>
+<span class="">	:pswitch_4</span>
+<span class="">	:pswitch_4</span>
+<span class="">	:pswitch_4</span>
+<span class="">	:pswitch_4</span>
+<span class="">	:pswitch_2</span>
+<span class="">	:pswitch_8</span>
+<span class="">	:pswitch_1</span>
+<span class="">	:pswitch_8</span>
+<span class="">	:pswitch_0</span>
+<span class="">	:pswitch_8</span>
+<span class="">	.end packed-switch</span>
+.end method
+
+.method static a(I)Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="">	packed-switch p0, :pswitch_data_0</span>
+<span class="">	:pswitch_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v1, "unknown usage "</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_1</span>
+<span class="missed">	const-string p0, "USAGE_ASSISTANT"</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_2</span>
+<span class="missed">	const-string p0, "USAGE_GAME"</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_3</span>
+<span class="missed">	const-string p0, "USAGE_ASSISTANCE_SONIFICATION"</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_4</span>
+<span class="missed">	const-string p0, "USAGE_ASSISTANCE_NAVIGATION_GUIDANCE"</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_5</span>
+<span class="missed">	const-string p0, "USAGE_ASSISTANCE_ACCESSIBILITY"</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_6</span>
+<span class="missed">	const-string p0, "USAGE_NOTIFICATION_EVENT"</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_7</span>
+<span class="missed">	const-string p0, "USAGE_NOTIFICATION_COMMUNICATION_DELAYED"</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_8</span>
+<span class="missed">	const-string p0, "USAGE_NOTIFICATION_COMMUNICATION_INSTANT"</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_9</span>
+<span class="missed">	const-string p0, "USAGE_NOTIFICATION_COMMUNICATION_REQUEST"</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_a</span>
+<span class="missed">	const-string p0, "USAGE_NOTIFICATION_RINGTONE"</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_b</span>
+<span class="missed">	const-string p0, "USAGE_NOTIFICATION"</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_c</span>
+<span class="missed">	const-string p0, "USAGE_ALARM"</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_d</span>
+<span class="missed">	const-string p0, "USAGE_VOICE_COMMUNICATION_SIGNALLING"</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_e</span>
+<span class="missed">	const-string p0, "USAGE_VOICE_COMMUNICATION"</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_f</span>
+<span class="missed">	const-string p0, "USAGE_MEDIA"</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_10</span>
+<span class="missed">	const-string p0, "USAGE_UNKNOWN"</span>
+<span class="">	return-object p0</span>
+<span class="">	nop</span>
+<span class="">	:pswitch_data_0</span>
+<span class="">	.packed-switch 0x0</span>
+<span class="">	:pswitch_10</span>
+<span class="">	:pswitch_f</span>
+<span class="">	:pswitch_e</span>
+<span class="">	:pswitch_d</span>
+<span class="">	:pswitch_c</span>
+<span class="">	:pswitch_b</span>
+<span class="">	:pswitch_a</span>
+<span class="">	:pswitch_9</span>
+<span class="">	:pswitch_8</span>
+<span class="">	:pswitch_7</span>
+<span class="">	:pswitch_6</span>
+<span class="">	:pswitch_5</span>
+<span class="">	:pswitch_4</span>
+<span class="">	:pswitch_3</span>
+<span class="">	:pswitch_2</span>
+<span class="">	:pswitch_0</span>
+<span class="">	:pswitch_1</span>
+<span class="">	.end packed-switch</span>
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+<span class="">	.locals 2</span>
+
+<span class="missed">	instance-of v0, p1, Landroidx/media/AudioAttributesCompat;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	return v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	check-cast p1, Landroidx/media/AudioAttributesCompat;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/media/AudioAttributesCompat;->a:Landroidx/media/a;</span>
+<span class="missed">	if-nez v0, :cond_2</span>
+<span class="missed">	iget-object p1, p1, Landroidx/media/AudioAttributesCompat;->a:Landroidx/media/a;</span>
+<span class="missed">	if-nez p1, :cond_1</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	:cond_1</span>
+<span class="">	return v1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object p1, p1, Landroidx/media/AudioAttributesCompat;->a:Landroidx/media/a;</span>
+<span class="">	invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public hashCode()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/media/AudioAttributesCompat;->a:Landroidx/media/a;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public toString()Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/media/AudioAttributesCompat;->a:Landroidx/media/a;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../.resources/report.js"></script>
+</body>
+</html>

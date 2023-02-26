@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.google.gson.internal.bind</a></li>
+        <li><i class="ico ico-class"></i> TypeAdapters.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Lcom/google/gson/internal/bind/TypeAdapters;
+.super Ljava/lang/Object;
+.source "TypeAdapters.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lcom/google/gson/internal/bind/TypeAdapters$d0;
+}
+.end annotation
+
+.field public static final A:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.end field
+.field public static final B:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/math/BigDecimal;",
+">;"
+}
+.end annotation
+.end field
+.field public static final C:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/math/BigInteger;",
+">;"
+}
+.end annotation
+.end field
+.field public static final D:Lwv;
+.field public static final E:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/lang/StringBuilder;",
+">;"
+}
+.end annotation
+.end field
+.field public static final F:Lwv;
+.field public static final G:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/lang/StringBuffer;",
+">;"
+}
+.end annotation
+.end field
+.field public static final H:Lwv;
+.field public static final I:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/net/URL;",
+">;"
+}
+.end annotation
+.end field
+.field public static final J:Lwv;
+.field public static final K:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/net/URI;",
+">;"
+}
+.end annotation
+.end field
+.field public static final L:Lwv;
+.field public static final M:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/net/InetAddress;",
+">;"
+}
+.end annotation
+.end field
+.field public static final N:Lwv;
+.field public static final O:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/util/UUID;",
+">;"
+}
+.end annotation
+.end field
+.field public static final P:Lwv;
+.field public static final Q:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/util/Currency;",
+">;"
+}
+.end annotation
+.end field
+.field public static final R:Lwv;
+.field public static final S:Lwv;
+.field public static final T:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/util/Calendar;",
+">;"
+}
+.end annotation
+.end field
+.field public static final U:Lwv;
+.field public static final V:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/util/Locale;",
+">;"
+}
+.end annotation
+.end field
+.field public static final W:Lwv;
+.field public static final X:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Llv;",
+">;"
+}
+.end annotation
+.end field
+.field public static final Y:Lwv;
+.field public static final Z:Lwv;
+.field public static final a:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/lang/Class;",
+">;"
+}
+.end annotation
+.end field
+.field public static final b:Lwv;
+.field public static final c:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/util/BitSet;",
+">;"
+}
+.end annotation
+.end field
+.field public static final d:Lwv;
+.field public static final e:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/lang/Boolean;",
+">;"
+}
+.end annotation
+.end field
+.field public static final f:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/lang/Boolean;",
+">;"
+}
+.end annotation
+.end field
+.field public static final g:Lwv;
+.field public static final h:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/lang/Number;",
+">;"
+}
+.end annotation
+.end field
+.field public static final i:Lwv;
+.field public static final j:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/lang/Number;",
+">;"
+}
+.end annotation
+.end field
+.field public static final k:Lwv;
+.field public static final l:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/lang/Number;",
+">;"
+}
+.end annotation
+.end field
+.field public static final m:Lwv;
+.field public static final n:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/util/concurrent/atomic/AtomicInteger;",
+">;"
+}
+.end annotation
+.end field
+.field public static final o:Lwv;
+.field public static final p:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/util/concurrent/atomic/AtomicBoolean;",
+">;"
+}
+.end annotation
+.end field
+.field public static final q:Lwv;
+.field public static final r:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/util/concurrent/atomic/AtomicIntegerArray;",
+">;"
+}
+.end annotation
+.end field
+.field public static final s:Lwv;
+.field public static final t:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/lang/Number;",
+">;"
+}
+.end annotation
+.end field
+.field public static final u:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/lang/Number;",
+">;"
+}
+.end annotation
+.end field
+.field public static final v:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/lang/Number;",
+">;"
+}
+.end annotation
+.end field
+.field public static final w:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/lang/Number;",
+">;"
+}
+.end annotation
+.end field
+.field public static final x:Lwv;
+.field public static final y:Lvv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/lang/Character;",
+">;"
+}
+.end annotation
+.end field
+.field public static final z:Lwv;
+
+
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$k;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$k;-><init>()V</span>
+<span class="exec">	invoke-virtual {v0}, Lvv;->a()Lvv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->a:Lvv;</span>
+<span class="cov">	const-class v1, Ljava/lang/Class;</span>
+<span class="exec">	invoke-static {v1, v0}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->b:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$u;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$u;-><init>()V</span>
+<span class="exec">	invoke-virtual {v0}, Lvv;->a()Lvv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->c:Lvv;</span>
+<span class="cov">	const-class v1, Ljava/util/BitSet;</span>
+<span class="exec">	invoke-static {v1, v0}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->d:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$w;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$w;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->e:Lvv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$x;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$x;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->f:Lvv;</span>
+<span class="cov">	sget-object v0, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;</span>
+<span class="cov">	const-class v1, Ljava/lang/Boolean;</span>
+<span class="cov">	sget-object v2, Lcom/google/gson/internal/bind/TypeAdapters;->e:Lvv;</span>
+<span class="exec">	invoke-static {v0, v1, v2}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->g:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$y;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$y;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->h:Lvv;</span>
+<span class="cov">	sget-object v0, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;</span>
+<span class="cov">	const-class v1, Ljava/lang/Byte;</span>
+<span class="cov">	sget-object v2, Lcom/google/gson/internal/bind/TypeAdapters;->h:Lvv;</span>
+<span class="exec">	invoke-static {v0, v1, v2}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->i:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$z;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$z;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->j:Lvv;</span>
+<span class="cov">	sget-object v0, Ljava/lang/Short;->TYPE:Ljava/lang/Class;</span>
+<span class="cov">	const-class v1, Ljava/lang/Short;</span>
+<span class="cov">	sget-object v2, Lcom/google/gson/internal/bind/TypeAdapters;->j:Lvv;</span>
+<span class="exec">	invoke-static {v0, v1, v2}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->k:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$a0;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$a0;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->l:Lvv;</span>
+<span class="cov">	sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;</span>
+<span class="cov">	const-class v1, Ljava/lang/Integer;</span>
+<span class="cov">	sget-object v2, Lcom/google/gson/internal/bind/TypeAdapters;->l:Lvv;</span>
+<span class="exec">	invoke-static {v0, v1, v2}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->m:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$b0;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$b0;-><init>()V</span>
+<span class="exec">	invoke-virtual {v0}, Lvv;->a()Lvv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->n:Lvv;</span>
+<span class="cov">	const-class v1, Ljava/util/concurrent/atomic/AtomicInteger;</span>
+<span class="exec">	invoke-static {v1, v0}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->o:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$c0;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$c0;-><init>()V</span>
+<span class="exec">	invoke-virtual {v0}, Lvv;->a()Lvv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->p:Lvv;</span>
+<span class="cov">	const-class v1, Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="exec">	invoke-static {v1, v0}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->q:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$a;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$a;-><init>()V</span>
+<span class="exec">	invoke-virtual {v0}, Lvv;->a()Lvv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->r:Lvv;</span>
+<span class="cov">	const-class v1, Ljava/util/concurrent/atomic/AtomicIntegerArray;</span>
+<span class="exec">	invoke-static {v1, v0}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->s:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$b;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$b;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->t:Lvv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$c;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$c;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->u:Lvv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$d;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$d;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->v:Lvv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$e;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$e;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->w:Lvv;</span>
+<span class="cov">	const-class v1, Ljava/lang/Number;</span>
+<span class="exec">	invoke-static {v1, v0}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->x:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$f;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$f;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->y:Lvv;</span>
+<span class="cov">	sget-object v0, Ljava/lang/Character;->TYPE:Ljava/lang/Class;</span>
+<span class="cov">	const-class v1, Ljava/lang/Character;</span>
+<span class="cov">	sget-object v2, Lcom/google/gson/internal/bind/TypeAdapters;->y:Lvv;</span>
+<span class="exec">	invoke-static {v0, v1, v2}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->z:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$g;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$g;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->A:Lvv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$h;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$h;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->B:Lvv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$i;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$i;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->C:Lvv;</span>
+<span class="cov">	const-class v0, Ljava/lang/String;</span>
+<span class="cov">	sget-object v1, Lcom/google/gson/internal/bind/TypeAdapters;->A:Lvv;</span>
+<span class="exec">	invoke-static {v0, v1}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->D:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$j;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$j;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->E:Lvv;</span>
+<span class="cov">	const-class v1, Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-static {v1, v0}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->F:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$l;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$l;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->G:Lvv;</span>
+<span class="cov">	const-class v1, Ljava/lang/StringBuffer;</span>
+<span class="exec">	invoke-static {v1, v0}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->H:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$m;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$m;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->I:Lvv;</span>
+<span class="cov">	const-class v1, Ljava/net/URL;</span>
+<span class="exec">	invoke-static {v1, v0}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->J:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$n;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$n;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->K:Lvv;</span>
+<span class="cov">	const-class v1, Ljava/net/URI;</span>
+<span class="exec">	invoke-static {v1, v0}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->L:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$o;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$o;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->M:Lvv;</span>
+<span class="cov">	const-class v1, Ljava/net/InetAddress;</span>
+<span class="exec">	invoke-static {v1, v0}, Lcom/google/gson/internal/bind/TypeAdapters;->b(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->N:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$p;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$p;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->O:Lvv;</span>
+<span class="cov">	const-class v1, Ljava/util/UUID;</span>
+<span class="exec">	invoke-static {v1, v0}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->P:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$q;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$q;-><init>()V</span>
+<span class="exec">	invoke-virtual {v0}, Lvv;->a()Lvv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->Q:Lvv;</span>
+<span class="cov">	const-class v1, Ljava/util/Currency;</span>
+<span class="exec">	invoke-static {v1, v0}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->R:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$26;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$26;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->S:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$r;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$r;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->T:Lvv;</span>
+<span class="cov">	const-class v1, Ljava/util/Calendar;</span>
+<span class="cov">	const-class v2, Ljava/util/GregorianCalendar;</span>
+<span class="exec">	invoke-static {v1, v2, v0}, Lcom/google/gson/internal/bind/TypeAdapters;->b(Ljava/lang/Class;Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->U:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$s;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$s;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->V:Lvv;</span>
+<span class="cov">	const-class v1, Ljava/util/Locale;</span>
+<span class="exec">	invoke-static {v1, v0}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->W:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$t;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$t;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->X:Lvv;</span>
+<span class="cov">	const-class v1, Llv;</span>
+<span class="exec">	invoke-static {v1, v0}, Lcom/google/gson/internal/bind/TypeAdapters;->b(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->Y:Lwv;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$30;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/bind/TypeAdapters$30;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->Z:Lwv;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public static a(Ljava/lang/Class;Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<TT:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"TTT;>;",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"TTT;>;",</span>
+<span class="">	"Lvv<",</span>
+<span class="">	"-TTT;>;)",</span>
+<span class="">	"Lwv;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$33;</span>
+<span class="cov">	invoke-direct {v0, p0, p1, p2}, Lcom/google/gson/internal/bind/TypeAdapters$33;-><init>(Ljava/lang/Class;Ljava/lang/Class;Lvv;)V</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public static a(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<TT:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"TTT;>;",</span>
+<span class="">	"Lvv<",</span>
+<span class="">	"TTT;>;)",</span>
+<span class="">	"Lwv;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$32;</span>
+<span class="cov">	invoke-direct {v0, p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$32;-><init>(Ljava/lang/Class;Lvv;)V</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public static b(Ljava/lang/Class;Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<TT:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"TTT;>;",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"+TTT;>;",</span>
+<span class="">	"Lvv<",</span>
+<span class="">	"-TTT;>;)",</span>
+<span class="">	"Lwv;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$34;</span>
+<span class="cov">	invoke-direct {v0, p0, p1, p2}, Lcom/google/gson/internal/bind/TypeAdapters$34;-><init>(Ljava/lang/Class;Ljava/lang/Class;Lvv;)V</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public static b(Ljava/lang/Class;Lvv;)Lwv;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<T1:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"TT1;>;",</span>
+<span class="">	"Lvv<",</span>
+<span class="">	"TT1;>;)",</span>
+<span class="">	"Lwv;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/bind/TypeAdapters$35;</span>
+<span class="cov">	invoke-direct {v0, p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$35;-><init>(Ljava/lang/Class;Lvv;)V</span>
+<span class="exec">	return-object v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../../.resources/report.js"></script>
+</body>
+</html>

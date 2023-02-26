@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.google.android.gms.common.api.internal</a></li>
+        <li><i class="ico ico-class"></i> c0.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Lcom/google/android/gms/common/api/internal/c0;
+.super Lcom/google/android/gms/common/api/internal/b0;
+
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/android/gms/common/api/internal/b0<",
+"Ljava/lang/Boolean;",
+">;"
+}
+.end annotation
+
+.field private final b:Lcom/google/android/gms/common/api/internal/f;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/android/gms/common/api/internal/f<",
+"*>;"
+}
+.end annotation
+.end field
+
+
+.method public constructor &lt;init&gt;(Lcom/google/android/gms/common/api/internal/f;Lhn;)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lcom/google/android/gms/common/api/internal/f<",</span>
+<span class="">	"*>;",</span>
+<span class="">	"Lhn<",</span>
+<span class="">	"Ljava/lang/Boolean;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	const/4 v0, 0x4</span>
+<span class="missed">	invoke-direct {p0, v0, p2}, Lcom/google/android/gms/common/api/internal/b0;-><init>(ILhn;)V</span>
+<span class="missed">	iput-object p1, p0, Lcom/google/android/gms/common/api/internal/c0;->b:Lcom/google/android/gms/common/api/internal/f;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final bridge synthetic a(Lcom/google/android/gms/common/api/internal/i;Z)V
+<span class="">	.locals 0</span>
+
+<span class="">	return-void</span>
+.end method
+
+.method public final b(Lcom/google/android/gms/common/api/internal/b$a;)[Le5;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lcom/google/android/gms/common/api/internal/b$a<",</span>
+<span class="">	"*>;)[",</span>
+<span class="">	"Le5;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/b$a;->i()Ljava/util/Map;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/c0;->b:Lcom/google/android/gms/common/api/internal/f;</span>
+<span class="">	invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Lcom/google/android/gms/common/api/internal/t;</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object p1, p1, Lcom/google/android/gms/common/api/internal/t;->a:Lcom/google/android/gms/common/api/internal/g;</span>
+<span class="">	invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/g;->b()[Le5;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public final c(Lcom/google/android/gms/common/api/internal/b$a;)Z
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lcom/google/android/gms/common/api/internal/b$a<",</span>
+<span class="">	"*>;)Z"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/b$a;->i()Ljava/util/Map;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/c0;->b:Lcom/google/android/gms/common/api/internal/f;</span>
+<span class="">	invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Lcom/google/android/gms/common/api/internal/t;</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	iget-object p1, p1, Lcom/google/android/gms/common/api/internal/t;->a:Lcom/google/android/gms/common/api/internal/g;</span>
+<span class="">	invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/g;->c()Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	return p1</span>
+.end method
+
+.method public final d(Lcom/google/android/gms/common/api/internal/b$a;)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lcom/google/android/gms/common/api/internal/b$a<",</span>
+<span class="">	"*>;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/b$a;->i()Ljava/util/Map;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/c0;->b:Lcom/google/android/gms/common/api/internal/f;</span>
+<span class="">	invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lcom/google/android/gms/common/api/internal/t;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v1, v0, Lcom/google/android/gms/common/api/internal/t;->b:Lcom/google/android/gms/common/api/internal/h;</span>
+<span class="">	invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/b$a;->f()Lcom/google/android/gms/common/api/a$f;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b0;->a:Lhn;</span>
+<span class="missed">	invoke-virtual {v1, p1, v2}, Lcom/google/android/gms/common/api/internal/h;->a(Lcom/google/android/gms/common/api/a$b;Lhn;)V</span>
+<span class="missed">	iget-object p1, v0, Lcom/google/android/gms/common/api/internal/t;->a:Lcom/google/android/gms/common/api/internal/g;</span>
+<span class="missed">	invoke-virtual {p1}, Lcom/google/android/gms/common/api/internal/g;->a()V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b0;->a:Lhn;</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {p1, v0}, Lhn;->b(Ljava/lang/Object;)Z</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../../../../.resources/report.js"></script>
+</body>
+</html>

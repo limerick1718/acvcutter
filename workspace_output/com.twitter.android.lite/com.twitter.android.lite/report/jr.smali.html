@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> jr.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Ljr;
+.super Ljava/lang/Object;
+.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Ljr$a;
+}
+.end annotation
+
+.field private final a:Landroid/content/Context;
+.field private final b:Ljr$a;
+
+
+.method constructor &lt;init&gt;(Landroid/content/Context;Ljr$a;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Ljr;->a:Landroid/content/Context;</span>
+<span class="missed">	iput-object p2, p0, Ljr;->b:Ljr$a;</span>
+<span class="">	return-void</span>
+.end method
+
+.method private a(Ljava/io/File;)Ljava/io/File;
+<span class="">	.locals 3</span>
+
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x9</span>
+<span class="missed">	if-ge v0, v1, :cond_0</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "/data"</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Ljr;->a:Landroid/content/Context;</span>
+<span class="">	invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Ljr;->a:Landroid/content/Context;</span>
+<span class="">	invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	invoke-virtual {v0, v1, v2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-instance v1, Ljava/io/File;</span>
+<span class="missed">	iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->nativeLibraryDir:Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	move-object p1, v1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Error getting ApplicationInfo"</span>
+<span class="missed">	invoke-virtual {v1, v2, v0}, Lmo;->b(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method private a(Ljava/lang/String;)Ljava/io/File;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Ljava/io/File;</span>
+<span class="missed">	invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V</span>
+<span class="">	invoke-virtual {v0}, Ljava/io/File;->exists()Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="">	invoke-direct {p0, v0}, Ljr;->a(Ljava/io/File;)Ljava/io/File;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method private static a(Ljava/lang/String;Llr;)Lorg/json/JSONObject;
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Lorg/json/JSONException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance v0, Lorg/json/JSONObject;</span>
+<span class="missed">	invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V</span>
+<span class="missed">	iget-wide v1, p1, Llr;->a:J</span>
+<span class="missed">	const-string v3, "base_address"</span>
+<span class="missed">	invoke-virtual {v0, v3, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;</span>
+<span class="missed">	iget-wide v1, p1, Llr;->b:J</span>
+<span class="missed">	const-string v3, "size"</span>
+<span class="missed">	invoke-virtual {v0, v3, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;</span>
+<span class="missed">	iget-object p1, p1, Llr;->d:Ljava/lang/String;</span>
+<span class="missed">	const-string v1, "name"</span>
+<span class="missed">	invoke-virtual {v0, v1, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;</span>
+<span class="missed">	const-string p1, "uuid"</span>
+<span class="missed">	invoke-virtual {v0, p1, p0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method private static a(Llr;)Z
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Llr;->c:Ljava/lang/String;</span>
+<span class="missed">	const/16 v1, 0x78</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(I)I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, -0x1</span>
+<span class="missed">	if-eq v0, v1, :cond_0</span>
+<span class="missed">	iget-object p0, p0, Llr;->d:Ljava/lang/String;</span>
+<span class="missed">	const/16 v0, 0x2f</span>
+<span class="">	invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(I)I</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-eq p0, v1, :cond_0</span>
+<span class="missed">	const/4 p0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return p0</span>
+.end method
+
+.method private static a(Lorg/json/JSONArray;)[B
+<span class="">	.locals 2</span>
+
+<span class="missed">	new-instance v0, Lorg/json/JSONObject;</span>
+<span class="missed">	invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v1, "binary_images"</span>
+<span class="missed">	invoke-virtual {v0, v1, p0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	invoke-virtual {v0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	const-string v0, "UTF-8"</span>
+<span class="">	invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p0</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "Binary images string is null"</span>
+<span class="missed">	invoke-virtual {v0, v1, p0}, Lmo;->d(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="missed">	new-array p0, p0, [B</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method private b(Ljava/io/BufferedReader;)Lorg/json/JSONArray;
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance v0, Lorg/json/JSONArray;</span>
+<span class="missed">	invoke-direct {v0}, Lorg/json/JSONArray;-><init>()V</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p1}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="">	invoke-direct {p0, v1}, Ljr;->b(Ljava/lang/String;)Lorg/json/JSONObject;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	invoke-virtual {v0, v1}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method private b(Ljava/lang/String;)Lorg/json/JSONObject;
+<span class="">	.locals 5</span>
+
+<span class="">	invoke-static {p1}, Lmr;->a(Ljava/lang/String;)Llr;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="">	invoke-static {p1}, Ljr;->a(Llr;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v1, p1, Llr;->d:Ljava/lang/String;</span>
+<span class="">	invoke-direct {p0, v1}, Ljr;->a(Ljava/lang/String;)Ljava/io/File;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v2, p0, Ljr;->b:Ljr$a;</span>
+<span class="">	invoke-interface {v2, v1}, Ljr$a;->a(Ljava/io/File;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1</span>
+<span class="">	:try_start_1</span>
+<span class="">	invoke-static {v1, p1}, Ljr;->a(Ljava/lang/String;Llr;)Lorg/json/JSONObject;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_0</span>
+<span class="">	return-object p1</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Could not create a binary image json string"</span>
+<span class="missed">	invoke-virtual {v1, v2, p1}, Lmo;->a(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	return-object v0</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception v1</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	new-instance v3, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "Could not generate ID for file "</span>
+<span class="missed">	invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object p1, p1, Llr;->d:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {v2, p1, v1}, Lmo;->a(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_1</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method  a(Ljava/io/BufferedReader;)[B
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0, p1}, Ljr;->b(Ljava/io/BufferedReader;)Lorg/json/JSONArray;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1}, Ljr;->a(Lorg/json/JSONArray;)[B</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> af.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Laf;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.implements Lnf;
+
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<T:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;",
+"Lnf<",
+"TT;>;"
+}
+.end annotation
+
+.field private final a:Lue;
+.field private final b:Lfg;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lfg<",
+"**>;"
+}
+.end annotation
+.end field
+.field private final c:Z
+.field private final d:Lad;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lad<",
+"*>;"
+}
+.end annotation
+.end field
+
+
+.method private constructor &lt;init&gt;(Lfg;Lad;Lue;)V
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lfg<",</span>
+<span class="">	"**>;",</span>
+<span class="">	"Lad<",</span>
+<span class="">	"*>;",</span>
+<span class="">	"Lue;",</span>
+<span class="">	")V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Laf;->b:Lfg;</span>
+<span class="">	invoke-virtual {p2, p3}, Lad;->a(Lue;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	iput-boolean p1, p0, Laf;->c:Z</span>
+<span class="missed">	iput-object p2, p0, Laf;->d:Lad;</span>
+<span class="missed">	iput-object p3, p0, Laf;->a:Lue;</span>
+<span class="">	return-void</span>
+.end method
+
+.method static a(Lfg;Lad;Lue;)Laf;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<T:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Lfg<",</span>
+<span class="">	"**>;",</span>
+<span class="">	"Lad<",</span>
+<span class="">	"*>;",</span>
+<span class="">	"Lue;",</span>
+<span class="">	")",</span>
+<span class="">	"Laf<",</span>
+<span class="">	"TT;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance v0, Laf;</span>
+<span class="missed">	invoke-direct {v0, p0, p1, p2}, Laf;-><init>(Lfg;Lad;Lue;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final a(Ljava/lang/Object;)I
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TT;)I"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Laf;->b:Lfg;</span>
+<span class="">	invoke-virtual {v0, p1}, Lfg;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iget-boolean v1, p0, Laf;->c:Z</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Laf;->d:Lad;</span>
+<span class="">	invoke-virtual {v1, p1}, Lad;->a(Ljava/lang/Object;)Lbd;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	mul-int/lit8 v0, v0, 0x35</span>
+<span class="">	invoke-virtual {p1}, Lbd;->hashCode()I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	add-int/2addr v0, p1</span>
+<span class="">	:cond_0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final a()Ljava/lang/Object;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()TT;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Laf;->a:Lue;</span>
+<span class="">	invoke-interface {v0}, Lue;->h()Lxe;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-interface {v0}, Lxe;->f()Lue;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final a(Ljava/lang/Object;Lyg;)V
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TT;",</span>
+<span class="">	"Lyg;",</span>
+<span class="">	")V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Laf;->d:Lad;</span>
+<span class="">	invoke-virtual {v0, p1}, Lad;->a(Ljava/lang/Object;)Lbd;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lbd;->c()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_2</span>
+<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, Ljava/util/Map$Entry;</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Ldd;</span>
+<span class="">	invoke-interface {v2}, Ldd;->c()Lzg;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	sget-object v4, Lzg;->j:Lzg;</span>
+<span class="missed">	if-ne v3, v4, :cond_1</span>
+<span class="">	invoke-interface {v2}, Ldd;->d()Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-nez v3, :cond_1</span>
+<span class="">	invoke-interface {v2}, Ldd;->e()Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-nez v3, :cond_1</span>
+<span class="missed">	instance-of v3, v1, Lae;</span>
+<span class="missed">	if-eqz v3, :cond_0</span>
+<span class="">	invoke-interface {v2}, Ldd;->a()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	check-cast v1, Lae;</span>
+<span class="">	invoke-virtual {v1}, Lae;->a()Lyd;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1}, Lce;->b()Lfc;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-interface {p2, v2, v1}, Lyg;->a(ILjava/lang/Object;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-interface {v2}, Ldd;->a()I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-interface {p2, v2, v1}, Lyg;->a(ILjava/lang/Object;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string p2, "Found invalid MessageSet item."</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object v0, p0, Laf;->b:Lfg;</span>
+<span class="">	invoke-virtual {v0, p1}, Lfg;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {v0, p1, p2}, Lfg;->b(Ljava/lang/Object;Lyg;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final a(Ljava/lang/Object;[BIILac;)V
+<span class="">	.locals 9</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TT;[BII",</span>
+<span class="">	"Lac;",</span>
+<span class="">	")V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	move-object v0, p1</span>
+<span class="missed">	check-cast v0, Lmd;</span>
+<span class="missed">	iget-object v1, v0, Lmd;->zzb:Leg;</span>
+<span class="">	invoke-static {}, Leg;->d()Leg;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	if-ne v1, v2, :cond_0</span>
+<span class="">	invoke-static {}, Leg;->e()Leg;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iput-object v1, v0, Lmd;->zzb:Leg;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	check-cast p1, Lmd$b;</span>
+<span class="missed">	invoke-virtual {p1}, Lmd$b;->a()Lbd;</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	move-object v0, p1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge p3, p4, :cond_a</span>
+<span class="">	invoke-static {p2, p3, p5}, Lbc;->a([BILac;)I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	iget v2, p5, Lac;->a:I</span>
+<span class="missed">	const/16 p3, 0xb</span>
+<span class="missed">	const/4 v3, 0x2</span>
+<span class="missed">	if-eq v2, p3, :cond_3</span>
+<span class="missed">	and-int/lit8 p3, v2, 0x7</span>
+<span class="missed">	if-ne p3, v3, :cond_2</span>
+<span class="missed">	iget-object p3, p0, Laf;->d:Lad;</span>
+<span class="missed">	iget-object v0, p5, Lac;->d:Lyc;</span>
+<span class="missed">	iget-object v3, p0, Laf;->a:Lue;</span>
+<span class="missed">	ushr-int/lit8 v5, v2, 0x3</span>
+<span class="">	invoke-virtual {p3, v0, v3, v5}, Lad;->a(Lyc;Lue;I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p3</span>
+<span class="missed">	move-object v0, p3</span>
+<span class="missed">	check-cast v0, Lmd$d;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	move-object v3, p2</span>
+<span class="missed">	move v5, p4</span>
+<span class="missed">	move-object v6, v1</span>
+<span class="missed">	move-object v7, p5</span>
+<span class="">	invoke-static/range {v2 .. v7}, Lbc;->a(I[BIILeg;Lac;)I</span>
+<span class="missed">	move-result p3</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	invoke-static {}, Lkf;->a()Lkf;</span>
+<span class="missed">	new-instance p1, Ljava/lang/NoSuchMethodError;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-static {v2, p2, v4, p4, p5}, Lbc;->a(I[BIILac;)I</span>
+<span class="missed">	move-result p3</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const/4 p3, 0x0</span>
+<span class="missed">	move-object v2, p1</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ge v4, p4, :cond_8</span>
+<span class="">	invoke-static {p2, v4, p5}, Lbc;->a([BILac;)I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	iget v5, p5, Lac;->a:I</span>
+<span class="missed">	ushr-int/lit8 v6, v5, 0x3</span>
+<span class="missed">	and-int/lit8 v7, v5, 0x7</span>
+<span class="missed">	if-eq v6, v3, :cond_6</span>
+<span class="missed">	const/4 v8, 0x3</span>
+<span class="missed">	if-eq v6, v8, :cond_4</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_4</span>
+<span class="missed">	if-nez v0, :cond_5</span>
+<span class="missed">	if-ne v7, v3, :cond_7</span>
+<span class="">	invoke-static {p2, v4, p5}, Lbc;->e([BILac;)I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	iget-object v2, p5, Lac;->c:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v2, Lfc;</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_5</span>
+<span class="missed">	invoke-static {}, Lkf;->a()Lkf;</span>
+<span class="missed">	new-instance p1, Ljava/lang/NoSuchMethodError;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_6</span>
+<span class="missed">	if-nez v7, :cond_7</span>
+<span class="">	invoke-static {p2, v4, p5}, Lbc;->a([BILac;)I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	iget p3, p5, Lac;->a:I</span>
+<span class="missed">	iget-object v0, p0, Laf;->d:Lad;</span>
+<span class="missed">	iget-object v5, p5, Lac;->d:Lyc;</span>
+<span class="missed">	iget-object v6, p0, Laf;->a:Lue;</span>
+<span class="">	invoke-virtual {v0, v5, v6, p3}, Lad;->a(Lyc;Lue;I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lmd$d;</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:goto_2</span>
+<span class="">	:cond_7</span>
+<span class="missed">	const/16 v6, 0xc</span>
+<span class="missed">	if-eq v5, v6, :cond_8</span>
+<span class="">	invoke-static {v5, p2, v4, p4, p5}, Lbc;->a(I[BIILac;)I</span>
+<span class="missed">	move-result v4</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_8</span>
+<span class="missed">	if-eqz v2, :cond_9</span>
+<span class="missed">	shl-int/lit8 p3, p3, 0x3</span>
+<span class="missed">	or-int/2addr p3, v3</span>
+<span class="missed">	invoke-virtual {v1, p3, v2}, Leg;->a(ILjava/lang/Object;)V</span>
+<span class="">	:cond_9</span>
+<span class="missed">	move p3, v4</span>
+<span class="">	goto/16 :goto_0</span>
+<span class="">	:cond_a</span>
+<span class="missed">	if-ne p3, p4, :cond_b</span>
+<span class="">	return-void</span>
+<span class="">	:cond_b</span>
+<span class="">	invoke-static {}, Ltd;->e()Ltd;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public final a(Ljava/lang/Object;Ljava/lang/Object;)Z
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TT;TT;)Z"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Laf;->b:Lfg;</span>
+<span class="">	invoke-virtual {v0, p1}, Lfg;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Laf;->b:Lfg;</span>
+<span class="">	invoke-virtual {v1, p2}, Lfg;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-boolean v0, p0, Laf;->c:Z</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Laf;->d:Lad;</span>
+<span class="">	invoke-virtual {v0, p1}, Lad;->a(Ljava/lang/Object;)Lbd;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object v0, p0, Laf;->d:Lad;</span>
+<span class="">	invoke-virtual {v0, p2}, Lad;->a(Ljava/lang/Object;)Lbd;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="">	invoke-virtual {p1, p2}, Lbd;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public final b(Ljava/lang/Object;)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TT;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Laf;->b:Lfg;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lfg;->b(Ljava/lang/Object;)V</span>
+<span class="missed">	iget-object v0, p0, Laf;->d:Lad;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lad;->c(Ljava/lang/Object;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final b(Ljava/lang/Object;Ljava/lang/Object;)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TT;TT;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Laf;->b:Lfg;</span>
+<span class="missed">	invoke-static {v0, p1, p2}, Lpf;->a(Lfg;Ljava/lang/Object;Ljava/lang/Object;)V</span>
+<span class="missed">	iget-boolean v0, p0, Laf;->c:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Laf;->d:Lad;</span>
+<span class="missed">	invoke-static {v0, p1, p2}, Lpf;->a(Lad;Ljava/lang/Object;Ljava/lang/Object;)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final c(Ljava/lang/Object;)I
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TT;)I"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Laf;->b:Lfg;</span>
+<span class="">	invoke-virtual {v0, p1}, Lfg;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v0, v1}, Lfg;->c(Ljava/lang/Object;)I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x0</span>
+<span class="missed">	iget-boolean v1, p0, Laf;->c:Z</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Laf;->d:Lad;</span>
+<span class="">	invoke-virtual {v1, p1}, Lad;->a(Ljava/lang/Object;)Lbd;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Lbd;->f()I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	add-int/2addr v0, p1</span>
+<span class="">	:cond_0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final d(Ljava/lang/Object;)Z
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TT;)Z"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Laf;->d:Lad;</span>
+<span class="">	invoke-virtual {v0, p1}, Lad;->a(Ljava/lang/Object;)Lbd;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Lbd;->e()Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

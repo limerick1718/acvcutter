@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.google.android.gms.measurement.internal</a></li>
+        <li><i class="ico ico-class"></i> u9.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Lcom/google/android/gms/measurement/internal/u9;
+.super Ljavax/net/ssl/SSLSocket;
+.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
+
+
+.field private final a:Ljavax/net/ssl/SSLSocket;
+
+
+.method constructor &lt;init&gt;(Lcom/google/android/gms/measurement/internal/s9;Ljavax/net/ssl/SSLSocket;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Ljavax/net/ssl/SSLSocket;-><init>()V</span>
+<span class="missed">	iput-object p2, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final addHandshakeCompletedListener(Ljavax/net/ssl/HandshakeCompletedListener;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->addHandshakeCompletedListener(Ljavax/net/ssl/HandshakeCompletedListener;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final bind(Ljava/net/SocketAddress;)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->bind(Ljava/net/SocketAddress;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final declared-synchronized close()V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->close()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public final connect(Ljava/net/SocketAddress;)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->connect(Ljava/net/SocketAddress;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final connect(Ljava/net/SocketAddress;I)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1, p2}, Ljavax/net/ssl/SSLSocket;->connect(Ljava/net/SocketAddress;I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public final getChannel()Ljava/nio/channels/SocketChannel;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getChannel()Ljava/nio/channels/SocketChannel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final getEnableSessionCreation()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getEnableSessionCreation()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final getEnabledCipherSuites()[Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getEnabledCipherSuites()[Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final getEnabledProtocols()[Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getEnabledProtocols()[Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final getInetAddress()Ljava/net/InetAddress;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getInetAddress()Ljava/net/InetAddress;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final getInputStream()Ljava/io/InputStream;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getInputStream()Ljava/io/InputStream;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final getKeepAlive()Z
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getKeepAlive()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final getLocalAddress()Ljava/net/InetAddress;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getLocalAddress()Ljava/net/InetAddress;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final getLocalPort()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getLocalPort()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final getLocalSocketAddress()Ljava/net/SocketAddress;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getLocalSocketAddress()Ljava/net/SocketAddress;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final getNeedClientAuth()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getNeedClientAuth()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final getOOBInline()Z
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getOOBInline()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final getOutputStream()Ljava/io/OutputStream;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getOutputStream()Ljava/io/OutputStream;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final getPort()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getPort()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final declared-synchronized getReceiveBufferSize()I
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getReceiveBufferSize()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return v0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public final getRemoteSocketAddress()Ljava/net/SocketAddress;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getRemoteSocketAddress()Ljava/net/SocketAddress;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final getReuseAddress()Z
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getReuseAddress()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final declared-synchronized getSendBufferSize()I
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getSendBufferSize()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return v0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public final getSession()Ljavax/net/ssl/SSLSession;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getSession()Ljavax/net/ssl/SSLSession;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final getSoLinger()I
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getSoLinger()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final declared-synchronized getSoTimeout()I
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getSoTimeout()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return v0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public final getSupportedCipherSuites()[Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getSupportedCipherSuites()[Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final getSupportedProtocols()[Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getSupportedProtocols()[Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final getTcpNoDelay()Z
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getTcpNoDelay()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final getTrafficClass()I
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getTrafficClass()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final getUseClientMode()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getUseClientMode()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final getWantClientAuth()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getWantClientAuth()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final isBound()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->isBound()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final isClosed()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->isClosed()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final isConnected()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->isConnected()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final isInputShutdown()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->isInputShutdown()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final isOutputShutdown()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->isOutputShutdown()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final removeHandshakeCompletedListener(Ljavax/net/ssl/HandshakeCompletedListener;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->removeHandshakeCompletedListener(Ljavax/net/ssl/HandshakeCompletedListener;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final sendUrgentData(I)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->sendUrgentData(I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final setEnableSessionCreation(Z)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->setEnableSessionCreation(Z)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final setEnabledCipherSuites([Ljava/lang/String;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->setEnabledCipherSuites([Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final setEnabledProtocols([Ljava/lang/String;)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="">	invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "SSLv3"</span>
+<span class="">	invoke-interface {v0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	new-instance p1, Ljava/util/ArrayList;</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->getEnabledProtocols()[Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V</span>
+<span class="">	invoke-interface {p1}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	if-le v0, v2, :cond_0</span>
+<span class="missed">	invoke-interface {p1, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-interface {p1}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	new-array v0, v0, [Ljava/lang/String;</span>
+<span class="">	invoke-interface {p1, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, [Ljava/lang/String;</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->setEnabledProtocols([Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final setKeepAlive(Z)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->setKeepAlive(Z)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final setNeedClientAuth(Z)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->setNeedClientAuth(Z)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final setOOBInline(Z)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->setOOBInline(Z)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final setPerformancePreferences(III)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1, p2, p3}, Ljavax/net/ssl/SSLSocket;->setPerformancePreferences(III)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final declared-synchronized setReceiveBufferSize(I)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->setReceiveBufferSize(I)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public final setReuseAddress(Z)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->setReuseAddress(Z)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final declared-synchronized setSendBufferSize(I)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->setSendBufferSize(I)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public final setSoLinger(ZI)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1, p2}, Ljavax/net/ssl/SSLSocket;->setSoLinger(ZI)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final declared-synchronized setSoTimeout(I)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->setSoTimeout(I)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public final setTcpNoDelay(Z)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->setTcpNoDelay(Z)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final setTrafficClass(I)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->setTrafficClass(I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final setUseClientMode(Z)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->setUseClientMode(Z)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final setWantClientAuth(Z)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/SSLSocket;->setWantClientAuth(Z)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final shutdownInput()V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->shutdownInput()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final shutdownOutput()V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->shutdownOutput()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final startHandshake()V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->startHandshake()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final toString()Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/u9;->a:Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocket;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../../../.resources/report.js"></script>
+</body>
+</html>

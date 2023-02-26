@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> gs.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Lgs;
+.super Ljava/lang/Object;
+.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+
+
+.field private final a:Lhs$c;
+
+
+<span class="cov">.method public constructor &lt;init&gt;(Lhs$c;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	iput-object p1, p0, Lgs;->a:Lhs$c;</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public a(Ljava/util/List;)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Lks;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lks;</span>
+<span class="missed">	invoke-virtual {p0, v0}, Lgs;->a(Lks;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public a(Lks;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-interface {p1}, Lks;->remove()V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public a()Z</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	iget-object v0, p0, Lgs;->a:Lhs$c;</span>
+<span class="exec">	invoke-interface {v0}, Lhs$c;->b()[Ljava/io/File;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iget-object v1, p0, Lgs;->a:Lhs$c;</span>
+<span class="exec">	invoke-interface {v1}, Lhs$c;->a()[Ljava/io/File;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const/4 v2, 0x1</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	array-length v0, v0</span>
+<span class="missed">	if-lez v0, :cond_0</span>
+<span class="">	return v2</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	if-eqz v1, :cond_1</span>
+<span class="cov">	array-length v0, v1</span>
+<span class="missed">	if-lez v0, :cond_1</span>
+<span class="">	return v2</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="exec">	return v0</span>
+.end method
+
+.method public b()Ljava/util/List;
+<span class="">	.locals 10</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Lks;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "Checking for crash reports..."</span>
+<span class="missed">	invoke-virtual {v0, v1}, Lmo;->a(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v0, p0, Lgs;->a:Lhs$c;</span>
+<span class="">	invoke-interface {v0}, Lhs$c;->b()[Ljava/io/File;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lgs;->a:Lhs$c;</span>
+<span class="">	invoke-interface {v1}, Lhs$c;->a()[Ljava/io/File;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	new-instance v2, Ljava/util/LinkedList;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/util/LinkedList;-><init>()V</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	array-length v4, v0</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v5, v4, :cond_0</span>
+<span class="missed">	aget-object v6, v0, v5</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="missed">	new-instance v8, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v9, "Found crash report "</span>
+<span class="missed">	invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v6}, Ljava/io/File;->getPath()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v9</span>
+<span class="missed">	invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v8</span>
+<span class="missed">	invoke-virtual {v7, v8}, Lmo;->a(Ljava/lang/String;)V</span>
+<span class="missed">	new-instance v7, Lls;</span>
+<span class="missed">	invoke-direct {v7, v6}, Lls;-><init>(Ljava/io/File;)V</span>
+<span class="missed">	invoke-interface {v2, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	add-int/lit8 v5, v5, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="missed">	array-length v0, v1</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ge v3, v0, :cond_1</span>
+<span class="missed">	aget-object v4, v1, v3</span>
+<span class="missed">	new-instance v5, Ljs;</span>
+<span class="missed">	invoke-direct {v5, v4}, Ljs;-><init>(Ljava/io/File;)V</span>
+<span class="missed">	invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	add-int/lit8 v3, v3, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-interface {v2}, Ljava/util/List;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "No reports found."</span>
+<span class="missed">	invoke-virtual {v0, v1}, Lmo;->a(Ljava/lang/String;)V</span>
+<span class="">	:cond_2</span>
+<span class="">	return-object v2</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

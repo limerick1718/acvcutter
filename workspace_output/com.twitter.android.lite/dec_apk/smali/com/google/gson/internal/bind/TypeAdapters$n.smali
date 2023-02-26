@@ -1,0 +1,60 @@
+.class final Lcom/google/gson/internal/bind/TypeAdapters$n;
+.super Lvv;
+.source "TypeAdapters.java"
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Lcom/google/gson/internal/bind/TypeAdapters;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x8
+name = null
+.end annotation
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lvv<",
+"Ljava/net/URI;",
+">;"
+}
+.end annotation
+.method constructor <init>()V
+.locals 0
+invoke-direct {p0}, Lvv;-><init>()V
+return-void
+.end method
+.method public bridge synthetic a(Lew;)Ljava/lang/Object;
+.locals 0
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Ljava/io/IOException;
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public a(Lew;)Ljava/net/URI;
+.locals 3
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Ljava/io/IOException;
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public bridge synthetic a(Lgw;Ljava/lang/Object;)V
+.locals 0
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Ljava/io/IOException;
+}
+.end annotation
+return-void
+.end method
+.method public a(Lgw;Ljava/net/URI;)V
+.locals 0
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Ljava/io/IOException;
+}
+.end annotation
+return-void
+.end method

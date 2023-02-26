@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> l$a.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Ll$a;
+.super Ln;
+.source "ArraySet.java"
+
+.annotation system Ldalvik/annotation/EnclosingMethod;
+value = Ll;->c()Ln;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x0
+name = null
+.end annotation
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ln<",
+"TE;TE;>;"
+}
+.end annotation
+
+.field final synthetic d:Ll;
+
+
+.method constructor &lt;init&gt;(Ll;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-object p1, p0, Ll$a;->d:Ll;</span>
+<span class="missed">	invoke-direct {p0}, Ln;-><init>()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected a(Ljava/lang/Object;)I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Ll$a;->d:Ll;</span>
+<span class="">	invoke-virtual {v0, p1}, Ll;->indexOf(Ljava/lang/Object;)I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method protected a(II)Ljava/lang/Object;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iget-object p2, p0, Ll$a;->d:Ll;</span>
+<span class="missed">	iget-object p2, p2, Ll;->b:[Ljava/lang/Object;</span>
+<span class="missed">	aget-object p1, p2, p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method protected a(ILjava/lang/Object;)Ljava/lang/Object;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(ITE;)TE;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance p1, Ljava/lang/UnsupportedOperationException;</span>
+<span class="missed">	const-string p2, "not a map"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method protected a()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Ll$a;->d:Ll;</span>
+<span class="missed">	invoke-virtual {v0}, Ll;->clear()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected a(I)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Ll$a;->d:Ll;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ll;->e(I)Ljava/lang/Object;</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected a(Ljava/lang/Object;Ljava/lang/Object;)V
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TE;TE;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object p2, p0, Ll$a;->d:Ll;</span>
+<span class="missed">	invoke-virtual {p2, p1}, Ll;->add(Ljava/lang/Object;)Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected b(Ljava/lang/Object;)I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Ll$a;->d:Ll;</span>
+<span class="">	invoke-virtual {v0, p1}, Ll;->indexOf(Ljava/lang/Object;)I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method protected b()Ljava/util/Map;
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/util/Map<",</span>
+<span class="">	"TE;TE;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance v0, Ljava/lang/UnsupportedOperationException;</span>
+<span class="missed">	const-string v1, "not a map"</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method protected c()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Ll$a;->d:Ll;</span>
+<span class="missed">	iget v0, v0, Ll;->c:I</span>
+<span class="">	return v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

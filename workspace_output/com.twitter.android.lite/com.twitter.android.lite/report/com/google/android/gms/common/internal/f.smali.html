@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.google.android.gms.common.internal</a></li>
+        <li><i class="ico ico-class"></i> f.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Lcom/google/android/gms/common/internal/f;
+.super Lp5;
+
+
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Landroid/os/Parcelable$Creator<",
+"Lcom/google/android/gms/common/internal/f;",
+">;"
+}
+.end annotation
+.end field
+.field private final a:I
+.field private final b:I
+.field private c:I
+.field  d:Ljava/lang/String;
+.field  e:Landroid/os/IBinder;
+.field  f:[Lcom/google/android/gms/common/api/Scope;
+.field  g:Landroid/os/Bundle;
+.field  h:Landroid/accounts/Account;
+.field  i:[Le5;
+.field  j:[Le5;
+.field private k:Z
+
+
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	new-instance v0, Lcom/google/android/gms/common/internal/c0;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/google/android/gms/common/internal/c0;-><init>()V</span>
+<span class="cov">	sput-object v0, Lcom/google/android/gms/common/internal/f;->CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public constructor &lt;init&gt;(I)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	invoke-direct {p0}, Lp5;-><init>()V</span>
+<span class="cov">	const/4 v0, 0x4</span>
+<span class="cov">	iput v0, p0, Lcom/google/android/gms/common/internal/f;->a:I</span>
+<span class="cov">	sget v0, Lg5;->a:I</span>
+<span class="cov">	iput v0, p0, Lcom/google/android/gms/common/internal/f;->c:I</span>
+<span class="cov">	iput p1, p0, Lcom/google/android/gms/common/internal/f;->b:I</span>
+<span class="cov">	const/4 p1, 0x1</span>
+<span class="cov">	iput-boolean p1, p0, Lcom/google/android/gms/common/internal/f;->k:Z</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method constructor &lt;init&gt;(IIILjava/lang/String;Landroid/os/IBinder;[Lcom/google/android/gms/common/api/Scope;Landroid/os/Bundle;Landroid/accounts/Account;[Le5;[Le5;Z)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Lp5;-><init>()V</span>
+<span class="missed">	iput p1, p0, Lcom/google/android/gms/common/internal/f;->a:I</span>
+<span class="missed">	iput p2, p0, Lcom/google/android/gms/common/internal/f;->b:I</span>
+<span class="missed">	iput p3, p0, Lcom/google/android/gms/common/internal/f;->c:I</span>
+<span class="missed">	const-string p2, "com.google.android.gms"</span>
+<span class="">	invoke-virtual {p2, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p3</span>
+<span class="missed">	if-eqz p3, :cond_0</span>
+<span class="missed">	iput-object p2, p0, Lcom/google/android/gms/common/internal/f;->d:Ljava/lang/String;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iput-object p4, p0, Lcom/google/android/gms/common/internal/f;->d:Ljava/lang/String;</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 p2, 0x2</span>
+<span class="missed">	if-ge p1, p2, :cond_2</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	if-eqz p5, :cond_1</span>
+<span class="">	invoke-static {p5}, Lcom/google/android/gms/common/internal/k$a;->a(Landroid/os/IBinder;)Lcom/google/android/gms/common/internal/k;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1}, Lcom/google/android/gms/common/internal/a;->a(Lcom/google/android/gms/common/internal/k;)Landroid/accounts/Account;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iput-object p1, p0, Lcom/google/android/gms/common/internal/f;->h:Landroid/accounts/Account;</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iput-object p5, p0, Lcom/google/android/gms/common/internal/f;->e:Landroid/os/IBinder;</span>
+<span class="missed">	iput-object p8, p0, Lcom/google/android/gms/common/internal/f;->h:Landroid/accounts/Account;</span>
+<span class="">	:goto_1</span>
+<span class="missed">	iput-object p6, p0, Lcom/google/android/gms/common/internal/f;->f:[Lcom/google/android/gms/common/api/Scope;</span>
+<span class="missed">	iput-object p7, p0, Lcom/google/android/gms/common/internal/f;->g:Landroid/os/Bundle;</span>
+<span class="missed">	iput-object p9, p0, Lcom/google/android/gms/common/internal/f;->i:[Le5;</span>
+<span class="missed">	iput-object p10, p0, Lcom/google/android/gms/common/internal/f;->j:[Le5;</span>
+<span class="missed">	iput-boolean p11, p0, Lcom/google/android/gms/common/internal/f;->k:Z</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	.locals 4</span>
+
+<span class="exec">	invoke-static {p1}, Lr5;->a(Landroid/os/Parcel;)I</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	iget v1, p0, Lcom/google/android/gms/common/internal/f;->a:I</span>
+<span class="cov">	const/4 v2, 0x1</span>
+<span class="cov">	invoke-static {p1, v2, v1}, Lr5;->a(Landroid/os/Parcel;II)V</span>
+<span class="cov">	iget v1, p0, Lcom/google/android/gms/common/internal/f;->b:I</span>
+<span class="cov">	const/4 v2, 0x2</span>
+<span class="cov">	invoke-static {p1, v2, v1}, Lr5;->a(Landroid/os/Parcel;II)V</span>
+<span class="cov">	iget v1, p0, Lcom/google/android/gms/common/internal/f;->c:I</span>
+<span class="cov">	const/4 v2, 0x3</span>
+<span class="cov">	invoke-static {p1, v2, v1}, Lr5;->a(Landroid/os/Parcel;II)V</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/internal/f;->d:Ljava/lang/String;</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	const/4 v3, 0x4</span>
+<span class="cov">	invoke-static {p1, v3, v1, v2}, Lr5;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/internal/f;->e:Landroid/os/IBinder;</span>
+<span class="cov">	const/4 v3, 0x5</span>
+<span class="cov">	invoke-static {p1, v3, v1, v2}, Lr5;->a(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/internal/f;->f:[Lcom/google/android/gms/common/api/Scope;</span>
+<span class="cov">	const/4 v3, 0x6</span>
+<span class="cov">	invoke-static {p1, v3, v1, p2, v2}, Lr5;->a(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/internal/f;->g:Landroid/os/Bundle;</span>
+<span class="cov">	const/4 v3, 0x7</span>
+<span class="cov">	invoke-static {p1, v3, v1, v2}, Lr5;->a(Landroid/os/Parcel;ILandroid/os/Bundle;Z)V</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/internal/f;->h:Landroid/accounts/Account;</span>
+<span class="cov">	const/16 v3, 0x8</span>
+<span class="cov">	invoke-static {p1, v3, v1, p2, v2}, Lr5;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/internal/f;->i:[Le5;</span>
+<span class="cov">	const/16 v3, 0xa</span>
+<span class="cov">	invoke-static {p1, v3, v1, p2, v2}, Lr5;->a(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/internal/f;->j:[Le5;</span>
+<span class="cov">	const/16 v3, 0xb</span>
+<span class="cov">	invoke-static {p1, v3, v1, p2, v2}, Lr5;->a(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V</span>
+<span class="cov">	iget-boolean p2, p0, Lcom/google/android/gms/common/internal/f;->k:Z</span>
+<span class="cov">	const/16 v1, 0xc</span>
+<span class="cov">	invoke-static {p1, v1, p2}, Lr5;->a(Landroid/os/Parcel;IZ)V</span>
+<span class="cov">	invoke-static {p1, v0}, Lr5;->a(Landroid/os/Parcel;I)V</span>
+<span class="exec">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../../../.resources/report.js"></script>
+</body>
+</html>

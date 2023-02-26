@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.google.android.gms.common.util</a></li>
+        <li><i class="ico ico-class"></i> i.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Lcom/google/android/gms/common/util/i;
+.super Ljava/lang/Object;
+
+
+.field private static a:Ljava/lang/Boolean;
+.field private static b:Ljava/lang/Boolean;
+.field private static c:Ljava/lang/Boolean;
+
+
+.method public static a()Z
+<span class="">	.locals 2</span>
+
+<span class="missed">	sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;</span>
+<span class="missed">	const-string v1, "user"</span>
+<span class="">	invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public static a(Landroid/content/Context;)Z
+<span class="">	.locals 1</span>
+<span class="">	.annotation build Landroid/annotation/TargetApi;</span>
+<span class="">	value = 0x15</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	sget-object v0, Lcom/google/android/gms/common/util/i;->b:Ljava/lang/Boolean;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	invoke-static {}, Lcom/google/android/gms/common/util/l;->g()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	const-string v0, "cn.google"</span>
+<span class="">	invoke-virtual {p0, v0}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_0</span>
+<span class="missed">	const/4 p0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	sput-object p0, Lcom/google/android/gms/common/util/i;->b:Ljava/lang/Boolean;</span>
+<span class="">	:cond_1</span>
+<span class="missed">	sget-object p0, Lcom/google/android/gms/common/util/i;->b:Ljava/lang/Boolean;</span>
+<span class="">	invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+<span class="cov">.method public static b(Landroid/content/Context;)Z</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation build Landroid/annotation/TargetApi;</span>
+<span class="">	value = 0x14</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	sget-object v0, Lcom/google/android/gms/common/util/i;->a:Ljava/lang/Boolean;</span>
+<span class="cov">	if-nez v0, :cond_1</span>
+<span class="exec">	invoke-static {}, Lcom/google/android/gms/common/util/l;->f()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="exec">	invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	const-string v0, "android.hardware.type.watch"</span>
+<span class="exec">	invoke-virtual {p0, v0}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_0</span>
+<span class="missed">	const/4 p0, 0x1</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 p0, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	sput-object p0, Lcom/google/android/gms/common/util/i;->a:Ljava/lang/Boolean;</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	sget-object p0, Lcom/google/android/gms/common/util/i;->a:Ljava/lang/Boolean;</span>
+<span class="exec">	invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="cov">	move-result p0</span>
+<span class="exec">	return p0</span>
+.end method
+
+<span class="cov">.method public static c(Landroid/content/Context;)Z</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation build Landroid/annotation/TargetApi;</span>
+<span class="">	value = 0x1a</span>
+<span class="">	.end annotation</span>
+
+<span class="exec">	invoke-static {p0}, Lcom/google/android/gms/common/util/i;->b(Landroid/content/Context;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-static {}, Lcom/google/android/gms/common/util/l;->h()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-static {p0}, Lcom/google/android/gms/common/util/i;->a(Landroid/content/Context;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_1</span>
+<span class="">	invoke-static {}, Lcom/google/android/gms/common/util/l;->i()Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-nez p0, :cond_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p0, 0x1</span>
+<span class="">	return p0</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	const/4 p0, 0x0</span>
+<span class="exec">	return p0</span>
+.end method
+
+<span class="cov">.method public static d(Landroid/content/Context;)Z</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	sget-object v0, Lcom/google/android/gms/common/util/i;->c:Ljava/lang/Boolean;</span>
+<span class="cov">	if-nez v0, :cond_2</span>
+<span class="exec">	invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "android.hardware.type.iot"</span>
+<span class="exec">	invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-nez v0, :cond_1</span>
+<span class="exec">	invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	const-string v0, "android.hardware.type.embedded"</span>
+<span class="exec">	invoke-virtual {p0, v0}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_0</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 p0, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 p0, 0x1</span>
+<span class="cov">	:goto_1</span>
+<span class="exec">	invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	sput-object p0, Lcom/google/android/gms/common/util/i;->c:Ljava/lang/Boolean;</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	sget-object p0, Lcom/google/android/gms/common/util/i;->c:Ljava/lang/Boolean;</span>
+<span class="exec">	invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="cov">	move-result p0</span>
+<span class="exec">	return p0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../../../.resources/report.js"></script>
+</body>
+</html>

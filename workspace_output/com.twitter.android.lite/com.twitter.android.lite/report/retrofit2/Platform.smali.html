@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">retrofit2</a></li>
+        <li><i class="ico ico-class"></i> Platform.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Lretrofit2/Platform;
+.super Ljava/lang/Object;
+.source "Platform.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lretrofit2/Platform$Android;,
+Lretrofit2/Platform$Java8;
+}
+.end annotation
+
+.field private static final PLATFORM:Lretrofit2/Platform;
+
+
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 1</span>
+
+<span class="exec">	invoke-static {}, Lretrofit2/Platform;->findPlatform()Lretrofit2/Platform;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lretrofit2/Platform;->PLATFORM:Lretrofit2/Platform;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method constructor &lt;init&gt;()V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private static findPlatform()Lretrofit2/Platform;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	:try_start_0</span>
+<span class="cov">	const-string v0, "android.os.Build"</span>
+<span class="cov">	invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;</span>
+<span class="cov">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	new-instance v0, Lretrofit2/Platform$Android;</span>
+<span class="cov">	invoke-direct {v0}, Lretrofit2/Platform$Android;-><init>()V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="exec">	return-object v0</span>
+<span class="">	:try_start_1</span>
+<span class="">	:catch_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const-string v0, "java.util.Optional"</span>
+<span class="missed">	invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;</span>
+<span class="missed">	new-instance v0, Lretrofit2/Platform$Java8;</span>
+<span class="missed">	invoke-direct {v0}, Lretrofit2/Platform$Java8;-><init>()V</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_1</span>
+<span class="">	return-object v0</span>
+<span class="">	:catch_1</span>
+<span class="missed">	new-instance v0, Lretrofit2/Platform;</span>
+<span class="missed">	invoke-direct {v0}, Lretrofit2/Platform;-><init>()V</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method static get()Lretrofit2/Platform;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	sget-object v0, Lretrofit2/Platform;->PLATFORM:Lretrofit2/Platform;</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method  defaultCallAdapterFactory(Ljava/util/concurrent/Executor;)Lretrofit2/CallAdapter$Factory;
+<span class="">	.locals 1</span>
+<span class="">	.param p1    # Ljava/util/concurrent/Executor;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	new-instance v0, Lretrofit2/ExecutorCallAdapterFactory;</span>
+<span class="missed">	invoke-direct {v0, p1}, Lretrofit2/ExecutorCallAdapterFactory;-><init>(Ljava/util/concurrent/Executor;)V</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sget-object p1, Lretrofit2/DefaultCallAdapterFactory;->INSTANCE:Lretrofit2/CallAdapter$Factory;</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method  defaultCallbackExecutor()Ljava/util/concurrent/Executor;
+<span class="">	.locals 1</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method varargs invokeDefaultMethod(Ljava/lang/reflect/Method;Ljava/lang/Class;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+<span class="">	.locals 0</span>
+<span class="">	.param p4    # [Ljava/lang/Object;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/lang/Throwable;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/reflect/Method;",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	"[",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	")",</span>
+<span class="">	"Ljava/lang/Object;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance p1, Ljava/lang/UnsupportedOperationException;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method  isDefaultMethod(Ljava/lang/reflect/Method;)Z
+<span class="">	.locals 0</span>
+
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	return p1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../.resources/report.js"></script>
+</body>
+</html>

@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> gu.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Lgu;
+.super Ljava/lang/Object;
+.source "com.google.firebase:firebase-encoders-json@@16.1.0"
+.implements Lxt;
+.implements Lzt;
+
+
+.field private a:Lgu;
+.field private b:Z
+.field private final c:Landroid/util/JsonWriter;
+.field private final d:Ljava/util/Map;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/Map<",
+"Ljava/lang/Class<",
+"*>;",
+"Lwt<",
+"*>;>;"
+}
+.end annotation
+.end field
+.field private final e:Ljava/util/Map;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/Map<",
+"Ljava/lang/Class<",
+"*>;",
+"Lyt<",
+"*>;>;"
+}
+.end annotation
+.end field
+.field private final f:Lwt;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lwt<",
+"Ljava/lang/Object;",
+">;"
+}
+.end annotation
+.end field
+.field private final g:Z
+
+
+<span class="cov">.method constructor &lt;init&gt;(Ljava/io/Writer;Ljava/util/Map;Ljava/util/Map;Lwt;Z)V</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/io/Writer;",</span>
+<span class="">	"Ljava/util/Map<",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;",</span>
+<span class="">	"Lwt<",</span>
+<span class="">	"*>;>;",</span>
+<span class="">	"Ljava/util/Map<",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;",</span>
+<span class="">	"Lyt<",</span>
+<span class="">	"*>;>;",</span>
+<span class="">	"Lwt<",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">;Z)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	iput-object v0, p0, Lgu;->a:Lgu;</span>
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="cov">	iput-boolean v0, p0, Lgu;->b:Z</span>
+<span class="cov">	new-instance v0, Landroid/util/JsonWriter;</span>
+<span class="cov">	invoke-direct {v0, p1}, Landroid/util/JsonWriter;-><init>(Ljava/io/Writer;)V</span>
+<span class="cov">	iput-object v0, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="cov">	iput-object p2, p0, Lgu;->d:Ljava/util/Map;</span>
+<span class="cov">	iput-object p3, p0, Lgu;->e:Ljava/util/Map;</span>
+<span class="cov">	iput-object p4, p0, Lgu;->f:Lwt;</span>
+<span class="cov">	iput-boolean p5, p0, Lgu;->g:Z</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method private a(Ljava/lang/Object;)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Class;->isArray()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	instance-of v0, p1, Ljava/util/Collection;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	instance-of v0, p1, Ljava/util/Date;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	instance-of v0, p1, Ljava/lang/Enum;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	instance-of p1, p1, Ljava/lang/Number;</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	:goto_1</span>
+<span class="">	return p1</span>
+.end method
+
+.method private b(Ljava/lang/String;Ljava/lang/Object;)Lgu;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;,</span>
+<span class="">	Lvt;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	invoke-direct {p0}, Lgu;->b()V</span>
+<span class="missed">	iget-object v0, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/util/JsonWriter;->name(Ljava/lang/String;)Landroid/util/JsonWriter;</span>
+<span class="missed">	if-nez p2, :cond_0</span>
+<span class="missed">	iget-object p1, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="missed">	invoke-virtual {p1}, Landroid/util/JsonWriter;->nullValue()Landroid/util/JsonWriter;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	invoke-virtual {p0, p2, p1}, Lgu;->a(Ljava/lang/Object;Z)Lgu;</span>
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method private b()V</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-boolean v0, p0, Lgu;->b:Z</span>
+<span class="cov">	if-eqz v0, :cond_1</span>
+<span class="cov">	iget-object v0, p0, Lgu;->a:Lgu;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-direct {v0}, Lgu;->b()V</span>
+<span class="missed">	iget-object v0, p0, Lgu;->a:Lgu;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	iput-boolean v1, v0, Lgu;->b:Z</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-object v0, p0, Lgu;->a:Lgu;</span>
+<span class="missed">	iget-object v0, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/util/JsonWriter;->endObject()Landroid/util/JsonWriter;</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v1, "Parent context used since this context was created. Cannot use this context anymore."</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+<span class="cov">.method private c(Ljava/lang/String;Ljava/lang/Object;)Lgu;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;,</span>
+<span class="">	Lvt;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	if-nez p2, :cond_0</span>
+<span class="exec">	return-object p0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	invoke-direct {p0}, Lgu;->b()V</span>
+<span class="cov">	iget-object v0, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="cov">	invoke-virtual {v0, p1}, Landroid/util/JsonWriter;->name(Ljava/lang/String;)Landroid/util/JsonWriter;</span>
+<span class="cov">	const/4 p1, 0x0</span>
+<span class="cov">	invoke-virtual {p0, p2, p1}, Lgu;->a(Ljava/lang/Object;Z)Lgu;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public a(I)Lgu;</span>
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-direct {p0}, Lgu;->b()V</span>
+<span class="cov">	iget-object v0, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="cov">	int-to-long v1, p1</span>
+<span class="cov">	invoke-virtual {v0, v1, v2}, Landroid/util/JsonWriter;->value(J)Landroid/util/JsonWriter;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public a(J)Lgu;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-direct {p0}, Lgu;->b()V</span>
+<span class="cov">	iget-object v0, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="cov">	invoke-virtual {v0, p1, p2}, Landroid/util/JsonWriter;->value(J)Landroid/util/JsonWriter;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method  a(Ljava/lang/Object;Z)Lgu;</span>
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="missed">	if-eqz p2, :cond_1</span>
+<span class="">	invoke-direct {p0, p1}, Lgu;->a(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_1</span>
+<span class="missed">	new-instance p2, Lvt;</span>
+<span class="missed">	new-array v0, v0, [Ljava/lang/Object;</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	aput-object p1, v0, v1</span>
+<span class="missed">	const-string p1, "%s cannot be encoded inline"</span>
+<span class="">	invoke-static {p1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {p2, p1}, Lvt;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p2</span>
+<span class="cov">	:cond_1</span>
+<span class="missed">	if-nez p1, :cond_2</span>
+<span class="missed">	iget-object p1, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="missed">	invoke-virtual {p1}, Landroid/util/JsonWriter;->nullValue()Landroid/util/JsonWriter;</span>
+<span class="">	return-object p0</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	instance-of v2, p1, Ljava/lang/Number;</span>
+<span class="missed">	if-eqz v2, :cond_3</span>
+<span class="missed">	iget-object p2, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="missed">	check-cast p1, Ljava/lang/Number;</span>
+<span class="missed">	invoke-virtual {p2, p1}, Landroid/util/JsonWriter;->value(Ljava/lang/Number;)Landroid/util/JsonWriter;</span>
+<span class="">	return-object p0</span>
+<span class="cov">	:cond_3</span>
+<span class="exec">	invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="exec">	invoke-virtual {v2}, Ljava/lang/Class;->isArray()Z</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	if-eqz v2, :cond_b</span>
+<span class="cov">	instance-of p2, p1, [B</span>
+<span class="cov">	if-eqz p2, :cond_4</span>
+<span class="cov">	check-cast p1, [B</span>
+<span class="cov">	invoke-virtual {p0, p1}, Lgu;->a([B)Lgu;</span>
+<span class="exec">	return-object p0</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget-object p2, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="missed">	invoke-virtual {p2}, Landroid/util/JsonWriter;->beginArray()Landroid/util/JsonWriter;</span>
+<span class="missed">	instance-of p2, p1, [I</span>
+<span class="missed">	if-eqz p2, :cond_5</span>
+<span class="missed">	check-cast p1, [I</span>
+<span class="missed">	array-length p2, p1</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ge v1, p2, :cond_a</span>
+<span class="missed">	aget v0, p1, v1</span>
+<span class="missed">	iget-object v2, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="missed">	int-to-long v3, v0</span>
+<span class="missed">	invoke-virtual {v2, v3, v4}, Landroid/util/JsonWriter;->value(J)Landroid/util/JsonWriter;</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_5</span>
+<span class="missed">	instance-of p2, p1, [J</span>
+<span class="missed">	if-eqz p2, :cond_6</span>
+<span class="missed">	check-cast p1, [J</span>
+<span class="missed">	array-length p2, p1</span>
+<span class="">	:goto_2</span>
+<span class="missed">	if-ge v1, p2, :cond_a</span>
+<span class="missed">	aget-wide v2, p1, v1</span>
+<span class="missed">	invoke-virtual {p0, v2, v3}, Lgu;->a(J)Lgu;</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_6</span>
+<span class="missed">	instance-of p2, p1, [D</span>
+<span class="missed">	if-eqz p2, :cond_7</span>
+<span class="missed">	check-cast p1, [D</span>
+<span class="missed">	array-length p2, p1</span>
+<span class="">	:goto_3</span>
+<span class="missed">	if-ge v1, p2, :cond_a</span>
+<span class="missed">	aget-wide v2, p1, v1</span>
+<span class="missed">	iget-object v0, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="missed">	invoke-virtual {v0, v2, v3}, Landroid/util/JsonWriter;->value(D)Landroid/util/JsonWriter;</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_7</span>
+<span class="missed">	instance-of p2, p1, [Z</span>
+<span class="missed">	if-eqz p2, :cond_8</span>
+<span class="missed">	check-cast p1, [Z</span>
+<span class="missed">	array-length p2, p1</span>
+<span class="">	:goto_4</span>
+<span class="missed">	if-ge v1, p2, :cond_a</span>
+<span class="missed">	aget-boolean v0, p1, v1</span>
+<span class="missed">	iget-object v2, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="missed">	invoke-virtual {v2, v0}, Landroid/util/JsonWriter;->value(Z)Landroid/util/JsonWriter;</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_8</span>
+<span class="missed">	instance-of p2, p1, [Ljava/lang/Number;</span>
+<span class="missed">	if-eqz p2, :cond_9</span>
+<span class="missed">	check-cast p1, [Ljava/lang/Number;</span>
+<span class="missed">	array-length p2, p1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_5</span>
+<span class="missed">	if-ge v0, p2, :cond_a</span>
+<span class="missed">	aget-object v2, p1, v0</span>
+<span class="missed">	invoke-virtual {p0, v2, v1}, Lgu;->a(Ljava/lang/Object;Z)Lgu;</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
+<span class="">	goto :goto_5</span>
+<span class="">	:cond_9</span>
+<span class="missed">	check-cast p1, [Ljava/lang/Object;</span>
+<span class="missed">	array-length p2, p1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_6</span>
+<span class="missed">	if-ge v0, p2, :cond_a</span>
+<span class="missed">	aget-object v2, p1, v0</span>
+<span class="missed">	invoke-virtual {p0, v2, v1}, Lgu;->a(Ljava/lang/Object;Z)Lgu;</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
+<span class="">	goto :goto_6</span>
+<span class="">	:cond_a</span>
+<span class="missed">	iget-object p1, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="missed">	invoke-virtual {p1}, Landroid/util/JsonWriter;->endArray()Landroid/util/JsonWriter;</span>
+<span class="">	return-object p0</span>
+<span class="cov">	:cond_b</span>
+<span class="cov">	instance-of v2, p1, Ljava/util/Collection;</span>
+<span class="missed">	if-eqz v2, :cond_d</span>
+<span class="missed">	check-cast p1, Ljava/util/Collection;</span>
+<span class="missed">	iget-object p2, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="missed">	invoke-virtual {p2}, Landroid/util/JsonWriter;->beginArray()Landroid/util/JsonWriter;</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:goto_7</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result p2</span>
+<span class="missed">	if-eqz p2, :cond_c</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-virtual {p0, p2, v1}, Lgu;->a(Ljava/lang/Object;Z)Lgu;</span>
+<span class="">	goto :goto_7</span>
+<span class="">	:cond_c</span>
+<span class="missed">	iget-object p1, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="missed">	invoke-virtual {p1}, Landroid/util/JsonWriter;->endArray()Landroid/util/JsonWriter;</span>
+<span class="">	return-object p0</span>
+<span class="cov">	:cond_d</span>
+<span class="cov">	instance-of v2, p1, Ljava/util/Map;</span>
+<span class="missed">	if-eqz v2, :cond_f</span>
+<span class="missed">	check-cast p1, Ljava/util/Map;</span>
+<span class="missed">	iget-object p2, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="missed">	invoke-virtual {p2}, Landroid/util/JsonWriter;->beginObject()Landroid/util/JsonWriter;</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:goto_8</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result p2</span>
+<span class="missed">	if-eqz p2, :cond_e</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	check-cast p2, Ljava/util/Map$Entry;</span>
+<span class="">	invoke-interface {p2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	move-object v3, v2</span>
+<span class="missed">	check-cast v3, Ljava/lang/String;</span>
+<span class="">	invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-virtual {p0, v3, p2}, Lgu;->a(Ljava/lang/String;Ljava/lang/Object;)Lgu;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_8</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	new-instance p2, Lvt;</span>
+<span class="missed">	const/4 v3, 0x2</span>
+<span class="missed">	new-array v3, v3, [Ljava/lang/Object;</span>
+<span class="missed">	aput-object v2, v3, v1</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	aput-object v1, v3, v0</span>
+<span class="missed">	const-string v0, "Only String keys are currently supported in maps, got %s of type %s instead."</span>
+<span class="">	invoke-static {v0, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-direct {p2, v0, p1}, Lvt;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V</span>
+<span class="">	throw p2</span>
+<span class="">	:cond_e</span>
+<span class="missed">	iget-object p1, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="missed">	invoke-virtual {p1}, Landroid/util/JsonWriter;->endObject()Landroid/util/JsonWriter;</span>
+<span class="">	return-object p0</span>
+<span class="cov">	:cond_f</span>
+<span class="cov">	iget-object v0, p0, Lgu;->d:Ljava/util/Map;</span>
+<span class="exec">	invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	check-cast v0, Lwt;</span>
+<span class="cov">	if-eqz v0, :cond_10</span>
+<span class="cov">	invoke-virtual {p0, v0, p1, p2}, Lgu;->a(Lwt;Ljava/lang/Object;Z)Lgu;</span>
+<span class="exec">	return-object p0</span>
+<span class="cov">	:cond_10</span>
+<span class="cov">	iget-object v0, p0, Lgu;->e:Ljava/util/Map;</span>
+<span class="exec">	invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	check-cast v0, Lyt;</span>
+<span class="cov">	if-eqz v0, :cond_11</span>
+<span class="cov">	invoke-interface {v0, p1, p0}, Lyt;->a(Ljava/lang/Object;Ljava/lang/Object;)V</span>
+<span class="exec">	return-object p0</span>
+<span class="">	:cond_11</span>
+<span class="missed">	instance-of v0, p1, Ljava/lang/Enum;</span>
+<span class="missed">	if-eqz v0, :cond_12</span>
+<span class="missed">	check-cast p1, Ljava/lang/Enum;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lgu;->a(Ljava/lang/String;)Lgu;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_12</span>
+<span class="missed">	iget-object v0, p0, Lgu;->f:Lwt;</span>
+<span class="missed">	invoke-virtual {p0, v0, p1, p2}, Lgu;->a(Lwt;Ljava/lang/Object;Z)Lgu;</span>
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method public a(Ljava/lang/String;)Lgu;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-direct {p0}, Lgu;->b()V</span>
+<span class="cov">	iget-object v0, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="cov">	invoke-virtual {v0, p1}, Landroid/util/JsonWriter;->value(Ljava/lang/String;)Landroid/util/JsonWriter;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public a(Ljava/lang/String;I)Lgu;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-direct {p0}, Lgu;->b()V</span>
+<span class="cov">	iget-object v0, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="cov">	invoke-virtual {v0, p1}, Landroid/util/JsonWriter;->name(Ljava/lang/String;)Landroid/util/JsonWriter;</span>
+<span class="cov">	invoke-virtual {p0, p2}, Lgu;->a(I)Lgu;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public a(Ljava/lang/String;J)Lgu;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-direct {p0}, Lgu;->b()V</span>
+<span class="cov">	iget-object v0, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="cov">	invoke-virtual {v0, p1}, Landroid/util/JsonWriter;->name(Ljava/lang/String;)Landroid/util/JsonWriter;</span>
+<span class="cov">	invoke-virtual {p0, p2, p3}, Lgu;->a(J)Lgu;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public a(Ljava/lang/String;Ljava/lang/Object;)Lgu;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-boolean v0, p0, Lgu;->g:Z</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	invoke-direct {p0, p1, p2}, Lgu;->c(Ljava/lang/String;Ljava/lang/Object;)Lgu;</span>
+<span class="exec">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-direct {p0, p1, p2}, Lgu;->b(Ljava/lang/String;Ljava/lang/Object;)Lgu;</span>
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method public a(Ljava/lang/String;Z)Lgu;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-direct {p0}, Lgu;->b()V</span>
+<span class="cov">	iget-object v0, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="cov">	invoke-virtual {v0, p1}, Landroid/util/JsonWriter;->name(Ljava/lang/String;)Landroid/util/JsonWriter;</span>
+<span class="cov">	invoke-virtual {p0, p2}, Lgu;->a(Z)Lgu;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method  a(Lwt;Ljava/lang/Object;Z)Lgu;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lwt<",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">;",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	"Z)",</span>
+<span class="">	"Lgu;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	if-nez p3, :cond_0</span>
+<span class="cov">	iget-object v0, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="cov">	invoke-virtual {v0}, Landroid/util/JsonWriter;->beginObject()Landroid/util/JsonWriter;</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	invoke-interface {p1, p2, p0}, Lwt;->a(Ljava/lang/Object;Ljava/lang/Object;)V</span>
+<span class="cov">	if-nez p3, :cond_1</span>
+<span class="cov">	iget-object p1, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="cov">	invoke-virtual {p1}, Landroid/util/JsonWriter;->endObject()Landroid/util/JsonWriter;</span>
+<span class="cov">	:cond_1</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public a(Z)Lgu;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-direct {p0}, Lgu;->b()V</span>
+<span class="cov">	iget-object v0, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="cov">	invoke-virtual {v0, p1}, Landroid/util/JsonWriter;->value(Z)Landroid/util/JsonWriter;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public a([B)Lgu;</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-direct {p0}, Lgu;->b()V</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="missed">	iget-object p1, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="missed">	invoke-virtual {p1}, Landroid/util/JsonWriter;->nullValue()Landroid/util/JsonWriter;</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v0, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="cov">	const/4 v1, 0x2</span>
+<span class="exec">	invoke-static {p1, v1}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	invoke-virtual {v0, p1}, Landroid/util/JsonWriter;->value(Ljava/lang/String;)Landroid/util/JsonWriter;</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public bridge synthetic a(Ljava/lang/String;I)Lxt;</span>
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-virtual {p0, p1, p2}, Lgu;->a(Ljava/lang/String;I)Lgu;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public bridge synthetic a(Ljava/lang/String;J)Lxt;</span>
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-virtual {p0, p1, p2, p3}, Lgu;->a(Ljava/lang/String;J)Lgu;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public bridge synthetic a(Ljava/lang/String;Ljava/lang/Object;)Lxt;</span>
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-virtual {p0, p1, p2}, Lgu;->a(Ljava/lang/String;Ljava/lang/Object;)Lgu;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public bridge synthetic a(Ljava/lang/String;Z)Lxt;</span>
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-virtual {p0, p1, p2}, Lgu;->a(Ljava/lang/String;Z)Lgu;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public bridge synthetic a(Ljava/lang/String;)Lzt;</span>
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-virtual {p0, p1}, Lgu;->a(Ljava/lang/String;)Lgu;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+.method public bridge synthetic a(Z)Lzt;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	invoke-virtual {p0, p1}, Lgu;->a(Z)Lgu;</span>
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method  a()V</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-direct {p0}, Lgu;->b()V</span>
+<span class="cov">	iget-object v0, p0, Lgu;->c:Landroid/util/JsonWriter;</span>
+<span class="cov">	invoke-virtual {v0}, Landroid/util/JsonWriter;->flush()V</span>
+<span class="exec">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

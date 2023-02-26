@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.google.gson.internal.bind</a></li>
+        <li><i class="ico ico-class"></i> TypeAdapters$v.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class synthetic Lcom/google/gson/internal/bind/TypeAdapters$v;
+.super Ljava/lang/Object;
+.source "TypeAdapters.java"
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Lcom/google/gson/internal/bind/TypeAdapters;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x1008
+name = null
+.end annotation
+
+.field static final synthetic a:[I
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 3</span>
+
+<span class="">	invoke-static {}, Lfw;->values()[Lfw;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	array-length v0, v0</span>
+<span class="missed">	new-array v0, v0, [I</span>
+<span class="missed">	sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters$v;->a:[I</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	sget-object v1, Lfw;->g:Lfw;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	aput v2, v0, v1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	:try_start_1</span>
+<span class="">	:catch_0</span>
+<span class="missed">	sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$v;->a:[I</span>
+<span class="missed">	sget-object v1, Lfw;->h:Lfw;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x2</span>
+<span class="missed">	aput v2, v0, v1</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1</span>
+<span class="">	:try_start_2</span>
+<span class="">	:catch_1</span>
+<span class="missed">	sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$v;->a:[I</span>
+<span class="missed">	sget-object v1, Lfw;->f:Lfw;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x3</span>
+<span class="missed">	aput v2, v0, v1</span>
+<span class="">	:try_end_2</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2</span>
+<span class="">	:try_start_3</span>
+<span class="">	:catch_2</span>
+<span class="missed">	sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$v;->a:[I</span>
+<span class="missed">	sget-object v1, Lfw;->i:Lfw;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x4</span>
+<span class="missed">	aput v2, v0, v1</span>
+<span class="">	:try_end_3</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3</span>
+<span class="">	:try_start_4</span>
+<span class="">	:catch_3</span>
+<span class="missed">	sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$v;->a:[I</span>
+<span class="missed">	sget-object v1, Lfw;->a:Lfw;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x5</span>
+<span class="missed">	aput v2, v0, v1</span>
+<span class="">	:try_end_4</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4</span>
+<span class="">	:try_start_5</span>
+<span class="">	:catch_4</span>
+<span class="missed">	sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$v;->a:[I</span>
+<span class="missed">	sget-object v1, Lfw;->c:Lfw;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x6</span>
+<span class="missed">	aput v2, v0, v1</span>
+<span class="">	:try_end_5</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5</span>
+<span class="">	:try_start_6</span>
+<span class="">	:catch_5</span>
+<span class="missed">	sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$v;->a:[I</span>
+<span class="missed">	sget-object v1, Lfw;->j:Lfw;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x7</span>
+<span class="missed">	aput v2, v0, v1</span>
+<span class="">	:try_end_6</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6</span>
+<span class="">	:try_start_7</span>
+<span class="">	:catch_6</span>
+<span class="missed">	sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$v;->a:[I</span>
+<span class="missed">	sget-object v1, Lfw;->e:Lfw;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/16 v2, 0x8</span>
+<span class="missed">	aput v2, v0, v1</span>
+<span class="">	:try_end_7</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7</span>
+<span class="">	:catch_7</span>
+<span class="">	:try_start_8</span>
+<span class="missed">	sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$v;->a:[I</span>
+<span class="missed">	sget-object v1, Lfw;->d:Lfw;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/16 v2, 0x9</span>
+<span class="missed">	aput v2, v0, v1</span>
+<span class="">	:try_end_8</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8</span>
+<span class="">	:catch_8</span>
+<span class="">	:try_start_9</span>
+<span class="missed">	sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$v;->a:[I</span>
+<span class="missed">	sget-object v1, Lfw;->b:Lfw;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/16 v2, 0xa</span>
+<span class="missed">	aput v2, v0, v1</span>
+<span class="">	:try_end_9</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_9</span>
+<span class="">	:catch_9</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../../.resources/report.js"></script>
+</body>
+</html>

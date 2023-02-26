@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.google.android.gms.common.api.internal</a></li>
+        <li><i class="ico ico-class"></i> BasePendingResult.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public abstract Lcom/google/android/gms/common/api/internal/BasePendingResult;
+.super Lcom/google/android/gms/common/api/h;
+
+.annotation build Lcom/google/android/gms/common/annotation/KeepName;
+.end annotation
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lcom/google/android/gms/common/api/internal/BasePendingResult$b;,
+Lcom/google/android/gms/common/api/internal/BasePendingResult$a;
+}
+.end annotation
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<R::",
+"Lcom/google/android/gms/common/api/j;",
+">",
+"Lcom/google/android/gms/common/api/h<",
+"TR;>;"
+}
+.end annotation
+
+.field private final a:Ljava/lang/Object;
+.field private final b:Lcom/google/android/gms/common/api/internal/BasePendingResult$a;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/android/gms/common/api/internal/BasePendingResult$a<",
+"TR;>;"
+}
+.end annotation
+.end field
+.field private final c:Ljava/util/concurrent/CountDownLatch;
+.field private final d:Ljava/util/ArrayList;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/ArrayList<",
+"Lcom/google/android/gms/common/api/h$a;",
+">;"
+}
+.end annotation
+.end field
+.field private e:Lcom/google/android/gms/common/api/k;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/android/gms/common/api/k<",
+"-TR;>;"
+}
+.end annotation
+.end field
+.field private final f:Ljava/util/concurrent/atomic/AtomicReference;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/concurrent/atomic/AtomicReference<",
+"Lcom/google/android/gms/common/api/internal/a0;",
+">;"
+}
+.end annotation
+.end field
+.field private g:Lcom/google/android/gms/common/api/j;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"TR;"
+}
+.end annotation
+.end field
+.field private h:Lcom/google/android/gms/common/api/Status;
+.field private volatile i:Z
+.field private j:Z
+.field private k:Z
+.field private mResultGuardian:Lcom/google/android/gms/common/api/internal/BasePendingResult$b;
+.annotation build Lcom/google/android/gms/common/annotation/KeepName;
+.end annotation
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/android/gms/common/api/internal/BasePendingResult$b;"
+}
+.end annotation
+.end field
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lcom/google/android/gms/common/api/internal/g0;</span>
+<span class="missed">	invoke-direct {v0}, Lcom/google/android/gms/common/api/internal/g0;-><init>()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method constructor &lt;init&gt;()V
+<span class="">	.locals 2</span>
+<span class="">	.annotation runtime Ljava/lang/Deprecated;</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	invoke-direct {p0}, Lcom/google/android/gms/common/api/h;-><init>()V</span>
+<span class="missed">	new-instance v0, Ljava/lang/Object;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->a:Ljava/lang/Object;</span>
+<span class="missed">	new-instance v0, Ljava/util/concurrent/CountDownLatch;</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V</span>
+<span class="missed">	iput-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->c:Ljava/util/concurrent/CountDownLatch;</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->d:Ljava/util/ArrayList;</span>
+<span class="missed">	new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->f:Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="missed">	new-instance v0, Lcom/google/android/gms/common/api/internal/BasePendingResult$a;</span>
+<span class="">	invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/internal/BasePendingResult$a;-><init>(Landroid/os/Looper;)V</span>
+<span class="missed">	iput-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->b:Lcom/google/android/gms/common/api/internal/BasePendingResult$a;</span>
+<span class="missed">	new-instance v0, Ljava/lang/ref/WeakReference;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method static synthetic a(Lcom/google/android/gms/common/api/internal/BasePendingResult;)Lcom/google/android/gms/common/api/j;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iget-object p0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->g:Lcom/google/android/gms/common/api/j;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method private final b()Lcom/google/android/gms/common/api/j;
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()TR;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->a:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-boolean v1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->i:Z</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const-string v3, "Result has already been consumed."</span>
+<span class="missed">	invoke-static {v1, v3}, Lcom/google/android/gms/common/internal/q;->a(ZLjava/lang/Object;)V</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->a()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const-string v3, "Result is not ready."</span>
+<span class="missed">	invoke-static {v1, v3}, Lcom/google/android/gms/common/internal/q;->a(ZLjava/lang/Object;)V</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->g:Lcom/google/android/gms/common/api/j;</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	iput-object v3, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->g:Lcom/google/android/gms/common/api/j;</span>
+<span class="missed">	iput-object v3, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->e:Lcom/google/android/gms/common/api/k;</span>
+<span class="missed">	iput-boolean v2, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->i:Z</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->f:Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="">	invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lcom/google/android/gms/common/api/internal/a0;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-interface {v0, p0}, Lcom/google/android/gms/common/api/internal/a0;->a(Lcom/google/android/gms/common/api/internal/BasePendingResult;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return-object v1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method
+
+.method private final b(Lcom/google/android/gms/common/api/j;)V
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TR;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iput-object p1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->g:Lcom/google/android/gms/common/api/j;</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->c:Ljava/util/concurrent/CountDownLatch;</span>
+<span class="missed">	invoke-virtual {p1}, Ljava/util/concurrent/CountDownLatch;->countDown()V</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->g:Lcom/google/android/gms/common/api/j;</span>
+<span class="">	invoke-interface {p1}, Lcom/google/android/gms/common/api/j;->c()Lcom/google/android/gms/common/api/Status;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->h:Lcom/google/android/gms/common/api/Status;</span>
+<span class="missed">	iget-boolean p1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->j:Z</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	iput-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->e:Lcom/google/android/gms/common/api/k;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->e:Lcom/google/android/gms/common/api/k;</span>
+<span class="missed">	if-nez p1, :cond_1</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->g:Lcom/google/android/gms/common/api/j;</span>
+<span class="missed">	instance-of p1, p1, Lcom/google/android/gms/common/api/i;</span>
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	new-instance p1, Lcom/google/android/gms/common/api/internal/BasePendingResult$b;</span>
+<span class="missed">	invoke-direct {p1, p0, v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult$b;-><init>(Lcom/google/android/gms/common/api/internal/BasePendingResult;Lcom/google/android/gms/common/api/internal/g0;)V</span>
+<span class="missed">	iput-object p1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->mResultGuardian:Lcom/google/android/gms/common/api/internal/BasePendingResult$b;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->b:Lcom/google/android/gms/common/api/internal/BasePendingResult$a;</span>
+<span class="missed">	const/4 v0, 0x2</span>
+<span class="missed">	invoke-virtual {p1, v0}, Landroid/os/Handler;->removeMessages(I)V</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->b:Lcom/google/android/gms/common/api/internal/BasePendingResult$a;</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->e:Lcom/google/android/gms/common/api/k;</span>
+<span class="">	invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->b()Lcom/google/android/gms/common/api/j;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/common/api/internal/BasePendingResult$a;->a(Lcom/google/android/gms/common/api/k;Lcom/google/android/gms/common/api/j;)V</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->d:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {p1}, Ljava/util/ArrayList;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ge v1, v0, :cond_3</span>
+<span class="">	invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="missed">	check-cast v2, Lcom/google/android/gms/common/api/h$a;</span>
+<span class="missed">	iget-object v3, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->h:Lcom/google/android/gms/common/api/Status;</span>
+<span class="missed">	invoke-interface {v2, v3}, Lcom/google/android/gms/common/api/h$a;->a(Lcom/google/android/gms/common/api/Status;)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->d:Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public static c(Lcom/google/android/gms/common/api/j;)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	instance-of v0, p0, Lcom/google/android/gms/common/api/i;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	move-object v0, p0</span>
+<span class="missed">	check-cast v0, Lcom/google/android/gms/common/api/i;</span>
+<span class="missed">	invoke-interface {v0}, Lcom/google/android/gms/common/api/i;->a()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-void</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x12</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V</span>
+<span class="missed">	const-string v1, "Unable to release "</span>
+<span class="missed">	invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	const-string v1, "BasePendingResult"</span>
+<span class="missed">	invoke-static {v1, p0, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected abstract a(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/j;
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lcom/google/android/gms/common/api/Status;",</span>
+<span class="">	")TR;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public final a(Lcom/google/android/gms/common/api/j;)V
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TR;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->a:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-boolean v1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->k:Z</span>
+<span class="missed">	if-nez v1, :cond_2</span>
+<span class="missed">	iget-boolean v1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->j:Z</span>
+<span class="missed">	if-nez v1, :cond_2</span>
+<span class="missed">	invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->a()Z</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->a()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const-string v4, "Results have already been set"</span>
+<span class="missed">	invoke-static {v1, v4}, Lcom/google/android/gms/common/internal/q;->a(ZLjava/lang/Object;)V</span>
+<span class="missed">	iget-boolean v1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->i:Z</span>
+<span class="missed">	if-nez v1, :cond_1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	const-string v1, "Result has already been consumed"</span>
+<span class="missed">	invoke-static {v2, v1}, Lcom/google/android/gms/common/internal/q;->a(ZLjava/lang/Object;)V</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->b(Lcom/google/android/gms/common/api/j;)V</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	invoke-static {p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->c(Lcom/google/android/gms/common/api/j;)V</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public final a()Z
+<span class="">	.locals 5</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->c:Ljava/util/concurrent/CountDownLatch;</span>
+<span class="">	invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->getCount()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="missed">	const-wide/16 v2, 0x0</span>
+<span class="missed">	cmp-long v4, v0, v2</span>
+<span class="missed">	if-nez v4, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final b(Lcom/google/android/gms/common/api/Status;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->a:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->a()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="">	invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->a(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/j;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->a(Lcom/google/android/gms/common/api/j;)V</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="missed">	iput-boolean p1, p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->k:Z</span>
+<span class="">	:cond_0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw p1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../../../../.resources/report.js"></script>
+</body>
+</html>

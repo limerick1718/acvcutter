@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.google.android.gms.common.api.internal</a></li>
+        <li><i class="ico ico-class"></i> b$b.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Lcom/google/android/gms/common/api/internal/b$b;
+.super Ljava/lang/Object;
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Lcom/google/android/gms/common/api/internal/b;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0xa
+name = "b"
+.end annotation
+
+.field private final a:Lcom/google/android/gms/common/api/internal/d0;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/android/gms/common/api/internal/d0<",
+"*>;"
+}
+.end annotation
+.end field
+.field private final b:Le5;
+
+
+.method private constructor &lt;init&gt;(Lcom/google/android/gms/common/api/internal/d0;Le5;)V
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lcom/google/android/gms/common/api/internal/d0<",</span>
+<span class="">	"*>;",</span>
+<span class="">	"Le5;",</span>
+<span class="">	")V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Lcom/google/android/gms/common/api/internal/b$b;->a:Lcom/google/android/gms/common/api/internal/d0;</span>
+<span class="missed">	iput-object p2, p0, Lcom/google/android/gms/common/api/internal/b$b;->b:Le5;</span>
+<span class="">	return-void</span>
+.end method
+
+.method synthetic constructor &lt;init&gt;(Lcom/google/android/gms/common/api/internal/d0;Le5;Lcom/google/android/gms/common/api/internal/m;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0, p1, p2}, Lcom/google/android/gms/common/api/internal/b$b;-><init>(Lcom/google/android/gms/common/api/internal/d0;Le5;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method static synthetic a(Lcom/google/android/gms/common/api/internal/b$b;)Lcom/google/android/gms/common/api/internal/d0;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iget-object p0, p0, Lcom/google/android/gms/common/api/internal/b$b;->a:Lcom/google/android/gms/common/api/internal/d0;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method static synthetic b(Lcom/google/android/gms/common/api/internal/b$b;)Le5;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iget-object p0, p0, Lcom/google/android/gms/common/api/internal/b$b;->b:Le5;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+<span class="">	.locals 3</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	instance-of v1, p1, Lcom/google/android/gms/common/api/internal/b$b;</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	check-cast p1, Lcom/google/android/gms/common/api/internal/b$b;</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$b;->a:Lcom/google/android/gms/common/api/internal/d0;</span>
+<span class="missed">	iget-object v2, p1, Lcom/google/android/gms/common/api/internal/b$b;->a:Lcom/google/android/gms/common/api/internal/d0;</span>
+<span class="">	invoke-static {v1, v2}, Lcom/google/android/gms/common/internal/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$b;->b:Le5;</span>
+<span class="missed">	iget-object p1, p1, Lcom/google/android/gms/common/api/internal/b$b;->b:Le5;</span>
+<span class="">	invoke-static {v1, p1}, Lcom/google/android/gms/common/internal/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final hashCode()I
+<span class="">	.locals 3</span>
+
+<span class="missed">	const/4 v0, 0x2</span>
+<span class="missed">	new-array v0, v0, [Ljava/lang/Object;</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$b;->a:Lcom/google/android/gms/common/api/internal/d0;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	aput-object v1, v0, v2</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$b;->b:Le5;</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	aput-object v1, v0, v2</span>
+<span class="">	invoke-static {v0}, Lcom/google/android/gms/common/internal/p;->a([Ljava/lang/Object;)I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final toString()Ljava/lang/String;
+<span class="">	.locals 3</span>
+
+<span class="">	invoke-static {p0}, Lcom/google/android/gms/common/internal/p;->a(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/p$a;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$b;->a:Lcom/google/android/gms/common/api/internal/d0;</span>
+<span class="missed">	const-string v2, "key"</span>
+<span class="missed">	invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/p$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/p$a;</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$b;->b:Le5;</span>
+<span class="missed">	const-string v2, "feature"</span>
+<span class="missed">	invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/p$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/p$a;</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/android/gms/common/internal/p$a;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../../../../.resources/report.js"></script>
+</body>
+</html>

@@ -1,0 +1,1217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.google.android.gms.common.internal</a></li>
+        <li><i class="ico ico-class"></i> b.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public abstract Lcom/google/android/gms/common/internal/b;
+.super Ljava/lang/Object;
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lcom/google/android/gms/common/internal/b$i;,
+Lcom/google/android/gms/common/internal/b$f;,
+Lcom/google/android/gms/common/internal/b$k;,
+Lcom/google/android/gms/common/internal/b$l;,
+Lcom/google/android/gms/common/internal/b$d;,
+Lcom/google/android/gms/common/internal/b$h;,
+Lcom/google/android/gms/common/internal/b$g;,
+Lcom/google/android/gms/common/internal/b$e;,
+Lcom/google/android/gms/common/internal/b$c;,
+Lcom/google/android/gms/common/internal/b$b;,
+Lcom/google/android/gms/common/internal/b$a;,
+Lcom/google/android/gms/common/internal/b$j;
+}
+.end annotation
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<T::",
+"Landroid/os/IInterface;",
+">",
+"Ljava/lang/Object;"
+}
+.end annotation
+
+.field private static final v:[Le5;
+.field private a:Lcom/google/android/gms/common/internal/g0;
+.field private final b:Landroid/content/Context;
+.field private final c:Lcom/google/android/gms/common/internal/h;
+.field private final d:Lg5;
+.field final e:Landroid/os/Handler;
+.field private final f:Ljava/lang/Object;
+.field private final g:Ljava/lang/Object;
+.field private h:Lcom/google/android/gms/common/internal/n;
+.annotation build Ljavax/annotation/concurrent/GuardedBy;
+value = "mServiceBrokerLock"
+.end annotation
+.end field
+.field protected i:Lcom/google/android/gms/common/internal/b$c;
+.field private j:Landroid/os/IInterface;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"TT;"
+}
+.end annotation
+.annotation build Ljavax/annotation/concurrent/GuardedBy;
+value = "mLock"
+.end annotation
+.end field
+.field private final k:Ljava/util/ArrayList;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/ArrayList<",
+"Lcom/google/android/gms/common/internal/b$h<",
+"*>;>;"
+}
+.end annotation
+.end field
+.field private l:Lcom/google/android/gms/common/internal/b$j;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/android/gms/common/internal/b$j;"
+}
+.end annotation
+.annotation build Ljavax/annotation/concurrent/GuardedBy;
+value = "mLock"
+.end annotation
+.end field
+.field private m:I
+.annotation build Ljavax/annotation/concurrent/GuardedBy;
+value = "mLock"
+.end annotation
+.end field
+.field private final n:Lcom/google/android/gms/common/internal/b$a;
+.field private final o:Lcom/google/android/gms/common/internal/b$b;
+.field private final p:I
+.field private final q:Ljava/lang/String;
+.field private r:Lc5;
+.field private s:Z
+.field private volatile t:Lcom/google/android/gms/common/internal/a0;
+.field protected u:Ljava/util/concurrent/atomic/AtomicInteger;
+
+
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	new-array v0, v0, [Le5;</span>
+<span class="cov">	sput-object v0, Lcom/google/android/gms/common/internal/b;->v:[Le5;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method protected constructor &lt;init&gt;(Landroid/content/Context;Landroid/os/Looper;ILcom/google/android/gms/common/internal/b$a;Lcom/google/android/gms/common/internal/b$b;Ljava/lang/String;)V</span>
+<span class="">	.locals 9</span>
+
+<span class="exec">	invoke-static {p1}, Lcom/google/android/gms/common/internal/h;->a(Landroid/content/Context;)Lcom/google/android/gms/common/internal/h;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="exec">	invoke-static {}, Lg5;->a()Lg5;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	invoke-static {p4}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	move-object v6, p4</span>
+<span class="cov">	check-cast v6, Lcom/google/android/gms/common/internal/b$a;</span>
+<span class="cov">	invoke-static {p5}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	move-object v7, p5</span>
+<span class="cov">	check-cast v7, Lcom/google/android/gms/common/internal/b$b;</span>
+<span class="cov">	move-object v0, p0</span>
+<span class="cov">	move-object v1, p1</span>
+<span class="cov">	move-object v2, p2</span>
+<span class="cov">	move v5, p3</span>
+<span class="cov">	move-object v8, p6</span>
+<span class="cov">	invoke-direct/range {v0 .. v8}, Lcom/google/android/gms/common/internal/b;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/h;Lg5;ILcom/google/android/gms/common/internal/b$a;Lcom/google/android/gms/common/internal/b$b;Ljava/lang/String;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method protected constructor &lt;init&gt;(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/h;Lg5;ILcom/google/android/gms/common/internal/b$a;Lcom/google/android/gms/common/internal/b$b;Ljava/lang/String;)V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	new-instance v0, Ljava/lang/Object;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Lcom/google/android/gms/common/internal/b;->f:Ljava/lang/Object;</span>
+<span class="cov">	new-instance v0, Ljava/lang/Object;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Lcom/google/android/gms/common/internal/b;->g:Ljava/lang/Object;</span>
+<span class="cov">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Lcom/google/android/gms/common/internal/b;->k:Ljava/util/ArrayList;</span>
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="cov">	iput v0, p0, Lcom/google/android/gms/common/internal/b;->m:I</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	iput-object v0, p0, Lcom/google/android/gms/common/internal/b;->r:Lc5;</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	iput-boolean v1, p0, Lcom/google/android/gms/common/internal/b;->s:Z</span>
+<span class="cov">	iput-object v0, p0, Lcom/google/android/gms/common/internal/b;->t:Lcom/google/android/gms/common/internal/a0;</span>
+<span class="cov">	new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;</span>
+<span class="cov">	invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V</span>
+<span class="cov">	iput-object v0, p0, Lcom/google/android/gms/common/internal/b;->u:Ljava/util/concurrent/atomic/AtomicInteger;</span>
+<span class="cov">	const-string v0, "Context must not be null"</span>
+<span class="cov">	invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	check-cast p1, Landroid/content/Context;</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/android/gms/common/internal/b;->b:Landroid/content/Context;</span>
+<span class="cov">	const-string p1, "Looper must not be null"</span>
+<span class="cov">	invoke-static {p2, p1}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	move-object p1, p2</span>
+<span class="cov">	check-cast p1, Landroid/os/Looper;</span>
+<span class="cov">	const-string p1, "Supervisor must not be null"</span>
+<span class="cov">	invoke-static {p3, p1}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	check-cast p3, Lcom/google/android/gms/common/internal/h;</span>
+<span class="cov">	iput-object p3, p0, Lcom/google/android/gms/common/internal/b;->c:Lcom/google/android/gms/common/internal/h;</span>
+<span class="cov">	const-string p1, "API availability must not be null"</span>
+<span class="cov">	invoke-static {p4, p1}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	check-cast p4, Lg5;</span>
+<span class="cov">	iput-object p4, p0, Lcom/google/android/gms/common/internal/b;->d:Lg5;</span>
+<span class="cov">	new-instance p1, Lcom/google/android/gms/common/internal/b$g;</span>
+<span class="cov">	invoke-direct {p1, p0, p2}, Lcom/google/android/gms/common/internal/b$g;-><init>(Lcom/google/android/gms/common/internal/b;Landroid/os/Looper;)V</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/android/gms/common/internal/b;->e:Landroid/os/Handler;</span>
+<span class="cov">	iput p5, p0, Lcom/google/android/gms/common/internal/b;->p:I</span>
+<span class="cov">	iput-object p6, p0, Lcom/google/android/gms/common/internal/b;->n:Lcom/google/android/gms/common/internal/b$a;</span>
+<span class="cov">	iput-object p7, p0, Lcom/google/android/gms/common/internal/b;->o:Lcom/google/android/gms/common/internal/b$b;</span>
+<span class="cov">	iput-object p8, p0, Lcom/google/android/gms/common/internal/b;->q:Ljava/lang/String;</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method private final A()Z
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-boolean v0, p0, Lcom/google/android/gms/common/internal/b;->s:Z</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return v1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->e()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	return v1</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->t()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="">	return v1</span>
+<span class="">	:try_start_0</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->e()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	return v0</span>
+<span class="">	:catch_0</span>
+<span class="">	return v1</span>
+.end method
+
+<span class="cov">.method static synthetic a(Lcom/google/android/gms/common/internal/b;Lc5;)Lc5;</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iput-object p1, p0, Lcom/google/android/gms/common/internal/b;->r:Lc5;</span>
+<span class="exec">	return-object p1</span>
+.end method
+
+<span class="cov">.method static synthetic a(Lcom/google/android/gms/common/internal/b;Lcom/google/android/gms/common/internal/n;)Lcom/google/android/gms/common/internal/n;</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iput-object p1, p0, Lcom/google/android/gms/common/internal/b;->h:Lcom/google/android/gms/common/internal/n;</span>
+<span class="exec">	return-object p1</span>
+.end method
+
+<span class="cov">.method static synthetic a(Lcom/google/android/gms/common/internal/b;)Ljava/lang/Object;</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iget-object p0, p0, Lcom/google/android/gms/common/internal/b;->g:Ljava/lang/Object;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method private final a(Lcom/google/android/gms/common/internal/a0;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iput-object p1, p0, Lcom/google/android/gms/common/internal/b;->t:Lcom/google/android/gms/common/internal/a0;</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method static synthetic a(Lcom/google/android/gms/common/internal/b;I)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	const/16 p1, 0x10</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/google/android/gms/common/internal/b;->c(I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method static synthetic a(Lcom/google/android/gms/common/internal/b;ILandroid/os/IInterface;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	const/4 p2, 0x0</span>
+<span class="missed">	invoke-direct {p0, p1, p2}, Lcom/google/android/gms/common/internal/b;->c(ILandroid/os/IInterface;)V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method static synthetic a(Lcom/google/android/gms/common/internal/b;Lcom/google/android/gms/common/internal/a0;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0, p1}, Lcom/google/android/gms/common/internal/b;->a(Lcom/google/android/gms/common/internal/a0;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private final a(IILandroid/os/IInterface;)Z</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(IITT;)Z"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->f:Ljava/lang/Object;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget v1, p0, Lcom/google/android/gms/common/internal/b;->m:I</span>
+<span class="missed">	if-eq v1, p1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return p1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	invoke-direct {p0, p2, p3}, Lcom/google/android/gms/common/internal/b;->c(ILandroid/os/IInterface;)V</span>
+<span class="cov">	const/4 p1, 0x1</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="exec">	return p1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method static synthetic a(Lcom/google/android/gms/common/internal/b;IILandroid/os/IInterface;)Z</span>
+<span class="">	.locals 0</span>
+
+<span class="exec">	invoke-direct {p0, p1, p2, p3}, Lcom/google/android/gms/common/internal/b;->a(IILandroid/os/IInterface;)Z</span>
+<span class="cov">	move-result p0</span>
+<span class="exec">	return p0</span>
+.end method
+
+.method static synthetic b(Lcom/google/android/gms/common/internal/b;)Z
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-direct {p0}, Lcom/google/android/gms/common/internal/b;->A()Z</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method private final c(I)V
+<span class="">	.locals 3</span>
+
+<span class="">	invoke-direct {p0}, Lcom/google/android/gms/common/internal/b;->z()Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x5</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	iput-boolean v0, p0, Lcom/google/android/gms/common/internal/b;->s:Z</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x4</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->e:Landroid/os/Handler;</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/internal/b;->u:Ljava/util/concurrent/atomic/AtomicInteger;</span>
+<span class="">	invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/16 v2, 0x10</span>
+<span class="">	invoke-virtual {v0, p1, v1, v2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method private final c(ILandroid/os/IInterface;)V</span>
+<span class="">	.locals 13</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(ITT;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	const/4 v0, 0x4</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	const/4 v2, 0x1</span>
+<span class="cov">	if-ne p1, v0, :cond_0</span>
+<span class="cov">	const/4 v3, 0x1</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 v3, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	if-eqz p2, :cond_1</span>
+<span class="cov">	const/4 v4, 0x1</span>
+<span class="exec">	goto :goto_1</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	const/4 v4, 0x0</span>
+<span class="cov">	:goto_1</span>
+<span class="cov">	if-ne v3, v4, :cond_2</span>
+<span class="cov">	const/4 v3, 0x1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="cov">	:goto_2</span>
+<span class="cov">	invoke-static {v3}, Lcom/google/android/gms/common/internal/q;->a(Z)V</span>
+<span class="cov">	iget-object v3, p0, Lcom/google/android/gms/common/internal/b;->f:Ljava/lang/Object;</span>
+<span class="cov">	monitor-enter v3</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iput p1, p0, Lcom/google/android/gms/common/internal/b;->m:I</span>
+<span class="cov">	iput-object p2, p0, Lcom/google/android/gms/common/internal/b;->j:Landroid/os/IInterface;</span>
+<span class="cov">	invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/common/internal/b;->b(ILandroid/os/IInterface;)V</span>
+<span class="cov">	const/4 v4, 0x0</span>
+<span class="cov">	if-eq p1, v2, :cond_7</span>
+<span class="cov">	const/4 v5, 0x2</span>
+<span class="cov">	const/4 v6, 0x3</span>
+<span class="cov">	if-eq p1, v5, :cond_4</span>
+<span class="cov">	if-eq p1, v6, :cond_4</span>
+<span class="missed">	if-eq p1, v0, :cond_3</span>
+<span class="exec">	goto/16 :goto_4</span>
+<span class="cov">	:cond_3</span>
+<span class="cov">	invoke-virtual {p0, p2}, Lcom/google/android/gms/common/internal/b;->a(Landroid/os/IInterface;)V</span>
+<span class="exec">	goto/16 :goto_4</span>
+<span class="cov">	:cond_4</span>
+<span class="cov">	iget-object p1, p0, Lcom/google/android/gms/common/internal/b;->l:Lcom/google/android/gms/common/internal/b$j;</span>
+<span class="missed">	if-eqz p1, :cond_5</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/internal/b;->a:Lcom/google/android/gms/common/internal/g0;</span>
+<span class="missed">	if-eqz p1, :cond_5</span>
+<span class="missed">	const-string p1, "GmsClient"</span>
+<span class="missed">	iget-object p2, p0, Lcom/google/android/gms/common/internal/b;->a:Lcom/google/android/gms/common/internal/g0;</span>
+<span class="">	invoke-virtual {p2}, Lcom/google/android/gms/common/internal/g0;->c()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->a:Lcom/google/android/gms/common/internal/g0;</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/android/gms/common/internal/g0;->a()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="">	invoke-virtual {v5}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	add-int/lit8 v5, v5, 0x46</span>
+<span class="">	invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="">	invoke-virtual {v7}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v7</span>
+<span class="missed">	add-int/2addr v5, v7</span>
+<span class="missed">	new-instance v7, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v7, v5}, Ljava/lang/StringBuilder;-><init>(I)V</span>
+<span class="missed">	const-string v5, "Calling connect() while still connected, missing disconnect() for "</span>
+<span class="missed">	invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v7, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string p2, " on "</span>
+<span class="missed">	invoke-virtual {v7, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	iget-object v7, p0, Lcom/google/android/gms/common/internal/b;->c:Lcom/google/android/gms/common/internal/h;</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/internal/b;->a:Lcom/google/android/gms/common/internal/g0;</span>
+<span class="">	invoke-virtual {p1}, Lcom/google/android/gms/common/internal/g0;->c()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v8</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/internal/b;->a:Lcom/google/android/gms/common/internal/g0;</span>
+<span class="">	invoke-virtual {p1}, Lcom/google/android/gms/common/internal/g0;->a()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v9</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/internal/b;->a:Lcom/google/android/gms/common/internal/g0;</span>
+<span class="">	invoke-virtual {p1}, Lcom/google/android/gms/common/internal/g0;->b()I</span>
+<span class="missed">	move-result v10</span>
+<span class="missed">	iget-object v11, p0, Lcom/google/android/gms/common/internal/b;->l:Lcom/google/android/gms/common/internal/b$j;</span>
+<span class="">	invoke-direct {p0}, Lcom/google/android/gms/common/internal/b;->y()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v12</span>
+<span class="missed">	invoke-virtual/range {v7 .. v12}, Lcom/google/android/gms/common/internal/h;->a(Ljava/lang/String;Ljava/lang/String;ILandroid/content/ServiceConnection;Ljava/lang/String;)V</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/internal/b;->u:Ljava/util/concurrent/atomic/AtomicInteger;</span>
+<span class="missed">	invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I</span>
+<span class="cov">	:cond_5</span>
+<span class="cov">	new-instance p1, Lcom/google/android/gms/common/internal/b$j;</span>
+<span class="cov">	iget-object p2, p0, Lcom/google/android/gms/common/internal/b;->u:Ljava/util/concurrent/atomic/AtomicInteger;</span>
+<span class="exec">	invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I</span>
+<span class="cov">	move-result p2</span>
+<span class="cov">	invoke-direct {p1, p0, p2}, Lcom/google/android/gms/common/internal/b$j;-><init>(Lcom/google/android/gms/common/internal/b;I)V</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/android/gms/common/internal/b;->l:Lcom/google/android/gms/common/internal/b$j;</span>
+<span class="cov">	iget p1, p0, Lcom/google/android/gms/common/internal/b;->m:I</span>
+<span class="cov">	const/16 p2, 0x81</span>
+<span class="missed">	if-ne p1, v6, :cond_6</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->t()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	if-eqz p1, :cond_6</span>
+<span class="missed">	new-instance p1, Lcom/google/android/gms/common/internal/g0;</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->r()Landroid/content/Context;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->t()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {p1, v0, v1, v2, p2}, Lcom/google/android/gms/common/internal/g0;-><init>(Ljava/lang/String;Ljava/lang/String;ZI)V</span>
+<span class="exec">	goto :goto_3</span>
+<span class="cov">	:cond_6</span>
+<span class="cov">	new-instance p1, Lcom/google/android/gms/common/internal/g0;</span>
+<span class="exec">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->w()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->i()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	invoke-direct {p1, v0, v2, v1, p2}, Lcom/google/android/gms/common/internal/g0;-><init>(Ljava/lang/String;Ljava/lang/String;ZI)V</span>
+<span class="cov">	:goto_3</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/android/gms/common/internal/b;->a:Lcom/google/android/gms/common/internal/g0;</span>
+<span class="cov">	iget-object p2, p0, Lcom/google/android/gms/common/internal/b;->c:Lcom/google/android/gms/common/internal/h;</span>
+<span class="exec">	invoke-virtual {p1}, Lcom/google/android/gms/common/internal/g0;->c()Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->a:Lcom/google/android/gms/common/internal/g0;</span>
+<span class="exec">	invoke-virtual {v0}, Lcom/google/android/gms/common/internal/g0;->a()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/internal/b;->a:Lcom/google/android/gms/common/internal/g0;</span>
+<span class="exec">	invoke-virtual {v1}, Lcom/google/android/gms/common/internal/g0;->b()I</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	iget-object v2, p0, Lcom/google/android/gms/common/internal/b;->l:Lcom/google/android/gms/common/internal/b$j;</span>
+<span class="exec">	invoke-direct {p0}, Lcom/google/android/gms/common/internal/b;->y()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v5</span>
+<span class="cov">	new-instance v6, Lcom/google/android/gms/common/internal/h$a;</span>
+<span class="cov">	invoke-direct {v6, p1, v0, v1}, Lcom/google/android/gms/common/internal/h$a;-><init>(Ljava/lang/String;Ljava/lang/String;I)V</span>
+<span class="exec">	invoke-virtual {p2, v6, v2, v5}, Lcom/google/android/gms/common/internal/h;->a(Lcom/google/android/gms/common/internal/h$a;Landroid/content/ServiceConnection;Ljava/lang/String;)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="missed">	if-nez p1, :cond_8</span>
+<span class="missed">	const-string p1, "GmsClient"</span>
+<span class="missed">	iget-object p2, p0, Lcom/google/android/gms/common/internal/b;->a:Lcom/google/android/gms/common/internal/g0;</span>
+<span class="">	invoke-virtual {p2}, Lcom/google/android/gms/common/internal/g0;->c()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->a:Lcom/google/android/gms/common/internal/g0;</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/android/gms/common/internal/g0;->a()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x22</span>
+<span class="">	invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	add-int/2addr v1, v2</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V</span>
+<span class="missed">	const-string v1, "unable to connect to service: "</span>
+<span class="missed">	invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string p2, " on "</span>
+<span class="missed">	invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	const/16 p1, 0x10</span>
+<span class="missed">	iget-object p2, p0, Lcom/google/android/gms/common/internal/b;->u:Ljava/util/concurrent/atomic/AtomicInteger;</span>
+<span class="">	invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I</span>
+<span class="missed">	move-result p2</span>
+<span class="missed">	invoke-virtual {p0, p1, v4, p2}, Lcom/google/android/gms/common/internal/b;->a(ILandroid/os/Bundle;I)V</span>
+<span class="exec">	goto :goto_4</span>
+<span class="cov">	:cond_7</span>
+<span class="cov">	iget-object p1, p0, Lcom/google/android/gms/common/internal/b;->l:Lcom/google/android/gms/common/internal/b$j;</span>
+<span class="cov">	if-eqz p1, :cond_8</span>
+<span class="cov">	iget-object v5, p0, Lcom/google/android/gms/common/internal/b;->c:Lcom/google/android/gms/common/internal/h;</span>
+<span class="cov">	iget-object p1, p0, Lcom/google/android/gms/common/internal/b;->a:Lcom/google/android/gms/common/internal/g0;</span>
+<span class="exec">	invoke-virtual {p1}, Lcom/google/android/gms/common/internal/g0;->c()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v6</span>
+<span class="cov">	iget-object p1, p0, Lcom/google/android/gms/common/internal/b;->a:Lcom/google/android/gms/common/internal/g0;</span>
+<span class="exec">	invoke-virtual {p1}, Lcom/google/android/gms/common/internal/g0;->a()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v7</span>
+<span class="cov">	iget-object p1, p0, Lcom/google/android/gms/common/internal/b;->a:Lcom/google/android/gms/common/internal/g0;</span>
+<span class="exec">	invoke-virtual {p1}, Lcom/google/android/gms/common/internal/g0;->b()I</span>
+<span class="cov">	move-result v8</span>
+<span class="cov">	iget-object v9, p0, Lcom/google/android/gms/common/internal/b;->l:Lcom/google/android/gms/common/internal/b$j;</span>
+<span class="exec">	invoke-direct {p0}, Lcom/google/android/gms/common/internal/b;->y()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v10</span>
+<span class="cov">	invoke-virtual/range {v5 .. v10}, Lcom/google/android/gms/common/internal/h;->a(Ljava/lang/String;Ljava/lang/String;ILandroid/content/ServiceConnection;Ljava/lang/String;)V</span>
+<span class="cov">	iput-object v4, p0, Lcom/google/android/gms/common/internal/b;->l:Lcom/google/android/gms/common/internal/b$j;</span>
+<span class="cov">	:goto_4</span>
+<span class="cov">	:cond_8</span>
+<span class="cov">	monitor-exit v3</span>
+<span class="exec">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit v3</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw p1</span>
+.end method
+
+.method static synthetic c(Lcom/google/android/gms/common/internal/b;)Z
+<span class="">	.locals 0</span>
+
+<span class="missed">	iget-boolean p0, p0, Lcom/google/android/gms/common/internal/b;->s:Z</span>
+<span class="">	return p0</span>
+.end method
+
+.method static synthetic d(Lcom/google/android/gms/common/internal/b;)Lc5;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iget-object p0, p0, Lcom/google/android/gms/common/internal/b;->r:Lc5;</span>
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method static synthetic e(Lcom/google/android/gms/common/internal/b;)Lcom/google/android/gms/common/internal/b$a;</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iget-object p0, p0, Lcom/google/android/gms/common/internal/b;->n:Lcom/google/android/gms/common/internal/b$a;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method static synthetic f(Lcom/google/android/gms/common/internal/b;)Ljava/util/ArrayList;</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iget-object p0, p0, Lcom/google/android/gms/common/internal/b;->k:Ljava/util/ArrayList;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+.method static synthetic g(Lcom/google/android/gms/common/internal/b;)Lcom/google/android/gms/common/internal/b$b;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iget-object p0, p0, Lcom/google/android/gms/common/internal/b;->o:Lcom/google/android/gms/common/internal/b$b;</span>
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method private final y()Ljava/lang/String;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->q:Ljava/lang/String;</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->b:Landroid/content/Context;</span>
+<span class="exec">	invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method private final z()Z
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->f:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget v1, p0, Lcom/google/android/gms/common/internal/b;->m:I</span>
+<span class="missed">	const/4 v2, 0x3</span>
+<span class="missed">	if-ne v1, v2, :cond_0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return v1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method
+
+.method protected abstract a(Landroid/os/IBinder;)Landroid/os/IInterface;
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Landroid/os/IBinder;",</span>
+<span class="">	")TT;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method protected a(I)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-static {}, Ljava/lang/System;->currentTimeMillis()J</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method protected final a(ILandroid/os/Bundle;I)V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object p2, p0, Lcom/google/android/gms/common/internal/b;->e:Landroid/os/Handler;</span>
+<span class="cov">	new-instance v0, Lcom/google/android/gms/common/internal/b$l;</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	invoke-direct {v0, p0, p1, v1}, Lcom/google/android/gms/common/internal/b$l;-><init>(Lcom/google/android/gms/common/internal/b;ILandroid/os/Bundle;)V</span>
+<span class="cov">	const/4 p1, 0x7</span>
+<span class="cov">	const/4 v1, -0x1</span>
+<span class="exec">	invoke-virtual {p2, p1, p3, v1, v0}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	invoke-virtual {p2, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method protected a(ILandroid/os/IBinder;Landroid/os/Bundle;I)V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->e:Landroid/os/Handler;</span>
+<span class="cov">	new-instance v1, Lcom/google/android/gms/common/internal/b$k;</span>
+<span class="cov">	invoke-direct {v1, p0, p1, p2, p3}, Lcom/google/android/gms/common/internal/b$k;-><init>(Lcom/google/android/gms/common/internal/b;ILandroid/os/IBinder;Landroid/os/Bundle;)V</span>
+<span class="cov">	const/4 p1, 0x1</span>
+<span class="cov">	const/4 p2, -0x1</span>
+<span class="exec">	invoke-virtual {v0, p1, p4, p2, v1}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	invoke-virtual {v0, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method protected a(Landroid/os/IInterface;)V</span>
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TT;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-static {}, Ljava/lang/System;->currentTimeMillis()J</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method protected a(Lc5;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-virtual {p1}, Lc5;->f()I</span>
+<span class="missed">	invoke-static {}, Ljava/lang/System;->currentTimeMillis()J</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public a(Lcom/google/android/gms/common/internal/b$c;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const-string v0, "Connection progress callbacks cannot be null."</span>
+<span class="cov">	invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	check-cast p1, Lcom/google/android/gms/common/internal/b$c;</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/android/gms/common/internal/b;->i:Lcom/google/android/gms/common/internal/b$c;</span>
+<span class="cov">	const/4 p1, 0x2</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	invoke-direct {p0, p1, v0}, Lcom/google/android/gms/common/internal/b;->c(ILandroid/os/IInterface;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method protected a(Lcom/google/android/gms/common/internal/b$c;ILandroid/app/PendingIntent;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	const-string v0, "Connection progress callbacks cannot be null."</span>
+<span class="missed">	invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	check-cast p1, Lcom/google/android/gms/common/internal/b$c;</span>
+<span class="missed">	iput-object p1, p0, Lcom/google/android/gms/common/internal/b;->i:Lcom/google/android/gms/common/internal/b$c;</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/internal/b;->e:Landroid/os/Handler;</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->u:Ljava/util/concurrent/atomic/AtomicInteger;</span>
+<span class="">	invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x3</span>
+<span class="">	invoke-virtual {p1, v1, v0, p2, p3}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method public a(Lcom/google/android/gms/common/internal/b$e;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-interface {p1}, Lcom/google/android/gms/common/internal/b$e;->a()V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public a(Lcom/google/android/gms/common/internal/k;Ljava/util/Set;)V</span>
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lcom/google/android/gms/common/internal/k;",</span>
+<span class="">	"Ljava/util/Set<",</span>
+<span class="">	"Lcom/google/android/gms/common/api/Scope;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="exec">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->s()Landroid/os/Bundle;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	new-instance v1, Lcom/google/android/gms/common/internal/f;</span>
+<span class="cov">	iget v2, p0, Lcom/google/android/gms/common/internal/b;->p:I</span>
+<span class="cov">	invoke-direct {v1, v2}, Lcom/google/android/gms/common/internal/f;-><init>(I)V</span>
+<span class="cov">	iget-object v2, p0, Lcom/google/android/gms/common/internal/b;->b:Landroid/content/Context;</span>
+<span class="exec">	invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	iput-object v2, v1, Lcom/google/android/gms/common/internal/f;->d:Ljava/lang/String;</span>
+<span class="cov">	iput-object v0, v1, Lcom/google/android/gms/common/internal/f;->g:Landroid/os/Bundle;</span>
+<span class="cov">	if-eqz p2, :cond_0</span>
+<span class="exec">	invoke-interface {p2}, Ljava/util/Collection;->size()I</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	new-array v0, v0, [Lcom/google/android/gms/common/api/Scope;</span>
+<span class="exec">	invoke-interface {p2, v0}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;</span>
+<span class="cov">	move-result-object p2</span>
+<span class="cov">	check-cast p2, [Lcom/google/android/gms/common/api/Scope;</span>
+<span class="cov">	iput-object p2, v1, Lcom/google/android/gms/common/internal/f;->f:[Lcom/google/android/gms/common/api/Scope;</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->h()Z</span>
+<span class="cov">	move-result p2</span>
+<span class="missed">	if-eqz p2, :cond_2</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->o()Landroid/accounts/Account;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	if-eqz p2, :cond_1</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->o()Landroid/accounts/Account;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p2, Landroid/accounts/Account;</span>
+<span class="missed">	const-string v0, "<<default account>>"</span>
+<span class="missed">	const-string v2, "com.google"</span>
+<span class="missed">	invoke-direct {p2, v0, v2}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iput-object p2, v1, Lcom/google/android/gms/common/internal/f;->h:Landroid/accounts/Account;</span>
+<span class="missed">	if-eqz p1, :cond_3</span>
+<span class="">	invoke-interface {p1}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, v1, Lcom/google/android/gms/common/internal/f;->e:Landroid/os/IBinder;</span>
+<span class="">	goto :goto_1</span>
+<span class="cov">	:cond_2</span>
+<span class="exec">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->x()Z</span>
+<span class="cov">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_3</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->o()Landroid/accounts/Account;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, v1, Lcom/google/android/gms/common/internal/f;->h:Landroid/accounts/Account;</span>
+<span class="cov">	:goto_1</span>
+<span class="cov">	:cond_3</span>
+<span class="cov">	sget-object p1, Lcom/google/android/gms/common/internal/b;->v:[Le5;</span>
+<span class="cov">	iput-object p1, v1, Lcom/google/android/gms/common/internal/f;->i:[Le5;</span>
+<span class="exec">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->p()[Le5;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	iput-object p1, v1, Lcom/google/android/gms/common/internal/f;->j:[Le5;</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object p1, p0, Lcom/google/android/gms/common/internal/b;->g:Ljava/lang/Object;</span>
+<span class="">	monitor-enter p1</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Landroid/os/DeadObjectException; {:try_start_0 .. :try_end_0} :catch_3</span>
+<span class="cov">	.catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_2</span>
+<span class="cov">	.catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1</span>
+<span class="cov">	.catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="cov">	:try_start_1</span>
+<span class="cov">	iget-object p2, p0, Lcom/google/android/gms/common/internal/b;->h:Lcom/google/android/gms/common/internal/n;</span>
+<span class="cov">	if-eqz p2, :cond_4</span>
+<span class="cov">	iget-object p2, p0, Lcom/google/android/gms/common/internal/b;->h:Lcom/google/android/gms/common/internal/n;</span>
+<span class="cov">	new-instance v0, Lcom/google/android/gms/common/internal/b$i;</span>
+<span class="cov">	iget-object v2, p0, Lcom/google/android/gms/common/internal/b;->u:Ljava/util/concurrent/atomic/AtomicInteger;</span>
+<span class="exec">	invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	invoke-direct {v0, p0, v2}, Lcom/google/android/gms/common/internal/b$i;-><init>(Lcom/google/android/gms/common/internal/b;I)V</span>
+<span class="cov">	invoke-interface {p2, v0, v1}, Lcom/google/android/gms/common/internal/n;->a(Lcom/google/android/gms/common/internal/l;Lcom/google/android/gms/common/internal/f;)V</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_4</span>
+<span class="missed">	const-string p2, "GmsClient"</span>
+<span class="missed">	const-string v0, "mServiceBroker is null, client disconnected"</span>
+<span class="missed">	invoke-static {p2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="cov">	:goto_2</span>
+<span class="cov">	monitor-exit p1</span>
+<span class="exec">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p2</span>
+<span class="missed">	monitor-exit p1</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	:try_start_2</span>
+<span class="">	throw p2</span>
+<span class="">	:try_end_2</span>
+<span class="missed">	.catch Landroid/os/DeadObjectException; {:try_start_2 .. :try_end_2} :catch_3</span>
+<span class="missed">	.catch Ljava/lang/SecurityException; {:try_start_2 .. :try_end_2} :catch_2</span>
+<span class="missed">	.catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_1</span>
+<span class="">	.catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	:goto_3</span>
+<span class="missed">	const-string p2, "GmsClient"</span>
+<span class="missed">	const-string v0, "IGmsServiceBroker.getService failed"</span>
+<span class="missed">	invoke-static {p2, v0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="missed">	const/16 p1, 0x8</span>
+<span class="missed">	iget-object p2, p0, Lcom/google/android/gms/common/internal/b;->u:Ljava/util/concurrent/atomic/AtomicInteger;</span>
+<span class="">	invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I</span>
+<span class="missed">	move-result p2</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	invoke-virtual {p0, p1, v0, v0, p2}, Lcom/google/android/gms/common/internal/b;->a(ILandroid/os/IBinder;Landroid/os/Bundle;I)V</span>
+<span class="">	return-void</span>
+<span class="">	:catch_2</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	throw p1</span>
+<span class="">	:catch_3</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	const-string p2, "GmsClient"</span>
+<span class="missed">	const-string v0, "IGmsServiceBroker.getService failed"</span>
+<span class="missed">	invoke-static {p2, v0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lcom/google/android/gms/common/internal/b;->b(I)V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public a()Z</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->f:Ljava/lang/Object;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget v1, p0, Lcom/google/android/gms/common/internal/b;->m:I</span>
+<span class="cov">	const/4 v2, 0x2</span>
+<span class="missed">	if-eq v1, v2, :cond_1</span>
+<span class="missed">	iget v1, p0, Lcom/google/android/gms/common/internal/b;->m:I</span>
+<span class="missed">	const/4 v2, 0x3</span>
+<span class="missed">	if-ne v1, v2, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="exec">	goto :goto_1</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	:goto_1</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="exec">	return v1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method
+
+.method public b(I)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->e:Landroid/os/Handler;</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/internal/b;->u:Ljava/util/concurrent/atomic/AtomicInteger;</span>
+<span class="">	invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x6</span>
+<span class="">	invoke-virtual {v0, v2, v1, p1}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method  b(ILandroid/os/IInterface;)V</span>
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(ITT;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	return-void</span>
+.end method
+
+.method public final b()[Le5;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->t:Lcom/google/android/gms/common/internal/a0;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, v0, Lcom/google/android/gms/common/internal/a0;->b:[Le5;</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public c()Z</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->f:Ljava/lang/Object;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget v1, p0, Lcom/google/android/gms/common/internal/b;->m:I</span>
+<span class="cov">	const/4 v2, 0x4</span>
+<span class="cov">	if-ne v1, v2, :cond_0</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="exec">	return v1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method
+
+.method public d()Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->c()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->a:Lcom/google/android/gms/common/internal/g0;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/android/gms/common/internal/g0;->a()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/RuntimeException;</span>
+<span class="missed">	const-string v1, "Failed to connect when checking package"</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method protected abstract e()Ljava/lang/String;
+<span class="">	</span>
+
+.end method
+
+<span class="cov">.method public f()V</span>
+<span class="">	.locals 4</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->u:Ljava/util/concurrent/atomic/AtomicInteger;</span>
+<span class="cov">	invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I</span>
+<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->k:Ljava/util/ArrayList;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/internal/b;->k:Ljava/util/ArrayList;</span>
+<span class="exec">	invoke-virtual {v1}, Ljava/util/ArrayList;->size()I</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="missed">	if-ge v2, v1, :cond_0</span>
+<span class="missed">	iget-object v3, p0, Lcom/google/android/gms/common/internal/b;->k:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	check-cast v3, Lcom/google/android/gms/common/internal/b$h;</span>
+<span class="missed">	invoke-virtual {v3}, Lcom/google/android/gms/common/internal/b$h;->a()V</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/internal/b;->k:Ljava/util/ArrayList;</span>
+<span class="cov">	invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_1</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/internal/b;->g:Ljava/lang/Object;</span>
+<span class="cov">	monitor-enter v1</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	:try_start_1</span>
+<span class="cov">	iput-object v0, p0, Lcom/google/android/gms/common/internal/b;->h:Lcom/google/android/gms/common/internal/n;</span>
+<span class="cov">	monitor-exit v1</span>
+<span class="cov">	:try_end_1</span>
+<span class="cov">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	invoke-direct {p0, v1, v0}, Lcom/google/android/gms/common/internal/b;->c(ILandroid/os/IInterface;)V</span>
+<span class="exec">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	:try_start_2</span>
+<span class="missed">	monitor-exit v1</span>
+<span class="">	:try_end_2</span>
+<span class="missed">	.catchall {:try_start_2 .. :try_end_2} :catchall_0</span>
+<span class="">	throw v0</span>
+<span class="">	:catchall_1</span>
+<span class="missed">	move-exception v1</span>
+<span class="">	:try_start_3</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_3</span>
+<span class="missed">	.catchall {:try_start_3 .. :try_end_3} :catchall_1</span>
+<span class="">	throw v1</span>
+.end method
+
+<span class="cov">.method public h()Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="exec">	return v0</span>
+.end method
+
+.method protected abstract i()Ljava/lang/String;
+<span class="">	</span>
+
+.end method
+
+.method public j()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	return v0</span>
+.end method
+
+.method public k()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget v0, Lg5;->a:I</span>
+<span class="">	return v0</span>
+.end method
+
+<span class="cov">.method public l()V</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->d:Lg5;</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/internal/b;->b:Landroid/content/Context;</span>
+<span class="exec">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->k()I</span>
+<span class="cov">	move-result v2</span>
+<span class="exec">	invoke-virtual {v0, v1, v2}, Lg5;->a(Landroid/content/Context;I)I</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	invoke-direct {p0, v1, v2}, Lcom/google/android/gms/common/internal/b;->c(ILandroid/os/IInterface;)V</span>
+<span class="missed">	new-instance v1, Lcom/google/android/gms/common/internal/b$d;</span>
+<span class="missed">	invoke-direct {v1, p0}, Lcom/google/android/gms/common/internal/b$d;-><init>(Lcom/google/android/gms/common/internal/b;)V</span>
+<span class="missed">	invoke-virtual {p0, v1, v0, v2}, Lcom/google/android/gms/common/internal/b;->a(Lcom/google/android/gms/common/internal/b$c;ILandroid/app/PendingIntent;)V</span>
+<span class="">	return-void</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	new-instance v0, Lcom/google/android/gms/common/internal/b$d;</span>
+<span class="cov">	invoke-direct {v0, p0}, Lcom/google/android/gms/common/internal/b$d;-><init>(Lcom/google/android/gms/common/internal/b;)V</span>
+<span class="cov">	invoke-virtual {p0, v0}, Lcom/google/android/gms/common/internal/b;->a(Lcom/google/android/gms/common/internal/b$c;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method protected final m()V</span>
+<span class="">	.locals 2</span>
+
+<span class="exec">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->c()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="exec">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v1, "Not connected. Call connect() and wait for onConnected() to be called."</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method protected n()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public o()Landroid/accounts/Account;
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public p()[Le5;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	sget-object v0, Lcom/google/android/gms/common/internal/b;->v:[Le5;</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public q()Landroid/os/Bundle;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method public final r()Landroid/content/Context;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->b:Landroid/content/Context;</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method protected s()Landroid/os/Bundle;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	new-instance v0, Landroid/os/Bundle;</span>
+<span class="cov">	invoke-direct {v0}, Landroid/os/Bundle;-><init>()V</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method protected t()Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method protected u()Ljava/util/Set;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/util/Set<",</span>
+<span class="">	"Lcom/google/android/gms/common/api/Scope;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	sget-object v0, Ljava/util/Collections;->EMPTY_SET:Ljava/util/Set;</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public final v()Landroid/os/IInterface;</span>
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/DeadObjectException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()TT;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b;->f:Ljava/lang/Object;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget v1, p0, Lcom/google/android/gms/common/internal/b;->m:I</span>
+<span class="cov">	const/4 v2, 0x5</span>
+<span class="cov">	if-eq v1, v2, :cond_1</span>
+<span class="cov">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b;->m()V</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/internal/b;->j:Landroid/os/IInterface;</span>
+<span class="cov">	if-eqz v1, :cond_0</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	const-string v2, "Client is connected but service is null"</span>
+<span class="cov">	invoke-static {v1, v2}, Lcom/google/android/gms/common/internal/q;->a(ZLjava/lang/Object;)V</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/internal/b;->j:Landroid/os/IInterface;</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="exec">	return-object v1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v1, Landroid/os/DeadObjectException;</span>
+<span class="missed">	invoke-direct {v1}, Landroid/os/DeadObjectException;-><init>()V</span>
+<span class="">	throw v1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method
+
+<span class="cov">.method protected w()Ljava/lang/String;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const-string v0, "com.google.android.gms"</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public x()Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="exec">	return v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../../../.resources/report.js"></script>
+</body>
+</html>

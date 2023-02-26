@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">okhttp3</a></li>
+        <li><i class="ico ico-class"></i> Handshake.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Lokhttp3/Handshake;
+.super Ljava/lang/Object;
+.source "Handshake.java"
+
+
+.field private final cipherSuite:Lokhttp3/CipherSuite;
+.field private final localCertificates:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Ljava/security/cert/Certificate;",
+">;"
+}
+.end annotation
+.end field
+.field private final peerCertificates:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Ljava/security/cert/Certificate;",
+">;"
+}
+.end annotation
+.end field
+.field private final tlsVersion:Lokhttp3/TlsVersion;
+
+
+<span class="cov">.method private constructor &lt;init&gt;(Lokhttp3/TlsVersion;Lokhttp3/CipherSuite;Ljava/util/List;Ljava/util/List;)V</span>
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lokhttp3/TlsVersion;",</span>
+<span class="">	"Lokhttp3/CipherSuite;",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/security/cert/Certificate;",</span>
+<span class="">	">;",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/security/cert/Certificate;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	iput-object p1, p0, Lokhttp3/Handshake;->tlsVersion:Lokhttp3/TlsVersion;</span>
+<span class="cov">	iput-object p2, p0, Lokhttp3/Handshake;->cipherSuite:Lokhttp3/CipherSuite;</span>
+<span class="cov">	iput-object p3, p0, Lokhttp3/Handshake;->peerCertificates:Ljava/util/List;</span>
+<span class="cov">	iput-object p4, p0, Lokhttp3/Handshake;->localCertificates:Ljava/util/List;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public static get(Ljavax/net/ssl/SSLSession;)Lokhttp3/Handshake;</span>
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="exec">	invoke-interface {p0}, Ljavax/net/ssl/SSLSession;->getCipherSuite()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	if-eqz v0, :cond_5</span>
+<span class="cov">	const-string v1, "SSL_NULL_WITH_NULL_NULL"</span>
+<span class="exec">	invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	if-nez v1, :cond_4</span>
+<span class="exec">	invoke-static {v0}, Lokhttp3/CipherSuite;->forJavaName(Ljava/lang/String;)Lokhttp3/CipherSuite;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-interface {p0}, Ljavax/net/ssl/SSLSession;->getProtocol()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	if-eqz v1, :cond_3</span>
+<span class="cov">	const-string v2, "NONE"</span>
+<span class="exec">	invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	if-nez v2, :cond_2</span>
+<span class="exec">	invoke-static {v1}, Lokhttp3/TlsVersion;->forJavaName(Ljava/lang/String;)Lokhttp3/TlsVersion;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	:try_start_0</span>
+<span class="exec">	invoke-interface {p0}, Ljavax/net/ssl/SSLSession;->getPeerCertificates()[Ljava/security/cert/Certificate;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljavax/net/ssl/SSLPeerUnverifiedException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	if-eqz v2, :cond_0</span>
+<span class="exec">	invoke-static {v2}, Lokhttp3/internal/Util;->immutableList([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="cov">	:goto_1</span>
+<span class="exec">	invoke-interface {p0}, Ljavax/net/ssl/SSLSession;->getLocalCertificates()[Ljava/security/cert/Certificate;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="missed">	if-eqz p0, :cond_1</span>
+<span class="">	invoke-static {p0}, Lokhttp3/internal/Util;->immutableList([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	goto :goto_2</span>
+<span class="cov">	:cond_1</span>
+<span class="exec">	invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	:goto_2</span>
+<span class="cov">	new-instance v3, Lokhttp3/Handshake;</span>
+<span class="cov">	invoke-direct {v3, v1, v0, v2, p0}, Lokhttp3/Handshake;-><init>(Lokhttp3/TlsVersion;Lokhttp3/CipherSuite;Ljava/util/List;Ljava/util/List;)V</span>
+<span class="exec">	return-object v3</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p0, Ljava/io/IOException;</span>
+<span class="missed">	const-string v0, "tlsVersion == NONE"</span>
+<span class="missed">	invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	new-instance p0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v0, "tlsVersion == null"</span>
+<span class="missed">	invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
+<span class="">	:cond_4</span>
+<span class="missed">	new-instance p0, Ljava/io/IOException;</span>
+<span class="missed">	const-string v0, "cipherSuite == SSL_NULL_WITH_NULL_NULL"</span>
+<span class="missed">	invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
+<span class="">	:cond_5</span>
+<span class="missed">	new-instance p0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v0, "cipherSuite == null"</span>
+<span class="missed">	invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
+.end method
+
+.method public static get(Lokhttp3/TlsVersion;Lokhttp3/CipherSuite;Ljava/util/List;Ljava/util/List;)Lokhttp3/Handshake;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lokhttp3/TlsVersion;",</span>
+<span class="">	"Lokhttp3/CipherSuite;",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/security/cert/Certificate;",</span>
+<span class="">	">;",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/security/cert/Certificate;",</span>
+<span class="">	">;)",</span>
+<span class="">	"Lokhttp3/Handshake;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-eqz p0, :cond_1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	new-instance v0, Lokhttp3/Handshake;</span>
+<span class="">	invoke-static {p2}, Lokhttp3/internal/Util;->immutableList(Ljava/util/List;)Ljava/util/List;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="">	invoke-static {p3}, Lokhttp3/internal/Util;->immutableList(Ljava/util/List;)Ljava/util/List;</span>
+<span class="missed">	move-result-object p3</span>
+<span class="missed">	invoke-direct {v0, p0, p1, p2, p3}, Lokhttp3/Handshake;-><init>(Lokhttp3/TlsVersion;Lokhttp3/CipherSuite;Ljava/util/List;Ljava/util/List;)V</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p0, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string p1, "cipherSuite == null"</span>
+<span class="missed">	invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p0, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string p1, "tlsVersion == null"</span>
+<span class="missed">	invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
+.end method
+
+.method private names(Ljava/util/List;)Ljava/util/List;
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/security/cert/Certificate;",</span>
+<span class="">	">;)",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="">	invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, Ljava/security/cert/Certificate;</span>
+<span class="missed">	instance-of v2, v1, Ljava/security/cert/X509Certificate;</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="missed">	check-cast v1, Ljava/security/cert/X509Certificate;</span>
+<span class="">	invoke-virtual {v1}, Ljava/security/cert/X509Certificate;->getSubjectDN()Ljava/security/Principal;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {v1}, Ljava/security/cert/Certificate;->getType()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public cipherSuite()Lokhttp3/CipherSuite;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/Handshake;->cipherSuite:Lokhttp3/CipherSuite;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+<span class="">	.locals 3</span>
+<span class="">	.param p1    # Ljava/lang/Object;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+
+<span class="missed">	instance-of v0, p1, Lokhttp3/Handshake;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	return v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	check-cast p1, Lokhttp3/Handshake;</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Handshake;->tlsVersion:Lokhttp3/TlsVersion;</span>
+<span class="missed">	iget-object v2, p1, Lokhttp3/Handshake;->tlsVersion:Lokhttp3/TlsVersion;</span>
+<span class="">	invoke-virtual {v0, v2}, Ljava/lang/Enum;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Handshake;->cipherSuite:Lokhttp3/CipherSuite;</span>
+<span class="missed">	iget-object v2, p1, Lokhttp3/Handshake;->cipherSuite:Lokhttp3/CipherSuite;</span>
+<span class="">	invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Handshake;->peerCertificates:Ljava/util/List;</span>
+<span class="missed">	iget-object v2, p1, Lokhttp3/Handshake;->peerCertificates:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0, v2}, Ljava/util/List;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Handshake;->localCertificates:Ljava/util/List;</span>
+<span class="missed">	iget-object p1, p1, Lokhttp3/Handshake;->localCertificates:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0, p1}, Ljava/util/List;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	:cond_1</span>
+<span class="">	return v1</span>
+.end method
+
+.method public hashCode()I
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/Handshake;->tlsVersion:Lokhttp3/TlsVersion;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/16 v1, 0x20f</span>
+<span class="missed">	add-int/2addr v1, v0</span>
+<span class="missed">	mul-int/lit8 v1, v1, 0x1f</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Handshake;->cipherSuite:Lokhttp3/CipherSuite;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	add-int/2addr v1, v0</span>
+<span class="missed">	mul-int/lit8 v1, v1, 0x1f</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Handshake;->peerCertificates:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->hashCode()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	add-int/2addr v1, v0</span>
+<span class="missed">	mul-int/lit8 v1, v1, 0x1f</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Handshake;->localCertificates:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->hashCode()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	add-int/2addr v1, v0</span>
+<span class="">	return v1</span>
+.end method
+
+.method public localCertificates()Ljava/util/List;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/security/cert/Certificate;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/Handshake;->localCertificates:Ljava/util/List;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public localPrincipal()Ljava/security/Principal;
+<span class="">	.locals 2</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/Handshake;->localCertificates:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Handshake;->localCertificates:Ljava/util/List;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ljava/security/cert/X509Certificate;</span>
+<span class="">	invoke-virtual {v0}, Ljava/security/cert/X509Certificate;->getSubjectX500Principal()Ljavax/security/auth/x500/X500Principal;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public peerCertificates()Ljava/util/List;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/security/cert/Certificate;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-object v0, p0, Lokhttp3/Handshake;->peerCertificates:Ljava/util/List;</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method public peerPrincipal()Ljava/security/Principal;
+<span class="">	.locals 2</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/Handshake;->peerCertificates:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Handshake;->peerCertificates:Ljava/util/List;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ljava/security/cert/X509Certificate;</span>
+<span class="">	invoke-virtual {v0}, Ljava/security/cert/X509Certificate;->getSubjectX500Principal()Ljavax/security/auth/x500/X500Principal;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public tlsVersion()Lokhttp3/TlsVersion;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/Handshake;->tlsVersion:Lokhttp3/TlsVersion;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public toString()Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v1, "Handshake{tlsVersion="</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/Handshake;->tlsVersion:Lokhttp3/TlsVersion;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v1, " cipherSuite="</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/Handshake;->cipherSuite:Lokhttp3/CipherSuite;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v1, " peerCertificates="</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/Handshake;->peerCertificates:Ljava/util/List;</span>
+<span class="">	invoke-direct {p0, v1}, Lokhttp3/Handshake;->names(Ljava/util/List;)Ljava/util/List;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v1, " localCertificates="</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/Handshake;->localCertificates:Ljava/util/List;</span>
+<span class="">	invoke-direct {p0, v1}, Lokhttp3/Handshake;->names(Ljava/util/List;)Ljava/util/List;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const/16 v1, 0x7d</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../.resources/report.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.google.firebase.messaging</a></li>
+        <li><i class="ico ico-class"></i> h.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Lcom/google/firebase/messaging/h;
+.super Ljava/lang/Object;
+.source "com.google.firebase:firebase-messaging@@20.0.0"
+
+
+.field private final a:Ljava/util/concurrent/Executor;
+.field private final b:Landroid/content/Context;
+.field private final c:Lcom/google/firebase/messaging/o;
+
+
+.method public constructor &lt;init&gt;(Landroid/content/Context;Lcom/google/firebase/messaging/o;Ljava/util/concurrent/Executor;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object p3, p0, Lcom/google/firebase/messaging/h;->a:Ljava/util/concurrent/Executor;</span>
+<span class="missed">	iput-object p1, p0, Lcom/google/firebase/messaging/h;->b:Landroid/content/Context;</span>
+<span class="missed">	iput-object p2, p0, Lcom/google/firebase/messaging/h;->c:Lcom/google/firebase/messaging/o;</span>
+<span class="">	return-void</span>
+.end method
+
+.method final a()Z
+<span class="">	.locals 10</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/firebase/messaging/h;->c:Lcom/google/firebase/messaging/o;</span>
+<span class="missed">	const-string v1, "gcm.n.noui"</span>
+<span class="">	invoke-virtual {v0, v1}, Lcom/google/firebase/messaging/o;->b(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/firebase/messaging/h;->b:Landroid/content/Context;</span>
+<span class="missed">	const-string v2, "keyguard"</span>
+<span class="">	invoke-virtual {v0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Landroid/app/KeyguardManager;</span>
+<span class="">	invoke-virtual {v0}, Landroid/app/KeyguardManager;->inKeyguardRestrictedInputMode()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-nez v0, :cond_3</span>
+<span class="">	invoke-static {}, Lcom/google/android/gms/common/util/l;->g()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	const-wide/16 v3, 0xa</span>
+<span class="missed">	invoke-static {v3, v4}, Landroid/os/SystemClock;->sleep(J)V</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-static {}, Landroid/os/Process;->myPid()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iget-object v3, p0, Lcom/google/firebase/messaging/h;->b:Landroid/content/Context;</span>
+<span class="missed">	const-string v4, "activity"</span>
+<span class="">	invoke-virtual {v3, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	check-cast v3, Landroid/app/ActivityManager;</span>
+<span class="">	invoke-virtual {v3}, Landroid/app/ActivityManager;->getRunningAppProcesses()Ljava/util/List;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	if-eqz v3, :cond_3</span>
+<span class="">	invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-eqz v4, :cond_3</span>
+<span class="">	invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	check-cast v4, Landroid/app/ActivityManager$RunningAppProcessInfo;</span>
+<span class="missed">	iget v5, v4, Landroid/app/ActivityManager$RunningAppProcessInfo;->pid:I</span>
+<span class="missed">	if-ne v5, v0, :cond_2</span>
+<span class="missed">	iget v0, v4, Landroid/app/ActivityManager$RunningAppProcessInfo;->importance:I</span>
+<span class="missed">	const/16 v3, 0x64</span>
+<span class="missed">	if-ne v0, v3, :cond_3</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-eqz v0, :cond_4</span>
+<span class="">	return v2</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/firebase/messaging/h;->c:Lcom/google/firebase/messaging/o;</span>
+<span class="missed">	const-string v3, "gcm.n.image"</span>
+<span class="">	invoke-virtual {v0, v3}, Lcom/google/firebase/messaging/o;->a(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {v0}, Lcom/google/firebase/messaging/n;->b(Ljava/lang/String;)Lcom/google/firebase/messaging/n;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_5</span>
+<span class="missed">	iget-object v3, p0, Lcom/google/firebase/messaging/h;->a:Ljava/util/concurrent/Executor;</span>
+<span class="missed">	invoke-virtual {v0, v3}, Lcom/google/firebase/messaging/n;->a(Ljava/util/concurrent/Executor;)V</span>
+<span class="">	:cond_5</span>
+<span class="missed">	iget-object v3, p0, Lcom/google/firebase/messaging/h;->b:Landroid/content/Context;</span>
+<span class="missed">	iget-object v4, p0, Lcom/google/firebase/messaging/h;->c:Lcom/google/firebase/messaging/o;</span>
+<span class="">	invoke-static {v3, v4}, Lcom/google/firebase/messaging/f;->a(Landroid/content/Context;Lcom/google/firebase/messaging/o;)Lcom/google/firebase/messaging/e;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	iget-object v4, v3, Lcom/google/firebase/messaging/e;->a:Landroidx/core/app/f$d;</span>
+<span class="missed">	const-string v5, "FirebaseMessaging"</span>
+<span class="missed">	if-eqz v0, :cond_6</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/firebase/messaging/n;->a()Lgn;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	const-wide/16 v7, 0x5</span>
+<span class="missed">	sget-object v9, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;</span>
+<span class="">	invoke-static {v6, v7, v8, v9}, Ljn;->a(Lgn;JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	check-cast v6, Landroid/graphics/Bitmap;</span>
+<span class="missed">	invoke-virtual {v4, v6}, Landroidx/core/app/f$d;->a(Landroid/graphics/Bitmap;)Landroidx/core/app/f$d;</span>
+<span class="missed">	new-instance v7, Landroidx/core/app/f$b;</span>
+<span class="missed">	invoke-direct {v7}, Landroidx/core/app/f$b;-><init>()V</span>
+<span class="missed">	invoke-virtual {v7, v6}, Landroidx/core/app/f$b;->b(Landroid/graphics/Bitmap;)Landroidx/core/app/f$b;</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="missed">	invoke-virtual {v7, v6}, Landroidx/core/app/f$b;->a(Landroid/graphics/Bitmap;)Landroidx/core/app/f$b;</span>
+<span class="missed">	invoke-virtual {v4, v7}, Landroidx/core/app/f$d;->a(Landroidx/core/app/f$e;)Landroidx/core/app/f$d;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_2</span>
+<span class="missed">	.catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1</span>
+<span class="missed">	.catch Ljava/util/concurrent/TimeoutException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_0</span>
+<span class="missed">	const-string v4, "Failed to download image in time, showing notification without it"</span>
+<span class="missed">	invoke-static {v5, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	invoke-virtual {v0}, Lcom/google/firebase/messaging/n;->close()V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_1</span>
+<span class="missed">	const-string v4, "Interrupted while downloading image, showing notification without it"</span>
+<span class="missed">	invoke-static {v5, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	invoke-virtual {v0}, Lcom/google/firebase/messaging/n;->close()V</span>
+<span class="">	invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_2</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	invoke-virtual {v0}, Ljava/util/concurrent/ExecutionException;->getCause()Ljava/lang/Throwable;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="">	invoke-virtual {v4}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	add-int/lit8 v4, v4, 0x1a</span>
+<span class="missed">	new-instance v6, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v6, v4}, Ljava/lang/StringBuilder;-><init>(I)V</span>
+<span class="missed">	const-string v4, "Failed to download image: "</span>
+<span class="missed">	invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-static {v5, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_6</span>
+<span class="missed">	const/4 v0, 0x3</span>
+<span class="">	invoke-static {v5, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_7</span>
+<span class="missed">	const-string v0, "Showing notification"</span>
+<span class="missed">	invoke-static {v5, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	:cond_7</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/firebase/messaging/h;->b:Landroid/content/Context;</span>
+<span class="missed">	const-string v4, "notification"</span>
+<span class="">	invoke-virtual {v0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Landroid/app/NotificationManager;</span>
+<span class="missed">	iget-object v4, v3, Lcom/google/firebase/messaging/e;->b:Ljava/lang/String;</span>
+<span class="missed">	iget-object v3, v3, Lcom/google/firebase/messaging/e;->a:Landroidx/core/app/f$d;</span>
+<span class="">	invoke-virtual {v3}, Landroidx/core/app/f$d;->a()Landroid/app/Notification;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-virtual {v0, v4, v2, v3}, Landroid/app/NotificationManager;->notify(Ljava/lang/String;ILandroid/app/Notification;)V</span>
+<span class="">	return v1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

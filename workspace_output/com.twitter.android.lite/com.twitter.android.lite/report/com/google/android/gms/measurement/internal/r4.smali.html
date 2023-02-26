@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.google.android.gms.measurement.internal</a></li>
+        <li><i class="ico ico-class"></i> r4.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Lcom/google/android/gms/measurement/internal/r4;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
+
+
+.field private final a:Ljava/lang/String;
+.field private final b:Ljava/lang/String;
+.field private final c:Ljava/lang/String;
+.field private final d:J
+.field private final synthetic e:Lcom/google/android/gms/measurement/internal/k4;
+
+
+<span class="cov">.method private constructor &lt;init&gt;(Lcom/google/android/gms/measurement/internal/k4;Ljava/lang/String;J)V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iput-object p1, p0, Lcom/google/android/gms/measurement/internal/r4;->e:Lcom/google/android/gms/measurement/internal/k4;</span>
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	invoke-static {p2}, Lcom/google/android/gms/common/internal/q;->b(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	const-wide/16 v0, 0x0</span>
+<span class="cov">	cmp-long p1, p3, v0</span>
+<span class="cov">	if-lez p1, :cond_0</span>
+<span class="cov">	const/4 p1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	invoke-static {p1}, Lcom/google/android/gms/common/internal/q;->a(Z)V</span>
+<span class="exec">	invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	const-string v0, ":start"</span>
+<span class="exec">	invoke-virtual {p1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/android/gms/measurement/internal/r4;->a:Ljava/lang/String;</span>
+<span class="exec">	invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	const-string v0, ":count"</span>
+<span class="exec">	invoke-virtual {p1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/android/gms/measurement/internal/r4;->b:Ljava/lang/String;</span>
+<span class="exec">	invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	const-string p2, ":value"</span>
+<span class="exec">	invoke-virtual {p1, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/android/gms/measurement/internal/r4;->c:Ljava/lang/String;</span>
+<span class="cov">	iput-wide p3, p0, Lcom/google/android/gms/measurement/internal/r4;->d:J</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method synthetic constructor &lt;init&gt;(Lcom/google/android/gms/measurement/internal/k4;Ljava/lang/String;JLcom/google/android/gms/measurement/internal/n4;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/android/gms/measurement/internal/r4;-><init>(Lcom/google/android/gms/measurement/internal/k4;Ljava/lang/String;J)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private final b()V</span>
+<span class="">	.locals 4</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/r4;->e:Lcom/google/android/gms/measurement/internal/k4;</span>
+<span class="cov">	invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/x5;->c()V</span>
+<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/r4;->e:Lcom/google/android/gms/measurement/internal/k4;</span>
+<span class="exec">	invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/x5;->j()Lcom/google/android/gms/common/util/e;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-interface {v0}, Lcom/google/android/gms/common/util/e;->a()J</span>
+<span class="cov">	move-result-wide v0</span>
+<span class="cov">	iget-object v2, p0, Lcom/google/android/gms/measurement/internal/r4;->e:Lcom/google/android/gms/measurement/internal/k4;</span>
+<span class="exec">	invoke-virtual {v2}, Lcom/google/android/gms/measurement/internal/k4;->t()Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="exec">	invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	iget-object v3, p0, Lcom/google/android/gms/measurement/internal/r4;->b:Ljava/lang/String;</span>
+<span class="cov">	invoke-interface {v2, v3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	iget-object v3, p0, Lcom/google/android/gms/measurement/internal/r4;->c:Ljava/lang/String;</span>
+<span class="cov">	invoke-interface {v2, v3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	iget-object v3, p0, Lcom/google/android/gms/measurement/internal/r4;->a:Ljava/lang/String;</span>
+<span class="cov">	invoke-interface {v2, v3, v0, v1}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private final c()J</span>
+<span class="">	.locals 4</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/r4;->e:Lcom/google/android/gms/measurement/internal/k4;</span>
+<span class="exec">	invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/k4;->t()Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/measurement/internal/r4;->a:Ljava/lang/String;</span>
+<span class="cov">	const-wide/16 v2, 0x0</span>
+<span class="exec">	invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J</span>
+<span class="cov">	move-result-wide v0</span>
+<span class="exec">	return-wide v0</span>
+.end method
+
+<span class="cov">.method public final a()Landroid/util/Pair;</span>
+<span class="">	.locals 8</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Landroid/util/Pair<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ljava/lang/Long;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/r4;->e:Lcom/google/android/gms/measurement/internal/k4;</span>
+<span class="cov">	invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/x5;->c()V</span>
+<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/r4;->e:Lcom/google/android/gms/measurement/internal/k4;</span>
+<span class="cov">	invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/x5;->c()V</span>
+<span class="exec">	invoke-direct {p0}, Lcom/google/android/gms/measurement/internal/r4;->c()J</span>
+<span class="cov">	move-result-wide v0</span>
+<span class="cov">	const-wide/16 v2, 0x0</span>
+<span class="cov">	cmp-long v4, v0, v2</span>
+<span class="cov">	if-nez v4, :cond_0</span>
+<span class="cov">	invoke-direct {p0}, Lcom/google/android/gms/measurement/internal/r4;->b()V</span>
+<span class="cov">	move-wide v0, v2</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v4, p0, Lcom/google/android/gms/measurement/internal/r4;->e:Lcom/google/android/gms/measurement/internal/k4;</span>
+<span class="exec">	invoke-virtual {v4}, Lcom/google/android/gms/measurement/internal/x5;->j()Lcom/google/android/gms/common/util/e;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="exec">	invoke-interface {v4}, Lcom/google/android/gms/common/util/e;->a()J</span>
+<span class="cov">	move-result-wide v4</span>
+<span class="cov">	sub-long/2addr v0, v4</span>
+<span class="exec">	invoke-static {v0, v1}, Ljava/lang/Math;->abs(J)J</span>
+<span class="cov">	move-result-wide v0</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	iget-wide v4, p0, Lcom/google/android/gms/measurement/internal/r4;->d:J</span>
+<span class="cov">	const/4 v6, 0x0</span>
+<span class="cov">	cmp-long v7, v0, v4</span>
+<span class="cov">	if-gez v7, :cond_1</span>
+<span class="exec">	return-object v6</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v7, 0x1</span>
+<span class="missed">	shl-long/2addr v4, v7</span>
+<span class="missed">	cmp-long v7, v0, v4</span>
+<span class="missed">	if-lez v7, :cond_2</span>
+<span class="missed">	invoke-direct {p0}, Lcom/google/android/gms/measurement/internal/r4;->b()V</span>
+<span class="">	return-object v6</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/r4;->e:Lcom/google/android/gms/measurement/internal/k4;</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/k4;->t()Landroid/content/SharedPreferences;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/measurement/internal/r4;->c:Ljava/lang/String;</span>
+<span class="">	invoke-interface {v0, v1, v6}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/measurement/internal/r4;->e:Lcom/google/android/gms/measurement/internal/k4;</span>
+<span class="">	invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/k4;->t()Landroid/content/SharedPreferences;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iget-object v4, p0, Lcom/google/android/gms/measurement/internal/r4;->b:Ljava/lang/String;</span>
+<span class="">	invoke-interface {v1, v4, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J</span>
+<span class="missed">	move-result-wide v4</span>
+<span class="missed">	invoke-direct {p0}, Lcom/google/android/gms/measurement/internal/r4;->b()V</span>
+<span class="missed">	if-eqz v0, :cond_4</span>
+<span class="missed">	cmp-long v1, v4, v2</span>
+<span class="missed">	if-gtz v1, :cond_3</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	new-instance v1, Landroid/util/Pair;</span>
+<span class="">	invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-direct {v1, v0, v2}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V</span>
+<span class="">	return-object v1</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_4</span>
+<span class="missed">	sget-object v0, Lcom/google/android/gms/measurement/internal/k4;->E:Landroid/util/Pair;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final a(Ljava/lang/String;J)V
+<span class="">	.locals 6</span>
+
+<span class="missed">	iget-object p2, p0, Lcom/google/android/gms/measurement/internal/r4;->e:Lcom/google/android/gms/measurement/internal/k4;</span>
+<span class="missed">	invoke-virtual {p2}, Lcom/google/android/gms/measurement/internal/x5;->c()V</span>
+<span class="">	invoke-direct {p0}, Lcom/google/android/gms/measurement/internal/r4;->c()J</span>
+<span class="missed">	move-result-wide p2</span>
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	cmp-long v2, p2, v0</span>
+<span class="missed">	if-nez v2, :cond_0</span>
+<span class="missed">	invoke-direct {p0}, Lcom/google/android/gms/measurement/internal/r4;->b()V</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-nez p1, :cond_1</span>
+<span class="missed">	const-string p1, ""</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object p2, p0, Lcom/google/android/gms/measurement/internal/r4;->e:Lcom/google/android/gms/measurement/internal/k4;</span>
+<span class="">	invoke-virtual {p2}, Lcom/google/android/gms/measurement/internal/k4;->t()Landroid/content/SharedPreferences;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	iget-object p3, p0, Lcom/google/android/gms/measurement/internal/r4;->b:Ljava/lang/String;</span>
+<span class="">	invoke-interface {p2, p3, v0, v1}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J</span>
+<span class="missed">	move-result-wide p2</span>
+<span class="missed">	const-wide/16 v2, 0x1</span>
+<span class="missed">	cmp-long v4, p2, v0</span>
+<span class="missed">	if-gtz v4, :cond_2</span>
+<span class="missed">	iget-object p2, p0, Lcom/google/android/gms/measurement/internal/r4;->e:Lcom/google/android/gms/measurement/internal/k4;</span>
+<span class="">	invoke-virtual {p2}, Lcom/google/android/gms/measurement/internal/k4;->t()Landroid/content/SharedPreferences;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="">	invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	iget-object p3, p0, Lcom/google/android/gms/measurement/internal/r4;->c:Ljava/lang/String;</span>
+<span class="missed">	invoke-interface {p2, p3, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/measurement/internal/r4;->b:Ljava/lang/String;</span>
+<span class="missed">	invoke-interface {p2, p1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/r4;->e:Lcom/google/android/gms/measurement/internal/k4;</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/x5;->h()Lcom/google/android/gms/measurement/internal/t9;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/android/gms/measurement/internal/t9;->u()Ljava/security/SecureRandom;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Ljava/security/SecureRandom;->nextLong()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="missed">	const-wide v4, 0x7fffffffffffffffL</span>
+<span class="missed">	and-long/2addr v0, v4</span>
+<span class="missed">	add-long/2addr p2, v2</span>
+<span class="missed">	div-long/2addr v4, p2</span>
+<span class="missed">	cmp-long v2, v0, v4</span>
+<span class="missed">	if-gez v2, :cond_3</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/measurement/internal/r4;->e:Lcom/google/android/gms/measurement/internal/k4;</span>
+<span class="">	invoke-virtual {v1}, Lcom/google/android/gms/measurement/internal/k4;->t()Landroid/content/SharedPreferences;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	if-eqz v0, :cond_4</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/internal/r4;->c:Ljava/lang/String;</span>
+<span class="missed">	invoke-interface {v1, v0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/measurement/internal/r4;->b:Ljava/lang/String;</span>
+<span class="missed">	invoke-interface {v1, p1, p2, p3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../../../.resources/report.js"></script>
+</body>
+</html>

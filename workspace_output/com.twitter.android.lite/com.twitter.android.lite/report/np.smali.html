@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> np.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Lnp;
+.super Ljava/lang/Object;
+.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.implements Lop;
+
+
+.field private static final f:Ljava/util/regex/Pattern;
+.field private static final g:Ljava/lang/String;
+.field private final a:Lpp;
+.field private final b:Landroid/content/Context;
+.field private final c:Ljava/lang/String;
+.field private final d:Lpu;
+.field private e:Ljava/lang/String;
+
+
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const-string v0, "[^\\p{Alnum}]"</span>
+<span class="exec">	invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lnp;->f:Ljava/util/regex/Pattern;</span>
+<span class="cov">	const-string v0, "/"</span>
+<span class="exec">	invoke-static {v0}, Ljava/util/regex/Pattern;->quote(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lnp;->g:Ljava/lang/String;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public constructor &lt;init&gt;(Landroid/content/Context;Ljava/lang/String;Lpu;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	if-eqz p1, :cond_1</span>
+<span class="cov">	if-eqz p2, :cond_0</span>
+<span class="cov">	iput-object p1, p0, Lnp;->b:Landroid/content/Context;</span>
+<span class="cov">	iput-object p2, p0, Lnp;->c:Ljava/lang/String;</span>
+<span class="cov">	iput-object p3, p0, Lnp;->d:Lpu;</span>
+<span class="cov">	new-instance p1, Lpp;</span>
+<span class="cov">	invoke-direct {p1}, Lpp;-><init>()V</span>
+<span class="cov">	iput-object p1, p0, Lnp;->a:Lpp;</span>
+<span class="exec">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p2, "appIdentifier must not be null"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p2, "appContext must not be null"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method private static a(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-nez p0, :cond_0</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	sget-object v0, Lnp;->f:Ljava/util/regex/Pattern;</span>
+<span class="exec">	invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	const-string v0, ""</span>
+<span class="exec">	invoke-virtual {p0, v0}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;</span>
+<span class="exec">	invoke-virtual {p0, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method private declared-synchronized a(Ljava/lang/String;Landroid/content/SharedPreferences;)Ljava/lang/String;</span>
+<span class="">	.locals 4</span>
+
+<span class="cov">	monitor-enter p0</span>
+<span class="cov">	:try_start_0</span>
+<span class="exec">	invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v0}, Ljava/util/UUID;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-static {v0}, Lnp;->a(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="cov">	const-string v3, "Created new Crashlytics IID: "</span>
+<span class="cov">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	invoke-virtual {v1, v2}, Lmo;->a(Ljava/lang/String;)V</span>
+<span class="exec">	invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	move-result-object p2</span>
+<span class="cov">	const-string v1, "crashlytics.installation.id"</span>
+<span class="exec">	invoke-interface {p2, v1, v0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	move-result-object p2</span>
+<span class="cov">	const-string v1, "firebase.installation.id"</span>
+<span class="exec">	invoke-interface {p2, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="cov">	monitor-exit p0</span>
+<span class="exec">	return-object v0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw p1</span>
+.end method
+
+.method private declared-synchronized a(Ljava/lang/String;Ljava/lang/String;Landroid/content/SharedPreferences;Landroid/content/SharedPreferences;)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "Migrating legacy Crashlytics IID: "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Lmo;->a(Ljava/lang/String;)V</span>
+<span class="">	invoke-interface {p3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object p3</span>
+<span class="missed">	const-string v0, "crashlytics.installation.id"</span>
+<span class="">	invoke-interface {p3, v0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string p3, "firebase.installation.id"</span>
+<span class="">	invoke-interface {p1, p3, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="">	invoke-interface {p4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string p2, "crashlytics.installation.id"</span>
+<span class="">	invoke-interface {p1, p2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string p2, "crashlytics.advertising.id"</span>
+<span class="">	invoke-interface {p1, p2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method private b(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	sget-object v0, Lnp;->g:Ljava/lang/String;</span>
+<span class="cov">	const-string v1, ""</span>
+<span class="exec">	invoke-virtual {p1, v0, v1}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	return-object p1</span>
+.end method
+
+<span class="cov">.method public declared-synchronized a()Ljava/lang/String;</span>
+<span class="">	.locals 7</span>
+
+<span class="cov">	monitor-enter p0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v0, p0, Lnp;->e:Ljava/lang/String;</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	iget-object v0, p0, Lnp;->e:Ljava/lang/String;</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="cov">	monitor-exit p0</span>
+<span class="exec">	return-object v0</span>
+<span class="cov">	:try_start_1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v0, p0, Lnp;->b:Landroid/content/Context;</span>
+<span class="exec">	invoke-static {v0}, Lzo;->h(Landroid/content/Context;)Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iget-object v1, p0, Lnp;->d:Lpu;</span>
+<span class="exec">	invoke-interface {v1}, Lpu;->d()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const-string v2, "firebase.installation.id"</span>
+<span class="cov">	const/4 v3, 0x0</span>
+<span class="exec">	invoke-interface {v0, v2, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	if-nez v2, :cond_2</span>
+<span class="cov">	iget-object v2, p0, Lnp;->b:Landroid/content/Context;</span>
+<span class="exec">	invoke-static {v2}, Lzo;->d(Landroid/content/Context;)Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	const-string v4, "crashlytics.installation.id"</span>
+<span class="exec">	invoke-interface {v2, v4, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="exec">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	new-instance v5, Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="cov">	const-string v6, "No cached FID; legacy id is "</span>
+<span class="cov">	invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v5</span>
+<span class="cov">	invoke-virtual {v4, v5}, Lmo;->a(Ljava/lang/String;)V</span>
+<span class="cov">	if-nez v3, :cond_1</span>
+<span class="exec">	invoke-direct {p0, v1, v0}, Lnp;->a(Ljava/lang/String;Landroid/content/SharedPreferences;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iput-object v0, p0, Lnp;->e:Ljava/lang/String;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iput-object v3, p0, Lnp;->e:Ljava/lang/String;</span>
+<span class="missed">	invoke-direct {p0, v3, v1, v0, v2}, Lnp;->a(Ljava/lang/String;Ljava/lang/String;Landroid/content/SharedPreferences;Landroid/content/SharedPreferences;)V</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	iget-object v0, p0, Lnp;->e:Ljava/lang/String;</span>
+<span class="cov">	:try_end_1</span>
+<span class="cov">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="cov">	monitor-exit p0</span>
+<span class="exec">	return-object v0</span>
+<span class="">	:try_start_2</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_3</span>
+<span class="missed">	const-string v2, "crashlytics.installation.id"</span>
+<span class="">	invoke-interface {v0, v2, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	iput-object v2, p0, Lnp;->e:Ljava/lang/String;</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	new-instance v3, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "Found matching FID, using Crashlytics IID: "</span>
+<span class="missed">	invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v4, p0, Lnp;->e:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-virtual {v2, v3}, Lmo;->a(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Lnp;->e:Ljava/lang/String;</span>
+<span class="missed">	if-nez v2, :cond_4</span>
+<span class="">	invoke-direct {p0, v1, v0}, Lnp;->a(Ljava/lang/String;Landroid/content/SharedPreferences;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lnp;->e:Ljava/lang/String;</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-direct {p0, v1, v0}, Lnp;->a(Ljava/lang/String;Landroid/content/SharedPreferences;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lnp;->e:Ljava/lang/String;</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget-object v0, p0, Lnp;->e:Ljava/lang/String;</span>
+<span class="">	:try_end_2</span>
+<span class="missed">	.catchall {:try_start_2 .. :try_end_2} :catchall_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return-object v0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw v0</span>
+.end method
+
+<span class="cov">.method public b()Ljava/lang/String;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-object v0, p0, Lnp;->c:Ljava/lang/String;</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public c()Ljava/lang/String;</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Lnp;->a:Lpp;</span>
+<span class="cov">	iget-object v1, p0, Lnp;->b:Landroid/content/Context;</span>
+<span class="exec">	invoke-virtual {v0, v1}, Lpp;->a(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public d()Ljava/lang/String;</span>
+<span class="">	.locals 4</span>
+
+<span class="cov">	sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;</span>
+<span class="cov">	const/4 v1, 0x2</span>
+<span class="cov">	new-array v1, v1, [Ljava/lang/Object;</span>
+<span class="cov">	sget-object v2, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;</span>
+<span class="exec">	invoke-direct {p0, v2}, Lnp;->b(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	const/4 v3, 0x0</span>
+<span class="cov">	aput-object v2, v1, v3</span>
+<span class="cov">	sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;</span>
+<span class="exec">	invoke-direct {p0, v2}, Lnp;->b(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	const/4 v3, 0x1</span>
+<span class="cov">	aput-object v2, v1, v3</span>
+<span class="cov">	const-string v2, "%s/%s"</span>
+<span class="exec">	invoke-static {v0, v2, v1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public e()Ljava/lang/String;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	sget-object v0, Landroid/os/Build$VERSION;->INCREMENTAL:Ljava/lang/String;</span>
+<span class="exec">	invoke-direct {p0, v0}, Lnp;->b(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public f()Ljava/lang/String;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	sget-object v0, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;</span>
+<span class="exec">	invoke-direct {p0, v0}, Lnp;->b(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

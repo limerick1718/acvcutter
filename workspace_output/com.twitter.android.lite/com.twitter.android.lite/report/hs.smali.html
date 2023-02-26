@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> hs.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Lhs;
+.super Ljava/lang/Object;
+.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lhs$d;,
+Lhs$c;,
+Lhs$b;,
+Lhs$a;
+}
+.end annotation
+
+.field private static final h:[S
+.field private final a:Lns;
+.field private final b:Ljava/lang/String;
+.field private final c:Ljava/lang/String;
+.field private final d:Ljp;
+.field private final e:Lgs;
+.field private final f:Lhs$a;
+.field private g:Ljava/lang/Thread;
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x6</span>
+<span class="missed">	new-array v0, v0, [S</span>
+<span class="missed">	fill-array-data v0, :array_0</span>
+<span class="missed">	sput-object v0, Lhs;->h:[S</span>
+<span class="">	return-void</span>
+<span class="">	nop</span>
+<span class="">	:array_0</span>
+<span class="">	.array-data 2</span>
+<span class="">	0xas</span>
+<span class="">	0x14s</span>
+<span class="">	0x1es</span>
+<span class="">	0x3cs</span>
+<span class="">	0x78s</span>
+<span class="">	0x12cs</span>
+<span class="">	.end array-data</span>
+.end method
+
+.method public constructor &lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Ljp;Lgs;Lns;Lhs$a;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	if-eqz p5, :cond_0</span>
+<span class="missed">	iput-object p5, p0, Lhs;->a:Lns;</span>
+<span class="missed">	iput-object p1, p0, Lhs;->b:Ljava/lang/String;</span>
+<span class="missed">	iput-object p2, p0, Lhs;->c:Ljava/lang/String;</span>
+<span class="missed">	iput-object p3, p0, Lhs;->d:Ljp;</span>
+<span class="missed">	iput-object p4, p0, Lhs;->e:Lgs;</span>
+<span class="missed">	iput-object p6, p0, Lhs;->f:Lhs$a;</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p2, "createReportCall must not be null."</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method static synthetic a(Lhs;)Lhs$a;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iget-object p0, p0, Lhs;->f:Lhs$a;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method static synthetic a(Lhs;Ljava/lang/Thread;)Ljava/lang/Thread;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-object p1, p0, Lhs;->g:Ljava/lang/Thread;</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method static synthetic a()[S
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lhs;->h:[S</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public declared-synchronized a(Ljava/util/List;ZF)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Lks;",</span>
+<span class="">	">;ZF)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lhs;->g:Ljava/lang/Thread;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string p2, "Report upload has already been started."</span>
+<span class="missed">	invoke-virtual {p1, p2}, Lmo;->a(Ljava/lang/String;)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return-void</span>
+<span class="">	:try_start_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Lhs$d;</span>
+<span class="missed">	invoke-direct {v0, p0, p1, p2, p3}, Lhs$d;-><init>(Lhs;Ljava/util/List;ZF)V</span>
+<span class="missed">	new-instance p1, Ljava/lang/Thread;</span>
+<span class="missed">	const-string p2, "Crashlytics Report Uploader"</span>
+<span class="missed">	invoke-direct {p1, v0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V</span>
+<span class="missed">	iput-object p1, p0, Lhs;->g:Ljava/lang/Thread;</span>
+<span class="missed">	invoke-virtual {p1}, Ljava/lang/Thread;->start()V</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(Lks;Z)Z
+<span class="">	.locals 5</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	new-instance v1, Lis;</span>
+<span class="missed">	iget-object v2, p0, Lhs;->b:Ljava/lang/String;</span>
+<span class="missed">	iget-object v3, p0, Lhs;->c:Ljava/lang/String;</span>
+<span class="missed">	invoke-direct {v1, v2, v3, p1}, Lis;-><init>(Ljava/lang/String;Ljava/lang/String;Lks;)V</span>
+<span class="missed">	iget-object v2, p0, Lhs;->d:Ljp;</span>
+<span class="missed">	sget-object v3, Ljp;->c:Ljp;</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	if-ne v2, v3, :cond_0</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	const-string v1, "Send to Reports Endpoint disabled. Removing Reports Endpoint report."</span>
+<span class="missed">	invoke-virtual {p2, v1}, Lmo;->a(Ljava/lang/String;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v2, p0, Lhs;->d:Ljp;</span>
+<span class="missed">	sget-object v3, Ljp;->b:Ljp;</span>
+<span class="missed">	if-ne v2, v3, :cond_1</span>
+<span class="">	invoke-interface {p1}, Lks;->e()Lks$a;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	sget-object v3, Lks$a;->a:Lks$a;</span>
+<span class="missed">	if-ne v2, v3, :cond_1</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	const-string v1, "Send to Reports Endpoint for non-native reports disabled. Removing Reports Uploader report."</span>
+<span class="missed">	invoke-virtual {p2, v1}, Lmo;->a(Ljava/lang/String;)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 p2, 0x1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v2, p0, Lhs;->a:Lns;</span>
+<span class="">	invoke-interface {v2, v1, p2}, Lns;->a(Lis;Z)Z</span>
+<span class="missed">	move-result p2</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v3, "Crashlytics Reports Endpoint upload "</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	if-eqz p2, :cond_2</span>
+<span class="missed">	const-string v3, "complete: "</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const-string v3, "FAILED: "</span>
+<span class="">	:goto_1</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-interface {p1}, Lks;->d()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-virtual {v1, v2}, Lmo;->c(Ljava/lang/String;)V</span>
+<span class="">	:goto_2</span>
+<span class="missed">	if-eqz p2, :cond_3</span>
+<span class="missed">	iget-object p2, p0, Lhs;->e:Lgs;</span>
+<span class="missed">	invoke-virtual {p2, p1}, Lgs;->a(Lks;)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p2</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v3, "Error occurred sending report "</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {v1, p1, p2}, Lmo;->b(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	:goto_3</span>
+<span class="">	:cond_3</span>
+<span class="">	return v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

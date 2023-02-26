@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> qo.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Lqo;
+.super Ljava/lang/Object;
+.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.implements Lho$b;
+.implements Lro;
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lqo$a;
+}
+.end annotation
+
+.field private final a:Lho;
+.field private final b:Lqo$a;
+.field private c:Lro$a;
+.field private d:Lho$a;
+
+
+<span class="cov">.method public constructor &lt;init&gt;(Lho;Lqo$a;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	iput-object p1, p0, Lqo;->a:Lho;</span>
+<span class="cov">	iput-object p2, p0, Lqo;->b:Lqo$a;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private a(Ljava/lang/String;Landroid/os/Bundle;)V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	:try_start_0</span>
+<span class="cov">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="cov">	const-string v1, "$A$:"</span>
+<span class="cov">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-static {p1, p2}, Lqo;->b(Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	iget-object p2, p0, Lqo;->b:Lqo$a;</span>
+<span class="cov">	invoke-interface {p2, p1}, Lqo$a;->a(Ljava/lang/String;)V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string p2, "Unable to serialize Firebase Analytics event."</span>
+<span class="missed">	invoke-virtual {p1, p2}, Lmo;->d(Ljava/lang/String;)V</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private static b(Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/String;</span>
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Lorg/json/JSONException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	new-instance v0, Lorg/json/JSONObject;</span>
+<span class="cov">	invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V</span>
+<span class="cov">	new-instance v1, Lorg/json/JSONObject;</span>
+<span class="cov">	invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V</span>
+<span class="exec">	invoke-virtual {p1}, Landroid/os/Bundle;->keySet()Ljava/util/Set;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="exec">	invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="cov">	move-result v3</span>
+<span class="cov">	if-eqz v3, :cond_0</span>
+<span class="exec">	invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	check-cast v3, Ljava/lang/String;</span>
+<span class="exec">	invoke-virtual {p1, v3}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	invoke-virtual {v1, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const-string p1, "name"</span>
+<span class="cov">	invoke-virtual {v0, p1, p0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;</span>
+<span class="cov">	const-string p0, "parameters"</span>
+<span class="cov">	invoke-virtual {v0, p0, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;</span>
+<span class="exec">	invoke-virtual {v0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+.method private b(ILandroid/os/Bundle;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lqo;->c:Lro$a;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-interface {v0, p1, p2}, Lro$a;->a(ILandroid/os/Bundle;)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public a(ILandroid/os/Bundle;)V</span>
+<span class="">	.locals 3</span>
+
+<span class="exec">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="cov">	const-string v2, "AnalyticsConnectorReceiver received message: "</span>
+<span class="cov">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="cov">	const-string v2, " "</span>
+<span class="cov">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	invoke-virtual {v0, v1}, Lmo;->a(Ljava/lang/String;)V</span>
+<span class="missed">	if-nez p2, :cond_0</span>
+<span class="">	return-void</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const-string v0, "params"</span>
+<span class="exec">	invoke-virtual {p2, v0}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	new-instance v0, Landroid/os/Bundle;</span>
+<span class="missed">	invoke-direct {v0}, Landroid/os/Bundle;-><init>()V</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	const-string v1, "_o"</span>
+<span class="exec">	invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const-string v2, "clx"</span>
+<span class="exec">	invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_2</span>
+<span class="missed">	invoke-direct {p0, p1, p2}, Lqo;->b(ILandroid/os/Bundle;)V</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	const-string p1, "name"</span>
+<span class="exec">	invoke-virtual {p2, p1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	if-eqz p1, :cond_3</span>
+<span class="cov">	invoke-direct {p0, p1, v0}, Lqo;->a(Ljava/lang/String;Landroid/os/Bundle;)V</span>
+<span class="cov">	:cond_3</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public a(Lro$a;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-object p1, p0, Lqo;->c:Lro$a;</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public a()Z</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	iget-object v0, p0, Lqo;->a:Lho;</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v2, "Firebase Analytics is not present; you will not see automatic logging of events before a crash occurs."</span>
+<span class="missed">	invoke-virtual {v0, v2}, Lmo;->a(Ljava/lang/String;)V</span>
+<span class="">	return v1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const-string v2, "clx"</span>
+<span class="exec">	invoke-interface {v0, v2, p0}, Lho;->a(Ljava/lang/String;Lho$b;)Lho$a;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iput-object v0, p0, Lqo;->d:Lho$a;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v2, "Could not register AnalyticsConnectorListener with Crashlytics origin."</span>
+<span class="missed">	invoke-virtual {v0, v2}, Lmo;->a(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v0, p0, Lqo;->a:Lho;</span>
+<span class="missed">	const-string v2, "crash"</span>
+<span class="">	invoke-interface {v0, v2, p0}, Lho;->a(Ljava/lang/String;Lho$b;)Lho$a;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lqo;->d:Lho$a;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v2, "A new version of the Google Analytics for Firebase SDK is now available. For improved performance and compatibility with Crashlytics, please update to the latest version."</span>
+<span class="missed">	invoke-virtual {v0, v2}, Lmo;->d(Ljava/lang/String;)V</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	iget-object v0, p0, Lqo;->d:Lho$a;</span>
+<span class="cov">	if-eqz v0, :cond_2</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	:cond_2</span>
+<span class="exec">	return v1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

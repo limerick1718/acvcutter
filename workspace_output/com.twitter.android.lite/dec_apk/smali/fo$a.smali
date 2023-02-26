@@ -1,0 +1,10 @@
+.class synthetic Lfo$a;
+.super Ljava/lang/Object;
+.source "com.google.firebase:firebase-common@@19.3.0"
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Lfo;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x1008
+name = null
+.end annotation

@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">okhttp3.internal.connection</a></li>
+        <li><i class="ico ico-class"></i> Exchange.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Lokhttp3/internal/connection/Exchange;
+.super Ljava/lang/Object;
+.source "Exchange.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lokhttp3/internal/connection/Exchange$ResponseBodySource;,
+Lokhttp3/internal/connection/Exchange$RequestBodySink;
+}
+.end annotation
+
+.field final call:Lokhttp3/Call;
+.field final codec:Lokhttp3/internal/http/ExchangeCodec;
+.field private duplex:Z
+.field final eventListener:Lokhttp3/EventListener;
+.field final finder:Lokhttp3/internal/connection/ExchangeFinder;
+.field final transmitter:Lokhttp3/internal/connection/Transmitter;
+
+
+<span class="cov">.method public constructor &lt;init&gt;(Lokhttp3/internal/connection/Transmitter;Lokhttp3/Call;Lokhttp3/EventListener;Lokhttp3/internal/connection/ExchangeFinder;Lokhttp3/internal/http/ExchangeCodec;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	iput-object p1, p0, Lokhttp3/internal/connection/Exchange;->transmitter:Lokhttp3/internal/connection/Transmitter;</span>
+<span class="cov">	iput-object p2, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/Call;</span>
+<span class="cov">	iput-object p3, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;</span>
+<span class="cov">	iput-object p4, p0, Lokhttp3/internal/connection/Exchange;->finder:Lokhttp3/internal/connection/ExchangeFinder;</span>
+<span class="cov">	iput-object p5, p0, Lokhttp3/internal/connection/Exchange;->codec:Lokhttp3/internal/http/ExchangeCodec;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method  bodyComplete(JZZLjava/io/IOException;)Ljava/io/IOException;</span>
+<span class="">	.locals 2</span>
+<span class="">	.param p5    # Ljava/io/IOException;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-eqz p5, :cond_0</span>
+<span class="missed">	invoke-virtual {p0, p5}, Lokhttp3/internal/connection/Exchange;->trackFailure(Ljava/io/IOException;)V</span>
+<span class="cov">	:cond_0</span>
+<span class="missed">	if-eqz p4, :cond_2</span>
+<span class="missed">	if-eqz p5, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/Call;</span>
+<span class="missed">	invoke-virtual {v0, v1, p5}, Lokhttp3/EventListener;->requestFailed(Lokhttp3/Call;Ljava/io/IOException;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/Call;</span>
+<span class="missed">	invoke-virtual {v0, v1, p1, p2}, Lokhttp3/EventListener;->requestBodyEnd(Lokhttp3/Call;J)V</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	if-eqz p3, :cond_4</span>
+<span class="missed">	if-eqz p5, :cond_3</span>
+<span class="missed">	iget-object p1, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;</span>
+<span class="missed">	iget-object p2, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/Call;</span>
+<span class="missed">	invoke-virtual {p1, p2, p5}, Lokhttp3/EventListener;->responseFailed(Lokhttp3/Call;Ljava/io/IOException;)V</span>
+<span class="exec">	goto :goto_1</span>
+<span class="cov">	:cond_3</span>
+<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;</span>
+<span class="cov">	iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/Call;</span>
+<span class="cov">	invoke-virtual {v0, v1, p1, p2}, Lokhttp3/EventListener;->responseBodyEnd(Lokhttp3/Call;J)V</span>
+<span class="cov">	:goto_1</span>
+<span class="cov">	:cond_4</span>
+<span class="cov">	iget-object p1, p0, Lokhttp3/internal/connection/Exchange;->transmitter:Lokhttp3/internal/connection/Transmitter;</span>
+<span class="exec">	invoke-virtual {p1, p0, p4, p3, p5}, Lokhttp3/internal/connection/Transmitter;->exchangeMessageDone(Lokhttp3/internal/connection/Exchange;ZZLjava/io/IOException;)Ljava/io/IOException;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	return-object p1</span>
+.end method
+
+.method public cancel()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->codec:Lokhttp3/internal/http/ExchangeCodec;</span>
+<span class="missed">	invoke-interface {v0}, Lokhttp3/internal/http/ExchangeCodec;->cancel()V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public connection()Lokhttp3/internal/connection/RealConnection;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->codec:Lokhttp3/internal/http/ExchangeCodec;</span>
+<span class="exec">	invoke-interface {v0}, Lokhttp3/internal/http/ExchangeCodec;->connection()Lokhttp3/internal/connection/RealConnection;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method public createRequestBody(Lokhttp3/Request;Z)Lvx;
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iput-boolean p2, p0, Lokhttp3/internal/connection/Exchange;->duplex:Z</span>
+<span class="">	invoke-virtual {p1}, Lokhttp3/Request;->body()Lokhttp3/RequestBody;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="">	invoke-virtual {p2}, Lokhttp3/RequestBody;->contentLength()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="missed">	iget-object p2, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/Call;</span>
+<span class="missed">	invoke-virtual {p2, v2}, Lokhttp3/EventListener;->requestBodyStart(Lokhttp3/Call;)V</span>
+<span class="missed">	iget-object p2, p0, Lokhttp3/internal/connection/Exchange;->codec:Lokhttp3/internal/http/ExchangeCodec;</span>
+<span class="">	invoke-interface {p2, p1, v0, v1}, Lokhttp3/internal/http/ExchangeCodec;->createRequestBody(Lokhttp3/Request;J)Lvx;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	new-instance p2, Lokhttp3/internal/connection/Exchange$RequestBodySink;</span>
+<span class="missed">	invoke-direct {p2, p0, p1, v0, v1}, Lokhttp3/internal/connection/Exchange$RequestBodySink;-><init>(Lokhttp3/internal/connection/Exchange;Lvx;J)V</span>
+<span class="">	return-object p2</span>
+.end method
+
+.method public detachWithViolence()V
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->codec:Lokhttp3/internal/http/ExchangeCodec;</span>
+<span class="missed">	invoke-interface {v0}, Lokhttp3/internal/http/ExchangeCodec;->cancel()V</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->transmitter:Lokhttp3/internal/connection/Transmitter;</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	invoke-virtual {v0, p0, v1, v1, v2}, Lokhttp3/internal/connection/Transmitter;->exchangeMessageDone(Lokhttp3/internal/connection/Exchange;ZZLjava/io/IOException;)Ljava/io/IOException;</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public finishRequest()V</span>
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->codec:Lokhttp3/internal/http/ExchangeCodec;</span>
+<span class="cov">	invoke-interface {v0}, Lokhttp3/internal/http/ExchangeCodec;->finishRequest()V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="exec">	return-void</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/Call;</span>
+<span class="missed">	invoke-virtual {v1, v2, v0}, Lokhttp3/EventListener;->requestFailed(Lokhttp3/Call;Ljava/io/IOException;)V</span>
+<span class="missed">	invoke-virtual {p0, v0}, Lokhttp3/internal/connection/Exchange;->trackFailure(Ljava/io/IOException;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public flushRequest()V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->codec:Lokhttp3/internal/http/ExchangeCodec;</span>
+<span class="missed">	invoke-interface {v0}, Lokhttp3/internal/http/ExchangeCodec;->flushRequest()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-void</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/Call;</span>
+<span class="missed">	invoke-virtual {v1, v2, v0}, Lokhttp3/EventListener;->requestFailed(Lokhttp3/Call;Ljava/io/IOException;)V</span>
+<span class="missed">	invoke-virtual {p0, v0}, Lokhttp3/internal/connection/Exchange;->trackFailure(Ljava/io/IOException;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+<span class="cov">.method public isDuplex()Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-boolean v0, p0, Lokhttp3/internal/connection/Exchange;->duplex:Z</span>
+<span class="exec">	return v0</span>
+.end method
+
+.method public newWebSocketStreams()Lokhttp3/internal/ws/RealWebSocket$Streams;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/net/SocketException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->transmitter:Lokhttp3/internal/connection/Transmitter;</span>
+<span class="missed">	invoke-virtual {v0}, Lokhttp3/internal/connection/Transmitter;->timeoutEarlyExit()V</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->codec:Lokhttp3/internal/http/ExchangeCodec;</span>
+<span class="">	invoke-interface {v0}, Lokhttp3/internal/http/ExchangeCodec;->connection()Lokhttp3/internal/connection/RealConnection;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0, p0}, Lokhttp3/internal/connection/RealConnection;->newWebSocketStreams(Lokhttp3/internal/connection/Exchange;)Lokhttp3/internal/ws/RealWebSocket$Streams;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public noNewExchangesOnConnection()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->codec:Lokhttp3/internal/http/ExchangeCodec;</span>
+<span class="">	invoke-interface {v0}, Lokhttp3/internal/http/ExchangeCodec;->connection()Lokhttp3/internal/connection/RealConnection;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {v0}, Lokhttp3/internal/connection/RealConnection;->noNewExchanges()V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public noRequestBody()V</span>
+<span class="">	.locals 4</span>
+
+<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->transmitter:Lokhttp3/internal/connection/Transmitter;</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	const/4 v3, 0x0</span>
+<span class="cov">	invoke-virtual {v0, p0, v1, v2, v3}, Lokhttp3/internal/connection/Transmitter;->exchangeMessageDone(Lokhttp3/internal/connection/Exchange;ZZLjava/io/IOException;)Ljava/io/IOException;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public openResponseBody(Lokhttp3/Response;)Lokhttp3/ResponseBody;</span>
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;</span>
+<span class="cov">	iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/Call;</span>
+<span class="cov">	invoke-virtual {v0, v1}, Lokhttp3/EventListener;->responseBodyStart(Lokhttp3/Call;)V</span>
+<span class="cov">	const-string v0, "Content-Type"</span>
+<span class="exec">	invoke-virtual {p1, v0}, Lokhttp3/Response;->header(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->codec:Lokhttp3/internal/http/ExchangeCodec;</span>
+<span class="exec">	invoke-interface {v1, p1}, Lokhttp3/internal/http/ExchangeCodec;->reportedContentLength(Lokhttp3/Response;)J</span>
+<span class="cov">	move-result-wide v1</span>
+<span class="cov">	iget-object v3, p0, Lokhttp3/internal/connection/Exchange;->codec:Lokhttp3/internal/http/ExchangeCodec;</span>
+<span class="exec">	invoke-interface {v3, p1}, Lokhttp3/internal/http/ExchangeCodec;->openResponseBodySource(Lokhttp3/Response;)Lwx;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	new-instance v3, Lokhttp3/internal/connection/Exchange$ResponseBodySource;</span>
+<span class="cov">	invoke-direct {v3, p0, p1, v1, v2}, Lokhttp3/internal/connection/Exchange$ResponseBodySource;-><init>(Lokhttp3/internal/connection/Exchange;Lwx;J)V</span>
+<span class="cov">	new-instance p1, Lokhttp3/internal/http/RealResponseBody;</span>
+<span class="exec">	invoke-static {v3}, Lnx;->a(Lwx;)Lgx;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	invoke-direct {p1, v0, v1, v2, v3}, Lokhttp3/internal/http/RealResponseBody;-><init>(Ljava/lang/String;JLgx;)V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="exec">	return-object p1</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/Call;</span>
+<span class="missed">	invoke-virtual {v0, v1, p1}, Lokhttp3/EventListener;->responseFailed(Lokhttp3/Call;Ljava/io/IOException;)V</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lokhttp3/internal/connection/Exchange;->trackFailure(Ljava/io/IOException;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public readResponseHeaders(Z)Lokhttp3/Response$Builder;</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->codec:Lokhttp3/internal/http/ExchangeCodec;</span>
+<span class="exec">	invoke-interface {v0, p1}, Lokhttp3/internal/http/ExchangeCodec;->readResponseHeaders(Z)Lokhttp3/Response$Builder;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	if-eqz p1, :cond_0</span>
+<span class="cov">	sget-object v0, Lokhttp3/internal/Internal;->instance:Lokhttp3/internal/Internal;</span>
+<span class="cov">	invoke-virtual {v0, p1, p0}, Lokhttp3/internal/Internal;->initExchange(Lokhttp3/Response$Builder;Lokhttp3/internal/connection/Exchange;)V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-object p1</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/Call;</span>
+<span class="missed">	invoke-virtual {v0, v1, p1}, Lokhttp3/EventListener;->responseFailed(Lokhttp3/Call;Ljava/io/IOException;)V</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lokhttp3/internal/connection/Exchange;->trackFailure(Ljava/io/IOException;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public responseHeadersEnd(Lokhttp3/Response;)V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;</span>
+<span class="cov">	iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/Call;</span>
+<span class="cov">	invoke-virtual {v0, v1, p1}, Lokhttp3/EventListener;->responseHeadersEnd(Lokhttp3/Call;Lokhttp3/Response;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public responseHeadersStart()V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;</span>
+<span class="cov">	iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/Call;</span>
+<span class="cov">	invoke-virtual {v0, v1}, Lokhttp3/EventListener;->responseHeadersStart(Lokhttp3/Call;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public timeoutEarlyExit()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->transmitter:Lokhttp3/internal/connection/Transmitter;</span>
+<span class="missed">	invoke-virtual {v0}, Lokhttp3/internal/connection/Transmitter;->timeoutEarlyExit()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method  trackFailure(Ljava/io/IOException;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->finder:Lokhttp3/internal/connection/ExchangeFinder;</span>
+<span class="missed">	invoke-virtual {v0}, Lokhttp3/internal/connection/ExchangeFinder;->trackFailure()V</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->codec:Lokhttp3/internal/http/ExchangeCodec;</span>
+<span class="">	invoke-interface {v0}, Lokhttp3/internal/http/ExchangeCodec;->connection()Lokhttp3/internal/connection/RealConnection;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lokhttp3/internal/connection/RealConnection;->trackFailure(Ljava/io/IOException;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public trailers()Lokhttp3/Headers;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->codec:Lokhttp3/internal/http/ExchangeCodec;</span>
+<span class="">	invoke-interface {v0}, Lokhttp3/internal/http/ExchangeCodec;->trailers()Lokhttp3/Headers;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public webSocketUpgradeFailed()V
+<span class="">	.locals 6</span>
+
+<span class="missed">	const-wide/16 v1, -0x1</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="missed">	move-object v0, p0</span>
+<span class="missed">	invoke-virtual/range {v0 .. v5}, Lokhttp3/internal/connection/Exchange;->bodyComplete(JZZLjava/io/IOException;)Ljava/io/IOException;</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public writeRequestHeaders(Lokhttp3/Request;)V</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;</span>
+<span class="cov">	iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/Call;</span>
+<span class="cov">	invoke-virtual {v0, v1}, Lokhttp3/EventListener;->requestHeadersStart(Lokhttp3/Call;)V</span>
+<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->codec:Lokhttp3/internal/http/ExchangeCodec;</span>
+<span class="cov">	invoke-interface {v0, p1}, Lokhttp3/internal/http/ExchangeCodec;->writeRequestHeaders(Lokhttp3/Request;)V</span>
+<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;</span>
+<span class="cov">	iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/Call;</span>
+<span class="cov">	invoke-virtual {v0, v1, p1}, Lokhttp3/EventListener;->requestHeadersEnd(Lokhttp3/Call;Lokhttp3/Request;)V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="exec">	return-void</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Exchange;->eventListener:Lokhttp3/EventListener;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/Exchange;->call:Lokhttp3/Call;</span>
+<span class="missed">	invoke-virtual {v0, v1, p1}, Lokhttp3/EventListener;->requestFailed(Lokhttp3/Call;Ljava/io/IOException;)V</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lokhttp3/internal/connection/Exchange;->trackFailure(Ljava/io/IOException;)V</span>
+<span class="">	throw p1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../.resources/report.js"></script>
+</body>
+</html>
