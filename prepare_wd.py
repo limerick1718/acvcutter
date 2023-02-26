@@ -8,13 +8,15 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Prepares the working directory.')
 parser.add_argument("apk_path", metavar="apk_path", help="path to the original apk")
-parser.add_argument("--wd", metavar="wd", help="path to the working directory")
-parser.add_argument("--package", metavar="package", help="app package name")
+# parser.add_argument("--wd", metavar="wd", help="path to the working directory")
+# parser.add_argument("--package", metavar="package", help="app package name")
 
 args = parser.parse_args()
-wd_path = args.wd # acvcut.wd_path
 apk_path = args.apk_path # acvcut.apk_path
-package = args.package # acvcut.package
+package = smiler.get_apk_properties(apk_path).package
+wd_path = "./workspace_output/" + package + "/"
+# wd_path = args.wd # acvcut.wd_path
+# package = args.package # acvcut.packages
 
 ignore_methods = None # list of methods to ignore coverage measurement 
 

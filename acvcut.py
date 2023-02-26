@@ -20,13 +20,21 @@ from cutter import invokes
 
 parser = argparse.ArgumentParser(description='Runs the shrinking routine.')
 parser.add_argument("apk_path", metavar="apk_path", help="path to the original apk")
-parser.add_argument("--wd", metavar="wd", help="path to the working directory")
-parser.add_argument("--package", metavar="package", help="app package name")
 
 args = parser.parse_args()
-wd_path = args.wd # acvcut.wd_path
 apk_path = args.apk_path # acvcut.apk_path
-package = args.package # acvcut.package
+package = smiler.get_apk_properties(apk_path).package
+wd_path = "./workspace_output/" + package + "/"
+
+# parser = argparse.ArgumentParser(description='Runs the shrinking routine.')
+# parser.add_argument("apk_path", metavar="apk_path", help="path to the original apk")
+# parser.add_argument("--wd", metavar="wd", help="path to the working directory")
+# parser.add_argument("--package", metavar="package", help="app package name")
+
+# args = parser.parse_args()
+# wd_path = args.wd # acvcut.wd_path
+# apk_path = args.apk_path # acvcut.apk_path
+# package = args.package # acvcut.package
 
 def setup_logging():
     with open(config.logging_yaml) as f:
