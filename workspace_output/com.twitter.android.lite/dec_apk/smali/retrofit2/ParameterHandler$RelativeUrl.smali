@@ -17,7 +17,7 @@ value = {
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Lretrofit2/ParameterHandler;-><init>()V
 return-void
 .end method
 .method  apply(Lretrofit2/RequestBuilder;Ljava/lang/Object;)V
@@ -26,5 +26,8 @@ return-void
 .annotation runtime Ljavax/annotation/Nullable;
 .end annotation
 .end param
+const-string v0, "@Url parameter is null."
+invoke-static {p2, v0}, Lretrofit2/Utils;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+invoke-virtual {p1, p2}, Lretrofit2/RequestBuilder;->setRelativeUrl(Ljava/lang/Object;)V
 return-void
 .end method

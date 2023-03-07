@@ -70,11 +70,18 @@ const-string v2, "measurementEnabled"
 invoke-virtual {v1, v2}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
 move-result-object v1
 instance-of v2, v1, Ljava/lang/Boolean;
+if-eqz v2, :cond_0
+check-cast v1, Ljava/lang/Boolean;
+iput-object v1, p0, Lmf;->C:Ljava/lang/Boolean;
+:cond_0
 iget-object v0, v0, Lkv;->g:Landroid/os/Bundle;
 const-string v1, "measurementDeactivated"
 invoke-virtual {v0, v1}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
 move-result-object v0
 instance-of v1, v0, Ljava/lang/Boolean;
+if-eqz v1, :cond_1
+check-cast v0, Ljava/lang/Boolean;
+iput-object v0, p0, Lmf;->D:Ljava/lang/Boolean;
 :cond_1
 iget-object v0, p0, Lmf;->b:Landroid/content/Context;
 invoke-static {v0}, Lef;->a(Landroid/content/Context;)V
@@ -131,6 +138,7 @@ iget-object v0, p0, Lmf;->b:Landroid/content/Context;
 invoke-virtual {v0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 move-result-object v0
 instance-of v0, v0, Landroid/app/Application;
+if-eqz v0, :cond_3
 invoke-virtual {p0}, Lmf;->h()Lnl;
 move-result-object v0
 invoke-virtual {v0}, Lnb;->n()Landroid/content/Context;
@@ -161,7 +169,16 @@ invoke-virtual {v0}, Lla;->x()Llc;
 move-result-object v0
 const-string v1, "Registered activity lifecycle callback"
 invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V
+goto :goto_0
+:cond_3
+invoke-virtual {p0}, Lmf;->r()Lla;
+move-result-object v0
+invoke-virtual {v0}, Lla;->i()Llc;
+move-result-object v0
+const-string v1, "Application context is not an Application"
+invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V
 :cond_4
+:goto_0
 iget-object v0, p0, Lmf;->k:Lma;
 new-instance v1, Lmg;
 invoke-direct {v1, p0, p1}, Lmg;-><init>(Lmf;Lnj;)V
@@ -171,12 +188,22 @@ return-void
 .method private final I()V
 .locals 2
 iget-boolean v0, p0, Lmf;->y:Z
+if-eqz v0, :cond_0
 return-void
+:cond_0
+new-instance v0, Ljava/lang/IllegalStateException;
+const-string v1, "AppMeasurement is not initialized"
+invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw v0
 .end method
 .method public static a(Landroid/content/Context;Lkv;)Lmf;
 .locals 11
 if-eqz p1, :cond_1
 iget-object v0, p1, Lkv;->e:Ljava/lang/String;
+if-eqz v0, :cond_0
+iget-object v0, p1, Lkv;->f:Ljava/lang/String;
+if-nez v0, :cond_1
+:cond_0
 new-instance v0, Lkv;
 iget-wide v2, p1, Lkv;->a:J
 iget-wide v4, p1, Lkv;->b:J
@@ -197,6 +224,7 @@ sget-object v0, Lmf;->a:Lmf;
 if-nez v0, :cond_3
 const-class v0, Lmf;
 monitor-enter v0
+:try_start_0
 sget-object v1, Lmf;->a:Lmf;
 if-nez v1, :cond_2
 new-instance v1, Lnj;
@@ -210,8 +238,25 @@ goto :goto_0
 :catchall_0
 move-exception p0
 monitor-exit v0
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 throw p0
 :cond_3
+if-eqz p1, :cond_4
+iget-object p0, p1, Lkv;->g:Landroid/os/Bundle;
+if-eqz p0, :cond_4
+iget-object p0, p1, Lkv;->g:Landroid/os/Bundle;
+const-string v0, "dataCollectionDefaultEnabled"
+invoke-virtual {p0, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+move-result p0
+if-eqz p0, :cond_4
+sget-object p0, Lmf;->a:Lmf;
+iget-object p1, p1, Lkv;->g:Landroid/os/Bundle;
+const-string v0, "dataCollectionDefaultEnabled"
+invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+move-result p1
+invoke-virtual {p0, p1}, Lmf;->a(Z)V
+:cond_4
 :goto_0
 sget-object p0, Lmf;->a:Lmf;
 return-object p0
@@ -223,7 +268,13 @@ return-void
 .end method
 .method private static a(Lnb;)V
 .locals 1
+if-eqz p0, :cond_0
 return-void
+:cond_0
+new-instance p0, Ljava/lang/IllegalStateException;
+const-string v0, "Component not created"
+invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw p0
 .end method
 .method private final a(Lnj;)V
 .locals 4
@@ -285,6 +336,17 @@ invoke-virtual {p0}, Lmf;->j()Lpv;
 move-result-object v0
 invoke-virtual {v0, p1}, Lpv;->f(Ljava/lang/String;)Z
 move-result v0
+if-eqz v0, :cond_0
+invoke-virtual {p0}, Lmf;->r()Lla;
+move-result-object p1
+invoke-virtual {p1}, Lla;->v()Llc;
+move-result-object p1
+const-string v0, "Faster debug mode event logging enabled. To disable, run:\n  adb shell setprop debug.firebase.analytics.app .none."
+move-object v3, v0
+move-object v0, p1
+move-object p1, v3
+goto :goto_0
+:cond_0
 invoke-virtual {p0}, Lmf;->r()Lla;
 move-result-object v0
 invoke-virtual {v0}, Lla;->v()Llc;
@@ -294,8 +356,14 @@ invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/St
 move-result-object p1
 invoke-virtual {p1}, Ljava/lang/String;->length()I
 move-result v2
+if-eqz v2, :cond_1
 invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 move-result-object p1
+goto :goto_0
+:cond_1
+new-instance p1, Ljava/lang/String;
+invoke-direct {p1, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+:goto_0
 invoke-virtual {v0, p1}, Llc;->a(Ljava/lang/String;)V
 :cond_2
 invoke-virtual {p0}, Lmf;->r()Lla;
@@ -308,29 +376,114 @@ iget p1, p0, Lmf;->E:I
 iget-object v0, p0, Lmf;->F:Ljava/util/concurrent/atomic/AtomicInteger;
 invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 move-result v0
+if-eq p1, v0, :cond_3
+invoke-virtual {p0}, Lmf;->r()Lla;
+move-result-object p1
+invoke-virtual {p1}, Lla;->c_()Llc;
+move-result-object p1
+iget v0, p0, Lmf;->E:I
+invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+move-result-object v0
+iget-object v1, p0, Lmf;->F:Ljava/util/concurrent/atomic/AtomicInteger;
+invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+move-result v1
+invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+move-result-object v1
+const-string v2, "Not all components initialized"
+invoke-virtual {p1, v2, v0, v1}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+:cond_3
 const/4 p1, 0x1
 iput-boolean p1, p0, Lmf;->y:Z
 return-void
 .end method
 .method private static b(Lnc;)V
 .locals 3
+if-eqz p0, :cond_1
 invoke-virtual {p0}, Lnc;->z()Z
 move-result v0
+if-eqz v0, :cond_0
 return-void
+:cond_0
+new-instance v0, Ljava/lang/IllegalStateException;
+invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+move-result-object p0
+invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+move-result-object p0
+invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+move-result-object v1
+invoke-virtual {v1}, Ljava/lang/String;->length()I
+move-result v1
+add-int/lit8 v1, v1, 0x1b
+new-instance v2, Ljava/lang/StringBuilder;
+invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+const-string v1, "Component not initialized: "
+invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object p0
+invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw v0
+:cond_1
+new-instance p0, Ljava/lang/IllegalStateException;
+const-string v0, "Component not created"
+invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw p0
 .end method
 .method private static b(Low;)V
 .locals 3
+if-eqz p0, :cond_1
 invoke-virtual {p0}, Low;->D()Z
 move-result v0
+if-eqz v0, :cond_0
 return-void
+:cond_0
+new-instance v0, Ljava/lang/IllegalStateException;
+invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+move-result-object p0
+invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+move-result-object p0
+invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+move-result-object v1
+invoke-virtual {v1}, Ljava/lang/String;->length()I
+move-result v1
+add-int/lit8 v1, v1, 0x1b
+new-instance v2, Ljava/lang/StringBuilder;
+invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+const-string v1, "Component not initialized: "
+invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object p0
+invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw v0
+:cond_1
+new-instance p0, Ljava/lang/IllegalStateException;
+const-string v0, "Component not created"
+invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw p0
 .end method
 .method public final A()Lkh;
 .locals 2
 iget-object v0, p0, Lmf;->s:Lkh;
+if-eqz v0, :cond_0
 return-object v0
+:cond_0
+new-instance v0, Ljava/lang/IllegalStateException;
+const-string v1, "Component not created"
+invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw v0
 .end method
 .method public final B()Z
 .locals 1
+iget-object v0, p0, Lmf;->B:Ljava/lang/Boolean;
+if-eqz v0, :cond_0
+iget-object v0, p0, Lmf;->B:Ljava/lang/Boolean;
+invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+move-result v0
+if-eqz v0, :cond_0
+const/4 v0, 0x1
+return v0
+:cond_0
 const/4 v0, 0x0
 return v0
 .end method
@@ -346,27 +499,97 @@ invoke-virtual {v0, v1}, Lqf;->a(Lkq$a;)Z
 move-result v0
 const/4 v1, 0x1
 const/4 v2, 0x0
+if-eqz v0, :cond_7
 iget-object v0, p0, Lmf;->h:Lqf;
 invoke-virtual {v0}, Lqf;->h()Z
 move-result v0
+if-eqz v0, :cond_0
+return v2
+:cond_0
 iget-object v0, p0, Lmf;->D:Ljava/lang/Boolean;
+if-eqz v0, :cond_1
+invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+move-result v0
+if-eqz v0, :cond_1
+return v2
+:cond_1
 invoke-virtual {p0}, Lmf;->c()Llm;
 move-result-object v0
 invoke-virtual {v0}, Llm;->k()Ljava/lang/Boolean;
 move-result-object v0
+if-eqz v0, :cond_2
+invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+move-result v0
+return v0
+:cond_2
 iget-object v0, p0, Lmf;->h:Lqf;
 invoke-virtual {v0}, Lqf;->i()Ljava/lang/Boolean;
 move-result-object v0
+if-eqz v0, :cond_3
+invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+move-result v0
+return v0
+:cond_3
 iget-object v0, p0, Lmf;->C:Ljava/lang/Boolean;
+if-eqz v0, :cond_4
+invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+move-result v0
+return v0
+:cond_4
 invoke-static {}, Lcom/google/android/gms/common/api/internal/c;->b()Z
 move-result v0
+if-eqz v0, :cond_5
+return v2
+:cond_5
 iget-object v0, p0, Lmf;->h:Lqf;
 sget-object v2, Lkq;->am:Lkq$a;
 invoke-virtual {v0, v2}, Lqf;->a(Lkq$a;)Z
 move-result v0
+if-eqz v0, :cond_6
 iget-object v0, p0, Lmf;->B:Ljava/lang/Boolean;
+if-eqz v0, :cond_6
 iget-object v0, p0, Lmf;->B:Ljava/lang/Boolean;
 invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+move-result v0
+return v0
+:cond_6
+return v1
+:cond_7
+iget-object v0, p0, Lmf;->h:Lqf;
+invoke-virtual {v0}, Lqf;->h()Z
+move-result v0
+if-eqz v0, :cond_8
+return v2
+:cond_8
+iget-object v0, p0, Lmf;->h:Lqf;
+invoke-virtual {v0}, Lqf;->i()Ljava/lang/Boolean;
+move-result-object v0
+if-eqz v0, :cond_9
+invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+move-result v0
+goto :goto_0
+:cond_9
+invoke-static {}, Lcom/google/android/gms/common/api/internal/c;->b()Z
+move-result v0
+xor-int/2addr v0, v1
+if-eqz v0, :cond_a
+iget-object v1, p0, Lmf;->B:Ljava/lang/Boolean;
+if-eqz v1, :cond_a
+sget-object v1, Lkq;->am:Lkq$a;
+invoke-virtual {v1}, Lkq$a;->b()Ljava/lang/Object;
+move-result-object v1
+check-cast v1, Ljava/lang/Boolean;
+invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+move-result v1
+if-eqz v1, :cond_a
+iget-object v0, p0, Lmf;->B:Ljava/lang/Boolean;
+invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+move-result v0
+:cond_a
+:goto_0
+invoke-virtual {p0}, Lmf;->c()Llm;
+move-result-object v1
+invoke-virtual {v1, v0}, Llm;->c(Z)Z
 move-result v0
 return v0
 .end method
@@ -383,6 +606,10 @@ invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 move-result-wide v1
 const-wide/16 v3, 0x0
 cmp-long v5, v1, v3
+if-nez v5, :cond_0
+iget-wide v0, p0, Lmf;->G:J
+return-wide v0
+:cond_0
 iget-wide v1, p0, Lmf;->G:J
 invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 move-result-wide v3
@@ -397,7 +624,11 @@ return-void
 .end method
 .method final F()V
 .locals 2
-return-void
+iget-object v0, p0, Lmf;->g:Lqc;
+new-instance v0, Ljava/lang/IllegalStateException;
+const-string v1, "Unexpected call on client side"
+invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw v0
 .end method
 .method final G()V
 .locals 1
@@ -420,7 +651,17 @@ if-eqz v5, :cond_0
 if-eqz v0, :cond_5
 invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 move-result v0
-goto/32 :cond_5
+if-nez v0, :cond_5
+iget-object v0, p0, Lmf;->p:Lcom/google/android/gms/common/util/d;
+invoke-interface {v0}, Lcom/google/android/gms/common/util/d;->b()J
+move-result-wide v0
+iget-wide v2, p0, Lmf;->A:J
+sub-long/2addr v0, v2
+invoke-static {v0, v1}, Ljava/lang/Math;->abs(J)J
+move-result-wide v0
+const-wide/16 v2, 0x3e8
+cmp-long v4, v0, v2
+if-lez v4, :cond_5
 :cond_0
 iget-object v0, p0, Lmf;->p:Lcom/google/android/gms/common/util/d;
 invoke-interface {v0}, Lcom/google/android/gms/common/util/d;->b()J
@@ -434,11 +675,13 @@ invoke-virtual {v0, v1}, Lpv;->d(Ljava/lang/String;)Z
 move-result v0
 const/4 v1, 0x1
 const/4 v2, 0x0
+if-eqz v0, :cond_2
 invoke-virtual {p0}, Lmf;->j()Lpv;
 move-result-object v0
 const-string v3, "android.permission.ACCESS_NETWORK_STATE"
 invoke-virtual {v0, v3}, Lpv;->d(Ljava/lang/String;)Z
 move-result v0
+if-eqz v0, :cond_2
 iget-object v0, p0, Lmf;->b:Landroid/content/Context;
 invoke-static {v0}, Lbj;->a(Landroid/content/Context;)Lbi;
 move-result-object v0
@@ -452,11 +695,17 @@ if-nez v0, :cond_1
 iget-object v0, p0, Lmf;->b:Landroid/content/Context;
 invoke-static {v0}, Llv;->a(Landroid/content/Context;)Z
 move-result v0
+if-eqz v0, :cond_2
 iget-object v0, p0, Lmf;->b:Landroid/content/Context;
 invoke-static {v0, v2}, Lpv;->a(Landroid/content/Context;Z)Z
 move-result v0
+if-eqz v0, :cond_2
 :cond_1
 const/4 v0, 0x1
+goto :goto_0
+:cond_2
+const/4 v0, 0x0
+:goto_0
 invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 move-result-object v0
 iput-object v0, p0, Lmf;->z:Ljava/lang/Boolean;
@@ -476,6 +725,18 @@ invoke-virtual {v4}, Lku;->z()Ljava/lang/String;
 move-result-object v4
 invoke-virtual {v0, v3, v4}, Lpv;->b(Ljava/lang/String;Ljava/lang/String;)Z
 move-result v0
+if-nez v0, :cond_4
+invoke-virtual {p0}, Lmf;->z()Lku;
+move-result-object v0
+invoke-virtual {v0}, Lku;->z()Ljava/lang/String;
+move-result-object v0
+invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+move-result v0
+if-nez v0, :cond_3
+goto :goto_1
+:cond_3
+const/4 v1, 0x0
+:cond_4
 :goto_1
 invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 move-result-object v0
@@ -535,6 +796,78 @@ invoke-virtual {v0, v1, v2}, Llp;->a(J)V
 :cond_1
 invoke-virtual {p0}, Lmf;->H()Z
 move-result v0
+if-nez v0, :cond_6
+invoke-virtual {p0}, Lmf;->C()Z
+move-result v0
+if-eqz v0, :cond_e
+invoke-virtual {p0}, Lmf;->j()Lpv;
+move-result-object v0
+const-string v1, "android.permission.INTERNET"
+invoke-virtual {v0, v1}, Lpv;->d(Ljava/lang/String;)Z
+move-result v0
+if-nez v0, :cond_2
+invoke-virtual {p0}, Lmf;->r()Lla;
+move-result-object v0
+invoke-virtual {v0}, Lla;->c_()Llc;
+move-result-object v0
+const-string v1, "App is missing INTERNET permission"
+invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V
+:cond_2
+invoke-virtual {p0}, Lmf;->j()Lpv;
+move-result-object v0
+const-string v1, "android.permission.ACCESS_NETWORK_STATE"
+invoke-virtual {v0, v1}, Lpv;->d(Ljava/lang/String;)Z
+move-result v0
+if-nez v0, :cond_3
+invoke-virtual {p0}, Lmf;->r()Lla;
+move-result-object v0
+invoke-virtual {v0}, Lla;->c_()Llc;
+move-result-object v0
+const-string v1, "App is missing ACCESS_NETWORK_STATE permission"
+invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V
+:cond_3
+iget-object v0, p0, Lmf;->g:Lqc;
+iget-object v0, p0, Lmf;->b:Landroid/content/Context;
+invoke-static {v0}, Lbj;->a(Landroid/content/Context;)Lbi;
+move-result-object v0
+invoke-virtual {v0}, Lbi;->a()Z
+move-result v0
+if-nez v0, :cond_5
+iget-object v0, p0, Lmf;->h:Lqf;
+invoke-virtual {v0}, Lqf;->x()Z
+move-result v0
+if-nez v0, :cond_5
+iget-object v0, p0, Lmf;->b:Landroid/content/Context;
+invoke-static {v0}, Llv;->a(Landroid/content/Context;)Z
+move-result v0
+if-nez v0, :cond_4
+invoke-virtual {p0}, Lmf;->r()Lla;
+move-result-object v0
+invoke-virtual {v0}, Lla;->c_()Llc;
+move-result-object v0
+const-string v1, "AppMeasurementReceiver not registered/enabled"
+invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V
+:cond_4
+iget-object v0, p0, Lmf;->b:Landroid/content/Context;
+const/4 v1, 0x0
+invoke-static {v0, v1}, Lpv;->a(Landroid/content/Context;Z)Z
+move-result v0
+if-nez v0, :cond_5
+invoke-virtual {p0}, Lmf;->r()Lla;
+move-result-object v0
+invoke-virtual {v0}, Lla;->c_()Llc;
+move-result-object v0
+const-string v1, "AppMeasurementService not registered/enabled"
+invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V
+:cond_5
+invoke-virtual {p0}, Lmf;->r()Lla;
+move-result-object v0
+invoke-virtual {v0}, Lla;->c_()Llc;
+move-result-object v0
+const-string v1, "Uploading is not possible. App measurement disabled"
+invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V
+return-void
+:cond_6
 iget-object v0, p0, Lmf;->g:Lqc;
 invoke-virtual {p0}, Lmf;->z()Lku;
 move-result-object v0
@@ -542,6 +875,15 @@ invoke-virtual {v0}, Lku;->y()Ljava/lang/String;
 move-result-object v0
 invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 move-result v0
+if-eqz v0, :cond_7
+invoke-virtual {p0}, Lmf;->z()Lku;
+move-result-object v0
+invoke-virtual {v0}, Lku;->z()Ljava/lang/String;
+move-result-object v0
+invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+move-result v0
+if-nez v0, :cond_9
+:cond_7
 invoke-virtual {p0}, Lmf;->j()Lpv;
 invoke-virtual {p0}, Lmf;->z()Lku;
 move-result-object v0
@@ -561,6 +903,34 @@ invoke-virtual {v3}, Llm;->h()Ljava/lang/String;
 move-result-object v3
 invoke-static {v0, v1, v2, v3}, Lpv;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 move-result v0
+if-eqz v0, :cond_8
+invoke-virtual {p0}, Lmf;->r()Lla;
+move-result-object v0
+invoke-virtual {v0}, Lla;->v()Llc;
+move-result-object v0
+const-string v1, "Rechecking which service to use due to a GMP App Id change"
+invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V
+invoke-virtual {p0}, Lmf;->c()Llm;
+move-result-object v0
+invoke-virtual {v0}, Llm;->j()V
+invoke-virtual {p0}, Lmf;->l()Lkw;
+move-result-object v0
+invoke-virtual {v0}, Lkw;->x()V
+iget-object v0, p0, Lmf;->u:Loc;
+invoke-virtual {v0}, Loc;->C()V
+iget-object v0, p0, Lmf;->u:Loc;
+invoke-virtual {v0}, Loc;->A()V
+invoke-virtual {p0}, Lmf;->c()Llm;
+move-result-object v0
+iget-object v0, v0, Llm;->h:Llp;
+iget-wide v1, p0, Lmf;->G:J
+invoke-virtual {v0, v1, v2}, Llp;->a(J)V
+invoke-virtual {p0}, Lmf;->c()Llm;
+move-result-object v0
+iget-object v0, v0, Llm;->j:Llr;
+const/4 v1, 0x0
+invoke-virtual {v0, v1}, Llr;->a(Ljava/lang/String;)V
+:cond_8
 invoke-virtual {p0}, Lmf;->c()Llm;
 move-result-object v0
 invoke-virtual {p0}, Lmf;->z()Lku;
@@ -582,6 +952,11 @@ invoke-virtual {v1}, Lku;->x()Ljava/lang/String;
 move-result-object v1
 invoke-virtual {v0, v1}, Lqf;->r(Ljava/lang/String;)Z
 move-result v0
+if-eqz v0, :cond_9
+iget-object v0, p0, Lmf;->l:Lpa;
+iget-wide v1, p0, Lmf;->G:J
+invoke-virtual {v0, v1, v2}, Lpa;->a(J)V
+:cond_9
 invoke-virtual {p0}, Lmf;->h()Lnl;
 move-result-object v0
 invoke-virtual {p0}, Lmf;->c()Llm;
@@ -597,6 +972,15 @@ invoke-virtual {v0}, Lku;->y()Ljava/lang/String;
 move-result-object v0
 invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 move-result v0
+if-eqz v0, :cond_a
+invoke-virtual {p0}, Lmf;->z()Lku;
+move-result-object v0
+invoke-virtual {v0}, Lku;->z()Ljava/lang/String;
+move-result-object v0
+invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+move-result v0
+if-nez v0, :cond_e
+:cond_a
 invoke-virtual {p0}, Lmf;->C()Z
 move-result v0
 invoke-virtual {p0}, Lmf;->c()Llm;
@@ -651,6 +1035,9 @@ return-void
 .end method
 .method final a(Z)V
 .locals 0
+invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+move-result-object p1
+iput-object p1, p0, Lmf;->B:Ljava/lang/Boolean;
 return-void
 .end method
 .method public final b()Lqf;
@@ -667,6 +1054,14 @@ return-object v0
 .end method
 .method public final d()Lla;
 .locals 1
+iget-object v0, p0, Lmf;->j:Lla;
+if-eqz v0, :cond_0
+invoke-virtual {v0}, Lnc;->z()Z
+move-result v0
+if-eqz v0, :cond_0
+iget-object v0, p0, Lmf;->j:Lla;
+return-object v0
+:cond_0
 const/4 v0, 0x0
 return-object v0
 .end method
@@ -679,12 +1074,12 @@ return-object v0
 .end method
 .method public final f()Lls;
 .locals 1
-const/4 v0, 0x0
+iget-object v0, p0, Lmf;->x:Lls;
 return-object v0
 .end method
 .method final g()Lma;
 .locals 1
-const/4 v0, 0x0
+iget-object v0, p0, Lmf;->k:Lma;
 return-object v0
 .end method
 .method public final h()Lnl;
@@ -758,7 +1153,7 @@ return-object v0
 .end method
 .method public final s()Ljava/lang/String;
 .locals 1
-const/4 v0, 0x0
+iget-object v0, p0, Lmf;->d:Ljava/lang/String;
 return-object v0
 .end method
 .method public final t()Ljava/lang/String;

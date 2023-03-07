@@ -33,6 +33,18 @@ invoke-virtual {v0, v2, v3, v1}, Landroid/content/res/Resources;->getIdentifier(
 move-result v1
 const/4 v2, 0x0
 const/4 v3, 0x1
+if-eqz v1, :cond_1
+invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
+move-result v0
+if-eqz v0, :cond_0
+goto :goto_0
+:cond_0
+const/4 v3, 0x0
+:goto_0
+xor-int/lit8 v0, v3, 0x1
+iput-boolean v0, p0, Lcom/google/android/gms/common/api/internal/c;->f:Z
+goto :goto_1
+:cond_1
 iput-boolean v2, p0, Lcom/google/android/gms/common/api/internal/c;->f:Z
 :goto_1
 iput-boolean v3, p0, Lcom/google/android/gms/common/api/internal/c;->e:Z
@@ -47,6 +59,16 @@ move-result-object v0
 :cond_2
 invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 move-result p1
+if-eqz p1, :cond_3
+new-instance p1, Lcom/google/android/gms/common/api/Status;
+const/16 v0, 0xa
+const-string v1, "Missing google app id value from from string resources with name google_app_id."
+invoke-direct {p1, v0, v1}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
+iput-object p1, p0, Lcom/google/android/gms/common/api/internal/c;->d:Lcom/google/android/gms/common/api/Status;
+const/4 p1, 0x0
+iput-object p1, p0, Lcom/google/android/gms/common/api/internal/c;->c:Ljava/lang/String;
+return-void
+:cond_3
 iput-object v0, p0, Lcom/google/android/gms/common/api/internal/c;->c:Ljava/lang/String;
 sget-object p1, Lcom/google/android/gms/common/api/Status;->a:Lcom/google/android/gms/common/api/Status;
 iput-object p1, p0, Lcom/google/android/gms/common/api/internal/c;->d:Lcom/google/android/gms/common/api/Status;
@@ -58,6 +80,7 @@ const-string v0, "Context must not be null."
 invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 sget-object v0, Lcom/google/android/gms/common/api/internal/c;->a:Ljava/lang/Object;
 monitor-enter v0
+:try_start_0
 sget-object v1, Lcom/google/android/gms/common/api/internal/c;->b:Lcom/google/android/gms/common/api/internal/c;
 if-nez v1, :cond_0
 new-instance v1, Lcom/google/android/gms/common/api/internal/c;
@@ -71,19 +94,43 @@ return-object p0
 :catchall_0
 move-exception p0
 monitor-exit v0
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 throw p0
 .end method
 .method private static a(Ljava/lang/String;)Lcom/google/android/gms/common/api/internal/c;
 .locals 4
 sget-object v0, Lcom/google/android/gms/common/api/internal/c;->a:Ljava/lang/Object;
 monitor-enter v0
+:try_start_0
 sget-object v1, Lcom/google/android/gms/common/api/internal/c;->b:Lcom/google/android/gms/common/api/internal/c;
+if-eqz v1, :cond_0
 sget-object p0, Lcom/google/android/gms/common/api/internal/c;->b:Lcom/google/android/gms/common/api/internal/c;
 monitor-exit v0
 return-object p0
+:cond_0
+new-instance v1, Ljava/lang/IllegalStateException;
+invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+move-result-object v2
+invoke-virtual {v2}, Ljava/lang/String;->length()I
+move-result v2
+add-int/lit8 v2, v2, 0x22
+new-instance v3, Ljava/lang/StringBuilder;
+invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+const-string v2, "Initialize must be called before "
+invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+const-string p0, "."
+invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object p0
+invoke-direct {v1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw v1
 :catchall_0
 move-exception p0
 monitor-exit v0
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 throw p0
 .end method
 .method public static a()Ljava/lang/String;

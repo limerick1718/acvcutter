@@ -13,6 +13,9 @@ name = "LogBytes"
 .field final synthetic this$0:Lcom/crashlytics/android/core/QueueFileLogStore;
 .method public constructor <init>(Lcom/crashlytics/android/core/QueueFileLogStore;[BI)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lcom/crashlytics/android/core/QueueFileLogStore$LogBytes;->this$0:Lcom/crashlytics/android/core/QueueFileLogStore;
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+iput-object p2, p0, Lcom/crashlytics/android/core/QueueFileLogStore$LogBytes;->bytes:[B
+iput p3, p0, Lcom/crashlytics/android/core/QueueFileLogStore$LogBytes;->offset:I
 return-void
 .end method

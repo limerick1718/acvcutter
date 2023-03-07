@@ -17,23 +17,29 @@ value = {
 .field final synthetic a:Lm;
 .method constructor <init>(Lm;)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lm$1;->a:Lm;
+invoke-direct {p0}, Lo;-><init>()V
 return-void
 .end method
 .method protected a()I
 .locals 1
-const/4 v0, 0x0
+iget-object v0, p0, Lm$1;->a:Lm;
+iget v0, v0, Lm;->b:I
 return v0
 .end method
 .method protected a(Ljava/lang/Object;)I
 .locals 1
-const/4 v0, 0x0
-return v0
+iget-object v0, p0, Lm$1;->a:Lm;
+invoke-virtual {v0, p1}, Lm;->a(Ljava/lang/Object;)I
+move-result p1
+return p1
 .end method
 .method protected a(II)Ljava/lang/Object;
 .locals 0
-const/4 v0, 0x0
-return-object v0
+iget-object p2, p0, Lm$1;->a:Lm;
+iget-object p2, p2, Lm;->a:[Ljava/lang/Object;
+aget-object p1, p2, p1
+return-object p1
 .end method
 .method protected a(ILjava/lang/Object;)Ljava/lang/Object;
 .locals 0
@@ -42,11 +48,15 @@ value = {
 "(ITE;)TE;"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
+new-instance p1, Ljava/lang/UnsupportedOperationException;
+const-string p2, "not a map"
+invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method
 .method protected a(I)V
 .locals 1
+iget-object v0, p0, Lm$1;->a:Lm;
+invoke-virtual {v0, p1}, Lm;->c(I)Ljava/lang/Object;
 return-void
 .end method
 .method protected a(Ljava/lang/Object;Ljava/lang/Object;)V
@@ -56,12 +66,16 @@ value = {
 "(TE;TE;)V"
 }
 .end annotation
+iget-object p2, p0, Lm$1;->a:Lm;
+invoke-virtual {p2, p1}, Lm;->add(Ljava/lang/Object;)Z
 return-void
 .end method
 .method protected b(Ljava/lang/Object;)I
 .locals 1
-const/4 v0, 0x0
-return v0
+iget-object v0, p0, Lm$1;->a:Lm;
+invoke-virtual {v0, p1}, Lm;->a(Ljava/lang/Object;)I
+move-result p1
+return p1
 .end method
 .method protected b()Ljava/util/Map;
 .locals 2
@@ -72,10 +86,14 @@ value = {
 "TE;TE;>;"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
+new-instance v0, Ljava/lang/UnsupportedOperationException;
+const-string v1, "not a map"
+invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+throw v0
 .end method
 .method protected c()V
 .locals 1
+iget-object v0, p0, Lm$1;->a:Lm;
+invoke-virtual {v0}, Lm;->clear()V
 return-void
 .end method

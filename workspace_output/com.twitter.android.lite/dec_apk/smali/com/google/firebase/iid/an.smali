@@ -16,5 +16,6 @@ return-void
 .end method
 .method public final execute(Ljava/lang/Runnable;)V
 .locals 0
+invoke-static {p1}, Lcom/google/firebase/iid/al;->b(Ljava/lang/Runnable;)V
 return-void
 .end method

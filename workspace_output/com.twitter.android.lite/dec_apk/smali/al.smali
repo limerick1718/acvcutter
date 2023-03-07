@@ -44,7 +44,10 @@ value = {
 ">;)V"
 }
 .end annotation
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lal;->a:Ljava/util/List;
+iput-object p2, p0, Lal;->b:Ljava/util/List;
+iput-object p3, p0, Lal;->c:Ljava/util/List;
 return-void
 .end method
 .method  a()Ljava/util/List;
@@ -57,7 +60,7 @@ value = {
 ">;"
 }
 .end annotation
-const/4 v0, 0x0
+iget-object v0, p0, Lal;->a:Ljava/util/List;
 return-object v0
 .end method
 .method  b()Ljava/util/List;
@@ -70,7 +73,7 @@ value = {
 ">;"
 }
 .end annotation
-const/4 v0, 0x0
+iget-object v0, p0, Lal;->b:Ljava/util/List;
 return-object v0
 .end method
 .method  c()Ljava/util/List;
@@ -83,6 +86,6 @@ value = {
 ">;"
 }
 .end annotation
-const/4 v0, 0x0
+iget-object v0, p0, Lal;->c:Ljava/util/List;
 return-object v0
 .end method

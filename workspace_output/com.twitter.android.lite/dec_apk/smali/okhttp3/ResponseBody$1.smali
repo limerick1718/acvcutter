@@ -21,18 +21,18 @@ return-void
 .end method
 .method public contentLength()J
 .locals 2
-const-wide v0, 0x0
+iget-wide v0, p0, Lokhttp3/ResponseBody$1;->val$contentLength:J
 return-wide v0
 .end method
 .method public contentType()Lokhttp3/MediaType;
 .locals 1
 .annotation runtime Ljavax/annotation/Nullable;
 .end annotation
-const/4 v0, 0x0
+iget-object v0, p0, Lokhttp3/ResponseBody$1;->val$contentType:Lokhttp3/MediaType;
 return-object v0
 .end method
 .method public source()Lyu;
 .locals 1
-const/4 v0, 0x0
+iget-object v0, p0, Lokhttp3/ResponseBody$1;->val$content:Lyu;
 return-object v0
 .end method

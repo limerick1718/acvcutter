@@ -73,6 +73,7 @@ iget-boolean v0, p0, Lcom/crashlytics/android/answers/BackgroundManager;->inBack
 if-nez v0, :cond_0
 const/4 v0, 0x1
 iput-boolean v0, p0, Lcom/crashlytics/android/answers/BackgroundManager;->inBackground:Z
+:try_start_0
 iget-object v0, p0, Lcom/crashlytics/android/answers/BackgroundManager;->backgroundFutureRef:Ljava/util/concurrent/atomic/AtomicReference;
 const/4 v1, 0x0
 iget-object v2, p0, Lcom/crashlytics/android/answers/BackgroundManager;->executorService:Ljava/util/concurrent/ScheduledExecutorService;
@@ -83,7 +84,18 @@ sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurr
 invoke-interface {v2, v3, v4, v5, v6}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
 move-result-object v2
 invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+:try_end_0
+.catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+goto :goto_0
+:catch_0
+move-exception v0
+invoke-static {}, Luq;->g()Luz;
+move-result-object v1
+const-string v2, "Answers"
+const-string v3, "Failed to schedule background detector"
+invoke-interface {v1, v2, v3, v0}, Luz;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 :cond_0
+:goto_0
 return-void
 .end method
 .method public onActivityResumed()V
@@ -108,5 +120,6 @@ return-void
 .end method
 .method public setFlushOnBackground(Z)V
 .locals 0
+iput-boolean p1, p0, Lcom/crashlytics/android/answers/BackgroundManager;->flushOnBackground:Z
 return-void
 .end method

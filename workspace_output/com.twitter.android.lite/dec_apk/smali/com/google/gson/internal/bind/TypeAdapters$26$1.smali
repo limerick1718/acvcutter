@@ -19,7 +19,9 @@ value = {
 .field final synthetic b:Lcom/google/gson/internal/bind/TypeAdapters$26;
 .method constructor <init>(Lcom/google/gson/internal/bind/TypeAdapters$26;Ltn;)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$26$1;->b:Lcom/google/gson/internal/bind/TypeAdapters$26;
+iput-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$26$1;->a:Ltn;
+invoke-direct {p0}, Ltn;-><init>()V
 return-void
 .end method
 .method public a(Ltw;)Ljava/sql/Timestamp;
@@ -29,7 +31,19 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
+iget-object v0, p0, Lcom/google/gson/internal/bind/TypeAdapters$26$1;->a:Ltn;
+invoke-virtual {v0, p1}, Ltn;->b(Ltw;)Ljava/lang/Object;
+move-result-object p1
+check-cast p1, Ljava/util/Date;
+if-eqz p1, :cond_0
+new-instance v0, Ljava/sql/Timestamp;
+invoke-virtual {p1}, Ljava/util/Date;->getTime()J
+move-result-wide v1
+invoke-direct {v0, v1, v2}, Ljava/sql/Timestamp;-><init>(J)V
+goto :goto_0
+:cond_0
 const/4 v0, 0x0
+:goto_0
 return-object v0
 .end method
 .method public bridge synthetic a(Lty;Ljava/lang/Object;)V
@@ -39,6 +53,8 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
+check-cast p2, Ljava/sql/Timestamp;
+invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/TypeAdapters$26$1;->a(Lty;Ljava/sql/Timestamp;)V
 return-void
 .end method
 .method public a(Lty;Ljava/sql/Timestamp;)V
@@ -48,6 +64,8 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
+iget-object v0, p0, Lcom/google/gson/internal/bind/TypeAdapters$26$1;->a:Ltn;
+invoke-virtual {v0, p1, p2}, Ltn;->a(Lty;Ljava/lang/Object;)V
 return-void
 .end method
 .method public synthetic b(Ltw;)Ljava/lang/Object;
@@ -57,6 +75,7 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
+invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$26$1;->a(Ltw;)Ljava/sql/Timestamp;
+move-result-object p1
+return-object p1
 .end method

@@ -19,26 +19,33 @@ value = {
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public a(Landroid/os/Parcel;)Landroid/support/v4/media/RatingCompat;
 .locals 2
-const/4 v0, 0x0
+new-instance v0, Landroid/support/v4/media/RatingCompat;
+invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+move-result v1
+invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
+move-result p1
+invoke-direct {v0, v1, p1}, Landroid/support/v4/media/RatingCompat;-><init>(IF)V
 return-object v0
 .end method
 .method public a(I)[Landroid/support/v4/media/RatingCompat;
 .locals 0
-const/4 v0, 0x0
-return-object v0
+new-array p1, p1, [Landroid/support/v4/media/RatingCompat;
+return-object p1
 .end method
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 .locals 0
-const/4 v0, 0x0
-return-object v0
+invoke-virtual {p0, p1}, Landroid/support/v4/media/RatingCompat$1;->a(Landroid/os/Parcel;)Landroid/support/v4/media/RatingCompat;
+move-result-object p1
+return-object p1
 .end method
 .method public synthetic newArray(I)[Ljava/lang/Object;
 .locals 0
-const/4 v0, 0x0
-return-object v0
+invoke-virtual {p0, p1}, Landroid/support/v4/media/RatingCompat$1;->a(I)[Landroid/support/v4/media/RatingCompat;
+move-result-object p1
+return-object p1
 .end method

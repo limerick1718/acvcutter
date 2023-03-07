@@ -16,5 +16,6 @@ return-void
 .end method
 .method public final a(Lsl;)V
 .locals 0
+invoke-static {p1}, Lsi;->a(Lsl;)V
 return-void
 .end method

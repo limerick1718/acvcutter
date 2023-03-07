@@ -11,11 +11,11 @@ name = null
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public accept(Ljava/io/File;Ljava/lang/String;)Z
 .locals 0
-const/4 v0, 0x0
-return v0
+const/4 p1, 0x1
+return p1
 .end method

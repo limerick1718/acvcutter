@@ -10,7 +10,8 @@ name = "d"
 .field  a:Lsun/misc/Unsafe;
 .method constructor <init>(Lsun/misc/Unsafe;)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lje$d;->a:Lsun/misc/Unsafe;
 return-void
 .end method
 .method public abstract a(Ljava/lang/Object;J)B
@@ -25,10 +26,17 @@ return-void
 .end method
 .method public final a(Ljava/lang/Object;JI)V
 .locals 1
+iget-object v0, p0, Lje$d;->a:Lsun/misc/Unsafe;
+invoke-virtual {v0, p1, p2, p3, p4}, Lsun/misc/Unsafe;->putInt(Ljava/lang/Object;JI)V
 return-void
 .end method
 .method public final a(Ljava/lang/Object;JJ)V
 .locals 6
+iget-object v0, p0, Lje$d;->a:Lsun/misc/Unsafe;
+move-object v1, p1
+move-wide v2, p2
+move-wide v4, p4
+invoke-virtual/range {v0 .. v5}, Lsun/misc/Unsafe;->putLong(Ljava/lang/Object;JJ)V
 return-void
 .end method
 .method public abstract a(Ljava/lang/Object;JZ)V
@@ -43,11 +51,15 @@ return-void
 .end method
 .method public final e(Ljava/lang/Object;J)I
 .locals 1
-const/4 v0, 0x0
-return v0
+iget-object v0, p0, Lje$d;->a:Lsun/misc/Unsafe;
+invoke-virtual {v0, p1, p2, p3}, Lsun/misc/Unsafe;->getInt(Ljava/lang/Object;J)I
+move-result p1
+return p1
 .end method
 .method public final f(Ljava/lang/Object;J)J
 .locals 1
-const-wide v0, 0x0
-return-wide v0
+iget-object v0, p0, Lje$d;->a:Lsun/misc/Unsafe;
+invoke-virtual {v0, p1, p2, p3}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
+move-result-wide p1
+return-wide p1
 .end method

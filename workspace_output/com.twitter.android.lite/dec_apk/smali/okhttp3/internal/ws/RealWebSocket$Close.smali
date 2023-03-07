@@ -13,6 +13,9 @@ name = "Close"
 .field final reason:Lyv;
 .method constructor <init>(ILyv;J)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+iput p1, p0, Lokhttp3/internal/ws/RealWebSocket$Close;->code:I
+iput-object p2, p0, Lokhttp3/internal/ws/RealWebSocket$Close;->reason:Lyv;
+iput-wide p3, p0, Lokhttp3/internal/ws/RealWebSocket$Close;->cancelAfterCloseMillis:J
 return-void
 .end method

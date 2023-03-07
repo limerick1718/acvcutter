@@ -21,7 +21,9 @@ value = {
 .field final synthetic val$keyData:Ljava/util/Map;
 .method constructor <init>(Lcom/crashlytics/android/core/CrashlyticsController;Ljava/util/Map;)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsController$11;->this$0:Lcom/crashlytics/android/core/CrashlyticsController;
+iput-object p2, p0, Lcom/crashlytics/android/core/CrashlyticsController$11;->val$keyData:Ljava/util/Map;
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public bridge synthetic call()Ljava/lang/Object;
@@ -31,7 +33,8 @@ value = {
 Ljava/lang/Exception;
 }
 .end annotation
-const/4 v0, 0x0
+invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController$11;->call()Ljava/lang/Void;
+move-result-object v0
 return-object v0
 .end method
 .method public call()Ljava/lang/Void;
@@ -41,6 +44,16 @@ value = {
 Ljava/lang/Exception;
 }
 .end annotation
+iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController$11;->this$0:Lcom/crashlytics/android/core/CrashlyticsController;
+invoke-static {v0}, Lcom/crashlytics/android/core/CrashlyticsController;->access$1200(Lcom/crashlytics/android/core/CrashlyticsController;)Ljava/lang/String;
+move-result-object v0
+new-instance v1, Lcom/crashlytics/android/core/MetaDataStore;
+iget-object v2, p0, Lcom/crashlytics/android/core/CrashlyticsController$11;->this$0:Lcom/crashlytics/android/core/CrashlyticsController;
+invoke-virtual {v2}, Lcom/crashlytics/android/core/CrashlyticsController;->getFilesDir()Ljava/io/File;
+move-result-object v2
+invoke-direct {v1, v2}, Lcom/crashlytics/android/core/MetaDataStore;-><init>(Ljava/io/File;)V
+iget-object v2, p0, Lcom/crashlytics/android/core/CrashlyticsController$11;->val$keyData:Ljava/util/Map;
+invoke-virtual {v1, v0, v2}, Lcom/crashlytics/android/core/MetaDataStore;->writeKeyData(Ljava/lang/String;Ljava/util/Map;)V
 const/4 v0, 0x0
 return-object v0
 .end method

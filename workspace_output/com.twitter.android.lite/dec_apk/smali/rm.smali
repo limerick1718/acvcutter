@@ -43,8 +43,10 @@ value = {
 "TTContinuationResult;>;"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
+new-instance p1, Ljava/lang/UnsupportedOperationException;
+const-string p2, "continueWith is not implemented"
+invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method
 .method public a(Ljava/util/concurrent/Executor;Lrh;)Lrm;
 .locals 0
@@ -58,8 +60,10 @@ value = {
 "TTResult;>;"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
+new-instance p1, Ljava/lang/UnsupportedOperationException;
+const-string p2, "addOnCanceledListener is not implemented"
+invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method
 .method public a(Ljava/util/concurrent/Executor;Lri;)Lrm;
 .locals 0
@@ -73,8 +77,10 @@ value = {
 "TTResult;>;"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
+new-instance p1, Ljava/lang/UnsupportedOperationException;
+const-string p2, "addOnCompleteListener is not implemented"
+invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method
 .method public abstract a(Ljava/util/concurrent/Executor;Lrj;)Lrm;
 .annotation system Ldalvik/annotation/Signature;
@@ -118,8 +124,10 @@ value = {
 "TTContinuationResult;>;"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
+new-instance p1, Ljava/lang/UnsupportedOperationException;
+const-string p2, "continueWithTask is not implemented"
+invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method
 .method public abstract b()Z
 .end method

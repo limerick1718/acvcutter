@@ -32,15 +32,24 @@ invoke-direct {p0}, Lba;-><init>()V
 iput-object p1, p0, Lkl;->a:Landroid/os/Bundle;
 return-void
 .end method
+.method static synthetic a(Lkl;)Landroid/os/Bundle;
+.locals 0
+iget-object p0, p0, Lkl;->a:Landroid/os/Bundle;
+return-object p0
+.end method
 .method public final a()I
 .locals 1
-const/4 v0, 0x0
+iget-object v0, p0, Lkl;->a:Landroid/os/Bundle;
+invoke-virtual {v0}, Landroid/os/Bundle;->size()I
+move-result v0
 return v0
 .end method
 .method final a(Ljava/lang/String;)Ljava/lang/Object;
 .locals 1
-const/4 v0, 0x0
-return-object v0
+iget-object v0, p0, Lkl;->a:Landroid/os/Bundle;
+invoke-virtual {v0, p1}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+move-result-object p1
+return-object p1
 .end method
 .method public final b()Landroid/os/Bundle;
 .locals 2
@@ -51,18 +60,28 @@ return-object v0
 .end method
 .method final b(Ljava/lang/String;)Ljava/lang/Long;
 .locals 2
-const/4 v0, 0x0
-return-object v0
+iget-object v0, p0, Lkl;->a:Landroid/os/Bundle;
+invoke-virtual {v0, p1}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
+move-result-wide v0
+invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+move-result-object p1
+return-object p1
 .end method
 .method final c(Ljava/lang/String;)Ljava/lang/Double;
 .locals 2
-const/4 v0, 0x0
-return-object v0
+iget-object v0, p0, Lkl;->a:Landroid/os/Bundle;
+invoke-virtual {v0, p1}, Landroid/os/Bundle;->getDouble(Ljava/lang/String;)D
+move-result-wide v0
+invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+move-result-object p1
+return-object p1
 .end method
 .method final d(Ljava/lang/String;)Ljava/lang/String;
 .locals 1
-const/4 v0, 0x0
-return-object v0
+iget-object v0, p0, Lkl;->a:Landroid/os/Bundle;
+invoke-virtual {v0, p1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+move-result-object p1
+return-object p1
 .end method
 .method public final iterator()Ljava/util/Iterator;
 .locals 1
@@ -74,12 +93,15 @@ value = {
 ">;"
 }
 .end annotation
-const/4 v0, 0x0
+new-instance v0, Lkm;
+invoke-direct {v0, p0}, Lkm;-><init>(Lkl;)V
 return-object v0
 .end method
 .method public final toString()Ljava/lang/String;
 .locals 1
-const/4 v0, 0x0
+iget-object v0, p0, Lkl;->a:Landroid/os/Bundle;
+invoke-virtual {v0}, Landroid/os/Bundle;->toString()Ljava/lang/String;
+move-result-object v0
 return-object v0
 .end method
 .method public final writeToParcel(Landroid/os/Parcel;I)V

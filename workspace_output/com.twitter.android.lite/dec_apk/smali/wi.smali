@@ -55,15 +55,23 @@ return-void
 invoke-virtual {p0}, Lwi;->b()Lwd$d;
 move-result-object v0
 sget-object v1, Lwd$d;->a:Lwd$d;
+if-ne v0, v1, :cond_0
 invoke-virtual {p0}, Lwi;->e()Lwe;
 move-result-object v0
 check-cast v0, Lwl;
 check-cast v0, Lwe;
 invoke-interface {v0, p1}, Lwe;->addDependency(Ljava/lang/Object;)V
 return-void
+:cond_0
+new-instance p1, Ljava/lang/IllegalStateException;
+const-string v0, "Must not add Dependency after task is running"
+invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method
 .method public synthetic addDependency(Ljava/lang/Object;)V
 .locals 0
+check-cast p1, Lwo;
+invoke-virtual {p0, p1}, Lwi;->a(Lwo;)V
 return-void
 .end method
 .method public areDependenciesMet()Z
@@ -109,12 +117,21 @@ value = {
 ">;"
 }
 .end annotation
-const/4 v0, 0x0
+invoke-virtual {p0}, Lwi;->e()Lwe;
+move-result-object v0
+check-cast v0, Lwl;
+check-cast v0, Lwe;
+invoke-interface {v0}, Lwe;->getDependencies()Ljava/util/Collection;
+move-result-object v0
 return-object v0
 .end method
 .method public getPriority()Lwh;
 .locals 1
-const/4 v0, 0x0
+invoke-virtual {p0}, Lwi;->e()Lwe;
+move-result-object v0
+check-cast v0, Lwl;
+invoke-interface {v0}, Lwl;->getPriority()Lwh;
+move-result-object v0
 return-object v0
 .end method
 .method public isFinished()Z

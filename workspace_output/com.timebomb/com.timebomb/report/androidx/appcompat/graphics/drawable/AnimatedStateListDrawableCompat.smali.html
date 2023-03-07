@@ -1,0 +1,1055 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.appcompat.graphics.drawable</a></li>
+        <li><i class="ico ico-class"></i> AnimatedStateListDrawableCompat.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;
+.super Landroidx/appcompat/graphics/drawable/StateListDrawable;
+.source "AnimatedStateListDrawableCompat.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$FrameInterpolator;,
+Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;,
+Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedVectorDrawableTransition;,
+Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimationDrawableTransition;,
+Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatableTransition;,
+Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;
+}
+.end annotation
+
+.field private static final ELEMENT_ITEM:Ljava/lang/String; = "item"
+.field private static final ELEMENT_TRANSITION:Ljava/lang/String; = "transition"
+.field private static final ITEM_MISSING_DRAWABLE_ERROR:Ljava/lang/String; = ": <item> tag requires a \'drawable\' attribute or child tag defining a drawable"
+.field private static final LOGTAG:Ljava/lang/String;
+.field private static final TRANSITION_MISSING_DRAWABLE_ERROR:Ljava/lang/String; = ": <transition> tag requires a \'drawable\' attribute or child tag defining a drawable"
+.field private static final TRANSITION_MISSING_FROM_TO_ID:Ljava/lang/String; = ": <transition> tag requires \'fromId\' & \'toId\' attributes"
+.field private mMutated:Z
+.field private mState:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;
+.field private mTransition:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;
+.field private mTransitionFromIndex:I
+.field private mTransitionToIndex:I
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	const-class v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->LOGTAG:Ljava/lang/String;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public constructor &lt;init&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	invoke-direct {p0, v0, v0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;-><init>(Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;Landroid/content/res/Resources;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method constructor &lt;init&gt;(Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;Landroid/content/res/Resources;)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "state"    # Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;</span>
+<span class="">	.param p2, "res"    # Landroid/content/res/Resources;</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	invoke-direct {p0, v0}, Landroidx/appcompat/graphics/drawable/StateListDrawable;-><init>(Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;)V</span>
+<span class="missed">	const/4 v0, -0x1</span>
+<span class="missed">	iput v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionToIndex:I</span>
+<span class="missed">	iput v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionFromIndex:I</span>
+<span class="missed">	new-instance v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;</span>
+<span class="missed">	invoke-direct {v0, p1, p0, p2}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;-><init>(Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;Landroid/content/res/Resources;)V</span>
+<span class="missed">	invoke-virtual {p0, v0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->setConstantState(Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;)V</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->getState()[I</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {p0, v1}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->onStateChange([I)Z</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->jumpToCurrentState()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public static create(Landroid/content/Context;ILandroid/content/res/Resources$Theme;)Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;
+<span class="">	.locals 7</span>
+<span class="">	.param p0, "context"    # Landroid/content/Context;</span>
+<span class="">	.param p1, "resId"    # I</span>
+<span class="">	.param p2, "theme"    # Landroid/content/res/Resources$Theme;</span>
+
+<span class="missed">	const-string v0, "parser error"</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1, p1}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-static {v2}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->next()I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	move v5, v4</span>
+<span class="missed">	const/4 v6, 0x2</span>
+<span class="missed">	if-eq v4, v6, :cond_0</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	if-eq v5, v4, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-ne v5, v6, :cond_1</span>
+<span class="">	invoke-static {p0, v1, v2, v3, p2}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->createFromXmlInner(Landroid/content/Context;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v4, Lorg/xmlpull/v1/XmlPullParserException;</span>
+<span class="missed">	const-string v6, "No start tag found"</span>
+<span class="missed">	invoke-direct {v4, v6}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v4</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_1</span>
+<span class="">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	sget-object v2, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->LOGTAG:Ljava/lang/String;</span>
+<span class="missed">	invoke-static {v2, v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	sget-object v2, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->LOGTAG:Ljava/lang/String;</span>
+<span class="missed">	invoke-static {v2, v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="">	nop</span>
+<span class="">	:goto_1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public static createFromXmlInner(Landroid/content/Context;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;
+<span class="">	.locals 8</span>
+<span class="">	.param p0, "context"    # Landroid/content/Context;</span>
+<span class="">	.param p1, "resources"    # Landroid/content/res/Resources;</span>
+<span class="">	.param p2, "parser"    # Lorg/xmlpull/v1/XmlPullParser;</span>
+<span class="">	.param p3, "attrs"    # Landroid/util/AttributeSet;</span>
+<span class="">	.param p4, "theme"    # Landroid/content/res/Resources$Theme;</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;,</span>
+<span class="">	Lorg/xmlpull/v1/XmlPullParserException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "animated-selector"</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	new-instance v1, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;</span>
+<span class="missed">	invoke-direct {v1}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;-><init>()V</span>
+<span class="missed">	move-object v2, v1</span>
+<span class="missed">	move-object v3, p0</span>
+<span class="missed">	move-object v4, p1</span>
+<span class="missed">	move-object v5, p2</span>
+<span class="missed">	move-object v6, p3</span>
+<span class="missed">	move-object v7, p4</span>
+<span class="missed">	invoke-virtual/range {v2 .. v7}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->inflate(Landroid/content/Context;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V</span>
+<span class="">	return-object v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v1, Lorg/xmlpull/v1/XmlPullParserException;</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="">	invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getPositionDescription()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v3, ": invalid animated-selector tag "</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-direct {v1, v2}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v1</span>
+.end method
+
+.method private inflateChildElements(Landroid/content/Context;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
+<span class="">	.locals 6</span>
+<span class="">	.param p1, "context"    # Landroid/content/Context;</span>
+<span class="">	.param p2, "resources"    # Landroid/content/res/Resources;</span>
+<span class="">	.param p3, "parser"    # Lorg/xmlpull/v1/XmlPullParser;</span>
+<span class="">	.param p4, "attrs"    # Landroid/util/AttributeSet;</span>
+<span class="">	.param p5, "theme"    # Landroid/content/res/Resources$Theme;</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Lorg/xmlpull/v1/XmlPullParserException;,</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-interface {p3}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	add-int/2addr v0, v1</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-interface {p3}, Lorg/xmlpull/v1/XmlPullParser;->next()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	move v3, v2</span>
+<span class="missed">	if-eq v2, v1, :cond_5</span>
+<span class="">	invoke-interface {p3}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	move v4, v2</span>
+<span class="missed">	if-ge v2, v0, :cond_1</span>
+<span class="missed">	const/4 v2, 0x3</span>
+<span class="missed">	if-eq v3, v2, :cond_5</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v2, 0x2</span>
+<span class="missed">	if-eq v3, v2, :cond_2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	if-le v4, v0, :cond_3</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-interface {p3}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v5, "item"</span>
+<span class="">	invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_4</span>
+<span class="missed">	invoke-direct/range {p0 .. p5}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->parseItem(Landroid/content/Context;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)I</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_4</span>
+<span class="">	invoke-interface {p3}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v5, "transition"</span>
+<span class="">	invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="missed">	invoke-direct/range {p0 .. p5}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->parseTransition(Landroid/content/Context;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)I</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_5</span>
+<span class="">	return-void</span>
+.end method
+
+.method private init()V
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->getState()[I</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {p0, v0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->onStateChange([I)Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method private parseItem(Landroid/content/Context;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)I
+<span class="">	.locals 10</span>
+<span class="">	.param p1, "context"    # Landroid/content/Context;</span>
+<span class="">	.param p2, "resources"    # Landroid/content/res/Resources;</span>
+<span class="">	.param p3, "parser"    # Lorg/xmlpull/v1/XmlPullParser;</span>
+<span class="">	.param p4, "attrs"    # Landroid/util/AttributeSet;</span>
+<span class="">	.param p5, "theme"    # Landroid/content/res/Resources$Theme;</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Lorg/xmlpull/v1/XmlPullParserException;,</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	sget-object v0, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableItem:[I</span>
+<span class="">	invoke-static {p2, p5, p4, v0}, Landroidx/core/content/res/TypedArrayUtils;->obtainAttributes(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sget v1, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableItem_android_id:I</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	sget v3, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableItem_android_drawable:I</span>
+<span class="missed">	const/4 v4, -0x1</span>
+<span class="">	invoke-virtual {v0, v3, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-lez v3, :cond_0</span>
+<span class="">	invoke-static {p1, v3}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V</span>
+<span class="">	invoke-virtual {p0, p4}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->extractStateSet(Landroid/util/AttributeSet;)[I</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	const-string v5, ": <item> tag requires a \'drawable\' attribute or child tag defining a drawable"</span>
+<span class="missed">	if-nez v2, :cond_5</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-interface {p3}, Lorg/xmlpull/v1/XmlPullParser;->next()I</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	move v7, v6</span>
+<span class="missed">	const/4 v8, 0x4</span>
+<span class="missed">	if-ne v6, v8, :cond_1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v6, 0x2</span>
+<span class="missed">	if-ne v7, v6, :cond_4</span>
+<span class="">	invoke-interface {p3}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	const-string v8, "vector"</span>
+<span class="">	invoke-virtual {v6, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	if-eqz v6, :cond_2</span>
+<span class="">	invoke-static {p2, p3, p4, p5}, Landroidx/vectordrawable/graphics/drawable/VectorDrawableCompat;->createFromXmlInner(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroidx/vectordrawable/graphics/drawable/VectorDrawableCompat;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	sget v6, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v8, 0x15</span>
+<span class="missed">	if-lt v6, v8, :cond_3</span>
+<span class="">	invoke-static {p2, p3, p4, p5}, Landroid/graphics/drawable/Drawable;->createFromXmlInner(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-static {p2, p3, p4}, Landroid/graphics/drawable/Drawable;->createFromXmlInner(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;)Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_4</span>
+<span class="missed">	new-instance v6, Lorg/xmlpull/v1/XmlPullParserException;</span>
+<span class="missed">	new-instance v8, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="">	invoke-interface {p3}, Lorg/xmlpull/v1/XmlPullParser;->getPositionDescription()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v9</span>
+<span class="missed">	invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="missed">	invoke-direct {v6, v5}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v6</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_5</span>
+<span class="missed">	if-eqz v2, :cond_6</span>
+<span class="missed">	iget-object v5, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mState:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;</span>
+<span class="">	invoke-virtual {v5, v4, v2, v1}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->addStateSet([ILandroid/graphics/drawable/Drawable;I)I</span>
+<span class="missed">	move-result v5</span>
+<span class="">	return v5</span>
+<span class="">	:cond_6</span>
+<span class="missed">	new-instance v6, Lorg/xmlpull/v1/XmlPullParserException;</span>
+<span class="missed">	new-instance v7, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="">	invoke-interface {p3}, Lorg/xmlpull/v1/XmlPullParser;->getPositionDescription()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v8</span>
+<span class="missed">	invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="missed">	invoke-direct {v6, v5}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v6</span>
+.end method
+
+.method private parseTransition(Landroid/content/Context;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)I
+<span class="">	.locals 15</span>
+<span class="">	.param p1, "context"    # Landroid/content/Context;</span>
+<span class="">	.param p2, "resources"    # Landroid/content/res/Resources;</span>
+<span class="">	.param p3, "parser"    # Lorg/xmlpull/v1/XmlPullParser;</span>
+<span class="">	.param p4, "attrs"    # Landroid/util/AttributeSet;</span>
+<span class="">	.param p5, "theme"    # Landroid/content/res/Resources$Theme;</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Lorg/xmlpull/v1/XmlPullParserException;,</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	sget-object v0, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableTransition:[I</span>
+<span class="missed">	move-object/from16 v1, p2</span>
+<span class="missed">	move-object/from16 v2, p4</span>
+<span class="missed">	move-object/from16 v3, p5</span>
+<span class="">	invoke-static {v1, v3, v2, v0}, Landroidx/core/content/res/TypedArrayUtils;->obtainAttributes(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sget v4, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableTransition_android_fromId:I</span>
+<span class="missed">	const/4 v5, -0x1</span>
+<span class="">	invoke-virtual {v0, v4, v5}, Landroid/content/res/TypedArray;->getResourceId(II)I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	sget v6, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableTransition_android_toId:I</span>
+<span class="">	invoke-virtual {v0, v6, v5}, Landroid/content/res/TypedArray;->getResourceId(II)I</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	const/4 v7, 0x0</span>
+<span class="missed">	sget v8, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableTransition_android_drawable:I</span>
+<span class="">	invoke-virtual {v0, v8, v5}, Landroid/content/res/TypedArray;->getResourceId(II)I</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	if-lez v8, :cond_0</span>
+<span class="missed">	move-object/from16 v9, p1</span>
+<span class="">	invoke-static {v9, v8}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	move-object/from16 v9, p1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	sget v10, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableTransition_android_reversible:I</span>
+<span class="missed">	const/4 v11, 0x0</span>
+<span class="">	invoke-virtual {v0, v10, v11}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z</span>
+<span class="missed">	move-result v10</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V</span>
+<span class="missed">	const-string v11, ": <transition> tag requires a \'drawable\' attribute or child tag defining a drawable"</span>
+<span class="missed">	if-nez v7, :cond_5</span>
+<span class="">	:goto_1</span>
+<span class="">	invoke-interface/range {p3 .. p3}, Lorg/xmlpull/v1/XmlPullParser;->next()I</span>
+<span class="missed">	move-result v12</span>
+<span class="missed">	move v13, v12</span>
+<span class="missed">	const/4 v14, 0x4</span>
+<span class="missed">	if-ne v12, v14, :cond_1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v12, 0x2</span>
+<span class="missed">	if-ne v13, v12, :cond_4</span>
+<span class="">	invoke-interface/range {p3 .. p3}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v12</span>
+<span class="missed">	const-string v14, "animated-vector"</span>
+<span class="">	invoke-virtual {v12, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v12</span>
+<span class="missed">	if-eqz v12, :cond_2</span>
+<span class="">	invoke-static/range {p1 .. p5}, Landroidx/vectordrawable/graphics/drawable/AnimatedVectorDrawableCompat;->createFromXmlInner(Landroid/content/Context;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroidx/vectordrawable/graphics/drawable/AnimatedVectorDrawableCompat;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_2</span>
+<span class="missed">	sget v12, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v14, 0x15</span>
+<span class="missed">	if-lt v12, v14, :cond_3</span>
+<span class="">	invoke-static/range {p2 .. p5}, Landroid/graphics/drawable/Drawable;->createFromXmlInner(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-static/range {p2 .. p4}, Landroid/graphics/drawable/Drawable;->createFromXmlInner(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;)Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_4</span>
+<span class="missed">	new-instance v5, Lorg/xmlpull/v1/XmlPullParserException;</span>
+<span class="missed">	new-instance v12, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="">	invoke-interface/range {p3 .. p3}, Lorg/xmlpull/v1/XmlPullParser;->getPositionDescription()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v14</span>
+<span class="missed">	invoke-virtual {v12, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v12, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v11</span>
+<span class="missed">	invoke-direct {v5, v11}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v5</span>
+<span class="">	:goto_2</span>
+<span class="">	:cond_5</span>
+<span class="missed">	if-eqz v7, :cond_7</span>
+<span class="missed">	if-eq v4, v5, :cond_6</span>
+<span class="missed">	if-eq v6, v5, :cond_6</span>
+<span class="missed">	move-object v5, p0</span>
+<span class="missed">	iget-object v11, v5, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mState:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;</span>
+<span class="">	invoke-virtual {v11, v4, v6, v7, v10}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->addTransition(IILandroid/graphics/drawable/Drawable;Z)I</span>
+<span class="missed">	move-result v11</span>
+<span class="">	return v11</span>
+<span class="">	:cond_6</span>
+<span class="missed">	move-object v5, p0</span>
+<span class="missed">	new-instance v11, Lorg/xmlpull/v1/XmlPullParserException;</span>
+<span class="missed">	new-instance v12, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="">	invoke-interface/range {p3 .. p3}, Lorg/xmlpull/v1/XmlPullParser;->getPositionDescription()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v13</span>
+<span class="missed">	invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v13, ": <transition> tag requires \'fromId\' & \'toId\' attributes"</span>
+<span class="missed">	invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v12</span>
+<span class="missed">	invoke-direct {v11, v12}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v11</span>
+<span class="">	:cond_7</span>
+<span class="missed">	move-object v5, p0</span>
+<span class="missed">	new-instance v12, Lorg/xmlpull/v1/XmlPullParserException;</span>
+<span class="missed">	new-instance v13, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="">	invoke-interface/range {p3 .. p3}, Lorg/xmlpull/v1/XmlPullParser;->getPositionDescription()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v14</span>
+<span class="missed">	invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v11</span>
+<span class="missed">	invoke-direct {v12, v11}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v12</span>
+.end method
+
+.method private selectTransition(I)Z
+<span class="">	.locals 12</span>
+<span class="">	.param p1, "toIndex"    # I</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransition:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="missed">	iget v2, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionToIndex:I</span>
+<span class="missed">	if-ne p1, v2, :cond_0</span>
+<span class="">	return v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget v2, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionFromIndex:I</span>
+<span class="missed">	if-ne p1, v2, :cond_1</span>
+<span class="">	invoke-virtual {v0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;->canReverse()Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_1</span>
+<span class="missed">	invoke-virtual {v0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;->reverse()V</span>
+<span class="missed">	iget v2, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionFromIndex:I</span>
+<span class="missed">	iput v2, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionToIndex:I</span>
+<span class="missed">	iput p1, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionFromIndex:I</span>
+<span class="">	return v1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget v2, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionToIndex:I</span>
+<span class="missed">	invoke-virtual {v0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;->stop()V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->getCurrentIndex()I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	iput-object v3, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransition:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;</span>
+<span class="missed">	const/4 v3, -0x1</span>
+<span class="missed">	iput v3, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionFromIndex:I</span>
+<span class="missed">	iput v3, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionToIndex:I</span>
+<span class="missed">	iget-object v3, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mState:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;</span>
+<span class="">	invoke-virtual {v3, v2}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->getKeyframeIdAt(I)I</span>
+<span class="missed">	move-result v4</span>
+<span class="">	invoke-virtual {v3, p1}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->getKeyframeIdAt(I)I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="missed">	if-eqz v5, :cond_8</span>
+<span class="missed">	if-nez v4, :cond_3</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-virtual {v3, v4, v5}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->indexOfTransition(II)I</span>
+<span class="missed">	move-result v7</span>
+<span class="missed">	if-gez v7, :cond_4</span>
+<span class="">	return v6</span>
+<span class="">	:cond_4</span>
+<span class="">	invoke-virtual {v3, v4, v5}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->transitionHasReversibleFlag(II)Z</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	invoke-virtual {p0, v7}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->selectDrawable(I)Z</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->getCurrent()Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v9</span>
+<span class="missed">	instance-of v10, v9, Landroid/graphics/drawable/AnimationDrawable;</span>
+<span class="missed">	if-eqz v10, :cond_5</span>
+<span class="">	invoke-virtual {v3, v4, v5}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->isTransitionReversed(II)Z</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	new-instance v10, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimationDrawableTransition;</span>
+<span class="missed">	move-object v11, v9</span>
+<span class="missed">	check-cast v11, Landroid/graphics/drawable/AnimationDrawable;</span>
+<span class="missed">	invoke-direct {v10, v11, v6, v8}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimationDrawableTransition;-><init>(Landroid/graphics/drawable/AnimationDrawable;ZZ)V</span>
+<span class="missed">	move-object v6, v10</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_5</span>
+<span class="missed">	instance-of v10, v9, Landroidx/vectordrawable/graphics/drawable/AnimatedVectorDrawableCompat;</span>
+<span class="missed">	if-eqz v10, :cond_6</span>
+<span class="missed">	new-instance v6, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedVectorDrawableTransition;</span>
+<span class="missed">	move-object v10, v9</span>
+<span class="missed">	check-cast v10, Landroidx/vectordrawable/graphics/drawable/AnimatedVectorDrawableCompat;</span>
+<span class="missed">	invoke-direct {v6, v10}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedVectorDrawableTransition;-><init>(Landroidx/vectordrawable/graphics/drawable/AnimatedVectorDrawableCompat;)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_6</span>
+<span class="missed">	instance-of v10, v9, Landroid/graphics/drawable/Animatable;</span>
+<span class="missed">	if-eqz v10, :cond_7</span>
+<span class="missed">	new-instance v6, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatableTransition;</span>
+<span class="missed">	move-object v10, v9</span>
+<span class="missed">	check-cast v10, Landroid/graphics/drawable/Animatable;</span>
+<span class="missed">	invoke-direct {v6, v10}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatableTransition;-><init>(Landroid/graphics/drawable/Animatable;)V</span>
+<span class="">	:goto_1</span>
+<span class="missed">	invoke-virtual {v6}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;->start()V</span>
+<span class="missed">	iput-object v6, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransition:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;</span>
+<span class="missed">	iput v2, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionFromIndex:I</span>
+<span class="missed">	iput p1, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionToIndex:I</span>
+<span class="">	return v1</span>
+<span class="">	:cond_7</span>
+<span class="">	return v6</span>
+<span class="">	:goto_2</span>
+<span class="">	:cond_8</span>
+<span class="">	return v6</span>
+.end method
+
+.method private updateStateFromTypedArray(Landroid/content/res/TypedArray;)V
+<span class="">	.locals 3</span>
+<span class="">	.param p1, "a"    # Landroid/content/res/TypedArray;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mState:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;</span>
+<span class="missed">	sget v1, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v2, 0x15</span>
+<span class="missed">	if-lt v1, v2, :cond_0</span>
+<span class="missed">	iget v1, v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mChangingConfigurations:I</span>
+<span class="">	invoke-virtual {p1}, Landroid/content/res/TypedArray;->getChangingConfigurations()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	or-int/2addr v1, v2</span>
+<span class="missed">	iput v1, v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mChangingConfigurations:I</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sget v1, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableCompat_android_variablePadding:I</span>
+<span class="missed">	iget-boolean v2, v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mVariablePadding:Z</span>
+<span class="">	invoke-virtual {p1, v1, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->setVariablePadding(Z)V</span>
+<span class="missed">	sget v1, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableCompat_android_constantSize:I</span>
+<span class="missed">	iget-boolean v2, v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mConstantSize:Z</span>
+<span class="">	invoke-virtual {p1, v1, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->setConstantSize(Z)V</span>
+<span class="missed">	sget v1, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableCompat_android_enterFadeDuration:I</span>
+<span class="missed">	iget v2, v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mEnterFadeDuration:I</span>
+<span class="">	invoke-virtual {p1, v1, v2}, Landroid/content/res/TypedArray;->getInt(II)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->setEnterFadeDuration(I)V</span>
+<span class="missed">	sget v1, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableCompat_android_exitFadeDuration:I</span>
+<span class="missed">	iget v2, v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mExitFadeDuration:I</span>
+<span class="">	invoke-virtual {p1, v1, v2}, Landroid/content/res/TypedArray;->getInt(II)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->setExitFadeDuration(I)V</span>
+<span class="missed">	sget v1, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableCompat_android_dither:I</span>
+<span class="missed">	iget-boolean v2, v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mDither:Z</span>
+<span class="">	invoke-virtual {p1, v1, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	invoke-virtual {p0, v1}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->setDither(Z)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public bridge synthetic addState([ILandroid/graphics/drawable/Drawable;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1, p2}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->addState([ILandroid/graphics/drawable/Drawable;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public addState([ILandroid/graphics/drawable/Drawable;I)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "stateSet"    # [I</span>
+<span class="">	.param p2, "drawable"    # Landroid/graphics/drawable/Drawable;</span>
+<span class="">	.param p3, "id"    # I</span>
+
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mState:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;</span>
+<span class="missed">	invoke-virtual {v0, p1, p2, p3}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->addStateSet([ILandroid/graphics/drawable/Drawable;I)I</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->getState()[I</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {p0, v0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->onStateChange([I)Z</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v1, "Drawable must not be null"</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public addTransition(IILandroid/graphics/drawable/Drawable;Z)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "fromId"    # I</span>
+<span class="">	.param p2, "toId"    # I</span>
+<span class="">	.param p4, "reversible"    # Z</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<T:",</span>
+<span class="">	"Landroid/graphics/drawable/Drawable;",</span>
+<span class="">	":",</span>
+<span class="">	"Landroid/graphics/drawable/Animatable;",</span>
+<span class="">	">(IITT;Z)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-eqz p3, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mState:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;</span>
+<span class="missed">	invoke-virtual {v0, p1, p2, p3, p4}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->addTransition(IILandroid/graphics/drawable/Drawable;Z)I</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v1, "Transition drawable must not be null"</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public bridge synthetic applyTheme(Landroid/content/res/Resources$Theme;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->applyTheme(Landroid/content/res/Resources$Theme;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public bridge synthetic canApplyTheme()Z
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->canApplyTheme()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method  clearMutated()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	invoke-super {p0}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->clearMutated()V</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-boolean v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mMutated:Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method  cloneConstantState()Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;
+<span class="">	.locals 3</span>
+
+<span class="missed">	new-instance v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mState:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	invoke-direct {v0, v1, p0, v2}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;-><init>(Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;Landroid/content/res/Resources;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method bridge synthetic cloneConstantState()Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->cloneConstantState()Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method bridge synthetic cloneConstantState()Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->cloneConstantState()Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public bridge synthetic draw(Landroid/graphics/Canvas;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->draw(Landroid/graphics/Canvas;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public bridge synthetic getAlpha()I
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->getAlpha()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public bridge synthetic getChangingConfigurations()I
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->getChangingConfigurations()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public bridge synthetic getCurrent()Landroid/graphics/drawable/Drawable;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->getCurrent()Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public bridge synthetic getHotspotBounds(Landroid/graphics/Rect;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->getHotspotBounds(Landroid/graphics/Rect;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public bridge synthetic getIntrinsicHeight()I
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->getIntrinsicHeight()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public bridge synthetic getIntrinsicWidth()I
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->getIntrinsicWidth()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public bridge synthetic getMinimumHeight()I
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->getMinimumHeight()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public bridge synthetic getMinimumWidth()I
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->getMinimumWidth()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public bridge synthetic getOpacity()I
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->getOpacity()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public bridge synthetic getOutline(Landroid/graphics/Outline;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->getOutline(Landroid/graphics/Outline;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public bridge synthetic getPadding(Landroid/graphics/Rect;)Z
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->getPadding(Landroid/graphics/Rect;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public inflate(Landroid/content/Context;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
+<span class="">	.locals 3</span>
+<span class="">	.param p1, "context"    # Landroid/content/Context;</span>
+<span class="">	.param p2, "resources"    # Landroid/content/res/Resources;</span>
+<span class="">	.param p3, "parser"    # Lorg/xmlpull/v1/XmlPullParser;</span>
+<span class="">	.param p4, "attrs"    # Landroid/util/AttributeSet;</span>
+<span class="">	.param p5, "theme"    # Landroid/content/res/Resources$Theme;</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Lorg/xmlpull/v1/XmlPullParserException;,</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	sget-object v0, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableCompat:[I</span>
+<span class="">	invoke-static {p2, p5, p4, v0}, Landroidx/core/content/res/TypedArrayUtils;->obtainAttributes(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sget v1, Landroidx/appcompat/R$styleable;->AnimatedStateListDrawableCompat_android_visible:I</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="">	invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	invoke-virtual {p0, v1, v2}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->setVisible(ZZ)Z</span>
+<span class="missed">	invoke-direct {p0, v0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->updateStateFromTypedArray(Landroid/content/res/TypedArray;)V</span>
+<span class="missed">	invoke-virtual {p0, p2}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->updateDensity(Landroid/content/res/Resources;)V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V</span>
+<span class="missed">	invoke-direct/range {p0 .. p5}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->inflateChildElements(Landroid/content/Context;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V</span>
+<span class="missed">	invoke-direct {p0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->init()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public bridge synthetic invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->invalidateDrawable(Landroid/graphics/drawable/Drawable;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public bridge synthetic isAutoMirrored()Z
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->isAutoMirrored()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public isStateful()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	return v0</span>
+.end method
+
+.method public jumpToCurrentState()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	invoke-super {p0}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->jumpToCurrentState()V</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransition:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-virtual {v0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;->stop()V</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-object v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransition:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;</span>
+<span class="missed">	iget v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionToIndex:I</span>
+<span class="missed">	invoke-virtual {p0, v0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->selectDrawable(I)Z</span>
+<span class="missed">	const/4 v0, -0x1</span>
+<span class="missed">	iput v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionToIndex:I</span>
+<span class="missed">	iput v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransitionFromIndex:I</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public mutate()Landroid/graphics/drawable/Drawable;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-boolean v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mMutated:Z</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	invoke-super {p0}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->mutate()Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-ne v0, p0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mState:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;</span>
+<span class="missed">	invoke-virtual {v0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mutate()V</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	iput-boolean v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mMutated:Z</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public bridge synthetic onLayoutDirectionChanged(I)Z
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->onLayoutDirectionChanged(I)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method protected onStateChange([I)Z
+<span class="">	.locals 4</span>
+<span class="">	.param p1, "stateSet"    # [I</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mState:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;</span>
+<span class="">	invoke-virtual {v0, p1}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->indexOfKeyframe([I)I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->getCurrentIndex()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eq v0, v1, :cond_1</span>
+<span class="">	invoke-direct {p0, v0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->selectTransition(I)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="">	invoke-virtual {p0, v0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->selectDrawable(I)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->getCurrent()Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	if-eqz v2, :cond_2</span>
+<span class="">	invoke-virtual {v2, p1}, Landroid/graphics/drawable/Drawable;->setState([I)Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	or-int/2addr v1, v3</span>
+<span class="">	:cond_2</span>
+<span class="">	return v1</span>
+.end method
+
+.method public bridge synthetic scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1, p2, p3, p4}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public bridge synthetic setAlpha(I)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->setAlpha(I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public bridge synthetic setAutoMirrored(Z)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->setAutoMirrored(Z)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public bridge synthetic setColorFilter(Landroid/graphics/ColorFilter;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected setConstantState(Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "state"    # Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->setConstantState(Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;)V</span>
+<span class="missed">	instance-of v0, p1, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	move-object v0, p1</span>
+<span class="missed">	check-cast v0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;</span>
+<span class="missed">	iput-object v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mState:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public bridge synthetic setDither(Z)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->setDither(Z)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public bridge synthetic setEnterFadeDuration(I)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->setEnterFadeDuration(I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public bridge synthetic setExitFadeDuration(I)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->setExitFadeDuration(I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public bridge synthetic setHotspot(FF)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1, p2}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->setHotspot(FF)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public bridge synthetic setHotspotBounds(IIII)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1, p2, p3, p4}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->setHotspotBounds(IIII)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public bridge synthetic setTintList(Landroid/content/res/ColorStateList;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->setTintList(Landroid/content/res/ColorStateList;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public bridge synthetic setTintMode(Landroid/graphics/PorterDuff$Mode;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setVisible(ZZ)Z
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "visible"    # Z</span>
+<span class="">	.param p2, "restart"    # Z</span>
+
+<span class="">	invoke-super {p0, p1, p2}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->setVisible(ZZ)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransition:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;</span>
+<span class="missed">	if-eqz v1, :cond_2</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	if-eqz p2, :cond_2</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->mTransition:Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;</span>
+<span class="missed">	invoke-virtual {v1}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$Transition;->start()V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat;->jumpToCurrentState()V</span>
+<span class="">	:cond_2</span>
+<span class="">	:goto_0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public bridge synthetic unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0, p1, p2}, Landroidx/appcompat/graphics/drawable/StateListDrawable;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

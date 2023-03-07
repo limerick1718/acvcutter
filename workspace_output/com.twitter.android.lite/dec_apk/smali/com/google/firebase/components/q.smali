@@ -65,6 +65,7 @@ iget-object v0, p0, Lcom/google/firebase/components/q;->b:Ljava/lang/Object;
 sget-object v1, Lcom/google/firebase/components/q;->a:Ljava/lang/Object;
 if-ne v0, v1, :cond_1
 monitor-enter p0
+:try_start_0
 iget-object v0, p0, Lcom/google/firebase/components/q;->b:Ljava/lang/Object;
 sget-object v1, Lcom/google/firebase/components/q;->a:Ljava/lang/Object;
 if-ne v0, v1, :cond_0
@@ -80,6 +81,8 @@ goto :goto_0
 :catchall_0
 move-exception v0
 monitor-exit p0
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 throw v0
 :cond_1
 :goto_0

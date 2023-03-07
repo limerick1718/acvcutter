@@ -47,3 +47,19 @@ return-void
 invoke-direct {p0, p1, p2}, Ltm;-><init>(Ljava/lang/String;I)V
 return-void
 .end method
+.method public static valueOf(Ljava/lang/String;)Ltm;
+.locals 1
+const-class v0, Ltm;
+invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+move-result-object p0
+check-cast p0, Ltm;
+return-object p0
+.end method
+.method public static values()[Ltm;
+.locals 1
+sget-object v0, Ltm;->c:[Ltm;
+invoke-virtual {v0}, [Ltm;->clone()Ljava/lang/Object;
+move-result-object v0
+check-cast v0, [Ltm;
+return-object v0
+.end method

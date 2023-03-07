@@ -34,7 +34,18 @@ Ljava/lang/Exception;
 iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore$CrashMarkerCheck;->crashMarker:Lcom/crashlytics/android/core/CrashlyticsFileMarker;
 invoke-virtual {v0}, Lcom/crashlytics/android/core/CrashlyticsFileMarker;->isPresent()Z
 move-result v0
+if-nez v0, :cond_0
 sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+return-object v0
+:cond_0
+invoke-static {}, Luq;->g()Luz;
+move-result-object v0
+const-string v1, "CrashlyticsCore"
+const-string v2, "Found previous crash marker."
+invoke-interface {v0, v1, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
+iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore$CrashMarkerCheck;->crashMarker:Lcom/crashlytics/android/core/CrashlyticsFileMarker;
+invoke-virtual {v0}, Lcom/crashlytics/android/core/CrashlyticsFileMarker;->remove()Z
+sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 return-object v0
 .end method
 .method public bridge synthetic call()Ljava/lang/Object;

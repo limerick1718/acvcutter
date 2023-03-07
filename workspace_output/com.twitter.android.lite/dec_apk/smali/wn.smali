@@ -113,12 +113,21 @@ value = 0x9
 .end annotation
 invoke-static {p1}, Lwm;->isProperDelegate(Ljava/lang/Object;)Z
 move-result v0
+if-eqz v0, :cond_0
 invoke-super {p0, p1}, Ljava/util/concurrent/ThreadPoolExecutor;->execute(Ljava/lang/Runnable;)V
+goto :goto_0
+:cond_0
+const/4 v0, 0x0
+invoke-virtual {p0, p1, v0}, Lwn;->newTaskFor(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/RunnableFuture;
+move-result-object p1
+invoke-super {p0, p1}, Ljava/util/concurrent/ThreadPoolExecutor;->execute(Ljava/lang/Runnable;)V
+:goto_0
 return-void
 .end method
 .method public synthetic getQueue()Ljava/util/concurrent/BlockingQueue;
 .locals 1
-const/4 v0, 0x0
+invoke-virtual {p0}, Lwn;->b()Lwf;
+move-result-object v0
 return-object v0
 .end method
 .method protected newTaskFor(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/RunnableFuture;
@@ -134,7 +143,8 @@ value = {
 "TT;>;"
 }
 .end annotation
-const/4 v0, 0x0
+new-instance v0, Lwk;
+invoke-direct {v0, p1, p2}, Lwk;-><init>(Ljava/lang/Runnable;Ljava/lang/Object;)V
 return-object v0
 .end method
 .method protected newTaskFor(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/RunnableFuture;

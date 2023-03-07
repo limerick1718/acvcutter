@@ -30,6 +30,25 @@ iget-wide v0, p0, Lpa;->b:J
 iput-wide v0, p0, Lpa;->c:J
 return-void
 .end method
+.method private final A()V
+.locals 3
+invoke-virtual {p0}, Lnb;->d()V
+const/4 v0, 0x0
+invoke-virtual {p0, v0, v0}, Lpa;->a(ZZ)Z
+invoke-virtual {p0}, Loa;->e()Lkh;
+move-result-object v0
+invoke-virtual {p0}, Lnb;->m()Lcom/google/android/gms/common/util/d;
+move-result-object v1
+invoke-interface {v1}, Lcom/google/android/gms/common/util/d;->b()J
+move-result-wide v1
+invoke-virtual {v0, v1, v2}, Lkh;->a(J)V
+return-void
+.end method
+.method static synthetic a(Lpa;)V
+.locals 0
+invoke-direct {p0}, Lpa;->A()V
+return-void
+.end method
 .method static synthetic a(Lpa;J)V
 .locals 0
 invoke-direct {p0, p1, p2}, Lpa;->b(J)V
@@ -58,6 +77,14 @@ invoke-virtual {p2}, Lku;->x()Ljava/lang/String;
 move-result-object p2
 invoke-virtual {p1, p2}, Lqf;->r(Ljava/lang/String;)Z
 move-result p1
+if-eqz p1, :cond_0
+invoke-virtual {p0}, Lnb;->m()Lcom/google/android/gms/common/util/d;
+move-result-object p1
+invoke-interface {p1}, Lcom/google/android/gms/common/util/d;->a()J
+move-result-wide p1
+invoke-virtual {p0, p1, p2}, Lpa;->a(J)V
+return-void
+:cond_0
 iget-object p1, p0, Lpa;->d:Lqn;
 invoke-virtual {p1}, Lqn;->c()V
 iget-object p1, p0, Lpa;->e:Lqn;
@@ -70,6 +97,7 @@ invoke-virtual {p2}, Lku;->x()Ljava/lang/String;
 move-result-object p2
 invoke-virtual {p1, p2}, Lqf;->p(Ljava/lang/String;)Z
 move-result p1
+if-nez p1, :cond_1
 invoke-virtual {p0}, Lnb;->t()Lqf;
 move-result-object p1
 invoke-virtual {p0}, Loa;->g()Lku;
@@ -78,6 +106,11 @@ invoke-virtual {p2}, Lku;->x()Ljava/lang/String;
 move-result-object p2
 invoke-virtual {p1, p2}, Lqf;->q(Ljava/lang/String;)Z
 move-result p1
+if-eqz p1, :cond_2
+:cond_1
+iget-object p1, p0, Lpa;->f:Lqn;
+invoke-virtual {p1}, Lqn;->c()V
+:cond_2
 invoke-virtual {p0}, Lnb;->s()Llm;
 move-result-object p1
 invoke-virtual {p0}, Lnb;->m()Lcom/google/android/gms/common/util/d;
@@ -155,6 +188,7 @@ invoke-virtual {v1}, Lku;->x()Ljava/lang/String;
 move-result-object v1
 invoke-virtual {v0, v1}, Lqf;->p(Ljava/lang/String;)Z
 move-result v0
+if-nez v0, :cond_0
 invoke-virtual {p0}, Lnb;->t()Lqf;
 move-result-object v0
 invoke-virtual {p0}, Loa;->g()Lku;
@@ -163,6 +197,18 @@ invoke-virtual {v1}, Lku;->x()Ljava/lang/String;
 move-result-object v1
 invoke-virtual {v0, v1}, Lqf;->q(Ljava/lang/String;)Z
 move-result v0
+if-eqz v0, :cond_1
+:cond_0
+iget-object v0, p0, Lpa;->f:Lqn;
+invoke-virtual {v0}, Lqn;->c()V
+iget-object v0, p0, Lpa;->f:Lqn;
+invoke-virtual {p0}, Lnb;->s()Llm;
+move-result-object v1
+iget-object v1, v1, Llm;->l:Llp;
+invoke-virtual {v1}, Llp;->a()J
+move-result-wide v1
+invoke-virtual {v0, v1, v2}, Lqn;->a(J)V
+:cond_1
 invoke-virtual {p0}, Lnb;->r()Lla;
 move-result-object v0
 invoke-virtual {v0}, Lla;->x()Llc;
@@ -214,6 +260,13 @@ move-result-object v1
 invoke-virtual {v0, v1}, Lqf;->p(Ljava/lang/String;)Z
 move-result v0
 const/4 v1, 0x0
+if-eqz v0, :cond_0
+const-wide/16 v2, 0x3e8
+div-long v2, p1, v2
+invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+move-result-object v0
+goto :goto_0
+:cond_0
 move-object v0, v1
 :goto_0
 invoke-virtual {p0}, Lnb;->t()Lqf;
@@ -224,6 +277,11 @@ invoke-virtual {v3}, Lku;->x()Ljava/lang/String;
 move-result-object v3
 invoke-virtual {v2, v3}, Lqf;->q(Ljava/lang/String;)Z
 move-result v2
+if-eqz v2, :cond_1
+const-wide/16 v1, -0x1
+invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+move-result-object v1
+:cond_1
 invoke-virtual {p0}, Loa;->f()Lnl;
 move-result-object v2
 const-string v3, "auto"
@@ -252,6 +310,12 @@ invoke-virtual {v2}, Lku;->x()Ljava/lang/String;
 move-result-object v2
 invoke-virtual {v1, v2}, Lqf;->p(Ljava/lang/String;)Z
 move-result v1
+if-eqz v1, :cond_2
+invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+move-result-wide v0
+const-string v2, "_sid"
+invoke-virtual {v8, v2, v0, v1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+:cond_2
 invoke-virtual {p0}, Loa;->f()Lnl;
 move-result-object v3
 const-string v4, "auto"
@@ -267,6 +331,7 @@ return-void
 .method private final z()V
 .locals 2
 monitor-enter p0
+:try_start_0
 iget-object v0, p0, Lpa;->a:Landroid/os/Handler;
 if-nez v0, :cond_0
 new-instance v0, Lcq;
@@ -280,18 +345,134 @@ return-void
 :catchall_0
 move-exception v0
 monitor-exit p0
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 throw v0
 .end method
 .method public final bridge synthetic a()V
 .locals 0
+invoke-super {p0}, Low;->a()V
 return-void
 .end method
 .method final a(J)V
 .locals 1
+invoke-virtual {p0}, Lnb;->d()V
+invoke-direct {p0}, Lpa;->z()V
+const/4 v0, 0x0
+invoke-virtual {p0, p1, p2, v0}, Lpa;->a(JZ)V
 return-void
 .end method
 .method final a(JZ)V
 .locals 7
+invoke-virtual {p0}, Lnb;->d()V
+invoke-direct {p0}, Lpa;->z()V
+iget-object v0, p0, Lpa;->d:Lqn;
+invoke-virtual {v0}, Lqn;->c()V
+iget-object v0, p0, Lpa;->e:Lqn;
+invoke-virtual {v0}, Lqn;->c()V
+invoke-virtual {p0}, Lnb;->t()Lqf;
+move-result-object v0
+invoke-virtual {p0}, Loa;->g()Lku;
+move-result-object v1
+invoke-virtual {v1}, Lku;->x()Ljava/lang/String;
+move-result-object v1
+invoke-virtual {v0, v1}, Lqf;->p(Ljava/lang/String;)Z
+move-result v0
+if-nez v0, :cond_0
+invoke-virtual {p0}, Lnb;->t()Lqf;
+move-result-object v0
+invoke-virtual {p0}, Loa;->g()Lku;
+move-result-object v1
+invoke-virtual {v1}, Lku;->x()Ljava/lang/String;
+move-result-object v1
+invoke-virtual {v0, v1}, Lqf;->q(Ljava/lang/String;)Z
+move-result v0
+if-eqz v0, :cond_1
+:cond_0
+iget-object v0, p0, Lpa;->f:Lqn;
+invoke-virtual {v0}, Lqn;->c()V
+:cond_1
+invoke-virtual {p0}, Lnb;->s()Llm;
+move-result-object v0
+invoke-virtual {v0, p1, p2}, Llm;->a(J)Z
+move-result v0
+const-wide/16 v1, 0x0
+if-eqz v0, :cond_2
+invoke-virtual {p0}, Lnb;->s()Llm;
+move-result-object v0
+iget-object v0, v0, Llm;->m:Llo;
+const/4 v3, 0x1
+invoke-virtual {v0, v3}, Llo;->a(Z)V
+invoke-virtual {p0}, Lnb;->s()Llm;
+move-result-object v0
+iget-object v0, v0, Llm;->o:Llp;
+invoke-virtual {v0, v1, v2}, Llp;->a(J)V
+:cond_2
+invoke-virtual {p0}, Lnb;->s()Llm;
+move-result-object v0
+iget-object v0, v0, Llm;->m:Llo;
+invoke-virtual {v0}, Llo;->a()Z
+move-result v0
+if-eqz v0, :cond_3
+invoke-direct {p0, p1, p2}, Lpa;->d(J)V
+return-void
+:cond_3
+iget-object v0, p0, Lpa;->e:Lqn;
+const-wide/32 v3, 0x36ee80
+invoke-virtual {p0}, Lnb;->s()Llm;
+move-result-object v5
+iget-object v5, v5, Llm;->o:Llp;
+invoke-virtual {v5}, Llp;->a()J
+move-result-wide v5
+sub-long/2addr v3, v5
+invoke-static {v1, v2, v3, v4}, Ljava/lang/Math;->max(JJ)J
+move-result-wide v1
+invoke-virtual {v0, v1, v2}, Lqn;->a(J)V
+if-nez p3, :cond_4
+return-void
+:cond_4
+invoke-virtual {p0}, Lnb;->t()Lqf;
+move-result-object p3
+invoke-virtual {p0}, Loa;->g()Lku;
+move-result-object v0
+invoke-virtual {v0}, Lku;->x()Ljava/lang/String;
+move-result-object v0
+invoke-virtual {p3, v0}, Lqf;->s(Ljava/lang/String;)Z
+move-result p3
+if-eqz p3, :cond_6
+invoke-virtual {p0}, Lnb;->s()Llm;
+move-result-object p3
+iget-object p3, p3, Llm;->n:Llp;
+invoke-virtual {p3, p1, p2}, Llp;->a(J)V
+invoke-virtual {p0}, Lnb;->t()Lqf;
+move-result-object p1
+invoke-virtual {p0}, Loa;->g()Lku;
+move-result-object p2
+invoke-virtual {p2}, Lku;->x()Ljava/lang/String;
+move-result-object p2
+invoke-virtual {p1, p2}, Lqf;->p(Ljava/lang/String;)Z
+move-result p1
+if-nez p1, :cond_5
+invoke-virtual {p0}, Lnb;->t()Lqf;
+move-result-object p1
+invoke-virtual {p0}, Loa;->g()Lku;
+move-result-object p2
+invoke-virtual {p2}, Lku;->x()Ljava/lang/String;
+move-result-object p2
+invoke-virtual {p1, p2}, Lqf;->q(Ljava/lang/String;)Z
+move-result p1
+if-eqz p1, :cond_6
+:cond_5
+iget-object p1, p0, Lpa;->f:Lqn;
+invoke-virtual {p1}, Lqn;->c()V
+iget-object p1, p0, Lpa;->f:Lqn;
+invoke-virtual {p0}, Lnb;->s()Llm;
+move-result-object p2
+iget-object p2, p2, Llm;->l:Llp;
+invoke-virtual {p2}, Llp;->a()J
+move-result-wide p2
+invoke-virtual {p1, p2, p3}, Lqn;->a(J)V
+:cond_6
 return-void
 .end method
 .method public final a(ZZ)Z
@@ -315,6 +496,17 @@ sub-long v2, v0, v2
 if-nez p1, :cond_0
 const-wide/16 v4, 0x3e8
 cmp-long p1, v2, v4
+if-gez p1, :cond_0
+invoke-virtual {p0}, Lnb;->r()Lla;
+move-result-object p1
+invoke-virtual {p1}, Lla;->x()Llc;
+move-result-object p1
+invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+move-result-object p2
+const-string v0, "Screen exposed for less than 1000 ms. Event not sent. time"
+invoke-virtual {p1, v0, p2}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V
+const/4 p1, 0x0
+return p1
 :cond_0
 invoke-virtual {p0}, Lnb;->s()Llm;
 move-result-object p1
@@ -346,6 +538,29 @@ invoke-virtual {v4}, Lku;->x()Ljava/lang/String;
 move-result-object v4
 invoke-virtual {v2, v4}, Lqf;->t(Ljava/lang/String;)Z
 move-result v2
+if-eqz v2, :cond_3
+invoke-virtual {p0}, Lnb;->t()Lqf;
+move-result-object v2
+invoke-virtual {p0}, Loa;->g()Lku;
+move-result-object v4
+invoke-virtual {v4}, Lku;->x()Ljava/lang/String;
+move-result-object v4
+sget-object v5, Lkq;->ao:Lkq$a;
+invoke-virtual {v2, v4, v5}, Lqf;->d(Ljava/lang/String;Lkq$a;)Z
+move-result v2
+if-eqz v2, :cond_1
+if-nez p2, :cond_3
+invoke-virtual {p0}, Lpa;->y()J
+goto :goto_0
+:cond_1
+if-eqz p2, :cond_2
+const-wide/16 v4, 0x1
+const-string v2, "_fr"
+invoke-virtual {p1, v2, v4, v5}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+goto :goto_0
+:cond_2
+invoke-virtual {p0}, Lpa;->y()J
+:cond_3
 :goto_0
 invoke-virtual {p0}, Lnb;->t()Lqf;
 move-result-object v2
@@ -384,10 +599,12 @@ return v3
 .end method
 .method public final bridge synthetic b()V
 .locals 0
+invoke-super {p0}, Low;->b()V
 return-void
 .end method
 .method public final bridge synthetic c()V
 .locals 0
+invoke-super {p0}, Low;->c()V
 return-void
 .end method
 .method public final bridge synthetic d()V
@@ -397,7 +614,8 @@ return-void
 .end method
 .method public final bridge synthetic e()Lkh;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->e()Lkh;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic f()Lnl;
@@ -414,7 +632,8 @@ return-object v0
 .end method
 .method public final bridge synthetic h()Loc;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->h()Loc;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic i()Lny;
@@ -425,17 +644,20 @@ return-object v0
 .end method
 .method public final bridge synthetic j()Lkw;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->j()Lkw;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic k()Lpa;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->k()Lpa;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic l()Lki;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->l()Lki;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic m()Lcom/google/android/gms/common/util/d;
@@ -446,17 +668,20 @@ return-object v0
 .end method
 .method public final bridge synthetic n()Landroid/content/Context;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->n()Landroid/content/Context;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic o()Lky;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->o()Lky;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic p()Lpv;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->p()Lpv;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic q()Lma;
@@ -485,7 +710,8 @@ return-object v0
 .end method
 .method public final bridge synthetic u()Lqc;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->u()Lqc;
+move-result-object v0
 return-object v0
 .end method
 .method protected final v()Z
@@ -505,6 +731,12 @@ return-void
 .end method
 .method final y()J
 .locals 4
-const-wide v0, 0x0
-return-wide v0
+invoke-virtual {p0}, Lnb;->m()Lcom/google/android/gms/common/util/d;
+move-result-object v0
+invoke-interface {v0}, Lcom/google/android/gms/common/util/d;->b()J
+move-result-wide v0
+iget-wide v2, p0, Lpa;->c:J
+sub-long v2, v0, v2
+iput-wide v0, p0, Lpa;->c:J
+return-wide v2
 .end method

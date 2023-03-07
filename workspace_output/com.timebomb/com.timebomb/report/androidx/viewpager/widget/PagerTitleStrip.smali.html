@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.viewpager.widget</a></li>
+        <li><i class="ico ico-class"></i> PagerTitleStrip.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Landroidx/viewpager/widget/PagerTitleStrip;
+.super Landroid/view/ViewGroup;
+.source "PagerTitleStrip.java"
+
+.annotation runtime Landroidx/viewpager/widget/ViewPager$DecorView;
+.end annotation
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Landroidx/viewpager/widget/PagerTitleStrip$PageListener;,
+Landroidx/viewpager/widget/PagerTitleStrip$SingleLineAllCapsTransform;
+}
+.end annotation
+
+.field private static final ATTRS:[I
+.field private static final SIDE_ALPHA:F = 0.6f
+.field private static final TEXT_ATTRS:[I
+.field private static final TEXT_SPACING:I = 0x10
+.field  mCurrText:Landroid/widget/TextView;
+.field private mGravity:I
+.field private mLastKnownCurrentPage:I
+.field  mLastKnownPositionOffset:F
+.field  mNextText:Landroid/widget/TextView;
+.field private mNonPrimaryAlpha:I
+.field private final mPageListener:Landroidx/viewpager/widget/PagerTitleStrip$PageListener;
+.field  mPager:Landroidx/viewpager/widget/ViewPager;
+.field  mPrevText:Landroid/widget/TextView;
+.field private mScaledTextSpacing:I
+.field  mTextColor:I
+.field private mUpdatingPositions:Z
+.field private mUpdatingText:Z
+.field private mWatchingAdapter:Ljava/lang/ref/WeakReference;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/ref/WeakReference<",
+"Landroidx/viewpager/widget/PagerAdapter;",
+">;"
+}
+.end annotation
+.end field
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 3</span>
+
+<span class="missed">	const/4 v0, 0x4</span>
+<span class="missed">	new-array v0, v0, [I</span>
+<span class="missed">	fill-array-data v0, :array_0</span>
+<span class="missed">	sput-object v0, Landroidx/viewpager/widget/PagerTitleStrip;->ATTRS:[I</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	new-array v0, v0, [I</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	const v2, 0x101038c</span>
+<span class="missed">	aput v2, v0, v1</span>
+<span class="missed">	sput-object v0, Landroidx/viewpager/widget/PagerTitleStrip;->TEXT_ATTRS:[I</span>
+<span class="">	return-void</span>
+<span class="">	:array_0</span>
+<span class="">	.array-data 4</span>
+<span class="">	0x1010034</span>
+<span class="">	0x1010095</span>
+<span class="">	0x1010098</span>
+<span class="">	0x10100af</span>
+<span class="">	.end array-data</span>
+.end method
+
+.method public constructor &lt;init&gt;(Landroid/content/Context;)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "context"    # Landroid/content/Context;</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	invoke-direct {p0, p1, v0}, Landroidx/viewpager/widget/PagerTitleStrip;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public constructor &lt;init&gt;(Landroid/content/Context;Landroid/util/AttributeSet;)V
+<span class="">	.locals 6</span>
+<span class="">	.param p1, "context"    # Landroid/content/Context;</span>
+<span class="">	.param p2, "attrs"    # Landroid/util/AttributeSet;</span>
+
+<span class="missed">	invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V</span>
+<span class="missed">	const/4 v0, -0x1</span>
+<span class="missed">	iput v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mLastKnownCurrentPage:I</span>
+<span class="missed">	const/high16 v0, -0x40800000    # -1.0f</span>
+<span class="missed">	iput v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mLastKnownPositionOffset:F</span>
+<span class="missed">	new-instance v0, Landroidx/viewpager/widget/PagerTitleStrip$PageListener;</span>
+<span class="missed">	invoke-direct {v0, p0}, Landroidx/viewpager/widget/PagerTitleStrip$PageListener;-><init>(Landroidx/viewpager/widget/PagerTitleStrip;)V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPageListener:Landroidx/viewpager/widget/PagerTitleStrip$PageListener;</span>
+<span class="missed">	new-instance v0, Landroid/widget/TextView;</span>
+<span class="missed">	invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPrevText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {p0, v0}, Landroidx/viewpager/widget/PagerTitleStrip;->addView(Landroid/view/View;)V</span>
+<span class="missed">	new-instance v0, Landroid/widget/TextView;</span>
+<span class="missed">	invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {p0, v0}, Landroidx/viewpager/widget/PagerTitleStrip;->addView(Landroid/view/View;)V</span>
+<span class="missed">	new-instance v0, Landroid/widget/TextView;</span>
+<span class="missed">	invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mNextText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {p0, v0}, Landroidx/viewpager/widget/PagerTitleStrip;->addView(Landroid/view/View;)V</span>
+<span class="missed">	sget-object v0, Landroidx/viewpager/widget/PagerTitleStrip;->ATTRS:[I</span>
+<span class="">	invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-virtual {v0, v1, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="missed">	iget-object v3, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPrevText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-static {v3, v2}, Landroidx/core/widget/TextViewCompat;->setTextAppearance(Landroid/widget/TextView;I)V</span>
+<span class="missed">	iget-object v3, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-static {v3, v2}, Landroidx/core/widget/TextViewCompat;->setTextAppearance(Landroid/widget/TextView;I)V</span>
+<span class="missed">	iget-object v3, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mNextText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-static {v3, v2}, Landroidx/core/widget/TextViewCompat;->setTextAppearance(Landroid/widget/TextView;I)V</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="">	invoke-virtual {v0, v3, v1}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-eqz v3, :cond_1</span>
+<span class="missed">	int-to-float v4, v3</span>
+<span class="missed">	invoke-virtual {p0, v1, v4}, Landroidx/viewpager/widget/PagerTitleStrip;->setTextSize(IF)V</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v4, 0x2</span>
+<span class="">	invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->hasValue(I)Z</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	if-eqz v5, :cond_2</span>
+<span class="">	invoke-virtual {v0, v4, v1}, Landroid/content/res/TypedArray;->getColor(II)I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	iget-object v5, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPrevText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v5, v4}, Landroid/widget/TextView;->setTextColor(I)V</span>
+<span class="missed">	iget-object v5, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v5, v4}, Landroid/widget/TextView;->setTextColor(I)V</span>
+<span class="missed">	iget-object v5, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mNextText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v5, v4}, Landroid/widget/TextView;->setTextColor(I)V</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 v4, 0x3</span>
+<span class="missed">	const/16 v5, 0x50</span>
+<span class="">	invoke-virtual {v0, v4, v5}, Landroid/content/res/TypedArray;->getInteger(II)I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	iput v4, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mGravity:I</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V</span>
+<span class="missed">	iget-object v4, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="">	invoke-virtual {v4}, Landroid/widget/TextView;->getTextColors()Landroid/content/res/ColorStateList;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="">	invoke-virtual {v4}, Landroid/content/res/ColorStateList;->getDefaultColor()I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	iput v4, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mTextColor:I</span>
+<span class="missed">	const v4, 0x3f19999a    # 0.6f</span>
+<span class="missed">	invoke-virtual {p0, v4}, Landroidx/viewpager/widget/PagerTitleStrip;->setNonPrimaryAlpha(F)V</span>
+<span class="missed">	iget-object v4, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPrevText:Landroid/widget/TextView;</span>
+<span class="missed">	sget-object v5, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;</span>
+<span class="missed">	invoke-virtual {v4, v5}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V</span>
+<span class="missed">	iget-object v4, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="missed">	sget-object v5, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;</span>
+<span class="missed">	invoke-virtual {v4, v5}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V</span>
+<span class="missed">	iget-object v4, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mNextText:Landroid/widget/TextView;</span>
+<span class="missed">	sget-object v5, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;</span>
+<span class="missed">	invoke-virtual {v4, v5}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	if-eqz v2, :cond_3</span>
+<span class="missed">	sget-object v5, Landroidx/viewpager/widget/PagerTitleStrip;->TEXT_ATTRS:[I</span>
+<span class="">	invoke-virtual {p1, v2, v5}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="">	invoke-virtual {v5, v1, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	invoke-virtual {v5}, Landroid/content/res/TypedArray;->recycle()V</span>
+<span class="">	:cond_3</span>
+<span class="missed">	if-eqz v4, :cond_4</span>
+<span class="missed">	iget-object v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPrevText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-static {v1}, Landroidx/viewpager/widget/PagerTitleStrip;->setSingleLineAllCaps(Landroid/widget/TextView;)V</span>
+<span class="missed">	iget-object v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-static {v1}, Landroidx/viewpager/widget/PagerTitleStrip;->setSingleLineAllCaps(Landroid/widget/TextView;)V</span>
+<span class="missed">	iget-object v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mNextText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-static {v1}, Landroidx/viewpager/widget/PagerTitleStrip;->setSingleLineAllCaps(Landroid/widget/TextView;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget-object v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPrevText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/widget/TextView;->setSingleLine()V</span>
+<span class="missed">	iget-object v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/widget/TextView;->setSingleLine()V</span>
+<span class="missed">	iget-object v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mNextText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/widget/TextView;->setSingleLine()V</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iget v1, v1, Landroid/util/DisplayMetrics;->density:F</span>
+<span class="missed">	const/high16 v5, 0x41800000    # 16.0f</span>
+<span class="missed">	mul-float/2addr v5, v1</span>
+<span class="missed">	float-to-int v5, v5</span>
+<span class="missed">	iput v5, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mScaledTextSpacing:I</span>
+<span class="">	return-void</span>
+.end method
+
+.method private static setSingleLineAllCaps(Landroid/widget/TextView;)V
+<span class="">	.locals 2</span>
+<span class="">	.param p0, "text"    # Landroid/widget/TextView;</span>
+
+<span class="missed">	new-instance v0, Landroidx/viewpager/widget/PagerTitleStrip$SingleLineAllCapsTransform;</span>
+<span class="">	invoke-virtual {p0}, Landroid/widget/TextView;->getContext()Landroid/content/Context;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v0, v1}, Landroidx/viewpager/widget/PagerTitleStrip$SingleLineAllCapsTransform;-><init>(Landroid/content/Context;)V</span>
+<span class="missed">	invoke-virtual {p0, v0}, Landroid/widget/TextView;->setTransformationMethod(Landroid/text/method/TransformationMethod;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method  getMinHeight()I
+<span class="">	.locals 2</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	invoke-virtual {p0}, Landroidx/viewpager/widget/PagerTitleStrip;->getBackground()Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="">	invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	:cond_0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public getTextSpacing()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mScaledTextSpacing:I</span>
+<span class="">	return v0</span>
+.end method
+
+.method protected onAttachedToWindow()V
+<span class="">	.locals 4</span>
+
+<span class="missed">	invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V</span>
+<span class="">	invoke-virtual {p0}, Landroidx/viewpager/widget/PagerTitleStrip;->getParent()Landroid/view/ViewParent;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	instance-of v1, v0, Landroidx/viewpager/widget/ViewPager;</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="missed">	move-object v1, v0</span>
+<span class="missed">	check-cast v1, Landroidx/viewpager/widget/ViewPager;</span>
+<span class="">	invoke-virtual {v1}, Landroidx/viewpager/widget/ViewPager;->getAdapter()Landroidx/viewpager/widget/PagerAdapter;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	iget-object v3, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPageListener:Landroidx/viewpager/widget/PagerTitleStrip$PageListener;</span>
+<span class="missed">	invoke-virtual {v1, v3}, Landroidx/viewpager/widget/ViewPager;->setInternalPageChangeListener(Landroidx/viewpager/widget/ViewPager$OnPageChangeListener;)Landroidx/viewpager/widget/ViewPager$OnPageChangeListener;</span>
+<span class="missed">	iget-object v3, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPageListener:Landroidx/viewpager/widget/PagerTitleStrip$PageListener;</span>
+<span class="missed">	invoke-virtual {v1, v3}, Landroidx/viewpager/widget/ViewPager;->addOnAdapterChangeListener(Landroidx/viewpager/widget/ViewPager$OnAdapterChangeListener;)V</span>
+<span class="missed">	iput-object v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPager:Landroidx/viewpager/widget/ViewPager;</span>
+<span class="missed">	iget-object v3, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mWatchingAdapter:Ljava/lang/ref/WeakReference;</span>
+<span class="missed">	if-eqz v3, :cond_0</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	check-cast v3, Landroidx/viewpager/widget/PagerAdapter;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {p0, v3, v2}, Landroidx/viewpager/widget/PagerTitleStrip;->updateAdapter(Landroidx/viewpager/widget/PagerAdapter;Landroidx/viewpager/widget/PagerAdapter;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v1, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v2, "PagerTitleStrip must be a direct child of a ViewPager."</span>
+<span class="missed">	invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v1</span>
+.end method
+
+.method protected onDetachedFromWindow()V
+<span class="">	.locals 3</span>
+
+<span class="missed">	invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V</span>
+<span class="missed">	iget-object v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPager:Landroidx/viewpager/widget/ViewPager;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {v0}, Landroidx/viewpager/widget/ViewPager;->getAdapter()Landroidx/viewpager/widget/PagerAdapter;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-virtual {p0, v0, v1}, Landroidx/viewpager/widget/PagerTitleStrip;->updateAdapter(Landroidx/viewpager/widget/PagerAdapter;Landroidx/viewpager/widget/PagerAdapter;)V</span>
+<span class="missed">	iget-object v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPager:Landroidx/viewpager/widget/ViewPager;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroidx/viewpager/widget/ViewPager;->setInternalPageChangeListener(Landroidx/viewpager/widget/ViewPager$OnPageChangeListener;)Landroidx/viewpager/widget/ViewPager$OnPageChangeListener;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPager:Landroidx/viewpager/widget/ViewPager;</span>
+<span class="missed">	iget-object v2, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPageListener:Landroidx/viewpager/widget/PagerTitleStrip$PageListener;</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroidx/viewpager/widget/ViewPager;->removeOnAdapterChangeListener(Landroidx/viewpager/widget/ViewPager$OnAdapterChangeListener;)V</span>
+<span class="missed">	iput-object v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPager:Landroidx/viewpager/widget/ViewPager;</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected onLayout(ZIIII)V
+<span class="">	.locals 3</span>
+<span class="">	.param p1, "changed"    # Z</span>
+<span class="">	.param p2, "l"    # I</span>
+<span class="">	.param p3, "t"    # I</span>
+<span class="">	.param p4, "r"    # I</span>
+<span class="">	.param p5, "b"    # I</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPager:Landroidx/viewpager/widget/ViewPager;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	iget v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mLastKnownPositionOffset:F</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	cmpl-float v2, v0, v1</span>
+<span class="missed">	if-ltz v2, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	move v0, v1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mLastKnownCurrentPage:I</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	invoke-virtual {p0, v1, v0, v2}, Landroidx/viewpager/widget/PagerTitleStrip;->updateTextPositions(IFZ)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected onMeasure(II)V
+<span class="">	.locals 10</span>
+<span class="">	.param p1, "widthMeasureSpec"    # I</span>
+<span class="">	.param p2, "heightMeasureSpec"    # I</span>
+
+<span class="">	invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/high16 v1, 0x40000000    # 2.0f</span>
+<span class="missed">	if-ne v0, v1, :cond_1</span>
+<span class="">	invoke-virtual {p0}, Landroidx/viewpager/widget/PagerTitleStrip;->getPaddingTop()I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	invoke-virtual {p0}, Landroidx/viewpager/widget/PagerTitleStrip;->getPaddingBottom()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	add-int/2addr v2, v3</span>
+<span class="missed">	const/4 v3, -0x2</span>
+<span class="">	invoke-static {p2, v2, v3}, Landroidx/viewpager/widget/PagerTitleStrip;->getChildMeasureSpec(III)I</span>
+<span class="missed">	move-result v4</span>
+<span class="">	invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	int-to-float v6, v5</span>
+<span class="missed">	const v7, 0x3e4ccccd    # 0.2f</span>
+<span class="missed">	mul-float/2addr v6, v7</span>
+<span class="missed">	float-to-int v6, v6</span>
+<span class="">	invoke-static {p1, v6, v3}, Landroidx/viewpager/widget/PagerTitleStrip;->getChildMeasureSpec(III)I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	iget-object v7, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPrevText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v7, v3, v4}, Landroid/widget/TextView;->measure(II)V</span>
+<span class="missed">	iget-object v7, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v7, v3, v4}, Landroid/widget/TextView;->measure(II)V</span>
+<span class="missed">	iget-object v7, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mNextText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v7, v3, v4}, Landroid/widget/TextView;->measure(II)V</span>
+<span class="">	invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I</span>
+<span class="missed">	move-result v7</span>
+<span class="missed">	if-ne v7, v1, :cond_0</span>
+<span class="">	invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I</span>
+<span class="missed">	move-result v1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="">	invoke-virtual {v1}, Landroid/widget/TextView;->getMeasuredHeight()I</span>
+<span class="missed">	move-result v1</span>
+<span class="">	invoke-virtual {p0}, Landroidx/viewpager/widget/PagerTitleStrip;->getMinHeight()I</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	add-int v9, v1, v2</span>
+<span class="">	invoke-static {v8, v9}, Ljava/lang/Math;->max(II)I</span>
+<span class="missed">	move-result v1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object v8, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="">	invoke-virtual {v8}, Landroid/widget/TextView;->getMeasuredState()I</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	shl-int/lit8 v9, v8, 0x10</span>
+<span class="">	invoke-static {v1, p2, v9}, Landroid/view/View;->resolveSizeAndState(III)I</span>
+<span class="missed">	move-result v9</span>
+<span class="missed">	invoke-virtual {p0, v5, v9}, Landroidx/viewpager/widget/PagerTitleStrip;->setMeasuredDimension(II)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v1, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v2, "Must measure with an exact width"</span>
+<span class="missed">	invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v1</span>
+.end method
+
+.method public requestLayout()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-boolean v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mUpdatingText:Z</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	invoke-super {p0}, Landroid/view/ViewGroup;->requestLayout()V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setGravity(I)V
+<span class="">	.locals 0</span>
+<span class="">	.param p1, "gravity"    # I</span>
+
+<span class="missed">	iput p1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mGravity:I</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/viewpager/widget/PagerTitleStrip;->requestLayout()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setNonPrimaryAlpha(F)V
+<span class="">	.locals 3</span>
+<span class="">	.param p1, "alpha"    # F</span>
+
+<span class="missed">	const/high16 v0, 0x437f0000    # 255.0f</span>
+<span class="missed">	mul-float/2addr v0, p1</span>
+<span class="missed">	float-to-int v0, v0</span>
+<span class="missed">	and-int/lit16 v0, v0, 0xff</span>
+<span class="missed">	iput v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mNonPrimaryAlpha:I</span>
+<span class="missed">	iget v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mNonPrimaryAlpha:I</span>
+<span class="missed">	shl-int/lit8 v0, v0, 0x18</span>
+<span class="missed">	iget v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mTextColor:I</span>
+<span class="missed">	const v2, 0xffffff</span>
+<span class="missed">	and-int/2addr v1, v2</span>
+<span class="missed">	or-int/2addr v0, v1</span>
+<span class="missed">	iget-object v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPrevText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V</span>
+<span class="missed">	iget-object v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mNextText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setTextColor(I)V
+<span class="">	.locals 3</span>
+<span class="">	.param p1, "color"    # I</span>
+
+<span class="missed">	iput p1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mTextColor:I</span>
+<span class="missed">	iget-object v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V</span>
+<span class="missed">	iget v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mNonPrimaryAlpha:I</span>
+<span class="missed">	shl-int/lit8 v0, v0, 0x18</span>
+<span class="missed">	iget v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mTextColor:I</span>
+<span class="missed">	const v2, 0xffffff</span>
+<span class="missed">	and-int/2addr v1, v2</span>
+<span class="missed">	or-int/2addr v0, v1</span>
+<span class="missed">	iget-object v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPrevText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V</span>
+<span class="missed">	iget-object v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mNextText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setTextSize(IF)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "unit"    # I</span>
+<span class="">	.param p2, "size"    # F</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPrevText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v0, p1, p2}, Landroid/widget/TextView;->setTextSize(IF)V</span>
+<span class="missed">	iget-object v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v0, p1, p2}, Landroid/widget/TextView;->setTextSize(IF)V</span>
+<span class="missed">	iget-object v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mNextText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v0, p1, p2}, Landroid/widget/TextView;->setTextSize(IF)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setTextSpacing(I)V
+<span class="">	.locals 0</span>
+<span class="">	.param p1, "spacingPixels"    # I</span>
+
+<span class="missed">	iput p1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mScaledTextSpacing:I</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/viewpager/widget/PagerTitleStrip;->requestLayout()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method  updateAdapter(Landroidx/viewpager/widget/PagerAdapter;Landroidx/viewpager/widget/PagerAdapter;)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "oldAdapter"    # Landroidx/viewpager/widget/PagerAdapter;</span>
+<span class="">	.param p2, "newAdapter"    # Landroidx/viewpager/widget/PagerAdapter;</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPageListener:Landroidx/viewpager/widget/PagerTitleStrip$PageListener;</span>
+<span class="missed">	invoke-virtual {p1, v0}, Landroidx/viewpager/widget/PagerAdapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-object v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mWatchingAdapter:Ljava/lang/ref/WeakReference;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-eqz p2, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPageListener:Landroidx/viewpager/widget/PagerTitleStrip$PageListener;</span>
+<span class="missed">	invoke-virtual {p2, v0}, Landroidx/viewpager/widget/PagerAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V</span>
+<span class="missed">	new-instance v0, Ljava/lang/ref/WeakReference;</span>
+<span class="missed">	invoke-direct {v0, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mWatchingAdapter:Ljava/lang/ref/WeakReference;</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPager:Landroidx/viewpager/widget/ViewPager;</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="missed">	const/4 v1, -0x1</span>
+<span class="missed">	iput v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mLastKnownCurrentPage:I</span>
+<span class="missed">	const/high16 v1, -0x40800000    # -1.0f</span>
+<span class="missed">	iput v1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mLastKnownPositionOffset:F</span>
+<span class="">	invoke-virtual {v0}, Landroidx/viewpager/widget/ViewPager;->getCurrentItem()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	invoke-virtual {p0, v0, p2}, Landroidx/viewpager/widget/PagerTitleStrip;->updateText(ILandroidx/viewpager/widget/PagerAdapter;)V</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/viewpager/widget/PagerTitleStrip;->requestLayout()V</span>
+<span class="">	:cond_2</span>
+<span class="">	return-void</span>
+.end method
+
+.method  updateText(ILandroidx/viewpager/widget/PagerAdapter;)V
+<span class="">	.locals 10</span>
+<span class="">	.param p1, "currentItem"    # I</span>
+<span class="">	.param p2, "adapter"    # Landroidx/viewpager/widget/PagerAdapter;</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="">	invoke-virtual {p2}, Landroidx/viewpager/widget/PagerAdapter;->getCount()I</span>
+<span class="missed">	move-result v1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	move v1, v0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	iput-boolean v2, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mUpdatingText:Z</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	if-lt p1, v2, :cond_1</span>
+<span class="missed">	if-eqz p2, :cond_1</span>
+<span class="missed">	add-int/lit8 v2, p1, -0x1</span>
+<span class="">	invoke-virtual {p2, v2}, Landroidx/viewpager/widget/PagerAdapter;->getPageTitle(I)Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v2, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPrevText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V</span>
+<span class="missed">	iget-object v2, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="missed">	if-eqz p2, :cond_2</span>
+<span class="missed">	if-ge p1, v1, :cond_2</span>
+<span class="">	invoke-virtual {p2, p1}, Landroidx/viewpager/widget/PagerAdapter;->getPageTitle(I)Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	add-int/lit8 v3, p1, 0x1</span>
+<span class="missed">	if-ge v3, v1, :cond_3</span>
+<span class="missed">	if-eqz p2, :cond_3</span>
+<span class="missed">	add-int/lit8 v3, p1, 0x1</span>
+<span class="">	invoke-virtual {p2, v3}, Landroidx/viewpager/widget/PagerAdapter;->getPageTitle(I)Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	iget-object v3, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mNextText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v3, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V</span>
+<span class="">	invoke-virtual {p0}, Landroidx/viewpager/widget/PagerTitleStrip;->getWidth()I</span>
+<span class="missed">	move-result v3</span>
+<span class="">	invoke-virtual {p0}, Landroidx/viewpager/widget/PagerTitleStrip;->getPaddingLeft()I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	sub-int/2addr v3, v4</span>
+<span class="">	invoke-virtual {p0}, Landroidx/viewpager/widget/PagerTitleStrip;->getPaddingRight()I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	sub-int/2addr v3, v4</span>
+<span class="missed">	int-to-float v4, v3</span>
+<span class="missed">	const v5, 0x3f4ccccd    # 0.8f</span>
+<span class="missed">	mul-float/2addr v4, v5</span>
+<span class="missed">	float-to-int v4, v4</span>
+<span class="">	invoke-static {v0, v4}, Ljava/lang/Math;->max(II)I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	const/high16 v5, -0x80000000</span>
+<span class="">	invoke-static {v4, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I</span>
+<span class="missed">	move-result v6</span>
+<span class="">	invoke-virtual {p0}, Landroidx/viewpager/widget/PagerTitleStrip;->getHeight()I</span>
+<span class="missed">	move-result v7</span>
+<span class="">	invoke-virtual {p0}, Landroidx/viewpager/widget/PagerTitleStrip;->getPaddingTop()I</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	sub-int/2addr v7, v8</span>
+<span class="">	invoke-virtual {p0}, Landroidx/viewpager/widget/PagerTitleStrip;->getPaddingBottom()I</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	sub-int/2addr v7, v8</span>
+<span class="">	invoke-static {v0, v7}, Ljava/lang/Math;->max(II)I</span>
+<span class="missed">	move-result v8</span>
+<span class="">	invoke-static {v8, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	iget-object v9, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mPrevText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v9, v6, v5}, Landroid/widget/TextView;->measure(II)V</span>
+<span class="missed">	iget-object v9, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v9, v6, v5}, Landroid/widget/TextView;->measure(II)V</span>
+<span class="missed">	iget-object v9, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mNextText:Landroid/widget/TextView;</span>
+<span class="missed">	invoke-virtual {v9, v6, v5}, Landroid/widget/TextView;->measure(II)V</span>
+<span class="missed">	iput p1, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mLastKnownCurrentPage:I</span>
+<span class="missed">	iget-boolean v9, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mUpdatingPositions:Z</span>
+<span class="missed">	if-nez v9, :cond_4</span>
+<span class="missed">	iget v9, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mLastKnownPositionOffset:F</span>
+<span class="missed">	invoke-virtual {p0, p1, v9, v0}, Landroidx/viewpager/widget/PagerTitleStrip;->updateTextPositions(IFZ)V</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iput-boolean v0, p0, Landroidx/viewpager/widget/PagerTitleStrip;->mUpdatingText:Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method  updateTextPositions(IFZ)V
+<span class="">	.locals 42</span>
+<span class="">	.param p1, "position"    # I</span>
+<span class="">	.param p2, "positionOffset"    # F</span>
+<span class="">	.param p3, "force"    # Z</span>
+
+<span class="missed">	move-object/from16 v0, p0</span>
+<span class="missed">	move/from16 v1, p1</span>
+<span class="missed">	move/from16 v2, p2</span>
+<span class="missed">	iget v3, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mLastKnownCurrentPage:I</span>
+<span class="missed">	if-eq v1, v3, :cond_0</span>
+<span class="missed">	iget-object v3, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mPager:Landroidx/viewpager/widget/ViewPager;</span>
+<span class="">	invoke-virtual {v3}, Landroidx/viewpager/widget/ViewPager;->getAdapter()Landroidx/viewpager/widget/PagerAdapter;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-virtual {v0, v1, v3}, Landroidx/viewpager/widget/PagerTitleStrip;->updateText(ILandroidx/viewpager/widget/PagerAdapter;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-nez p3, :cond_1</span>
+<span class="missed">	iget v3, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mLastKnownPositionOffset:F</span>
+<span class="missed">	cmpl-float v3, v2, v3</span>
+<span class="missed">	if-nez v3, :cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	iput-boolean v3, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mUpdatingPositions:Z</span>
+<span class="missed">	iget-object v3, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mPrevText:Landroid/widget/TextView;</span>
+<span class="">	invoke-virtual {v3}, Landroid/widget/TextView;->getMeasuredWidth()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	iget-object v4, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="">	invoke-virtual {v4}, Landroid/widget/TextView;->getMeasuredWidth()I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	iget-object v5, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mNextText:Landroid/widget/TextView;</span>
+<span class="">	invoke-virtual {v5}, Landroid/widget/TextView;->getMeasuredWidth()I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	div-int/lit8 v6, v4, 0x2</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/viewpager/widget/PagerTitleStrip;->getWidth()I</span>
+<span class="missed">	move-result v7</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/viewpager/widget/PagerTitleStrip;->getHeight()I</span>
+<span class="missed">	move-result v8</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/viewpager/widget/PagerTitleStrip;->getPaddingLeft()I</span>
+<span class="missed">	move-result v9</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/viewpager/widget/PagerTitleStrip;->getPaddingRight()I</span>
+<span class="missed">	move-result v10</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/viewpager/widget/PagerTitleStrip;->getPaddingTop()I</span>
+<span class="missed">	move-result v11</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/viewpager/widget/PagerTitleStrip;->getPaddingBottom()I</span>
+<span class="missed">	move-result v12</span>
+<span class="missed">	add-int v13, v9, v6</span>
+<span class="missed">	add-int v14, v10, v6</span>
+<span class="missed">	sub-int v15, v7, v13</span>
+<span class="missed">	sub-int/2addr v15, v14</span>
+<span class="missed">	const/high16 v16, 0x3f000000    # 0.5f</span>
+<span class="missed">	add-float v16, v2, v16</span>
+<span class="missed">	const/high16 v17, 0x3f800000    # 1.0f</span>
+<span class="missed">	cmpl-float v18, v16, v17</span>
+<span class="missed">	if-lez v18, :cond_2</span>
+<span class="missed">	sub-float v16, v16, v17</span>
+<span class="">	:cond_2</span>
+<span class="missed">	sub-int v17, v7, v14</span>
+<span class="missed">	int-to-float v1, v15</span>
+<span class="missed">	mul-float v1, v1, v16</span>
+<span class="missed">	float-to-int v1, v1</span>
+<span class="missed">	sub-int v17, v17, v1</span>
+<span class="missed">	div-int/lit8 v1, v4, 0x2</span>
+<span class="missed">	sub-int v1, v17, v1</span>
+<span class="missed">	move/from16 v18, v6</span>
+<span class="missed">	add-int v6, v1, v4</span>
+<span class="missed">	move/from16 v19, v4</span>
+<span class="missed">	iget-object v4, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mPrevText:Landroid/widget/TextView;</span>
+<span class="">	invoke-virtual {v4}, Landroid/widget/TextView;->getBaseline()I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	move/from16 v20, v13</span>
+<span class="missed">	iget-object v13, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="">	invoke-virtual {v13}, Landroid/widget/TextView;->getBaseline()I</span>
+<span class="missed">	move-result v13</span>
+<span class="missed">	move/from16 v21, v14</span>
+<span class="missed">	iget-object v14, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mNextText:Landroid/widget/TextView;</span>
+<span class="">	invoke-virtual {v14}, Landroid/widget/TextView;->getBaseline()I</span>
+<span class="missed">	move-result v14</span>
+<span class="missed">	move/from16 v22, v15</span>
+<span class="">	invoke-static {v4, v13}, Ljava/lang/Math;->max(II)I</span>
+<span class="missed">	move-result v15</span>
+<span class="">	invoke-static {v15, v14}, Ljava/lang/Math;->max(II)I</span>
+<span class="missed">	move-result v15</span>
+<span class="missed">	sub-int v23, v15, v4</span>
+<span class="missed">	sub-int v24, v15, v13</span>
+<span class="missed">	sub-int v25, v15, v14</span>
+<span class="missed">	move/from16 v26, v4</span>
+<span class="missed">	iget-object v4, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mPrevText:Landroid/widget/TextView;</span>
+<span class="">	invoke-virtual {v4}, Landroid/widget/TextView;->getMeasuredHeight()I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	add-int v4, v23, v4</span>
+<span class="missed">	move/from16 v27, v13</span>
+<span class="missed">	iget-object v13, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="">	invoke-virtual {v13}, Landroid/widget/TextView;->getMeasuredHeight()I</span>
+<span class="missed">	move-result v13</span>
+<span class="missed">	add-int v13, v24, v13</span>
+<span class="missed">	move/from16 v28, v14</span>
+<span class="missed">	iget-object v14, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mNextText:Landroid/widget/TextView;</span>
+<span class="">	invoke-virtual {v14}, Landroid/widget/TextView;->getMeasuredHeight()I</span>
+<span class="missed">	move-result v14</span>
+<span class="missed">	add-int v14, v25, v14</span>
+<span class="missed">	move/from16 v29, v15</span>
+<span class="">	invoke-static {v4, v13}, Ljava/lang/Math;->max(II)I</span>
+<span class="missed">	move-result v15</span>
+<span class="">	invoke-static {v15, v14}, Ljava/lang/Math;->max(II)I</span>
+<span class="missed">	move-result v15</span>
+<span class="missed">	move/from16 v30, v4</span>
+<span class="missed">	iget v4, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mGravity:I</span>
+<span class="missed">	and-int/lit8 v4, v4, 0x70</span>
+<span class="missed">	move/from16 v31, v13</span>
+<span class="missed">	const/16 v13, 0x10</span>
+<span class="missed">	move/from16 v32, v14</span>
+<span class="missed">	const/4 v14, 0x0</span>
+<span class="missed">	if-eq v4, v13, :cond_4</span>
+<span class="missed">	const/16 v13, 0x50</span>
+<span class="missed">	if-eq v4, v13, :cond_3</span>
+<span class="missed">	add-int v13, v11, v23</span>
+<span class="missed">	add-int v33, v11, v24</span>
+<span class="missed">	add-int v34, v11, v25</span>
+<span class="missed">	move v14, v13</span>
+<span class="missed">	move/from16 v13, v33</span>
+<span class="missed">	move/from16 v41, v34</span>
+<span class="missed">	move/from16 v34, v4</span>
+<span class="missed">	move/from16 v4, v41</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	move v13, v14</span>
+<span class="missed">	move/from16 v33, v14</span>
+<span class="missed">	move/from16 v34, v14</span>
+<span class="missed">	move/from16 v35, v14</span>
+<span class="missed">	move/from16 v36, v14</span>
+<span class="missed">	sub-int v37, v8, v12</span>
+<span class="missed">	sub-int v37, v37, v15</span>
+<span class="missed">	add-int v34, v37, v23</span>
+<span class="missed">	add-int v35, v37, v24</span>
+<span class="missed">	add-int v36, v37, v25</span>
+<span class="missed">	move/from16 v14, v34</span>
+<span class="missed">	move/from16 v13, v35</span>
+<span class="missed">	move/from16 v34, v4</span>
+<span class="missed">	move/from16 v4, v36</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_4</span>
+<span class="missed">	move v13, v14</span>
+<span class="missed">	move/from16 v33, v14</span>
+<span class="missed">	move/from16 v34, v14</span>
+<span class="missed">	sub-int v35, v8, v11</span>
+<span class="missed">	sub-int v35, v35, v12</span>
+<span class="missed">	sub-int v36, v35, v15</span>
+<span class="missed">	div-int/lit8 v36, v36, 0x2</span>
+<span class="missed">	add-int v13, v36, v23</span>
+<span class="missed">	add-int v33, v36, v24</span>
+<span class="missed">	add-int v34, v36, v25</span>
+<span class="missed">	move v14, v13</span>
+<span class="missed">	move/from16 v13, v33</span>
+<span class="missed">	move/from16 v41, v34</span>
+<span class="missed">	move/from16 v34, v4</span>
+<span class="missed">	move/from16 v4, v41</span>
+<span class="">	:goto_1</span>
+<span class="missed">	move/from16 v35, v8</span>
+<span class="missed">	iget-object v8, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mCurrText:Landroid/widget/TextView;</span>
+<span class="">	invoke-virtual {v8}, Landroid/widget/TextView;->getMeasuredHeight()I</span>
+<span class="missed">	move-result v36</span>
+<span class="missed">	move/from16 v37, v11</span>
+<span class="missed">	add-int v11, v13, v36</span>
+<span class="missed">	invoke-virtual {v8, v1, v13, v6, v11}, Landroid/widget/TextView;->layout(IIII)V</span>
+<span class="missed">	iget v8, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mScaledTextSpacing:I</span>
+<span class="missed">	sub-int v8, v1, v8</span>
+<span class="missed">	sub-int/2addr v8, v3</span>
+<span class="">	invoke-static {v9, v8}, Ljava/lang/Math;->min(II)I</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	iget-object v11, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mPrevText:Landroid/widget/TextView;</span>
+<span class="missed">	move/from16 v36, v1</span>
+<span class="missed">	add-int v1, v8, v3</span>
+<span class="">	invoke-virtual {v11}, Landroid/widget/TextView;->getMeasuredHeight()I</span>
+<span class="missed">	move-result v38</span>
+<span class="missed">	move/from16 v39, v3</span>
+<span class="missed">	add-int v3, v14, v38</span>
+<span class="missed">	invoke-virtual {v11, v8, v14, v1, v3}, Landroid/widget/TextView;->layout(IIII)V</span>
+<span class="missed">	sub-int v1, v7, v10</span>
+<span class="missed">	sub-int/2addr v1, v5</span>
+<span class="missed">	iget v3, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mScaledTextSpacing:I</span>
+<span class="missed">	add-int/2addr v3, v6</span>
+<span class="">	invoke-static {v1, v3}, Ljava/lang/Math;->max(II)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	iget-object v3, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mNextText:Landroid/widget/TextView;</span>
+<span class="missed">	add-int v11, v1, v5</span>
+<span class="">	invoke-virtual {v3}, Landroid/widget/TextView;->getMeasuredHeight()I</span>
+<span class="missed">	move-result v38</span>
+<span class="missed">	move/from16 v40, v5</span>
+<span class="missed">	add-int v5, v4, v38</span>
+<span class="missed">	invoke-virtual {v3, v1, v4, v11, v5}, Landroid/widget/TextView;->layout(IIII)V</span>
+<span class="missed">	iput v2, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mLastKnownPositionOffset:F</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	iput-boolean v3, v0, Landroidx/viewpager/widget/PagerTitleStrip;->mUpdatingPositions:Z</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../.resources/report.js"></script>
+</body>
+</html>

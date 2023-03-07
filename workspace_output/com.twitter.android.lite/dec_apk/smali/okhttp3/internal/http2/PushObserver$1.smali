@@ -11,7 +11,7 @@ name = null
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onData(ILyu;IZ)Z
@@ -21,8 +21,10 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-const/4 v0, 0x0
-return v0
+int-to-long p3, p3
+invoke-interface {p2, p3, p4}, Lyu;->i(J)V
+const/4 p1, 0x1
+return p1
 .end method
 .method public onHeaders(ILjava/util/List;Z)Z
 .locals 0
@@ -34,8 +36,8 @@ value = {
 ">;Z)Z"
 }
 .end annotation
-const/4 v0, 0x0
-return v0
+const/4 p1, 0x1
+return p1
 .end method
 .method public onRequest(ILjava/util/List;)Z
 .locals 0
@@ -47,8 +49,8 @@ value = {
 ">;)Z"
 }
 .end annotation
-const/4 v0, 0x0
-return v0
+const/4 p1, 0x1
+return p1
 .end method
 .method public onReset(ILokhttp3/internal/http2/ErrorCode;)V
 .locals 0

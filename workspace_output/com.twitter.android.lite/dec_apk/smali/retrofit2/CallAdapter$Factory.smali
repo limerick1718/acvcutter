@@ -13,6 +13,27 @@ name = "Factory"
 invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
+.method protected static getParameterUpperBound(ILjava/lang/reflect/ParameterizedType;)Ljava/lang/reflect/Type;
+.locals 0
+invoke-static {p0, p1}, Lretrofit2/Utils;->getParameterUpperBound(ILjava/lang/reflect/ParameterizedType;)Ljava/lang/reflect/Type;
+move-result-object p0
+return-object p0
+.end method
+.method protected static getRawType(Ljava/lang/reflect/Type;)Ljava/lang/Class;
+.locals 0
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(",
+"Ljava/lang/reflect/Type;",
+")",
+"Ljava/lang/Class<",
+"*>;"
+}
+.end annotation
+invoke-static {p0}, Lretrofit2/Utils;->getRawType(Ljava/lang/reflect/Type;)Ljava/lang/Class;
+move-result-object p0
+return-object p0
+.end method
 .method public abstract get(Ljava/lang/reflect/Type;[Ljava/lang/annotation/Annotation;Lretrofit2/Retrofit;)Lretrofit2/CallAdapter;
 .annotation system Ldalvik/annotation/Signature;
 value = {

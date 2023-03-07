@@ -12,6 +12,8 @@ name = "Message"
 .field final formatOpcode:I
 .method constructor <init>(ILyv;)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+iput p1, p0, Lokhttp3/internal/ws/RealWebSocket$Message;->formatOpcode:I
+iput-object p2, p0, Lokhttp3/internal/ws/RealWebSocket$Message;->data:Lyv;
 return-void
 .end method

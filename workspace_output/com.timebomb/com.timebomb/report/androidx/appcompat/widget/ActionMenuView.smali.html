@@ -1,0 +1,1378 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.appcompat.widget</a></li>
+        <li><i class="ico ico-class"></i> ActionMenuView.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Landroidx/appcompat/widget/ActionMenuView;
+.super Landroidx/appcompat/widget/LinearLayoutCompat;
+.source "ActionMenuView.java"
+.implements Landroidx/appcompat/view/menu/MenuBuilder$ItemInvoker;
+.implements Landroidx/appcompat/view/menu/MenuView;
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Landroidx/appcompat/widget/ActionMenuView$LayoutParams;,
+Landroidx/appcompat/widget/ActionMenuView$ActionMenuChildView;,
+Landroidx/appcompat/widget/ActionMenuView$ActionMenuPresenterCallback;,
+Landroidx/appcompat/widget/ActionMenuView$MenuBuilderCallback;,
+Landroidx/appcompat/widget/ActionMenuView$OnMenuItemClickListener;
+}
+.end annotation
+
+.field static final GENERATED_ITEM_PADDING:I = 0x4
+.field static final MIN_CELL_SIZE:I = 0x38
+.field private static final TAG:Ljava/lang/String; = "ActionMenuView"
+.field private mActionMenuPresenterCallback:Landroidx/appcompat/view/menu/MenuPresenter$Callback;
+.field private mFormatItems:Z
+.field private mFormatItemsWidth:I
+.field private mGeneratedItemPadding:I
+.field private mMenu:Landroidx/appcompat/view/menu/MenuBuilder;
+.field  mMenuBuilderCallback:Landroidx/appcompat/view/menu/MenuBuilder$Callback;
+.field private mMinCellSize:I
+.field  mOnMenuItemClickListener:Landroidx/appcompat/widget/ActionMenuView$OnMenuItemClickListener;
+.field private mPopupContext:Landroid/content/Context;
+.field private mPopupTheme:I
+.field private mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;
+.field private mReserveOverflow:Z
+
+
+<span class="cov">.method public constructor &lt;init&gt;(Landroid/content/Context;)V</span>
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "context"    # Landroid/content/Context;</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	invoke-direct {p0, p1, v0}, Landroidx/appcompat/widget/ActionMenuView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public constructor &lt;init&gt;(Landroid/content/Context;Landroid/util/AttributeSet;)V</span>
+<span class="">	.locals 3</span>
+<span class="">	.param p1, "context"    # Landroid/content/Context;</span>
+<span class="">	.param p2, "attrs"    # Landroid/util/AttributeSet;</span>
+
+<span class="cov">	invoke-direct {p0, p1, p2}, Landroidx/appcompat/widget/LinearLayoutCompat;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	invoke-virtual {p0, v0}, Landroidx/appcompat/widget/ActionMenuView;->setBaselineAligned(Z)V</span>
+<span class="exec">	invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	iget v1, v1, Landroid/util/DisplayMetrics;->density:F</span>
+<span class="cov">	const/high16 v2, 0x42600000    # 56.0f</span>
+<span class="cov">	mul-float/2addr v2, v1</span>
+<span class="cov">	float-to-int v2, v2</span>
+<span class="cov">	iput v2, p0, Landroidx/appcompat/widget/ActionMenuView;->mMinCellSize:I</span>
+<span class="cov">	const/high16 v2, 0x40800000    # 4.0f</span>
+<span class="cov">	mul-float/2addr v2, v1</span>
+<span class="cov">	float-to-int v2, v2</span>
+<span class="cov">	iput v2, p0, Landroidx/appcompat/widget/ActionMenuView;->mGeneratedItemPadding:I</span>
+<span class="cov">	iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->mPopupContext:Landroid/content/Context;</span>
+<span class="cov">	iput v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPopupTheme:I</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method static measureChildForCells(Landroid/view/View;IIII)I
+<span class="">	.locals 15</span>
+<span class="">	.param p0, "child"    # Landroid/view/View;</span>
+<span class="">	.param p1, "cellSize"    # I</span>
+<span class="">	.param p2, "cellsRemaining"    # I</span>
+<span class="">	.param p3, "parentHeightMeasureSpec"    # I</span>
+<span class="">	.param p4, "parentHeightPadding"    # I</span>
+
+<span class="missed">	move-object v0, p0</span>
+<span class="missed">	move/from16 v1, p2</span>
+<span class="">	invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="">	invoke-static/range {p3 .. p3}, Landroid/view/View$MeasureSpec;->getSize(I)I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	sub-int v3, v3, p4</span>
+<span class="">	invoke-static/range {p3 .. p3}, Landroid/view/View$MeasureSpec;->getMode(I)I</span>
+<span class="missed">	move-result v4</span>
+<span class="">	invoke-static {v3, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	instance-of v6, v0, Landroidx/appcompat/view/menu/ActionMenuItemView;</span>
+<span class="missed">	if-eqz v6, :cond_0</span>
+<span class="missed">	move-object v6, v0</span>
+<span class="missed">	check-cast v6, Landroidx/appcompat/view/menu/ActionMenuItemView;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 v7, 0x0</span>
+<span class="missed">	const/4 v8, 0x1</span>
+<span class="missed">	if-eqz v6, :cond_1</span>
+<span class="">	invoke-virtual {v6}, Landroidx/appcompat/view/menu/ActionMenuItemView;->hasText()Z</span>
+<span class="missed">	move-result v9</span>
+<span class="missed">	if-eqz v9, :cond_1</span>
+<span class="missed">	move v9, v8</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	move v9, v7</span>
+<span class="">	:goto_1</span>
+<span class="missed">	const/4 v10, 0x0</span>
+<span class="missed">	if-lez v1, :cond_4</span>
+<span class="missed">	const/4 v11, 0x2</span>
+<span class="missed">	if-eqz v9, :cond_2</span>
+<span class="missed">	if-lt v1, v11, :cond_4</span>
+<span class="">	:cond_2</span>
+<span class="missed">	mul-int v12, p1, v1</span>
+<span class="missed">	const/high16 v13, -0x80000000</span>
+<span class="">	invoke-static {v12, v13}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I</span>
+<span class="missed">	move-result v12</span>
+<span class="missed">	invoke-virtual {p0, v12, v5}, Landroid/view/View;->measure(II)V</span>
+<span class="">	invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I</span>
+<span class="missed">	move-result v13</span>
+<span class="missed">	div-int v10, v13, p1</span>
+<span class="missed">	rem-int v14, v13, p1</span>
+<span class="missed">	if-eqz v14, :cond_3</span>
+<span class="missed">	add-int/lit8 v10, v10, 0x1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	if-eqz v9, :cond_4</span>
+<span class="missed">	if-ge v10, v11, :cond_4</span>
+<span class="missed">	const/4 v10, 0x2</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget-boolean v11, v2, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z</span>
+<span class="missed">	if-nez v11, :cond_5</span>
+<span class="missed">	if-eqz v9, :cond_5</span>
+<span class="missed">	move v7, v8</span>
+<span class="">	:cond_5</span>
+<span class="missed">	iput-boolean v7, v2, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expandable:Z</span>
+<span class="missed">	iput v10, v2, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed:I</span>
+<span class="missed">	mul-int v8, v10, p1</span>
+<span class="missed">	const/high16 v11, 0x40000000    # 2.0f</span>
+<span class="">	invoke-static {v8, v11}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I</span>
+<span class="missed">	move-result v11</span>
+<span class="missed">	invoke-virtual {p0, v11, v5}, Landroid/view/View;->measure(II)V</span>
+<span class="">	return v10</span>
+.end method
+
+.method private onMeasureExactFormat(II)V
+<span class="">	.locals 40</span>
+<span class="">	.param p1, "widthMeasureSpec"    # I</span>
+<span class="">	.param p2, "heightMeasureSpec"    # I</span>
+
+<span class="missed">	move-object/from16 v0, p0</span>
+<span class="">	invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getMode(I)I</span>
+<span class="missed">	move-result v1</span>
+<span class="">	invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getSize(I)I</span>
+<span class="missed">	move-result v3</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/ActionMenuView;->getPaddingLeft()I</span>
+<span class="missed">	move-result v4</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/ActionMenuView;->getPaddingRight()I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	add-int/2addr v4, v5</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/ActionMenuView;->getPaddingTop()I</span>
+<span class="missed">	move-result v5</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/ActionMenuView;->getPaddingBottom()I</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	add-int/2addr v5, v6</span>
+<span class="missed">	const/4 v6, -0x2</span>
+<span class="missed">	move/from16 v7, p2</span>
+<span class="">	invoke-static {v7, v5, v6}, Landroidx/appcompat/widget/ActionMenuView;->getChildMeasureSpec(III)I</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	sub-int/2addr v2, v4</span>
+<span class="missed">	iget v8, v0, Landroidx/appcompat/widget/ActionMenuView;->mMinCellSize:I</span>
+<span class="missed">	div-int v9, v2, v8</span>
+<span class="missed">	rem-int v10, v2, v8</span>
+<span class="missed">	const/4 v11, 0x0</span>
+<span class="missed">	if-nez v9, :cond_0</span>
+<span class="missed">	invoke-virtual {v0, v2, v11}, Landroidx/appcompat/widget/ActionMenuView;->setMeasuredDimension(II)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	div-int v12, v10, v9</span>
+<span class="missed">	add-int/2addr v8, v12</span>
+<span class="missed">	move v12, v9</span>
+<span class="missed">	const/4 v13, 0x0</span>
+<span class="missed">	const/4 v14, 0x0</span>
+<span class="missed">	const/4 v15, 0x0</span>
+<span class="missed">	const/16 v16, 0x0</span>
+<span class="missed">	const/16 v17, 0x0</span>
+<span class="missed">	const-wide/16 v18, 0x0</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/ActionMenuView;->getChildCount()I</span>
+<span class="missed">	move-result v11</span>
+<span class="missed">	const/16 v21, 0x0</span>
+<span class="missed">	move-wide/from16 v38, v18</span>
+<span class="missed">	move/from16 v18, v3</span>
+<span class="missed">	move v3, v13</span>
+<span class="missed">	move/from16 v13, v16</span>
+<span class="missed">	move/from16 v16, v15</span>
+<span class="missed">	move v15, v14</span>
+<span class="missed">	move v14, v12</span>
+<span class="missed">	move/from16 v12, v21</span>
+<span class="missed">	move-wide/from16 v21, v38</span>
+<span class="">	:goto_0</span>
+<span class="missed">	move/from16 v19, v4</span>
+<span class="missed">	if-ge v12, v11, :cond_8</span>
+<span class="">	invoke-virtual {v0, v12}, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="">	invoke-virtual {v4}, Landroid/view/View;->getVisibility()I</span>
+<span class="missed">	move-result v7</span>
+<span class="missed">	move/from16 v24, v9</span>
+<span class="missed">	const/16 v9, 0x8</span>
+<span class="missed">	if-ne v7, v9, :cond_1</span>
+<span class="missed">	move/from16 v27, v5</span>
+<span class="missed">	move/from16 v25, v10</span>
+<span class="">	goto/16 :goto_4</span>
+<span class="">	:cond_1</span>
+<span class="missed">	instance-of v7, v4, Landroidx/appcompat/view/menu/ActionMenuItemView;</span>
+<span class="missed">	add-int/lit8 v13, v13, 0x1</span>
+<span class="missed">	if-eqz v7, :cond_2</span>
+<span class="missed">	iget v9, v0, Landroidx/appcompat/widget/ActionMenuView;->mGeneratedItemPadding:I</span>
+<span class="missed">	move/from16 v25, v10</span>
+<span class="missed">	const/4 v10, 0x0</span>
+<span class="missed">	invoke-virtual {v4, v9, v10, v9, v10}, Landroid/view/View;->setPadding(IIII)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	move/from16 v25, v10</span>
+<span class="missed">	const/4 v10, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="">	invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;</span>
+<span class="missed">	move-result-object v9</span>
+<span class="missed">	check-cast v9, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	iput-boolean v10, v9, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expanded:Z</span>
+<span class="missed">	iput v10, v9, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->extraPixels:I</span>
+<span class="missed">	iput v10, v9, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed:I</span>
+<span class="missed">	iput-boolean v10, v9, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expandable:Z</span>
+<span class="missed">	iput v10, v9, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->leftMargin:I</span>
+<span class="missed">	iput v10, v9, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->rightMargin:I</span>
+<span class="missed">	if-eqz v7, :cond_3</span>
+<span class="missed">	move-object v10, v4</span>
+<span class="missed">	check-cast v10, Landroidx/appcompat/view/menu/ActionMenuItemView;</span>
+<span class="">	invoke-virtual {v10}, Landroidx/appcompat/view/menu/ActionMenuItemView;->hasText()Z</span>
+<span class="missed">	move-result v10</span>
+<span class="missed">	if-eqz v10, :cond_3</span>
+<span class="missed">	const/4 v10, 0x1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const/4 v10, 0x0</span>
+<span class="">	:goto_2</span>
+<span class="missed">	iput-boolean v10, v9, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->preventEdgeOffset:Z</span>
+<span class="missed">	iget-boolean v10, v9, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z</span>
+<span class="missed">	if-eqz v10, :cond_4</span>
+<span class="missed">	const/4 v10, 0x1</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_4</span>
+<span class="missed">	move v10, v14</span>
+<span class="">	:goto_3</span>
+<span class="missed">	move/from16 v26, v7</span>
+<span class="">	invoke-static {v4, v8, v10, v6, v5}, Landroidx/appcompat/widget/ActionMenuView;->measureChildForCells(Landroid/view/View;IIII)I</span>
+<span class="missed">	move-result v7</span>
+<span class="">	invoke-static {v15, v7}, Ljava/lang/Math;->max(II)I</span>
+<span class="missed">	move-result v15</span>
+<span class="missed">	move/from16 v27, v5</span>
+<span class="missed">	iget-boolean v5, v9, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expandable:Z</span>
+<span class="missed">	if-eqz v5, :cond_5</span>
+<span class="missed">	add-int/lit8 v16, v16, 0x1</span>
+<span class="">	:cond_5</span>
+<span class="missed">	iget-boolean v5, v9, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z</span>
+<span class="missed">	if-eqz v5, :cond_6</span>
+<span class="missed">	const/16 v17, 0x1</span>
+<span class="">	:cond_6</span>
+<span class="missed">	sub-int/2addr v14, v7</span>
+<span class="">	invoke-virtual {v4}, Landroid/view/View;->getMeasuredHeight()I</span>
+<span class="missed">	move-result v5</span>
+<span class="">	invoke-static {v3, v5}, Ljava/lang/Math;->max(II)I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	if-ne v7, v5, :cond_7</span>
+<span class="missed">	shl-int/2addr v5, v12</span>
+<span class="missed">	move/from16 v28, v3</span>
+<span class="missed">	move-object/from16 v23, v4</span>
+<span class="missed">	int-to-long v3, v5</span>
+<span class="missed">	or-long v3, v21, v3</span>
+<span class="missed">	move-wide/from16 v21, v3</span>
+<span class="missed">	move/from16 v3, v28</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_7</span>
+<span class="missed">	move/from16 v28, v3</span>
+<span class="missed">	move-object/from16 v23, v4</span>
+<span class="">	:goto_4</span>
+<span class="missed">	add-int/lit8 v12, v12, 0x1</span>
+<span class="missed">	move/from16 v7, p2</span>
+<span class="missed">	move/from16 v4, v19</span>
+<span class="missed">	move/from16 v9, v24</span>
+<span class="missed">	move/from16 v10, v25</span>
+<span class="missed">	move/from16 v5, v27</span>
+<span class="">	goto/16 :goto_0</span>
+<span class="">	:cond_8</span>
+<span class="missed">	move/from16 v27, v5</span>
+<span class="missed">	move/from16 v24, v9</span>
+<span class="missed">	move/from16 v25, v10</span>
+<span class="missed">	const/4 v4, 0x2</span>
+<span class="missed">	if-eqz v17, :cond_9</span>
+<span class="missed">	if-ne v13, v4, :cond_9</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="">	goto :goto_5</span>
+<span class="">	:cond_9</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="">	:goto_5</span>
+<span class="missed">	const/4 v7, 0x0</span>
+<span class="">	:goto_6</span>
+<span class="missed">	const-wide/16 v28, 0x0</span>
+<span class="missed">	if-lez v16, :cond_13</span>
+<span class="missed">	if-lez v14, :cond_13</span>
+<span class="missed">	const v12, 0x7fffffff</span>
+<span class="missed">	const-wide/16 v30, 0x0</span>
+<span class="missed">	const/16 v26, 0x0</span>
+<span class="missed">	const/16 v32, 0x0</span>
+<span class="missed">	move v9, v12</span>
+<span class="missed">	move/from16 v4, v26</span>
+<span class="missed">	move/from16 v12, v32</span>
+<span class="">	:goto_7</span>
+<span class="missed">	if-ge v12, v11, :cond_d</span>
+<span class="">	invoke-virtual {v0, v12}, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v10</span>
+<span class="">	invoke-virtual {v10}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;</span>
+<span class="missed">	move-result-object v34</span>
+<span class="missed">	move/from16 v35, v7</span>
+<span class="missed">	move-object/from16 v7, v34</span>
+<span class="missed">	check-cast v7, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	move-object/from16 v34, v10</span>
+<span class="missed">	iget-boolean v10, v7, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expandable:Z</span>
+<span class="missed">	if-nez v10, :cond_a</span>
+<span class="">	goto :goto_8</span>
+<span class="">	:cond_a</span>
+<span class="missed">	iget v10, v7, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed:I</span>
+<span class="missed">	if-ge v10, v9, :cond_b</span>
+<span class="missed">	iget v9, v7, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed:I</span>
+<span class="missed">	const-wide/16 v32, 0x1</span>
+<span class="missed">	shl-long v30, v32, v12</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="">	goto :goto_8</span>
+<span class="">	:cond_b</span>
+<span class="missed">	const-wide/16 v32, 0x1</span>
+<span class="missed">	iget v10, v7, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed:I</span>
+<span class="missed">	if-ne v10, v9, :cond_c</span>
+<span class="missed">	shl-long v36, v32, v12</span>
+<span class="missed">	or-long v30, v30, v36</span>
+<span class="missed">	add-int/lit8 v4, v4, 0x1</span>
+<span class="">	:goto_8</span>
+<span class="">	:cond_c</span>
+<span class="missed">	add-int/lit8 v12, v12, 0x1</span>
+<span class="missed">	move/from16 v7, v35</span>
+<span class="">	goto :goto_7</span>
+<span class="">	:cond_d</span>
+<span class="missed">	move/from16 v35, v7</span>
+<span class="missed">	or-long v21, v21, v30</span>
+<span class="missed">	if-le v4, v14, :cond_e</span>
+<span class="missed">	move/from16 v36, v2</span>
+<span class="missed">	move/from16 v37, v3</span>
+<span class="">	goto :goto_b</span>
+<span class="">	:cond_e</span>
+<span class="missed">	add-int/lit8 v9, v9, 0x1</span>
+<span class="missed">	const/4 v7, 0x0</span>
+<span class="">	:goto_9</span>
+<span class="missed">	if-ge v7, v11, :cond_12</span>
+<span class="">	invoke-virtual {v0, v7}, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v10</span>
+<span class="">	invoke-virtual {v10}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;</span>
+<span class="missed">	move-result-object v12</span>
+<span class="missed">	check-cast v12, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	move/from16 v34, v4</span>
+<span class="missed">	const/16 v23, 0x1</span>
+<span class="missed">	shl-int v4, v23, v7</span>
+<span class="missed">	move/from16 v36, v2</span>
+<span class="missed">	move/from16 v37, v3</span>
+<span class="missed">	int-to-long v2, v4</span>
+<span class="missed">	and-long v2, v30, v2</span>
+<span class="missed">	cmp-long v2, v2, v28</span>
+<span class="missed">	if-nez v2, :cond_f</span>
+<span class="missed">	iget v2, v12, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed:I</span>
+<span class="missed">	if-ne v2, v9, :cond_11</span>
+<span class="missed">	shl-int v2, v23, v7</span>
+<span class="missed">	int-to-long v2, v2</span>
+<span class="missed">	or-long v21, v21, v2</span>
+<span class="">	goto :goto_a</span>
+<span class="">	:cond_f</span>
+<span class="missed">	if-eqz v5, :cond_10</span>
+<span class="missed">	iget-boolean v2, v12, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->preventEdgeOffset:Z</span>
+<span class="missed">	if-eqz v2, :cond_10</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	if-ne v14, v2, :cond_10</span>
+<span class="missed">	iget v2, v0, Landroidx/appcompat/widget/ActionMenuView;->mGeneratedItemPadding:I</span>
+<span class="missed">	add-int v3, v2, v8</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-virtual {v10, v3, v4, v2, v4}, Landroid/view/View;->setPadding(IIII)V</span>
+<span class="">	:cond_10</span>
+<span class="missed">	iget v2, v12, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed:I</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	add-int/2addr v2, v3</span>
+<span class="missed">	iput v2, v12, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed:I</span>
+<span class="missed">	iput-boolean v3, v12, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expanded:Z</span>
+<span class="missed">	add-int/lit8 v14, v14, -0x1</span>
+<span class="">	:cond_11</span>
+<span class="">	:goto_a</span>
+<span class="missed">	add-int/lit8 v7, v7, 0x1</span>
+<span class="missed">	move/from16 v4, v34</span>
+<span class="missed">	move/from16 v2, v36</span>
+<span class="missed">	move/from16 v3, v37</span>
+<span class="">	goto :goto_9</span>
+<span class="">	:cond_12</span>
+<span class="missed">	move/from16 v36, v2</span>
+<span class="missed">	move/from16 v37, v3</span>
+<span class="missed">	move/from16 v34, v4</span>
+<span class="missed">	const/4 v7, 0x1</span>
+<span class="missed">	const/4 v4, 0x2</span>
+<span class="">	goto/16 :goto_6</span>
+<span class="">	:cond_13</span>
+<span class="missed">	move/from16 v36, v2</span>
+<span class="missed">	move/from16 v37, v3</span>
+<span class="missed">	move/from16 v35, v7</span>
+<span class="">	:goto_b</span>
+<span class="missed">	if-nez v17, :cond_14</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	if-ne v13, v2, :cond_14</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="">	goto :goto_c</span>
+<span class="">	:cond_14</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_c</span>
+<span class="missed">	if-lez v14, :cond_23</span>
+<span class="missed">	cmp-long v3, v21, v28</span>
+<span class="missed">	if-eqz v3, :cond_23</span>
+<span class="missed">	add-int/lit8 v3, v13, -0x1</span>
+<span class="missed">	if-lt v14, v3, :cond_16</span>
+<span class="missed">	if-nez v2, :cond_16</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	if-le v15, v3, :cond_15</span>
+<span class="">	goto :goto_d</span>
+<span class="">	:cond_15</span>
+<span class="missed">	move v9, v8</span>
+<span class="missed">	move v8, v2</span>
+<span class="">	goto/16 :goto_13</span>
+<span class="">	:cond_16</span>
+<span class="">	:goto_d</span>
+<span class="">	invoke-static/range {v21 .. v22}, Ljava/lang/Long;->bitCount(J)I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	int-to-float v3, v3</span>
+<span class="missed">	if-nez v2, :cond_19</span>
+<span class="missed">	const-wide/16 v9, 0x1</span>
+<span class="missed">	and-long v9, v21, v9</span>
+<span class="missed">	cmp-long v4, v9, v28</span>
+<span class="missed">	const/high16 v7, 0x3f000000    # 0.5f</span>
+<span class="missed">	if-eqz v4, :cond_17</span>
+<span class="missed">	const/4 v10, 0x0</span>
+<span class="">	invoke-virtual {v0, v10}, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="">	invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	check-cast v4, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	iget-boolean v9, v4, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->preventEdgeOffset:Z</span>
+<span class="missed">	if-nez v9, :cond_18</span>
+<span class="missed">	sub-float/2addr v3, v7</span>
+<span class="">	goto :goto_e</span>
+<span class="">	:cond_17</span>
+<span class="missed">	const/4 v10, 0x0</span>
+<span class="">	:cond_18</span>
+<span class="">	:goto_e</span>
+<span class="missed">	add-int/lit8 v4, v11, -0x1</span>
+<span class="missed">	const/4 v9, 0x1</span>
+<span class="missed">	shl-int v4, v9, v4</span>
+<span class="missed">	move v9, v8</span>
+<span class="missed">	int-to-long v7, v4</span>
+<span class="missed">	and-long v7, v21, v7</span>
+<span class="missed">	cmp-long v4, v7, v28</span>
+<span class="missed">	if-eqz v4, :cond_1a</span>
+<span class="missed">	add-int/lit8 v4, v11, -0x1</span>
+<span class="">	invoke-virtual {v0, v4}, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="">	invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	check-cast v4, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	iget-boolean v7, v4, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->preventEdgeOffset:Z</span>
+<span class="missed">	if-nez v7, :cond_1a</span>
+<span class="missed">	const/high16 v7, 0x3f000000    # 0.5f</span>
+<span class="missed">	sub-float/2addr v3, v7</span>
+<span class="">	goto :goto_f</span>
+<span class="">	:cond_19</span>
+<span class="missed">	move v9, v8</span>
+<span class="missed">	const/4 v10, 0x0</span>
+<span class="">	:cond_1a</span>
+<span class="">	:goto_f</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	cmpl-float v4, v3, v4</span>
+<span class="missed">	if-lez v4, :cond_1b</span>
+<span class="missed">	mul-int v8, v14, v9</span>
+<span class="missed">	int-to-float v4, v8</span>
+<span class="missed">	div-float/2addr v4, v3</span>
+<span class="missed">	float-to-int v4, v4</span>
+<span class="">	goto :goto_10</span>
+<span class="">	:cond_1b</span>
+<span class="missed">	move v4, v10</span>
+<span class="">	:goto_10</span>
+<span class="missed">	const/4 v7, 0x0</span>
+<span class="">	:goto_11</span>
+<span class="missed">	if-ge v7, v11, :cond_22</span>
+<span class="missed">	const/4 v8, 0x1</span>
+<span class="missed">	shl-int v10, v8, v7</span>
+<span class="missed">	move v8, v2</span>
+<span class="missed">	move v12, v3</span>
+<span class="missed">	int-to-long v2, v10</span>
+<span class="missed">	and-long v2, v21, v2</span>
+<span class="missed">	cmp-long v2, v2, v28</span>
+<span class="missed">	if-nez v2, :cond_1c</span>
+<span class="missed">	const/16 v20, 0x2</span>
+<span class="">	goto :goto_12</span>
+<span class="">	:cond_1c</span>
+<span class="">	invoke-virtual {v0, v7}, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	check-cast v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	instance-of v10, v2, Landroidx/appcompat/view/menu/ActionMenuItemView;</span>
+<span class="missed">	if-eqz v10, :cond_1e</span>
+<span class="missed">	iput v4, v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->extraPixels:I</span>
+<span class="missed">	const/4 v10, 0x1</span>
+<span class="missed">	iput-boolean v10, v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expanded:Z</span>
+<span class="missed">	if-nez v7, :cond_1d</span>
+<span class="missed">	iget-boolean v10, v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->preventEdgeOffset:Z</span>
+<span class="missed">	if-nez v10, :cond_1d</span>
+<span class="missed">	neg-int v10, v4</span>
+<span class="missed">	const/16 v20, 0x2</span>
+<span class="missed">	div-int/lit8 v10, v10, 0x2</span>
+<span class="missed">	iput v10, v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->leftMargin:I</span>
+<span class="">	:cond_1d</span>
+<span class="missed">	const/16 v35, 0x1</span>
+<span class="missed">	const/16 v20, 0x2</span>
+<span class="">	goto :goto_12</span>
+<span class="">	:cond_1e</span>
+<span class="missed">	iget-boolean v10, v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z</span>
+<span class="missed">	if-eqz v10, :cond_1f</span>
+<span class="missed">	iput v4, v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->extraPixels:I</span>
+<span class="missed">	const/4 v10, 0x1</span>
+<span class="missed">	iput-boolean v10, v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expanded:Z</span>
+<span class="missed">	neg-int v10, v4</span>
+<span class="missed">	const/16 v20, 0x2</span>
+<span class="missed">	div-int/lit8 v10, v10, 0x2</span>
+<span class="missed">	iput v10, v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->rightMargin:I</span>
+<span class="missed">	const/16 v35, 0x1</span>
+<span class="">	goto :goto_12</span>
+<span class="">	:cond_1f</span>
+<span class="missed">	const/16 v20, 0x2</span>
+<span class="missed">	if-eqz v7, :cond_20</span>
+<span class="missed">	div-int/lit8 v10, v4, 0x2</span>
+<span class="missed">	iput v10, v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->leftMargin:I</span>
+<span class="">	:cond_20</span>
+<span class="missed">	add-int/lit8 v10, v11, -0x1</span>
+<span class="missed">	if-eq v7, v10, :cond_21</span>
+<span class="missed">	div-int/lit8 v10, v4, 0x2</span>
+<span class="missed">	iput v10, v3, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->rightMargin:I</span>
+<span class="">	:goto_12</span>
+<span class="">	:cond_21</span>
+<span class="missed">	add-int/lit8 v7, v7, 0x1</span>
+<span class="missed">	move v2, v8</span>
+<span class="missed">	move v3, v12</span>
+<span class="">	goto :goto_11</span>
+<span class="">	:cond_22</span>
+<span class="missed">	move v8, v2</span>
+<span class="missed">	move v12, v3</span>
+<span class="missed">	const/4 v14, 0x0</span>
+<span class="">	goto :goto_13</span>
+<span class="">	:cond_23</span>
+<span class="missed">	move v9, v8</span>
+<span class="missed">	move v8, v2</span>
+<span class="">	:goto_13</span>
+<span class="missed">	const/high16 v2, 0x40000000    # 2.0f</span>
+<span class="missed">	if-eqz v35, :cond_25</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	:goto_14</span>
+<span class="missed">	if-ge v3, v11, :cond_25</span>
+<span class="">	invoke-virtual {v0, v3}, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="">	invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="missed">	check-cast v7, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	iget-boolean v10, v7, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->expanded:Z</span>
+<span class="missed">	if-nez v10, :cond_24</span>
+<span class="">	goto :goto_15</span>
+<span class="">	:cond_24</span>
+<span class="missed">	iget v10, v7, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->cellsUsed:I</span>
+<span class="missed">	mul-int/2addr v10, v9</span>
+<span class="missed">	iget v12, v7, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->extraPixels:I</span>
+<span class="missed">	add-int/2addr v10, v12</span>
+<span class="">	invoke-static {v10, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I</span>
+<span class="missed">	move-result v12</span>
+<span class="missed">	invoke-virtual {v4, v12, v6}, Landroid/view/View;->measure(II)V</span>
+<span class="">	:goto_15</span>
+<span class="missed">	add-int/lit8 v3, v3, 0x1</span>
+<span class="">	goto :goto_14</span>
+<span class="">	:cond_25</span>
+<span class="missed">	if-eq v1, v2, :cond_26</span>
+<span class="missed">	move/from16 v3, v37</span>
+<span class="">	goto :goto_16</span>
+<span class="">	:cond_26</span>
+<span class="missed">	move/from16 v3, v18</span>
+<span class="">	:goto_16</span>
+<span class="missed">	move/from16 v2, v36</span>
+<span class="missed">	invoke-virtual {v0, v2, v3}, Landroidx/appcompat/widget/ActionMenuView;->setMeasuredDimension(II)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected checkLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Z
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "p"    # Landroid/view/ViewGroup$LayoutParams;</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	instance-of v0, p1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return v0</span>
+.end method
+
+<span class="cov">.method public dismissPopupMenus()V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	invoke-virtual {v0}, Landroidx/appcompat/widget/ActionMenuPresenter;->dismissPopupMenus()Z</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
+.end method
+
+.method protected bridge synthetic generateDefaultLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuView;->generateDefaultLayoutParams()Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method protected generateDefaultLayoutParams()Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+<span class="">	.locals 2</span>
+
+<span class="missed">	new-instance v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	const/4 v1, -0x2</span>
+<span class="missed">	invoke-direct {v0, v1, v1}, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;-><init>(II)V</span>
+<span class="missed">	const/16 v1, 0x10</span>
+<span class="missed">	iput v1, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->gravity:I</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method protected bridge synthetic generateDefaultLayoutParams()Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuView;->generateDefaultLayoutParams()Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public bridge synthetic generateLayoutParams(Landroid/util/AttributeSet;)Landroid/view/ViewGroup$LayoutParams;
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-virtual {p0, p1}, Landroidx/appcompat/widget/ActionMenuView;->generateLayoutParams(Landroid/util/AttributeSet;)Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method protected bridge synthetic generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroid/view/ViewGroup$LayoutParams;
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-virtual {p0, p1}, Landroidx/appcompat/widget/ActionMenuView;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public generateLayoutParams(Landroid/util/AttributeSet;)Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "attrs"    # Landroid/util/AttributeSet;</span>
+
+<span class="missed">	new-instance v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuView;->getContext()Landroid/content/Context;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v0, v1, p1}, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method protected generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "p"    # Landroid/view/ViewGroup$LayoutParams;</span>
+
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	instance-of v0, p1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	new-instance v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	move-object v1, p1</span>
+<span class="missed">	check-cast v1, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	invoke-direct {v0, v1}, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;-><init>(Landroidx/appcompat/widget/ActionMenuView$LayoutParams;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	invoke-direct {v0, p1}, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget v1, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->gravity:I</span>
+<span class="missed">	if-gtz v1, :cond_1</span>
+<span class="missed">	const/16 v1, 0x10</span>
+<span class="missed">	iput v1, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->gravity:I</span>
+<span class="">	:cond_1</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuView;->generateDefaultLayoutParams()Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public bridge synthetic generateLayoutParams(Landroid/util/AttributeSet;)Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-virtual {p0, p1}, Landroidx/appcompat/widget/ActionMenuView;->generateLayoutParams(Landroid/util/AttributeSet;)Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method protected bridge synthetic generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-virtual {p0, p1}, Landroidx/appcompat/widget/ActionMenuView;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public generateOverflowButtonLayoutParams()Landroidx/appcompat/widget/ActionMenuView$LayoutParams;
+<span class="">	.locals 2</span>
+
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuView;->generateDefaultLayoutParams()Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	iput-boolean v1, v0, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getMenu()Landroid/view/Menu;
+<span class="">	.locals 4</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuView;->getContext()Landroid/content/Context;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-instance v1, Landroidx/appcompat/view/menu/MenuBuilder;</span>
+<span class="missed">	invoke-direct {v1, v0}, Landroidx/appcompat/view/menu/MenuBuilder;-><init>(Landroid/content/Context;)V</span>
+<span class="missed">	iput-object v1, p0, Landroidx/appcompat/widget/ActionMenuView;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/widget/ActionMenuView;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;</span>
+<span class="missed">	new-instance v2, Landroidx/appcompat/widget/ActionMenuView$MenuBuilderCallback;</span>
+<span class="missed">	invoke-direct {v2, p0}, Landroidx/appcompat/widget/ActionMenuView$MenuBuilderCallback;-><init>(Landroidx/appcompat/widget/ActionMenuView;)V</span>
+<span class="missed">	invoke-virtual {v1, v2}, Landroidx/appcompat/view/menu/MenuBuilder;->setCallback(Landroidx/appcompat/view/menu/MenuBuilder$Callback;)V</span>
+<span class="missed">	new-instance v1, Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="missed">	invoke-direct {v1, v0}, Landroidx/appcompat/widget/ActionMenuPresenter;-><init>(Landroid/content/Context;)V</span>
+<span class="missed">	iput-object v1, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	invoke-virtual {v1, v2}, Landroidx/appcompat/widget/ActionMenuPresenter;->setReserveOverflow(Z)V</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="missed">	iget-object v2, p0, Landroidx/appcompat/widget/ActionMenuView;->mActionMenuPresenterCallback:Landroidx/appcompat/view/menu/MenuPresenter$Callback;</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v2, Landroidx/appcompat/widget/ActionMenuView$ActionMenuPresenterCallback;</span>
+<span class="missed">	invoke-direct {v2}, Landroidx/appcompat/widget/ActionMenuView$ActionMenuPresenterCallback;-><init>()V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {v1, v2}, Landroidx/appcompat/widget/ActionMenuPresenter;->setCallback(Landroidx/appcompat/view/menu/MenuPresenter$Callback;)V</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/widget/ActionMenuView;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;</span>
+<span class="missed">	iget-object v2, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="missed">	iget-object v3, p0, Landroidx/appcompat/widget/ActionMenuView;->mPopupContext:Landroid/content/Context;</span>
+<span class="missed">	invoke-virtual {v1, v2, v3}, Landroidx/appcompat/view/menu/MenuBuilder;->addMenuPresenter(Landroidx/appcompat/view/menu/MenuPresenter;Landroid/content/Context;)V</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="missed">	invoke-virtual {v1, p0}, Landroidx/appcompat/widget/ActionMenuPresenter;->setMenuView(Landroidx/appcompat/widget/ActionMenuView;)V</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getOverflowIcon()Landroid/graphics/drawable/Drawable;
+<span class="">	.locals 1</span>
+
+<span class="missed">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuView;->getMenu()Landroid/view/Menu;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="">	invoke-virtual {v0}, Landroidx/appcompat/widget/ActionMenuPresenter;->getOverflowIcon()Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getPopupTheme()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPopupTheme:I</span>
+<span class="">	return v0</span>
+.end method
+
+.method public getWindowAnimations()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
+.end method
+
+.method protected hasSupportDividerBeforeChildAt(I)Z
+<span class="">	.locals 4</span>
+<span class="">	.param p1, "childIndex"    # I</span>
+
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/lit8 v0, p1, -0x1</span>
+<span class="">	invoke-virtual {p0, v0}, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p0, p1}, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuView;->getChildCount()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-ge p1, v3, :cond_1</span>
+<span class="missed">	instance-of v3, v0, Landroidx/appcompat/widget/ActionMenuView$ActionMenuChildView;</span>
+<span class="missed">	if-eqz v3, :cond_1</span>
+<span class="missed">	move-object v3, v0</span>
+<span class="missed">	check-cast v3, Landroidx/appcompat/widget/ActionMenuView$ActionMenuChildView;</span>
+<span class="">	invoke-interface {v3}, Landroidx/appcompat/widget/ActionMenuView$ActionMenuChildView;->needsDividerAfter()Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	or-int/2addr v2, v3</span>
+<span class="">	:cond_1</span>
+<span class="missed">	if-lez p1, :cond_2</span>
+<span class="missed">	instance-of v3, v1, Landroidx/appcompat/widget/ActionMenuView$ActionMenuChildView;</span>
+<span class="missed">	if-eqz v3, :cond_2</span>
+<span class="missed">	move-object v3, v1</span>
+<span class="missed">	check-cast v3, Landroidx/appcompat/widget/ActionMenuView$ActionMenuChildView;</span>
+<span class="">	invoke-interface {v3}, Landroidx/appcompat/widget/ActionMenuView$ActionMenuChildView;->needsDividerBefore()Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	or-int/2addr v2, v3</span>
+<span class="">	:cond_2</span>
+<span class="">	return v2</span>
+.end method
+
+.method public hideOverflowMenu()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {v0}, Landroidx/appcompat/widget/ActionMenuPresenter;->hideOverflowMenu()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return v0</span>
+.end method
+
+<span class="cov">.method public initialize(Landroidx/appcompat/view/menu/MenuBuilder;)V</span>
+<span class="">	.locals 0</span>
+<span class="">	.param p1, "menu"    # Landroidx/appcompat/view/menu/MenuBuilder;</span>
+
+<span class="cov">	iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public invokeItem(Landroidx/appcompat/view/menu/MenuItemImpl;)Z
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "item"    # Landroidx/appcompat/view/menu/MenuItemImpl;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-virtual {v0, p1, v1}, Landroidx/appcompat/view/menu/MenuBuilder;->performItemAction(Landroid/view/MenuItem;I)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public isOverflowMenuShowPending()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {v0}, Landroidx/appcompat/widget/ActionMenuPresenter;->isOverflowMenuShowPending()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return v0</span>
+.end method
+
+<span class="cov">.method public isOverflowMenuShowing()Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="exec">	invoke-virtual {v0}, Landroidx/appcompat/widget/ActionMenuPresenter;->isOverflowMenuShowing()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return v0</span>
+.end method
+
+.method public isOverflowReserved()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-boolean v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mReserveOverflow:Z</span>
+<span class="">	return v0</span>
+.end method
+
+.method public onConfigurationChanged(Landroid/content/res/Configuration;)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "newConfig"    # Landroid/content/res/Configuration;</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroidx/appcompat/widget/LinearLayoutCompat;->onConfigurationChanged(Landroid/content/res/Configuration;)V</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroidx/appcompat/widget/ActionMenuPresenter;->updateMenuView(Z)V</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="">	invoke-virtual {v0}, Landroidx/appcompat/widget/ActionMenuPresenter;->isOverflowMenuShowing()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="missed">	invoke-virtual {v0}, Landroidx/appcompat/widget/ActionMenuPresenter;->hideOverflowMenu()Z</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="missed">	invoke-virtual {v0}, Landroidx/appcompat/widget/ActionMenuPresenter;->showOverflowMenu()Z</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public onDetachedFromWindow()V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-super {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->onDetachedFromWindow()V</span>
+<span class="cov">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuView;->dismissPopupMenus()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method protected onLayout(ZIIII)V</span>
+<span class="">	.locals 21</span>
+<span class="">	.param p1, "changed"    # Z</span>
+<span class="">	.param p2, "left"    # I</span>
+<span class="">	.param p3, "top"    # I</span>
+<span class="">	.param p4, "right"    # I</span>
+<span class="">	.param p5, "bottom"    # I</span>
+
+<span class="cov">	move-object/from16 v0, p0</span>
+<span class="cov">	iget-boolean v1, v0, Landroidx/appcompat/widget/ActionMenuView;->mFormatItems:Z</span>
+<span class="cov">	if-nez v1, :cond_0</span>
+<span class="cov">	invoke-super/range {p0 .. p5}, Landroidx/appcompat/widget/LinearLayoutCompat;->onLayout(ZIIII)V</span>
+<span class="exec">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/ActionMenuView;->getChildCount()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	sub-int v2, p5, p3</span>
+<span class="missed">	div-int/lit8 v2, v2, 0x2</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/ActionMenuView;->getDividerWidth()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="missed">	sub-int v7, p4, p2</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/ActionMenuView;->getPaddingRight()I</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	sub-int/2addr v7, v8</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/ActionMenuView;->getPaddingLeft()I</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	sub-int/2addr v7, v8</span>
+<span class="missed">	const/4 v8, 0x0</span>
+<span class="">	invoke-static/range {p0 .. p0}, Landroidx/appcompat/widget/ViewUtils;->isLayoutRtl(Landroid/view/View;)Z</span>
+<span class="missed">	move-result v9</span>
+<span class="missed">	const/4 v10, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/16 v11, 0x8</span>
+<span class="missed">	if-ge v10, v1, :cond_6</span>
+<span class="">	invoke-virtual {v0, v10}, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v12</span>
+<span class="">	invoke-virtual {v12}, Landroid/view/View;->getVisibility()I</span>
+<span class="missed">	move-result v13</span>
+<span class="missed">	if-ne v13, v11, :cond_1</span>
+<span class="missed">	move/from16 v16, v2</span>
+<span class="missed">	move/from16 v17, v9</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {v12}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;</span>
+<span class="missed">	move-result-object v11</span>
+<span class="missed">	check-cast v11, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	iget-boolean v13, v11, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z</span>
+<span class="missed">	if-eqz v13, :cond_4</span>
+<span class="">	invoke-virtual {v12}, Landroid/view/View;->getMeasuredWidth()I</span>
+<span class="missed">	move-result v4</span>
+<span class="">	invoke-virtual {v0, v10}, Landroidx/appcompat/widget/ActionMenuView;->hasSupportDividerBeforeChildAt(I)Z</span>
+<span class="missed">	move-result v13</span>
+<span class="missed">	if-eqz v13, :cond_2</span>
+<span class="missed">	add-int/2addr v4, v3</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-virtual {v12}, Landroid/view/View;->getMeasuredHeight()I</span>
+<span class="missed">	move-result v13</span>
+<span class="missed">	if-eqz v9, :cond_3</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/ActionMenuView;->getPaddingLeft()I</span>
+<span class="missed">	move-result v14</span>
+<span class="missed">	iget v15, v11, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->leftMargin:I</span>
+<span class="missed">	add-int/2addr v14, v15</span>
+<span class="missed">	add-int v15, v14, v4</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/ActionMenuView;->getWidth()I</span>
+<span class="missed">	move-result v14</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/ActionMenuView;->getPaddingRight()I</span>
+<span class="missed">	move-result v15</span>
+<span class="missed">	sub-int/2addr v14, v15</span>
+<span class="missed">	iget v15, v11, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->rightMargin:I</span>
+<span class="missed">	sub-int v15, v14, v15</span>
+<span class="missed">	sub-int v14, v15, v4</span>
+<span class="">	:goto_1</span>
+<span class="missed">	div-int/lit8 v16, v13, 0x2</span>
+<span class="missed">	move/from16 v17, v9</span>
+<span class="missed">	sub-int v9, v2, v16</span>
+<span class="missed">	move/from16 v16, v2</span>
+<span class="missed">	add-int v2, v9, v13</span>
+<span class="missed">	invoke-virtual {v12, v14, v9, v15, v2}, Landroid/view/View;->layout(IIII)V</span>
+<span class="missed">	sub-int/2addr v7, v4</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	move v8, v2</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_4</span>
+<span class="missed">	move/from16 v16, v2</span>
+<span class="missed">	move/from16 v17, v9</span>
+<span class="">	invoke-virtual {v12}, Landroid/view/View;->getMeasuredWidth()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	iget v9, v11, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->leftMargin:I</span>
+<span class="missed">	add-int/2addr v2, v9</span>
+<span class="missed">	iget v9, v11, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->rightMargin:I</span>
+<span class="missed">	add-int/2addr v2, v9</span>
+<span class="missed">	add-int/2addr v5, v2</span>
+<span class="missed">	sub-int/2addr v7, v2</span>
+<span class="">	invoke-virtual {v0, v10}, Landroidx/appcompat/widget/ActionMenuView;->hasSupportDividerBeforeChildAt(I)Z</span>
+<span class="missed">	move-result v9</span>
+<span class="missed">	if-eqz v9, :cond_5</span>
+<span class="missed">	add-int/2addr v5, v3</span>
+<span class="">	:cond_5</span>
+<span class="missed">	add-int/lit8 v6, v6, 0x1</span>
+<span class="">	:goto_2</span>
+<span class="missed">	add-int/lit8 v10, v10, 0x1</span>
+<span class="missed">	move/from16 v2, v16</span>
+<span class="missed">	move/from16 v9, v17</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_6</span>
+<span class="missed">	move/from16 v16, v2</span>
+<span class="missed">	move/from16 v17, v9</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v9, 0x1</span>
+<span class="missed">	if-ne v1, v9, :cond_7</span>
+<span class="missed">	if-nez v8, :cond_7</span>
+<span class="">	invoke-virtual {v0, v2}, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v2}, Landroid/view/View;->getMeasuredWidth()I</span>
+<span class="missed">	move-result v9</span>
+<span class="">	invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I</span>
+<span class="missed">	move-result v10</span>
+<span class="missed">	sub-int v11, p4, p2</span>
+<span class="missed">	div-int/lit8 v11, v11, 0x2</span>
+<span class="missed">	div-int/lit8 v12, v9, 0x2</span>
+<span class="missed">	sub-int v12, v11, v12</span>
+<span class="missed">	div-int/lit8 v13, v10, 0x2</span>
+<span class="missed">	sub-int v13, v16, v13</span>
+<span class="missed">	add-int v14, v12, v9</span>
+<span class="missed">	add-int v15, v13, v10</span>
+<span class="missed">	invoke-virtual {v2, v12, v13, v14, v15}, Landroid/view/View;->layout(IIII)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_7</span>
+<span class="missed">	xor-int/lit8 v9, v8, 0x1</span>
+<span class="missed">	sub-int v9, v6, v9</span>
+<span class="missed">	if-lez v9, :cond_8</span>
+<span class="missed">	div-int v10, v7, v9</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_8</span>
+<span class="missed">	move v10, v2</span>
+<span class="">	:goto_3</span>
+<span class="">	invoke-static {v2, v10}, Ljava/lang/Math;->max(II)I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v17, :cond_c</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/ActionMenuView;->getWidth()I</span>
+<span class="missed">	move-result v10</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/ActionMenuView;->getPaddingRight()I</span>
+<span class="missed">	move-result v12</span>
+<span class="missed">	sub-int/2addr v10, v12</span>
+<span class="missed">	const/4 v12, 0x0</span>
+<span class="">	:goto_4</span>
+<span class="missed">	if-ge v12, v1, :cond_b</span>
+<span class="">	invoke-virtual {v0, v12}, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v13</span>
+<span class="">	invoke-virtual {v13}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;</span>
+<span class="missed">	move-result-object v14</span>
+<span class="missed">	check-cast v14, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="">	invoke-virtual {v13}, Landroid/view/View;->getVisibility()I</span>
+<span class="missed">	move-result v15</span>
+<span class="missed">	if-eq v15, v11, :cond_a</span>
+<span class="missed">	iget-boolean v15, v14, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z</span>
+<span class="missed">	if-eqz v15, :cond_9</span>
+<span class="missed">	move/from16 v19, v3</span>
+<span class="missed">	move/from16 v20, v4</span>
+<span class="">	goto :goto_5</span>
+<span class="">	:cond_9</span>
+<span class="missed">	iget v15, v14, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->rightMargin:I</span>
+<span class="missed">	sub-int/2addr v10, v15</span>
+<span class="">	invoke-virtual {v13}, Landroid/view/View;->getMeasuredWidth()I</span>
+<span class="missed">	move-result v15</span>
+<span class="">	invoke-virtual {v13}, Landroid/view/View;->getMeasuredHeight()I</span>
+<span class="missed">	move-result v18</span>
+<span class="missed">	div-int/lit8 v19, v18, 0x2</span>
+<span class="missed">	sub-int v11, v16, v19</span>
+<span class="missed">	move/from16 v19, v3</span>
+<span class="missed">	sub-int v3, v10, v15</span>
+<span class="missed">	move/from16 v20, v4</span>
+<span class="missed">	add-int v4, v11, v18</span>
+<span class="missed">	invoke-virtual {v13, v3, v11, v10, v4}, Landroid/view/View;->layout(IIII)V</span>
+<span class="missed">	iget v3, v14, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->leftMargin:I</span>
+<span class="missed">	add-int/2addr v3, v15</span>
+<span class="missed">	add-int/2addr v3, v2</span>
+<span class="missed">	sub-int/2addr v10, v3</span>
+<span class="">	goto :goto_5</span>
+<span class="">	:cond_a</span>
+<span class="missed">	move/from16 v19, v3</span>
+<span class="missed">	move/from16 v20, v4</span>
+<span class="">	:goto_5</span>
+<span class="missed">	add-int/lit8 v12, v12, 0x1</span>
+<span class="missed">	move/from16 v3, v19</span>
+<span class="missed">	move/from16 v4, v20</span>
+<span class="missed">	const/16 v11, 0x8</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_b</span>
+<span class="missed">	move/from16 v19, v3</span>
+<span class="missed">	move/from16 v20, v4</span>
+<span class="">	goto :goto_8</span>
+<span class="">	:cond_c</span>
+<span class="missed">	move/from16 v19, v3</span>
+<span class="missed">	move/from16 v20, v4</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/ActionMenuView;->getPaddingLeft()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="">	:goto_6</span>
+<span class="missed">	if-ge v4, v1, :cond_f</span>
+<span class="">	invoke-virtual {v0, v4}, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v10</span>
+<span class="">	invoke-virtual {v10}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;</span>
+<span class="missed">	move-result-object v11</span>
+<span class="missed">	check-cast v11, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="">	invoke-virtual {v10}, Landroid/view/View;->getVisibility()I</span>
+<span class="missed">	move-result v12</span>
+<span class="missed">	const/16 v13, 0x8</span>
+<span class="missed">	if-eq v12, v13, :cond_e</span>
+<span class="missed">	iget-boolean v12, v11, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z</span>
+<span class="missed">	if-eqz v12, :cond_d</span>
+<span class="">	goto :goto_7</span>
+<span class="">	:cond_d</span>
+<span class="missed">	iget v12, v11, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->leftMargin:I</span>
+<span class="missed">	add-int/2addr v3, v12</span>
+<span class="">	invoke-virtual {v10}, Landroid/view/View;->getMeasuredWidth()I</span>
+<span class="missed">	move-result v12</span>
+<span class="">	invoke-virtual {v10}, Landroid/view/View;->getMeasuredHeight()I</span>
+<span class="missed">	move-result v14</span>
+<span class="missed">	div-int/lit8 v15, v14, 0x2</span>
+<span class="missed">	sub-int v15, v16, v15</span>
+<span class="missed">	add-int v13, v3, v12</span>
+<span class="missed">	add-int v0, v15, v14</span>
+<span class="missed">	invoke-virtual {v10, v3, v15, v13, v0}, Landroid/view/View;->layout(IIII)V</span>
+<span class="missed">	iget v0, v11, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->rightMargin:I</span>
+<span class="missed">	add-int/2addr v0, v12</span>
+<span class="missed">	add-int/2addr v0, v2</span>
+<span class="missed">	add-int/2addr v3, v0</span>
+<span class="">	:goto_7</span>
+<span class="">	:cond_e</span>
+<span class="missed">	add-int/lit8 v4, v4, 0x1</span>
+<span class="missed">	move-object/from16 v0, p0</span>
+<span class="">	goto :goto_6</span>
+<span class="">	:goto_8</span>
+<span class="">	:cond_f</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method protected onMeasure(II)V</span>
+<span class="">	.locals 7</span>
+<span class="">	.param p1, "widthMeasureSpec"    # I</span>
+<span class="">	.param p2, "heightMeasureSpec"    # I</span>
+
+<span class="cov">	iget-boolean v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mFormatItems:Z</span>
+<span class="exec">	invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	const/4 v2, 0x1</span>
+<span class="cov">	const/4 v3, 0x0</span>
+<span class="cov">	const/high16 v4, 0x40000000    # 2.0f</span>
+<span class="missed">	if-ne v1, v4, :cond_0</span>
+<span class="missed">	move v1, v2</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	move v1, v3</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	iput-boolean v1, p0, Landroidx/appcompat/widget/ActionMenuView;->mFormatItems:Z</span>
+<span class="cov">	iget-boolean v1, p0, Landroidx/appcompat/widget/ActionMenuView;->mFormatItems:Z</span>
+<span class="missed">	if-eq v0, v1, :cond_1</span>
+<span class="missed">	iput v3, p0, Landroidx/appcompat/widget/ActionMenuView;->mFormatItemsWidth:I</span>
+<span class="cov">	:cond_1</span>
+<span class="exec">	invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	iget-boolean v4, p0, Landroidx/appcompat/widget/ActionMenuView;->mFormatItems:Z</span>
+<span class="missed">	if-eqz v4, :cond_2</span>
+<span class="missed">	iget-object v4, p0, Landroidx/appcompat/widget/ActionMenuView;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;</span>
+<span class="missed">	if-eqz v4, :cond_2</span>
+<span class="missed">	iget v5, p0, Landroidx/appcompat/widget/ActionMenuView;->mFormatItemsWidth:I</span>
+<span class="missed">	if-eq v1, v5, :cond_2</span>
+<span class="missed">	iput v1, p0, Landroidx/appcompat/widget/ActionMenuView;->mFormatItemsWidth:I</span>
+<span class="missed">	invoke-virtual {v4, v2}, Landroidx/appcompat/view/menu/MenuBuilder;->onItemsChanged(Z)V</span>
+<span class="cov">	:cond_2</span>
+<span class="exec">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuView;->getChildCount()I</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	iget-boolean v4, p0, Landroidx/appcompat/widget/ActionMenuView;->mFormatItems:Z</span>
+<span class="missed">	if-eqz v4, :cond_3</span>
+<span class="missed">	if-lez v2, :cond_3</span>
+<span class="missed">	invoke-direct {p0, p1, p2}, Landroidx/appcompat/widget/ActionMenuView;->onMeasureExactFormat(II)V</span>
+<span class="exec">	goto :goto_2</span>
+<span class="cov">	:cond_3</span>
+<span class="cov">	const/4 v4, 0x0</span>
+<span class="cov">	:goto_1</span>
+<span class="missed">	if-ge v4, v2, :cond_4</span>
+<span class="">	invoke-virtual {p0, v4}, Landroidx/appcompat/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="">	invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	check-cast v6, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;</span>
+<span class="missed">	iput v3, v6, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->rightMargin:I</span>
+<span class="missed">	iput v3, v6, Landroidx/appcompat/widget/ActionMenuView$LayoutParams;->leftMargin:I</span>
+<span class="missed">	add-int/lit8 v4, v4, 0x1</span>
+<span class="exec">	goto :goto_1</span>
+<span class="cov">	:cond_4</span>
+<span class="cov">	invoke-super {p0, p1, p2}, Landroidx/appcompat/widget/LinearLayoutCompat;->onMeasure(II)V</span>
+<span class="cov">	:goto_2</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public peekMenu()Landroidx/appcompat/view/menu/MenuBuilder;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method public setExpandedActionViewsExclusive(Z)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "exclusive"    # Z</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroidx/appcompat/widget/ActionMenuPresenter;->setExpandedActionViewsExclusive(Z)V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public setMenuCallbacks(Landroidx/appcompat/view/menu/MenuPresenter$Callback;Landroidx/appcompat/view/menu/MenuBuilder$Callback;)V</span>
+<span class="">	.locals 0</span>
+<span class="">	.param p1, "pcb"    # Landroidx/appcompat/view/menu/MenuPresenter$Callback;</span>
+<span class="">	.param p2, "mcb"    # Landroidx/appcompat/view/menu/MenuBuilder$Callback;</span>
+
+<span class="cov">	iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->mActionMenuPresenterCallback:Landroidx/appcompat/view/menu/MenuPresenter$Callback;</span>
+<span class="cov">	iput-object p2, p0, Landroidx/appcompat/widget/ActionMenuView;->mMenuBuilderCallback:Landroidx/appcompat/view/menu/MenuBuilder$Callback;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public setOnMenuItemClickListener(Landroidx/appcompat/widget/ActionMenuView$OnMenuItemClickListener;)V</span>
+<span class="">	.locals 0</span>
+<span class="">	.param p1, "listener"    # Landroidx/appcompat/widget/ActionMenuView$OnMenuItemClickListener;</span>
+
+<span class="cov">	iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->mOnMenuItemClickListener:Landroidx/appcompat/widget/ActionMenuView$OnMenuItemClickListener;</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public setOverflowIcon(Landroid/graphics/drawable/Drawable;)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "icon"    # Landroid/graphics/drawable/Drawable;</span>
+
+<span class="missed">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuView;->getMenu()Landroid/view/Menu;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroidx/appcompat/widget/ActionMenuPresenter;->setOverflowIcon(Landroid/graphics/drawable/Drawable;)V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public setOverflowReserved(Z)V</span>
+<span class="">	.locals 0</span>
+<span class="">	.param p1, "reserveOverflow"    # Z</span>
+
+<span class="cov">	iput-boolean p1, p0, Landroidx/appcompat/widget/ActionMenuView;->mReserveOverflow:Z</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public setPopupTheme(I)V</span>
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "resId"    # I</span>
+
+<span class="cov">	iget v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPopupTheme:I</span>
+<span class="cov">	if-eq v0, p1, :cond_1</span>
+<span class="cov">	iput p1, p0, Landroidx/appcompat/widget/ActionMenuView;->mPopupTheme:I</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuView;->getContext()Landroid/content/Context;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPopupContext:Landroid/content/Context;</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	new-instance v0, Landroid/view/ContextThemeWrapper;</span>
+<span class="exec">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuView;->getContext()Landroid/content/Context;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	invoke-direct {v0, v1, p1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V</span>
+<span class="cov">	iput-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPopupContext:Landroid/content/Context;</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public setPresenter(Landroidx/appcompat/widget/ActionMenuPresenter;)V</span>
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "presenter"    # Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+
+<span class="cov">	iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="cov">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="cov">	invoke-virtual {v0, p0}, Landroidx/appcompat/widget/ActionMenuPresenter;->setMenuView(Landroidx/appcompat/widget/ActionMenuView;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public showOverflowMenu()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {v0}, Landroidx/appcompat/widget/ActionMenuPresenter;->showOverflowMenu()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../.resources/report.js"></script>
+</body>
+</html>

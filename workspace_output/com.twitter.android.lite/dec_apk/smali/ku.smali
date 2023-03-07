@@ -18,6 +18,7 @@ return-void
 .method private final C()Ljava/lang/String;
 .locals 7
 const/4 v0, 0x0
+:try_start_0
 invoke-virtual {p0}, Lnb;->n()Landroid/content/Context;
 move-result-object v1
 invoke-virtual {v1}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
@@ -25,6 +26,12 @@ move-result-object v1
 const-string v2, "com.google.firebase.analytics.FirebaseAnalytics"
 invoke-virtual {v1, v2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 move-result-object v1
+:try_end_0
+.catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_2
+if-nez v1, :cond_0
+return-object v0
+:cond_0
+:try_start_1
 const-string v2, "getInstance"
 const/4 v3, 0x1
 new-array v4, v3, [Ljava/lang/Class;
@@ -39,6 +46,12 @@ move-result-object v4
 aput-object v4, v3, v6
 invoke-virtual {v2, v0, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 move-result-object v2
+:try_end_1
+.catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+if-nez v2, :cond_1
+return-object v0
+:cond_1
+:try_start_2
 const-string v3, "getFirebaseInstanceId"
 new-array v4, v6, [Ljava/lang/Class;
 invoke-virtual {v1, v3, v4}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
@@ -47,7 +60,26 @@ new-array v3, v6, [Ljava/lang/Object;
 invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 move-result-object v1
 check-cast v1, Ljava/lang/String;
+:try_end_2
+.catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 return-object v1
+:catch_0
+invoke-virtual {p0}, Lnb;->r()Lla;
+move-result-object v1
+invoke-virtual {v1}, Lla;->k()Llc;
+move-result-object v1
+const-string v2, "Failed to retrieve Firebase Instance Id"
+invoke-virtual {v1, v2}, Llc;->a(Ljava/lang/String;)V
+return-object v0
+:catch_1
+invoke-virtual {p0}, Lnb;->r()Lla;
+move-result-object v1
+invoke-virtual {v1}, Lla;->j()Llc;
+move-result-object v1
+const-string v2, "Failed to obtain Firebase Analytics instance"
+invoke-virtual {v1, v2}, Llc;->a(Ljava/lang/String;)V
+:catch_2
+return-object v0
 .end method
 .method final A()I
 .locals 1
@@ -121,6 +153,9 @@ if-eqz v1, :cond_1
 iget-object v1, v0, Lku;->q:Lmf;
 invoke-virtual {v1}, Lmf;->C()Z
 move-result v1
+if-nez v1, :cond_1
+const/4 v1, 0x0
+goto :goto_0
 :cond_1
 invoke-direct/range {p0 .. p0}, Lku;->C()Ljava/lang/String;
 move-result-object v1
@@ -141,6 +176,15 @@ invoke-virtual {v1}, Lnb;->b()V
 const-string v12, "google_analytics_adid_collection_enabled"
 invoke-virtual {v1, v12}, Lqf;->b(Ljava/lang/String;)Ljava/lang/Boolean;
 move-result-object v1
+if-eqz v1, :cond_3
+invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+move-result v1
+if-eqz v1, :cond_2
+goto :goto_1
+:cond_2
+const/4 v1, 0x0
+goto :goto_2
+:cond_3
 :goto_1
 const/4 v1, 0x1
 :goto_2
@@ -154,6 +198,15 @@ invoke-virtual {v1}, Lnb;->b()V
 const-string v12, "google_analytics_ssaid_collection_enabled"
 invoke-virtual {v1, v12}, Lqf;->b(Ljava/lang/String;)Ljava/lang/Boolean;
 move-result-object v1
+if-eqz v1, :cond_5
+invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+move-result v1
+if-eqz v1, :cond_4
+goto :goto_3
+:cond_4
+const/16 v21, 0x0
+goto :goto_4
+:cond_5
 :goto_3
 const/16 v21, 0x1
 :goto_4
@@ -179,6 +232,7 @@ return-object v25
 .end method
 .method public final bridge synthetic a()V
 .locals 0
+invoke-super {p0}, Low;->a()V
 return-void
 .end method
 .method public final bridge synthetic b()V
@@ -188,6 +242,7 @@ return-void
 .end method
 .method public final bridge synthetic c()V
 .locals 0
+invoke-super {p0}, Low;->c()V
 return-void
 .end method
 .method public final bridge synthetic d()V
@@ -197,47 +252,56 @@ return-void
 .end method
 .method public final bridge synthetic e()Lkh;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->e()Lkh;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic f()Lnl;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->f()Lnl;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic g()Lku;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->g()Lku;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic h()Loc;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->h()Loc;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic i()Lny;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->i()Lny;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic j()Lkw;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->j()Lkw;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic k()Lpa;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->k()Lpa;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic l()Lki;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->l()Lki;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic m()Lcom/google/android/gms/common/util/d;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->m()Lcom/google/android/gms/common/util/d;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic n()Landroid/content/Context;
@@ -248,17 +312,20 @@ return-object v0
 .end method
 .method public final bridge synthetic o()Lky;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->o()Lky;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic p()Lpv;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->p()Lpv;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic q()Lma;
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Low;->q()Lma;
+move-result-object v0
 return-object v0
 .end method
 .method public final bridge synthetic r()Lla;
@@ -305,25 +372,94 @@ const-string v3, ""
 const/4 v4, 0x0
 const-string v5, "unknown"
 const/high16 v6, -0x80000000
+if-nez v1, :cond_1
+invoke-virtual {p0}, Lnb;->r()Lla;
+move-result-object v1
+invoke-virtual {v1}, Lla;->c_()Llc;
+move-result-object v1
+invoke-static {v0}, Lla;->a(Ljava/lang/String;)Ljava/lang/Object;
+move-result-object v7
+const-string v8, "PackageManager is null, app identity information might be inaccurate. appId"
+invoke-virtual {v1, v8, v7}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V
+:cond_0
+move-object v1, v2
+goto/16 :goto_4
+:cond_1
+:try_start_0
 invoke-virtual {v1, v0}, Landroid/content/pm/PackageManager;->getInstallerPackageName(Ljava/lang/String;)Ljava/lang/String;
 move-result-object v5
+:try_end_0
+.catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+goto :goto_0
+:catch_0
+invoke-virtual {p0}, Lnb;->r()Lla;
+move-result-object v7
+invoke-virtual {v7}, Lla;->c_()Llc;
+move-result-object v7
+invoke-static {v0}, Lla;->a(Ljava/lang/String;)Ljava/lang/Object;
+move-result-object v8
+const-string v9, "Error retrieving app installer package name. appId"
+invoke-virtual {v7, v9, v8}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V
+:goto_0
+if-nez v5, :cond_2
 const-string v5, "manual_install"
+goto :goto_1
+:cond_2
+const-string v7, "com.android.vending"
+invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+move-result v7
+if-eqz v7, :cond_3
+move-object v5, v3
 :cond_3
+:goto_1
+:try_start_1
 invoke-virtual {p0}, Lnb;->n()Landroid/content/Context;
 move-result-object v7
 invoke-virtual {v7}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 move-result-object v7
 invoke-virtual {v1, v7, v4}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 move-result-object v7
+if-eqz v7, :cond_0
 iget-object v8, v7, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 invoke-virtual {v1, v8}, Landroid/content/pm/PackageManager;->getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
 move-result-object v1
 invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 move-result v8
+if-nez v8, :cond_4
 invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 move-result-object v1
+:try_end_1
+.catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_2
+goto :goto_2
+:cond_4
+move-object v1, v2
+:goto_2
+:try_start_2
 iget-object v2, v7, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
 iget v6, v7, Landroid/content/pm/PackageInfo;->versionCode:I
+:try_end_2
+.catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2 .. :try_end_2} :catch_1
+goto :goto_4
+:catch_1
+move-object v12, v2
+move-object v2, v1
+move-object v1, v12
+goto :goto_3
+:catch_2
+move-object v1, v2
+:goto_3
+invoke-virtual {p0}, Lnb;->r()Lla;
+move-result-object v7
+invoke-virtual {v7}, Lla;->c_()Llc;
+move-result-object v7
+invoke-static {v0}, Lla;->a(Ljava/lang/String;)Ljava/lang/Object;
+move-result-object v8
+const-string v9, "Error retrieving package info. appId, appName"
+invoke-virtual {v7, v9, v8, v2}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+move-object v12, v2
+move-object v2, v1
+move-object v1, v12
+:goto_4
 iput-object v0, p0, Lku;->a:Ljava/lang/String;
 iput-object v5, p0, Lku;->d:Ljava/lang/String;
 iput-object v2, p0, Lku;->b:Ljava/lang/String;
@@ -337,19 +473,59 @@ move-result-object v5
 invoke-static {v5}, Lcom/google/android/gms/common/api/internal/c;->a(Landroid/content/Context;)Lcom/google/android/gms/common/api/Status;
 move-result-object v5
 const/4 v6, 0x1
+if-eqz v5, :cond_5
 invoke-virtual {v5}, Lcom/google/android/gms/common/api/Status;->c()Z
 move-result v7
+if-eqz v7, :cond_5
 const/4 v7, 0x1
+goto :goto_5
+:cond_5
+const/4 v7, 0x0
+:goto_5
 iget-object v8, p0, Lku;->q:Lmf;
 invoke-virtual {v8}, Lmf;->p()Ljava/lang/String;
 move-result-object v8
 invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 move-result v8
 const-string v9, "am"
+if-nez v8, :cond_6
+iget-object v8, p0, Lku;->q:Lmf;
+invoke-virtual {v8}, Lmf;->s()Ljava/lang/String;
+move-result-object v8
+invoke-virtual {v9, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+move-result v8
+if-eqz v8, :cond_6
+const/4 v8, 0x1
+goto :goto_6
+:cond_6
 const/4 v8, 0x0
 :goto_6
 or-int/2addr v7, v8
+if-nez v7, :cond_8
+if-nez v5, :cond_7
+invoke-virtual {p0}, Lnb;->r()Lla;
+move-result-object v5
+invoke-virtual {v5}, Lla;->c_()Llc;
+move-result-object v5
+const-string v8, "GoogleService failed to initialize (no status)"
+invoke-virtual {v5, v8}, Llc;->a(Ljava/lang/String;)V
+goto :goto_7
+:cond_7
+invoke-virtual {p0}, Lnb;->r()Lla;
+move-result-object v8
+invoke-virtual {v8}, Lla;->c_()Llc;
+move-result-object v8
+invoke-virtual {v5}, Lcom/google/android/gms/common/api/Status;->d()I
+move-result v10
+invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+move-result-object v10
+invoke-virtual {v5}, Lcom/google/android/gms/common/api/Status;->b()Ljava/lang/String;
+move-result-object v5
+const-string v11, "GoogleService failed to initialize, status"
+invoke-virtual {v8, v11, v10, v5}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+:cond_8
 :goto_7
+if-eqz v7, :cond_c
 invoke-virtual {p0}, Lnb;->t()Lqf;
 move-result-object v5
 invoke-virtual {v5}, Lqf;->i()Ljava/lang/Boolean;
@@ -358,9 +534,46 @@ invoke-virtual {p0}, Lnb;->t()Lqf;
 move-result-object v7
 invoke-virtual {v7}, Lqf;->h()Z
 move-result v7
+if-eqz v7, :cond_9
+iget-object v5, p0, Lku;->q:Lmf;
+invoke-virtual {v5}, Lmf;->o()Z
+move-result v5
+if-eqz v5, :cond_c
+invoke-virtual {p0}, Lnb;->r()Lla;
+move-result-object v5
+invoke-virtual {v5}, Lla;->v()Llc;
+move-result-object v5
+const-string v6, "Collection disabled with firebase_analytics_collection_deactivated=1"
+invoke-virtual {v5, v6}, Llc;->a(Ljava/lang/String;)V
+goto :goto_8
+:cond_9
+if-eqz v5, :cond_a
+invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
+move-result v7
+if-nez v7, :cond_a
+iget-object v5, p0, Lku;->q:Lmf;
+invoke-virtual {v5}, Lmf;->o()Z
+move-result v5
+if-eqz v5, :cond_c
+invoke-virtual {p0}, Lnb;->r()Lla;
+move-result-object v5
+invoke-virtual {v5}, Lla;->v()Llc;
+move-result-object v5
+const-string v6, "Collection disabled with firebase_analytics_collection_enabled=0"
+invoke-virtual {v5, v6}, Llc;->a(Ljava/lang/String;)V
+goto :goto_8
+:cond_a
 if-nez v5, :cond_b
 invoke-static {}, Lcom/google/android/gms/common/api/internal/c;->b()Z
 move-result v5
+if-eqz v5, :cond_b
+invoke-virtual {p0}, Lnb;->r()Lla;
+move-result-object v5
+invoke-virtual {v5}, Lla;->v()Llc;
+move-result-object v5
+const-string v6, "Collection disabled with google_app_measurement_enable=0"
+invoke-virtual {v5, v6}, Llc;->a(Ljava/lang/String;)V
+goto :goto_8
 :cond_b
 invoke-virtual {p0}, Lnb;->r()Lla;
 move-result-object v5
@@ -368,6 +581,11 @@ invoke-virtual {v5}, Lla;->x()Llc;
 move-result-object v5
 const-string v7, "Collection enabled"
 invoke-virtual {v5, v7}, Llc;->a(Ljava/lang/String;)V
+goto :goto_9
+:cond_c
+:goto_8
+const/4 v6, 0x0
+:goto_9
 iput-object v3, p0, Lku;->i:Ljava/lang/String;
 iput-object v3, p0, Lku;->j:Ljava/lang/String;
 iput-wide v1, p0, Lku;->g:J
@@ -377,10 +595,26 @@ invoke-virtual {v1}, Lmf;->p()Ljava/lang/String;
 move-result-object v1
 invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 move-result v1
+if-nez v1, :cond_d
+iget-object v1, p0, Lku;->q:Lmf;
+invoke-virtual {v1}, Lmf;->s()Ljava/lang/String;
+move-result-object v1
+invoke-virtual {v9, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+move-result v1
+if-eqz v1, :cond_d
+iget-object v1, p0, Lku;->q:Lmf;
+invoke-virtual {v1}, Lmf;->p()Ljava/lang/String;
+move-result-object v1
+iput-object v1, p0, Lku;->j:Ljava/lang/String;
+:cond_d
+:try_start_3
 invoke-static {}, Lcom/google/android/gms/common/api/internal/c;->a()Ljava/lang/String;
 move-result-object v1
 invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 move-result v2
+if-eqz v2, :cond_e
+goto :goto_a
+:cond_e
 move-object v3, v1
 :goto_a
 iput-object v3, p0, Lku;->i:Ljava/lang/String;
@@ -405,14 +639,32 @@ const-string v2, "App package, google app id"
 iget-object v3, p0, Lku;->a:Ljava/lang/String;
 iget-object v5, p0, Lku;->i:Ljava/lang/String;
 invoke-virtual {v1, v2, v3, v5}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+:try_end_3
+.catch Ljava/lang/IllegalStateException; {:try_start_3 .. :try_end_3} :catch_3
+goto :goto_b
+:catch_3
+move-exception v1
+invoke-virtual {p0}, Lnb;->r()Lla;
+move-result-object v2
+invoke-virtual {v2}, Lla;->c_()Llc;
+move-result-object v2
+invoke-static {v0}, Lla;->a(Ljava/lang/String;)Ljava/lang/Object;
+move-result-object v0
+const-string v3, "getGoogleAppId or isMeasurementEnabled failed with exception. appId"
+invoke-virtual {v2, v3, v0, v1}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 :cond_10
+:goto_b
 sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 const/16 v1, 0x10
+if-lt v0, v1, :cond_11
 invoke-virtual {p0}, Lnb;->n()Landroid/content/Context;
 move-result-object v0
 invoke-static {v0}, Lbh;->a(Landroid/content/Context;)Z
 move-result v0
 iput v0, p0, Lku;->h:I
+return-void
+:cond_11
+iput v4, p0, Lku;->h:I
 return-void
 .end method
 .method final x()Ljava/lang/String;

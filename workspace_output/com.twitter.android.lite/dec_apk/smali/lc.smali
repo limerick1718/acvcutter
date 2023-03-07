@@ -54,5 +54,14 @@ return-void
 .end method
 .method public final a(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 .locals 8
+iget-object v0, p0, Llc;->d:Lla;
+iget v1, p0, Llc;->a:I
+iget-boolean v2, p0, Llc;->b:Z
+iget-boolean v3, p0, Llc;->c:Z
+move-object v4, p1
+move-object v5, p2
+move-object v6, p3
+move-object v7, p4
+invoke-virtual/range {v0 .. v7}, Lla;->a(IZZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 return-void
 .end method

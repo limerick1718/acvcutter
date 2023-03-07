@@ -21,6 +21,16 @@ iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 check-cast v0, Lwd$a;
 iget p1, p1, Landroid/os/Message;->what:I
 const/4 v1, 0x1
+if-eq p1, v1, :cond_1
+const/4 v1, 0x2
+if-eq p1, v1, :cond_0
+goto :goto_0
+:cond_0
+iget-object p1, v0, Lwd$a;->a:Lwd;
+iget-object v0, v0, Lwd$a;->b:[Ljava/lang/Object;
+invoke-virtual {p1, v0}, Lwd;->b([Ljava/lang/Object;)V
+goto :goto_0
+:cond_1
 iget-object p1, v0, Lwd$a;->a:Lwd;
 iget-object v0, v0, Lwd$a;->b:[Ljava/lang/Object;
 const/4 v1, 0x0

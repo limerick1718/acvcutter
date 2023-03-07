@@ -45,8 +45,18 @@ return-void
 .end method
 .method private constructor <init>()V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
+.end method
+.method public static getTagFieldNumber(I)I
+.locals 0
+ushr-int/lit8 p0, p0, 0x3
+return p0
+.end method
+.method static getTagWireType(I)I
+.locals 0
+and-int/lit8 p0, p0, 0x7
+return p0
 .end method
 .method static makeTag(II)I
 .locals 0

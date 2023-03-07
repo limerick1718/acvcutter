@@ -22,5 +22,7 @@ return-void
 .end method
 .method public execute(Ljava/lang/Runnable;)V
 .locals 1
+iget-object v0, p0, Lretrofit2/Platform$Android$MainThreadExecutor;->handler:Landroid/os/Handler;
+invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 return-void
 .end method

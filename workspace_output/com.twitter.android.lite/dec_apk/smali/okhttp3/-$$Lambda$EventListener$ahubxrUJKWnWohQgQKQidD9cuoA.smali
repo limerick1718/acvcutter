@@ -11,6 +11,8 @@ return-void
 .end method
 .method public final create(Lokhttp3/Call;)Lokhttp3/EventListener;
 .locals 1
-const/4 v0, 0x0
-return-object v0
+iget-object v0, p0, Lokhttp3/-$$Lambda$EventListener$ahubxrUJKWnWohQgQKQidD9cuoA;->f$0:Lokhttp3/EventListener;
+invoke-static {v0, p1}, Lokhttp3/EventListener;->lambda$factory$0(Lokhttp3/EventListener;Lokhttp3/Call;)Lokhttp3/EventListener;
+move-result-object p1
+return-object p1
 .end method

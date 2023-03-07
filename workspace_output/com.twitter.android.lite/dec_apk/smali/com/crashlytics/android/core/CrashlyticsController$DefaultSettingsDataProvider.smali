@@ -21,6 +21,9 @@ return-void
 .end method
 .method public getSettingsData()Lyk;
 .locals 1
-const/4 v0, 0x0
+invoke-static {}, Lyh;->a()Lyh;
+move-result-object v0
+invoke-virtual {v0}, Lyh;->b()Lyk;
+move-result-object v0
 return-object v0
 .end method

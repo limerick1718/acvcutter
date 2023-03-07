@@ -47,6 +47,9 @@ return p1
 .end method
 .method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
 .locals 0
-const/4 v0, 0x0
-return v0
+invoke-static {p2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+move-result-object p1
+invoke-direct {p0, p1}, Lcom/twitter/android/lite/TwitterLiteActivity$1;->a(Landroid/net/Uri;)Z
+move-result p1
+return p1
 .end method

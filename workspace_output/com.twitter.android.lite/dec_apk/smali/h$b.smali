@@ -30,7 +30,7 @@ value = {
 "TK;TV;>;)V"
 }
 .end annotation
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0, p1, p2}, Lh$e;-><init>(Lh$c;Lh$c;)V
 return-void
 .end method
 .method  a(Lh$c;)Lh$c;
@@ -44,8 +44,8 @@ value = {
 "TK;TV;>;"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
+iget-object p1, p1, Lh$c;->d:Lh$c;
+return-object p1
 .end method
 .method  b(Lh$c;)Lh$c;
 .locals 0
@@ -58,6 +58,6 @@ value = {
 "TK;TV;>;"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
+iget-object p1, p1, Lh$c;->c:Lh$c;
+return-object p1
 .end method

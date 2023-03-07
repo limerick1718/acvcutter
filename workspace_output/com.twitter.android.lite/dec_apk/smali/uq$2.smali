@@ -25,6 +25,10 @@ return-void
 .end method
 .method public a(Ljava/lang/Exception;)V
 .locals 1
+iget-object v0, p0, Luq$2;->c:Luq;
+invoke-static {v0}, Luq;->b(Luq;)Lut;
+move-result-object v0
+invoke-interface {v0, p1}, Lut;->a(Ljava/lang/Exception;)V
 return-void
 .end method
 .method public a(Ljava/lang/Object;)V

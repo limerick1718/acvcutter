@@ -4,7 +4,8 @@
 .field private final synthetic a:Lpl;
 .method constructor <init>(Lpl;)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lpo;->a:Lpl;
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public final a(Ljava/lang/String;ILjava/lang/Throwable;[BLjava/util/Map;)V
@@ -23,5 +24,12 @@ value = {
 ">;>;)V"
 }
 .end annotation
+iget-object v0, p0, Lpo;->a:Lpl;
+move-object v1, p1
+move v2, p2
+move-object v3, p3
+move-object v4, p4
+move-object v5, p5
+invoke-virtual/range {v0 .. v5}, Lpl;->a(Ljava/lang/String;ILjava/lang/Throwable;[BLjava/util/Map;)V
 return-void
 .end method

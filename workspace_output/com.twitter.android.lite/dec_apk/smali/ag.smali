@@ -3,13 +3,14 @@
 .source "FragmentContainer.java"
 .method public constructor <init>()V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public a(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Lae;
 .locals 0
-const/4 v0, 0x0
-return-object v0
+invoke-static {p1, p2, p3}, Lae;->a(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Lae;
+move-result-object p1
+return-object p1
 .end method
 .method public abstract a(I)Landroid/view/View;
 .end method

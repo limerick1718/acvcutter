@@ -23,7 +23,11 @@ value = {
 .field final synthetic val$userName:Ljava/lang/String;
 .method constructor <init>(Lcom/crashlytics/android/core/CrashlyticsController;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsController$10;->this$0:Lcom/crashlytics/android/core/CrashlyticsController;
+iput-object p2, p0, Lcom/crashlytics/android/core/CrashlyticsController$10;->val$userId:Ljava/lang/String;
+iput-object p3, p0, Lcom/crashlytics/android/core/CrashlyticsController$10;->val$userName:Ljava/lang/String;
+iput-object p4, p0, Lcom/crashlytics/android/core/CrashlyticsController$10;->val$userEmail:Ljava/lang/String;
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public bridge synthetic call()Ljava/lang/Object;
@@ -33,7 +37,8 @@ value = {
 Ljava/lang/Exception;
 }
 .end annotation
-const/4 v0, 0x0
+invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController$10;->call()Ljava/lang/Void;
+move-result-object v0
 return-object v0
 .end method
 .method public call()Ljava/lang/Void;
@@ -43,6 +48,20 @@ value = {
 Ljava/lang/Exception;
 }
 .end annotation
+iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController$10;->this$0:Lcom/crashlytics/android/core/CrashlyticsController;
+invoke-static {v0}, Lcom/crashlytics/android/core/CrashlyticsController;->access$1200(Lcom/crashlytics/android/core/CrashlyticsController;)Ljava/lang/String;
+move-result-object v0
+new-instance v1, Lcom/crashlytics/android/core/MetaDataStore;
+iget-object v2, p0, Lcom/crashlytics/android/core/CrashlyticsController$10;->this$0:Lcom/crashlytics/android/core/CrashlyticsController;
+invoke-virtual {v2}, Lcom/crashlytics/android/core/CrashlyticsController;->getFilesDir()Ljava/io/File;
+move-result-object v2
+invoke-direct {v1, v2}, Lcom/crashlytics/android/core/MetaDataStore;-><init>(Ljava/io/File;)V
+new-instance v2, Lcom/crashlytics/android/core/UserMetaData;
+iget-object v3, p0, Lcom/crashlytics/android/core/CrashlyticsController$10;->val$userId:Ljava/lang/String;
+iget-object v4, p0, Lcom/crashlytics/android/core/CrashlyticsController$10;->val$userName:Ljava/lang/String;
+iget-object v5, p0, Lcom/crashlytics/android/core/CrashlyticsController$10;->val$userEmail:Ljava/lang/String;
+invoke-direct {v2, v3, v4, v5}, Lcom/crashlytics/android/core/UserMetaData;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+invoke-virtual {v1, v0, v2}, Lcom/crashlytics/android/core/MetaDataStore;->writeUserData(Ljava/lang/String;Lcom/crashlytics/android/core/UserMetaData;)V
 const/4 v0, 0x0
 return-object v0
 .end method

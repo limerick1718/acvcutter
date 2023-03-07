@@ -9,9 +9,16 @@ accessFlags = 0x409
 name = "Listener"
 .end annotation
 .field public static final REFUSE_INCOMING_STREAMS:Lokhttp3/internal/http2/Http2Connection$Listener;
+.method static constructor <clinit>()V
+.locals 1
+new-instance v0, Lokhttp3/internal/http2/Http2Connection$Listener$1;
+invoke-direct {v0}, Lokhttp3/internal/http2/Http2Connection$Listener$1;-><init>()V
+sput-object v0, Lokhttp3/internal/http2/Http2Connection$Listener;->REFUSE_INCOMING_STREAMS:Lokhttp3/internal/http2/Http2Connection$Listener;
+return-void
+.end method
 .method public constructor <init>()V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onSettings(Lokhttp3/internal/http2/Http2Connection;)V

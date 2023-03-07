@@ -12,7 +12,9 @@ name = "ContentTypeOverridingRequestBody"
 .field private final delegate:Lokhttp3/RequestBody;
 .method constructor <init>(Lokhttp3/RequestBody;Lokhttp3/MediaType;)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Lokhttp3/RequestBody;-><init>()V
+iput-object p1, p0, Lretrofit2/RequestBuilder$ContentTypeOverridingRequestBody;->delegate:Lokhttp3/RequestBody;
+iput-object p2, p0, Lretrofit2/RequestBuilder$ContentTypeOverridingRequestBody;->contentType:Lokhttp3/MediaType;
 return-void
 .end method
 .method public contentLength()J
@@ -22,12 +24,14 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-const-wide v0, 0x0
+iget-object v0, p0, Lretrofit2/RequestBuilder$ContentTypeOverridingRequestBody;->delegate:Lokhttp3/RequestBody;
+invoke-virtual {v0}, Lokhttp3/RequestBody;->contentLength()J
+move-result-wide v0
 return-wide v0
 .end method
 .method public contentType()Lokhttp3/MediaType;
 .locals 1
-const/4 v0, 0x0
+iget-object v0, p0, Lretrofit2/RequestBuilder$ContentTypeOverridingRequestBody;->contentType:Lokhttp3/MediaType;
 return-object v0
 .end method
 .method public writeTo(Lyt;)V
@@ -37,5 +41,7 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
+iget-object v0, p0, Lretrofit2/RequestBuilder$ContentTypeOverridingRequestBody;->delegate:Lokhttp3/RequestBody;
+invoke-virtual {v0, p1}, Lokhttp3/RequestBody;->writeTo(Lyt;)V
 return-void
 .end method

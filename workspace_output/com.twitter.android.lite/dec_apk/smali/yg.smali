@@ -10,6 +10,13 @@
 .field public final g:I
 .method public constructor <init>(IIIIIZI)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+iput p1, p0, Lyg;->a:I
+iput p2, p0, Lyg;->b:I
+iput p3, p0, Lyg;->c:I
+iput p4, p0, Lyg;->d:I
+iput p5, p0, Lyg;->e:I
+iput-boolean p6, p0, Lyg;->f:Z
+iput p7, p0, Lyg;->g:I
 return-void
 .end method

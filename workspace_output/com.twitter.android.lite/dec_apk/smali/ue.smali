@@ -39,6 +39,18 @@ invoke-virtual {p1, p0}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/la
 move-result-object p0
 return-object p0
 .end method
+.method public static a(Landroid/content/Context;)Lub;
+.locals 1
+const-class v0, Lub;
+invoke-static {p0}, Lue;->c(Landroid/content/Context;)Lokhttp3/OkHttpClient$Builder;
+move-result-object p0
+invoke-virtual {p0}, Lokhttp3/OkHttpClient$Builder;->build()Lokhttp3/OkHttpClient;
+move-result-object p0
+invoke-static {v0, p0}, Lue;->a(Ljava/lang/Class;Lokhttp3/OkHttpClient;)Ljava/lang/Object;
+move-result-object p0
+check-cast p0, Lub;
+return-object p0
+.end method
 .method public static b(Landroid/content/Context;)Luf;
 .locals 5
 const-class v0, Luf;

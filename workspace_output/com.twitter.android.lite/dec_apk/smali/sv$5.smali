@@ -16,6 +16,13 @@ return-void
 .end method
 .method public a(Ljava/lang/reflect/Field;)Ljava/lang/String;
 .locals 1
-const/4 v0, 0x0
-return-object v0
+invoke-virtual {p1}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
+move-result-object p1
+const-string v0, "-"
+invoke-static {p1, v0}, Lsv$5;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+move-result-object p1
+sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+invoke-virtual {p1, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+move-result-object p1
+return-object p1
 .end method

@@ -38,6 +38,9 @@ return-object v0
 iget-object v0, p0, Llr;->d:Ljava/lang/String;
 invoke-static {p1, v0}, Lpv;->c(Ljava/lang/String;Ljava/lang/String;)Z
 move-result v0
+if-eqz v0, :cond_0
+return-void
+:cond_0
 iget-object v0, p0, Llr;->e:Llm;
 invoke-static {v0}, Llm;->a(Llm;)Landroid/content/SharedPreferences;
 move-result-object v0

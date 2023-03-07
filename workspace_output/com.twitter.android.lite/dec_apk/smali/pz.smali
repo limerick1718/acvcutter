@@ -43,6 +43,10 @@ move-object v1, p1
 iput-object v1, v0, Lpz;->a:Ljava/lang/String;
 invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 move-result v1
+if-eqz v1, :cond_0
+const/4 v1, 0x0
+goto :goto_0
+:cond_0
 move-object v1, p2
 :goto_0
 iput-object v1, v0, Lpz;->b:Ljava/lang/String;
@@ -82,7 +86,44 @@ return-void
 .end method
 .method constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJLjava/lang/String;ZZJLjava/lang/String;JJIZZZLjava/lang/String;)V
 .locals 3
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+move-object v0, p0
+invoke-direct {p0}, Lba;-><init>()V
+move-object v1, p1
+iput-object v1, v0, Lpz;->a:Ljava/lang/String;
+move-object v1, p2
+iput-object v1, v0, Lpz;->b:Ljava/lang/String;
+move-object v1, p3
+iput-object v1, v0, Lpz;->c:Ljava/lang/String;
+move-wide v1, p12
+iput-wide v1, v0, Lpz;->j:J
+move-object v1, p4
+iput-object v1, v0, Lpz;->d:Ljava/lang/String;
+move-wide v1, p5
+iput-wide v1, v0, Lpz;->e:J
+move-wide v1, p7
+iput-wide v1, v0, Lpz;->f:J
+move-object v1, p9
+iput-object v1, v0, Lpz;->g:Ljava/lang/String;
+move v1, p10
+iput-boolean v1, v0, Lpz;->h:Z
+move v1, p11
+iput-boolean v1, v0, Lpz;->i:Z
+move-object/from16 v1, p14
+iput-object v1, v0, Lpz;->k:Ljava/lang/String;
+move-wide/from16 v1, p15
+iput-wide v1, v0, Lpz;->l:J
+move-wide/from16 v1, p17
+iput-wide v1, v0, Lpz;->m:J
+move/from16 v1, p19
+iput v1, v0, Lpz;->n:I
+move/from16 v1, p20
+iput-boolean v1, v0, Lpz;->o:Z
+move/from16 v1, p21
+iput-boolean v1, v0, Lpz;->p:Z
+move/from16 v1, p22
+iput-boolean v1, v0, Lpz;->q:Z
+move-object/from16 v1, p23
+iput-object v1, v0, Lpz;->r:Ljava/lang/String;
 return-void
 .end method
 .method public final writeToParcel(Landroid/os/Parcel;I)V

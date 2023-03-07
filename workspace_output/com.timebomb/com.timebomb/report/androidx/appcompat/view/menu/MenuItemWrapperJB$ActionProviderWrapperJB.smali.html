@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.appcompat.view.menu</a></li>
+        <li><i class="ico ico-class"></i> MenuItemWrapperJB$ActionProviderWrapperJB.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Landroidx/appcompat/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;
+.super Landroidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper;
+.source "MenuItemWrapperJB.java"
+.implements Landroid/view/ActionProvider$VisibilityListener;
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Landroidx/appcompat/view/menu/MenuItemWrapperJB;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x0
+name = "ActionProviderWrapperJB"
+.end annotation
+
+.field  mListener:Landroidx/core/view/ActionProvider$VisibilityListener;
+.field final synthetic this$0:Landroidx/appcompat/view/menu/MenuItemWrapperJB;
+
+
+.method public constructor &lt;init&gt;(Landroidx/appcompat/view/menu/MenuItemWrapperJB;Landroid/content/Context;Landroid/view/ActionProvider;)V
+<span class="">	.locals 0</span>
+<span class="">	.param p1, "this$0"    # Landroidx/appcompat/view/menu/MenuItemWrapperJB;</span>
+<span class="">	.param p2, "context"    # Landroid/content/Context;</span>
+<span class="">	.param p3, "inner"    # Landroid/view/ActionProvider;</span>
+
+<span class="missed">	iput-object p1, p0, Landroidx/appcompat/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;->this$0:Landroidx/appcompat/view/menu/MenuItemWrapperJB;</span>
+<span class="missed">	invoke-direct {p0, p1, p2, p3}, Landroidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper;-><init>(Landroidx/appcompat/view/menu/MenuItemWrapperICS;Landroid/content/Context;Landroid/view/ActionProvider;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public isVisible()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;->mInner:Landroid/view/ActionProvider;</span>
+<span class="">	invoke-virtual {v0}, Landroid/view/ActionProvider;->isVisible()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public onActionProviderVisibilityChanged(Z)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "isVisible"    # Z</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;->mListener:Landroidx/core/view/ActionProvider$VisibilityListener;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/view/ActionProvider$VisibilityListener;->onActionProviderVisibilityChanged(Z)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public onCreateActionView(Landroid/view/MenuItem;)Landroid/view/View;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "forItem"    # Landroid/view/MenuItem;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;->mInner:Landroid/view/ActionProvider;</span>
+<span class="">	invoke-virtual {v0, p1}, Landroid/view/ActionProvider;->onCreateActionView(Landroid/view/MenuItem;)Landroid/view/View;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public overridesItemVisibility()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;->mInner:Landroid/view/ActionProvider;</span>
+<span class="">	invoke-virtual {v0}, Landroid/view/ActionProvider;->overridesItemVisibility()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public refreshVisibility()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;->mInner:Landroid/view/ActionProvider;</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/view/ActionProvider;->refreshVisibility()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setVisibilityListener(Landroidx/core/view/ActionProvider$VisibilityListener;)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "listener"    # Landroidx/core/view/ActionProvider$VisibilityListener;</span>
+
+<span class="missed">	iput-object p1, p0, Landroidx/appcompat/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;->mListener:Landroidx/core/view/ActionProvider$VisibilityListener;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;->mInner:Landroid/view/ActionProvider;</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	move-object v1, p0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroid/view/ActionProvider;->setVisibilityListener(Landroid/view/ActionProvider$VisibilityListener;)V</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

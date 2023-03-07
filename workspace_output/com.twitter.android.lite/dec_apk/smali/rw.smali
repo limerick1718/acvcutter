@@ -63,8 +63,15 @@ value = {
 .end annotation
 iget-object v0, p0, Lrw;->b:Ljava/lang/Object;
 monitor-enter v0
+:try_start_0
 iget-object v1, p0, Lrw;->c:Lri;
+if-nez v1, :cond_0
 monitor-exit v0
+return-void
+:cond_0
+monitor-exit v0
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 iget-object v0, p0, Lrw;->a:Ljava/util/concurrent/Executor;
 new-instance v1, Lrx;
 invoke-direct {v1, p0, p1}, Lrx;-><init>(Lrw;Lrm;)V
@@ -72,6 +79,9 @@ invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/R
 return-void
 :catchall_0
 move-exception p1
+:try_start_1
 monitor-exit v0
+:try_end_1
+.catchall {:try_start_1 .. :try_end_1} :catchall_0
 throw p1
 .end method

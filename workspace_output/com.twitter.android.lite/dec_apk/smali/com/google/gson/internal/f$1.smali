@@ -19,16 +19,20 @@ value = {
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public a(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
 .locals 0
-const/4 v0, 0x0
-return v0
+invoke-interface {p1, p2}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+move-result p1
+return p1
 .end method
 .method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
 .locals 0
-const/4 v0, 0x0
-return v0
+check-cast p1, Ljava/lang/Comparable;
+check-cast p2, Ljava/lang/Comparable;
+invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/f$1;->a(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
+move-result p1
+return p1
 .end method

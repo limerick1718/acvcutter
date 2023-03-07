@@ -18,6 +18,7 @@ return-void
 .end method
 .method public run()V
 .locals 10
+:try_start_0
 iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersEventsHandler$4;->this$0:Lcom/crashlytics/android/answers/AnswersEventsHandler;
 invoke-static {v0}, Lcom/crashlytics/android/answers/AnswersEventsHandler;->access$000(Lcom/crashlytics/android/answers/AnswersEventsHandler;)Lcom/crashlytics/android/answers/SessionMetadataCollector;
 move-result-object v0
@@ -49,5 +50,16 @@ move-result-object v8
 move-object v1, v9
 invoke-direct/range {v1 .. v8}, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;-><init>(Luw;Landroid/content/Context;Ljava/util/concurrent/ScheduledExecutorService;Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;Lxi;Lcom/crashlytics/android/answers/SessionEventMetadata;Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;)V
 iput-object v9, v0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->strategy:Lcom/crashlytics/android/answers/SessionAnalyticsManagerStrategy;
+:try_end_0
+.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+goto :goto_0
+:catch_0
+move-exception v0
+invoke-static {}, Luq;->g()Luz;
+move-result-object v1
+const-string v2, "Answers"
+const-string v3, "Failed to enable events"
+invoke-interface {v1, v2, v3, v0}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+:goto_0
 return-void
 .end method

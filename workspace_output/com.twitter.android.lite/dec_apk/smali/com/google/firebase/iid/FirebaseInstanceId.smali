@@ -40,8 +40,10 @@ const/4 v0, 0x0
 iput-boolean v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->j:Z
 invoke-static {p1}, Lcom/google/firebase/iid/q;->a(Lcom/google/firebase/FirebaseApp;)Ljava/lang/String;
 move-result-object v0
+if-eqz v0, :cond_4
 const-class v0, Lcom/google/firebase/iid/FirebaseInstanceId;
 monitor-enter v0
+:try_start_0
 sget-object v1, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lcom/google/firebase/iid/z;
 if-nez v1, :cond_0
 new-instance v1, Lcom/google/firebase/iid/z;
@@ -51,6 +53,8 @@ invoke-direct {v1, v2}, Lcom/google/firebase/iid/z;-><init>(Landroid/content/Con
 sput-object v1, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lcom/google/firebase/iid/z;
 :cond_0
 monitor-exit v0
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 iput-object p1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->e:Lcom/google/firebase/FirebaseApp;
 iput-object p2, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->f:Lcom/google/firebase/iid/q;
 iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Lcom/google/firebase/iid/b;
@@ -59,6 +63,13 @@ const-class v0, Lcom/google/firebase/iid/b;
 invoke-virtual {p1, v0}, Lcom/google/firebase/FirebaseApp;->a(Ljava/lang/Class;)Ljava/lang/Object;
 move-result-object v0
 check-cast v0, Lcom/google/firebase/iid/b;
+if-eqz v0, :cond_1
+invoke-interface {v0}, Lcom/google/firebase/iid/b;->b()Z
+move-result v1
+if-eqz v1, :cond_1
+iput-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Lcom/google/firebase/iid/b;
+goto :goto_0
+:cond_1
 new-instance v0, Lcom/google/firebase/iid/au;
 invoke-direct {v0, p1, p2, p3}, Lcom/google/firebase/iid/au;-><init>(Lcom/google/firebase/FirebaseApp;Lcom/google/firebase/iid/q;Ljava/util/concurrent/Executor;)V
 iput-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Lcom/google/firebase/iid/b;
@@ -86,7 +97,15 @@ invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->m()V
 return-void
 :catchall_0
 move-exception p1
+:try_start_1
 monitor-exit v0
+:try_end_1
+.catchall {:try_start_1 .. :try_end_1} :catchall_0
+throw p1
+:cond_4
+new-instance p1, Ljava/lang/IllegalStateException;
+const-string p2, "FirebaseInstanceId failed to initialize, FirebaseApp is missing project ID"
+invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 throw p1
 .end method
 .method constructor <init>(Lcom/google/firebase/FirebaseApp;Lso;)V
@@ -135,15 +154,51 @@ Ljava/io/IOException;
 }
 .end annotation
 const-wide/16 v0, 0x7530
+:try_start_0
 sget-object v2, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 invoke-static {p1, v0, v1, v2}, Lrp;->a(Lrm;JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
 move-result-object p1
+:try_end_0
+.catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
+.catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+.catch Ljava/util/concurrent/TimeoutException; {:try_start_0 .. :try_end_0} :catch_0
 return-object p1
+:catch_0
+new-instance p1, Ljava/io/IOException;
+const-string v0, "SERVICE_NOT_AVAILABLE"
+invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+throw p1
+:catch_1
+move-exception p1
+invoke-virtual {p1}, Ljava/util/concurrent/ExecutionException;->getCause()Ljava/lang/Throwable;
+move-result-object v0
+instance-of v1, v0, Ljava/io/IOException;
+if-eqz v1, :cond_1
+invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+move-result-object p1
+const-string v1, "INSTANCE_ID_RESET"
+invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+move-result p1
+if-eqz p1, :cond_0
+invoke-virtual {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->h()V
+:cond_0
+check-cast v0, Ljava/io/IOException;
+throw v0
+:cond_1
+instance-of v1, v0, Ljava/lang/RuntimeException;
+if-eqz v1, :cond_2
+check-cast v0, Ljava/lang/RuntimeException;
+throw v0
+:cond_2
+new-instance v0, Ljava/io/IOException;
+invoke-direct {v0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
+throw v0
 .end method
 .method static a(Ljava/lang/Runnable;J)V
 .locals 5
 const-class v0, Lcom/google/firebase/iid/FirebaseInstanceId;
 monitor-enter v0
+:try_start_0
 sget-object v1, Lcom/google/firebase/iid/FirebaseInstanceId;->c:Ljava/util/concurrent/ScheduledThreadPoolExecutor;
 if-nez v1, :cond_0
 new-instance v1, Ljava/util/concurrent/ScheduledThreadPoolExecutor;
@@ -162,6 +217,8 @@ return-void
 :catchall_0
 move-exception p0
 monitor-exit v0
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 throw p0
 .end method
 .method private final b(Ljava/lang/String;Ljava/lang/String;)Lrm;
@@ -194,6 +251,11 @@ invoke-virtual {v6}, Lrn;->a()Lrm;
 move-result-object p1
 return-object p1
 .end method
+.method static synthetic b(Lcom/google/firebase/iid/FirebaseInstanceId;)V
+.locals 0
+invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->m()V
+return-void
+.end method
 .method private static c(Ljava/lang/String;Ljava/lang/String;)Lcom/google/firebase/iid/aa;
 .locals 2
 sget-object v0, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lcom/google/firebase/iid/z;
@@ -206,12 +268,21 @@ return-object p0
 .locals 1
 invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
 move-result v0
+if-nez v0, :cond_1
 const-string v0, "fcm"
 invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 move-result v0
+if-nez v0, :cond_1
 const-string v0, "gcm"
 invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 move-result v0
+if-eqz v0, :cond_0
+goto :goto_0
+:cond_0
+return-object p0
+:cond_1
+:goto_0
+const-string p0, "*"
 return-object p0
 .end method
 .method static g()Z
@@ -220,9 +291,20 @@ const/4 v0, 0x3
 const-string v1, "FirebaseInstanceId"
 invoke-static {v1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 move-result v2
+if-nez v2, :cond_1
 sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 const/16 v3, 0x17
+if-ne v2, v3, :cond_0
+invoke-static {v1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+move-result v0
+if-eqz v0, :cond_0
+goto :goto_0
+:cond_0
 const/4 v0, 0x0
+return v0
+:cond_1
+:goto_0
+const/4 v0, 0x1
 return v0
 .end method
 .method public static getInstance(Lcom/google/firebase/FirebaseApp;)Lcom/google/firebase/iid/FirebaseInstanceId;
@@ -252,7 +334,7 @@ if-nez v0, :cond_0
 iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->i:Lcom/google/firebase/iid/ae;
 invoke-virtual {v0}, Lcom/google/firebase/iid/ae;->a()Z
 move-result v0
-goto/32 :cond_1
+if-eqz v0, :cond_1
 :cond_0
 invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->n()V
 :cond_1
@@ -261,10 +343,13 @@ return-void
 .method private final declared-synchronized n()V
 .locals 2
 monitor-enter p0
+:try_start_0
 iget-boolean v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->j:Z
 if-nez v0, :cond_0
 const-wide/16 v0, 0x0
 invoke-virtual {p0, v0, v1}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(J)V
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 :cond_0
 monitor-exit p0
 return-void
@@ -296,6 +381,7 @@ invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 move-result-object v0
 invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 move-result-object v1
+if-eq v0, v1, :cond_0
 invoke-direct {p0, p1, p2}, Lcom/google/firebase/iid/FirebaseInstanceId;->b(Ljava/lang/String;Ljava/lang/String;)Lrm;
 move-result-object p1
 invoke-direct {p0, p1}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Lrm;)Ljava/lang/Object;
@@ -304,6 +390,11 @@ check-cast p1, Lcom/google/firebase/iid/a;
 invoke-interface {p1}, Lcom/google/firebase/iid/a;->a()Ljava/lang/String;
 move-result-object p1
 return-object p1
+:cond_0
+new-instance p1, Ljava/io/IOException;
+const-string p2, "MAIN_THREAD"
+invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method
 .method final synthetic a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrm;
 .locals 1
@@ -318,6 +409,7 @@ monitor-enter p0
 const-wide/16 v0, 0x1e
 const/4 v2, 0x1
 shl-long v3, p1, v2
+:try_start_0
 invoke-static {v0, v1, v3, v4}, Ljava/lang/Math;->max(JJ)J
 move-result-wide v0
 sget-wide v3, Lcom/google/firebase/iid/FirebaseInstanceId;->a:J
@@ -331,6 +423,8 @@ move-object v6, p0
 invoke-direct/range {v5 .. v10}, Lcom/google/firebase/iid/ab;-><init>(Lcom/google/firebase/iid/FirebaseInstanceId;Lcom/google/firebase/iid/q;Lcom/google/firebase/iid/ae;J)V
 invoke-static {v0, p1, p2}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Ljava/lang/Runnable;J)V
 iput-boolean v2, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->j:Z
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 monitor-exit p0
 return-void
 :catchall_0
@@ -345,7 +439,28 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
+invoke-virtual {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->e()Lcom/google/firebase/iid/aa;
+move-result-object v0
+if-eqz v0, :cond_0
+iget-object v1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->f:Lcom/google/firebase/iid/q;
+invoke-virtual {v1}, Lcom/google/firebase/iid/q;->b()Ljava/lang/String;
+move-result-object v1
+invoke-virtual {v0, v1}, Lcom/google/firebase/iid/aa;->b(Ljava/lang/String;)Z
+move-result v1
+if-nez v1, :cond_0
+invoke-static {}, Lcom/google/firebase/iid/FirebaseInstanceId;->o()Ljava/lang/String;
+move-result-object v1
+iget-object v0, v0, Lcom/google/firebase/iid/aa;->a:Ljava/lang/String;
+iget-object v2, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Lcom/google/firebase/iid/b;
+invoke-interface {v2, v1, v0, p1}, Lcom/google/firebase/iid/b;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrm;
+move-result-object p1
+invoke-direct {p0, p1}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Lrm;)Ljava/lang/Object;
 return-void
+:cond_0
+new-instance p1, Ljava/io/IOException;
+const-string v0, "token not available"
+invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method
 .method final synthetic a(Ljava/lang/String;Ljava/lang/String;Lrn;Ljava/lang/String;)V
 .locals 9
@@ -353,6 +468,19 @@ invoke-static {}, Lcom/google/firebase/iid/FirebaseInstanceId;->o()Ljava/lang/St
 move-result-object v6
 invoke-static {p1, p2}, Lcom/google/firebase/iid/FirebaseInstanceId;->c(Ljava/lang/String;Ljava/lang/String;)Lcom/google/firebase/iid/aa;
 move-result-object p2
+if-eqz p2, :cond_0
+iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->f:Lcom/google/firebase/iid/q;
+invoke-virtual {v0}, Lcom/google/firebase/iid/q;->b()Ljava/lang/String;
+move-result-object v0
+invoke-virtual {p2, v0}, Lcom/google/firebase/iid/aa;->b(Ljava/lang/String;)Z
+move-result v0
+if-nez v0, :cond_0
+new-instance p1, Lcom/google/firebase/iid/ba;
+iget-object p2, p2, Lcom/google/firebase/iid/aa;->a:Ljava/lang/String;
+invoke-direct {p1, v6, p2}, Lcom/google/firebase/iid/ba;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+invoke-virtual {p3, p1}, Lrn;->a(Ljava/lang/Object;)V
+return-void
+:cond_0
 invoke-static {p2}, Lcom/google/firebase/iid/aa;->a(Lcom/google/firebase/iid/aa;)Ljava/lang/String;
 move-result-object v3
 iget-object p2, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->h:Lcom/google/firebase/iid/t;
@@ -380,6 +508,7 @@ return-void
 .locals 6
 invoke-virtual {p5}, Lrm;->b()Z
 move-result v0
+if-eqz v0, :cond_0
 invoke-virtual {p5}, Lrm;->d()Ljava/lang/Object;
 move-result-object p5
 check-cast p5, Ljava/lang/String;
@@ -396,11 +525,19 @@ new-instance p1, Lcom/google/firebase/iid/ba;
 invoke-direct {p1, p4, p5}, Lcom/google/firebase/iid/ba;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 invoke-virtual {p3, p1}, Lrn;->a(Ljava/lang/Object;)V
 return-void
+:cond_0
+invoke-virtual {p5}, Lrm;->e()Ljava/lang/Exception;
+move-result-object p1
+invoke-virtual {p3, p1}, Lrn;->a(Ljava/lang/Exception;)V
+return-void
 .end method
 .method final declared-synchronized a(Z)V
 .locals 0
 monitor-enter p0
+:try_start_0
 iput-boolean p1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->j:Z
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 monitor-exit p0
 return-void
 :catchall_0
@@ -420,7 +557,28 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
+invoke-virtual {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->e()Lcom/google/firebase/iid/aa;
+move-result-object v0
+if-eqz v0, :cond_0
+iget-object v1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->f:Lcom/google/firebase/iid/q;
+invoke-virtual {v1}, Lcom/google/firebase/iid/q;->b()Ljava/lang/String;
+move-result-object v1
+invoke-virtual {v0, v1}, Lcom/google/firebase/iid/aa;->b(Ljava/lang/String;)Z
+move-result v1
+if-nez v1, :cond_0
+invoke-static {}, Lcom/google/firebase/iid/FirebaseInstanceId;->o()Ljava/lang/String;
+move-result-object v1
+iget-object v2, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Lcom/google/firebase/iid/b;
+iget-object v0, v0, Lcom/google/firebase/iid/aa;->a:Ljava/lang/String;
+invoke-interface {v2, v1, v0, p1}, Lcom/google/firebase/iid/b;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrm;
+move-result-object p1
+invoke-direct {p0, p1}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Lrm;)Ljava/lang/Object;
 return-void
+:cond_0
+new-instance p1, Ljava/io/IOException;
+const-string v0, "token not available"
+invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method
 .method public c()Ljava/lang/String;
 .locals 1
@@ -435,12 +593,21 @@ return-object v0
 .end annotation
 invoke-virtual {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->e()Lcom/google/firebase/iid/aa;
 move-result-object v0
+if-eqz v0, :cond_0
 iget-object v1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->f:Lcom/google/firebase/iid/q;
 invoke-virtual {v1}, Lcom/google/firebase/iid/q;->b()Ljava/lang/String;
 move-result-object v1
 invoke-virtual {v0, v1}, Lcom/google/firebase/iid/aa;->b(Ljava/lang/String;)Z
 move-result v1
+if-eqz v1, :cond_1
+:cond_0
+invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->n()V
+:cond_1
+if-eqz v0, :cond_2
 iget-object v0, v0, Lcom/google/firebase/iid/aa;->a:Ljava/lang/String;
+return-object v0
+:cond_2
+const/4 v0, 0x0
 return-object v0
 .end method
 .method final e()Lcom/google/firebase/iid/aa;
@@ -470,7 +637,24 @@ return-object v0
 .end method
 .method final declared-synchronized h()V
 .locals 1
+monitor-enter p0
+:try_start_0
+sget-object v0, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lcom/google/firebase/iid/z;
+invoke-virtual {v0}, Lcom/google/firebase/iid/z;->b()V
+iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->k:Lcom/google/firebase/iid/FirebaseInstanceId$a;
+invoke-virtual {v0}, Lcom/google/firebase/iid/FirebaseInstanceId$a;->a()Z
+move-result v0
+if-eqz v0, :cond_0
+invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->n()V
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
+:cond_0
+monitor-exit p0
 return-void
+:catchall_0
+move-exception v0
+monitor-exit p0
+throw v0
 .end method
 .method final i()Z
 .locals 1
@@ -493,9 +677,23 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
+invoke-static {}, Lcom/google/firebase/iid/FirebaseInstanceId;->o()Ljava/lang/String;
+move-result-object v0
+invoke-virtual {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->e()Lcom/google/firebase/iid/aa;
+move-result-object v1
+invoke-static {v1}, Lcom/google/firebase/iid/aa;->a(Lcom/google/firebase/iid/aa;)Ljava/lang/String;
+move-result-object v1
+iget-object v2, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Lcom/google/firebase/iid/b;
+invoke-interface {v2, v0, v1}, Lcom/google/firebase/iid/b;->a(Ljava/lang/String;Ljava/lang/String;)Lrm;
+move-result-object v0
+invoke-direct {p0, v0}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Lrm;)Ljava/lang/Object;
 return-void
 .end method
 .method final l()V
 .locals 2
+sget-object v0, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lcom/google/firebase/iid/z;
+const-string v1, ""
+invoke-virtual {v0, v1}, Lcom/google/firebase/iid/z;->c(Ljava/lang/String;)V
+invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->n()V
 return-void
 .end method

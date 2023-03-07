@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.appcompat.view.menu</a></li>
+        <li><i class="ico ico-class"></i> MenuPopup.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class abstract Landroidx/appcompat/view/menu/MenuPopup;
+.super Ljava/lang/Object;
+.source "MenuPopup.java"
+.implements Landroidx/appcompat/view/menu/ShowableListMenu;
+.implements Landroidx/appcompat/view/menu/MenuPresenter;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
+
+
+.field private mEpicenterBounds:Landroid/graphics/Rect;
+
+
+.method constructor &lt;init&gt;()V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected static measureIndividualMenuWidth(Landroid/widget/ListAdapter;Landroid/view/ViewGroup;Landroid/content/Context;I)I
+<span class="">	.locals 9</span>
+<span class="">	.param p0, "adapter"    # Landroid/widget/ListAdapter;</span>
+<span class="">	.param p1, "parent"    # Landroid/view/ViewGroup;</span>
+<span class="">	.param p2, "context"    # Landroid/content/Context;</span>
+<span class="">	.param p3, "maxAllowedWidth"    # I</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	invoke-static {v3, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I</span>
+<span class="missed">	move-result v4</span>
+<span class="">	invoke-static {v3, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I</span>
+<span class="missed">	move-result v3</span>
+<span class="">	invoke-interface {p0}, Landroid/widget/ListAdapter;->getCount()I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v6, v5, :cond_4</span>
+<span class="">	invoke-interface {p0, v6}, Landroid/widget/ListAdapter;->getItemViewType(I)I</span>
+<span class="missed">	move-result v7</span>
+<span class="missed">	if-eq v7, v2, :cond_0</span>
+<span class="missed">	move v2, v7</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-nez p1, :cond_1</span>
+<span class="missed">	new-instance v8, Landroid/widget/FrameLayout;</span>
+<span class="missed">	invoke-direct {v8, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V</span>
+<span class="missed">	move-object p1, v8</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-interface {p0, v6, v1, p1}, Landroid/widget/ListAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v1, v4, v3}, Landroid/view/View;->measure(II)V</span>
+<span class="">	invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	if-lt v8, p3, :cond_2</span>
+<span class="">	return p3</span>
+<span class="">	:cond_2</span>
+<span class="missed">	if-le v8, v0, :cond_3</span>
+<span class="missed">	move v0, v8</span>
+<span class="">	:cond_3</span>
+<span class="missed">	add-int/lit8 v6, v6, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_4</span>
+<span class="">	return v0</span>
+.end method
+
+.method protected static shouldPreserveIconSpacing(Landroidx/appcompat/view/menu/MenuBuilder;)Z
+<span class="">	.locals 5</span>
+<span class="">	.param p0, "menu"    # Landroidx/appcompat/view/menu/MenuBuilder;</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/view/menu/MenuBuilder;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v2, v1, :cond_1</span>
+<span class="">	invoke-virtual {p0, v2}, Landroidx/appcompat/view/menu/MenuBuilder;->getItem(I)Landroid/view/MenuItem;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	invoke-interface {v3}, Landroid/view/MenuItem;->isVisible()Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-eqz v4, :cond_0</span>
+<span class="">	invoke-interface {v3}, Landroid/view/MenuItem;->getIcon()Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	if-eqz v4, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_1</span>
+<span class="">	return v0</span>
+.end method
+
+.method protected static toMenuAdapter(Landroid/widget/ListAdapter;)Landroidx/appcompat/view/menu/MenuAdapter;
+<span class="">	.locals 1</span>
+<span class="">	.param p0, "adapter"    # Landroid/widget/ListAdapter;</span>
+
+<span class="missed">	instance-of v0, p0, Landroid/widget/HeaderViewListAdapter;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	move-object v0, p0</span>
+<span class="missed">	check-cast v0, Landroid/widget/HeaderViewListAdapter;</span>
+<span class="">	invoke-virtual {v0}, Landroid/widget/HeaderViewListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Landroidx/appcompat/view/menu/MenuAdapter;</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	move-object v0, p0</span>
+<span class="missed">	check-cast v0, Landroidx/appcompat/view/menu/MenuAdapter;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public abstract addMenu(Landroidx/appcompat/view/menu/MenuBuilder;)V
+<span class="">	</span>
+
+.end method
+
+.method protected closeMenuOnSubMenuOpened()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	return v0</span>
+.end method
+
+.method public collapseItemActionView(Landroidx/appcompat/view/menu/MenuBuilder;Landroidx/appcompat/view/menu/MenuItemImpl;)Z
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "menu"    # Landroidx/appcompat/view/menu/MenuBuilder;</span>
+<span class="">	.param p2, "item"    # Landroidx/appcompat/view/menu/MenuItemImpl;</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public expandItemActionView(Landroidx/appcompat/view/menu/MenuBuilder;Landroidx/appcompat/view/menu/MenuItemImpl;)Z
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "menu"    # Landroidx/appcompat/view/menu/MenuBuilder;</span>
+<span class="">	.param p2, "item"    # Landroidx/appcompat/view/menu/MenuItemImpl;</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public getEpicenterBounds()Landroid/graphics/Rect;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuPopup;->mEpicenterBounds:Landroid/graphics/Rect;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getId()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public getMenuView(Landroid/view/ViewGroup;)Landroidx/appcompat/view/menu/MenuView;
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "root"    # Landroid/view/ViewGroup;</span>
+
+<span class="missed">	new-instance v0, Ljava/lang/UnsupportedOperationException;</span>
+<span class="missed">	const-string v1, "MenuPopups manage their own views"</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public initForMenu(Landroid/content/Context;Landroidx/appcompat/view/menu/MenuBuilder;)V
+<span class="">	.locals 0</span>
+<span class="">	.param p1, "context"    # Landroid/content/Context;</span>
+<span class="">	.param p2, "menu"    # Landroidx/appcompat/view/menu/MenuBuilder;</span>
+
+<span class="">	return-void</span>
+.end method
+
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+<span class="">	.locals 5</span>
+<span class="">	.param p2, "view"    # Landroid/view/View;</span>
+<span class="">	.param p3, "position"    # I</span>
+<span class="">	.param p4, "id"    # J</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Landroid/widget/AdapterView<",</span>
+<span class="">	"*>;",</span>
+<span class="">	"Landroid/view/View;",</span>
+<span class="">	"IJ)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Landroid/widget/ListAdapter;</span>
+<span class="">	invoke-static {v0}, Landroidx/appcompat/view/menu/MenuPopup;->toMenuAdapter(Landroid/widget/ListAdapter;)Landroidx/appcompat/view/menu/MenuAdapter;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iget-object v2, v1, Landroidx/appcompat/view/menu/MenuAdapter;->mAdapterMenu:Landroidx/appcompat/view/menu/MenuBuilder;</span>
+<span class="">	invoke-interface {v0, p3}, Landroid/widget/ListAdapter;->getItem(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	check-cast v3, Landroid/view/MenuItem;</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/view/menu/MenuPopup;->closeMenuOnSubMenuOpened()Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-eqz v4, :cond_0</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v4, 0x4</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {v2, v3, p0, v4}, Landroidx/appcompat/view/menu/MenuBuilder;->performItemAction(Landroid/view/MenuItem;Landroidx/appcompat/view/menu/MenuPresenter;I)Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method public abstract setAnchorView(Landroid/view/View;)V
+<span class="">	</span>
+
+.end method
+
+.method public setEpicenterBounds(Landroid/graphics/Rect;)V
+<span class="">	.locals 0</span>
+<span class="">	.param p1, "bounds"    # Landroid/graphics/Rect;</span>
+
+<span class="missed">	iput-object p1, p0, Landroidx/appcompat/view/menu/MenuPopup;->mEpicenterBounds:Landroid/graphics/Rect;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public abstract setForceShowIcon(Z)V
+<span class="">	</span>
+
+.end method
+
+.method public abstract setGravity(I)V
+<span class="">	</span>
+
+.end method
+
+.method public abstract setHorizontalOffset(I)V
+<span class="">	</span>
+
+.end method
+
+.method public abstract setOnDismissListener(Landroid/widget/PopupWindow$OnDismissListener;)V
+<span class="">	</span>
+
+.end method
+
+.method public abstract setShowTitle(Z)V
+<span class="">	</span>
+
+.end method
+
+.method public abstract setVerticalOffset(I)V
+<span class="">	</span>
+
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

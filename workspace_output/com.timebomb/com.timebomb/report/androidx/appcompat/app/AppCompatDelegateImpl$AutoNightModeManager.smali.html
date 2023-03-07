@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.appcompat.app</a></li>
+        <li><i class="ico ico-class"></i> AppCompatDelegateImpl$AutoNightModeManager.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;
+.super Ljava/lang/Object;
+.source "AppCompatDelegateImpl.java"
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Landroidx/appcompat/app/AppCompatDelegateImpl;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x10
+name = "AutoNightModeManager"
+.end annotation
+
+.field private mAutoTimeChangeReceiver:Landroid/content/BroadcastReceiver;
+.field private mAutoTimeChangeReceiverFilter:Landroid/content/IntentFilter;
+.field private mIsNight:Z
+.field private mTwilightManager:Landroidx/appcompat/app/TwilightManager;
+.field final synthetic this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
+
+
+.method constructor &lt;init&gt;(Landroidx/appcompat/app/AppCompatDelegateImpl;Landroidx/appcompat/app/TwilightManager;)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "this$0"    # Landroidx/appcompat/app/AppCompatDelegateImpl;</span>
+<span class="">	.param p2, "twilightManager"    # Landroidx/appcompat/app/TwilightManager;</span>
+
+<span class="missed">	iput-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object p2, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mTwilightManager:Landroidx/appcompat/app/TwilightManager;</span>
+<span class="">	invoke-virtual {p2}, Landroidx/appcompat/app/TwilightManager;->isNight()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iput-boolean v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mIsNight:Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method  cleanup()V
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiver:Landroid/content/BroadcastReceiver;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;</span>
+<span class="missed">	iget-object v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mContext:Landroid/content/Context;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiver:Landroid/content/BroadcastReceiver;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiver:Landroid/content/BroadcastReceiver;</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method  dispatchTimeChanged()V
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mTwilightManager:Landroidx/appcompat/app/TwilightManager;</span>
+<span class="">	invoke-virtual {v0}, Landroidx/appcompat/app/TwilightManager;->isNight()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iget-boolean v1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mIsNight:Z</span>
+<span class="missed">	if-eq v0, v1, :cond_0</span>
+<span class="missed">	iput-boolean v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mIsNight:Z</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;</span>
+<span class="missed">	invoke-virtual {v1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->applyDayNight()Z</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method  getApplyableNightMode()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mTwilightManager:Landroidx/appcompat/app/TwilightManager;</span>
+<span class="">	invoke-virtual {v0}, Landroidx/appcompat/app/TwilightManager;->isNight()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iput-boolean v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mIsNight:Z</span>
+<span class="missed">	iget-boolean v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mIsNight:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	:goto_0</span>
+<span class="">	return v0</span>
+.end method
+
+.method  setup()V
+<span class="">	.locals 3</span>
+
+<span class="missed">	invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->cleanup()V</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiver:Landroid/content/BroadcastReceiver;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	new-instance v0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager$1;</span>
+<span class="missed">	invoke-direct {v0, p0}, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager$1;-><init>(Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;)V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiver:Landroid/content/BroadcastReceiver;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiverFilter:Landroid/content/IntentFilter;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	new-instance v0, Landroid/content/IntentFilter;</span>
+<span class="missed">	invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiverFilter:Landroid/content/IntentFilter;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiverFilter:Landroid/content/IntentFilter;</span>
+<span class="missed">	const-string v1, "android.intent.action.TIME_SET"</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiverFilter:Landroid/content/IntentFilter;</span>
+<span class="missed">	const-string v1, "android.intent.action.TIMEZONE_CHANGED"</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiverFilter:Landroid/content/IntentFilter;</span>
+<span class="missed">	const-string v1, "android.intent.action.TIME_TICK"</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;</span>
+<span class="missed">	iget-object v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mContext:Landroid/content/Context;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiver:Landroid/content/BroadcastReceiver;</span>
+<span class="missed">	iget-object v2, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->mAutoTimeChangeReceiverFilter:Landroid/content/IntentFilter;</span>
+<span class="missed">	invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../.resources/report.js"></script>
+</body>
+</html>

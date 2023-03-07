@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.core.util</a></li>
+        <li><i class="ico ico-class"></i> TimeUtils.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Landroidx/core/util/TimeUtils;
+.super Ljava/lang/Object;
+.source "TimeUtils.java"
+
+
+.field public static final HUNDRED_DAY_FIELD_LEN:I = 0x13
+.field private static final SECONDS_PER_DAY:I = 0x15180
+.field private static final SECONDS_PER_HOUR:I = 0xe10
+.field private static final SECONDS_PER_MINUTE:I = 0x3c
+.field private static sFormatStr:[C
+.field private static final sFormatSync:Ljava/lang/Object;
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Ljava/lang/Object;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	sput-object v0, Landroidx/core/util/TimeUtils;->sFormatSync:Ljava/lang/Object;</span>
+<span class="missed">	const/16 v0, 0x18</span>
+<span class="missed">	new-array v0, v0, [C</span>
+<span class="missed">	sput-object v0, Landroidx/core/util/TimeUtils;->sFormatStr:[C</span>
+<span class="">	return-void</span>
+.end method
+
+.method private constructor &lt;init&gt;()V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method private static accumField(IIZI)I
+<span class="">	.locals 1</span>
+<span class="">	.param p0, "amt"    # I</span>
+<span class="">	.param p1, "suffix"    # I</span>
+<span class="">	.param p2, "always"    # Z</span>
+<span class="">	.param p3, "zeropad"    # I</span>
+
+<span class="missed">	const/16 v0, 0x63</span>
+<span class="missed">	if-gt p0, v0, :cond_5</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="missed">	const/4 v0, 0x3</span>
+<span class="missed">	if-lt p3, v0, :cond_0</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/16 v0, 0x9</span>
+<span class="missed">	if-gt p0, v0, :cond_4</span>
+<span class="missed">	if-eqz p2, :cond_1</span>
+<span class="missed">	const/4 v0, 0x2</span>
+<span class="missed">	if-lt p3, v0, :cond_1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	if-nez p2, :cond_3</span>
+<span class="missed">	if-lez p0, :cond_2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	add-int/lit8 v0, p1, 0x1</span>
+<span class="">	return v0</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_4</span>
+<span class="missed">	add-int/lit8 v0, p1, 0x2</span>
+<span class="">	return v0</span>
+<span class="">	:goto_2</span>
+<span class="">	:cond_5</span>
+<span class="missed">	add-int/lit8 v0, p1, 0x3</span>
+<span class="">	return v0</span>
+.end method
+
+.method public static formatDuration(JJLjava/io/PrintWriter;)V
+<span class="">	.locals 3</span>
+<span class="">	.param p0, "time"    # J</span>
+<span class="">	.param p2, "now"    # J</span>
+<span class="">	.param p4, "pw"    # Ljava/io/PrintWriter;</span>
+
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	cmp-long v0, p0, v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	const-string v0, "--"</span>
+<span class="missed">	invoke-virtual {p4, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sub-long v0, p0, p2</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	invoke-static {v0, v1, p4, v2}, Landroidx/core/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public static formatDuration(JLjava/io/PrintWriter;)V
+<span class="">	.locals 1</span>
+<span class="">	.param p0, "duration"    # J</span>
+<span class="">	.param p2, "pw"    # Ljava/io/PrintWriter;</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	invoke-static {p0, p1, p2, v0}, Landroidx/core/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public static formatDuration(JLjava/io/PrintWriter;I)V
+<span class="">	.locals 5</span>
+<span class="">	.param p0, "duration"    # J</span>
+<span class="">	.param p2, "pw"    # Ljava/io/PrintWriter;</span>
+<span class="">	.param p3, "fieldLen"    # I</span>
+
+<span class="missed">	sget-object v0, Landroidx/core/util/TimeUtils;->sFormatSync:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-static {p0, p1, p3}, Landroidx/core/util/TimeUtils;->formatDurationLocked(JI)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	new-instance v2, Ljava/lang/String;</span>
+<span class="missed">	sget-object v3, Landroidx/core/util/TimeUtils;->sFormatStr:[C</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-direct {v2, v3, v4, v1}, Ljava/lang/String;-><init>([CII)V</span>
+<span class="missed">	invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method
+
+.method public static formatDuration(JLjava/lang/StringBuilder;)V
+<span class="">	.locals 4</span>
+<span class="">	.param p0, "duration"    # J</span>
+<span class="">	.param p2, "builder"    # Ljava/lang/StringBuilder;</span>
+
+<span class="missed">	sget-object v0, Landroidx/core/util/TimeUtils;->sFormatSync:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-static {p0, p1, v1}, Landroidx/core/util/TimeUtils;->formatDurationLocked(JI)I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	sget-object v3, Landroidx/core/util/TimeUtils;->sFormatStr:[C</span>
+<span class="missed">	invoke-virtual {p2, v3, v1, v2}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;</span>
+<span class="">	nop</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method
+
+.method private static formatDurationLocked(JI)I
+<span class="">	.locals 27</span>
+<span class="">	.param p0, "duration"    # J</span>
+<span class="">	.param p2, "fieldLen"    # I</span>
+
+<span class="missed">	move-wide/from16 v0, p0</span>
+<span class="missed">	move/from16 v2, p2</span>
+<span class="missed">	sget-object v3, Landroidx/core/util/TimeUtils;->sFormatStr:[C</span>
+<span class="missed">	array-length v3, v3</span>
+<span class="missed">	if-ge v3, v2, :cond_0</span>
+<span class="missed">	new-array v3, v2, [C</span>
+<span class="missed">	sput-object v3, Landroidx/core/util/TimeUtils;->sFormatStr:[C</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sget-object v3, Landroidx/core/util/TimeUtils;->sFormatStr:[C</span>
+<span class="missed">	const-wide/16 v4, 0x0</span>
+<span class="missed">	cmp-long v6, v0, v4</span>
+<span class="missed">	const/16 v7, 0x20</span>
+<span class="missed">	if-nez v6, :cond_2</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	add-int/lit8 v2, v2, -0x1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v4, v2, :cond_1</span>
+<span class="missed">	aput-char v7, v3, v4</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/16 v5, 0x30</span>
+<span class="missed">	aput-char v5, v3, v4</span>
+<span class="missed">	add-int/lit8 v5, v4, 0x1</span>
+<span class="">	return v5</span>
+<span class="">	:cond_2</span>
+<span class="missed">	cmp-long v4, v0, v4</span>
+<span class="missed">	if-lez v4, :cond_3</span>
+<span class="missed">	const/16 v4, 0x2b</span>
+<span class="missed">	move v10, v4</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const/16 v4, 0x2d</span>
+<span class="missed">	neg-long v0, v0</span>
+<span class="missed">	move v10, v4</span>
+<span class="">	:goto_1</span>
+<span class="missed">	const-wide/16 v4, 0x3e8</span>
+<span class="missed">	rem-long v8, v0, v4</span>
+<span class="missed">	long-to-int v11, v8</span>
+<span class="missed">	div-long v4, v0, v4</span>
+<span class="missed">	long-to-double v4, v4</span>
+<span class="">	invoke-static {v4, v5}, Ljava/lang/Math;->floor(D)D</span>
+<span class="missed">	move-result-wide v4</span>
+<span class="missed">	double-to-int v4, v4</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="missed">	const/4 v8, 0x0</span>
+<span class="missed">	const v9, 0x15180</span>
+<span class="missed">	if-le v4, v9, :cond_4</span>
+<span class="missed">	div-int v5, v4, v9</span>
+<span class="missed">	mul-int/2addr v9, v5</span>
+<span class="missed">	sub-int/2addr v4, v9</span>
+<span class="missed">	move v12, v5</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_4</span>
+<span class="missed">	move v12, v5</span>
+<span class="">	:goto_2</span>
+<span class="missed">	const/16 v5, 0xe10</span>
+<span class="missed">	if-le v4, v5, :cond_5</span>
+<span class="missed">	div-int/lit16 v5, v4, 0xe10</span>
+<span class="missed">	mul-int/lit16 v6, v5, 0xe10</span>
+<span class="missed">	sub-int/2addr v4, v6</span>
+<span class="missed">	move v13, v5</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_5</span>
+<span class="missed">	move v13, v6</span>
+<span class="">	:goto_3</span>
+<span class="missed">	const/16 v5, 0x3c</span>
+<span class="missed">	if-le v4, v5, :cond_6</span>
+<span class="missed">	div-int/lit8 v5, v4, 0x3c</span>
+<span class="missed">	mul-int/lit8 v6, v5, 0x3c</span>
+<span class="missed">	sub-int/2addr v4, v6</span>
+<span class="missed">	move v15, v4</span>
+<span class="missed">	move v14, v5</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_6</span>
+<span class="missed">	move v15, v4</span>
+<span class="missed">	move v14, v8</span>
+<span class="">	:goto_4</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	const/16 v16, 0x3</span>
+<span class="missed">	const/4 v9, 0x2</span>
+<span class="missed">	const/4 v8, 0x0</span>
+<span class="missed">	const/4 v6, 0x1</span>
+<span class="missed">	if-eqz v2, :cond_b</span>
+<span class="">	invoke-static {v12, v6, v8, v8}, Landroidx/core/util/TimeUtils;->accumField(IIZI)I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	if-lez v5, :cond_7</span>
+<span class="missed">	move v8, v6</span>
+<span class="">	:cond_7</span>
+<span class="">	invoke-static {v13, v6, v8, v9}, Landroidx/core/util/TimeUtils;->accumField(IIZI)I</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	add-int/2addr v5, v8</span>
+<span class="missed">	if-lez v5, :cond_8</span>
+<span class="missed">	move v8, v6</span>
+<span class="">	goto :goto_5</span>
+<span class="">	:cond_8</span>
+<span class="missed">	const/4 v8, 0x0</span>
+<span class="">	:goto_5</span>
+<span class="">	invoke-static {v14, v6, v8, v9}, Landroidx/core/util/TimeUtils;->accumField(IIZI)I</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	add-int/2addr v5, v8</span>
+<span class="missed">	if-lez v5, :cond_9</span>
+<span class="missed">	move v8, v6</span>
+<span class="">	goto :goto_6</span>
+<span class="">	:cond_9</span>
+<span class="missed">	const/4 v8, 0x0</span>
+<span class="">	:goto_6</span>
+<span class="">	invoke-static {v15, v6, v8, v9}, Landroidx/core/util/TimeUtils;->accumField(IIZI)I</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	add-int/2addr v5, v8</span>
+<span class="missed">	if-lez v5, :cond_a</span>
+<span class="missed">	move/from16 v8, v16</span>
+<span class="">	goto :goto_7</span>
+<span class="">	:cond_a</span>
+<span class="missed">	const/4 v8, 0x0</span>
+<span class="">	:goto_7</span>
+<span class="">	invoke-static {v11, v9, v6, v8}, Landroidx/core/util/TimeUtils;->accumField(IIZI)I</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	add-int/2addr v8, v6</span>
+<span class="missed">	add-int/2addr v5, v8</span>
+<span class="">	:goto_8</span>
+<span class="missed">	if-ge v5, v2, :cond_b</span>
+<span class="missed">	aput-char v7, v3, v4</span>
+<span class="missed">	add-int/lit8 v4, v4, 0x1</span>
+<span class="missed">	add-int/lit8 v5, v5, 0x1</span>
+<span class="">	goto :goto_8</span>
+<span class="">	:cond_b</span>
+<span class="missed">	aput-char v10, v3, v4</span>
+<span class="missed">	add-int/lit8 v17, v4, 0x1</span>
+<span class="missed">	move/from16 v8, v17</span>
+<span class="missed">	if-eqz v2, :cond_c</span>
+<span class="missed">	move v4, v6</span>
+<span class="">	goto :goto_9</span>
+<span class="">	:cond_c</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="">	:goto_9</span>
+<span class="missed">	move/from16 v18, v4</span>
+<span class="missed">	const/16 v7, 0x64</span>
+<span class="missed">	const/16 v19, 0x0</span>
+<span class="missed">	const/16 v20, 0x0</span>
+<span class="missed">	move-object v4, v3</span>
+<span class="missed">	move v5, v12</span>
+<span class="missed">	move/from16 v21, v6</span>
+<span class="missed">	move v6, v7</span>
+<span class="missed">	move/from16 v7, v17</span>
+<span class="missed">	move/from16 v22, v8</span>
+<span class="missed">	const/16 v23, 0x0</span>
+<span class="missed">	move/from16 v8, v19</span>
+<span class="missed">	move/from16 v19, v9</span>
+<span class="missed">	move/from16 v9, v20</span>
+<span class="">	invoke-static/range {v4 .. v9}, Landroidx/core/util/TimeUtils;->printField([CICIZI)I</span>
+<span class="missed">	move-result v9</span>
+<span class="missed">	const/16 v6, 0x68</span>
+<span class="missed">	move/from16 v8, v22</span>
+<span class="missed">	if-eq v9, v8, :cond_d</span>
+<span class="missed">	move/from16 v17, v21</span>
+<span class="">	goto :goto_a</span>
+<span class="">	:cond_d</span>
+<span class="missed">	move/from16 v17, v23</span>
+<span class="">	:goto_a</span>
+<span class="missed">	if-eqz v18, :cond_e</span>
+<span class="missed">	move/from16 v20, v19</span>
+<span class="">	goto :goto_b</span>
+<span class="">	:cond_e</span>
+<span class="missed">	move/from16 v20, v23</span>
+<span class="">	:goto_b</span>
+<span class="missed">	move-object v4, v3</span>
+<span class="missed">	move v5, v13</span>
+<span class="missed">	move v7, v9</span>
+<span class="missed">	move/from16 v24, v8</span>
+<span class="missed">	move/from16 v8, v17</span>
+<span class="missed">	move/from16 v17, v9</span>
+<span class="missed">	move/from16 v9, v20</span>
+<span class="">	invoke-static/range {v4 .. v9}, Landroidx/core/util/TimeUtils;->printField([CICIZI)I</span>
+<span class="missed">	move-result v9</span>
+<span class="missed">	const/16 v6, 0x6d</span>
+<span class="missed">	move/from16 v8, v24</span>
+<span class="missed">	if-eq v9, v8, :cond_f</span>
+<span class="missed">	move/from16 v17, v21</span>
+<span class="">	goto :goto_c</span>
+<span class="">	:cond_f</span>
+<span class="missed">	move/from16 v17, v23</span>
+<span class="">	:goto_c</span>
+<span class="missed">	if-eqz v18, :cond_10</span>
+<span class="missed">	move/from16 v20, v19</span>
+<span class="">	goto :goto_d</span>
+<span class="">	:cond_10</span>
+<span class="missed">	move/from16 v20, v23</span>
+<span class="">	:goto_d</span>
+<span class="missed">	move-object v4, v3</span>
+<span class="missed">	move v5, v14</span>
+<span class="missed">	move v7, v9</span>
+<span class="missed">	move/from16 v25, v8</span>
+<span class="missed">	move/from16 v8, v17</span>
+<span class="missed">	move/from16 v17, v9</span>
+<span class="missed">	move/from16 v9, v20</span>
+<span class="">	invoke-static/range {v4 .. v9}, Landroidx/core/util/TimeUtils;->printField([CICIZI)I</span>
+<span class="missed">	move-result v9</span>
+<span class="missed">	const/16 v6, 0x73</span>
+<span class="missed">	move/from16 v8, v25</span>
+<span class="missed">	if-eq v9, v8, :cond_11</span>
+<span class="">	goto :goto_e</span>
+<span class="">	:cond_11</span>
+<span class="missed">	move/from16 v21, v23</span>
+<span class="">	:goto_e</span>
+<span class="missed">	if-eqz v18, :cond_12</span>
+<span class="">	goto :goto_f</span>
+<span class="">	:cond_12</span>
+<span class="missed">	move/from16 v19, v23</span>
+<span class="">	:goto_f</span>
+<span class="missed">	move-object v4, v3</span>
+<span class="missed">	move v5, v15</span>
+<span class="missed">	move v7, v9</span>
+<span class="missed">	move/from16 v26, v8</span>
+<span class="missed">	move/from16 v8, v21</span>
+<span class="missed">	move/from16 v17, v9</span>
+<span class="missed">	move/from16 v9, v19</span>
+<span class="">	invoke-static/range {v4 .. v9}, Landroidx/core/util/TimeUtils;->printField([CICIZI)I</span>
+<span class="missed">	move-result v9</span>
+<span class="missed">	const/16 v6, 0x6d</span>
+<span class="missed">	const/4 v8, 0x1</span>
+<span class="missed">	if-eqz v18, :cond_13</span>
+<span class="missed">	move/from16 v7, v26</span>
+<span class="missed">	if-eq v9, v7, :cond_14</span>
+<span class="">	goto :goto_10</span>
+<span class="">	:cond_13</span>
+<span class="missed">	move/from16 v7, v26</span>
+<span class="">	:cond_14</span>
+<span class="missed">	move/from16 v16, v23</span>
+<span class="">	:goto_10</span>
+<span class="missed">	move-object v4, v3</span>
+<span class="missed">	move v5, v11</span>
+<span class="missed">	move/from16 v17, v7</span>
+<span class="missed">	move v7, v9</span>
+<span class="missed">	move/from16 v19, v9</span>
+<span class="missed">	move/from16 v9, v16</span>
+<span class="">	invoke-static/range {v4 .. v9}, Landroidx/core/util/TimeUtils;->printField([CICIZI)I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	const/16 v5, 0x73</span>
+<span class="missed">	aput-char v5, v3, v4</span>
+<span class="missed">	add-int/lit8 v5, v4, 0x1</span>
+<span class="">	return v5</span>
+.end method
+
+.method private static printField([CICIZI)I
+<span class="">	.locals 3</span>
+<span class="">	.param p0, "formatStr"    # [C</span>
+<span class="">	.param p1, "amt"    # I</span>
+<span class="">	.param p2, "suffix"    # C</span>
+<span class="">	.param p3, "pos"    # I</span>
+<span class="">	.param p4, "always"    # Z</span>
+<span class="">	.param p5, "zeropad"    # I</span>
+
+<span class="missed">	if-nez p4, :cond_0</span>
+<span class="missed">	if-lez p1, :cond_7</span>
+<span class="">	:cond_0</span>
+<span class="missed">	move v0, p3</span>
+<span class="missed">	if-eqz p4, :cond_1</span>
+<span class="missed">	const/4 v1, 0x3</span>
+<span class="missed">	if-ge p5, v1, :cond_2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/16 v1, 0x63</span>
+<span class="missed">	if-le p1, v1, :cond_3</span>
+<span class="">	:cond_2</span>
+<span class="missed">	div-int/lit8 v1, p1, 0x64</span>
+<span class="missed">	add-int/lit8 v2, v1, 0x30</span>
+<span class="missed">	int-to-char v2, v2</span>
+<span class="missed">	aput-char v2, p0, p3</span>
+<span class="missed">	add-int/lit8 p3, p3, 0x1</span>
+<span class="missed">	mul-int/lit8 v2, v1, 0x64</span>
+<span class="missed">	sub-int/2addr p1, v2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	if-eqz p4, :cond_4</span>
+<span class="missed">	const/4 v1, 0x2</span>
+<span class="missed">	if-ge p5, v1, :cond_5</span>
+<span class="">	:cond_4</span>
+<span class="missed">	const/16 v1, 0x9</span>
+<span class="missed">	if-gt p1, v1, :cond_5</span>
+<span class="missed">	if-eq v0, p3, :cond_6</span>
+<span class="">	:cond_5</span>
+<span class="missed">	div-int/lit8 v1, p1, 0xa</span>
+<span class="missed">	add-int/lit8 v2, v1, 0x30</span>
+<span class="missed">	int-to-char v2, v2</span>
+<span class="missed">	aput-char v2, p0, p3</span>
+<span class="missed">	add-int/lit8 p3, p3, 0x1</span>
+<span class="missed">	mul-int/lit8 v2, v1, 0xa</span>
+<span class="missed">	sub-int/2addr p1, v2</span>
+<span class="">	:cond_6</span>
+<span class="missed">	add-int/lit8 v1, p1, 0x30</span>
+<span class="missed">	int-to-char v1, v1</span>
+<span class="missed">	aput-char v1, p0, p3</span>
+<span class="missed">	add-int/lit8 p3, p3, 0x1</span>
+<span class="missed">	aput-char p2, p0, p3</span>
+<span class="missed">	add-int/lit8 p3, p3, 0x1</span>
+<span class="">	:cond_7</span>
+<span class="">	return p3</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../.resources/report.js"></script>
+</body>
+</html>

@@ -9,5 +9,7 @@ return-void
 .end method
 .method public final a()V
 .locals 1
+iget-object v0, p0, Lpc;->a:Lpa;
+invoke-static {v0}, Lpa;->a(Lpa;)V
 return-void
 .end method

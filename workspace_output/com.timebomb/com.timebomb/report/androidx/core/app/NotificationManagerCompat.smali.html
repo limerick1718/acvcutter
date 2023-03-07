@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.core.app</a></li>
+        <li><i class="ico ico-class"></i> NotificationManagerCompat.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Landroidx/core/app/NotificationManagerCompat;
+.super Ljava/lang/Object;
+.source "NotificationManagerCompat.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Landroidx/core/app/NotificationManagerCompat$CancelTask;,
+Landroidx/core/app/NotificationManagerCompat$NotifyTask;,
+Landroidx/core/app/NotificationManagerCompat$Task;,
+Landroidx/core/app/NotificationManagerCompat$ServiceConnectedEvent;,
+Landroidx/core/app/NotificationManagerCompat$SideChannelManager;
+}
+.end annotation
+
+.field public static final ACTION_BIND_SIDE_CHANNEL:Ljava/lang/String; = "android.support.BIND_NOTIFICATION_SIDE_CHANNEL"
+.field private static final CHECK_OP_NO_THROW:Ljava/lang/String; = "checkOpNoThrow"
+.field public static final EXTRA_USE_SIDE_CHANNEL:Ljava/lang/String; = "android.support.useSideChannel"
+.field public static final IMPORTANCE_DEFAULT:I = 0x3
+.field public static final IMPORTANCE_HIGH:I = 0x4
+.field public static final IMPORTANCE_LOW:I = 0x2
+.field public static final IMPORTANCE_MAX:I = 0x5
+.field public static final IMPORTANCE_MIN:I = 0x1
+.field public static final IMPORTANCE_NONE:I = 0x0
+.field public static final IMPORTANCE_UNSPECIFIED:I = -0x3e8
+.field static final MAX_SIDE_CHANNEL_SDK_VERSION:I = 0x13
+.field private static final OP_POST_NOTIFICATION:Ljava/lang/String; = "OP_POST_NOTIFICATION"
+.field private static final SETTING_ENABLED_NOTIFICATION_LISTENERS:Ljava/lang/String; = "enabled_notification_listeners"
+.field private static final SIDE_CHANNEL_RETRY_BASE_INTERVAL_MS:I = 0x3e8
+.field private static final SIDE_CHANNEL_RETRY_MAX_COUNT:I = 0x6
+.field private static final TAG:Ljava/lang/String; = "NotifManCompat"
+.field private static sEnabledNotificationListenerPackages:Ljava/util/Set;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/Set<",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.end field
+.field private static sEnabledNotificationListeners:Ljava/lang/String;
+.field private static final sEnabledNotificationListenersLock:Ljava/lang/Object;
+.field private static final sLock:Ljava/lang/Object;
+.field private static sSideChannelManager:Landroidx/core/app/NotificationManagerCompat$SideChannelManager;
+.field private final mContext:Landroid/content/Context;
+.field private final mNotificationManager:Landroid/app/NotificationManager;
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Ljava/lang/Object;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	sput-object v0, Landroidx/core/app/NotificationManagerCompat;->sEnabledNotificationListenersLock:Ljava/lang/Object;</span>
+<span class="missed">	new-instance v0, Ljava/util/HashSet;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/HashSet;-><init>()V</span>
+<span class="missed">	sput-object v0, Landroidx/core/app/NotificationManagerCompat;->sEnabledNotificationListenerPackages:Ljava/util/Set;</span>
+<span class="missed">	new-instance v0, Ljava/lang/Object;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	sput-object v0, Landroidx/core/app/NotificationManagerCompat;->sLock:Ljava/lang/Object;</span>
+<span class="">	return-void</span>
+.end method
+
+.method private constructor &lt;init&gt;(Landroid/content/Context;)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "context"    # Landroid/content/Context;</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Landroidx/core/app/NotificationManagerCompat;->mContext:Landroid/content/Context;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/NotificationManagerCompat;->mContext:Landroid/content/Context;</span>
+<span class="missed">	const-string v1, "notification"</span>
+<span class="">	invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Landroid/app/NotificationManager;</span>
+<span class="missed">	iput-object v0, p0, Landroidx/core/app/NotificationManagerCompat;->mNotificationManager:Landroid/app/NotificationManager;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public static from(Landroid/content/Context;)Landroidx/core/app/NotificationManagerCompat;
+<span class="">	.locals 1</span>
+<span class="">	.param p0, "context"    # Landroid/content/Context;</span>
+
+<span class="missed">	new-instance v0, Landroidx/core/app/NotificationManagerCompat;</span>
+<span class="missed">	invoke-direct {v0, p0}, Landroidx/core/app/NotificationManagerCompat;-><init>(Landroid/content/Context;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public static getEnabledListenerPackages(Landroid/content/Context;)Ljava/util/Set;
+<span class="">	.locals 9</span>
+<span class="">	.param p0, "context"    # Landroid/content/Context;</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Landroid/content/Context;",</span>
+<span class="">	")",</span>
+<span class="">	"Ljava/util/Set<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	nop</span>
+<span class="">	invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "enabled_notification_listeners"</span>
+<span class="">	invoke-static {v0, v1}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sget-object v1, Landroidx/core/app/NotificationManagerCompat;->sEnabledNotificationListenersLock:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v1</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	sget-object v2, Landroidx/core/app/NotificationManagerCompat;->sEnabledNotificationListeners:Ljava/lang/String;</span>
+<span class="">	invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-nez v2, :cond_2</span>
+<span class="missed">	const-string v2, ":"</span>
+<span class="missed">	const/4 v3, -0x1</span>
+<span class="">	invoke-virtual {v0, v2, v3}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	new-instance v3, Ljava/util/HashSet;</span>
+<span class="missed">	array-length v4, v2</span>
+<span class="missed">	invoke-direct {v3, v4}, Ljava/util/HashSet;-><init>(I)V</span>
+<span class="missed">	array-length v4, v2</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v5, v4, :cond_1</span>
+<span class="missed">	aget-object v6, v2, v5</span>
+<span class="">	invoke-static {v6}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="missed">	if-eqz v7, :cond_0</span>
+<span class="">	invoke-virtual {v7}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v8</span>
+<span class="missed">	invoke-interface {v3, v8}, Ljava/util/Set;->add(Ljava/lang/Object;)Z</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/lit8 v5, v5, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	sput-object v3, Landroidx/core/app/NotificationManagerCompat;->sEnabledNotificationListenerPackages:Ljava/util/Set;</span>
+<span class="missed">	sput-object v0, Landroidx/core/app/NotificationManagerCompat;->sEnabledNotificationListeners:Ljava/lang/String;</span>
+<span class="">	:cond_2</span>
+<span class="missed">	sget-object v2, Landroidx/core/app/NotificationManagerCompat;->sEnabledNotificationListenerPackages:Ljava/util/Set;</span>
+<span class="missed">	monitor-exit v1</span>
+<span class="">	return-object v2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	monitor-exit v1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v2</span>
+.end method
+
+.method private pushSideChannelQueue(Landroidx/core/app/NotificationManagerCompat$Task;)V
+<span class="">	.locals 3</span>
+<span class="">	.param p1, "task"    # Landroidx/core/app/NotificationManagerCompat$Task;</span>
+
+<span class="missed">	sget-object v0, Landroidx/core/app/NotificationManagerCompat;->sLock:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	sget-object v1, Landroidx/core/app/NotificationManagerCompat;->sSideChannelManager:Landroidx/core/app/NotificationManagerCompat$SideChannelManager;</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="missed">	new-instance v1, Landroidx/core/app/NotificationManagerCompat$SideChannelManager;</span>
+<span class="missed">	iget-object v2, p0, Landroidx/core/app/NotificationManagerCompat;->mContext:Landroid/content/Context;</span>
+<span class="">	invoke-virtual {v2}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-direct {v1, v2}, Landroidx/core/app/NotificationManagerCompat$SideChannelManager;-><init>(Landroid/content/Context;)V</span>
+<span class="missed">	sput-object v1, Landroidx/core/app/NotificationManagerCompat;->sSideChannelManager:Landroidx/core/app/NotificationManagerCompat$SideChannelManager;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sget-object v1, Landroidx/core/app/NotificationManagerCompat;->sSideChannelManager:Landroidx/core/app/NotificationManagerCompat$SideChannelManager;</span>
+<span class="missed">	invoke-virtual {v1, p1}, Landroidx/core/app/NotificationManagerCompat$SideChannelManager;->queueTask(Landroidx/core/app/NotificationManagerCompat$Task;)V</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method
+
+.method private static useSideChannelForNotification(Landroid/app/Notification;)Z
+<span class="">	.locals 2</span>
+<span class="">	.param p0, "notification"    # Landroid/app/Notification;</span>
+
+<span class="">	invoke-static {p0}, Landroidx/core/app/NotificationCompat;->getExtras(Landroid/app/Notification;)Landroid/os/Bundle;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string v1, "android.support.useSideChannel"</span>
+<span class="">	invoke-virtual {v0, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return v1</span>
+.end method
+
+.method public areNotificationsEnabled()Z
+<span class="">	.locals 13</span>
+
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x18</span>
+<span class="missed">	if-lt v0, v1, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/NotificationManagerCompat;->mNotificationManager:Landroid/app/NotificationManager;</span>
+<span class="">	invoke-virtual {v0}, Landroid/app/NotificationManager;->areNotificationsEnabled()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x13</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	if-lt v0, v1, :cond_2</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/NotificationManagerCompat;->mContext:Landroid/content/Context;</span>
+<span class="missed">	const-string v1, "appops"</span>
+<span class="">	invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Landroid/app/AppOpsManager;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/core/app/NotificationManagerCompat;->mContext:Landroid/content/Context;</span>
+<span class="">	invoke-virtual {v1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iget-object v3, p0, Landroidx/core/app/NotificationManagerCompat;->mContext:Landroid/content/Context;</span>
+<span class="">	invoke-virtual {v3}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	invoke-virtual {v3}, Landroid/content/Context;->getPackageName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	iget v4, v1, Landroid/content/pm/ApplicationInfo;->uid:I</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-class v5, Landroid/app/AppOpsManager;</span>
+<span class="">	invoke-virtual {v5}, Ljava/lang/Class;->getName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="">	invoke-static {v5}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="missed">	const-string v6, "checkOpNoThrow"</span>
+<span class="missed">	const/4 v7, 0x3</span>
+<span class="missed">	new-array v8, v7, [Ljava/lang/Class;</span>
+<span class="missed">	sget-object v9, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	const/4 v10, 0x0</span>
+<span class="missed">	aput-object v9, v8, v10</span>
+<span class="missed">	sget-object v9, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	aput-object v9, v8, v2</span>
+<span class="missed">	const-class v9, Ljava/lang/String;</span>
+<span class="missed">	const/4 v11, 0x2</span>
+<span class="missed">	aput-object v9, v8, v11</span>
+<span class="">	invoke-virtual {v5, v6, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	const-string v8, "OP_POST_NOTIFICATION"</span>
+<span class="">	invoke-virtual {v5, v8}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;</span>
+<span class="missed">	move-result-object v8</span>
+<span class="missed">	const-class v9, Ljava/lang/Integer;</span>
+<span class="">	invoke-virtual {v8, v9}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v9</span>
+<span class="missed">	check-cast v9, Ljava/lang/Integer;</span>
+<span class="">	invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I</span>
+<span class="missed">	move-result v9</span>
+<span class="missed">	new-array v7, v7, [Ljava/lang/Object;</span>
+<span class="">	invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object v12</span>
+<span class="missed">	aput-object v12, v7, v10</span>
+<span class="">	invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object v12</span>
+<span class="missed">	aput-object v12, v7, v2</span>
+<span class="missed">	aput-object v3, v7, v11</span>
+<span class="">	invoke-virtual {v6, v0, v7}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="missed">	check-cast v7, Ljava/lang/Integer;</span>
+<span class="">	invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I</span>
+<span class="missed">	move-result v7</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_5</span>
+<span class="missed">	.catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_4</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_3</span>
+<span class="missed">	.catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_2</span>
+<span class="missed">	.catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1</span>
+<span class="missed">	.catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	if-nez v7, :cond_1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	move v2, v10</span>
+<span class="">	:goto_0</span>
+<span class="">	return v2</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v5</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception v5</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_2</span>
+<span class="missed">	move-exception v5</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_3</span>
+<span class="missed">	move-exception v5</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_4</span>
+<span class="missed">	move-exception v5</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_5</span>
+<span class="missed">	move-exception v5</span>
+<span class="">	:goto_1</span>
+<span class="">	return v2</span>
+<span class="">	:cond_2</span>
+<span class="">	return v2</span>
+.end method
+
+.method public cancel(I)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "id"    # I</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	invoke-virtual {p0, v0, p1}, Landroidx/core/app/NotificationManagerCompat;->cancel(Ljava/lang/String;I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public cancel(Ljava/lang/String;I)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "tag"    # Ljava/lang/String;</span>
+<span class="">	.param p2, "id"    # I</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/NotificationManagerCompat;->mNotificationManager:Landroid/app/NotificationManager;</span>
+<span class="missed">	invoke-virtual {v0, p1, p2}, Landroid/app/NotificationManager;->cancel(Ljava/lang/String;I)V</span>
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x13</span>
+<span class="missed">	if-gt v0, v1, :cond_0</span>
+<span class="missed">	new-instance v0, Landroidx/core/app/NotificationManagerCompat$CancelTask;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/core/app/NotificationManagerCompat;->mContext:Landroid/content/Context;</span>
+<span class="">	invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v0, v1, p2, p1}, Landroidx/core/app/NotificationManagerCompat$CancelTask;-><init>(Ljava/lang/String;ILjava/lang/String;)V</span>
+<span class="missed">	invoke-direct {p0, v0}, Landroidx/core/app/NotificationManagerCompat;->pushSideChannelQueue(Landroidx/core/app/NotificationManagerCompat$Task;)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public cancelAll()V
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/NotificationManagerCompat;->mNotificationManager:Landroid/app/NotificationManager;</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/app/NotificationManager;->cancelAll()V</span>
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x13</span>
+<span class="missed">	if-gt v0, v1, :cond_0</span>
+<span class="missed">	new-instance v0, Landroidx/core/app/NotificationManagerCompat$CancelTask;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/core/app/NotificationManagerCompat;->mContext:Landroid/content/Context;</span>
+<span class="">	invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v0, v1}, Landroidx/core/app/NotificationManagerCompat$CancelTask;-><init>(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-direct {p0, v0}, Landroidx/core/app/NotificationManagerCompat;->pushSideChannelQueue(Landroidx/core/app/NotificationManagerCompat$Task;)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public getImportance()I
+<span class="">	.locals 2</span>
+
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x18</span>
+<span class="missed">	if-lt v0, v1, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/NotificationManagerCompat;->mNotificationManager:Landroid/app/NotificationManager;</span>
+<span class="">	invoke-virtual {v0}, Landroid/app/NotificationManager;->getImportance()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/16 v0, -0x3e8</span>
+<span class="">	return v0</span>
+.end method
+
+.method public notify(ILandroid/app/Notification;)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "id"    # I</span>
+<span class="">	.param p2, "notification"    # Landroid/app/Notification;</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	invoke-virtual {p0, v0, p1, p2}, Landroidx/core/app/NotificationManagerCompat;->notify(Ljava/lang/String;ILandroid/app/Notification;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public notify(Ljava/lang/String;ILandroid/app/Notification;)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "tag"    # Ljava/lang/String;</span>
+<span class="">	.param p2, "id"    # I</span>
+<span class="">	.param p3, "notification"    # Landroid/app/Notification;</span>
+
+<span class="">	invoke-static {p3}, Landroidx/core/app/NotificationManagerCompat;->useSideChannelForNotification(Landroid/app/Notification;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	new-instance v0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/core/app/NotificationManagerCompat;->mContext:Landroid/content/Context;</span>
+<span class="">	invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v0, v1, p2, p1, p3}, Landroidx/core/app/NotificationManagerCompat$NotifyTask;-><init>(Ljava/lang/String;ILjava/lang/String;Landroid/app/Notification;)V</span>
+<span class="missed">	invoke-direct {p0, v0}, Landroidx/core/app/NotificationManagerCompat;->pushSideChannelQueue(Landroidx/core/app/NotificationManagerCompat$Task;)V</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/NotificationManagerCompat;->mNotificationManager:Landroid/app/NotificationManager;</span>
+<span class="missed">	invoke-virtual {v0, p1, p2}, Landroid/app/NotificationManager;->cancel(Ljava/lang/String;I)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/app/NotificationManagerCompat;->mNotificationManager:Landroid/app/NotificationManager;</span>
+<span class="missed">	invoke-virtual {v0, p1, p2, p3}, Landroid/app/NotificationManager;->notify(Ljava/lang/String;ILandroid/app/Notification;)V</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../.resources/report.js"></script>
+</body>
+</html>

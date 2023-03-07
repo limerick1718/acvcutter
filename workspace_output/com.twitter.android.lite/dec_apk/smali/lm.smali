@@ -128,8 +128,72 @@ value = {
 ">;"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
+const-string v0, ""
+invoke-virtual {p0}, Lnb;->d()V
+invoke-virtual {p0}, Lnb;->m()Lcom/google/android/gms/common/util/d;
+move-result-object v1
+invoke-interface {v1}, Lcom/google/android/gms/common/util/d;->b()J
+move-result-wide v1
+iget-object v3, p0, Llm;->s:Ljava/lang/String;
+if-eqz v3, :cond_0
+iget-wide v4, p0, Llm;->u:J
+cmp-long v6, v1, v4
+if-gez v6, :cond_0
+new-instance p1, Landroid/util/Pair;
+iget-boolean v0, p0, Llm;->t:Z
+invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+move-result-object v0
+invoke-direct {p1, v3, v0}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+return-object p1
+:cond_0
+invoke-virtual {p0}, Lnb;->t()Lqf;
+move-result-object v3
+sget-object v4, Lkq;->j:Lkq$a;
+invoke-virtual {v3, p1, v4}, Lqf;->a(Ljava/lang/String;Lkq$a;)J
+move-result-wide v3
+add-long/2addr v1, v3
+iput-wide v1, p0, Llm;->u:J
+const/4 p1, 0x1
+invoke-static {p1}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->setShouldSkipGmsCoreVersionCheck(Z)V
+:try_start_0
+invoke-virtual {p0}, Lnb;->n()Landroid/content/Context;
+move-result-object p1
+invoke-static {p1}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->getAdvertisingIdInfo(Landroid/content/Context;)Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
+move-result-object p1
+if-eqz p1, :cond_1
+invoke-virtual {p1}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->getId()Ljava/lang/String;
+move-result-object v1
+iput-object v1, p0, Llm;->s:Ljava/lang/String;
+invoke-virtual {p1}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->isLimitAdTrackingEnabled()Z
+move-result p1
+iput-boolean p1, p0, Llm;->t:Z
+:cond_1
+iget-object p1, p0, Llm;->s:Ljava/lang/String;
+if-nez p1, :cond_2
+iput-object v0, p0, Llm;->s:Ljava/lang/String;
+:try_end_0
+.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+goto :goto_0
+:catch_0
+move-exception p1
+invoke-virtual {p0}, Lnb;->r()Lla;
+move-result-object v1
+invoke-virtual {v1}, Lla;->w()Llc;
+move-result-object v1
+const-string v2, "Unable to get advertising id"
+invoke-virtual {v1, v2, p1}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V
+iput-object v0, p0, Llm;->s:Ljava/lang/String;
+:cond_2
+:goto_0
+const/4 p1, 0x0
+invoke-static {p1}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->setShouldSkipGmsCoreVersionCheck(Z)V
+new-instance p1, Landroid/util/Pair;
+iget-object v0, p0, Llm;->s:Ljava/lang/String;
+iget-boolean v1, p0, Llm;->t:Z
+invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+move-result-object v1
+invoke-direct {p1, v0, v1}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+return-object p1
 .end method
 .method final a(Z)V
 .locals 3
@@ -170,11 +234,51 @@ return p1
 .end method
 .method final b(Ljava/lang/String;)Ljava/lang/String;
 .locals 6
-const/4 v0, 0x0
-return-object v0
+invoke-virtual {p0}, Lnb;->d()V
+invoke-virtual {p0, p1}, Llm;->a(Ljava/lang/String;)Landroid/util/Pair;
+move-result-object p1
+iget-object p1, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
+check-cast p1, Ljava/lang/String;
+invoke-static {}, Lpv;->i()Ljava/security/MessageDigest;
+move-result-object v0
+if-nez v0, :cond_0
+const/4 p1, 0x0
+return-object p1
+:cond_0
+sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+const/4 v2, 0x1
+new-array v3, v2, [Ljava/lang/Object;
+const/4 v4, 0x0
+new-instance v5, Ljava/math/BigInteger;
+invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
+move-result-object p1
+invoke-virtual {v0, p1}, Ljava/security/MessageDigest;->digest([B)[B
+move-result-object p1
+invoke-direct {v5, v2, p1}, Ljava/math/BigInteger;-><init>(I[B)V
+aput-object v5, v3, v4
+const-string p1, "%032X"
+invoke-static {v1, p1, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+move-result-object p1
+return-object p1
 .end method
 .method final b(Z)V
 .locals 3
+invoke-virtual {p0}, Lnb;->d()V
+invoke-virtual {p0}, Lnb;->r()Lla;
+move-result-object v0
+invoke-virtual {v0}, Lla;->x()Llc;
+move-result-object v0
+invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+move-result-object v1
+const-string v2, "Setting measurementEnabled"
+invoke-virtual {v0, v2, v1}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V
+invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;
+move-result-object v0
+invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+move-result-object v0
+const-string v1, "measurement_enabled"
+invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 return-void
 .end method
 .method final c(Ljava/lang/String;)V
@@ -191,8 +295,13 @@ return-void
 .end method
 .method final c(Z)Z
 .locals 2
-const/4 v0, 0x0
-return v0
+invoke-virtual {p0}, Lnb;->d()V
+invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;
+move-result-object v0
+const-string v1, "measurement_enabled"
+invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+move-result p1
+return p1
 .end method
 .method final d(Ljava/lang/String;)V
 .locals 2
@@ -302,11 +411,68 @@ move-result-object v0
 const-string v1, "use_service"
 invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 move-result v0
+if-nez v0, :cond_0
 const/4 v0, 0x0
+return-object v0
+:cond_0
+invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;
+move-result-object v0
+const/4 v2, 0x0
+invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+move-result v0
+invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+move-result-object v0
 return-object v0
 .end method
 .method final j()V
 .locals 3
+invoke-virtual {p0}, Lnb;->d()V
+invoke-virtual {p0}, Lnb;->r()Lla;
+move-result-object v0
+invoke-virtual {v0}, Lla;->x()Llc;
+move-result-object v0
+const-string v1, "Clearing collection preferences."
+invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V
+invoke-virtual {p0}, Lnb;->t()Lqf;
+move-result-object v0
+sget-object v1, Lkq;->aq:Lkq$a;
+invoke-virtual {v0, v1}, Lqf;->a(Lkq$a;)Z
+move-result v0
+if-eqz v0, :cond_1
+invoke-virtual {p0}, Llm;->k()Ljava/lang/Boolean;
+move-result-object v0
+invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;
+move-result-object v1
+invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+move-result-object v1
+invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;
+invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
+if-eqz v0, :cond_0
+invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+move-result v0
+invoke-virtual {p0, v0}, Llm;->b(Z)V
+:cond_0
+return-void
+:cond_1
+invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;
+move-result-object v0
+const-string v1, "measurement_enabled"
+invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+move-result v0
+const/4 v1, 0x1
+if-eqz v0, :cond_2
+invoke-virtual {p0, v1}, Llm;->c(Z)Z
+move-result v1
+:cond_2
+invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;
+move-result-object v2
+invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+move-result-object v2
+invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;
+invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V
+if-eqz v0, :cond_3
+invoke-virtual {p0, v1}, Llm;->b(Z)V
+:cond_3
 return-void
 .end method
 .method final k()Ljava/lang/Boolean;
@@ -317,6 +483,16 @@ move-result-object v0
 const-string v1, "measurement_enabled"
 invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 move-result v0
+if-eqz v0, :cond_0
+invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;
+move-result-object v0
+const/4 v2, 0x1
+invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+move-result v0
+invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+move-result-object v0
+return-object v0
+:cond_0
 const/4 v0, 0x0
 return-object v0
 .end method

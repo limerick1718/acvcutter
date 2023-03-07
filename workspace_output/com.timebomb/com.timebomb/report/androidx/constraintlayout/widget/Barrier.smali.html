@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.constraintlayout.widget</a></li>
+        <li><i class="ico ico-class"></i> Barrier.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Landroidx/constraintlayout/widget/Barrier;
+.super Landroidx/constraintlayout/widget/ConstraintHelper;
+.source "Barrier.java"
+
+
+.field public static final BOTTOM:I = 0x3
+.field public static final END:I = 0x6
+.field public static final LEFT:I = 0x0
+.field public static final RIGHT:I = 0x1
+.field public static final START:I = 0x5
+.field public static final TOP:I = 0x2
+.field private mBarrier:Landroidx/constraintlayout/solver/widgets/Barrier;
+.field private mIndicatedType:I
+.field private mResolvedType:I
+
+
+.method public constructor &lt;init&gt;(Landroid/content/Context;)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "context"    # Landroid/content/Context;</span>
+
+<span class="missed">	invoke-direct {p0, p1}, Landroidx/constraintlayout/widget/ConstraintHelper;-><init>(Landroid/content/Context;)V</span>
+<span class="missed">	const/16 v0, 0x8</span>
+<span class="missed">	invoke-super {p0, v0}, Landroidx/constraintlayout/widget/ConstraintHelper;->setVisibility(I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public constructor &lt;init&gt;(Landroid/content/Context;Landroid/util/AttributeSet;)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "context"    # Landroid/content/Context;</span>
+<span class="">	.param p2, "attrs"    # Landroid/util/AttributeSet;</span>
+
+<span class="missed">	invoke-direct {p0, p1, p2}, Landroidx/constraintlayout/widget/ConstraintHelper;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V</span>
+<span class="missed">	const/16 v0, 0x8</span>
+<span class="missed">	invoke-super {p0, v0}, Landroidx/constraintlayout/widget/ConstraintHelper;->setVisibility(I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public constructor &lt;init&gt;(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "context"    # Landroid/content/Context;</span>
+<span class="">	.param p2, "attrs"    # Landroid/util/AttributeSet;</span>
+<span class="">	.param p3, "defStyleAttr"    # I</span>
+
+<span class="missed">	invoke-direct {p0, p1, p2, p3}, Landroidx/constraintlayout/widget/ConstraintHelper;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V</span>
+<span class="missed">	const/16 v0, 0x8</span>
+<span class="missed">	invoke-super {p0, v0}, Landroidx/constraintlayout/widget/ConstraintHelper;->setVisibility(I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public allowsGoneWidget()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/solver/widgets/Barrier;</span>
+<span class="">	invoke-virtual {v0}, Landroidx/constraintlayout/solver/widgets/Barrier;->allowsGoneWidget()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public getType()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget v0, p0, Landroidx/constraintlayout/widget/Barrier;->mIndicatedType:I</span>
+<span class="">	return v0</span>
+.end method
+
+.method protected init(Landroid/util/AttributeSet;)V
+<span class="">	.locals 6</span>
+<span class="">	.param p1, "attrs"    # Landroid/util/AttributeSet;</span>
+
+<span class="missed">	invoke-super {p0, p1}, Landroidx/constraintlayout/widget/ConstraintHelper;->init(Landroid/util/AttributeSet;)V</span>
+<span class="missed">	new-instance v0, Landroidx/constraintlayout/solver/widgets/Barrier;</span>
+<span class="missed">	invoke-direct {v0}, Landroidx/constraintlayout/solver/widgets/Barrier;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/solver/widgets/Barrier;</span>
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="">	invoke-virtual {p0}, Landroidx/constraintlayout/widget/Barrier;->getContext()Landroid/content/Context;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sget-object v1, Landroidx/constraintlayout/widget/R$styleable;->ConstraintLayout_Layout:[I</span>
+<span class="">	invoke-virtual {v0, p1, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Landroid/content/res/TypedArray;->getIndexCount()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v2, v1, :cond_2</span>
+<span class="">	invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->getIndex(I)I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	sget v4, Landroidx/constraintlayout/widget/R$styleable;->ConstraintLayout_Layout_barrierDirection:I</span>
+<span class="missed">	if-ne v3, v4, :cond_0</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="">	invoke-virtual {v0, v3, v4}, Landroid/content/res/TypedArray;->getInt(II)I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	invoke-virtual {p0, v4}, Landroidx/constraintlayout/widget/Barrier;->setType(I)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sget v4, Landroidx/constraintlayout/widget/R$styleable;->ConstraintLayout_Layout_barrierAllowsGoneWidgets:I</span>
+<span class="missed">	if-ne v3, v4, :cond_1</span>
+<span class="missed">	iget-object v4, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/solver/widgets/Barrier;</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="">	invoke-virtual {v0, v3, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	invoke-virtual {v4, v5}, Landroidx/constraintlayout/solver/widgets/Barrier;->setAllowsGoneWidget(Z)V</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_1</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object v0, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/solver/widgets/Barrier;</span>
+<span class="missed">	iput-object v0, p0, Landroidx/constraintlayout/widget/Barrier;->mHelperWidget:Landroidx/constraintlayout/solver/widgets/Helper;</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/constraintlayout/widget/Barrier;->validateParams()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setAllowsGoneWidget(Z)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "supportGone"    # Z</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/solver/widgets/Barrier;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroidx/constraintlayout/solver/widgets/Barrier;->setAllowsGoneWidget(Z)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setType(I)V
+<span class="">	.locals 7</span>
+<span class="">	.param p1, "type"    # I</span>
+
+<span class="missed">	iput p1, p0, Landroidx/constraintlayout/widget/Barrier;->mIndicatedType:I</span>
+<span class="missed">	iput p1, p0, Landroidx/constraintlayout/widget/Barrier;->mResolvedType:I</span>
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/4 v1, 0x6</span>
+<span class="missed">	const/4 v2, 0x5</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	const/16 v5, 0x11</span>
+<span class="missed">	if-ge v0, v5, :cond_1</span>
+<span class="missed">	iget v0, p0, Landroidx/constraintlayout/widget/Barrier;->mIndicatedType:I</span>
+<span class="missed">	if-ne v0, v2, :cond_0</span>
+<span class="missed">	iput v3, p0, Landroidx/constraintlayout/widget/Barrier;->mResolvedType:I</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-ne v0, v1, :cond_6</span>
+<span class="missed">	iput v4, p0, Landroidx/constraintlayout/widget/Barrier;->mResolvedType:I</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {p0}, Landroidx/constraintlayout/widget/Barrier;->getResources()Landroid/content/res/Resources;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Landroid/content/res/Configuration;->getLayoutDirection()I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	if-ne v4, v5, :cond_2</span>
+<span class="missed">	move v5, v4</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	move v5, v3</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-eqz v5, :cond_4</span>
+<span class="missed">	iget v6, p0, Landroidx/constraintlayout/widget/Barrier;->mIndicatedType:I</span>
+<span class="missed">	if-ne v6, v2, :cond_3</span>
+<span class="missed">	iput v4, p0, Landroidx/constraintlayout/widget/Barrier;->mResolvedType:I</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	if-ne v6, v1, :cond_6</span>
+<span class="missed">	iput v3, p0, Landroidx/constraintlayout/widget/Barrier;->mResolvedType:I</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget v6, p0, Landroidx/constraintlayout/widget/Barrier;->mIndicatedType:I</span>
+<span class="missed">	if-ne v6, v2, :cond_5</span>
+<span class="missed">	iput v3, p0, Landroidx/constraintlayout/widget/Barrier;->mResolvedType:I</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_5</span>
+<span class="missed">	if-ne v6, v1, :cond_6</span>
+<span class="missed">	iput v4, p0, Landroidx/constraintlayout/widget/Barrier;->mResolvedType:I</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_6</span>
+<span class="missed">	iget-object v0, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/solver/widgets/Barrier;</span>
+<span class="missed">	iget v1, p0, Landroidx/constraintlayout/widget/Barrier;->mResolvedType:I</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroidx/constraintlayout/solver/widgets/Barrier;->setBarrierType(I)V</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../.resources/report.js"></script>
+</body>
+</html>

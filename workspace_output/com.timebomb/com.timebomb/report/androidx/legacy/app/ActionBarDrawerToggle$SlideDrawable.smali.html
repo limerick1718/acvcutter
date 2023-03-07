@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.legacy.app</a></li>
+        <li><i class="ico ico-class"></i> ActionBarDrawerToggle$SlideDrawable.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Landroidx/legacy/app/ActionBarDrawerToggle$SlideDrawable;
+.super Landroid/graphics/drawable/InsetDrawable;
+.source "ActionBarDrawerToggle.java"
+.implements Landroid/graphics/drawable/Drawable$Callback;
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Landroidx/legacy/app/ActionBarDrawerToggle;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x2
+name = "SlideDrawable"
+.end annotation
+
+.field private final mHasMirroring:Z
+.field private mOffset:F
+.field private mPosition:F
+.field private final mTmpRect:Landroid/graphics/Rect;
+.field final synthetic this$0:Landroidx/legacy/app/ActionBarDrawerToggle;
+
+
+.method constructor &lt;init&gt;(Landroidx/legacy/app/ActionBarDrawerToggle;Landroid/graphics/drawable/Drawable;)V
+<span class="">	.locals 2</span>
+<span class="">	.param p2, "wrapped"    # Landroid/graphics/drawable/Drawable;</span>
+
+<span class="missed">	iput-object p1, p0, Landroidx/legacy/app/ActionBarDrawerToggle$SlideDrawable;->this$0:Landroidx/legacy/app/ActionBarDrawerToggle;</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	invoke-direct {p0, p2, p1}, Landroid/graphics/drawable/InsetDrawable;-><init>(Landroid/graphics/drawable/Drawable;I)V</span>
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x12</span>
+<span class="missed">	if-le v0, v1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iput-boolean p1, p0, Landroidx/legacy/app/ActionBarDrawerToggle$SlideDrawable;->mHasMirroring:Z</span>
+<span class="missed">	new-instance p1, Landroid/graphics/Rect;</span>
+<span class="missed">	invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Landroidx/legacy/app/ActionBarDrawerToggle$SlideDrawable;->mTmpRect:Landroid/graphics/Rect;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public draw(Landroid/graphics/Canvas;)V
+<span class="">	.locals 5</span>
+<span class="">	.param p1, "canvas"    # Landroid/graphics/Canvas;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/legacy/app/ActionBarDrawerToggle$SlideDrawable;->mTmpRect:Landroid/graphics/Rect;</span>
+<span class="missed">	invoke-virtual {p0, v0}, Landroidx/legacy/app/ActionBarDrawerToggle$SlideDrawable;->copyBounds(Landroid/graphics/Rect;)V</span>
+<span class="missed">	invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I</span>
+<span class="missed">	iget-object v0, p0, Landroidx/legacy/app/ActionBarDrawerToggle$SlideDrawable;->this$0:Landroidx/legacy/app/ActionBarDrawerToggle;</span>
+<span class="missed">	iget-object v0, v0, Landroidx/legacy/app/ActionBarDrawerToggle;->mActivity:Landroid/app/Activity;</span>
+<span class="">	invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {v0}, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-ne v0, v1, :cond_0</span>
+<span class="missed">	move v0, v1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	const/4 v1, -0x1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v2, p0, Landroidx/legacy/app/ActionBarDrawerToggle$SlideDrawable;->mTmpRect:Landroid/graphics/Rect;</span>
+<span class="">	invoke-virtual {v2}, Landroid/graphics/Rect;->width()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	iget v3, p0, Landroidx/legacy/app/ActionBarDrawerToggle$SlideDrawable;->mOffset:F</span>
+<span class="missed">	neg-float v3, v3</span>
+<span class="missed">	int-to-float v4, v2</span>
+<span class="missed">	mul-float/2addr v3, v4</span>
+<span class="missed">	iget v4, p0, Landroidx/legacy/app/ActionBarDrawerToggle$SlideDrawable;->mPosition:F</span>
+<span class="missed">	mul-float/2addr v3, v4</span>
+<span class="missed">	int-to-float v4, v1</span>
+<span class="missed">	mul-float/2addr v3, v4</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="missed">	iget-boolean v3, p0, Landroidx/legacy/app/ActionBarDrawerToggle$SlideDrawable;->mHasMirroring:Z</span>
+<span class="missed">	if-nez v3, :cond_2</span>
+<span class="missed">	int-to-float v3, v2</span>
+<span class="missed">	invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V</span>
+<span class="missed">	const/high16 v3, -0x40800000    # -1.0f</span>
+<span class="missed">	const/high16 v4, 0x3f800000    # 1.0f</span>
+<span class="missed">	invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->scale(FF)V</span>
+<span class="">	:cond_2</span>
+<span class="missed">	invoke-super {p0, p1}, Landroid/graphics/drawable/InsetDrawable;->draw(Landroid/graphics/Canvas;)V</span>
+<span class="missed">	invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public getPosition()F
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget v0, p0, Landroidx/legacy/app/ActionBarDrawerToggle$SlideDrawable;->mPosition:F</span>
+<span class="">	return v0</span>
+.end method
+
+.method public setOffset(F)V
+<span class="">	.locals 0</span>
+<span class="">	.param p1, "offset"    # F</span>
+
+<span class="missed">	iput p1, p0, Landroidx/legacy/app/ActionBarDrawerToggle$SlideDrawable;->mOffset:F</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/legacy/app/ActionBarDrawerToggle$SlideDrawable;->invalidateSelf()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setPosition(F)V
+<span class="">	.locals 0</span>
+<span class="">	.param p1, "position"    # F</span>
+
+<span class="missed">	iput p1, p0, Landroidx/legacy/app/ActionBarDrawerToggle$SlideDrawable;->mPosition:F</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/legacy/app/ActionBarDrawerToggle$SlideDrawable;->invalidateSelf()V</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../.resources/report.js"></script>
+</body>
+</html>

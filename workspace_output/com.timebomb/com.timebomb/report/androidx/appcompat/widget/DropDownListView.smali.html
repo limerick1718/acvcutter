@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.appcompat.widget</a></li>
+        <li><i class="ico ico-class"></i> DropDownListView.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Landroidx/appcompat/widget/DropDownListView;
+.super Landroid/widget/ListView;
+.source "DropDownListView.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;,
+Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;
+}
+.end annotation
+
+.field public static final INVALID_POSITION:I = -0x1
+.field public static final NO_POSITION:I = -0x1
+.field private mClickAnimation:Landroidx/core/view/ViewPropertyAnimatorCompat;
+.field private mDrawsInPressedState:Z
+.field private mHijackFocus:Z
+.field private mIsChildViewEnabled:Ljava/lang/reflect/Field;
+.field private mListSelectionHidden:Z
+.field private mMotionPosition:I
+.field  mResolveHoverRunnable:Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;
+.field private mScrollHelper:Landroidx/core/widget/ListViewAutoScrollHelper;
+.field private mSelectionBottomPadding:I
+.field private mSelectionLeftPadding:I
+.field private mSelectionRightPadding:I
+.field private mSelectionTopPadding:I
+.field private mSelector:Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;
+.field private final mSelectorRect:Landroid/graphics/Rect;
+
+
+.method constructor &lt;init&gt;(Landroid/content/Context;Z)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "context"    # Landroid/content/Context;</span>
+<span class="">	.param p2, "hijackFocus"    # Z</span>
+
+<span class="missed">	sget v0, Landroidx/appcompat/R$attr;->dropDownListViewStyle:I</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-direct {p0, p1, v1, v0}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V</span>
+<span class="missed">	new-instance v0, Landroid/graphics/Rect;</span>
+<span class="missed">	invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectorRect:Landroid/graphics/Rect;</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput v0, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectionLeftPadding:I</span>
+<span class="missed">	iput v0, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectionTopPadding:I</span>
+<span class="missed">	iput v0, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectionRightPadding:I</span>
+<span class="missed">	iput v0, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectionBottomPadding:I</span>
+<span class="missed">	iput-boolean p2, p0, Landroidx/appcompat/widget/DropDownListView;->mHijackFocus:Z</span>
+<span class="missed">	invoke-virtual {p0, v0}, Landroidx/appcompat/widget/DropDownListView;->setCacheColorHint(I)V</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-class v0, Landroid/widget/AbsListView;</span>
+<span class="missed">	const-string v1, "mIsChildViewEnabled"</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mIsChildViewEnabled:Ljava/lang/reflect/Field;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mIsChildViewEnabled:Ljava/lang/reflect/Field;</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	invoke-virtual {v0}, Ljava/lang/NoSuchFieldException;->printStackTrace()V</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method private clearPressedItem()V
+<span class="">	.locals 3</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-boolean v0, p0, Landroidx/appcompat/widget/DropDownListView;->mDrawsInPressedState:Z</span>
+<span class="missed">	invoke-virtual {p0, v0}, Landroidx/appcompat/widget/DropDownListView;->setPressed(Z)V</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->drawableStateChanged()V</span>
+<span class="missed">	iget v1, p0, Landroidx/appcompat/widget/DropDownListView;->mMotionPosition:I</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getFirstVisiblePosition()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	sub-int/2addr v1, v2</span>
+<span class="">	invoke-virtual {p0, v1}, Landroidx/appcompat/widget/DropDownListView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	invoke-virtual {v1, v0}, Landroid/view/View;->setPressed(Z)V</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mClickAnimation:Landroidx/core/view/ViewPropertyAnimatorCompat;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-virtual {v0}, Landroidx/core/view/ViewPropertyAnimatorCompat;->cancel()V</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mClickAnimation:Landroidx/core/view/ViewPropertyAnimatorCompat;</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+.end method
+
+.method private clickPressedItem(Landroid/view/View;I)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "child"    # Landroid/view/View;</span>
+<span class="">	.param p2, "position"    # I</span>
+
+<span class="">	invoke-virtual {p0, p2}, Landroidx/appcompat/widget/DropDownListView;->getItemIdAtPosition(I)J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="missed">	invoke-virtual {p0, p1, p2, v0, v1}, Landroidx/appcompat/widget/DropDownListView;->performItemClick(Landroid/view/View;IJ)Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method private drawSelectorCompat(Landroid/graphics/Canvas;)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "canvas"    # Landroid/graphics/Canvas;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectorRect:Landroid/graphics/Rect;</span>
+<span class="">	invoke-virtual {v0}, Landroid/graphics/Rect;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getSelector()Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectorRect:Landroid/graphics/Rect;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method private positionSelectorCompat(ILandroid/view/View;)V
+<span class="">	.locals 5</span>
+<span class="">	.param p1, "position"    # I</span>
+<span class="">	.param p2, "sel"    # Landroid/view/View;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectorRect:Landroid/graphics/Rect;</span>
+<span class="">	invoke-virtual {p2}, Landroid/view/View;->getLeft()I</span>
+<span class="missed">	move-result v1</span>
+<span class="">	invoke-virtual {p2}, Landroid/view/View;->getTop()I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	invoke-virtual {p2}, Landroid/view/View;->getRight()I</span>
+<span class="missed">	move-result v3</span>
+<span class="">	invoke-virtual {p2}, Landroid/view/View;->getBottom()I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V</span>
+<span class="missed">	iget v1, v0, Landroid/graphics/Rect;->left:I</span>
+<span class="missed">	iget v2, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectionLeftPadding:I</span>
+<span class="missed">	sub-int/2addr v1, v2</span>
+<span class="missed">	iput v1, v0, Landroid/graphics/Rect;->left:I</span>
+<span class="missed">	iget v1, v0, Landroid/graphics/Rect;->top:I</span>
+<span class="missed">	iget v2, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectionTopPadding:I</span>
+<span class="missed">	sub-int/2addr v1, v2</span>
+<span class="missed">	iput v1, v0, Landroid/graphics/Rect;->top:I</span>
+<span class="missed">	iget v1, v0, Landroid/graphics/Rect;->right:I</span>
+<span class="missed">	iget v2, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectionRightPadding:I</span>
+<span class="missed">	add-int/2addr v1, v2</span>
+<span class="missed">	iput v1, v0, Landroid/graphics/Rect;->right:I</span>
+<span class="missed">	iget v1, v0, Landroid/graphics/Rect;->bottom:I</span>
+<span class="missed">	iget v2, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectionBottomPadding:I</span>
+<span class="missed">	add-int/2addr v1, v2</span>
+<span class="missed">	iput v1, v0, Landroid/graphics/Rect;->bottom:I</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/widget/DropDownListView;->mIsChildViewEnabled:Ljava/lang/reflect/Field;</span>
+<span class="">	invoke-virtual {v1, p0}, Ljava/lang/reflect/Field;->getBoolean(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="">	invoke-virtual {p2}, Landroid/view/View;->isEnabled()Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eq v2, v1, :cond_1</span>
+<span class="missed">	iget-object v2, p0, Landroidx/appcompat/widget/DropDownListView;->mIsChildViewEnabled:Ljava/lang/reflect/Field;</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-virtual {v2, p0, v3}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V</span>
+<span class="missed">	const/4 v2, -0x1</span>
+<span class="missed">	if-eq p1, v2, :cond_1</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->refreshDrawableState()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	:cond_1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	invoke-virtual {v1}, Ljava/lang/IllegalAccessException;->printStackTrace()V</span>
+<span class="">	:goto_1</span>
+<span class="">	return-void</span>
+.end method
+
+.method private positionSelectorLikeFocusCompat(ILandroid/view/View;)V
+<span class="">	.locals 8</span>
+<span class="">	.param p1, "position"    # I</span>
+<span class="">	.param p2, "sel"    # Landroid/view/View;</span>
+
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getSelector()Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v3, -0x1</span>
+<span class="missed">	if-eq p1, v3, :cond_0</span>
+<span class="missed">	move v3, v1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	move v3, v2</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-eqz v3, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, v2, v2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z</span>
+<span class="">	:cond_1</span>
+<span class="missed">	invoke-direct {p0, p1, p2}, Landroidx/appcompat/widget/DropDownListView;->positionSelectorCompat(ILandroid/view/View;)V</span>
+<span class="missed">	if-eqz v3, :cond_3</span>
+<span class="missed">	iget-object v4, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectorRect:Landroid/graphics/Rect;</span>
+<span class="">	invoke-virtual {v4}, Landroid/graphics/Rect;->exactCenterX()F</span>
+<span class="missed">	move-result v5</span>
+<span class="">	invoke-virtual {v4}, Landroid/graphics/Rect;->exactCenterY()F</span>
+<span class="missed">	move-result v6</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getVisibility()I</span>
+<span class="missed">	move-result v7</span>
+<span class="missed">	if-nez v7, :cond_2</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	move v1, v2</span>
+<span class="">	:goto_1</span>
+<span class="missed">	invoke-virtual {v0, v1, v2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z</span>
+<span class="missed">	invoke-static {v0, v5, v6}, Landroidx/core/graphics/drawable/DrawableCompat;->setHotspot(Landroid/graphics/drawable/Drawable;FF)V</span>
+<span class="">	:cond_3</span>
+<span class="">	return-void</span>
+.end method
+
+.method private positionSelectorLikeTouchCompat(ILandroid/view/View;FF)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "position"    # I</span>
+<span class="">	.param p2, "sel"    # Landroid/view/View;</span>
+<span class="">	.param p3, "x"    # F</span>
+<span class="">	.param p4, "y"    # F</span>
+
+<span class="missed">	invoke-direct {p0, p1, p2}, Landroidx/appcompat/widget/DropDownListView;->positionSelectorLikeFocusCompat(ILandroid/view/View;)V</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getSelector()Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v1, -0x1</span>
+<span class="missed">	if-eq p1, v1, :cond_0</span>
+<span class="missed">	invoke-static {v0, p3, p4}, Landroidx/core/graphics/drawable/DrawableCompat;->setHotspot(Landroid/graphics/drawable/Drawable;FF)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method private setPressedItem(Landroid/view/View;IFF)V
+<span class="">	.locals 6</span>
+<span class="">	.param p1, "child"    # Landroid/view/View;</span>
+<span class="">	.param p2, "position"    # I</span>
+<span class="">	.param p3, "x"    # F</span>
+<span class="">	.param p4, "y"    # F</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	iput-boolean v0, p0, Landroidx/appcompat/widget/DropDownListView;->mDrawsInPressedState:Z</span>
+<span class="missed">	sget v1, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v2, 0x15</span>
+<span class="missed">	if-lt v1, v2, :cond_0</span>
+<span class="missed">	invoke-virtual {p0, p3, p4}, Landroidx/appcompat/widget/DropDownListView;->drawableHotspotChanged(FF)V</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->isPressed()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_1</span>
+<span class="missed">	invoke-virtual {p0, v0}, Landroidx/appcompat/widget/DropDownListView;->setPressed(Z)V</span>
+<span class="">	:cond_1</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->layoutChildren()V</span>
+<span class="missed">	iget v1, p0, Landroidx/appcompat/widget/DropDownListView;->mMotionPosition:I</span>
+<span class="missed">	const/4 v3, -0x1</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	if-eq v1, v3, :cond_2</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getFirstVisiblePosition()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	sub-int/2addr v1, v3</span>
+<span class="">	invoke-virtual {p0, v1}, Landroidx/appcompat/widget/DropDownListView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	if-eqz v1, :cond_2</span>
+<span class="missed">	if-eq v1, p1, :cond_2</span>
+<span class="">	invoke-virtual {v1}, Landroid/view/View;->isPressed()Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-eqz v3, :cond_2</span>
+<span class="missed">	invoke-virtual {v1, v4}, Landroid/view/View;->setPressed(Z)V</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iput p2, p0, Landroidx/appcompat/widget/DropDownListView;->mMotionPosition:I</span>
+<span class="">	invoke-virtual {p1}, Landroid/view/View;->getLeft()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	int-to-float v1, v1</span>
+<span class="missed">	sub-float v1, p3, v1</span>
+<span class="">	invoke-virtual {p1}, Landroid/view/View;->getTop()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	int-to-float v3, v3</span>
+<span class="missed">	sub-float v3, p4, v3</span>
+<span class="missed">	sget v5, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	if-lt v5, v2, :cond_3</span>
+<span class="missed">	invoke-virtual {p1, v1, v3}, Landroid/view/View;->drawableHotspotChanged(FF)V</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-virtual {p1}, Landroid/view/View;->isPressed()Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-nez v2, :cond_4</span>
+<span class="missed">	invoke-virtual {p1, v0}, Landroid/view/View;->setPressed(Z)V</span>
+<span class="">	:cond_4</span>
+<span class="missed">	invoke-direct {p0, p2, p1, p3, p4}, Landroidx/appcompat/widget/DropDownListView;->positionSelectorLikeTouchCompat(ILandroid/view/View;FF)V</span>
+<span class="missed">	invoke-direct {p0, v4}, Landroidx/appcompat/widget/DropDownListView;->setSelectorEnabled(Z)V</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->refreshDrawableState()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method private setSelectorEnabled(Z)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "enabled"    # Z</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mSelector:Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;->setEnabled(Z)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method private touchModeDrawsInPressedStateCompat()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-boolean v0, p0, Landroidx/appcompat/widget/DropDownListView;->mDrawsInPressedState:Z</span>
+<span class="">	return v0</span>
+.end method
+
+.method private updateSelectorStateCompat()V
+<span class="">	.locals 2</span>
+
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getSelector()Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-direct {p0}, Landroidx/appcompat/widget/DropDownListView;->touchModeDrawsInPressedStateCompat()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->isPressed()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getDrawableState()[I</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected dispatchDraw(Landroid/graphics/Canvas;)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "canvas"    # Landroid/graphics/Canvas;</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	invoke-direct {p0, p1}, Landroidx/appcompat/widget/DropDownListView;->drawSelectorCompat(Landroid/graphics/Canvas;)V</span>
+<span class="missed">	invoke-super {p0, p1}, Landroid/widget/ListView;->dispatchDraw(Landroid/graphics/Canvas;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected drawableStateChanged()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mResolveHoverRunnable:Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-super {p0}, Landroid/widget/ListView;->drawableStateChanged()V</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	invoke-direct {p0, v0}, Landroidx/appcompat/widget/DropDownListView;->setSelectorEnabled(Z)V</span>
+<span class="missed">	invoke-direct {p0}, Landroidx/appcompat/widget/DropDownListView;->updateSelectorStateCompat()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public hasFocus()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-boolean v0, p0, Landroidx/appcompat/widget/DropDownListView;->mHijackFocus:Z</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	invoke-super {p0}, Landroid/widget/ListView;->hasFocus()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	:goto_1</span>
+<span class="">	return v0</span>
+.end method
+
+.method public hasWindowFocus()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-boolean v0, p0, Landroidx/appcompat/widget/DropDownListView;->mHijackFocus:Z</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	invoke-super {p0}, Landroid/widget/ListView;->hasWindowFocus()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	:goto_1</span>
+<span class="">	return v0</span>
+.end method
+
+.method public isFocused()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-boolean v0, p0, Landroidx/appcompat/widget/DropDownListView;->mHijackFocus:Z</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	invoke-super {p0}, Landroid/widget/ListView;->isFocused()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	:goto_1</span>
+<span class="">	return v0</span>
+.end method
+
+.method public isInTouchMode()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-boolean v0, p0, Landroidx/appcompat/widget/DropDownListView;->mHijackFocus:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-boolean v0, p0, Landroidx/appcompat/widget/DropDownListView;->mListSelectionHidden:Z</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-super {p0}, Landroid/widget/ListView;->isInTouchMode()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public lookForSelectablePosition(IZ)I
+<span class="">	.locals 4</span>
+<span class="">	.param p1, "position"    # I</span>
+<span class="">	.param p2, "lookDown"    # Z</span>
+
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getAdapter()Landroid/widget/ListAdapter;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v1, -0x1</span>
+<span class="missed">	if-eqz v0, :cond_8</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->isInTouchMode()Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-interface {v0}, Landroid/widget/ListAdapter;->getCount()I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getAdapter()Landroid/widget/ListAdapter;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	invoke-interface {v3}, Landroid/widget/ListAdapter;->areAllItemsEnabled()Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-nez v3, :cond_5</span>
+<span class="missed">	if-eqz p2, :cond_1</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	invoke-static {v3, p1}, Ljava/lang/Math;->max(II)I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge p1, v2, :cond_2</span>
+<span class="">	invoke-interface {v0, p1}, Landroid/widget/ListAdapter;->isEnabled(I)Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-nez v3, :cond_2</span>
+<span class="missed">	add-int/lit8 p1, p1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	add-int/lit8 v3, v2, -0x1</span>
+<span class="">	invoke-static {p1, v3}, Ljava/lang/Math;->min(II)I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ltz p1, :cond_2</span>
+<span class="">	invoke-interface {v0, p1}, Landroid/widget/ListAdapter;->isEnabled(I)Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-nez v3, :cond_2</span>
+<span class="missed">	add-int/lit8 p1, p1, -0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	if-ltz p1, :cond_4</span>
+<span class="missed">	if-lt p1, v2, :cond_3</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_3</span>
+<span class="">	return p1</span>
+<span class="">	:goto_2</span>
+<span class="">	:cond_4</span>
+<span class="">	return v1</span>
+<span class="">	:cond_5</span>
+<span class="missed">	if-ltz p1, :cond_7</span>
+<span class="missed">	if-lt p1, v2, :cond_6</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_6</span>
+<span class="">	return p1</span>
+<span class="">	:goto_3</span>
+<span class="">	:cond_7</span>
+<span class="">	return v1</span>
+<span class="">	:goto_4</span>
+<span class="">	:cond_8</span>
+<span class="">	return v1</span>
+.end method
+
+.method public measureHeightOfChildrenCompat(IIIII)I
+<span class="">	.locals 22</span>
+<span class="">	.param p1, "widthMeasureSpec"    # I</span>
+<span class="">	.param p2, "startPosition"    # I</span>
+<span class="">	.param p3, "endPosition"    # I</span>
+<span class="">	.param p4, "maxHeight"    # I</span>
+<span class="">	.param p5, "disallowPartialChildPosition"    # I</span>
+
+<span class="missed">	move/from16 v0, p4</span>
+<span class="missed">	move/from16 v1, p5</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/DropDownListView;->getListPaddingTop()I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/DropDownListView;->getListPaddingBottom()I</span>
+<span class="missed">	move-result v3</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/DropDownListView;->getListPaddingLeft()I</span>
+<span class="missed">	move-result v4</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/DropDownListView;->getListPaddingRight()I</span>
+<span class="missed">	move-result v5</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/DropDownListView;->getDividerHeight()I</span>
+<span class="missed">	move-result v6</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/DropDownListView;->getDivider()Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/DropDownListView;->getAdapter()Landroid/widget/ListAdapter;</span>
+<span class="missed">	move-result-object v8</span>
+<span class="missed">	if-nez v8, :cond_0</span>
+<span class="missed">	add-int v9, v2, v3</span>
+<span class="">	return v9</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int v9, v2, v3</span>
+<span class="missed">	if-lez v6, :cond_1</span>
+<span class="missed">	if-eqz v7, :cond_1</span>
+<span class="missed">	move v11, v6</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v11, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 v12, 0x0</span>
+<span class="missed">	const/4 v13, 0x0</span>
+<span class="missed">	const/4 v14, 0x0</span>
+<span class="">	invoke-interface {v8}, Landroid/widget/ListAdapter;->getCount()I</span>
+<span class="missed">	move-result v15</span>
+<span class="missed">	const/16 v16, 0x0</span>
+<span class="missed">	move v10, v14</span>
+<span class="missed">	move v14, v12</span>
+<span class="missed">	move v12, v9</span>
+<span class="missed">	move/from16 v9, v16</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ge v9, v15, :cond_9</span>
+<span class="missed">	move/from16 v17, v2</span>
+<span class="">	invoke-interface {v8, v9}, Landroid/widget/ListAdapter;->getItemViewType(I)I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eq v2, v10, :cond_2</span>
+<span class="missed">	const/4 v13, 0x0</span>
+<span class="missed">	move v10, v2</span>
+<span class="">	:cond_2</span>
+<span class="missed">	move/from16 v18, v2</span>
+<span class="missed">	move-object/from16 v2, p0</span>
+<span class="">	invoke-interface {v8, v9, v13, v2}, Landroid/widget/ListAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;</span>
+<span class="missed">	move-result-object v13</span>
+<span class="">	invoke-virtual {v13}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;</span>
+<span class="missed">	move-result-object v19</span>
+<span class="missed">	if-nez v19, :cond_3</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/DropDownListView;->generateDefaultLayoutParams()Landroid/view/ViewGroup$LayoutParams;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-virtual {v13, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	move-object/from16 v2, v19</span>
+<span class="">	:goto_2</span>
+<span class="missed">	move/from16 v19, v3</span>
+<span class="missed">	iget v3, v2, Landroid/view/ViewGroup$LayoutParams;->height:I</span>
+<span class="missed">	if-lez v3, :cond_4</span>
+<span class="missed">	iget v3, v2, Landroid/view/ViewGroup$LayoutParams;->height:I</span>
+<span class="missed">	move-object/from16 v20, v2</span>
+<span class="missed">	const/high16 v2, 0x40000000    # 2.0f</span>
+<span class="">	invoke-static {v3, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	move v3, v2</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_4</span>
+<span class="missed">	move-object/from16 v20, v2</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	invoke-static {v2, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I</span>
+<span class="missed">	move-result v3</span>
+<span class="">	:goto_3</span>
+<span class="missed">	move/from16 v2, p1</span>
+<span class="missed">	invoke-virtual {v13, v2, v3}, Landroid/view/View;->measure(II)V</span>
+<span class="missed">	invoke-virtual {v13}, Landroid/view/View;->forceLayout()V</span>
+<span class="missed">	if-lez v9, :cond_5</span>
+<span class="missed">	add-int/2addr v12, v11</span>
+<span class="">	:cond_5</span>
+<span class="">	invoke-virtual {v13}, Landroid/view/View;->getMeasuredHeight()I</span>
+<span class="missed">	move-result v21</span>
+<span class="missed">	add-int v12, v12, v21</span>
+<span class="missed">	if-lt v12, v0, :cond_7</span>
+<span class="missed">	if-ltz v1, :cond_6</span>
+<span class="missed">	if-le v9, v1, :cond_6</span>
+<span class="missed">	if-lez v14, :cond_6</span>
+<span class="missed">	if-eq v12, v0, :cond_6</span>
+<span class="missed">	move/from16 v16, v14</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_6</span>
+<span class="missed">	move/from16 v16, v0</span>
+<span class="">	:goto_4</span>
+<span class="">	return v16</span>
+<span class="">	:cond_7</span>
+<span class="missed">	if-ltz v1, :cond_8</span>
+<span class="missed">	if-lt v9, v1, :cond_8</span>
+<span class="missed">	move v14, v12</span>
+<span class="">	:cond_8</span>
+<span class="missed">	add-int/lit8 v9, v9, 0x1</span>
+<span class="missed">	move/from16 v2, v17</span>
+<span class="missed">	move/from16 v3, v19</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_9</span>
+<span class="">	return v12</span>
+.end method
+
+.method protected onDetachedFromWindow()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mResolveHoverRunnable:Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;</span>
+<span class="missed">	invoke-super {p0}, Landroid/widget/ListView;->onDetachedFromWindow()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public onForwardedEvent(Landroid/view/MotionEvent;I)Z
+<span class="">	.locals 11</span>
+<span class="">	.param p1, "event"    # Landroid/view/MotionEvent;</span>
+<span class="">	.param p2, "activePointerId"    # I</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	if-eq v2, v3, :cond_1</span>
+<span class="missed">	const/4 v4, 0x2</span>
+<span class="missed">	if-eq v2, v4, :cond_2</span>
+<span class="missed">	const/4 v4, 0x3</span>
+<span class="missed">	if-eq v2, v4, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-virtual {p1, p2}, Landroid/view/MotionEvent;->findPointerIndex(I)I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-gez v4, :cond_3</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-virtual {p1, v4}, Landroid/view/MotionEvent;->getX(I)F</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	float-to-int v5, v5</span>
+<span class="">	invoke-virtual {p1, v4}, Landroid/view/MotionEvent;->getY(I)F</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	float-to-int v6, v6</span>
+<span class="">	invoke-virtual {p0, v5, v6}, Landroidx/appcompat/widget/DropDownListView;->pointToPosition(II)I</span>
+<span class="missed">	move-result v7</span>
+<span class="missed">	const/4 v8, -0x1</span>
+<span class="missed">	if-ne v7, v8, :cond_4</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_4</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getFirstVisiblePosition()I</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	sub-int v8, v7, v8</span>
+<span class="">	invoke-virtual {p0, v8}, Landroidx/appcompat/widget/DropDownListView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v8</span>
+<span class="missed">	int-to-float v9, v5</span>
+<span class="missed">	int-to-float v10, v6</span>
+<span class="missed">	invoke-direct {p0, v8, v7, v9, v10}, Landroidx/appcompat/widget/DropDownListView;->setPressedItem(Landroid/view/View;IFF)V</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-ne v2, v3, :cond_5</span>
+<span class="missed">	invoke-direct {p0, v8, v7}, Landroidx/appcompat/widget/DropDownListView;->clickPressedItem(Landroid/view/View;I)V</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_5</span>
+<span class="missed">	if-eqz v0, :cond_6</span>
+<span class="missed">	if-eqz v1, :cond_7</span>
+<span class="">	:cond_6</span>
+<span class="missed">	invoke-direct {p0}, Landroidx/appcompat/widget/DropDownListView;->clearPressedItem()V</span>
+<span class="">	:cond_7</span>
+<span class="missed">	if-eqz v0, :cond_9</span>
+<span class="missed">	iget-object v4, p0, Landroidx/appcompat/widget/DropDownListView;->mScrollHelper:Landroidx/core/widget/ListViewAutoScrollHelper;</span>
+<span class="missed">	if-nez v4, :cond_8</span>
+<span class="missed">	new-instance v4, Landroidx/core/widget/ListViewAutoScrollHelper;</span>
+<span class="missed">	invoke-direct {v4, p0}, Landroidx/core/widget/ListViewAutoScrollHelper;-><init>(Landroid/widget/ListView;)V</span>
+<span class="missed">	iput-object v4, p0, Landroidx/appcompat/widget/DropDownListView;->mScrollHelper:Landroidx/core/widget/ListViewAutoScrollHelper;</span>
+<span class="">	:cond_8</span>
+<span class="missed">	iget-object v4, p0, Landroidx/appcompat/widget/DropDownListView;->mScrollHelper:Landroidx/core/widget/ListViewAutoScrollHelper;</span>
+<span class="missed">	invoke-virtual {v4, v3}, Landroidx/core/widget/ListViewAutoScrollHelper;->setEnabled(Z)Landroidx/core/widget/AutoScrollHelper;</span>
+<span class="missed">	iget-object v3, p0, Landroidx/appcompat/widget/DropDownListView;->mScrollHelper:Landroidx/core/widget/ListViewAutoScrollHelper;</span>
+<span class="missed">	invoke-virtual {v3, p0, p1}, Landroidx/core/widget/ListViewAutoScrollHelper;->onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_9</span>
+<span class="missed">	iget-object v3, p0, Landroidx/appcompat/widget/DropDownListView;->mScrollHelper:Landroidx/core/widget/ListViewAutoScrollHelper;</span>
+<span class="missed">	if-eqz v3, :cond_a</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-virtual {v3, v4}, Landroidx/core/widget/ListViewAutoScrollHelper;->setEnabled(Z)Landroidx/core/widget/AutoScrollHelper;</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_a</span>
+<span class="">	return v0</span>
+.end method
+
+.method public onHoverEvent(Landroid/view/MotionEvent;)Z
+<span class="">	.locals 6</span>
+<span class="">	.param p1, "ev"    # Landroid/view/MotionEvent;</span>
+
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x1a</span>
+<span class="missed">	if-ge v0, v1, :cond_0</span>
+<span class="">	invoke-super {p0, p1}, Landroid/widget/ListView;->onHoverEvent(Landroid/view/MotionEvent;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/16 v1, 0xa</span>
+<span class="missed">	if-ne v0, v1, :cond_1</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/widget/DropDownListView;->mResolveHoverRunnable:Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;</span>
+<span class="missed">	if-nez v1, :cond_1</span>
+<span class="missed">	new-instance v1, Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;</span>
+<span class="missed">	invoke-direct {v1, p0}, Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;-><init>(Landroidx/appcompat/widget/DropDownListView;)V</span>
+<span class="missed">	iput-object v1, p0, Landroidx/appcompat/widget/DropDownListView;->mResolveHoverRunnable:Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/widget/DropDownListView;->mResolveHoverRunnable:Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;</span>
+<span class="missed">	invoke-virtual {v1}, Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;->post()V</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-super {p0, p1}, Landroid/widget/ListView;->onHoverEvent(Landroid/view/MotionEvent;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/16 v2, 0x9</span>
+<span class="missed">	const/4 v3, -0x1</span>
+<span class="missed">	if-eq v0, v2, :cond_3</span>
+<span class="missed">	const/4 v2, 0x7</span>
+<span class="missed">	if-ne v0, v2, :cond_2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	invoke-virtual {p0, v3}, Landroidx/appcompat/widget/DropDownListView;->setSelection(I)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	float-to-int v2, v2</span>
+<span class="">	invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	float-to-int v4, v4</span>
+<span class="">	invoke-virtual {p0, v2, v4}, Landroidx/appcompat/widget/DropDownListView;->pointToPosition(II)I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eq v2, v3, :cond_5</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getSelectedItemPosition()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-eq v2, v3, :cond_5</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getFirstVisiblePosition()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	sub-int v3, v2, v3</span>
+<span class="">	invoke-virtual {p0, v3}, Landroidx/appcompat/widget/DropDownListView;->getChildAt(I)Landroid/view/View;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	invoke-virtual {v3}, Landroid/view/View;->isEnabled()Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-eqz v4, :cond_4</span>
+<span class="">	invoke-virtual {v3}, Landroid/view/View;->getTop()I</span>
+<span class="missed">	move-result v4</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getTop()I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	sub-int/2addr v4, v5</span>
+<span class="missed">	invoke-virtual {p0, v2, v4}, Landroidx/appcompat/widget/DropDownListView;->setSelectionFromTop(II)V</span>
+<span class="">	:cond_4</span>
+<span class="missed">	invoke-direct {p0}, Landroidx/appcompat/widget/DropDownListView;->updateSelectorStateCompat()V</span>
+<span class="">	:cond_5</span>
+<span class="">	nop</span>
+<span class="">	:goto_1</span>
+<span class="">	return v1</span>
+.end method
+
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "ev"    # Landroid/view/MotionEvent;</span>
+
+<span class="">	invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	float-to-int v0, v0</span>
+<span class="">	invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	float-to-int v1, v1</span>
+<span class="">	invoke-virtual {p0, v0, v1}, Landroidx/appcompat/widget/DropDownListView;->pointToPosition(II)I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iput v0, p0, Landroidx/appcompat/widget/DropDownListView;->mMotionPosition:I</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mResolveHoverRunnable:Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-virtual {v0}, Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;->cancel()V</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-super {p0, p1}, Landroid/widget/ListView;->onTouchEvent(Landroid/view/MotionEvent;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method  setListSelectionHidden(Z)V
+<span class="">	.locals 0</span>
+<span class="">	.param p1, "hideListSelection"    # Z</span>
+
+<span class="missed">	iput-boolean p1, p0, Landroidx/appcompat/widget/DropDownListView;->mListSelectionHidden:Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setSelector(Landroid/graphics/drawable/Drawable;)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "sel"    # Landroid/graphics/drawable/Drawable;</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	new-instance v0, Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;</span>
+<span class="missed">	invoke-direct {v0, p1}, Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;-><init>(Landroid/graphics/drawable/Drawable;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iput-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mSelector:Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mSelector:Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;</span>
+<span class="missed">	invoke-super {p0, v0}, Landroid/widget/ListView;->setSelector(Landroid/graphics/drawable/Drawable;)V</span>
+<span class="missed">	new-instance v0, Landroid/graphics/Rect;</span>
+<span class="missed">	invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V</span>
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="missed">	invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget v1, v0, Landroid/graphics/Rect;->left:I</span>
+<span class="missed">	iput v1, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectionLeftPadding:I</span>
+<span class="missed">	iget v1, v0, Landroid/graphics/Rect;->top:I</span>
+<span class="missed">	iput v1, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectionTopPadding:I</span>
+<span class="missed">	iget v1, v0, Landroid/graphics/Rect;->right:I</span>
+<span class="missed">	iput v1, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectionRightPadding:I</span>
+<span class="missed">	iget v1, v0, Landroid/graphics/Rect;->bottom:I</span>
+<span class="missed">	iput v1, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectionBottomPadding:I</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../.resources/report.js"></script>
+</body>
+</html>

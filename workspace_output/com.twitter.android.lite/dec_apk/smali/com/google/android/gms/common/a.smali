@@ -32,13 +32,25 @@ Ljava/util/concurrent/TimeoutException;
 const-string v0, "BlockingServiceConnection.getServiceWithTimeout() called on main thread"
 invoke-static {v0}, Lcom/google/android/gms/common/internal/o;->c(Ljava/lang/String;)V
 iget-boolean v0, p0, Lcom/google/android/gms/common/a;->a:Z
+if-nez v0, :cond_1
 const/4 v0, 0x1
 iput-boolean v0, p0, Lcom/google/android/gms/common/a;->a:Z
 iget-object v0, p0, Lcom/google/android/gms/common/a;->b:Ljava/util/concurrent/BlockingQueue;
 invoke-interface {v0, p1, p2, p3}, Ljava/util/concurrent/BlockingQueue;->poll(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
 move-result-object p1
 check-cast p1, Landroid/os/IBinder;
+if-eqz p1, :cond_0
 return-object p1
+:cond_0
+new-instance p1, Ljava/util/concurrent/TimeoutException;
+const-string p2, "Timed out waiting for the service connection"
+invoke-direct {p1, p2}, Ljava/util/concurrent/TimeoutException;-><init>(Ljava/lang/String;)V
+throw p1
+:cond_1
+new-instance p1, Ljava/lang/IllegalStateException;
+const-string p2, "Cannot call get on this connection more than once"
+invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
 .locals 0

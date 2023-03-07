@@ -259,7 +259,12 @@ value = {
 }
 .end annotation
 sget-object v0, Ltm;->a:Ltm;
+if-ne p0, v0, :cond_0
 sget-object p0, Lcom/google/gson/internal/bind/i;->t:Ltn;
+return-object p0
+:cond_0
+new-instance p0, Lsx$3;
+invoke-direct {p0}, Lsx$3;-><init>()V
 return-object p0
 .end method
 .method private static a(Ltn;)Ltn;
@@ -291,10 +296,36 @@ value = {
 ">;"
 }
 .end annotation
+if-eqz p1, :cond_0
+sget-object p1, Lcom/google/gson/internal/bind/i;->v:Ltn;
+return-object p1
 :cond_0
 new-instance p1, Lsx$1;
 invoke-direct {p1, p0}, Lsx$1;-><init>(Lsx;)V
 return-object p1
+.end method
+.method static a(D)V
+.locals 2
+invoke-static {p0, p1}, Ljava/lang/Double;->isNaN(D)Z
+move-result v0
+if-nez v0, :cond_0
+invoke-static {p0, p1}, Ljava/lang/Double;->isInfinite(D)Z
+move-result v0
+if-nez v0, :cond_0
+return-void
+:cond_0
+new-instance v0, Ljava/lang/IllegalArgumentException;
+new-instance v1, Ljava/lang/StringBuilder;
+invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+invoke-virtual {v1, p0, p1}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+const-string p0, " is not a valid double value as per JSON specification. To override this"
+invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+const-string p0, " behavior, use GsonBuilder.serializeSpecialFloatingPointValues() method."
+invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object p0
+invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+throw v0
 .end method
 .method private static b(Ltn;)Ltn;
 .locals 1
@@ -325,6 +356,9 @@ value = {
 ">;"
 }
 .end annotation
+if-eqz p1, :cond_0
+sget-object p1, Lcom/google/gson/internal/bind/i;->u:Ltn;
+return-object p1
 :cond_0
 new-instance p1, Lsx$2;
 invoke-direct {p1, p0}, Lsx$2;-><init>(Lsx;)V
@@ -332,6 +366,11 @@ return-object p1
 .end method
 .method public a(Ljava/lang/Object;)Ljava/lang/String;
 .locals 1
+if-nez p1, :cond_0
+sget-object p1, Ltf;->a:Ltf;
+invoke-virtual {p0, p1}, Lsx;->a(Ltd;)Ljava/lang/String;
+move-result-object p1
+return-object p1
 :cond_0
 invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 move-result-object v0
@@ -350,8 +389,12 @@ return-object p1
 .end method
 .method public a(Ltd;)Ljava/lang/String;
 .locals 1
-const/4 v0, 0x0
-return-object v0
+new-instance v0, Ljava/io/StringWriter;
+invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V
+invoke-virtual {p0, p1, v0}, Lsx;->a(Ltd;Ljava/lang/Appendable;)V
+invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
+move-result-object p1
+return-object p1
 .end method
 .method public a(Ljava/lang/Class;)Ltn;
 .locals 0
@@ -386,8 +429,44 @@ value = {
 "TT;>;"
 }
 .end annotation
+iget-object v0, p0, Lsx;->d:Ljava/util/List;
+invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+move-result v0
+if-nez v0, :cond_0
+iget-object p1, p0, Lsx;->m:Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;
+:cond_0
 const/4 v0, 0x0
-return-object v0
+iget-object v1, p0, Lsx;->d:Ljava/util/List;
+invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+move-result-object v1
+:cond_1
+:goto_0
+invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+move-result v2
+if-eqz v2, :cond_3
+invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+move-result-object v2
+check-cast v2, Lto;
+if-nez v0, :cond_2
+if-ne v2, p1, :cond_1
+const/4 v0, 0x1
+goto :goto_0
+:cond_2
+invoke-interface {v2, p0, p2}, Lto;->a(Lsx;Ltv;)Ltn;
+move-result-object v2
+if-eqz v2, :cond_1
+return-object v2
+:cond_3
+new-instance p1, Ljava/lang/IllegalArgumentException;
+new-instance v0, Ljava/lang/StringBuilder;
+invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+const-string v1, "GSON cannot serialize "
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object p2
+invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method
 .method public a(Ltv;)Ltn;
 .locals 5
@@ -403,6 +482,10 @@ value = {
 }
 .end annotation
 iget-object v0, p0, Lsx;->c:Ljava/util/Map;
+if-nez p1, :cond_0
+sget-object v1, Lsx;->a:Ltv;
+goto :goto_0
+:cond_0
 move-object v1, p1
 :goto_0
 invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -426,6 +509,10 @@ const/4 v1, 0x1
 invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 move-result-object v2
 check-cast v2, Lsx$a;
+if-eqz v2, :cond_3
+return-object v2
+:cond_3
+:try_start_0
 new-instance v2, Lsx$a;
 invoke-direct {v2}, Lsx$a;-><init>()V
 invoke-interface {v0, p1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -435,6 +522,7 @@ move-result-object v3
 :cond_4
 invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 move-result v4
+if-eqz v4, :cond_6
 invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 move-result-object v4
 check-cast v4, Lto;
@@ -444,16 +532,43 @@ if-eqz v4, :cond_4
 invoke-virtual {v2, v4}, Lsx$a;->a(Ltn;)V
 iget-object v2, p0, Lsx;->c:Ljava/util/Map;
 invoke-interface {v2, p1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 if-eqz v1, :cond_5
 iget-object p1, p0, Lsx;->b:Ljava/lang/ThreadLocal;
 invoke-virtual {p1}, Ljava/lang/ThreadLocal;->remove()V
 :cond_5
 return-object v4
+:cond_6
+:try_start_1
+new-instance v2, Ljava/lang/IllegalArgumentException;
+new-instance v3, Ljava/lang/StringBuilder;
+invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+const-string v4, "GSON cannot handle "
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object v3
+invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+throw v2
+:try_end_1
+.catchall {:try_start_1 .. :try_end_1} :catchall_0
+:catchall_0
+move-exception v2
+invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+if-eqz v1, :cond_7
+iget-object p1, p0, Lsx;->b:Ljava/lang/ThreadLocal;
+invoke-virtual {p1}, Ljava/lang/ThreadLocal;->remove()V
+:cond_7
+throw v2
 .end method
 .method public a(Ljava/io/Reader;)Ltw;
 .locals 1
-const/4 v0, 0x0
+new-instance v0, Ltw;
+invoke-direct {v0, p1}, Ltw;-><init>(Ljava/io/Reader;)V
+iget-boolean p1, p0, Lsx;->l:Z
+invoke-virtual {v0, p1}, Ltw;->a(Z)V
 return-object v0
 .end method
 .method public a(Ljava/io/Writer;)Lty;
@@ -464,9 +579,17 @@ Ljava/io/IOException;
 }
 .end annotation
 iget-boolean v0, p0, Lsx;->j:Z
+if-eqz v0, :cond_0
+const-string v0, ")]}\'\n"
+invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+:cond_0
 new-instance v0, Lty;
 invoke-direct {v0, p1}, Lty;-><init>(Ljava/io/Writer;)V
 iget-boolean p1, p0, Lsx;->k:Z
+if-eqz p1, :cond_1
+const-string p1, "  "
+invoke-virtual {v0, p1}, Lty;->c(Ljava/lang/String;)V
+:cond_1
 iget-boolean p1, p0, Lsx;->h:Z
 invoke-virtual {v0, p1}, Lty;->d(Z)V
 return-object v0
@@ -478,12 +601,20 @@ value = {
 Lte;
 }
 .end annotation
+:try_start_0
 invoke-static {p3}, Lcom/google/gson/internal/i;->a(Ljava/lang/Appendable;)Ljava/io/Writer;
 move-result-object p3
 invoke-virtual {p0, p3}, Lsx;->a(Ljava/io/Writer;)Lty;
 move-result-object p3
 invoke-virtual {p0, p1, p2, p3}, Lsx;->a(Ljava/lang/Object;Ljava/lang/reflect/Type;Lty;)V
+:try_end_0
+.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 return-void
+:catch_0
+move-exception p1
+new-instance p2, Lte;
+invoke-direct {p2, p1}, Lte;-><init>(Ljava/lang/Throwable;)V
+throw p2
 .end method
 .method public a(Ljava/lang/Object;Ljava/lang/reflect/Type;Lty;)V
 .locals 4
@@ -508,11 +639,31 @@ invoke-virtual {p3}, Lty;->i()Z
 move-result v2
 iget-boolean v3, p0, Lsx;->h:Z
 invoke-virtual {p3, v3}, Lty;->d(Z)V
+:try_start_0
 invoke-virtual {p2, p3, p1}, Ltn;->a(Lty;Ljava/lang/Object;)V
+:try_end_0
+.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 invoke-virtual {p3, v0}, Lty;->b(Z)V
 invoke-virtual {p3, v1}, Lty;->c(Z)V
 invoke-virtual {p3, v2}, Lty;->d(Z)V
 return-void
+:catchall_0
+move-exception p1
+goto :goto_0
+:catch_0
+move-exception p1
+:try_start_1
+new-instance p2, Lte;
+invoke-direct {p2, p1}, Lte;-><init>(Ljava/lang/Throwable;)V
+throw p2
+:try_end_1
+.catchall {:try_start_1 .. :try_end_1} :catchall_0
+:goto_0
+invoke-virtual {p3, v0}, Lty;->b(Z)V
+invoke-virtual {p3, v1}, Lty;->c(Z)V
+invoke-virtual {p3, v2}, Lty;->d(Z)V
+throw p1
 .end method
 .method public a(Ltd;Ljava/lang/Appendable;)V
 .locals 0
@@ -521,7 +672,20 @@ value = {
 Lte;
 }
 .end annotation
+:try_start_0
+invoke-static {p2}, Lcom/google/gson/internal/i;->a(Ljava/lang/Appendable;)Ljava/io/Writer;
+move-result-object p2
+invoke-virtual {p0, p2}, Lsx;->a(Ljava/io/Writer;)Lty;
+move-result-object p2
+invoke-virtual {p0, p1, p2}, Lsx;->a(Ltd;Lty;)V
+:try_end_0
+.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 return-void
+:catch_0
+move-exception p1
+new-instance p2, Lte;
+invoke-direct {p2, p1}, Lte;-><init>(Ljava/lang/Throwable;)V
+throw p2
 .end method
 .method public a(Ltd;Lty;)V
 .locals 4
@@ -530,10 +694,62 @@ value = {
 Lte;
 }
 .end annotation
+invoke-virtual {p2}, Lty;->g()Z
+move-result v0
+const/4 v1, 0x1
+invoke-virtual {p2, v1}, Lty;->b(Z)V
+invoke-virtual {p2}, Lty;->h()Z
+move-result v1
+iget-boolean v2, p0, Lsx;->i:Z
+invoke-virtual {p2, v2}, Lty;->c(Z)V
+invoke-virtual {p2}, Lty;->i()Z
+move-result v2
+iget-boolean v3, p0, Lsx;->h:Z
+invoke-virtual {p2, v3}, Lty;->d(Z)V
+:try_start_0
+invoke-static {p1, p2}, Lcom/google/gson/internal/i;->a(Ltd;Lty;)V
+:try_end_0
+.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
+invoke-virtual {p2, v0}, Lty;->b(Z)V
+invoke-virtual {p2, v1}, Lty;->c(Z)V
+invoke-virtual {p2, v2}, Lty;->d(Z)V
 return-void
+:catchall_0
+move-exception p1
+goto :goto_0
+:catch_0
+move-exception p1
+:try_start_1
+new-instance v3, Lte;
+invoke-direct {v3, p1}, Lte;-><init>(Ljava/lang/Throwable;)V
+throw v3
+:try_end_1
+.catchall {:try_start_1 .. :try_end_1} :catchall_0
+:goto_0
+invoke-virtual {p2, v0}, Lty;->b(Z)V
+invoke-virtual {p2, v1}, Lty;->c(Z)V
+invoke-virtual {p2, v2}, Lty;->d(Z)V
+throw p1
 .end method
 .method public toString()Ljava/lang/String;
 .locals 2
-const/4 v0, 0x0
+new-instance v0, Ljava/lang/StringBuilder;
+const-string v1, "{serializeNulls:"
+invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+iget-boolean v1, p0, Lsx;->h:Z
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+const-string v1, ",factories:"
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+iget-object v1, p0, Lsx;->d:Ljava/util/List;
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+const-string v1, ",instanceCreators:"
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+iget-object v1, p0, Lsx;->e:Lcom/google/gson/internal/c;
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+const-string v1, "}"
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object v0
 return-object v0
 .end method

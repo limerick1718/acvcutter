@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.asynclayoutinflater.view</a></li>
+        <li><i class="ico ico-class"></i> AsyncLayoutInflater$InflateThread.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;
+.super Ljava/lang/Thread;
+.source "AsyncLayoutInflater.java"
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0xa
+name = "InflateThread"
+.end annotation
+
+.field private static final sInstance:Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;
+.field private mQueue:Ljava/util/concurrent/ArrayBlockingQueue;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/concurrent/ArrayBlockingQueue<",
+"Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;",
+">;"
+}
+.end annotation
+.end field
+.field private mRequestPool:Landroidx/core/util/Pools$SynchronizedPool;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Landroidx/core/util/Pools$SynchronizedPool<",
+"Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;",
+">;"
+}
+.end annotation
+.end field
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;</span>
+<span class="missed">	invoke-direct {v0}, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;-><init>()V</span>
+<span class="missed">	sput-object v0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;->sInstance:Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;</span>
+<span class="missed">	sget-object v0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;->sInstance:Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;</span>
+<span class="missed">	invoke-virtual {v0}, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;->start()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method private constructor &lt;init&gt;()V
+<span class="">	.locals 2</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Thread;-><init>()V</span>
+<span class="missed">	new-instance v0, Ljava/util/concurrent/ArrayBlockingQueue;</span>
+<span class="missed">	const/16 v1, 0xa</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/util/concurrent/ArrayBlockingQueue;-><init>(I)V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;->mQueue:Ljava/util/concurrent/ArrayBlockingQueue;</span>
+<span class="missed">	new-instance v0, Landroidx/core/util/Pools$SynchronizedPool;</span>
+<span class="missed">	invoke-direct {v0, v1}, Landroidx/core/util/Pools$SynchronizedPool;-><init>(I)V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;->mRequestPool:Landroidx/core/util/Pools$SynchronizedPool;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public static getInstance()Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;->sInstance:Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public enqueue(Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;)V
+<span class="">	.locals 3</span>
+<span class="">	.param p1, "request"    # Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;</span>
+
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;->mQueue:Ljava/util/concurrent/ArrayBlockingQueue;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljava/util/concurrent/ArrayBlockingQueue;->put(Ljava/lang/Object;)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	nop</span>
+<span class="">	return-void</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	new-instance v1, Ljava/lang/RuntimeException;</span>
+<span class="missed">	const-string v2, "Failed to enqueue async inflate request"</span>
+<span class="missed">	invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	throw v1</span>
+.end method
+
+.method public obtainRequest()Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;->mRequestPool:Landroidx/core/util/Pools$SynchronizedPool;</span>
+<span class="">	invoke-virtual {v0}, Landroidx/core/util/Pools$SynchronizedPool;->acquire()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	new-instance v1, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;</span>
+<span class="missed">	invoke-direct {v1}, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;-><init>()V</span>
+<span class="missed">	move-object v0, v1</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public releaseRequest(Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "obj"    # Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-object v0, p1, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;->callback:Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$OnInflateFinishedListener;</span>
+<span class="missed">	iput-object v0, p1, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;->inflater:Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;</span>
+<span class="missed">	iput-object v0, p1, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;->parent:Landroid/view/ViewGroup;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	iput v1, p1, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;->resid:I</span>
+<span class="missed">	iput-object v0, p1, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;->view:Landroid/view/View;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;->mRequestPool:Landroidx/core/util/Pools$SynchronizedPool;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroidx/core/util/Pools$SynchronizedPool;->release(Ljava/lang/Object;)Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method public run()V
+<span class="">	.locals 0</span>
+
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;->runInner()V</span>
+<span class="">	goto :goto_0</span>
+.end method
+
+.method public runInner()V
+<span class="">	.locals 6</span>
+
+<span class="missed">	const-string v0, "AsyncLayoutInflater"</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;->mQueue:Ljava/util/concurrent/ArrayBlockingQueue;</span>
+<span class="">	invoke-virtual {v1}, Ljava/util/concurrent/ArrayBlockingQueue;->take()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1</span>
+<span class="">	nop</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	iget-object v3, v1, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;->inflater:Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;</span>
+<span class="missed">	iget-object v3, v3, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;->mInflater:Landroid/view/LayoutInflater;</span>
+<span class="missed">	iget v4, v1, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;->resid:I</span>
+<span class="missed">	iget-object v5, v1, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;->parent:Landroid/view/ViewGroup;</span>
+<span class="">	invoke-virtual {v3, v4, v5, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	iput-object v3, v1, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;->view:Landroid/view/View;</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v3</span>
+<span class="missed">	const-string v4, "Failed to inflate resource in the background! Retrying on the UI thread"</span>
+<span class="missed">	invoke-static {v0, v4, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object v0, v1, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;->inflater:Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;</span>
+<span class="missed">	iget-object v0, v0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;->mHandler:Landroid/os/Handler;</span>
+<span class="">	invoke-static {v0, v2, v1}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V</span>
+<span class="">	return-void</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../.resources/report.js"></script>
+</body>
+</html>

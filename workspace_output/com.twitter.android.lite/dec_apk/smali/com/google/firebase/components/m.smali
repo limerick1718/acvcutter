@@ -125,7 +125,23 @@ invoke-virtual {v3}, Lcom/google/firebase/components/e;->a()Ljava/lang/Class;
 move-result-object v5
 invoke-interface {v4, v5}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 move-result v4
+if-eqz v4, :cond_2
 goto :goto_0
+:cond_2
+new-instance v0, Lcom/google/firebase/components/h;
+const/4 v2, 0x2
+new-array v2, v2, [Ljava/lang/Object;
+const/4 v4, 0x0
+aput-object v1, v2, v4
+const/4 v1, 0x1
+invoke-virtual {v3}, Lcom/google/firebase/components/e;->a()Ljava/lang/Class;
+move-result-object v3
+aput-object v3, v2, v1
+const-string v1, "Unsatisfied dependency for component %s: %s"
+invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+move-result-object v1
+invoke-direct {v0, v1}, Lcom/google/firebase/components/h;-><init>(Ljava/lang/String;)V
+throw v0
 :cond_3
 return-void
 .end method

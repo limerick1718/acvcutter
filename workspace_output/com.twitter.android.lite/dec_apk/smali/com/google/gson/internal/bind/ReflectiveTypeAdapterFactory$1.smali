@@ -35,6 +35,16 @@ Ljava/io/IOException;,
 Ljava/lang/IllegalAccessException;
 }
 .end annotation
+iget-object v0, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$1;->c:Ltn;
+invoke-virtual {v0, p1}, Ltn;->b(Ltw;)Ljava/lang/Object;
+move-result-object p1
+if-nez p1, :cond_0
+iget-boolean v0, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$1;->f:Z
+if-nez v0, :cond_1
+:cond_0
+iget-object v0, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$1;->a:Ljava/lang/reflect/Field;
+invoke-virtual {v0, p2, p1}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
+:cond_1
 return-void
 .end method
 .method  a(Lty;Ljava/lang/Object;)V
@@ -49,6 +59,10 @@ iget-object v0, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$
 invoke-virtual {v0, p2}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 move-result-object p2
 iget-boolean v0, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$1;->b:Z
+if-eqz v0, :cond_0
+iget-object v0, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$1;->c:Ltn;
+goto :goto_0
+:cond_0
 new-instance v0, Lcom/google/gson/internal/bind/h;
 iget-object v1, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$1;->d:Lsx;
 iget-object v2, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$1;->c:Ltn;
@@ -70,6 +84,9 @@ Ljava/lang/IllegalAccessException;
 .end annotation
 iget-boolean v0, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$1;->i:Z
 const/4 v1, 0x0
+if-nez v0, :cond_0
+return v1
+:cond_0
 iget-object v0, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$1;->a:Ljava/lang/reflect/Field;
 invoke-virtual {v0, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 move-result-object v0

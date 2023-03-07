@@ -63,6 +63,10 @@ return-object v1
 .end method
 .method public disable()V
 .locals 1
+iget-object v0, p0, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->lifecycleManager:Luo;
+invoke-virtual {v0}, Luo;->a()V
+iget-object v0, p0, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->eventsHandler:Lcom/crashlytics/android/answers/AnswersEventsHandler;
+invoke-virtual {v0}, Lcom/crashlytics/android/answers/AnswersEventsHandler;->disable()V
 return-void
 .end method
 .method public enable()V
@@ -107,10 +111,44 @@ return-void
 .end method
 .method public onCrash(Ljava/lang/String;Ljava/lang/String;)V
 .locals 3
+invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+move-result-object v0
+invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+move-result-object v1
+if-eq v0, v1, :cond_0
+invoke-static {}, Luq;->g()Luz;
+move-result-object v0
+const-string v1, "Answers"
+const-string v2, "Logged crash"
+invoke-interface {v0, v1, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
+iget-object v0, p0, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->eventsHandler:Lcom/crashlytics/android/answers/AnswersEventsHandler;
+invoke-static {p1, p2}, Lcom/crashlytics/android/answers/SessionEvent;->crashEventBuilder(Ljava/lang/String;Ljava/lang/String;)Lcom/crashlytics/android/answers/SessionEvent$Builder;
+move-result-object p1
+invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/AnswersEventsHandler;->processEventSync(Lcom/crashlytics/android/answers/SessionEvent$Builder;)V
 return-void
+:cond_0
+new-instance p1, Ljava/lang/IllegalStateException;
+const-string p2, "onCrash called from main thread!!!"
+invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method
 .method public onCustom(Lcom/crashlytics/android/answers/CustomEvent;)V
 .locals 3
+invoke-static {}, Luq;->g()Luz;
+move-result-object v0
+new-instance v1, Ljava/lang/StringBuilder;
+invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+const-string v2, "Logged custom event: "
+invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object v1
+const-string v2, "Answers"
+invoke-interface {v0, v2, v1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
+iget-object v0, p0, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->eventsHandler:Lcom/crashlytics/android/answers/AnswersEventsHandler;
+invoke-static {p1}, Lcom/crashlytics/android/answers/SessionEvent;->customEventBuilder(Lcom/crashlytics/android/answers/CustomEvent;)Lcom/crashlytics/android/answers/SessionEvent$Builder;
+move-result-object p1
+invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/AnswersEventsHandler;->processEventAsync(Lcom/crashlytics/android/answers/SessionEvent$Builder;)V
 return-void
 .end method
 .method public onError(Ljava/lang/String;)V
@@ -153,9 +191,29 @@ return-void
 .end method
 .method public onPredefined(Lcom/crashlytics/android/answers/PredefinedEvent;)V
 .locals 3
+invoke-static {}, Luq;->g()Luz;
+move-result-object v0
+new-instance v1, Ljava/lang/StringBuilder;
+invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+const-string v2, "Logged predefined event: "
+invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object v1
+const-string v2, "Answers"
+invoke-interface {v0, v2, v1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
+iget-object v0, p0, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->eventsHandler:Lcom/crashlytics/android/answers/AnswersEventsHandler;
+invoke-static {p1}, Lcom/crashlytics/android/answers/SessionEvent;->predefinedEventBuilder(Lcom/crashlytics/android/answers/PredefinedEvent;)Lcom/crashlytics/android/answers/SessionEvent$Builder;
+move-result-object p1
+invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/AnswersEventsHandler;->processEventAsync(Lcom/crashlytics/android/answers/SessionEvent$Builder;)V
 return-void
 .end method
 .method public setAnalyticsSettingsData(Lxs;Ljava/lang/String;)V
 .locals 2
+iget-object v0, p0, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->backgroundManager:Lcom/crashlytics/android/answers/BackgroundManager;
+iget-boolean v1, p1, Lxs;->j:Z
+invoke-virtual {v0, v1}, Lcom/crashlytics/android/answers/BackgroundManager;->setFlushOnBackground(Z)V
+iget-object v0, p0, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->eventsHandler:Lcom/crashlytics/android/answers/AnswersEventsHandler;
+invoke-virtual {v0, p1, p2}, Lcom/crashlytics/android/answers/AnswersEventsHandler;->setAnalyticsSettingsData(Lxs;Ljava/lang/String;)V
 return-void
 .end method

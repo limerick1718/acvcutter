@@ -176,6 +176,7 @@ return-void
 .locals 7
 const-class v0, Lkq$a;
 monitor-enter v0
+:try_start_0
 sget-object v1, Lkq;->d:Ljava/util/List;
 invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 move-result-object v1
@@ -294,15 +295,22 @@ return-void
 :catchall_0
 move-exception v1
 monitor-exit v0
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 throw v1
 .end method
 .method private static e()V
 .locals 4
 const-class v0, Lkq$a;
 monitor-enter v0
+:try_start_0
 invoke-static {}, Lqc;->a()Z
 move-result v1
+if-nez v1, :cond_5
 sget-object v1, Lkq;->a:Lqc;
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
+:try_start_1
 sget-object v1, Lkq;->d:Ljava/util/List;
 invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 move-result-object v1
@@ -381,13 +389,27 @@ iget-object v3, v2, Lkq$a;->a:Lef;
 invoke-virtual {v3}, Lef;->d()Ljava/lang/Object;
 move-result-object v3
 iput-object v3, v2, Lkq$a;->d:Ljava/lang/Object;
+:try_end_1
+.catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_1} :catch_0
+.catchall {:try_start_1 .. :try_end_1} :catchall_0
 goto :goto_4
+:catch_0
+move-exception v1
+:try_start_2
+invoke-static {v1}, Lkq;->a(Ljava/lang/Exception;)V
 :cond_4
 monitor-exit v0
 return-void
+:cond_5
+new-instance v1, Ljava/lang/IllegalStateException;
+const-string v2, "Tried to refresh flag cache on main thread or on package side."
+invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw v1
 :catchall_0
 move-exception v1
 monitor-exit v0
+:try_end_2
+.catchall {:try_start_2 .. :try_end_2} :catchall_0
 throw v1
 .end method
 .method public final a(Ljava/lang/Object;)Ljava/lang/Object;
@@ -397,8 +419,41 @@ value = {
 "(TV;)TV;"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
+if-eqz p1, :cond_0
+return-object p1
+:cond_0
+sget-object p1, Lkq;->a:Lqc;
+if-nez p1, :cond_1
+iget-object p1, p0, Lkq$a;->c:Ljava/lang/Object;
+return-object p1
+:cond_1
+sget-object p1, Lkq;->a:Lqc;
+invoke-static {}, Lqc;->a()Z
+move-result p1
+if-eqz p1, :cond_3
+iget-object p1, p0, Lkq$a;->d:Ljava/lang/Object;
+if-nez p1, :cond_2
+iget-object p1, p0, Lkq$a;->c:Ljava/lang/Object;
+return-object p1
+:cond_2
+iget-object p1, p0, Lkq$a;->d:Ljava/lang/Object;
+return-object p1
+:cond_3
+invoke-static {}, Lkq$a;->e()V
+:try_start_0
+iget-object p1, p0, Lkq$a;->a:Lef;
+invoke-virtual {p1}, Lef;->d()Ljava/lang/Object;
+move-result-object p1
+:try_end_0
+.catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+return-object p1
+:catch_0
+move-exception p1
+invoke-static {p1}, Lkq;->a(Ljava/lang/Exception;)V
+iget-object p1, p0, Lkq$a;->a:Lef;
+invoke-virtual {p1}, Lef;->c()Ljava/lang/Object;
+move-result-object p1
+return-object p1
 .end method
 .method public final a()Ljava/lang/String;
 .locals 1
@@ -413,17 +468,35 @@ value = {
 }
 .end annotation
 sget-object v0, Lkq;->a:Lqc;
+if-nez v0, :cond_0
+iget-object v0, p0, Lkq$a;->c:Ljava/lang/Object;
+return-object v0
+:cond_0
 sget-object v0, Lkq;->a:Lqc;
 invoke-static {}, Lqc;->a()Z
 move-result v0
 if-eqz v0, :cond_2
 iget-object v0, p0, Lkq$a;->d:Ljava/lang/Object;
+if-nez v0, :cond_1
 iget-object v0, p0, Lkq$a;->c:Ljava/lang/Object;
+return-object v0
+:cond_1
+iget-object v0, p0, Lkq$a;->d:Ljava/lang/Object;
 return-object v0
 :cond_2
 invoke-static {}, Lkq$a;->e()V
+:try_start_0
 iget-object v0, p0, Lkq$a;->a:Lef;
 invoke-virtual {v0}, Lef;->d()Ljava/lang/Object;
+move-result-object v0
+:try_end_0
+.catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+return-object v0
+:catch_0
+move-exception v0
+invoke-static {v0}, Lkq;->a(Ljava/lang/Exception;)V
+iget-object v0, p0, Lkq$a;->a:Lef;
+invoke-virtual {v0}, Lef;->c()Ljava/lang/Object;
 move-result-object v0
 return-object v0
 .end method

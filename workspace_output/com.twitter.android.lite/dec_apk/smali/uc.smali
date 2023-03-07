@@ -100,7 +100,7 @@ return-object v0
 .end method
 .method public b()Ljava/lang/String;
 .locals 1
-const/4 v0, 0x0
+iget-object v0, p0, Luc;->b:Ljava/lang/String;
 return-object v0
 .end method
 .method public c()Z
@@ -111,6 +111,9 @@ if-eqz v0, :cond_0
 const-string v1, "auth_token"
 invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 move-result v0
+if-lez v0, :cond_0
+const/4 v0, 0x1
+goto :goto_0
 :cond_0
 const/4 v0, 0x0
 :goto_0

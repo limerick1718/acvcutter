@@ -10,7 +10,7 @@ name = null
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/io/Reader;-><init>()V
 return-void
 .end method
 .method public close()V
@@ -20,7 +20,9 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-return-void
+new-instance v0, Ljava/lang/AssertionError;
+invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+throw v0
 .end method
 .method public read([CII)I
 .locals 0
@@ -29,6 +31,7 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-const/4 v0, 0x0
-return v0
+new-instance p1, Ljava/lang/AssertionError;
+invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V
+throw p1
 .end method

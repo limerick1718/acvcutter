@@ -68,6 +68,7 @@ invoke-virtual/range {v1 .. v6}, Lbe;->a(Landroid/content/Context;Ljava/lang/Str
 move-result p1
 iput-boolean p1, p0, Lcom/google/android/gms/common/internal/ae;->c:Z
 iget-boolean p1, p0, Lcom/google/android/gms/common/internal/ae;->c:Z
+if-eqz p1, :cond_0
 iget-object p1, p0, Lcom/google/android/gms/common/internal/ae;->g:Lcom/google/android/gms/common/internal/ad;
 invoke-static {p1}, Lcom/google/android/gms/common/internal/ad;->b(Lcom/google/android/gms/common/internal/ad;)Landroid/os/Handler;
 move-result-object p1
@@ -82,6 +83,21 @@ iget-object v1, p0, Lcom/google/android/gms/common/internal/ae;->g:Lcom/google/a
 invoke-static {v1}, Lcom/google/android/gms/common/internal/ad;->e(Lcom/google/android/gms/common/internal/ad;)J
 move-result-wide v1
 invoke-virtual {v0, p1, v1, v2}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
+return-void
+:cond_0
+const/4 p1, 0x2
+iput p1, p0, Lcom/google/android/gms/common/internal/ae;->b:I
+:try_start_0
+iget-object p1, p0, Lcom/google/android/gms/common/internal/ae;->g:Lcom/google/android/gms/common/internal/ad;
+invoke-static {p1}, Lcom/google/android/gms/common/internal/ad;->d(Lcom/google/android/gms/common/internal/ad;)Lbe;
+move-result-object p1
+iget-object v0, p0, Lcom/google/android/gms/common/internal/ae;->g:Lcom/google/android/gms/common/internal/ad;
+invoke-static {v0}, Lcom/google/android/gms/common/internal/ad;->c(Lcom/google/android/gms/common/internal/ad;)Landroid/content/Context;
+move-result-object v0
+invoke-virtual {p1, v0, p0}, Lbe;->a(Landroid/content/Context;Landroid/content/ServiceConnection;)V
+:try_end_0
+.catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+:catch_0
 return-void
 .end method
 .method public final a()Z
@@ -162,6 +178,7 @@ iget-object v0, p0, Lcom/google/android/gms/common/internal/ae;->g:Lcom/google/a
 invoke-static {v0}, Lcom/google/android/gms/common/internal/ad;->a(Lcom/google/android/gms/common/internal/ad;)Ljava/util/HashMap;
 move-result-object v0
 monitor-enter v0
+:try_start_0
 iget-object v1, p0, Lcom/google/android/gms/common/internal/ae;->g:Lcom/google/android/gms/common/internal/ad;
 invoke-static {v1}, Lcom/google/android/gms/common/internal/ad;->b(Lcom/google/android/gms/common/internal/ad;)Landroid/os/Handler;
 move-result-object v1
@@ -189,9 +206,47 @@ return-void
 :catchall_0
 move-exception p1
 monitor-exit v0
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 throw p1
 .end method
 .method public final onServiceDisconnected(Landroid/content/ComponentName;)V
 .locals 4
+iget-object v0, p0, Lcom/google/android/gms/common/internal/ae;->g:Lcom/google/android/gms/common/internal/ad;
+invoke-static {v0}, Lcom/google/android/gms/common/internal/ad;->a(Lcom/google/android/gms/common/internal/ad;)Ljava/util/HashMap;
+move-result-object v0
+monitor-enter v0
+:try_start_0
+iget-object v1, p0, Lcom/google/android/gms/common/internal/ae;->g:Lcom/google/android/gms/common/internal/ad;
+invoke-static {v1}, Lcom/google/android/gms/common/internal/ad;->b(Lcom/google/android/gms/common/internal/ad;)Landroid/os/Handler;
+move-result-object v1
+const/4 v2, 0x1
+iget-object v3, p0, Lcom/google/android/gms/common/internal/ae;->e:Lcom/google/android/gms/common/internal/h$a;
+invoke-virtual {v1, v2, v3}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
+const/4 v1, 0x0
+iput-object v1, p0, Lcom/google/android/gms/common/internal/ae;->d:Landroid/os/IBinder;
+iput-object p1, p0, Lcom/google/android/gms/common/internal/ae;->f:Landroid/content/ComponentName;
+iget-object v1, p0, Lcom/google/android/gms/common/internal/ae;->a:Ljava/util/Set;
+invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+move-result-object v1
+:goto_0
+invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+move-result v2
+if-eqz v2, :cond_0
+invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+move-result-object v2
+check-cast v2, Landroid/content/ServiceConnection;
+invoke-interface {v2, p1}, Landroid/content/ServiceConnection;->onServiceDisconnected(Landroid/content/ComponentName;)V
+goto :goto_0
+:cond_0
+const/4 p1, 0x2
+iput p1, p0, Lcom/google/android/gms/common/internal/ae;->b:I
+monitor-exit v0
 return-void
+:catchall_0
+move-exception p1
+monitor-exit v0
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
+throw p1
 .end method

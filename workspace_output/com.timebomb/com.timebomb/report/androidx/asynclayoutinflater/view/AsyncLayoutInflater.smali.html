@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.asynclayoutinflater.view</a></li>
+        <li><i class="ico ico-class"></i> AsyncLayoutInflater.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;
+.super Ljava/lang/Object;
+.source "AsyncLayoutInflater.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;,
+Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$BasicInflater;,
+Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;,
+Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$OnInflateFinishedListener;
+}
+.end annotation
+
+.field private static final TAG:Ljava/lang/String; = "AsyncLayoutInflater"
+.field  mHandler:Landroid/os/Handler;
+.field private mHandlerCallback:Landroid/os/Handler$Callback;
+.field  mInflateThread:Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;
+.field  mInflater:Landroid/view/LayoutInflater;
+
+
+.method public constructor &lt;init&gt;(Landroid/content/Context;)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "context"    # Landroid/content/Context;</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	new-instance v0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$1;</span>
+<span class="missed">	invoke-direct {v0, p0}, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$1;-><init>(Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;)V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;->mHandlerCallback:Landroid/os/Handler$Callback;</span>
+<span class="missed">	new-instance v0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$BasicInflater;</span>
+<span class="missed">	invoke-direct {v0, p1}, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$BasicInflater;-><init>(Landroid/content/Context;)V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;->mInflater:Landroid/view/LayoutInflater;</span>
+<span class="missed">	new-instance v0, Landroid/os/Handler;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;->mHandlerCallback:Landroid/os/Handler$Callback;</span>
+<span class="missed">	invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Handler$Callback;)V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;->mHandler:Landroid/os/Handler;</span>
+<span class="">	invoke-static {}, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;->getInstance()Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;->mInflateThread:Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public inflate(ILandroid/view/ViewGroup;Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$OnInflateFinishedListener;)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "resid"    # I</span>
+<span class="">	.param p2, "parent"    # Landroid/view/ViewGroup;</span>
+<span class="">	.param p3, "callback"    # Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$OnInflateFinishedListener;</span>
+
+<span class="missed">	if-eqz p3, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;->mInflateThread:Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;</span>
+<span class="">	invoke-virtual {v0}, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;->obtainRequest()Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object p0, v0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;->inflater:Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;</span>
+<span class="missed">	iput p1, v0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;->resid:I</span>
+<span class="missed">	iput-object p2, v0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;->parent:Landroid/view/ViewGroup;</span>
+<span class="missed">	iput-object p3, v0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;->callback:Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$OnInflateFinishedListener;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;->mInflateThread:Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;</span>
+<span class="missed">	invoke-virtual {v1, v0}, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;->enqueue(Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateRequest;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v1, "callback argument may not be null!"</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../.resources/report.js"></script>
+</body>
+</html>

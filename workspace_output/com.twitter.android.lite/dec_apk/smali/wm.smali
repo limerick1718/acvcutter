@@ -77,8 +77,11 @@ return-void
 .method public declared-synchronized addDependency(Lwo;)V
 .locals 1
 monitor-enter p0
+:try_start_0
 iget-object v0, p0, Lwm;->dependencies:Ljava/util/List;
 invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 monitor-exit p0
 return-void
 :catchall_0
@@ -110,8 +113,9 @@ return v0
 .end method
 .method public compareTo(Ljava/lang/Object;)I
 .locals 0
-const/4 v0, 0x0
-return v0
+invoke-static {p0, p1}, Lwh;->a(Lwl;Ljava/lang/Object;)I
+move-result p1
+return p1
 .end method
 .method public declared-synchronized getDependencies()Ljava/util/Collection;
 .locals 1
@@ -124,9 +128,12 @@ value = {
 }
 .end annotation
 monitor-enter p0
+:try_start_0
 iget-object v0, p0, Lwm;->dependencies:Ljava/util/List;
 invoke-static {v0}, Ljava/util/Collections;->unmodifiableCollection(Ljava/util/Collection;)Ljava/util/Collection;
 move-result-object v0
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 monitor-exit p0
 return-object v0
 :catchall_0
@@ -136,12 +143,15 @@ throw v0
 .end method
 .method public getError()Ljava/lang/Throwable;
 .locals 1
-const/4 v0, 0x0
+iget-object v0, p0, Lwm;->throwable:Ljava/util/concurrent/atomic/AtomicReference;
+invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+move-result-object v0
+check-cast v0, Ljava/lang/Throwable;
 return-object v0
 .end method
 .method public getPriority()Lwh;
 .locals 1
-const/4 v0, 0x0
+sget-object v0, Lwh;->b:Lwh;
 return-object v0
 .end method
 .method public isFinished()Z
@@ -160,8 +170,11 @@ return-void
 .method public declared-synchronized setFinished(Z)V
 .locals 1
 monitor-enter p0
+:try_start_0
 iget-object v0, p0, Lwm;->hasRun:Ljava/util/concurrent/atomic/AtomicBoolean;
 invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 monitor-exit p0
 return-void
 :catchall_0

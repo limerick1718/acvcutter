@@ -17,6 +17,7 @@ return-void
 .end method
 .method public final lookup(Ljava/lang/String;)Ljava/util/List;
 .locals 0
-const/4 v0, 0x0
-return-object v0
+invoke-static {p1}, Lokhttp3/Dns$-CC;->lambda$static$0(Ljava/lang/String;)Ljava/util/List;
+move-result-object p1
+return-object p1
 .end method

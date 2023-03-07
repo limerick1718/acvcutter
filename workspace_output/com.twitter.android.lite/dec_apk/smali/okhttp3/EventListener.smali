@@ -25,6 +25,10 @@ new-instance v0, Lokhttp3/-$$Lambda$EventListener$ahubxrUJKWnWohQgQKQidD9cuoA;
 invoke-direct {v0, p0}, Lokhttp3/-$$Lambda$EventListener$ahubxrUJKWnWohQgQKQidD9cuoA;-><init>(Lokhttp3/EventListener;)V
 return-object v0
 .end method
+.method static synthetic lambda$factory$0(Lokhttp3/EventListener;Lokhttp3/Call;)Lokhttp3/EventListener;
+.locals 0
+return-object p0
+.end method
 .method public callEnd(Lokhttp3/Call;)V
 .locals 0
 return-void

@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.core.os</a></li>
+        <li><i class="ico ico-class"></i> LocaleListHelper.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Landroidx/core/os/LocaleListHelper;
+.super Ljava/lang/Object;
+.source "LocaleListHelper.java"
+
+
+.field private static final EN_LATN:Ljava/util/Locale;
+.field private static final LOCALE_AR_XB:Ljava/util/Locale;
+.field private static final LOCALE_EN_XA:Ljava/util/Locale;
+.field private static final NUM_PSEUDO_LOCALES:I = 0x2
+.field private static final STRING_AR_XB:Ljava/lang/String; = "ar-XB"
+.field private static final STRING_EN_XA:Ljava/lang/String; = "en-XA"
+.field private static sDefaultAdjustedLocaleList:Landroidx/core/os/LocaleListHelper;
+.field private static sDefaultLocaleList:Landroidx/core/os/LocaleListHelper;
+.field private static final sEmptyList:[Ljava/util/Locale;
+.field private static final sEmptyLocaleList:Landroidx/core/os/LocaleListHelper;
+.field private static sLastDefaultLocale:Ljava/util/Locale;
+.field private static sLastExplicitlySetLocaleList:Landroidx/core/os/LocaleListHelper;
+.field private static final sLock:Ljava/lang/Object;
+.field private final mList:[Ljava/util/Locale;
+.field private final mStringRepresentation:Ljava/lang/String;
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 3</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	new-array v1, v0, [Ljava/util/Locale;</span>
+<span class="missed">	sput-object v1, Landroidx/core/os/LocaleListHelper;->sEmptyList:[Ljava/util/Locale;</span>
+<span class="missed">	new-instance v1, Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	new-array v0, v0, [Ljava/util/Locale;</span>
+<span class="missed">	invoke-direct {v1, v0}, Landroidx/core/os/LocaleListHelper;-><init>([Ljava/util/Locale;)V</span>
+<span class="missed">	sput-object v1, Landroidx/core/os/LocaleListHelper;->sEmptyLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	new-instance v0, Ljava/util/Locale;</span>
+<span class="missed">	const-string v1, "en"</span>
+<span class="missed">	const-string v2, "XA"</span>
+<span class="missed">	invoke-direct {v0, v1, v2}, Ljava/util/Locale;-><init>(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	sput-object v0, Landroidx/core/os/LocaleListHelper;->LOCALE_EN_XA:Ljava/util/Locale;</span>
+<span class="missed">	new-instance v0, Ljava/util/Locale;</span>
+<span class="missed">	const-string v1, "ar"</span>
+<span class="missed">	const-string v2, "XB"</span>
+<span class="missed">	invoke-direct {v0, v1, v2}, Ljava/util/Locale;-><init>(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	sput-object v0, Landroidx/core/os/LocaleListHelper;->LOCALE_AR_XB:Ljava/util/Locale;</span>
+<span class="missed">	const-string v0, "en-Latn"</span>
+<span class="">	invoke-static {v0}, Landroidx/core/os/LocaleHelper;->forLanguageTag(Ljava/lang/String;)Ljava/util/Locale;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Landroidx/core/os/LocaleListHelper;->EN_LATN:Ljava/util/Locale;</span>
+<span class="missed">	new-instance v0, Ljava/lang/Object;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	sput-object v0, Landroidx/core/os/LocaleListHelper;->sLock:Ljava/lang/Object;</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	sput-object v0, Landroidx/core/os/LocaleListHelper;->sLastExplicitlySetLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	sput-object v0, Landroidx/core/os/LocaleListHelper;->sDefaultLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	sput-object v0, Landroidx/core/os/LocaleListHelper;->sDefaultAdjustedLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	sput-object v0, Landroidx/core/os/LocaleListHelper;->sLastDefaultLocale:Ljava/util/Locale;</span>
+<span class="">	return-void</span>
+.end method
+
+.method constructor &lt;init&gt;(Ljava/util/Locale;Landroidx/core/os/LocaleListHelper;)V
+<span class="">	.locals 7</span>
+<span class="">	.param p1, "topLocale"    # Ljava/util/Locale;</span>
+<span class="">	.param p2, "otherLocales"    # Landroidx/core/os/LocaleListHelper;</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	if-eqz p1, :cond_a</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	if-nez p2, :cond_0</span>
+<span class="missed">	move v1, v0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v1, p2, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	array-length v1, v1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 v2, -0x1</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ge v3, v1, :cond_2</span>
+<span class="missed">	iget-object v4, p2, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	aget-object v4, v4, v3</span>
+<span class="">	invoke-virtual {p1, v4}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-eqz v4, :cond_1</span>
+<span class="missed">	move v2, v3</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	add-int/lit8 v3, v3, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:goto_2</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 v3, -0x1</span>
+<span class="missed">	if-ne v2, v3, :cond_3</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_3</span>
+<span class="missed">	move v4, v0</span>
+<span class="">	:goto_3</span>
+<span class="missed">	add-int/2addr v4, v1</span>
+<span class="missed">	new-array v5, v4, [Ljava/util/Locale;</span>
+<span class="">	invoke-virtual {p1}, Ljava/util/Locale;->clone()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	check-cast v6, Ljava/util/Locale;</span>
+<span class="missed">	aput-object v6, v5, v0</span>
+<span class="missed">	if-ne v2, v3, :cond_5</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_4</span>
+<span class="missed">	if-ge v0, v1, :cond_4</span>
+<span class="missed">	add-int/lit8 v3, v0, 0x1</span>
+<span class="missed">	iget-object v6, p2, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	aget-object v6, v6, v0</span>
+<span class="">	invoke-virtual {v6}, Ljava/util/Locale;->clone()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	check-cast v6, Ljava/util/Locale;</span>
+<span class="missed">	aput-object v6, v5, v3</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_4</span>
+<span class="">	goto :goto_7</span>
+<span class="">	:cond_5</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_5</span>
+<span class="missed">	if-ge v0, v2, :cond_6</span>
+<span class="missed">	add-int/lit8 v3, v0, 0x1</span>
+<span class="missed">	iget-object v6, p2, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	aget-object v6, v6, v0</span>
+<span class="">	invoke-virtual {v6}, Ljava/util/Locale;->clone()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	check-cast v6, Ljava/util/Locale;</span>
+<span class="missed">	aput-object v6, v5, v3</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
+<span class="">	goto :goto_5</span>
+<span class="">	:cond_6</span>
+<span class="missed">	add-int/lit8 v0, v2, 0x1</span>
+<span class="">	:goto_6</span>
+<span class="missed">	if-ge v0, v1, :cond_7</span>
+<span class="missed">	iget-object v3, p2, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	aget-object v3, v3, v0</span>
+<span class="">	invoke-virtual {v3}, Ljava/util/Locale;->clone()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	check-cast v3, Ljava/util/Locale;</span>
+<span class="missed">	aput-object v3, v5, v0</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
+<span class="">	goto :goto_6</span>
+<span class="">	:goto_7</span>
+<span class="">	:cond_7</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	:goto_8</span>
+<span class="missed">	if-ge v3, v4, :cond_9</span>
+<span class="missed">	aget-object v6, v5, v3</span>
+<span class="">	invoke-static {v6}, Landroidx/core/os/LocaleHelper;->toLanguageTag(Ljava/util/Locale;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	add-int/lit8 v6, v4, -0x1</span>
+<span class="missed">	if-ge v3, v6, :cond_8</span>
+<span class="missed">	const/16 v6, 0x2c</span>
+<span class="missed">	invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="">	:cond_8</span>
+<span class="missed">	add-int/lit8 v3, v3, 0x1</span>
+<span class="">	goto :goto_8</span>
+<span class="">	:cond_9</span>
+<span class="missed">	iput-object v5, p0, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	iput-object v3, p0, Landroidx/core/os/LocaleListHelper;->mStringRepresentation:Ljava/lang/String;</span>
+<span class="">	return-void</span>
+<span class="">	:cond_a</span>
+<span class="missed">	new-instance v0, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v1, "topLocale is null"</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method varargs constructor &lt;init&gt;([Ljava/util/Locale;)V
+<span class="">	.locals 8</span>
+<span class="">	.param p1, "list"    # [Ljava/util/Locale;</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	array-length v0, p1</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	sget-object v0, Landroidx/core/os/LocaleListHelper;->sEmptyList:[Ljava/util/Locale;</span>
+<span class="missed">	iput-object v0, p0, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	const-string v0, ""</span>
+<span class="missed">	iput-object v0, p0, Landroidx/core/os/LocaleListHelper;->mStringRepresentation:Ljava/lang/String;</span>
+<span class="">	goto/16 :goto_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	array-length v0, p1</span>
+<span class="missed">	new-array v0, v0, [Ljava/util/Locale;</span>
+<span class="missed">	new-instance v1, Ljava/util/HashSet;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/util/HashSet;-><init>()V</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	array-length v4, p1</span>
+<span class="missed">	if-ge v3, v4, :cond_4</span>
+<span class="missed">	aget-object v4, p1, v3</span>
+<span class="missed">	const-string v5, "list["</span>
+<span class="missed">	if-eqz v4, :cond_3</span>
+<span class="">	invoke-virtual {v1, v4}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	if-nez v6, :cond_2</span>
+<span class="">	invoke-virtual {v4}, Ljava/util/Locale;->clone()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="missed">	check-cast v5, Ljava/util/Locale;</span>
+<span class="missed">	aput-object v5, v0, v3</span>
+<span class="">	invoke-static {v5}, Landroidx/core/os/LocaleHelper;->toLanguageTag(Ljava/util/Locale;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	array-length v6, p1</span>
+<span class="missed">	add-int/lit8 v6, v6, -0x1</span>
+<span class="missed">	if-ge v3, v6, :cond_1</span>
+<span class="missed">	const/16 v6, 0x2c</span>
+<span class="missed">	invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="">	:cond_1</span>
+<span class="missed">	invoke-virtual {v1, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	add-int/lit8 v3, v3, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance v6, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v7, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v5, "] is a repetition"</span>
+<span class="missed">	invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="missed">	invoke-direct {v6, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v6</span>
+<span class="">	:cond_3</span>
+<span class="missed">	new-instance v6, Ljava/lang/NullPointerException;</span>
+<span class="missed">	new-instance v7, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v5, "] is null"</span>
+<span class="missed">	invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="missed">	invoke-direct {v6, v5}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v6</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iput-object v0, p0, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	iput-object v3, p0, Landroidx/core/os/LocaleListHelper;->mStringRepresentation:Ljava/lang/String;</span>
+<span class="">	:goto_1</span>
+<span class="">	return-void</span>
+.end method
+
+.method private computeFirstMatch(Ljava/util/Collection;Z)Ljava/util/Locale;
+<span class="">	.locals 2</span>
+<span class="">	.param p2, "assumeEnglishIsSupported"    # Z</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/Collection<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;Z)",</span>
+<span class="">	"Ljava/util/Locale;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0, p1, p2}, Landroidx/core/os/LocaleListHelper;->computeFirstMatchIndex(Ljava/util/Collection;Z)I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, -0x1</span>
+<span class="missed">	if-ne v0, v1, :cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	aget-object v1, v1, v0</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object v1</span>
+.end method
+
+.method private computeFirstMatchIndex(Ljava/util/Collection;Z)I
+<span class="">	.locals 6</span>
+<span class="">	.param p2, "assumeEnglishIsSupported"    # Z</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/Collection<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;Z)I"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	array-length v1, v0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	if-ne v1, v3, :cond_0</span>
+<span class="">	return v2</span>
+<span class="">	:cond_0</span>
+<span class="missed">	array-length v0, v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	const/4 v0, -0x1</span>
+<span class="">	return v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const v0, 0x7fffffff</span>
+<span class="missed">	if-eqz p2, :cond_3</span>
+<span class="missed">	sget-object v1, Landroidx/core/os/LocaleListHelper;->EN_LATN:Ljava/util/Locale;</span>
+<span class="">	invoke-direct {p0, v1}, Landroidx/core/os/LocaleListHelper;->findFirstMatchIndex(Ljava/util/Locale;)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_2</span>
+<span class="">	return v2</span>
+<span class="">	:cond_2</span>
+<span class="missed">	if-ge v1, v0, :cond_3</span>
+<span class="missed">	move v0, v1</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-eqz v3, :cond_6</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	check-cast v3, Ljava/lang/String;</span>
+<span class="">	invoke-static {v3}, Landroidx/core/os/LocaleHelper;->forLanguageTag(Ljava/lang/String;)Ljava/util/Locale;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="">	invoke-direct {p0, v4}, Landroidx/core/os/LocaleListHelper;->findFirstMatchIndex(Ljava/util/Locale;)I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	if-nez v5, :cond_4</span>
+<span class="">	return v2</span>
+<span class="">	:cond_4</span>
+<span class="missed">	if-ge v5, v0, :cond_5</span>
+<span class="missed">	move v0, v5</span>
+<span class="">	:cond_5</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_6</span>
+<span class="missed">	const v1, 0x7fffffff</span>
+<span class="missed">	if-ne v0, v1, :cond_7</span>
+<span class="">	return v2</span>
+<span class="">	:cond_7</span>
+<span class="">	return v0</span>
+.end method
+
+.method private findFirstMatchIndex(Ljava/util/Locale;)I
+<span class="">	.locals 3</span>
+<span class="">	.param p1, "supportedLocale"    # Ljava/util/Locale;</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	array-length v2, v1</span>
+<span class="missed">	if-ge v0, v2, :cond_1</span>
+<span class="missed">	aget-object v1, v1, v0</span>
+<span class="">	invoke-static {p1, v1}, Landroidx/core/os/LocaleListHelper;->matchScore(Ljava/util/Locale;Ljava/util/Locale;)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-lez v1, :cond_0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const v0, 0x7fffffff</span>
+<span class="">	return v0</span>
+.end method
+
+.method static forLanguageTags(Ljava/lang/String;)Landroidx/core/os/LocaleListHelper;
+<span class="">	.locals 4</span>
+<span class="">	.param p0, "list"    # Ljava/lang/String;</span>
+
+<span class="missed">	if-eqz p0, :cond_2</span>
+<span class="">	invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, -0x1</span>
+<span class="missed">	const-string v1, ","</span>
+<span class="">	invoke-virtual {p0, v1, v0}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	array-length v1, v0</span>
+<span class="missed">	new-array v1, v1, [Ljava/util/Locale;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	array-length v3, v1</span>
+<span class="missed">	if-ge v2, v3, :cond_1</span>
+<span class="missed">	aget-object v3, v0, v2</span>
+<span class="">	invoke-static {v3}, Landroidx/core/os/LocaleHelper;->forLanguageTag(Ljava/lang/String;)Ljava/util/Locale;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	aput-object v3, v1, v2</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v2, Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	invoke-direct {v2, v1}, Landroidx/core/os/LocaleListHelper;-><init>([Ljava/util/Locale;)V</span>
+<span class="">	return-object v2</span>
+<span class="">	:cond_2</span>
+<span class="">	:goto_1</span>
+<span class="">	invoke-static {}, Landroidx/core/os/LocaleListHelper;->getEmptyLocaleList()Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method static getAdjustedDefault()Landroidx/core/os/LocaleListHelper;
+<span class="">	.locals 2</span>
+
+<span class="missed">	invoke-static {}, Landroidx/core/os/LocaleListHelper;->getDefault()Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	sget-object v0, Landroidx/core/os/LocaleListHelper;->sLock:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	sget-object v1, Landroidx/core/os/LocaleListHelper;->sDefaultAdjustedLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-object v1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method
+
+.method static getDefault()Landroidx/core/os/LocaleListHelper;
+<span class="">	.locals 4</span>
+
+<span class="">	invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sget-object v1, Landroidx/core/os/LocaleListHelper;->sLock:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	sget-object v2, Landroidx/core/os/LocaleListHelper;->sLastDefaultLocale:Ljava/util/Locale;</span>
+<span class="">	invoke-virtual {v0, v2}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-nez v2, :cond_1</span>
+<span class="missed">	sput-object v0, Landroidx/core/os/LocaleListHelper;->sLastDefaultLocale:Ljava/util/Locale;</span>
+<span class="missed">	sget-object v2, Landroidx/core/os/LocaleListHelper;->sDefaultLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="missed">	sget-object v2, Landroidx/core/os/LocaleListHelper;->sDefaultLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	invoke-virtual {v2, v3}, Landroidx/core/os/LocaleListHelper;->get(I)Ljava/util/Locale;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v0, v2}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="missed">	sget-object v2, Landroidx/core/os/LocaleListHelper;->sDefaultLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	monitor-exit v1</span>
+<span class="">	return-object v2</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v2, Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	sget-object v3, Landroidx/core/os/LocaleListHelper;->sLastExplicitlySetLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	invoke-direct {v2, v0, v3}, Landroidx/core/os/LocaleListHelper;-><init>(Ljava/util/Locale;Landroidx/core/os/LocaleListHelper;)V</span>
+<span class="missed">	sput-object v2, Landroidx/core/os/LocaleListHelper;->sDefaultLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	sget-object v2, Landroidx/core/os/LocaleListHelper;->sDefaultLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	sput-object v2, Landroidx/core/os/LocaleListHelper;->sDefaultAdjustedLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="">	:cond_1</span>
+<span class="missed">	sget-object v2, Landroidx/core/os/LocaleListHelper;->sDefaultLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	monitor-exit v1</span>
+<span class="">	return-object v2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	monitor-exit v1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v2</span>
+.end method
+
+.method static getEmptyLocaleList()Landroidx/core/os/LocaleListHelper;
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Landroidx/core/os/LocaleListHelper;->sEmptyLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method private static getLikelyScript(Ljava/util/Locale;)Ljava/lang/String;
+<span class="">	.locals 3</span>
+<span class="">	.param p0, "locale"    # Ljava/util/Locale;</span>
+
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const-string v1, ""</span>
+<span class="missed">	const/16 v2, 0x15</span>
+<span class="missed">	if-lt v0, v2, :cond_1</span>
+<span class="">	invoke-virtual {p0}, Ljava/util/Locale;->getScript()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-nez v2, :cond_0</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object v1</span>
+<span class="">	:cond_1</span>
+<span class="">	return-object v1</span>
+.end method
+
+.method private static isPseudoLocale(Ljava/lang/String;)Z
+<span class="">	.locals 1</span>
+<span class="">	.param p0, "locale"    # Ljava/lang/String;</span>
+
+<span class="missed">	const-string v0, "en-XA"</span>
+<span class="">	invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	const-string v0, "ar-XB"</span>
+<span class="">	invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	:goto_1</span>
+<span class="">	return v0</span>
+.end method
+
+.method private static isPseudoLocale(Ljava/util/Locale;)Z
+<span class="">	.locals 1</span>
+<span class="">	.param p0, "locale"    # Ljava/util/Locale;</span>
+
+<span class="missed">	sget-object v0, Landroidx/core/os/LocaleListHelper;->LOCALE_EN_XA:Ljava/util/Locale;</span>
+<span class="">	invoke-virtual {v0, p0}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	sget-object v0, Landroidx/core/os/LocaleListHelper;->LOCALE_AR_XB:Ljava/util/Locale;</span>
+<span class="">	invoke-virtual {v0, p0}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	:goto_1</span>
+<span class="">	return v0</span>
+.end method
+
+.method static isPseudoLocalesOnly([Ljava/lang/String;)Z
+<span class="">	.locals 6</span>
+<span class="">	.param p0, "supportedLocales"    # [Ljava/lang/String;</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-nez p0, :cond_0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	array-length v1, p0</span>
+<span class="missed">	const/4 v2, 0x3</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	if-le v1, v2, :cond_1</span>
+<span class="">	return v3</span>
+<span class="">	:cond_1</span>
+<span class="missed">	array-length v1, p0</span>
+<span class="missed">	move v2, v3</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v2, v1, :cond_3</span>
+<span class="missed">	aget-object v4, p0, v2</span>
+<span class="">	invoke-virtual {v4}, Ljava/lang/String;->isEmpty()Z</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	if-nez v5, :cond_2</span>
+<span class="">	invoke-static {v4}, Landroidx/core/os/LocaleListHelper;->isPseudoLocale(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	if-nez v5, :cond_2</span>
+<span class="">	return v3</span>
+<span class="">	:cond_2</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="">	return v0</span>
+.end method
+
+.method private static matchScore(Ljava/util/Locale;Ljava/util/Locale;)I
+<span class="">	.locals 5</span>
+<span class="">	.param p0, "supported"    # Ljava/util/Locale;</span>
+<span class="">	.param p1, "desired"    # Ljava/util/Locale;</span>
+
+<span class="">	invoke-virtual {p0, p1}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return v1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p0}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p1}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	return v2</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-static {p0}, Landroidx/core/os/LocaleListHelper;->isPseudoLocale(Ljava/util/Locale;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_6</span>
+<span class="">	invoke-static {p1}, Landroidx/core/os/LocaleListHelper;->isPseudoLocale(Ljava/util/Locale;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-static {p0}, Landroidx/core/os/LocaleListHelper;->getLikelyScript(Ljava/util/Locale;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-eqz v3, :cond_5</span>
+<span class="">	invoke-virtual {p0}, Ljava/util/Locale;->getCountry()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/String;->isEmpty()Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-nez v4, :cond_4</span>
+<span class="">	invoke-virtual {p1}, Ljava/util/Locale;->getCountry()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="">	invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-eqz v4, :cond_3</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	move v1, v2</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_4</span>
+<span class="">	return v1</span>
+<span class="">	:cond_5</span>
+<span class="">	invoke-static {p1}, Landroidx/core/os/LocaleListHelper;->getLikelyScript(Ljava/util/Locale;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="">	return v2</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_6</span>
+<span class="">	return v2</span>
+.end method
+
+.method static setDefault(Landroidx/core/os/LocaleListHelper;)V
+<span class="">	.locals 1</span>
+<span class="">	.param p0, "locales"    # Landroidx/core/os/LocaleListHelper;</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	invoke-static {p0, v0}, Landroidx/core/os/LocaleListHelper;->setDefault(Landroidx/core/os/LocaleListHelper;I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method static setDefault(Landroidx/core/os/LocaleListHelper;I)V
+<span class="">	.locals 4</span>
+<span class="">	.param p0, "locales"    # Landroidx/core/os/LocaleListHelper;</span>
+<span class="">	.param p1, "localeIndex"    # I</span>
+
+<span class="missed">	if-eqz p0, :cond_2</span>
+<span class="">	invoke-virtual {p0}, Landroidx/core/os/LocaleListHelper;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	sget-object v0, Landroidx/core/os/LocaleListHelper;->sLock:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-virtual {p0, p1}, Landroidx/core/os/LocaleListHelper;->get(I)Ljava/util/Locale;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	sput-object v1, Landroidx/core/os/LocaleListHelper;->sLastDefaultLocale:Ljava/util/Locale;</span>
+<span class="missed">	sget-object v1, Landroidx/core/os/LocaleListHelper;->sLastDefaultLocale:Ljava/util/Locale;</span>
+<span class="missed">	invoke-static {v1}, Ljava/util/Locale;->setDefault(Ljava/util/Locale;)V</span>
+<span class="missed">	sput-object p0, Landroidx/core/os/LocaleListHelper;->sLastExplicitlySetLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	sput-object p0, Landroidx/core/os/LocaleListHelper;->sDefaultLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="missed">	sget-object v1, Landroidx/core/os/LocaleListHelper;->sDefaultLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	sput-object v1, Landroidx/core/os/LocaleListHelper;->sDefaultAdjustedLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v1, Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	sget-object v2, Landroidx/core/os/LocaleListHelper;->sLastDefaultLocale:Ljava/util/Locale;</span>
+<span class="missed">	sget-object v3, Landroidx/core/os/LocaleListHelper;->sDefaultLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	invoke-direct {v1, v2, v3}, Landroidx/core/os/LocaleListHelper;-><init>(Ljava/util/Locale;Landroidx/core/os/LocaleListHelper;)V</span>
+<span class="missed">	sput-object v1, Landroidx/core/os/LocaleListHelper;->sDefaultAdjustedLocaleList:Landroidx/core/os/LocaleListHelper;</span>
+<span class="">	:goto_0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v1, "locales is empty"</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance v0, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v1, "locales is null"</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+<span class="">	.locals 6</span>
+<span class="">	.param p1, "other"    # Ljava/lang/Object;</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-ne p1, p0, :cond_0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	instance-of v1, p1, Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-nez v1, :cond_1</span>
+<span class="">	return v2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	move-object v1, p1</span>
+<span class="missed">	check-cast v1, Landroidx/core/os/LocaleListHelper;</span>
+<span class="missed">	iget-object v1, v1, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	iget-object v3, p0, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	array-length v3, v3</span>
+<span class="missed">	array-length v4, v1</span>
+<span class="missed">	if-eq v3, v4, :cond_2</span>
+<span class="">	return v2</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object v4, p0, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	array-length v5, v4</span>
+<span class="missed">	if-ge v3, v5, :cond_4</span>
+<span class="missed">	aget-object v4, v4, v3</span>
+<span class="missed">	aget-object v5, v1, v3</span>
+<span class="">	invoke-virtual {v4, v5}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-nez v4, :cond_3</span>
+<span class="">	return v2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	add-int/lit8 v3, v3, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_4</span>
+<span class="">	return v0</span>
+.end method
+
+.method  get(I)Ljava/util/Locale;
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "index"    # I</span>
+
+<span class="missed">	if-ltz p1, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	array-length v1, v0</span>
+<span class="missed">	if-ge p1, v1, :cond_0</span>
+<span class="missed">	aget-object v0, v0, p1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method  getFirstMatch([Ljava/lang/String;)Ljava/util/Locale;
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "supportedLocales"    # [Ljava/lang/String;</span>
+
+<span class="">	invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-direct {p0, v0, v1}, Landroidx/core/os/LocaleListHelper;->computeFirstMatch(Ljava/util/Collection;Z)Ljava/util/Locale;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method  getFirstMatchIndex([Ljava/lang/String;)I
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "supportedLocales"    # [Ljava/lang/String;</span>
+
+<span class="">	invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-direct {p0, v0, v1}, Landroidx/core/os/LocaleListHelper;->computeFirstMatchIndex(Ljava/util/Collection;Z)I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method  getFirstMatchIndexWithEnglishSupported(Ljava/util/Collection;)I
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/Collection<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;)I"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	invoke-direct {p0, p1, v0}, Landroidx/core/os/LocaleListHelper;->computeFirstMatchIndex(Ljava/util/Collection;Z)I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method  getFirstMatchIndexWithEnglishSupported([Ljava/lang/String;)I
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "supportedLocales"    # [Ljava/lang/String;</span>
+
+<span class="">	invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p0, v0}, Landroidx/core/os/LocaleListHelper;->getFirstMatchIndexWithEnglishSupported(Ljava/util/Collection;)I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method  getFirstMatchWithEnglishSupported([Ljava/lang/String;)Ljava/util/Locale;
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "supportedLocales"    # [Ljava/lang/String;</span>
+
+<span class="">	invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	invoke-direct {p0, v0, v1}, Landroidx/core/os/LocaleListHelper;->computeFirstMatch(Ljava/util/Collection;Z)Ljava/util/Locale;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public hashCode()I
+<span class="">	.locals 4</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object v2, p0, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	array-length v3, v2</span>
+<span class="missed">	if-ge v1, v3, :cond_0</span>
+<span class="missed">	mul-int/lit8 v3, v0, 0x1f</span>
+<span class="missed">	aget-object v2, v2, v1</span>
+<span class="">	invoke-virtual {v2}, Ljava/util/Locale;->hashCode()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	add-int v0, v3, v2</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	return v0</span>
+.end method
+
+.method  indexOf(Ljava/util/Locale;)I
+<span class="">	.locals 3</span>
+<span class="">	.param p1, "locale"    # Ljava/util/Locale;</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	array-length v2, v1</span>
+<span class="missed">	if-ge v0, v2, :cond_1</span>
+<span class="missed">	aget-object v1, v1, v0</span>
+<span class="">	invoke-virtual {v1, p1}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v0, -0x1</span>
+<span class="">	return v0</span>
+.end method
+
+.method  isEmpty()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	array-length v0, v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return v0</span>
+.end method
+
+.method  size()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	array-length v0, v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method  toLanguageTags()Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/core/os/LocaleListHelper;->mStringRepresentation:Ljava/lang/String;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public toString()Ljava/lang/String;
+<span class="">	.locals 4</span>
+
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v1, "["</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object v2, p0, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	array-length v3, v2</span>
+<span class="missed">	if-ge v1, v3, :cond_1</span>
+<span class="missed">	aget-object v2, v2, v1</span>
+<span class="missed">	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v2, p0, Landroidx/core/os/LocaleListHelper;->mList:[Ljava/util/Locale;</span>
+<span class="missed">	array-length v2, v2</span>
+<span class="missed">	add-int/lit8 v2, v2, -0x1</span>
+<span class="missed">	if-ge v1, v2, :cond_0</span>
+<span class="missed">	const/16 v2, 0x2c</span>
+<span class="missed">	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const-string v1, "]"</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	return-object v1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../.resources/report.js"></script>
+</body>
+</html>

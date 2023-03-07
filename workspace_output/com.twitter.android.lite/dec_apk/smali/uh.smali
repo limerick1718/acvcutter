@@ -16,6 +16,7 @@ return-void
 invoke-static {p0}, Luh;->a(Landroid/content/Context;)Z
 move-result v0
 const/high16 v1, 0x40000000    # 2.0f
+if-eqz v0, :cond_0
 new-instance v0, Lj$a;
 invoke-direct {v0}, Lj$a;-><init>()V
 invoke-virtual {p0}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
@@ -36,6 +37,15 @@ iget-object v1, v0, Lj;->a:Landroid/content/Intent;
 const-string v3, "android.support.customtabs.extra.SEND_TO_EXTERNAL_HANDLER"
 invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 invoke-virtual {v0, p0, p1}, Lj;->a(Landroid/content/Context;Landroid/net/Uri;)V
+goto :goto_0
+:cond_0
+new-instance v0, Landroid/content/Intent;
+const-string v2, "android.intent.action.VIEW"
+invoke-direct {v0, v2, p1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+move-result-object p1
+invoke-virtual {p0, p1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+:goto_0
 return-void
 .end method
 .method public static a(Landroid/content/Context;)Z
@@ -87,6 +97,10 @@ return p0
 invoke-static {p0}, Luh;->b(Ljava/lang/String;)I
 move-result p0
 const/16 v0, 0x26
+if-ge p0, v0, :cond_0
+const/4 p0, 0x1
+goto :goto_0
+:cond_0
 const/4 p0, 0x0
 :goto_0
 return p0
@@ -98,6 +112,7 @@ invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSeque
 move-result-object p0
 invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
 move-result v0
+if-eqz v0, :cond_0
 const/4 v0, 0x1
 invoke-virtual {p0, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 move-result-object p0
@@ -106,6 +121,23 @@ move-result-object p0
 invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 move-result p0
 return p0
+:cond_0
+const/4 p0, 0x0
+return p0
+.end method
+.method public static b(Landroid/content/Context;)V
+.locals 2
+sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+const/16 v1, 0x18
+if-ge v0, v1, :cond_0
+const-string v0, "com.google.android.webview"
+invoke-static {p0, v0}, Luk;->a(Landroid/content/Context;Ljava/lang/String;)V
+goto :goto_0
+:cond_0
+const-string v0, "com.android.chrome"
+invoke-static {p0, v0}, Luk;->a(Landroid/content/Context;Ljava/lang/String;)V
+:goto_0
+return-void
 .end method
 .method public static b(Landroid/net/Uri;)Z
 .locals 1
@@ -118,7 +150,13 @@ if-nez v0, :cond_1
 const-string v0, "https"
 invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 move-result p0
+if-eqz p0, :cond_0
+goto :goto_0
+:cond_0
+const/4 p0, 0x0
+goto :goto_1
 :cond_1
+:goto_0
 const/4 p0, 0x1
 :goto_1
 return p0

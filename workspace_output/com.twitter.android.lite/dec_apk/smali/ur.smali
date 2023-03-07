@@ -12,20 +12,37 @@ return-void
 .end method
 .method public getCacheDir()Ljava/io/File;
 .locals 3
-const/4 v0, 0x0
+new-instance v0, Ljava/io/File;
+invoke-super {p0}, Landroid/content/ContextWrapper;->getCacheDir()Ljava/io/File;
+move-result-object v1
+iget-object v2, p0, Lur;->a:Ljava/lang/String;
+invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 return-object v0
 .end method
 .method public getDatabasePath(Ljava/lang/String;)Ljava/io/File;
 .locals 3
-const/4 v0, 0x0
-return-object v0
+new-instance v0, Ljava/io/File;
+invoke-super {p0, p1}, Landroid/content/ContextWrapper;->getDatabasePath(Ljava/lang/String;)Ljava/io/File;
+move-result-object v1
+invoke-virtual {v1}, Ljava/io/File;->getParentFile()Ljava/io/File;
+move-result-object v1
+iget-object v2, p0, Lur;->a:Ljava/lang/String;
+invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
+new-instance v1, Ljava/io/File;
+invoke-direct {v1, v0, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+return-object v1
 .end method
 .method public getExternalCacheDir()Ljava/io/File;
 .locals 3
 .annotation build Landroid/annotation/TargetApi;
 value = 0x8
 .end annotation
-const/4 v0, 0x0
+new-instance v0, Ljava/io/File;
+invoke-super {p0}, Landroid/content/ContextWrapper;->getExternalCacheDir()Ljava/io/File;
+move-result-object v1
+iget-object v2, p0, Lur;->a:Ljava/lang/String;
+invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 return-object v0
 .end method
 .method public getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
@@ -33,7 +50,11 @@ return-object v0
 .annotation build Landroid/annotation/TargetApi;
 value = 0x8
 .end annotation
-const/4 v0, 0x0
+new-instance v0, Ljava/io/File;
+invoke-super {p0, p1}, Landroid/content/ContextWrapper;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
+move-result-object p1
+iget-object v1, p0, Lur;->a:Ljava/lang/String;
+invoke-direct {v0, p1, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 return-object v0
 .end method
 .method public getFilesDir()Ljava/io/File;
@@ -62,14 +83,22 @@ return-object p1
 .end method
 .method public openOrCreateDatabase(Ljava/lang/String;ILandroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;
 .locals 0
-const/4 v0, 0x0
-return-object v0
+invoke-virtual {p0, p1}, Lur;->getDatabasePath(Ljava/lang/String;)Ljava/io/File;
+move-result-object p1
+invoke-static {p1, p3}, Landroid/database/sqlite/SQLiteDatabase;->openOrCreateDatabase(Ljava/io/File;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;
+move-result-object p1
+return-object p1
 .end method
 .method public openOrCreateDatabase(Ljava/lang/String;ILandroid/database/sqlite/SQLiteDatabase$CursorFactory;Landroid/database/DatabaseErrorHandler;)Landroid/database/sqlite/SQLiteDatabase;
 .locals 0
 .annotation build Landroid/annotation/TargetApi;
 value = 0xb
 .end annotation
-const/4 v0, 0x0
-return-object v0
+invoke-virtual {p0, p1}, Lur;->getDatabasePath(Ljava/lang/String;)Ljava/io/File;
+move-result-object p1
+invoke-virtual {p1}, Ljava/io/File;->getPath()Ljava/lang/String;
+move-result-object p1
+invoke-static {p1, p3, p4}, Landroid/database/sqlite/SQLiteDatabase;->openOrCreateDatabase(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;Landroid/database/DatabaseErrorHandler;)Landroid/database/sqlite/SQLiteDatabase;
+move-result-object p1
+return-object p1
 .end method

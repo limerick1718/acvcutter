@@ -145,6 +145,9 @@ value = {
 iget-object v0, p0, Lwd;->n:Ljava/util/concurrent/atomic/AtomicBoolean;
 invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 move-result v0
+if-nez v0, :cond_0
+invoke-direct {p0, p1}, Lwd;->d(Ljava/lang/Object;)Ljava/lang/Object;
+:cond_0
 return-void
 .end method
 .method static synthetic c(Lwd;Ljava/lang/Object;)V
@@ -180,6 +183,10 @@ value = {
 .end annotation
 invoke-virtual {p0}, Lwd;->d()Z
 move-result v0
+if-eqz v0, :cond_0
+invoke-virtual {p0, p1}, Lwd;->b(Ljava/lang/Object;)V
+goto :goto_0
+:cond_0
 invoke-virtual {p0, p1}, Lwd;->a(Ljava/lang/Object;)V
 :goto_0
 sget-object p1, Lwd$d;->c:Lwd$d;
@@ -206,6 +213,28 @@ value = {
 .end annotation
 iget-object v0, p0, Lwd;->l:Lwd$d;
 sget-object v1, Lwd$d;->a:Lwd$d;
+if-eq v0, v1, :cond_2
+sget-object v0, Lwd$4;->a:[I
+iget-object v1, p0, Lwd;->l:Lwd$d;
+invoke-virtual {v1}, Lwd$d;->ordinal()I
+move-result v1
+aget v0, v0, v1
+const/4 v1, 0x1
+if-eq v0, v1, :cond_1
+const/4 v1, 0x2
+if-eq v0, v1, :cond_0
+goto :goto_0
+:cond_0
+new-instance p1, Ljava/lang/IllegalStateException;
+const-string p2, "Cannot execute task: the task has already been executed (a task can be executed only once)"
+invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw p1
+:cond_1
+new-instance p1, Ljava/lang/IllegalStateException;
+const-string p2, "Cannot execute task: the task is already running."
+invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw p1
+:cond_2
 :goto_0
 sget-object v0, Lwd$d;->b:Lwd$d;
 iput-object v0, p0, Lwd;->l:Lwd$d;
@@ -231,8 +260,13 @@ return-void
 .end method
 .method public final a(Z)Z
 .locals 2
-const/4 v0, 0x0
-return v0
+iget-object v0, p0, Lwd;->m:Ljava/util/concurrent/atomic/AtomicBoolean;
+const/4 v1, 0x1
+invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+iget-object v0, p0, Lwd;->k:Ljava/util/concurrent/FutureTask;
+invoke-virtual {v0, p1}, Ljava/util/concurrent/FutureTask;->cancel(Z)Z
+move-result p1
+return p1
 .end method
 .method public final b()Lwd$d;
 .locals 1
@@ -246,6 +280,7 @@ value = {
 "(TResult;)V"
 }
 .end annotation
+invoke-virtual {p0}, Lwd;->c()V
 return-void
 .end method
 .method protected varargs b([Ljava/lang/Object;)V

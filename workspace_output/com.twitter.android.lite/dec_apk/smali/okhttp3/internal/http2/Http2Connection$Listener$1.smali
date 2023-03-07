@@ -10,7 +10,7 @@ name = null
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Lokhttp3/internal/http2/Http2Connection$Listener;-><init>()V
 return-void
 .end method
 .method public onStream(Lokhttp3/internal/http2/Http2Stream;)V
@@ -20,5 +20,8 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
+sget-object v0, Lokhttp3/internal/http2/ErrorCode;->REFUSED_STREAM:Lokhttp3/internal/http2/ErrorCode;
+const/4 v1, 0x0
+invoke-virtual {p1, v0, v1}, Lokhttp3/internal/http2/Http2Stream;->close(Lokhttp3/internal/http2/ErrorCode;Ljava/io/IOException;)V
 return-void
 .end method

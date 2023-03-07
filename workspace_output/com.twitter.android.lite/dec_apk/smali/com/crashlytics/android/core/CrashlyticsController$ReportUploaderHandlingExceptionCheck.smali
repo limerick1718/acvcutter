@@ -23,6 +23,8 @@ return-void
 .end method
 .method public isHandlingException()Z
 .locals 1
-const/4 v0, 0x0
+iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController$ReportUploaderHandlingExceptionCheck;->this$0:Lcom/crashlytics/android/core/CrashlyticsController;
+invoke-virtual {v0}, Lcom/crashlytics/android/core/CrashlyticsController;->isHandlingException()Z
+move-result v0
 return v0
 .end method

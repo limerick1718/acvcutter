@@ -31,6 +31,9 @@ value = {
 .end field
 .method public constructor <init>()V
 .locals 1
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Lgh;-><init>()V
+invoke-static {}, Lfy;->a()Lfy;
+move-result-object v0
+iput-object v0, p0, Lgh$c;->zzbyj:Lfy;
 return-void
 .end method

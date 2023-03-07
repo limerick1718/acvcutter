@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.appcompat.view.menu</a></li>
+        <li><i class="ico ico-class"></i> MenuItemWrapperICS.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Landroidx/appcompat/view/menu/MenuItemWrapperICS;
+.super Landroidx/appcompat/view/menu/BaseMenuWrapper;
+.source "MenuItemWrapperICS.java"
+.implements Landroid/view/MenuItem;
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Landroidx/appcompat/view/menu/MenuItemWrapperICS$CollapsibleActionViewWrapper;,
+Landroidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper;,
+Landroidx/appcompat/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper;,
+Landroidx/appcompat/view/menu/MenuItemWrapperICS$OnMenuItemClickListenerWrapper;
+}
+.end annotation
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Landroidx/appcompat/view/menu/BaseMenuWrapper<",
+"Landroidx/core/internal/view/SupportMenuItem;",
+">;",
+"Landroid/view/MenuItem;"
+}
+.end annotation
+
+.field static final LOG_TAG:Ljava/lang/String; = "MenuItemWrapper"
+.field private mSetExclusiveCheckableMethod:Ljava/lang/reflect/Method;
+
+
+.method constructor &lt;init&gt;(Landroid/content/Context;Landroidx/core/internal/view/SupportMenuItem;)V
+<span class="">	.locals 0</span>
+<span class="">	.param p1, "context"    # Landroid/content/Context;</span>
+<span class="">	.param p2, "object"    # Landroidx/core/internal/view/SupportMenuItem;</span>
+
+<span class="missed">	invoke-direct {p0, p1, p2}, Landroidx/appcompat/view/menu/BaseMenuWrapper;-><init>(Landroid/content/Context;Ljava/lang/Object;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public collapseActionView()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->collapseActionView()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method  createActionProviderWrapper(Landroid/view/ActionProvider;)Landroidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper;
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "provider"    # Landroid/view/ActionProvider;</span>
+
+<span class="missed">	new-instance v0, Landroidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mContext:Landroid/content/Context;</span>
+<span class="missed">	invoke-direct {v0, p0, v1, p1}, Landroidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper;-><init>(Landroidx/appcompat/view/menu/MenuItemWrapperICS;Landroid/content/Context;Landroid/view/ActionProvider;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public expandActionView()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->expandActionView()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public getActionProvider()Landroid/view/ActionProvider;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getSupportActionProvider()Landroidx/core/view/ActionProvider;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	instance-of v1, v0, Landroidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper;</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	move-object v1, v0</span>
+<span class="missed">	check-cast v1, Landroidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper;</span>
+<span class="missed">	iget-object v1, v1, Landroidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper;->mInner:Landroid/view/ActionProvider;</span>
+<span class="">	return-object v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	return-object v1</span>
+.end method
+
+.method public getActionView()Landroid/view/View;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getActionView()Landroid/view/View;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	instance-of v1, v0, Landroidx/appcompat/view/menu/MenuItemWrapperICS$CollapsibleActionViewWrapper;</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	move-object v1, v0</span>
+<span class="missed">	check-cast v1, Landroidx/appcompat/view/menu/MenuItemWrapperICS$CollapsibleActionViewWrapper;</span>
+<span class="">	invoke-virtual {v1}, Landroidx/appcompat/view/menu/MenuItemWrapperICS$CollapsibleActionViewWrapper;->getWrappedView()Landroid/view/View;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	return-object v1</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getAlphabeticModifiers()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getAlphabeticModifiers()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public getAlphabeticShortcut()C
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getAlphabeticShortcut()C</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public getContentDescription()Ljava/lang/CharSequence;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getContentDescription()Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getGroupId()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getGroupId()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public getIcon()Landroid/graphics/drawable/Drawable;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getIcon()Landroid/graphics/drawable/Drawable;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getIconTintList()Landroid/content/res/ColorStateList;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getIconTintList()Landroid/content/res/ColorStateList;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getIconTintMode()Landroid/graphics/PorterDuff$Mode;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getIconTintMode()Landroid/graphics/PorterDuff$Mode;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getIntent()Landroid/content/Intent;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getIntent()Landroid/content/Intent;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getItemId()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getItemId()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public getMenuInfo()Landroid/view/ContextMenu$ContextMenuInfo;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getMenuInfo()Landroid/view/ContextMenu$ContextMenuInfo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getNumericModifiers()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getNumericModifiers()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public getNumericShortcut()C
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getNumericShortcut()C</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public getOrder()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getOrder()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public getSubMenu()Landroid/view/SubMenu;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getSubMenu()Landroid/view/SubMenu;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p0, v0}, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->getSubMenuWrapper(Landroid/view/SubMenu;)Landroid/view/SubMenu;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getTitle()Ljava/lang/CharSequence;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getTitle()Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getTitleCondensed()Ljava/lang/CharSequence;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getTitleCondensed()Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getTooltipText()Ljava/lang/CharSequence;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getTooltipText()Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public hasSubMenu()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->hasSubMenu()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public isActionViewExpanded()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->isActionViewExpanded()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public isCheckable()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->isCheckable()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public isChecked()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->isChecked()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public isEnabled()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->isEnabled()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public isVisible()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->isVisible()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public setActionProvider(Landroid/view/ActionProvider;)Landroid/view/MenuItem;
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "provider"    # Landroid/view/ActionProvider;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="">	invoke-virtual {p0, p1}, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->createActionProviderWrapper(Landroid/view/ActionProvider;)Landroidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-interface {v0, v1}, Landroidx/core/internal/view/SupportMenuItem;->setSupportActionProvider(Landroidx/core/view/ActionProvider;)Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setActionView(I)Landroid/view/MenuItem;
+<span class="">	.locals 3</span>
+<span class="">	.param p1, "resId"    # I</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setActionView(I)Landroid/view/MenuItem;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0}, Landroidx/core/internal/view/SupportMenuItem;->getActionView()Landroid/view/View;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	instance-of v1, v0, Landroid/view/CollapsibleActionView;</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v1, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	new-instance v2, Landroidx/appcompat/view/menu/MenuItemWrapperICS$CollapsibleActionViewWrapper;</span>
+<span class="missed">	invoke-direct {v2, v0}, Landroidx/appcompat/view/menu/MenuItemWrapperICS$CollapsibleActionViewWrapper;-><init>(Landroid/view/View;)V</span>
+<span class="missed">	invoke-interface {v1, v2}, Landroidx/core/internal/view/SupportMenuItem;->setActionView(Landroid/view/View;)Landroid/view/MenuItem;</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setActionView(Landroid/view/View;)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "view"    # Landroid/view/View;</span>
+
+<span class="missed">	instance-of v0, p1, Landroid/view/CollapsibleActionView;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	new-instance v0, Landroidx/appcompat/view/menu/MenuItemWrapperICS$CollapsibleActionViewWrapper;</span>
+<span class="missed">	invoke-direct {v0, p1}, Landroidx/appcompat/view/menu/MenuItemWrapperICS$CollapsibleActionViewWrapper;-><init>(Landroid/view/View;)V</span>
+<span class="missed">	move-object p1, v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setActionView(Landroid/view/View;)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setAlphabeticShortcut(C)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "alphaChar"    # C</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setAlphabeticShortcut(C)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setAlphabeticShortcut(CI)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "alphaChar"    # C</span>
+<span class="">	.param p2, "alphaModifiers"    # I</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1, p2}, Landroidx/core/internal/view/SupportMenuItem;->setAlphabeticShortcut(CI)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setCheckable(Z)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "checkable"    # Z</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setCheckable(Z)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setChecked(Z)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "checked"    # Z</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setChecked(Z)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setContentDescription(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "contentDescription"    # Ljava/lang/CharSequence;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setContentDescription(Ljava/lang/CharSequence;)Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setEnabled(Z)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "enabled"    # Z</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setEnabled(Z)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setExclusiveCheckable(Z)V
+<span class="">	.locals 6</span>
+<span class="">	.param p1, "checkable"    # Z</span>
+
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mSetExclusiveCheckableMethod:Ljava/lang/reflect/Method;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v3, "setExclusiveCheckable"</span>
+<span class="missed">	new-array v4, v2, [Ljava/lang/Class;</span>
+<span class="missed">	sget-object v5, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	aput-object v5, v4, v1</span>
+<span class="">	invoke-virtual {v0, v3, v4}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mSetExclusiveCheckableMethod:Ljava/lang/reflect/Method;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mSetExclusiveCheckableMethod:Ljava/lang/reflect/Method;</span>
+<span class="missed">	iget-object v3, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	new-array v2, v2, [Ljava/lang/Object;</span>
+<span class="">	invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	aput-object v4, v2, v1</span>
+<span class="missed">	invoke-virtual {v0, v3, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	const-string v1, "MenuItemWrapper"</span>
+<span class="missed">	const-string v2, "Error while calling setExclusiveCheckable"</span>
+<span class="missed">	invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setIcon(I)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "iconRes"    # I</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setIcon(I)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "icon"    # Landroid/graphics/drawable/Drawable;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setIconTintList(Landroid/content/res/ColorStateList;)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "tint"    # Landroid/content/res/ColorStateList;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setIconTintList(Landroid/content/res/ColorStateList;)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setIconTintMode(Landroid/graphics/PorterDuff$Mode;)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "tintMode"    # Landroid/graphics/PorterDuff$Mode;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setIconTintMode(Landroid/graphics/PorterDuff$Mode;)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "intent"    # Landroid/content/Intent;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setNumericShortcut(C)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "numericChar"    # C</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setNumericShortcut(C)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setNumericShortcut(CI)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "numericChar"    # C</span>
+<span class="">	.param p2, "numericModifiers"    # I</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1, p2}, Landroidx/core/internal/view/SupportMenuItem;->setNumericShortcut(CI)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setOnActionExpandListener(Landroid/view/MenuItem$OnActionExpandListener;)Landroid/view/MenuItem;
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "listener"    # Landroid/view/MenuItem$OnActionExpandListener;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	new-instance v1, Landroidx/appcompat/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper;</span>
+<span class="missed">	invoke-direct {v1, p0, p1}, Landroidx/appcompat/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper;-><init>(Landroidx/appcompat/view/menu/MenuItemWrapperICS;Landroid/view/MenuItem$OnActionExpandListener;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-interface {v0, v1}, Landroidx/core/internal/view/SupportMenuItem;->setOnActionExpandListener(Landroid/view/MenuItem$OnActionExpandListener;)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setOnMenuItemClickListener(Landroid/view/MenuItem$OnMenuItemClickListener;)Landroid/view/MenuItem;
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "menuItemClickListener"    # Landroid/view/MenuItem$OnMenuItemClickListener;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	new-instance v1, Landroidx/appcompat/view/menu/MenuItemWrapperICS$OnMenuItemClickListenerWrapper;</span>
+<span class="missed">	invoke-direct {v1, p0, p1}, Landroidx/appcompat/view/menu/MenuItemWrapperICS$OnMenuItemClickListenerWrapper;-><init>(Landroidx/appcompat/view/menu/MenuItemWrapperICS;Landroid/view/MenuItem$OnMenuItemClickListener;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-interface {v0, v1}, Landroidx/core/internal/view/SupportMenuItem;->setOnMenuItemClickListener(Landroid/view/MenuItem$OnMenuItemClickListener;)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setShortcut(CC)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "numericChar"    # C</span>
+<span class="">	.param p2, "alphaChar"    # C</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1, p2}, Landroidx/core/internal/view/SupportMenuItem;->setShortcut(CC)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setShortcut(CCII)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "numericChar"    # C</span>
+<span class="">	.param p2, "alphaChar"    # C</span>
+<span class="">	.param p3, "numericModifiers"    # I</span>
+<span class="">	.param p4, "alphaModifiers"    # I</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1, p2, p3, p4}, Landroidx/core/internal/view/SupportMenuItem;->setShortcut(CCII)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setShowAsAction(I)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "actionEnum"    # I</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setShowAsAction(I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setShowAsActionFlags(I)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "actionEnum"    # I</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setShowAsActionFlags(I)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setTitle(I)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "title"    # I</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setTitle(I)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setTitle(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "title"    # Ljava/lang/CharSequence;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setTitle(Ljava/lang/CharSequence;)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setTitleCondensed(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "title"    # Ljava/lang/CharSequence;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setTitleCondensed(Ljava/lang/CharSequence;)Landroid/view/MenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setTooltipText(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "tooltipText"    # Ljava/lang/CharSequence;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="missed">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setTooltipText(Ljava/lang/CharSequence;)Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public setVisible(Z)Landroid/view/MenuItem;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "visible"    # Z</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemWrapperICS;->mWrappedObject:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Landroidx/core/internal/view/SupportMenuItem;</span>
+<span class="">	invoke-interface {v0, p1}, Landroidx/core/internal/view/SupportMenuItem;->setVisible(Z)Landroid/view/MenuItem;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.appcompat.widget</a></li>
+        <li><i class="ico ico-class"></i> ActivityChooserModel$HistoricalRecord.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;
+.super Ljava/lang/Object;
+.source "ActivityChooserModel.java"
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Landroidx/appcompat/widget/ActivityChooserModel;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x19
+name = "HistoricalRecord"
+.end annotation
+
+.field public final activity:Landroid/content/ComponentName;
+.field public final time:J
+.field public final weight:F
+
+
+.method public constructor &lt;init&gt;(Landroid/content/ComponentName;JF)V
+<span class="">	.locals 0</span>
+<span class="">	.param p1, "activityName"    # Landroid/content/ComponentName;</span>
+<span class="">	.param p2, "time"    # J</span>
+<span class="">	.param p4, "weight"    # F</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;</span>
+<span class="missed">	iput-wide p2, p0, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->time:J</span>
+<span class="missed">	iput p4, p0, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->weight:F</span>
+<span class="">	return-void</span>
+.end method
+
+.method public constructor &lt;init&gt;(Ljava/lang/String;JF)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "activityName"    # Ljava/lang/String;</span>
+<span class="">	.param p2, "time"    # J</span>
+<span class="">	.param p4, "weight"    # F</span>
+
+<span class="">	invoke-static {p1}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-direct {p0, v0, p2, p3, p4}, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;-><init>(Landroid/content/ComponentName;JF)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+<span class="">	.locals 7</span>
+<span class="">	.param p1, "obj"    # Ljava/lang/Object;</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-ne p0, p1, :cond_0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	if-nez p1, :cond_1</span>
+<span class="">	return v1</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	if-eq v2, v3, :cond_2</span>
+<span class="">	return v1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	move-object v2, p1</span>
+<span class="missed">	check-cast v2, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;</span>
+<span class="missed">	iget-object v3, p0, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;</span>
+<span class="missed">	if-nez v3, :cond_3</span>
+<span class="missed">	iget-object v3, v2, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;</span>
+<span class="missed">	if-eqz v3, :cond_4</span>
+<span class="">	return v1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	iget-object v4, v2, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;</span>
+<span class="">	invoke-virtual {v3, v4}, Landroid/content/ComponentName;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-nez v3, :cond_4</span>
+<span class="">	return v1</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget-wide v3, p0, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->time:J</span>
+<span class="missed">	iget-wide v5, v2, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->time:J</span>
+<span class="missed">	cmp-long v3, v3, v5</span>
+<span class="missed">	if-eqz v3, :cond_5</span>
+<span class="">	return v1</span>
+<span class="">	:cond_5</span>
+<span class="missed">	iget v3, p0, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->weight:F</span>
+<span class="">	invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	iget v4, v2, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->weight:F</span>
+<span class="">	invoke-static {v4}, Ljava/lang/Float;->floatToIntBits(F)I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-eq v3, v4, :cond_6</span>
+<span class="">	return v1</span>
+<span class="">	:cond_6</span>
+<span class="">	return v0</span>
+.end method
+
+.method public hashCode()I
+<span class="">	.locals 7</span>
+
+<span class="missed">	const/16 v0, 0x1f</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	mul-int/lit8 v2, v1, 0x1f</span>
+<span class="missed">	iget-object v3, p0, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;</span>
+<span class="missed">	if-nez v3, :cond_0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {v3}, Landroid/content/ComponentName;->hashCode()I</span>
+<span class="missed">	move-result v3</span>
+<span class="">	:goto_0</span>
+<span class="missed">	add-int/2addr v2, v3</span>
+<span class="missed">	mul-int/lit8 v1, v2, 0x1f</span>
+<span class="missed">	iget-wide v3, p0, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->time:J</span>
+<span class="missed">	const/16 v5, 0x20</span>
+<span class="missed">	ushr-long v5, v3, v5</span>
+<span class="missed">	xor-long/2addr v3, v5</span>
+<span class="missed">	long-to-int v3, v3</span>
+<span class="missed">	add-int/2addr v1, v3</span>
+<span class="missed">	mul-int/lit8 v2, v1, 0x1f</span>
+<span class="missed">	iget v3, p0, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->weight:F</span>
+<span class="">	invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	add-int/2addr v2, v3</span>
+<span class="">	return v2</span>
+.end method
+
+.method public toString()Ljava/lang/String;
+<span class="">	.locals 4</span>
+
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v1, "["</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v1, "; activity:"</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v1, "; time:"</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-wide v1, p0, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->time:J</span>
+<span class="missed">	invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v1, "; weight:"</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	new-instance v1, Ljava/math/BigDecimal;</span>
+<span class="missed">	iget v2, p0, Landroidx/appcompat/widget/ActivityChooserModel$HistoricalRecord;->weight:F</span>
+<span class="missed">	float-to-double v2, v2</span>
+<span class="missed">	invoke-direct {v1, v2, v3}, Ljava/math/BigDecimal;-><init>(D)V</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v1, "]"</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	return-object v1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../.resources/report.js"></script>
+</body>
+</html>

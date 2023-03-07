@@ -2,6 +2,13 @@
 .super Ljava/lang/Object;
 .source "FileSystem.java"
 .field public static final SYSTEM:Lokhttp3/internal/io/FileSystem;
+.method static constructor <clinit>()V
+.locals 1
+new-instance v0, Lokhttp3/internal/io/FileSystem$1;
+invoke-direct {v0}, Lokhttp3/internal/io/FileSystem$1;-><init>()V
+sput-object v0, Lokhttp3/internal/io/FileSystem;->SYSTEM:Lokhttp3/internal/io/FileSystem;
+return-void
+.end method
 .method public abstract appendingSink(Ljava/io/File;)Lzj;
 .annotation system Ldalvik/annotation/Throws;
 value = {

@@ -11,7 +11,7 @@ return-void
 .end method
 .method private constructor <init>()V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public static a(Landroid/os/Parcel;Z)V
@@ -24,6 +24,10 @@ return-void
 .locals 0
 invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 move-result p0
+if-eqz p0, :cond_0
+const/4 p0, 0x1
+return p0
+:cond_0
 const/4 p0, 0x0
 return p0
 .end method

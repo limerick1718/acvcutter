@@ -8,6 +8,7 @@
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
 .locals 1
 invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+if-eqz p1, :cond_0
 iput-object p1, p0, Lxq;->c:Landroid/content/Context;
 iput-object p2, p0, Lxq;->b:Ljava/lang/String;
 iget-object p1, p0, Lxq;->c:Landroid/content/Context;
@@ -17,6 +18,11 @@ invoke-virtual {p1, p2, v0}, Landroid/content/Context;->getSharedPreferences(Lja
 move-result-object p1
 iput-object p1, p0, Lxq;->a:Landroid/content/SharedPreferences;
 return-void
+:cond_0
+new-instance p1, Ljava/lang/IllegalStateException;
+const-string p2, "Cannot get directory before context has been set. Call Fabric.with() first"
+invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method
 .method public constructor <init>(Luw;)V
 .locals 1
@@ -43,8 +49,13 @@ value = 0x9
 .end annotation
 sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 const/16 v1, 0x9
+if-lt v0, v1, :cond_0
 invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
 const/4 p1, 0x1
+return p1
+:cond_0
+invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->commit()Z
+move-result p1
 return p1
 .end method
 .method public b()Landroid/content/SharedPreferences$Editor;

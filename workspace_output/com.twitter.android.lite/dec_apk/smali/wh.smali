@@ -70,9 +70,14 @@ value = {
 }
 .end annotation
 instance-of v0, p1, Lwl;
+if-eqz v0, :cond_0
 check-cast p1, Lwl;
 invoke-interface {p1}, Lwl;->getPriority()Lwh;
 move-result-object p1
+goto :goto_0
+:cond_0
+sget-object p1, Lwh;->b:Lwh;
+:goto_0
 invoke-virtual {p1}, Lwh;->ordinal()I
 move-result p1
 invoke-interface {p0}, Lwl;->getPriority()Lwh;
@@ -81,4 +86,20 @@ invoke-virtual {p0}, Lwh;->ordinal()I
 move-result p0
 sub-int/2addr p1, p0
 return p1
+.end method
+.method public static valueOf(Ljava/lang/String;)Lwh;
+.locals 1
+const-class v0, Lwh;
+invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+move-result-object p0
+check-cast p0, Lwh;
+return-object p0
+.end method
+.method public static values()[Lwh;
+.locals 1
+sget-object v0, Lwh;->e:[Lwh;
+invoke-virtual {v0}, [Lwh;->clone()Ljava/lang/Object;
+move-result-object v0
+check-cast v0, [Lwh;
+return-object v0
 .end method

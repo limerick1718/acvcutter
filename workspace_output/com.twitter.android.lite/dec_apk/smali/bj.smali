@@ -26,10 +26,14 @@ return-object p0
 .method private final declared-synchronized b(Landroid/content/Context;)Lbi;
 .locals 1
 monitor-enter p0
+:try_start_0
 iget-object v0, p0, Lbj;->a:Lbi;
 if-nez v0, :cond_1
 invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 move-result-object v0
+if-nez v0, :cond_0
+goto :goto_0
+:cond_0
 invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 move-result-object p1
 :goto_0
@@ -38,6 +42,8 @@ invoke-direct {v0, p1}, Lbi;-><init>(Landroid/content/Context;)V
 iput-object v0, p0, Lbj;->a:Lbi;
 :cond_1
 iget-object p1, p0, Lbj;->a:Lbi;
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 monitor-exit p0
 return-object p1
 :catchall_0

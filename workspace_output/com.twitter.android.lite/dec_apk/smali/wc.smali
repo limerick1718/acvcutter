@@ -18,10 +18,43 @@ xor-int/lit8 p1, p1, 0x1
 iput-boolean p1, p0, Lwc;->c:Z
 return-void
 .end method
+.method private c()V
+.locals 4
+iget-object v0, p0, Lwc;->b:Ljava/lang/String;
+new-instance v1, Ljava/lang/StringBuilder;
+invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+iget-object v2, p0, Lwc;->a:Ljava/lang/String;
+invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+const-string v2, ": "
+invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+iget-wide v2, p0, Lwc;->e:J
+invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+const-string v2, "ms"
+invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object v1
+invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+return-void
+.end method
 .method public declared-synchronized a()V
 .locals 2
 monitor-enter p0
+:try_start_0
 iget-boolean v0, p0, Lwc;->c:Z
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
+if-eqz v0, :cond_0
+monitor-exit p0
+return-void
+:cond_0
+:try_start_1
+invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+move-result-wide v0
+iput-wide v0, p0, Lwc;->d:J
+const-wide/16 v0, 0x0
+iput-wide v0, p0, Lwc;->e:J
+:try_end_1
+.catchall {:try_start_1 .. :try_end_1} :catchall_0
 monitor-exit p0
 return-void
 :catchall_0
@@ -32,7 +65,33 @@ throw v0
 .method public declared-synchronized b()V
 .locals 5
 monitor-enter p0
+:try_start_0
 iget-boolean v0, p0, Lwc;->c:Z
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
+if-eqz v0, :cond_0
+monitor-exit p0
+return-void
+:cond_0
+:try_start_1
+iget-wide v0, p0, Lwc;->e:J
+:try_end_1
+.catchall {:try_start_1 .. :try_end_1} :catchall_0
+const-wide/16 v2, 0x0
+cmp-long v4, v0, v2
+if-eqz v4, :cond_1
+monitor-exit p0
+return-void
+:cond_1
+:try_start_2
+invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+move-result-wide v0
+iget-wide v2, p0, Lwc;->d:J
+sub-long/2addr v0, v2
+iput-wide v0, p0, Lwc;->e:J
+invoke-direct {p0}, Lwc;->c()V
+:try_end_2
+.catchall {:try_start_2 .. :try_end_2} :catchall_0
 monitor-exit p0
 return-void
 :catchall_0

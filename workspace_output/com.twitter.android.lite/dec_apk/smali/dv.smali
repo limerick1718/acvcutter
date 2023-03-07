@@ -10,5 +10,7 @@ return-void
 .end method
 .method public final onChange(Z)V
 .locals 0
+iget-object p1, p0, Ldv;->a:Ldt;
+invoke-virtual {p1}, Ldt;->b()V
 return-void
 .end method

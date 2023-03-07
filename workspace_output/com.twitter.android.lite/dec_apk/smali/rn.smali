@@ -38,6 +38,8 @@ return-object v0
 .end method
 .method public a(Ljava/lang/Exception;)V
 .locals 1
+iget-object v0, p0, Lrn;->a:Lsf;
+invoke-virtual {v0, p1}, Lsf;->a(Ljava/lang/Exception;)V
 return-void
 .end method
 .method public a(Ljava/lang/Object;)V
@@ -53,8 +55,10 @@ return-void
 .end method
 .method public b(Ljava/lang/Exception;)Z
 .locals 1
-const/4 v0, 0x0
-return v0
+iget-object v0, p0, Lrn;->a:Lsf;
+invoke-virtual {v0, p1}, Lsf;->b(Ljava/lang/Exception;)Z
+move-result p1
+return p1
 .end method
 .method public b(Ljava/lang/Object;)Z
 .locals 1
@@ -63,6 +67,8 @@ value = {
 "(TTResult;)Z"
 }
 .end annotation
-const/4 v0, 0x0
-return v0
+iget-object v0, p0, Lrn;->a:Lsf;
+invoke-virtual {v0, p1}, Lsf;->b(Ljava/lang/Object;)Z
+move-result p1
+return p1
 .end method

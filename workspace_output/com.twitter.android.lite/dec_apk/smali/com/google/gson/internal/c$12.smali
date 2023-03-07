@@ -19,7 +19,8 @@ value = {
 .field final synthetic a:Lcom/google/gson/internal/c;
 .method constructor <init>(Lcom/google/gson/internal/c;)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lcom/google/gson/internal/c$12;->a:Lcom/google/gson/internal/c;
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public a()Ljava/lang/Object;
@@ -29,6 +30,7 @@ value = {
 "()TT;"
 }
 .end annotation
-const/4 v0, 0x0
+new-instance v0, Ljava/util/ArrayDeque;
+invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
 return-object v0
 .end method

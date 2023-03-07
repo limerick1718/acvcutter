@@ -12,11 +12,22 @@ name = null
 .field final synthetic a:Lae;
 .method constructor <init>(Lae;)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lae$3;->a:Lae;
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public a()Landroidx/lifecycle/e;
 .locals 3
-const/4 v0, 0x0
+iget-object v0, p0, Lae$3;->a:Lae;
+iget-object v0, v0, Lae;->ad:Landroidx/lifecycle/h;
+if-nez v0, :cond_0
+iget-object v0, p0, Lae$3;->a:Lae;
+new-instance v1, Landroidx/lifecycle/h;
+iget-object v2, v0, Lae;->ae:Landroidx/lifecycle/g;
+invoke-direct {v1, v2}, Landroidx/lifecycle/h;-><init>(Landroidx/lifecycle/g;)V
+iput-object v1, v0, Lae;->ad:Landroidx/lifecycle/h;
+:cond_0
+iget-object v0, p0, Lae$3;->a:Lae;
+iget-object v0, v0, Lae;->ad:Landroidx/lifecycle/h;
 return-object v0
 .end method

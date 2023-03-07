@@ -67,6 +67,7 @@ sget-object v0, Lbe;->b:Lbe;
 if-nez v0, :cond_1
 sget-object v0, Lbe;->a:Ljava/lang/Object;
 monitor-enter v0
+:try_start_0
 sget-object v1, Lbe;->b:Lbe;
 if-nez v1, :cond_0
 new-instance v1, Lbe;
@@ -78,6 +79,8 @@ goto :goto_0
 :catchall_0
 move-exception v1
 monitor-exit v0
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 throw v1
 :cond_1
 :goto_0
@@ -114,7 +117,21 @@ return p1
 invoke-virtual {p3}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 move-result-object p2
 const/4 v0, 0x0
+if-nez p2, :cond_0
 const/4 p2, 0x0
+goto :goto_0
+:cond_0
+invoke-virtual {p2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+move-result-object p2
+invoke-static {p1, p2}, Lcom/google/android/gms/common/util/c;->b(Landroid/content/Context;Ljava/lang/String;)Z
+move-result p2
+:goto_0
+if-eqz p2, :cond_1
+const-string p1, "ConnectionTracker"
+const-string p2, "Attempted to bind to a service in a STOPPED package."
+invoke-static {p1, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+return v0
+:cond_1
 invoke-virtual {p1, p3, p4, p5}, Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
 move-result p1
 return p1

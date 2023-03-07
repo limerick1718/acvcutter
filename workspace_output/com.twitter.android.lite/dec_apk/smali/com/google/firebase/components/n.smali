@@ -98,6 +98,8 @@ return v0
 .end method
 .method final d()Z
 .locals 1
-const/4 v0, 0x0
+iget-object v0, p0, Lcom/google/firebase/components/n;->b:Ljava/util/Set;
+invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
+move-result v0
 return v0
 .end method

@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.constraintlayout.solver.widgets</a></li>
+        <li><i class="ico ico-class"></i> ConstraintWidgetGroup.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;
+.super Ljava/lang/Object;
+.source "ConstraintWidgetGroup.java"
+
+
+.field public mConstrainedGroup:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Landroidx/constraintlayout/solver/widgets/ConstraintWidget;",
+">;"
+}
+.end annotation
+.end field
+.field public final mGroupDimensions:[I
+.field  mGroupHeight:I
+.field  mGroupWidth:I
+.field public mSkipSolver:Z
+.field  mStartHorizontalWidgets:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Landroidx/constraintlayout/solver/widgets/ConstraintWidget;",
+">;"
+}
+.end annotation
+.end field
+.field  mStartVerticalWidgets:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Landroidx/constraintlayout/solver/widgets/ConstraintWidget;",
+">;"
+}
+.end annotation
+.end field
+.field  mUnresolvedWidgets:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Landroidx/constraintlayout/solver/widgets/ConstraintWidget;",
+">;"
+}
+.end annotation
+.end field
+.field  mWidgetsToSetHorizontal:Ljava/util/HashSet;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/HashSet<",
+"Landroidx/constraintlayout/solver/widgets/ConstraintWidget;",
+">;"
+}
+.end annotation
+.end field
+.field  mWidgetsToSetVertical:Ljava/util/HashSet;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/HashSet<",
+"Landroidx/constraintlayout/solver/widgets/ConstraintWidget;",
+">;"
+}
+.end annotation
+.end field
+.field  mWidgetsToSolve:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Landroidx/constraintlayout/solver/widgets/ConstraintWidget;",
+">;"
+}
+.end annotation
+.end field
+
+
+<span class="cov">.method constructor &lt;init&gt;(Ljava/util/List;)V</span>
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Landroidx/constraintlayout/solver/widgets/ConstraintWidget;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	const/4 v0, -0x1</span>
+<span class="cov">	iput v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mGroupWidth:I</span>
+<span class="cov">	iput v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mGroupHeight:I</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	iput-boolean v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mSkipSolver:Z</span>
+<span class="cov">	const/4 v1, 0x2</span>
+<span class="cov">	new-array v1, v1, [I</span>
+<span class="cov">	iget v2, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mGroupWidth:I</span>
+<span class="cov">	aput v2, v1, v0</span>
+<span class="cov">	iget v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mGroupHeight:I</span>
+<span class="cov">	const/4 v2, 0x1</span>
+<span class="cov">	aput v0, v1, v2</span>
+<span class="cov">	iput-object v1, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mGroupDimensions:[I</span>
+<span class="cov">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mStartHorizontalWidgets:Ljava/util/List;</span>
+<span class="cov">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mStartVerticalWidgets:Ljava/util/List;</span>
+<span class="cov">	new-instance v0, Ljava/util/HashSet;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/HashSet;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSetHorizontal:Ljava/util/HashSet;</span>
+<span class="cov">	new-instance v0, Ljava/util/HashSet;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/HashSet;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSetVertical:Ljava/util/HashSet;</span>
+<span class="cov">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSolve:Ljava/util/List;</span>
+<span class="cov">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mUnresolvedWidgets:Ljava/util/List;</span>
+<span class="cov">	iput-object p1, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mConstrainedGroup:Ljava/util/List;</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method constructor &lt;init&gt;(Ljava/util/List;Z)V
+<span class="">	.locals 3</span>
+<span class="">	.param p2, "skipSolver"    # Z</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Landroidx/constraintlayout/solver/widgets/ConstraintWidget;",</span>
+<span class="">	">;Z)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	const/4 v0, -0x1</span>
+<span class="missed">	iput v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mGroupWidth:I</span>
+<span class="missed">	iput v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mGroupHeight:I</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-boolean v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mSkipSolver:Z</span>
+<span class="missed">	const/4 v1, 0x2</span>
+<span class="missed">	new-array v1, v1, [I</span>
+<span class="missed">	iget v2, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mGroupWidth:I</span>
+<span class="missed">	aput v2, v1, v0</span>
+<span class="missed">	iget v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mGroupHeight:I</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	aput v0, v1, v2</span>
+<span class="missed">	iput-object v1, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mGroupDimensions:[I</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mStartHorizontalWidgets:Ljava/util/List;</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mStartVerticalWidgets:Ljava/util/List;</span>
+<span class="missed">	new-instance v0, Ljava/util/HashSet;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/HashSet;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSetHorizontal:Ljava/util/HashSet;</span>
+<span class="missed">	new-instance v0, Ljava/util/HashSet;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/HashSet;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSetVertical:Ljava/util/HashSet;</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSolve:Ljava/util/List;</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mUnresolvedWidgets:Ljava/util/List;</span>
+<span class="missed">	iput-object p1, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mConstrainedGroup:Ljava/util/List;</span>
+<span class="missed">	iput-boolean p2, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mSkipSolver:Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method private getWidgetsToSolveTraversal(Ljava/util/ArrayList;Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V
+<span class="">	.locals 5</span>
+<span class="">	.param p2, "widget"    # Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/ArrayList<",</span>
+<span class="">	"Landroidx/constraintlayout/solver/widgets/ConstraintWidget;",</span>
+<span class="">	">;",</span>
+<span class="">	"Landroidx/constraintlayout/solver/widgets/ConstraintWidget;",</span>
+<span class="">	")V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-boolean v0, p2, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mGroupsToSolver:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {p1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	iput-boolean v0, p2, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mGroupsToSolver:Z</span>
+<span class="">	invoke-virtual {p2}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->isFullyResolved()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="missed">	instance-of v0, p2, Landroidx/constraintlayout/solver/widgets/Helper;</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="missed">	move-object v0, p2</span>
+<span class="missed">	check-cast v0, Landroidx/constraintlayout/solver/widgets/Helper;</span>
+<span class="missed">	iget v1, v0, Landroidx/constraintlayout/solver/widgets/Helper;->mWidgetsCount:I</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v2, v1, :cond_2</span>
+<span class="missed">	iget-object v3, v0, Landroidx/constraintlayout/solver/widgets/Helper;->mWidgets:[Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="missed">	aget-object v3, v3, v2</span>
+<span class="missed">	invoke-direct {p0, p1, v3}, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->getWidgetsToSolveTraversal(Ljava/util/ArrayList;Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object v0, p2, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mListAnchors:[Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="missed">	array-length v0, v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ge v1, v0, :cond_4</span>
+<span class="missed">	iget-object v2, p2, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mListAnchors:[Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="missed">	aget-object v2, v2, v1</span>
+<span class="missed">	iget-object v2, v2, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mTarget:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	if-eqz v2, :cond_3</span>
+<span class="missed">	iget-object v3, v2, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mOwner:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="missed">	if-eqz v2, :cond_3</span>
+<span class="">	invoke-virtual {p2}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->getParent()Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	if-eq v3, v4, :cond_3</span>
+<span class="missed">	invoke-direct {p0, p1, v3}, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->getWidgetsToSolveTraversal(Ljava/util/ArrayList;Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V</span>
+<span class="">	:cond_3</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_4</span>
+<span class="">	return-void</span>
+.end method
+
+.method private updateResolvedDimension(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V
+<span class="">	.locals 8</span>
+<span class="">	.param p1, "widget"    # Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	iget-boolean v2, p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mOptimizerMeasurable:Z</span>
+<span class="missed">	if-eqz v2, :cond_f</span>
+<span class="">	invoke-virtual {p1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->isFullyResolved()Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v2, p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mRight:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="missed">	iget-object v2, v2, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mTarget:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	if-eqz v2, :cond_1</span>
+<span class="missed">	move v2, v4</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	move v2, v3</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-eqz v2, :cond_2</span>
+<span class="missed">	iget-object v5, p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mRight:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="missed">	iget-object v5, v5, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mTarget:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object v5, p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mLeft:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="missed">	iget-object v5, v5, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mTarget:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-eqz v5, :cond_5</span>
+<span class="missed">	iget-object v6, v5, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mOwner:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="missed">	iget-boolean v6, v6, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mOptimizerMeasured:Z</span>
+<span class="missed">	if-nez v6, :cond_3</span>
+<span class="missed">	iget-object v6, v5, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mOwner:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="missed">	invoke-direct {p0, v6}, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->updateResolvedDimension(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V</span>
+<span class="">	:cond_3</span>
+<span class="missed">	iget-object v6, v5, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mType:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;</span>
+<span class="missed">	sget-object v7, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;->RIGHT:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;</span>
+<span class="missed">	if-ne v6, v7, :cond_4</span>
+<span class="missed">	iget-object v6, v5, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mOwner:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="missed">	iget v6, v6, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mX:I</span>
+<span class="missed">	iget-object v7, v5, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mOwner:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="">	invoke-virtual {v7}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->getWidth()I</span>
+<span class="missed">	move-result v7</span>
+<span class="missed">	add-int v1, v6, v7</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget-object v6, v5, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mType:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;</span>
+<span class="missed">	sget-object v7, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;->LEFT:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;</span>
+<span class="missed">	if-ne v6, v7, :cond_5</span>
+<span class="missed">	iget-object v6, v5, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mOwner:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="missed">	iget v1, v6, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mX:I</span>
+<span class="">	:goto_2</span>
+<span class="">	:cond_5</span>
+<span class="missed">	if-eqz v2, :cond_6</span>
+<span class="missed">	iget-object v6, p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mRight:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="">	invoke-virtual {v6}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->getMargin()I</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	sub-int/2addr v1, v6</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_6</span>
+<span class="missed">	iget-object v6, p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mLeft:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="">	invoke-virtual {v6}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->getMargin()I</span>
+<span class="missed">	move-result v6</span>
+<span class="">	invoke-virtual {p1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->getWidth()I</span>
+<span class="missed">	move-result v7</span>
+<span class="missed">	add-int/2addr v6, v7</span>
+<span class="missed">	add-int/2addr v1, v6</span>
+<span class="">	:goto_3</span>
+<span class="">	invoke-virtual {p1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->getWidth()I</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	sub-int v0, v1, v6</span>
+<span class="missed">	invoke-virtual {p1, v0, v1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setHorizontalDimension(II)V</span>
+<span class="missed">	iget-object v6, p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mBaseline:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="missed">	iget-object v6, v6, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mTarget:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="missed">	if-eqz v6, :cond_8</span>
+<span class="missed">	iget-object v3, p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mBaseline:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="missed">	iget-object v3, v3, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mTarget:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="missed">	iget-object v5, v3, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mOwner:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="missed">	iget-boolean v5, v5, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mOptimizerMeasured:Z</span>
+<span class="missed">	if-nez v5, :cond_7</span>
+<span class="missed">	iget-object v5, v3, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mOwner:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="missed">	invoke-direct {p0, v5}, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->updateResolvedDimension(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V</span>
+<span class="">	:cond_7</span>
+<span class="missed">	iget-object v5, v3, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mOwner:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="missed">	iget v5, v5, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mY:I</span>
+<span class="missed">	iget-object v6, v3, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mOwner:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="missed">	iget v6, v6, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mBaselineDistance:I</span>
+<span class="missed">	add-int/2addr v5, v6</span>
+<span class="missed">	iget v6, p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mBaselineDistance:I</span>
+<span class="missed">	sub-int/2addr v5, v6</span>
+<span class="missed">	iget v0, p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mHeight:I</span>
+<span class="missed">	add-int/2addr v0, v5</span>
+<span class="missed">	invoke-virtual {p1, v5, v0}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setVerticalDimension(II)V</span>
+<span class="missed">	iput-boolean v4, p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mOptimizerMeasured:Z</span>
+<span class="">	return-void</span>
+<span class="">	:cond_8</span>
+<span class="missed">	iget-object v6, p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mBottom:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="missed">	iget-object v6, v6, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mTarget:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="missed">	if-eqz v6, :cond_9</span>
+<span class="missed">	move v3, v4</span>
+<span class="">	:cond_9</span>
+<span class="missed">	if-eqz v3, :cond_a</span>
+<span class="missed">	iget-object v6, p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mBottom:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="missed">	iget-object v5, v6, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mTarget:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_a</span>
+<span class="missed">	iget-object v6, p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mTop:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="missed">	iget-object v5, v6, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mTarget:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="">	:goto_4</span>
+<span class="missed">	if-eqz v5, :cond_d</span>
+<span class="missed">	iget-object v6, v5, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mOwner:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="missed">	iget-boolean v6, v6, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mOptimizerMeasured:Z</span>
+<span class="missed">	if-nez v6, :cond_b</span>
+<span class="missed">	iget-object v6, v5, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mOwner:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="missed">	invoke-direct {p0, v6}, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->updateResolvedDimension(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V</span>
+<span class="">	:cond_b</span>
+<span class="missed">	iget-object v6, v5, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mType:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;</span>
+<span class="missed">	sget-object v7, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;->BOTTOM:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;</span>
+<span class="missed">	if-ne v6, v7, :cond_c</span>
+<span class="missed">	iget-object v6, v5, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mOwner:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="missed">	iget v6, v6, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mY:I</span>
+<span class="missed">	iget-object v7, v5, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mOwner:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="">	invoke-virtual {v7}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->getHeight()I</span>
+<span class="missed">	move-result v7</span>
+<span class="missed">	add-int v1, v6, v7</span>
+<span class="">	goto :goto_5</span>
+<span class="">	:cond_c</span>
+<span class="missed">	iget-object v6, v5, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mType:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;</span>
+<span class="missed">	sget-object v7, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;->TOP:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor$Type;</span>
+<span class="missed">	if-ne v6, v7, :cond_d</span>
+<span class="missed">	iget-object v6, v5, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->mOwner:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="missed">	iget v1, v6, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mY:I</span>
+<span class="">	:goto_5</span>
+<span class="">	:cond_d</span>
+<span class="missed">	if-eqz v3, :cond_e</span>
+<span class="missed">	iget-object v6, p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mBottom:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="">	invoke-virtual {v6}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->getMargin()I</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	sub-int/2addr v1, v6</span>
+<span class="">	goto :goto_6</span>
+<span class="">	:cond_e</span>
+<span class="missed">	iget-object v6, p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mTop:Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;</span>
+<span class="">	invoke-virtual {v6}, Landroidx/constraintlayout/solver/widgets/ConstraintAnchor;->getMargin()I</span>
+<span class="missed">	move-result v6</span>
+<span class="">	invoke-virtual {p1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->getHeight()I</span>
+<span class="missed">	move-result v7</span>
+<span class="missed">	add-int/2addr v6, v7</span>
+<span class="missed">	add-int/2addr v1, v6</span>
+<span class="">	:goto_6</span>
+<span class="">	invoke-virtual {p1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->getHeight()I</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	sub-int v0, v1, v6</span>
+<span class="missed">	invoke-virtual {p1, v0, v1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setVerticalDimension(II)V</span>
+<span class="missed">	iput-boolean v4, p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mOptimizerMeasured:Z</span>
+<span class="">	:cond_f</span>
+<span class="">	return-void</span>
+.end method
+
+.method  addWidgetsToSet(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;I)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "widget"    # Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="">	.param p2, "orientation"    # I</span>
+
+<span class="missed">	if-nez p2, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSetHorizontal:Ljava/util/HashSet;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-ne p2, v0, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSetVertical:Ljava/util/HashSet;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public getStartWidgets(I)Ljava/util/List;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "orientation"    # I</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(I)",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Landroidx/constraintlayout/solver/widgets/ConstraintWidget;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mStartHorizontalWidgets:Ljava/util/List;</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-ne p1, v0, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mStartVerticalWidgets:Ljava/util/List;</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method  getWidgetsToSet(I)Ljava/util/Set;
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "orientation"    # I</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(I)",</span>
+<span class="">	"Ljava/util/Set<",</span>
+<span class="">	"Landroidx/constraintlayout/solver/widgets/ConstraintWidget;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSetHorizontal:Ljava/util/HashSet;</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-ne p1, v0, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSetVertical:Ljava/util/HashSet;</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method  getWidgetsToSolve()Ljava/util/List;
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Landroidx/constraintlayout/solver/widgets/ConstraintWidget;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSolve:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSolve:Ljava/util/List;</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mConstrainedGroup:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v1, v0, :cond_2</span>
+<span class="missed">	iget-object v2, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mConstrainedGroup:Ljava/util/List;</span>
+<span class="">	invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="missed">	iget-boolean v3, v2, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->mOptimizerMeasurable:Z</span>
+<span class="missed">	if-nez v3, :cond_1</span>
+<span class="missed">	iget-object v3, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSolve:Ljava/util/List;</span>
+<span class="missed">	check-cast v3, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {p0, v3, v2}, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->getWidgetsToSolveTraversal(Ljava/util/ArrayList;Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V</span>
+<span class="">	:cond_1</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object v1, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mUnresolvedWidgets:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {v1}, Ljava/util/List;->clear()V</span>
+<span class="missed">	iget-object v1, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mUnresolvedWidgets:Ljava/util/List;</span>
+<span class="missed">	iget-object v2, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mConstrainedGroup:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {v1, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z</span>
+<span class="missed">	iget-object v1, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mUnresolvedWidgets:Ljava/util/List;</span>
+<span class="missed">	iget-object v2, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSolve:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {v1, v2}, Ljava/util/List;->removeAll(Ljava/util/Collection;)Z</span>
+<span class="missed">	iget-object v1, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSolve:Ljava/util/List;</span>
+<span class="">	return-object v1</span>
+.end method
+
+<span class="cov">.method  updateUnresolvedWidgets()V</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mUnresolvedWidgets:Ljava/util/List;</span>
+<span class="exec">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="missed">	if-ge v1, v0, :cond_0</span>
+<span class="missed">	iget-object v2, p0, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->mUnresolvedWidgets:Ljava/util/List;</span>
+<span class="">	invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;</span>
+<span class="missed">	invoke-direct {p0, v2}, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetGroup;->updateResolvedDimension(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

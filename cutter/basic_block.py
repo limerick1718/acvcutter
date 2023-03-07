@@ -39,7 +39,7 @@ def remove_blocks(method):
     remove_ifs(method)
     update_tries(method)
     remove_extra_tries(method)
-    #remove_catchs(method)
+    #remove_catchs(method
     remove_array_data(method)
     merge_goto(method)
     clean_switch(method)
@@ -235,6 +235,8 @@ def first_insn_is_covered(insns):
 
 def get_label_blocks(method):
     label_blocks = []
+    if "abstract" in method.access:
+        return label_blocks
     first_covered = first_insn_is_covered(method.insns)
     block = LBlock(0, first_covered, [])
     for label in sorted(method.labels.values(), key=attrgetter('lid')):

@@ -39,3 +39,15 @@ invoke-static {p0, v0}, Landroid/provider/Settings$Secure;->getString(Landroid/c
 move-result-object p0
 return-object p0
 .end method
+.method public static c()Ljava/lang/String;
+.locals 1
+const-string v0, "x-twitter-client-language"
+return-object v0
+.end method
+.method public static c(Landroid/content/Context;)Ljava/lang/String;
+.locals 1
+const-string v0, "-"
+invoke-static {p0, v0}, Luj;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+move-result-object p0
+return-object p0
+.end method

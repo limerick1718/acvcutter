@@ -11,7 +11,7 @@ name = null
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public a(Ljava/lang/Class;)Landroidx/lifecycle/p;
@@ -25,6 +25,7 @@ value = {
 "TT;>;)TT;"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
+new-instance p1, Law$c;
+invoke-direct {p1}, Law$c;-><init>()V
+return-object p1
 .end method

@@ -31,12 +31,52 @@ return-void
 .end method
 .method constructor <init>(Lko;J)V
 .locals 1
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Lba;-><init>()V
+invoke-static {p1}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
+iget-object v0, p1, Lko;->a:Ljava/lang/String;
+iput-object v0, p0, Lko;->a:Ljava/lang/String;
+iget-object v0, p1, Lko;->b:Lkl;
+iput-object v0, p0, Lko;->b:Lkl;
+iget-object p1, p1, Lko;->c:Ljava/lang/String;
+iput-object p1, p0, Lko;->c:Ljava/lang/String;
+iput-wide p2, p0, Lko;->d:J
 return-void
 .end method
 .method public final toString()Ljava/lang/String;
 .locals 5
-const/4 v0, 0x0
+iget-object v0, p0, Lko;->c:Ljava/lang/String;
+iget-object v1, p0, Lko;->a:Ljava/lang/String;
+iget-object v2, p0, Lko;->b:Lkl;
+invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+move-result-object v2
+invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+move-result-object v3
+invoke-virtual {v3}, Ljava/lang/String;->length()I
+move-result v3
+add-int/lit8 v3, v3, 0x15
+invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+move-result-object v4
+invoke-virtual {v4}, Ljava/lang/String;->length()I
+move-result v4
+add-int/2addr v3, v4
+invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+move-result-object v4
+invoke-virtual {v4}, Ljava/lang/String;->length()I
+move-result v4
+add-int/2addr v3, v4
+new-instance v4, Ljava/lang/StringBuilder;
+invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+const-string v3, "origin="
+invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+const-string v0, ",name="
+invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+const-string v0, ",params="
+invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object v0
 return-object v0
 .end method
 .method public final writeToParcel(Landroid/os/Parcel;I)V

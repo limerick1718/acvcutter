@@ -6,10 +6,17 @@
 .field private final synthetic c:Lkh;
 .method constructor <init>(Lkh;Ljava/lang/String;J)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lli;->c:Lkh;
+iput-object p2, p0, Lli;->a:Ljava/lang/String;
+iput-wide p3, p0, Lli;->b:J
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public final run()V
 .locals 4
+iget-object v0, p0, Lli;->c:Lkh;
+iget-object v1, p0, Lli;->a:Ljava/lang/String;
+iget-wide v2, p0, Lli;->b:J
+invoke-static {v0, v1, v2, v3}, Lkh;->a(Lkh;Ljava/lang/String;J)V
 return-void
 .end method

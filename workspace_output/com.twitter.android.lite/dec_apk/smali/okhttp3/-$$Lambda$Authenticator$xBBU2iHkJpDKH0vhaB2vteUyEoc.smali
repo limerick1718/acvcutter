@@ -17,6 +17,7 @@ return-void
 .end method
 .method public final authenticate(Lokhttp3/Route;Lokhttp3/Response;)Lokhttp3/Request;
 .locals 0
-const/4 v0, 0x0
-return-object v0
+invoke-static {p1, p2}, Lokhttp3/Authenticator$-CC;->lambda$static$0(Lokhttp3/Route;Lokhttp3/Response;)Lokhttp3/Request;
+move-result-object p1
+return-object p1
 .end method

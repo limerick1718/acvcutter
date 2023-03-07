@@ -14,7 +14,7 @@ value = {
 .end annotation
 .method public constructor <init>()V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public abstract a()Lep;
@@ -33,8 +33,22 @@ value = {
 .end method
 .method public final synthetic a(Lhp;)Lhq;
 .locals 1
-const/4 v0, 0x0
-return-object v0
+invoke-virtual {p0}, Lep;->l()Lhp;
+move-result-object v0
+invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+move-result-object v0
+invoke-virtual {v0, p1}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
+move-result v0
+if-eqz v0, :cond_0
+check-cast p1, Leo;
+invoke-virtual {p0, p1}, Lep;->a(Leo;)Lep;
+move-result-object p1
+return-object p1
+:cond_0
+new-instance p1, Ljava/lang/IllegalArgumentException;
+const-string v0, "mergeFrom(MessageLite) can only merge messages of the same type."
+invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method
 .method public synthetic clone()Ljava/lang/Object;
 .locals 1
@@ -43,6 +57,7 @@ value = {
 Ljava/lang/CloneNotSupportedException;
 }
 .end annotation
-const/4 v0, 0x0
+invoke-virtual {p0}, Lep;->a()Lep;
+move-result-object v0
 return-object v0
 .end method

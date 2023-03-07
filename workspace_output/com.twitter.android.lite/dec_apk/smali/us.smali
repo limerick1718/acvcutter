@@ -22,8 +22,13 @@ return-void
 .method private a(Ljava/util/zip/ZipEntry;Ljava/util/zip/ZipFile;)Luy;
 .locals 6
 const/4 v0, 0x0
+:try_start_0
 invoke-virtual {p2, p1}, Ljava/util/zip/ZipFile;->getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
 move-result-object p2
+:try_end_0
+.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+.catchall {:try_start_0 .. :try_end_0} :catchall_1
+:try_start_1
 new-instance v1, Ljava/util/Properties;
 invoke-direct {v1}, Ljava/util/Properties;-><init>()V
 invoke-virtual {v1, p2}, Ljava/util/Properties;->load(Ljava/io/InputStream;)V
@@ -38,12 +43,69 @@ invoke-virtual {v1, v4}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)
 move-result-object v1
 invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 move-result v4
+if-nez v4, :cond_0
 invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 move-result v4
+if-nez v4, :cond_0
 new-instance v4, Luy;
 invoke-direct {v4, v2, v3, v1}, Luy;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+:try_end_1
+.catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+.catchall {:try_start_1 .. :try_end_1} :catchall_0
 invoke-static {p2}, Lvn;->a(Ljava/io/Closeable;)V
 return-object v4
+:cond_0
+:try_start_2
+new-instance v1, Ljava/lang/IllegalStateException;
+new-instance v2, Ljava/lang/StringBuilder;
+invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+const-string v3, "Invalid format of fabric file,"
+invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {p1}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+move-result-object v3
+invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object v2
+invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw v1
+:try_end_2
+.catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+.catchall {:try_start_2 .. :try_end_2} :catchall_0
+:catchall_0
+move-exception p1
+goto :goto_1
+:catch_0
+move-exception v1
+goto :goto_0
+:catchall_1
+move-exception p1
+move-object p2, v0
+goto :goto_1
+:catch_1
+move-exception v1
+move-object p2, v0
+:goto_0
+:try_start_3
+invoke-static {}, Luq;->g()Luz;
+move-result-object v2
+const-string v3, "Fabric"
+new-instance v4, Ljava/lang/StringBuilder;
+invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+const-string v5, "Error when parsing fabric properties "
+invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {p1}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+move-result-object p1
+invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object p1
+invoke-interface {v2, v3, p1, v1}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+:try_end_3
+.catchall {:try_start_3 .. :try_end_3} :catchall_0
+invoke-static {p2}, Lvn;->a(Ljava/io/Closeable;)V
+return-object v0
+:goto_1
+invoke-static {p2}, Lvn;->a(Ljava/io/Closeable;)V
+throw p1
 .end method
 .method private c()Ljava/util/Map;
 .locals 5

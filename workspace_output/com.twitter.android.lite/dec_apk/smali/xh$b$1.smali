@@ -33,6 +33,8 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
+invoke-virtual {p1, p2}, Ljava/net/URL;->openConnection(Ljava/net/Proxy;)Ljava/net/URLConnection;
+move-result-object p1
+check-cast p1, Ljava/net/HttpURLConnection;
+return-object p1
 .end method

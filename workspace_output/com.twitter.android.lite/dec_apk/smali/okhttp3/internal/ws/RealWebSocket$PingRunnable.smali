@@ -12,10 +12,13 @@ name = "PingRunnable"
 .field final synthetic this$0:Lokhttp3/internal/ws/RealWebSocket;
 .method constructor <init>(Lokhttp3/internal/ws/RealWebSocket;)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lokhttp3/internal/ws/RealWebSocket$PingRunnable;->this$0:Lokhttp3/internal/ws/RealWebSocket;
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public run()V
 .locals 1
+iget-object v0, p0, Lokhttp3/internal/ws/RealWebSocket$PingRunnable;->this$0:Lokhttp3/internal/ws/RealWebSocket;
+invoke-virtual {v0}, Lokhttp3/internal/ws/RealWebSocket;->writePingFrame()V
 return-void
 .end method

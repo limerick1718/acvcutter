@@ -23,6 +23,7 @@ return-void
 .locals 2
 sget-object v0, Lcom/google/android/gms/common/internal/h;->a:Ljava/lang/Object;
 monitor-enter v0
+:try_start_0
 sget-object v1, Lcom/google/android/gms/common/internal/h;->b:Lcom/google/android/gms/common/internal/h;
 if-nez v1, :cond_0
 new-instance v1, Lcom/google/android/gms/common/internal/ad;
@@ -32,11 +33,16 @@ invoke-direct {v1, p0}, Lcom/google/android/gms/common/internal/ad;-><init>(Land
 sput-object v1, Lcom/google/android/gms/common/internal/h;->b:Lcom/google/android/gms/common/internal/h;
 :cond_0
 monitor-exit v0
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 sget-object p0, Lcom/google/android/gms/common/internal/h;->b:Lcom/google/android/gms/common/internal/h;
 return-object p0
 :catchall_0
 move-exception p0
+:try_start_1
 monitor-exit v0
+:try_end_1
+.catchall {:try_start_1 .. :try_end_1} :catchall_0
 throw p0
 .end method
 .method public final a(Ljava/lang/String;Ljava/lang/String;ILandroid/content/ServiceConnection;Ljava/lang/String;)V

@@ -85,13 +85,13 @@ value = {
 "Lcom/crashlytics/android/answers/SessionEvent$Builder;"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
+iput-object p1, p0, Lcom/crashlytics/android/answers/SessionEvent$Builder;->customAttributes:Ljava/util/Map;
+return-object p0
 .end method
 .method public customType(Ljava/lang/String;)Lcom/crashlytics/android/answers/SessionEvent$Builder;
 .locals 0
-const/4 v0, 0x0
-return-object v0
+iput-object p1, p0, Lcom/crashlytics/android/answers/SessionEvent$Builder;->customType:Ljava/lang/String;
+return-object p0
 .end method
 .method public details(Ljava/util/Map;)Lcom/crashlytics/android/answers/SessionEvent$Builder;
 .locals 0
@@ -120,11 +120,11 @@ value = {
 "Lcom/crashlytics/android/answers/SessionEvent$Builder;"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
+iput-object p1, p0, Lcom/crashlytics/android/answers/SessionEvent$Builder;->predefinedAttributes:Ljava/util/Map;
+return-object p0
 .end method
 .method public predefinedType(Ljava/lang/String;)Lcom/crashlytics/android/answers/SessionEvent$Builder;
 .locals 0
-const/4 v0, 0x0
-return-object v0
+iput-object p1, p0, Lcom/crashlytics/android/answers/SessionEvent$Builder;->predefinedType:Ljava/lang/String;
+return-object p0
 .end method

@@ -2,6 +2,13 @@
 .super Ljava/lang/Object;
 .source "PushObserver.java"
 .field public static final CANCEL:Lokhttp3/internal/http2/PushObserver;
+.method static constructor <clinit>()V
+.locals 1
+new-instance v0, Lokhttp3/internal/http2/PushObserver$1;
+invoke-direct {v0}, Lokhttp3/internal/http2/PushObserver$1;-><init>()V
+sput-object v0, Lokhttp3/internal/http2/PushObserver;->CANCEL:Lokhttp3/internal/http2/PushObserver;
+return-void
+.end method
 .method public abstract onData(ILyu;IZ)Z
 .annotation system Ldalvik/annotation/Throws;
 value = {

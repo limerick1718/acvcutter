@@ -16,6 +16,11 @@ return-void
 .end method
 .method public final a(Lcom/google/firebase/components/b;)Ljava/lang/Object;
 .locals 2
-const/4 v0, 0x0
+new-instance v0, Lcom/google/firebase/iid/Registrar$a;
+const-class v1, Lcom/google/firebase/iid/FirebaseInstanceId;
+invoke-interface {p1, v1}, Lcom/google/firebase/components/b;->a(Ljava/lang/Class;)Ljava/lang/Object;
+move-result-object p1
+check-cast p1, Lcom/google/firebase/iid/FirebaseInstanceId;
+invoke-direct {v0, p1}, Lcom/google/firebase/iid/Registrar$a;-><init>(Lcom/google/firebase/iid/FirebaseInstanceId;)V
 return-object v0
 .end method

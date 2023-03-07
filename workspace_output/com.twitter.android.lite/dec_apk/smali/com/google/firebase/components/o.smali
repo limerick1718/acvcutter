@@ -40,25 +40,94 @@ iput-object v0, p0, Lcom/google/firebase/components/o;->b:Ljava/util/Queue;
 iput-object p1, p0, Lcom/google/firebase/components/o;->c:Ljava/util/concurrent/Executor;
 return-void
 .end method
+.method static synthetic a(Ljava/util/Map$Entry;Lsl;)V
+.locals 0
+invoke-interface {p0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+move-result-object p0
+check-cast p0, Lsm;
+invoke-interface {p0, p1}, Lsm;->a(Lsl;)V
+return-void
+.end method
+.method private declared-synchronized b(Lsl;)Ljava/util/Set;
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(",
+"Lsl<",
+"*>;)",
+"Ljava/util/Set<",
+"Ljava/util/Map$Entry<",
+"Lsm<",
+"Ljava/lang/Object;",
+">;",
+"Ljava/util/concurrent/Executor;",
+">;>;"
+}
+.end annotation
+monitor-enter p0
+:try_start_0
+iget-object v0, p0, Lcom/google/firebase/components/o;->a:Ljava/util/Map;
+invoke-virtual {p1}, Lsl;->a()Ljava/lang/Class;
+move-result-object p1
+invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+move-result-object p1
+check-cast p1, Ljava/util/Map;
+if-nez p1, :cond_0
+invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
+move-result-object p1
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
+monitor-exit p0
+return-object p1
+:cond_0
+:try_start_1
+invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+move-result-object p1
+:try_end_1
+.catchall {:try_start_1 .. :try_end_1} :catchall_0
+monitor-exit p0
+return-object p1
+:catchall_0
+move-exception p1
+monitor-exit p0
+throw p1
+.end method
 .method final a()V
 .locals 2
 monitor-enter p0
+:try_start_0
 iget-object v0, p0, Lcom/google/firebase/components/o;->b:Ljava/util/Queue;
 const/4 v1, 0x0
+if-eqz v0, :cond_0
 iget-object v0, p0, Lcom/google/firebase/components/o;->b:Ljava/util/Queue;
 iput-object v1, p0, Lcom/google/firebase/components/o;->b:Ljava/util/Queue;
+goto :goto_0
+:cond_0
+move-object v0, v1
+:goto_0
 monitor-exit p0
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 if-eqz v0, :cond_1
 invoke-interface {v0}, Ljava/util/Queue;->iterator()Ljava/util/Iterator;
 move-result-object v0
 :goto_1
 invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 move-result v1
+if-eqz v1, :cond_1
+invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+move-result-object v1
+check-cast v1, Lsl;
+invoke-virtual {p0, v1}, Lcom/google/firebase/components/o;->a(Lsl;)V
+goto :goto_1
 :cond_1
 return-void
 :catchall_0
 move-exception v0
+:try_start_1
 monitor-exit p0
+:try_end_1
+.catchall {:try_start_1 .. :try_end_1} :catchall_0
 throw v0
 .end method
 .method public declared-synchronized a(Ljava/lang/Class;Ljava/util/concurrent/Executor;Lsm;)V
@@ -76,6 +145,7 @@ value = {
 }
 .end annotation
 monitor-enter p0
+:try_start_0
 invoke-static {p1}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
 invoke-static {p3}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
 invoke-static {p2}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
@@ -93,6 +163,8 @@ invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Ob
 move-result-object p1
 check-cast p1, Ljava/util/concurrent/ConcurrentHashMap;
 invoke-virtual {p1, p3, p2}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 monitor-exit p0
 return-void
 :catchall_0
@@ -126,5 +198,44 @@ value = {
 "*>;)V"
 }
 .end annotation
+invoke-static {p1}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
+monitor-enter p0
+:try_start_0
+iget-object v0, p0, Lcom/google/firebase/components/o;->b:Ljava/util/Queue;
+if-eqz v0, :cond_0
+iget-object v0, p0, Lcom/google/firebase/components/o;->b:Ljava/util/Queue;
+invoke-interface {v0, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
+monitor-exit p0
 return-void
+:cond_0
+monitor-exit p0
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
+invoke-direct {p0, p1}, Lcom/google/firebase/components/o;->b(Lsl;)Ljava/util/Set;
+move-result-object v0
+invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+move-result-object v0
+:goto_0
+invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+move-result v1
+if-eqz v1, :cond_1
+invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+move-result-object v1
+check-cast v1, Ljava/util/Map$Entry;
+invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+move-result-object v2
+check-cast v2, Ljava/util/concurrent/Executor;
+invoke-static {v1, p1}, Lcom/google/firebase/components/p;->a(Ljava/util/Map$Entry;Lsl;)Ljava/lang/Runnable;
+move-result-object v1
+invoke-interface {v2, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+goto :goto_0
+:cond_1
+return-void
+:catchall_0
+move-exception p1
+:try_start_1
+monitor-exit p0
+:try_end_1
+.catchall {:try_start_1 .. :try_end_1} :catchall_0
+throw p1
 .end method

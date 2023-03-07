@@ -3,7 +3,9 @@
 .field protected volatile M:I
 .method public constructor <init>()V
 .locals 1
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+const/4 v0, -0x1
+iput v0, p0, Lkd;->M:I
 return-void
 .end method
 .method public abstract a(Lju;)Lkd;
@@ -34,7 +36,9 @@ value = {
 Ljava/lang/CloneNotSupportedException;
 }
 .end annotation
-const/4 v0, 0x0
+invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+move-result-object v0
+check-cast v0, Lkd;
 return-object v0
 .end method
 .method public synthetic clone()Ljava/lang/Object;
@@ -44,21 +48,29 @@ value = {
 Ljava/lang/CloneNotSupportedException;
 }
 .end annotation
-const/4 v0, 0x0
+invoke-virtual {p0}, Lkd;->c()Lkd;
+move-result-object v0
 return-object v0
 .end method
 .method public final d()I
 .locals 1
-const/4 v0, 0x0
+iget v0, p0, Lkd;->M:I
+if-gez v0, :cond_0
+invoke-virtual {p0}, Lkd;->e()I
+:cond_0
+iget v0, p0, Lkd;->M:I
 return v0
 .end method
 .method public final e()I
 .locals 1
-const/4 v0, 0x0
+invoke-virtual {p0}, Lkd;->b()I
+move-result v0
+iput v0, p0, Lkd;->M:I
 return v0
 .end method
 .method public toString()Ljava/lang/String;
 .locals 1
-const/4 v0, 0x0
+invoke-static {p0}, Lke;->a(Lkd;)Ljava/lang/String;
+move-result-object v0
 return-object v0
 .end method

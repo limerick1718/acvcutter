@@ -32,6 +32,7 @@ Ljava/lang/Exception;
 }
 .end annotation
 const-string v0, "CrashlyticsCore"
+:try_start_0
 iget-object v1, p0, Lcom/crashlytics/android/core/CrashlyticsCore$3;->this$0:Lcom/crashlytics/android/core/CrashlyticsCore;
 invoke-static {v1}, Lcom/crashlytics/android/core/CrashlyticsCore;->access$100(Lcom/crashlytics/android/core/CrashlyticsCore;)Lcom/crashlytics/android/core/CrashlyticsFileMarker;
 move-result-object v1
@@ -48,6 +49,18 @@ invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 move-result-object v3
 invoke-interface {v2, v0, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
 invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+move-result-object v0
+:try_end_0
+.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+return-object v0
+:catch_0
+move-exception v1
+invoke-static {}, Luq;->g()Luz;
+move-result-object v2
+const-string v3, "Problem encountered deleting Crashlytics initialization marker."
+invoke-interface {v2, v0, v3, v1}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+const/4 v0, 0x0
+invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 move-result-object v0
 return-object v0
 .end method

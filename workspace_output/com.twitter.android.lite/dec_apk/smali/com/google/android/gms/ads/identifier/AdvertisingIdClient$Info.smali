@@ -28,6 +28,22 @@ return v0
 .end method
 .method public final toString()Ljava/lang/String;
 .locals 4
-const/4 v0, 0x0
+iget-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->zzq:Ljava/lang/String;
+iget-boolean v1, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->zzr:Z
+invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+move-result-object v2
+invoke-virtual {v2}, Ljava/lang/String;->length()I
+move-result v2
+add-int/lit8 v2, v2, 0x7
+new-instance v3, Ljava/lang/StringBuilder;
+invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+const-string v2, "{"
+invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+const-string v0, "}"
+invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object v0
 return-object v0
 .end method

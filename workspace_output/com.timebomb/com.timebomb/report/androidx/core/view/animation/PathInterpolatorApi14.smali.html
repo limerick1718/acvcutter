@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.core.view.animation</a></li>
+        <li><i class="ico ico-class"></i> PathInterpolatorApi14.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Landroidx/core/view/animation/PathInterpolatorApi14;
+.super Ljava/lang/Object;
+.source "PathInterpolatorApi14.java"
+.implements Landroid/view/animation/Interpolator;
+
+
+.field private static final PRECISION:F = 0.002f
+.field private final mX:[F
+.field private final mY:[F
+
+
+.method constructor &lt;init&gt;(FF)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "controlX"    # F</span>
+<span class="">	.param p2, "controlY"    # F</span>
+
+<span class="">	invoke-static {p1, p2}, Landroidx/core/view/animation/PathInterpolatorApi14;->createQuad(FF)Landroid/graphics/Path;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-direct {p0, v0}, Landroidx/core/view/animation/PathInterpolatorApi14;-><init>(Landroid/graphics/Path;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method constructor &lt;init&gt;(FFFF)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "controlX1"    # F</span>
+<span class="">	.param p2, "controlY1"    # F</span>
+<span class="">	.param p3, "controlX2"    # F</span>
+<span class="">	.param p4, "controlY2"    # F</span>
+
+<span class="">	invoke-static {p1, p2, p3, p4}, Landroidx/core/view/animation/PathInterpolatorApi14;->createCubic(FFFF)Landroid/graphics/Path;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-direct {p0, v0}, Landroidx/core/view/animation/PathInterpolatorApi14;-><init>(Landroid/graphics/Path;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method constructor &lt;init&gt;(Landroid/graphics/Path;)V
+<span class="">	.locals 10</span>
+<span class="">	.param p1, "path"    # Landroid/graphics/Path;</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	new-instance v0, Landroid/graphics/PathMeasure;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-direct {v0, p1, v1}, Landroid/graphics/PathMeasure;-><init>(Landroid/graphics/Path;Z)V</span>
+<span class="">	invoke-virtual {v0}, Landroid/graphics/PathMeasure;->getLength()F</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	const v3, 0x3b03126f    # 0.002f</span>
+<span class="missed">	div-float v3, v2, v3</span>
+<span class="missed">	float-to-int v3, v3</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	add-int/2addr v3, v4</span>
+<span class="missed">	new-array v5, v3, [F</span>
+<span class="missed">	iput-object v5, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mX:[F</span>
+<span class="missed">	new-array v5, v3, [F</span>
+<span class="missed">	iput-object v5, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mY:[F</span>
+<span class="missed">	const/4 v5, 0x2</span>
+<span class="missed">	new-array v5, v5, [F</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v6, v3, :cond_0</span>
+<span class="missed">	int-to-float v7, v6</span>
+<span class="missed">	mul-float/2addr v7, v2</span>
+<span class="missed">	add-int/lit8 v8, v3, -0x1</span>
+<span class="missed">	int-to-float v8, v8</span>
+<span class="missed">	div-float/2addr v7, v8</span>
+<span class="missed">	const/4 v8, 0x0</span>
+<span class="missed">	invoke-virtual {v0, v7, v5, v8}, Landroid/graphics/PathMeasure;->getPosTan(F[F[F)Z</span>
+<span class="missed">	iget-object v8, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mX:[F</span>
+<span class="missed">	aget v9, v5, v1</span>
+<span class="missed">	aput v9, v8, v6</span>
+<span class="missed">	iget-object v8, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mY:[F</span>
+<span class="missed">	aget v9, v5, v4</span>
+<span class="missed">	aput v9, v8, v6</span>
+<span class="missed">	add-int/lit8 v6, v6, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method private static createCubic(FFFF)Landroid/graphics/Path;
+<span class="">	.locals 8</span>
+<span class="">	.param p0, "controlX1"    # F</span>
+<span class="">	.param p1, "controlY1"    # F</span>
+<span class="">	.param p2, "controlX2"    # F</span>
+<span class="">	.param p3, "controlY2"    # F</span>
+
+<span class="missed">	new-instance v0, Landroid/graphics/Path;</span>
+<span class="missed">	invoke-direct {v0}, Landroid/graphics/Path;-><init>()V</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-virtual {v0, v1, v1}, Landroid/graphics/Path;->moveTo(FF)V</span>
+<span class="missed">	const/high16 v6, 0x3f800000    # 1.0f</span>
+<span class="missed">	const/high16 v7, 0x3f800000    # 1.0f</span>
+<span class="missed">	move-object v1, v0</span>
+<span class="missed">	move v2, p0</span>
+<span class="missed">	move v3, p1</span>
+<span class="missed">	move v4, p2</span>
+<span class="missed">	move v5, p3</span>
+<span class="missed">	invoke-virtual/range {v1 .. v7}, Landroid/graphics/Path;->cubicTo(FFFFFF)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method private static createQuad(FF)Landroid/graphics/Path;
+<span class="">	.locals 2</span>
+<span class="">	.param p0, "controlX"    # F</span>
+<span class="">	.param p1, "controlY"    # F</span>
+
+<span class="missed">	new-instance v0, Landroid/graphics/Path;</span>
+<span class="missed">	invoke-direct {v0}, Landroid/graphics/Path;-><init>()V</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-virtual {v0, v1, v1}, Landroid/graphics/Path;->moveTo(FF)V</span>
+<span class="missed">	const/high16 v1, 0x3f800000    # 1.0f</span>
+<span class="missed">	invoke-virtual {v0, p0, p1, v1, v1}, Landroid/graphics/Path;->quadTo(FFFF)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getInterpolation(F)F
+<span class="">	.locals 8</span>
+<span class="">	.param p1, "t"    # F</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	cmpg-float v1, p1, v0</span>
+<span class="missed">	if-gtz v1, :cond_0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/high16 v1, 0x3f800000    # 1.0f</span>
+<span class="missed">	cmpl-float v2, p1, v1</span>
+<span class="missed">	if-ltz v2, :cond_1</span>
+<span class="">	return v1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	iget-object v2, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mX:[F</span>
+<span class="missed">	array-length v2, v2</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	sub-int/2addr v2, v3</span>
+<span class="">	:goto_0</span>
+<span class="missed">	sub-int v4, v2, v1</span>
+<span class="missed">	if-le v4, v3, :cond_3</span>
+<span class="missed">	add-int v4, v1, v2</span>
+<span class="missed">	div-int/lit8 v4, v4, 0x2</span>
+<span class="missed">	iget-object v5, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mX:[F</span>
+<span class="missed">	aget v5, v5, v4</span>
+<span class="missed">	cmpg-float v5, p1, v5</span>
+<span class="missed">	if-gez v5, :cond_2</span>
+<span class="missed">	move v2, v4</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	move v1, v4</span>
+<span class="">	:goto_1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	iget-object v3, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mX:[F</span>
+<span class="missed">	aget v4, v3, v2</span>
+<span class="missed">	aget v5, v3, v1</span>
+<span class="missed">	sub-float/2addr v4, v5</span>
+<span class="missed">	cmpl-float v0, v4, v0</span>
+<span class="missed">	if-nez v0, :cond_4</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mY:[F</span>
+<span class="missed">	aget v0, v0, v1</span>
+<span class="">	return v0</span>
+<span class="">	:cond_4</span>
+<span class="missed">	aget v0, v3, v1</span>
+<span class="missed">	sub-float v0, p1, v0</span>
+<span class="missed">	div-float v3, v0, v4</span>
+<span class="missed">	iget-object v5, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mY:[F</span>
+<span class="missed">	aget v6, v5, v1</span>
+<span class="missed">	aget v5, v5, v2</span>
+<span class="missed">	sub-float v7, v5, v6</span>
+<span class="missed">	mul-float/2addr v7, v3</span>
+<span class="missed">	add-float/2addr v7, v6</span>
+<span class="">	return v7</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

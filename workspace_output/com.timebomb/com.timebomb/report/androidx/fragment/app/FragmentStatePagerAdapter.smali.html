@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../main_index.html">com.timebomb</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">androidx.fragment.app</a></li>
+        <li><i class="ico ico-class"></i> FragmentStatePagerAdapter.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public abstract Landroidx/fragment/app/FragmentStatePagerAdapter;
+.super Landroidx/viewpager/widget/PagerAdapter;
+.source "FragmentStatePagerAdapter.java"
+
+
+.field private static final DEBUG:Z = false
+.field private static final TAG:Ljava/lang/String; = "FragmentStatePagerAdapt"
+.field private mCurTransaction:Landroidx/fragment/app/FragmentTransaction;
+.field private mCurrentPrimaryItem:Landroidx/fragment/app/Fragment;
+.field private final mFragmentManager:Landroidx/fragment/app/FragmentManager;
+.field private mFragments:Ljava/util/ArrayList;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/ArrayList<",
+"Landroidx/fragment/app/Fragment;",
+">;"
+}
+.end annotation
+.end field
+.field private mSavedState:Ljava/util/ArrayList;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/ArrayList<",
+"Landroidx/fragment/app/Fragment$SavedState;",
+">;"
+}
+.end annotation
+.end field
+
+
+.method public constructor &lt;init&gt;(Landroidx/fragment/app/FragmentManager;)V
+<span class="">	.locals 2</span>
+<span class="">	.param p1, "fm"    # Landroidx/fragment/app/FragmentManager;</span>
+
+<span class="missed">	invoke-direct {p0}, Landroidx/viewpager/widget/PagerAdapter;-><init>()V</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-object v0, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mCurTransaction:Landroidx/fragment/app/FragmentTransaction;</span>
+<span class="missed">	new-instance v1, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mSavedState:Ljava/util/ArrayList;</span>
+<span class="missed">	new-instance v1, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragments:Ljava/util/ArrayList;</span>
+<span class="missed">	iput-object v0, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mCurrentPrimaryItem:Landroidx/fragment/app/Fragment;</span>
+<span class="missed">	iput-object p1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragmentManager:Landroidx/fragment/app/FragmentManager;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public destroyItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
+<span class="">	.locals 4</span>
+<span class="">	.param p1, "container"    # Landroid/view/ViewGroup;</span>
+<span class="">	.param p2, "position"    # I</span>
+<span class="">	.param p3, "object"    # Ljava/lang/Object;</span>
+
+<span class="missed">	move-object v0, p3</span>
+<span class="missed">	check-cast v0, Landroidx/fragment/app/Fragment;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mCurTransaction:Landroidx/fragment/app/FragmentTransaction;</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragmentManager:Landroidx/fragment/app/FragmentManager;</span>
+<span class="">	invoke-virtual {v1}, Landroidx/fragment/app/FragmentManager;->beginTransaction()Landroidx/fragment/app/FragmentTransaction;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iput-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mCurTransaction:Landroidx/fragment/app/FragmentTransaction;</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mSavedState:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v1}, Ljava/util/ArrayList;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-gt v1, p2, :cond_1</span>
+<span class="missed">	iget-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mSavedState:Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mSavedState:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->isAdded()Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-eqz v3, :cond_2</span>
+<span class="missed">	iget-object v3, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragmentManager:Landroidx/fragment/app/FragmentManager;</span>
+<span class="">	invoke-virtual {v3, v0}, Landroidx/fragment/app/FragmentManager;->saveFragmentInstanceState(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/Fragment$SavedState;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	move-object v3, v2</span>
+<span class="">	:goto_1</span>
+<span class="missed">	invoke-virtual {v1, p2, v3}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragments:Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-virtual {v1, p2, v2}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mCurTransaction:Landroidx/fragment/app/FragmentTransaction;</span>
+<span class="missed">	invoke-virtual {v1, v0}, Landroidx/fragment/app/FragmentTransaction;->remove(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentTransaction;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public finishUpdate(Landroid/view/ViewGroup;)V
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "container"    # Landroid/view/ViewGroup;</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mCurTransaction:Landroidx/fragment/app/FragmentTransaction;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-virtual {v0}, Landroidx/fragment/app/FragmentTransaction;->commitNowAllowingStateLoss()V</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-object v0, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mCurTransaction:Landroidx/fragment/app/FragmentTransaction;</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public abstract getItem(I)Landroidx/fragment/app/Fragment;
+<span class="">	</span>
+
+.end method
+
+.method public instantiateItem(Landroid/view/ViewGroup;I)Ljava/lang/Object;
+<span class="">	.locals 3</span>
+<span class="">	.param p1, "container"    # Landroid/view/ViewGroup;</span>
+<span class="">	.param p2, "position"    # I</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragments:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v0}, Ljava/util/ArrayList;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-le v0, p2, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragments:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Landroidx/fragment/app/Fragment;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mCurTransaction:Landroidx/fragment/app/FragmentTransaction;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragmentManager:Landroidx/fragment/app/FragmentManager;</span>
+<span class="">	invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->beginTransaction()Landroidx/fragment/app/FragmentTransaction;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mCurTransaction:Landroidx/fragment/app/FragmentTransaction;</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {p0, p2}, Landroidx/fragment/app/FragmentStatePagerAdapter;->getItem(I)Landroidx/fragment/app/Fragment;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mSavedState:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v1}, Ljava/util/ArrayList;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-le v1, p2, :cond_2</span>
+<span class="missed">	iget-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mSavedState:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, Landroidx/fragment/app/Fragment$SavedState;</span>
+<span class="missed">	if-eqz v1, :cond_2</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroidx/fragment/app/Fragment;->setInitialSavedState(Landroidx/fragment/app/Fragment$SavedState;)V</span>
+<span class="">	:cond_2</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragments:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v1}, Ljava/util/ArrayList;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-gt v1, p2, :cond_3</span>
+<span class="missed">	iget-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragments:Ljava/util/ArrayList;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroidx/fragment/app/Fragment;->setMenuVisibility(Z)V</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroidx/fragment/app/Fragment;->setUserVisibleHint(Z)V</span>
+<span class="missed">	iget-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragments:Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-virtual {v1, p2, v0}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mCurTransaction:Landroidx/fragment/app/FragmentTransaction;</span>
+<span class="">	invoke-virtual {p1}, Landroid/view/ViewGroup;->getId()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	invoke-virtual {v1, v2, v0}, Landroidx/fragment/app/FragmentTransaction;->add(ILandroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentTransaction;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public isViewFromObject(Landroid/view/View;Ljava/lang/Object;)Z
+<span class="">	.locals 1</span>
+<span class="">	.param p1, "view"    # Landroid/view/View;</span>
+<span class="">	.param p2, "object"    # Ljava/lang/Object;</span>
+
+<span class="missed">	move-object v0, p2</span>
+<span class="missed">	check-cast v0, Landroidx/fragment/app/Fragment;</span>
+<span class="">	invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getView()Landroid/view/View;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-ne v0, p1, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public restoreState(Landroid/os/Parcelable;Ljava/lang/ClassLoader;)V
+<span class="">	.locals 9</span>
+<span class="">	.param p1, "state"    # Landroid/os/Parcelable;</span>
+<span class="">	.param p2, "loader"    # Ljava/lang/ClassLoader;</span>
+
+<span class="missed">	if-eqz p1, :cond_4</span>
+<span class="missed">	move-object v0, p1</span>
+<span class="missed">	check-cast v0, Landroid/os/Bundle;</span>
+<span class="missed">	invoke-virtual {v0, p2}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V</span>
+<span class="missed">	const-string v1, "states"</span>
+<span class="">	invoke-virtual {v0, v1}, Landroid/os/Bundle;->getParcelableArray(Ljava/lang/String;)[Landroid/os/Parcelable;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iget-object v2, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mSavedState:Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V</span>
+<span class="missed">	iget-object v2, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragments:Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	array-length v3, v1</span>
+<span class="missed">	if-ge v2, v3, :cond_0</span>
+<span class="missed">	iget-object v3, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mSavedState:Ljava/util/ArrayList;</span>
+<span class="missed">	aget-object v4, v1, v2</span>
+<span class="missed">	check-cast v4, Landroidx/fragment/app/Fragment$SavedState;</span>
+<span class="missed">	invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {v0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	:goto_1</span>
+<span class="">	invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-eqz v4, :cond_4</span>
+<span class="">	invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	check-cast v4, Ljava/lang/String;</span>
+<span class="missed">	const-string v5, "f"</span>
+<span class="">	invoke-virtual {v4, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	if-eqz v5, :cond_3</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="">	invoke-virtual {v4, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="">	invoke-static {v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	iget-object v6, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragmentManager:Landroidx/fragment/app/FragmentManager;</span>
+<span class="">	invoke-virtual {v6, v0, v4}, Landroidx/fragment/app/FragmentManager;->getFragment(Landroid/os/Bundle;Ljava/lang/String;)Landroidx/fragment/app/Fragment;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	if-eqz v6, :cond_2</span>
+<span class="">	:goto_2</span>
+<span class="missed">	iget-object v7, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragments:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v7}, Ljava/util/ArrayList;->size()I</span>
+<span class="missed">	move-result v7</span>
+<span class="missed">	if-gt v7, v5, :cond_1</span>
+<span class="missed">	iget-object v7, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragments:Ljava/util/ArrayList;</span>
+<span class="missed">	const/4 v8, 0x0</span>
+<span class="missed">	invoke-virtual {v7, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v7, 0x0</span>
+<span class="missed">	invoke-virtual {v6, v7}, Landroidx/fragment/app/Fragment;->setMenuVisibility(Z)V</span>
+<span class="missed">	iget-object v7, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragments:Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-virtual {v7, v5, v6}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance v7, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v8, "Bad fragment at key "</span>
+<span class="missed">	invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="missed">	const-string v8, "FragmentStatePagerAdapt"</span>
+<span class="missed">	invoke-static {v8, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	:goto_3</span>
+<span class="">	:cond_3</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_4</span>
+<span class="">	return-void</span>
+.end method
+
+.method public saveState()Landroid/os/Parcelable;
+<span class="">	.locals 5</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mSavedState:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v1}, Ljava/util/ArrayList;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-lez v1, :cond_0</span>
+<span class="missed">	new-instance v1, Landroid/os/Bundle;</span>
+<span class="missed">	invoke-direct {v1}, Landroid/os/Bundle;-><init>()V</span>
+<span class="missed">	move-object v0, v1</span>
+<span class="missed">	iget-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mSavedState:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v1}, Ljava/util/ArrayList;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	new-array v1, v1, [Landroidx/fragment/app/Fragment$SavedState;</span>
+<span class="missed">	iget-object v2, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mSavedState:Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-virtual {v2, v1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;</span>
+<span class="missed">	const-string v2, "states"</span>
+<span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putParcelableArray(Ljava/lang/String;[Landroid/os/Parcelable;)V</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object v2, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragments:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v2}, Ljava/util/ArrayList;->size()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-ge v1, v2, :cond_3</span>
+<span class="missed">	iget-object v2, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragments:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Landroidx/fragment/app/Fragment;</span>
+<span class="missed">	if-eqz v2, :cond_2</span>
+<span class="">	invoke-virtual {v2}, Landroidx/fragment/app/Fragment;->isAdded()Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-eqz v3, :cond_2</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	new-instance v3, Landroid/os/Bundle;</span>
+<span class="missed">	invoke-direct {v3}, Landroid/os/Bundle;-><init>()V</span>
+<span class="missed">	move-object v0, v3</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v3, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "f"</span>
+<span class="missed">	invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	iget-object v4, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mFragmentManager:Landroidx/fragment/app/FragmentManager;</span>
+<span class="missed">	invoke-virtual {v4, v0, v3, v2}, Landroidx/fragment/app/FragmentManager;->putFragment(Landroid/os/Bundle;Ljava/lang/String;Landroidx/fragment/app/Fragment;)V</span>
+<span class="">	:cond_2</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public setPrimaryItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
+<span class="">	.locals 3</span>
+<span class="">	.param p1, "container"    # Landroid/view/ViewGroup;</span>
+<span class="">	.param p2, "position"    # I</span>
+<span class="">	.param p3, "object"    # Ljava/lang/Object;</span>
+
+<span class="missed">	move-object v0, p3</span>
+<span class="missed">	check-cast v0, Landroidx/fragment/app/Fragment;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mCurrentPrimaryItem:Landroidx/fragment/app/Fragment;</span>
+<span class="missed">	if-eq v0, v1, :cond_1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	invoke-virtual {v1, v2}, Landroidx/fragment/app/Fragment;->setMenuVisibility(Z)V</span>
+<span class="missed">	iget-object v1, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mCurrentPrimaryItem:Landroidx/fragment/app/Fragment;</span>
+<span class="missed">	invoke-virtual {v1, v2}, Landroidx/fragment/app/Fragment;->setUserVisibleHint(Z)V</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroidx/fragment/app/Fragment;->setMenuVisibility(Z)V</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroidx/fragment/app/Fragment;->setUserVisibleHint(Z)V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/fragment/app/FragmentStatePagerAdapter;->mCurrentPrimaryItem:Landroidx/fragment/app/Fragment;</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+.end method
+
+.method public startUpdate(Landroid/view/ViewGroup;)V
+<span class="">	.locals 3</span>
+<span class="">	.param p1, "container"    # Landroid/view/ViewGroup;</span>
+
+<span class="">	invoke-virtual {p1}, Landroid/view/ViewGroup;->getId()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, -0x1</span>
+<span class="missed">	if-eq v0, v1, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "ViewPager with adapter "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v2, " requires a view id"</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../.resources/report.js"></script>
+</body>
+</html>

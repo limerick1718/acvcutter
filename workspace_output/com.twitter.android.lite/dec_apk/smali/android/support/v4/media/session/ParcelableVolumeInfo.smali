@@ -16,9 +16,31 @@ value = {
 .field public c:I
 .field public d:I
 .field public e:I
+.method static constructor <clinit>()V
+.locals 1
+new-instance v0, Landroid/support/v4/media/session/ParcelableVolumeInfo$1;
+invoke-direct {v0}, Landroid/support/v4/media/session/ParcelableVolumeInfo$1;-><init>()V
+sput-object v0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->CREATOR:Landroid/os/Parcelable$Creator;
+return-void
+.end method
 .method public constructor <init>(Landroid/os/Parcel;)V
 .locals 1
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+move-result v0
+iput v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->a:I
+invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+move-result v0
+iput v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->c:I
+invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+move-result v0
+iput v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->d:I
+invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+move-result v0
+iput v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->e:I
+invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+move-result p1
+iput p1, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->b:I
 return-void
 .end method
 .method public describeContents()I
@@ -28,5 +50,15 @@ return v0
 .end method
 .method public writeToParcel(Landroid/os/Parcel;I)V
 .locals 0
+iget p2, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->a:I
+invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+iget p2, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->c:I
+invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+iget p2, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->d:I
+invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+iget p2, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->e:I
+invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+iget p2, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->b:I
+invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 return-void
 .end method

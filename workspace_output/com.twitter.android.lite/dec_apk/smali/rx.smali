@@ -16,6 +16,7 @@ iget-object v0, p0, Lrx;->b:Lrw;
 invoke-static {v0}, Lrw;->a(Lrw;)Ljava/lang/Object;
 move-result-object v0
 monitor-enter v0
+:try_start_0
 iget-object v1, p0, Lrx;->b:Lrw;
 invoke-static {v1}, Lrw;->b(Lrw;)Lri;
 move-result-object v1
@@ -31,5 +32,7 @@ return-void
 :catchall_0
 move-exception v1
 monitor-exit v0
+:try_end_0
+.catchall {:try_start_0 .. :try_end_0} :catchall_0
 throw v1
 .end method

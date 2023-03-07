@@ -26,8 +26,10 @@ value = {
 ")TT;"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
+iget-object v0, p0, Lcom/google/android/gms/common/internal/r;->e:Lcom/google/android/gms/common/api/a$h;
+invoke-interface {v0, p1}, Lcom/google/android/gms/common/api/a$h;->a(Landroid/os/IBinder;)Landroid/os/IInterface;
+move-result-object p1
+return-object p1
 .end method
 .method protected a(ILandroid/os/IInterface;)V
 .locals 1
@@ -36,21 +38,28 @@ value = {
 "(ITT;)V"
 }
 .end annotation
+iget-object v0, p0, Lcom/google/android/gms/common/internal/r;->e:Lcom/google/android/gms/common/api/a$h;
+invoke-interface {v0, p1, p2}, Lcom/google/android/gms/common/api/a$h;->a(ILandroid/os/IInterface;)V
 return-void
 .end method
 .method public g()I
 .locals 1
-const/4 v0, 0x0
+invoke-super {p0}, Lcom/google/android/gms/common/internal/g;->g()I
+move-result v0
 return v0
 .end method
 .method protected i()Ljava/lang/String;
 .locals 1
-const/4 v0, 0x0
+iget-object v0, p0, Lcom/google/android/gms/common/internal/r;->e:Lcom/google/android/gms/common/api/a$h;
+invoke-interface {v0}, Lcom/google/android/gms/common/api/a$h;->a()Ljava/lang/String;
+move-result-object v0
 return-object v0
 .end method
 .method protected k()Ljava/lang/String;
 .locals 1
-const/4 v0, 0x0
+iget-object v0, p0, Lcom/google/android/gms/common/internal/r;->e:Lcom/google/android/gms/common/api/a$h;
+invoke-interface {v0}, Lcom/google/android/gms/common/api/a$h;->b()Ljava/lang/String;
+move-result-object v0
 return-object v0
 .end method
 .method public w()Lcom/google/android/gms/common/api/a$h;
@@ -62,6 +71,6 @@ value = {
 "TT;>;"
 }
 .end annotation
-const/4 v0, 0x0
+iget-object v0, p0, Lcom/google/android/gms/common/internal/r;->e:Lcom/google/android/gms/common/api/a$h;
 return-object v0
 .end method

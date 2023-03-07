@@ -362,6 +362,18 @@ def cover_smalitree(st, coverage):
                 for lbl in m.labels.values():
                     lbl.covered = lbl.cover_code > -1 and cov_class[lbl.cover_code]
 
+def cover_smalitree_all(st, coverage):
+    cov_iter = enumerate(coverage)
+    for cl in st.classes:
+        if cl.is_coverable():
+            cov_class = next(cov_iter)[1]
+            for m in cl.methods:
+                m.called = True
+                for ins in m.insns:
+                    ins.covered = True
+                for lbl in m.labels.values():
+                    lbl.covered = True
+
 
 def cover_smalitree_cumulatively(st, coverage):
     cov_iter = enumerate(coverage)

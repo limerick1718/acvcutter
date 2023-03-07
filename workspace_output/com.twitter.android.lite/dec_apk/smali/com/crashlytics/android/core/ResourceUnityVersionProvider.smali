@@ -27,8 +27,15 @@ const/4 v0, 0x1
 iput-boolean v0, p0, Lcom/crashlytics/android/core/ResourceUnityVersionProvider;->hasRead:Z
 :cond_0
 iget-object v0, p0, Lcom/crashlytics/android/core/ResourceUnityVersionProvider;->unityVersion:Ljava/lang/String;
+if-eqz v0, :cond_1
+return-object v0
+:cond_1
 iget-object v0, p0, Lcom/crashlytics/android/core/ResourceUnityVersionProvider;->fallback:Lcom/crashlytics/android/core/UnityVersionProvider;
+if-eqz v0, :cond_2
 invoke-interface {v0}, Lcom/crashlytics/android/core/UnityVersionProvider;->getUnityVersion()Ljava/lang/String;
 move-result-object v0
+return-object v0
+:cond_2
+const/4 v0, 0x0
 return-object v0
 .end method

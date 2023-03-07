@@ -12,10 +12,15 @@ name = null
 .field final synthetic val$latch:Lcom/crashlytics/android/core/CrashPromptDialog$OptInLatch;
 .method constructor <init>(Lcom/crashlytics/android/core/CrashPromptDialog$OptInLatch;)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lcom/crashlytics/android/core/CrashPromptDialog$1;->val$latch:Lcom/crashlytics/android/core/CrashPromptDialog$OptInLatch;
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onClick(Landroid/content/DialogInterface;I)V
 .locals 1
+iget-object p2, p0, Lcom/crashlytics/android/core/CrashPromptDialog$1;->val$latch:Lcom/crashlytics/android/core/CrashPromptDialog$OptInLatch;
+const/4 v0, 0x1
+invoke-virtual {p2, v0}, Lcom/crashlytics/android/core/CrashPromptDialog$OptInLatch;->setOptIn(Z)V
+invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 return-void
 .end method

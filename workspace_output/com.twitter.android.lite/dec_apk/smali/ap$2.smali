@@ -19,10 +19,52 @@ name = null
 .field final synthetic h:Ljava/lang/Object;
 .method constructor <init>(Ljava/lang/Object;Lar;Landroid/view/View;Lae;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/lang/Object;)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lap$2;->a:Ljava/lang/Object;
+iput-object p2, p0, Lap$2;->b:Lar;
+iput-object p3, p0, Lap$2;->c:Landroid/view/View;
+iput-object p4, p0, Lap$2;->d:Lae;
+iput-object p5, p0, Lap$2;->e:Ljava/util/ArrayList;
+iput-object p6, p0, Lap$2;->f:Ljava/util/ArrayList;
+iput-object p7, p0, Lap$2;->g:Ljava/util/ArrayList;
+iput-object p8, p0, Lap$2;->h:Ljava/lang/Object;
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public run()V
 .locals 5
+iget-object v0, p0, Lap$2;->a:Ljava/lang/Object;
+if-eqz v0, :cond_0
+iget-object v1, p0, Lap$2;->b:Lar;
+iget-object v2, p0, Lap$2;->c:Landroid/view/View;
+invoke-virtual {v1, v0, v2}, Lar;->c(Ljava/lang/Object;Landroid/view/View;)V
+iget-object v0, p0, Lap$2;->b:Lar;
+iget-object v1, p0, Lap$2;->a:Ljava/lang/Object;
+iget-object v2, p0, Lap$2;->d:Lae;
+iget-object v3, p0, Lap$2;->e:Ljava/util/ArrayList;
+iget-object v4, p0, Lap$2;->c:Landroid/view/View;
+invoke-static {v0, v1, v2, v3, v4}, Lap;->a(Lar;Ljava/lang/Object;Lae;Ljava/util/ArrayList;Landroid/view/View;)Ljava/util/ArrayList;
+move-result-object v0
+iget-object v1, p0, Lap$2;->f:Ljava/util/ArrayList;
+invoke-virtual {v1, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+:cond_0
+iget-object v0, p0, Lap$2;->g:Ljava/util/ArrayList;
+if-eqz v0, :cond_2
+iget-object v0, p0, Lap$2;->h:Ljava/lang/Object;
+if-eqz v0, :cond_1
+new-instance v0, Ljava/util/ArrayList;
+invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+iget-object v1, p0, Lap$2;->c:Landroid/view/View;
+invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+iget-object v1, p0, Lap$2;->b:Lar;
+iget-object v2, p0, Lap$2;->h:Ljava/lang/Object;
+iget-object v3, p0, Lap$2;->g:Ljava/util/ArrayList;
+invoke-virtual {v1, v2, v3, v0}, Lar;->b(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+:cond_1
+iget-object v0, p0, Lap$2;->g:Ljava/util/ArrayList;
+invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+iget-object v0, p0, Lap$2;->g:Ljava/util/ArrayList;
+iget-object v1, p0, Lap$2;->c:Landroid/view/View;
+invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+:cond_2
 return-void
 .end method

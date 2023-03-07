@@ -41,7 +41,23 @@ return-object v0
 .method public delay(F)Lcom/crashlytics/android/core/CrashlyticsCore$Builder;
 .locals 2
 const/4 v0, 0x0
-return-object v0
+cmpg-float v1, p1, v0
+if-lez v1, :cond_1
+iget v1, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->delay:F
+cmpl-float v0, v1, v0
+if-gtz v0, :cond_0
+iput p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->delay:F
+return-object p0
+:cond_0
+new-instance p1, Ljava/lang/IllegalStateException;
+const-string v0, "delay already set."
+invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw p1
+:cond_1
+new-instance p1, Ljava/lang/IllegalArgumentException;
+const-string v0, "delay must be greater than 0"
+invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method
 .method public disabled(Z)Lcom/crashlytics/android/core/CrashlyticsCore$Builder;
 .locals 0
@@ -50,13 +66,39 @@ return-object p0
 .end method
 .method public listener(Lcom/crashlytics/android/core/CrashlyticsListener;)Lcom/crashlytics/android/core/CrashlyticsCore$Builder;
 .locals 1
-const/4 v0, 0x0
-return-object v0
+if-eqz p1, :cond_1
+iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->listener:Lcom/crashlytics/android/core/CrashlyticsListener;
+if-nez v0, :cond_0
+iput-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->listener:Lcom/crashlytics/android/core/CrashlyticsListener;
+return-object p0
+:cond_0
+new-instance p1, Ljava/lang/IllegalStateException;
+const-string v0, "listener already set."
+invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw p1
+:cond_1
+new-instance p1, Ljava/lang/IllegalArgumentException;
+const-string v0, "listener must not be null."
+invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method
 .method public pinningInfo(Lcom/crashlytics/android/core/PinningInfoProvider;)Lcom/crashlytics/android/core/CrashlyticsCore$Builder;
 .locals 1
 .annotation runtime Ljava/lang/Deprecated;
 .end annotation
-const/4 v0, 0x0
-return-object v0
+if-eqz p1, :cond_1
+iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->pinningInfoProvider:Lcom/crashlytics/android/core/PinningInfoProvider;
+if-nez v0, :cond_0
+iput-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->pinningInfoProvider:Lcom/crashlytics/android/core/PinningInfoProvider;
+return-object p0
+:cond_0
+new-instance p1, Ljava/lang/IllegalStateException;
+const-string v0, "pinningInfoProvider already set."
+invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+throw p1
+:cond_1
+new-instance p1, Ljava/lang/IllegalArgumentException;
+const-string v0, "pinningInfoProvider must not be null."
+invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method

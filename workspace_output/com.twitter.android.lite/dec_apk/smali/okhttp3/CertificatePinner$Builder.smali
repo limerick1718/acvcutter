@@ -27,6 +27,7 @@ return-void
 .end method
 .method public varargs add(Ljava/lang/String;[Ljava/lang/String;)Lokhttp3/CertificatePinner$Builder;
 .locals 5
+if-eqz p1, :cond_1
 array-length v0, p2
 const/4 v1, 0x0
 :goto_0
@@ -40,6 +41,11 @@ add-int/lit8 v1, v1, 0x1
 goto :goto_0
 :cond_0
 return-object p0
+:cond_1
+new-instance p1, Ljava/lang/NullPointerException;
+const-string p2, "pattern == null"
+invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+throw p1
 .end method
 .method public build()Lokhttp3/CertificatePinner;
 .locals 3

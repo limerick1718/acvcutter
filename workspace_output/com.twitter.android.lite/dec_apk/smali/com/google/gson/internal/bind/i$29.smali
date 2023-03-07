@@ -27,7 +27,10 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-const/4 v0, 0x0
+new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+invoke-virtual {p1}, Ltw;->i()Z
+move-result p1
+invoke-direct {v0, p1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 return-object v0
 .end method
 .method public bridge synthetic a(Lty;Ljava/lang/Object;)V
@@ -37,6 +40,8 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
+check-cast p2, Ljava/util/concurrent/atomic/AtomicBoolean;
+invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/i$29;->a(Lty;Ljava/util/concurrent/atomic/AtomicBoolean;)V
 return-void
 .end method
 .method public a(Lty;Ljava/util/concurrent/atomic/AtomicBoolean;)V
@@ -46,6 +51,9 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
+invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+move-result p2
+invoke-virtual {p1, p2}, Lty;->a(Z)Lty;
 return-void
 .end method
 .method public synthetic b(Ltw;)Ljava/lang/Object;
@@ -55,6 +63,7 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
+invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/i$29;->a(Ltw;)Ljava/util/concurrent/atomic/AtomicBoolean;
+move-result-object p1
+return-object p1
 .end method
