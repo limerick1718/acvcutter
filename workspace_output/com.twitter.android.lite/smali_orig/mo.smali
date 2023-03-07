@@ -1,217 +1,93 @@
-.class public Lmo;
+.class final Lmo;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
 
 
-# static fields
-.field static final c:Lmo;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/concurrent/Callable<",
+        "Ljava/util/List<",
+        "Lpu;",
+        ">;>;"
+    }
+.end annotation
 
 
 # instance fields
-.field private final a:Ljava/lang/String;
+.field private final synthetic a:Lpz;
 
-.field private b:I
+.field private final synthetic b:Ljava/lang/String;
+
+.field private final synthetic c:Ljava/lang/String;
+
+.field private final synthetic d:Lmh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    .line 1
-    new-instance v0, Lmo;
-
-    const-string v1, "FirebaseCrashlytics"
-
-    invoke-direct {v0, v1}, Lmo;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lmo;->c:Lmo;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;)V
+.method constructor <init>(Lmh;Lpz;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     .line 1
+    iput-object p1, p0, Lmo;->d:Lmh;
+
+    iput-object p2, p0, Lmo;->a:Lpz;
+
+    iput-object p3, p0, Lmo;->b:Ljava/lang/String;
+
+    iput-object p4, p0, Lmo;->c:Ljava/lang/String;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput-object p1, p0, Lmo;->a:Ljava/lang/String;
-
-    const/4 p1, 0x4
-
-    .line 3
-    iput p1, p0, Lmo;->b:I
-
     return-void
-.end method
-
-.method public static a()Lmo;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lmo;->c:Lmo;
-
-    return-object v0
-.end method
-
-.method private a(I)Z
-    .locals 1
-
-    .line 2
-    iget v0, p0, Lmo;->b:I
-
-    if-le v0, p1, :cond_1
-
-    iget-object v0, p0, Lmo;->a:Ljava/lang/String;
-
-    invoke-static {v0, p1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    :goto_1
-    return p1
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/String;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    .line 5
-    invoke-virtual {p0, p1, v0}, Lmo;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 1
-
-    const/4 v0, 0x3
+.method public final synthetic call()Ljava/lang/Object;
+    .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 3
-    invoke-direct {p0, v0}, Lmo;->a(I)Z
+    iget-object v0, p0, Lmo;->d:Lmh;
 
-    move-result v0
+    invoke-static {v0}, Lmh;->a(Lmh;)Lpl;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
+
+    invoke-virtual {v0}, Lpl;->l()V
 
     .line 4
-    iget-object v0, p0, Lmo;->a:Ljava/lang/String;
+    iget-object v0, p0, Lmo;->d:Lmh;
 
-    invoke-static {v0, p1, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v0}, Lmh;->a(Lmh;)Lpl;
 
-    :cond_0
-    return-void
-.end method
+    move-result-object v0
 
-.method public b(Ljava/lang/String;)V
-    .locals 1
+    .line 5
+    invoke-virtual {v0}, Lpl;->d()Lqi;
 
-    const/4 v0, 0x0
+    move-result-object v0
 
-    .line 3
-    invoke-virtual {p0, p1, v0}, Lmo;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
+    iget-object v1, p0, Lmo;->a:Lpz;
 
-    return-void
-.end method
+    iget-object v1, v1, Lpz;->a:Ljava/lang/String;
 
-.method public b(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 1
+    iget-object v2, p0, Lmo;->b:Ljava/lang/String;
 
-    const/4 v0, 0x6
+    iget-object v3, p0, Lmo;->c:Ljava/lang/String;
 
-    .line 1
-    invoke-direct {p0, v0}, Lmo;->a(I)Z
+    .line 6
+    invoke-virtual {v0, v1, v2, v3}, Lqi;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
 
-    move-result v0
+    move-result-object v0
 
-    if-eqz v0, :cond_0
-
-    .line 2
-    iget-object v0, p0, Lmo;->a:Ljava/lang/String;
-
-    invoke-static {v0, p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    :cond_0
-    return-void
-.end method
-
-.method public c(Ljava/lang/String;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    .line 3
-    invoke-virtual {p0, p1, v0}, Lmo;->c(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public c(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 1
-
-    const/4 v0, 0x4
-
-    .line 1
-    invoke-direct {p0, v0}, Lmo;->a(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    iget-object v0, p0, Lmo;->a:Ljava/lang/String;
-
-    invoke-static {v0, p1, p2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    :cond_0
-    return-void
-.end method
-
-.method public d(Ljava/lang/String;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    .line 3
-    invoke-virtual {p0, p1, v0}, Lmo;->d(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public d(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 1
-
-    const/4 v0, 0x5
-
-    .line 1
-    invoke-direct {p0, v0}, Lmo;->a(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    iget-object v0, p0, Lmo;->a:Ljava/lang/String;
-
-    invoke-static {v0, p1, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

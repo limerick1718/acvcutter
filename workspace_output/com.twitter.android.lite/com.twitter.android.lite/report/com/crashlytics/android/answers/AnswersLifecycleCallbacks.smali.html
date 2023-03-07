@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.crashlytics.android.answers</a></li>
+        <li><i class="ico ico-class"></i> AnswersLifecycleCallbacks.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Lcom/crashlytics/android/answers/AnswersLifecycleCallbacks;
+.super Luo$b;
+.source "AnswersLifecycleCallbacks.java"
+
+
+.field private final analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;
+.field private final backgroundManager:Lcom/crashlytics/android/answers/BackgroundManager;
+
+
+<span class="cov">.method public constructor &lt;init&gt;(Lcom/crashlytics/android/answers/SessionAnalyticsManager;Lcom/crashlytics/android/answers/BackgroundManager;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Luo$b;-><init>()V</span>
+<span class="cov">	iput-object p1, p0, Lcom/crashlytics/android/answers/AnswersLifecycleCallbacks;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="cov">	iput-object p2, p0, Lcom/crashlytics/android/answers/AnswersLifecycleCallbacks;->backgroundManager:Lcom/crashlytics/android/answers/BackgroundManager;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="">	return-void</span>
+.end method
+
+.method public onActivityDestroyed(Landroid/app/Activity;)V
+<span class="">	.locals 0</span>
+
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public onActivityPaused(Landroid/app/Activity;)V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersLifecycleCallbacks;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="cov">	sget-object v1, Lcom/crashlytics/android/answers/SessionEvent$Type;->PAUSE:Lcom/crashlytics/android/answers/SessionEvent$Type;</span>
+<span class="cov">	invoke-virtual {v0, p1, v1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onLifecycle(Landroid/app/Activity;Lcom/crashlytics/android/answers/SessionEvent$Type;)V</span>
+<span class="cov">	iget-object p1, p0, Lcom/crashlytics/android/answers/AnswersLifecycleCallbacks;->backgroundManager:Lcom/crashlytics/android/answers/BackgroundManager;</span>
+<span class="cov">	invoke-virtual {p1}, Lcom/crashlytics/android/answers/BackgroundManager;->onActivityPaused()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public onActivityResumed(Landroid/app/Activity;)V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersLifecycleCallbacks;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="cov">	sget-object v1, Lcom/crashlytics/android/answers/SessionEvent$Type;->RESUME:Lcom/crashlytics/android/answers/SessionEvent$Type;</span>
+<span class="cov">	invoke-virtual {v0, p1, v1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onLifecycle(Landroid/app/Activity;Lcom/crashlytics/android/answers/SessionEvent$Type;)V</span>
+<span class="cov">	iget-object p1, p0, Lcom/crashlytics/android/answers/AnswersLifecycleCallbacks;->backgroundManager:Lcom/crashlytics/android/answers/BackgroundManager;</span>
+<span class="cov">	invoke-virtual {p1}, Lcom/crashlytics/android/answers/BackgroundManager;->onActivityResumed()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public onActivityStarted(Landroid/app/Activity;)V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersLifecycleCallbacks;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="cov">	sget-object v1, Lcom/crashlytics/android/answers/SessionEvent$Type;->START:Lcom/crashlytics/android/answers/SessionEvent$Type;</span>
+<span class="cov">	invoke-virtual {v0, p1, v1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onLifecycle(Landroid/app/Activity;Lcom/crashlytics/android/answers/SessionEvent$Type;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public onActivityStopped(Landroid/app/Activity;)V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersLifecycleCallbacks;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="cov">	sget-object v1, Lcom/crashlytics/android/answers/SessionEvent$Type;->STOP:Lcom/crashlytics/android/answers/SessionEvent$Type;</span>
+<span class="cov">	invoke-virtual {v0, p1, v1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onLifecycle(Landroid/app/Activity;Lcom/crashlytics/android/answers/SessionEvent$Type;)V</span>
+<span class="exec">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

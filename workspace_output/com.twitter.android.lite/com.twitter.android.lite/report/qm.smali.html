@@ -15,93 +15,270 @@
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
 		<code>.class public final Lqm;
-.super Lp5;
+.super Ljava/lang/Object;
 
 
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Landroid/os/Parcelable$Creator<",
-"Lqm;",
-">;"
-}
-.end annotation
-.end field
-.field private final a:I
-.field private final b:Lc5;
-.field private final c:Lcom/google/android/gms/common/internal/s;
 
 
-.method static constructor &lt;clinit&gt;()V
-<span class="">	.locals 1</span>
+<span class="cov">.method private static a(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Ljava/util/Set;</span>
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Landroid/database/sqlite/SQLiteDatabase;",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	")",</span>
+<span class="">	"Ljava/util/Set<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="missed">	new-instance v0, Lrm;</span>
-<span class="missed">	invoke-direct {v0}, Lrm;-><init>()V</span>
-<span class="missed">	sput-object v0, Lqm;->CREATOR:Landroid/os/Parcelable$Creator;</span>
-<span class="">	return-void</span>
+<span class="cov">	new-instance v0, Ljava/util/HashSet;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/HashSet;-><init>()V</span>
+<span class="exec">	invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-virtual {v1}, Ljava/lang/String;->length()I</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	add-int/lit8 v1, v1, 0x16</span>
+<span class="cov">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V</span>
+<span class="cov">	const-string v1, "SELECT * FROM "</span>
+<span class="cov">	invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="cov">	const-string p1, " LIMIT 0"</span>
+<span class="cov">	invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="exec">	invoke-virtual {p0, p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	:try_start_0</span>
+<span class="exec">	invoke-interface {p0}, Landroid/database/Cursor;->getColumnNames()[Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	invoke-static {v0, p1}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="cov">	invoke-interface {p0}, Landroid/database/Cursor;->close()V</span>
+<span class="exec">	return-object v0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-interface {p0}, Landroid/database/Cursor;->close()V</span>
+<span class="">	throw p1</span>
 .end method
 
-.method public constructor &lt;init&gt;(I)V
-<span class="">	.locals 2</span>
+<span class="cov">.method static a(Lla;Landroid/database/sqlite/SQLiteDatabase;)V</span>
+<span class="">	.locals 3</span>
 
-<span class="missed">	new-instance p1, Lc5;</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	const/16 v1, 0x8</span>
-<span class="missed">	invoke-direct {p1, v1, v0}, Lc5;-><init>(ILandroid/app/PendingIntent;)V</span>
-<span class="missed">	invoke-direct {p0, p1, v0}, Lqm;-><init>(Lc5;Lcom/google/android/gms/common/internal/s;)V</span>
-<span class="">	return-void</span>
+<span class="cov">	if-eqz p0, :cond_4</span>
+<span class="cov">	new-instance v0, Ljava/io/File;</span>
+<span class="exec">	invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->getPath()Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V</span>
+<span class="cov">	const/4 p1, 0x0</span>
+<span class="exec">	invoke-virtual {v0, p1, p1}, Ljava/io/File;->setReadable(ZZ)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Lla;->i()Llc;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Failed to turn off database read permission"</span>
+<span class="missed">	invoke-virtual {v1, v2}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-virtual {v0, p1, p1}, Ljava/io/File;->setWritable(ZZ)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="missed">	if-nez p1, :cond_1</span>
+<span class="">	invoke-virtual {p0}, Lla;->i()Llc;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v1, "Failed to turn off database write permission"</span>
+<span class="missed">	invoke-virtual {p1, v1}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	const/4 p1, 0x1</span>
+<span class="exec">	invoke-virtual {v0, p1, p1}, Ljava/io/File;->setReadable(ZZ)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_2</span>
+<span class="">	invoke-virtual {p0}, Lla;->i()Llc;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Failed to turn on database read permission for owner"</span>
+<span class="missed">	invoke-virtual {v1, v2}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="cov">	:cond_2</span>
+<span class="exec">	invoke-virtual {v0, p1, p1}, Ljava/io/File;->setWritable(ZZ)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="missed">	if-nez p1, :cond_3</span>
+<span class="">	invoke-virtual {p0}, Lla;->i()Llc;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	const-string p1, "Failed to turn on database write permission for owner"</span>
+<span class="missed">	invoke-virtual {p0, p1}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="cov">	:cond_3</span>
+<span class="exec">	return-void</span>
+<span class="">	:cond_4</span>
+<span class="missed">	new-instance p0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p1, "Monitor must not be null"</span>
+<span class="missed">	invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
 .end method
 
-.method constructor &lt;init&gt;(ILc5;Lcom/google/android/gms/common/internal/s;)V
-<span class="">	.locals 0</span>
+<span class="cov">.method static a(Lla;Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V</span>
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/database/sqlite/SQLiteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="missed">	invoke-direct {p0}, Lp5;-><init>()V</span>
-<span class="missed">	iput p1, p0, Lqm;->a:I</span>
-<span class="missed">	iput-object p2, p0, Lqm;->b:Lc5;</span>
-<span class="missed">	iput-object p3, p0, Lqm;->c:Lcom/google/android/gms/common/internal/s;</span>
-<span class="">	return-void</span>
+<span class="cov">	const-string v0, "Monitor must not be null"</span>
+<span class="cov">	if-eqz p0, :cond_7</span>
+<span class="exec">	invoke-static {p0, p1, p2}, Lqm;->a(Lla;Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	if-nez v1, :cond_0</span>
+<span class="cov">	invoke-virtual {p1, p3}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	if-eqz p0, :cond_6</span>
+<span class="cov">	:try_start_0</span>
+<span class="exec">	invoke-static {p1, p2}, Lqm;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Ljava/util/Set;</span>
+<span class="cov">	move-result-object p3</span>
+<span class="cov">	const-string v0, ","</span>
+<span class="exec">	invoke-virtual {p4, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;</span>
+<span class="cov">	move-result-object p4</span>
+<span class="cov">	array-length v0, p4</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	if-ge v2, v0, :cond_2</span>
+<span class="cov">	aget-object v3, p4, v2</span>
+<span class="exec">	invoke-interface {p3, v3}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v4</span>
+<span class="cov">	if-eqz v4, :cond_1</span>
+<span class="cov">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Landroid/database/sqlite/SQLiteException;</span>
+<span class="">	invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p3</span>
+<span class="">	invoke-virtual {p3}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result p3</span>
+<span class="missed">	add-int/lit8 p3, p3, 0x23</span>
+<span class="">	invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p4</span>
+<span class="">	invoke-virtual {p4}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result p4</span>
+<span class="missed">	add-int/2addr p3, p4</span>
+<span class="missed">	new-instance p4, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {p4, p3}, Ljava/lang/StringBuilder;-><init>(I)V</span>
+<span class="missed">	const-string p3, "Table "</span>
+<span class="missed">	invoke-virtual {p4, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {p4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string p3, " is missing required column: "</span>
+<span class="missed">	invoke-virtual {p4, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {p4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p3</span>
+<span class="missed">	invoke-direct {p1, p3}, Landroid/database/sqlite/SQLiteException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="cov">	:cond_2</span>
+<span class="missed">	if-eqz p5, :cond_4</span>
+<span class="">	:goto_1</span>
+<span class="missed">	array-length p4, p5</span>
+<span class="missed">	if-ge v1, p4, :cond_4</span>
+<span class="missed">	aget-object p4, p5, v1</span>
+<span class="">	invoke-interface {p3, p4}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p4</span>
+<span class="missed">	if-nez p4, :cond_3</span>
+<span class="missed">	add-int/lit8 p4, v1, 0x1</span>
+<span class="missed">	aget-object p4, p5, p4</span>
+<span class="missed">	invoke-virtual {p1, p4}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V</span>
+<span class="">	:cond_3</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x2</span>
+<span class="">	goto :goto_1</span>
+<span class="cov">	:cond_4</span>
+<span class="exec">	invoke-interface {p3}, Ljava/util/Set;->isEmpty()Z</span>
+<span class="cov">	move-result p1</span>
+<span class="missed">	if-nez p1, :cond_5</span>
+<span class="">	invoke-virtual {p0}, Lla;->i()Llc;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string p4, "Table has extra columns. table, columns"</span>
+<span class="missed">	const-string p5, ", "</span>
+<span class="">	invoke-static {p5, p3}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p3</span>
+<span class="missed">	invoke-virtual {p1, p4, p2, p3}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V</span>
+<span class="cov">	:cond_5</span>
+<span class="exec">	return-void</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_6</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	:goto_2</span>
+<span class="">	invoke-virtual {p0}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	const-string p3, "Failed to verify columns on table that was just created"</span>
+<span class="missed">	invoke-virtual {p0, p3, p2}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_7</span>
+<span class="missed">	new-instance p0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
 .end method
 
-.method private constructor &lt;init&gt;(Lc5;Lcom/google/android/gms/common/internal/s;)V
-<span class="">	.locals 1</span>
+<span class="cov">.method private static a(Lla;Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Z</span>
+<span class="">	.locals 10</span>
 
-<span class="missed">	const/4 p2, 0x1</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	invoke-direct {p0, p2, p1, v0}, Lqm;-><init>(ILc5;Lcom/google/android/gms/common/internal/s;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public final f()Lc5;
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Lqm;->b:Lc5;</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public final g()Lcom/google/android/gms/common/internal/s;
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Lqm;->c:Lcom/google/android/gms/common/internal/s;</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-<span class="">	.locals 4</span>
-
-<span class="">	invoke-static {p1}, Lr5;->a(Landroid/os/Parcel;)I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	iget v1, p0, Lqm;->a:I</span>
-<span class="missed">	const/4 v2, 0x1</span>
-<span class="missed">	invoke-static {p1, v2, v1}, Lr5;->a(Landroid/os/Parcel;II)V</span>
-<span class="missed">	iget-object v1, p0, Lqm;->b:Lc5;</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="missed">	const/4 v3, 0x2</span>
-<span class="missed">	invoke-static {p1, v3, v1, p2, v2}, Lr5;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V</span>
-<span class="missed">	iget-object v1, p0, Lqm;->c:Lcom/google/android/gms/common/internal/s;</span>
-<span class="missed">	const/4 v3, 0x3</span>
-<span class="missed">	invoke-static {p1, v3, v1, p2, v2}, Lr5;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V</span>
-<span class="missed">	invoke-static {p1, v0}, Lr5;->a(Landroid/os/Parcel;I)V</span>
-<span class="">	return-void</span>
+<span class="cov">	if-eqz p0, :cond_3</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	const-string v3, "SQLITE_MASTER"</span>
+<span class="cov">	const-string v2, "name"</span>
+<span class="exec">	filled-new-array {v2}, [Ljava/lang/String;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	const-string v5, "name=?"</span>
+<span class="cov">	const/4 v2, 0x1</span>
+<span class="cov">	new-array v6, v2, [Ljava/lang/String;</span>
+<span class="cov">	aput-object p2, v6, v1</span>
+<span class="cov">	const/4 v7, 0x0</span>
+<span class="cov">	const/4 v8, 0x0</span>
+<span class="cov">	const/4 v9, 0x0</span>
+<span class="cov">	move-object v2, p1</span>
+<span class="exec">	invoke-virtual/range {v2 .. v9}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z</span>
+<span class="cov">	move-result p0</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	invoke-interface {v0}, Landroid/database/Cursor;->close()V</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return p0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	:try_start_1</span>
+<span class="">	invoke-virtual {p0}, Lla;->i()Llc;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	const-string v2, "Error querying for table"</span>
+<span class="missed">	invoke-virtual {p0, v2, p2, p1}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-interface {v0}, Landroid/database/Cursor;->close()V</span>
+<span class="">	:cond_1</span>
+<span class="">	return v1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="missed">	invoke-interface {v0}, Landroid/database/Cursor;->close()V</span>
+<span class="">	:cond_2</span>
+<span class="">	throw p0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	new-instance p0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p1, "Monitor must not be null"</span>
+<span class="missed">	invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

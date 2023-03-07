@@ -1,25 +1,24 @@
-.class final Ltn;
+.class public abstract Ltn;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "TypeAdapter.java"
 
 
-# instance fields
-.field private final synthetic a:Lgn;
-
-.field private final synthetic b:Lsn;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
 
 # direct methods
-.method constructor <init>(Lsn;Lgn;)V
+.method public constructor <init>()V
     .locals 0
 
-    .line 1
-    iput-object p1, p0, Ltn;->b:Lsn;
-
-    iput-object p2, p0, Ltn;->a:Lgn;
-
+    .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,55 +26,90 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final a(Ljava/lang/Object;)Ltd;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)",
+            "Ltd;"
+        }
+    .end annotation
 
-    .line 1
-    iget-object v0, p0, Ltn;->b:Lsn;
-
-    invoke-static {v0}, Lsn;->a(Lsn;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    monitor-enter v0
-
-    .line 2
+    .line 233
     :try_start_0
-    iget-object v1, p0, Ltn;->b:Lsn;
+    new-instance v0, Lcom/google/gson/internal/bind/d;
 
-    invoke-static {v1}, Lsn;->b(Lsn;)Lcn;
+    invoke-direct {v0}, Lcom/google/gson/internal/bind/d;-><init>()V
 
-    move-result-object v1
+    .line 234
+    invoke-virtual {p0, v0, p1}, Ltn;->a(Lty;Ljava/lang/Object;)V
 
-    if-eqz v1, :cond_0
+    .line 235
+    invoke-virtual {v0}, Lcom/google/gson/internal/bind/d;->a()Ltd;
 
-    .line 3
-    iget-object v1, p0, Ltn;->b:Lsn;
-
-    invoke-static {v1}, Lsn;->b(Lsn;)Lcn;
-
-    move-result-object v1
-
-    iget-object v2, p0, Ltn;->a:Lgn;
-
-    invoke-virtual {v2}, Lgn;->a()Ljava/lang/Exception;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2}, Lcn;->a(Ljava/lang/Exception;)V
-
-    .line 4
-    :cond_0
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
+    move-result-object p1
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    throw v1
+    return-object p1
+
+    :catch_0
+    move-exception p1
+
+    .line 237
+    new-instance v0, Lte;
+
+    invoke-direct {v0, p1}, Lte;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+.end method
+
+.method public final a()Ltn;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ltn<",
+            "TT;>;"
+        }
+    .end annotation
+
+    .line 186
+    new-instance v0, Ltn$1;
+
+    invoke-direct {v0, p0}, Ltn$1;-><init>(Ltn;)V
+
+    return-object v0
+.end method
+
+.method public abstract a(Lty;Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lty;",
+            "TT;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public abstract b(Ltw;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ltw;",
+            ")TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method

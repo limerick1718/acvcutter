@@ -4,7 +4,7 @@
 .implements Landroid/os/Parcelable;
 .annotation system Ldalvik/annotation/MemberClasses;
 value = {
-Landroid/support/v4/media/MediaDescriptionCompat$b;
+Landroid/support/v4/media/MediaDescriptionCompat$a;
 }
 .end annotation
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;

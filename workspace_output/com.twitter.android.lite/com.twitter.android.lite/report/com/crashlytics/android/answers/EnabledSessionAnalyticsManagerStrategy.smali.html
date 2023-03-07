@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.crashlytics.android.answers</a></li>
+        <li><i class="ico ico-class"></i> EnabledSessionAnalyticsManagerStrategy.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;
+.super Ljava/lang/Object;
+.source "EnabledSessionAnalyticsManagerStrategy.java"
+.implements Lcom/crashlytics/android/answers/SessionAnalyticsManagerStrategy;
+
+
+.field static final UNDEFINED_ROLLOVER_INTERVAL_SECONDS:I = -0x1
+.field  apiKey:Lvl;
+.field private final context:Landroid/content/Context;
+.field  customEventsEnabled:Z
+.field  eventFilter:Lcom/crashlytics/android/answers/EventFilter;
+.field private final executorService:Ljava/util/concurrent/ScheduledExecutorService;
+.field private final filesManager:Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;
+.field  filesSender:Lxa;
+.field private final firebaseAnalyticsApiAdapter:Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;
+.field  forwardToFirebaseAnalyticsEnabled:Z
+.field private final httpRequestFactory:Lxi;
+.field  includePurchaseEventsInForwardedEvents:Z
+.field private final kit:Luw;
+.field final metadata:Lcom/crashlytics/android/answers/SessionEventMetadata;
+.field  predefinedEventsEnabled:Z
+.field private final rolloverFutureRef:Ljava/util/concurrent/atomic/AtomicReference;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/concurrent/atomic/AtomicReference<",
+"Ljava/util/concurrent/ScheduledFuture<",
+"*>;>;"
+}
+.end annotation
+.end field
+.field volatile rolloverIntervalSeconds:I
+
+
+<span class="cov">.method public constructor &lt;init&gt;(Luw;Landroid/content/Context;Ljava/util/concurrent/ScheduledExecutorService;Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;Lxi;Lcom/crashlytics/android/answers/SessionEventMetadata;Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverFutureRef:Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="cov">	new-instance v0, Lvl;</span>
+<span class="cov">	invoke-direct {v0}, Lvl;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->apiKey:Lvl;</span>
+<span class="cov">	new-instance v0, Lcom/crashlytics/android/answers/KeepAllEventFilter;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/crashlytics/android/answers/KeepAllEventFilter;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->eventFilter:Lcom/crashlytics/android/answers/EventFilter;</span>
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="cov">	iput-boolean v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->customEventsEnabled:Z</span>
+<span class="cov">	iput-boolean v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->predefinedEventsEnabled:Z</span>
+<span class="cov">	const/4 v0, -0x1</span>
+<span class="cov">	iput v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverIntervalSeconds:I</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	iput-boolean v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->forwardToFirebaseAnalyticsEnabled:Z</span>
+<span class="cov">	iput-boolean v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->includePurchaseEventsInForwardedEvents:Z</span>
+<span class="cov">	iput-object p1, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->kit:Luw;</span>
+<span class="cov">	iput-object p2, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->context:Landroid/content/Context;</span>
+<span class="cov">	iput-object p3, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->executorService:Ljava/util/concurrent/ScheduledExecutorService;</span>
+<span class="cov">	iput-object p4, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesManager:Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;</span>
+<span class="cov">	iput-object p5, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->httpRequestFactory:Lxi;</span>
+<span class="cov">	iput-object p6, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->metadata:Lcom/crashlytics/android/answers/SessionEventMetadata;</span>
+<span class="cov">	iput-object p7, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->firebaseAnalyticsApiAdapter:Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public cancelTimeBasedFileRollOver()V
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverFutureRef:Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="">	invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->context:Landroid/content/Context;</span>
+<span class="missed">	const-string v1, "Cancelling time-based rollover because no events are currently being generated."</span>
+<span class="missed">	invoke-static {v0, v1}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverFutureRef:Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="">	invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ljava/util/concurrent/ScheduledFuture;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-interface {v0, v1}, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverFutureRef:Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public deleteAllEvents()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesManager:Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;</span>
+<span class="missed">	invoke-virtual {v0}, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->deleteAllEventsFiles()V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public processEvent(Lcom/crashlytics/android/answers/SessionEvent$Builder;)V</span>
+<span class="">	.locals 5</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->metadata:Lcom/crashlytics/android/answers/SessionEventMetadata;</span>
+<span class="exec">	invoke-virtual {p1, v0}, Lcom/crashlytics/android/answers/SessionEvent$Builder;->build(Lcom/crashlytics/android/answers/SessionEventMetadata;)Lcom/crashlytics/android/answers/SessionEvent;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	iget-boolean v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->customEventsEnabled:Z</span>
+<span class="cov">	const-string v1, "Answers"</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	sget-object v0, Lcom/crashlytics/android/answers/SessionEvent$Type;->CUSTOM:Lcom/crashlytics/android/answers/SessionEvent$Type;</span>
+<span class="missed">	iget-object v2, p1, Lcom/crashlytics/android/answers/SessionEvent;->type:Lcom/crashlytics/android/answers/SessionEvent$Type;</span>
+<span class="">	invoke-virtual {v0, v2}, Lcom/crashlytics/android/answers/SessionEvent$Type;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v3, "Custom events tracking disabled - skipping event: "</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {v0, v1, p1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-boolean v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->predefinedEventsEnabled:Z</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	sget-object v0, Lcom/crashlytics/android/answers/SessionEvent$Type;->PREDEFINED:Lcom/crashlytics/android/answers/SessionEvent$Type;</span>
+<span class="missed">	iget-object v2, p1, Lcom/crashlytics/android/answers/SessionEvent;->type:Lcom/crashlytics/android/answers/SessionEvent$Type;</span>
+<span class="">	invoke-virtual {v0, v2}, Lcom/crashlytics/android/answers/SessionEvent$Type;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v3, "Predefined events tracking disabled - skipping event: "</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {v0, v1, p1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->eventFilter:Lcom/crashlytics/android/answers/EventFilter;</span>
+<span class="exec">	invoke-interface {v0, p1}, Lcom/crashlytics/android/answers/EventFilter;->skipEvent(Lcom/crashlytics/android/answers/SessionEvent;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v3, "Skipping filtered event: "</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {v0, v1, p1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesManager:Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;</span>
+<span class="cov">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->writeEvent(Ljava/lang/Object;)V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	new-instance v3, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "Failed to write event: "</span>
+<span class="missed">	invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-interface {v2, v1, v3, v0}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	invoke-virtual {p0}, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->scheduleTimeBasedRollOverIfNeeded()V</span>
+<span class="cov">	sget-object v0, Lcom/crashlytics/android/answers/SessionEvent$Type;->CUSTOM:Lcom/crashlytics/android/answers/SessionEvent$Type;</span>
+<span class="cov">	iget-object v2, p1, Lcom/crashlytics/android/answers/SessionEvent;->type:Lcom/crashlytics/android/answers/SessionEvent$Type;</span>
+<span class="exec">	invoke-virtual {v0, v2}, Lcom/crashlytics/android/answers/SessionEvent$Type;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-nez v0, :cond_4</span>
+<span class="cov">	sget-object v0, Lcom/crashlytics/android/answers/SessionEvent$Type;->PREDEFINED:Lcom/crashlytics/android/answers/SessionEvent$Type;</span>
+<span class="cov">	iget-object v2, p1, Lcom/crashlytics/android/answers/SessionEvent;->type:Lcom/crashlytics/android/answers/SessionEvent$Type;</span>
+<span class="exec">	invoke-virtual {v0, v2}, Lcom/crashlytics/android/answers/SessionEvent$Type;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_3</span>
+<span class="exec">	goto :goto_1</span>
+<span class="cov">	:cond_3</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_4</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="cov">	:goto_2</span>
+<span class="cov">	iget-object v2, p1, Lcom/crashlytics/android/answers/SessionEvent;->predefinedType:Ljava/lang/String;</span>
+<span class="cov">	const-string v3, "purchase"</span>
+<span class="exec">	invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	iget-boolean v3, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->forwardToFirebaseAnalyticsEnabled:Z</span>
+<span class="missed">	if-eqz v3, :cond_7</span>
+<span class="missed">	if-nez v0, :cond_5</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_5</span>
+<span class="missed">	if-eqz v2, :cond_6</span>
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->includePurchaseEventsInForwardedEvents:Z</span>
+<span class="missed">	if-nez v0, :cond_6</span>
+<span class="">	return-void</span>
+<span class="">	:try_start_1</span>
+<span class="">	:cond_6</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->firebaseAnalyticsApiAdapter:Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;->processEvent(Lcom/crashlytics/android/answers/SessionEvent;)V</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	new-instance v3, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "Failed to map event to Firebase: "</span>
+<span class="missed">	invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {v2, v1, p1, v0}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="cov">	:goto_3</span>
+<span class="cov">	:cond_7</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public rollFileOver()Z</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesManager:Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;</span>
+<span class="exec">	invoke-virtual {v0}, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->rollFileOver()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="exec">	return v0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->context:Landroid/content/Context;</span>
+<span class="missed">	const-string v2, "Failed to roll file over."</span>
+<span class="missed">	invoke-static {v1, v2, v0}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
+.end method
+
+.method  scheduleTimeBasedFileRollOver(JJ)V
+<span class="">	.locals 8</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverFutureRef:Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="">	invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	new-instance v2, Lxd;</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->context:Landroid/content/Context;</span>
+<span class="missed">	invoke-direct {v2, v0, p0}, Lxd;-><init>(Landroid/content/Context;Lwz;)V</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->context:Landroid/content/Context;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v3, "Scheduling time based file roll over every "</span>
+<span class="missed">	invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p3, p4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v3, " seconds"</span>
+<span class="missed">	invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-static {v0, v1}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;)V</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverFutureRef:Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->executorService:Ljava/util/concurrent/ScheduledExecutorService;</span>
+<span class="missed">	sget-object v7, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;</span>
+<span class="missed">	move-wide v3, p1</span>
+<span class="missed">	move-wide v5, p3</span>
+<span class="">	invoke-interface/range {v1 .. v7}, Ljava/util/concurrent/ScheduledExecutorService;->scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	iget-object p2, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->context:Landroid/content/Context;</span>
+<span class="missed">	const-string p3, "Failed to schedule time based file roll over"</span>
+<span class="missed">	invoke-static {p2, p3, p1}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public scheduleTimeBasedRollOverIfNeeded()V</span>
+<span class="">	.locals 4</span>
+
+<span class="cov">	iget v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverIntervalSeconds:I</span>
+<span class="cov">	const/4 v1, -0x1</span>
+<span class="missed">	if-eq v0, v1, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	iget v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverIntervalSeconds:I</span>
+<span class="missed">	int-to-long v0, v0</span>
+<span class="missed">	iget v2, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverIntervalSeconds:I</span>
+<span class="missed">	int-to-long v2, v2</span>
+<span class="missed">	invoke-virtual {p0, v0, v1, v2, v3}, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->scheduleTimeBasedFileRollOver(JJ)V</span>
+<span class="cov">	:cond_1</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public sendEvents()V</span>
+<span class="">	.locals 8</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesSender:Lxa;</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="cov">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->context:Landroid/content/Context;</span>
+<span class="cov">	const-string v1, "skipping files send because we don\'t yet know the target endpoint"</span>
+<span class="cov">	invoke-static {v0, v1}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;)V</span>
+<span class="exec">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->context:Landroid/content/Context;</span>
+<span class="missed">	const-string v1, "Sending all files"</span>
+<span class="missed">	invoke-static {v0, v1}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesManager:Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;</span>
+<span class="">	invoke-virtual {v0}, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->getBatchOfFilesToSend()Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-lez v3, :cond_3</span>
+<span class="missed">	iget-object v3, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->context:Landroid/content/Context;</span>
+<span class="missed">	sget-object v4, Ljava/util/Locale;->US:Ljava/util/Locale;</span>
+<span class="missed">	const-string v5, "attempt to send batch of %d files"</span>
+<span class="missed">	const/4 v6, 0x1</span>
+<span class="missed">	new-array v6, v6, [Ljava/lang/Object;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v7</span>
+<span class="">	invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="missed">	aput-object v7, v6, v1</span>
+<span class="">	invoke-static {v4, v5, v6}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	invoke-static {v3, v4}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v3, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesSender:Lxa;</span>
+<span class="">	invoke-interface {v3, v0}, Lxa;->send(Ljava/util/List;)Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-eqz v3, :cond_1</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	add-int/2addr v2, v4</span>
+<span class="missed">	iget-object v4, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesManager:Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;</span>
+<span class="missed">	invoke-virtual {v4, v0}, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->deleteSentFiles(Ljava/util/List;)V</span>
+<span class="">	:cond_1</span>
+<span class="missed">	if-nez v3, :cond_2</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesManager:Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;</span>
+<span class="">	invoke-virtual {v0}, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->getBatchOfFilesToSend()Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->context:Landroid/content/Context;</span>
+<span class="missed">	new-instance v3, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "Failed to send batch of analytics files to server: "</span>
+<span class="missed">	invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-static {v1, v3, v0}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	if-nez v2, :cond_4</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesManager:Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;</span>
+<span class="missed">	invoke-virtual {v0}, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->deleteOldestInRollOverIfOverMax()V</span>
+<span class="">	:cond_4</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setAnalyticsSettingsData(Lxs;Ljava/lang/String;)V
+<span class="">	.locals 7</span>
+
+<span class="missed">	new-instance v6, Lcom/crashlytics/android/answers/SessionAnalyticsFilesSender;</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->kit:Luw;</span>
+<span class="missed">	iget-object v3, p1, Lxs;->a:Ljava/lang/String;</span>
+<span class="missed">	iget-object v4, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->httpRequestFactory:Lxi;</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->apiKey:Lvl;</span>
+<span class="missed">	iget-object v2, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->context:Landroid/content/Context;</span>
+<span class="">	invoke-virtual {v0, v2}, Lvl;->a(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="missed">	move-object v0, v6</span>
+<span class="missed">	move-object v2, p2</span>
+<span class="missed">	invoke-direct/range {v0 .. v5}, Lcom/crashlytics/android/answers/SessionAnalyticsFilesSender;-><init>(Luw;Ljava/lang/String;Ljava/lang/String;Lxi;Ljava/lang/String;)V</span>
+<span class="">	invoke-static {v6}, Lcom/crashlytics/android/answers/AnswersRetryFilesSender;->build(Lcom/crashlytics/android/answers/SessionAnalyticsFilesSender;)Lcom/crashlytics/android/answers/AnswersRetryFilesSender;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	iput-object p2, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesSender:Lxa;</span>
+<span class="missed">	iget-object p2, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesManager:Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;</span>
+<span class="missed">	invoke-virtual {p2, p1}, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->setAnalyticsSettingsData(Lxs;)V</span>
+<span class="missed">	iget-boolean p2, p1, Lxs;->f:Z</span>
+<span class="missed">	iput-boolean p2, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->forwardToFirebaseAnalyticsEnabled:Z</span>
+<span class="missed">	iget-boolean p2, p1, Lxs;->g:Z</span>
+<span class="missed">	iput-boolean p2, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->includePurchaseEventsInForwardedEvents:Z</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v1, "Firebase analytics forwarding "</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-boolean v1, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->forwardToFirebaseAnalyticsEnabled:Z</span>
+<span class="missed">	const-string v2, "enabled"</span>
+<span class="missed">	const-string v3, "disabled"</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	move-object v1, v2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	move-object v1, v3</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "Answers"</span>
+<span class="missed">	invoke-interface {p2, v1, v0}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "Firebase analytics including purchase events "</span>
+<span class="missed">	invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-boolean v4, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->includePurchaseEventsInForwardedEvents:Z</span>
+<span class="missed">	if-eqz v4, :cond_1</span>
+<span class="missed">	move-object v4, v2</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	move-object v4, v3</span>
+<span class="">	:goto_1</span>
+<span class="missed">	invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-interface {p2, v1, v0}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	iget-boolean p2, p1, Lxs;->h:Z</span>
+<span class="missed">	iput-boolean p2, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->customEventsEnabled:Z</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "Custom event tracking "</span>
+<span class="missed">	invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-boolean v4, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->customEventsEnabled:Z</span>
+<span class="missed">	if-eqz v4, :cond_2</span>
+<span class="missed">	move-object v4, v2</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_2</span>
+<span class="missed">	move-object v4, v3</span>
+<span class="">	:goto_2</span>
+<span class="missed">	invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-interface {p2, v1, v0}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	iget-boolean p2, p1, Lxs;->i:Z</span>
+<span class="missed">	iput-boolean p2, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->predefinedEventsEnabled:Z</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "Predefined event tracking "</span>
+<span class="missed">	invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-boolean v4, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->predefinedEventsEnabled:Z</span>
+<span class="missed">	if-eqz v4, :cond_3</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_3</span>
+<span class="missed">	move-object v2, v3</span>
+<span class="">	:goto_3</span>
+<span class="missed">	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-interface {p2, v1, v0}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	iget p2, p1, Lxs;->k:I</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-le p2, v0, :cond_4</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	const-string v0, "Event sampling enabled"</span>
+<span class="missed">	invoke-interface {p2, v1, v0}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	new-instance p2, Lcom/crashlytics/android/answers/SamplingEventFilter;</span>
+<span class="missed">	iget v0, p1, Lxs;->k:I</span>
+<span class="missed">	invoke-direct {p2, v0}, Lcom/crashlytics/android/answers/SamplingEventFilter;-><init>(I)V</span>
+<span class="missed">	iput-object p2, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->eventFilter:Lcom/crashlytics/android/answers/EventFilter;</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget p1, p1, Lxs;->b:I</span>
+<span class="missed">	iput p1, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverIntervalSeconds:I</span>
+<span class="missed">	const-wide/16 p1, 0x0</span>
+<span class="missed">	iget v0, p0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverIntervalSeconds:I</span>
+<span class="missed">	int-to-long v0, v0</span>
+<span class="missed">	invoke-virtual {p0, p1, p2, v0, v1}, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->scheduleTimeBasedFileRollOver(JJ)V</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

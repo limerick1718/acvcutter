@@ -14,8 +14,8 @@ name = "BomAwareReader"
 .annotation runtime Ljavax/annotation/Nullable;
 .end annotation
 .end field
-.field private final source:Lgx;
-.method constructor <init>(Lgx;Ljava/nio/charset/Charset;)V
+.field private final source:Lyu;
+.method constructor <init>(Lyu;Ljava/nio/charset/Charset;)V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void

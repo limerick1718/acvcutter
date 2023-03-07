@@ -1,6 +1,6 @@
 .class public final Li$a;
 .super Ljava/lang/Object;
-.source "CustomTabsIntent.java"
+.source "R.java"
 
 
 # annotations
@@ -14,185 +14,51 @@
 .end annotation
 
 
-# instance fields
-.field private final a:Landroid/content/Intent;
+# static fields
+.field public static final browser_actions_context_menu_max_width:I = 0x7f030000
 
-.field private b:Ljava/util/ArrayList;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList<",
-            "Landroid/os/Bundle;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static final browser_actions_context_menu_min_padding:I = 0x7f030001
 
-.field private c:Landroid/os/Bundle;
+.field public static final compat_button_inset_horizontal_material:I = 0x7f030002
 
-.field private d:Ljava/util/ArrayList;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList<",
-            "Landroid/os/Bundle;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static final compat_button_inset_vertical_material:I = 0x7f030003
 
-.field private e:Z
+.field public static final compat_button_padding_horizontal_material:I = 0x7f030004
 
+.field public static final compat_button_padding_vertical_material:I = 0x7f030005
 
-# direct methods
-.method public constructor <init>()V
-    .locals 1
+.field public static final compat_control_corner_material:I = 0x7f030006
 
-    const/4 v0, 0x0
+.field public static final compat_notification_large_icon_max_height:I = 0x7f030007
 
-    .line 1
-    invoke-direct {p0, v0}, Li$a;-><init>(Lj;)V
+.field public static final compat_notification_large_icon_max_width:I = 0x7f030008
 
-    return-void
-.end method
+.field public static final notification_action_icon_size:I = 0x7f030009
 
-.method public constructor <init>(Lj;)V
-    .locals 2
+.field public static final notification_action_text_size:I = 0x7f03000a
 
-    .line 2
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public static final notification_big_circle_margin:I = 0x7f03000b
 
-    .line 3
-    new-instance v0, Landroid/content/Intent;
+.field public static final notification_content_margin_start:I = 0x7f03000c
 
-    const-string v1, "android.intent.action.VIEW"
+.field public static final notification_large_icon_height:I = 0x7f03000d
 
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+.field public static final notification_large_icon_width:I = 0x7f03000e
 
-    iput-object v0, p0, Li$a;->a:Landroid/content/Intent;
+.field public static final notification_main_column_padding_top:I = 0x7f03000f
 
-    const/4 v0, 0x0
+.field public static final notification_media_narrow_margin:I = 0x7f030010
 
-    .line 4
-    iput-object v0, p0, Li$a;->b:Ljava/util/ArrayList;
+.field public static final notification_right_icon_size:I = 0x7f030011
 
-    .line 5
-    iput-object v0, p0, Li$a;->c:Landroid/os/Bundle;
+.field public static final notification_right_side_padding_top:I = 0x7f030012
 
-    .line 6
-    iput-object v0, p0, Li$a;->d:Ljava/util/ArrayList;
+.field public static final notification_small_icon_background_padding:I = 0x7f030013
 
-    const/4 v1, 0x1
+.field public static final notification_small_icon_size_as_large:I = 0x7f030014
 
-    .line 7
-    iput-boolean v1, p0, Li$a;->e:Z
+.field public static final notification_subtext_size:I = 0x7f030015
 
-    if-nez p1, :cond_1
+.field public static final notification_top_pad:I = 0x7f030016
 
-    .line 8
-    new-instance v1, Landroid/os/Bundle;
-
-    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
-
-    if-nez p1, :cond_0
-
-    const-string p1, "android.support.customtabs.extra.SESSION"
-
-    .line 9
-    invoke-static {v1, p1, v0}, Landroidx/core/app/c;->a(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/IBinder;)V
-
-    .line 10
-    iget-object p1, p0, Li$a;->a:Landroid/content/Intent;
-
-    invoke-virtual {p1, v1}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
-
-    return-void
-
-    .line 11
-    :cond_0
-    invoke-virtual {p1}, Lj;->a()Landroid/os/IBinder;
-
-    throw v0
-
-    .line 12
-    :cond_1
-    invoke-virtual {p1}, Lj;->b()Landroid/content/ComponentName;
-
-    throw v0
-.end method
-
-
-# virtual methods
-.method public a(I)Li$a;
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Li$a;->a:Landroid/content/Intent;
-
-    const-string v1, "android.support.customtabs.extra.TOOLBAR_COLOR"
-
-    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    return-object p0
-.end method
-
-.method public a(Z)Li$a;
-    .locals 2
-
-    .line 2
-    iget-object v0, p0, Li$a;->a:Landroid/content/Intent;
-
-    const-string v1, "android.support.customtabs.extra.TITLE_VISIBILITY"
-
-    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    return-object p0
-.end method
-
-.method public a()Li;
-    .locals 3
-
-    .line 3
-    iget-object v0, p0, Li$a;->b:Ljava/util/ArrayList;
-
-    if-eqz v0, :cond_0
-
-    .line 4
-    iget-object v1, p0, Li$a;->a:Landroid/content/Intent;
-
-    const-string v2, "android.support.customtabs.extra.MENU_ITEMS"
-
-    invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putParcelableArrayListExtra(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;
-
-    .line 5
-    :cond_0
-    iget-object v0, p0, Li$a;->d:Ljava/util/ArrayList;
-
-    if-eqz v0, :cond_1
-
-    .line 6
-    iget-object v1, p0, Li$a;->a:Landroid/content/Intent;
-
-    const-string v2, "android.support.customtabs.extra.TOOLBAR_ITEMS"
-
-    invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putParcelableArrayListExtra(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;
-
-    .line 7
-    :cond_1
-    iget-object v0, p0, Li$a;->a:Landroid/content/Intent;
-
-    iget-boolean v1, p0, Li$a;->e:Z
-
-    const-string v2, "android.support.customtabs.extra.EXTRA_ENABLE_INSTANT_APPS"
-
-    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 8
-    new-instance v0, Li;
-
-    iget-object v1, p0, Li$a;->a:Landroid/content/Intent;
-
-    iget-object v2, p0, Li$a;->c:Landroid/os/Bundle;
-
-    invoke-direct {v0, v1, v2}, Li;-><init>(Landroid/content/Intent;Landroid/os/Bundle;)V
-
-    return-object v0
-.end method
+.field public static final notification_top_pad_large_text:I = 0x7f030017

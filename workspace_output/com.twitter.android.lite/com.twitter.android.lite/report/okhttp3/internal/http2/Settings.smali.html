@@ -31,14 +31,14 @@
 .field private final values:[I
 
 
-<span class="cov">.method public constructor &lt;init&gt;()V</span>
+.method public constructor &lt;init&gt;()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	const/16 v0, 0xa</span>
-<span class="cov">	new-array v0, v0, [I</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/internal/http2/Settings;->values:[I</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	const/16 v0, 0xa</span>
+<span class="missed">	new-array v0, v0, [I</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/internal/http2/Settings;->values:[I</span>
+<span class="">	return-void</span>
 .end method
 
 .method  clear()V
@@ -51,12 +51,12 @@
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method  get(I)I</span>
+.method  get(I)I
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/http2/Settings;->values:[I</span>
-<span class="cov">	aget p1, v0, p1</span>
-<span class="exec">	return p1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Settings;->values:[I</span>
+<span class="missed">	aget p1, v0, p1</span>
+<span class="">	return p1</span>
 .end method
 
 .method  getEnablePush(Z)Z
@@ -84,62 +84,62 @@
 <span class="">	return v1</span>
 .end method
 
-<span class="cov">.method  getHeaderTableSize()I</span>
+.method  getHeaderTableSize()I
 <span class="">	.locals 2</span>
 
-<span class="cov">	iget v0, p0, Lokhttp3/internal/http2/Settings;->set:I</span>
-<span class="cov">	and-int/lit8 v0, v0, 0x2</span>
+<span class="missed">	iget v0, p0, Lokhttp3/internal/http2/Settings;->set:I</span>
+<span class="missed">	and-int/lit8 v0, v0, 0x2</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Settings;->values:[I</span>
 <span class="missed">	const/4 v1, 0x1</span>
 <span class="missed">	aget v0, v0, v1</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 v0, -0x1</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return v0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, -0x1</span>
+<span class="">	:goto_0</span>
+<span class="">	return v0</span>
 .end method
 
-<span class="cov">.method  getInitialWindowSize()I</span>
+.method  getInitialWindowSize()I
 <span class="">	.locals 2</span>
 
-<span class="cov">	iget v0, p0, Lokhttp3/internal/http2/Settings;->set:I</span>
-<span class="cov">	and-int/lit16 v0, v0, 0x80</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/http2/Settings;->values:[I</span>
-<span class="cov">	const/4 v1, 0x7</span>
-<span class="cov">	aget v0, v0, v1</span>
+<span class="missed">	iget v0, p0, Lokhttp3/internal/http2/Settings;->set:I</span>
+<span class="missed">	and-int/lit16 v0, v0, 0x80</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Settings;->values:[I</span>
+<span class="missed">	const/4 v1, 0x7</span>
+<span class="missed">	aget v0, v0, v1</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	const v0, 0xffff</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return v0</span>
+<span class="">	:goto_0</span>
+<span class="">	return v0</span>
 .end method
 
-<span class="cov">.method  getMaxConcurrentStreams(I)I</span>
+.method  getMaxConcurrentStreams(I)I
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget v0, p0, Lokhttp3/internal/http2/Settings;->set:I</span>
-<span class="cov">	and-int/lit8 v0, v0, 0x10</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	iget-object p1, p0, Lokhttp3/internal/http2/Settings;->values:[I</span>
-<span class="cov">	const/4 v0, 0x4</span>
-<span class="cov">	aget p1, p1, v0</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return p1</span>
+<span class="missed">	iget v0, p0, Lokhttp3/internal/http2/Settings;->set:I</span>
+<span class="missed">	and-int/lit8 v0, v0, 0x10</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object p1, p0, Lokhttp3/internal/http2/Settings;->values:[I</span>
+<span class="missed">	const/4 v0, 0x4</span>
+<span class="missed">	aget p1, p1, v0</span>
+<span class="">	:cond_0</span>
+<span class="">	return p1</span>
 .end method
 
-<span class="cov">.method  getMaxFrameSize(I)I</span>
+.method  getMaxFrameSize(I)I
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget v0, p0, Lokhttp3/internal/http2/Settings;->set:I</span>
-<span class="cov">	and-int/lit8 v0, v0, 0x20</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	iget-object p1, p0, Lokhttp3/internal/http2/Settings;->values:[I</span>
-<span class="cov">	const/4 v0, 0x5</span>
-<span class="cov">	aget p1, p1, v0</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return p1</span>
+<span class="missed">	iget v0, p0, Lokhttp3/internal/http2/Settings;->set:I</span>
+<span class="missed">	and-int/lit8 v0, v0, 0x20</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object p1, p0, Lokhttp3/internal/http2/Settings;->values:[I</span>
+<span class="missed">	const/4 v0, 0x5</span>
+<span class="missed">	aget p1, p1, v0</span>
+<span class="">	:cond_0</span>
+<span class="">	return p1</span>
 .end method
 
 .method  getMaxHeaderListSize(I)I
@@ -155,70 +155,70 @@
 <span class="">	return p1</span>
 .end method
 
-<span class="cov">.method  isSet(I)Z</span>
+.method  isSet(I)Z
 <span class="">	.locals 2</span>
 
-<span class="cov">	const/4 v0, 0x1</span>
-<span class="cov">	shl-int p1, v0, p1</span>
-<span class="cov">	iget v1, p0, Lokhttp3/internal/http2/Settings;->set:I</span>
-<span class="cov">	and-int/2addr p1, v1</span>
-<span class="cov">	if-eqz p1, :cond_0</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return v0</span>
-.end method
-
-<span class="cov">.method  merge(Lokhttp3/internal/http2/Settings;)V</span>
-<span class="">	.locals 2</span>
-
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	const/16 v1, 0xa</span>
-<span class="cov">	if-ge v0, v1, :cond_1</span>
-<span class="exec">	invoke-virtual {p1, v0}, Lokhttp3/internal/http2/Settings;->isSet(I)Z</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	if-nez v1, :cond_0</span>
-<span class="">	goto :goto_1</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-virtual {p1, v0}, Lokhttp3/internal/http2/Settings;->get(I)I</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	invoke-virtual {p0, v0, v1}, Lokhttp3/internal/http2/Settings;->set(II)Lokhttp3/internal/http2/Settings;</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	add-int/lit8 v0, v0, 0x1</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	shl-int p1, v0, p1</span>
+<span class="missed">	iget v1, p0, Lokhttp3/internal/http2/Settings;->set:I</span>
+<span class="missed">	and-int/2addr p1, v1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
 <span class="">	goto :goto_0</span>
-<span class="cov">	:cond_1</span>
-<span class="exec">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return v0</span>
 .end method
 
-<span class="cov">.method  set(II)Lokhttp3/internal/http2/Settings;</span>
+.method  merge(Lokhttp3/internal/http2/Settings;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/16 v1, 0xa</span>
+<span class="missed">	if-ge v0, v1, :cond_1</span>
+<span class="">	invoke-virtual {p1, v0}, Lokhttp3/internal/http2/Settings;->isSet(I)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p1, v0}, Lokhttp3/internal/http2/Settings;->get(I)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	invoke-virtual {p0, v0, v1}, Lokhttp3/internal/http2/Settings;->set(II)Lokhttp3/internal/http2/Settings;</span>
+<span class="">	:goto_1</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+.end method
+
+.method  set(II)Lokhttp3/internal/http2/Settings;
 <span class="">	.locals 3</span>
 
-<span class="cov">	if-ltz p1, :cond_1</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/http2/Settings;->values:[I</span>
-<span class="cov">	array-length v1, v0</span>
+<span class="missed">	if-ltz p1, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Settings;->values:[I</span>
+<span class="missed">	array-length v1, v0</span>
 <span class="missed">	if-lt p1, v1, :cond_0</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="cov">	shl-int/2addr v1, p1</span>
-<span class="cov">	iget v2, p0, Lokhttp3/internal/http2/Settings;->set:I</span>
-<span class="cov">	or-int/2addr v1, v2</span>
-<span class="cov">	iput v1, p0, Lokhttp3/internal/http2/Settings;->set:I</span>
-<span class="cov">	aput p2, v0, p1</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return-object p0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	shl-int/2addr v1, p1</span>
+<span class="missed">	iget v2, p0, Lokhttp3/internal/http2/Settings;->set:I</span>
+<span class="missed">	or-int/2addr v1, v2</span>
+<span class="missed">	iput v1, p0, Lokhttp3/internal/http2/Settings;->set:I</span>
+<span class="missed">	aput p2, v0, p1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object p0</span>
 .end method
 
-<span class="cov">.method  size()I</span>
+.method  size()I
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget v0, p0, Lokhttp3/internal/http2/Settings;->set:I</span>
-<span class="exec">	invoke-static {v0}, Ljava/lang/Integer;->bitCount(I)I</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
+<span class="missed">	iget v0, p0, Lokhttp3/internal/http2/Settings;->set:I</span>
+<span class="">	invoke-static {v0}, Ljava/lang/Integer;->bitCount(I)I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

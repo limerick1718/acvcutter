@@ -12,7 +12,7 @@ name = "WildcardTypeImpl"
 .field private final lowerBound:Ljava/lang/reflect/Type;
 .field private final upperBound:Ljava/lang/reflect/Type;
 .method constructor <init>([Ljava/lang/reflect/Type;[Ljava/lang/reflect/Type;)V
-.locals 5
+.locals 3
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

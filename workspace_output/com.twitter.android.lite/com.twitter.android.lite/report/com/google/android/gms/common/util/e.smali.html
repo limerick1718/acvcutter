@@ -14,25 +14,83 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lcom/google/android/gms/common/util/e;
+		<code>.class public final Lcom/google/android/gms/common/util/e;
 .super Ljava/lang/Object;
 
 
 
 
-.method public abstract a()J
-<span class="">	</span>
+.method public static a()Ljava/util/List;
+<span class="">	.locals 1</span>
+<span class="">	.annotation runtime Ljava/lang/Deprecated;</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<T:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">()",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"TT;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
+<span class="">	invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
 .end method
 
-.method public abstract b()J
-<span class="">	</span>
+.method public static a(Ljava/lang/Object;)Ljava/util/List;
+<span class="">	.locals 0</span>
+<span class="">	.annotation runtime Ljava/lang/Deprecated;</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<T:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(TT;)",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"TT;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
+<span class="">	invoke-static {p0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
 .end method
 
-.method public abstract c()J
-<span class="">	</span>
+<span class="cov">.method public static varargs a([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation runtime Ljava/lang/Deprecated;</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<T:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">([TT;)",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"TT;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
+<span class="cov">	array-length v0, p0</span>
+<span class="cov">	if-eqz v0, :cond_1</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	if-eq v0, v1, :cond_0</span>
+<span class="exec">	invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	invoke-static {p0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	aget-object p0, p0, v0</span>
+<span class="">	invoke-static {p0}, Lcom/google/android/gms/common/util/e;->a(Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-static {}, Lcom/google/android/gms/common/util/e;->a()Ljava/util/List;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

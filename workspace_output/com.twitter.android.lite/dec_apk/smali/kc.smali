@@ -1,14 +1,12 @@
-.class public interface abstract Lkc;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Ljava/util/Iterator;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/Object;",
-"Ljava/util/Iterator<",
-"Ljava/lang/Byte;",
-">;"
-}
-.end annotation
-.method public abstract a()B
+.class public final Lkc;
+.super Ljava/io/IOException;
+.method public constructor <init>(Ljava/lang/String;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Exception;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method

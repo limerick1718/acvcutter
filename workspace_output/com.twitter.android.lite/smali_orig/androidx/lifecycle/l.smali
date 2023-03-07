@@ -19,7 +19,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 25
     invoke-direct {p0}, Landroidx/lifecycle/LiveData;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 33
     invoke-super {p0, p1}, Landroidx/lifecycle/LiveData;->a(Ljava/lang/Object;)V
 
     return-void

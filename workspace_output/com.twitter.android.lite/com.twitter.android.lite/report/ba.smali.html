@@ -14,42 +14,25 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final Lba;
+		<code>.class public abstract Lba;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement@@17.4.0"
-.implements Lqd;
+.implements Lbd;
 
 
-.field static final a:Lqd;
 
 
-.method static constructor &lt;clinit&gt;()V
+<span class="cov">.method public constructor &lt;init&gt;()V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public final describeContents()I
 <span class="">	.locals 1</span>
 
-<span class="missed">	new-instance v0, Lba;</span>
-<span class="missed">	invoke-direct {v0}, Lba;-><init>()V</span>
-<span class="missed">	sput-object v0, Lba;->a:Lqd;</span>
-<span class="">	return-void</span>
-.end method
-
-.method private constructor &lt;init&gt;()V
-<span class="">	.locals 0</span>
-
-<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public final a(I)Z
-<span class="">	.locals 0</span>
-
-<span class="">	invoke-static {p1}, Lw9$b;->a(I)Lw9$b;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="missed">	const/4 p1, 0x1</span>
-<span class="">	return p1</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 p1, 0x0</span>
-<span class="">	return p1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

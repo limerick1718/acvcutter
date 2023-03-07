@@ -1,7 +1,7 @@
 .class final Lokhttp3/internal/ws/WebSocketWriter$FrameSink;
 .super Ljava/lang/Object;
 .source "WebSocketWriter.java"
-.implements Lvx;
+.implements Lzj;
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lokhttp3/internal/ws/WebSocketWriter;
 .end annotation
@@ -37,12 +37,12 @@ Ljava/io/IOException;
 .end annotation
 return-void
 .end method
-.method public timeout()Lxx;
+.method public timeout()Lzl;
 .locals 1
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public write(Lex;J)V
+.method public write(Lys;J)V
 .locals 6
 .annotation system Ldalvik/annotation/Throws;
 value = {

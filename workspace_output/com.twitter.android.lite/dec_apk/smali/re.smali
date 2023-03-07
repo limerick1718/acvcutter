@@ -1,46 +1,20 @@
-.class interface abstract Lre;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.method public abstract a(ILjava/lang/Object;Ljava/lang/Object;)I
-.end method
-.method public abstract a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-.end method
-.method public abstract a(Ljava/lang/Object;)Ljava/util/Map;
+.class final Lre;
+.super Lcom/google/android/gms/common/api/a$a;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"(",
+"Lcom/google/android/gms/common/api/a$a<",
+"Lqq;",
 "Ljava/lang/Object;",
-")",
-"Ljava/util/Map<",
-"**>;"
+">;"
 }
 .end annotation
+.method constructor <init>()V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method
-.method public abstract b(Ljava/lang/Object;)Ljava/util/Map;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"(",
-"Ljava/lang/Object;",
-")",
-"Ljava/util/Map<",
-"**>;"
-}
-.end annotation
-.end method
-.method public abstract c(Ljava/lang/Object;)Lpe;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"(",
-"Ljava/lang/Object;",
-")",
-"Lpe<",
-"**>;"
-}
-.end annotation
-.end method
-.method public abstract d(Ljava/lang/Object;)Z
-.end method
-.method public abstract e(Ljava/lang/Object;)Ljava/lang/Object;
-.end method
-.method public abstract f(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final synthetic a(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/c;Ljava/lang/Object;Lcom/google/android/gms/common/api/f$a;Lcom/google/android/gms/common/api/f$b;)Lcom/google/android/gms/common/api/a$f;
+.locals 0
+const/4 v0, 0x0
+return-object v0
 .end method

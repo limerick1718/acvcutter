@@ -1,72 +1,50 @@
-.class public final Lcom/google/android/gms/common/internal/q;
-.super Ljava/lang/Object;
-.method public static a(Ljava/lang/Object;)Ljava/lang/Object;
-.locals 1
+.class public Lcom/google/android/gms/common/internal/q;
+.super Lba;
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"<T:",
-"Ljava/lang/Object;",
-">(TT;)TT;"
+"Landroid/os/Parcelable$Creator<",
+"Lcom/google/android/gms/common/internal/q;",
+">;"
 }
 .end annotation
-return-object p0
-.end method
-.method public static a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.end field
+.field private final a:I
+.field private b:Landroid/os/IBinder;
+.field private c:Lcom/google/android/gms/common/b;
+.field private d:Z
+.field private e:Z
+.method constructor <init>(ILandroid/os/IBinder;Lcom/google/android/gms/common/b;ZZ)V
 .locals 0
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"<T:",
-"Ljava/lang/Object;",
-">(TT;",
-"Ljava/lang/Object;",
-")TT;"
-}
-.end annotation
-return-object p0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method
-.method public static a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+.method public a()Lcom/google/android/gms/common/internal/j;
 .locals 1
-invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-move-result v0
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
-.method public static a()V
+.method public b()Lcom/google/android/gms/common/b;
 .locals 1
-const-string v0, "Must not be called on the main application thread"
-invoke-static {v0}, Lcom/google/android/gms/common/internal/q;->c(Ljava/lang/String;)V
-return-void
+const/4 v0, 0x0
+return-object v0
 .end method
-.method public static a(Ljava/lang/String;)V
+.method public c()Z
 .locals 1
-invoke-static {}, Lcom/google/android/gms/common/util/s;->a()Z
-move-result v0
-return-void
+const/4 v0, 0x0
+return v0
 .end method
-.method public static a(Z)V
-.locals 0
-return-void
-.end method
-.method public static a(ZLjava/lang/Object;)V
-.locals 0
-return-void
-.end method
-.method public static varargs a(ZLjava/lang/String;[Ljava/lang/Object;)V
-.locals 0
-return-void
-.end method
-.method public static b(Ljava/lang/String;)Ljava/lang/String;
+.method public d()Z
 .locals 1
-invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-move-result v0
-return-object p0
+const/4 v0, 0x0
+return v0
 .end method
-.method public static b(Z)V
-.locals 0
-return-void
+.method public equals(Ljava/lang/Object;)Z
+.locals 4
+const/4 v0, 0x0
+return v0
 .end method
-.method public static c(Ljava/lang/String;)V
-.locals 1
-invoke-static {}, Lcom/google/android/gms/common/util/s;->a()Z
-move-result v0
+.method public writeToParcel(Landroid/os/Parcel;I)V
+.locals 4
 return-void
 .end method

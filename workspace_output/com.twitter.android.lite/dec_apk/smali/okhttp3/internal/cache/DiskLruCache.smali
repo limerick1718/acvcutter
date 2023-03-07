@@ -33,7 +33,7 @@ Lokhttp3/internal/cache/DiskLruCache$Snapshot;
 .field private final journalFile:Ljava/io/File;
 .field private final journalFileBackup:Ljava/io/File;
 .field private final journalFileTmp:Ljava/io/File;
-.field  journalWriter:Lfx;
+.field  journalWriter:Lyt;
 .field final lruEntries:Ljava/util/LinkedHashMap;
 .annotation system Ldalvik/annotation/Signature;
 value = {

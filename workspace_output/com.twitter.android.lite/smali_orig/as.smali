@@ -1,124 +1,138 @@
-.class public Las;
+.class Las;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.source "OneShotPreDrawListener.java"
 
 # interfaces
-.implements Lzr;
+.implements Landroid/view/View$OnAttachStateChangeListener;
+.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
 
 # instance fields
-.field private final a:Landroid/content/Context;
+.field private final a:Landroid/view/View;
+
+.field private b:Landroid/view/ViewTreeObserver;
+
+.field private final c:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method private constructor <init>(Landroid/view/View;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 1
+    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput-object p1, p0, Las;->a:Landroid/content/Context;
+    .line 42
+    iput-object p1, p0, Las;->a:Landroid/view/View;
+
+    .line 43
+    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object p1
+
+    iput-object p1, p0, Las;->b:Landroid/view/ViewTreeObserver;
+
+    .line 44
+    iput-object p2, p0, Las;->c:Ljava/lang/Runnable;
 
     return-void
 .end method
 
+.method public static a(Landroid/view/View;Ljava/lang/Runnable;)Las;
+    .locals 1
 
-# virtual methods
-.method public a()Ljava/io/File;
-    .locals 3
+    .line 55
+    new-instance v0, Las;
 
-    .line 1
-    new-instance v0, Ljava/io/File;
+    invoke-direct {v0, p0, p1}, Las;-><init>(Landroid/view/View;Ljava/lang/Runnable;)V
 
-    iget-object v1, p0, Las;->a:Landroid/content/Context;
+    .line 56
+    invoke-virtual {p0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+    move-result-object p1
 
-    move-result-object v1
+    invoke-virtual {p1, v0}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    const-string v2, ".com.google.firebase.crashlytics"
-
-    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-virtual {p0, v0}, Las;->a(Ljava/io/File;)Ljava/io/File;
-
-    move-result-object v0
+    .line 57
+    invoke-virtual {p0, v0}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
     return-object v0
 .end method
 
-.method a(Ljava/io/File;)Ljava/io/File;
+
+# virtual methods
+.method public a()V
     .locals 1
 
-    if-eqz p1, :cond_2
+    .line 73
+    iget-object v0, p0, Las;->b:Landroid/view/ViewTreeObserver;
 
-    .line 2
-    invoke-virtual {p1}, Ljava/io/File;->exists()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p1}, Ljava/io/File;->mkdirs()Z
+    invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 74
+    iget-object v0, p0, Las;->b:Landroid/view/ViewTreeObserver;
+
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
+
     goto :goto_0
 
-    .line 3
+    .line 76
     :cond_0
-    invoke-static {}, Lmo;->a()Lmo;
+    iget-object v0, p0, Las;->a:Landroid/view/View;
 
-    move-result-object p1
-
-    const-string v0, "Couldn\'t create file"
-
-    invoke-virtual {p1, v0}, Lmo;->d(Ljava/lang/String;)V
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    .line 4
-    :cond_2
-    invoke-static {}, Lmo;->a()Lmo;
-
-    move-result-object p1
-
-    const-string v0, "Null File"
-
-    invoke-virtual {p1, v0}, Lmo;->a(Ljava/lang/String;)V
-
-    :goto_1
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public b()Ljava/lang/String;
-    .locals 3
-
-    .line 1
-    new-instance v0, Ljava/io/File;
-
-    iget-object v1, p0, Las;->a:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
-
-    move-result-object v1
-
-    const-string v2, ".com.google.firebase.crashlytics"
-
-    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljava/io/File;->getPath()Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
+
+    .line 78
+    :goto_0
+    iget-object v0, p0, Las;->a:Landroid/view/View;
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+
+    return-void
+.end method
+
+.method public onPreDraw()Z
+    .locals 1
+
+    .line 63
+    invoke-virtual {p0}, Las;->a()V
+
+    .line 64
+    iget-object v0, p0, Las;->c:Ljava/lang/Runnable;
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public onViewAttachedToWindow(Landroid/view/View;)V
+    .locals 0
+
+    .line 83
+    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object p1
+
+    iput-object p1, p0, Las;->b:Landroid/view/ViewTreeObserver;
+
+    return-void
+.end method
+
+.method public onViewDetachedFromWindow(Landroid/view/View;)V
+    .locals 0
+
+    .line 88
+    invoke-virtual {p0}, Las;->a()V
+
+    return-void
 .end method

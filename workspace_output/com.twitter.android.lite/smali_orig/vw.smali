@@ -1,270 +1,245 @@
 .class public Lvw;
 .super Ljava/lang/Object;
-.source "UriUtils.java"
-
-
-# static fields
-.field public static final a:Ljava/util/Set;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Set<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private static final b:Ljava/util/regex/Pattern;
+.source "FirebaseInfo.java"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    .line 1
-    new-instance v0, Ljava/util/HashSet;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(I)V
-
-    sput-object v0, Lvw;->a:Ljava/util/Set;
-
-    const-string v1, "twitter.com"
-
-    .line 2
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    .line 3
-    sget-object v0, Lvw;->a:Ljava/util/Set;
-
-    const-string v1, "www.twitter.com"
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    .line 4
-    sget-object v0, Lvw;->a:Ljava/util/Set;
-
-    const-string v1, "mobile.twitter.com"
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    const-string v0, "[-A-Za-z0-9+&@#/%?=~_|!:,.;\\(\\)]+"
-
-    .line 5
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lvw;->b:Ljava/util/regex/Pattern;
+    .line 24
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private static a(Landroid/net/Uri;)Z
-    .locals 1
 
-    .line 1
-    invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+# virtual methods
+.method a(Landroid/content/Context;)Ljava/lang/String;
+    .locals 4
 
-    move-result-object p0
+    const-string v0, "google_app_id"
 
-    if-eqz p0, :cond_0
+    const-string v1, "string"
 
-    .line 2
-    sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string v0, "https"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
-.method public static b(Landroid/net/Uri;)Z
-    .locals 1
-
-    .line 1
-    invoke-static {p0}, Lvw;->a(Landroid/net/Uri;)Z
+    .line 31
+    invoke-static {p1, v0, v1}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-static {p0}, Lvw;->c(Landroid/net/Uri;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p0}, Lvw;->d(Landroid/net/Uri;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
-.method private static c(Landroid/net/Uri;)Z
-    .locals 2
-
-    .line 1
-    invoke-virtual {p0}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_0
-
-    .line 2
-    sget-object v0, Lvw;->a:Ljava/util/Set;
-
-    sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-interface {v0, p0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
-.method private static d(Landroid/net/Uri;)Z
-    .locals 2
-
-    .line 1
-    invoke-virtual {p0}, Landroid/net/Uri;->getHost()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lvw;->b:Ljava/util/regex/Pattern;
-
-    invoke-virtual {p0}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    .line 33
+    invoke-static {}, Luq;->g()Luz;
 
     move-result-object v1
 
-    invoke-virtual {p0}, Landroid/net/Uri;->getHost()Ljava/lang/String;
+    const-string v2, "Fabric"
 
-    move-result-object p0
+    const-string v3, "Generating Crashlytics ApiKey from google_app_id in Strings"
 
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    invoke-interface {v1, v2, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result p0
+    .line 35
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    invoke-virtual {v1, p0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    move-result-object p1
 
-    move-result-object p0
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    move-result-object p1
 
-    move-result-object p0
+    invoke-virtual {p0, p1}, Lvw;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {p0}, Ljava/util/regex/Matcher;->matches()Z
+    move-result-object p1
 
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
+    return-object p1
 
     :cond_0
-    const/4 p0, 0x0
+    const/4 p1, 0x0
 
-    :goto_0
-    return p0
+    return-object p1
 .end method
 
-.method public static e(Landroid/net/Uri;)Landroid/net/Uri;
+.method a(Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
+
+    .line 41
+    invoke-static {p1}, Lvn;->b(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    const/16 v1, 0x28
+
+    invoke-virtual {p1, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public b(Landroid/content/Context;)Z
     .locals 3
 
-    .line 1
-    invoke-virtual {p0}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    const-string v1, "com.crashlytics.useFirebaseAppId"
 
-    const-string v1, "/#!"
-
-    .line 2
-    invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+    .line 56
+    invoke-static {p1, v1, v0}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;Z)Z
 
     move-result v1
 
-    const/4 v2, -0x1
+    const/4 v2, 0x1
 
-    if-eq v1, v2, :cond_0
+    if-eqz v1, :cond_0
 
-    .line 3
-    new-instance p0, Ljava/lang/StringBuilder;
+    return v2
 
-    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
+    .line 60
+    :cond_0
+    invoke-virtual {p0, p1}, Lvw;->e(Landroid/content/Context;)Z
 
-    const/4 v2, 0x0
+    move-result v1
 
-    invoke-virtual {v0, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    if-eqz v1, :cond_1
 
-    move-result-object v2
+    invoke-virtual {p0, p1}, Lvw;->c(Landroid/content/Context;)Z
 
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result p1
 
-    add-int/lit8 v1, v1, 0x3
+    if-nez p1, :cond_1
 
-    .line 4
-    invoke-virtual {v0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    const/4 v0, 0x1
+
+    :cond_1
+    return v0
+.end method
+
+.method c(Landroid/content/Context;)Z
+    .locals 2
+
+    .line 70
+    new-instance v0, Lvl;
+
+    invoke-direct {v0}, Lvl;-><init>()V
+
+    invoke-virtual {v0, p1}, Lvl;->c(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 71
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result v0
 
-    move-result-object p0
+    const/4 v1, 0x1
 
-    .line 5
-    invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    if-nez v0, :cond_0
 
-    move-result-object p0
+    return v1
 
+    .line 75
     :cond_0
-    return-object p0
+    new-instance v0, Lvl;
+
+    invoke-direct {v0}, Lvl;-><init>()V
+
+    invoke-virtual {v0, p1}, Lvl;->d(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 76
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    xor-int/2addr p1, v1
+
+    return p1
+.end method
+
+.method public d(Landroid/content/Context;)Z
+    .locals 3
+
+    const-string v0, "io.fabric.auto_initialize"
+
+    const-string v1, "bool"
+
+    .line 89
+    invoke-static {p1, v0, v1}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 p1, 0x0
+
+    return p1
+
+    .line 96
+    :cond_0
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    .line 98
+    invoke-static {}, Luq;->g()Luz;
+
+    move-result-object v0
+
+    const-string v1, "Fabric"
+
+    const-string v2, "Found Fabric auto-initialization flag for joint Firebase/Fabric customers"
+
+    invoke-interface {v0, v1, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_1
+    return p1
+.end method
+
+.method e(Landroid/content/Context;)Z
+    .locals 2
+
+    const-string v0, "google_app_id"
+
+    const-string v1, "string"
+
+    .line 113
+    invoke-static {p1, v0, v1}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 p1, 0x0
+
+    return p1
+
+    .line 120
+    :cond_0
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 121
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    xor-int/lit8 p1, p1, 0x1
+
+    return p1
 .end method

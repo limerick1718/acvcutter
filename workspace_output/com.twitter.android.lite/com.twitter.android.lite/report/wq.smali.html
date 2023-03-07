@@ -14,87 +14,16 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final Lwq;
-.super Lzq$d$d$d;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-
-.annotation system Ldalvik/annotation/MemberClasses;
-value = {
-Lwq$b;
-}
-.end annotation
-
-.field private final a:Ljava/lang/String;
+		<code>.class public interface abstract Lwq;
+.super Ljava/lang/Object;
+.source "Backoff.java"
 
 
-.method private constructor &lt;init&gt;(Ljava/lang/String;)V
-<span class="">	.locals 0</span>
 
-<span class="missed">	invoke-direct {p0}, Lzq$d$d$d;-><init>()V</span>
-<span class="missed">	iput-object p1, p0, Lwq;->a:Ljava/lang/String;</span>
-<span class="">	return-void</span>
-.end method
 
-.method synthetic constructor &lt;init&gt;(Ljava/lang/String;Lwq$a;)V
-<span class="">	.locals 0</span>
+.method public abstract getDelayMillis(I)J
+<span class="">	</span>
 
-<span class="missed">	invoke-direct {p0, p1}, Lwq;-><init>(Ljava/lang/String;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public a()Ljava/lang/String;
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Lwq;->a:Ljava/lang/String;</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-<span class="">	.locals 1</span>
-
-<span class="missed">	if-ne p1, p0, :cond_0</span>
-<span class="missed">	const/4 p1, 0x1</span>
-<span class="">	return p1</span>
-<span class="">	:cond_0</span>
-<span class="missed">	instance-of v0, p1, Lzq$d$d$d;</span>
-<span class="missed">	if-eqz v0, :cond_1</span>
-<span class="missed">	check-cast p1, Lzq$d$d$d;</span>
-<span class="missed">	iget-object v0, p0, Lwq;->a:Ljava/lang/String;</span>
-<span class="">	invoke-virtual {p1}, Lzq$d$d$d;->a()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result p1</span>
-<span class="">	return p1</span>
-<span class="">	:cond_1</span>
-<span class="missed">	const/4 p1, 0x0</span>
-<span class="">	return p1</span>
-.end method
-
-.method public hashCode()I
-<span class="">	.locals 2</span>
-
-<span class="missed">	iget-object v0, p0, Lwq;->a:Ljava/lang/String;</span>
-<span class="">	invoke-virtual {v0}, Ljava/lang/String;->hashCode()I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	const v1, 0xf4243</span>
-<span class="missed">	xor-int/2addr v0, v1</span>
-<span class="">	return v0</span>
-.end method
-
-.method public toString()Ljava/lang/String;
-<span class="">	.locals 2</span>
-
-<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const-string v1, "Log{content="</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	iget-object v1, p0, Lwq;->a:Ljava/lang/String;</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string v1, "}"</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -14,53 +14,3282 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public Lys;
+		<code>.class public final Lys;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.source "Buffer.java"
+.implements Ljava/lang/Cloneable;
+.implements Ljava/nio/channels/ByteChannel;
+.implements Lyt;
+.implements Lyu;
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lys$a;
+}
+.end annotation
+
+.field private static final c:[B
+.field  a:Lzg;
+.annotation runtime Ljavax/annotation/Nullable;
+.end annotation
+.end field
+.field  b:J
 
 
-.field private final a:Lhp;
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 1</span>
 
+<span class="cov">	const/16 v0, 0x10</span>
+<span class="cov">	new-array v0, v0, [B</span>
+<span class="cov">	fill-array-data v0, :array_0</span>
+<span class="cov">	sput-object v0, Lys;->c:[B</span>
+<span class="exec">	return-void</span>
+<span class="">	:array_0</span>
+<span class="">	.array-data 1</span>
+<span class="">	0x30t</span>
+<span class="">	0x31t</span>
+<span class="">	0x32t</span>
+<span class="">	0x33t</span>
+<span class="">	0x34t</span>
+<span class="">	0x35t</span>
+<span class="">	0x36t</span>
+<span class="">	0x37t</span>
+<span class="">	0x38t</span>
+<span class="">	0x39t</span>
+<span class="">	0x61t</span>
+<span class="">	0x62t</span>
+<span class="">	0x63t</span>
+<span class="">	0x64t</span>
+<span class="">	0x65t</span>
+<span class="">	0x66t</span>
+<span class="">	.end array-data</span>
+.end method
 
-<span class="cov">.method constructor &lt;init&gt;(Lhp;)V</span>
+<span class="cov">.method public constructor &lt;init&gt;()V</span>
 <span class="">	.locals 0</span>
 
 <span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	iput-object p1, p0, Lys;->a:Lhp;</span>
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method private static a(I)Lzs;</span>
-<span class="">	.locals 1</span>
+.method public a(Lzc;)I
+<span class="">	.locals 3</span>
 
-<span class="cov">	const/4 v0, 0x3</span>
-<span class="missed">	if-eq p0, v0, :cond_0</span>
-<span class="missed">	new-instance p0, Lus;</span>
-<span class="missed">	invoke-direct {p0}, Lus;-><init>()V</span>
-<span class="">	return-object p0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	new-instance p0, Lat;</span>
-<span class="cov">	invoke-direct {p0}, Lat;-><init>()V</span>
-<span class="exec">	return-object p0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	invoke-virtual {p0, p1, v0}, Lys;->a(Lzc;Z)I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, -0x1</span>
+<span class="missed">	if-ne v0, v1, :cond_0</span>
+<span class="">	return v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object p1, p1, Lzc;->a:[Lyv;</span>
+<span class="missed">	aget-object p1, p1, v0</span>
+<span class="">	invoke-virtual {p1}, Lyv;->h()I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	int-to-long v1, p1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	invoke-virtual {p0, v1, v2}, Lys;->i(J)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return v0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/AssertionError;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V</span>
+<span class="">	throw p1</span>
 .end method
 
-<span class="cov">.method public a(Lorg/json/JSONObject;)Lgt;</span>
+.method  a(Lzc;Z)I
+<span class="">	.locals 17</span>
+
+<span class="missed">	move-object/from16 v0, p1</span>
+<span class="missed">	move-object/from16 v1, p0</span>
+<span class="missed">	iget-object v2, v1, Lys;->a:Lzg;</span>
+<span class="missed">	const/4 v3, -0x2</span>
+<span class="missed">	if-nez v2, :cond_1</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="">	return v3</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sget-object v2, Lyv;->b:Lyv;</span>
+<span class="">	invoke-virtual {v0, v2}, Lzc;->indexOf(Ljava/lang/Object;)I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v4, v2, Lzg;->a:[B</span>
+<span class="missed">	iget v5, v2, Lzg;->b:I</span>
+<span class="missed">	iget v6, v2, Lzg;->c:I</span>
+<span class="missed">	iget-object v0, v0, Lzc;->b:[I</span>
+<span class="missed">	const/4 v7, 0x0</span>
+<span class="missed">	const/4 v8, -0x1</span>
+<span class="missed">	move v9, v5</span>
+<span class="missed">	move v11, v6</span>
+<span class="missed">	const/4 v10, -0x1</span>
+<span class="missed">	move-object v5, v2</span>
+<span class="missed">	move-object v6, v4</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	add-int/lit8 v12, v4, 0x1</span>
+<span class="missed">	aget v4, v0, v4</span>
+<span class="missed">	add-int/lit8 v13, v12, 0x1</span>
+<span class="missed">	aget v12, v0, v12</span>
+<span class="missed">	if-eq v12, v8, :cond_2</span>
+<span class="missed">	move v10, v12</span>
+<span class="">	:cond_2</span>
+<span class="missed">	if-nez v5, :cond_3</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const/4 v12, 0x0</span>
+<span class="missed">	if-gez v4, :cond_b</span>
+<span class="missed">	mul-int/lit8 v4, v4, -0x1</span>
+<span class="missed">	add-int v14, v13, v4</span>
+<span class="">	:goto_1</span>
+<span class="missed">	add-int/lit8 v4, v9, 0x1</span>
+<span class="missed">	aget-byte v9, v6, v9</span>
+<span class="missed">	and-int/lit16 v9, v9, 0xff</span>
+<span class="missed">	add-int/lit8 v15, v13, 0x1</span>
+<span class="missed">	aget v13, v0, v13</span>
+<span class="missed">	if-eq v9, v13, :cond_4</span>
+<span class="">	return v10</span>
+<span class="">	:cond_4</span>
+<span class="missed">	if-ne v15, v14, :cond_5</span>
+<span class="missed">	const/4 v9, 0x1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_5</span>
+<span class="missed">	const/4 v9, 0x0</span>
+<span class="">	:goto_2</span>
+<span class="missed">	if-ne v4, v11, :cond_9</span>
+<span class="missed">	iget-object v4, v5, Lzg;->f:Lzg;</span>
+<span class="missed">	iget v5, v4, Lzg;->b:I</span>
+<span class="missed">	iget-object v6, v4, Lzg;->a:[B</span>
+<span class="missed">	iget v11, v4, Lzg;->c:I</span>
+<span class="missed">	if-ne v4, v2, :cond_8</span>
+<span class="missed">	if-nez v9, :cond_7</span>
+<span class="">	:goto_3</span>
+<span class="missed">	if-eqz p2, :cond_6</span>
+<span class="">	return v3</span>
+<span class="">	:cond_6</span>
+<span class="">	return v10</span>
+<span class="">	:cond_7</span>
+<span class="missed">	move v4, v5</span>
+<span class="missed">	move-object v5, v12</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_8</span>
+<span class="missed">	move/from16 v16, v5</span>
+<span class="missed">	move-object v5, v4</span>
+<span class="missed">	move/from16 v4, v16</span>
+<span class="">	:goto_4</span>
+<span class="">	:cond_9</span>
+<span class="missed">	if-eqz v9, :cond_a</span>
+<span class="missed">	aget v9, v0, v15</span>
+<span class="">	goto :goto_6</span>
+<span class="">	:cond_a</span>
+<span class="missed">	move v9, v4</span>
+<span class="missed">	move v13, v15</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_b</span>
+<span class="missed">	add-int/lit8 v14, v9, 0x1</span>
+<span class="missed">	aget-byte v9, v6, v9</span>
+<span class="missed">	and-int/lit16 v9, v9, 0xff</span>
+<span class="missed">	add-int v15, v13, v4</span>
+<span class="">	:goto_5</span>
+<span class="missed">	if-ne v13, v15, :cond_c</span>
+<span class="">	return v10</span>
+<span class="">	:cond_c</span>
+<span class="missed">	aget v3, v0, v13</span>
+<span class="missed">	if-ne v9, v3, :cond_10</span>
+<span class="missed">	add-int/2addr v13, v4</span>
+<span class="missed">	aget v9, v0, v13</span>
+<span class="missed">	if-ne v14, v11, :cond_e</span>
+<span class="missed">	iget-object v3, v5, Lzg;->f:Lzg;</span>
+<span class="missed">	iget v4, v3, Lzg;->b:I</span>
+<span class="missed">	iget-object v5, v3, Lzg;->a:[B</span>
+<span class="missed">	iget v6, v3, Lzg;->c:I</span>
+<span class="missed">	if-ne v3, v2, :cond_d</span>
+<span class="missed">	move v11, v6</span>
+<span class="missed">	move-object v6, v5</span>
+<span class="missed">	move-object v5, v12</span>
+<span class="">	goto :goto_6</span>
+<span class="">	:cond_d</span>
+<span class="missed">	move v11, v6</span>
+<span class="missed">	move-object v6, v5</span>
+<span class="missed">	move-object v5, v3</span>
+<span class="">	goto :goto_6</span>
+<span class="">	:cond_e</span>
+<span class="missed">	move v4, v14</span>
+<span class="">	:goto_6</span>
+<span class="missed">	if-ltz v9, :cond_f</span>
+<span class="">	return v9</span>
+<span class="">	:cond_f</span>
+<span class="missed">	neg-int v3, v9</span>
+<span class="missed">	move v9, v4</span>
+<span class="missed">	move v4, v3</span>
+<span class="missed">	const/4 v3, -0x2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_10</span>
+<span class="missed">	add-int/lit8 v13, v13, 0x1</span>
+<span class="missed">	const/4 v3, -0x2</span>
+<span class="">	goto :goto_5</span>
+.end method
+
+.method public a([BII)I
+<span class="">	.locals 7</span>
+
+<span class="missed">	array-length v0, p1</span>
+<span class="missed">	int-to-long v1, v0</span>
+<span class="missed">	int-to-long v3, p2</span>
+<span class="missed">	int-to-long v5, p3</span>
+<span class="missed">	invoke-static/range {v1 .. v6}, Lzm;->a(JJJ)V</span>
+<span class="missed">	iget-object v0, p0, Lys;->a:Lzg;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	const/4 p1, -0x1</span>
+<span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget v1, v0, Lzg;->c:I</span>
+<span class="missed">	iget v2, v0, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr v1, v2</span>
+<span class="">	invoke-static {p3, v1}, Ljava/lang/Math;->min(II)I</span>
+<span class="missed">	move-result p3</span>
+<span class="missed">	iget-object v1, v0, Lzg;->a:[B</span>
+<span class="missed">	iget v2, v0, Lzg;->b:I</span>
+<span class="missed">	invoke-static {v1, v2, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
+<span class="missed">	iget p1, v0, Lzg;->b:I</span>
+<span class="missed">	add-int/2addr p1, p3</span>
+<span class="missed">	iput p1, v0, Lzg;->b:I</span>
+<span class="missed">	iget-wide p1, p0, Lys;->b:J</span>
+<span class="missed">	int-to-long v1, p3</span>
+<span class="missed">	sub-long/2addr p1, v1</span>
+<span class="missed">	iput-wide p1, p0, Lys;->b:J</span>
+<span class="missed">	iget p1, v0, Lzg;->b:I</span>
+<span class="missed">	iget p2, v0, Lzg;->c:I</span>
+<span class="missed">	if-ne p1, p2, :cond_1</span>
+<span class="">	invoke-virtual {v0}, Lzg;->c()Lzg;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Lys;->a:Lzg;</span>
+<span class="missed">	invoke-static {v0}, Lzh;->a(Lzg;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return p3</span>
+.end method
+
+<span class="cov">.method public final a()J</span>
 <span class="">	.locals 2</span>
+
+<span class="cov">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="exec">	return-wide v0</span>
+.end method
+
+.method public a(B)J
+<span class="">	.locals 6</span>
+
+<span class="missed">	const-wide/16 v2, 0x0</span>
+<span class="missed">	const-wide v4, 0x7fffffffffffffffL</span>
+<span class="missed">	move-object v0, p0</span>
+<span class="missed">	move v1, p1</span>
+<span class="">	invoke-virtual/range {v0 .. v5}, Lys;->a(BJJ)J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	return-wide v0</span>
+.end method
+
+.method public a(BJJ)J
+<span class="">	.locals 15</span>
+
+<span class="missed">	move-object v0, p0</span>
+<span class="missed">	const-wide/16 v1, 0x0</span>
+<span class="missed">	cmp-long v3, p2, v1</span>
+<span class="missed">	if-ltz v3, :cond_8</span>
+<span class="missed">	cmp-long v3, p4, p2</span>
+<span class="missed">	if-ltz v3, :cond_8</span>
+<span class="missed">	iget-wide v3, v0, Lys;->b:J</span>
+<span class="missed">	cmp-long v5, p4, v3</span>
+<span class="missed">	if-lez v5, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	move-wide/from16 v3, p4</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const-wide/16 v5, -0x1</span>
+<span class="missed">	cmp-long v7, p2, v3</span>
+<span class="missed">	if-nez v7, :cond_1</span>
+<span class="">	return-wide v5</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v7, v0, Lys;->a:Lzg;</span>
+<span class="missed">	if-nez v7, :cond_2</span>
+<span class="">	return-wide v5</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-wide v8, v0, Lys;->b:J</span>
+<span class="missed">	sub-long v10, v8, p2</span>
+<span class="missed">	cmp-long v12, v10, p2</span>
+<span class="missed">	if-gez v12, :cond_3</span>
+<span class="">	:goto_1</span>
+<span class="missed">	cmp-long v1, v8, p2</span>
+<span class="missed">	if-lez v1, :cond_4</span>
+<span class="missed">	iget-object v7, v7, Lzg;->g:Lzg;</span>
+<span class="missed">	iget v1, v7, Lzg;->c:I</span>
+<span class="missed">	iget v2, v7, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr v1, v2</span>
+<span class="missed">	int-to-long v1, v1</span>
+<span class="missed">	sub-long/2addr v8, v1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:goto_2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	move-wide v8, v1</span>
+<span class="missed">	iget v1, v7, Lzg;->c:I</span>
+<span class="missed">	iget v2, v7, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr v1, v2</span>
+<span class="missed">	int-to-long v1, v1</span>
+<span class="missed">	add-long/2addr v1, v8</span>
+<span class="missed">	cmp-long v10, v1, p2</span>
+<span class="missed">	if-gez v10, :cond_4</span>
+<span class="missed">	iget-object v7, v7, Lzg;->f:Lzg;</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_4</span>
+<span class="missed">	move-wide/from16 v1, p2</span>
+<span class="">	:goto_3</span>
+<span class="missed">	cmp-long v10, v8, v3</span>
+<span class="missed">	if-gez v10, :cond_7</span>
+<span class="missed">	iget-object v10, v7, Lzg;->a:[B</span>
+<span class="missed">	iget v11, v7, Lzg;->c:I</span>
+<span class="missed">	int-to-long v11, v11</span>
+<span class="missed">	iget v13, v7, Lzg;->b:I</span>
+<span class="missed">	int-to-long v13, v13</span>
+<span class="missed">	add-long/2addr v13, v3</span>
+<span class="missed">	sub-long/2addr v13, v8</span>
+<span class="">	invoke-static {v11, v12, v13, v14}, Ljava/lang/Math;->min(JJ)J</span>
+<span class="missed">	move-result-wide v11</span>
+<span class="missed">	long-to-int v12, v11</span>
+<span class="missed">	iget v11, v7, Lzg;->b:I</span>
+<span class="missed">	int-to-long v13, v11</span>
+<span class="missed">	add-long/2addr v13, v1</span>
+<span class="missed">	sub-long/2addr v13, v8</span>
+<span class="missed">	long-to-int v1, v13</span>
+<span class="">	:goto_4</span>
+<span class="missed">	if-ge v1, v12, :cond_6</span>
+<span class="missed">	aget-byte v2, v10, v1</span>
+<span class="missed">	move/from16 v11, p1</span>
+<span class="missed">	if-ne v2, v11, :cond_5</span>
+<span class="missed">	iget v2, v7, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr v1, v2</span>
+<span class="missed">	int-to-long v1, v1</span>
+<span class="missed">	add-long/2addr v1, v8</span>
+<span class="">	return-wide v1</span>
+<span class="">	:cond_5</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_6</span>
+<span class="missed">	move/from16 v11, p1</span>
+<span class="missed">	iget v1, v7, Lzg;->c:I</span>
+<span class="missed">	iget v2, v7, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr v1, v2</span>
+<span class="missed">	int-to-long v1, v1</span>
+<span class="missed">	add-long/2addr v1, v8</span>
+<span class="missed">	iget-object v7, v7, Lzg;->f:Lzg;</span>
+<span class="missed">	move-wide v8, v1</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_7</span>
+<span class="">	return-wide v5</span>
+<span class="">	:cond_8</span>
+<span class="missed">	new-instance v1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const/4 v2, 0x3</span>
+<span class="missed">	new-array v2, v2, [Ljava/lang/Object;</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	iget-wide v4, v0, Lys;->b:J</span>
+<span class="">	invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	aput-object v4, v2, v3</span>
+<span class="">	invoke-static/range {p2 .. p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	aput-object v3, v2, v4</span>
+<span class="missed">	const/4 v3, 0x2</span>
+<span class="">	invoke-static/range {p4 .. p5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	aput-object v4, v2, v3</span>
+<span class="missed">	const-string v3, "size=%s fromIndex=%s toIndex=%s"</span>
+<span class="">	invoke-static {v3, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v1</span>
+.end method
+
+.method public a(Lyv;J)J
+<span class="">	.locals 11</span>
+
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	cmp-long v2, p2, v0</span>
+<span class="missed">	if-ltz v2, :cond_b</span>
+<span class="missed">	iget-object v2, p0, Lys;->a:Lzg;</span>
+<span class="missed">	const-wide/16 v3, -0x1</span>
+<span class="missed">	if-nez v2, :cond_0</span>
+<span class="">	return-wide v3</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-wide v5, p0, Lys;->b:J</span>
+<span class="missed">	sub-long v7, v5, p2</span>
+<span class="missed">	cmp-long v9, v7, p2</span>
+<span class="missed">	if-gez v9, :cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	cmp-long v0, v5, p2</span>
+<span class="missed">	if-lez v0, :cond_2</span>
+<span class="missed">	iget-object v2, v2, Lzg;->g:Lzg;</span>
+<span class="missed">	iget v0, v2, Lzg;->c:I</span>
+<span class="missed">	iget v1, v2, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr v0, v1</span>
+<span class="missed">	int-to-long v0, v0</span>
+<span class="missed">	sub-long/2addr v5, v0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	move-wide v5, v0</span>
+<span class="missed">	iget v0, v2, Lzg;->c:I</span>
+<span class="missed">	iget v1, v2, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr v0, v1</span>
+<span class="missed">	int-to-long v0, v0</span>
+<span class="missed">	add-long/2addr v0, v5</span>
+<span class="missed">	cmp-long v7, v0, p2</span>
+<span class="missed">	if-gez v7, :cond_2</span>
+<span class="missed">	iget-object v2, v2, Lzg;->f:Lzg;</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-virtual {p1}, Lyv;->h()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x2</span>
+<span class="missed">	const/4 v7, 0x0</span>
+<span class="missed">	if-ne v0, v1, :cond_6</span>
+<span class="">	invoke-virtual {p1, v7}, Lyv;->a(I)B</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	invoke-virtual {p1, v1}, Lyv;->a(I)B</span>
+<span class="missed">	move-result p1</span>
+<span class="">	:goto_2</span>
+<span class="missed">	iget-wide v7, p0, Lys;->b:J</span>
+<span class="missed">	cmp-long v1, v5, v7</span>
+<span class="missed">	if-gez v1, :cond_a</span>
+<span class="missed">	iget-object v1, v2, Lzg;->a:[B</span>
+<span class="missed">	iget v7, v2, Lzg;->b:I</span>
+<span class="missed">	int-to-long v7, v7</span>
+<span class="missed">	add-long/2addr v7, p2</span>
+<span class="missed">	sub-long/2addr v7, v5</span>
+<span class="missed">	long-to-int p2, v7</span>
+<span class="missed">	iget p3, v2, Lzg;->c:I</span>
+<span class="">	:goto_3</span>
+<span class="missed">	if-ge p2, p3, :cond_5</span>
+<span class="missed">	aget-byte v7, v1, p2</span>
+<span class="missed">	if-eq v7, v0, :cond_4</span>
+<span class="missed">	if-ne v7, p1, :cond_3</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_3</span>
+<span class="missed">	add-int/lit8 p2, p2, 0x1</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:goto_4</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget p1, v2, Lzg;->b:I</span>
+<span class="">	:goto_5</span>
+<span class="missed">	sub-int/2addr p2, p1</span>
+<span class="missed">	int-to-long p1, p2</span>
+<span class="missed">	add-long/2addr p1, v5</span>
+<span class="">	return-wide p1</span>
+<span class="">	:cond_5</span>
+<span class="missed">	iget p2, v2, Lzg;->c:I</span>
+<span class="missed">	iget p3, v2, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr p2, p3</span>
+<span class="missed">	int-to-long p2, p2</span>
+<span class="missed">	add-long/2addr p2, v5</span>
+<span class="missed">	iget-object v2, v2, Lzg;->f:Lzg;</span>
+<span class="missed">	move-wide v5, p2</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_6</span>
+<span class="">	invoke-virtual {p1}, Lyv;->j()[B</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:goto_6</span>
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	cmp-long v8, v5, v0</span>
+<span class="missed">	if-gez v8, :cond_a</span>
+<span class="missed">	iget-object v0, v2, Lzg;->a:[B</span>
+<span class="missed">	iget v1, v2, Lzg;->b:I</span>
+<span class="missed">	int-to-long v8, v1</span>
+<span class="missed">	add-long/2addr v8, p2</span>
+<span class="missed">	sub-long/2addr v8, v5</span>
+<span class="missed">	long-to-int p2, v8</span>
+<span class="missed">	iget p3, v2, Lzg;->c:I</span>
+<span class="">	:goto_7</span>
+<span class="missed">	if-ge p2, p3, :cond_9</span>
+<span class="missed">	aget-byte v1, v0, p2</span>
+<span class="missed">	array-length v8, p1</span>
+<span class="missed">	const/4 v9, 0x0</span>
+<span class="">	:goto_8</span>
+<span class="missed">	if-ge v9, v8, :cond_8</span>
+<span class="missed">	aget-byte v10, p1, v9</span>
+<span class="missed">	if-ne v1, v10, :cond_7</span>
+<span class="missed">	iget p1, v2, Lzg;->b:I</span>
+<span class="">	goto :goto_5</span>
+<span class="">	:cond_7</span>
+<span class="missed">	add-int/lit8 v9, v9, 0x1</span>
+<span class="">	goto :goto_8</span>
+<span class="">	:cond_8</span>
+<span class="missed">	add-int/lit8 p2, p2, 0x1</span>
+<span class="">	goto :goto_7</span>
+<span class="">	:cond_9</span>
+<span class="missed">	iget p2, v2, Lzg;->c:I</span>
+<span class="missed">	iget p3, v2, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr p2, p3</span>
+<span class="missed">	int-to-long p2, p2</span>
+<span class="missed">	add-long/2addr p2, v5</span>
+<span class="missed">	iget-object v2, v2, Lzg;->f:Lzg;</span>
+<span class="missed">	move-wide v5, p2</span>
+<span class="">	goto :goto_6</span>
+<span class="">	:cond_a</span>
+<span class="">	return-wide v3</span>
+<span class="">	:cond_b</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p2, "fromIndex < 0"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(Lzj;)J
+<span class="">	.locals 5</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
-<span class="">	Lorg/json/JSONException;</span>
+<span class="">	Ljava/io/IOException;</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	const-string v0, "settings_version"</span>
-<span class="exec">	invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	invoke-static {v0}, Lys;->a(I)Lzs;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	iget-object v1, p0, Lys;->a:Lhp;</span>
-<span class="exec">	invoke-interface {v0, v1, p1}, Lzs;->a(Lhp;Lorg/json/JSONObject;)Lgt;</span>
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	const-wide/16 v2, 0x0</span>
+<span class="missed">	cmp-long v4, v0, v2</span>
+<span class="missed">	if-lez v4, :cond_0</span>
+<span class="missed">	invoke-interface {p1, p0, v0, v1}, Lzj;->write(Lys;J)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-wide v0</span>
+.end method
+
+.method public a(Lzk;)J
+<span class="">	.locals 7</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const-wide/16 v2, 0x2000</span>
+<span class="">	invoke-interface {p1, p0, v2, v3}, Lzk;->read(Lys;J)J</span>
+<span class="missed">	move-result-wide v2</span>
+<span class="missed">	const-wide/16 v4, -0x1</span>
+<span class="missed">	cmp-long v6, v2, v4</span>
+<span class="missed">	if-eqz v6, :cond_0</span>
+<span class="missed">	add-long/2addr v0, v2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-wide v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v0, "source == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(JLjava/nio/charset/Charset;)Ljava/lang/String;
+<span class="">	.locals 6</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/EOFException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	const-wide/16 v2, 0x0</span>
+<span class="missed">	move-wide v4, p1</span>
+<span class="missed">	invoke-static/range {v0 .. v5}, Lzm;->a(JJJ)V</span>
+<span class="missed">	if-eqz p3, :cond_4</span>
+<span class="missed">	const-wide/32 v0, 0x7fffffff</span>
+<span class="missed">	cmp-long v2, p1, v0</span>
+<span class="missed">	if-gtz v2, :cond_3</span>
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	cmp-long v2, p1, v0</span>
+<span class="missed">	if-nez v2, :cond_0</span>
+<span class="missed">	const-string p1, ""</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lys;->a:Lzg;</span>
+<span class="missed">	iget v1, v0, Lzg;->b:I</span>
+<span class="missed">	int-to-long v1, v1</span>
+<span class="missed">	add-long/2addr v1, p1</span>
+<span class="missed">	iget v3, v0, Lzg;->c:I</span>
+<span class="missed">	int-to-long v3, v3</span>
+<span class="missed">	cmp-long v5, v1, v3</span>
+<span class="missed">	if-lez v5, :cond_1</span>
+<span class="missed">	new-instance v0, Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p0, p1, p2}, Lys;->h(J)[B</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {v0, p1, p3}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v1, Ljava/lang/String;</span>
+<span class="missed">	iget-object v2, v0, Lzg;->a:[B</span>
+<span class="missed">	iget v3, v0, Lzg;->b:I</span>
+<span class="missed">	long-to-int v4, p1</span>
+<span class="missed">	invoke-direct {v1, v2, v3, v4, p3}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V</span>
+<span class="missed">	iget p3, v0, Lzg;->b:I</span>
+<span class="missed">	int-to-long v2, p3</span>
+<span class="missed">	add-long/2addr v2, p1</span>
+<span class="missed">	long-to-int p3, v2</span>
+<span class="missed">	iput p3, v0, Lzg;->b:I</span>
+<span class="missed">	iget-wide v2, p0, Lys;->b:J</span>
+<span class="missed">	sub-long/2addr v2, p1</span>
+<span class="missed">	iput-wide v2, p0, Lys;->b:J</span>
+<span class="missed">	iget p1, v0, Lzg;->b:I</span>
+<span class="missed">	iget p2, v0, Lzg;->c:I</span>
+<span class="missed">	if-ne p1, p2, :cond_2</span>
+<span class="">	invoke-virtual {v0}, Lzg;->c()Lzg;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Lys;->a:Lzg;</span>
+<span class="missed">	invoke-static {v0}, Lzh;->a(Lzg;)V</span>
+<span class="">	:cond_2</span>
+<span class="">	return-object v1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	new-instance p3, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v1, "byteCount > Integer.MAX_VALUE: "</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {p3, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p3</span>
+<span class="">	:cond_4</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p2, "charset == null"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(Ljava/nio/charset/Charset;)Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="">	invoke-virtual {p0, v0, v1, p1}, Lys;->a(JLjava/nio/charset/Charset;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object p1</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	new-instance v0, Ljava/lang/AssertionError;</span>
+<span class="missed">	invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public final a(Lys$a;)Lys$a;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p1, Lys$a;->a:Lys;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	iput-object p0, p1, Lys$a;->a:Lys;</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	iput-boolean v0, p1, Lys$a;->b:Z</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v0, "already attached to a buffer"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(I)Lys;
+<span class="">	.locals 3</span>
+
+<span class="missed">	const/16 v0, 0x80</span>
+<span class="missed">	if-ge p1, v0, :cond_0</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lys;->b(I)Lys;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/16 v1, 0x800</span>
+<span class="missed">	const/16 v2, 0x3f</span>
+<span class="missed">	if-ge p1, v1, :cond_1</span>
+<span class="missed">	shr-int/lit8 v1, p1, 0x6</span>
+<span class="missed">	or-int/lit16 v1, v1, 0xc0</span>
+<span class="missed">	invoke-virtual {p0, v1}, Lys;->b(I)Lys;</span>
+<span class="missed">	and-int/2addr p1, v2</span>
+<span class="missed">	or-int/2addr p1, v0</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lys;->b(I)Lys;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/high16 v1, 0x10000</span>
+<span class="missed">	if-ge p1, v1, :cond_3</span>
+<span class="missed">	const v1, 0xd800</span>
+<span class="missed">	if-lt p1, v1, :cond_2</span>
+<span class="missed">	const v1, 0xdfff</span>
+<span class="missed">	if-gt p1, v1, :cond_2</span>
+<span class="missed">	invoke-virtual {p0, v2}, Lys;->b(I)Lys;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	shr-int/lit8 v1, p1, 0xc</span>
+<span class="missed">	or-int/lit16 v1, v1, 0xe0</span>
+<span class="missed">	invoke-virtual {p0, v1}, Lys;->b(I)Lys;</span>
+<span class="missed">	shr-int/lit8 v1, p1, 0x6</span>
+<span class="missed">	and-int/2addr v1, v2</span>
+<span class="missed">	or-int/2addr v1, v0</span>
+<span class="missed">	invoke-virtual {p0, v1}, Lys;->b(I)Lys;</span>
+<span class="missed">	and-int/2addr p1, v2</span>
+<span class="missed">	or-int/2addr p1, v0</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lys;->b(I)Lys;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const v1, 0x10ffff</span>
+<span class="missed">	if-gt p1, v1, :cond_4</span>
+<span class="missed">	shr-int/lit8 v1, p1, 0x12</span>
+<span class="missed">	or-int/lit16 v1, v1, 0xf0</span>
+<span class="missed">	invoke-virtual {p0, v1}, Lys;->b(I)Lys;</span>
+<span class="missed">	shr-int/lit8 v1, p1, 0xc</span>
+<span class="missed">	and-int/2addr v1, v2</span>
+<span class="missed">	or-int/2addr v1, v0</span>
+<span class="missed">	invoke-virtual {p0, v1}, Lys;->b(I)Lys;</span>
+<span class="missed">	shr-int/lit8 v1, p1, 0x6</span>
+<span class="missed">	and-int/2addr v1, v2</span>
+<span class="missed">	or-int/2addr v1, v0</span>
+<span class="missed">	invoke-virtual {p0, v1}, Lys;->b(I)Lys;</span>
+<span class="missed">	and-int/2addr p1, v2</span>
+<span class="missed">	or-int/2addr p1, v0</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lys;->b(I)Lys;</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_4</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "Unexpected code point: "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public a(Ljava/lang/String;)Lys;
+<span class="">	.locals 2</span>
+
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-virtual {p0, p1, v1, v0}, Lys;->a(Ljava/lang/String;II)Lys;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public a(Ljava/lang/String;II)Lys;
+<span class="">	.locals 7</span>
+
+<span class="missed">	if-eqz p1, :cond_d</span>
+<span class="missed">	if-ltz p2, :cond_c</span>
+<span class="missed">	if-lt p3, p2, :cond_b</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-gt p3, v0, :cond_a</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge p2, p3, :cond_9</span>
+<span class="">	invoke-virtual {p1, p2}, Ljava/lang/String;->charAt(I)C</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/16 v1, 0x80</span>
+<span class="missed">	if-ge v0, v1, :cond_2</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="">	invoke-virtual {p0, v2}, Lys;->e(I)Lzg;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	iget-object v3, v2, Lzg;->a:[B</span>
+<span class="missed">	iget v4, v2, Lzg;->c:I</span>
+<span class="missed">	sub-int/2addr v4, p2</span>
+<span class="missed">	rsub-int v5, v4, 0x2000</span>
+<span class="">	invoke-static {p3, v5}, Ljava/lang/Math;->min(II)I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	add-int/lit8 v6, p2, 0x1</span>
+<span class="missed">	add-int/2addr p2, v4</span>
+<span class="missed">	int-to-byte v0, v0</span>
+<span class="missed">	aput-byte v0, v3, p2</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ge v6, v5, :cond_1</span>
+<span class="">	invoke-virtual {p1, v6}, Ljava/lang/String;->charAt(I)C</span>
+<span class="missed">	move-result p2</span>
+<span class="missed">	if-lt p2, v1, :cond_0</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/lit8 v0, v6, 0x1</span>
+<span class="missed">	add-int/2addr v6, v4</span>
+<span class="missed">	int-to-byte p2, p2</span>
+<span class="missed">	aput-byte p2, v3, v6</span>
+<span class="missed">	move v6, v0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:goto_2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	add-int/2addr v4, v6</span>
+<span class="missed">	iget p2, v2, Lzg;->c:I</span>
+<span class="missed">	sub-int/2addr v4, p2</span>
+<span class="missed">	iget p2, v2, Lzg;->c:I</span>
+<span class="missed">	add-int/2addr p2, v4</span>
+<span class="missed">	iput p2, v2, Lzg;->c:I</span>
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	int-to-long v2, v4</span>
+<span class="missed">	add-long/2addr v0, v2</span>
+<span class="missed">	iput-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	move p2, v6</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/16 v2, 0x800</span>
+<span class="missed">	if-ge v0, v2, :cond_3</span>
+<span class="missed">	shr-int/lit8 v2, v0, 0x6</span>
+<span class="missed">	or-int/lit16 v2, v2, 0xc0</span>
+<span class="missed">	invoke-virtual {p0, v2}, Lys;->b(I)Lys;</span>
+<span class="missed">	and-int/lit8 v0, v0, 0x3f</span>
+<span class="missed">	or-int/2addr v0, v1</span>
+<span class="missed">	invoke-virtual {p0, v0}, Lys;->b(I)Lys;</span>
+<span class="">	:goto_3</span>
+<span class="missed">	add-int/lit8 p2, p2, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const v2, 0xd800</span>
+<span class="missed">	const/16 v3, 0x3f</span>
+<span class="missed">	if-lt v0, v2, :cond_8</span>
+<span class="missed">	const v2, 0xdfff</span>
+<span class="missed">	if-le v0, v2, :cond_4</span>
+<span class="">	goto :goto_6</span>
+<span class="">	:cond_4</span>
+<span class="missed">	add-int/lit8 v4, p2, 0x1</span>
+<span class="missed">	if-ge v4, p3, :cond_5</span>
+<span class="">	invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C</span>
+<span class="missed">	move-result v5</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_5</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="">	:goto_4</span>
+<span class="missed">	const v6, 0xdbff</span>
+<span class="missed">	if-gt v0, v6, :cond_7</span>
+<span class="missed">	const v6, 0xdc00</span>
+<span class="missed">	if-lt v5, v6, :cond_7</span>
+<span class="missed">	if-le v5, v2, :cond_6</span>
+<span class="">	goto :goto_5</span>
+<span class="">	:cond_6</span>
+<span class="missed">	const/high16 v2, 0x10000</span>
+<span class="missed">	const v4, -0xd801</span>
+<span class="missed">	and-int/2addr v0, v4</span>
+<span class="missed">	shl-int/lit8 v0, v0, 0xa</span>
+<span class="missed">	const v4, -0xdc01</span>
+<span class="missed">	and-int/2addr v4, v5</span>
+<span class="missed">	or-int/2addr v0, v4</span>
+<span class="missed">	add-int/2addr v0, v2</span>
+<span class="missed">	shr-int/lit8 v2, v0, 0x12</span>
+<span class="missed">	or-int/lit16 v2, v2, 0xf0</span>
+<span class="missed">	invoke-virtual {p0, v2}, Lys;->b(I)Lys;</span>
+<span class="missed">	shr-int/lit8 v2, v0, 0xc</span>
+<span class="missed">	and-int/2addr v2, v3</span>
+<span class="missed">	or-int/2addr v2, v1</span>
+<span class="missed">	invoke-virtual {p0, v2}, Lys;->b(I)Lys;</span>
+<span class="missed">	shr-int/lit8 v2, v0, 0x6</span>
+<span class="missed">	and-int/2addr v2, v3</span>
+<span class="missed">	or-int/2addr v2, v1</span>
+<span class="missed">	invoke-virtual {p0, v2}, Lys;->b(I)Lys;</span>
+<span class="missed">	and-int/2addr v0, v3</span>
+<span class="missed">	or-int/2addr v0, v1</span>
+<span class="missed">	invoke-virtual {p0, v0}, Lys;->b(I)Lys;</span>
+<span class="missed">	add-int/lit8 p2, p2, 0x2</span>
+<span class="">	goto/16 :goto_0</span>
+<span class="">	:goto_5</span>
+<span class="">	:cond_7</span>
+<span class="missed">	invoke-virtual {p0, v3}, Lys;->b(I)Lys;</span>
+<span class="missed">	move p2, v4</span>
+<span class="">	goto/16 :goto_0</span>
+<span class="">	:goto_6</span>
+<span class="">	:cond_8</span>
+<span class="missed">	shr-int/lit8 v2, v0, 0xc</span>
+<span class="missed">	or-int/lit16 v2, v2, 0xe0</span>
+<span class="missed">	invoke-virtual {p0, v2}, Lys;->b(I)Lys;</span>
+<span class="missed">	shr-int/lit8 v2, v0, 0x6</span>
+<span class="missed">	and-int/2addr v2, v3</span>
+<span class="missed">	or-int/2addr v2, v1</span>
+<span class="missed">	invoke-virtual {p0, v2}, Lys;->b(I)Lys;</span>
+<span class="missed">	and-int/lit8 v0, v0, 0x3f</span>
+<span class="missed">	or-int/2addr v0, v1</span>
+<span class="missed">	invoke-virtual {p0, v0}, Lys;->b(I)Lys;</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_9</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_a</span>
+<span class="missed">	new-instance p2, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v1, "endIndex > string.length: "</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string p3, " > "</span>
+<span class="missed">	invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p2</span>
+<span class="">	:cond_b</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v1, "endIndex < beginIndex: "</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string p3, " < "</span>
+<span class="missed">	invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_c</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance p3, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v0, "beginIndex < 0: "</span>
+<span class="missed">	invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_d</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p2, "string == null"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(Ljava/lang/String;IILjava/nio/charset/Charset;)Lys;
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_5</span>
+<span class="missed">	if-ltz p2, :cond_4</span>
+<span class="missed">	if-lt p3, p2, :cond_3</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-gt p3, v0, :cond_2</span>
+<span class="missed">	if-eqz p4, :cond_1</span>
+<span class="missed">	sget-object v0, Lzm;->a:Ljava/nio/charset/Charset;</span>
+<span class="">	invoke-virtual {p4, v0}, Ljava/nio/charset/Charset;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {p0, p1, p2, p3}, Lys;->a(Ljava/lang/String;II)Lys;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p1, p2, p3}, Ljava/lang/String;->substring(II)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1, p4}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const/4 p2, 0x0</span>
+<span class="missed">	array-length p3, p1</span>
+<span class="">	invoke-virtual {p0, p1, p2, p3}, Lys;->b([BII)Lys;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p2, "charset == null"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p2, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance p4, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {p4}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v0, "endIndex > string.length: "</span>
+<span class="missed">	invoke-virtual {p4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {p4, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string p3, " > "</span>
+<span class="missed">	invoke-virtual {p4, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	invoke-virtual {p4, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance p4, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {p4}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v0, "endIndex < beginIndex: "</span>
+<span class="missed">	invoke-virtual {p4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {p4, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string p3, " < "</span>
+<span class="missed">	invoke-virtual {p4, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {p4, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_4</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalAccessError;</span>
+<span class="missed">	new-instance p3, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string p4, "beginIndex < 0: "</span>
+<span class="missed">	invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalAccessError;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_5</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p2, "string == null"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(Ljava/lang/String;Ljava/nio/charset/Charset;)Lys;
+<span class="">	.locals 2</span>
+
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-virtual {p0, p1, v1, v0, p2}, Lys;->a(Ljava/lang/String;IILjava/nio/charset/Charset;)Lys;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public final a(Lys;JJ)Lys;
+<span class="">	.locals 6</span>
+
+<span class="missed">	if-eqz p1, :cond_4</span>
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	move-wide v2, p2</span>
+<span class="missed">	move-wide v4, p4</span>
+<span class="missed">	invoke-static/range {v0 .. v5}, Lzm;->a(JJJ)V</span>
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	cmp-long v2, p4, v0</span>
+<span class="missed">	if-nez v2, :cond_0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-wide v2, p1, Lys;->b:J</span>
+<span class="missed">	add-long/2addr v2, p4</span>
+<span class="missed">	iput-wide v2, p1, Lys;->b:J</span>
+<span class="missed">	iget-object v2, p0, Lys;->a:Lzg;</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget v3, v2, Lzg;->c:I</span>
+<span class="missed">	iget v4, v2, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr v3, v4</span>
+<span class="missed">	int-to-long v3, v3</span>
+<span class="missed">	cmp-long v5, p2, v3</span>
+<span class="missed">	if-ltz v5, :cond_1</span>
+<span class="missed">	iget v3, v2, Lzg;->c:I</span>
+<span class="missed">	iget v4, v2, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr v3, v4</span>
+<span class="missed">	int-to-long v3, v3</span>
+<span class="missed">	sub-long/2addr p2, v3</span>
+<span class="missed">	iget-object v2, v2, Lzg;->f:Lzg;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	cmp-long v3, p4, v0</span>
+<span class="missed">	if-lez v3, :cond_3</span>
+<span class="">	invoke-virtual {v2}, Lzg;->a()Lzg;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	iget v4, v3, Lzg;->b:I</span>
+<span class="missed">	int-to-long v4, v4</span>
+<span class="missed">	add-long/2addr v4, p2</span>
+<span class="missed">	long-to-int p2, v4</span>
+<span class="missed">	iput p2, v3, Lzg;->b:I</span>
+<span class="missed">	iget p2, v3, Lzg;->b:I</span>
+<span class="missed">	long-to-int p3, p4</span>
+<span class="missed">	add-int/2addr p2, p3</span>
+<span class="missed">	iget p3, v3, Lzg;->c:I</span>
+<span class="">	invoke-static {p2, p3}, Ljava/lang/Math;->min(II)I</span>
+<span class="missed">	move-result p2</span>
+<span class="missed">	iput p2, v3, Lzg;->c:I</span>
+<span class="missed">	iget-object p2, p1, Lys;->a:Lzg;</span>
+<span class="missed">	if-nez p2, :cond_2</span>
+<span class="missed">	iput-object v3, v3, Lzg;->g:Lzg;</span>
+<span class="missed">	iput-object v3, v3, Lzg;->f:Lzg;</span>
+<span class="missed">	iput-object v3, p1, Lys;->a:Lzg;</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object p2, p2, Lzg;->g:Lzg;</span>
+<span class="missed">	invoke-virtual {p2, v3}, Lzg;->a(Lzg;)Lzg;</span>
+<span class="">	:goto_2</span>
+<span class="missed">	iget p2, v3, Lzg;->c:I</span>
+<span class="missed">	iget p3, v3, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr p2, p3</span>
+<span class="missed">	int-to-long p2, p2</span>
+<span class="missed">	sub-long/2addr p4, p2</span>
+<span class="missed">	iget-object v2, v2, Lzg;->f:Lzg;</span>
+<span class="missed">	move-wide p2, v0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_3</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_4</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p2, "out == null"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(Lyv;)Lys;
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	invoke-virtual {p1, p0}, Lyv;->a(Lys;)V</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v0, "byteString == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(Lzk;J)Lyt;
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	:goto_0</span>
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	cmp-long v2, p2, v0</span>
+<span class="missed">	if-lez v2, :cond_1</span>
+<span class="">	invoke-interface {p1, p0, p2, p3}, Lzk;->read(Lys;J)J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="missed">	const-wide/16 v2, -0x1</span>
+<span class="missed">	cmp-long v4, v0, v2</span>
+<span class="missed">	if-eqz v4, :cond_0</span>
+<span class="missed">	sub-long/2addr p2, v0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/io/EOFException;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/io/EOFException;-><init>()V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_1</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a(J)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/EOFException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	cmp-long v2, v0, p1</span>
+<span class="missed">	if-ltz v2, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/io/EOFException;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/io/EOFException;-><init>()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(Lys;J)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/EOFException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	cmp-long v2, v0, p2</span>
+<span class="missed">	if-ltz v2, :cond_0</span>
+<span class="missed">	invoke-virtual {p1, p0, p2, p3}, Lys;->write(Lys;J)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {p1, p0, v0, v1}, Lys;->write(Lys;J)V</span>
+<span class="missed">	new-instance p1, Ljava/io/EOFException;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/io/EOFException;-><init>()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a([B)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/EOFException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	array-length v1, p1</span>
+<span class="missed">	if-ge v0, v1, :cond_1</span>
+<span class="missed">	array-length v1, p1</span>
+<span class="missed">	sub-int/2addr v1, v0</span>
+<span class="">	invoke-virtual {p0, p1, v0, v1}, Lys;->a([BII)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, -0x1</span>
+<span class="missed">	if-eq v1, v2, :cond_0</span>
+<span class="missed">	add-int/2addr v0, v1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/io/EOFException;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/io/EOFException;-><init>()V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+.end method
+
+.method public b(Lyv;)J
+<span class="">	.locals 2</span>
+
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="">	invoke-virtual {p0, p1, v0, v1}, Lys;->a(Lyv;J)J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	return-wide v0</span>
+.end method
+
+.method public b()Lys;
+<span class="">	.locals 0</span>
+
+<span class="">	return-object p0</span>
+.end method
+
+.method public b(I)Lys;
+<span class="">	.locals 4</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	invoke-virtual {p0, v0}, Lys;->e(I)Lzg;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, v0, Lzg;->a:[B</span>
+<span class="missed">	iget v2, v0, Lzg;->c:I</span>
+<span class="missed">	add-int/lit8 v3, v2, 0x1</span>
+<span class="missed">	iput v3, v0, Lzg;->c:I</span>
+<span class="missed">	int-to-byte p1, p1</span>
+<span class="missed">	aput-byte p1, v1, v2</span>
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	const-wide/16 v2, 0x1</span>
+<span class="missed">	add-long/2addr v0, v2</span>
+<span class="missed">	iput-wide v0, p0, Lys;->b:J</span>
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method public b([B)Lys;</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	if-eqz p1, :cond_0</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	array-length v1, p1</span>
+<span class="exec">	invoke-virtual {p0, p1, v0, v1}, Lys;->b([BII)Lys;</span>
 <span class="cov">	move-result-object p1</span>
 <span class="exec">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v0, "source == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public b([BII)Lys;</span>
+<span class="">	.locals 9</span>
+
+<span class="cov">	if-eqz p1, :cond_1</span>
+<span class="cov">	array-length v0, p1</span>
+<span class="cov">	int-to-long v1, v0</span>
+<span class="cov">	int-to-long v3, p2</span>
+<span class="cov">	int-to-long v7, p3</span>
+<span class="cov">	move-wide v5, v7</span>
+<span class="cov">	invoke-static/range {v1 .. v6}, Lzm;->a(JJJ)V</span>
+<span class="cov">	add-int/2addr p3, p2</span>
+<span class="cov">	:goto_0</span>
+<span class="missed">	if-ge p2, p3, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	invoke-virtual {p0, v0}, Lys;->e(I)Lzg;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sub-int v1, p3, p2</span>
+<span class="missed">	iget v2, v0, Lzg;->c:I</span>
+<span class="missed">	rsub-int v2, v2, 0x2000</span>
+<span class="">	invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	iget-object v2, v0, Lzg;->a:[B</span>
+<span class="missed">	iget v3, v0, Lzg;->c:I</span>
+<span class="missed">	invoke-static {p1, p2, v2, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
+<span class="missed">	add-int/2addr p2, v1</span>
+<span class="missed">	iget v2, v0, Lzg;->c:I</span>
+<span class="missed">	add-int/2addr v2, v1</span>
+<span class="missed">	iput v2, v0, Lzg;->c:I</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-wide p1, p0, Lys;->b:J</span>
+<span class="cov">	add-long/2addr p1, v7</span>
+<span class="cov">	iput-wide p1, p0, Lys;->b:J</span>
+<span class="exec">	return-object p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p2, "source == null"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public synthetic b(Ljava/lang/String;)Lyt;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0, p1}, Lys;->a(Ljava/lang/String;)Lys;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public b(J)Z
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	cmp-long v2, v0, p1</span>
+<span class="missed">	if-ltz v2, :cond_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return p1</span>
+.end method
+
+.method public final c(J)B
+<span class="">	.locals 6</span>
+
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	const-wide/16 v4, 0x1</span>
+<span class="missed">	move-wide v2, p1</span>
+<span class="missed">	invoke-static/range {v0 .. v5}, Lzm;->a(JJJ)V</span>
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	sub-long v2, v0, p1</span>
+<span class="missed">	cmp-long v4, v2, p1</span>
+<span class="missed">	if-lez v4, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lys;->a:Lzg;</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget v1, v0, Lzg;->c:I</span>
+<span class="missed">	iget v2, v0, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr v1, v2</span>
+<span class="missed">	int-to-long v1, v1</span>
+<span class="missed">	cmp-long v3, p1, v1</span>
+<span class="missed">	if-gez v3, :cond_0</span>
+<span class="missed">	iget-object v1, v0, Lzg;->a:[B</span>
+<span class="missed">	iget v0, v0, Lzg;->b:I</span>
+<span class="missed">	long-to-int p2, p1</span>
+<span class="missed">	add-int/2addr v0, p2</span>
+<span class="missed">	aget-byte p1, v1, v0</span>
+<span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sub-long/2addr p1, v1</span>
+<span class="missed">	iget-object v0, v0, Lzg;->f:Lzg;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	sub-long/2addr p1, v0</span>
+<span class="missed">	iget-object v0, p0, Lys;->a:Lzg;</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object v0, v0, Lzg;->g:Lzg;</span>
+<span class="missed">	iget v1, v0, Lzg;->c:I</span>
+<span class="missed">	iget v2, v0, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr v1, v2</span>
+<span class="missed">	int-to-long v1, v1</span>
+<span class="missed">	add-long/2addr p1, v1</span>
+<span class="missed">	const-wide/16 v1, 0x0</span>
+<span class="missed">	cmp-long v3, p1, v1</span>
+<span class="missed">	if-ltz v3, :cond_2</span>
+<span class="missed">	iget-object v1, v0, Lzg;->a:[B</span>
+<span class="missed">	iget v0, v0, Lzg;->b:I</span>
+<span class="missed">	long-to-int p2, p1</span>
+<span class="missed">	add-int/2addr v0, p2</span>
+<span class="missed">	aget-byte p1, v1, v0</span>
+<span class="">	return p1</span>
+.end method
+
+.method public c()Lys;
+<span class="">	.locals 0</span>
+
+<span class="">	return-object p0</span>
+.end method
+
+.method public c(I)Lys;
+<span class="">	.locals 5</span>
+
+<span class="missed">	const/4 v0, 0x2</span>
+<span class="">	invoke-virtual {p0, v0}, Lys;->e(I)Lzg;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, v0, Lzg;->a:[B</span>
+<span class="missed">	iget v2, v0, Lzg;->c:I</span>
+<span class="missed">	add-int/lit8 v3, v2, 0x1</span>
+<span class="missed">	ushr-int/lit8 v4, p1, 0x8</span>
+<span class="missed">	and-int/lit16 v4, v4, 0xff</span>
+<span class="missed">	int-to-byte v4, v4</span>
+<span class="missed">	aput-byte v4, v1, v2</span>
+<span class="missed">	add-int/lit8 v2, v3, 0x1</span>
+<span class="missed">	and-int/lit16 p1, p1, 0xff</span>
+<span class="missed">	int-to-byte p1, p1</span>
+<span class="missed">	aput-byte p1, v1, v3</span>
+<span class="missed">	iput v2, v0, Lzg;->c:I</span>
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	const-wide/16 v2, 0x2</span>
+<span class="missed">	add-long/2addr v0, v2</span>
+<span class="missed">	iput-wide v0, p0, Lys;->b:J</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public synthetic c(Lyv;)Lyt;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0, p1}, Lys;->a(Lyv;)Lys;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public synthetic c([B)Lyt;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0, p1}, Lys;->b([B)Lys;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public synthetic c([BII)Lyt;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0, p1, p2, p3}, Lys;->b([BII)Lys;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public synthetic clone()Ljava/lang/Object;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/lang/CloneNotSupportedException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0}, Lys;->x()Lys;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public close()V
+<span class="">	.locals 0</span>
+
+<span class="">	return-void</span>
+.end method
+
+.method public d()Ljava/io/OutputStream;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lys$1;</span>
+<span class="missed">	invoke-direct {v0, p0}, Lys$1;-><init>(Lys;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public d(I)Lys;</span>
+<span class="">	.locals 5</span>
+
+<span class="cov">	const/4 v0, 0x4</span>
+<span class="exec">	invoke-virtual {p0, v0}, Lys;->e(I)Lzg;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iget-object v1, v0, Lzg;->a:[B</span>
+<span class="cov">	iget v2, v0, Lzg;->c:I</span>
+<span class="cov">	add-int/lit8 v3, v2, 0x1</span>
+<span class="cov">	ushr-int/lit8 v4, p1, 0x18</span>
+<span class="cov">	and-int/lit16 v4, v4, 0xff</span>
+<span class="cov">	int-to-byte v4, v4</span>
+<span class="cov">	aput-byte v4, v1, v2</span>
+<span class="cov">	add-int/lit8 v2, v3, 0x1</span>
+<span class="cov">	ushr-int/lit8 v4, p1, 0x10</span>
+<span class="cov">	and-int/lit16 v4, v4, 0xff</span>
+<span class="cov">	int-to-byte v4, v4</span>
+<span class="cov">	aput-byte v4, v1, v3</span>
+<span class="cov">	add-int/lit8 v3, v2, 0x1</span>
+<span class="cov">	ushr-int/lit8 v4, p1, 0x8</span>
+<span class="cov">	and-int/lit16 v4, v4, 0xff</span>
+<span class="cov">	int-to-byte v4, v4</span>
+<span class="cov">	aput-byte v4, v1, v2</span>
+<span class="cov">	add-int/lit8 v2, v3, 0x1</span>
+<span class="cov">	and-int/lit16 p1, p1, 0xff</span>
+<span class="cov">	int-to-byte p1, p1</span>
+<span class="cov">	aput-byte p1, v1, v3</span>
+<span class="cov">	iput v2, v0, Lzg;->c:I</span>
+<span class="cov">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="cov">	const-wide/16 v2, 0x4</span>
+<span class="cov">	add-long/2addr v0, v2</span>
+<span class="cov">	iput-wide v0, p0, Lys;->b:J</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+.method public d(J)Lyv;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/EOFException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance v0, Lyv;</span>
+<span class="">	invoke-virtual {p0, p1, p2}, Lys;->h(J)[B</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {v0, p1}, Lyv;-><init>([B)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public e(J)Ljava/lang/String;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/EOFException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	sget-object v0, Lzm;->a:Ljava/nio/charset/Charset;</span>
+<span class="">	invoke-virtual {p0, p1, p2, v0}, Lys;->a(JLjava/nio/charset/Charset;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public e()Lys;
+<span class="">	.locals 0</span>
+
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method  e(I)Lzg;</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="cov">	if-lt p1, v0, :cond_3</span>
+<span class="cov">	const/16 v0, 0x2000</span>
+<span class="cov">	if-gt p1, v0, :cond_3</span>
+<span class="cov">	iget-object v1, p0, Lys;->a:Lzg;</span>
+<span class="cov">	if-nez v1, :cond_0</span>
+<span class="exec">	invoke-static {}, Lzh;->a()Lzg;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	iput-object p1, p0, Lys;->a:Lzg;</span>
+<span class="cov">	iget-object p1, p0, Lys;->a:Lzg;</span>
+<span class="cov">	iput-object p1, p1, Lzg;->g:Lzg;</span>
+<span class="cov">	iput-object p1, p1, Lzg;->f:Lzg;</span>
+<span class="exec">	return-object p1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v1, v1, Lzg;->g:Lzg;</span>
+<span class="cov">	iget v2, v1, Lzg;->c:I</span>
+<span class="cov">	add-int/2addr v2, p1</span>
+<span class="cov">	if-gt v2, v0, :cond_1</span>
+<span class="cov">	iget-boolean p1, v1, Lzg;->e:Z</span>
+<span class="missed">	if-nez p1, :cond_2</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-static {}, Lzh;->a()Lzg;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {v1, p1}, Lzg;->a(Lzg;)Lzg;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="cov">	:cond_2</span>
+<span class="exec">	return-object v1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+<span class="">	.locals 13</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-ne p0, p1, :cond_0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	instance-of v1, p1, Lys;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-nez v1, :cond_1</span>
+<span class="">	return v2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	check-cast p1, Lys;</span>
+<span class="missed">	iget-wide v3, p0, Lys;->b:J</span>
+<span class="missed">	iget-wide v5, p1, Lys;->b:J</span>
+<span class="missed">	cmp-long v1, v3, v5</span>
+<span class="missed">	if-eqz v1, :cond_2</span>
+<span class="">	return v2</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const-wide/16 v5, 0x0</span>
+<span class="missed">	cmp-long v1, v3, v5</span>
+<span class="missed">	if-nez v1, :cond_3</span>
+<span class="">	return v0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	iget-object v1, p0, Lys;->a:Lzg;</span>
+<span class="missed">	iget-object p1, p1, Lys;->a:Lzg;</span>
+<span class="missed">	iget v3, v1, Lzg;->b:I</span>
+<span class="missed">	iget v4, p1, Lzg;->b:I</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-wide v7, p0, Lys;->b:J</span>
+<span class="missed">	cmp-long v9, v5, v7</span>
+<span class="missed">	if-gez v9, :cond_8</span>
+<span class="missed">	iget v7, v1, Lzg;->c:I</span>
+<span class="missed">	sub-int/2addr v7, v3</span>
+<span class="missed">	iget v8, p1, Lzg;->c:I</span>
+<span class="missed">	sub-int/2addr v8, v4</span>
+<span class="">	invoke-static {v7, v8}, Ljava/lang/Math;->min(II)I</span>
+<span class="missed">	move-result v7</span>
+<span class="missed">	int-to-long v7, v7</span>
+<span class="missed">	move v9, v4</span>
+<span class="missed">	move v4, v3</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	int-to-long v10, v3</span>
+<span class="missed">	cmp-long v12, v10, v7</span>
+<span class="missed">	if-gez v12, :cond_5</span>
+<span class="missed">	iget-object v10, v1, Lzg;->a:[B</span>
+<span class="missed">	add-int/lit8 v11, v4, 0x1</span>
+<span class="missed">	aget-byte v4, v10, v4</span>
+<span class="missed">	iget-object v10, p1, Lzg;->a:[B</span>
+<span class="missed">	add-int/lit8 v12, v9, 0x1</span>
+<span class="missed">	aget-byte v9, v10, v9</span>
+<span class="missed">	if-eq v4, v9, :cond_4</span>
+<span class="">	return v2</span>
+<span class="">	:cond_4</span>
+<span class="missed">	add-int/lit8 v3, v3, 0x1</span>
+<span class="missed">	move v4, v11</span>
+<span class="missed">	move v9, v12</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_5</span>
+<span class="missed">	iget v3, v1, Lzg;->c:I</span>
+<span class="missed">	if-ne v4, v3, :cond_6</span>
+<span class="missed">	iget-object v1, v1, Lzg;->f:Lzg;</span>
+<span class="missed">	iget v3, v1, Lzg;->b:I</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_6</span>
+<span class="missed">	move v3, v4</span>
+<span class="">	:goto_2</span>
+<span class="missed">	iget v4, p1, Lzg;->c:I</span>
+<span class="missed">	if-ne v9, v4, :cond_7</span>
+<span class="missed">	iget-object p1, p1, Lzg;->f:Lzg;</span>
+<span class="missed">	iget v4, p1, Lzg;->b:I</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_7</span>
+<span class="missed">	move v4, v9</span>
+<span class="">	:goto_3</span>
+<span class="missed">	add-long/2addr v5, v7</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_8</span>
+<span class="">	return v0</span>
+.end method
+
+.method public f(J)Ljava/lang/String;
+<span class="">	.locals 10</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/EOFException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	cmp-long v2, p1, v0</span>
+<span class="missed">	if-ltz v2, :cond_3</span>
+<span class="missed">	const-wide/16 v0, 0x1</span>
+<span class="missed">	const-wide v2, 0x7fffffffffffffffL</span>
+<span class="missed">	cmp-long v4, p1, v2</span>
+<span class="missed">	if-nez v4, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-long v2, p1, v0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/16 v5, 0xa</span>
+<span class="missed">	const-wide/16 v6, 0x0</span>
+<span class="missed">	move-object v4, p0</span>
+<span class="missed">	move-wide v8, v2</span>
+<span class="">	invoke-virtual/range {v4 .. v9}, Lys;->a(BJJ)J</span>
+<span class="missed">	move-result-wide v4</span>
+<span class="missed">	const-wide/16 v6, -0x1</span>
+<span class="missed">	cmp-long v8, v4, v6</span>
+<span class="missed">	if-eqz v8, :cond_1</span>
+<span class="">	invoke-virtual {p0, v4, v5}, Lys;->g(J)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {p0}, Lys;->a()J</span>
+<span class="missed">	move-result-wide v4</span>
+<span class="missed">	cmp-long v6, v2, v4</span>
+<span class="missed">	if-gez v6, :cond_2</span>
+<span class="missed">	sub-long v0, v2, v0</span>
+<span class="">	invoke-virtual {p0, v0, v1}, Lys;->c(J)B</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/16 v1, 0xd</span>
+<span class="missed">	if-ne v0, v1, :cond_2</span>
+<span class="">	invoke-virtual {p0, v2, v3}, Lys;->c(J)B</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/16 v1, 0xa</span>
+<span class="missed">	if-ne v0, v1, :cond_2</span>
+<span class="">	invoke-virtual {p0, v2, v3}, Lys;->g(J)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance v6, Lys;</span>
+<span class="missed">	invoke-direct {v6}, Lys;-><init>()V</span>
+<span class="missed">	const-wide/16 v2, 0x0</span>
+<span class="missed">	const-wide/16 v0, 0x20</span>
+<span class="">	invoke-virtual {p0}, Lys;->a()J</span>
+<span class="missed">	move-result-wide v4</span>
+<span class="">	invoke-static {v0, v1, v4, v5}, Ljava/lang/Math;->min(JJ)J</span>
+<span class="missed">	move-result-wide v4</span>
+<span class="missed">	move-object v0, p0</span>
+<span class="missed">	move-object v1, v6</span>
+<span class="missed">	invoke-virtual/range {v0 .. v5}, Lys;->a(Lys;JJ)Lys;</span>
+<span class="missed">	new-instance v0, Ljava/io/EOFException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "\\n not found: limit="</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p0}, Lys;->a()J</span>
+<span class="missed">	move-result-wide v2</span>
+<span class="">	invoke-static {v2, v3, p1, p2}, Ljava/lang/Math;->min(JJ)J</span>
+<span class="missed">	move-result-wide p1</span>
+<span class="missed">	invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string p1, " content="</span>
+<span class="missed">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v6}, Lys;->s()Lyv;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Lyv;->f()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const/16 p1, 0x2026</span>
+<span class="missed">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {v0, p1}, Ljava/io/EOFException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "limit < 0: "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public f()Lyt;
+<span class="">	.locals 0</span>
+
+<span class="">	return-object p0</span>
+.end method
+
+.method public final f(I)Lyv;
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="missed">	sget-object p1, Lyv;->b:Lyv;</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Lzi;</span>
+<span class="missed">	invoke-direct {v0, p0, p1}, Lzi;-><init>(Lys;I)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public flush()V
+<span class="">	.locals 0</span>
+
+<span class="">	return-void</span>
+.end method
+
+.method  g(J)Ljava/lang/String;
+<span class="">	.locals 6</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/EOFException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	const-wide/16 v0, 0x1</span>
+<span class="missed">	const-wide/16 v2, 0x0</span>
+<span class="missed">	cmp-long v4, p1, v2</span>
+<span class="missed">	if-lez v4, :cond_0</span>
+<span class="missed">	sub-long v2, p1, v0</span>
+<span class="">	invoke-virtual {p0, v2, v3}, Lys;->c(J)B</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	const/16 v5, 0xd</span>
+<span class="missed">	if-ne v4, v5, :cond_0</span>
+<span class="">	invoke-virtual {p0, v2, v3}, Lys;->e(J)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-wide/16 v0, 0x2</span>
+<span class="missed">	invoke-virtual {p0, v0, v1}, Lys;->i(J)V</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p0, p1, p2}, Lys;->e(J)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {p0, v0, v1}, Lys;->i(J)V</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public synthetic g(I)Lyt;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0, p1}, Lys;->d(I)Lys;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+<span class="cov">.method public g()Z</span>
+<span class="">	.locals 5</span>
+
+<span class="cov">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="cov">	const-wide/16 v2, 0x0</span>
+<span class="cov">	cmp-long v4, v0, v2</span>
+<span class="cov">	if-nez v4, :cond_0</span>
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return v0</span>
+.end method
+
+.method public synthetic h(I)Lyt;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0, p1}, Lys;->c(I)Lys;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public h()Lyu;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lzd;</span>
+<span class="missed">	invoke-direct {v0, p0}, Lzd;-><init>(Lyu;)V</span>
+<span class="">	invoke-static {v0}, Lzb;->a(Lzk;)Lyu;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public h(J)[B
+<span class="">	.locals 6</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/EOFException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	const-wide/16 v2, 0x0</span>
+<span class="missed">	move-wide v4, p1</span>
+<span class="missed">	invoke-static/range {v0 .. v5}, Lzm;->a(JJJ)V</span>
+<span class="missed">	const-wide/32 v0, 0x7fffffff</span>
+<span class="missed">	cmp-long v2, p1, v0</span>
+<span class="missed">	if-gtz v2, :cond_0</span>
+<span class="missed">	long-to-int p2, p1</span>
+<span class="missed">	new-array p1, p2, [B</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lys;->a([B)V</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "byteCount > Integer.MAX_VALUE: "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public hashCode()I
+<span class="">	.locals 5</span>
+
+<span class="missed">	iget-object v0, p0, Lys;->a:Lzg;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget v2, v0, Lzg;->b:I</span>
+<span class="missed">	iget v3, v0, Lzg;->c:I</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v2, v3, :cond_2</span>
+<span class="missed">	mul-int/lit8 v1, v1, 0x1f</span>
+<span class="missed">	iget-object v4, v0, Lzg;->a:[B</span>
+<span class="missed">	aget-byte v4, v4, v2</span>
+<span class="missed">	add-int/2addr v1, v4</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object v0, v0, Lzg;->f:Lzg;</span>
+<span class="missed">	iget-object v2, p0, Lys;->a:Lzg;</span>
+<span class="missed">	if-ne v0, v2, :cond_1</span>
+<span class="">	return v1</span>
+.end method
+
+.method public i()Ljava/io/InputStream;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lys$2;</span>
+<span class="missed">	invoke-direct {v0, p0}, Lys$2;-><init>(Lys;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public synthetic i(I)Lyt;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0, p1}, Lys;->b(I)Lys;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public i(J)V
+<span class="">	.locals 6</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/EOFException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	:goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	cmp-long v2, p1, v0</span>
+<span class="missed">	if-lez v2, :cond_2</span>
+<span class="missed">	iget-object v0, p0, Lys;->a:Lzg;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	iget v0, v0, Lzg;->c:I</span>
+<span class="missed">	iget-object v1, p0, Lys;->a:Lzg;</span>
+<span class="missed">	iget v1, v1, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr v0, v1</span>
+<span class="missed">	int-to-long v0, v0</span>
+<span class="">	invoke-static {p1, p2, v0, v1}, Ljava/lang/Math;->min(JJ)J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="missed">	long-to-int v1, v0</span>
+<span class="missed">	iget-wide v2, p0, Lys;->b:J</span>
+<span class="missed">	int-to-long v4, v1</span>
+<span class="missed">	sub-long/2addr v2, v4</span>
+<span class="missed">	iput-wide v2, p0, Lys;->b:J</span>
+<span class="missed">	sub-long/2addr p1, v4</span>
+<span class="missed">	iget-object v0, p0, Lys;->a:Lzg;</span>
+<span class="missed">	iget v2, v0, Lzg;->b:I</span>
+<span class="missed">	add-int/2addr v2, v1</span>
+<span class="missed">	iput v2, v0, Lzg;->b:I</span>
+<span class="missed">	iget-object v0, p0, Lys;->a:Lzg;</span>
+<span class="missed">	iget v0, v0, Lzg;->b:I</span>
+<span class="missed">	iget-object v1, p0, Lys;->a:Lzg;</span>
+<span class="missed">	iget v1, v1, Lzg;->c:I</span>
+<span class="missed">	if-ne v0, v1, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lys;->a:Lzg;</span>
+<span class="">	invoke-virtual {v0}, Lzg;->c()Lzg;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iput-object v1, p0, Lys;->a:Lzg;</span>
+<span class="missed">	invoke-static {v0}, Lzh;->a(Lzg;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/io/EOFException;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/io/EOFException;-><init>()V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_2</span>
+<span class="">	return-void</span>
+.end method
+
+.method public isOpen()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final j()J
+<span class="">	.locals 5</span>
+
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	const-wide/16 v2, 0x0</span>
+<span class="missed">	cmp-long v4, v0, v2</span>
+<span class="missed">	if-nez v4, :cond_0</span>
+<span class="">	return-wide v2</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v2, p0, Lys;->a:Lzg;</span>
+<span class="missed">	iget-object v2, v2, Lzg;->g:Lzg;</span>
+<span class="missed">	iget v3, v2, Lzg;->c:I</span>
+<span class="missed">	const/16 v4, 0x2000</span>
+<span class="missed">	if-ge v3, v4, :cond_1</span>
+<span class="missed">	iget-boolean v3, v2, Lzg;->e:Z</span>
+<span class="missed">	if-eqz v3, :cond_1</span>
+<span class="missed">	iget v3, v2, Lzg;->c:I</span>
+<span class="missed">	iget v2, v2, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr v3, v2</span>
+<span class="missed">	int-to-long v2, v3</span>
+<span class="missed">	sub-long/2addr v0, v2</span>
+<span class="">	:cond_1</span>
+<span class="">	return-wide v0</span>
+.end method
+
+.method public j(J)Lys;
+<span class="">	.locals 9</span>
+
+<span class="missed">	const/16 v0, 0x8</span>
+<span class="">	invoke-virtual {p0, v0}, Lys;->e(I)Lzg;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iget-object v2, v1, Lzg;->a:[B</span>
+<span class="missed">	iget v3, v1, Lzg;->c:I</span>
+<span class="missed">	add-int/lit8 v4, v3, 0x1</span>
+<span class="missed">	const/16 v5, 0x38</span>
+<span class="missed">	ushr-long v5, p1, v5</span>
+<span class="missed">	const-wide/16 v7, 0xff</span>
+<span class="missed">	and-long/2addr v5, v7</span>
+<span class="missed">	long-to-int v6, v5</span>
+<span class="missed">	int-to-byte v5, v6</span>
+<span class="missed">	aput-byte v5, v2, v3</span>
+<span class="missed">	add-int/lit8 v3, v4, 0x1</span>
+<span class="missed">	const/16 v5, 0x30</span>
+<span class="missed">	ushr-long v5, p1, v5</span>
+<span class="missed">	and-long/2addr v5, v7</span>
+<span class="missed">	long-to-int v6, v5</span>
+<span class="missed">	int-to-byte v5, v6</span>
+<span class="missed">	aput-byte v5, v2, v4</span>
+<span class="missed">	add-int/lit8 v4, v3, 0x1</span>
+<span class="missed">	const/16 v5, 0x28</span>
+<span class="missed">	ushr-long v5, p1, v5</span>
+<span class="missed">	and-long/2addr v5, v7</span>
+<span class="missed">	long-to-int v6, v5</span>
+<span class="missed">	int-to-byte v5, v6</span>
+<span class="missed">	aput-byte v5, v2, v3</span>
+<span class="missed">	add-int/lit8 v3, v4, 0x1</span>
+<span class="missed">	const/16 v5, 0x20</span>
+<span class="missed">	ushr-long v5, p1, v5</span>
+<span class="missed">	and-long/2addr v5, v7</span>
+<span class="missed">	long-to-int v6, v5</span>
+<span class="missed">	int-to-byte v5, v6</span>
+<span class="missed">	aput-byte v5, v2, v4</span>
+<span class="missed">	add-int/lit8 v4, v3, 0x1</span>
+<span class="missed">	const/16 v5, 0x18</span>
+<span class="missed">	ushr-long v5, p1, v5</span>
+<span class="missed">	and-long/2addr v5, v7</span>
+<span class="missed">	long-to-int v6, v5</span>
+<span class="missed">	int-to-byte v5, v6</span>
+<span class="missed">	aput-byte v5, v2, v3</span>
+<span class="missed">	add-int/lit8 v3, v4, 0x1</span>
+<span class="missed">	const/16 v5, 0x10</span>
+<span class="missed">	ushr-long v5, p1, v5</span>
+<span class="missed">	and-long/2addr v5, v7</span>
+<span class="missed">	long-to-int v6, v5</span>
+<span class="missed">	int-to-byte v5, v6</span>
+<span class="missed">	aput-byte v5, v2, v4</span>
+<span class="missed">	add-int/lit8 v4, v3, 0x1</span>
+<span class="missed">	ushr-long v5, p1, v0</span>
+<span class="missed">	and-long/2addr v5, v7</span>
+<span class="missed">	long-to-int v0, v5</span>
+<span class="missed">	int-to-byte v0, v0</span>
+<span class="missed">	aput-byte v0, v2, v3</span>
+<span class="missed">	add-int/lit8 v0, v4, 0x1</span>
+<span class="missed">	and-long/2addr p1, v7</span>
+<span class="missed">	long-to-int p2, p1</span>
+<span class="missed">	int-to-byte p1, p2</span>
+<span class="missed">	aput-byte p1, v2, v4</span>
+<span class="missed">	iput v0, v1, Lzg;->c:I</span>
+<span class="missed">	iget-wide p1, p0, Lys;->b:J</span>
+<span class="missed">	const-wide/16 v0, 0x8</span>
+<span class="missed">	add-long/2addr p1, v0</span>
+<span class="missed">	iput-wide p1, p0, Lys;->b:J</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public k()B
+<span class="">	.locals 9</span>
+
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	const-wide/16 v2, 0x0</span>
+<span class="missed">	cmp-long v4, v0, v2</span>
+<span class="missed">	if-eqz v4, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lys;->a:Lzg;</span>
+<span class="missed">	iget v1, v0, Lzg;->b:I</span>
+<span class="missed">	iget v2, v0, Lzg;->c:I</span>
+<span class="missed">	iget-object v3, v0, Lzg;->a:[B</span>
+<span class="missed">	add-int/lit8 v4, v1, 0x1</span>
+<span class="missed">	aget-byte v1, v3, v1</span>
+<span class="missed">	iget-wide v5, p0, Lys;->b:J</span>
+<span class="missed">	const-wide/16 v7, 0x1</span>
+<span class="missed">	sub-long/2addr v5, v7</span>
+<span class="missed">	iput-wide v5, p0, Lys;->b:J</span>
+<span class="missed">	if-ne v4, v2, :cond_0</span>
+<span class="">	invoke-virtual {v0}, Lzg;->c()Lzg;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	iput-object v2, p0, Lys;->a:Lzg;</span>
+<span class="missed">	invoke-static {v0}, Lzh;->a(Lzg;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iput v4, v0, Lzg;->b:I</span>
+<span class="">	:goto_0</span>
+<span class="">	return v1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v1, "size == 0"</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public k(J)Lys;
+<span class="">	.locals 11</span>
+
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	cmp-long v2, p1, v0</span>
+<span class="missed">	if-nez v2, :cond_0</span>
+<span class="missed">	const/16 p1, 0x30</span>
+<span class="">	invoke-virtual {p0, p1}, Lys;->b(I)Lys;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	if-gez v2, :cond_2</span>
+<span class="missed">	neg-long p1, p1</span>
+<span class="missed">	cmp-long v2, p1, v0</span>
+<span class="missed">	if-gez v2, :cond_1</span>
+<span class="missed">	const-string p1, "-9223372036854775808"</span>
+<span class="">	invoke-virtual {p0, p1}, Lys;->a(Ljava/lang/String;)Lys;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const-wide/32 v5, 0x5f5e100</span>
+<span class="missed">	const-wide/16 v7, 0xa</span>
+<span class="missed">	cmp-long v2, p1, v5</span>
+<span class="missed">	if-gez v2, :cond_a</span>
+<span class="missed">	const-wide/16 v5, 0x2710</span>
+<span class="missed">	cmp-long v2, p1, v5</span>
+<span class="missed">	if-gez v2, :cond_6</span>
+<span class="missed">	const-wide/16 v5, 0x64</span>
+<span class="missed">	cmp-long v2, p1, v5</span>
+<span class="missed">	if-gez v2, :cond_4</span>
+<span class="missed">	cmp-long v2, p1, v7</span>
+<span class="missed">	if-gez v2, :cond_3</span>
+<span class="">	goto/16 :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const/4 v4, 0x2</span>
+<span class="">	goto/16 :goto_0</span>
+<span class="">	:cond_4</span>
+<span class="missed">	const-wide/16 v4, 0x3e8</span>
+<span class="missed">	cmp-long v2, p1, v4</span>
+<span class="missed">	if-gez v2, :cond_5</span>
+<span class="missed">	const/4 v4, 0x3</span>
+<span class="">	goto/16 :goto_0</span>
+<span class="">	:cond_5</span>
+<span class="missed">	const/4 v4, 0x4</span>
+<span class="">	goto/16 :goto_0</span>
+<span class="">	:cond_6</span>
+<span class="missed">	const-wide/32 v4, 0xf4240</span>
+<span class="missed">	cmp-long v2, p1, v4</span>
+<span class="missed">	if-gez v2, :cond_8</span>
+<span class="missed">	const-wide/32 v4, 0x186a0</span>
+<span class="missed">	cmp-long v2, p1, v4</span>
+<span class="missed">	if-gez v2, :cond_7</span>
+<span class="missed">	const/4 v4, 0x5</span>
+<span class="">	goto/16 :goto_0</span>
+<span class="">	:cond_7</span>
+<span class="missed">	const/4 v4, 0x6</span>
+<span class="">	goto/16 :goto_0</span>
+<span class="">	:cond_8</span>
+<span class="missed">	const-wide/32 v4, 0x989680</span>
+<span class="missed">	cmp-long v2, p1, v4</span>
+<span class="missed">	if-gez v2, :cond_9</span>
+<span class="missed">	const/4 v4, 0x7</span>
+<span class="">	goto/16 :goto_0</span>
+<span class="">	:cond_9</span>
+<span class="missed">	const/16 v4, 0x8</span>
+<span class="">	goto/16 :goto_0</span>
+<span class="">	:cond_a</span>
+<span class="missed">	const-wide v4, 0xe8d4a51000L</span>
+<span class="missed">	cmp-long v2, p1, v4</span>
+<span class="missed">	if-gez v2, :cond_e</span>
+<span class="missed">	const-wide v4, 0x2540be400L</span>
+<span class="missed">	cmp-long v2, p1, v4</span>
+<span class="missed">	if-gez v2, :cond_c</span>
+<span class="missed">	const-wide/32 v4, 0x3b9aca00</span>
+<span class="missed">	cmp-long v2, p1, v4</span>
+<span class="missed">	if-gez v2, :cond_b</span>
+<span class="missed">	const/16 v4, 0x9</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_b</span>
+<span class="missed">	const/16 v4, 0xa</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_c</span>
+<span class="missed">	const-wide v4, 0x174876e800L</span>
+<span class="missed">	cmp-long v2, p1, v4</span>
+<span class="missed">	if-gez v2, :cond_d</span>
+<span class="missed">	const/16 v4, 0xb</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_d</span>
+<span class="missed">	const/16 v4, 0xc</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_e</span>
+<span class="missed">	const-wide v4, 0x38d7ea4c68000L</span>
+<span class="missed">	cmp-long v2, p1, v4</span>
+<span class="missed">	if-gez v2, :cond_11</span>
+<span class="missed">	const-wide v4, 0x9184e72a000L</span>
+<span class="missed">	cmp-long v2, p1, v4</span>
+<span class="missed">	if-gez v2, :cond_f</span>
+<span class="missed">	const/16 v4, 0xd</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_f</span>
+<span class="missed">	const-wide v4, 0x5af3107a4000L</span>
+<span class="missed">	cmp-long v2, p1, v4</span>
+<span class="missed">	if-gez v2, :cond_10</span>
+<span class="missed">	const/16 v4, 0xe</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_10</span>
+<span class="missed">	const/16 v4, 0xf</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_11</span>
+<span class="missed">	const-wide v4, 0x16345785d8a0000L</span>
+<span class="missed">	cmp-long v2, p1, v4</span>
+<span class="missed">	if-gez v2, :cond_13</span>
+<span class="missed">	const-wide v4, 0x2386f26fc10000L</span>
+<span class="missed">	cmp-long v2, p1, v4</span>
+<span class="missed">	if-gez v2, :cond_12</span>
+<span class="missed">	const/16 v4, 0x10</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_12</span>
+<span class="missed">	const/16 v4, 0x11</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_13</span>
+<span class="missed">	const-wide v4, 0xde0b6b3a7640000L</span>
+<span class="missed">	cmp-long v2, p1, v4</span>
+<span class="missed">	if-gez v2, :cond_14</span>
+<span class="missed">	const/16 v4, 0x12</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_14</span>
+<span class="missed">	const/16 v4, 0x13</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-eqz v3, :cond_15</span>
+<span class="missed">	add-int/lit8 v4, v4, 0x1</span>
+<span class="">	:cond_15</span>
+<span class="">	invoke-virtual {p0, v4}, Lys;->e(I)Lzg;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	iget-object v5, v2, Lzg;->a:[B</span>
+<span class="missed">	iget v6, v2, Lzg;->c:I</span>
+<span class="missed">	add-int/2addr v6, v4</span>
+<span class="">	:goto_1</span>
+<span class="missed">	cmp-long v9, p1, v0</span>
+<span class="missed">	if-eqz v9, :cond_16</span>
+<span class="missed">	rem-long v9, p1, v7</span>
+<span class="missed">	long-to-int v10, v9</span>
+<span class="missed">	add-int/lit8 v6, v6, -0x1</span>
+<span class="missed">	sget-object v9, Lys;->c:[B</span>
+<span class="missed">	aget-byte v9, v9, v10</span>
+<span class="missed">	aput-byte v9, v5, v6</span>
+<span class="missed">	div-long/2addr p1, v7</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_16</span>
+<span class="missed">	if-eqz v3, :cond_17</span>
+<span class="missed">	add-int/lit8 v6, v6, -0x1</span>
+<span class="missed">	const/16 p1, 0x2d</span>
+<span class="missed">	aput-byte p1, v5, v6</span>
+<span class="">	:cond_17</span>
+<span class="missed">	iget p1, v2, Lzg;->c:I</span>
+<span class="missed">	add-int/2addr p1, v4</span>
+<span class="missed">	iput p1, v2, Lzg;->c:I</span>
+<span class="missed">	iget-wide p1, p0, Lys;->b:J</span>
+<span class="missed">	int-to-long v0, v4</span>
+<span class="missed">	add-long/2addr p1, v0</span>
+<span class="missed">	iput-wide p1, p0, Lys;->b:J</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public l(J)Lys;
+<span class="">	.locals 9</span>
+
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	cmp-long v2, p1, v0</span>
+<span class="missed">	if-nez v2, :cond_0</span>
+<span class="missed">	const/16 p1, 0x30</span>
+<span class="">	invoke-virtual {p0, p1}, Lys;->b(I)Lys;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {p1, p2}, Ljava/lang/Long;->highestOneBit(J)J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	invoke-static {v0, v1}, Ljava/lang/Long;->numberOfTrailingZeros(J)I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x4</span>
+<span class="missed">	div-int/2addr v0, v1</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
+<span class="">	invoke-virtual {p0, v0}, Lys;->e(I)Lzg;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	iget-object v3, v2, Lzg;->a:[B</span>
+<span class="missed">	iget v4, v2, Lzg;->c:I</span>
+<span class="missed">	add-int/2addr v4, v0</span>
+<span class="missed">	add-int/lit8 v4, v4, -0x1</span>
+<span class="missed">	iget v5, v2, Lzg;->c:I</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-lt v4, v5, :cond_1</span>
+<span class="missed">	sget-object v6, Lys;->c:[B</span>
+<span class="missed">	const-wide/16 v7, 0xf</span>
+<span class="missed">	and-long/2addr v7, p1</span>
+<span class="missed">	long-to-int v8, v7</span>
+<span class="missed">	aget-byte v6, v6, v8</span>
+<span class="missed">	aput-byte v6, v3, v4</span>
+<span class="missed">	ushr-long/2addr p1, v1</span>
+<span class="missed">	add-int/lit8 v4, v4, -0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget p1, v2, Lzg;->c:I</span>
+<span class="missed">	add-int/2addr p1, v0</span>
+<span class="missed">	iput p1, v2, Lzg;->c:I</span>
+<span class="missed">	iget-wide p1, p0, Lys;->b:J</span>
+<span class="missed">	int-to-long v0, v0</span>
+<span class="missed">	add-long/2addr p1, v0</span>
+<span class="missed">	iput-wide p1, p0, Lys;->b:J</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public l()S
+<span class="">	.locals 8</span>
+
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	const-wide/16 v2, 0x2</span>
+<span class="missed">	cmp-long v4, v0, v2</span>
+<span class="missed">	if-ltz v4, :cond_2</span>
+<span class="missed">	iget-object v0, p0, Lys;->a:Lzg;</span>
+<span class="missed">	iget v1, v0, Lzg;->b:I</span>
+<span class="missed">	iget v4, v0, Lzg;->c:I</span>
+<span class="missed">	sub-int v5, v4, v1</span>
+<span class="missed">	const/4 v6, 0x2</span>
+<span class="missed">	if-ge v5, v6, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Lys;->k()B</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	and-int/lit16 v0, v0, 0xff</span>
+<span class="missed">	shl-int/lit8 v0, v0, 0x8</span>
+<span class="">	invoke-virtual {p0}, Lys;->k()B</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	and-int/lit16 v1, v1, 0xff</span>
+<span class="missed">	or-int/2addr v0, v1</span>
+<span class="missed">	int-to-short v0, v0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v5, v0, Lzg;->a:[B</span>
+<span class="missed">	add-int/lit8 v6, v1, 0x1</span>
+<span class="missed">	aget-byte v1, v5, v1</span>
+<span class="missed">	and-int/lit16 v1, v1, 0xff</span>
+<span class="missed">	shl-int/lit8 v1, v1, 0x8</span>
+<span class="missed">	add-int/lit8 v7, v6, 0x1</span>
+<span class="missed">	aget-byte v5, v5, v6</span>
+<span class="missed">	and-int/lit16 v5, v5, 0xff</span>
+<span class="missed">	or-int/2addr v1, v5</span>
+<span class="missed">	iget-wide v5, p0, Lys;->b:J</span>
+<span class="missed">	sub-long/2addr v5, v2</span>
+<span class="missed">	iput-wide v5, p0, Lys;->b:J</span>
+<span class="missed">	if-ne v7, v4, :cond_1</span>
+<span class="">	invoke-virtual {v0}, Lzg;->c()Lzg;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	iput-object v2, p0, Lys;->a:Lzg;</span>
+<span class="missed">	invoke-static {v0}, Lzh;->a(Lzg;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iput v7, v0, Lzg;->b:I</span>
+<span class="">	:goto_0</span>
+<span class="missed">	int-to-short v0, v1</span>
+<span class="">	return v0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "size < 2: "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-wide v2, p0, Lys;->b:J</span>
+<span class="missed">	invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+<span class="cov">.method public m()I</span>
+<span class="">	.locals 8</span>
+
+<span class="cov">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="cov">	const-wide/16 v2, 0x4</span>
+<span class="cov">	cmp-long v4, v0, v2</span>
+<span class="cov">	if-ltz v4, :cond_2</span>
+<span class="cov">	iget-object v0, p0, Lys;->a:Lzg;</span>
+<span class="cov">	iget v1, v0, Lzg;->b:I</span>
+<span class="cov">	iget v4, v0, Lzg;->c:I</span>
+<span class="cov">	sub-int v5, v4, v1</span>
+<span class="cov">	const/4 v6, 0x4</span>
+<span class="missed">	if-ge v5, v6, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Lys;->k()B</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	and-int/lit16 v0, v0, 0xff</span>
+<span class="missed">	shl-int/lit8 v0, v0, 0x18</span>
+<span class="">	invoke-virtual {p0}, Lys;->k()B</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	and-int/lit16 v1, v1, 0xff</span>
+<span class="missed">	shl-int/lit8 v1, v1, 0x10</span>
+<span class="missed">	or-int/2addr v0, v1</span>
+<span class="">	invoke-virtual {p0}, Lys;->k()B</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	and-int/lit16 v1, v1, 0xff</span>
+<span class="missed">	shl-int/lit8 v1, v1, 0x8</span>
+<span class="missed">	or-int/2addr v0, v1</span>
+<span class="">	invoke-virtual {p0}, Lys;->k()B</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	and-int/lit16 v1, v1, 0xff</span>
+<span class="missed">	or-int/2addr v0, v1</span>
+<span class="">	return v0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v5, v0, Lzg;->a:[B</span>
+<span class="cov">	add-int/lit8 v6, v1, 0x1</span>
+<span class="cov">	aget-byte v1, v5, v1</span>
+<span class="cov">	and-int/lit16 v1, v1, 0xff</span>
+<span class="cov">	shl-int/lit8 v1, v1, 0x18</span>
+<span class="cov">	add-int/lit8 v7, v6, 0x1</span>
+<span class="cov">	aget-byte v6, v5, v6</span>
+<span class="cov">	and-int/lit16 v6, v6, 0xff</span>
+<span class="cov">	shl-int/lit8 v6, v6, 0x10</span>
+<span class="cov">	or-int/2addr v1, v6</span>
+<span class="cov">	add-int/lit8 v6, v7, 0x1</span>
+<span class="cov">	aget-byte v7, v5, v7</span>
+<span class="cov">	and-int/lit16 v7, v7, 0xff</span>
+<span class="cov">	shl-int/lit8 v7, v7, 0x8</span>
+<span class="cov">	or-int/2addr v1, v7</span>
+<span class="cov">	add-int/lit8 v7, v6, 0x1</span>
+<span class="cov">	aget-byte v5, v5, v6</span>
+<span class="cov">	and-int/lit16 v5, v5, 0xff</span>
+<span class="cov">	or-int/2addr v1, v5</span>
+<span class="cov">	iget-wide v5, p0, Lys;->b:J</span>
+<span class="cov">	sub-long/2addr v5, v2</span>
+<span class="cov">	iput-wide v5, p0, Lys;->b:J</span>
+<span class="cov">	if-ne v7, v4, :cond_1</span>
+<span class="exec">	invoke-virtual {v0}, Lzg;->c()Lzg;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	iput-object v2, p0, Lys;->a:Lzg;</span>
+<span class="cov">	invoke-static {v0}, Lzh;->a(Lzg;)V</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	iput v7, v0, Lzg;->b:I</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return v1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "size < 4: "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-wide v2, p0, Lys;->b:J</span>
+<span class="missed">	invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public synthetic m(J)Lyt;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0, p1, p2}, Lys;->l(J)Lys;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public n()J
+<span class="">	.locals 15</span>
+
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	const-wide/16 v2, 0x8</span>
+<span class="missed">	cmp-long v4, v0, v2</span>
+<span class="missed">	if-ltz v4, :cond_2</span>
+<span class="missed">	iget-object v0, p0, Lys;->a:Lzg;</span>
+<span class="missed">	iget v1, v0, Lzg;->b:I</span>
+<span class="missed">	iget v4, v0, Lzg;->c:I</span>
+<span class="missed">	sub-int v5, v4, v1</span>
+<span class="missed">	const/16 v6, 0x20</span>
+<span class="missed">	const/16 v7, 0x8</span>
+<span class="missed">	if-ge v5, v7, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Lys;->m()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	int-to-long v0, v0</span>
+<span class="missed">	const-wide v2, 0xffffffffL</span>
+<span class="missed">	and-long/2addr v0, v2</span>
+<span class="missed">	shl-long/2addr v0, v6</span>
+<span class="">	invoke-virtual {p0}, Lys;->m()I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	int-to-long v4, v4</span>
+<span class="missed">	and-long/2addr v2, v4</span>
+<span class="missed">	or-long/2addr v0, v2</span>
+<span class="">	return-wide v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v5, v0, Lzg;->a:[B</span>
+<span class="missed">	add-int/lit8 v8, v1, 0x1</span>
+<span class="missed">	aget-byte v1, v5, v1</span>
+<span class="missed">	int-to-long v9, v1</span>
+<span class="missed">	const-wide/16 v11, 0xff</span>
+<span class="missed">	and-long/2addr v9, v11</span>
+<span class="missed">	const/16 v1, 0x38</span>
+<span class="missed">	shl-long/2addr v9, v1</span>
+<span class="missed">	add-int/lit8 v1, v8, 0x1</span>
+<span class="missed">	aget-byte v8, v5, v8</span>
+<span class="missed">	int-to-long v13, v8</span>
+<span class="missed">	and-long/2addr v13, v11</span>
+<span class="missed">	const/16 v8, 0x30</span>
+<span class="missed">	shl-long/2addr v13, v8</span>
+<span class="missed">	or-long v8, v9, v13</span>
+<span class="missed">	add-int/lit8 v10, v1, 0x1</span>
+<span class="missed">	aget-byte v1, v5, v1</span>
+<span class="missed">	int-to-long v13, v1</span>
+<span class="missed">	and-long/2addr v13, v11</span>
+<span class="missed">	const/16 v1, 0x28</span>
+<span class="missed">	shl-long/2addr v13, v1</span>
+<span class="missed">	or-long/2addr v8, v13</span>
+<span class="missed">	add-int/lit8 v1, v10, 0x1</span>
+<span class="missed">	aget-byte v10, v5, v10</span>
+<span class="missed">	int-to-long v13, v10</span>
+<span class="missed">	and-long/2addr v13, v11</span>
+<span class="missed">	shl-long/2addr v13, v6</span>
+<span class="missed">	or-long/2addr v8, v13</span>
+<span class="missed">	add-int/lit8 v6, v1, 0x1</span>
+<span class="missed">	aget-byte v1, v5, v1</span>
+<span class="missed">	int-to-long v13, v1</span>
+<span class="missed">	and-long/2addr v13, v11</span>
+<span class="missed">	const/16 v1, 0x18</span>
+<span class="missed">	shl-long/2addr v13, v1</span>
+<span class="missed">	or-long/2addr v8, v13</span>
+<span class="missed">	add-int/lit8 v1, v6, 0x1</span>
+<span class="missed">	aget-byte v6, v5, v6</span>
+<span class="missed">	int-to-long v13, v6</span>
+<span class="missed">	and-long/2addr v13, v11</span>
+<span class="missed">	const/16 v6, 0x10</span>
+<span class="missed">	shl-long/2addr v13, v6</span>
+<span class="missed">	or-long/2addr v8, v13</span>
+<span class="missed">	add-int/lit8 v6, v1, 0x1</span>
+<span class="missed">	aget-byte v1, v5, v1</span>
+<span class="missed">	int-to-long v13, v1</span>
+<span class="missed">	and-long/2addr v13, v11</span>
+<span class="missed">	shl-long/2addr v13, v7</span>
+<span class="missed">	or-long v7, v8, v13</span>
+<span class="missed">	add-int/lit8 v1, v6, 0x1</span>
+<span class="missed">	aget-byte v5, v5, v6</span>
+<span class="missed">	int-to-long v5, v5</span>
+<span class="missed">	and-long/2addr v5, v11</span>
+<span class="missed">	or-long/2addr v5, v7</span>
+<span class="missed">	iget-wide v7, p0, Lys;->b:J</span>
+<span class="missed">	sub-long/2addr v7, v2</span>
+<span class="missed">	iput-wide v7, p0, Lys;->b:J</span>
+<span class="missed">	if-ne v1, v4, :cond_1</span>
+<span class="">	invoke-virtual {v0}, Lzg;->c()Lzg;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iput-object v1, p0, Lys;->a:Lzg;</span>
+<span class="missed">	invoke-static {v0}, Lzh;->a(Lzg;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iput v1, v0, Lzg;->b:I</span>
+<span class="">	:goto_0</span>
+<span class="">	return-wide v5</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "size < 8: "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-wide v2, p0, Lys;->b:J</span>
+<span class="missed">	invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public synthetic n(J)Lyt;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0, p1, p2}, Lys;->k(J)Lys;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public o()S
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Lys;->l()S</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-static {v0}, Lzm;->a(S)S</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public p()I
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Lys;->m()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-static {v0}, Lzm;->a(I)I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public q()J
+<span class="">	.locals 17</span>
+
+<span class="missed">	move-object/from16 v0, p0</span>
+<span class="missed">	iget-wide v1, v0, Lys;->b:J</span>
+<span class="missed">	const-wide/16 v3, 0x0</span>
+<span class="missed">	cmp-long v5, v1, v3</span>
+<span class="missed">	if-eqz v5, :cond_b</span>
+<span class="missed">	const-wide/16 v5, -0x7</span>
+<span class="missed">	const/4 v7, 0x0</span>
+<span class="missed">	move-wide v8, v5</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v10, v0, Lys;->a:Lzg;</span>
+<span class="missed">	iget-object v11, v10, Lzg;->a:[B</span>
+<span class="missed">	iget v12, v10, Lzg;->b:I</span>
+<span class="missed">	iget v13, v10, Lzg;->c:I</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v12, v13, :cond_7</span>
+<span class="missed">	aget-byte v15, v11, v12</span>
+<span class="missed">	const/16 v14, 0x30</span>
+<span class="missed">	if-lt v15, v14, :cond_4</span>
+<span class="missed">	const/16 v1, 0x39</span>
+<span class="missed">	if-gt v15, v1, :cond_4</span>
+<span class="missed">	sub-int/2addr v14, v15</span>
+<span class="missed">	const-wide v1, -0xcccccccccccccccL</span>
+<span class="missed">	cmp-long v16, v3, v1</span>
+<span class="missed">	if-ltz v16, :cond_2</span>
+<span class="missed">	if-nez v16, :cond_1</span>
+<span class="missed">	int-to-long v1, v14</span>
+<span class="missed">	cmp-long v16, v1, v8</span>
+<span class="missed">	if-gez v16, :cond_1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const-wide/16 v1, 0xa</span>
+<span class="missed">	mul-long v3, v3, v1</span>
+<span class="missed">	int-to-long v1, v14</span>
+<span class="missed">	add-long/2addr v3, v1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance v1, Lys;</span>
+<span class="missed">	invoke-direct {v1}, Lys;-><init>()V</span>
+<span class="">	invoke-virtual {v1, v3, v4}, Lys;->k(J)Lys;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1, v15}, Lys;->b(I)Lys;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	if-nez v5, :cond_3</span>
+<span class="missed">	invoke-virtual {v1}, Lys;->k()B</span>
+<span class="">	:cond_3</span>
+<span class="missed">	new-instance v2, Ljava/lang/NumberFormatException;</span>
+<span class="missed">	new-instance v3, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "Number too large: "</span>
+<span class="missed">	invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Lys;->t()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v2, v1}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v2</span>
+<span class="">	:cond_4</span>
+<span class="missed">	const/16 v1, 0x2d</span>
+<span class="missed">	if-ne v15, v1, :cond_5</span>
+<span class="missed">	if-nez v7, :cond_5</span>
+<span class="missed">	const-wide/16 v1, 0x1</span>
+<span class="missed">	sub-long/2addr v8, v1</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="">	:goto_2</span>
+<span class="missed">	add-int/lit8 v12, v12, 0x1</span>
+<span class="missed">	add-int/lit8 v7, v7, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_5</span>
+<span class="missed">	if-eqz v7, :cond_6</span>
+<span class="missed">	const/4 v6, 0x1</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_6</span>
+<span class="missed">	new-instance v1, Ljava/lang/NumberFormatException;</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v3, "Expected leading [0-9] or \'-\' character but was 0x"</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-static {v15}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-direct {v1, v2}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v1</span>
+<span class="">	:goto_3</span>
+<span class="">	:cond_7</span>
+<span class="missed">	if-ne v12, v13, :cond_8</span>
+<span class="">	invoke-virtual {v10}, Lzg;->c()Lzg;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iput-object v1, v0, Lys;->a:Lzg;</span>
+<span class="missed">	invoke-static {v10}, Lzh;->a(Lzg;)V</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_8</span>
+<span class="missed">	iput v12, v10, Lzg;->b:I</span>
+<span class="">	:goto_4</span>
+<span class="missed">	if-nez v6, :cond_9</span>
+<span class="missed">	iget-object v1, v0, Lys;->a:Lzg;</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="">	:cond_9</span>
+<span class="missed">	iget-wide v1, v0, Lys;->b:J</span>
+<span class="missed">	int-to-long v6, v7</span>
+<span class="missed">	sub-long/2addr v1, v6</span>
+<span class="missed">	iput-wide v1, v0, Lys;->b:J</span>
+<span class="missed">	if-eqz v5, :cond_a</span>
+<span class="">	goto :goto_5</span>
+<span class="">	:cond_a</span>
+<span class="missed">	neg-long v3, v3</span>
+<span class="">	:goto_5</span>
+<span class="">	return-wide v3</span>
+<span class="">	:cond_b</span>
+<span class="missed">	new-instance v1, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v2, "size == 0"</span>
+<span class="missed">	invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v1</span>
+.end method
+
+.method public r()J
+<span class="">	.locals 15</span>
+
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	const-wide/16 v2, 0x0</span>
+<span class="missed">	cmp-long v4, v0, v2</span>
+<span class="missed">	if-eqz v4, :cond_9</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	move-wide v4, v2</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v6, p0, Lys;->a:Lzg;</span>
+<span class="missed">	iget-object v7, v6, Lzg;->a:[B</span>
+<span class="missed">	iget v8, v6, Lzg;->b:I</span>
+<span class="missed">	iget v9, v6, Lzg;->c:I</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v8, v9, :cond_6</span>
+<span class="missed">	aget-byte v10, v7, v8</span>
+<span class="missed">	const/16 v11, 0x30</span>
+<span class="missed">	if-lt v10, v11, :cond_1</span>
+<span class="missed">	const/16 v11, 0x39</span>
+<span class="missed">	if-gt v10, v11, :cond_1</span>
+<span class="missed">	add-int/lit8 v11, v10, -0x30</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/16 v11, 0x61</span>
+<span class="missed">	if-lt v10, v11, :cond_2</span>
+<span class="missed">	const/16 v11, 0x66</span>
+<span class="missed">	if-gt v10, v11, :cond_2</span>
+<span class="missed">	add-int/lit8 v11, v10, -0x61</span>
+<span class="">	:goto_1</span>
+<span class="missed">	add-int/lit8 v11, v11, 0xa</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/16 v11, 0x41</span>
+<span class="missed">	if-lt v10, v11, :cond_4</span>
+<span class="missed">	const/16 v11, 0x46</span>
+<span class="missed">	if-gt v10, v11, :cond_4</span>
+<span class="missed">	add-int/lit8 v11, v10, -0x41</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:goto_2</span>
+<span class="missed">	const-wide/high16 v12, -0x1000000000000000L    # -3.105036184601418E231</span>
+<span class="missed">	and-long/2addr v12, v4</span>
+<span class="missed">	cmp-long v14, v12, v2</span>
+<span class="missed">	if-nez v14, :cond_3</span>
+<span class="missed">	const/4 v10, 0x4</span>
+<span class="missed">	shl-long/2addr v4, v10</span>
+<span class="missed">	int-to-long v10, v11</span>
+<span class="missed">	or-long/2addr v4, v10</span>
+<span class="missed">	add-int/lit8 v8, v8, 0x1</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	new-instance v0, Lys;</span>
+<span class="missed">	invoke-direct {v0}, Lys;-><init>()V</span>
+<span class="">	invoke-virtual {v0, v4, v5}, Lys;->l(J)Lys;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0, v10}, Lys;->b(I)Lys;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-instance v1, Ljava/lang/NumberFormatException;</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v3, "Number too large: "</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Lys;->t()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-direct {v1, v0}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v1</span>
+<span class="">	:cond_4</span>
+<span class="missed">	if-eqz v1, :cond_5</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_5</span>
+<span class="missed">	new-instance v0, Ljava/lang/NumberFormatException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "Expected leading [0-9a-fA-F] character but was 0x"</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-static {v10}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+<span class="">	:goto_3</span>
+<span class="">	:cond_6</span>
+<span class="missed">	if-ne v8, v9, :cond_7</span>
+<span class="">	invoke-virtual {v6}, Lzg;->c()Lzg;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="missed">	iput-object v7, p0, Lys;->a:Lzg;</span>
+<span class="missed">	invoke-static {v6}, Lzh;->a(Lzg;)V</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_7</span>
+<span class="missed">	iput v8, v6, Lzg;->b:I</span>
+<span class="">	:goto_4</span>
+<span class="missed">	if-nez v0, :cond_8</span>
+<span class="missed">	iget-object v6, p0, Lys;->a:Lzg;</span>
+<span class="missed">	if-nez v6, :cond_0</span>
+<span class="">	:cond_8</span>
+<span class="missed">	iget-wide v2, p0, Lys;->b:J</span>
+<span class="missed">	int-to-long v0, v1</span>
+<span class="missed">	sub-long/2addr v2, v0</span>
+<span class="missed">	iput-wide v2, p0, Lys;->b:J</span>
+<span class="">	return-wide v4</span>
+<span class="">	:cond_9</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v1, "size == 0"</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public read(Ljava/nio/ByteBuffer;)I
+<span class="">	.locals 6</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lys;->a:Lzg;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	const/4 p1, -0x1</span>
+<span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	iget v2, v0, Lzg;->c:I</span>
+<span class="missed">	iget v3, v0, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr v2, v3</span>
+<span class="">	invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	iget-object v2, v0, Lzg;->a:[B</span>
+<span class="missed">	iget v3, v0, Lzg;->b:I</span>
+<span class="missed">	invoke-virtual {p1, v2, v3, v1}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;</span>
+<span class="missed">	iget p1, v0, Lzg;->b:I</span>
+<span class="missed">	add-int/2addr p1, v1</span>
+<span class="missed">	iput p1, v0, Lzg;->b:I</span>
+<span class="missed">	iget-wide v2, p0, Lys;->b:J</span>
+<span class="missed">	int-to-long v4, v1</span>
+<span class="missed">	sub-long/2addr v2, v4</span>
+<span class="missed">	iput-wide v2, p0, Lys;->b:J</span>
+<span class="missed">	iget p1, v0, Lzg;->b:I</span>
+<span class="missed">	iget v2, v0, Lzg;->c:I</span>
+<span class="missed">	if-ne p1, v2, :cond_1</span>
+<span class="">	invoke-virtual {v0}, Lzg;->c()Lzg;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Lys;->a:Lzg;</span>
+<span class="missed">	invoke-static {v0}, Lzh;->a(Lzg;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return v1</span>
+.end method
+
+.method public read(Lys;J)J
+<span class="">	.locals 5</span>
+
+<span class="missed">	if-eqz p1, :cond_3</span>
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	cmp-long v2, p2, v0</span>
+<span class="missed">	if-ltz v2, :cond_2</span>
+<span class="missed">	iget-wide v2, p0, Lys;->b:J</span>
+<span class="missed">	cmp-long v4, v2, v0</span>
+<span class="missed">	if-nez v4, :cond_0</span>
+<span class="missed">	const-wide/16 p1, -0x1</span>
+<span class="">	return-wide p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	cmp-long v0, p2, v2</span>
+<span class="missed">	if-lez v0, :cond_1</span>
+<span class="missed">	move-wide p2, v2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	invoke-virtual {p1, p0, p2, p3}, Lys;->write(Lys;J)V</span>
+<span class="">	return-wide p2</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v1, "byteCount < 0: "</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v0, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p2, "sink == null"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public s()Lyv;
+<span class="">	.locals 2</span>
+
+<span class="missed">	new-instance v0, Lyv;</span>
+<span class="">	invoke-virtual {p0}, Lys;->v()[B</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v0, v1}, Lyv;-><init>([B)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public t()Ljava/lang/String;
+<span class="">	.locals 3</span>
+
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	sget-object v2, Lzm;->a:Ljava/nio/charset/Charset;</span>
+<span class="">	invoke-virtual {p0, v0, v1, v2}, Lys;->a(JLjava/nio/charset/Charset;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object v0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	new-instance v1, Ljava/lang/AssertionError;</span>
+<span class="missed">	invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V</span>
+<span class="">	throw v1</span>
+.end method
+
+.method public timeout()Lzl;
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lzl;->NONE:Lzl;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public toString()Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Lys;->y()Lyv;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lyv;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public u()Ljava/lang/String;
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/EOFException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	const-wide v0, 0x7fffffffffffffffL</span>
+<span class="">	invoke-virtual {p0, v0, v1}, Lys;->f(J)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public v()[B
+<span class="">	.locals 2</span>
+
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="">	invoke-virtual {p0, v0, v1}, Lys;->h(J)[B</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object v0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	new-instance v1, Ljava/lang/AssertionError;</span>
+<span class="missed">	invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V</span>
+<span class="">	throw v1</span>
+.end method
+
+.method public final w()V
+<span class="">	.locals 2</span>
+
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	invoke-virtual {p0, v0, v1}, Lys;->i(J)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-void</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	new-instance v1, Ljava/lang/AssertionError;</span>
+<span class="missed">	invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V</span>
+<span class="">	throw v1</span>
+.end method
+
+.method public write(Ljava/nio/ByteBuffer;)I
+<span class="">	.locals 6</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="">	invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	move v1, v0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-lez v1, :cond_0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="">	invoke-virtual {p0, v2}, Lys;->e(I)Lzg;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	iget v3, v2, Lzg;->c:I</span>
+<span class="missed">	rsub-int v3, v3, 0x2000</span>
+<span class="">	invoke-static {v1, v3}, Ljava/lang/Math;->min(II)I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	iget-object v4, v2, Lzg;->a:[B</span>
+<span class="missed">	iget v5, v2, Lzg;->c:I</span>
+<span class="missed">	invoke-virtual {p1, v4, v5, v3}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;</span>
+<span class="missed">	sub-int/2addr v1, v3</span>
+<span class="missed">	iget v4, v2, Lzg;->c:I</span>
+<span class="missed">	add-int/2addr v4, v3</span>
+<span class="missed">	iput v4, v2, Lzg;->c:I</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-wide v1, p0, Lys;->b:J</span>
+<span class="missed">	int-to-long v3, v0</span>
+<span class="missed">	add-long/2addr v1, v3</span>
+<span class="missed">	iput-wide v1, p0, Lys;->b:J</span>
+<span class="">	return v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v0, "source == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public write(Lys;J)V</span>
+<span class="">	.locals 6</span>
+
+<span class="cov">	if-eqz p1, :cond_7</span>
+<span class="cov">	if-eq p1, p0, :cond_6</span>
+<span class="cov">	iget-wide v0, p1, Lys;->b:J</span>
+<span class="cov">	const-wide/16 v2, 0x0</span>
+<span class="cov">	move-wide v4, p2</span>
+<span class="cov">	invoke-static/range {v0 .. v5}, Lzm;->a(JJJ)V</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	const-wide/16 v0, 0x0</span>
+<span class="cov">	cmp-long v2, p2, v0</span>
+<span class="cov">	if-lez v2, :cond_5</span>
+<span class="cov">	iget-object v0, p1, Lys;->a:Lzg;</span>
+<span class="cov">	iget v0, v0, Lzg;->c:I</span>
+<span class="cov">	iget-object v1, p1, Lys;->a:Lzg;</span>
+<span class="cov">	iget v1, v1, Lzg;->b:I</span>
+<span class="cov">	sub-int/2addr v0, v1</span>
+<span class="cov">	int-to-long v0, v0</span>
+<span class="cov">	cmp-long v2, p2, v0</span>
+<span class="missed">	if-gez v2, :cond_3</span>
+<span class="missed">	iget-object v0, p0, Lys;->a:Lzg;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, v0, Lzg;->g:Lzg;</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="missed">	iget-boolean v1, v0, Lzg;->e:Z</span>
+<span class="missed">	if-eqz v1, :cond_2</span>
+<span class="missed">	iget v1, v0, Lzg;->c:I</span>
+<span class="missed">	int-to-long v1, v1</span>
+<span class="missed">	add-long/2addr v1, p2</span>
+<span class="missed">	iget-boolean v3, v0, Lzg;->d:Z</span>
+<span class="missed">	if-eqz v3, :cond_1</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget v3, v0, Lzg;->b:I</span>
+<span class="">	:goto_2</span>
+<span class="missed">	int-to-long v3, v3</span>
+<span class="missed">	sub-long/2addr v1, v3</span>
+<span class="missed">	const-wide/16 v3, 0x2000</span>
+<span class="missed">	cmp-long v5, v1, v3</span>
+<span class="missed">	if-gtz v5, :cond_2</span>
+<span class="missed">	iget-object v1, p1, Lys;->a:Lzg;</span>
+<span class="missed">	long-to-int v2, p2</span>
+<span class="missed">	invoke-virtual {v1, v0, v2}, Lzg;->a(Lzg;I)V</span>
+<span class="missed">	iget-wide v0, p1, Lys;->b:J</span>
+<span class="missed">	sub-long/2addr v0, p2</span>
+<span class="missed">	iput-wide v0, p1, Lys;->b:J</span>
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	add-long/2addr v0, p2</span>
+<span class="missed">	iput-wide v0, p0, Lys;->b:J</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object v0, p1, Lys;->a:Lzg;</span>
+<span class="missed">	long-to-int v1, p2</span>
+<span class="">	invoke-virtual {v0, v1}, Lzg;->a(I)Lzg;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p1, Lys;->a:Lzg;</span>
+<span class="cov">	:cond_3</span>
+<span class="cov">	iget-object v0, p1, Lys;->a:Lzg;</span>
+<span class="cov">	iget v1, v0, Lzg;->c:I</span>
+<span class="cov">	iget v2, v0, Lzg;->b:I</span>
+<span class="cov">	sub-int/2addr v1, v2</span>
+<span class="cov">	int-to-long v1, v1</span>
+<span class="exec">	invoke-virtual {v0}, Lzg;->c()Lzg;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	iput-object v3, p1, Lys;->a:Lzg;</span>
+<span class="cov">	iget-object v3, p0, Lys;->a:Lzg;</span>
+<span class="missed">	if-nez v3, :cond_4</span>
+<span class="missed">	iput-object v0, p0, Lys;->a:Lzg;</span>
+<span class="missed">	iget-object v0, p0, Lys;->a:Lzg;</span>
+<span class="missed">	iput-object v0, v0, Lzg;->g:Lzg;</span>
+<span class="missed">	iput-object v0, v0, Lzg;->f:Lzg;</span>
+<span class="exec">	goto :goto_3</span>
+<span class="cov">	:cond_4</span>
+<span class="cov">	iget-object v3, v3, Lzg;->g:Lzg;</span>
+<span class="exec">	invoke-virtual {v3, v0}, Lzg;->a(Lzg;)Lzg;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	invoke-virtual {v0}, Lzg;->d()V</span>
+<span class="cov">	:goto_3</span>
+<span class="cov">	iget-wide v3, p1, Lys;->b:J</span>
+<span class="cov">	sub-long/2addr v3, v1</span>
+<span class="cov">	iput-wide v3, p1, Lys;->b:J</span>
+<span class="cov">	iget-wide v3, p0, Lys;->b:J</span>
+<span class="cov">	add-long/2addr v3, v1</span>
+<span class="cov">	iput-wide v3, p0, Lys;->b:J</span>
+<span class="cov">	sub-long/2addr p2, v1</span>
+<span class="">	goto :goto_0</span>
+<span class="cov">	:cond_5</span>
+<span class="exec">	return-void</span>
+<span class="">	:cond_6</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p2, "source == this"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_7</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p2, "source == null"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public x()Lys;
+<span class="">	.locals 6</span>
+
+<span class="missed">	new-instance v0, Lys;</span>
+<span class="missed">	invoke-direct {v0}, Lys;-><init>()V</span>
+<span class="missed">	iget-wide v1, p0, Lys;->b:J</span>
+<span class="missed">	const-wide/16 v3, 0x0</span>
+<span class="missed">	cmp-long v5, v1, v3</span>
+<span class="missed">	if-nez v5, :cond_0</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v1, p0, Lys;->a:Lzg;</span>
+<span class="">	invoke-virtual {v1}, Lzg;->a()Lzg;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iput-object v1, v0, Lys;->a:Lzg;</span>
+<span class="missed">	iget-object v1, v0, Lys;->a:Lzg;</span>
+<span class="missed">	iput-object v1, v1, Lzg;->g:Lzg;</span>
+<span class="missed">	iput-object v1, v1, Lzg;->f:Lzg;</span>
+<span class="missed">	iget-object v1, p0, Lys;->a:Lzg;</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object v1, v1, Lzg;->f:Lzg;</span>
+<span class="missed">	iget-object v2, p0, Lys;->a:Lzg;</span>
+<span class="missed">	if-eq v1, v2, :cond_1</span>
+<span class="missed">	iget-object v2, v0, Lys;->a:Lzg;</span>
+<span class="missed">	iget-object v2, v2, Lzg;->g:Lzg;</span>
+<span class="">	invoke-virtual {v1}, Lzg;->a()Lzg;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-virtual {v2, v3}, Lzg;->a(Lzg;)Lzg;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-wide v1, p0, Lys;->b:J</span>
+<span class="missed">	iput-wide v1, v0, Lys;->b:J</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final y()Lyv;
+<span class="">	.locals 5</span>
+
+<span class="missed">	iget-wide v0, p0, Lys;->b:J</span>
+<span class="missed">	const-wide/32 v2, 0x7fffffff</span>
+<span class="missed">	cmp-long v4, v0, v2</span>
+<span class="missed">	if-gtz v4, :cond_0</span>
+<span class="missed">	long-to-int v1, v0</span>
+<span class="">	invoke-virtual {p0, v1}, Lys;->f(I)Lyv;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "size > Integer.MAX_VALUE: "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-wide v2, p0, Lys;->b:J</span>
+<span class="missed">	invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public synthetic z()Lyt;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0}, Lys;->e()Lys;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

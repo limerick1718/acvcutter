@@ -1,79 +1,45 @@
-.class public final Luj;
+.class public Luj;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-
-# interfaces
-.implements Lrj;
-
-
-# static fields
-.field private static final a:Lva;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lva<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
+.source "LocaleUtils.java"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public static a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
 
-    .line 1
-    new-instance v0, Lbb;
+    .line 13
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    const-string v1, "com.google.android.gms.measurement"
+    move-result-object p0
 
-    .line 2
-    invoke-static {v1}, Lsa;->a(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-virtual {p0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object p0
+
+    iget-object p0, p0, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
+
+    .line 14
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p0}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lbb;-><init>(Landroid/net/Uri;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "measurement.referrer.enable_logging_install_referrer_cmp_from_apk"
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v2, 0x1
+    invoke-virtual {p0}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
 
-    .line 3
-    invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;
+    move-result-object p0
 
-    move-result-object v0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sput-object v0, Luj;->a:Lva;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    return-void
-.end method
+    move-result-object p0
 
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()Z
-    .locals 1
-
-    .line 1
-    sget-object v0, Luj;->a:Lva;
-
-    invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
+    return-object p0
 .end method

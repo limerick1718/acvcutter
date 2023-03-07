@@ -15,7 +15,7 @@
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
 		<code>.class final Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;
-.super Lvv;
+.super Ltn;
 .source "MapTypeAdapterFactory.java"
 
 .annotation system Ldalvik/annotation/EnclosingClass;
@@ -32,29 +32,30 @@ value = {
 "V:",
 "Ljava/lang/Object;",
 ">",
-"Lvv<",
+"Ltn<",
 "Ljava/util/Map<",
 "TK;TV;>;>;"
 }
 .end annotation
 
-.field private final a:Lvv;
+.field final synthetic a:Lcom/google/gson/internal/bind/MapTypeAdapterFactory;
+.field private final b:Ltn;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lvv<",
+"Ltn<",
 "TK;>;"
 }
 .end annotation
 .end field
-.field private final b:Lvv;
+.field private final c:Ltn;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lvv<",
+"Ltn<",
 "TV;>;"
 }
 .end annotation
 .end field
-.field private final c:Lcom/google/gson/internal/g;
+.field private final d:Lcom/google/gson/internal/g;
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "Lcom/google/gson/internal/g<",
@@ -64,20 +65,19 @@ value = {
 }
 .end annotation
 .end field
-.field final synthetic d:Lcom/google/gson/internal/bind/MapTypeAdapterFactory;
 
 
-<span class="cov">.method public constructor &lt;init&gt;(Lcom/google/gson/internal/bind/MapTypeAdapterFactory;Lfv;Ljava/lang/reflect/Type;Lvv;Ljava/lang/reflect/Type;Lvv;Lcom/google/gson/internal/g;)V</span>
+<span class="cov">.method public constructor &lt;init&gt;(Lcom/google/gson/internal/bind/MapTypeAdapterFactory;Lsx;Ljava/lang/reflect/Type;Ltn;Ljava/lang/reflect/Type;Ltn;Lcom/google/gson/internal/g;)V</span>
 <span class="">	.locals 0</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
 <span class="">	"(",</span>
-<span class="">	"Lfv;",</span>
+<span class="">	"Lsx;",</span>
 <span class="">	"Ljava/lang/reflect/Type;",</span>
-<span class="">	"Lvv<",</span>
+<span class="">	"Ltn<",</span>
 <span class="">	"TK;>;",</span>
 <span class="">	"Ljava/lang/reflect/Type;",</span>
-<span class="">	"Lvv<",</span>
+<span class="">	"Ltn<",</span>
 <span class="">	"TV;>;",</span>
 <span class="">	"Lcom/google/gson/internal/g<",</span>
 <span class="">	"+",</span>
@@ -86,48 +86,48 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iput-object p1, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->d:Lcom/google/gson/internal/bind/MapTypeAdapterFactory;</span>
-<span class="cov">	invoke-direct {p0}, Lvv;-><init>()V</span>
-<span class="cov">	new-instance p1, Lcom/google/gson/internal/bind/c;</span>
-<span class="cov">	invoke-direct {p1, p2, p4, p3}, Lcom/google/gson/internal/bind/c;-><init>(Lfv;Lvv;Ljava/lang/reflect/Type;)V</span>
-<span class="cov">	iput-object p1, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->a:Lvv;</span>
-<span class="cov">	new-instance p1, Lcom/google/gson/internal/bind/c;</span>
-<span class="cov">	invoke-direct {p1, p2, p6, p5}, Lcom/google/gson/internal/bind/c;-><init>(Lfv;Lvv;Ljava/lang/reflect/Type;)V</span>
-<span class="cov">	iput-object p1, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->b:Lvv;</span>
-<span class="cov">	iput-object p7, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->c:Lcom/google/gson/internal/g;</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->a:Lcom/google/gson/internal/bind/MapTypeAdapterFactory;</span>
+<span class="cov">	invoke-direct {p0}, Ltn;-><init>()V</span>
+<span class="cov">	new-instance p1, Lcom/google/gson/internal/bind/h;</span>
+<span class="cov">	invoke-direct {p1, p2, p4, p3}, Lcom/google/gson/internal/bind/h;-><init>(Lsx;Ltn;Ljava/lang/reflect/Type;)V</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->b:Ltn;</span>
+<span class="cov">	new-instance p1, Lcom/google/gson/internal/bind/h;</span>
+<span class="cov">	invoke-direct {p1, p2, p6, p5}, Lcom/google/gson/internal/bind/h;-><init>(Lsx;Ltn;Ljava/lang/reflect/Type;)V</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->c:Ltn;</span>
+<span class="cov">	iput-object p7, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->d:Lcom/google/gson/internal/g;</span>
 <span class="exec">	return-void</span>
 .end method
 
-.method private a(Llv;)Ljava/lang/String;
+.method private a(Ltd;)Ljava/lang/String;
 <span class="">	.locals 1</span>
 
-<span class="">	invoke-virtual {p1}, Llv;->k()Z</span>
+<span class="">	invoke-virtual {p1}, Ltd;->i()Z</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_3</span>
-<span class="">	invoke-virtual {p1}, Llv;->g()Lqv;</span>
+<span class="">	invoke-virtual {p1}, Ltd;->m()Lti;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="">	invoke-virtual {p1}, Lqv;->t()Z</span>
+<span class="">	invoke-virtual {p1}, Lti;->p()Z</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
-<span class="">	invoke-virtual {p1}, Lqv;->q()Ljava/lang/Number;</span>
+<span class="">	invoke-virtual {p1}, Lti;->a()Ljava/lang/Number;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	return-object p1</span>
 <span class="">	:cond_0</span>
-<span class="">	invoke-virtual {p1}, Lqv;->s()Z</span>
+<span class="">	invoke-virtual {p1}, Lti;->o()Z</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_1</span>
-<span class="">	invoke-virtual {p1}, Lqv;->l()Z</span>
+<span class="">	invoke-virtual {p1}, Lti;->f()Z</span>
 <span class="missed">	move-result p1</span>
 <span class="">	invoke-static {p1}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	return-object p1</span>
 <span class="">	:cond_1</span>
-<span class="">	invoke-virtual {p1}, Lqv;->u()Z</span>
+<span class="">	invoke-virtual {p1}, Lti;->q()Z</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_2</span>
-<span class="">	invoke-virtual {p1}, Lqv;->r()Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p1}, Lti;->b()Ljava/lang/String;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	return-object p1</span>
 <span class="">	:cond_2</span>
@@ -135,7 +135,7 @@ value = {
 <span class="missed">	invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V</span>
 <span class="">	throw p1</span>
 <span class="">	:cond_3</span>
-<span class="">	invoke-virtual {p1}, Llv;->i()Z</span>
+<span class="">	invoke-virtual {p1}, Ltd;->j()Z</span>
 <span class="missed">	move-result p1</span>
 <span class="missed">	if-eqz p1, :cond_4</span>
 <span class="missed">	const-string p1, "null"</span>
@@ -146,20 +146,7 @@ value = {
 <span class="">	throw p1</span>
 .end method
 
-.method public bridge synthetic a(Lew;)Ljava/lang/Object;
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="">	invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->a(Lew;)Ljava/util/Map;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	return-object p1</span>
-.end method
-
-.method public a(Lew;)Ljava/util/Map;
+.method public a(Ltw;)Ljava/util/Map;
 <span class="">	.locals 4</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -169,93 +156,93 @@ value = {
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
 <span class="">	"(",</span>
-<span class="">	"Lew;",</span>
+<span class="">	"Ltw;",</span>
 <span class="">	")",</span>
 <span class="">	"Ljava/util/Map<",</span>
 <span class="">	"TK;TV;>;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="">	invoke-virtual {p1}, Lew;->peek()Lfw;</span>
+<span class="">	invoke-virtual {p1}, Ltw;->f()Ltx;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	sget-object v1, Lfw;->i:Lfw;</span>
+<span class="missed">	sget-object v1, Ltx;->i:Ltx;</span>
 <span class="missed">	if-ne v0, v1, :cond_0</span>
-<span class="missed">	invoke-virtual {p1}, Lew;->B()V</span>
+<span class="missed">	invoke-virtual {p1}, Ltw;->j()V</span>
 <span class="missed">	const/4 p1, 0x0</span>
 <span class="">	return-object p1</span>
 <span class="">	:cond_0</span>
-<span class="missed">	iget-object v1, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->c:Lcom/google/gson/internal/g;</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->d:Lcom/google/gson/internal/g;</span>
 <span class="">	invoke-interface {v1}, Lcom/google/gson/internal/g;->a()Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v1</span>
 <span class="missed">	check-cast v1, Ljava/util/Map;</span>
-<span class="missed">	sget-object v2, Lfw;->a:Lfw;</span>
+<span class="missed">	sget-object v2, Ltx;->a:Ltx;</span>
 <span class="missed">	const-string v3, "duplicate key: "</span>
 <span class="missed">	if-ne v0, v2, :cond_3</span>
-<span class="missed">	invoke-virtual {p1}, Lew;->a()V</span>
+<span class="missed">	invoke-virtual {p1}, Ltw;->a()V</span>
 <span class="">	:goto_0</span>
-<span class="">	invoke-virtual {p1}, Lew;->t()Z</span>
+<span class="">	invoke-virtual {p1}, Ltw;->e()Z</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_2</span>
-<span class="missed">	invoke-virtual {p1}, Lew;->a()V</span>
-<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->a:Lvv;</span>
-<span class="">	invoke-virtual {v0, p1}, Lvv;->a(Lew;)Ljava/lang/Object;</span>
+<span class="missed">	invoke-virtual {p1}, Ltw;->a()V</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->b:Ltn;</span>
+<span class="">	invoke-virtual {v0, p1}, Ltn;->b(Ltw;)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	iget-object v2, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->b:Lvv;</span>
-<span class="">	invoke-virtual {v2, p1}, Lvv;->a(Lew;)Ljava/lang/Object;</span>
+<span class="missed">	iget-object v2, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->c:Ltn;</span>
+<span class="">	invoke-virtual {v2, p1}, Ltn;->b(Ltw;)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v2</span>
 <span class="">	invoke-interface {v1, v0, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v2</span>
 <span class="missed">	if-nez v2, :cond_1</span>
-<span class="missed">	invoke-virtual {p1}, Lew;->q()V</span>
+<span class="missed">	invoke-virtual {p1}, Ltw;->b()V</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_1</span>
-<span class="missed">	new-instance p1, Ltv;</span>
+<span class="missed">	new-instance p1, Ltl;</span>
 <span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
 <span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
 <span class="missed">	invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
 <span class="missed">	invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
 <span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	invoke-direct {p1, v0}, Ltv;-><init>(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-direct {p1, v0}, Ltl;-><init>(Ljava/lang/String;)V</span>
 <span class="">	throw p1</span>
 <span class="">	:cond_2</span>
-<span class="missed">	invoke-virtual {p1}, Lew;->q()V</span>
+<span class="missed">	invoke-virtual {p1}, Ltw;->b()V</span>
 <span class="">	goto :goto_2</span>
 <span class="">	:cond_3</span>
-<span class="missed">	invoke-virtual {p1}, Lew;->f()V</span>
+<span class="missed">	invoke-virtual {p1}, Ltw;->c()V</span>
 <span class="">	:goto_1</span>
-<span class="">	invoke-virtual {p1}, Lew;->t()Z</span>
+<span class="">	invoke-virtual {p1}, Ltw;->e()Z</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_5</span>
 <span class="missed">	sget-object v0, Lcom/google/gson/internal/d;->a:Lcom/google/gson/internal/d;</span>
-<span class="missed">	invoke-virtual {v0, p1}, Lcom/google/gson/internal/d;->a(Lew;)V</span>
-<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->a:Lvv;</span>
-<span class="">	invoke-virtual {v0, p1}, Lvv;->a(Lew;)Ljava/lang/Object;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lcom/google/gson/internal/d;->a(Ltw;)V</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->b:Ltn;</span>
+<span class="">	invoke-virtual {v0, p1}, Ltn;->b(Ltw;)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	iget-object v2, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->b:Lvv;</span>
-<span class="">	invoke-virtual {v2, p1}, Lvv;->a(Lew;)Ljava/lang/Object;</span>
+<span class="missed">	iget-object v2, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->c:Ltn;</span>
+<span class="">	invoke-virtual {v2, p1}, Ltn;->b(Ltw;)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v2</span>
 <span class="">	invoke-interface {v1, v0, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v2</span>
 <span class="missed">	if-nez v2, :cond_4</span>
 <span class="">	goto :goto_1</span>
 <span class="">	:cond_4</span>
-<span class="missed">	new-instance p1, Ltv;</span>
+<span class="missed">	new-instance p1, Ltl;</span>
 <span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
 <span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
 <span class="missed">	invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
 <span class="missed">	invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
 <span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	invoke-direct {p1, v0}, Ltv;-><init>(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-direct {p1, v0}, Ltl;-><init>(Ljava/lang/String;)V</span>
 <span class="">	throw p1</span>
 <span class="">	:cond_5</span>
-<span class="missed">	invoke-virtual {p1}, Lew;->r()V</span>
+<span class="missed">	invoke-virtual {p1}, Ltw;->d()V</span>
 <span class="">	:goto_2</span>
 <span class="">	return-object v1</span>
 .end method
 
-<span class="cov">.method public bridge synthetic a(Lgw;Ljava/lang/Object;)V</span>
+<span class="cov">.method public bridge synthetic a(Lty;Ljava/lang/Object;)V</span>
 <span class="">	.locals 0</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -264,11 +251,11 @@ value = {
 <span class="">	.end annotation</span>
 
 <span class="cov">	check-cast p2, Ljava/util/Map;</span>
-<span class="cov">	invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->a(Lgw;Ljava/util/Map;)V</span>
+<span class="cov">	invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->a(Lty;Ljava/util/Map;)V</span>
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public a(Lgw;Ljava/util/Map;)V</span>
+<span class="cov">.method public a(Lty;Ljava/util/Map;)V</span>
 <span class="">	.locals 7</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -278,20 +265,20 @@ value = {
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
 <span class="">	"(",</span>
-<span class="">	"Lgw;",</span>
+<span class="">	"Lty;",</span>
 <span class="">	"Ljava/util/Map<",</span>
 <span class="">	"TK;TV;>;)V"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
 <span class="missed">	if-nez p2, :cond_0</span>
-<span class="missed">	invoke-virtual {p1}, Lgw;->u()Lgw;</span>
+<span class="missed">	invoke-virtual {p1}, Lty;->f()Lty;</span>
 <span class="">	return-void</span>
 <span class="cov">	:cond_0</span>
-<span class="cov">	iget-object v0, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->d:Lcom/google/gson/internal/bind/MapTypeAdapterFactory;</span>
-<span class="cov">	iget-boolean v0, v0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory;->b:Z</span>
+<span class="cov">	iget-object v0, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->a:Lcom/google/gson/internal/bind/MapTypeAdapterFactory;</span>
+<span class="cov">	iget-boolean v0, v0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory;->a:Z</span>
 <span class="cov">	if-nez v0, :cond_2</span>
-<span class="cov">	invoke-virtual {p1}, Lgw;->f()Lgw;</span>
+<span class="cov">	invoke-virtual {p1}, Lty;->d()Lty;</span>
 <span class="exec">	invoke-interface {p2}, Ljava/util/Map;->entrySet()Ljava/util/Set;</span>
 <span class="cov">	move-result-object p2</span>
 <span class="exec">	invoke-interface {p2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;</span>
@@ -307,14 +294,14 @@ value = {
 <span class="cov">	move-result-object v1</span>
 <span class="exec">	invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
 <span class="cov">	move-result-object v1</span>
-<span class="cov">	invoke-virtual {p1, v1}, Lgw;->b(Ljava/lang/String;)Lgw;</span>
-<span class="cov">	iget-object v1, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->b:Lvv;</span>
+<span class="cov">	invoke-virtual {p1, v1}, Lty;->a(Ljava/lang/String;)Lty;</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->c:Ltn;</span>
 <span class="exec">	invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="cov">	invoke-virtual {v1, p1, v0}, Lvv;->a(Lgw;Ljava/lang/Object;)V</span>
+<span class="cov">	invoke-virtual {v1, p1, v0}, Ltn;->a(Lty;Ljava/lang/Object;)V</span>
 <span class="exec">	goto :goto_0</span>
 <span class="cov">	:cond_1</span>
-<span class="cov">	invoke-virtual {p1}, Lgw;->q()Lgw;</span>
+<span class="cov">	invoke-virtual {p1}, Lty;->e()Lty;</span>
 <span class="exec">	return-void</span>
 <span class="">	:cond_2</span>
 <span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
@@ -338,19 +325,19 @@ value = {
 <span class="">	invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v4</span>
 <span class="missed">	check-cast v4, Ljava/util/Map$Entry;</span>
-<span class="missed">	iget-object v5, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->a:Lvv;</span>
+<span class="missed">	iget-object v5, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->b:Ltn;</span>
 <span class="">	invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v6</span>
-<span class="">	invoke-virtual {v5, v6}, Lvv;->a(Ljava/lang/Object;)Llv;</span>
+<span class="">	invoke-virtual {v5, v6}, Ltn;->a(Ljava/lang/Object;)Ltd;</span>
 <span class="missed">	move-result-object v5</span>
 <span class="missed">	invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
 <span class="">	invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v4</span>
 <span class="missed">	invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="">	invoke-virtual {v5}, Llv;->h()Z</span>
+<span class="">	invoke-virtual {v5}, Ltd;->g()Z</span>
 <span class="missed">	move-result v4</span>
 <span class="missed">	if-nez v4, :cond_4</span>
-<span class="">	invoke-virtual {v5}, Llv;->j()Z</span>
+<span class="">	invoke-virtual {v5}, Ltd;->h()Z</span>
 <span class="missed">	move-result v4</span>
 <span class="missed">	if-eqz v4, :cond_3</span>
 <span class="">	goto :goto_2</span>
@@ -365,48 +352,61 @@ value = {
 <span class="">	goto :goto_1</span>
 <span class="">	:cond_5</span>
 <span class="missed">	if-eqz v3, :cond_7</span>
-<span class="missed">	invoke-virtual {p1}, Lgw;->a()Lgw;</span>
+<span class="missed">	invoke-virtual {p1}, Lty;->b()Lty;</span>
 <span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
 <span class="missed">	move-result p2</span>
 <span class="">	:goto_4</span>
 <span class="missed">	if-ge v2, p2, :cond_6</span>
-<span class="missed">	invoke-virtual {p1}, Lgw;->a()Lgw;</span>
+<span class="missed">	invoke-virtual {p1}, Lty;->b()Lty;</span>
 <span class="">	invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v3</span>
-<span class="missed">	check-cast v3, Llv;</span>
-<span class="missed">	invoke-static {v3, p1}, Lcom/google/gson/internal/i;->a(Llv;Lgw;)V</span>
-<span class="missed">	iget-object v3, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->b:Lvv;</span>
+<span class="missed">	check-cast v3, Ltd;</span>
+<span class="missed">	invoke-static {v3, p1}, Lcom/google/gson/internal/i;->a(Ltd;Lty;)V</span>
+<span class="missed">	iget-object v3, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->c:Ltn;</span>
 <span class="">	invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v4</span>
-<span class="missed">	invoke-virtual {v3, p1, v4}, Lvv;->a(Lgw;Ljava/lang/Object;)V</span>
-<span class="missed">	invoke-virtual {p1}, Lgw;->l()Lgw;</span>
+<span class="missed">	invoke-virtual {v3, p1, v4}, Ltn;->a(Lty;Ljava/lang/Object;)V</span>
+<span class="missed">	invoke-virtual {p1}, Lty;->c()Lty;</span>
 <span class="missed">	add-int/lit8 v2, v2, 0x1</span>
 <span class="">	goto :goto_4</span>
 <span class="">	:cond_6</span>
-<span class="missed">	invoke-virtual {p1}, Lgw;->l()Lgw;</span>
+<span class="missed">	invoke-virtual {p1}, Lty;->c()Lty;</span>
 <span class="">	goto :goto_6</span>
 <span class="">	:cond_7</span>
-<span class="missed">	invoke-virtual {p1}, Lgw;->f()Lgw;</span>
+<span class="missed">	invoke-virtual {p1}, Lty;->d()Lty;</span>
 <span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
 <span class="missed">	move-result p2</span>
 <span class="">	:goto_5</span>
 <span class="missed">	if-ge v2, p2, :cond_8</span>
 <span class="">	invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v3</span>
-<span class="missed">	check-cast v3, Llv;</span>
-<span class="">	invoke-direct {p0, v3}, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->a(Llv;)Ljava/lang/String;</span>
+<span class="missed">	check-cast v3, Ltd;</span>
+<span class="">	invoke-direct {p0, v3}, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->a(Ltd;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v3</span>
-<span class="missed">	invoke-virtual {p1, v3}, Lgw;->b(Ljava/lang/String;)Lgw;</span>
-<span class="missed">	iget-object v3, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->b:Lvv;</span>
+<span class="missed">	invoke-virtual {p1, v3}, Lty;->a(Ljava/lang/String;)Lty;</span>
+<span class="missed">	iget-object v3, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->c:Ltn;</span>
 <span class="">	invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v4</span>
-<span class="missed">	invoke-virtual {v3, p1, v4}, Lvv;->a(Lgw;Ljava/lang/Object;)V</span>
+<span class="missed">	invoke-virtual {v3, p1, v4}, Ltn;->a(Lty;Ljava/lang/Object;)V</span>
 <span class="missed">	add-int/lit8 v2, v2, 0x1</span>
 <span class="">	goto :goto_5</span>
 <span class="">	:cond_8</span>
-<span class="missed">	invoke-virtual {p1}, Lgw;->q()Lgw;</span>
+<span class="missed">	invoke-virtual {p1}, Lty;->e()Lty;</span>
 <span class="">	:goto_6</span>
 <span class="">	return-void</span>
+.end method
+
+.method public synthetic b(Ltw;)Ljava/lang/Object;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$a;->a(Ltw;)Ljava/util/Map;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

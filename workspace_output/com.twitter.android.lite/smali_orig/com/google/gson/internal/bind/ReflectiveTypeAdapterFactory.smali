@@ -3,14 +3,14 @@
 .source "ReflectiveTypeAdapterFactory.java"
 
 # interfaces
-.implements Lwv;
+.implements Lto;
 
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$b;,
-        Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$c;
+        Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$a;,
+        Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$b;
     }
 .end annotation
 
@@ -18,7 +18,7 @@
 # instance fields
 .field private final a:Lcom/google/gson/internal/c;
 
-.field private final b:Lev;
+.field private final b:Lsw;
 
 .field private final c:Lcom/google/gson/internal/Excluder;
 
@@ -26,38 +26,38 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/gson/internal/c;Lev;Lcom/google/gson/internal/Excluder;Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;)V
+.method public constructor <init>(Lcom/google/gson/internal/c;Lsw;Lcom/google/gson/internal/Excluder;Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;)V
     .locals 0
 
-    .line 1
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 56
     iput-object p1, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a:Lcom/google/gson/internal/c;
 
-    .line 3
-    iput-object p2, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->b:Lev;
+    .line 57
+    iput-object p2, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->b:Lsw;
 
-    .line 4
+    .line 58
     iput-object p3, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->c:Lcom/google/gson/internal/Excluder;
 
-    .line 5
+    .line 59
     iput-object p4, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->d:Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;
 
     return-void
 .end method
 
-.method private a(Lfv;Ljava/lang/reflect/Field;Ljava/lang/String;Ldw;ZZ)Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$c;
+.method private a(Lsx;Ljava/lang/reflect/Field;Ljava/lang/String;Ltv;ZZ)Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$b;
     .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lfv;",
+            "Lsx;",
             "Ljava/lang/reflect/Field;",
             "Ljava/lang/String;",
-            "Ldw<",
+            "Ltv<",
             "*>;ZZ)",
-            "Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$c;"
+            "Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$b;"
         }
     .end annotation
 
@@ -67,8 +67,8 @@
 
     move-object/from16 v9, p4
 
-    .line 18
-    invoke-virtual/range {p4 .. p4}, Ldw;->a()Ljava/lang/Class;
+    .line 106
+    invoke-virtual/range {p4 .. p4}, Ltv;->a()Ljava/lang/Class;
 
     move-result-object v0
 
@@ -76,8 +76,8 @@
 
     move-result v10
 
-    .line 19
-    const-class v0, Lyv;
+    .line 108
+    const-class v0, Ltq;
 
     move-object v5, p2
 
@@ -85,16 +85,16 @@
 
     move-result-object v0
 
-    check-cast v0, Lyv;
+    check-cast v0, Ltq;
 
     if-eqz v0, :cond_0
 
-    .line 20
+    .line 111
     iget-object v1, v11, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->d:Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;
 
     iget-object v2, v11, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a:Lcom/google/gson/internal/c;
 
-    invoke-virtual {v1, v2, p1, v9, v0}, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;->a(Lcom/google/gson/internal/c;Lfv;Ldw;Lyv;)Lvv;
+    invoke-virtual {v1, v2, p1, v9, v0}, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;->a(Lcom/google/gson/internal/c;Lsx;Ltv;Ltq;)Ltn;
 
     move-result-object v0
 
@@ -120,16 +120,16 @@
     :goto_1
     if-nez v0, :cond_2
 
-    .line 21
-    invoke-virtual {p1, v9}, Lfv;->a(Ldw;)Lvv;
+    .line 115
+    invoke-virtual {p1, v9}, Lsx;->a(Ltv;)Ltn;
 
     move-result-object v0
 
     :cond_2
     move-object v7, v0
 
-    .line 22
-    new-instance v12, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$a;
+    .line 118
+    new-instance v12, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$1;
 
     move-object v0, v12
 
@@ -147,7 +147,7 @@
 
     move-object/from16 v9, p4
 
-    invoke-direct/range {v0 .. v10}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$a;-><init>(Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;Ljava/lang/String;ZZLjava/lang/reflect/Field;ZLvv;Lfv;Ldw;Z)V
+    invoke-direct/range {v0 .. v10}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$1;-><init>(Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;Ljava/lang/String;ZZLjava/lang/reflect/Field;ZLtn;Lsx;Ltv;Z)V
 
     return-object v12
 .end method
@@ -165,55 +165,55 @@
         }
     .end annotation
 
-    .line 3
-    const-class v0, Lzv;
+    .line 72
+    const-class v0, Ltr;
 
     invoke-virtual {p1, v0}, Ljava/lang/reflect/Field;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v0
 
-    check-cast v0, Lzv;
+    check-cast v0, Ltr;
 
     if-nez v0, :cond_0
 
-    .line 4
-    iget-object v0, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->b:Lev;
+    .line 74
+    iget-object v0, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->b:Lsw;
 
-    invoke-interface {v0, p1}, Lev;->a(Ljava/lang/reflect/Field;)Ljava/lang/String;
+    invoke-interface {v0, p1}, Lsw;->a(Ljava/lang/reflect/Field;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 5
+    .line 75
     invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
 
     return-object p1
 
-    .line 6
+    .line 78
     :cond_0
-    invoke-interface {v0}, Lzv;->value()Ljava/lang/String;
+    invoke-interface {v0}, Ltr;->a()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 7
-    invoke-interface {v0}, Lzv;->alternate()[Ljava/lang/String;
+    .line 79
+    invoke-interface {v0}, Ltr;->b()[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 8
+    .line 80
     array-length v1, v0
 
     if-nez v1, :cond_1
 
-    .line 9
+    .line 81
     invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
 
     return-object p1
 
-    .line 10
+    .line 84
     :cond_1
     new-instance v1, Ljava/util/ArrayList;
 
@@ -223,10 +223,10 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11
+    .line 85
     invoke-interface {v1, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 12
+    .line 86
     array-length p1, v0
 
     const/4 v2, 0x0
@@ -236,7 +236,7 @@
 
     aget-object v3, v0, v2
 
-    .line 13
+    .line 87
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v2, v2, 0x1
@@ -247,31 +247,31 @@
     return-object v1
 .end method
 
-.method private a(Lfv;Ldw;Ljava/lang/Class;)Ljava/util/Map;
+.method private a(Lsx;Ltv;Ljava/lang/Class;)Ljava/util/Map;
     .locals 23
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lfv;",
-            "Ldw<",
+            "Lsx;",
+            "Ltv<",
             "*>;",
             "Ljava/lang/Class<",
             "*>;)",
             "Ljava/util/Map<",
             "Ljava/lang/String;",
-            "Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$c;",
+            "Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$b;",
             ">;"
         }
     .end annotation
 
     move-object/from16 v7, p0
 
-    .line 23
+    .line 143
     new-instance v8, Ljava/util/LinkedHashMap;
 
     invoke-direct {v8}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 24
+    .line 144
     invoke-virtual/range {p3 .. p3}, Ljava/lang/Class;->isInterface()Z
 
     move-result v0
@@ -280,28 +280,28 @@
 
     return-object v8
 
-    .line 25
+    .line 148
     :cond_0
-    invoke-virtual/range {p2 .. p2}, Ldw;->b()Ljava/lang/reflect/Type;
+    invoke-virtual/range {p2 .. p2}, Ltv;->b()Ljava/lang/reflect/Type;
 
     move-result-object v9
 
-    move-object/from16 v10, p2
+    move-object/from16 v11, p2
 
-    move-object/from16 v11, p3
+    move-object/from16 v10, p3
 
-    .line 26
+    .line 149
     :goto_0
     const-class v0, Ljava/lang/Object;
 
-    if-eq v11, v0, :cond_7
+    if-eq v10, v0, :cond_7
 
-    .line 27
-    invoke-virtual {v11}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;
+    .line 150
+    invoke-virtual {v10}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;
 
     move-result-object v12
 
-    .line 28
+    .line 151
     array-length v13, v12
 
     const/4 v14, 0x0
@@ -315,12 +315,12 @@
 
     const/4 v0, 0x1
 
-    .line 29
+    .line 152
     invoke-virtual {v7, v6, v0}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a(Ljava/lang/reflect/Field;Z)Z
 
     move-result v1
 
-    .line 30
+    .line 153
     invoke-virtual {v7, v6, v14}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a(Ljava/lang/reflect/Field;Z)Z
 
     move-result v16
@@ -331,12 +331,12 @@
 
     goto/16 :goto_5
 
-    .line 31
+    .line 157
     :cond_1
     invoke-virtual {v6, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 32
-    invoke-virtual {v10}, Ldw;->b()Ljava/lang/reflect/Type;
+    .line 158
+    invoke-virtual {v11}, Ltv;->b()Ljava/lang/reflect/Type;
 
     move-result-object v0
 
@@ -344,37 +344,37 @@
 
     move-result-object v2
 
-    invoke-static {v0, v11, v2}, Lcom/google/gson/internal/b;->a(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
+    invoke-static {v0, v10, v2}, Lcom/google/gson/internal/b;->a(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
 
     move-result-object v17
 
-    .line 33
+    .line 159
     invoke-direct {v7, v6}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a(Ljava/lang/reflect/Field;)Ljava/util/List;
 
     move-result-object v5
 
     const/4 v0, 0x0
 
-    .line 34
+    .line 161
     invoke-interface {v5}, Ljava/util/List;->size()I
 
     move-result v4
 
-    move-object v3, v0
+    move-object v2, v0
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     :goto_2
-    if-ge v2, v4, :cond_4
+    if-ge v3, v4, :cond_4
 
-    .line 35
-    invoke-interface {v5, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    .line 162
+    invoke-interface {v5, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/String;
 
-    if-eqz v2, :cond_2
+    if-eqz v3, :cond_2
 
     const/16 v18, 0x0
 
@@ -383,9 +383,9 @@
     :cond_2
     move/from16 v18, v1
 
-    .line 36
+    .line 165
     :goto_3
-    invoke-static/range {v17 .. v17}, Ldw;->a(Ljava/lang/reflect/Type;)Ldw;
+    invoke-static/range {v17 .. v17}, Ltv;->a(Ljava/lang/reflect/Type;)Ltv;
 
     move-result-object v19
 
@@ -397,11 +397,11 @@
 
     move-object/from16 v1, p1
 
-    move/from16 v20, v2
+    move-object v14, v2
 
     move-object v2, v6
 
-    move-object v14, v3
+    move/from16 v20, v3
 
     move-object/from16 v3, p2
 
@@ -417,31 +417,31 @@
 
     move/from16 v6, v16
 
-    .line 37
-    invoke-direct/range {v0 .. v6}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a(Lfv;Ljava/lang/reflect/Field;Ljava/lang/String;Ldw;ZZ)Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$c;
+    .line 164
+    invoke-direct/range {v0 .. v6}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a(Lsx;Ljava/lang/reflect/Field;Ljava/lang/String;Ltv;ZZ)Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$b;
 
     move-result-object v0
 
     move-object/from16 v1, p2
 
-    .line 38
+    .line 166
     invoke-interface {v8, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$c;
+    check-cast v0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$b;
 
     if-nez v14, :cond_3
 
-    move-object v3, v0
+    move-object v2, v0
 
     goto :goto_4
 
     :cond_3
-    move-object v3, v14
+    move-object v2, v14
 
     :goto_4
-    add-int/lit8 v2, v20, 0x1
+    add-int/lit8 v3, v20, 0x1
 
     move/from16 v1, v18
 
@@ -456,7 +456,7 @@
     goto :goto_2
 
     :cond_4
-    move-object v14, v3
+    move-object v14, v2
 
     if-nez v14, :cond_5
 
@@ -467,7 +467,7 @@
 
     goto :goto_1
 
-    .line 39
+    .line 170
     :cond_5
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -481,7 +481,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v2, v14, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$c;->a:Ljava/lang/String;
+    iget-object v2, v14, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$b;->h:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -493,28 +493,28 @@
 
     throw v0
 
-    .line 40
+    .line 174
     :cond_6
-    invoke-virtual {v10}, Ldw;->b()Ljava/lang/reflect/Type;
+    invoke-virtual {v11}, Ltv;->b()Ljava/lang/reflect/Type;
 
     move-result-object v0
 
-    invoke-virtual {v11}, Ljava/lang/Class;->getGenericSuperclass()Ljava/lang/reflect/Type;
+    invoke-virtual {v10}, Ljava/lang/Class;->getGenericSuperclass()Ljava/lang/reflect/Type;
 
     move-result-object v1
 
-    invoke-static {v0, v11, v1}, Lcom/google/gson/internal/b;->a(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
+    invoke-static {v0, v10, v1}, Lcom/google/gson/internal/b;->a(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
 
     move-result-object v0
 
-    invoke-static {v0}, Ldw;->a(Ljava/lang/reflect/Type;)Ldw;
-
-    move-result-object v10
-
-    .line 41
-    invoke-virtual {v10}, Ldw;->a()Ljava/lang/Class;
+    invoke-static {v0}, Ltv;->a(Ljava/lang/reflect/Type;)Ltv;
 
     move-result-object v11
+
+    .line 175
+    invoke-virtual {v11}, Ltv;->a()Ljava/lang/Class;
+
+    move-result-object v10
 
     goto/16 :goto_0
 
@@ -525,7 +525,7 @@
 .method static a(Ljava/lang/reflect/Field;ZLcom/google/gson/internal/Excluder;)Z
     .locals 1
 
-    .line 2
+    .line 67
     invoke-virtual {p0}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
 
     move-result-object v0
@@ -555,27 +555,27 @@
 
 
 # virtual methods
-.method public a(Lfv;Ldw;)Lvv;
+.method public a(Lsx;Ltv;)Ltn;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Lfv;",
-            "Ldw<",
+            "Lsx;",
+            "Ltv<",
             "TT;>;)",
-            "Lvv<",
+            "Ltn<",
             "TT;>;"
         }
     .end annotation
 
-    .line 14
-    invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;
+    .line 93
+    invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 15
+    .line 95
     const-class v1, Ljava/lang/Object;
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -588,22 +588,22 @@
 
     return-object p1
 
-    .line 16
+    .line 99
     :cond_0
     iget-object v1, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a:Lcom/google/gson/internal/c;
 
-    invoke-virtual {v1, p2}, Lcom/google/gson/internal/c;->a(Ldw;)Lcom/google/gson/internal/g;
+    invoke-virtual {v1, p2}, Lcom/google/gson/internal/c;->a(Ltv;)Lcom/google/gson/internal/g;
 
     move-result-object v1
 
-    .line 17
-    new-instance v2, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$b;
+    .line 100
+    new-instance v2, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$a;
 
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a(Lfv;Ldw;Ljava/lang/Class;)Ljava/util/Map;
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a(Lsx;Ltv;Ljava/lang/Class;)Ljava/util/Map;
 
     move-result-object p1
 
-    invoke-direct {v2, v1, p1}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$b;-><init>(Lcom/google/gson/internal/g;Ljava/util/Map;)V
+    invoke-direct {v2, v1, p1}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$a;-><init>(Lcom/google/gson/internal/g;Ljava/util/Map;)V
 
     return-object v2
 .end method
@@ -611,7 +611,7 @@
 .method public a(Ljava/lang/reflect/Field;Z)Z
     .locals 1
 
-    .line 1
+    .line 63
     iget-object v0, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->c:Lcom/google/gson/internal/Excluder;
 
     invoke-static {p1, p2, v0}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;->a(Ljava/lang/reflect/Field;ZLcom/google/gson/internal/Excluder;)Z

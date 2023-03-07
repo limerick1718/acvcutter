@@ -1,108 +1,104 @@
-.class  Ldq;
+.class public Ldq;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.implements Laq;
-.annotation system Ldalvik/annotation/MemberClasses;
+.field public static final a:Landroid/net/Uri;
+.field public static final b:Ljava/util/regex/Pattern;
+.field public static final c:Ljava/util/regex/Pattern;
+.field private static final d:Landroid/net/Uri;
+.field private static final e:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private static f:Ljava/util/HashMap;
+.annotation system Ldalvik/annotation/Signature;
 value = {
-Ldq$b;
+"Ljava/util/HashMap<",
+"Ljava/lang/String;",
+"Ljava/lang/String;",
+">;"
 }
 .end annotation
-.field private static final d:Ljava/nio/charset/Charset;
-.field private final a:Ljava/io/File;
-.field private final b:I
-.field private c:Lcq;
+.end field
+.field private static final g:Ljava/util/HashMap;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/HashMap<",
+"Ljava/lang/String;",
+"Ljava/lang/Boolean;",
+">;"
+}
+.end annotation
+.end field
+.field private static final h:Ljava/util/HashMap;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/HashMap<",
+"Ljava/lang/String;",
+"Ljava/lang/Integer;",
+">;"
+}
+.end annotation
+.end field
+.field private static final i:Ljava/util/HashMap;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/HashMap<",
+"Ljava/lang/String;",
+"Ljava/lang/Long;",
+">;"
+}
+.end annotation
+.end field
+.field private static final j:Ljava/util/HashMap;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/HashMap<",
+"Ljava/lang/String;",
+"Ljava/lang/Float;",
+">;"
+}
+.end annotation
+.end field
+.field private static k:Ljava/lang/Object;
+.field private static l:Z
+.field private static m:[Ljava/lang/String;
 .method static constructor <clinit>()V
-.locals 1
-const-string v0, "UTF-8"
-invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-move-result-object v0
-sput-object v0, Ldq;->d:Ljava/nio/charset/Charset;
-return-void
-.end method
-.method constructor <init>(Ljava/io/File;I)V
-.locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Ldq;->a:Ljava/io/File;
-iput p2, p0, Ldq;->b:I
-return-void
-.end method
-.method private b(JLjava/lang/String;)V
-.locals 4
-const-string v0, " "
-iget-object v1, p0, Ldq;->c:Lcq;
-iget v1, p0, Ldq;->b:I
-div-int/lit8 v1, v1, 0x4
-invoke-virtual {p3}, Ljava/lang/String;->length()I
-move-result v2
-const-string v1, "\r"
-invoke-virtual {p3, v1, v0}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-move-result-object p3
-const-string v1, "\n"
-invoke-virtual {p3, v1, v0}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-move-result-object p3
-sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
-const-string v1, "%d %s%n"
-const/4 v2, 0x2
-new-array v2, v2, [Ljava/lang/Object;
-const/4 v3, 0x0
-invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-move-result-object p1
-aput-object p1, v2, v3
-const/4 p1, 0x1
-aput-object p3, v2, p1
-invoke-static {v0, v1, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-move-result-object p1
-sget-object p2, Ldq;->d:Ljava/nio/charset/Charset;
-invoke-virtual {p1, p2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
-move-result-object p1
-iget-object p2, p0, Ldq;->c:Lcq;
-invoke-virtual {p2, p1}, Lcq;->a([B)V
-:goto_0
-iget-object p1, p0, Ldq;->c:Lcq;
-invoke-virtual {p1}, Lcq;->f()Z
-move-result p1
-if-nez p1, :cond_3
-iget-object p1, p0, Ldq;->c:Lcq;
-invoke-virtual {p1}, Lcq;->q()I
-move-result p1
-iget p2, p0, Ldq;->b:I
-goto/32 :cond_3
-goto :goto_0
-:cond_3
-return-void
-.end method
-.method private f()V
-.locals 4
-iget-object v0, p0, Ldq;->c:Lcq;
-if-nez v0, :cond_0
-new-instance v0, Lcq;
-iget-object v1, p0, Ldq;->a:Ljava/io/File;
-invoke-direct {v0, v1}, Lcq;-><init>(Ljava/io/File;)V
-iput-object v0, p0, Ldq;->c:Lcq;
-:cond_0
-return-void
-.end method
-.method public a()V
 .locals 2
+const-string v0, "content://com.google.android.gsf.gservices"
+invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+move-result-object v0
+sput-object v0, Ldq;->a:Landroid/net/Uri;
+const-string v0, "content://com.google.android.gsf.gservices/prefix"
+invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+move-result-object v0
+sput-object v0, Ldq;->d:Landroid/net/Uri;
+const/4 v0, 0x2
+const-string v1, "^(1|true|t|on|yes|y)$"
+invoke-static {v1, v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
+move-result-object v1
+sput-object v1, Ldq;->b:Ljava/util/regex/Pattern;
+const-string v1, "^(0|false|f|off|no|n)$"
+invoke-static {v1, v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
+move-result-object v0
+sput-object v0, Ldq;->c:Ljava/util/regex/Pattern;
+new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+sput-object v0, Ldq;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
+new-instance v0, Ljava/util/HashMap;
+invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+sput-object v0, Ldq;->g:Ljava/util/HashMap;
+new-instance v0, Ljava/util/HashMap;
+invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+sput-object v0, Ldq;->h:Ljava/util/HashMap;
+new-instance v0, Ljava/util/HashMap;
+invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+sput-object v0, Ldq;->i:Ljava/util/HashMap;
+new-instance v0, Ljava/util/HashMap;
+invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+sput-object v0, Ldq;->j:Ljava/util/HashMap;
+const/4 v0, 0x0
+new-array v0, v0, [Ljava/lang/String;
+sput-object v0, Ldq;->m:[Ljava/lang/String;
 return-void
 .end method
-.method public a(JLjava/lang/String;)V
+.method public constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ldq;->f()V
-invoke-direct {p0, p1, p2, p3}, Ldq;->b(JLjava/lang/String;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
-.end method
-.method public b()V
-.locals 1
-return-void
-.end method
-.method public c()Ljava/lang/String;
-.locals 3
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public d()[B
-.locals 4
-const/4 v0, 0x0
-return-object v0
 .end method

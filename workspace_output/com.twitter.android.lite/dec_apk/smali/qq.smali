@@ -1,57 +1,63 @@
-.class final Lqq;
-.super Lzq$d$d$a$b$a;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.annotation system Ldalvik/annotation/MemberClasses;
+.class public Lqq;
+.super Lcom/google/android/gms/common/internal/g;
+.implements Lrf;
+.annotation system Ldalvik/annotation/Signature;
 value = {
-Lqq$b;
+"Lcom/google/android/gms/common/internal/g<",
+"Lqw;",
+">;",
+"Lrf;"
 }
 .end annotation
-.field private final a:J
-.field private final b:J
-.field private final c:Ljava/lang/String;
-.field private final d:Ljava/lang/String;
-.method private constructor <init>(JJLjava/lang/String;Ljava/lang/String;)V
-.locals 0
+.field private final e:Z
+.field private final f:Lcom/google/android/gms/common/internal/c;
+.field private final g:Landroid/os/Bundle;
+.field private h:Ljava/lang/Integer;
+.method private constructor <init>(Landroid/content/Context;Landroid/os/Looper;ZLcom/google/android/gms/common/internal/c;Landroid/os/Bundle;Lcom/google/android/gms/common/api/f$a;Lcom/google/android/gms/common/api/f$b;)V
+.locals 7
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method synthetic constructor <init>(JJLjava/lang/String;Ljava/lang/String;Lqq$a;)V
-.locals 0
+.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;ZLcom/google/android/gms/common/internal/c;Lqp;Lcom/google/android/gms/common/api/f$a;Lcom/google/android/gms/common/api/f$b;)V
+.locals 8
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public a()J
+.method protected synthetic a(Landroid/os/IBinder;)Landroid/os/IInterface;
 .locals 2
-const-wide v0, 0x0
-return-wide v0
+const/4 v0, 0x0
+return-object v0
 .end method
-.method public b()Ljava/lang/String;
+.method public final a(Lqu;)V
+.locals 4
+return-void
+.end method
+.method public d()Z
+.locals 1
+const/4 v0, 0x0
+return v0
+.end method
+.method public g()I
+.locals 1
+const/4 v0, 0x0
+return v0
+.end method
+.method protected i()Ljava/lang/String;
 .locals 1
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public c()J
-.locals 2
-const-wide v0, 0x0
-return-wide v0
-.end method
-.method public d()Ljava/lang/String;
+.method protected k()Ljava/lang/String;
 .locals 1
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public equals(Ljava/lang/Object;)Z
-.locals 7
-const/4 v0, 0x0
-return v0
-.end method
-.method public hashCode()I
-.locals 7
-const/4 v0, 0x0
-return v0
-.end method
-.method public toString()Ljava/lang/String;
+.method protected q()Landroid/os/Bundle;
 .locals 3
 const/4 v0, 0x0
 return-object v0
+.end method
+.method public final w()V
+.locals 1
+return-void
 .end method

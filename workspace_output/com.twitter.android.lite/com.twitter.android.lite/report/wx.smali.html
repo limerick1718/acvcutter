@@ -16,13 +16,30 @@
 	<pre class="source lang-smali" id='source'>
 		<code>.class public interface abstract Lwx;
 .super Ljava/lang/Object;
-.source "Source.java"
-.implements Ljava/io/Closeable;
+.source "EventsStorage.java"
 
 
 
 
-.method public abstract close()V
+.method public abstract a()I
+<span class="">	</span>
+
+.end method
+
+.method public abstract a(I)Ljava/util/List;
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(I)",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/io/File;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract a(Ljava/lang/String;)V
 <span class="">	</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -32,7 +49,20 @@
 
 .end method
 
-.method public abstract read(Lex;J)J
+.method public abstract a(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/io/File;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract a([B)V
 <span class="">	</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -42,7 +72,30 @@
 
 .end method
 
-.method public abstract timeout()Lxx;
+.method public abstract a(II)Z
+<span class="">	</span>
+
+.end method
+
+.method public abstract b()Z
+<span class="">	</span>
+
+.end method
+
+.method public abstract c()Ljava/util/List;
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/io/File;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract d()V
 <span class="">	</span>
 
 .end method</code>

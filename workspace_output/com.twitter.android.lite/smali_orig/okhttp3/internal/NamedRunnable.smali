@@ -14,10 +14,10 @@
 .method public varargs constructor <init>(Ljava/lang/String;[Ljava/lang/Object;)V
     .locals 0
 
-    .line 1
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 25
     invoke-static {p1, p2}, Lokhttp3/internal/Util;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
@@ -35,7 +35,7 @@
 .method public final run()V
     .locals 3
 
-    .line 1
+    .line 29
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -44,7 +44,7 @@
 
     move-result-object v0
 
-    .line 2
+    .line 30
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v1
@@ -53,13 +53,13 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
 
-    .line 3
+    .line 32
     :try_start_0
     invoke-virtual {p0}, Lokhttp3/internal/NamedRunnable;->execute()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 4
+    .line 34
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v1

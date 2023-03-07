@@ -16,21 +16,45 @@
 	<pre class="source lang-smali" id='source'>
 		<code>.class public interface abstract Lut;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-encoders-json@@16.1.0"
+.source "InitializationCallback.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lut$a;
+}
+.end annotation
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<T:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;"
+}
+.end annotation
+
+.field public static final d:Lut;
 
 
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 2</span>
 
+<span class="cov">	new-instance v0, Lut$a;</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	invoke-direct {v0, v1}, Lut$a;-><init>(Lut$1;)V</span>
+<span class="cov">	sput-object v0, Lut;->d:Lut;</span>
+<span class="exec">	return-void</span>
+.end method
 
-.method public abstract a(Ljava/lang/Object;)Ljava/lang/String;
+.method public abstract a(Ljava/lang/Exception;)V
 <span class="">	</span>
 
 .end method
 
-.method public abstract a(Ljava/lang/Object;Ljava/io/Writer;)V
+.method public abstract a(Ljava/lang/Object;)V
 <span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
+<span class="">	"(TT;)V"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 

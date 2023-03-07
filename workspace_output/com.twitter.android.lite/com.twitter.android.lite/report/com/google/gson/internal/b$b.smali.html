@@ -17,8 +17,8 @@
 		<code>.class final Lcom/google/gson/internal/b$b;
 .super Ljava/lang/Object;
 .source "$Gson$Types.java"
-.implements Ljava/lang/reflect/ParameterizedType;
 .implements Ljava/io/Serializable;
+.implements Ljava/lang/reflect/ParameterizedType;
 
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lcom/google/gson/internal/b;
@@ -72,17 +72,18 @@ name = "b"
 <span class="missed">	const/4 p1, 0x0</span>
 <span class="">	goto :goto_3</span>
 <span class="">	:cond_5</span>
-<span class="">	invoke-static {p1}, Lcom/google/gson/internal/b;->b(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;</span>
+<span class="">	invoke-static {p1}, Lcom/google/gson/internal/b;->d(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	:goto_3</span>
 <span class="missed">	iput-object p1, p0, Lcom/google/gson/internal/b$b;->a:Ljava/lang/reflect/Type;</span>
-<span class="">	invoke-static {p2}, Lcom/google/gson/internal/b;->b(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;</span>
+<span class="">	invoke-static {p2}, Lcom/google/gson/internal/b;->d(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="missed">	iput-object p1, p0, Lcom/google/gson/internal/b$b;->b:Ljava/lang/reflect/Type;</span>
 <span class="">	invoke-virtual {p3}, [Ljava/lang/reflect/Type;->clone()Ljava/lang/Object;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="missed">	check-cast p1, [Ljava/lang/reflect/Type;</span>
 <span class="missed">	iput-object p1, p0, Lcom/google/gson/internal/b$b;->c:[Ljava/lang/reflect/Type;</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/gson/internal/b$b;->c:[Ljava/lang/reflect/Type;</span>
 <span class="missed">	array-length p1, p1</span>
 <span class="">	:goto_4</span>
 <span class="missed">	if-ge v1, p1, :cond_6</span>
@@ -91,10 +92,10 @@ name = "b"
 <span class="missed">	invoke-static {p2}, Lcom/google/gson/internal/a;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
 <span class="missed">	iget-object p2, p0, Lcom/google/gson/internal/b$b;->c:[Ljava/lang/reflect/Type;</span>
 <span class="missed">	aget-object p2, p2, v1</span>
-<span class="missed">	invoke-static {p2}, Lcom/google/gson/internal/b;->c(Ljava/lang/reflect/Type;)V</span>
+<span class="missed">	invoke-static {p2}, Lcom/google/gson/internal/b;->h(Ljava/lang/reflect/Type;)V</span>
 <span class="missed">	iget-object p2, p0, Lcom/google/gson/internal/b$b;->c:[Ljava/lang/reflect/Type;</span>
 <span class="missed">	aget-object p3, p2, v1</span>
-<span class="">	invoke-static {p3}, Lcom/google/gson/internal/b;->b(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;</span>
+<span class="">	invoke-static {p3}, Lcom/google/gson/internal/b;->d(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;</span>
 <span class="missed">	move-result-object p3</span>
 <span class="missed">	aput-object p3, p2, v1</span>
 <span class="missed">	add-int/lit8 v1, v1, 0x1</span>
@@ -168,7 +169,7 @@ name = "b"
 <span class="missed">	array-length v0, v0</span>
 <span class="missed">	if-nez v0, :cond_0</span>
 <span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/b$b;->b:Ljava/lang/reflect/Type;</span>
-<span class="">	invoke-static {v0}, Lcom/google/gson/internal/b;->h(Ljava/lang/reflect/Type;)Ljava/lang/String;</span>
+<span class="">	invoke-static {v0}, Lcom/google/gson/internal/b;->f(Ljava/lang/reflect/Type;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="">	return-object v0</span>
 <span class="">	:cond_0</span>
@@ -177,7 +178,7 @@ name = "b"
 <span class="missed">	mul-int/lit8 v2, v2, 0x1e</span>
 <span class="missed">	invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V</span>
 <span class="missed">	iget-object v2, p0, Lcom/google/gson/internal/b$b;->b:Ljava/lang/reflect/Type;</span>
-<span class="">	invoke-static {v2}, Lcom/google/gson/internal/b;->h(Ljava/lang/reflect/Type;)Ljava/lang/String;</span>
+<span class="">	invoke-static {v2}, Lcom/google/gson/internal/b;->f(Ljava/lang/reflect/Type;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v2</span>
 <span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
 <span class="missed">	const-string v2, "<"</span>
@@ -185,7 +186,7 @@ name = "b"
 <span class="missed">	iget-object v2, p0, Lcom/google/gson/internal/b$b;->c:[Ljava/lang/reflect/Type;</span>
 <span class="missed">	const/4 v3, 0x0</span>
 <span class="missed">	aget-object v2, v2, v3</span>
-<span class="">	invoke-static {v2}, Lcom/google/gson/internal/b;->h(Ljava/lang/reflect/Type;)Ljava/lang/String;</span>
+<span class="">	invoke-static {v2}, Lcom/google/gson/internal/b;->f(Ljava/lang/reflect/Type;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v2</span>
 <span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
 <span class="missed">	const/4 v2, 0x1</span>
@@ -195,7 +196,7 @@ name = "b"
 <span class="missed">	invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
 <span class="missed">	iget-object v3, p0, Lcom/google/gson/internal/b$b;->c:[Ljava/lang/reflect/Type;</span>
 <span class="missed">	aget-object v3, v3, v2</span>
-<span class="">	invoke-static {v3}, Lcom/google/gson/internal/b;->h(Ljava/lang/reflect/Type;)Ljava/lang/String;</span>
+<span class="">	invoke-static {v3}, Lcom/google/gson/internal/b;->f(Ljava/lang/reflect/Type;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v3</span>
 <span class="missed">	invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
 <span class="missed">	add-int/lit8 v2, v2, 0x1</span>

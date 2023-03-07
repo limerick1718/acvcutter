@@ -26,7 +26,7 @@
 .method synthetic constructor <init>(Ljava/lang/String;Lcom/google/android/gms/dynamite/a;)V
     .locals 0
 
-    .line 3
+    .line 5
     invoke-direct {p0, p1}, Lcom/google/android/gms/dynamite/DynamiteModule$a;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -35,7 +35,7 @@
 .method private constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 0
 
-    .line 2
+    .line 3
     invoke-direct {p0, p1, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
@@ -44,7 +44,7 @@
 .method synthetic constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;Lcom/google/android/gms/dynamite/a;)V
     .locals 0
 
-    .line 4
+    .line 6
     invoke-direct {p0, p1, p2}, Lcom/google/android/gms/dynamite/DynamiteModule$a;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void

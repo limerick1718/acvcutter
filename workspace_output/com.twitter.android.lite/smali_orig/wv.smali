@@ -1,20 +1,30 @@
 .class public interface abstract Lwv;
 .super Ljava/lang/Object;
-.source "TypeAdapterFactory.java"
+.source "EventTransform.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
 
 # virtual methods
-.method public abstract a(Lfv;Ldw;)Lvv;
+.method public abstract toBytes(Ljava/lang/Object;)[B
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Lfv;",
-            "Ldw<",
-            "TT;>;)",
-            "Lvv<",
-            "TT;>;"
+            "(TT;)[B"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 .end method

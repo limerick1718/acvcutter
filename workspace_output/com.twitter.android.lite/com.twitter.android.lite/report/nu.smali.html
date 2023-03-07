@@ -14,12 +14,235 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lnu;
+		<code>.class final Lnu;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-common@@19.3.0"
+.implements Landroid/app/Application$ActivityLifecycleCallbacks;
+
+.annotation build Landroid/annotation/TargetApi;
+value = 0xe
+.end annotation
+
+.field private final synthetic a:Lnl;
 
 
-</code>
+<span class="cov">.method private constructor &lt;init&gt;(Lnl;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iput-object p1, p0, Lnu;->a:Lnl;</span>
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method synthetic constructor &lt;init&gt;(Lnl;Lnm;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0, p1}, Lnu;-><init>(Lnl;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public final onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V</span>
+<span class="">	.locals 6</span>
+
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v0, p0, Lnu;->a:Lnl;</span>
+<span class="exec">	invoke-virtual {v0}, Lnb;->r()Lla;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v0}, Lla;->x()Llc;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "onActivityCreated"</span>
+<span class="cov">	invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="exec">	invoke-virtual {p1}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	if-eqz v0, :cond_6</span>
+<span class="exec">	invoke-virtual {v0}, Landroid/content/Intent;->getData()Landroid/net/Uri;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="missed">	if-eqz v1, :cond_6</span>
+<span class="">	invoke-virtual {v1}, Landroid/net/Uri;->isHierarchical()Z</span>
+<span class="missed">	move-result v2</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	if-eqz v2, :cond_6</span>
+<span class="missed">	const-string v2, "auto"</span>
+<span class="missed">	if-nez p2, :cond_1</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	iget-object v3, p0, Lnu;->a:Lnl;</span>
+<span class="">	invoke-virtual {v3}, Lnb;->p()Lpv;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	invoke-virtual {v3, v1}, Lpv;->a(Landroid/net/Uri;)Landroid/os/Bundle;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	iget-object v4, p0, Lnu;->a:Lnl;</span>
+<span class="missed">	invoke-virtual {v4}, Lnb;->p()Lpv;</span>
+<span class="">	invoke-static {v0}, Lpv;->a(Landroid/content/Intent;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string v0, "gs"</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	move-object v0, v2</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-eqz v3, :cond_1</span>
+<span class="missed">	iget-object v4, p0, Lnu;->a:Lnl;</span>
+<span class="missed">	const-string v5, "_cmp"</span>
+<span class="missed">	invoke-virtual {v4, v0, v5, v3}, Lnl;->a(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const-string v0, "referrer"</span>
+<span class="">	invoke-virtual {v1, v0}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_2</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const-string v1, "gclid"</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	if-eqz v1, :cond_4</span>
+<span class="missed">	const-string v1, "utm_campaign"</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_3</span>
+<span class="missed">	const-string v1, "utm_source"</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_3</span>
+<span class="missed">	const-string v1, "utm_medium"</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_3</span>
+<span class="missed">	const-string v1, "utm_term"</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_3</span>
+<span class="missed">	const-string v1, "utm_content"</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_4</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_4</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-nez v1, :cond_5</span>
+<span class="missed">	iget-object v0, p0, Lnu;->a:Lnl;</span>
+<span class="">	invoke-virtual {v0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lla;->w()Llc;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "Activity created with data \'referrer\' param without gclid and at least one utm field"</span>
+<span class="missed">	invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_5</span>
+<span class="missed">	iget-object v1, p0, Lnu;->a:Lnl;</span>
+<span class="">	invoke-virtual {v1}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1}, Lla;->w()Llc;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v4, "Activity created with referrer"</span>
+<span class="missed">	invoke-virtual {v1, v4, v0}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="">	invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_6</span>
+<span class="missed">	iget-object v1, p0, Lnu;->a:Lnl;</span>
+<span class="missed">	const-string v4, "_ldl"</span>
+<span class="missed">	invoke-virtual {v1, v2, v4, v0, v3}, Lnl;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Z)V</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	iget-object v1, p0, Lnu;->a:Lnl;</span>
+<span class="">	invoke-virtual {v1}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Throwable caught in onActivityCreated"</span>
+<span class="missed">	invoke-virtual {v1, v2, v0}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="cov">	:goto_2</span>
+<span class="cov">	:cond_6</span>
+<span class="cov">	iget-object v0, p0, Lnu;->a:Lnl;</span>
+<span class="exec">	invoke-virtual {v0}, Loa;->i()Lny;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	invoke-virtual {v0, p1, p2}, Lny;->a(Landroid/app/Activity;Landroid/os/Bundle;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public final onActivityDestroyed(Landroid/app/Activity;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lnu;->a:Lnl;</span>
+<span class="">	invoke-virtual {v0}, Loa;->i()Lny;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lny;->c(Landroid/app/Activity;)V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public final onActivityPaused(Landroid/app/Activity;)V</span>
+<span class="">	.locals 4</span>
+
+<span class="cov">	iget-object v0, p0, Lnu;->a:Lnl;</span>
+<span class="exec">	invoke-virtual {v0}, Loa;->i()Lny;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	invoke-virtual {v0, p1}, Lny;->b(Landroid/app/Activity;)V</span>
+<span class="cov">	iget-object p1, p0, Lnu;->a:Lnl;</span>
+<span class="exec">	invoke-virtual {p1}, Loa;->k()Lpa;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	invoke-virtual {p1}, Lnb;->m()Lcom/google/android/gms/common/util/d;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-interface {v0}, Lcom/google/android/gms/common/util/d;->b()J</span>
+<span class="cov">	move-result-wide v0</span>
+<span class="exec">	invoke-virtual {p1}, Lnb;->q()Lma;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	new-instance v3, Lpf;</span>
+<span class="cov">	invoke-direct {v3, p1, v0, v1}, Lpf;-><init>(Lpa;J)V</span>
+<span class="cov">	invoke-virtual {v2, v3}, Lma;->a(Ljava/lang/Runnable;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public final onActivityResumed(Landroid/app/Activity;)V</span>
+<span class="">	.locals 4</span>
+
+<span class="cov">	iget-object v0, p0, Lnu;->a:Lnl;</span>
+<span class="exec">	invoke-virtual {v0}, Loa;->i()Lny;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	invoke-virtual {v0, p1}, Lny;->a(Landroid/app/Activity;)V</span>
+<span class="cov">	iget-object p1, p0, Lnu;->a:Lnl;</span>
+<span class="exec">	invoke-virtual {p1}, Loa;->k()Lpa;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	invoke-virtual {p1}, Lnb;->m()Lcom/google/android/gms/common/util/d;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-interface {v0}, Lcom/google/android/gms/common/util/d;->b()J</span>
+<span class="cov">	move-result-wide v0</span>
+<span class="exec">	invoke-virtual {p1}, Lnb;->q()Lma;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	new-instance v3, Lpe;</span>
+<span class="cov">	invoke-direct {v3, p1, v0, v1}, Lpe;-><init>(Lpa;J)V</span>
+<span class="cov">	invoke-virtual {v2, v3}, Lma;->a(Ljava/lang/Runnable;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public final onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-object v0, p0, Lnu;->a:Lnl;</span>
+<span class="exec">	invoke-virtual {v0}, Loa;->i()Lny;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	invoke-virtual {v0, p1, p2}, Lny;->b(Landroid/app/Activity;Landroid/os/Bundle;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public final onActivityStarted(Landroid/app/Activity;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public final onActivityStopped(Landroid/app/Activity;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="">	return-void</span>
+.end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
 

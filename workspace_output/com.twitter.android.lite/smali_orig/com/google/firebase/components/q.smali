@@ -1,50 +1,157 @@
-.class final synthetic Lcom/google/firebase/components/q;
+.class final Lcom/google/firebase/components/q;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-components@@16.0.0"
+.source "com.google.firebase:firebase-common@@16.0.2"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lsq;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Lsq<",
+        "TT;>;"
+    }
+.end annotation
+
+
+# static fields
+.field private static final a:Ljava/lang/Object;
 
 
 # instance fields
-.field private final a:Ljava/util/Map$Entry;
+.field private volatile b:Ljava/lang/Object;
 
-.field private final b:Lhu;
+.field private volatile c:Lsq;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lsq<",
+            "TT;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method private constructor <init>(Ljava/util/Map$Entry;Lhu;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 31
+    new-instance v0, Ljava/lang/Object;
 
-    iput-object p1, p0, Lcom/google/firebase/components/q;->a:Ljava/util/Map$Entry;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcom/google/firebase/components/q;->b:Lhu;
+    sput-object v0, Lcom/google/firebase/components/q;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public static a(Ljava/util/Map$Entry;Lhu;)Ljava/lang/Runnable;
+.method constructor <init>(Lcom/google/firebase/components/c;Lcom/google/firebase/components/b;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/firebase/components/c<",
+            "TT;>;",
+            "Lcom/google/firebase/components/b;",
+            ")V"
+        }
+    .end annotation
 
-    new-instance v0, Lcom/google/firebase/components/q;
+    .line 42
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, p0, p1}, Lcom/google/firebase/components/q;-><init>(Ljava/util/Map$Entry;Lhu;)V
+    .line 33
+    sget-object v0, Lcom/google/firebase/components/q;->a:Ljava/lang/Object;
 
-    return-object v0
+    iput-object v0, p0, Lcom/google/firebase/components/q;->b:Ljava/lang/Object;
+
+    .line 43
+    invoke-static {p1, p2}, Lcom/google/firebase/components/r;->a(Lcom/google/firebase/components/c;Lcom/google/firebase/components/b;)Lsq;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/google/firebase/components/q;->c:Lsq;
+
+    return-void
+.end method
+
+.method static synthetic a(Lcom/google/firebase/components/c;Lcom/google/firebase/components/b;)Ljava/lang/Object;
+    .locals 0
+
+    .line 43
+    invoke-interface {p0, p1}, Lcom/google/firebase/components/c;->a(Lcom/google/firebase/components/b;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public final a()Ljava/lang/Object;
     .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
 
-    iget-object v0, p0, Lcom/google/firebase/components/q;->a:Ljava/util/Map$Entry;
+    .line 49
+    iget-object v0, p0, Lcom/google/firebase/components/q;->b:Ljava/lang/Object;
 
-    iget-object v1, p0, Lcom/google/firebase/components/q;->b:Lhu;
+    .line 50
+    sget-object v1, Lcom/google/firebase/components/q;->a:Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Lcom/google/firebase/components/r;->a(Ljava/util/Map$Entry;Lhu;)V
+    if-ne v0, v1, :cond_1
 
-    return-void
+    .line 51
+    monitor-enter p0
+
+    .line 52
+    :try_start_0
+    iget-object v0, p0, Lcom/google/firebase/components/q;->b:Ljava/lang/Object;
+
+    .line 53
+    sget-object v1, Lcom/google/firebase/components/q;->a:Ljava/lang/Object;
+
+    if-ne v0, v1, :cond_0
+
+    .line 54
+    iget-object v0, p0, Lcom/google/firebase/components/q;->c:Lsq;
+
+    invoke-interface {v0}, Lsq;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    .line 55
+    iput-object v0, p0, Lcom/google/firebase/components/q;->b:Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    .line 58
+    iput-object v1, p0, Lcom/google/firebase/components/q;->c:Lsq;
+
+    .line 60
+    :cond_0
+    monitor-exit p0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_1
+    :goto_0
+    return-object v0
 .end method

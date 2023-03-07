@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lokhttp3/internal/cache/DiskLruCache$Editor;->newSink(I)Lvx;
+    value = Lokhttp3/internal/cache/DiskLruCache$Editor;->newSink(I)Lzj;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,13 +19,13 @@
 
 
 # direct methods
-.method constructor <init>(Lokhttp3/internal/cache/DiskLruCache$Editor;Lvx;)V
+.method constructor <init>(Lokhttp3/internal/cache/DiskLruCache$Editor;Lzj;)V
     .locals 0
 
-    .line 1
+    .line 897
     iput-object p1, p0, Lokhttp3/internal/cache/DiskLruCache$Editor$1;->this$1:Lokhttp3/internal/cache/DiskLruCache$Editor;
 
-    invoke-direct {p0, p2}, Lokhttp3/internal/cache/FaultHidingSink;-><init>(Lvx;)V
+    invoke-direct {p0, p2}, Lokhttp3/internal/cache/FaultHidingSink;-><init>(Lzj;)V
 
     return-void
 .end method
@@ -35,20 +35,20 @@
 .method protected onException(Ljava/io/IOException;)V
     .locals 1
 
-    .line 1
+    .line 899
     iget-object p1, p0, Lokhttp3/internal/cache/DiskLruCache$Editor$1;->this$1:Lokhttp3/internal/cache/DiskLruCache$Editor;
 
     iget-object p1, p1, Lokhttp3/internal/cache/DiskLruCache$Editor;->this$0:Lokhttp3/internal/cache/DiskLruCache;
 
     monitor-enter p1
 
-    .line 2
+    .line 900
     :try_start_0
     iget-object v0, p0, Lokhttp3/internal/cache/DiskLruCache$Editor$1;->this$1:Lokhttp3/internal/cache/DiskLruCache$Editor;
 
     invoke-virtual {v0}, Lokhttp3/internal/cache/DiskLruCache$Editor;->detach()V
 
-    .line 3
+    .line 901
     monitor-exit p1
 
     return-void

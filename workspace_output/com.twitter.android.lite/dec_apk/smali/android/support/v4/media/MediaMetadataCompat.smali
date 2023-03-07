@@ -11,18 +11,21 @@ value = {
 }
 .end annotation
 .end field
-.field static final c:Lk;
+.field static final a:Ll;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lk<",
+"Ll<",
 "Ljava/lang/String;",
 "Ljava/lang/Integer;",
 ">;"
 }
 .end annotation
 .end field
-.field final a:Landroid/os/Bundle;
-.field private b:Ljava/lang/Object;
+.field private static final c:[Ljava/lang/String;
+.field private static final d:[Ljava/lang/String;
+.field private static final e:[Ljava/lang/String;
+.field final b:Landroid/os/Bundle;
+.field private f:Ljava/lang/Object;
 .method constructor <init>(Landroid/os/Parcel;)V
 .locals 1
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

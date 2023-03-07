@@ -15,11 +15,11 @@
 
 
 # virtual methods
-.method protected abstract a(Lcom/google/android/gms/common/api/a$b;Lhn;)V
+.method protected abstract a(Lcom/google/android/gms/common/api/a$b;Lrn;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TA;",
-            "Lhn<",
+            "Lrn<",
             "Ljava/lang/Boolean;",
             ">;)V"
         }

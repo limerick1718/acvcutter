@@ -27,7 +27,7 @@ return-wide v0
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public writeTo(Lfx;)V
+.method public writeTo(Lyt;)V
 .locals 2
 .annotation system Ldalvik/annotation/Throws;
 value = {

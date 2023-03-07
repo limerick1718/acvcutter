@@ -14,87 +14,599 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public abstract Llm;
-.super Ly6;
-.implements Lkm;
+		<code>.class final Llm;
+.super Lnc;
 
 
+.field static final a:Landroid/util/Pair;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Landroid/util/Pair<",
+"Ljava/lang/String;",
+"Ljava/lang/Long;",
+">;"
+}
+.end annotation
+.end field
+.field public b:Llq;
+.field public final c:Llp;
+.field public final d:Llp;
+.field public final e:Llp;
+.field public final f:Llp;
+.field public final g:Llp;
+.field public final h:Llp;
+.field public final i:Llp;
+.field public final j:Llr;
+.field public final k:Llp;
+.field public final l:Llp;
+.field public final m:Llo;
+.field public final n:Llp;
+.field public final o:Llp;
+.field public p:Z
+.field private r:Landroid/content/SharedPreferences;
+.field private s:Ljava/lang/String;
+.field private t:Z
+.field private u:J
 
 
-.method public constructor &lt;init&gt;()V
-<span class="">	.locals 1</span>
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 3</span>
 
-<span class="missed">	const-string v0, "com.google.android.gms.signin.internal.ISignInCallbacks"</span>
-<span class="missed">	invoke-direct {p0, v0}, Ly6;-><init>(Ljava/lang/String;)V</span>
-<span class="">	return-void</span>
+<span class="cov">	new-instance v0, Landroid/util/Pair;</span>
+<span class="cov">	const-wide/16 v1, 0x0</span>
+<span class="exec">	invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const-string v2, ""</span>
+<span class="cov">	invoke-direct {v0, v2, v1}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V</span>
+<span class="cov">	sput-object v0, Llm;->a:Landroid/util/Pair;</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method protected a(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+<span class="cov">.method constructor &lt;init&gt;(Lmf;)V</span>
+<span class="">	.locals 5</span>
+
+<span class="cov">	invoke-direct {p0, p1}, Lnc;-><init>(Lmf;)V</span>
+<span class="cov">	new-instance p1, Llp;</span>
+<span class="cov">	const-wide/16 v0, 0x0</span>
+<span class="cov">	const-string v2, "last_upload"</span>
+<span class="cov">	invoke-direct {p1, p0, v2, v0, v1}, Llp;-><init>(Llm;Ljava/lang/String;J)V</span>
+<span class="cov">	iput-object p1, p0, Llm;->c:Llp;</span>
+<span class="cov">	new-instance p1, Llp;</span>
+<span class="cov">	const-string v2, "last_upload_attempt"</span>
+<span class="cov">	invoke-direct {p1, p0, v2, v0, v1}, Llp;-><init>(Llm;Ljava/lang/String;J)V</span>
+<span class="cov">	iput-object p1, p0, Llm;->d:Llp;</span>
+<span class="cov">	new-instance p1, Llp;</span>
+<span class="cov">	const-string v2, "backoff"</span>
+<span class="cov">	invoke-direct {p1, p0, v2, v0, v1}, Llp;-><init>(Llm;Ljava/lang/String;J)V</span>
+<span class="cov">	iput-object p1, p0, Llm;->e:Llp;</span>
+<span class="cov">	new-instance p1, Llp;</span>
+<span class="cov">	const-string v2, "last_delete_stale"</span>
+<span class="cov">	invoke-direct {p1, p0, v2, v0, v1}, Llp;-><init>(Llm;Ljava/lang/String;J)V</span>
+<span class="cov">	iput-object p1, p0, Llm;->f:Llp;</span>
+<span class="cov">	new-instance p1, Llp;</span>
+<span class="cov">	const-string v2, "time_before_start"</span>
+<span class="cov">	const-wide/16 v3, 0x2710</span>
+<span class="cov">	invoke-direct {p1, p0, v2, v3, v4}, Llp;-><init>(Llm;Ljava/lang/String;J)V</span>
+<span class="cov">	iput-object p1, p0, Llm;->k:Llp;</span>
+<span class="cov">	new-instance p1, Llp;</span>
+<span class="cov">	const-string v2, "session_timeout"</span>
+<span class="cov">	const-wide/32 v3, 0x1b7740</span>
+<span class="cov">	invoke-direct {p1, p0, v2, v3, v4}, Llp;-><init>(Llm;Ljava/lang/String;J)V</span>
+<span class="cov">	iput-object p1, p0, Llm;->l:Llp;</span>
+<span class="cov">	new-instance p1, Llo;</span>
+<span class="cov">	const-string v2, "start_new_session"</span>
+<span class="cov">	const/4 v3, 0x1</span>
+<span class="cov">	invoke-direct {p1, p0, v2, v3}, Llo;-><init>(Llm;Ljava/lang/String;Z)V</span>
+<span class="cov">	iput-object p1, p0, Llm;->m:Llo;</span>
+<span class="cov">	new-instance p1, Llp;</span>
+<span class="cov">	const-string v2, "last_pause_time"</span>
+<span class="cov">	invoke-direct {p1, p0, v2, v0, v1}, Llp;-><init>(Llm;Ljava/lang/String;J)V</span>
+<span class="cov">	iput-object p1, p0, Llm;->n:Llp;</span>
+<span class="cov">	new-instance p1, Llp;</span>
+<span class="cov">	const-string v2, "time_active"</span>
+<span class="cov">	invoke-direct {p1, p0, v2, v0, v1}, Llp;-><init>(Llm;Ljava/lang/String;J)V</span>
+<span class="cov">	iput-object p1, p0, Llm;->o:Llp;</span>
+<span class="cov">	new-instance p1, Llp;</span>
+<span class="cov">	const-string v2, "midnight_offset"</span>
+<span class="cov">	invoke-direct {p1, p0, v2, v0, v1}, Llp;-><init>(Llm;Ljava/lang/String;J)V</span>
+<span class="cov">	iput-object p1, p0, Llm;->g:Llp;</span>
+<span class="cov">	new-instance p1, Llp;</span>
+<span class="cov">	const-string v2, "first_open_time"</span>
+<span class="cov">	invoke-direct {p1, p0, v2, v0, v1}, Llp;-><init>(Llm;Ljava/lang/String;J)V</span>
+<span class="cov">	iput-object p1, p0, Llm;->h:Llp;</span>
+<span class="cov">	new-instance p1, Llp;</span>
+<span class="cov">	const-string v2, "app_install_time"</span>
+<span class="cov">	invoke-direct {p1, p0, v2, v0, v1}, Llp;-><init>(Llm;Ljava/lang/String;J)V</span>
+<span class="cov">	iput-object p1, p0, Llm;->i:Llp;</span>
+<span class="cov">	new-instance p1, Llr;</span>
+<span class="cov">	const-string v0, "app_instance_id"</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	invoke-direct {p1, p0, v0, v1}, Llr;-><init>(Llm;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	iput-object p1, p0, Llm;->j:Llr;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method static synthetic a(Llm;)Landroid/content/SharedPreferences;</span>
 <span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+
+<span class="exec">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method private final y()Landroid/content/SharedPreferences;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	invoke-virtual {p0}, Lnb;->d()V</span>
+<span class="cov">	invoke-virtual {p0}, Lnc;->A()V</span>
+<span class="cov">	iget-object v0, p0, Llm;->r:Landroid/content/SharedPreferences;</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method final a(Ljava/lang/String;)Landroid/util/Pair;
+<span class="">	.locals 7</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	")",</span>
+<span class="">	"Landroid/util/Pair<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ljava/lang/Boolean;",</span>
+<span class="">	">;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	const/4 p4, 0x3</span>
-<span class="missed">	if-eq p1, p4, :cond_4</span>
-<span class="missed">	const/4 p4, 0x4</span>
-<span class="missed">	if-eq p1, p4, :cond_3</span>
-<span class="missed">	const/4 p4, 0x6</span>
-<span class="missed">	if-eq p1, p4, :cond_2</span>
-<span class="missed">	const/4 p4, 0x7</span>
-<span class="missed">	if-eq p1, p4, :cond_1</span>
-<span class="missed">	const/16 p4, 0x8</span>
-<span class="missed">	if-eq p1, p4, :cond_0</span>
-<span class="missed">	const/4 p1, 0x0</span>
-<span class="">	return p1</span>
+<span class="missed">	const-string v0, ""</span>
+<span class="missed">	invoke-virtual {p0}, Lnb;->d()V</span>
+<span class="">	invoke-virtual {p0}, Lnb;->m()Lcom/google/android/gms/common/util/d;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-interface {v1}, Lcom/google/android/gms/common/util/d;->b()J</span>
+<span class="missed">	move-result-wide v1</span>
+<span class="missed">	iget-object v3, p0, Llm;->s:Ljava/lang/String;</span>
+<span class="missed">	if-eqz v3, :cond_0</span>
+<span class="missed">	iget-wide v4, p0, Llm;->u:J</span>
+<span class="missed">	cmp-long v6, v1, v4</span>
+<span class="missed">	if-gez v6, :cond_0</span>
+<span class="missed">	new-instance p1, Landroid/util/Pair;</span>
+<span class="missed">	iget-boolean v0, p0, Llm;->t:Z</span>
+<span class="">	invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-direct {p1, v3, v0}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V</span>
+<span class="">	return-object p1</span>
 <span class="">	:cond_0</span>
-<span class="missed">	sget-object p1, Lqm;->CREATOR:Landroid/os/Parcelable$Creator;</span>
-<span class="">	invoke-static {p2, p1}, Lz6;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	check-cast p1, Lqm;</span>
-<span class="missed">	invoke-interface {p0, p1}, Lkm;->a(Lqm;)V</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_1</span>
-<span class="missed">	sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;</span>
-<span class="">	invoke-static {p2, p1}, Lz6;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	check-cast p1, Lcom/google/android/gms/common/api/Status;</span>
-<span class="missed">	sget-object p4, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->CREATOR:Landroid/os/Parcelable$Creator;</span>
-<span class="">	invoke-static {p2, p4}, Lz6;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;</span>
-<span class="missed">	move-result-object p2</span>
-<span class="missed">	check-cast p2, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;</span>
-<span class="missed">	invoke-interface {p0, p1, p2}, Lkm;->a(Lcom/google/android/gms/common/api/Status;Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)V</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_2</span>
-<span class="missed">	sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;</span>
-<span class="">	invoke-static {p2, p1}, Lz6;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	check-cast p1, Lcom/google/android/gms/common/api/Status;</span>
-<span class="missed">	invoke-interface {p0, p1}, Lkm;->a(Lcom/google/android/gms/common/api/Status;)V</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_3</span>
-<span class="missed">	sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;</span>
-<span class="">	invoke-static {p2, p1}, Lz6;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	check-cast p1, Lcom/google/android/gms/common/api/Status;</span>
-<span class="missed">	invoke-interface {p0, p1}, Lkm;->b(Lcom/google/android/gms/common/api/Status;)V</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_4</span>
-<span class="missed">	sget-object p1, Lc5;->CREATOR:Landroid/os/Parcelable$Creator;</span>
-<span class="">	invoke-static {p2, p1}, Lz6;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	check-cast p1, Lc5;</span>
-<span class="missed">	sget-object p4, Lhm;->CREATOR:Landroid/os/Parcelable$Creator;</span>
-<span class="">	invoke-static {p2, p4}, Lz6;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;</span>
-<span class="missed">	move-result-object p2</span>
-<span class="missed">	check-cast p2, Lhm;</span>
-<span class="missed">	invoke-interface {p0, p1, p2}, Lkm;->a(Lc5;Lhm;)V</span>
-<span class="">	:goto_0</span>
-<span class="missed">	invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V</span>
+<span class="">	invoke-virtual {p0}, Lnb;->t()Lqf;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	sget-object v4, Lkq;->j:Lkq$a;</span>
+<span class="">	invoke-virtual {v3, p1, v4}, Lqf;->a(Ljava/lang/String;Lkq$a;)J</span>
+<span class="missed">	move-result-wide v3</span>
+<span class="missed">	add-long/2addr v1, v3</span>
+<span class="missed">	iput-wide v1, p0, Llm;->u:J</span>
 <span class="missed">	const/4 p1, 0x1</span>
+<span class="missed">	invoke-static {p1}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->setShouldSkipGmsCoreVersionCheck(Z)V</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-virtual {p0}, Lnb;->n()Landroid/content/Context;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->getAdvertisingIdInfo(Landroid/content/Context;)Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="">	invoke-virtual {p1}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->getId()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iput-object v1, p0, Llm;->s:Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p1}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->isLimitAdTrackingEnabled()Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	iput-boolean p1, p0, Llm;->t:Z</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object p1, p0, Llm;->s:Ljava/lang/String;</span>
+<span class="missed">	if-nez p1, :cond_2</span>
+<span class="missed">	iput-object v0, p0, Llm;->s:Ljava/lang/String;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1}, Lla;->w()Llc;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Unable to get advertising id"</span>
+<span class="missed">	invoke-virtual {v1, v2, p1}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="missed">	iput-object v0, p0, Llm;->s:Ljava/lang/String;</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	invoke-static {p1}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->setShouldSkipGmsCoreVersionCheck(Z)V</span>
+<span class="missed">	new-instance p1, Landroid/util/Pair;</span>
+<span class="missed">	iget-object v0, p0, Llm;->s:Ljava/lang/String;</span>
+<span class="missed">	iget-boolean v1, p0, Llm;->t:Z</span>
+<span class="">	invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {p1, v0, v1}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V</span>
+<span class="">	return-object p1</span>
+.end method
+
+<span class="cov">.method final a(Z)V</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	invoke-virtual {p0}, Lnb;->d()V</span>
+<span class="exec">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v0}, Lla;->x()Llc;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const-string v2, "Setting useService"</span>
+<span class="cov">	invoke-virtual {v0, v2, v1}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="exec">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "use_service"</span>
+<span class="cov">	invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method final a(J)Z</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	iget-object v0, p0, Llm;->l:Llp;</span>
+<span class="exec">	invoke-virtual {v0}, Llp;->a()J</span>
+<span class="cov">	move-result-wide v0</span>
+<span class="cov">	sub-long/2addr p1, v0</span>
+<span class="cov">	iget-object v0, p0, Llm;->n:Llp;</span>
+<span class="exec">	invoke-virtual {v0}, Llp;->a()J</span>
+<span class="cov">	move-result-wide v0</span>
+<span class="cov">	cmp-long v2, p1, v0</span>
+<span class="cov">	if-lez v2, :cond_0</span>
+<span class="cov">	const/4 p1, 0x1</span>
+<span class="exec">	return p1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 p1, 0x0</span>
+<span class="exec">	return p1</span>
+.end method
+
+.method final b(Ljava/lang/String;)Ljava/lang/String;
+<span class="">	.locals 6</span>
+
+<span class="missed">	invoke-virtual {p0}, Lnb;->d()V</span>
+<span class="">	invoke-virtual {p0, p1}, Llm;->a(Ljava/lang/String;)Landroid/util/Pair;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object p1, p1, Landroid/util/Pair;->first:Ljava/lang/Object;</span>
+<span class="missed">	check-cast p1, Ljava/lang/String;</span>
+<span class="">	invoke-static {}, Lpv;->i()Ljava/security/MessageDigest;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	new-array v3, v2, [Ljava/lang/Object;</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	new-instance v5, Ljava/math/BigInteger;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {v0, p1}, Ljava/security/MessageDigest;->digest([B)[B</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {v5, v2, p1}, Ljava/math/BigInteger;-><init>(I[B)V</span>
+<span class="missed">	aput-object v5, v3, v4</span>
+<span class="missed">	const-string p1, "%032X"</span>
+<span class="">	invoke-static {v1, p1, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method final b(Z)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	invoke-virtual {p0}, Lnb;->d()V</span>
+<span class="">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lla;->x()Llc;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Setting measurementEnabled"</span>
+<span class="missed">	invoke-virtual {v0, v2, v1}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "measurement_enabled"</span>
+<span class="missed">	invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method final c(Ljava/lang/String;)V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	invoke-virtual {p0}, Lnb;->d()V</span>
+<span class="exec">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "gmp_app_id"</span>
+<span class="cov">	invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method final c(Z)Z
+<span class="">	.locals 2</span>
+
+<span class="missed">	invoke-virtual {p0}, Lnb;->d()V</span>
+<span class="">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "measurement_enabled"</span>
+<span class="">	invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z</span>
+<span class="missed">	move-result p1</span>
 <span class="">	return p1</span>
+.end method
+
+<span class="cov">.method final d(Ljava/lang/String;)V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	invoke-virtual {p0}, Lnb;->d()V</span>
+<span class="exec">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "admob_app_id"</span>
+<span class="cov">	invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method final d(Z)V</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	invoke-virtual {p0}, Lnb;->d()V</span>
+<span class="exec">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v0}, Lla;->x()Llc;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const-string v2, "Updating deferred analytics collection"</span>
+<span class="cov">	invoke-virtual {v0, v2, v1}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="exec">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "deferred_analytics_collection"</span>
+<span class="cov">	invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method protected final e()Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="exec">	return v0</span>
+.end method
+
+<span class="cov">.method protected final f()V</span>
+<span class="">	.locals 9</span>
+
+<span class="exec">	invoke-virtual {p0}, Lnb;->n()Landroid/content/Context;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	const-string v2, "com.google.android.gms.measurement.prefs"</span>
+<span class="exec">	invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iput-object v0, p0, Llm;->r:Landroid/content/SharedPreferences;</span>
+<span class="cov">	iget-object v0, p0, Llm;->r:Landroid/content/SharedPreferences;</span>
+<span class="cov">	const-string v2, "has_been_opened"</span>
+<span class="exec">	invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	iput-boolean v0, p0, Llm;->p:Z</span>
+<span class="cov">	iget-boolean v0, p0, Llm;->p:Z</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="cov">	iget-object v0, p0, Llm;->r:Landroid/content/SharedPreferences;</span>
+<span class="exec">	invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	new-instance v0, Llq;</span>
+<span class="cov">	const-wide/16 v1, 0x0</span>
+<span class="cov">	sget-object v3, Lkq;->k:Lkq$a;</span>
+<span class="exec">	invoke-virtual {v3}, Lkq$a;->b()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	check-cast v3, Ljava/lang/Long;</span>
+<span class="exec">	invoke-virtual {v3}, Ljava/lang/Long;->longValue()J</span>
+<span class="cov">	move-result-wide v3</span>
+<span class="exec">	invoke-static {v1, v2, v3, v4}, Ljava/lang/Math;->max(JJ)J</span>
+<span class="cov">	move-result-wide v6</span>
+<span class="cov">	const/4 v8, 0x0</span>
+<span class="cov">	const-string v5, "health_monitor"</span>
+<span class="cov">	move-object v3, v0</span>
+<span class="cov">	move-object v4, p0</span>
+<span class="cov">	invoke-direct/range {v3 .. v8}, Llq;-><init>(Llm;Ljava/lang/String;JLln;)V</span>
+<span class="cov">	iput-object v0, p0, Llm;->b:Llq;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method final g()Ljava/lang/String;</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	invoke-virtual {p0}, Lnb;->d()V</span>
+<span class="exec">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "gmp_app_id"</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="exec">	invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method final h()Ljava/lang/String;</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	invoke-virtual {p0}, Lnb;->d()V</span>
+<span class="exec">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "admob_app_id"</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="exec">	invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method final i()Ljava/lang/Boolean;</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	invoke-virtual {p0}, Lnb;->d()V</span>
+<span class="exec">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "use_service"</span>
+<span class="exec">	invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="exec">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method final j()V
+<span class="">	.locals 3</span>
+
+<span class="missed">	invoke-virtual {p0}, Lnb;->d()V</span>
+<span class="">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lla;->x()Llc;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "Clearing collection preferences."</span>
+<span class="missed">	invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="">	invoke-virtual {p0}, Lnb;->t()Lqf;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sget-object v1, Lkq;->aq:Lkq$a;</span>
+<span class="">	invoke-virtual {v0, v1}, Lqf;->a(Lkq$a;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-virtual {p0}, Llm;->k()Ljava/lang/Boolean;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	invoke-virtual {p0, v0}, Llm;->b(Z)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "measurement_enabled"</span>
+<span class="">	invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="">	invoke-virtual {p0, v1}, Llm;->c(Z)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="missed">	if-eqz v0, :cond_3</span>
+<span class="missed">	invoke-virtual {p0, v1}, Llm;->b(Z)V</span>
+<span class="">	:cond_3</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method final k()Ljava/lang/Boolean;</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	invoke-virtual {p0}, Lnb;->d()V</span>
+<span class="exec">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "measurement_enabled"</span>
+<span class="exec">	invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="">	invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method protected final v()Ljava/lang/String;</span>
+<span class="">	.locals 4</span>
+
+<span class="cov">	invoke-virtual {p0}, Lnb;->d()V</span>
+<span class="exec">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "previous_os_version"</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="exec">	invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {p0}, Lnb;->l()Lki;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	invoke-virtual {v2}, Lnc;->A()V</span>
+<span class="cov">	sget-object v2, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;</span>
+<span class="exec">	invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
+<span class="cov">	move-result v3</span>
+<span class="cov">	if-nez v3, :cond_0</span>
+<span class="exec">	invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v3</span>
+<span class="cov">	if-nez v3, :cond_0</span>
+<span class="exec">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="exec">	invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	invoke-interface {v3, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method final w()Z</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	invoke-virtual {p0}, Lnb;->d()V</span>
+<span class="exec">	invoke-direct {p0}, Llm;->y()Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "deferred_analytics_collection"</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="exec">	invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="exec">	return v0</span>
+.end method
+
+<span class="cov">.method final x()Z</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Llm;->r:Landroid/content/SharedPreferences;</span>
+<span class="cov">	const-string v1, "deferred_analytics_collection"</span>
+<span class="exec">	invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="exec">	return v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

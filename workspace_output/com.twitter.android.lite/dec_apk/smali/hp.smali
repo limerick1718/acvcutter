@@ -1,5 +1,18 @@
 .class public interface abstract Lhp;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.method public abstract a()J
+.implements Lhr;
+.method public abstract a(Lfn;)V
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Ljava/io/IOException;
+}
+.end annotation
+.end method
+.method public abstract d()Lew;
+.end method
+.method public abstract h()I
+.end method
+.method public abstract j()Lhq;
+.end method
+.method public abstract k()Lhq;
 .end method

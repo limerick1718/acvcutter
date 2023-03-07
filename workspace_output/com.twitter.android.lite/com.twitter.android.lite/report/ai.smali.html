@@ -14,90 +14,160 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lai;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.implements Lkb;
+		<code>.class public abstract Lai;
+.super Lag;
+.source "FragmentHostCallback.java"
 
 .annotation system Ldalvik/annotation/Signature;
 value = {
+"<E:",
 "Ljava/lang/Object;",
-"Lkb<",
-"Lzh;",
-">;"
+">",
+"Lag;"
 }
 .end annotation
 
-.field private static b:Lai;
-.field private final a:Lkb;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lkb<",
-"Lzh;",
-">;"
-}
-.end annotation
-.end field
+.field private final a:Landroid/app/Activity;
+.field final b:Lak;
+.field private final c:Landroid/content/Context;
+.field private final d:Landroid/os/Handler;
+.field private final e:I
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 1</span>
+.method constructor &lt;init&gt;(Laf;)V
+<span class="">	.locals 2</span>
 
-<span class="cov">	new-instance v0, Lai;</span>
-<span class="cov">	invoke-direct {v0}, Lai;-><init>()V</span>
-<span class="cov">	sput-object v0, Lai;->b:Lai;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iget-object v0, p1, Laf;->a:Landroid/os/Handler;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-direct {p0, p1, p1, v0, v1}, Lai;-><init>(Landroid/app/Activity;Landroid/content/Context;Landroid/os/Handler;I)V</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public constructor &lt;init&gt;()V</span>
+.method constructor &lt;init&gt;(Landroid/app/Activity;Landroid/content/Context;Landroid/os/Handler;I)V
 <span class="">	.locals 1</span>
 
-<span class="cov">	new-instance v0, Lci;</span>
-<span class="cov">	invoke-direct {v0}, Lci;-><init>()V</span>
-<span class="exec">	invoke-static {v0}, Ljb;->a(Ljava/lang/Object;)Lkb;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	invoke-direct {p0, v0}, Lai;-><init>(Lkb;)V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct {p0}, Lag;-><init>()V</span>
+<span class="missed">	new-instance v0, Lak;</span>
+<span class="missed">	invoke-direct {v0}, Lak;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lai;->b:Lak;</span>
+<span class="missed">	iput-object p1, p0, Lai;->a:Landroid/app/Activity;</span>
+<span class="missed">	const-string p1, "context == null"</span>
+<span class="">	invoke-static {p2, p1}, Lw;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Landroid/content/Context;</span>
+<span class="missed">	iput-object p1, p0, Lai;->c:Landroid/content/Context;</span>
+<span class="missed">	const-string p1, "handler == null"</span>
+<span class="">	invoke-static {p3, p1}, Lw;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Landroid/os/Handler;</span>
+<span class="missed">	iput-object p1, p0, Lai;->d:Landroid/os/Handler;</span>
+<span class="missed">	iput p4, p0, Lai;->e:I</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method private constructor &lt;init&gt;(Lkb;)V</span>
+.method public a(I)Landroid/view/View;
 <span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Lkb<",</span>
-<span class="">	"Lzh;",</span>
-<span class="">	">;)V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="exec">	invoke-static {p1}, Ljb;->a(Lkb;)Lkb;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	iput-object p1, p0, Lai;->a:Lkb;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	return-object p1</span>
 .end method
 
-<span class="cov">.method public static b()Z</span>
-<span class="">	.locals 1</span>
+.method public a(Lae;Landroid/content/Intent;ILandroid/os/Bundle;)V
+<span class="">	.locals 0</span>
 
-<span class="cov">	sget-object v0, Lai;->b:Lai;</span>
-<span class="exec">	invoke-virtual {v0}, Lai;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lzh;</span>
-<span class="exec">	invoke-interface {v0}, Lzh;->a()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
+<span class="missed">	const/4 p1, -0x1</span>
+<span class="missed">	if-ne p3, p1, :cond_0</span>
+<span class="missed">	iget-object p1, p0, Lai;->c:Landroid/content/Context;</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string p2, "Starting activity with a requestCode requires a FragmentActivity host"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
 .end method
 
-<span class="cov">.method public final synthetic a()Ljava/lang/Object;</span>
+.method public a(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+<span class="">	.locals 0</span>
+
+<span class="">	return-void</span>
+.end method
+
+.method public a()Z
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lai;->a:Lkb;</span>
-<span class="exec">	invoke-interface {v0}, Lkb;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lzh;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	return v0</span>
+.end method
+
+.method public a(Lae;)Z
+<span class="">	.locals 0</span>
+
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public b()Landroid/view/LayoutInflater;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lai;->c:Landroid/content/Context;</span>
+<span class="">	invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method  b(Lae;)V
+<span class="">	.locals 0</span>
+
+<span class="">	return-void</span>
+.end method
+
+.method public c()V
+<span class="">	.locals 0</span>
+
+<span class="">	return-void</span>
+.end method
+
+.method public d()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	return v0</span>
+.end method
+
+.method public e()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget v0, p0, Lai;->e:I</span>
+<span class="">	return v0</span>
+.end method
+
+.method  f()Landroid/app/Activity;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lai;->a:Landroid/app/Activity;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method  g()Landroid/content/Context;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lai;->c:Landroid/content/Context;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method  h()Landroid/os/Handler;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lai;->d:Landroid/os/Handler;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method  i()Lak;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lai;->b:Lak;</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

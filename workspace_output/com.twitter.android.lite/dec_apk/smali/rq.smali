@@ -1,91 +1,75 @@
 .class final Lrq;
-.super Lzq$d$d$a$b$c;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.annotation system Ldalvik/annotation/MemberClasses;
-value = {
-Lrq$b;
-}
-.end annotation
-.field private final a:Ljava/lang/String;
-.field private final b:Ljava/lang/String;
-.field private final c:Lar;
+.super Ljava/lang/Object;
+.implements Lsc;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lar<",
-"Lzq$d$d$a$b$e$b;",
-">;"
+"<TResult:",
+"Ljava/lang/Object;",
+"TContinuationResult:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;",
+"Lsc<",
+"TTResult;>;"
+}
+.end annotation
+.field private final a:Ljava/util/concurrent/Executor;
+.field private final b:Lrg;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lrg<",
+"TTResult;TTContinuationResult;>;"
 }
 .end annotation
 .end field
-.field private final d:Lzq$d$d$a$b$c;
-.field private final e:I
-.method private constructor <init>(Ljava/lang/String;Ljava/lang/String;Lar;Lzq$d$d$a$b$c;I)V
+.field private final c:Lsf;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lsf<",
+"TTContinuationResult;>;"
+}
+.end annotation
+.end field
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lrg;Lsf;)V
 .locals 0
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "(",
-"Ljava/lang/String;",
-"Ljava/lang/String;",
-"Lar<",
-"Lzq$d$d$a$b$e$b;",
-">;",
-"Lzq$d$d$a$b$c;",
-"I)V"
+"Ljava/util/concurrent/Executor;",
+"Lrg<",
+"TTResult;TTContinuationResult;>;",
+"Lsf<",
+"TTContinuationResult;>;)V"
 }
 .end annotation
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lrq;->a:Ljava/util/concurrent/Executor;
+iput-object p2, p0, Lrq;->b:Lrg;
+iput-object p3, p0, Lrq;->c:Lsf;
 return-void
 .end method
-.method synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Lar;Lzq$d$d$a$b$c;ILrq$a;)V
+.method static synthetic a(Lrq;)Lsf;
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
+iget-object p0, p0, Lrq;->c:Lsf;
+return-object p0
 .end method
-.method public a()Lzq$d$d$a$b$c;
-.locals 1
-const/4 v0, 0x0
-return-object v0
+.method static synthetic b(Lrq;)Lrg;
+.locals 0
+iget-object p0, p0, Lrq;->b:Lrg;
+return-object p0
 .end method
-.method public b()Lar;
-.locals 1
+.method public final a(Lrm;)V
+.locals 2
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"()",
-"Lar<",
-"Lzq$d$d$a$b$e$b;",
-">;"
+"(",
+"Lrm<",
+"TTResult;>;)V"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public c()I
-.locals 1
-const/4 v0, 0x0
-return v0
-.end method
-.method public d()Ljava/lang/String;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public e()Ljava/lang/String;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public equals(Ljava/lang/Object;)Z
-.locals 4
-const/4 v0, 0x0
-return v0
-.end method
-.method public hashCode()I
-.locals 4
-const/4 v0, 0x0
-return v0
-.end method
-.method public toString()Ljava/lang/String;
-.locals 2
-const/4 v0, 0x0
-return-object v0
+iget-object v0, p0, Lrq;->a:Ljava/util/concurrent/Executor;
+new-instance v1, Lrr;
+invoke-direct {v1, p0, p1}, Lrr;-><init>(Lrq;Lrm;)V
+invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+return-void
 .end method

@@ -1,79 +1,56 @@
-.class public final Lpi;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-
-# interfaces
-.implements Lmi;
+.class final Lpi;
+.super Lqn;
 
 
-# static fields
-.field private static final a:Lva;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lva<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
+# instance fields
+.field private final synthetic a:Lpl;
+
+.field private final synthetic b:Lph;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    .line 1
-    new-instance v0, Lbb;
-
-    const-string v1, "com.google.android.gms.measurement"
-
-    .line 2
-    invoke-static {v1}, Lsa;->a(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lbb;-><init>(Landroid/net/Uri;)V
-
-    const-string v1, "measurement.service.audience.invalidate_config_cache_after_app_unisntall"
-
-    const/4 v2, 0x1
-
-    .line 3
-    invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;
-
-    move-result-object v0
-
-    sput-object v0, Lpi;->a:Lva;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Lph;Lnd;Lpl;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lpi;->b:Lph;
+
+    iput-object p3, p0, Lpi;->a:Lpl;
+
+    invoke-direct {p0, p2}, Lqn;-><init>(Lnd;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method public final a()V
+    .locals 2
 
-    .line 1
-    sget-object v0, Lpi;->a:Lva;
+    .line 2
+    iget-object v0, p0, Lpi;->b:Lph;
 
-    invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
+    invoke-virtual {v0}, Lph;->f()V
+
+    .line 3
+    iget-object v0, p0, Lpi;->b:Lph;
+
+    invoke-virtual {v0}, Lnb;->r()Lla;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Boolean;
+    invoke-virtual {v0}, Lla;->x()Llc;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result-object v0
 
-    move-result v0
+    const-string v1, "Starting upload from DelayedRunnable"
 
-    return v0
+    invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V
+
+    .line 4
+    iget-object v0, p0, Lpi;->a:Lpl;
+
+    invoke-virtual {v0}, Lpl;->k()V
+
+    return-void
 .end method

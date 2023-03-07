@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -26,40 +26,42 @@
         }
     .end annotation
 
-    .line 16
+    .line 1438
+    :try_start_0
     const-class v0, Landroidx/versionedparcelable/a;
 
-    :try_start_0
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
-    move-result-object v1
+    move-result-object v0
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    invoke-static {p0, v2, v1}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+    invoke-static {p0, v1, v0}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
 
     move-result-object p0
 
-    const-string v1, "read"
+    const-string v0, "read"
 
-    new-array v3, v2, [Ljava/lang/Class;
+    .line 1439
+    new-array v2, v1, [Ljava/lang/Class;
+
+    const-class v3, Landroidx/versionedparcelable/a;
 
     const/4 v4, 0x0
 
-    aput-object v0, v3, v4
+    aput-object v3, v2, v4
 
-    .line 17
-    invoke-virtual {p0, v1, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {p0, v0, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object p0
 
     const/4 v0, 0x0
 
-    new-array v1, v2, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     aput-object p1, v1, v4
 
-    .line 18
+    .line 1440
     invoke-virtual {p0, v0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -76,25 +78,7 @@
     :catch_0
     move-exception p0
 
-    goto :goto_0
-
-    :catch_1
-    move-exception p0
-
-    goto :goto_1
-
-    :catch_2
-    move-exception p0
-
-    goto :goto_2
-
-    :catch_3
-    move-exception p0
-
-    goto :goto_3
-
-    .line 19
-    :goto_0
+    .line 1451
     new-instance p1, Ljava/lang/RuntimeException;
 
     const-string v0, "VersionedParcel encountered ClassNotFoundException"
@@ -103,8 +87,10 @@
 
     throw p1
 
-    .line 20
-    :goto_1
+    :catch_1
+    move-exception p0
+
+    .line 1449
     new-instance p1, Ljava/lang/RuntimeException;
 
     const-string v0, "VersionedParcel encountered NoSuchMethodException"
@@ -113,8 +99,10 @@
 
     throw p1
 
-    .line 21
-    :goto_2
+    :catch_2
+    move-exception p0
+
+    .line 1444
     invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     move-result-object p1
@@ -123,7 +111,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 22
+    .line 1445
     invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     move-result-object p0
@@ -132,7 +120,7 @@
 
     throw p0
 
-    .line 23
+    .line 1447
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -142,8 +130,10 @@
 
     throw p1
 
-    .line 24
-    :goto_3
+    :catch_3
+    move-exception p0
+
+    .line 1442
     new-instance p1, Ljava/lang/RuntimeException;
 
     const-string v0, "VersionedParcel encountered IllegalAccessException"
@@ -172,7 +162,7 @@
         }
     .end annotation
 
-    .line 34
+    .line 1485
     invoke-virtual {p0}, Ljava/lang/Class;->getPackage()Ljava/lang/Package;
 
     move-result-object v0
@@ -183,13 +173,13 @@
 
     const/4 v1, 0x2
 
+    .line 1486
     new-array v1, v1, [Ljava/lang/Object;
 
     const/4 v2, 0x0
 
     aput-object v0, v1, v2
 
-    .line 35
     invoke-virtual {p0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
     move-result-object v0
@@ -204,7 +194,7 @@
 
     move-result-object v0
 
-    .line 36
+    .line 1487
     invoke-virtual {p0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object p0
@@ -228,9 +218,9 @@
         }
     .end annotation
 
-    .line 25
+    .line 1460
     :try_start_0
-    invoke-static {p0}, Landroidx/versionedparcelable/a;->b(Landroidx/versionedparcelable/c;)Ljava/lang/Class;
+    invoke-static {p0}, Landroidx/versionedparcelable/a;->c(Landroidx/versionedparcelable/c;)Ljava/lang/Class;
 
     move-result-object v0
 
@@ -238,9 +228,9 @@
 
     const/4 v2, 0x2
 
+    .line 1461
     new-array v3, v2, [Ljava/lang/Class;
 
-    .line 26
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v4
@@ -267,7 +257,7 @@
 
     aput-object p1, v2, v6
 
-    .line 27
+    .line 1462
     invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_3
@@ -280,7 +270,7 @@
     :catch_0
     move-exception p0
 
-    .line 28
+    .line 1473
     new-instance p1, Ljava/lang/RuntimeException;
 
     const-string v0, "VersionedParcel encountered ClassNotFoundException"
@@ -292,7 +282,7 @@
     :catch_1
     move-exception p0
 
-    .line 29
+    .line 1471
     new-instance p1, Ljava/lang/RuntimeException;
 
     const-string v0, "VersionedParcel encountered NoSuchMethodException"
@@ -304,7 +294,7 @@
     :catch_2
     move-exception p0
 
-    .line 30
+    .line 1466
     invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     move-result-object p1
@@ -313,7 +303,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 31
+    .line 1467
     invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     move-result-object p0
@@ -322,7 +312,7 @@
 
     throw p0
 
-    .line 32
+    .line 1469
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -335,7 +325,7 @@
     :catch_3
     move-exception p0
 
-    .line 33
+    .line 1464
     new-instance p1, Ljava/lang/RuntimeException;
 
     const-string v0, "VersionedParcel encountered IllegalAccessException"
@@ -345,40 +335,10 @@
     throw p1
 .end method
 
-.method private static b(Landroidx/versionedparcelable/c;)Ljava/lang/Class;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T::",
-            "Landroidx/versionedparcelable/c;",
-            ">(TT;)",
-            "Ljava/lang/Class;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/ClassNotFoundException;
-        }
-    .end annotation
-
-    .line 11
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p0
-
-    .line 12
-    invoke-static {p0}, Landroidx/versionedparcelable/a;->a(Ljava/lang/Class;)Ljava/lang/Class;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method private c(Landroidx/versionedparcelable/c;)V
+.method private b(Landroidx/versionedparcelable/c;)V
     .locals 3
 
-    .line 1
+    .line 948
     :try_start_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -390,7 +350,7 @@
     :try_end_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2
+    .line 953
     invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object p1
@@ -402,7 +362,7 @@
     :catch_0
     move-exception v0
 
-    .line 3
+    .line 950
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -432,110 +392,66 @@
     throw v1
 .end method
 
-
-# virtual methods
-.method public a(II)I
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->a(I)Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    return p1
-
-    .line 2
-    :cond_0
-    invoke-virtual {p0}, Landroidx/versionedparcelable/a;->e()I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public a(Landroid/os/Parcelable;I)Landroid/os/Parcelable;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T::",
-            "Landroid/os/Parcelable;",
-            ">(TT;I)TT;"
-        }
-    .end annotation
-
-    .line 7
-    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->a(I)Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    return-object p1
-
-    .line 8
-    :cond_0
-    invoke-virtual {p0}, Landroidx/versionedparcelable/a;->f()Landroid/os/Parcelable;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public a(Landroidx/versionedparcelable/c;I)Landroidx/versionedparcelable/c;
+.method private static c(Landroidx/versionedparcelable/c;)Ljava/lang/Class;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
             "Landroidx/versionedparcelable/c;",
-            ">(TT;I)TT;"
+            ">(TT;)",
+            "Ljava/lang/Class;"
         }
     .end annotation
 
-    .line 14
-    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->a(I)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/ClassNotFoundException;
+        }
+    .end annotation
 
-    move-result p2
+    .line 1479
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    if-nez p2, :cond_0
+    move-result-object p0
 
-    return-object p1
+    .line 1480
+    invoke-static {p0}, Landroidx/versionedparcelable/a;->a(Ljava/lang/Class;)Ljava/lang/Class;
 
-    .line 15
-    :cond_0
-    invoke-virtual {p0}, Landroidx/versionedparcelable/a;->h()Landroidx/versionedparcelable/c;
+    move-result-object p0
 
-    move-result-object p1
-
-    return-object p1
+    return-object p0
 .end method
 
-.method public a(Ljava/lang/String;I)Ljava/lang/String;
+
+# virtual methods
+.method protected abstract a(I)V
+.end method
+
+.method public a(II)V
     .locals 0
 
-    .line 3
-    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->a(I)Z
+    .line 298
+    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->c(I)V
 
-    move-result p2
+    .line 299
+    invoke-virtual {p0, p1}, Landroidx/versionedparcelable/a;->a(I)V
 
-    if-nez p2, :cond_0
-
-    return-object p1
-
-    .line 4
-    :cond_0
-    invoke-virtual {p0}, Landroidx/versionedparcelable/a;->g()Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method protected abstract a()V
+    return-void
 .end method
 
 .method protected abstract a(Landroid/os/Parcelable;)V
+.end method
+
+.method public a(Landroid/os/Parcelable;I)V
+    .locals 0
+
+    .line 355
+    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->c(I)V
+
+    .line 356
+    invoke-virtual {p0, p1}, Landroidx/versionedparcelable/a;->a(Landroid/os/Parcelable;)V
+
+    return-void
 .end method
 
 .method protected a(Landroidx/versionedparcelable/c;)V
@@ -545,30 +461,54 @@
 
     const/4 p1, 0x0
 
-    .line 9
+    .line 935
     invoke-virtual {p0, p1}, Landroidx/versionedparcelable/a;->a(Ljava/lang/String;)V
 
     return-void
 
-    .line 10
+    .line 938
     :cond_0
-    invoke-direct {p0, p1}, Landroidx/versionedparcelable/a;->c(Landroidx/versionedparcelable/c;)V
+    invoke-direct {p0, p1}, Landroidx/versionedparcelable/a;->b(Landroidx/versionedparcelable/c;)V
 
-    .line 11
-    invoke-virtual {p0}, Landroidx/versionedparcelable/a;->b()Landroidx/versionedparcelable/a;
+    .line 940
+    invoke-virtual {p0}, Landroidx/versionedparcelable/a;->c()Landroidx/versionedparcelable/a;
 
     move-result-object v0
 
-    .line 12
+    .line 941
     invoke-static {p1, v0}, Landroidx/versionedparcelable/a;->a(Landroidx/versionedparcelable/c;Landroidx/versionedparcelable/a;)V
 
-    .line 13
-    invoke-virtual {v0}, Landroidx/versionedparcelable/a;->a()V
+    .line 942
+    invoke-virtual {v0}, Landroidx/versionedparcelable/a;->b()V
+
+    return-void
+.end method
+
+.method public a(Landroidx/versionedparcelable/c;I)V
+    .locals 0
+
+    .line 927
+    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->c(I)V
+
+    .line 928
+    invoke-virtual {p0, p1}, Landroidx/versionedparcelable/a;->a(Landroidx/versionedparcelable/c;)V
 
     return-void
 .end method
 
 .method protected abstract a(Ljava/lang/String;)V
+.end method
+
+.method public a(Ljava/lang/String;I)V
+    .locals 0
+
+    .line 334
+    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->c(I)V
+
+    .line 335
+    invoke-virtual {p0, p1}, Landroidx/versionedparcelable/a;->a(Ljava/lang/String;)V
+
+    return-void
 .end method
 
 .method public a(ZZ)V
@@ -580,100 +520,19 @@
 .method protected abstract a([B)V
 .end method
 
-.method protected abstract a(I)Z
-.end method
-
-.method public a([BI)[B
+.method public a([BI)V
     .locals 0
 
-    .line 5
-    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->a(I)Z
+    .line 277
+    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->c(I)V
 
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    return-object p1
-
-    .line 6
-    :cond_0
-    invoke-virtual {p0}, Landroidx/versionedparcelable/a;->d()[B
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method protected abstract b()Landroidx/versionedparcelable/a;
-.end method
-
-.method protected abstract b(I)V
-.end method
-
-.method public b(II)V
-    .locals 0
-
-    .line 3
-    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->b(I)V
-
-    .line 4
-    invoke-virtual {p0, p1}, Landroidx/versionedparcelable/a;->c(I)V
-
-    return-void
-.end method
-
-.method public b(Landroid/os/Parcelable;I)V
-    .locals 0
-
-    .line 7
-    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->b(I)V
-
-    .line 8
-    invoke-virtual {p0, p1}, Landroidx/versionedparcelable/a;->a(Landroid/os/Parcelable;)V
-
-    return-void
-.end method
-
-.method public b(Landroidx/versionedparcelable/c;I)V
-    .locals 0
-
-    .line 9
-    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->b(I)V
-
-    .line 10
-    invoke-virtual {p0, p1}, Landroidx/versionedparcelable/a;->a(Landroidx/versionedparcelable/c;)V
-
-    return-void
-.end method
-
-.method public b(Ljava/lang/String;I)V
-    .locals 0
-
-    .line 5
-    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->b(I)V
-
-    .line 6
-    invoke-virtual {p0, p1}, Landroidx/versionedparcelable/a;->a(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public b([BI)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->b(I)V
-
-    .line 2
+    .line 278
     invoke-virtual {p0, p1}, Landroidx/versionedparcelable/a;->a([B)V
 
     return-void
 .end method
 
-.method protected abstract c(I)V
-.end method
-
-.method public c()Z
+.method public a()Z
     .locals 1
 
     const/4 v0, 0x0
@@ -681,13 +540,147 @@
     return v0
 .end method
 
-.method protected abstract d()[B
+.method public b(II)I
+    .locals 0
+
+    .line 373
+    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->b(I)Z
+
+    move-result p2
+
+    if-nez p2, :cond_0
+
+    return p1
+
+    .line 376
+    :cond_0
+    invoke-virtual {p0}, Landroidx/versionedparcelable/a;->d()I
+
+    move-result p1
+
+    return p1
 .end method
 
-.method protected abstract e()I
+.method public b(Landroid/os/Parcelable;I)Landroid/os/Parcelable;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Landroid/os/Parcelable;",
+            ">(TT;I)TT;"
+        }
+    .end annotation
+
+    .line 445
+    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->b(I)Z
+
+    move-result p2
+
+    if-nez p2, :cond_0
+
+    return-object p1
+
+    .line 448
+    :cond_0
+    invoke-virtual {p0}, Landroidx/versionedparcelable/a;->g()Landroid/os/Parcelable;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
-.method protected abstract f()Landroid/os/Parcelable;
+.method public b(Landroidx/versionedparcelable/c;I)Landroidx/versionedparcelable/c;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Landroidx/versionedparcelable/c;",
+            ">(TT;I)TT;"
+        }
+    .end annotation
+
+    .line 1366
+    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->b(I)Z
+
+    move-result p2
+
+    if-nez p2, :cond_0
+
+    return-object p1
+
+    .line 1369
+    :cond_0
+    invoke-virtual {p0}, Landroidx/versionedparcelable/a;->h()Landroidx/versionedparcelable/c;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public b(Ljava/lang/String;I)Ljava/lang/String;
+    .locals 0
+
+    .line 415
+    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->b(I)Z
+
+    move-result p2
+
+    if-nez p2, :cond_0
+
+    return-object p1
+
+    .line 418
+    :cond_0
+    invoke-virtual {p0}, Landroidx/versionedparcelable/a;->e()Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method protected abstract b()V
+.end method
+
+.method protected abstract b(I)Z
+.end method
+
+.method public b([BI)[B
+    .locals 0
+
+    .line 436
+    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/a;->b(I)Z
+
+    move-result p2
+
+    if-nez p2, :cond_0
+
+    return-object p1
+
+    .line 439
+    :cond_0
+    invoke-virtual {p0}, Landroidx/versionedparcelable/a;->f()[B
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method protected abstract c()Landroidx/versionedparcelable/a;
+.end method
+
+.method protected abstract c(I)V
+.end method
+
+.method protected abstract d()I
+.end method
+
+.method protected abstract e()Ljava/lang/String;
+.end method
+
+.method protected abstract f()[B
+.end method
+
+.method protected abstract g()Landroid/os/Parcelable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -695,9 +688,6 @@
             ">()TT;"
         }
     .end annotation
-.end method
-
-.method protected abstract g()Ljava/lang/String;
 .end method
 
 .method protected h()Landroidx/versionedparcelable/c;
@@ -710,8 +700,8 @@
         }
     .end annotation
 
-    .line 1
-    invoke-virtual {p0}, Landroidx/versionedparcelable/a;->g()Ljava/lang/String;
+    .line 1382
+    invoke-virtual {p0}, Landroidx/versionedparcelable/a;->e()Ljava/lang/String;
 
     move-result-object v0
 
@@ -721,9 +711,9 @@
 
     return-object v0
 
-    .line 2
+    .line 1386
     :cond_0
-    invoke-virtual {p0}, Landroidx/versionedparcelable/a;->b()Landroidx/versionedparcelable/a;
+    invoke-virtual {p0}, Landroidx/versionedparcelable/a;->c()Landroidx/versionedparcelable/a;
 
     move-result-object v1
 

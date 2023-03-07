@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.crashlytics.android.core</a></li>
+        <li><i class="ico ico-class"></i> ByteString.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Lcom/crashlytics/android/core/ByteString;
+.super Ljava/lang/Object;
+.source "ByteString.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lcom/crashlytics/android/core/ByteString$CodedBuilder;,
+Lcom/crashlytics/android/core/ByteString$Output;
+}
+.end annotation
+
+.field public static final EMPTY:Lcom/crashlytics/android/core/ByteString;
+.field private final bytes:[B
+.field private volatile hash:I
+
+
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	new-instance v0, Lcom/crashlytics/android/core/ByteString;</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	new-array v1, v1, [B</span>
+<span class="cov">	invoke-direct {v0, v1}, Lcom/crashlytics/android/core/ByteString;-><init>([B)V</span>
+<span class="cov">	sput-object v0, Lcom/crashlytics/android/core/ByteString;->EMPTY:Lcom/crashlytics/android/core/ByteString;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private constructor &lt;init&gt;([B)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	iput v0, p0, Lcom/crashlytics/android/core/ByteString;->hash:I</span>
+<span class="cov">	iput-object p1, p0, Lcom/crashlytics/android/core/ByteString;->bytes:[B</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method synthetic constructor &lt;init&gt;([BLcom/crashlytics/android/core/ByteString$1;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0, p1}, Lcom/crashlytics/android/core/ByteString;-><init>([B)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public static copyFrom(Ljava/lang/String;Ljava/lang/String;)Lcom/crashlytics/android/core/ByteString;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/UnsupportedEncodingException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance v0, Lcom/crashlytics/android/core/ByteString;</span>
+<span class="">	invoke-virtual {p0, p1}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	invoke-direct {v0, p0}, Lcom/crashlytics/android/core/ByteString;-><init>([B)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public static copyFrom(Ljava/nio/ByteBuffer;)Lcom/crashlytics/android/core/ByteString;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Ljava/nio/ByteBuffer;->remaining()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-static {p0, v0}, Lcom/crashlytics/android/core/ByteString;->copyFrom(Ljava/nio/ByteBuffer;I)Lcom/crashlytics/android/core/ByteString;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static copyFrom(Ljava/nio/ByteBuffer;I)Lcom/crashlytics/android/core/ByteString;
+<span class="">	.locals 0</span>
+
+<span class="missed">	new-array p1, p1, [B</span>
+<span class="missed">	invoke-virtual {p0, p1}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;</span>
+<span class="missed">	new-instance p0, Lcom/crashlytics/android/core/ByteString;</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/crashlytics/android/core/ByteString;-><init>([B)V</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static copyFrom(Ljava/util/List;)Lcom/crashlytics/android/core/ByteString;
+<span class="">	.locals 6</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Lcom/crashlytics/android/core/ByteString;",</span>
+<span class="">	">;)",</span>
+<span class="">	"Lcom/crashlytics/android/core/ByteString;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-interface {p0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	sget-object p0, Lcom/crashlytics/android/core/ByteString;->EMPTY:Lcom/crashlytics/android/core/ByteString;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-interface {p0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-ne v0, v1, :cond_1</span>
+<span class="">	invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	check-cast p0, Lcom/crashlytics/android/core/ByteString;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-eqz v3, :cond_2</span>
+<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	check-cast v3, Lcom/crashlytics/android/core/ByteString;</span>
+<span class="">	invoke-virtual {v3}, Lcom/crashlytics/android/core/ByteString;->size()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	add-int/2addr v1, v3</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-array v0, v1, [B</span>
+<span class="">	invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="">	invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-eqz v3, :cond_3</span>
+<span class="">	invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	check-cast v3, Lcom/crashlytics/android/core/ByteString;</span>
+<span class="missed">	iget-object v4, v3, Lcom/crashlytics/android/core/ByteString;->bytes:[B</span>
+<span class="">	invoke-virtual {v3}, Lcom/crashlytics/android/core/ByteString;->size()I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	invoke-static {v4, v2, v0, v1, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
+<span class="">	invoke-virtual {v3}, Lcom/crashlytics/android/core/ByteString;->size()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	add-int/2addr v1, v3</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	new-instance p0, Lcom/crashlytics/android/core/ByteString;</span>
+<span class="missed">	invoke-direct {p0, v0}, Lcom/crashlytics/android/core/ByteString;-><init>([B)V</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static copyFrom([B)Lcom/crashlytics/android/core/ByteString;
+<span class="">	.locals 2</span>
+
+<span class="missed">	array-length v0, p0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-static {p0, v1, v0}, Lcom/crashlytics/android/core/ByteString;->copyFrom([BII)Lcom/crashlytics/android/core/ByteString;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static copyFrom([BII)Lcom/crashlytics/android/core/ByteString;
+<span class="">	.locals 2</span>
+
+<span class="missed">	new-array v0, p2, [B</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-static {p0, p1, v0, v1, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
+<span class="missed">	new-instance p0, Lcom/crashlytics/android/core/ByteString;</span>
+<span class="missed">	invoke-direct {p0, v0}, Lcom/crashlytics/android/core/ByteString;-><init>([B)V</span>
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method public static copyFromUtf8(Ljava/lang/String;)Lcom/crashlytics/android/core/ByteString;</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	:try_start_0</span>
+<span class="cov">	new-instance v0, Lcom/crashlytics/android/core/ByteString;</span>
+<span class="cov">	const-string v1, "UTF-8"</span>
+<span class="exec">	invoke-virtual {p0, v1}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	invoke-direct {v0, p0}, Lcom/crashlytics/android/core/ByteString;-><init>([B)V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="exec">	return-object v0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p0</span>
+<span class="missed">	new-instance v0, Ljava/lang/RuntimeException;</span>
+<span class="missed">	const-string v1, "UTF-8 not supported."</span>
+<span class="missed">	invoke-direct {v0, v1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method static newCodedBuilder(I)Lcom/crashlytics/android/core/ByteString$CodedBuilder;
+<span class="">	.locals 2</span>
+
+<span class="missed">	new-instance v0, Lcom/crashlytics/android/core/ByteString$CodedBuilder;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-direct {v0, p0, v1}, Lcom/crashlytics/android/core/ByteString$CodedBuilder;-><init>(ILcom/crashlytics/android/core/ByteString$1;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public static newOutput()Lcom/crashlytics/android/core/ByteString$Output;
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/16 v0, 0x20</span>
+<span class="">	invoke-static {v0}, Lcom/crashlytics/android/core/ByteString;->newOutput(I)Lcom/crashlytics/android/core/ByteString$Output;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public static newOutput(I)Lcom/crashlytics/android/core/ByteString$Output;
+<span class="">	.locals 2</span>
+
+<span class="missed">	new-instance v0, Lcom/crashlytics/android/core/ByteString$Output;</span>
+<span class="missed">	new-instance v1, Ljava/io/ByteArrayOutputStream;</span>
+<span class="missed">	invoke-direct {v1, p0}, Ljava/io/ByteArrayOutputStream;-><init>(I)V</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="missed">	invoke-direct {v0, v1, p0}, Lcom/crashlytics/android/core/ByteString$Output;-><init>(Ljava/io/ByteArrayOutputStream;Lcom/crashlytics/android/core/ByteString$1;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public asReadOnlyByteBuffer()Ljava/nio/ByteBuffer;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/ByteString;->bytes:[B</span>
+<span class="">	invoke-static {v0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Ljava/nio/ByteBuffer;->asReadOnlyBuffer()Ljava/nio/ByteBuffer;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public byteAt(I)B
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/ByteString;->bytes:[B</span>
+<span class="missed">	aget-byte p1, v0, p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public copyTo(Ljava/nio/ByteBuffer;)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/ByteString;->bytes:[B</span>
+<span class="missed">	array-length v1, v0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	invoke-virtual {p1, v0, v2, v1}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public copyTo([BI)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/ByteString;->bytes:[B</span>
+<span class="missed">	array-length v1, v0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	invoke-static {v0, v2, p1, p2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public copyTo([BIII)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/crashlytics/android/core/ByteString;->bytes:[B</span>
+<span class="cov">	invoke-static {v0, p2, p1, p3, p4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+<span class="">	.locals 7</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-ne p1, p0, :cond_0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	instance-of v1, p1, Lcom/crashlytics/android/core/ByteString;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-nez v1, :cond_1</span>
+<span class="">	return v2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	check-cast p1, Lcom/crashlytics/android/core/ByteString;</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/core/ByteString;->bytes:[B</span>
+<span class="missed">	array-length v3, v1</span>
+<span class="missed">	iget-object p1, p1, Lcom/crashlytics/android/core/ByteString;->bytes:[B</span>
+<span class="missed">	array-length v4, p1</span>
+<span class="missed">	if-eq v3, v4, :cond_2</span>
+<span class="">	return v2</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v4, v3, :cond_4</span>
+<span class="missed">	aget-byte v5, v1, v4</span>
+<span class="missed">	aget-byte v6, p1, v4</span>
+<span class="missed">	if-eq v5, v6, :cond_3</span>
+<span class="">	return v2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	add-int/lit8 v4, v4, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_4</span>
+<span class="">	return v0</span>
+.end method
+
+.method public hashCode()I
+<span class="">	.locals 5</span>
+
+<span class="missed">	iget v0, p0, Lcom/crashlytics/android/core/ByteString;->hash:I</span>
+<span class="missed">	if-nez v0, :cond_2</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/ByteString;->bytes:[B</span>
+<span class="missed">	array-length v1, v0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	move v3, v1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v2, v1, :cond_0</span>
+<span class="missed">	mul-int/lit8 v3, v3, 0x1f</span>
+<span class="missed">	aget-byte v4, v0, v2</span>
+<span class="missed">	add-int/2addr v3, v4</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-nez v3, :cond_1</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	move v0, v3</span>
+<span class="">	:goto_1</span>
+<span class="missed">	iput v0, p0, Lcom/crashlytics/android/core/ByteString;->hash:I</span>
+<span class="">	:cond_2</span>
+<span class="">	return v0</span>
+.end method
+
+.method public isEmpty()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/ByteString;->bytes:[B</span>
+<span class="missed">	array-length v0, v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public newInput()Ljava/io/InputStream;
+<span class="">	.locals 2</span>
+
+<span class="missed">	new-instance v0, Ljava/io/ByteArrayInputStream;</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/core/ByteString;->bytes:[B</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/io/ByteArrayInputStream;-><init>([B)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public size()I</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/crashlytics/android/core/ByteString;->bytes:[B</span>
+<span class="cov">	array-length v0, v0</span>
+<span class="exec">	return v0</span>
+.end method
+
+.method public toByteArray()[B
+<span class="">	.locals 4</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/ByteString;->bytes:[B</span>
+<span class="missed">	array-length v1, v0</span>
+<span class="missed">	new-array v2, v1, [B</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	invoke-static {v0, v3, v2, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
+<span class="">	return-object v2</span>
+.end method
+
+.method public toString(Ljava/lang/String;)Ljava/lang/String;
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/UnsupportedEncodingException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance v0, Ljava/lang/String;</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/core/ByteString;->bytes:[B</span>
+<span class="missed">	invoke-direct {v0, v1, p1}, Ljava/lang/String;-><init>([BLjava/lang/String;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public toStringUtf8()Ljava/lang/String;
+<span class="">	.locals 3</span>
+
+<span class="">	:try_start_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/String;</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/core/ByteString;->bytes:[B</span>
+<span class="missed">	const-string v2, "UTF-8"</span>
+<span class="missed">	invoke-direct {v0, v1, v2}, Ljava/lang/String;-><init>([BLjava/lang/String;)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object v0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	new-instance v1, Ljava/lang/RuntimeException;</span>
+<span class="missed">	const-string v2, "UTF-8 not supported?"</span>
+<span class="missed">	invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	throw v1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

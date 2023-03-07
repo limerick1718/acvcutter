@@ -25,7 +25,7 @@ invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method constructor <init>(Lokhttp3/Cookie$Builder;)V
-.locals 3
+.locals 2
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

@@ -1,390 +1,225 @@
-.class public final Lfu;
+.class public Lfu;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-encoders-json@@16.1.0"
-
-# interfaces
-.implements Lbu;
 
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lfu$b;
-    }
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbu<",
-        "Lfu;",
-        ">;"
+        Lfu$a;
     }
 .end annotation
 
 
 # static fields
-.field private static final e:Lwt;
+.field static final a:Lfu;
+
+.field private static volatile b:Z = false
+
+.field private static final c:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lwt<",
-            "Ljava/lang/Object;",
-            ">;"
+            "Ljava/lang/Class<",
+            "*>;"
         }
     .end annotation
 .end field
 
-.field private static final f:Lyt;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lyt<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private static final g:Lyt;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lyt<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private static final h:Lfu$b;
+.field private static volatile d:Lfu;
 
 
 # instance fields
-.field private final a:Ljava/util/Map;
+.field private final e:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
-            "Ljava/lang/Class<",
-            "*>;",
-            "Lwt<",
-            "*>;>;"
+            "Lfu$a;",
+            "Lgh$d<",
+            "**>;>;"
         }
     .end annotation
 .end field
-
-.field private final b:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map<",
-            "Ljava/lang/Class<",
-            "*>;",
-            "Lyt<",
-            "*>;>;"
-        }
-    .end annotation
-.end field
-
-.field private c:Lwt;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lwt<",
-            "Ljava/lang/Object;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private d:Z
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 1
-    invoke-static {}, Lcu;->a()Lwt;
+    .line 24
+    invoke-static {}, Lfu;->d()Ljava/lang/Class;
 
     move-result-object v0
 
-    sput-object v0, Lfu;->e:Lwt;
+    sput-object v0, Lfu;->c:Ljava/lang/Class;
 
-    .line 2
-    invoke-static {}, Ldu;->a()Lyt;
+    .line 25
+    new-instance v0, Lfu;
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    sput-object v0, Lfu;->f:Lyt;
+    invoke-direct {v0, v1}, Lfu;-><init>(Z)V
 
-    .line 3
-    invoke-static {}, Leu;->a()Lyt;
-
-    move-result-object v0
-
-    sput-object v0, Lfu;->g:Lyt;
-
-    .line 4
-    new-instance v0, Lfu$b;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lfu$b;-><init>(Lfu$a;)V
-
-    sput-object v0, Lfu;->h:Lfu$b;
+    sput-object v0, Lfu;->a:Lfu;
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 2
+.method constructor <init>()V
+    .locals 1
 
-    .line 1
+    .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 18
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lfu;->a:Ljava/util/Map;
+    iput-object v0, p0, Lfu;->e:Ljava/util/Map;
 
-    .line 3
-    new-instance v0, Ljava/util/HashMap;
+    return-void
+.end method
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+.method private constructor <init>(Z)V
+    .locals 0
 
-    iput-object v0, p0, Lfu;->b:Ljava/util/Map;
+    .line 20
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 21
+    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lfu;->e:Ljava/util/Map;
+
+    return-void
+.end method
+
+.method public static a()Lfu;
+    .locals 1
 
     .line 4
-    sget-object v0, Lfu;->e:Lwt;
+    invoke-static {}, Lft;->a()Lfu;
 
-    iput-object v0, p0, Lfu;->c:Lwt;
+    move-result-object v0
 
-    const/4 v0, 0x0
+    return-object v0
+.end method
+
+.method public static b()Lfu;
+    .locals 2
 
     .line 5
-    iput-boolean v0, p0, Lfu;->d:Z
+    sget-object v0, Lfu;->d:Lfu;
 
-    .line 6
-    const-class v0, Ljava/lang/String;
-
-    sget-object v1, Lfu;->f:Lyt;
-
-    invoke-virtual {p0, v0, v1}, Lfu;->a(Ljava/lang/Class;Lyt;)Lfu;
+    if-nez v0, :cond_1
 
     .line 7
-    const-class v0, Ljava/lang/Boolean;
+    const-class v1, Lfu;
 
-    sget-object v1, Lfu;->g:Lyt;
-
-    invoke-virtual {p0, v0, v1}, Lfu;->a(Ljava/lang/Class;Lyt;)Lfu;
+    monitor-enter v1
 
     .line 8
-    const-class v0, Ljava/util/Date;
+    :try_start_0
+    sget-object v0, Lfu;->d:Lfu;
 
-    sget-object v1, Lfu;->h:Lfu$b;
+    if-nez v0, :cond_0
 
-    invoke-virtual {p0, v0, v1}, Lfu;->a(Ljava/lang/Class;Lyt;)Lfu;
+    .line 10
+    invoke-static {}, Lft;->b()Lfu;
 
-    return-void
+    move-result-object v0
+
+    sput-object v0, Lfu;->d:Lfu;
+
+    .line 11
+    :cond_0
+    monitor-exit v1
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_1
+    :goto_0
+    return-object v0
 .end method
 
-.method static synthetic a(Lfu;)Ljava/util/Map;
-    .locals 0
+.method static c()Lfu;
+    .locals 1
 
-    .line 1
-    iget-object p0, p0, Lfu;->a:Ljava/util/Map;
+    .line 13
+    const-class v0, Lfu;
 
-    return-object p0
+    invoke-static {v0}, Lgf;->a(Ljava/lang/Class;)Lfu;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
-.method static synthetic a(Ljava/lang/Boolean;Lzt;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Throws;
+.method private static d()Ljava/lang/Class;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
         value = {
-            Ljava/io/IOException;
+            "()",
+            "Ljava/lang/Class<",
+            "*>;"
         }
     .end annotation
 
-    .line 6
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
-
-    invoke-interface {p1, p0}, Lzt;->a(Z)Lzt;
-
-    return-void
-.end method
-
-.method static synthetic a(Ljava/lang/Object;Lxt;)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .line 3
-    new-instance p1, Lvt;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Couldn\'t find encoder for type "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 4
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Lvt;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method static synthetic a(Ljava/lang/String;Lzt;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .line 5
-    invoke-interface {p1, p0}, Lzt;->a(Ljava/lang/String;)Lzt;
-
-    return-void
-.end method
-
-.method static synthetic b(Lfu;)Ljava/util/Map;
-    .locals 0
+    :try_start_0
+    const-string v0, "com.google.protobuf.Extension"
 
     .line 1
-    iget-object p0, p0, Lfu;->b:Ljava/util/Map;
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    return-object p0
-.end method
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-.method static synthetic c(Lfu;)Lwt;
-    .locals 0
+    return-object v0
 
-    .line 1
-    iget-object p0, p0, Lfu;->c:Lwt;
+    :catch_0
+    const/4 v0, 0x0
 
-    return-object p0
-.end method
-
-.method static synthetic d(Lfu;)Z
-    .locals 0
-
-    .line 1
-    iget-boolean p0, p0, Lfu;->d:Z
-
-    return p0
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public bridge synthetic a(Ljava/lang/Class;Lwt;)Lbu;
-    .locals 0
-
-    .line 2
-    invoke-virtual {p0, p1, p2}, Lfu;->a(Ljava/lang/Class;Lwt;)Lfu;
-
-    return-object p0
-.end method
-
-.method public a(Lau;)Lfu;
-    .locals 0
-
-    .line 11
-    invoke-interface {p1, p0}, Lau;->a(Lbu;)V
-
-    return-object p0
-.end method
-
-.method public a(Ljava/lang/Class;Lwt;)Lfu;
-    .locals 1
+.method public final a(Lhp;I)Lgh$d;
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/lang/Class<",
-            "TT;>;",
-            "Lwt<",
-            "-TT;>;)",
-            "Lfu;"
+            "<ContainingType::",
+            "Lhp;",
+            ">(TContainingType;I)",
+            "Lgh$d<",
+            "TContainingType;*>;"
         }
     .end annotation
 
-    .line 7
-    iget-object v0, p0, Lfu;->a:Ljava/util/Map;
+    .line 14
+    iget-object v0, p0, Lfu;->e:Ljava/util/Map;
 
-    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v1, Lfu$a;
 
-    .line 8
-    iget-object p2, p0, Lfu;->b:Ljava/util/Map;
+    invoke-direct {v1, p1, p2}, Lfu$a;-><init>(Ljava/lang/Object;I)V
 
-    invoke-interface {p2, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 15
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-object p0
-.end method
+    move-result-object p1
 
-.method public a(Ljava/lang/Class;Lyt;)Lfu;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/lang/Class<",
-            "TT;>;",
-            "Lyt<",
-            "-TT;>;)",
-            "Lfu;"
-        }
-    .end annotation
+    check-cast p1, Lgh$d;
 
-    .line 9
-    iget-object v0, p0, Lfu;->b:Ljava/util/Map;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 10
-    iget-object p2, p0, Lfu;->a:Ljava/util/Map;
-
-    invoke-interface {p2, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p0
-.end method
-
-.method public a(Z)Lfu;
-    .locals 0
-
-    .line 12
-    iput-boolean p1, p0, Lfu;->d:Z
-
-    return-object p0
-.end method
-
-.method public a()Lut;
-    .locals 1
-
-    .line 13
-    new-instance v0, Lfu$a;
-
-    invoke-direct {v0, p0}, Lfu$a;-><init>(Lfu;)V
-
-    return-object v0
+    return-object p1
 .end method

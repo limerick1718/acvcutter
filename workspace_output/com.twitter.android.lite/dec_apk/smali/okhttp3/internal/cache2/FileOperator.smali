@@ -7,7 +7,7 @@
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public read(JLex;J)V
+.method public read(JLys;J)V
 .locals 9
 .annotation system Ldalvik/annotation/Throws;
 value = {
@@ -16,7 +16,7 @@ Ljava/io/IOException;
 .end annotation
 return-void
 .end method
-.method public write(JLex;J)V
+.method public write(JLys;J)V
 .locals 13
 .annotation system Ldalvik/annotation/Throws;
 value = {

@@ -33,15 +33,15 @@
         }
     .end annotation
 
-    .line 1
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 2
+    .line 44
     iput v0, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->nextModeIndex:I
 
-    .line 3
+    .line 45
     iput-object p1, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->connectionSpecs:Ljava/util/List;
 
     return-void
@@ -50,7 +50,7 @@
 .method private isFallbackPossible(Ljavax/net/ssl/SSLSocket;)Z
     .locals 2
 
-    .line 1
+    .line 132
     iget v0, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->nextModeIndex:I
 
     :goto_0
@@ -62,7 +62,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 2
+    .line 133
     iget-object v1, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->connectionSpecs:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -102,7 +102,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 56
     iget v0, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->nextModeIndex:I
 
     iget-object v1, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->connectionSpecs:Ljava/util/List;
@@ -114,7 +114,7 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 2
+    .line 57
     iget-object v2, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->connectionSpecs:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -123,7 +123,7 @@
 
     check-cast v2, Lokhttp3/ConnectionSpec;
 
-    .line 3
+    .line 58
     invoke-virtual {v2, p1}, Lokhttp3/ConnectionSpec;->isCompatible(Ljavax/net/ssl/SSLSocket;)Z
 
     move-result v3
@@ -132,7 +132,7 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 4
+    .line 60
     iput v0, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->nextModeIndex:I
 
     goto :goto_1
@@ -148,14 +148,14 @@
     :goto_1
     if-eqz v2, :cond_2
 
-    .line 5
+    .line 75
     invoke-direct {p0, p1}, Lokhttp3/internal/connection/ConnectionSpecSelector;->isFallbackPossible(Ljavax/net/ssl/SSLSocket;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->isFallbackPossible:Z
 
-    .line 6
+    .line 77
     sget-object v0, Lokhttp3/internal/Internal;->instance:Lokhttp3/internal/Internal;
 
     iget-boolean v1, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->isFallback:Z
@@ -164,7 +164,7 @@
 
     return-object v2
 
-    .line 7
+    .line 69
     :cond_2
     new-instance v0, Ljava/net/UnknownServiceException;
 
@@ -192,7 +192,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 8
+    .line 72
     invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledProtocols()[Ljava/lang/String;
 
     move-result-object p1
@@ -217,10 +217,10 @@
 
     const/4 v0, 0x1
 
-    .line 1
+    .line 91
     iput-boolean v0, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->isFallback:Z
 
-    .line 2
+    .line 93
     iget-boolean v0, p0, Lokhttp3/internal/connection/ConnectionSpecSelector;->isFallbackPossible:Z
 
     const/4 v1, 0x0
@@ -229,7 +229,7 @@
 
     return v1
 
-    .line 3
+    .line 98
     :cond_0
     instance-of v0, p1, Ljava/net/ProtocolException;
 
@@ -237,7 +237,7 @@
 
     return v1
 
-    .line 4
+    .line 105
     :cond_1
     instance-of v0, p1, Ljava/io/InterruptedIOException;
 
@@ -245,13 +245,13 @@
 
     return v1
 
-    .line 5
+    .line 111
     :cond_2
     instance-of v0, p1, Ljavax/net/ssl/SSLHandshakeException;
 
     if-eqz v0, :cond_3
 
-    .line 6
+    .line 113
     invoke-virtual {p1}, Ljava/io/IOException;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
@@ -262,7 +262,7 @@
 
     return v1
 
-    .line 7
+    .line 117
     :cond_3
     instance-of v0, p1, Ljavax/net/ssl/SSLPeerUnverifiedException;
 
@@ -270,7 +270,7 @@
 
     return v1
 
-    .line 8
+    .line 123
     :cond_4
     instance-of p1, p1, Ljavax/net/ssl/SSLException;
 

@@ -3,7 +3,7 @@
 .source "JsonAdapterAnnotationTypeAdapterFactory.java"
 
 # interfaces
-.implements Lwv;
+.implements Lto;
 
 
 # instance fields
@@ -14,10 +14,10 @@
 .method public constructor <init>(Lcom/google/gson/internal/c;)V
     .locals 0
 
-    .line 1
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 38
     iput-object p1, p0, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;->a:Lcom/google/gson/internal/c;
 
     return-void
@@ -25,32 +25,32 @@
 
 
 # virtual methods
-.method a(Lcom/google/gson/internal/c;Lfv;Ldw;Lyv;)Lvv;
+.method a(Lcom/google/gson/internal/c;Lsx;Ltv;Ltq;)Ltn;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/google/gson/internal/c;",
-            "Lfv;",
-            "Ldw<",
+            "Lsx;",
+            "Ltv<",
             "*>;",
-            "Lyv;",
+            "Ltq;",
             ")",
-            "Lvv<",
+            "Ltn<",
             "*>;"
         }
     .end annotation
 
-    .line 4
-    invoke-interface {p4}, Lyv;->value()Ljava/lang/Class;
+    .line 55
+    invoke-interface {p4}, Ltq;->a()Ljava/lang/Class;
 
     move-result-object v0
 
-    invoke-static {v0}, Ldw;->a(Ljava/lang/Class;)Ldw;
+    invoke-static {v0}, Ltv;->b(Ljava/lang/Class;)Ltv;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lcom/google/gson/internal/c;->a(Ldw;)Lcom/google/gson/internal/g;
+    invoke-virtual {p1, v0}, Lcom/google/gson/internal/c;->a(Ltv;)Lcom/google/gson/internal/g;
 
     move-result-object p1
 
@@ -58,44 +58,44 @@
 
     move-result-object p1
 
-    .line 5
-    instance-of v0, p1, Lvv;
+    .line 58
+    instance-of v0, p1, Ltn;
 
     if-eqz v0, :cond_0
 
-    .line 6
-    check-cast p1, Lvv;
+    .line 59
+    check-cast p1, Ltn;
 
     goto :goto_2
 
-    .line 7
+    .line 60
     :cond_0
-    instance-of v0, p1, Lwv;
+    instance-of v0, p1, Lto;
 
     if-eqz v0, :cond_1
 
-    .line 8
-    check-cast p1, Lwv;
+    .line 61
+    check-cast p1, Lto;
 
-    invoke-interface {p1, p2, p3}, Lwv;->a(Lfv;Ldw;)Lvv;
+    invoke-interface {p1, p2, p3}, Lto;->a(Lsx;Ltv;)Ltn;
 
     move-result-object p1
 
     goto :goto_2
 
-    .line 9
+    .line 62
     :cond_1
-    instance-of v0, p1, Lsv;
+    instance-of v0, p1, Ltk;
 
     if-nez v0, :cond_3
 
-    instance-of v1, p1, Lkv;
+    instance-of v1, p1, Ltc;
 
     if-eqz v1, :cond_2
 
     goto :goto_0
 
-    .line 10
+    .line 71
     :cond_2
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
@@ -107,7 +107,7 @@
 
     invoke-virtual {p4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11
+    .line 72
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p1
@@ -122,7 +122,7 @@
 
     invoke-virtual {p4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3}, Ldw;->toString()Ljava/lang/String;
+    invoke-virtual {p3}, Ltv;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -150,10 +150,10 @@
 
     if-eqz v0, :cond_4
 
-    .line 12
+    .line 63
     move-object v0, p1
 
-    check-cast v0, Lsv;
+    check-cast v0, Ltk;
 
     move-object v3, v0
 
@@ -162,20 +162,20 @@
     :cond_4
     move-object v3, v1
 
-    .line 13
+    .line 66
     :goto_1
-    instance-of v0, p1, Lkv;
+    instance-of v0, p1, Ltc;
 
     if-eqz v0, :cond_5
 
     move-object v1, p1
 
-    check-cast v1, Lkv;
+    check-cast v1, Ltc;
 
     :cond_5
     move-object v4, v1
 
-    .line 14
+    .line 69
     new-instance p1, Lcom/google/gson/internal/bind/TreeTypeAdapter;
 
     const/4 v7, 0x0
@@ -186,20 +186,20 @@
 
     move-object v6, p3
 
-    invoke-direct/range {v2 .. v7}, Lcom/google/gson/internal/bind/TreeTypeAdapter;-><init>(Lsv;Lkv;Lfv;Ldw;Lwv;)V
+    invoke-direct/range {v2 .. v7}, Lcom/google/gson/internal/bind/TreeTypeAdapter;-><init>(Ltk;Ltc;Lsx;Ltv;Lto;)V
 
     :goto_2
     if-eqz p1, :cond_6
 
-    .line 15
-    invoke-interface {p4}, Lyv;->nullSafe()Z
+    .line 77
+    invoke-interface {p4}, Ltq;->b()Z
 
     move-result p2
 
     if-eqz p2, :cond_6
 
-    .line 16
-    invoke-virtual {p1}, Lvv;->a()Lvv;
+    .line 78
+    invoke-virtual {p1}, Ltn;->a()Ltn;
 
     move-result-object p1
 
@@ -207,34 +207,34 @@
     return-object p1
 .end method
 
-.method public a(Lfv;Ldw;)Lvv;
+.method public a(Lsx;Ltv;)Ltn;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Lfv;",
-            "Ldw<",
+            "Lsx;",
+            "Ltv<",
             "TT;>;)",
-            "Lvv<",
+            "Ltn<",
             "TT;>;"
         }
     .end annotation
 
-    .line 1
-    invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;
+    .line 44
+    invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 2
-    const-class v1, Lyv;
+    .line 45
+    const-class v1, Ltq;
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v0
 
-    check-cast v0, Lyv;
+    check-cast v0, Ltq;
 
     if-nez v0, :cond_0
 
@@ -242,11 +242,11 @@
 
     return-object p1
 
-    .line 3
+    .line 49
     :cond_0
     iget-object v1, p0, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;->a:Lcom/google/gson/internal/c;
 
-    invoke-virtual {p0, v1, p1, p2, v0}, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;->a(Lcom/google/gson/internal/c;Lfv;Ldw;Lyv;)Lvv;
+    invoke-virtual {p0, v1, p1, p2, v0}, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;->a(Lcom/google/gson/internal/c;Lsx;Ltv;Ltq;)Ltn;
 
     move-result-object p1
 

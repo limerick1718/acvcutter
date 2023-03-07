@@ -1,43 +1,67 @@
-.class final Landroid/support/v4/media/MediaDescriptionCompat$a;
+.class public final Landroid/support/v4/media/MediaDescriptionCompat$a;
 .super Ljava/lang/Object;
 .source "MediaDescriptionCompat.java"
-.implements Landroid/os/Parcelable$Creator;
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Landroid/support/v4/media/MediaDescriptionCompat;
 .end annotation
 .annotation system Ldalvik/annotation/InnerClass;
-accessFlags = 0x8
-name = null
+accessFlags = 0x19
+name = "a"
 .end annotation
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/Object;",
-"Landroid/os/Parcelable$Creator<",
-"Landroid/support/v4/media/MediaDescriptionCompat;",
-">;"
-}
-.end annotation
-.method constructor <init>()V
+.field private a:Ljava/lang/String;
+.field private b:Ljava/lang/CharSequence;
+.field private c:Ljava/lang/CharSequence;
+.field private d:Ljava/lang/CharSequence;
+.field private e:Landroid/graphics/Bitmap;
+.field private f:Landroid/net/Uri;
+.field private g:Landroid/os/Bundle;
+.field private h:Landroid/net/Uri;
+.method public constructor <init>()V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/media/MediaDescriptionCompat;
-.locals 2
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public a(Landroid/graphics/Bitmap;)Landroid/support/v4/media/MediaDescriptionCompat$a;
 .locals 0
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public newArray(I)[Landroid/support/v4/media/MediaDescriptionCompat;
+.method public a(Landroid/net/Uri;)Landroid/support/v4/media/MediaDescriptionCompat$a;
 .locals 0
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public bridge synthetic newArray(I)[Ljava/lang/Object;
+.method public a(Landroid/os/Bundle;)Landroid/support/v4/media/MediaDescriptionCompat$a;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public a(Ljava/lang/CharSequence;)Landroid/support/v4/media/MediaDescriptionCompat$a;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public a(Ljava/lang/String;)Landroid/support/v4/media/MediaDescriptionCompat$a;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public a()Landroid/support/v4/media/MediaDescriptionCompat;
+.locals 10
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public b(Landroid/net/Uri;)Landroid/support/v4/media/MediaDescriptionCompat$a;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public b(Ljava/lang/CharSequence;)Landroid/support/v4/media/MediaDescriptionCompat$a;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public c(Ljava/lang/CharSequence;)Landroid/support/v4/media/MediaDescriptionCompat$a;
 .locals 0
 const/4 v0, 0x0
 return-object v0

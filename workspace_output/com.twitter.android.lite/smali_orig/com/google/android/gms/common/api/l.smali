@@ -1,59 +1,109 @@
 .class public final Lcom/google/android/gms/common/api/l;
-.super Ljava/lang/UnsupportedOperationException;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
-# instance fields
-.field private final a:Le5;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator<",
+        "Lcom/google/android/gms/common/api/Scope;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public constructor <init>(Le5;)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    .line 2
-    iput-object p1, p0, Lcom/google/android/gms/common/api/l;->a:Le5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getMessage()Ljava/lang/String;
-    .locals 3
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 6
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/l;->a:Le5;
+    .line 7
+    invoke-static {p1}, Lbb;->b(Landroid/os/Parcel;)I
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    move-result v0
 
-    move-result-object v0
+    const/4 v1, 0x0
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v2, 0x0
 
-    move-result-object v1
+    .line 10
+    :goto_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result v3
+
+    if-ge v3, v0, :cond_2
+
+    .line 11
+    invoke-static {p1}, Lbb;->a(Landroid/os/Parcel;)I
+
+    move-result v3
+
+    .line 12
+    invoke-static {v3}, Lbb;->a(I)I
+
+    move-result v4
+
+    const/4 v5, 0x1
+
+    if-eq v4, v5, :cond_1
+
+    const/4 v5, 0x2
+
+    if-eq v4, v5, :cond_0
+
+    .line 19
+    invoke-static {p1, v3}, Lbb;->b(Landroid/os/Parcel;I)V
+
+    goto :goto_0
+
+    .line 17
+    :cond_0
+    invoke-static {p1, v3}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v2
+
+    goto :goto_0
+
+    .line 14
+    :cond_1
+    invoke-static {p1, v3}, Lbb;->d(Landroid/os/Parcel;I)I
 
     move-result v1
 
-    add-int/lit8 v1, v1, 0x8
+    goto :goto_0
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    .line 21
+    :cond_2
+    invoke-static {p1, v0}, Lbb;->l(Landroid/os/Parcel;I)V
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    .line 22
+    new-instance p1, Lcom/google/android/gms/common/api/Scope;
 
-    const-string v1, "Missing "
+    invoke-direct {p1, v1, v2}, Lcom/google/android/gms/common/api/Scope;-><init>(ILjava/lang/String;)V
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-object p1
+.end method
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 4
+    new-array p1, p1, [Lcom/google/android/gms/common/api/Scope;
 
-    move-result-object v0
-
-    return-object v0
+    return-object p1
 .end method

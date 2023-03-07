@@ -1,46 +1,36 @@
-.class final synthetic Ltr;
+.class public interface abstract annotation Ltr;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.source "SerializedName.java"
 
 # interfaces
-.implements Ljava/io/FileFilter;
+.implements Ljava/lang/annotation/Annotation;
 
 
-# instance fields
-.field private final a:Ljava/lang/String;
+# annotations
+.annotation system Ldalvik/annotation/AnnotationDefault;
+    value = .subannotation Ltr;
+        b = {}
+    .end subannotation
+.end annotation
 
+.annotation runtime Ljava/lang/annotation/Documented;
+.end annotation
 
-# direct methods
-.method private constructor <init>(Ljava/lang/String;)V
-    .locals 0
+.annotation runtime Ljava/lang/annotation/Retention;
+    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
+.end annotation
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ltr;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public static a(Ljava/lang/String;)Ljava/io/FileFilter;
-    .locals 1
-
-    new-instance v0, Ltr;
-
-    invoke-direct {v0, p0}, Ltr;-><init>(Ljava/lang/String;)V
-
-    return-object v0
-.end method
+.annotation runtime Ljava/lang/annotation/Target;
+    value = {
+        .enum Ljava/lang/annotation/ElementType;->FIELD:Ljava/lang/annotation/ElementType;,
+        .enum Ljava/lang/annotation/ElementType;->METHOD:Ljava/lang/annotation/ElementType;
+    }
+.end annotation
 
 
 # virtual methods
-.method public accept(Ljava/io/File;)Z
-    .locals 1
+.method public abstract a()Ljava/lang/String;
+.end method
 
-    iget-object v0, p0, Ltr;->a:Ljava/lang/String;
-
-    invoke-static {v0, p1}, Lyr;->a(Ljava/lang/String;Ljava/io/File;)Z
-
-    move-result p1
-
-    return p1
+.method public abstract b()[Ljava/lang/String;
 .end method

@@ -1,27 +1,37 @@
-.class public final Lam;
+.class final Lam;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Landroid/os/Parcelable$Creator;
+.source "FragmentManager.java"
+.implements Landroid/os/Parcelable;
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ljava/lang/Object;",
 "Landroid/os/Parcelable$Creator<",
-"Lbm;",
+"Lam;",
 ">;"
 }
 .end annotation
+.end field
+.field  a:[Lan;
+.field  b:[I
+.field  c:[Lac;
+.field  d:I
+.field  e:I
 .method public constructor <init>()V
-.locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.locals 1
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-.locals 16
-const/4 v0, 0x0
-return-object v0
+.method public constructor <init>(Landroid/os/Parcel;)V
+.locals 1
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-.locals 0
+.method public describeContents()I
+.locals 1
 const/4 v0, 0x0
-return-object v0
+return v0
+.end method
+.method public writeToParcel(Landroid/os/Parcel;I)V
+.locals 1
+return-void
 .end method

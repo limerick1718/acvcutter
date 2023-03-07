@@ -14,110 +14,415 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public Lww;
+		<code>.class public abstract Lww;
 .super Ljava/lang/Object;
-.source "NymizerParams.java"
+.source "EventsFilesManager.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lww$a;
+}
+.end annotation
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<T:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;"
+}
+.end annotation
+
+.field public static final MAX_BYTE_SIZE_PER_FILE:I = 0x1f40
+.field public static final MAX_FILES_IN_BATCH:I = 0x1
+.field public static final MAX_FILES_TO_KEEP:I = 0x64
+.field public static final ROLL_OVER_FILE_NAME_SEPARATOR:Ljava/lang/String; = "_"
+.field protected final context:Landroid/content/Context;
+.field protected final currentTimeProvider:Lvp;
+.field private final defaultMaxFilesToKeep:I
+.field protected final eventStorage:Lwx;
+.field protected volatile lastRollOverTime:J
+.field protected final rollOverListeners:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Lwy;",
+">;"
+}
+.end annotation
+.end field
+.field protected final transform:Lwv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lwv<",
+"TT;>;"
+}
+.end annotation
+.end field
 
 
+<span class="cov">.method public constructor &lt;init&gt;(Landroid/content/Context;Lwv;Lvp;Lwx;I)V</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Landroid/content/Context;",</span>
+<span class="">	"Lwv<",</span>
+<span class="">	"TT;>;",</span>
+<span class="">	"Lvp;",</span>
+<span class="">	"Lwx;",</span>
+<span class="">	"I)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Lww;->rollOverListeners:Ljava/util/List;</span>
+<span class="exec">	invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	iput-object p1, p0, Lww;->context:Landroid/content/Context;</span>
+<span class="cov">	iput-object p2, p0, Lww;->transform:Lwv;</span>
+<span class="cov">	iput-object p4, p0, Lww;->eventStorage:Lwx;</span>
+<span class="cov">	iput-object p3, p0, Lww;->currentTimeProvider:Lvp;</span>
+<span class="cov">	iget-object p1, p0, Lww;->currentTimeProvider:Lvp;</span>
+<span class="exec">	invoke-interface {p1}, Lvp;->a()J</span>
+<span class="cov">	move-result-wide p1</span>
+<span class="cov">	iput-wide p1, p0, Lww;->lastRollOverTime:J</span>
+<span class="cov">	iput p5, p0, Lww;->defaultMaxFilesToKeep:I</span>
+<span class="exec">	return-void</span>
+.end method
 
-.method private constructor &lt;init&gt;()V
-<span class="">	.locals 0</span>
+<span class="cov">.method private rollFileOverIfNeeded(I)V</span>
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	iget-object v0, p0, Lww;->eventStorage:Lwx;</span>
+<span class="exec">	invoke-virtual {p0}, Lww;->getMaxByteSizePerFile()I</span>
+<span class="cov">	move-result v1</span>
+<span class="exec">	invoke-interface {v0, p1, v1}, Lwx;->a(II)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;</span>
+<span class="missed">	const/4 v1, 0x3</span>
+<span class="missed">	new-array v1, v1, [Ljava/lang/Object;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	iget-object v3, p0, Lww;->eventStorage:Lwx;</span>
+<span class="">	invoke-interface {v3}, Lwx;->a()I</span>
+<span class="missed">	move-result v3</span>
+<span class="">	invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	aput-object v3, v1, v2</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="">	invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	aput-object p1, v1, v2</span>
+<span class="missed">	const/4 p1, 0x2</span>
+<span class="">	invoke-virtual {p0}, Lww;->getMaxByteSizePerFile()I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	aput-object v2, v1, p1</span>
+<span class="missed">	const-string p1, "session analytics events file is %d bytes, new event is %d bytes, this is over flush limit of %d, rolling it over"</span>
+<span class="">	invoke-static {v0, p1, v1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object v0, p0, Lww;->context:Landroid/content/Context;</span>
+<span class="missed">	const/4 v1, 0x4</span>
+<span class="missed">	const-string v2, "Fabric"</span>
+<span class="missed">	invoke-static {v0, v1, v2, p1}, Lvn;->a(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {p0}, Lww;->rollFileOver()Z</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private triggerRollOverOnListeners(Ljava/lang/String;)V</span>
+<span class="">	.locals 4</span>
+
+<span class="cov">	iget-object v0, p0, Lww;->rollOverListeners:Ljava/util/List;</span>
+<span class="exec">	invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	if-eqz v1, :cond_0</span>
+<span class="exec">	invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	check-cast v1, Lwy;</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	invoke-interface {v1, p1}, Lwy;->onRollOver(Ljava/lang/String;)V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	iget-object v2, p0, Lww;->context:Landroid/content/Context;</span>
+<span class="missed">	const-string v3, "One of the roll over listeners threw an exception"</span>
+<span class="missed">	invoke-static {v2, v3, v1}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public deleteAllEventsFiles()V
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lww;->eventStorage:Lwx;</span>
+<span class="">	invoke-interface {v0}, Lwx;->c()Ljava/util/List;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-interface {v0, v1}, Lwx;->a(Ljava/util/List;)V</span>
+<span class="missed">	iget-object v0, p0, Lww;->eventStorage:Lwx;</span>
+<span class="missed">	invoke-interface {v0}, Lwx;->d()V</span>
 <span class="">	return-void</span>
 .end method
 
-.method public static a()Lww;
-<span class="">	.locals 1</span>
+.method public deleteOldestInRollOverIfOverMax()V
+<span class="">	.locals 8</span>
 
-<span class="missed">	new-instance v0, Lww;</span>
-<span class="missed">	invoke-direct {v0}, Lww;-><init>()V</span>
+<span class="missed">	iget-object v0, p0, Lww;->eventStorage:Lwx;</span>
+<span class="">	invoke-interface {v0}, Lwx;->c()Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p0}, Lww;->getMaxFilesToKeep()I</span>
+<span class="missed">	move-result v1</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-gt v2, v1, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	sub-int/2addr v2, v1</span>
+<span class="missed">	iget-object v3, p0, Lww;->context:Landroid/content/Context;</span>
+<span class="missed">	sget-object v4, Ljava/util/Locale;->US:Ljava/util/Locale;</span>
+<span class="missed">	const/4 v5, 0x3</span>
+<span class="missed">	new-array v5, v5, [Ljava/lang/Object;</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v7</span>
+<span class="">	invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="missed">	aput-object v7, v5, v6</span>
+<span class="missed">	const/4 v6, 0x1</span>
+<span class="">	invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	aput-object v1, v5, v6</span>
+<span class="missed">	const/4 v1, 0x2</span>
+<span class="">	invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	aput-object v6, v5, v1</span>
+<span class="missed">	const-string v1, "Found %d files in  roll over directory, this is greater than %d, deleting %d oldest files"</span>
+<span class="">	invoke-static {v4, v1, v5}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-static {v3, v1}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;)V</span>
+<span class="missed">	new-instance v1, Ljava/util/TreeSet;</span>
+<span class="missed">	new-instance v3, Lww$1;</span>
+<span class="missed">	invoke-direct {v3, p0}, Lww$1;-><init>(Lww;)V</span>
+<span class="missed">	invoke-direct {v1, v3}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-eqz v3, :cond_1</span>
+<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	check-cast v3, Ljava/io/File;</span>
+<span class="">	invoke-virtual {v3}, Ljava/io/File;->getName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="">	invoke-virtual {p0, v4}, Lww;->parseCreationTimestampFromFileName(Ljava/lang/String;)J</span>
+<span class="missed">	move-result-wide v4</span>
+<span class="missed">	new-instance v6, Lww$a;</span>
+<span class="missed">	invoke-direct {v6, v3, v4, v5}, Lww$a;-><init>(Ljava/io/File;J)V</span>
+<span class="missed">	invoke-virtual {v1, v6}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="">	invoke-virtual {v1}, Ljava/util/TreeSet;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-eqz v3, :cond_3</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	check-cast v3, Lww$a;</span>
+<span class="missed">	iget-object v3, v3, Lww$a;->a:Ljava/io/File;</span>
+<span class="missed">	invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z</span>
+<span class="">	invoke-virtual {v0}, Ljava/util/ArrayList;->size()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-ne v3, v2, :cond_2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	iget-object v1, p0, Lww;->eventStorage:Lwx;</span>
+<span class="missed">	invoke-interface {v1, v0}, Lwx;->a(Ljava/util/List;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public deleteSentFiles(Ljava/util/List;)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/io/File;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lww;->eventStorage:Lwx;</span>
+<span class="missed">	invoke-interface {v0, p1}, Lwx;->a(Ljava/util/List;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected abstract generateUniqueRollOverFileName()Ljava/lang/String;
+<span class="">	</span>
+
+.end method
+
+.method public getBatchOfFilesToSend()Ljava/util/List;
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/io/File;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lww;->eventStorage:Lwx;</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	invoke-interface {v0, v1}, Lwx;->a(I)Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
 <span class="">	return-object v0</span>
 .end method
 
-.method public a(I)Lww;
-<span class="">	.locals 0</span>
+.method public getLastRollOverTime()J
+<span class="">	.locals 2</span>
 
-<span class="">	return-object p0</span>
+<span class="missed">	iget-wide v0, p0, Lww;->lastRollOverTime:J</span>
+<span class="">	return-wide v0</span>
 .end method
 
-.method public a(J)Lww;
-<span class="">	.locals 0</span>
+<span class="cov">.method protected getMaxByteSizePerFile()I</span>
+<span class="">	.locals 1</span>
 
-<span class="">	return-object p0</span>
+<span class="cov">	const/16 v0, 0x1f40</span>
+<span class="exec">	return v0</span>
 .end method
 
-.method public a(Ljava/lang/String;)Lww;
-<span class="">	.locals 0</span>
+.method protected getMaxFilesToKeep()I
+<span class="">	.locals 1</span>
 
-<span class="">	return-object p0</span>
+<span class="missed">	iget v0, p0, Lww;->defaultMaxFilesToKeep:I</span>
+<span class="">	return v0</span>
 .end method
 
-.method public a(Z)Lww;
-<span class="">	.locals 0</span>
+.method public parseCreationTimestampFromFileName(Ljava/lang/String;)J
+<span class="">	.locals 4</span>
 
-<span class="">	return-object p0</span>
+<span class="missed">	const-string v0, "_"</span>
+<span class="">	invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	array-length v0, p1</span>
+<span class="missed">	const-wide/16 v1, 0x0</span>
+<span class="missed">	const/4 v3, 0x3</span>
+<span class="missed">	if-eq v0, v3, :cond_0</span>
+<span class="">	return-wide v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x2</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	aget-object p1, p1, v0</span>
+<span class="">	invoke-static {p1}, Ljava/lang/Long;->valueOf(Ljava/lang/String;)Ljava/lang/Long;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Long;->longValue()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-wide v0</span>
+<span class="">	:catch_0</span>
+<span class="">	return-wide v1</span>
 .end method
 
-.method public b(Ljava/lang/String;)Lww;
-<span class="">	.locals 0</span>
+<span class="cov">.method public registerRollOverListener(Lwy;)V</span>
+<span class="">	.locals 1</span>
 
-<span class="">	return-object p0</span>
+<span class="cov">	if-eqz p1, :cond_0</span>
+<span class="cov">	iget-object v0, p0, Lww;->rollOverListeners:Ljava/util/List;</span>
+<span class="cov">	invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method public c(Ljava/lang/String;)Lww;
-<span class="">	.locals 0</span>
+<span class="cov">.method public rollFileOver()Z</span>
+<span class="">	.locals 7</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="">	return-object p0</span>
+<span class="cov">	iget-object v0, p0, Lww;->eventStorage:Lwx;</span>
+<span class="exec">	invoke-interface {v0}, Lwx;->b()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="exec">	invoke-virtual {p0}, Lww;->generateUniqueRollOverFileName()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iget-object v3, p0, Lww;->eventStorage:Lwx;</span>
+<span class="cov">	invoke-interface {v3, v0}, Lwx;->a(Ljava/lang/String;)V</span>
+<span class="cov">	iget-object v3, p0, Lww;->context:Landroid/content/Context;</span>
+<span class="cov">	const/4 v4, 0x4</span>
+<span class="cov">	sget-object v5, Ljava/util/Locale;->US:Ljava/util/Locale;</span>
+<span class="cov">	new-array v6, v1, [Ljava/lang/Object;</span>
+<span class="cov">	aput-object v0, v6, v2</span>
+<span class="cov">	const-string v2, "generated new file %s"</span>
+<span class="exec">	invoke-static {v5, v2, v6}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	const-string v5, "Fabric"</span>
+<span class="cov">	invoke-static {v3, v4, v5, v2}, Lvn;->a(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	iget-object v2, p0, Lww;->currentTimeProvider:Lvp;</span>
+<span class="exec">	invoke-interface {v2}, Lvp;->a()J</span>
+<span class="cov">	move-result-wide v2</span>
+<span class="cov">	iput-wide v2, p0, Lww;->lastRollOverTime:J</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	invoke-direct {p0, v0}, Lww;->triggerRollOverOnListeners(Ljava/lang/String;)V</span>
+<span class="exec">	return v1</span>
 .end method
 
-.method public d(Ljava/lang/String;)Lww;
-<span class="">	.locals 0</span>
+<span class="cov">.method public writeEvent(Ljava/lang/Object;)V</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TT;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="">	return-object p0</span>
-.end method
-
-.method public e(Ljava/lang/String;)Lww;
-<span class="">	.locals 0</span>
-
-<span class="">	return-object p0</span>
-.end method
-
-.method public f(Ljava/lang/String;)Lww;
-<span class="">	.locals 0</span>
-
-<span class="">	return-object p0</span>
-.end method
-
-.method public g(Ljava/lang/String;)Lww;
-<span class="">	.locals 0</span>
-
-<span class="">	return-object p0</span>
-.end method
-
-.method public h(Ljava/lang/String;)Lww;
-<span class="">	.locals 0</span>
-
-<span class="">	return-object p0</span>
-.end method
-
-.method public i(Ljava/lang/String;)Lww;
-<span class="">	.locals 0</span>
-
-<span class="">	return-object p0</span>
-.end method
-
-.method public j(Ljava/lang/String;)Lww;
-<span class="">	.locals 0</span>
-
-<span class="">	return-object p0</span>
-.end method
-
-.method public k(Ljava/lang/String;)Lww;
-<span class="">	.locals 0</span>
-
-<span class="">	return-object p0</span>
+<span class="cov">	iget-object v0, p0, Lww;->transform:Lwv;</span>
+<span class="exec">	invoke-interface {v0, p1}, Lwv;->toBytes(Ljava/lang/Object;)[B</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	array-length v0, p1</span>
+<span class="cov">	invoke-direct {p0, v0}, Lww;->rollFileOverIfNeeded(I)V</span>
+<span class="cov">	iget-object v0, p0, Lww;->eventStorage:Lwx;</span>
+<span class="cov">	invoke-interface {v0, p1}, Lwx;->a([B)V</span>
+<span class="exec">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

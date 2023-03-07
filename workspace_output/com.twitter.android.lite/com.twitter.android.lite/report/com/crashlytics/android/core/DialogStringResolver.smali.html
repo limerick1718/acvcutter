@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.crashlytics.android.core</a></li>
+        <li><i class="ico ico-class"></i> DialogStringResolver.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Lcom/crashlytics/android/core/DialogStringResolver;
+.super Ljava/lang/Object;
+.source "DialogStringResolver.java"
+
+
+.field private static final PROMPT_MESSAGE_RES_NAME:Ljava/lang/String; = "com.crashlytics.CrashSubmissionPromptMessage"
+.field private static final PROMPT_TITLE_RES_NAME:Ljava/lang/String; = "com.crashlytics.CrashSubmissionPromptTitle"
+.field private static final SUBMISSION_ALWAYS_SEND_RES_NAME:Ljava/lang/String; = "com.crashlytics.CrashSubmissionAlwaysSendTitle"
+.field private static final SUBMISSION_CANCEL_RES_NAME:Ljava/lang/String; = "com.crashlytics.CrashSubmissionCancelTitle"
+.field private static final SUBMISSION_SEND_RES_NAME:Ljava/lang/String; = "com.crashlytics.CrashSubmissionSendTitle"
+.field private final context:Landroid/content/Context;
+.field private final promptData:Lyf;
+
+
+.method public constructor &lt;init&gt;(Landroid/content/Context;Lyf;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Lcom/crashlytics/android/core/DialogStringResolver;->context:Landroid/content/Context;</span>
+<span class="missed">	iput-object p2, p0, Lcom/crashlytics/android/core/DialogStringResolver;->promptData:Lyf;</span>
+<span class="">	return-void</span>
+.end method
+
+.method private isNullOrEmpty(Ljava/lang/String;)Z
+<span class="">	.locals 0</span>
+
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	:goto_1</span>
+<span class="">	return p1</span>
+.end method
+
+.method private resourceOrFallbackValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/DialogStringResolver;->context:Landroid/content/Context;</span>
+<span class="">	invoke-static {v0, p1}, Lvn;->b(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-direct {p0, p1, p2}, Lcom/crashlytics/android/core/DialogStringResolver;->stringOrFallback(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method private stringOrFallback(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-direct {p0, p1}, Lcom/crashlytics/android/core/DialogStringResolver;->isNullOrEmpty(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	move-object p1, p2</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public getAlwaysSendButtonTitle()Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/DialogStringResolver;->promptData:Lyf;</span>
+<span class="missed">	iget-object v0, v0, Lyf;->g:Ljava/lang/String;</span>
+<span class="missed">	const-string v1, "com.crashlytics.CrashSubmissionAlwaysSendTitle"</span>
+<span class="">	invoke-direct {p0, v1, v0}, Lcom/crashlytics/android/core/DialogStringResolver;->resourceOrFallbackValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getCancelButtonTitle()Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/DialogStringResolver;->promptData:Lyf;</span>
+<span class="missed">	iget-object v0, v0, Lyf;->e:Ljava/lang/String;</span>
+<span class="missed">	const-string v1, "com.crashlytics.CrashSubmissionCancelTitle"</span>
+<span class="">	invoke-direct {p0, v1, v0}, Lcom/crashlytics/android/core/DialogStringResolver;->resourceOrFallbackValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getMessage()Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/DialogStringResolver;->promptData:Lyf;</span>
+<span class="missed">	iget-object v0, v0, Lyf;->b:Ljava/lang/String;</span>
+<span class="missed">	const-string v1, "com.crashlytics.CrashSubmissionPromptMessage"</span>
+<span class="">	invoke-direct {p0, v1, v0}, Lcom/crashlytics/android/core/DialogStringResolver;->resourceOrFallbackValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getSendButtonTitle()Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/DialogStringResolver;->promptData:Lyf;</span>
+<span class="missed">	iget-object v0, v0, Lyf;->c:Ljava/lang/String;</span>
+<span class="missed">	const-string v1, "com.crashlytics.CrashSubmissionSendTitle"</span>
+<span class="">	invoke-direct {p0, v1, v0}, Lcom/crashlytics/android/core/DialogStringResolver;->resourceOrFallbackValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getTitle()Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/DialogStringResolver;->promptData:Lyf;</span>
+<span class="missed">	iget-object v0, v0, Lyf;->a:Ljava/lang/String;</span>
+<span class="missed">	const-string v1, "com.crashlytics.CrashSubmissionPromptTitle"</span>
+<span class="">	invoke-direct {p0, v1, v0}, Lcom/crashlytics/android/core/DialogStringResolver;->resourceOrFallbackValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

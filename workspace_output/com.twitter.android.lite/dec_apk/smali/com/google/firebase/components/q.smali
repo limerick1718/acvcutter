@@ -1,15 +1,87 @@
-.class final synthetic Lcom/google/firebase/components/q;
+.class final Lcom/google/firebase/components/q;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-components@@16.0.0"
-.implements Ljava/lang/Runnable;
-.field private final a:Ljava/util/Map$Entry;
-.field private final b:Lhu;
-.method private constructor <init>(Ljava/util/Map$Entry;Lhu;)V
-.locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+.source "com.google.firebase:firebase-common@@16.0.2"
+.implements Lsq;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<T:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;",
+"Lsq<",
+"TT;>;"
+}
+.end annotation
+.field private static final a:Ljava/lang/Object;
+.field private volatile b:Ljava/lang/Object;
+.field private volatile c:Lsq;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lsq<",
+"TT;>;"
+}
+.end annotation
+.end field
+.method static constructor <clinit>()V
+.locals 1
+new-instance v0, Ljava/lang/Object;
+invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+sput-object v0, Lcom/google/firebase/components/q;->a:Ljava/lang/Object;
 return-void
 .end method
-.method public run()V
-.locals 2
+.method constructor <init>(Lcom/google/firebase/components/c;Lcom/google/firebase/components/b;)V
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(",
+"Lcom/google/firebase/components/c<",
+"TT;>;",
+"Lcom/google/firebase/components/b;",
+")V"
+}
+.end annotation
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+sget-object v0, Lcom/google/firebase/components/q;->a:Ljava/lang/Object;
+iput-object v0, p0, Lcom/google/firebase/components/q;->b:Ljava/lang/Object;
+invoke-static {p1, p2}, Lcom/google/firebase/components/r;->a(Lcom/google/firebase/components/c;Lcom/google/firebase/components/b;)Lsq;
+move-result-object p1
+iput-object p1, p0, Lcom/google/firebase/components/q;->c:Lsq;
 return-void
+.end method
+.method static synthetic a(Lcom/google/firebase/components/c;Lcom/google/firebase/components/b;)Ljava/lang/Object;
+.locals 0
+invoke-interface {p0, p1}, Lcom/google/firebase/components/c;->a(Lcom/google/firebase/components/b;)Ljava/lang/Object;
+move-result-object p0
+return-object p0
+.end method
+.method public final a()Ljava/lang/Object;
+.locals 2
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"()TT;"
+}
+.end annotation
+iget-object v0, p0, Lcom/google/firebase/components/q;->b:Ljava/lang/Object;
+sget-object v1, Lcom/google/firebase/components/q;->a:Ljava/lang/Object;
+if-ne v0, v1, :cond_1
+monitor-enter p0
+iget-object v0, p0, Lcom/google/firebase/components/q;->b:Ljava/lang/Object;
+sget-object v1, Lcom/google/firebase/components/q;->a:Ljava/lang/Object;
+if-ne v0, v1, :cond_0
+iget-object v0, p0, Lcom/google/firebase/components/q;->c:Lsq;
+invoke-interface {v0}, Lsq;->a()Ljava/lang/Object;
+move-result-object v0
+iput-object v0, p0, Lcom/google/firebase/components/q;->b:Ljava/lang/Object;
+const/4 v1, 0x0
+iput-object v1, p0, Lcom/google/firebase/components/q;->c:Lsq;
+:cond_0
+monitor-exit p0
+goto :goto_0
+:catchall_0
+move-exception v0
+monitor-exit p0
+throw v0
+:cond_1
+:goto_0
+return-object v0
 .end method

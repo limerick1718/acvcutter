@@ -1,68 +1,133 @@
-.class final Lrb;
-.super Lqb;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.class public final Lrb;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
-# instance fields
-.field private final a:Lpb;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator<",
+        "Lra;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Lqb;-><init>()V
-
-    .line 2
-    new-instance v0, Lpb;
-
-    invoke-direct {v0}, Lpb;-><init>()V
-
-    iput-object v0, p0, Lrb;->a:Lpb;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-    .locals 2
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 7
 
-    if-eq p2, p1, :cond_1
+    .line 7
+    invoke-static {p1}, Lbb;->b(Landroid/os/Parcel;)I
 
-    if-eqz p2, :cond_0
+    move-result v0
 
-    .line 1
-    iget-object v0, p0, Lrb;->a:Lpb;
+    const/4 v1, 0x0
 
-    const/4 v1, 0x1
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, p1, v1}, Lpb;->a(Ljava/lang/Throwable;Z)Ljava/util/List;
+    move-object v3, v1
 
-    move-result-object p1
+    .line 11
+    :goto_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    move-result v4
 
-    return-void
+    if-ge v4, v0, :cond_3
 
-    .line 2
+    .line 12
+    invoke-static {p1}, Lbb;->a(Landroid/os/Parcel;)I
+
+    move-result v4
+
+    .line 13
+    invoke-static {v4}, Lbb;->a(I)I
+
+    move-result v5
+
+    const/4 v6, 0x1
+
+    if-eq v5, v6, :cond_2
+
+    const/4 v6, 0x2
+
+    if-eq v5, v6, :cond_1
+
+    const/4 v6, 0x3
+
+    if-eq v5, v6, :cond_0
+
+    .line 23
+    invoke-static {p1, v4}, Lbb;->b(Landroid/os/Parcel;I)V
+
+    goto :goto_0
+
+    .line 20
     :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
+    sget-object v3, Lcom/google/android/gms/common/internal/q;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    const-string p2, "The suppressed exception cannot be null."
+    .line 21
+    invoke-static {p1, v4, v3}, Lbb;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    move-result-object v3
 
-    throw p1
+    check-cast v3, Lcom/google/android/gms/common/internal/q;
 
-    .line 3
+    goto :goto_0
+
+    .line 17
     :cond_1
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    sget-object v1, Lcom/google/android/gms/common/b;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    const-string v0, "Self suppression is not allowed."
+    .line 18
+    invoke-static {p1, v4, v1}, Lbb;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
-    invoke-direct {p1, v0, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v1
 
-    throw p1
+    check-cast v1, Lcom/google/android/gms/common/b;
+
+    goto :goto_0
+
+    .line 15
+    :cond_2
+    invoke-static {p1, v4}, Lbb;->d(Landroid/os/Parcel;I)I
+
+    move-result v2
+
+    goto :goto_0
+
+    .line 25
+    :cond_3
+    invoke-static {p1, v0}, Lbb;->l(Landroid/os/Parcel;I)V
+
+    .line 26
+    new-instance p1, Lra;
+
+    invoke-direct {p1, v2, v1, v3}, Lra;-><init>(ILcom/google/android/gms/common/b;Lcom/google/android/gms/common/internal/q;)V
+
+    return-object p1
+.end method
+
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 0
+
+    .line 4
+    new-array p1, p1, [Lra;
+
+    return-object p1
 .end method

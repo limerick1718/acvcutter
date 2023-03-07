@@ -1,37 +1,31 @@
-.class public interface abstract Lxt;
+.class Lxt;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-encoders-json@@16.1.0"
+.source "AppIconSettingsData.java"
 
 
-# virtual methods
-.method public abstract a(Ljava/lang/String;I)Lxt;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-.end method
+# instance fields
+.field public final a:Ljava/lang/String;
 
-.method public abstract a(Ljava/lang/String;J)Lxt;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-.end method
+.field public final b:I
 
-.method public abstract a(Ljava/lang/String;Ljava/lang/Object;)Lxt;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-.end method
+.field public final c:I
 
-.method public abstract a(Ljava/lang/String;Z)Lxt;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+
+# direct methods
+.method public constructor <init>(Ljava/lang/String;II)V
+    .locals 0
+
+    .line 30
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 31
+    iput-object p1, p0, Lxt;->a:Ljava/lang/String;
+
+    .line 32
+    iput p2, p0, Lxt;->b:I
+
+    .line 33
+    iput p3, p0, Lxt;->c:I
+
+    return-void
 .end method

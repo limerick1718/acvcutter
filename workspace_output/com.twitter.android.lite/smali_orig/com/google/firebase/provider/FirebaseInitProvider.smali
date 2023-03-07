@@ -1,62 +1,53 @@
 .class public Lcom/google/firebase/provider/FirebaseInitProvider;
 .super Landroid/content/ContentProvider;
-.source "com.google.firebase:firebase-common@@19.3.0"
+.source "com.google.firebase:firebase-common@@16.0.2"
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 34
     invoke-direct {p0}, Landroid/content/ContentProvider;-><init>()V
 
     return-void
 .end method
 
-.method private static a(Landroid/content/pm/ProviderInfo;)V
-    .locals 1
-
-    const-string v0, "FirebaseInitProvider ProviderInfo cannot be null."
-
-    .line 1
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2
-    iget-object p0, p0, Landroid/content/pm/ProviderInfo;->authority:Ljava/lang/String;
-
-    const-string v0, "com.google.firebase.firebaseinitprovider"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    return-void
-
-    .line 3
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string v0, "Incorrect provider authority in manifest. Most likely due to a missing applicationId variable in application\'s build.gradle."
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
 
 # virtual methods
 .method public attachInfo(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V
-    .locals 0
+    .locals 2
 
-    .line 1
-    invoke-static {p2}, Lcom/google/firebase/provider/FirebaseInitProvider;->a(Landroid/content/pm/ProviderInfo;)V
+    const-string v0, "FirebaseInitProvider ProviderInfo cannot be null."
 
-    .line 2
+    .line 1066
+    invoke-static {p2, v0}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1067
+    iget-object v0, p2, Landroid/content/pm/ProviderInfo;->authority:Ljava/lang/String;
+
+    const-string v1, "com.google.firebase.firebaseinitprovider"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 47
     invoke-super {p0, p1, p2}, Landroid/content/ContentProvider;->attachInfo(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V
 
     return-void
+
+    .line 1068
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "Incorrect provider authority in manifest. Most likely due to a missing applicationId variable in application\'s build.gradle."
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
 .method public delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
@@ -86,12 +77,12 @@
 .method public onCreate()Z
     .locals 2
 
-    .line 1
-    invoke-virtual {p0}, Landroid/content/ContentProvider;->getContext()Landroid/content/Context;
+    .line 53
+    invoke-virtual {p0}, Lcom/google/firebase/provider/FirebaseInitProvider;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {v0}, Lfo;->a(Landroid/content/Context;)Lfo;
+    invoke-static {v0}, Lcom/google/firebase/FirebaseApp;->a(Landroid/content/Context;)Lcom/google/firebase/FirebaseApp;
 
     move-result-object v0
 
@@ -101,7 +92,7 @@
 
     const-string v0, "FirebaseApp initialization unsuccessful"
 
-    .line 2
+    .line 54
     invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
@@ -109,7 +100,7 @@
     :cond_0
     const-string v0, "FirebaseApp initialization successful"
 
-    .line 3
+    .line 56
     invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0

@@ -14,16 +14,46 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lns;
+		<code>.class final Lns;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.implements Ljava/lang/Runnable;
 
 
+.field private final synthetic a:Ljava/util/concurrent/atomic/AtomicReference;
+.field private final synthetic b:Ljava/lang/String;
+.field private final synthetic c:Ljava/lang/String;
+.field private final synthetic d:Ljava/lang/String;
+.field private final synthetic e:Z
+.field private final synthetic f:Lnl;
 
 
-.method public abstract a(Lis;Z)Z
-<span class="">	</span>
+.method constructor &lt;init&gt;(Lnl;Ljava/util/concurrent/atomic/AtomicReference;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+<span class="">	.locals 0</span>
 
+<span class="missed">	iput-object p1, p0, Lns;->f:Lnl;</span>
+<span class="missed">	iput-object p2, p0, Lns;->a:Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="missed">	iput-object p3, p0, Lns;->b:Ljava/lang/String;</span>
+<span class="missed">	iput-object p4, p0, Lns;->c:Ljava/lang/String;</span>
+<span class="missed">	iput-object p5, p0, Lns;->d:Ljava/lang/String;</span>
+<span class="missed">	iput-boolean p6, p0, Lns;->e:Z</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final run()V
+<span class="">	.locals 7</span>
+
+<span class="missed">	iget-object v0, p0, Lns;->f:Lnl;</span>
+<span class="missed">	iget-object v0, v0, Lnl;->q:Lmf;</span>
+<span class="">	invoke-virtual {v0}, Lmf;->x()Loc;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iget-object v2, p0, Lns;->a:Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="missed">	iget-object v3, p0, Lns;->b:Ljava/lang/String;</span>
+<span class="missed">	iget-object v4, p0, Lns;->c:Ljava/lang/String;</span>
+<span class="missed">	iget-object v5, p0, Lns;->d:Ljava/lang/String;</span>
+<span class="missed">	iget-boolean v6, p0, Lns;->e:Z</span>
+<span class="missed">	invoke-virtual/range {v1 .. v6}, Loc;->a(Ljava/util/concurrent/atomic/AtomicReference;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

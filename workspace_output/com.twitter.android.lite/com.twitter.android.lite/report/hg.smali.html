@@ -15,156 +15,95 @@
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
 		<code>.class final Lhg;
-.super Lfg;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lfg<",
-"Leg;",
-"Leg;",
-">;"
-}
-.end annotation
+.super Ljava/lang/Object;
+.implements Lho;
 
 
+.field private a:[Lho;
 
-.method constructor &lt;init&gt;()V
+
+.method varargs constructor &lt;init&gt;([Lho;)V
 <span class="">	.locals 0</span>
 
-<span class="missed">	invoke-direct {p0}, Lfg;-><init>()V</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Lhg;->a:[Lho;</span>
 <span class="">	return-void</span>
 .end method
 
-.method private static a(Ljava/lang/Object;Leg;)V
-<span class="">	.locals 0</span>
-
-<span class="missed">	check-cast p0, Lmd;</span>
-<span class="missed">	iput-object p1, p0, Lmd;->zzb:Leg;</span>
-<span class="">	return-void</span>
-.end method
-
-.method final synthetic a()Ljava/lang/Object;
-<span class="">	.locals 1</span>
-
-<span class="">	invoke-static {}, Leg;->e()Leg;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-<span class="">	.locals 0</span>
-
-<span class="missed">	check-cast p1, Lmd;</span>
-<span class="missed">	iget-object p1, p1, Lmd;->zzb:Leg;</span>
-<span class="">	return-object p1</span>
-.end method
-
-.method final synthetic a(Ljava/lang/Object;IJ)V
-<span class="">	.locals 0</span>
-
-<span class="missed">	check-cast p1, Leg;</span>
-<span class="missed">	shl-int/lit8 p2, p2, 0x3</span>
-<span class="">	invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;</span>
-<span class="missed">	move-result-object p3</span>
-<span class="missed">	invoke-virtual {p1, p2, p3}, Leg;->a(ILjava/lang/Object;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method final synthetic a(Ljava/lang/Object;ILfc;)V
-<span class="">	.locals 0</span>
-
-<span class="missed">	check-cast p1, Leg;</span>
-<span class="missed">	shl-int/lit8 p2, p2, 0x3</span>
-<span class="missed">	or-int/lit8 p2, p2, 0x2</span>
-<span class="missed">	invoke-virtual {p1, p2, p3}, Leg;->a(ILjava/lang/Object;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
-<span class="">	.locals 0</span>
-
-<span class="missed">	check-cast p2, Leg;</span>
-<span class="missed">	invoke-static {p1, p2}, Lhg;->a(Ljava/lang/Object;Leg;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method final synthetic a(Ljava/lang/Object;Lyg;)V
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+.method public final a(Ljava/lang/Class;)Z
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;)Z"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	check-cast p1, Leg;</span>
-<span class="missed">	invoke-virtual {p1, p2}, Leg;->b(Lyg;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method final b(Ljava/lang/Object;)V
-<span class="">	.locals 0</span>
-
-<span class="missed">	check-cast p1, Lmd;</span>
-<span class="missed">	iget-object p1, p1, Lmd;->zzb:Leg;</span>
-<span class="missed">	invoke-virtual {p1}, Leg;->a()V</span>
-<span class="">	return-void</span>
-.end method
-
-.method final synthetic b(Ljava/lang/Object;Ljava/lang/Object;)V
-<span class="">	.locals 0</span>
-
-<span class="missed">	check-cast p2, Leg;</span>
-<span class="missed">	invoke-static {p1, p2}, Lhg;->a(Ljava/lang/Object;Leg;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method final synthetic b(Ljava/lang/Object;Lyg;)V
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	check-cast p1, Leg;</span>
-<span class="missed">	invoke-virtual {p1, p2}, Leg;->a(Lyg;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method final synthetic c(Ljava/lang/Object;)I
-<span class="">	.locals 0</span>
-
-<span class="missed">	check-cast p1, Leg;</span>
-<span class="">	invoke-virtual {p1}, Leg;->b()I</span>
-<span class="missed">	move-result p1</span>
+<span class="missed">	iget-object v0, p0, Lhg;->a:[Lho;</span>
+<span class="missed">	array-length v1, v0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v3, v1, :cond_1</span>
+<span class="missed">	aget-object v4, v0, v3</span>
+<span class="">	invoke-interface {v4, p1}, Lho;->a(Ljava/lang/Class;)Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-eqz v4, :cond_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
 <span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/lit8 v3, v3, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="">	return v2</span>
 .end method
 
-.method final synthetic c(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-<span class="">	.locals 1</span>
+.method public final b(Ljava/lang/Class;)Lhn;
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;)",</span>
+<span class="">	"Lhn;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="missed">	check-cast p1, Leg;</span>
-<span class="missed">	check-cast p2, Leg;</span>
-<span class="">	invoke-static {}, Leg;->d()Leg;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	invoke-virtual {p2, v0}, Leg;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="">	return-object p1</span>
-<span class="">	:cond_0</span>
-<span class="">	invoke-static {p1, p2}, Leg;->a(Leg;Leg;)Leg;</span>
+<span class="missed">	iget-object v0, p0, Lhg;->a:[Lho;</span>
+<span class="missed">	array-length v1, v0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v2, v1, :cond_1</span>
+<span class="missed">	aget-object v3, v0, v2</span>
+<span class="">	invoke-interface {v3, p1}, Lho;->a(Ljava/lang/Class;)Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-eqz v4, :cond_0</span>
+<span class="">	invoke-interface {v3, p1}, Lho;->b(Ljava/lang/Class;)Lhn;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	return-object p1</span>
-.end method
-
-.method final synthetic d(Ljava/lang/Object;)I
-<span class="">	.locals 0</span>
-
-<span class="missed">	check-cast p1, Leg;</span>
-<span class="">	invoke-virtual {p1}, Leg;->c()I</span>
-<span class="missed">	move-result p1</span>
-<span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v0, Ljava/lang/UnsupportedOperationException;</span>
+<span class="missed">	const-string v1, "No factory is available for message type: "</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_2</span>
+<span class="">	invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/String;</span>
+<span class="missed">	invoke-direct {p1, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V</span>
+<span class="">	:goto_1</span>
+<span class="missed">	invoke-direct {v0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

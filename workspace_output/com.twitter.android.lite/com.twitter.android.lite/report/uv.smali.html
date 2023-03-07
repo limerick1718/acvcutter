@@ -14,82 +14,204 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public abstract enum Luv;
-.super Ljava/lang/Enum;
-.source "LongSerializationPolicy.java"
+		<code>.class  Luv;
+.super Lwi;
+.source "InitializationTask.java"
 
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ljava/lang/Enum<",
-"Luv;",
-">;"
+"<Result:",
+"Ljava/lang/Object;",
+">",
+"Lwi<",
+"Ljava/lang/Void;",
+"Ljava/lang/Void;",
+"TResult;>;"
 }
 .end annotation
 
-.field public static final enum a:Luv;
-.field public static final enum b:Luv;
-.field private static final synthetic c:[Luv;
+.field final a:Luw;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Luw<",
+"TResult;>;"
+}
+.end annotation
+.end field
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 5</span>
-
-<span class="cov">	new-instance v0, Luv$a;</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	const-string v2, "DEFAULT"</span>
-<span class="cov">	invoke-direct {v0, v2, v1}, Luv$a;-><init>(Ljava/lang/String;I)V</span>
-<span class="cov">	sput-object v0, Luv;->a:Luv;</span>
-<span class="cov">	new-instance v0, Luv$b;</span>
-<span class="cov">	const/4 v2, 0x1</span>
-<span class="cov">	const-string v3, "STRING"</span>
-<span class="cov">	invoke-direct {v0, v3, v2}, Luv$b;-><init>(Ljava/lang/String;I)V</span>
-<span class="cov">	sput-object v0, Luv;->b:Luv;</span>
-<span class="cov">	const/4 v3, 0x2</span>
-<span class="cov">	new-array v3, v3, [Luv;</span>
-<span class="cov">	sget-object v4, Luv;->a:Luv;</span>
-<span class="cov">	aput-object v4, v3, v1</span>
-<span class="cov">	aput-object v0, v3, v2</span>
-<span class="cov">	sput-object v3, Luv;->c:[Luv;</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method private constructor &lt;init&gt;(Ljava/lang/String;I)V</span>
+<span class="cov">.method public constructor &lt;init&gt;(Luw;)V</span>
 <span class="">	.locals 0</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	"()V"</span>
+<span class="">	"(",</span>
+<span class="">	"Luw<",</span>
+<span class="">	"TResult;>;)V"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V</span>
+<span class="cov">	invoke-direct {p0}, Lwi;-><init>()V</span>
+<span class="cov">	iput-object p1, p0, Luv;->a:Luw;</span>
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method synthetic constructor &lt;init&gt;(Ljava/lang/String;ILuv$a;)V</span>
+<span class="cov">.method private a(Ljava/lang/String;)Lwc;</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	new-instance v0, Lwc;</span>
+<span class="cov">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="cov">	iget-object v2, p0, Luv;->a:Luw;</span>
+<span class="exec">	invoke-virtual {v2}, Luw;->getIdentifier()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="cov">	const-string v2, "."</span>
+<span class="cov">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	const-string v1, "KitInitialization"</span>
+<span class="cov">	invoke-direct {v0, p1, v1}, Lwc;-><init>(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	invoke-virtual {v0}, Lwc;->a()V</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method protected bridge synthetic a([Ljava/lang/Object;)Ljava/lang/Object;</span>
 <span class="">	.locals 0</span>
 
-<span class="cov">	invoke-direct {p0, p1, p2}, Luv;-><init>(Ljava/lang/String;I)V</span>
+<span class="cov">	check-cast p1, [Ljava/lang/Void;</span>
+<span class="exec">	invoke-virtual {p0, p1}, Luv;->a([Ljava/lang/Void;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	return-object p1</span>
+.end method
+
+<span class="cov">.method protected varargs a([Ljava/lang/Void;)Ljava/lang/Object;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"([",</span>
+<span class="">	"Ljava/lang/Void;",</span>
+<span class="">	")TResult;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	const-string p1, "doInBackground"</span>
+<span class="exec">	invoke-direct {p0, p1}, Luv;->a(Ljava/lang/String;)Lwc;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	invoke-virtual {p0}, Luv;->d()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="cov">	iget-object v0, p0, Luv;->a:Luw;</span>
+<span class="exec">	invoke-virtual {v0}, Luw;->doInBackground()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	invoke-virtual {p1}, Lwc;->b()V</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method protected a()V</span>
+<span class="">	.locals 6</span>
+
+<span class="cov">	invoke-super {p0}, Lwi;->a()V</span>
+<span class="cov">	const-string v0, "onPreExecute"</span>
+<span class="exec">	invoke-direct {p0, v0}, Luv;->a(Ljava/lang/String;)Lwc;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v2, p0, Luv;->a:Luw;</span>
+<span class="exec">	invoke-virtual {v2}, Luw;->onPreExecute()Z</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Lwp; {:try_start_0 .. :try_end_0} :catch_1</span>
+<span class="cov">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="cov">	invoke-virtual {v0}, Lwc;->b()V</span>
+<span class="missed">	if-nez v2, :cond_0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {p0, v1}, Luv;->a(Z)Z</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="">	:try_start_1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	const-string v4, "Fabric"</span>
+<span class="missed">	const-string v5, "Failure onPreExecute()"</span>
+<span class="missed">	invoke-interface {v3, v4, v5, v2}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="missed">	invoke-virtual {v0}, Lwc;->b()V</span>
+<span class="">	goto :goto_0</span>
+<span class="cov">	:goto_1</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-void</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception v2</span>
+<span class="">	:try_start_2</span>
+<span class="">	throw v2</span>
+<span class="">	:try_end_2</span>
+<span class="missed">	.catchall {:try_start_2 .. :try_end_2} :catchall_0</span>
+<span class="">	:goto_2</span>
+<span class="missed">	invoke-virtual {v0}, Lwc;->b()V</span>
+<span class="missed">	invoke-virtual {p0, v1}, Luv;->a(Z)Z</span>
+<span class="">	throw v2</span>
+.end method
+
+<span class="cov">.method protected a(Ljava/lang/Object;)V</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TResult;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-object v0, p0, Luv;->a:Luw;</span>
+<span class="cov">	invoke-virtual {v0, p1}, Luw;->onPostExecute(Ljava/lang/Object;)V</span>
+<span class="cov">	iget-object v0, p0, Luv;->a:Luw;</span>
+<span class="cov">	iget-object v0, v0, Luw;->initializationCallback:Lut;</span>
+<span class="cov">	invoke-interface {v0, p1}, Lut;->a(Ljava/lang/Object;)V</span>
 <span class="exec">	return-void</span>
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Luv;
+.method protected b(Ljava/lang/Object;)V
 <span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TResult;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="missed">	const-class v0, Luv;</span>
-<span class="">	invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	check-cast p0, Luv;</span>
-<span class="">	return-object p0</span>
+<span class="missed">	iget-object v0, p0, Luv;->a:Luw;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Luw;->onCancelled(Ljava/lang/Object;)V</span>
+<span class="missed">	new-instance p1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	iget-object v0, p0, Luv;->a:Luw;</span>
+<span class="">	invoke-virtual {v0}, Luw;->getIdentifier()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v0, " Initialization was cancelled"</span>
+<span class="missed">	invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	new-instance v0, Luu;</span>
+<span class="missed">	invoke-direct {v0, p1}, Luu;-><init>(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object p1, p0, Luv;->a:Luw;</span>
+<span class="missed">	iget-object p1, p1, Luw;->initializationCallback:Lut;</span>
+<span class="missed">	invoke-interface {p1, v0}, Lut;->a(Ljava/lang/Exception;)V</span>
+<span class="">	return-void</span>
 .end method
 
-.method public static values()[Luv;
+<span class="cov">.method public getPriority()Lwh;</span>
 <span class="">	.locals 1</span>
 
-<span class="missed">	sget-object v0, Luv;->c:[Luv;</span>
-<span class="">	invoke-virtual {v0}, [Luv;->clone()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, [Luv;</span>
-<span class="">	return-object v0</span>
+<span class="cov">	sget-object v0, Lwh;->c:Lwh;</span>
+<span class="exec">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

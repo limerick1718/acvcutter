@@ -15,20 +15,20 @@
 
 .field private closed:Z
 
-.field private final hpackBuffer:Lex;
+.field private final hpackBuffer:Lys;
 
 .field final hpackWriter:Lokhttp3/internal/http2/Hpack$Writer;
 
 .field private maxFrameSize:I
 
-.field private final sink:Lfx;
+.field private final sink:Lyt;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1
+    .line 47
     const-class v0, Lokhttp3/internal/http2/Http2;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -44,35 +44,37 @@
     return-void
 .end method
 
-.method constructor <init>(Lfx;Z)V
+.method constructor <init>(Lyt;Z)V
     .locals 0
 
-    .line 1
+    .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 58
+    iput-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    .line 3
+    .line 59
     iput-boolean p2, p0, Lokhttp3/internal/http2/Http2Writer;->client:Z
 
-    .line 4
-    new-instance p1, Lex;
+    .line 60
+    new-instance p1, Lys;
 
-    invoke-direct {p1}, Lex;-><init>()V
+    invoke-direct {p1}, Lys;-><init>()V
 
-    iput-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->hpackBuffer:Lex;
+    iput-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->hpackBuffer:Lys;
 
-    .line 5
-    new-instance p2, Lokhttp3/internal/http2/Hpack$Writer;
+    .line 61
+    new-instance p1, Lokhttp3/internal/http2/Hpack$Writer;
 
-    invoke-direct {p2, p1}, Lokhttp3/internal/http2/Hpack$Writer;-><init>(Lex;)V
+    iget-object p2, p0, Lokhttp3/internal/http2/Http2Writer;->hpackBuffer:Lys;
 
-    iput-object p2, p0, Lokhttp3/internal/http2/Http2Writer;->hpackWriter:Lokhttp3/internal/http2/Hpack$Writer;
+    invoke-direct {p1, p2}, Lokhttp3/internal/http2/Hpack$Writer;-><init>(Lys;)V
+
+    iput-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->hpackWriter:Lokhttp3/internal/http2/Hpack$Writer;
 
     const/16 p1, 0x4000
 
-    .line 6
+    .line 62
     iput p1, p0, Lokhttp3/internal/http2/Http2Writer;->maxFrameSize:I
 
     return-void
@@ -93,7 +95,7 @@
 
     if-lez v2, :cond_1
 
-    .line 1
+    .line 272
     iget v2, p0, Lokhttp3/internal/http2/Http2Writer;->maxFrameSize:I
 
     int-to-long v2, v2
@@ -121,16 +123,16 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 2
+    .line 274
     :goto_1
     invoke-virtual {p0, p1, v3, v2, v0}, Lokhttp3/internal/http2/Http2Writer;->frameHeader(IIBB)V
 
-    .line 3
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 275
+    iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    iget-object v1, p0, Lokhttp3/internal/http2/Http2Writer;->hpackBuffer:Lex;
+    iget-object v1, p0, Lokhttp3/internal/http2/Http2Writer;->hpackBuffer:Lys;
 
-    invoke-interface {v0, v1, v4, v5}, Lvx;->write(Lex;J)V
+    invoke-interface {v0, v1, v4, v5}, Lyt;->write(Lys;J)V
 
     goto :goto_0
 
@@ -138,7 +140,7 @@
     return-void
 .end method
 
-.method private static writeMedium(Lfx;I)V
+.method private static writeMedium(Lyt;I)V
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -150,20 +152,20 @@
 
     and-int/lit16 v0, v0, 0xff
 
-    .line 1
-    invoke-interface {p0, v0}, Lfx;->writeByte(I)Lfx;
+    .line 265
+    invoke-interface {p0, v0}, Lyt;->i(I)Lyt;
 
     ushr-int/lit8 v0, p1, 0x8
 
     and-int/lit16 v0, v0, 0xff
 
-    .line 2
-    invoke-interface {p0, v0}, Lfx;->writeByte(I)Lfx;
+    .line 266
+    invoke-interface {p0, v0}, Lyt;->i(I)Lyt;
 
     and-int/lit16 p1, p1, 0xff
 
-    .line 3
-    invoke-interface {p0, p1}, Lfx;->writeByte(I)Lfx;
+    .line 267
+    invoke-interface {p0, p1}, Lyt;->i(I)Lyt;
 
     return-void
 .end method
@@ -180,13 +182,13 @@
 
     monitor-enter p0
 
-    .line 1
+    .line 77
     :try_start_0
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->closed:Z
 
     if-nez v0, :cond_1
 
-    .line 2
+    .line 78
     iget v0, p0, Lokhttp3/internal/http2/Http2Writer;->maxFrameSize:I
 
     invoke-virtual {p1, v0}, Lokhttp3/internal/http2/Settings;->getMaxFrameSize(I)I
@@ -195,7 +197,7 @@
 
     iput v0, p0, Lokhttp3/internal/http2/Http2Writer;->maxFrameSize:I
 
-    .line 3
+    .line 79
     invoke-virtual {p1}, Lokhttp3/internal/http2/Settings;->getHeaderTableSize()I
 
     move-result v0
@@ -204,7 +206,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 4
+    .line 80
     iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->hpackWriter:Lokhttp3/internal/http2/Hpack$Writer;
 
     invoke-virtual {p1}, Lokhttp3/internal/http2/Settings;->getHeaderTableSize()I
@@ -220,22 +222,22 @@
 
     const/4 v1, 0x0
 
-    .line 5
+    .line 86
     invoke-virtual {p0, v1, v1, p1, v0}, Lokhttp3/internal/http2/Http2Writer;->frameHeader(IIBB)V
 
-    .line 6
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 87
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    invoke-interface {p1}, Lfx;->flush()V
+    invoke-interface {p1}, Lyt;->flush()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 7
+    .line 88
     monitor-exit p0
 
     return-void
 
-    .line 8
+    .line 77
     :cond_1
     :try_start_1
     new-instance p1, Ljava/io/IOException;
@@ -268,18 +270,18 @@
 
     const/4 v0, 0x1
 
-    .line 1
+    .line 260
     :try_start_0
     iput-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->closed:Z
 
-    .line 2
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 261
+    iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    invoke-interface {v0}, Lvx;->close()V
+    invoke-interface {v0}, Lyt;->close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3
+    .line 262
     monitor-exit p0
 
     return-void
@@ -302,13 +304,13 @@
 
     monitor-enter p0
 
-    .line 1
+    .line 66
     :try_start_0
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->closed:Z
 
     if-nez v0, :cond_2
 
-    .line 2
+    .line 67
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->client:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -319,7 +321,7 @@
 
     return-void
 
-    .line 3
+    .line 68
     :cond_0
     :try_start_1
     sget-object v0, Lokhttp3/internal/http2/Http2Writer;->logger:Ljava/util/logging/Logger;
@@ -332,7 +334,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 4
+    .line 69
     sget-object v0, Lokhttp3/internal/http2/Http2Writer;->logger:Ljava/util/logging/Logger;
 
     const-string v1, ">> CONNECTION %s"
@@ -343,9 +345,9 @@
 
     const/4 v3, 0x0
 
-    sget-object v4, Lokhttp3/internal/http2/Http2;->CONNECTION_PREFACE:Lhx;
+    sget-object v4, Lokhttp3/internal/http2/Http2;->CONNECTION_PREFACE:Lyv;
 
-    invoke-virtual {v4}, Lhx;->g()Ljava/lang/String;
+    invoke-virtual {v4}, Lyv;->f()Ljava/lang/String;
 
     move-result-object v4
 
@@ -357,31 +359,31 @@
 
     invoke-virtual {v0, v1}, Ljava/util/logging/Logger;->fine(Ljava/lang/String;)V
 
-    .line 5
+    .line 71
     :cond_1
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    sget-object v1, Lokhttp3/internal/http2/Http2;->CONNECTION_PREFACE:Lhx;
+    sget-object v1, Lokhttp3/internal/http2/Http2;->CONNECTION_PREFACE:Lyv;
 
-    invoke-virtual {v1}, Lhx;->n()[B
+    invoke-virtual {v1}, Lyv;->i()[B
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lfx;->write([B)Lfx;
+    invoke-interface {v0, v1}, Lyt;->c([B)Lyt;
 
-    .line 6
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 72
+    iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    invoke-interface {v0}, Lfx;->flush()V
+    invoke-interface {v0}, Lyt;->flush()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 7
+    .line 73
     monitor-exit p0
 
     return-void
 
-    .line 8
+    .line 66
     :cond_2
     :try_start_2
     new-instance v0, Ljava/io/IOException;
@@ -402,7 +404,7 @@
     throw v0
 .end method
 
-.method public declared-synchronized data(ZILex;I)V
+.method public declared-synchronized data(ZILys;I)V
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -412,7 +414,7 @@
 
     monitor-enter p0
 
-    .line 1
+    .line 152
     :try_start_0
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->closed:Z
 
@@ -426,18 +428,18 @@
 
     int-to-byte v0, p1
 
-    .line 2
+    .line 155
     :cond_0
-    invoke-virtual {p0, p2, v0, p3, p4}, Lokhttp3/internal/http2/Http2Writer;->dataFrame(IBLex;I)V
+    invoke-virtual {p0, p2, v0, p3, p4}, Lokhttp3/internal/http2/Http2Writer;->dataFrame(IBLys;I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3
+    .line 156
     monitor-exit p0
 
     return-void
 
-    .line 4
+    .line 152
     :cond_1
     :try_start_1
     new-instance p1, Ljava/io/IOException;
@@ -458,7 +460,7 @@
     throw p1
 .end method
 
-.method dataFrame(IBLex;I)V
+.method dataFrame(IBLys;I)V
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -468,17 +470,17 @@
 
     const/4 v0, 0x0
 
-    .line 1
+    .line 160
     invoke-virtual {p0, p1, p4, v0, p2}, Lokhttp3/internal/http2/Http2Writer;->frameHeader(IIBB)V
 
     if-lez p4, :cond_0
 
-    .line 2
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 162
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
     int-to-long v0, p4
 
-    invoke-interface {p1, p3, v0, v1}, Lvx;->write(Lex;J)V
+    invoke-interface {p1, p3, v0, v1}, Lyt;->write(Lys;J)V
 
     :cond_0
     return-void
@@ -494,25 +496,25 @@
 
     monitor-enter p0
 
-    .line 1
+    .line 120
     :try_start_0
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->closed:Z
 
     if-nez v0, :cond_0
 
-    .line 2
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 121
+    iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    invoke-interface {v0}, Lfx;->flush()V
+    invoke-interface {v0}, Lyt;->flush()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3
+    .line 122
     monitor-exit p0
 
     return-void
 
-    .line 4
+    .line 120
     :cond_0
     :try_start_1
     new-instance v0, Ljava/io/IOException;
@@ -541,7 +543,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 248
     sget-object v0, Lokhttp3/internal/http2/Http2Writer;->logger:Ljava/util/logging/Logger;
 
     sget-object v1, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;
@@ -562,7 +564,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/logging/Logger;->fine(Ljava/lang/String;)V
 
-    .line 2
+    .line 249
     :cond_0
     iget v0, p0, Lokhttp3/internal/http2/Http2Writer;->maxFrameSize:I
 
@@ -576,40 +578,40 @@
 
     if-nez v0, :cond_1
 
-    .line 3
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 253
+    iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    invoke-static {v0, p2}, Lokhttp3/internal/http2/Http2Writer;->writeMedium(Lfx;I)V
+    invoke-static {v0, p2}, Lokhttp3/internal/http2/Http2Writer;->writeMedium(Lyt;I)V
 
-    .line 4
-    iget-object p2, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 254
+    iget-object p2, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
     and-int/lit16 p3, p3, 0xff
 
-    invoke-interface {p2, p3}, Lfx;->writeByte(I)Lfx;
+    invoke-interface {p2, p3}, Lyt;->i(I)Lyt;
 
-    .line 5
-    iget-object p2, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 255
+    iget-object p2, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
     and-int/lit16 p3, p4, 0xff
 
-    invoke-interface {p2, p3}, Lfx;->writeByte(I)Lfx;
+    invoke-interface {p2, p3}, Lyt;->i(I)Lyt;
 
-    .line 6
-    iget-object p2, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 256
+    iget-object p2, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
     const p3, 0x7fffffff
 
     and-int/2addr p1, p3
 
-    invoke-interface {p2, p1}, Lfx;->writeInt(I)Lfx;
+    invoke-interface {p2, p1}, Lyt;->g(I)Lyt;
 
     return-void
 
+    .line 252
     :cond_1
     new-array p2, v2, [Ljava/lang/Object;
 
-    .line 7
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -627,9 +629,9 @@
     :cond_2
     const/4 p1, 0x2
 
+    .line 250
     new-array p1, p1, [Ljava/lang/Object;
 
-    .line 8
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p3
@@ -661,13 +663,13 @@
 
     monitor-enter p0
 
-    .line 1
+    .line 214
     :try_start_0
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->closed:Z
 
     if-nez v0, :cond_2
 
-    .line 2
+    .line 215
     iget v0, p2, Lokhttp3/internal/http2/ErrorCode;->httpCode:I
 
     const/4 v1, -0x1
@@ -676,47 +678,47 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 3
+    .line 216
     array-length v0, p3
 
     add-int/lit8 v0, v0, 0x8
 
     const/4 v1, 0x7
 
-    .line 4
+    .line 220
     invoke-virtual {p0, v2, v0, v1, v2}, Lokhttp3/internal/http2/Http2Writer;->frameHeader(IIBB)V
 
-    .line 5
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 221
+    iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    invoke-interface {v0, p1}, Lfx;->writeInt(I)Lfx;
+    invoke-interface {v0, p1}, Lyt;->g(I)Lyt;
 
-    .line 6
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 222
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
     iget p2, p2, Lokhttp3/internal/http2/ErrorCode;->httpCode:I
 
-    invoke-interface {p1, p2}, Lfx;->writeInt(I)Lfx;
+    invoke-interface {p1, p2}, Lyt;->g(I)Lyt;
 
-    .line 7
+    .line 223
     array-length p1, p3
 
     if-lez p1, :cond_0
 
-    .line 8
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 224
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    invoke-interface {p1, p3}, Lfx;->write([B)Lfx;
+    invoke-interface {p1, p3}, Lyt;->c([B)Lyt;
 
-    .line 9
+    .line 226
     :cond_0
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    invoke-interface {p1}, Lfx;->flush()V
+    invoke-interface {p1}, Lyt;->flush()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 10
+    .line 227
     monitor-exit p0
 
     return-void
@@ -725,16 +727,16 @@
     :try_start_1
     const-string p1, "errorCode.httpCode == -1"
 
+    .line 215
     new-array p2, v2, [Ljava/lang/Object;
 
-    .line 11
     invoke-static {p1, p2}, Lokhttp3/internal/http2/Http2;->illegalArgument(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/IllegalArgumentException;
 
     move-result-object p1
 
     throw p1
 
-    .line 12
+    .line 214
     :cond_2
     new-instance p1, Ljava/io/IOException;
 
@@ -773,25 +775,25 @@
 
     monitor-enter p0
 
-    .line 1
+    .line 281
     :try_start_0
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->closed:Z
 
     if-nez v0, :cond_3
 
-    .line 2
+    .line 282
     iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->hpackWriter:Lokhttp3/internal/http2/Hpack$Writer;
 
     invoke-virtual {v0, p3}, Lokhttp3/internal/http2/Hpack$Writer;->writeHeaders(Ljava/util/List;)V
 
-    .line 3
-    iget-object p3, p0, Lokhttp3/internal/http2/Http2Writer;->hpackBuffer:Lex;
+    .line 284
+    iget-object p3, p0, Lokhttp3/internal/http2/Http2Writer;->hpackBuffer:Lys;
 
-    invoke-virtual {p3}, Lex;->v()J
+    invoke-virtual {p3}, Lys;->a()J
 
     move-result-wide v0
 
-    .line 4
+    .line 285
     iget p3, p0, Lokhttp3/internal/http2/Http2Writer;->maxFrameSize:I
 
     int-to-long v2, p3
@@ -825,32 +827,32 @@
     :cond_1
     const/4 p1, 0x1
 
-    .line 5
+    .line 289
     invoke-virtual {p0, p2, p3, p1, v5}, Lokhttp3/internal/http2/Http2Writer;->frameHeader(IIBB)V
 
-    .line 6
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 290
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    iget-object p3, p0, Lokhttp3/internal/http2/Http2Writer;->hpackBuffer:Lex;
+    iget-object p3, p0, Lokhttp3/internal/http2/Http2Writer;->hpackBuffer:Lys;
 
-    invoke-interface {p1, p3, v2, v3}, Lvx;->write(Lex;J)V
+    invoke-interface {p1, p3, v2, v3}, Lyt;->write(Lys;J)V
 
     if-lez v4, :cond_2
 
     sub-long/2addr v0, v2
 
-    .line 7
+    .line 292
     invoke-direct {p0, p2, v0, v1}, Lokhttp3/internal/http2/Http2Writer;->writeContinuationFrames(IJ)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 8
+    .line 293
     :cond_2
     monitor-exit p0
 
     return-void
 
-    .line 9
+    .line 281
     :cond_3
     :try_start_1
     new-instance p1, Ljava/io/IOException;
@@ -874,7 +876,7 @@
 .method public maxDataLength()I
     .locals 1
 
-    .line 1
+    .line 139
     iget v0, p0, Lokhttp3/internal/http2/Http2Writer;->maxFrameSize:I
 
     return v0
@@ -890,7 +892,7 @@
 
     monitor-enter p0
 
-    .line 1
+    .line 193
     :try_start_0
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->closed:Z
 
@@ -911,33 +913,33 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 2
+    .line 198
     :goto_0
     invoke-virtual {p0, v2, v0, v1, p1}, Lokhttp3/internal/http2/Http2Writer;->frameHeader(IIBB)V
 
-    .line 3
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 199
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    invoke-interface {p1, p2}, Lfx;->writeInt(I)Lfx;
+    invoke-interface {p1, p2}, Lyt;->g(I)Lyt;
 
-    .line 4
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 200
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    invoke-interface {p1, p3}, Lfx;->writeInt(I)Lfx;
+    invoke-interface {p1, p3}, Lyt;->g(I)Lyt;
 
-    .line 5
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 201
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    invoke-interface {p1}, Lfx;->flush()V
+    invoke-interface {p1}, Lyt;->flush()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 6
+    .line 202
     monitor-exit p0
 
     return-void
 
-    .line 7
+    .line 193
     :cond_1
     :try_start_1
     new-instance p1, Ljava/io/IOException;
@@ -977,25 +979,25 @@
 
     monitor-enter p0
 
-    .line 1
+    .line 105
     :try_start_0
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->closed:Z
 
     if-nez v0, :cond_2
 
-    .line 2
+    .line 106
     iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->hpackWriter:Lokhttp3/internal/http2/Hpack$Writer;
 
     invoke-virtual {v0, p3}, Lokhttp3/internal/http2/Hpack$Writer;->writeHeaders(Ljava/util/List;)V
 
-    .line 3
-    iget-object p3, p0, Lokhttp3/internal/http2/Http2Writer;->hpackBuffer:Lex;
+    .line 108
+    iget-object p3, p0, Lokhttp3/internal/http2/Http2Writer;->hpackBuffer:Lys;
 
-    invoke-virtual {p3}, Lex;->v()J
+    invoke-virtual {p3}, Lys;->a()J
 
     move-result-wide v0
 
-    .line 4
+    .line 109
     iget p3, p0, Lokhttp3/internal/http2/Http2Writer;->maxFrameSize:I
 
     const/4 v2, 0x4
@@ -1028,41 +1030,41 @@
     :goto_0
     add-int/2addr p3, v2
 
-    .line 5
+    .line 112
     invoke-virtual {p0, p1, p3, v3, v7}, Lokhttp3/internal/http2/Http2Writer;->frameHeader(IIBB)V
 
-    .line 6
-    iget-object p3, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 113
+    iget-object p3, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
     const v2, 0x7fffffff
 
     and-int/2addr p2, v2
 
-    invoke-interface {p3, p2}, Lfx;->writeInt(I)Lfx;
+    invoke-interface {p3, p2}, Lyt;->g(I)Lyt;
 
-    .line 7
-    iget-object p2, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 114
+    iget-object p2, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    iget-object p3, p0, Lokhttp3/internal/http2/Http2Writer;->hpackBuffer:Lex;
+    iget-object p3, p0, Lokhttp3/internal/http2/Http2Writer;->hpackBuffer:Lys;
 
-    invoke-interface {p2, p3, v4, v5}, Lvx;->write(Lex;J)V
+    invoke-interface {p2, p3, v4, v5}, Lyt;->write(Lys;J)V
 
     if-lez v6, :cond_1
 
     sub-long/2addr v0, v4
 
-    .line 8
+    .line 116
     invoke-direct {p0, p1, v0, v1}, Lokhttp3/internal/http2/Http2Writer;->writeContinuationFrames(IJ)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 9
+    .line 117
     :cond_1
     monitor-exit p0
 
     return-void
 
-    .line 10
+    .line 105
     :cond_2
     :try_start_1
     new-instance p1, Ljava/io/IOException;
@@ -1093,13 +1095,13 @@
 
     monitor-enter p0
 
-    .line 1
+    .line 126
     :try_start_0
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->closed:Z
 
     if-nez v0, :cond_1
 
-    .line 2
+    .line 127
     iget v0, p2, Lokhttp3/internal/http2/ErrorCode;->httpCode:I
 
     const/4 v1, -0x1
@@ -1112,29 +1114,29 @@
 
     const/4 v2, 0x0
 
-    .line 3
+    .line 132
     invoke-virtual {p0, p1, v0, v1, v2}, Lokhttp3/internal/http2/Http2Writer;->frameHeader(IIBB)V
 
-    .line 4
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 133
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
     iget p2, p2, Lokhttp3/internal/http2/ErrorCode;->httpCode:I
 
-    invoke-interface {p1, p2}, Lfx;->writeInt(I)Lfx;
+    invoke-interface {p1, p2}, Lyt;->g(I)Lyt;
 
-    .line 5
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 134
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    invoke-interface {p1}, Lfx;->flush()V
+    invoke-interface {p1}, Lyt;->flush()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 6
+    .line 135
     monitor-exit p0
 
     return-void
 
-    .line 7
+    .line 127
     :cond_0
     :try_start_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
@@ -1143,7 +1145,7 @@
 
     throw p1
 
-    .line 8
+    .line 126
     :cond_1
     new-instance p1, Ljava/io/IOException;
 
@@ -1173,13 +1175,13 @@
 
     monitor-enter p0
 
-    .line 1
+    .line 168
     :try_start_0
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->closed:Z
 
     if-nez v0, :cond_4
 
-    .line 2
+    .line 169
     invoke-virtual {p1}, Lokhttp3/internal/http2/Settings;->size()I
 
     move-result v0
@@ -1190,7 +1192,7 @@
 
     const/4 v2, 0x4
 
-    .line 3
+    .line 173
     invoke-virtual {p0, v1, v0, v2, v1}, Lokhttp3/internal/http2/Http2Writer;->frameHeader(IIBB)V
 
     :goto_0
@@ -1198,7 +1200,7 @@
 
     if-ge v1, v0, :cond_3
 
-    .line 4
+    .line 175
     invoke-virtual {p1, v1}, Lokhttp3/internal/http2/Settings;->isSet(I)Z
 
     move-result v0
@@ -1226,40 +1228,40 @@
     :cond_2
     move v0, v1
 
-    .line 5
+    .line 182
     :goto_1
-    iget-object v3, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    iget-object v3, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    invoke-interface {v3, v0}, Lfx;->writeShort(I)Lfx;
+    invoke-interface {v3, v0}, Lyt;->h(I)Lyt;
 
-    .line 6
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 183
+    iget-object v0, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
     invoke-virtual {p1, v1}, Lokhttp3/internal/http2/Settings;->get(I)I
 
     move-result v3
 
-    invoke-interface {v0, v3}, Lfx;->writeInt(I)Lfx;
+    invoke-interface {v0, v3}, Lyt;->g(I)Lyt;
 
     :goto_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 7
+    .line 185
     :cond_3
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    invoke-interface {p1}, Lfx;->flush()V
+    invoke-interface {p1}, Lyt;->flush()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 8
+    .line 186
     monitor-exit p0
 
     return-void
 
-    .line 9
+    .line 168
     :cond_4
     :try_start_1
     new-instance p1, Ljava/io/IOException;
@@ -1290,7 +1292,7 @@
 
     monitor-enter p0
 
-    .line 1
+    .line 234
     :try_start_0
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Writer;->closed:Z
 
@@ -1314,24 +1316,24 @@
 
     const/16 v1, 0x8
 
-    .line 2
+    .line 242
     invoke-virtual {p0, p1, v0, v1, v2}, Lokhttp3/internal/http2/Http2Writer;->frameHeader(IIBB)V
 
-    .line 3
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 243
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
     long-to-int p3, p2
 
-    invoke-interface {p1, p3}, Lfx;->writeInt(I)Lfx;
+    invoke-interface {p1, p3}, Lyt;->g(I)Lyt;
 
-    .line 4
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lfx;
+    .line 244
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Writer;->sink:Lyt;
 
-    invoke-interface {p1}, Lfx;->flush()V
+    invoke-interface {p1}, Lyt;->flush()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 5
+    .line 245
     monitor-exit p0
 
     return-void
@@ -1342,23 +1344,24 @@
 
     const/4 v0, 0x1
 
+    .line 236
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 6
+    .line 237
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p2
 
     aput-object p2, v0, v2
 
-    .line 7
+    .line 236
     invoke-static {p1, v0}, Lokhttp3/internal/http2/Http2;->illegalArgument(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/IllegalArgumentException;
 
     move-result-object p1
 
     throw p1
 
-    .line 8
+    .line 234
     :cond_1
     new-instance p1, Ljava/io/IOException;
 

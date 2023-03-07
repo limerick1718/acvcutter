@@ -17,10 +17,10 @@
 		<code>.class final Lcom/google/gson/internal/bind/TypeAdapters$32;
 .super Ljava/lang/Object;
 .source "TypeAdapters.java"
-.implements Lwv;
+.implements Lto;
 
 .annotation system Ldalvik/annotation/EnclosingMethod;
-value = Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;
+value = Lcom/google/gson/internal/bind/i;->a(Ljava/lang/Class;Ltn;)Lto;
 .end annotation
 .annotation system Ldalvik/annotation/InnerClass;
 accessFlags = 0x8
@@ -28,38 +28,38 @@ name = null
 .end annotation
 
 .field final synthetic a:Ljava/lang/Class;
-.field final synthetic b:Lvv;
+.field final synthetic b:Ltn;
 
 
-<span class="cov">.method constructor &lt;init&gt;(Ljava/lang/Class;Lvv;)V</span>
+<span class="cov">.method constructor &lt;init&gt;(Ljava/lang/Class;Ltn;)V</span>
 <span class="">	.locals 0</span>
 
 <span class="cov">	iput-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->a:Ljava/lang/Class;</span>
-<span class="cov">	iput-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->b:Lvv;</span>
+<span class="cov">	iput-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->b:Ltn;</span>
 <span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public a(Lfv;Ldw;)Lvv;</span>
+<span class="cov">.method public a(Lsx;Ltv;)Ltn;</span>
 <span class="">	.locals 0</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
 <span class="">	"<T:",</span>
 <span class="">	"Ljava/lang/Object;",</span>
 <span class="">	">(",</span>
-<span class="">	"Lfv;",</span>
-<span class="">	"Ldw<",</span>
+<span class="">	"Lsx;",</span>
+<span class="">	"Ltv<",</span>
 <span class="">	"TT;>;)",</span>
-<span class="">	"Lvv<",</span>
+<span class="">	"Ltn<",</span>
 <span class="">	"TT;>;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="exec">	invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;</span>
+<span class="exec">	invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;</span>
 <span class="cov">	move-result-object p1</span>
 <span class="cov">	iget-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->a:Ljava/lang/Class;</span>
 <span class="cov">	if-ne p1, p2, :cond_0</span>
-<span class="cov">	iget-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->b:Lvv;</span>
+<span class="cov">	iget-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->b:Ltn;</span>
 <span class="exec">	goto :goto_0</span>
 <span class="cov">	:cond_0</span>
 <span class="cov">	const/4 p1, 0x0</span>
@@ -80,7 +80,7 @@ name = null
 <span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
 <span class="missed">	const-string v1, ",adapter="</span>
 <span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	iget-object v1, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->b:Lvv;</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->b:Ltn;</span>
 <span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
 <span class="missed">	const-string v1, "]"</span>
 <span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>

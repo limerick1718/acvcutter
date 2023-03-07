@@ -14,139 +14,1052 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public Lkw;
-.super Ljava/lang/Object;
-.source "CookieAuth.java"
+		<code>.class public final Lkw;
+.super Low;
 
 
-.field private final a:Ljava/lang/String;
-.field private final b:Ljava/lang/String;
+.field private final a:Lkx;
+.field private b:Z
 
 
-<span class="cov">.method public constructor &lt;init&gt;(Landroid/webkit/CookieManager;)V</span>
-<span class="">	.locals 6</span>
+<span class="cov">.method constructor &lt;init&gt;(Lmf;)V</span>
+<span class="">	.locals 2</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	const-string v0, "https://mobile.twitter.com/?utm_source=apk&utm_medium=shortcut"</span>
-<span class="exec">	invoke-virtual {p1, v0}, Landroid/webkit/CookieManager;->getCookie(Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	invoke-static {}, Lkw;->d()Ljava/lang/String;</span>
+<span class="cov">	invoke-direct {p0, p1}, Low;-><init>(Lmf;)V</span>
+<span class="cov">	new-instance p1, Lkx;</span>
+<span class="exec">	invoke-virtual {p0}, Lnb;->n()Landroid/content/Context;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="cov">	iput-object v0, p0, Lkw;->b:Ljava/lang/String;</span>
-<span class="cov">	if-nez p1, :cond_0</span>
-<span class="cov">	const/4 p1, 0x0</span>
-<span class="cov">	iput-object p1, p0, Lkw;->a:Ljava/lang/String;</span>
-<span class="">	goto :goto_2</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
-<span class="missed">	const-string v1, ";"</span>
-<span class="">	invoke-virtual {p1, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V</span>
-<span class="missed">	const/4 p1, 0x0</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
-<span class="missed">	move-result v3</span>
-<span class="missed">	if-ge v2, v3, :cond_2</span>
-<span class="">	invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="missed">	check-cast v3, Ljava/lang/String;</span>
-<span class="missed">	const-string v4, "="</span>
-<span class="">	invoke-virtual {v3, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="missed">	array-length v4, v3</span>
-<span class="missed">	const/4 v5, 0x2</span>
-<span class="missed">	if-lt v4, v5, :cond_1</span>
-<span class="missed">	aget-object v3, v3, p1</span>
-<span class="">	invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="missed">	const-string v4, "ct0"</span>
-<span class="">	invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result v3</span>
-<span class="missed">	if-eqz v3, :cond_1</span>
-<span class="missed">	invoke-interface {v0, v2}, Ljava/util/List;->remove(I)Ljava/lang/Object;</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:cond_1</span>
-<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:goto_1</span>
-<span class="">	:cond_2</span>
-<span class="missed">	new-instance p1, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const-string v2, "ct0="</span>
-<span class="missed">	invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	iget-object v2, p0, Lkw;->b:Ljava/lang/String;</span>
-<span class="missed">	invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="">	invoke-static {v1, v0}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	iput-object p1, p0, Lkw;->a:Ljava/lang/String;</span>
-<span class="cov">	:goto_2</span>
+<span class="cov">	const-string v1, "google_app_measurement_local.db"</span>
+<span class="cov">	invoke-direct {p1, p0, v0, v1}, Lkx;-><init>(Lkw;Landroid/content/Context;Ljava/lang/String;)V</span>
+<span class="cov">	iput-object p1, p0, Lkw;->a:Lkx;</span>
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method private static d()Ljava/lang/String;</span>
-<span class="">	.locals 4</span>
+<span class="cov">.method private final a(I[B)Z</span>
+<span class="">	.locals 17</span>
 
-<span class="cov">	new-instance v0, Ljava/util/Random;</span>
-<span class="cov">	invoke-direct {v0}, Ljava/util/Random;-><init>()V</span>
-<span class="cov">	new-instance v1, Ljava/lang/StringBuilder;</span>
-<span class="cov">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I</span>
-<span class="cov">	move-result v2</span>
-<span class="cov">	const/16 v3, 0x20</span>
-<span class="cov">	if-ge v2, v3, :cond_0</span>
-<span class="exec">	invoke-virtual {v0}, Ljava/util/Random;->nextInt()I</span>
-<span class="cov">	move-result v2</span>
-<span class="exec">	invoke-static {v2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;</span>
-<span class="cov">	move-result-object v2</span>
-<span class="cov">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	goto :goto_0</span>
+<span class="cov">	move-object/from16 v1, p0</span>
+<span class="cov">	const-string v2, "Error writing entry to local database"</span>
+<span class="cov">	invoke-virtual/range {p0 .. p0}, Lnb;->b()V</span>
+<span class="cov">	invoke-virtual/range {p0 .. p0}, Lnb;->d()V</span>
+<span class="cov">	iget-boolean v0, v1, Lkw;->b:Z</span>
+<span class="cov">	const/4 v3, 0x0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return v3</span>
 <span class="cov">	:cond_0</span>
-<span class="exec">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="cov">	new-instance v4, Landroid/content/ContentValues;</span>
+<span class="cov">	invoke-direct {v4}, Landroid/content/ContentValues;-><init>()V</span>
+<span class="exec">	invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v5, "type"</span>
+<span class="cov">	invoke-virtual {v4, v5, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V</span>
+<span class="cov">	const-string v0, "entry"</span>
+<span class="cov">	move-object/from16 v5, p2</span>
+<span class="cov">	invoke-virtual {v4, v0, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V</span>
+<span class="cov">	const/4 v5, 0x5</span>
+<span class="cov">	const/4 v6, 0x0</span>
+<span class="cov">	const/4 v7, 0x5</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	if-ge v6, v5, :cond_e</span>
+<span class="cov">	const/4 v8, 0x0</span>
+<span class="cov">	const/4 v9, 0x1</span>
+<span class="cov">	:try_start_0</span>
+<span class="exec">	invoke-direct/range {p0 .. p0}, Lkw;->y()Landroid/database/sqlite/SQLiteDatabase;</span>
+<span class="cov">	move-result-object v10</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteFullException; {:try_start_0 .. :try_end_0} :catch_a</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_0 .. :try_end_0} :catch_9</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_8</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_2</span>
+<span class="missed">	if-nez v10, :cond_2</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	iput-boolean v9, v1, Lkw;->b:Z</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catch Landroid/database/sqlite/SQLiteFullException; {:try_start_1 .. :try_end_1} :catch_1</span>
+<span class="missed">	.catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_1 .. :try_end_1} :catch_6</span>
+<span class="missed">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_1 .. :try_end_1} :catch_0</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_4</span>
+<span class="missed">	if-eqz v10, :cond_1</span>
+<span class="missed">	invoke-virtual {v10}, Landroid/database/sqlite/SQLiteDatabase;->close()V</span>
+<span class="">	:cond_1</span>
+<span class="">	return v3</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v13, v8</span>
+<span class="">	goto/16 :goto_2</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception v0</span>
+<span class="exec">	goto/16 :goto_5</span>
+<span class="cov">	:try_start_2</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	invoke-virtual {v10}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V</span>
+<span class="cov">	const-wide/16 v11, 0x0</span>
+<span class="cov">	const-string v0, "select count(1) from messages"</span>
+<span class="exec">	invoke-virtual {v10, v0, v8}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;</span>
+<span class="cov">	move-result-object v13</span>
+<span class="cov">	:try_end_2</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteFullException; {:try_start_2 .. :try_end_2} :catch_7</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_2 .. :try_end_2} :catch_6</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_2 .. :try_end_2} :catch_5</span>
+<span class="cov">	.catchall {:try_start_2 .. :try_end_2} :catchall_1</span>
+<span class="cov">	if-eqz v13, :cond_3</span>
+<span class="cov">	:try_start_3</span>
+<span class="exec">	invoke-interface {v13}, Landroid/database/Cursor;->moveToFirst()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-eqz v0, :cond_3</span>
+<span class="exec">	invoke-interface {v13, v3}, Landroid/database/Cursor;->getLong(I)J</span>
+<span class="cov">	move-result-wide v11</span>
+<span class="cov">	:try_end_3</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteFullException; {:try_start_3 .. :try_end_3} :catch_3</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_3 .. :try_end_3} :catch_4</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_3 .. :try_end_3} :catch_2</span>
+<span class="cov">	.catchall {:try_start_3 .. :try_end_3} :catchall_0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	goto/16 :goto_7</span>
+<span class="">	:catch_2</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	goto/16 :goto_2</span>
+<span class="">	:catch_3</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v8, v13</span>
+<span class="exec">	goto/16 :goto_5</span>
+<span class="cov">	:goto_1</span>
+<span class="cov">	:cond_3</span>
+<span class="cov">	const-string v0, "messages"</span>
+<span class="cov">	const-wide/32 v14, 0x186a0</span>
+<span class="cov">	cmp-long v16, v11, v14</span>
+<span class="missed">	if-ltz v16, :cond_4</span>
+<span class="">	:try_start_4</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v16</span>
+<span class="">	invoke-virtual/range {v16 .. v16}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="missed">	const-string v8, "Data loss, local db full"</span>
+<span class="missed">	invoke-virtual {v5, v8}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="missed">	sub-long/2addr v14, v11</span>
+<span class="missed">	const-wide/16 v11, 0x1</span>
+<span class="missed">	add-long/2addr v14, v11</span>
+<span class="missed">	const-string v5, "rowid in (select rowid from messages order by rowid asc limit ?)"</span>
+<span class="missed">	new-array v8, v9, [Ljava/lang/String;</span>
+<span class="">	invoke-static {v14, v15}, Ljava/lang/Long;->toString(J)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v11</span>
+<span class="missed">	aput-object v11, v8, v3</span>
+<span class="">	invoke-virtual {v10, v0, v5, v8}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	int-to-long v11, v5</span>
+<span class="missed">	cmp-long v5, v11, v14</span>
+<span class="missed">	if-eqz v5, :cond_4</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="">	invoke-virtual {v5}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="missed">	const-string v8, "Different delete count than expected in local db. expected, received, difference"</span>
+<span class="">	invoke-static {v14, v15}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;</span>
+<span class="missed">	move-result-object v9</span>
+<span class="missed">	sub-long/2addr v14, v11</span>
+<span class="">	invoke-static {v14, v15}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;</span>
+<span class="missed">	move-result-object v11</span>
+<span class="missed">	invoke-virtual {v5, v8, v3, v9, v11}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V</span>
+<span class="cov">	:cond_4</span>
+<span class="cov">	const/4 v3, 0x0</span>
+<span class="cov">	invoke-virtual {v10, v0, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->insertOrThrow(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J</span>
+<span class="cov">	invoke-virtual {v10}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V</span>
+<span class="cov">	invoke-virtual {v10}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V</span>
+<span class="cov">	:try_end_4</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteFullException; {:try_start_4 .. :try_end_4} :catch_3</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_4 .. :try_end_4} :catch_4</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_4 .. :try_end_4} :catch_2</span>
+<span class="cov">	.catchall {:try_start_4 .. :try_end_4} :catchall_0</span>
+<span class="cov">	if-eqz v13, :cond_5</span>
+<span class="cov">	invoke-interface {v13}, Landroid/database/Cursor;->close()V</span>
+<span class="cov">	:cond_5</span>
+<span class="cov">	if-eqz v10, :cond_6</span>
+<span class="cov">	invoke-virtual {v10}, Landroid/database/sqlite/SQLiteDatabase;->close()V</span>
+<span class="cov">	:cond_6</span>
+<span class="cov">	const/4 v2, 0x1</span>
+<span class="exec">	return v2</span>
+<span class="">	:catch_4</span>
+<span class="missed">	move-object v8, v13</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:catchall_1</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v3, v8</span>
+<span class="missed">	move-object v13, v3</span>
+<span class="">	goto/16 :goto_7</span>
+<span class="">	:catch_5</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v3, v8</span>
+<span class="missed">	move-object v13, v3</span>
+<span class="">	:goto_2</span>
+<span class="missed">	move-object v8, v10</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:catch_6</span>
+<span class="missed">	move-object v3, v8</span>
+<span class="missed">	move-object v8, v3</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:catch_7</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v3, v8</span>
+<span class="">	goto :goto_5</span>
+<span class="">	:catchall_2</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v3, v8</span>
+<span class="missed">	move-object v10, v3</span>
+<span class="missed">	move-object v13, v10</span>
+<span class="">	goto/16 :goto_7</span>
+<span class="">	:catch_8</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v3, v8</span>
+<span class="missed">	move-object v13, v8</span>
+<span class="">	:goto_3</span>
+<span class="missed">	if-eqz v8, :cond_7</span>
+<span class="">	:try_start_5</span>
+<span class="">	invoke-virtual {v8}, Landroid/database/sqlite/SQLiteDatabase;->inTransaction()Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-eqz v3, :cond_7</span>
+<span class="missed">	invoke-virtual {v8}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V</span>
+<span class="">	:cond_7</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	invoke-virtual {v3}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-virtual {v3, v2, v0}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	iput-boolean v3, v1, Lkw;->b:Z</span>
+<span class="">	:try_end_5</span>
+<span class="missed">	.catchall {:try_start_5 .. :try_end_5} :catchall_3</span>
+<span class="missed">	if-eqz v13, :cond_8</span>
+<span class="missed">	invoke-interface {v13}, Landroid/database/Cursor;->close()V</span>
+<span class="">	:cond_8</span>
+<span class="missed">	if-eqz v8, :cond_b</span>
+<span class="missed">	invoke-virtual {v8}, Landroid/database/sqlite/SQLiteDatabase;->close()V</span>
+<span class="">	goto :goto_6</span>
+<span class="">	:catchall_3</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v10, v8</span>
+<span class="">	goto :goto_7</span>
+<span class="">	:catch_9</span>
+<span class="missed">	move-object v3, v8</span>
+<span class="missed">	move-object v10, v8</span>
+<span class="">	:goto_4</span>
+<span class="missed">	int-to-long v11, v7</span>
+<span class="">	:try_start_6</span>
+<span class="missed">	invoke-static {v11, v12}, Landroid/os/SystemClock;->sleep(J)V</span>
+<span class="">	:try_end_6</span>
+<span class="missed">	.catchall {:try_start_6 .. :try_end_6} :catchall_4</span>
+<span class="missed">	add-int/lit8 v7, v7, 0x14</span>
+<span class="missed">	if-eqz v8, :cond_9</span>
+<span class="missed">	invoke-interface {v8}, Landroid/database/Cursor;->close()V</span>
+<span class="">	:cond_9</span>
+<span class="missed">	if-eqz v10, :cond_b</span>
+<span class="missed">	invoke-virtual {v10}, Landroid/database/sqlite/SQLiteDatabase;->close()V</span>
+<span class="">	goto :goto_6</span>
+<span class="">	:catch_a</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v3, v8</span>
+<span class="missed">	move-object v10, v8</span>
+<span class="">	:try_start_7</span>
+<span class="">	:goto_5</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	invoke-virtual {v3}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-virtual {v3, v2, v0}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	iput-boolean v3, v1, Lkw;->b:Z</span>
+<span class="">	:try_end_7</span>
+<span class="missed">	.catchall {:try_start_7 .. :try_end_7} :catchall_4</span>
+<span class="missed">	if-eqz v8, :cond_a</span>
+<span class="missed">	invoke-interface {v8}, Landroid/database/Cursor;->close()V</span>
+<span class="">	:cond_a</span>
+<span class="missed">	if-eqz v10, :cond_b</span>
+<span class="missed">	invoke-virtual {v10}, Landroid/database/sqlite/SQLiteDatabase;->close()V</span>
+<span class="">	:goto_6</span>
+<span class="">	:cond_b</span>
+<span class="missed">	add-int/lit8 v6, v6, 0x1</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v5, 0x5</span>
+<span class="">	goto/16 :goto_0</span>
+<span class="">	:catchall_4</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v13, v8</span>
+<span class="">	:goto_7</span>
+<span class="missed">	if-eqz v13, :cond_c</span>
+<span class="missed">	invoke-interface {v13}, Landroid/database/Cursor;->close()V</span>
+<span class="">	:cond_c</span>
+<span class="missed">	if-eqz v10, :cond_d</span>
+<span class="missed">	invoke-virtual {v10}, Landroid/database/sqlite/SQLiteDatabase;->close()V</span>
+<span class="">	:cond_d</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_e</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lla;->i()Llc;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v2, "Failed to write entry to local database"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	return v2</span>
+.end method
+
+<span class="cov">.method private final y()Landroid/database/sqlite/SQLiteDatabase;</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/database/sqlite/SQLiteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-boolean v0, p0, Lkw;->b:Z</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return-object v1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v0, p0, Lkw;->a:Lkx;</span>
+<span class="exec">	invoke-virtual {v0}, Lkx;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	iput-boolean v0, p0, Lkw;->b:Z</span>
+<span class="">	return-object v1</span>
+<span class="cov">	:cond_1</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public final a(I)Ljava/util/List;</span>
+<span class="">	.locals 19</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(I)",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Lba;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	move-object/from16 v1, p0</span>
+<span class="cov">	const-string v2, "Error reading entries from local database"</span>
+<span class="cov">	invoke-virtual/range {p0 .. p0}, Lnb;->d()V</span>
+<span class="cov">	invoke-virtual/range {p0 .. p0}, Lnb;->b()V</span>
+<span class="cov">	iget-boolean v0, v1, Lkw;->b:Z</span>
+<span class="cov">	const/4 v3, 0x0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return-object v3</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	new-instance v4, Ljava/util/ArrayList;</span>
+<span class="cov">	invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="exec">	invoke-virtual/range {p0 .. p0}, Lnb;->n()Landroid/content/Context;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v5, "google_app_measurement_local.db"</span>
+<span class="exec">	invoke-virtual {v0, v5}, Landroid/content/Context;->getDatabasePath(Ljava/lang/String;)Ljava/io/File;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v0}, Ljava/io/File;->exists()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-nez v0, :cond_1</span>
+<span class="exec">	return-object v4</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	const/4 v5, 0x5</span>
+<span class="cov">	const/4 v6, 0x0</span>
+<span class="cov">	const/4 v7, 0x0</span>
+<span class="cov">	const/4 v8, 0x5</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	if-ge v7, v5, :cond_13</span>
+<span class="cov">	const/4 v9, 0x1</span>
+<span class="cov">	:try_start_0</span>
+<span class="exec">	invoke-direct/range {p0 .. p0}, Lkw;->y()Landroid/database/sqlite/SQLiteDatabase;</span>
+<span class="cov">	move-result-object v15</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteFullException; {:try_start_0 .. :try_end_0} :catch_10</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_0 .. :try_end_0} :catch_e</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_d</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_6</span>
+<span class="missed">	if-nez v15, :cond_3</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	iput-boolean v9, v1, Lkw;->b:Z</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catch Landroid/database/sqlite/SQLiteFullException; {:try_start_1 .. :try_end_1} :catch_1</span>
+<span class="missed">	.catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_1 .. :try_end_1} :catch_a</span>
+<span class="missed">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_1 .. :try_end_1} :catch_0</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="missed">	if-eqz v15, :cond_2</span>
+<span class="missed">	invoke-virtual {v15}, Landroid/database/sqlite/SQLiteDatabase;->close()V</span>
+<span class="">	:cond_2</span>
+<span class="">	return-object v3</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v10, v3</span>
+<span class="missed">	move-object v5, v15</span>
+<span class="">	goto/16 :goto_e</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v10, v3</span>
+<span class="missed">	move-object v5, v15</span>
+<span class="">	goto/16 :goto_a</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v10, v3</span>
+<span class="missed">	move-object v5, v15</span>
+<span class="exec">	goto/16 :goto_c</span>
+<span class="cov">	:try_start_2</span>
+<span class="cov">	:cond_3</span>
+<span class="cov">	invoke-virtual {v15}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V</span>
+<span class="cov">	const-string v11, "messages"</span>
+<span class="cov">	const-string v0, "rowid"</span>
+<span class="cov">	const-string v10, "type"</span>
+<span class="cov">	const-string v12, "entry"</span>
+<span class="exec">	filled-new-array {v0, v10, v12}, [Ljava/lang/String;</span>
+<span class="cov">	move-result-object v12</span>
+<span class="cov">	const/4 v13, 0x0</span>
+<span class="cov">	const/4 v14, 0x0</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	const/16 v16, 0x0</span>
+<span class="cov">	const-string v17, "rowid asc"</span>
+<span class="cov">	const/16 v10, 0x64</span>
+<span class="exec">	invoke-static {v10}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v18</span>
+<span class="cov">	:try_end_2</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteFullException; {:try_start_2 .. :try_end_2} :catch_c</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_2 .. :try_end_2} :catch_a</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_2 .. :try_end_2} :catch_9</span>
+<span class="cov">	.catchall {:try_start_2 .. :try_end_2} :catchall_5</span>
+<span class="cov">	move-object v10, v15</span>
+<span class="cov">	move-object v5, v15</span>
+<span class="cov">	move-object v15, v0</span>
+<span class="cov">	:try_start_3</span>
+<span class="exec">	invoke-virtual/range {v10 .. v18}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;</span>
+<span class="cov">	move-result-object v10</span>
+<span class="cov">	:try_end_3</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteFullException; {:try_start_3 .. :try_end_3} :catch_8</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_3 .. :try_end_3} :catch_b</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_3 .. :try_end_3} :catch_7</span>
+<span class="cov">	.catchall {:try_start_3 .. :try_end_3} :catchall_4</span>
+<span class="cov">	const-wide/16 v11, -0x1</span>
+<span class="cov">	:try_start_4</span>
+<span class="cov">	:cond_4</span>
+<span class="cov">	:goto_1</span>
+<span class="exec">	invoke-interface {v10}, Landroid/database/Cursor;->moveToNext()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-eqz v0, :cond_8</span>
+<span class="exec">	invoke-interface {v10, v6}, Landroid/database/Cursor;->getLong(I)J</span>
+<span class="cov">	move-result-wide v11</span>
+<span class="exec">	invoke-interface {v10, v9}, Landroid/database/Cursor;->getInt(I)I</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	const/4 v13, 0x2</span>
+<span class="exec">	invoke-interface {v10, v13}, Landroid/database/Cursor;->getBlob(I)[B</span>
+<span class="cov">	move-result-object v14</span>
+<span class="cov">	if-nez v0, :cond_5</span>
+<span class="exec">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="cov">	move-result-object v13</span>
+<span class="cov">	:try_end_4</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteFullException; {:try_start_4 .. :try_end_4} :catch_6</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_4 .. :try_end_4} :catch_f</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_4 .. :try_end_4} :catch_5</span>
+<span class="cov">	.catchall {:try_start_4 .. :try_end_4} :catchall_7</span>
+<span class="cov">	:try_start_5</span>
+<span class="cov">	array-length v0, v14</span>
+<span class="cov">	invoke-virtual {v13, v14, v6, v0}, Landroid/os/Parcel;->unmarshall([BII)V</span>
+<span class="cov">	invoke-virtual {v13, v6}, Landroid/os/Parcel;->setDataPosition(I)V</span>
+<span class="cov">	sget-object v0, Lko;->CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="exec">	invoke-interface {v0, v13}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	check-cast v0, Lko;</span>
+<span class="cov">	:try_end_5</span>
+<span class="cov">	.catch Lbb$a; {:try_start_5 .. :try_end_5} :catch_2</span>
+<span class="cov">	.catchall {:try_start_5 .. :try_end_5} :catchall_1</span>
+<span class="cov">	:try_start_6</span>
+<span class="cov">	invoke-virtual {v13}, Landroid/os/Parcel;->recycle()V</span>
+<span class="cov">	if-eqz v0, :cond_4</span>
+<span class="cov">	invoke-interface {v4, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	:try_end_6</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteFullException; {:try_start_6 .. :try_end_6} :catch_6</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_6 .. :try_end_6} :catch_f</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_6 .. :try_end_6} :catch_5</span>
+<span class="cov">	.catchall {:try_start_6 .. :try_end_6} :catchall_7</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catchall_1</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:try_start_7</span>
+<span class="">	:catch_2</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v14, "Failed to load event from local database"</span>
+<span class="missed">	invoke-virtual {v0, v14}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="">	:try_end_7</span>
+<span class="missed">	.catchall {:try_start_7 .. :try_end_7} :catchall_1</span>
+<span class="">	:try_start_8</span>
+<span class="missed">	invoke-virtual {v13}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:goto_2</span>
+<span class="missed">	invoke-virtual {v13}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v0</span>
+<span class="">	:try_end_8</span>
+<span class="missed">	.catch Landroid/database/sqlite/SQLiteFullException; {:try_start_8 .. :try_end_8} :catch_6</span>
+<span class="missed">	.catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_8 .. :try_end_8} :catch_f</span>
+<span class="missed">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_8 .. :try_end_8} :catch_5</span>
+<span class="missed">	.catchall {:try_start_8 .. :try_end_8} :catchall_7</span>
+<span class="cov">	:cond_5</span>
+<span class="cov">	const-string v15, "Failed to load user property from local database"</span>
+<span class="cov">	if-ne v0, v9, :cond_6</span>
+<span class="cov">	:try_start_9</span>
+<span class="exec">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="cov">	move-result-object v13</span>
+<span class="cov">	:try_end_9</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteFullException; {:try_start_9 .. :try_end_9} :catch_6</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_9 .. :try_end_9} :catch_f</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_9 .. :try_end_9} :catch_5</span>
+<span class="cov">	.catchall {:try_start_9 .. :try_end_9} :catchall_7</span>
+<span class="cov">	:try_start_a</span>
+<span class="cov">	array-length v0, v14</span>
+<span class="cov">	invoke-virtual {v13, v14, v6, v0}, Landroid/os/Parcel;->unmarshall([BII)V</span>
+<span class="cov">	invoke-virtual {v13, v6}, Landroid/os/Parcel;->setDataPosition(I)V</span>
+<span class="cov">	sget-object v0, Lps;->CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="exec">	invoke-interface {v0, v13}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	check-cast v0, Lps;</span>
+<span class="cov">	:try_end_a</span>
+<span class="cov">	.catch Lbb$a; {:try_start_a .. :try_end_a} :catch_3</span>
+<span class="cov">	.catchall {:try_start_a .. :try_end_a} :catchall_2</span>
+<span class="cov">	:try_start_b</span>
+<span class="cov">	invoke-virtual {v13}, Landroid/os/Parcel;->recycle()V</span>
+<span class="cov">	:try_end_b</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteFullException; {:try_start_b .. :try_end_b} :catch_6</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_b .. :try_end_b} :catch_f</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_b .. :try_end_b} :catch_5</span>
+<span class="cov">	.catchall {:try_start_b .. :try_end_b} :catchall_7</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:catchall_2</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:try_start_c</span>
+<span class="">	:catch_3</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {v0, v15}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="">	:try_end_c</span>
+<span class="missed">	.catchall {:try_start_c .. :try_end_c} :catchall_2</span>
+<span class="">	:try_start_d</span>
+<span class="missed">	invoke-virtual {v13}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	move-object v0, v3</span>
+<span class="cov">	:goto_3</span>
+<span class="cov">	if-eqz v0, :cond_4</span>
+<span class="cov">	invoke-interface {v4, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:goto_4</span>
+<span class="missed">	invoke-virtual {v13}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_6</span>
+<span class="missed">	if-ne v0, v13, :cond_7</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v13</span>
+<span class="">	:try_end_d</span>
+<span class="missed">	.catch Landroid/database/sqlite/SQLiteFullException; {:try_start_d .. :try_end_d} :catch_6</span>
+<span class="missed">	.catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_d .. :try_end_d} :catch_f</span>
+<span class="missed">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_d .. :try_end_d} :catch_5</span>
+<span class="missed">	.catchall {:try_start_d .. :try_end_d} :catchall_7</span>
+<span class="">	:try_start_e</span>
+<span class="missed">	array-length v0, v14</span>
+<span class="missed">	invoke-virtual {v13, v14, v6, v0}, Landroid/os/Parcel;->unmarshall([BII)V</span>
+<span class="missed">	invoke-virtual {v13, v6}, Landroid/os/Parcel;->setDataPosition(I)V</span>
+<span class="missed">	sget-object v0, Lqd;->CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="">	invoke-interface {v0, v13}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lqd;</span>
+<span class="">	:try_end_e</span>
+<span class="missed">	.catch Lbb$a; {:try_start_e .. :try_end_e} :catch_4</span>
+<span class="missed">	.catchall {:try_start_e .. :try_end_e} :catchall_3</span>
+<span class="">	:try_start_f</span>
+<span class="missed">	invoke-virtual {v13}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	:try_end_f</span>
+<span class="missed">	.catch Landroid/database/sqlite/SQLiteFullException; {:try_start_f .. :try_end_f} :catch_6</span>
+<span class="missed">	.catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_f .. :try_end_f} :catch_f</span>
+<span class="missed">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_f .. :try_end_f} :catch_5</span>
+<span class="missed">	.catchall {:try_start_f .. :try_end_f} :catchall_7</span>
+<span class="">	goto :goto_5</span>
+<span class="">	:catchall_3</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	goto :goto_6</span>
+<span class="">	:try_start_10</span>
+<span class="">	:catch_4</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {v0, v15}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="">	:try_end_10</span>
+<span class="missed">	.catchall {:try_start_10 .. :try_end_10} :catchall_3</span>
+<span class="">	:try_start_11</span>
+<span class="missed">	invoke-virtual {v13}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	move-object v0, v3</span>
+<span class="">	:goto_5</span>
+<span class="missed">	if-eqz v0, :cond_4</span>
+<span class="missed">	invoke-interface {v4, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="">	goto/16 :goto_1</span>
+<span class="">	:goto_6</span>
+<span class="missed">	invoke-virtual {v13}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_7</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v13, "Unknown record type in local database"</span>
+<span class="missed">	invoke-virtual {v0, v13}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="exec">	goto/16 :goto_1</span>
+<span class="cov">	:cond_8</span>
+<span class="cov">	const-string v0, "messages"</span>
+<span class="cov">	const-string v13, "rowid <= ?"</span>
+<span class="cov">	new-array v14, v9, [Ljava/lang/String;</span>
+<span class="exec">	invoke-static {v11, v12}, Ljava/lang/Long;->toString(J)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v11</span>
+<span class="cov">	aput-object v11, v14, v6</span>
+<span class="exec">	invoke-virtual {v5, v0, v13, v14}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I</span>
+<span class="cov">	move-result v0</span>
+<span class="exec">	invoke-interface {v4}, Ljava/util/List;->size()I</span>
+<span class="cov">	move-result v11</span>
+<span class="missed">	if-ge v0, v11, :cond_9</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v11, "Fewer entries removed from local database than expected"</span>
+<span class="missed">	invoke-virtual {v0, v11}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="cov">	:cond_9</span>
+<span class="cov">	invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V</span>
+<span class="cov">	invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V</span>
+<span class="cov">	:try_end_11</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteFullException; {:try_start_11 .. :try_end_11} :catch_6</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_11 .. :try_end_11} :catch_f</span>
+<span class="cov">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_11 .. :try_end_11} :catch_5</span>
+<span class="cov">	.catchall {:try_start_11 .. :try_end_11} :catchall_7</span>
+<span class="cov">	if-eqz v10, :cond_a</span>
+<span class="cov">	invoke-interface {v10}, Landroid/database/Cursor;->close()V</span>
+<span class="cov">	:cond_a</span>
+<span class="cov">	if-eqz v5, :cond_b</span>
+<span class="cov">	invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->close()V</span>
+<span class="cov">	:cond_b</span>
+<span class="exec">	return-object v4</span>
+<span class="">	:catch_5</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	goto :goto_a</span>
+<span class="">	:catch_6</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	goto/16 :goto_c</span>
+<span class="">	:catchall_4</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	goto :goto_7</span>
+<span class="">	:catch_7</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	goto :goto_8</span>
+<span class="">	:catch_8</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	goto :goto_9</span>
+<span class="">	:catchall_5</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v5, v15</span>
+<span class="">	:goto_7</span>
+<span class="missed">	move-object v10, v3</span>
+<span class="">	goto/16 :goto_e</span>
+<span class="">	:catch_9</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v5, v15</span>
+<span class="">	:goto_8</span>
+<span class="missed">	move-object v10, v3</span>
+<span class="">	goto :goto_a</span>
+<span class="">	:catch_a</span>
+<span class="missed">	move-object v5, v15</span>
+<span class="">	:catch_b</span>
+<span class="missed">	move-object v10, v3</span>
+<span class="">	goto :goto_b</span>
+<span class="">	:catch_c</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v5, v15</span>
+<span class="">	:goto_9</span>
+<span class="missed">	move-object v10, v3</span>
+<span class="">	goto :goto_c</span>
+<span class="">	:catchall_6</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v5, v3</span>
+<span class="missed">	move-object v10, v5</span>
+<span class="">	goto :goto_e</span>
+<span class="">	:catch_d</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v5, v3</span>
+<span class="missed">	move-object v10, v5</span>
+<span class="">	:goto_a</span>
+<span class="missed">	if-eqz v5, :cond_c</span>
+<span class="">	:try_start_12</span>
+<span class="">	invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->inTransaction()Z</span>
+<span class="missed">	move-result v11</span>
+<span class="missed">	if-eqz v11, :cond_c</span>
+<span class="missed">	invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V</span>
+<span class="">	:cond_c</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v11</span>
+<span class="">	invoke-virtual {v11}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v11</span>
+<span class="missed">	invoke-virtual {v11, v2, v0}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="missed">	iput-boolean v9, v1, Lkw;->b:Z</span>
+<span class="">	:try_end_12</span>
+<span class="missed">	.catchall {:try_start_12 .. :try_end_12} :catchall_7</span>
+<span class="missed">	if-eqz v10, :cond_d</span>
+<span class="missed">	invoke-interface {v10}, Landroid/database/Cursor;->close()V</span>
+<span class="">	:cond_d</span>
+<span class="missed">	if-eqz v5, :cond_10</span>
+<span class="missed">	invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->close()V</span>
+<span class="">	goto :goto_d</span>
+<span class="">	:catch_e</span>
+<span class="missed">	move-object v5, v3</span>
+<span class="missed">	move-object v10, v5</span>
+<span class="">	:catch_f</span>
+<span class="">	:goto_b</span>
+<span class="missed">	int-to-long v11, v8</span>
+<span class="">	:try_start_13</span>
+<span class="missed">	invoke-static {v11, v12}, Landroid/os/SystemClock;->sleep(J)V</span>
+<span class="">	:try_end_13</span>
+<span class="missed">	.catchall {:try_start_13 .. :try_end_13} :catchall_7</span>
+<span class="missed">	add-int/lit8 v8, v8, 0x14</span>
+<span class="missed">	if-eqz v10, :cond_e</span>
+<span class="missed">	invoke-interface {v10}, Landroid/database/Cursor;->close()V</span>
+<span class="">	:cond_e</span>
+<span class="missed">	if-eqz v5, :cond_10</span>
+<span class="missed">	invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->close()V</span>
+<span class="">	goto :goto_d</span>
+<span class="">	:catch_10</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v5, v3</span>
+<span class="missed">	move-object v10, v5</span>
+<span class="">	:try_start_14</span>
+<span class="">	:goto_c</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v11</span>
+<span class="">	invoke-virtual {v11}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v11</span>
+<span class="missed">	invoke-virtual {v11, v2, v0}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="missed">	iput-boolean v9, v1, Lkw;->b:Z</span>
+<span class="">	:try_end_14</span>
+<span class="missed">	.catchall {:try_start_14 .. :try_end_14} :catchall_7</span>
+<span class="missed">	if-eqz v10, :cond_f</span>
+<span class="missed">	invoke-interface {v10}, Landroid/database/Cursor;->close()V</span>
+<span class="">	:cond_f</span>
+<span class="missed">	if-eqz v5, :cond_10</span>
+<span class="missed">	invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->close()V</span>
+<span class="">	:cond_10</span>
+<span class="">	:goto_d</span>
+<span class="missed">	add-int/lit8 v7, v7, 0x1</span>
+<span class="missed">	const/4 v5, 0x5</span>
+<span class="">	goto/16 :goto_0</span>
+<span class="">	:catchall_7</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	:goto_e</span>
+<span class="missed">	if-eqz v10, :cond_11</span>
+<span class="missed">	invoke-interface {v10}, Landroid/database/Cursor;->close()V</span>
+<span class="">	:cond_11</span>
+<span class="missed">	if-eqz v5, :cond_12</span>
+<span class="missed">	invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->close()V</span>
+<span class="">	:cond_12</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_13</span>
+<span class="">	invoke-virtual/range {p0 .. p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lla;->i()Llc;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v2, "Failed to read events from database in reasonable time"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="">	return-object v3</span>
+.end method
+
+.method public final bridge synthetic a()V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0}, Low;->a()V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public final a(Lko;)Z</span>
+<span class="">	.locals 3</span>
+
+<span class="exec">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
 <span class="cov">	move-result-object v0</span>
 <span class="cov">	const/4 v1, 0x0</span>
-<span class="exec">	invoke-virtual {v0, v1, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;</span>
+<span class="cov">	invoke-virtual {p1, v0, v1}, Lko;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="exec">	invoke-virtual {v0}, Landroid/os/Parcel;->marshall()[B</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="cov">	array-length v0, p1</span>
+<span class="cov">	const/high16 v2, 0x20000</span>
+<span class="missed">	if-le v0, v2, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Lla;->i()Llc;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v0, "Event is too long for local database. Sending event directly to service"</span>
+<span class="missed">	invoke-virtual {p1, v0}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="">	return v1</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-direct {p0, v1, p1}, Lkw;->a(I[B)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="exec">	return p1</span>
+.end method
+
+<span class="cov">.method public final a(Lps;)Z</span>
+<span class="">	.locals 3</span>
+
+<span class="exec">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="exec">	return-object v0</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	invoke-virtual {p1, v0, v1}, Lps;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="exec">	invoke-virtual {v0}, Landroid/os/Parcel;->marshall()[B</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="cov">	array-length v0, p1</span>
+<span class="cov">	const/high16 v2, 0x20000</span>
+<span class="missed">	if-le v0, v2, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Lla;->i()Llc;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v0, "User property too long for local database. Sending directly to service"</span>
+<span class="missed">	invoke-virtual {p1, v0}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="">	return v1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="exec">	invoke-direct {p0, v0, p1}, Lkw;->a(I[B)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="exec">	return p1</span>
 .end method
 
-<span class="cov">.method public a()Ljava/lang/String;</span>
-<span class="">	.locals 1</span>
+.method public final a(Lqd;)Z
+<span class="">	.locals 2</span>
 
-<span class="cov">	iget-object v0, p0, Lkw;->a:Ljava/lang/String;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	invoke-virtual {p0}, Lnb;->p()Lpv;</span>
+<span class="">	invoke-static {p1}, Lpv;->a(Landroid/os/Parcelable;)[B</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	array-length v0, p1</span>
+<span class="missed">	const/high16 v1, 0x20000</span>
+<span class="missed">	if-le v0, v1, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Lla;->i()Llc;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v0, "Conditional user property too long for local database. Sending directly to service"</span>
+<span class="missed">	invoke-virtual {p1, v0}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x2</span>
+<span class="">	invoke-direct {p0, v0, p1}, Lkw;->a(I[B)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
 .end method
 
-.method public b()Ljava/lang/String;
+<span class="cov">.method public final bridge synthetic b()V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-super {p0}, Low;->b()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public final bridge synthetic c()V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0}, Low;->c()V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public final bridge synthetic d()V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-super {p0}, Low;->d()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public final bridge synthetic e()Lkh;
 <span class="">	.locals 1</span>
 
-<span class="missed">	iget-object v0, p0, Lkw;->b:Ljava/lang/String;</span>
+<span class="">	invoke-super {p0}, Low;->e()Lkh;</span>
+<span class="missed">	move-result-object v0</span>
 <span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public c()Z</span>
-<span class="">	.locals 2</span>
+.method public final bridge synthetic f()Lnl;
+<span class="">	.locals 1</span>
 
-<span class="exec">	invoke-virtual {p0}, Lkw;->a()Ljava/lang/String;</span>
+<span class="">	invoke-super {p0}, Low;->f()Lnl;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final bridge synthetic g()Lku;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Low;->g()Lku;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final bridge synthetic h()Loc;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Low;->h()Loc;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final bridge synthetic i()Lny;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Low;->i()Lny;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final bridge synthetic j()Lkw;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Low;->j()Lkw;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final bridge synthetic k()Lpa;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Low;->k()Lpa;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final bridge synthetic l()Lki;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Low;->l()Lki;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final bridge synthetic m()Lcom/google/android/gms/common/util/d;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Low;->m()Lcom/google/android/gms/common/util/d;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public final bridge synthetic n()Landroid/content/Context;</span>
+<span class="">	.locals 1</span>
+
+<span class="exec">	invoke-super {p0}, Low;->n()Landroid/content/Context;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	const-string v1, "auth_token"</span>
-<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-lez v0, :cond_0</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method public final bridge synthetic o()Lky;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Low;->o()Lky;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final bridge synthetic p()Lpv;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Low;->p()Lpv;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final bridge synthetic q()Lma;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Low;->q()Lma;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public final bridge synthetic r()Lla;</span>
+<span class="">	.locals 1</span>
+
+<span class="exec">	invoke-super {p0}, Low;->r()Lla;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method public final bridge synthetic s()Llm;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Low;->s()Llm;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final bridge synthetic t()Lqf;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Low;->t()Lqf;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final bridge synthetic u()Lqc;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Low;->u()Lqc;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method protected final v()Z</span>
+<span class="">	.locals 1</span>
+
 <span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	:goto_0</span>
 <span class="exec">	return v0</span>
+.end method
+
+.method public final x()V
+<span class="">	.locals 3</span>
+
+<span class="missed">	invoke-virtual {p0}, Lnb;->b()V</span>
+<span class="missed">	invoke-virtual {p0}, Lnb;->d()V</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-direct {p0}, Lkw;->y()Landroid/database/sqlite/SQLiteDatabase;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "messages"</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	invoke-virtual {v0, v1, v2, v2}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x0</span>
+<span class="missed">	if-lez v0, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1}, Lla;->x()Llc;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Reset local analytics data. records"</span>
+<span class="">	invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {v1, v2, v0}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Error resetting local analytics data. error"</span>
+<span class="missed">	invoke-virtual {v1, v2, v0}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

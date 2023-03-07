@@ -46,19 +46,19 @@
         }
     .end annotation
 
-    .line 1
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 45
     iput-object p1, p0, Lokhttp3/Handshake;->tlsVersion:Lokhttp3/TlsVersion;
 
-    .line 3
+    .line 46
     iput-object p2, p0, Lokhttp3/Handshake;->cipherSuite:Lokhttp3/CipherSuite;
 
-    .line 4
+    .line 47
     iput-object p3, p0, Lokhttp3/Handshake;->peerCertificates:Ljava/util/List;
 
-    .line 5
+    .line 48
     iput-object p4, p0, Lokhttp3/Handshake;->localCertificates:Ljava/util/List;
 
     return-void
@@ -72,7 +72,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 52
     invoke-interface {p0}, Ljavax/net/ssl/SSLSession;->getCipherSuite()Ljava/lang/String;
 
     move-result-object v0
@@ -81,19 +81,19 @@
 
     const-string v1, "SSL_NULL_WITH_NULL_NULL"
 
-    .line 2
+    .line 54
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-nez v1, :cond_4
 
-    .line 3
+    .line 57
     invoke-static {v0}, Lokhttp3/CipherSuite;->forJavaName(Ljava/lang/String;)Lokhttp3/CipherSuite;
 
     move-result-object v0
 
-    .line 4
+    .line 59
     invoke-interface {p0}, Ljavax/net/ssl/SSLSession;->getProtocol()Ljava/lang/String;
 
     move-result-object v1
@@ -102,19 +102,19 @@
 
     const-string v2, "NONE"
 
-    .line 5
+    .line 61
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-nez v2, :cond_2
 
-    .line 6
+    .line 62
     invoke-static {v1}, Lokhttp3/TlsVersion;->forJavaName(Ljava/lang/String;)Lokhttp3/TlsVersion;
 
     move-result-object v1
 
-    .line 7
+    .line 66
     :try_start_0
     invoke-interface {p0}, Ljavax/net/ssl/SSLSession;->getPeerCertificates()[Ljava/security/cert/Certificate;
 
@@ -130,20 +130,20 @@
     :goto_0
     if-eqz v2, :cond_0
 
-    .line 8
+    .line 71
     invoke-static {v2}, Lokhttp3/internal/Util;->immutableList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v2
 
     goto :goto_1
 
-    .line 9
+    .line 72
     :cond_0
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v2
 
-    .line 10
+    .line 74
     :goto_1
     invoke-interface {p0}, Ljavax/net/ssl/SSLSession;->getLocalCertificates()[Ljava/security/cert/Certificate;
 
@@ -151,20 +151,20 @@
 
     if-eqz p0, :cond_1
 
-    .line 11
+    .line 76
     invoke-static {p0}, Lokhttp3/internal/Util;->immutableList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 
     goto :goto_2
 
-    .line 12
+    .line 77
     :cond_1
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object p0
 
-    .line 13
+    .line 79
     :goto_2
     new-instance v3, Lokhttp3/Handshake;
 
@@ -172,7 +172,7 @@
 
     return-object v3
 
-    .line 14
+    .line 61
     :cond_2
     new-instance p0, Ljava/io/IOException;
 
@@ -182,7 +182,7 @@
 
     throw p0
 
-    .line 15
+    .line 60
     :cond_3
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -192,7 +192,7 @@
 
     throw p0
 
-    .line 16
+    .line 55
     :cond_4
     new-instance p0, Ljava/io/IOException;
 
@@ -202,7 +202,7 @@
 
     throw p0
 
-    .line 17
+    .line 53
     :cond_5
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -234,14 +234,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 18
+    .line 86
     new-instance v0, Lokhttp3/Handshake;
 
     invoke-static {p2}, Lokhttp3/internal/Util;->immutableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p2
 
-    .line 19
+    .line 87
     invoke-static {p3}, Lokhttp3/internal/Util;->immutableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p3
@@ -250,7 +250,7 @@
 
     return-object v0
 
-    .line 20
+    .line 85
     :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
@@ -260,7 +260,7 @@
 
     throw p0
 
-    .line 21
+    .line 84
     :cond_1
     new-instance p0, Ljava/lang/NullPointerException;
 
@@ -285,12 +285,12 @@
         }
     .end annotation
 
-    .line 1
+    .line 159
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2
+    .line 161
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -308,12 +308,12 @@
 
     check-cast v1, Ljava/security/cert/Certificate;
 
-    .line 3
+    .line 162
     instance-of v2, v1, Ljava/security/cert/X509Certificate;
 
     if-eqz v2, :cond_0
 
-    .line 4
+    .line 163
     check-cast v1, Ljava/security/cert/X509Certificate;
 
     invoke-virtual {v1}, Ljava/security/cert/X509Certificate;->getSubjectDN()Ljava/security/Principal;
@@ -328,7 +328,7 @@
 
     goto :goto_0
 
-    .line 5
+    .line 165
     :cond_0
     invoke-virtual {v1}, Ljava/security/cert/Certificate;->getType()Ljava/lang/String;
 
@@ -347,7 +347,7 @@
 .method public cipherSuite()Lokhttp3/CipherSuite;
     .locals 1
 
-    .line 1
+    .line 100
     iget-object v0, p0, Lokhttp3/Handshake;->cipherSuite:Lokhttp3/CipherSuite;
 
     return-object v0
@@ -360,7 +360,7 @@
         .end annotation
     .end param
 
-    .line 1
+    .line 128
     instance-of v0, p1, Lokhttp3/Handshake;
 
     const/4 v1, 0x0
@@ -369,16 +369,16 @@
 
     return v1
 
-    .line 2
+    .line 129
     :cond_0
     check-cast p1, Lokhttp3/Handshake;
 
-    .line 3
+    .line 130
     iget-object v0, p0, Lokhttp3/Handshake;->tlsVersion:Lokhttp3/TlsVersion;
 
     iget-object v2, p1, Lokhttp3/Handshake;->tlsVersion:Lokhttp3/TlsVersion;
 
-    invoke-virtual {v0, v2}, Ljava/lang/Enum;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2}, Lokhttp3/TlsVersion;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -388,7 +388,7 @@
 
     iget-object v2, p1, Lokhttp3/Handshake;->cipherSuite:Lokhttp3/CipherSuite;
 
-    .line 4
+    .line 131
     invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -399,7 +399,7 @@
 
     iget-object v2, p1, Lokhttp3/Handshake;->peerCertificates:Ljava/util/List;
 
-    .line 5
+    .line 132
     invoke-interface {v0, v2}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -410,7 +410,7 @@
 
     iget-object p1, p1, Lokhttp3/Handshake;->localCertificates:Ljava/util/List;
 
-    .line 6
+    .line 133
     invoke-interface {v0, p1}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -426,10 +426,10 @@
 .method public hashCode()I
     .locals 2
 
-    .line 1
+    .line 138
     iget-object v0, p0, Lokhttp3/Handshake;->tlsVersion:Lokhttp3/TlsVersion;
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v0}, Lokhttp3/TlsVersion;->hashCode()I
 
     move-result v0
 
@@ -439,7 +439,7 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 2
+    .line 139
     iget-object v0, p0, Lokhttp3/Handshake;->cipherSuite:Lokhttp3/CipherSuite;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -450,7 +450,7 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 3
+    .line 140
     iget-object v0, p0, Lokhttp3/Handshake;->peerCertificates:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->hashCode()I
@@ -461,7 +461,7 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 4
+    .line 141
     iget-object v0, p0, Lokhttp3/Handshake;->localCertificates:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->hashCode()I
@@ -484,7 +484,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 117
     iget-object v0, p0, Lokhttp3/Handshake;->localCertificates:Ljava/util/List;
 
     return-object v0
@@ -495,7 +495,7 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 1
+    .line 122
     iget-object v0, p0, Lokhttp3/Handshake;->localCertificates:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -504,7 +504,7 @@
 
     if-nez v0, :cond_0
 
-    .line 2
+    .line 123
     iget-object v0, p0, Lokhttp3/Handshake;->localCertificates:Ljava/util/List;
 
     const/4 v1, 0x0
@@ -539,7 +539,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 105
     iget-object v0, p0, Lokhttp3/Handshake;->peerCertificates:Ljava/util/List;
 
     return-object v0
@@ -550,7 +550,7 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 1
+    .line 110
     iget-object v0, p0, Lokhttp3/Handshake;->peerCertificates:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -559,7 +559,7 @@
 
     if-nez v0, :cond_0
 
-    .line 2
+    .line 111
     iget-object v0, p0, Lokhttp3/Handshake;->peerCertificates:Ljava/util/List;
 
     const/4 v1, 0x0
@@ -586,7 +586,7 @@
 .method public tlsVersion()Lokhttp3/TlsVersion;
     .locals 1
 
-    .line 1
+    .line 95
     iget-object v0, p0, Lokhttp3/Handshake;->tlsVersion:Lokhttp3/TlsVersion;
 
     return-object v0
@@ -595,7 +595,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 1
+    .line 146
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -622,7 +622,7 @@
 
     iget-object v1, p0, Lokhttp3/Handshake;->peerCertificates:Ljava/util/List;
 
-    .line 2
+    .line 152
     invoke-direct {p0, v1}, Lokhttp3/Handshake;->names(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v1
@@ -635,7 +635,7 @@
 
     iget-object v1, p0, Lokhttp3/Handshake;->localCertificates:Ljava/util/List;
 
-    .line 3
+    .line 154
     invoke-direct {p0, v1}, Lokhttp3/Handshake;->names(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v1

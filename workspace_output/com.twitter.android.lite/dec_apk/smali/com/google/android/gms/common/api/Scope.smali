@@ -1,5 +1,5 @@
 .class public final Lcom/google/android/gms/common/api/Scope;
-.super Lp5;
+.super Lba;
 .implements Lcom/google/android/gms/common/internal/ReflectedParcelable;
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
 .annotation system Ldalvik/annotation/Signature;
@@ -22,15 +22,15 @@ return-void
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
+.method public final a()Ljava/lang/String;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
 .method public final equals(Ljava/lang/Object;)Z
 .locals 1
 const/4 v0, 0x0
 return v0
-.end method
-.method public final f()Ljava/lang/String;
-.locals 1
-const/4 v0, 0x0
-return-object v0
 .end method
 .method public final hashCode()I
 .locals 1

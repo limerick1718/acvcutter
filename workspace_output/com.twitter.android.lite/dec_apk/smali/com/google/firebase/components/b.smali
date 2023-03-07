@@ -1,23 +1,27 @@
-.class final synthetic Lcom/google/firebase/components/b;
+.class public interface abstract Lcom/google/firebase/components/b;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-components@@16.0.0"
-.implements Lcom/google/firebase/components/g;
-.field private final a:Ljava/lang/Object;
-.method private constructor <init>(Ljava/lang/Object;)V
-.locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Lcom/google/firebase/components/b;->a:Ljava/lang/Object;
-return-void
+.source "com.google.firebase:firebase-common@@16.0.2"
+.method public abstract a(Ljava/lang/Class;)Ljava/lang/Object;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<T:",
+"Ljava/lang/Object;",
+">(",
+"Ljava/lang/Class<",
+"TT;>;)TT;"
+}
+.end annotation
 .end method
-.method public static a(Ljava/lang/Object;)Lcom/google/firebase/components/g;
-.locals 1
-new-instance v0, Lcom/google/firebase/components/b;
-invoke-direct {v0, p0}, Lcom/google/firebase/components/b;-><init>(Ljava/lang/Object;)V
-return-object v0
-.end method
-.method public a(Lcom/google/firebase/components/e;)Ljava/lang/Object;
-.locals 1
-iget-object v0, p0, Lcom/google/firebase/components/b;->a:Ljava/lang/Object;
-invoke-static {v0, p1}, Lcom/google/firebase/components/d;->b(Ljava/lang/Object;Lcom/google/firebase/components/e;)Ljava/lang/Object;
-return-object v0
+.method public abstract b(Ljava/lang/Class;)Lsq;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<T:",
+"Ljava/lang/Object;",
+">(",
+"Ljava/lang/Class<",
+"TT;>;)",
+"Lsq<",
+"TT;>;"
+}
+.end annotation
 .end method

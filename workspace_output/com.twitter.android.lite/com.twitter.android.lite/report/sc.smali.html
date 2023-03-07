@@ -14,95 +14,30 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final Lsc;
-.super Lrc;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+		<code>.class interface abstract Lsc;
+.super Ljava/lang/Object;
+
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<TResult:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;"
+}
+.end annotation
 
 
-.field private a:I
-.field private b:I
-.field private c:I
-.field private d:I
-.field private e:I
 
-
-.method private constructor &lt;init&gt;([BIIZ)V
-<span class="">	.locals 0</span>
-
-<span class="missed">	const/4 p1, 0x0</span>
-<span class="missed">	invoke-direct {p0, p1}, Lrc;-><init>(Lqc;)V</span>
-<span class="missed">	const p1, 0x7fffffff</span>
-<span class="missed">	iput p1, p0, Lsc;->e:I</span>
-<span class="missed">	add-int/2addr p3, p2</span>
-<span class="missed">	iput p3, p0, Lsc;->a:I</span>
-<span class="missed">	iput p2, p0, Lsc;->c:I</span>
-<span class="missed">	iput p2, p0, Lsc;->d:I</span>
-<span class="">	return-void</span>
-.end method
-
-.method synthetic constructor &lt;init&gt;([BIIZLqc;)V
-<span class="">	.locals 0</span>
-
-<span class="missed">	invoke-direct {p0, p1, p2, p3, p4}, Lsc;-><init>([BIIZ)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method private final b()V
-<span class="">	.locals 3</span>
-
-<span class="missed">	iget v0, p0, Lsc;->a:I</span>
-<span class="missed">	iget v1, p0, Lsc;->b:I</span>
-<span class="missed">	add-int/2addr v0, v1</span>
-<span class="missed">	iput v0, p0, Lsc;->a:I</span>
-<span class="missed">	iget v1, p0, Lsc;->d:I</span>
-<span class="missed">	sub-int v1, v0, v1</span>
-<span class="missed">	iget v2, p0, Lsc;->e:I</span>
-<span class="missed">	if-le v1, v2, :cond_0</span>
-<span class="missed">	sub-int/2addr v1, v2</span>
-<span class="missed">	iput v1, p0, Lsc;->b:I</span>
-<span class="missed">	sub-int/2addr v0, v1</span>
-<span class="missed">	iput v0, p0, Lsc;->a:I</span>
-<span class="">	return-void</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	iput v0, p0, Lsc;->b:I</span>
-<span class="">	return-void</span>
-.end method
-
-.method public final a()I
-<span class="">	.locals 2</span>
-
-<span class="missed">	iget v0, p0, Lsc;->c:I</span>
-<span class="missed">	iget v1, p0, Lsc;->d:I</span>
-<span class="missed">	sub-int/2addr v0, v1</span>
-<span class="">	return v0</span>
-.end method
-
-.method public final b(I)I
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+.method public abstract a(Lrm;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	Ltd;</span>
+<span class="">	"(",</span>
+<span class="">	"Lrm<",</span>
+<span class="">	"TTResult;>;)V"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	if-ltz p1, :cond_1</span>
-<span class="">	invoke-virtual {p0}, Lsc;->a()I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	add-int/2addr p1, v0</span>
-<span class="missed">	iget v0, p0, Lsc;->e:I</span>
-<span class="missed">	if-gt p1, v0, :cond_0</span>
-<span class="missed">	iput p1, p0, Lsc;->e:I</span>
-<span class="missed">	invoke-direct {p0}, Lsc;->b()V</span>
-<span class="">	return v0</span>
-<span class="">	:cond_0</span>
-<span class="">	invoke-static {}, Ltd;->a()Ltd;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	throw p1</span>
-<span class="">	:cond_1</span>
-<span class="">	invoke-static {}, Ltd;->b()Ltd;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	throw p1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

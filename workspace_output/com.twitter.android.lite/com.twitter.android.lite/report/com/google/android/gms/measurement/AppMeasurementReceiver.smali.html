@@ -15,39 +15,46 @@
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
 		<code>.class public final Lcom/google/android/gms/measurement/AppMeasurementReceiver;
-.super Lv0;
-.source "com.google.android.gms:play-services-measurement@@17.4.0"
-.implements Lcom/google/android/gms/measurement/internal/x4;
+.super Lau;
+.implements Lly;
 
 
-.field private c:Lcom/google/android/gms/measurement/internal/u4;
+.field private a:Llv;
 
 
 .method public constructor &lt;init&gt;()V
 <span class="">	.locals 0</span>
 
-<span class="missed">	invoke-direct {p0}, Lv0;-><init>()V</span>
+<span class="missed">	invoke-direct {p0}, Lau;-><init>()V</span>
 <span class="">	return-void</span>
+.end method
+
+.method public final a()Landroid/content/BroadcastReceiver$PendingResult;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Lcom/google/android/gms/measurement/AppMeasurementReceiver;->goAsync()Landroid/content/BroadcastReceiver$PendingResult;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
 .end method
 
 .method public final a(Landroid/content/Context;Landroid/content/Intent;)V
 <span class="">	.locals 0</span>
 
-<span class="missed">	invoke-static {p1, p2}, Lv0;->b(Landroid/content/Context;Landroid/content/Intent;)Landroid/content/ComponentName;</span>
+<span class="missed">	invoke-static {p1, p2}, Lcom/google/android/gms/measurement/AppMeasurementReceiver;->a_(Landroid/content/Context;Landroid/content/Intent;)Landroid/content/ComponentName;</span>
 <span class="">	return-void</span>
 .end method
 
 .method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
 <span class="">	.locals 1</span>
 
-<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/AppMeasurementReceiver;->c:Lcom/google/android/gms/measurement/internal/u4;</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/AppMeasurementReceiver;->a:Llv;</span>
 <span class="missed">	if-nez v0, :cond_0</span>
-<span class="missed">	new-instance v0, Lcom/google/android/gms/measurement/internal/u4;</span>
-<span class="missed">	invoke-direct {v0, p0}, Lcom/google/android/gms/measurement/internal/u4;-><init>(Lcom/google/android/gms/measurement/internal/x4;)V</span>
-<span class="missed">	iput-object v0, p0, Lcom/google/android/gms/measurement/AppMeasurementReceiver;->c:Lcom/google/android/gms/measurement/internal/u4;</span>
+<span class="missed">	new-instance v0, Llv;</span>
+<span class="missed">	invoke-direct {v0, p0}, Llv;-><init>(Lly;)V</span>
+<span class="missed">	iput-object v0, p0, Lcom/google/android/gms/measurement/AppMeasurementReceiver;->a:Llv;</span>
 <span class="">	:cond_0</span>
-<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/AppMeasurementReceiver;->c:Lcom/google/android/gms/measurement/internal/u4;</span>
-<span class="missed">	invoke-virtual {v0, p1, p2}, Lcom/google/android/gms/measurement/internal/u4;->a(Landroid/content/Context;Landroid/content/Intent;)V</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/measurement/AppMeasurementReceiver;->a:Llv;</span>
+<span class="missed">	invoke-virtual {v0, p1, p2}, Llv;->a(Landroid/content/Context;Landroid/content/Intent;)V</span>
 <span class="">	return-void</span>
 .end method</code>
 	</pre>

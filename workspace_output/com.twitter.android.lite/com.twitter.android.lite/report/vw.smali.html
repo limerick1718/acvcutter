@@ -16,159 +16,144 @@
 	<pre class="source lang-smali" id='source'>
 		<code>.class public Lvw;
 .super Ljava/lang/Object;
-.source "UriUtils.java"
+.source "FirebaseInfo.java"
 
 
-.field public static final a:Ljava/util/Set;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/Set<",
-"Ljava/lang/String;",
-">;"
-}
-.end annotation
-.end field
-.field private static final b:Ljava/util/regex/Pattern;
 
 
-.method static constructor &lt;clinit&gt;()V
-<span class="">	.locals 2</span>
+<span class="cov">.method public constructor &lt;init&gt;()V</span>
+<span class="">	.locals 0</span>
 
-<span class="missed">	new-instance v0, Ljava/util/HashSet;</span>
-<span class="missed">	const/4 v1, 0x3</span>
-<span class="missed">	invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(I)V</span>
-<span class="missed">	sput-object v0, Lvw;->a:Ljava/util/Set;</span>
-<span class="missed">	const-string v1, "twitter.com"</span>
-<span class="missed">	invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z</span>
-<span class="missed">	sget-object v0, Lvw;->a:Ljava/util/Set;</span>
-<span class="missed">	const-string v1, "www.twitter.com"</span>
-<span class="missed">	invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z</span>
-<span class="missed">	sget-object v0, Lvw;->a:Ljava/util/Set;</span>
-<span class="missed">	const-string v1, "mobile.twitter.com"</span>
-<span class="missed">	invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z</span>
-<span class="missed">	const-string v0, "[-A-Za-z0-9+&@#/%?=~_|!:,.;\\(\\)]+"</span>
-<span class="">	invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	sput-object v0, Lvw;->b:Ljava/util/regex/Pattern;</span>
-<span class="">	return-void</span>
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method private static a(Landroid/net/Uri;)Z
-<span class="">	.locals 1</span>
+.method  a(Landroid/content/Context;)Ljava/lang/String;
+<span class="">	.locals 4</span>
 
-<span class="">	invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	if-eqz p0, :cond_0</span>
-<span class="missed">	sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;</span>
-<span class="">	invoke-virtual {p0, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	const-string v0, "https"</span>
-<span class="">	invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	if-eqz p0, :cond_0</span>
-<span class="missed">	const/4 p0, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 p0, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="">	return p0</span>
-.end method
-
-.method public static b(Landroid/net/Uri;)Z
-<span class="">	.locals 1</span>
-
-<span class="">	invoke-static {p0}, Lvw;->a(Landroid/net/Uri;)Z</span>
+<span class="missed">	const-string v0, "google_app_id"</span>
+<span class="missed">	const-string v1, "string"</span>
+<span class="">	invoke-static {p1, v0, v1}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)I</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
-<span class="">	invoke-static {p0}, Lvw;->c(Landroid/net/Uri;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="">	invoke-static {p0}, Lvw;->d(Landroid/net/Uri;)Z</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	if-eqz p0, :cond_0</span>
-<span class="missed">	const/4 p0, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 p0, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="">	return p0</span>
-.end method
-
-.method private static c(Landroid/net/Uri;)Z
-<span class="">	.locals 2</span>
-
-<span class="">	invoke-virtual {p0}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	if-eqz p0, :cond_0</span>
-<span class="missed">	sget-object v0, Lvw;->a:Ljava/util/Set;</span>
-<span class="missed">	sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;</span>
-<span class="">	invoke-virtual {p0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	invoke-interface {v0, p0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	if-eqz p0, :cond_0</span>
-<span class="missed">	const/4 p0, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 p0, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="">	return p0</span>
-.end method
-
-.method private static d(Landroid/net/Uri;)Z
-<span class="">	.locals 2</span>
-
-<span class="">	invoke-virtual {p0}, Landroid/net/Uri;->getHost()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	sget-object v0, Lvw;->b:Ljava/util/regex/Pattern;</span>
-<span class="">	invoke-virtual {p0}, Landroid/net/Uri;->toString()Ljava/lang/String;</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
 <span class="missed">	move-result-object v1</span>
-<span class="">	invoke-virtual {p0}, Landroid/net/Uri;->getHost()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/String;->length()I</span>
-<span class="missed">	move-result p0</span>
-<span class="">	invoke-virtual {v1, p0}, Ljava/lang/String;->substring(I)Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	invoke-virtual {p0}, Ljava/util/regex/Matcher;->matches()Z</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	if-eqz p0, :cond_0</span>
-<span class="missed">	const/4 p0, 0x1</span>
-<span class="">	goto :goto_0</span>
+<span class="missed">	const-string v2, "Fabric"</span>
+<span class="missed">	const-string v3, "Generating Crashlytics ApiKey from google_app_id in Strings"</span>
+<span class="missed">	invoke-interface {v1, v2, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p0, p1}, Lvw;->a(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
 <span class="">	:cond_0</span>
-<span class="missed">	const/4 p0, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="">	return p0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	return-object p1</span>
 .end method
 
-.method public static e(Landroid/net/Uri;)Landroid/net/Uri;
+.method  a(Ljava/lang/String;)Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="">	invoke-static {p1}, Lvn;->b(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	const/16 v1, 0x28</span>
+<span class="">	invoke-virtual {p1, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+<span class="cov">.method public b(Landroid/content/Context;)Z</span>
 <span class="">	.locals 3</span>
 
-<span class="">	invoke-virtual {p0}, Landroid/net/Uri;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	const-string v1, "/#!"</span>
-<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/4 v2, -0x1</span>
-<span class="missed">	if-eq v1, v2, :cond_0</span>
-<span class="missed">	new-instance p0, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="">	invoke-virtual {v0, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;</span>
-<span class="missed">	move-result-object v2</span>
-<span class="missed">	invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	add-int/lit8 v1, v1, 0x3</span>
-<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;</span>
-<span class="missed">	move-result-object p0</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	const-string v1, "com.crashlytics.useFirebaseAppId"</span>
+<span class="exec">	invoke-static {p1, v1, v0}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;Z)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	const/4 v2, 0x1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="">	return v2</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-virtual {p0, p1}, Lvw;->e(Landroid/content/Context;)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	if-eqz v1, :cond_1</span>
+<span class="exec">	invoke-virtual {p0, p1}, Lvw;->c(Landroid/content/Context;)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="missed">	if-nez p1, :cond_1</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="cov">	:cond_1</span>
+<span class="exec">	return v0</span>
+.end method
+
+<span class="cov">.method  c(Landroid/content/Context;)Z</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	new-instance v0, Lvl;</span>
+<span class="cov">	invoke-direct {v0}, Lvl;-><init>()V</span>
+<span class="exec">	invoke-virtual {v0, p1}, Lvl;->c(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="exec">	return v1</span>
 <span class="">	:cond_0</span>
-<span class="">	return-object p0</span>
+<span class="missed">	new-instance v0, Lvl;</span>
+<span class="missed">	invoke-direct {v0}, Lvl;-><init>()V</span>
+<span class="">	invoke-virtual {v0, p1}, Lvl;->d(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	xor-int/2addr p1, v1</span>
+<span class="">	return p1</span>
+.end method
+
+<span class="cov">.method public d(Landroid/content/Context;)Z</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	const-string v0, "io.fabric.auto_initialize"</span>
+<span class="cov">	const-string v1, "bool"</span>
+<span class="exec">	invoke-static {p1, v0, v1}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="cov">	const/4 p1, 0x0</span>
+<span class="exec">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getBoolean(I)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "Fabric"</span>
+<span class="missed">	const-string v2, "Found Fabric auto-initialization flag for joint Firebase/Fabric customers"</span>
+<span class="missed">	invoke-interface {v0, v1, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return p1</span>
+.end method
+
+<span class="cov">.method  e(Landroid/content/Context;)Z</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	const-string v0, "google_app_id"</span>
+<span class="cov">	const-string v1, "string"</span>
+<span class="exec">	invoke-static {p1, v0, v1}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	return p1</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="cov">	xor-int/lit8 p1, p1, 0x1</span>
+<span class="exec">	return p1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

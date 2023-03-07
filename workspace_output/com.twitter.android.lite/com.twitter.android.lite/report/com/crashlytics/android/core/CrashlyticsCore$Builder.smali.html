@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.crashlytics.android.core</a></li>
+        <li><i class="ico ico-class"></i> CrashlyticsCore$Builder.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Lcom/crashlytics/android/core/CrashlyticsCore$Builder;
+.super Ljava/lang/Object;
+.source "CrashlyticsCore.java"
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Lcom/crashlytics/android/core/CrashlyticsCore;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x9
+name = "Builder"
+.end annotation
+
+.field private delay:F
+.field private disabled:Z
+.field private listener:Lcom/crashlytics/android/core/CrashlyticsListener;
+.field private pinningInfoProvider:Lcom/crashlytics/android/core/PinningInfoProvider;
+
+
+<span class="cov">.method public constructor &lt;init&gt;()V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	const/high16 v0, -0x40800000    # -1.0f</span>
+<span class="cov">	iput v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->delay:F</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	iput-boolean v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->disabled:Z</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public build()Lcom/crashlytics/android/core/CrashlyticsCore;</span>
+<span class="">	.locals 5</span>
+
+<span class="cov">	iget v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->delay:F</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	cmpg-float v0, v0, v1</span>
+<span class="cov">	if-gez v0, :cond_0</span>
+<span class="cov">	const/high16 v0, 0x3f800000    # 1.0f</span>
+<span class="cov">	iput v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->delay:F</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	new-instance v0, Lcom/crashlytics/android/core/CrashlyticsCore;</span>
+<span class="cov">	iget v1, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->delay:F</span>
+<span class="cov">	iget-object v2, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->listener:Lcom/crashlytics/android/core/CrashlyticsListener;</span>
+<span class="cov">	iget-object v3, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->pinningInfoProvider:Lcom/crashlytics/android/core/PinningInfoProvider;</span>
+<span class="cov">	iget-boolean v4, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->disabled:Z</span>
+<span class="cov">	invoke-direct {v0, v1, v2, v3, v4}, Lcom/crashlytics/android/core/CrashlyticsCore;-><init>(FLcom/crashlytics/android/core/CrashlyticsListener;Lcom/crashlytics/android/core/PinningInfoProvider;Z)V</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method public delay(F)Lcom/crashlytics/android/core/CrashlyticsCore$Builder;
+<span class="">	.locals 2</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	cmpg-float v1, p1, v0</span>
+<span class="missed">	if-lez v1, :cond_1</span>
+<span class="missed">	iget v1, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->delay:F</span>
+<span class="missed">	cmpl-float v0, v1, v0</span>
+<span class="missed">	if-gtz v0, :cond_0</span>
+<span class="missed">	iput p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->delay:F</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v0, "delay already set."</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v0, "delay must be greater than 0"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public disabled(Z)Lcom/crashlytics/android/core/CrashlyticsCore$Builder;</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iput-boolean p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->disabled:Z</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+.method public listener(Lcom/crashlytics/android/core/CrashlyticsListener;)Lcom/crashlytics/android/core/CrashlyticsCore$Builder;
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->listener:Lcom/crashlytics/android/core/CrashlyticsListener;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	iput-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->listener:Lcom/crashlytics/android/core/CrashlyticsListener;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v0, "listener already set."</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v0, "listener must not be null."</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public pinningInfo(Lcom/crashlytics/android/core/PinningInfoProvider;)Lcom/crashlytics/android/core/CrashlyticsCore$Builder;
+<span class="">	.locals 1</span>
+<span class="">	.annotation runtime Ljava/lang/Deprecated;</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->pinningInfoProvider:Lcom/crashlytics/android/core/PinningInfoProvider;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	iput-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->pinningInfoProvider:Lcom/crashlytics/android/core/PinningInfoProvider;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v0, "pinningInfoProvider already set."</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v0, "pinningInfoProvider must not be null."</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

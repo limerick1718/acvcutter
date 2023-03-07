@@ -18,9 +18,9 @@
 
 
 # instance fields
-.field private body:Lvx;
+.field private body:Lzj;
 
-.field private cacheOut:Lvx;
+.field private cacheOut:Lzj;
 
 .field done:Z
 
@@ -33,29 +33,31 @@
 .method constructor <init>(Lokhttp3/Cache;Lokhttp3/internal/cache/DiskLruCache$Editor;)V
     .locals 2
 
-    .line 1
+    .line 437
     iput-object p1, p0, Lokhttp3/Cache$CacheRequestImpl;->this$0:Lokhttp3/Cache;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 438
     iput-object p2, p0, Lokhttp3/Cache$CacheRequestImpl;->editor:Lokhttp3/internal/cache/DiskLruCache$Editor;
 
     const/4 v0, 0x1
 
-    .line 3
-    invoke-virtual {p2, v0}, Lokhttp3/internal/cache/DiskLruCache$Editor;->newSink(I)Lvx;
+    .line 439
+    invoke-virtual {p2, v0}, Lokhttp3/internal/cache/DiskLruCache$Editor;->newSink(I)Lzj;
 
     move-result-object v0
 
-    iput-object v0, p0, Lokhttp3/Cache$CacheRequestImpl;->cacheOut:Lvx;
+    iput-object v0, p0, Lokhttp3/Cache$CacheRequestImpl;->cacheOut:Lzj;
 
-    .line 4
-    new-instance v1, Lokhttp3/Cache$CacheRequestImpl$1;
+    .line 440
+    new-instance v0, Lokhttp3/Cache$CacheRequestImpl$1;
 
-    invoke-direct {v1, p0, v0, p1, p2}, Lokhttp3/Cache$CacheRequestImpl$1;-><init>(Lokhttp3/Cache$CacheRequestImpl;Lvx;Lokhttp3/Cache;Lokhttp3/internal/cache/DiskLruCache$Editor;)V
+    iget-object v1, p0, Lokhttp3/Cache$CacheRequestImpl;->cacheOut:Lzj;
 
-    iput-object v1, p0, Lokhttp3/Cache$CacheRequestImpl;->body:Lvx;
+    invoke-direct {v0, p0, v1, p1, p2}, Lokhttp3/Cache$CacheRequestImpl$1;-><init>(Lokhttp3/Cache$CacheRequestImpl;Lzj;Lokhttp3/Cache;Lokhttp3/internal/cache/DiskLruCache$Editor;)V
+
+    iput-object v0, p0, Lokhttp3/Cache$CacheRequestImpl;->body:Lzj;
 
     return-void
 .end method
@@ -65,18 +67,18 @@
 .method public abort()V
     .locals 4
 
-    .line 1
+    .line 456
     iget-object v0, p0, Lokhttp3/Cache$CacheRequestImpl;->this$0:Lokhttp3/Cache;
 
     monitor-enter v0
 
-    .line 2
+    .line 457
     :try_start_0
     iget-boolean v1, p0, Lokhttp3/Cache$CacheRequestImpl;->done:Z
 
     if-eqz v1, :cond_0
 
-    .line 3
+    .line 458
     monitor-exit v0
 
     return-void
@@ -84,10 +86,10 @@
     :cond_0
     const/4 v1, 0x1
 
-    .line 4
+    .line 460
     iput-boolean v1, p0, Lokhttp3/Cache$CacheRequestImpl;->done:Z
 
-    .line 5
+    .line 461
     iget-object v2, p0, Lokhttp3/Cache$CacheRequestImpl;->this$0:Lokhttp3/Cache;
 
     iget v3, v2, Lokhttp3/Cache;->writeAbortCount:I
@@ -96,17 +98,17 @@
 
     iput v3, v2, Lokhttp3/Cache;->writeAbortCount:I
 
-    .line 6
+    .line 462
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 7
-    iget-object v0, p0, Lokhttp3/Cache$CacheRequestImpl;->cacheOut:Lvx;
+    .line 463
+    iget-object v0, p0, Lokhttp3/Cache$CacheRequestImpl;->cacheOut:Lzj;
 
     invoke-static {v0}, Lokhttp3/internal/Util;->closeQuietly(Ljava/io/Closeable;)V
 
-    .line 8
+    .line 465
     :try_start_1
     iget-object v0, p0, Lokhttp3/Cache$CacheRequestImpl;->editor:Lokhttp3/internal/cache/DiskLruCache$Editor;
 
@@ -120,7 +122,7 @@
     :catchall_0
     move-exception v1
 
-    .line 9
+    .line 462
     :try_start_2
     monitor-exit v0
     :try_end_2
@@ -129,11 +131,11 @@
     throw v1
 .end method
 
-.method public body()Lvx;
+.method public body()Lzj;
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Lokhttp3/Cache$CacheRequestImpl;->body:Lvx;
+    .line 471
+    iget-object v0, p0, Lokhttp3/Cache$CacheRequestImpl;->body:Lzj;
 
     return-object v0
 .end method

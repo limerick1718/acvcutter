@@ -2,6 +2,10 @@
 .super Ljava/lang/Object;
 
 
+# static fields
+.field private static volatile a:I = -0x1
+
+
 # direct methods
 .method static constructor <clinit>()V
     .locals 0
@@ -19,7 +23,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 1
+    .line 12
     :try_start_0
     invoke-static {p0}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
 

@@ -38,7 +38,7 @@ value = {
 .end field
 
 
-<span class="cov">.method constructor &lt;init&gt;(Ljava/util/List;)V</span>
+.method constructor &lt;init&gt;(Ljava/util/List;)V
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -49,14 +49,14 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	iput v0, p0, Lokhttp3/internal/connection/RouteSelector$Selection;->nextRouteIndex:I</span>
-<span class="cov">	iput-object p1, p0, Lokhttp3/internal/connection/RouteSelector$Selection;->routes:Ljava/util/List;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput v0, p0, Lokhttp3/internal/connection/RouteSelector$Selection;->nextRouteIndex:I</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/internal/connection/RouteSelector$Selection;->routes:Ljava/util/List;</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public getAll()Ljava/util/List;</span>
+.method public getAll()Ljava/util/List;
 <span class="">	.locals 2</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -67,42 +67,42 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	new-instance v0, Ljava/util/ArrayList;</span>
-<span class="cov">	iget-object v1, p0, Lokhttp3/internal/connection/RouteSelector$Selection;->routes:Ljava/util/List;</span>
-<span class="cov">	invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/RouteSelector$Selection;->routes:Ljava/util/List;</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public hasNext()Z</span>
+.method public hasNext()Z
 <span class="">	.locals 2</span>
 
-<span class="cov">	iget v0, p0, Lokhttp3/internal/connection/RouteSelector$Selection;->nextRouteIndex:I</span>
-<span class="cov">	iget-object v1, p0, Lokhttp3/internal/connection/RouteSelector$Selection;->routes:Ljava/util/List;</span>
-<span class="exec">	invoke-interface {v1}, Ljava/util/List;->size()I</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	if-ge v0, v1, :cond_0</span>
-<span class="cov">	const/4 v0, 0x1</span>
+<span class="missed">	iget v0, p0, Lokhttp3/internal/connection/RouteSelector$Selection;->nextRouteIndex:I</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/RouteSelector$Selection;->routes:Ljava/util/List;</span>
+<span class="">	invoke-interface {v1}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-ge v0, v1, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	const/4 v0, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return v0</span>
+<span class="">	:goto_0</span>
+<span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public next()Lokhttp3/Route;</span>
+.method public next()Lokhttp3/Route;
 <span class="">	.locals 3</span>
 
-<span class="exec">	invoke-virtual {p0}, Lokhttp3/internal/connection/RouteSelector$Selection;->hasNext()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/RouteSelector$Selection;->routes:Ljava/util/List;</span>
-<span class="cov">	iget v1, p0, Lokhttp3/internal/connection/RouteSelector$Selection;->nextRouteIndex:I</span>
-<span class="cov">	add-int/lit8 v2, v1, 0x1</span>
-<span class="cov">	iput v2, p0, Lokhttp3/internal/connection/RouteSelector$Selection;->nextRouteIndex:I</span>
-<span class="exec">	invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lokhttp3/Route;</span>
-<span class="exec">	return-object v0</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/internal/connection/RouteSelector$Selection;->hasNext()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/RouteSelector$Selection;->routes:Ljava/util/List;</span>
+<span class="missed">	iget v1, p0, Lokhttp3/internal/connection/RouteSelector$Selection;->nextRouteIndex:I</span>
+<span class="missed">	add-int/lit8 v2, v1, 0x1</span>
+<span class="missed">	iput v2, p0, Lokhttp3/internal/connection/RouteSelector$Selection;->nextRouteIndex:I</span>
+<span class="">	invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lokhttp3/Route;</span>
+<span class="">	return-object v0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	new-instance v0, Ljava/util/NoSuchElementException;</span>
 <span class="missed">	invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V</span>

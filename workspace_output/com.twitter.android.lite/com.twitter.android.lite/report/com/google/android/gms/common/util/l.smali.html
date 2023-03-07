@@ -14,122 +14,119 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lcom/google/android/gms/common/util/l;
+		<code>.class public Lcom/google/android/gms/common/util/l;
 .super Ljava/lang/Object;
 
 
+.field private static a:Ljava/lang/String;
+.field private static b:I
 
 
-<span class="cov">.method public static a()Z</span>
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 0</span>
+
+<span class="">	return-void</span>
+.end method
+
+.method private static a(Ljava/lang/String;)Ljava/io/BufferedReader;
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/StrictMode;->allowThreadDiskReads()Landroid/os/StrictMode$ThreadPolicy;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	new-instance v1, Ljava/io/BufferedReader;</span>
+<span class="missed">	new-instance v2, Ljava/io/FileReader;</span>
+<span class="missed">	invoke-direct {v2, p0}, Ljava/io/FileReader;-><init>(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-direct {v1, v2}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V</span>
+<span class="">	return-object v1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p0</span>
+<span class="missed">	invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V</span>
+<span class="">	throw p0</span>
+.end method
+
+.method public static a()Ljava/lang/String;
 <span class="">	.locals 1</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
 
-<span class="cov">	const/4 v0, 0x1</span>
-<span class="exec">	return v0</span>
-.end method
-
-.method public static b()Z
-<span class="">	.locals 1</span>
-
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="">	return v0</span>
-.end method
-
-.method public static c()Z
-<span class="">	.locals 1</span>
-
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="">	return v0</span>
-.end method
-
-.method public static d()Z
-<span class="">	.locals 2</span>
-
-<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="missed">	const/16 v1, 0x12</span>
-<span class="missed">	if-lt v0, v1, :cond_0</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="">	return v0</span>
+<span class="missed">	sget-object v0, Lcom/google/android/gms/common/util/l;->a:Ljava/lang/String;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	sget v0, Lcom/google/android/gms/common/util/l;->b:I</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	invoke-static {}, Landroid/os/Process;->myPid()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	sput v0, Lcom/google/android/gms/common/util/l;->b:I</span>
 <span class="">	:cond_0</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="">	return v0</span>
+<span class="missed">	sget v0, Lcom/google/android/gms/common/util/l;->b:I</span>
+<span class="">	invoke-static {v0}, Lcom/google/android/gms/common/util/l;->a(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lcom/google/android/gms/common/util/l;->a:Ljava/lang/String;</span>
+<span class="">	:cond_1</span>
+<span class="missed">	sget-object v0, Lcom/google/android/gms/common/util/l;->a:Ljava/lang/String;</span>
+<span class="">	return-object v0</span>
 .end method
 
-.method public static e()Z
-<span class="">	.locals 2</span>
+.method private static a(I)Ljava/lang/String;
+<span class="">	.locals 4</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
 
-<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="missed">	const/16 v1, 0x13</span>
-<span class="missed">	if-lt v0, v1, :cond_0</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="">	return v0</span>
-<span class="">	:cond_0</span>
 <span class="missed">	const/4 v0, 0x0</span>
-<span class="">	return v0</span>
-.end method
-
-<span class="cov">.method public static f()Z</span>
-<span class="">	.locals 2</span>
-
-<span class="cov">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="cov">	const/16 v1, 0x14</span>
-<span class="cov">	if-lt v0, v1, :cond_0</span>
-<span class="cov">	const/4 v0, 0x1</span>
-<span class="exec">	return v0</span>
+<span class="missed">	if-gtz p0, :cond_0</span>
+<span class="">	return-object v0</span>
 <span class="">	:cond_0</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="">	return v0</span>
-.end method
-
-.method public static g()Z
-<span class="">	.locals 2</span>
-
-<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="missed">	const/16 v1, 0x15</span>
-<span class="missed">	if-lt v0, v1, :cond_0</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="">	return v0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="">	return v0</span>
-.end method
-
-.method public static h()Z
-<span class="">	.locals 2</span>
-
-<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="missed">	const/16 v1, 0x18</span>
-<span class="missed">	if-lt v0, v1, :cond_0</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="">	return v0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="">	return v0</span>
-.end method
-
-<span class="cov">.method public static i()Z</span>
-<span class="">	.locals 2</span>
-
-<span class="cov">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="cov">	const/16 v1, 0x1a</span>
-<span class="cov">	if-lt v0, v1, :cond_0</span>
-<span class="cov">	const/4 v0, 0x1</span>
-<span class="exec">	return v0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="">	return v0</span>
-.end method
-
-.method public static j()Z
-<span class="">	.locals 2</span>
-
-<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="missed">	const/16 v1, 0x1c</span>
-<span class="missed">	if-lt v0, v1, :cond_0</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="">	return v0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="">	return v0</span>
+<span class="missed">	const/16 v1, 0x19</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V</span>
+<span class="missed">	const-string v1, "/proc/"</span>
+<span class="missed">	invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string p0, "/cmdline"</span>
+<span class="missed">	invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-static {p0}, Lcom/google/android/gms/common/util/l;->a(Ljava/lang/String;)Ljava/io/BufferedReader;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_1</span>
+<span class="">	:try_start_1</span>
+<span class="">	invoke-virtual {p0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="missed">	invoke-static {p0}, Lcom/google/android/gms/common/util/j;->a(Ljava/io/Closeable;)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	move-object v3, v0</span>
+<span class="missed">	move-object v0, p0</span>
+<span class="missed">	move-object p0, v3</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catchall_1</span>
+<span class="missed">	move-exception p0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-static {v0}, Lcom/google/android/gms/common/util/j;->a(Ljava/io/Closeable;)V</span>
+<span class="">	throw p0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-object p0, v0</span>
+<span class="">	:catch_1</span>
+<span class="missed">	invoke-static {p0}, Lcom/google/android/gms/common/util/j;->a(Ljava/io/Closeable;)V</span>
+<span class="">	:goto_1</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

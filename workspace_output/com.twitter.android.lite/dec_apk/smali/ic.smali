@@ -1,30 +1,50 @@
 .class final Lic;
-.super Lpc;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.field private final e:I
-.field private final f:I
-.method constructor <init>([BII)V
+.super Ljava/lang/Object;
+.field private static final a:Lic;
+.field private final b:Lih;
+.field private final c:Ljava/util/concurrent/ConcurrentMap;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/concurrent/ConcurrentMap<",
+"Ljava/lang/Class<",
+"*>;",
+"Lig<",
+"*>;>;"
+}
+.end annotation
+.end field
+.method private constructor <init>()V
 .locals 1
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public final a(I)B
-.locals 4
-const/4 v0, 0x0
-return v0
-.end method
-.method public final a()I
-.locals 1
-const/4 v0, 0x0
-return v0
-.end method
-.method final b(I)B
+.method public final a(Ljava/lang/Class;)Lig;
 .locals 2
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<T:",
+"Ljava/lang/Object;",
+">(",
+"Ljava/lang/Class<",
+"TT;>;)",
+"Lig<",
+"TT;>;"
+}
+.end annotation
 const/4 v0, 0x0
-return v0
+return-object v0
 .end method
-.method protected final e()I
-.locals 1
+.method public final a(Ljava/lang/Object;)Lig;
+.locals 0
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<T:",
+"Ljava/lang/Object;",
+">(TT;)",
+"Lig<",
+"TT;>;"
+}
+.end annotation
 const/4 v0, 0x0
-return v0
+return-object v0
 .end method

@@ -11,7 +11,7 @@
 .method public constructor <init>(Lokhttp3/internal/http2/ErrorCode;)V
     .locals 2
 
-    .line 1
+    .line 25
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -28,7 +28,7 @@
 
     invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    .line 2
+    .line 26
     iput-object p1, p0, Lokhttp3/internal/http2/StreamResetException;->errorCode:Lokhttp3/internal/http2/ErrorCode;
 
     return-void

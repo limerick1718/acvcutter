@@ -37,6 +37,7 @@ name = "Builder"
 .end annotation
 .end field
 .field  certificatePinner:Lokhttp3/CertificatePinner;
+.field  clientWindowSizeBytes:I
 .field  connectTimeout:I
 .field  connectionPool:Lokhttp3/ConnectionPool;
 .field  connectionSpecs:Ljava/util/List;
@@ -100,6 +101,7 @@ value = {
 .annotation runtime Ljavax/annotation/Nullable;
 .end annotation
 .end field
+.field  twitterMCI1986Fix:Z
 .field  writeTimeout:I
 
 
@@ -127,6 +129,7 @@ value = {
 <span class="exec">	invoke-static {}, Ljava/net/ProxySelector;->getDefault()Ljava/net/ProxySelector;</span>
 <span class="cov">	move-result-object v0</span>
 <span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->proxySelector:Ljava/net/ProxySelector;</span>
+<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient$Builder;->proxySelector:Ljava/net/ProxySelector;</span>
 <span class="missed">	if-nez v0, :cond_0</span>
 <span class="missed">	new-instance v0, Lokhttp3/internal/proxy/NullProxySelector;</span>
 <span class="missed">	invoke-direct {v0}, Lokhttp3/internal/proxy/NullProxySelector;-><init>()V</span>
@@ -143,6 +146,7 @@ value = {
 <span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->certificatePinner:Lokhttp3/CertificatePinner;</span>
 <span class="cov">	sget-object v0, Lokhttp3/Authenticator;->NONE:Lokhttp3/Authenticator;</span>
 <span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->proxyAuthenticator:Lokhttp3/Authenticator;</span>
+<span class="cov">	sget-object v0, Lokhttp3/Authenticator;->NONE:Lokhttp3/Authenticator;</span>
 <span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->authenticator:Lokhttp3/Authenticator;</span>
 <span class="cov">	new-instance v0, Lokhttp3/ConnectionPool;</span>
 <span class="cov">	invoke-direct {v0}, Lokhttp3/ConnectionPool;-><init>()V</span>
@@ -160,78 +164,84 @@ value = {
 <span class="cov">	iput v1, p0, Lokhttp3/OkHttpClient$Builder;->readTimeout:I</span>
 <span class="cov">	iput v1, p0, Lokhttp3/OkHttpClient$Builder;->writeTimeout:I</span>
 <span class="cov">	iput v0, p0, Lokhttp3/OkHttpClient$Builder;->pingInterval:I</span>
+<span class="cov">	const/high16 v0, 0x1000000</span>
+<span class="cov">	iput v0, p0, Lokhttp3/OkHttpClient$Builder;->clientWindowSizeBytes:I</span>
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method constructor &lt;init&gt;(Lokhttp3/OkHttpClient;)V</span>
+.method constructor &lt;init&gt;(Lokhttp3/OkHttpClient;)V
 <span class="">	.locals 2</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	new-instance v0, Ljava/util/ArrayList;</span>
-<span class="cov">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->interceptors:Ljava/util/List;</span>
-<span class="cov">	new-instance v0, Ljava/util/ArrayList;</span>
-<span class="cov">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->networkInterceptors:Ljava/util/List;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->dispatcher:Lokhttp3/Dispatcher;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->dispatcher:Lokhttp3/Dispatcher;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->proxy:Ljava/net/Proxy;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->proxy:Ljava/net/Proxy;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->protocols:Ljava/util/List;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->protocols:Ljava/util/List;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->connectionSpecs:Ljava/util/List;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->connectionSpecs:Ljava/util/List;</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient$Builder;->interceptors:Ljava/util/List;</span>
-<span class="cov">	iget-object v1, p1, Lokhttp3/OkHttpClient;->interceptors:Ljava/util/List;</span>
-<span class="cov">	invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient$Builder;->networkInterceptors:Ljava/util/List;</span>
-<span class="cov">	iget-object v1, p1, Lokhttp3/OkHttpClient;->networkInterceptors:Ljava/util/List;</span>
-<span class="cov">	invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->eventListenerFactory:Lokhttp3/EventListener$Factory;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->eventListenerFactory:Lokhttp3/EventListener$Factory;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->proxySelector:Ljava/net/ProxySelector;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->proxySelector:Ljava/net/ProxySelector;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->cookieJar:Lokhttp3/CookieJar;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->cookieJar:Lokhttp3/CookieJar;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->internalCache:Lokhttp3/internal/cache/InternalCache;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->internalCache:Lokhttp3/internal/cache/InternalCache;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->cache:Lokhttp3/Cache;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->cache:Lokhttp3/Cache;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->socketFactory:Ljavax/net/SocketFactory;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->socketFactory:Ljavax/net/SocketFactory;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->hostnameVerifier:Ljavax/net/ssl/HostnameVerifier;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->hostnameVerifier:Ljavax/net/ssl/HostnameVerifier;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->certificatePinner:Lokhttp3/CertificatePinner;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->certificatePinner:Lokhttp3/CertificatePinner;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->proxyAuthenticator:Lokhttp3/Authenticator;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->proxyAuthenticator:Lokhttp3/Authenticator;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->authenticator:Lokhttp3/Authenticator;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->authenticator:Lokhttp3/Authenticator;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->connectionPool:Lokhttp3/ConnectionPool;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->connectionPool:Lokhttp3/ConnectionPool;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient;->dns:Lokhttp3/Dns;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->dns:Lokhttp3/Dns;</span>
-<span class="cov">	iget-boolean v0, p1, Lokhttp3/OkHttpClient;->followSslRedirects:Z</span>
-<span class="cov">	iput-boolean v0, p0, Lokhttp3/OkHttpClient$Builder;->followSslRedirects:Z</span>
-<span class="cov">	iget-boolean v0, p1, Lokhttp3/OkHttpClient;->followRedirects:Z</span>
-<span class="cov">	iput-boolean v0, p0, Lokhttp3/OkHttpClient$Builder;->followRedirects:Z</span>
-<span class="cov">	iget-boolean v0, p1, Lokhttp3/OkHttpClient;->retryOnConnectionFailure:Z</span>
-<span class="cov">	iput-boolean v0, p0, Lokhttp3/OkHttpClient$Builder;->retryOnConnectionFailure:Z</span>
-<span class="cov">	iget v0, p1, Lokhttp3/OkHttpClient;->callTimeout:I</span>
-<span class="cov">	iput v0, p0, Lokhttp3/OkHttpClient$Builder;->callTimeout:I</span>
-<span class="cov">	iget v0, p1, Lokhttp3/OkHttpClient;->connectTimeout:I</span>
-<span class="cov">	iput v0, p0, Lokhttp3/OkHttpClient$Builder;->connectTimeout:I</span>
-<span class="cov">	iget v0, p1, Lokhttp3/OkHttpClient;->readTimeout:I</span>
-<span class="cov">	iput v0, p0, Lokhttp3/OkHttpClient$Builder;->readTimeout:I</span>
-<span class="cov">	iget v0, p1, Lokhttp3/OkHttpClient;->writeTimeout:I</span>
-<span class="cov">	iput v0, p0, Lokhttp3/OkHttpClient$Builder;->writeTimeout:I</span>
-<span class="cov">	iget p1, p1, Lokhttp3/OkHttpClient;->pingInterval:I</span>
-<span class="cov">	iput p1, p0, Lokhttp3/OkHttpClient$Builder;->pingInterval:I</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->interceptors:Ljava/util/List;</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->networkInterceptors:Ljava/util/List;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->dispatcher:Lokhttp3/Dispatcher;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->dispatcher:Lokhttp3/Dispatcher;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->proxy:Ljava/net/Proxy;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->proxy:Ljava/net/Proxy;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->protocols:Ljava/util/List;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->protocols:Ljava/util/List;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->connectionSpecs:Ljava/util/List;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->connectionSpecs:Ljava/util/List;</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient$Builder;->interceptors:Ljava/util/List;</span>
+<span class="missed">	iget-object v1, p1, Lokhttp3/OkHttpClient;->interceptors:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient$Builder;->networkInterceptors:Ljava/util/List;</span>
+<span class="missed">	iget-object v1, p1, Lokhttp3/OkHttpClient;->networkInterceptors:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->eventListenerFactory:Lokhttp3/EventListener$Factory;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->eventListenerFactory:Lokhttp3/EventListener$Factory;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->proxySelector:Ljava/net/ProxySelector;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->proxySelector:Ljava/net/ProxySelector;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->cookieJar:Lokhttp3/CookieJar;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->cookieJar:Lokhttp3/CookieJar;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->internalCache:Lokhttp3/internal/cache/InternalCache;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->internalCache:Lokhttp3/internal/cache/InternalCache;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->cache:Lokhttp3/Cache;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->cache:Lokhttp3/Cache;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->socketFactory:Ljavax/net/SocketFactory;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->socketFactory:Ljavax/net/SocketFactory;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->hostnameVerifier:Ljavax/net/ssl/HostnameVerifier;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->hostnameVerifier:Ljavax/net/ssl/HostnameVerifier;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->certificatePinner:Lokhttp3/CertificatePinner;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->certificatePinner:Lokhttp3/CertificatePinner;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->proxyAuthenticator:Lokhttp3/Authenticator;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->proxyAuthenticator:Lokhttp3/Authenticator;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->authenticator:Lokhttp3/Authenticator;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->authenticator:Lokhttp3/Authenticator;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->connectionPool:Lokhttp3/ConnectionPool;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->connectionPool:Lokhttp3/ConnectionPool;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient;->dns:Lokhttp3/Dns;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient$Builder;->dns:Lokhttp3/Dns;</span>
+<span class="missed">	iget-boolean v0, p1, Lokhttp3/OkHttpClient;->followSslRedirects:Z</span>
+<span class="missed">	iput-boolean v0, p0, Lokhttp3/OkHttpClient$Builder;->followSslRedirects:Z</span>
+<span class="missed">	iget-boolean v0, p1, Lokhttp3/OkHttpClient;->followRedirects:Z</span>
+<span class="missed">	iput-boolean v0, p0, Lokhttp3/OkHttpClient$Builder;->followRedirects:Z</span>
+<span class="missed">	iget-boolean v0, p1, Lokhttp3/OkHttpClient;->retryOnConnectionFailure:Z</span>
+<span class="missed">	iput-boolean v0, p0, Lokhttp3/OkHttpClient$Builder;->retryOnConnectionFailure:Z</span>
+<span class="missed">	iget v0, p1, Lokhttp3/OkHttpClient;->callTimeout:I</span>
+<span class="missed">	iput v0, p0, Lokhttp3/OkHttpClient$Builder;->callTimeout:I</span>
+<span class="missed">	iget v0, p1, Lokhttp3/OkHttpClient;->connectTimeout:I</span>
+<span class="missed">	iput v0, p0, Lokhttp3/OkHttpClient$Builder;->connectTimeout:I</span>
+<span class="missed">	iget v0, p1, Lokhttp3/OkHttpClient;->readTimeout:I</span>
+<span class="missed">	iput v0, p0, Lokhttp3/OkHttpClient$Builder;->readTimeout:I</span>
+<span class="missed">	iget v0, p1, Lokhttp3/OkHttpClient;->writeTimeout:I</span>
+<span class="missed">	iput v0, p0, Lokhttp3/OkHttpClient$Builder;->writeTimeout:I</span>
+<span class="missed">	iget v0, p1, Lokhttp3/OkHttpClient;->pingInterval:I</span>
+<span class="missed">	iput v0, p0, Lokhttp3/OkHttpClient$Builder;->pingInterval:I</span>
+<span class="missed">	iget v0, p1, Lokhttp3/OkHttpClient;->clientWindowSizeBytes:I</span>
+<span class="missed">	iput v0, p0, Lokhttp3/OkHttpClient$Builder;->clientWindowSizeBytes:I</span>
+<span class="missed">	iget-boolean p1, p1, Lokhttp3/OkHttpClient;->twitterMCI1986Fix:Z</span>
+<span class="missed">	iput-boolean p1, p0, Lokhttp3/OkHttpClient$Builder;->twitterMCI1986Fix:Z</span>
+<span class="">	return-void</span>
 .end method
 
 <span class="cov">.method public addInterceptor(Lokhttp3/Interceptor;)Lokhttp3/OkHttpClient$Builder;</span>
@@ -296,14 +306,14 @@ value = {
 <span class="">	return-object p0</span>
 .end method
 
-<span class="cov">.method public callTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;</span>
+.method public callTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;
 <span class="">	.locals 1</span>
 
-<span class="cov">	const-string v0, "timeout"</span>
-<span class="exec">	invoke-static {v0, p1, p2, p3}, Lokhttp3/internal/Util;->checkDuration(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	iput p1, p0, Lokhttp3/OkHttpClient$Builder;->callTimeout:I</span>
-<span class="exec">	return-object p0</span>
+<span class="missed">	const-string v0, "timeout"</span>
+<span class="">	invoke-static {v0, p1, p2, p3}, Lokhttp3/internal/Util;->checkDuration(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;)I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	iput p1, p0, Lokhttp3/OkHttpClient$Builder;->callTimeout:I</span>
+<span class="">	return-object p0</span>
 .end method
 
 .method public callTimeout(Ljava/time/Duration;)Lokhttp3/OkHttpClient$Builder;
@@ -331,6 +341,19 @@ value = {
 <span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
 <span class="missed">	const-string v0, "certificatePinner == null"</span>
 <span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public clientWindowSizeBytes(I)Lokhttp3/OkHttpClient$Builder;
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-lez p1, :cond_0</span>
+<span class="missed">	iput p1, p0, Lokhttp3/OkHttpClient$Builder;->clientWindowSizeBytes:I</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v0, "clientWindowSizeBytes must be > 0"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
 <span class="">	throw p1</span>
 .end method
 
@@ -756,6 +779,13 @@ value = {
 <span class="missed">	const-string p2, "sslSocketFactory == null"</span>
 <span class="missed">	invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
 <span class="">	throw p1</span>
+.end method
+
+.method public twitterMCI1986Fix(Z)Lokhttp3/OkHttpClient$Builder;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-boolean p1, p0, Lokhttp3/OkHttpClient$Builder;->twitterMCI1986Fix:Z</span>
+<span class="">	return-object p0</span>
 .end method
 
 .method public writeTimeout(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient$Builder;

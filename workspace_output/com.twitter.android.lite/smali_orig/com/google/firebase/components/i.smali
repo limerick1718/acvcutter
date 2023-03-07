@@ -1,52 +1,51 @@
-.class final synthetic Lcom/google/firebase/components/i;
+.class abstract Lcom/google/firebase/components/i;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-components@@16.0.0"
+.source "com.google.firebase:firebase-common@@16.0.2"
 
 # interfaces
-.implements Lqu;
-
-
-# instance fields
-.field private final a:Lcom/google/firebase/components/l;
-
-.field private final b:Lcom/google/firebase/components/d;
+.implements Lcom/google/firebase/components/b;
 
 
 # direct methods
-.method private constructor <init>(Lcom/google/firebase/components/l;Lcom/google/firebase/components/d;)V
+.method constructor <init>()V
     .locals 0
 
+    .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/firebase/components/i;->a:Lcom/google/firebase/components/l;
-
-    iput-object p2, p0, Lcom/google/firebase/components/i;->b:Lcom/google/firebase/components/d;
 
     return-void
 .end method
 
-.method public static a(Lcom/google/firebase/components/l;Lcom/google/firebase/components/d;)Lqu;
-    .locals 1
-
-    new-instance v0, Lcom/google/firebase/components/i;
-
-    invoke-direct {v0, p0, p1}, Lcom/google/firebase/components/i;-><init>(Lcom/google/firebase/components/l;Lcom/google/firebase/components/d;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public get()Ljava/lang/Object;
-    .locals 2
+.method public a(Ljava/lang/Class;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Class<",
+            "TT;>;)TT;"
+        }
+    .end annotation
 
-    iget-object v0, p0, Lcom/google/firebase/components/i;->a:Lcom/google/firebase/components/l;
+    .line 22
+    invoke-virtual {p0, p1}, Lcom/google/firebase/components/i;->b(Ljava/lang/Class;)Lsq;
 
-    iget-object v1, p0, Lcom/google/firebase/components/i;->b:Lcom/google/firebase/components/d;
+    move-result-object p1
 
-    invoke-static {v0, v1}, Lcom/google/firebase/components/l;->a(Lcom/google/firebase/components/l;Lcom/google/firebase/components/d;)Ljava/lang/Object;
+    if-nez p1, :cond_0
 
-    move-result-object v0
+    const/4 p1, 0x0
 
-    return-object v0
+    return-object p1
+
+    .line 26
+    :cond_0
+    invoke-interface {p1}, Lsq;->a()Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
 .end method

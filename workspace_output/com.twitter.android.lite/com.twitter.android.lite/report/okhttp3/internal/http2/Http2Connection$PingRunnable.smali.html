@@ -32,40 +32,40 @@ name = "PingRunnable"
 .field final synthetic this$0:Lokhttp3/internal/http2/Http2Connection;
 
 
-<span class="cov">.method constructor &lt;init&gt;(Lokhttp3/internal/http2/Http2Connection;ZII)V</span>
+.method constructor &lt;init&gt;(Lokhttp3/internal/http2/Http2Connection;ZII)V
 <span class="">	.locals 2</span>
 
-<span class="cov">	iput-object p1, p0, Lokhttp3/internal/http2/Http2Connection$PingRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;</span>
-<span class="cov">	const/4 v0, 0x3</span>
-<span class="cov">	new-array v0, v0, [Ljava/lang/Object;</span>
-<span class="cov">	iget-object p1, p1, Lokhttp3/internal/http2/Http2Connection;->connectionName:Ljava/lang/String;</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	aput-object p1, v0, v1</span>
-<span class="exec">	invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="cov">	aput-object p1, v0, v1</span>
-<span class="exec">	invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	const/4 v1, 0x2</span>
-<span class="cov">	aput-object p1, v0, v1</span>
-<span class="cov">	const-string p1, "OkHttp %s ping %08x%08x"</span>
-<span class="cov">	invoke-direct {p0, p1, v0}, Lokhttp3/internal/NamedRunnable;-><init>(Ljava/lang/String;[Ljava/lang/Object;)V</span>
-<span class="cov">	iput-boolean p2, p0, Lokhttp3/internal/http2/Http2Connection$PingRunnable;->reply:Z</span>
-<span class="cov">	iput p3, p0, Lokhttp3/internal/http2/Http2Connection$PingRunnable;->payload1:I</span>
-<span class="cov">	iput p4, p0, Lokhttp3/internal/http2/Http2Connection$PingRunnable;->payload2:I</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/internal/http2/Http2Connection$PingRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;</span>
+<span class="missed">	const/4 v0, 0x3</span>
+<span class="missed">	new-array v0, v0, [Ljava/lang/Object;</span>
+<span class="missed">	iget-object p1, p1, Lokhttp3/internal/http2/Http2Connection;->connectionName:Ljava/lang/String;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	aput-object p1, v0, v1</span>
+<span class="">	invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	aput-object p1, v0, v1</span>
+<span class="">	invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const/4 v1, 0x2</span>
+<span class="missed">	aput-object p1, v0, v1</span>
+<span class="missed">	const-string p1, "OkHttp %s ping %08x%08x"</span>
+<span class="missed">	invoke-direct {p0, p1, v0}, Lokhttp3/internal/NamedRunnable;-><init>(Ljava/lang/String;[Ljava/lang/Object;)V</span>
+<span class="missed">	iput-boolean p2, p0, Lokhttp3/internal/http2/Http2Connection$PingRunnable;->reply:Z</span>
+<span class="missed">	iput p3, p0, Lokhttp3/internal/http2/Http2Connection$PingRunnable;->payload1:I</span>
+<span class="missed">	iput p4, p0, Lokhttp3/internal/http2/Http2Connection$PingRunnable;->payload2:I</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public execute()V</span>
+.method public execute()V
 <span class="">	.locals 4</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Connection$PingRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;</span>
-<span class="cov">	iget-boolean v1, p0, Lokhttp3/internal/http2/Http2Connection$PingRunnable;->reply:Z</span>
-<span class="cov">	iget v2, p0, Lokhttp3/internal/http2/Http2Connection$PingRunnable;->payload1:I</span>
-<span class="cov">	iget v3, p0, Lokhttp3/internal/http2/Http2Connection$PingRunnable;->payload2:I</span>
-<span class="cov">	invoke-virtual {v0, v1, v2, v3}, Lokhttp3/internal/http2/Http2Connection;->writePing(ZII)V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Connection$PingRunnable;->this$0:Lokhttp3/internal/http2/Http2Connection;</span>
+<span class="missed">	iget-boolean v1, p0, Lokhttp3/internal/http2/Http2Connection$PingRunnable;->reply:Z</span>
+<span class="missed">	iget v2, p0, Lokhttp3/internal/http2/Http2Connection$PingRunnable;->payload1:I</span>
+<span class="missed">	iget v3, p0, Lokhttp3/internal/http2/Http2Connection$PingRunnable;->payload2:I</span>
+<span class="missed">	invoke-virtual {v0, v1, v2, v3}, Lokhttp3/internal/http2/Http2Connection;->writePing(ZII)V</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

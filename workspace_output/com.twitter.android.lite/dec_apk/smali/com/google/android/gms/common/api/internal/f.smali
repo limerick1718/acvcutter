@@ -1,5 +1,10 @@
 .class public final Lcom/google/android/gms/common/api/internal/f;
 .super Ljava/lang/Object;
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lcom/google/android/gms/common/api/internal/f$a;
+}
+.end annotation
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "<",
@@ -8,7 +13,7 @@ value = {
 "Ljava/lang/Object;"
 }
 .end annotation
-.field private final a:Ljava/lang/Object;
+.field private volatile a:Ljava/lang/Object;
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "T",
@@ -16,14 +21,7 @@ value = {
 }
 .end annotation
 .end field
-.field private final b:Ljava/lang/String;
-.method public final equals(Ljava/lang/Object;)Z
-.locals 4
-const/4 v0, 0x0
-return v0
-.end method
-.method public final hashCode()I
-.locals 2
-const/4 v0, 0x0
-return v0
+.method public final a()V
+.locals 1
+return-void
 .end method

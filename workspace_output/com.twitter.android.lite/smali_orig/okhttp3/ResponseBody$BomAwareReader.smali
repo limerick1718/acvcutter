@@ -24,20 +24,20 @@
     .end annotation
 .end field
 
-.field private final source:Lgx;
+.field private final source:Lyu;
 
 
 # direct methods
-.method constructor <init>(Lgx;Ljava/nio/charset/Charset;)V
+.method constructor <init>(Lyu;Ljava/nio/charset/Charset;)V
     .locals 0
 
-    .line 1
+    .line 250
     invoke-direct {p0}, Ljava/io/Reader;-><init>()V
 
-    .line 2
-    iput-object p1, p0, Lokhttp3/ResponseBody$BomAwareReader;->source:Lgx;
+    .line 251
+    iput-object p1, p0, Lokhttp3/ResponseBody$BomAwareReader;->source:Lyu;
 
-    .line 3
+    .line 252
     iput-object p2, p0, Lokhttp3/ResponseBody$BomAwareReader;->charset:Ljava/nio/charset/Charset;
 
     return-void
@@ -55,24 +55,24 @@
 
     const/4 v0, 0x1
 
-    .line 1
+    .line 267
     iput-boolean v0, p0, Lokhttp3/ResponseBody$BomAwareReader;->closed:Z
 
-    .line 2
+    .line 268
     iget-object v0, p0, Lokhttp3/ResponseBody$BomAwareReader;->delegate:Ljava/io/Reader;
 
     if-eqz v0, :cond_0
 
-    .line 3
+    .line 269
     invoke-virtual {v0}, Ljava/io/Reader;->close()V
 
     goto :goto_0
 
-    .line 4
+    .line 271
     :cond_0
-    iget-object v0, p0, Lokhttp3/ResponseBody$BomAwareReader;->source:Lgx;
+    iget-object v0, p0, Lokhttp3/ResponseBody$BomAwareReader;->source:Lyu;
 
-    invoke-interface {v0}, Lwx;->close()V
+    invoke-interface {v0}, Lyu;->close()V
 
     :goto_0
     return-void
@@ -86,31 +86,31 @@
         }
     .end annotation
 
-    .line 1
+    .line 256
     iget-boolean v0, p0, Lokhttp3/ResponseBody$BomAwareReader;->closed:Z
 
     if-nez v0, :cond_1
 
-    .line 2
+    .line 258
     iget-object v0, p0, Lokhttp3/ResponseBody$BomAwareReader;->delegate:Ljava/io/Reader;
 
     if-nez v0, :cond_0
 
-    .line 3
-    iget-object v0, p0, Lokhttp3/ResponseBody$BomAwareReader;->source:Lgx;
+    .line 260
+    iget-object v0, p0, Lokhttp3/ResponseBody$BomAwareReader;->source:Lyu;
 
     iget-object v1, p0, Lokhttp3/ResponseBody$BomAwareReader;->charset:Ljava/nio/charset/Charset;
 
-    invoke-static {v0, v1}, Lokhttp3/internal/Util;->bomAwareCharset(Lgx;Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
+    invoke-static {v0, v1}, Lokhttp3/internal/Util;->bomAwareCharset(Lyu;Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
 
     move-result-object v0
 
-    .line 4
+    .line 261
     new-instance v1, Ljava/io/InputStreamReader;
 
-    iget-object v2, p0, Lokhttp3/ResponseBody$BomAwareReader;->source:Lgx;
+    iget-object v2, p0, Lokhttp3/ResponseBody$BomAwareReader;->source:Lyu;
 
-    invoke-interface {v2}, Lgx;->o()Ljava/io/InputStream;
+    invoke-interface {v2}, Lyu;->i()Ljava/io/InputStream;
 
     move-result-object v2
 
@@ -120,7 +120,7 @@
 
     move-object v0, v1
 
-    .line 5
+    .line 263
     :cond_0
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/Reader;->read([CII)I
 
@@ -128,7 +128,7 @@
 
     return p1
 
-    .line 6
+    .line 256
     :cond_1
     new-instance p1, Ljava/io/IOException;
 

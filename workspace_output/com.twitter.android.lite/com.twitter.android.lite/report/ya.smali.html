@@ -14,38 +14,276 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final Lya;
-.super Lva;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lva<",
-"Ljava/lang/String;",
-">;"
-}
-.end annotation
+		<code>.class  Lya;
+.super Ljava/lang/Object;
+.source "DefaultSettingsController.java"
+.implements Lyj;
 
 
+.field private final a:Lyn;
+.field private final b:Lym;
+.field private final c:Lvp;
+.field private final d:Lxx;
+.field private final e:Lyo;
+.field private final f:Luw;
+.field private final g:Lxp;
+.field private final h:Lvq;
 
-<span class="cov">.method constructor &lt;init&gt;(Lbb;Ljava/lang/String;Ljava/lang/String;)V</span>
-<span class="">	.locals 1</span>
 
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	invoke-direct {p0, p1, p2, p3, v0}, Lva;-><init>(Lbb;Ljava/lang/String;Ljava/lang/Object;Lxa;)V</span>
+<span class="cov">.method public constructor &lt;init&gt;(Luw;Lyn;Lvp;Lym;Lxx;Lyo;Lvq;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	iput-object p1, p0, Lya;->f:Luw;</span>
+<span class="cov">	iput-object p2, p0, Lya;->a:Lyn;</span>
+<span class="cov">	iput-object p3, p0, Lya;->c:Lvp;</span>
+<span class="cov">	iput-object p4, p0, Lya;->b:Lym;</span>
+<span class="cov">	iput-object p5, p0, Lya;->d:Lxx;</span>
+<span class="cov">	iput-object p6, p0, Lya;->e:Lyo;</span>
+<span class="cov">	iput-object p7, p0, Lya;->h:Lvq;</span>
+<span class="cov">	new-instance p1, Lxq;</span>
+<span class="cov">	iget-object p2, p0, Lya;->f:Luw;</span>
+<span class="cov">	invoke-direct {p1, p2}, Lxq;-><init>(Luw;)V</span>
+<span class="cov">	iput-object p1, p0, Lya;->g:Lxp;</span>
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+.method private a(Lorg/json/JSONObject;Ljava/lang/String;)V
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Lorg/json/JSONException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string p2, "Fabric"</span>
+<span class="missed">	invoke-interface {v0, p2, p1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method private b(Lyi;)Lyk;</span>
+<span class="">	.locals 6</span>
+
+<span class="cov">	const-string v0, "Fabric"</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	sget-object v2, Lyi;->b:Lyi;</span>
+<span class="exec">	invoke-virtual {v2, p1}, Lyi;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	if-nez v2, :cond_4</span>
+<span class="cov">	iget-object v2, p0, Lya;->d:Lxx;</span>
+<span class="exec">	invoke-interface {v2}, Lxx;->a()Lorg/json/JSONObject;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="missed">	if-eqz v2, :cond_3</span>
+<span class="missed">	iget-object v3, p0, Lya;->b:Lym;</span>
+<span class="missed">	iget-object v4, p0, Lya;->c:Lvp;</span>
+<span class="">	invoke-interface {v3, v4, v2}, Lym;->a(Lvp;Lorg/json/JSONObject;)Lyk;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	if-eqz v3, :cond_2</span>
+<span class="missed">	const-string v4, "Loaded cached settings: "</span>
+<span class="missed">	invoke-direct {p0, v2, v4}, Lya;->a(Lorg/json/JSONObject;Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Lya;->c:Lvp;</span>
+<span class="">	invoke-interface {v2}, Lvp;->a()J</span>
+<span class="missed">	move-result-wide v4</span>
+<span class="missed">	sget-object v2, Lyi;->c:Lyi;</span>
+<span class="">	invoke-virtual {v2, p1}, Lyi;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-nez p1, :cond_1</span>
+<span class="">	invoke-virtual {v3, v4, v5}, Lyk;->a(J)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v2, "Cached settings have expired."</span>
+<span class="missed">	invoke-interface {p1, v0, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:goto_0</span>
+<span class="">	:try_start_1</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v1, "Returning cached settings."</span>
+<span class="missed">	invoke-interface {p1, v0, v1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0</span>
+<span class="missed">	move-object v1, v3</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	move-object v1, v3</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:try_start_2</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v2, "Failed to transform cached settings data."</span>
+<span class="missed">	invoke-interface {p1, v0, v2, v1}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	goto :goto_2</span>
+<span class="cov">	:cond_3</span>
+<span class="exec">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	const-string v2, "No cached settings data found."</span>
+<span class="cov">	invoke-interface {p1, v0, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	:try_end_2</span>
+<span class="cov">	.catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	:goto_1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v3, "Failed to get cached settings"</span>
+<span class="missed">	invoke-interface {v2, v0, v3, p1}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="cov">	:goto_2</span>
+<span class="cov">	:cond_4</span>
+<span class="exec">	return-object v1</span>
+.end method
+
+<span class="cov">.method public a()Lyk;</span>
 <span class="">	.locals 1</span>
 
-<span class="cov">	instance-of v0, p1, Ljava/lang/String;</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	check-cast p1, Ljava/lang/String;</span>
-<span class="exec">	return-object p1</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 p1, 0x0</span>
-<span class="">	return-object p1</span>
+<span class="cov">	sget-object v0, Lyi;->a:Lyi;</span>
+<span class="exec">	invoke-virtual {p0, v0}, Lya;->a(Lyi;)Lyk;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public a(Lyi;)Lyk;</span>
+<span class="">	.locals 5</span>
+
+<span class="cov">	iget-object v0, p0, Lya;->h:Lvq;</span>
+<span class="exec">	invoke-virtual {v0}, Lvq;->a()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	const-string v1, "Fabric"</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v0, "Not fetching settings, because data collection is disabled by Firebase."</span>
+<span class="missed">	invoke-interface {p1, v1, v0}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-object v2</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-static {}, Luq;->h()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-nez v0, :cond_1</span>
+<span class="exec">	invoke-virtual {p0}, Lya;->d()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	invoke-direct {p0, p1}, Lya;->b(Lyi;)Lyk;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	if-nez v2, :cond_2</span>
+<span class="cov">	iget-object p1, p0, Lya;->e:Lyo;</span>
+<span class="cov">	iget-object v0, p0, Lya;->a:Lyn;</span>
+<span class="exec">	invoke-interface {p1, v0}, Lyo;->a(Lyn;)Lorg/json/JSONObject;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	iget-object v0, p0, Lya;->b:Lym;</span>
+<span class="missed">	iget-object v3, p0, Lya;->c:Lvp;</span>
+<span class="">	invoke-interface {v0, v3, p1}, Lym;->a(Lvp;Lorg/json/JSONObject;)Lyk;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	iget-object v0, p0, Lya;->d:Lxx;</span>
+<span class="missed">	iget-wide v3, v2, Lyk;->g:J</span>
+<span class="missed">	invoke-interface {v0, v3, v4, p1}, Lxx;->a(JLorg/json/JSONObject;)V</span>
+<span class="missed">	const-string v0, "Loaded settings: "</span>
+<span class="missed">	invoke-direct {p0, p1, v0}, Lya;->a(Lorg/json/JSONObject;Ljava/lang/String;)V</span>
+<span class="">	invoke-virtual {p0}, Lya;->b()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lya;->a(Ljava/lang/String;)Z</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	if-nez v2, :cond_3</span>
+<span class="cov">	sget-object p1, Lyi;->c:Lyi;</span>
+<span class="exec">	invoke-direct {p0, p1}, Lya;->b(Lyi;)Lyk;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v3, "Unknown error while loading Crashlytics settings. Crashes will be cached until settings can be retrieved."</span>
+<span class="missed">	invoke-interface {v0, v1, v3, p1}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	:cond_3</span>
+<span class="exec">	return-object v2</span>
+.end method
+
+.method  a(Ljava/lang/String;)Z
+<span class="">	.locals 2</span>
+<span class="">	.annotation build Landroid/annotation/SuppressLint;</span>
+<span class="">	value = {</span>
+<span class="">	"CommitPrefEdits"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lya;->g:Lxp;</span>
+<span class="">	invoke-interface {v0}, Lxp;->b()Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "existing_instance_identifier"</span>
+<span class="missed">	invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	iget-object p1, p0, Lya;->g:Lxp;</span>
+<span class="">	invoke-interface {p1, v0}, Lxp;->a(Landroid/content/SharedPreferences$Editor;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+<span class="cov">.method  b()Ljava/lang/String;</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="cov">	new-array v0, v0, [Ljava/lang/String;</span>
+<span class="cov">	iget-object v1, p0, Lya;->f:Luw;</span>
+<span class="exec">	invoke-virtual {v1}, Luw;->getContext()Landroid/content/Context;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-static {v1}, Lvn;->m(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	aput-object v1, v0, v2</span>
+<span class="exec">	invoke-static {v0}, Lvn;->a([Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method  c()Ljava/lang/String;</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	iget-object v0, p0, Lya;->g:Lxp;</span>
+<span class="exec">	invoke-interface {v0}, Lxp;->a()Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "existing_instance_identifier"</span>
+<span class="cov">	const-string v2, ""</span>
+<span class="exec">	invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method  d()Z</span>
+<span class="">	.locals 2</span>
+
+<span class="exec">	invoke-virtual {p0}, Lya;->c()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {p0}, Lya;->b()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	xor-int/lit8 v0, v0, 0x1</span>
+<span class="exec">	return v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

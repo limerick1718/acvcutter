@@ -30,10 +30,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 1
+    .line 320
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 321
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -50,7 +50,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1
+    .line 333
     array-length v0, p2
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
 
     aget-object v2, p2, v1
 
-    .line 2
+    .line 334
     iget-object v3, p0, Lokhttp3/CertificatePinner$Builder;->pins:Ljava/util/List;
 
     new-instance v4, Lokhttp3/CertificatePinner$Pin;
@@ -76,7 +76,7 @@
     :cond_0
     return-object p0
 
-    .line 3
+    .line 331
     :cond_1
     new-instance p1, Ljava/lang/NullPointerException;
 
@@ -90,7 +90,7 @@
 .method public build()Lokhttp3/CertificatePinner;
     .locals 3
 
-    .line 1
+    .line 341
     new-instance v0, Lokhttp3/CertificatePinner;
 
     new-instance v1, Ljava/util/LinkedHashSet;

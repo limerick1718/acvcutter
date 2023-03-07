@@ -14,3 +14,18 @@ value = {
 Landroid/support/v4/media/session/b$a$a;
 }
 .end annotation
+.method public asBinder()Landroid/os/IBinder;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+.locals 4
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Landroid/os/RemoteException;
+}
+.end annotation
+const/4 v0, 0x0
+return v0
+.end method

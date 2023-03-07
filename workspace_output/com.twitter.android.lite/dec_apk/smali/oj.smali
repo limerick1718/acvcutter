@@ -1,47 +1,35 @@
-.class public final Loj;
+.class final Loj;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.implements Llj;
-.field private static final a:Lva;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lva<",
-"Ljava/lang/Boolean;",
-">;"
-}
-.end annotation
-.end field
-.method static constructor <clinit>()V
-.locals 3
-new-instance v0, Lbb;
-const-string v1, "com.google.android.gms.measurement"
-invoke-static {v1}, Lsa;->a(Ljava/lang/String;)Landroid/net/Uri;
-move-result-object v1
-invoke-direct {v0, v1}, Lbb;-><init>(Landroid/net/Uri;)V
-const-string v1, "measurement.ga.ga_app_id"
-const/4 v2, 0x0
-invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;
-move-result-object v0
-sput-object v0, Loj;->a:Lva;
-return-void
-.end method
-.method public constructor <init>()V
+.implements Ljava/lang/Runnable;
+.field private final synthetic a:Z
+.field private final synthetic b:Z
+.field private final synthetic c:Lko;
+.field private final synthetic d:Lpz;
+.field private final synthetic e:Ljava/lang/String;
+.field private final synthetic f:Loc;
+.method constructor <init>(Loc;ZZLko;Lpz;Ljava/lang/String;)V
 .locals 0
+iput-object p1, p0, Loj;->f:Loc;
+iput-boolean p2, p0, Loj;->a:Z
+iput-boolean p3, p0, Loj;->b:Z
+iput-object p4, p0, Loj;->c:Lko;
+iput-object p5, p0, Loj;->d:Lpz;
+iput-object p6, p0, Loj;->e:Ljava/lang/String;
 invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public final a()Z
-.locals 1
-const/4 v0, 0x1
-return v0
-.end method
-.method public final b()Z
-.locals 1
-sget-object v0, Loj;->a:Lva;
-invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
+.method public final run()V
+.locals 4
+iget-object v0, p0, Loj;->f:Loc;
+invoke-static {v0}, Loc;->d(Loc;)Lkr;
 move-result-object v0
-check-cast v0, Ljava/lang/Boolean;
-invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-move-result v0
-return v0
+iget-boolean v1, p0, Loj;->a:Z
+iget-object v1, p0, Loj;->f:Loc;
+iget-boolean v2, p0, Loj;->b:Z
+const/4 v2, 0x0
+iget-object v3, p0, Loj;->d:Lpz;
+invoke-virtual {v1, v0, v2, v3}, Loc;->a(Lkr;Lba;Lpz;)V
+iget-object v0, p0, Loj;->f:Loc;
+invoke-static {v0}, Loc;->e(Loc;)V
+return-void
 .end method

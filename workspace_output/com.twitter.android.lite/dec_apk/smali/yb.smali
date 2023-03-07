@@ -1,12 +1,19 @@
-.class final Lyb;
+.class  Lyb;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.field private static final a:Ljava/lang/Class;
-.annotation system Ldalvik/annotation/Signature;
+.source "DefaultSettingsJsonTransform.java"
+.implements Lym;
+.method constructor <init>()V
+.locals 0
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method public a(Lvp;Lorg/json/JSONObject;)Lyk;
+.locals 13
+.annotation system Ldalvik/annotation/Throws;
 value = {
-"Ljava/lang/Class<",
-"*>;"
+Lorg/json/JSONException;
 }
 .end annotation
-.end field
-.field private static final b:Z
+const/4 v0, 0x0
+return-object v0
+.end method

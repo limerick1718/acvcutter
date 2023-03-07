@@ -14,30 +14,34 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lho;
+		<code>.class interface abstract Lho;
 .super Ljava/lang/Object;
 
-.annotation system Ldalvik/annotation/MemberClasses;
-value = {
-Lho$a;,
-Lho$b;
-}
-.end annotation
 
 
 
-.method public abstract a(Ljava/lang/String;Lho$b;)Lho$a;
+.method public abstract a(Ljava/lang/Class;)Z
 <span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;)Z"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
 .end method
 
-.method public abstract a(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
+.method public abstract b(Ljava/lang/Class;)Lhn;
 <span class="">	</span>
-
-.end method
-
-.method public abstract a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
-<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;)",</span>
+<span class="">	"Lhn;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
 .end method</code>
 	</pre>

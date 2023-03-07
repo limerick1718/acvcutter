@@ -1,143 +1,98 @@
-.class public final Lbm;
-.super Lp5;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.class public Lbm;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lbm;",
-            ">;"
-        }
-    .end annotation
-.end field
+# interfaces
+.implements Landroid/os/IInterface;
 
 
 # instance fields
-.field public final a:J
+.field private final a:Landroid/os/IBinder;
 
-.field public final b:J
-
-.field public final c:Z
-
-.field public final d:Ljava/lang/String;
-
-.field public final e:Ljava/lang/String;
-
-.field public final f:Ljava/lang/String;
-
-.field public final g:Landroid/os/Bundle;
+.field private final b:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Lam;
-
-    invoke-direct {v0}, Lam;-><init>()V
-
-    sput-object v0, Lbm;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(JJZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
+.method protected constructor <init>(Landroid/os/IBinder;Ljava/lang/String;)V
     .locals 0
 
-    .line 1
-    invoke-direct {p0}, Lp5;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput-wide p1, p0, Lbm;->a:J
+    iput-object p1, p0, Lbm;->a:Landroid/os/IBinder;
 
-    .line 3
-    iput-wide p3, p0, Lbm;->b:J
-
-    .line 4
-    iput-boolean p5, p0, Lbm;->c:Z
-
-    .line 5
-    iput-object p6, p0, Lbm;->d:Ljava/lang/String;
-
-    .line 6
-    iput-object p7, p0, Lbm;->e:Ljava/lang/String;
-
-    .line 7
-    iput-object p8, p0, Lbm;->f:Ljava/lang/String;
-
-    .line 8
-    iput-object p9, p0, Lbm;->g:Landroid/os/Bundle;
+    iput-object p2, p0, Lbm;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method protected final a(ILandroid/os/Parcel;)Landroid/os/Parcel;
     .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 
-    .line 1
-    invoke-static {p1}, Lr5;->a(Landroid/os/Parcel;)I
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
-    move-result p2
+    move-result-object v0
 
-    .line 2
-    iget-wide v0, p0, Lbm;->a:J
+    :try_start_0
+    iget-object v1, p0, Lbm;->a:Landroid/os/IBinder;
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    invoke-static {p1, v2, v0, v1}, Lr5;->a(Landroid/os/Parcel;IJ)V
+    invoke-interface {v1, p1, p2, v0, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 3
-    iget-wide v0, p0, Lbm;->b:J
+    invoke-virtual {v0}, Landroid/os/Parcel;->readException()V
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 v2, 0x2
+    invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
 
-    invoke-static {p1, v2, v0, v1}, Lr5;->a(Landroid/os/Parcel;IJ)V
+    return-object v0
 
-    .line 4
-    iget-boolean v0, p0, Lbm;->c:Z
+    :catchall_0
+    move-exception p1
 
-    const/4 v1, 0x3
+    goto :goto_0
 
-    invoke-static {p1, v1, v0}, Lr5;->a(Landroid/os/Parcel;IZ)V
+    :catch_0
+    move-exception p1
 
-    .line 5
-    iget-object v0, p0, Lbm;->d:Ljava/lang/String;
+    :try_start_1
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    const/4 v1, 0x0
+    throw p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    const/4 v2, 0x4
+    :goto_0
+    invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
 
-    invoke-static {p1, v2, v0, v1}, Lr5;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    throw p1
+.end method
 
-    .line 6
-    iget-object v0, p0, Lbm;->e:Ljava/lang/String;
+.method protected final a_()Landroid/os/Parcel;
+    .locals 2
 
-    const/4 v2, 0x5
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
-    invoke-static {p1, v2, v0, v1}, Lr5;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    move-result-object v0
 
-    .line 7
-    iget-object v0, p0, Lbm;->f:Ljava/lang/String;
+    iget-object v1, p0, Lbm;->b:Ljava/lang/String;
 
-    const/4 v2, 0x6
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    invoke-static {p1, v2, v0, v1}, Lr5;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    return-object v0
+.end method
 
-    .line 8
-    iget-object v0, p0, Lbm;->g:Landroid/os/Bundle;
+.method public asBinder()Landroid/os/IBinder;
+    .locals 1
 
-    const/4 v2, 0x7
+    iget-object v0, p0, Lbm;->a:Landroid/os/IBinder;
 
-    invoke-static {p1, v2, v0, v1}, Lr5;->a(Landroid/os/Parcel;ILandroid/os/Bundle;Z)V
-
-    .line 9
-    invoke-static {p1, p2}, Lr5;->a(Landroid/os/Parcel;I)V
-
-    return-void
+    return-object v0
 .end method

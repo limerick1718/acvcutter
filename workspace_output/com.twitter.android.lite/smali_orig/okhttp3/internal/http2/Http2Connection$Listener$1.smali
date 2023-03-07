@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 940
     invoke-direct {p0}, Lokhttp3/internal/http2/Http2Connection$Listener;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 942
     sget-object v0, Lokhttp3/internal/http2/ErrorCode;->REFUSED_STREAM:Lokhttp3/internal/http2/ErrorCode;
 
     const/4 v1, 0x0

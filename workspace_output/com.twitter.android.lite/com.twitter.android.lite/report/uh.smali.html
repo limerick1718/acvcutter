@@ -14,102 +14,187 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Luh;
+		<code>.class public Luh;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.implements Lkb;
+.source "BrowserUtils.java"
 
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/Object;",
-"Lkb<",
-"Lth;",
-">;"
-}
-.end annotation
 
-.field private static b:Luh;
-.field private final a:Lkb;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lkb<",
-"Lth;",
-">;"
-}
-.end annotation
-.end field
+.field static final a:Ljava/util/regex/Pattern;
+.field private static b:Ljava/lang/Boolean;
 
 
 <span class="cov">.method static constructor &lt;clinit&gt;()V</span>
 <span class="">	.locals 1</span>
 
-<span class="cov">	new-instance v0, Luh;</span>
-<span class="cov">	invoke-direct {v0}, Luh;-><init>()V</span>
-<span class="cov">	sput-object v0, Luh;->b:Luh;</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public constructor &lt;init&gt;()V</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	new-instance v0, Lwh;</span>
-<span class="cov">	invoke-direct {v0}, Lwh;-><init>()V</span>
-<span class="exec">	invoke-static {v0}, Ljb;->a(Ljava/lang/Object;)Lkb;</span>
+<span class="cov">	const-string v0, "^.*Chrome\\/(\\d+).*$"</span>
+<span class="exec">	invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="cov">	invoke-direct {p0, v0}, Luh;-><init>(Lkb;)V</span>
+<span class="cov">	sput-object v0, Luh;->a:Ljava/util/regex/Pattern;</span>
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method private constructor &lt;init&gt;(Lkb;)V</span>
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Lkb<",</span>
-<span class="">	"Lth;",</span>
-<span class="">	">;)V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
+<span class="cov">.method public static a(Landroid/app/Activity;Landroid/net/Uri;)V</span>
+<span class="">	.locals 4</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="exec">	invoke-static {p1}, Ljb;->a(Lkb;)Lkb;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	iput-object p1, p0, Luh;->a:Lkb;</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public static b()Z</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	sget-object v0, Luh;->b:Luh;</span>
-<span class="exec">	invoke-virtual {v0}, Luh;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lth;</span>
-<span class="exec">	invoke-interface {v0}, Lth;->a()Z</span>
+<span class="exec">	invoke-static {p0}, Luh;->a(Landroid/content/Context;)Z</span>
 <span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
+<span class="cov">	const/high16 v1, 0x40000000    # 2.0f</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	new-instance v0, Lj$a;</span>
+<span class="cov">	invoke-direct {v0}, Lj$a;-><init>()V</span>
+<span class="exec">	invoke-virtual {p0}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	const v3, 0x7f020017</span>
+<span class="exec">	invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I</span>
+<span class="cov">	move-result v2</span>
+<span class="exec">	invoke-virtual {v0, v2}, Lj$a;->a(I)Lj$a;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const/4 v2, 0x1</span>
+<span class="exec">	invoke-virtual {v0, v2}, Lj$a;->a(Z)Lj$a;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v0}, Lj$a;->a()Lj;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iget-object v3, v0, Lj;->a:Landroid/content/Intent;</span>
+<span class="cov">	invoke-virtual {v3, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;</span>
+<span class="cov">	iget-object v1, v0, Lj;->a:Landroid/content/Intent;</span>
+<span class="cov">	const-string v3, "android.support.customtabs.extra.SEND_TO_EXTERNAL_HANDLER"</span>
+<span class="cov">	invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;</span>
+<span class="cov">	invoke-virtual {v0, p0, p1}, Lj;->a(Landroid/content/Context;Landroid/net/Uri;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Landroid/content/Intent;</span>
+<span class="missed">	const-string v2, "android.intent.action.VIEW"</span>
+<span class="missed">	invoke-direct {v0, v2, p1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V</span>
+<span class="">	invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {p0, p1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public static c()Z</span>
+<span class="cov">.method public static a(Landroid/content/Context;)Z</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	sget-object v0, Luh;->b:Ljava/lang/Boolean;</span>
+<span class="cov">	if-nez v0, :cond_1</span>
+<span class="cov">	new-instance v0, Landroid/content/Intent;</span>
+<span class="cov">	const-string v1, "android.support.customtabs.action.CustomTabsService"</span>
+<span class="cov">	invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V</span>
+<span class="cov">	const-string v1, "com.android.chrome"</span>
+<span class="cov">	invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;</span>
+<span class="exec">	invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="exec">	invoke-virtual {p0, v0, v1}, Landroid/content/pm/PackageManager;->queryIntentServices(Landroid/content/Intent;I)Ljava/util/List;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	if-eqz p0, :cond_0</span>
+<span class="exec">	invoke-interface {p0}, Ljava/util/List;->isEmpty()Z</span>
+<span class="cov">	move-result p0</span>
+<span class="cov">	if-nez p0, :cond_0</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	sput-object p0, Luh;->b:Ljava/lang/Boolean;</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	sget-object p0, Luh;->b:Ljava/lang/Boolean;</span>
+<span class="exec">	invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="cov">	move-result p0</span>
+<span class="exec">	return p0</span>
+.end method
+
+<span class="cov">.method public static a(Landroid/net/Uri;)Z</span>
 <span class="">	.locals 1</span>
 
-<span class="cov">	sget-object v0, Luh;->b:Luh;</span>
-<span class="exec">	invoke-virtual {v0}, Luh;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lth;</span>
-<span class="exec">	invoke-interface {v0}, Lth;->b()Z</span>
+<span class="exec">	invoke-static {p0}, Lum;->b(Landroid/net/Uri;)Z</span>
 <span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="exec">	invoke-static {p0}, Luh;->b(Landroid/net/Uri;)Z</span>
+<span class="cov">	move-result p0</span>
+<span class="cov">	if-eqz p0, :cond_0</span>
+<span class="cov">	const/4 p0, 0x1</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 p0, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return p0</span>
 .end method
 
-<span class="cov">.method public final synthetic a()Ljava/lang/Object;</span>
+<span class="cov">.method public static a(Ljava/lang/String;)Z</span>
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Luh;->a:Lkb;</span>
-<span class="exec">	invoke-interface {v0}, Lkb;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lth;</span>
-<span class="exec">	return-object v0</span>
+<span class="exec">	invoke-static {p0}, Luh;->b(Ljava/lang/String;)I</span>
+<span class="cov">	move-result p0</span>
+<span class="cov">	const/16 v0, 0x26</span>
+<span class="missed">	if-ge p0, v0, :cond_0</span>
+<span class="missed">	const/4 p0, 0x1</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 p0, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return p0</span>
+.end method
+
+<span class="cov">.method private static b(Ljava/lang/String;)I</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	sget-object v0, Luh;->a:Ljava/util/regex/Pattern;</span>
+<span class="exec">	invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="exec">	invoke-virtual {p0, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	invoke-static {p0}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I</span>
+<span class="cov">	move-result p0</span>
+<span class="exec">	return p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	return p0</span>
+.end method
+
+.method public static b(Landroid/content/Context;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x18</span>
+<span class="missed">	if-ge v0, v1, :cond_0</span>
+<span class="missed">	const-string v0, "com.google.android.webview"</span>
+<span class="missed">	invoke-static {p0, v0}, Luk;->a(Landroid/content/Context;Ljava/lang/String;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const-string v0, "com.android.chrome"</span>
+<span class="missed">	invoke-static {p0, v0}, Luk;->a(Landroid/content/Context;Ljava/lang/String;)V</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public static b(Landroid/net/Uri;)Z</span>
+<span class="">	.locals 1</span>
+
+<span class="exec">	invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	const-string v0, "http"</span>
+<span class="exec">	invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-nez v0, :cond_1</span>
+<span class="cov">	const-string v0, "https"</span>
+<span class="exec">	invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result p0</span>
+<span class="cov">	if-eqz p0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="exec">	goto :goto_1</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	const/4 p0, 0x1</span>
+<span class="cov">	:goto_1</span>
+<span class="exec">	return p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

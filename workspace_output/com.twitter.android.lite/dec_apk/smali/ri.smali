@@ -1,7 +1,19 @@
 .class public interface abstract Lri;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.method public abstract a()Z
-.end method
-.method public abstract b()Z
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<TResult:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;"
+}
+.end annotation
+.method public abstract a(Lrm;)V
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(",
+"Lrm<",
+"TTResult;>;)V"
+}
+.end annotation
 .end method

@@ -1,53 +1,32 @@
-.class public Ljs;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.implements Lks;
-.field private final a:Ljava/io/File;
-.method public constructor <init>(Ljava/io/File;)V
-.locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
-.end method
-.method public a()Ljava/util/Map;
-.locals 1
+.class public final enum Ljs;
+.super Ljava/lang/Enum;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"()",
-"Ljava/util/Map<",
-"Ljava/lang/String;",
-"Ljava/lang/String;",
+"Ljava/lang/Enum<",
+"Ljs;",
 ">;"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public b()[Ljava/io/File;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public c()Ljava/lang/String;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public d()Ljava/lang/String;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public e()Lks$a;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public f()Ljava/io/File;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public remove()V
-.locals 7
+.field public static final enum a:Ljs;
+.field public static final enum b:Ljs;
+.field public static final enum c:Ljs;
+.field public static final enum d:Ljs;
+.field public static final enum e:Ljs;
+.field public static final enum f:Ljs;
+.field public static final enum g:Ljs;
+.field public static final enum h:Ljs;
+.field public static final enum i:Ljs;
+.field private static final synthetic k:[Ljs;
+.field private final j:Ljava/lang/Object;
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/Object;)V
+.locals 0
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(",
+"Ljava/lang/Object;",
+")V"
+}
+.end annotation
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

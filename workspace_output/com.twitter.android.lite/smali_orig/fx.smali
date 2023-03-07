@@ -1,116 +1,133 @@
-.class public interface abstract Lfx;
+.class final Lfx;
 .super Ljava/lang/Object;
-.source "BufferedSink.java"
-
-# interfaces
-.implements Lvx;
-.implements Ljava/nio/channels/WritableByteChannel;
 
 
-# virtual methods
-.method public abstract a(Lwx;)J
-    .annotation system Ldalvik/annotation/Throws;
+# static fields
+.field private static final a:Lfv;
+    .annotation system Ldalvik/annotation/Signature;
         value = {
-            Ljava/io/IOException;
+            "Lfv<",
+            "*>;"
         }
     .end annotation
-.end method
+.end field
 
-.method public abstract a(J)Lfx;
-    .annotation system Ldalvik/annotation/Throws;
+.field private static final b:Lfv;
+    .annotation system Ldalvik/annotation/Signature;
         value = {
-            Ljava/io/IOException;
+            "Lfv<",
+            "*>;"
         }
     .end annotation
+.end field
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .line 9
+    new-instance v0, Lfw;
+
+    invoke-direct {v0}, Lfw;-><init>()V
+
+    sput-object v0, Lfx;->a:Lfv;
+
+    .line 10
+    invoke-static {}, Lfx;->c()Lfv;
+
+    move-result-object v0
+
+    sput-object v0, Lfx;->b:Lfv;
+
+    return-void
 .end method
 
-.method public abstract a(Lhx;)Lfx;
-    .annotation system Ldalvik/annotation/Throws;
+.method static a()Lfv;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
         value = {
-            Ljava/io/IOException;
+            "()",
+            "Lfv<",
+            "*>;"
         }
     .end annotation
+
+    .line 5
+    sget-object v0, Lfx;->a:Lfv;
+
+    return-object v0
 .end method
 
-.method public abstract a(Ljava/lang/String;)Lfx;
-    .annotation system Ldalvik/annotation/Throws;
+.method static b()Lfv;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
         value = {
-            Ljava/io/IOException;
+            "()",
+            "Lfv<",
+            "*>;"
         }
     .end annotation
+
+    .line 6
+    sget-object v0, Lfx;->b:Lfv;
+
+    if-eqz v0, :cond_0
+
+    return-object v0
+
+    .line 7
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Protobuf runtime is not correctly loaded."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
-.method public abstract b()Lex;
-.end method
-
-.method public abstract e()Lfx;
-    .annotation system Ldalvik/annotation/Throws;
+.method private static c()Lfv;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
         value = {
-            Ljava/io/IOException;
+            "()",
+            "Lfv<",
+            "*>;"
         }
     .end annotation
-.end method
 
-.method public abstract f(J)Lfx;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-.end method
+    :try_start_0
+    const-string v0, "com.google.protobuf.ExtensionSchemaFull"
 
-.method public abstract flush()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-.end method
+    .line 1
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-.method public abstract h()Lfx;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-.end method
+    move-result-object v0
 
-.method public abstract write([B)Lfx;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-.end method
+    const/4 v1, 0x0
 
-.method public abstract write([BII)Lfx;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-.end method
+    .line 2
+    new-array v2, v1, [Ljava/lang/Class;
 
-.method public abstract writeByte(I)Lfx;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-.end method
+    invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
-.method public abstract writeInt(I)Lfx;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-.end method
+    move-result-object v0
 
-.method public abstract writeShort(I)Lfx;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    new-array v1, v1, [Ljava/lang/Object;
+
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfv;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    const/4 v0, 0x0
+
+    return-object v0
 .end method

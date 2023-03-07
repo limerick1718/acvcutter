@@ -6,15 +6,15 @@
 
 
 # instance fields
-.field private final synthetic a:Lcom/google/android/gms/common/api/f;
+.field private final synthetic a:Lcom/google/android/gms/common/api/f$a;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/gms/common/api/f;)V
+.method constructor <init>(Lcom/google/android/gms/common/api/f$a;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/w;->a:Lcom/google/android/gms/common/api/f;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/w;->a:Lcom/google/android/gms/common/api/f$a;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,21 +26,21 @@
 .method public final a(I)V
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/w;->a:Lcom/google/android/gms/common/api/f;
+    .line 4
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/w;->a:Lcom/google/android/gms/common/api/f$a;
 
-    invoke-interface {v0, p1}, Lcom/google/android/gms/common/api/f;->a(I)V
+    invoke-interface {v0, p1}, Lcom/google/android/gms/common/api/f$a;->a(I)V
 
     return-void
 .end method
 
-.method public final c(Landroid/os/Bundle;)V
+.method public final a(Landroid/os/Bundle;)V
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/w;->a:Lcom/google/android/gms/common/api/f;
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/w;->a:Lcom/google/android/gms/common/api/f$a;
 
-    invoke-interface {v0, p1}, Lcom/google/android/gms/common/api/f;->c(Landroid/os/Bundle;)V
+    invoke-interface {v0, p1}, Lcom/google/android/gms/common/api/f$a;->a(Landroid/os/Bundle;)V
 
     return-void
 .end method

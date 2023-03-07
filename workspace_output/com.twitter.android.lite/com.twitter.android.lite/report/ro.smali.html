@@ -14,9 +14,8 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lro;
+		<code>.class public final Lro;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
 
 .annotation system Ldalvik/annotation/MemberClasses;
 value = {
@@ -24,16 +23,20 @@ Lro$a;
 }
 .end annotation
 
+.field public static final a:Ljava/util/concurrent/Executor;
+.field static final b:Ljava/util/concurrent/Executor;
 
 
-.method public abstract a(Lro$a;)V
-<span class="">	</span>
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 1</span>
 
-.end method
-
-.method public abstract a()Z
-<span class="">	</span>
-
+<span class="cov">	new-instance v0, Lro$a;</span>
+<span class="cov">	invoke-direct {v0}, Lro$a;-><init>()V</span>
+<span class="cov">	sput-object v0, Lro;->a:Ljava/util/concurrent/Executor;</span>
+<span class="cov">	new-instance v0, Lse;</span>
+<span class="cov">	invoke-direct {v0}, Lse;-><init>()V</span>
+<span class="cov">	sput-object v0, Lro;->b:Ljava/util/concurrent/Executor;</span>
+<span class="exec">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

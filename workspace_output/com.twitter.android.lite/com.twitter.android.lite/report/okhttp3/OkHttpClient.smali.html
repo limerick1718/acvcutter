@@ -53,6 +53,7 @@ value = {
 .field final callTimeout:I
 .field final certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;
 .field final certificatePinner:Lokhttp3/CertificatePinner;
+.field final clientWindowSizeBytes:I
 .field final connectTimeout:I
 .field final connectionPool:Lokhttp3/ConnectionPool;
 .field final connectionSpecs:Ljava/util/List;
@@ -113,6 +114,7 @@ value = {
 .field final retryOnConnectionFailure:Z
 .field final socketFactory:Ljavax/net/SocketFactory;
 .field final sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;
+.field final twitterMCI1986Fix:Z
 .field final writeTimeout:I
 
 
@@ -144,13 +146,13 @@ value = {
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public constructor &lt;init&gt;()V</span>
+.method public constructor &lt;init&gt;()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	new-instance v0, Lokhttp3/OkHttpClient$Builder;</span>
-<span class="cov">	invoke-direct {v0}, Lokhttp3/OkHttpClient$Builder;-><init>()V</span>
-<span class="cov">	invoke-direct {p0, v0}, Lokhttp3/OkHttpClient;-><init>(Lokhttp3/OkHttpClient$Builder;)V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	new-instance v0, Lokhttp3/OkHttpClient$Builder;</span>
+<span class="missed">	invoke-direct {v0}, Lokhttp3/OkHttpClient$Builder;-><init>()V</span>
+<span class="missed">	invoke-direct {p0, v0}, Lokhttp3/OkHttpClient;-><init>(Lokhttp3/OkHttpClient$Builder;)V</span>
+<span class="">	return-void</span>
 .end method
 
 <span class="cov">.method constructor &lt;init&gt;(Lokhttp3/OkHttpClient$Builder;)V</span>
@@ -219,13 +221,13 @@ value = {
 <span class="exec">	invoke-static {v0}, Lokhttp3/internal/tls/CertificateChainCleaner;->get(Ljavax/net/ssl/X509TrustManager;)Lokhttp3/internal/tls/CertificateChainCleaner;</span>
 <span class="cov">	move-result-object v0</span>
 <span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient;->certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;</span>
-<span class="exec">	goto :goto_2</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	:cond_4</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient$Builder;->sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient;->sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/OkHttpClient$Builder;->certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/OkHttpClient;->certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient$Builder;->sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient;->sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/OkHttpClient$Builder;->certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/OkHttpClient;->certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;</span>
 <span class="cov">	:goto_2</span>
 <span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;</span>
 <span class="cov">	if-eqz v0, :cond_5</span>
@@ -263,8 +265,12 @@ value = {
 <span class="cov">	iput v0, p0, Lokhttp3/OkHttpClient;->readTimeout:I</span>
 <span class="cov">	iget v0, p1, Lokhttp3/OkHttpClient$Builder;->writeTimeout:I</span>
 <span class="cov">	iput v0, p0, Lokhttp3/OkHttpClient;->writeTimeout:I</span>
-<span class="cov">	iget p1, p1, Lokhttp3/OkHttpClient$Builder;->pingInterval:I</span>
-<span class="cov">	iput p1, p0, Lokhttp3/OkHttpClient;->pingInterval:I</span>
+<span class="cov">	iget v0, p1, Lokhttp3/OkHttpClient$Builder;->pingInterval:I</span>
+<span class="cov">	iput v0, p0, Lokhttp3/OkHttpClient;->pingInterval:I</span>
+<span class="cov">	iget v0, p1, Lokhttp3/OkHttpClient$Builder;->clientWindowSizeBytes:I</span>
+<span class="cov">	iput v0, p0, Lokhttp3/OkHttpClient;->clientWindowSizeBytes:I</span>
+<span class="cov">	iget-boolean p1, p1, Lokhttp3/OkHttpClient$Builder;->twitterMCI1986Fix:Z</span>
+<span class="cov">	iput-boolean p1, p0, Lokhttp3/OkHttpClient;->twitterMCI1986Fix:Z</span>
 <span class="cov">	iget-object p1, p0, Lokhttp3/OkHttpClient;->interceptors:Ljava/util/List;</span>
 <span class="cov">	const/4 v0, 0x0</span>
 <span class="exec">	invoke-interface {p1, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z</span>
@@ -344,35 +350,35 @@ value = {
 <span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public callTimeoutMillis()I</span>
+.method public callTimeoutMillis()I
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget v0, p0, Lokhttp3/OkHttpClient;->callTimeout:I</span>
-<span class="exec">	return v0</span>
+<span class="missed">	iget v0, p0, Lokhttp3/OkHttpClient;->callTimeout:I</span>
+<span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public certificatePinner()Lokhttp3/CertificatePinner;</span>
+.method public certificatePinner()Lokhttp3/CertificatePinner;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->certificatePinner:Lokhttp3/CertificatePinner;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->certificatePinner:Lokhttp3/CertificatePinner;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public connectTimeoutMillis()I</span>
+.method public connectTimeoutMillis()I
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget v0, p0, Lokhttp3/OkHttpClient;->connectTimeout:I</span>
-<span class="exec">	return v0</span>
+<span class="missed">	iget v0, p0, Lokhttp3/OkHttpClient;->connectTimeout:I</span>
+<span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public connectionPool()Lokhttp3/ConnectionPool;</span>
+.method public connectionPool()Lokhttp3/ConnectionPool;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->connectionPool:Lokhttp3/ConnectionPool;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->connectionPool:Lokhttp3/ConnectionPool;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public connectionSpecs()Ljava/util/List;</span>
+.method public connectionSpecs()Ljava/util/List;
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -383,36 +389,36 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->connectionSpecs:Ljava/util/List;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->connectionSpecs:Ljava/util/List;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public cookieJar()Lokhttp3/CookieJar;</span>
+.method public cookieJar()Lokhttp3/CookieJar;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->cookieJar:Lokhttp3/CookieJar;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->cookieJar:Lokhttp3/CookieJar;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public dispatcher()Lokhttp3/Dispatcher;</span>
+.method public dispatcher()Lokhttp3/Dispatcher;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->dispatcher:Lokhttp3/Dispatcher;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->dispatcher:Lokhttp3/Dispatcher;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public dns()Lokhttp3/Dns;</span>
+.method public dns()Lokhttp3/Dns;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->dns:Lokhttp3/Dns;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->dns:Lokhttp3/Dns;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public eventListenerFactory()Lokhttp3/EventListener$Factory;</span>
+.method public eventListenerFactory()Lokhttp3/EventListener$Factory;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->eventListenerFactory:Lokhttp3/EventListener$Factory;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->eventListenerFactory:Lokhttp3/EventListener$Factory;</span>
+<span class="">	return-object v0</span>
 .end method
 
 .method public followRedirects()Z
@@ -429,14 +435,21 @@ value = {
 <span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public hostnameVerifier()Ljavax/net/ssl/HostnameVerifier;</span>
+.method public hostnameVerifier()Ljavax/net/ssl/HostnameVerifier;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->hostnameVerifier:Ljavax/net/ssl/HostnameVerifier;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->hostnameVerifier:Ljavax/net/ssl/HostnameVerifier;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public interceptors()Ljava/util/List;</span>
+.method public initialWindowSizeBytes()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget v0, p0, Lokhttp3/OkHttpClient;->clientWindowSizeBytes:I</span>
+<span class="">	return v0</span>
+.end method
+
+.method public interceptors()Ljava/util/List;
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -447,26 +460,26 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->interceptors:Ljava/util/List;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->interceptors:Ljava/util/List;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method  internalCache()Lokhttp3/internal/cache/InternalCache;</span>
+.method  internalCache()Lokhttp3/internal/cache/InternalCache;
 <span class="">	.locals 1</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->cache:Lokhttp3/Cache;</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->cache:Lokhttp3/Cache;</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	iget-object v0, v0, Lokhttp3/Cache;->internalCache:Lokhttp3/internal/cache/InternalCache;</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->internalCache:Lokhttp3/internal/cache/InternalCache;</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return-object v0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->internalCache:Lokhttp3/internal/cache/InternalCache;</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public networkInterceptors()Ljava/util/List;</span>
+.method public networkInterceptors()Ljava/util/List;
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -477,25 +490,25 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->networkInterceptors:Ljava/util/List;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->networkInterceptors:Ljava/util/List;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public newBuilder()Lokhttp3/OkHttpClient$Builder;</span>
+.method public newBuilder()Lokhttp3/OkHttpClient$Builder;
 <span class="">	.locals 1</span>
 
-<span class="cov">	new-instance v0, Lokhttp3/OkHttpClient$Builder;</span>
-<span class="cov">	invoke-direct {v0, p0}, Lokhttp3/OkHttpClient$Builder;-><init>(Lokhttp3/OkHttpClient;)V</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	new-instance v0, Lokhttp3/OkHttpClient$Builder;</span>
+<span class="missed">	invoke-direct {v0, p0}, Lokhttp3/OkHttpClient$Builder;-><init>(Lokhttp3/OkHttpClient;)V</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public newCall(Lokhttp3/Request;)Lokhttp3/Call;</span>
+.method public newCall(Lokhttp3/Request;)Lokhttp3/Call;
 <span class="">	.locals 1</span>
 
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="exec">	invoke-static {p0, p1, v0}, Lokhttp3/RealCall;->newRealCall(Lokhttp3/OkHttpClient;Lokhttp3/Request;Z)Lokhttp3/RealCall;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	return-object p1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	invoke-static {p0, p1, v0}, Lokhttp3/RealCall;->newRealCall(Lokhttp3/OkHttpClient;Lokhttp3/Request;Z)Lokhttp3/RealCall;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
 .end method
 
 .method public newWebSocket(Lokhttp3/Request;Lokhttp3/WebSocketListener;)Lokhttp3/WebSocket;
@@ -514,14 +527,14 @@ value = {
 <span class="">	return-object v6</span>
 .end method
 
-<span class="cov">.method public pingIntervalMillis()I</span>
+.method public pingIntervalMillis()I
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget v0, p0, Lokhttp3/OkHttpClient;->pingInterval:I</span>
-<span class="exec">	return v0</span>
+<span class="missed">	iget v0, p0, Lokhttp3/OkHttpClient;->pingInterval:I</span>
+<span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public protocols()Ljava/util/List;</span>
+.method public protocols()Ljava/util/List;
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -532,66 +545,73 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->protocols:Ljava/util/List;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->protocols:Ljava/util/List;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public proxy()Ljava/net/Proxy;</span>
+.method public proxy()Ljava/net/Proxy;
 <span class="">	.locals 1</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->proxy:Ljava/net/Proxy;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->proxy:Ljava/net/Proxy;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public proxyAuthenticator()Lokhttp3/Authenticator;</span>
+.method public proxyAuthenticator()Lokhttp3/Authenticator;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->proxyAuthenticator:Lokhttp3/Authenticator;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->proxyAuthenticator:Lokhttp3/Authenticator;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public proxySelector()Ljava/net/ProxySelector;</span>
+.method public proxySelector()Ljava/net/ProxySelector;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->proxySelector:Ljava/net/ProxySelector;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->proxySelector:Ljava/net/ProxySelector;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public readTimeoutMillis()I</span>
+.method public readTimeoutMillis()I
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget v0, p0, Lokhttp3/OkHttpClient;->readTimeout:I</span>
-<span class="exec">	return v0</span>
+<span class="missed">	iget v0, p0, Lokhttp3/OkHttpClient;->readTimeout:I</span>
+<span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public retryOnConnectionFailure()Z</span>
+.method public retryOnConnectionFailure()Z
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-boolean v0, p0, Lokhttp3/OkHttpClient;->retryOnConnectionFailure:Z</span>
-<span class="exec">	return v0</span>
+<span class="missed">	iget-boolean v0, p0, Lokhttp3/OkHttpClient;->retryOnConnectionFailure:Z</span>
+<span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public socketFactory()Ljavax/net/SocketFactory;</span>
+.method public socketFactory()Ljavax/net/SocketFactory;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->socketFactory:Ljavax/net/SocketFactory;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->socketFactory:Ljavax/net/SocketFactory;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public sslSocketFactory()Ljavax/net/ssl/SSLSocketFactory;</span>
+.method public sslSocketFactory()Ljavax/net/ssl/SSLSocketFactory;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/OkHttpClient;->sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/OkHttpClient;->sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public writeTimeoutMillis()I</span>
+.method public twitterMCI1986Fix()Z
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget v0, p0, Lokhttp3/OkHttpClient;->writeTimeout:I</span>
-<span class="exec">	return v0</span>
+<span class="missed">	iget-boolean v0, p0, Lokhttp3/OkHttpClient;->twitterMCI1986Fix:Z</span>
+<span class="">	return v0</span>
+.end method
+
+.method public writeTimeoutMillis()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget v0, p0, Lokhttp3/OkHttpClient;->writeTimeout:I</span>
+<span class="">	return v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

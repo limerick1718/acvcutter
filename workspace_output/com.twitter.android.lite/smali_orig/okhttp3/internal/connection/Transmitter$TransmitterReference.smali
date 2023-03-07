@@ -30,10 +30,10 @@
 .method constructor <init>(Lokhttp3/internal/connection/Transmitter;Ljava/lang/Object;)V
     .locals 0
 
-    .line 1
+    .line 362
     invoke-direct {p0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    .line 2
+    .line 363
     iput-object p2, p0, Lokhttp3/internal/connection/Transmitter$TransmitterReference;->callStackTrace:Ljava/lang/Object;
 
     return-void

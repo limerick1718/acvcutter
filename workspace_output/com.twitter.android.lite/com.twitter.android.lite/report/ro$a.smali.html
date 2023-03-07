@@ -14,23 +14,39 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lro$a;
+		<code>.class final Lro$a;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.implements Ljava/util/concurrent/Executor;
 
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lro;
 .end annotation
 .annotation system Ldalvik/annotation/InnerClass;
-accessFlags = 0x609
+accessFlags = 0x1a
 name = "a"
 .end annotation
 
+.field private final a:Landroid/os/Handler;
 
 
-.method public abstract a(ILandroid/os/Bundle;)V
-<span class="">	</span>
+<span class="cov">.method public constructor &lt;init&gt;()V</span>
+<span class="">	.locals 2</span>
 
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	new-instance v0, Landroid/os/Handler;</span>
+<span class="exec">	invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V</span>
+<span class="cov">	iput-object v0, p0, Lro$a;->a:Landroid/os/Handler;</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public final execute(Ljava/lang/Runnable;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lro$a;->a:Landroid/os/Handler;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

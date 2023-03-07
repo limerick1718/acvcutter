@@ -1,116 +1,82 @@
-.class public Llw;
+.class final Llw;
 .super Ljava/lang/Object;
-.source "GuestAuthStore.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Landroid/content/SharedPreferences;
+.field private final synthetic a:Lmf;
+
+.field private final synthetic b:Lla;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/SharedPreferences;)V
+.method constructor <init>(Llv;Lmf;Lla;)V
     .locals 0
 
     .line 1
+    iput-object p2, p0, Llw;->a:Lmf;
+
+    iput-object p3, p0, Llw;->b:Lla;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput-object p1, p0, Llw;->a:Landroid/content/SharedPreferences;
-
     return-void
-.end method
-
-.method public static a(Landroid/content/Context;)Llw;
-    .locals 3
-
-    .line 1
-    new-instance v0, Llw;
-
-    const-string v1, "guest_auth"
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Llw;-><init>(Landroid/content/SharedPreferences;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 2
-
-    .line 3
-    iget-object v0, p0, Llw;->a:Landroid/content/SharedPreferences;
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    const-string v1, "access_token"
-
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/String;)V
+.method public final run()V
     .locals 2
 
     .line 2
-    iget-object v0, p0, Llw;->a:Landroid/content/SharedPreferences;
+    iget-object v0, p0, Llw;->a:Lmf;
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    invoke-virtual {v0}, Lmf;->f()Lls;
 
     move-result-object v0
 
-    const-string v1, "access_token"
+    if-nez v0, :cond_0
 
-    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    .line 3
+    iget-object v0, p0, Llw;->b:Lla;
 
-    move-result-object p1
+    invoke-virtual {v0}, Lla;->c_()Llc;
 
-    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+    move-result-object v0
+
+    const-string v1, "Install Referrer Reporter is null"
+
+    invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V
 
     return-void
-.end method
 
-.method public b()Ljava/lang/String;
-    .locals 3
+    .line 5
+    :cond_0
+    iget-object v0, p0, Llw;->a:Lmf;
 
-    .line 1
-    iget-object v0, p0, Llw;->a:Landroid/content/SharedPreferences;
-
-    const-string v1, "access_token"
-
-    const/4 v2, 0x0
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0}, Lmf;->f()Lls;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    .line 6
+    iget-object v1, v0, Lls;->a:Lmf;
 
-.method public c()Z
-    .locals 2
+    invoke-virtual {v1}, Lmf;->E()V
 
-    .line 1
-    iget-object v0, p0, Llw;->a:Landroid/content/SharedPreferences;
+    .line 7
+    iget-object v1, v0, Lls;->a:Lmf;
 
-    const-string v1, "access_token"
+    invoke-virtual {v1}, Lmf;->n()Landroid/content/Context;
 
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    move-result-object v1
 
-    move-result v0
+    invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    return v0
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lls;->a(Ljava/lang/String;)V
+
+    return-void
 .end method

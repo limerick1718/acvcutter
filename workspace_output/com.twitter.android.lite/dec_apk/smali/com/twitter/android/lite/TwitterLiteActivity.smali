@@ -2,7 +2,7 @@
 .super Landroid/app/Activity;
 .source "TwitterLiteActivity.java"
 .field private a:Landroid/webkit/WebView;
-.field private b:Lcom/twitter/android/lite/c;
+.field private b:Lcom/twitter/android/lite/b;
 .field private c:Ljava/lang/String;
 .field private d:Landroid/widget/FrameLayout;
 .method public constructor <init>()V
@@ -12,44 +12,15 @@ return-void
 .end method
 .method static synthetic a(Lcom/twitter/android/lite/TwitterLiteActivity;)V
 .locals 0
-invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->c()V
+invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->e()V
 return-void
 .end method
 .method static synthetic b(Lcom/twitter/android/lite/TwitterLiteActivity;)V
 .locals 0
-invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->d()V
+invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->g()V
 return-void
 .end method
 .method private c()V
-.locals 3
-invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
-move-result-object v0
-invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->e()Ljava/lang/String;
-move-result-object v0
-return-void
-.end method
-.method private d()V
-.locals 3
-invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
-move-result-object v0
-if-eqz v0, :cond_1
-invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
-move-result-object v0
-invoke-virtual {v0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
-move-result-object v0
-:cond_1
-return-void
-.end method
-.method private e()Ljava/lang/String;
-.locals 4
-invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
-move-result-object v0
-invoke-virtual {v0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
-move-result-object v0
-const/4 v0, 0x0
-return-object v0
-.end method
-.method private f()V
 .locals 5
 .annotation build Landroid/annotation/SuppressLint;
 value = {
@@ -59,15 +30,15 @@ value = {
 iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;
 const/high16 v0, 0x7f070000
 const/4 v1, 0x1
-invoke-virtual {p0, v0}, Landroid/app/Activity;->setContentView(I)V
+invoke-virtual {p0, v0}, Lcom/twitter/android/lite/TwitterLiteActivity;->setContentView(I)V
 const v0, 0x7f050040
-invoke-virtual {p0, v0}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+invoke-virtual {p0, v0}, Lcom/twitter/android/lite/TwitterLiteActivity;->findViewById(I)Landroid/view/View;
 move-result-object v0
 check-cast v0, Landroid/webkit/WebView;
 iput-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;
-invoke-static {p0}, Lcom/twitter/android/lite/b;->a(Landroid/content/Context;)Ljava/lang/String;
+invoke-static {p0}, Lcom/twitter/android/lite/a;->a(Landroid/content/Context;)Ljava/lang/String;
 move-result-object v0
-invoke-static {v0}, Lpw;->b(Ljava/lang/String;)Z
+invoke-static {v0}, Luh;->a(Ljava/lang/String;)Z
 move-result v2
 iget-object v2, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;
 invoke-virtual {v2}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
@@ -91,17 +62,18 @@ invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebS
 move-result-object v1
 invoke-virtual {v1, v0}, Landroid/webkit/WebSettings;->setUserAgentString(Ljava/lang/String;)V
 iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;
-new-instance v1, Lcom/twitter/android/lite/TwitterLiteActivity$a;
-invoke-direct {v1, p0}, Lcom/twitter/android/lite/TwitterLiteActivity$a;-><init>(Lcom/twitter/android/lite/TwitterLiteActivity;)V
+new-instance v1, Lcom/twitter/android/lite/TwitterLiteActivity$1;
+invoke-direct {v1, p0}, Lcom/twitter/android/lite/TwitterLiteActivity$1;-><init>(Lcom/twitter/android/lite/TwitterLiteActivity;)V
 invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
-new-instance v0, Lcom/twitter/android/lite/c;
-invoke-direct {v0, p0}, Lcom/twitter/android/lite/c;-><init>(Lcom/twitter/android/lite/TwitterLiteActivity;)V
-iput-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->b:Lcom/twitter/android/lite/c;
-iget-object v1, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;
-invoke-virtual {v1, v0}, Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V
+new-instance v0, Lcom/twitter/android/lite/b;
+invoke-direct {v0, p0}, Lcom/twitter/android/lite/b;-><init>(Lcom/twitter/android/lite/TwitterLiteActivity;)V
+iput-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->b:Lcom/twitter/android/lite/b;
 iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;
-invoke-virtual {p0, v0}, Landroid/app/Activity;->registerForContextMenu(Landroid/view/View;)V
-invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+iget-object v1, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->b:Lcom/twitter/android/lite/b;
+invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V
+iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;
+invoke-virtual {p0, v0}, Lcom/twitter/android/lite/TwitterLiteActivity;->registerForContextMenu(Landroid/view/View;)V
+invoke-virtual {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->getIntent()Landroid/content/Intent;
 move-result-object v0
 invoke-virtual {v0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 move-result-object v0
@@ -109,7 +81,7 @@ const-string v1, "android.intent.action.SEND"
 invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 move-result v0
 iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;
-invoke-static {}, Lcom/twitter/android/lite/e;->a()Landroid/net/Uri;
+invoke-static {}, Lcom/twitter/android/lite/d;->a()Landroid/net/Uri;
 move-result-object v1
 invoke-virtual {v1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 move-result-object v1
@@ -117,24 +89,64 @@ invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 :goto_0
 return-void
 .end method
-.method private g()V
+.method private d()V
 .locals 2
-invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+invoke-virtual {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->getIntent()Landroid/content/Intent;
 move-result-object v0
 invoke-virtual {v0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 move-result-object v0
 return-void
 .end method
-.method  a()Landroid/widget/FrameLayout;
+.method private e()V
+.locals 3
+invoke-virtual {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->getIntent()Landroid/content/Intent;
+move-result-object v0
+invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->f()Ljava/lang/String;
+move-result-object v0
+if-eqz v0, :cond_1
+invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
+move-result v1
+:cond_1
+return-void
+.end method
+.method private f()Ljava/lang/String;
+.locals 4
+invoke-virtual {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->getIntent()Landroid/content/Intent;
+move-result-object v0
+invoke-virtual {v0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+move-result-object v0
+invoke-virtual {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->getIntent()Landroid/content/Intent;
+move-result-object v0
+invoke-virtual {v0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+move-result-object v0
+const-string v1, "notification"
+invoke-virtual {v0, v1}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+move-result-object v0
+check-cast v0, Ljava/lang/String;
+invoke-virtual {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->getIntent()Landroid/content/Intent;
+move-result-object v2
+const-string v3, ""
+invoke-virtual {v2, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+return-object v0
+.end method
+.method private g()V
+.locals 3
+invoke-virtual {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->getIntent()Landroid/content/Intent;
+move-result-object v0
+if-eqz v0, :cond_1
+invoke-virtual {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->getIntent()Landroid/content/Intent;
+move-result-object v0
+invoke-virtual {v0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
+move-result-object v0
+:cond_1
+return-void
+.end method
+.method  a()Landroid/webkit/WebView;
 .locals 1
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public synthetic a(Landroid/content/DialogInterface;I)V
-.locals 0
-return-void
-.end method
-.method  b()Landroid/webkit/WebView;
+.method  b()Landroid/widget/FrameLayout;
 .locals 1
 const/4 v0, 0x0
 return-object v0
@@ -160,10 +172,10 @@ return v0
 .method protected onCreate(Landroid/os/Bundle;)V
 .locals 0
 invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
-invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->g()V
-invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->f()V
+invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->d()V
+invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->c()V
 const p1, 0x7f050021
-invoke-virtual {p0, p1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+invoke-virtual {p0, p1}, Lcom/twitter/android/lite/TwitterLiteActivity;->findViewById(I)Landroid/view/View;
 move-result-object p1
 check-cast p1, Landroid/widget/FrameLayout;
 iput-object p1, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->d:Landroid/widget/FrameLayout;
@@ -175,10 +187,19 @@ return-void
 .end method
 .method protected onNewIntent(Landroid/content/Intent;)V
 .locals 0
+invoke-super {p0, p1}, Landroid/app/Activity;->onNewIntent(Landroid/content/Intent;)V
+invoke-virtual {p0, p1}, Lcom/twitter/android/lite/TwitterLiteActivity;->setIntent(Landroid/content/Intent;)V
+invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->e()V
+invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->g()V
 return-void
 .end method
 .method protected onPause()V
 .locals 1
+invoke-super {p0}, Landroid/app/Activity;->onPause()V
+iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;
+if-eqz v0, :cond_0
+invoke-virtual {v0}, Landroid/webkit/WebView;->onPause()V
+:cond_0
 return-void
 .end method
 .method public onRequestPermissionsResult(I[Ljava/lang/String;[I)V
@@ -191,11 +212,11 @@ invoke-super {p0}, Landroid/app/Activity;->onResume()V
 iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;
 invoke-virtual {v0}, Landroid/webkit/WebView;->onResume()V
 new-instance v0, Lcom/twitter/android/lite/notification/c;
-invoke-virtual {p0}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
+invoke-virtual {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->getApplicationContext()Landroid/content/Context;
 move-result-object v1
 invoke-direct {v0, v1}, Lcom/twitter/android/lite/notification/c;-><init>(Landroid/content/Context;)V
 const/4 v1, 0x0
 new-array v1, v1, [Ljava/lang/Void;
-invoke-virtual {v0, v1}, Landroid/os/AsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+invoke-virtual {v0, v1}, Lcom/twitter/android/lite/notification/c;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 return-void
 .end method

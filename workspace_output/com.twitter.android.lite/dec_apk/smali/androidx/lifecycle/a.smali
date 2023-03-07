@@ -7,8 +7,8 @@ Landroidx/lifecycle/a$b;,
 Landroidx/lifecycle/a$a;
 }
 .end annotation
-.field static c:Landroidx/lifecycle/a;
-.field private final a:Ljava/util/Map;
+.field static a:Landroidx/lifecycle/a;
+.field private final b:Ljava/util/Map;
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "Ljava/util/Map<",
@@ -18,7 +18,7 @@ value = {
 }
 .end annotation
 .end field
-.field private final b:Ljava/util/Map;
+.field private final c:Ljava/util/Map;
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "Ljava/util/Map<",
@@ -33,13 +33,13 @@ value = {
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method  a(Ljava/lang/Class;)Landroidx/lifecycle/a$a;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method  b(Ljava/lang/Class;)Z
+.method  a(Ljava/lang/Class;)Z
 .locals 6
 const/4 v0, 0x0
 return v0
+.end method
+.method  b(Ljava/lang/Class;)Landroidx/lifecycle/a$a;
+.locals 1
+const/4 v0, 0x0
+return-object v0
 .end method

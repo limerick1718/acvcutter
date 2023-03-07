@@ -20,7 +20,7 @@
 
 
 # instance fields
-.field private final synthetic g:Lcom/google/android/gms/common/internal/b;
+.field private final synthetic a:Lcom/google/android/gms/common/internal/b;
 
 
 # direct methods
@@ -28,7 +28,7 @@
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/b$l;->g:Lcom/google/android/gms/common/internal/b;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/b$l;->a:Lcom/google/android/gms/common/internal/b;
 
     const/4 p3, 0x0
 
@@ -40,62 +40,35 @@
 
 
 # virtual methods
-.method protected final a(Lc5;)V
+.method protected final a(Lcom/google/android/gms/common/b;)V
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/b$l;->g:Lcom/google/android/gms/common/internal/b;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/common/internal/b;->n()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/b$l;->g:Lcom/google/android/gms/common/internal/b;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/b;->b(Lcom/google/android/gms/common/internal/b;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    iget-object p1, p0, Lcom/google/android/gms/common/internal/b$l;->g:Lcom/google/android/gms/common/internal/b;
-
-    const/16 v0, 0x10
-
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/b;->a(Lcom/google/android/gms/common/internal/b;I)V
-
-    return-void
-
-    .line 3
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/b$l;->g:Lcom/google/android/gms/common/internal/b;
-
-    iget-object v0, v0, Lcom/google/android/gms/common/internal/b;->i:Lcom/google/android/gms/common/internal/b$c;
-
-    invoke-interface {v0, p1}, Lcom/google/android/gms/common/internal/b$c;->a(Lc5;)V
-
     .line 4
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/b$l;->g:Lcom/google/android/gms/common/internal/b;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/b$l;->a:Lcom/google/android/gms/common/internal/b;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/common/internal/b;->a(Lc5;)V
+    iget-object v0, v0, Lcom/google/android/gms/common/internal/b;->b:Lcom/google/android/gms/common/internal/b$c;
+
+    invoke-interface {v0, p1}, Lcom/google/android/gms/common/internal/b$c;->a(Lcom/google/android/gms/common/b;)V
+
+    .line 5
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/b$l;->a:Lcom/google/android/gms/common/internal/b;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/common/internal/b;->a(Lcom/google/android/gms/common/b;)V
 
     return-void
 .end method
 
-.method protected final e()Z
+.method protected final a()Z
     .locals 2
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/b$l;->g:Lcom/google/android/gms/common/internal/b;
+    .line 7
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/b$l;->a:Lcom/google/android/gms/common/internal/b;
 
-    iget-object v0, v0, Lcom/google/android/gms/common/internal/b;->i:Lcom/google/android/gms/common/internal/b$c;
+    iget-object v0, v0, Lcom/google/android/gms/common/internal/b;->b:Lcom/google/android/gms/common/internal/b$c;
 
-    sget-object v1, Lc5;->e:Lc5;
+    sget-object v1, Lcom/google/android/gms/common/b;->a:Lcom/google/android/gms/common/b;
 
-    invoke-interface {v0, v1}, Lcom/google/android/gms/common/internal/b$c;->a(Lc5;)V
+    invoke-interface {v0, v1}, Lcom/google/android/gms/common/internal/b$c;->a(Lcom/google/android/gms/common/b;)V
 
     const/4 v0, 0x1
 

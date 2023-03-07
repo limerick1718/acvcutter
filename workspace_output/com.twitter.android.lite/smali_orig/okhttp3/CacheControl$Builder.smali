@@ -36,18 +36,18 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 1
+    .line 293
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, -0x1
 
-    .line 2
+    .line 296
     iput v0, p0, Lokhttp3/CacheControl$Builder;->maxAgeSeconds:I
 
-    .line 3
+    .line 297
     iput v0, p0, Lokhttp3/CacheControl$Builder;->maxStaleSeconds:I
 
-    .line 4
+    .line 298
     iput v0, p0, Lokhttp3/CacheControl$Builder;->minFreshSeconds:I
 
     return-void
@@ -58,7 +58,7 @@
 .method public build()Lokhttp3/CacheControl;
     .locals 1
 
-    .line 1
+    .line 385
     new-instance v0, Lokhttp3/CacheControl;
 
     invoke-direct {v0, p0}, Lokhttp3/CacheControl;-><init>(Lokhttp3/CacheControl$Builder;)V
@@ -71,7 +71,7 @@
 
     const/4 v0, 0x1
 
-    .line 1
+    .line 380
     iput-boolean v0, p0, Lokhttp3/CacheControl$Builder;->immutable:Z
 
     return-object p0
@@ -84,7 +84,7 @@
 
     int-to-long v0, p1
 
-    .line 1
+    .line 324
     invoke-virtual {p2, v0, v1}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
 
     move-result-wide p1
@@ -102,13 +102,13 @@
     :cond_0
     long-to-int p1, p1
 
-    .line 2
+    .line 327
     :goto_0
     iput p1, p0, Lokhttp3/CacheControl$Builder;->maxAgeSeconds:I
 
     return-object p0
 
-    .line 3
+    .line 323
     :cond_1
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
@@ -138,7 +138,7 @@
 
     int-to-long v0, p1
 
-    .line 1
+    .line 340
     invoke-virtual {p2, v0, v1}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
 
     move-result-wide p1
@@ -156,13 +156,13 @@
     :cond_0
     long-to-int p1, p1
 
-    .line 2
+    .line 343
     :goto_0
     iput p1, p0, Lokhttp3/CacheControl$Builder;->maxStaleSeconds:I
 
     return-object p0
 
-    .line 3
+    .line 339
     :cond_1
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
@@ -192,7 +192,7 @@
 
     int-to-long v0, p1
 
-    .line 1
+    .line 357
     invoke-virtual {p2, v0, v1}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
 
     move-result-wide p1
@@ -210,13 +210,13 @@
     :cond_0
     long-to-int p1, p1
 
-    .line 2
+    .line 360
     :goto_0
     iput p1, p0, Lokhttp3/CacheControl$Builder;->minFreshSeconds:I
 
     return-object p0
 
-    .line 3
+    .line 356
     :cond_1
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
@@ -244,7 +244,7 @@
 
     const/4 v0, 0x1
 
-    .line 1
+    .line 305
     iput-boolean v0, p0, Lokhttp3/CacheControl$Builder;->noCache:Z
 
     return-object p0
@@ -255,7 +255,7 @@
 
     const/4 v0, 0x1
 
-    .line 1
+    .line 311
     iput-boolean v0, p0, Lokhttp3/CacheControl$Builder;->noStore:Z
 
     return-object p0
@@ -266,7 +266,7 @@
 
     const/4 v0, 0x1
 
-    .line 1
+    .line 375
     iput-boolean v0, p0, Lokhttp3/CacheControl$Builder;->noTransform:Z
 
     return-object p0
@@ -277,7 +277,7 @@
 
     const/4 v0, 0x1
 
-    .line 1
+    .line 369
     iput-boolean v0, p0, Lokhttp3/CacheControl$Builder;->onlyIfCached:Z
 
     return-object p0

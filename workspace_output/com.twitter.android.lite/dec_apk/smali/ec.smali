@@ -1,21 +1,15 @@
-.class final Lec;
-.super Lgc;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.field private a:I
-.field private final b:I
-.field private final synthetic c:Lfc;
-.method constructor <init>(Lfc;)V
+.class final synthetic Lec;
+.super Ljava/lang/Object;
+.implements Lea;
+.field private final a:Leb;
+.field private final b:Ljava/lang/String;
+.method constructor <init>(Leb;Ljava/lang/String;)V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public final a()B
+.method public final a()Ljava/lang/Object;
 .locals 2
 const/4 v0, 0x0
-return v0
-.end method
-.method public final hasNext()Z
-.locals 2
-const/4 v0, 0x0
-return v0
+return-object v0
 .end method

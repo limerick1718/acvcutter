@@ -19,14 +19,10 @@ return-void
 invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method static synthetic a(Lokhttp3/EventListener;Lokhttp3/Call;)Lokhttp3/EventListener;
-.locals 0
-return-object p0
-.end method
 .method static factory(Lokhttp3/EventListener;)Lokhttp3/EventListener$Factory;
 .locals 1
-new-instance v0, Lokhttp3/d;
-invoke-direct {v0, p0}, Lokhttp3/d;-><init>(Lokhttp3/EventListener;)V
+new-instance v0, Lokhttp3/-$$Lambda$EventListener$ahubxrUJKWnWohQgQKQidD9cuoA;
+invoke-direct {v0, p0}, Lokhttp3/-$$Lambda$EventListener$ahubxrUJKWnWohQgQKQidD9cuoA;-><init>(Lokhttp3/EventListener;)V
 return-object v0
 .end method
 .method public callEnd(Lokhttp3/Call;)V

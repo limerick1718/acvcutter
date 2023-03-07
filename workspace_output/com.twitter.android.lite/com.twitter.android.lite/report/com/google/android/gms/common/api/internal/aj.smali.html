@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.google.android.gms.common.api.internal</a></li>
+        <li><i class="ico ico-class"></i> aj.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Lcom/google/android/gms/common/api/internal/aj;
+.super Ljava/lang/Object;
+.implements Ljava/lang/Runnable;
+
+
+.field final synthetic a:Lcom/google/android/gms/common/api/internal/ah;
+.field private final b:Lcom/google/android/gms/common/api/internal/ai;
+
+
+.method constructor &lt;init&gt;(Lcom/google/android/gms/common/api/internal/ah;Lcom/google/android/gms/common/api/internal/ai;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-object p1, p0, Lcom/google/android/gms/common/api/internal/aj;->a:Lcom/google/android/gms/common/api/internal/ah;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object p2, p0, Lcom/google/android/gms/common/api/internal/aj;->b:Lcom/google/android/gms/common/api/internal/ai;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final run()V
+<span class="">	.locals 8</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/aj;->a:Lcom/google/android/gms/common/api/internal/ah;</span>
+<span class="missed">	iget-boolean v0, v0, Lcom/google/android/gms/common/api/internal/ah;->b:Z</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/aj;->b:Lcom/google/android/gms/common/api/internal/ai;</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/ai;->b()Lcom/google/android/gms/common/b;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/android/gms/common/b;->a()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/aj;->a:Lcom/google/android/gms/common/api/internal/ah;</span>
+<span class="missed">	iget-object v1, v1, Lcom/google/android/gms/common/api/internal/ah;->a:Lcom/google/android/gms/common/api/internal/e;</span>
+<span class="missed">	iget-object v2, p0, Lcom/google/android/gms/common/api/internal/aj;->a:Lcom/google/android/gms/common/api/internal/ah;</span>
+<span class="">	invoke-virtual {v2}, Lcom/google/android/gms/common/api/internal/ah;->a()Landroid/app/Activity;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/android/gms/common/b;->d()Landroid/app/PendingIntent;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v3, p0, Lcom/google/android/gms/common/api/internal/aj;->b:Lcom/google/android/gms/common/api/internal/ai;</span>
+<span class="">	invoke-virtual {v3}, Lcom/google/android/gms/common/api/internal/ai;->a()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="">	invoke-static {v2, v0, v3, v4}, Lcom/google/android/gms/common/api/GoogleApiActivity;->a(Landroid/content/Context;Landroid/app/PendingIntent;IZ)Landroid/content/Intent;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	invoke-interface {v1, v0, v2}, Lcom/google/android/gms/common/api/internal/e;->a(Landroid/content/Intent;I)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/aj;->a:Lcom/google/android/gms/common/api/internal/ah;</span>
+<span class="missed">	iget-object v1, v1, Lcom/google/android/gms/common/api/internal/ah;->d:Lcom/google/android/gms/common/e;</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/android/gms/common/b;->c()I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	invoke-virtual {v1, v2}, Lcom/google/android/gms/common/e;->a(I)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_2</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/aj;->a:Lcom/google/android/gms/common/api/internal/ah;</span>
+<span class="missed">	iget-object v2, v1, Lcom/google/android/gms/common/api/internal/ah;->d:Lcom/google/android/gms/common/e;</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/aj;->a:Lcom/google/android/gms/common/api/internal/ah;</span>
+<span class="">	invoke-virtual {v1}, Lcom/google/android/gms/common/api/internal/ah;->a()Landroid/app/Activity;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/aj;->a:Lcom/google/android/gms/common/api/internal/ah;</span>
+<span class="missed">	iget-object v4, v1, Lcom/google/android/gms/common/api/internal/ah;->a:Lcom/google/android/gms/common/api/internal/e;</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/android/gms/common/b;->c()I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	const/4 v6, 0x2</span>
+<span class="missed">	iget-object v7, p0, Lcom/google/android/gms/common/api/internal/aj;->a:Lcom/google/android/gms/common/api/internal/ah;</span>
+<span class="missed">	invoke-virtual/range {v2 .. v7}, Lcom/google/android/gms/common/e;->a(Landroid/app/Activity;Lcom/google/android/gms/common/api/internal/e;IILandroid/content/DialogInterface$OnCancelListener;)Z</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/android/gms/common/b;->c()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/16 v2, 0x12</span>
+<span class="missed">	if-ne v1, v2, :cond_3</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/aj;->a:Lcom/google/android/gms/common/api/internal/ah;</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/ah;->a()Landroid/app/Activity;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/aj;->a:Lcom/google/android/gms/common/api/internal/ah;</span>
+<span class="">	invoke-static {v0, v1}, Lcom/google/android/gms/common/e;->a(Landroid/app/Activity;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/aj;->a:Lcom/google/android/gms/common/api/internal/ah;</span>
+<span class="missed">	iget-object v1, v1, Lcom/google/android/gms/common/api/internal/ah;->d:Lcom/google/android/gms/common/e;</span>
+<span class="missed">	iget-object v2, p0, Lcom/google/android/gms/common/api/internal/aj;->a:Lcom/google/android/gms/common/api/internal/ah;</span>
+<span class="">	invoke-virtual {v2}, Lcom/google/android/gms/common/api/internal/ah;->a()Landroid/app/Activity;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v2}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	new-instance v3, Lcom/google/android/gms/common/api/internal/ak;</span>
+<span class="missed">	invoke-direct {v3, p0, v0}, Lcom/google/android/gms/common/api/internal/ak;-><init>(Lcom/google/android/gms/common/api/internal/aj;Landroid/app/Dialog;)V</span>
+<span class="missed">	invoke-virtual {v1, v2, v3}, Lcom/google/android/gms/common/e;->a(Landroid/content/Context;Lcom/google/android/gms/common/api/internal/t;)Lcom/google/android/gms/common/api/internal/s;</span>
+<span class="">	return-void</span>
+<span class="">	:cond_3</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/aj;->a:Lcom/google/android/gms/common/api/internal/ah;</span>
+<span class="missed">	iget-object v2, p0, Lcom/google/android/gms/common/api/internal/aj;->b:Lcom/google/android/gms/common/api/internal/ai;</span>
+<span class="">	invoke-virtual {v2}, Lcom/google/android/gms/common/api/internal/ai;->a()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	invoke-virtual {v1, v0, v2}, Lcom/google/android/gms/common/api/internal/ah;->a(Lcom/google/android/gms/common/b;I)V</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../../../../.resources/report.js"></script>
+</body>
+</html>

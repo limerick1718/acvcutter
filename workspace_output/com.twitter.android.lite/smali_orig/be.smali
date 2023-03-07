@@ -1,34 +1,51 @@
-.class public final Lbe;
-.super Lzb;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-
-# interfaces
-.implements Lee;
-.implements Ljava/util/RandomAccess;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lzb<",
-        "Ljava/lang/String;",
-        ">;",
-        "Lee;",
-        "Ljava/util/RandomAccess;"
-    }
-.end annotation
+.class public Lbe;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field private static final c:Lbe;
+.field private static final a:Ljava/lang/Object;
+
+.field private static volatile b:Lbe;
+
+.field private static c:Z
 
 
 # instance fields
-.field private final b:Ljava/util/List;
+.field private final d:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
-            "Ljava/lang/Object;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final e:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final f:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final g:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
             ">;"
         }
     .end annotation
@@ -39,463 +56,187 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1
-    new-instance v0, Lbe;
+    .line 27
+    new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Lbe;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    sput-object v0, Lbe;->c:Lbe;
+    sput-object v0, Lbe;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lzb;->b()V
+    const/4 v0, 0x0
+
+    .line 28
+    sput-boolean v0, Lbe;->c:Z
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
-
-    const/16 v0, 0xa
-
-    .line 1
-    invoke-direct {p0, v0}, Lbe;-><init>(I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(I)V
-    .locals 1
-
-    .line 2
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-direct {p0, v0}, Lbe;-><init>(Ljava/util/ArrayList;)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/util/ArrayList;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/ArrayList<",
-            "Ljava/lang/Object;",
-            ">;)V"
-        }
-    .end annotation
-
-    .line 3
-    invoke-direct {p0}, Lzb;-><init>()V
-
-    .line 4
-    iput-object p1, p0, Lbe;->b:Ljava/util/List;
-
-    return-void
-.end method
-
-.method private static a(Ljava/lang/Object;)Ljava/lang/String;
-    .locals 1
-
-    .line 4
-    instance-of v0, p0, Ljava/lang/String;
-
-    if-eqz v0, :cond_0
-
-    .line 5
-    check-cast p0, Ljava/lang/String;
-
-    return-object p0
-
-    .line 6
-    :cond_0
-    instance-of v0, p0, Lfc;
-
-    if-eqz v0, :cond_1
 
     .line 7
-    check-cast p0, Lfc;
-
-    invoke-virtual {p0}, Lfc;->b()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    iput-object v0, p0, Lbe;->d:Ljava/util/List;
+
+    .line 9
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    iput-object v0, p0, Lbe;->e:Ljava/util/List;
+
+    .line 10
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    iput-object v0, p0, Lbe;->f:Ljava/util/List;
+
+    .line 11
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    iput-object v0, p0, Lbe;->g:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public static a()Lbe;
+    .locals 2
+
+    .line 1
+    sget-object v0, Lbe;->b:Lbe;
+
+    if-nez v0, :cond_1
+
+    .line 2
+    sget-object v0, Lbe;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    .line 3
+    :try_start_0
+    sget-object v1, Lbe;->b:Lbe;
+
+    if-nez v1, :cond_0
+
+    .line 4
+    new-instance v1, Lbe;
+
+    invoke-direct {v1}, Lbe;-><init>()V
+
+    sput-object v1, Lbe;->b:Lbe;
+
+    .line 5
+    :cond_0
+    monitor-exit v0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+
+    .line 6
     :cond_1
-    check-cast p0, [B
+    :goto_0
+    sget-object v0, Lbe;->b:Lbe;
 
-    invoke-static {p0}, Lpd;->b([B)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(I)Lud;
-    .locals 1
-
-    .line 10
-    invoke-virtual {p0}, Lbe;->size()I
-
-    move-result v0
-
-    if-lt p1, v0, :cond_0
-
-    .line 11
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 12
-    iget-object p1, p0, Lbe;->b:Ljava/util/List;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
-
-    .line 13
-    new-instance p1, Lbe;
-
-    invoke-direct {p1, v0}, Lbe;-><init>(Ljava/util/ArrayList;)V
-
-    return-object p1
-
-    .line 14
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
-
-    throw p1
-.end method
-
-.method public final a(Lfc;)V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Lzb;->c()V
-
-    .line 2
-    iget-object v0, p0, Lbe;->b:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 3
-    iget p1, p0, Ljava/util/AbstractList;->modCount:I
-
-    add-int/lit8 p1, p1, 0x1
-
-    iput p1, p0, Ljava/util/AbstractList;->modCount:I
-
-    return-void
-.end method
-
-.method public final synthetic add(ILjava/lang/Object;)V
-    .locals 1
-
-    .line 1
-    check-cast p2, Ljava/lang/String;
-
-    .line 2
-    invoke-virtual {p0}, Lzb;->c()V
-
-    .line 3
-    iget-object v0, p0, Lbe;->b:Ljava/util/List;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
-
-    .line 4
-    iget p1, p0, Ljava/util/AbstractList;->modCount:I
-
-    add-int/lit8 p1, p1, 0x1
-
-    iput p1, p0, Ljava/util/AbstractList;->modCount:I
-
-    return-void
-.end method
-
-.method public final addAll(ILjava/util/Collection;)Z
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
+.method public a(Landroid/content/Context;Landroid/content/ServiceConnection;)V
+    .locals 0
+    .annotation build Landroid/annotation/SuppressLint;
         value = {
-            "(I",
-            "Ljava/util/Collection<",
-            "+",
-            "Ljava/lang/String;",
-            ">;)Z"
+            "UntrackedBindService"
         }
     .end annotation
 
-    .line 2
-    invoke-virtual {p0}, Lzb;->c()V
+    .line 25
+    invoke-virtual {p1, p2}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 3
-    instance-of v0, p2, Lee;
+    return-void
+.end method
 
-    if-eqz v0, :cond_0
+.method public a(Landroid/content/Context;Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
+    .locals 7
 
-    check-cast p2, Lee;
+    .line 24
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-interface {p2}, Lee;->d()Ljava/util/List;
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v4, p2
+
+    move-object v5, p3
+
+    move v6, p4
+
+    invoke-virtual/range {v1 .. v6}, Lbe;->a(Landroid/content/Context;Ljava/lang/String;Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final a(Landroid/content/Context;Ljava/lang/String;Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
+    .locals 1
+
+    .line 15
+    invoke-virtual {p3}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object p2
 
-    .line 4
+    const/4 v0, 0x0
+
+    if-nez p2, :cond_0
+
+    const/4 p2, 0x0
+
+    goto :goto_0
+
+    .line 18
     :cond_0
-    iget-object v0, p0, Lbe;->b:Ljava/util/List;
+    invoke-virtual {p2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->addAll(ILjava/util/Collection;)Z
+    move-result-object p2
 
-    move-result p1
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/util/c;->b(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 5
-    iget p2, p0, Ljava/util/AbstractList;->modCount:I
+    move-result p2
 
-    add-int/lit8 p2, p2, 0x1
+    :goto_0
+    if-eqz p2, :cond_1
 
-    iput p2, p0, Ljava/util/AbstractList;->modCount:I
+    const-string p1, "ConnectionTracker"
 
-    return p1
-.end method
+    const-string p2, "Attempted to bind to a service in a STOPPED package."
 
-.method public final addAll(Ljava/util/Collection;)Z
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Collection<",
-            "+",
-            "Ljava/lang/String;",
-            ">;)Z"
-        }
-    .end annotation
-
-    .line 1
-    invoke-virtual {p0}, Lbe;->size()I
-
-    move-result v0
-
-    invoke-virtual {p0, v0, p1}, Lbe;->addAll(ILjava/util/Collection;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final b(I)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lbe;->b:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final clear()V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Lzb;->c()V
-
-    .line 2
-    iget-object v0, p0, Lbe;->b:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->clear()V
-
-    .line 3
-    iget v0, p0, Ljava/util/AbstractList;->modCount:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Ljava/util/AbstractList;->modCount:I
-
-    return-void
-.end method
-
-.method public final d()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "*>;"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lbe;->b:Ljava/util/List;
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final e()Lee;
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Lbe;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    new-instance v0, Lgg;
-
-    invoke-direct {v0, p0}, Lgg;-><init>(Lee;)V
-
-    return-object v0
-
-    :cond_0
-    return-object p0
-.end method
-
-.method public final synthetic get(I)Ljava/lang/Object;
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lbe;->b:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 2
-    instance-of v1, v0, Ljava/lang/String;
-
-    if-eqz v1, :cond_0
-
-    .line 3
-    check-cast v0, Ljava/lang/String;
-
-    return-object v0
-
-    .line 4
-    :cond_0
-    instance-of v1, v0, Lfc;
-
-    if-eqz v1, :cond_2
-
-    .line 5
-    check-cast v0, Lfc;
-
-    .line 6
-    invoke-virtual {v0}, Lfc;->b()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 7
-    invoke-virtual {v0}, Lfc;->c()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 8
-    iget-object v0, p0, Lbe;->b:Ljava/util/List;
-
-    invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
-
-    :cond_1
-    return-object v1
-
-    .line 9
-    :cond_2
-    check-cast v0, [B
-
-    .line 10
-    invoke-static {v0}, Lpd;->b([B)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 11
-    invoke-static {v0}, Lpd;->a([B)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    .line 12
-    iget-object v0, p0, Lbe;->b:Ljava/util/List;
-
-    invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
-
-    :cond_3
-    return-object v1
-.end method
-
-.method public final synthetic remove(I)Ljava/lang/Object;
-    .locals 1
-
-    .line 2
-    invoke-virtual {p0}, Lzb;->c()V
-
-    .line 3
-    iget-object v0, p0, Lbe;->b:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    .line 4
-    iget v0, p0, Ljava/util/AbstractList;->modCount:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Ljava/util/AbstractList;->modCount:I
-
-    .line 5
-    invoke-static {p1}, Lbe;->a(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final synthetic set(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    check-cast p2, Ljava/lang/String;
-
-    .line 2
-    invoke-virtual {p0}, Lzb;->c()V
-
-    .line 3
-    iget-object v0, p0, Lbe;->b:Ljava/util/List;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    .line 4
-    invoke-static {p1}, Lbe;->a(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final size()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lbe;->b:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
+    .line 20
+    invoke-static {p1, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     return v0
+
+    .line 22
+    :cond_1
+    invoke-virtual {p1, p3, p4, p5}, Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
+
+    move-result p1
+
+    return p1
 .end method

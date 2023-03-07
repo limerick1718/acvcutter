@@ -1,42 +1,186 @@
 .class public final Lkh;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.implements Lgh;
-.field private static final a:Lva;
+.super Loa;
+.field private final a:Ljava/util/Map;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lva<",
-"Ljava/lang/Boolean;",
+"Ljava/util/Map<",
+"Ljava/lang/String;",
+"Ljava/lang/Long;",
 ">;"
 }
 .end annotation
 .end field
-.method static constructor <clinit>()V
-.locals 3
-new-instance v0, Lbb;
-const-string v1, "com.google.android.gms.measurement"
-invoke-static {v1}, Lsa;->a(Ljava/lang/String;)Landroid/net/Uri;
-move-result-object v1
-invoke-direct {v0, v1}, Lbb;-><init>(Landroid/net/Uri;)V
-const-string v1, "measurement.sampling.calculate_bundle_timestamp_before_sampling"
-const/4 v2, 0x1
-invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;
-move-result-object v0
-sput-object v0, Lkh;->a:Lva;
-return-void
-.end method
-.method public constructor <init>()V
+.field private final b:Ljava/util/Map;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/Map<",
+"Ljava/lang/String;",
+"Ljava/lang/Integer;",
+">;"
+}
+.end annotation
+.end field
+.field private c:J
+.method public constructor <init>(Lmf;)V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0, p1}, Loa;-><init>(Lmf;)V
+new-instance p1, Ll;
+invoke-direct {p1}, Ll;-><init>()V
+iput-object p1, p0, Lkh;->b:Ljava/util/Map;
+new-instance p1, Ll;
+invoke-direct {p1}, Ll;-><init>()V
+iput-object p1, p0, Lkh;->a:Ljava/util/Map;
 return-void
 .end method
-.method public final a()Z
-.locals 1
-sget-object v0, Lkh;->a:Lva;
-invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
+.method static synthetic a(Lkh;J)V
+.locals 0
+invoke-direct {p0, p1, p2}, Lkh;->b(J)V
+return-void
+.end method
+.method private final b(J)V
+.locals 4
+iget-object v0, p0, Lkh;->a:Ljava/util/Map;
+invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 move-result-object v0
-check-cast v0, Ljava/lang/Boolean;
-invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+move-result-object v0
+:goto_0
+invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+move-result v1
+iget-object v0, p0, Lkh;->a:Ljava/util/Map;
+invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
 move-result v0
-return v0
+return-void
+.end method
+.method public final bridge synthetic a()V
+.locals 0
+return-void
+.end method
+.method public final a(J)V
+.locals 5
+invoke-virtual {p0}, Loa;->i()Lny;
+move-result-object v0
+invoke-virtual {v0}, Lny;->x()Lnx;
+move-result-object v0
+iget-object v1, p0, Lkh;->a:Ljava/util/Map;
+invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
+move-result-object v1
+invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+move-result-object v1
+:goto_0
+invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+move-result v2
+iget-object v1, p0, Lkh;->a:Ljava/util/Map;
+invoke-interface {v1}, Ljava/util/Map;->isEmpty()Z
+move-result v1
+invoke-direct {p0, p1, p2}, Lkh;->b(J)V
+return-void
+.end method
+.method public final a(Ljava/lang/String;J)V
+.locals 2
+return-void
+.end method
+.method public final bridge synthetic b()V
+.locals 0
+return-void
+.end method
+.method public final b(Ljava/lang/String;J)V
+.locals 2
+return-void
+.end method
+.method public final bridge synthetic c()V
+.locals 0
+return-void
+.end method
+.method public final bridge synthetic d()V
+.locals 0
+return-void
+.end method
+.method public final bridge synthetic e()Lkh;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final bridge synthetic f()Lnl;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final bridge synthetic g()Lku;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final bridge synthetic h()Loc;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final bridge synthetic i()Lny;
+.locals 1
+invoke-super {p0}, Loa;->i()Lny;
+move-result-object v0
+return-object v0
+.end method
+.method public final bridge synthetic j()Lkw;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final bridge synthetic k()Lpa;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final bridge synthetic l()Lki;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final bridge synthetic m()Lcom/google/android/gms/common/util/d;
+.locals 1
+invoke-super {p0}, Loa;->m()Lcom/google/android/gms/common/util/d;
+move-result-object v0
+return-object v0
+.end method
+.method public final bridge synthetic n()Landroid/content/Context;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final bridge synthetic o()Lky;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final bridge synthetic p()Lpv;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final bridge synthetic q()Lma;
+.locals 1
+invoke-super {p0}, Loa;->q()Lma;
+move-result-object v0
+return-object v0
+.end method
+.method public final bridge synthetic r()Lla;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final bridge synthetic s()Llm;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final bridge synthetic t()Lqf;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final bridge synthetic u()Lqc;
+.locals 1
+const/4 v0, 0x0
+return-object v0
 .end method

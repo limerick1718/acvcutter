@@ -19,7 +19,7 @@
 .source "IconCompat.java"
 
 
-.field static final j:Landroid/graphics/PorterDuff$Mode;
+.field static final h:Landroid/graphics/PorterDuff$Mode;
 .field public a:I
 .field  b:Ljava/lang/Object;
 .field public c:[B
@@ -27,15 +27,15 @@
 .field public e:I
 .field public f:I
 .field public g:Landroid/content/res/ColorStateList;
-.field  h:Landroid/graphics/PorterDuff$Mode;
-.field public i:Ljava/lang/String;
+.field  i:Landroid/graphics/PorterDuff$Mode;
+.field public j:Ljava/lang/String;
 
 
 .method static constructor &lt;clinit&gt;()V
 <span class="">	.locals 1</span>
 
 <span class="missed">	sget-object v0, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;</span>
-<span class="missed">	sput-object v0, Landroidx/core/graphics/drawable/IconCompat;->j:Landroid/graphics/PorterDuff$Mode;</span>
+<span class="missed">	sput-object v0, Landroidx/core/graphics/drawable/IconCompat;->h:Landroid/graphics/PorterDuff$Mode;</span>
 <span class="">	return-void</span>
 .end method
 
@@ -45,12 +45,88 @@
 <span class="missed">	invoke-direct {p0}, Landroidx/versionedparcelable/CustomVersionedParcelable;-><init>()V</span>
 <span class="missed">	const/4 v0, 0x0</span>
 <span class="missed">	iput-object v0, p0, Landroidx/core/graphics/drawable/IconCompat;->g:Landroid/content/res/ColorStateList;</span>
-<span class="missed">	sget-object v0, Landroidx/core/graphics/drawable/IconCompat;->j:Landroid/graphics/PorterDuff$Mode;</span>
-<span class="missed">	iput-object v0, p0, Landroidx/core/graphics/drawable/IconCompat;->h:Landroid/graphics/PorterDuff$Mode;</span>
+<span class="missed">	sget-object v0, Landroidx/core/graphics/drawable/IconCompat;->h:Landroid/graphics/PorterDuff$Mode;</span>
+<span class="missed">	iput-object v0, p0, Landroidx/core/graphics/drawable/IconCompat;->i:Landroid/graphics/PorterDuff$Mode;</span>
 <span class="">	return-void</span>
 .end method
 
-.method private static a(Landroid/graphics/drawable/Icon;)I
+.method private static a(I)Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-eq p0, v0, :cond_4</span>
+<span class="missed">	const/4 v0, 0x2</span>
+<span class="missed">	if-eq p0, v0, :cond_3</span>
+<span class="missed">	const/4 v0, 0x3</span>
+<span class="missed">	if-eq p0, v0, :cond_2</span>
+<span class="missed">	const/4 v0, 0x4</span>
+<span class="missed">	if-eq p0, v0, :cond_1</span>
+<span class="missed">	const/4 v0, 0x5</span>
+<span class="missed">	if-eq p0, v0, :cond_0</span>
+<span class="missed">	const-string p0, "UNKNOWN"</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const-string p0, "BITMAP_MASKABLE"</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const-string p0, "URI"</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const-string p0, "DATA"</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const-string p0, "RESOURCE"</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_4</span>
+<span class="missed">	const-string p0, "BITMAP"</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method private static a(Landroid/graphics/drawable/Icon;)Ljava/lang/String;
+<span class="">	.locals 7</span>
+
+<span class="missed">	const-string v0, "Unable to get icon package"</span>
+<span class="missed">	const-string v1, "IconCompat"</span>
+<span class="missed">	sget v2, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v3, 0x1c</span>
+<span class="missed">	if-lt v2, v3, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Landroid/graphics/drawable/Icon;->getResPackage()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	const-string v4, "getResPackage"</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="missed">	new-array v6, v5, [Ljava/lang/Class;</span>
+<span class="">	invoke-virtual {v3, v4, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	new-array v4, v5, [Ljava/lang/Object;</span>
+<span class="">	invoke-virtual {v3, p0, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	check-cast p0, Ljava/lang/String;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_2</span>
+<span class="missed">	.catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1</span>
+<span class="missed">	.catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object p0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p0</span>
+<span class="missed">	invoke-static {v1, v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="">	return-object v2</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception p0</span>
+<span class="missed">	invoke-static {v1, v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="">	return-object v2</span>
+<span class="">	:catch_2</span>
+<span class="missed">	move-exception p0</span>
+<span class="missed">	invoke-static {v1, v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="">	return-object v2</span>
+.end method
+
+.method private static b(Landroid/graphics/drawable/Icon;)I
 <span class="">	.locals 6</span>
 
 <span class="missed">	const-string v0, "Unable to get icon resource"</span>
@@ -95,107 +171,37 @@
 <span class="">	return v2</span>
 .end method
 
-.method private static a(I)Ljava/lang/String;
-<span class="">	.locals 1</span>
-
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	if-eq p0, v0, :cond_4</span>
-<span class="missed">	const/4 v0, 0x2</span>
-<span class="missed">	if-eq p0, v0, :cond_3</span>
-<span class="missed">	const/4 v0, 0x3</span>
-<span class="missed">	if-eq p0, v0, :cond_2</span>
-<span class="missed">	const/4 v0, 0x4</span>
-<span class="missed">	if-eq p0, v0, :cond_1</span>
-<span class="missed">	const/4 v0, 0x5</span>
-<span class="missed">	if-eq p0, v0, :cond_0</span>
-<span class="missed">	const-string p0, "UNKNOWN"</span>
-<span class="">	return-object p0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const-string p0, "BITMAP_MASKABLE"</span>
-<span class="">	return-object p0</span>
-<span class="">	:cond_1</span>
-<span class="missed">	const-string p0, "URI"</span>
-<span class="">	return-object p0</span>
-<span class="">	:cond_2</span>
-<span class="missed">	const-string p0, "DATA"</span>
-<span class="">	return-object p0</span>
-<span class="">	:cond_3</span>
-<span class="missed">	const-string p0, "RESOURCE"</span>
-<span class="">	return-object p0</span>
-<span class="">	:cond_4</span>
-<span class="missed">	const-string p0, "BITMAP"</span>
-<span class="">	return-object p0</span>
-.end method
-
-.method private static b(Landroid/graphics/drawable/Icon;)Ljava/lang/String;
-<span class="">	.locals 7</span>
-
-<span class="missed">	const-string v0, "Unable to get icon package"</span>
-<span class="missed">	const-string v1, "IconCompat"</span>
-<span class="missed">	sget v2, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="missed">	const/16 v3, 0x1c</span>
-<span class="missed">	if-lt v2, v3, :cond_0</span>
-<span class="">	invoke-virtual {p0}, Landroid/graphics/drawable/Icon;->getResPackage()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	return-object p0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="">	:try_start_0</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="missed">	const-string v4, "getResPackage"</span>
-<span class="missed">	const/4 v5, 0x0</span>
-<span class="missed">	new-array v6, v5, [Ljava/lang/Class;</span>
-<span class="">	invoke-virtual {v3, v4, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="missed">	new-array v4, v5, [Ljava/lang/Object;</span>
-<span class="">	invoke-virtual {v3, p0, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	check-cast p0, Ljava/lang/String;</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_2</span>
-<span class="missed">	.catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1</span>
-<span class="missed">	.catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="">	return-object p0</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception p0</span>
-<span class="missed">	invoke-static {v1, v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
-<span class="">	return-object v2</span>
-<span class="">	:catch_1</span>
-<span class="missed">	move-exception p0</span>
-<span class="missed">	invoke-static {v1, v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
-<span class="">	return-object v2</span>
-<span class="">	:catch_2</span>
-<span class="missed">	move-exception p0</span>
-<span class="missed">	invoke-static {v1, v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
-<span class="">	return-object v2</span>
-.end method
-
-.method public a()I
+.method public a()Ljava/lang/String;
 <span class="">	.locals 3</span>
 
 <span class="missed">	iget v0, p0, Landroidx/core/graphics/drawable/IconCompat;->a:I</span>
 <span class="missed">	const/4 v1, -0x1</span>
 <span class="missed">	if-ne v0, v1, :cond_0</span>
 <span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="missed">	const/16 v1, 0x17</span>
-<span class="missed">	if-lt v0, v1, :cond_0</span>
+<span class="missed">	const/16 v2, 0x17</span>
+<span class="missed">	if-lt v0, v2, :cond_0</span>
 <span class="missed">	iget-object v0, p0, Landroidx/core/graphics/drawable/IconCompat;->b:Ljava/lang/Object;</span>
 <span class="missed">	check-cast v0, Landroid/graphics/drawable/Icon;</span>
-<span class="">	invoke-static {v0}, Landroidx/core/graphics/drawable/IconCompat;->a(Landroid/graphics/drawable/Icon;)I</span>
-<span class="missed">	move-result v0</span>
-<span class="">	return v0</span>
+<span class="">	invoke-static {v0}, Landroidx/core/graphics/drawable/IconCompat;->a(Landroid/graphics/drawable/Icon;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	iget v0, p0, Landroidx/core/graphics/drawable/IconCompat;->a:I</span>
-<span class="missed">	const/4 v1, 0x2</span>
-<span class="missed">	if-ne v0, v1, :cond_1</span>
-<span class="missed">	iget v0, p0, Landroidx/core/graphics/drawable/IconCompat;->e:I</span>
-<span class="">	return v0</span>
+<span class="missed">	const/4 v2, 0x2</span>
+<span class="missed">	if-ne v0, v2, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/graphics/drawable/IconCompat;->b:Ljava/lang/Object;</span>
+<span class="missed">	check-cast v0, Ljava/lang/String;</span>
+<span class="missed">	const-string v2, ":"</span>
+<span class="">	invoke-virtual {v0, v2, v1}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	aget-object v0, v0, v1</span>
+<span class="">	return-object v0</span>
 <span class="">	:cond_1</span>
 <span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
 <span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
 <span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const-string v2, "called getResId() on "</span>
+<span class="missed">	const-string v2, "called getResPackage() on "</span>
 <span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
 <span class="missed">	invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
 <span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
@@ -207,10 +213,10 @@
 .method public a(Z)V
 <span class="">	.locals 3</span>
 
-<span class="missed">	iget-object v0, p0, Landroidx/core/graphics/drawable/IconCompat;->h:Landroid/graphics/PorterDuff$Mode;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/graphics/drawable/IconCompat;->i:Landroid/graphics/PorterDuff$Mode;</span>
 <span class="">	invoke-virtual {v0}, Landroid/graphics/PorterDuff$Mode;->name()Ljava/lang/String;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	iput-object v0, p0, Landroidx/core/graphics/drawable/IconCompat;->i:Ljava/lang/String;</span>
+<span class="missed">	iput-object v0, p0, Landroidx/core/graphics/drawable/IconCompat;->j:Ljava/lang/String;</span>
 <span class="missed">	iget v0, p0, Landroidx/core/graphics/drawable/IconCompat;->a:I</span>
 <span class="missed">	const/4 v1, -0x1</span>
 <span class="missed">	if-eq v0, v1, :cond_5</span>
@@ -238,6 +244,7 @@
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_1</span>
 <span class="missed">	iget-object p1, p0, Landroidx/core/graphics/drawable/IconCompat;->b:Ljava/lang/Object;</span>
+<span class="missed">	check-cast p1, [B</span>
 <span class="missed">	check-cast p1, [B</span>
 <span class="missed">	iput-object p1, p0, Landroidx/core/graphics/drawable/IconCompat;->c:[B</span>
 <span class="">	goto :goto_0</span>
@@ -282,37 +289,31 @@
 <span class="">	throw p1</span>
 .end method
 
-.method public b()Ljava/lang/String;
+.method public b()I
 <span class="">	.locals 3</span>
 
 <span class="missed">	iget v0, p0, Landroidx/core/graphics/drawable/IconCompat;->a:I</span>
 <span class="missed">	const/4 v1, -0x1</span>
 <span class="missed">	if-ne v0, v1, :cond_0</span>
 <span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="missed">	const/16 v2, 0x17</span>
-<span class="missed">	if-lt v0, v2, :cond_0</span>
+<span class="missed">	const/16 v1, 0x17</span>
+<span class="missed">	if-lt v0, v1, :cond_0</span>
 <span class="missed">	iget-object v0, p0, Landroidx/core/graphics/drawable/IconCompat;->b:Ljava/lang/Object;</span>
 <span class="missed">	check-cast v0, Landroid/graphics/drawable/Icon;</span>
-<span class="">	invoke-static {v0}, Landroidx/core/graphics/drawable/IconCompat;->b(Landroid/graphics/drawable/Icon;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	return-object v0</span>
+<span class="">	invoke-static {v0}, Landroidx/core/graphics/drawable/IconCompat;->b(Landroid/graphics/drawable/Icon;)I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	iget v0, p0, Landroidx/core/graphics/drawable/IconCompat;->a:I</span>
-<span class="missed">	const/4 v2, 0x2</span>
-<span class="missed">	if-ne v0, v2, :cond_1</span>
-<span class="missed">	iget-object v0, p0, Landroidx/core/graphics/drawable/IconCompat;->b:Ljava/lang/Object;</span>
-<span class="missed">	check-cast v0, Ljava/lang/String;</span>
-<span class="missed">	const-string v2, ":"</span>
-<span class="">	invoke-virtual {v0, v2, v1}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="missed">	aget-object v0, v0, v1</span>
-<span class="">	return-object v0</span>
+<span class="missed">	const/4 v1, 0x2</span>
+<span class="missed">	if-ne v0, v1, :cond_1</span>
+<span class="missed">	iget v0, p0, Landroidx/core/graphics/drawable/IconCompat;->e:I</span>
+<span class="">	return v0</span>
 <span class="">	:cond_1</span>
 <span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
 <span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
 <span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const-string v2, "called getResPackage() on "</span>
+<span class="missed">	const-string v2, "called getResId() on "</span>
 <span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
 <span class="missed">	invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
 <span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
@@ -324,10 +325,10 @@
 .method public c()V
 <span class="">	.locals 3</span>
 
-<span class="missed">	iget-object v0, p0, Landroidx/core/graphics/drawable/IconCompat;->i:Ljava/lang/String;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/graphics/drawable/IconCompat;->j:Ljava/lang/String;</span>
 <span class="">	invoke-static {v0}, Landroid/graphics/PorterDuff$Mode;->valueOf(Ljava/lang/String;)Landroid/graphics/PorterDuff$Mode;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	iput-object v0, p0, Landroidx/core/graphics/drawable/IconCompat;->h:Landroid/graphics/PorterDuff$Mode;</span>
+<span class="missed">	iput-object v0, p0, Landroidx/core/graphics/drawable/IconCompat;->i:Landroid/graphics/PorterDuff$Mode;</span>
 <span class="missed">	iget v0, p0, Landroidx/core/graphics/drawable/IconCompat;->a:I</span>
 <span class="missed">	const/4 v1, -0x1</span>
 <span class="missed">	if-eq v0, v1, :cond_4</span>
@@ -433,14 +434,14 @@
 <span class="">	:cond_3</span>
 <span class="missed">	const-string v1, " pkg="</span>
 <span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {p0}, Landroidx/core/graphics/drawable/IconCompat;->b()Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p0}, Landroidx/core/graphics/drawable/IconCompat;->a()Ljava/lang/String;</span>
 <span class="missed">	move-result-object v1</span>
 <span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
 <span class="missed">	const-string v1, " id="</span>
 <span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
 <span class="missed">	new-array v1, v2, [Ljava/lang/Object;</span>
 <span class="missed">	const/4 v2, 0x0</span>
-<span class="">	invoke-virtual {p0}, Landroidx/core/graphics/drawable/IconCompat;->a()I</span>
+<span class="">	invoke-virtual {p0}, Landroidx/core/graphics/drawable/IconCompat;->b()I</span>
 <span class="missed">	move-result v3</span>
 <span class="">	invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
 <span class="missed">	move-result-object v3</span>
@@ -474,12 +475,12 @@
 <span class="missed">	iget-object v1, p0, Landroidx/core/graphics/drawable/IconCompat;->g:Landroid/content/res/ColorStateList;</span>
 <span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
 <span class="">	:cond_6</span>
-<span class="missed">	iget-object v1, p0, Landroidx/core/graphics/drawable/IconCompat;->h:Landroid/graphics/PorterDuff$Mode;</span>
-<span class="missed">	sget-object v2, Landroidx/core/graphics/drawable/IconCompat;->j:Landroid/graphics/PorterDuff$Mode;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/core/graphics/drawable/IconCompat;->i:Landroid/graphics/PorterDuff$Mode;</span>
+<span class="missed">	sget-object v2, Landroidx/core/graphics/drawable/IconCompat;->h:Landroid/graphics/PorterDuff$Mode;</span>
 <span class="missed">	if-eq v1, v2, :cond_7</span>
 <span class="missed">	const-string v1, " mode="</span>
 <span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	iget-object v1, p0, Landroidx/core/graphics/drawable/IconCompat;->h:Landroid/graphics/PorterDuff$Mode;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/core/graphics/drawable/IconCompat;->i:Landroid/graphics/PorterDuff$Mode;</span>
 <span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
 <span class="">	:cond_7</span>
 <span class="missed">	const-string v1, ")"</span>

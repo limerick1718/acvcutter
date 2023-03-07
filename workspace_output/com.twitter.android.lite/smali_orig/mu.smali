@@ -1,81 +1,60 @@
-.class public Lmu;
+.class final Lmu;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-common@@19.3.0"
 
 # interfaces
-.implements Lnu;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic a:Lko;
+
+.field private final synthetic b:Ljava/lang/String;
+
+.field private final synthetic c:Lmh;
 
 
 # direct methods
-.method private constructor <init>(Landroid/content/Context;)V
+.method constructor <init>(Lmh;Lko;Ljava/lang/String;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lmu;->c:Lmh;
 
-    .line 2
-    invoke-static {p1}, Lou;->a(Landroid/content/Context;)Lou;
+    iput-object p2, p0, Lmu;->a:Lko;
+
+    iput-object p3, p0, Lmu;->b:Ljava/lang/String;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a()Lcom/google/firebase/components/d;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/firebase/components/d<",
-            "Lnu;",
-            ">;"
-        }
-    .end annotation
 
-    .line 1
-    const-class v0, Lnu;
-
-    invoke-static {v0}, Lcom/google/firebase/components/d;->a(Ljava/lang/Class;)Lcom/google/firebase/components/d$b;
-
-    move-result-object v0
-
-    const-class v1, Landroid/content/Context;
+# virtual methods
+.method public final run()V
+    .locals 3
 
     .line 2
-    invoke-static {v1}, Lcom/google/firebase/components/n;->b(Ljava/lang/Class;)Lcom/google/firebase/components/n;
+    iget-object v0, p0, Lmu;->c:Lmh;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/firebase/components/d$b;->a(Lcom/google/firebase/components/n;)Lcom/google/firebase/components/d$b;
-
-    invoke-static {}, Llu;->a()Lcom/google/firebase/components/g;
-
-    move-result-object v1
-
-    .line 3
-    invoke-virtual {v0, v1}, Lcom/google/firebase/components/d$b;->a(Lcom/google/firebase/components/g;)Lcom/google/firebase/components/d$b;
-
-    .line 4
-    invoke-virtual {v0}, Lcom/google/firebase/components/d$b;->b()Lcom/google/firebase/components/d;
+    invoke-static {v0}, Lmh;->a(Lmh;)Lpl;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    invoke-virtual {v0}, Lpl;->l()V
 
-.method static synthetic a(Lcom/google/firebase/components/e;)Lnu;
-    .locals 2
+    .line 3
+    iget-object v0, p0, Lmu;->c:Lmh;
 
-    .line 5
-    new-instance v0, Lmu;
+    invoke-static {v0}, Lmh;->a(Lmh;)Lpl;
 
-    const-class v1, Landroid/content/Context;
+    move-result-object v0
 
-    invoke-interface {p0, v1}, Lcom/google/firebase/components/e;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    iget-object v1, p0, Lmu;->a:Lko;
 
-    move-result-object p0
+    iget-object v2, p0, Lmu;->b:Ljava/lang/String;
 
-    check-cast p0, Landroid/content/Context;
+    invoke-virtual {v0, v1, v2}, Lpl;->a(Lko;Ljava/lang/String;)V
 
-    invoke-direct {v0, p0}, Lmu;-><init>(Landroid/content/Context;)V
-
-    return-object v0
+    return-void
 .end method

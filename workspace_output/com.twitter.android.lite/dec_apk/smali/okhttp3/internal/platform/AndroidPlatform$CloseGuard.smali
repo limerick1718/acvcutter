@@ -49,17 +49,7 @@ return-object v2
 .end method
 .method  createAndOpen(Ljava/lang/String;)Ljava/lang/Object;
 .locals 5
-iget-object v0, p0, Lokhttp3/internal/platform/AndroidPlatform$CloseGuard;->getMethod:Ljava/lang/reflect/Method;
-const/4 v1, 0x0
-const/4 v2, 0x0
-new-array v3, v2, [Ljava/lang/Object;
-invoke-virtual {v0, v1, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-move-result-object v0
-iget-object v3, p0, Lokhttp3/internal/platform/AndroidPlatform$CloseGuard;->openMethod:Ljava/lang/reflect/Method;
-const/4 v4, 0x1
-new-array v4, v4, [Ljava/lang/Object;
-aput-object p1, v4, v2
-invoke-virtual {v3, v0, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method  warnIfOpen(Ljava/lang/Object;)Z

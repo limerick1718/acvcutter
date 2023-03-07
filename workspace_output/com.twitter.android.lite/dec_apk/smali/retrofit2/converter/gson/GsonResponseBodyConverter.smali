@@ -13,22 +13,22 @@ value = {
 "TT;>;"
 }
 .end annotation
-.field private final adapter:Lvv;
+.field private final adapter:Ltn;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lvv<",
+"Ltn<",
 "TT;>;"
 }
 .end annotation
 .end field
-.field private final gson:Lfv;
-.method constructor <init>(Lfv;Lvv;)V
+.field private final gson:Lsx;
+.method constructor <init>(Lsx;Ltn;)V
 .locals 0
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "(",
-"Lfv;",
-"Lvv<",
+"Lsx;",
+"Ltn<",
 "TT;>;)V"
 }
 .end annotation

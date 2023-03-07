@@ -10,7 +10,7 @@ name = "Pin"
 .end annotation
 .field private static final WILDCARD:Ljava/lang/String; = "*."
 .field final canonicalHostname:Ljava/lang/String;
-.field final hash:Lhx;
+.field final hash:Lyv;
 .field final hashAlgorithm:Ljava/lang/String;
 .field final pattern:Ljava/lang/String;
 .method constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
@@ -43,11 +43,11 @@ iput-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hashAlgorithm:Ljava/lang/St
 const/4 p1, 0x7
 invoke-virtual {p2, p1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 move-result-object p1
-invoke-static {p1}, Lhx;->a(Ljava/lang/String;)Lhx;
+invoke-static {p1}, Lyv;->b(Ljava/lang/String;)Lyv;
 move-result-object p1
-iput-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lhx;
+iput-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lyv;
 :goto_1
-iget-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lhx;
+iget-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lyv;
 return-void
 .end method
 .method public equals(Ljava/lang/Object;)Z
@@ -68,8 +68,8 @@ invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 move-result v0
 add-int/2addr v1, v0
 mul-int/lit8 v1, v1, 0x1f
-iget-object v0, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lhx;
-invoke-virtual {v0}, Lhx;->hashCode()I
+iget-object v0, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lyv;
+invoke-virtual {v0}, Lyv;->hashCode()I
 move-result v0
 add-int/2addr v1, v0
 return v1

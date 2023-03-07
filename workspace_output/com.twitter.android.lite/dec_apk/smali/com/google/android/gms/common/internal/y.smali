@@ -5,7 +5,7 @@
 value = {
 "Ljava/lang/Object;",
 "Landroid/os/Parcelable$Creator<",
-"Lcom/google/android/gms/common/internal/r;",
+"Lcom/google/android/gms/common/internal/p;",
 ">;"
 }
 .end annotation

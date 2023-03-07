@@ -5,8 +5,8 @@
 
 # instance fields
 .field public accessToken:Ljava/lang/String;
-    .annotation runtime Lzv;
-        value = "access_token"
+    .annotation runtime Ltr;
+        a = "access_token"
     .end annotation
 .end field
 
@@ -15,7 +15,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 5
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

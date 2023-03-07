@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.crashlytics.android.answers</a></li>
+        <li><i class="ico ico-class"></i> AnswersEventsHandler.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Lcom/crashlytics/android/answers/AnswersEventsHandler;
+.super Ljava/lang/Object;
+.source "AnswersEventsHandler.java"
+.implements Lwy;
+
+
+.field private final context:Landroid/content/Context;
+.field final executor:Ljava/util/concurrent/ScheduledExecutorService;
+.field private final filesManagerProvider:Lcom/crashlytics/android/answers/AnswersFilesManagerProvider;
+.field private final firebaseAnalyticsApiAdapter:Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;
+.field private final kit:Luw;
+.field private final metadataCollector:Lcom/crashlytics/android/answers/SessionMetadataCollector;
+.field private final requestFactory:Lxi;
+.field  strategy:Lcom/crashlytics/android/answers/SessionAnalyticsManagerStrategy;
+
+
+<span class="cov">.method public constructor &lt;init&gt;(Luw;Landroid/content/Context;Lcom/crashlytics/android/answers/AnswersFilesManagerProvider;Lcom/crashlytics/android/answers/SessionMetadataCollector;Lxi;Ljava/util/concurrent/ScheduledExecutorService;Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	new-instance v0, Lcom/crashlytics/android/answers/DisabledSessionAnalyticsManagerStrategy;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/crashlytics/android/answers/DisabledSessionAnalyticsManagerStrategy;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->strategy:Lcom/crashlytics/android/answers/SessionAnalyticsManagerStrategy;</span>
+<span class="cov">	iput-object p1, p0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->kit:Luw;</span>
+<span class="cov">	iput-object p2, p0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->context:Landroid/content/Context;</span>
+<span class="cov">	iput-object p3, p0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->filesManagerProvider:Lcom/crashlytics/android/answers/AnswersFilesManagerProvider;</span>
+<span class="cov">	iput-object p4, p0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->metadataCollector:Lcom/crashlytics/android/answers/SessionMetadataCollector;</span>
+<span class="cov">	iput-object p5, p0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->requestFactory:Lxi;</span>
+<span class="cov">	iput-object p6, p0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->executor:Ljava/util/concurrent/ScheduledExecutorService;</span>
+<span class="cov">	iput-object p7, p0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->firebaseAnalyticsApiAdapter:Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method static synthetic access$000(Lcom/crashlytics/android/answers/AnswersEventsHandler;)Lcom/crashlytics/android/answers/SessionMetadataCollector;</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iget-object p0, p0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->metadataCollector:Lcom/crashlytics/android/answers/SessionMetadataCollector;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method static synthetic access$100(Lcom/crashlytics/android/answers/AnswersEventsHandler;)Lcom/crashlytics/android/answers/AnswersFilesManagerProvider;</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iget-object p0, p0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->filesManagerProvider:Lcom/crashlytics/android/answers/AnswersFilesManagerProvider;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method static synthetic access$200(Lcom/crashlytics/android/answers/AnswersEventsHandler;)Luw;</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iget-object p0, p0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->kit:Luw;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method static synthetic access$300(Lcom/crashlytics/android/answers/AnswersEventsHandler;)Landroid/content/Context;</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iget-object p0, p0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->context:Landroid/content/Context;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method static synthetic access$400(Lcom/crashlytics/android/answers/AnswersEventsHandler;)Lxi;</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iget-object p0, p0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->requestFactory:Lxi;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method static synthetic access$500(Lcom/crashlytics/android/answers/AnswersEventsHandler;)Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iget-object p0, p0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->firebaseAnalyticsApiAdapter:Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method private executeAsync(Ljava/lang/Runnable;)V</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->executor:Ljava/util/concurrent/ScheduledExecutorService;</span>
+<span class="cov">	invoke-interface {v0, p1}, Ljava/util/concurrent/ScheduledExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "Answers"</span>
+<span class="missed">	const-string v2, "Failed to submit events task"</span>
+<span class="missed">	invoke-interface {v0, v1, v2, p1}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method private executeSync(Ljava/lang/Runnable;)V
+<span class="">	.locals 3</span>
+
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->executor:Ljava/util/concurrent/ScheduledExecutorService;</span>
+<span class="">	invoke-interface {v0, p1}, Ljava/util/concurrent/ScheduledExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {p1}, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "Answers"</span>
+<span class="missed">	const-string v2, "Failed to run events task"</span>
+<span class="missed">	invoke-interface {v0, v1, v2, p1}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public disable()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lcom/crashlytics/android/answers/AnswersEventsHandler$2;</span>
+<span class="missed">	invoke-direct {v0, p0}, Lcom/crashlytics/android/answers/AnswersEventsHandler$2;-><init>(Lcom/crashlytics/android/answers/AnswersEventsHandler;)V</span>
+<span class="missed">	invoke-direct {p0, v0}, Lcom/crashlytics/android/answers/AnswersEventsHandler;->executeAsync(Ljava/lang/Runnable;)V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public enable()V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	new-instance v0, Lcom/crashlytics/android/answers/AnswersEventsHandler$4;</span>
+<span class="cov">	invoke-direct {v0, p0}, Lcom/crashlytics/android/answers/AnswersEventsHandler$4;-><init>(Lcom/crashlytics/android/answers/AnswersEventsHandler;)V</span>
+<span class="cov">	invoke-direct {p0, v0}, Lcom/crashlytics/android/answers/AnswersEventsHandler;->executeAsync(Ljava/lang/Runnable;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public flushEvents()V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	new-instance v0, Lcom/crashlytics/android/answers/AnswersEventsHandler$5;</span>
+<span class="cov">	invoke-direct {v0, p0}, Lcom/crashlytics/android/answers/AnswersEventsHandler$5;-><init>(Lcom/crashlytics/android/answers/AnswersEventsHandler;)V</span>
+<span class="cov">	invoke-direct {p0, v0}, Lcom/crashlytics/android/answers/AnswersEventsHandler;->executeAsync(Ljava/lang/Runnable;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public onRollOver(Ljava/lang/String;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	new-instance p1, Lcom/crashlytics/android/answers/AnswersEventsHandler$3;</span>
+<span class="cov">	invoke-direct {p1, p0}, Lcom/crashlytics/android/answers/AnswersEventsHandler$3;-><init>(Lcom/crashlytics/android/answers/AnswersEventsHandler;)V</span>
+<span class="cov">	invoke-direct {p0, p1}, Lcom/crashlytics/android/answers/AnswersEventsHandler;->executeAsync(Ljava/lang/Runnable;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method  processEvent(Lcom/crashlytics/android/answers/SessionEvent$Builder;ZZ)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	new-instance v0, Lcom/crashlytics/android/answers/AnswersEventsHandler$6;</span>
+<span class="cov">	invoke-direct {v0, p0, p1, p3}, Lcom/crashlytics/android/answers/AnswersEventsHandler$6;-><init>(Lcom/crashlytics/android/answers/AnswersEventsHandler;Lcom/crashlytics/android/answers/SessionEvent$Builder;Z)V</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="missed">	invoke-direct {p0, v0}, Lcom/crashlytics/android/answers/AnswersEventsHandler;->executeSync(Ljava/lang/Runnable;)V</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	invoke-direct {p0, v0}, Lcom/crashlytics/android/answers/AnswersEventsHandler;->executeAsync(Ljava/lang/Runnable;)V</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public processEventAsync(Lcom/crashlytics/android/answers/SessionEvent$Builder;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	invoke-virtual {p0, p1, v0, v0}, Lcom/crashlytics/android/answers/AnswersEventsHandler;->processEvent(Lcom/crashlytics/android/answers/SessionEvent$Builder;ZZ)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public processEventAsyncAndFlush(Lcom/crashlytics/android/answers/SessionEvent$Builder;)V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	invoke-virtual {p0, p1, v0, v1}, Lcom/crashlytics/android/answers/AnswersEventsHandler;->processEvent(Lcom/crashlytics/android/answers/SessionEvent$Builder;ZZ)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public processEventSync(Lcom/crashlytics/android/answers/SessionEvent$Builder;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-virtual {p0, p1, v0, v1}, Lcom/crashlytics/android/answers/AnswersEventsHandler;->processEvent(Lcom/crashlytics/android/answers/SessionEvent$Builder;ZZ)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setAnalyticsSettingsData(Lxs;Ljava/lang/String;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lcom/crashlytics/android/answers/AnswersEventsHandler$1;</span>
+<span class="missed">	invoke-direct {v0, p0, p1, p2}, Lcom/crashlytics/android/answers/AnswersEventsHandler$1;-><init>(Lcom/crashlytics/android/answers/AnswersEventsHandler;Lxs;Ljava/lang/String;)V</span>
+<span class="missed">	invoke-direct {p0, v0}, Lcom/crashlytics/android/answers/AnswersEventsHandler;->executeAsync(Ljava/lang/Runnable;)V</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

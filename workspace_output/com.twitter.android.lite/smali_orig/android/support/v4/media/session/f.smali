@@ -1,31 +1,18 @@
 .class Landroid/support/v4/media/session/f;
 .super Ljava/lang/Object;
-.source "MediaSessionCompatApi21.java"
+.source "PlaybackStateCompatApi22.java"
 
 
 # direct methods
-.method public static a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public static a(Ljava/lang/Object;)Landroid/os/Bundle;
     .locals 0
 
-    .line 1
-    check-cast p0, Landroid/media/session/MediaSession$QueueItem;
+    .line 29
+    check-cast p0, Landroid/media/session/PlaybackState;
 
-    invoke-virtual {p0}, Landroid/media/session/MediaSession$QueueItem;->getDescription()Landroid/media/MediaDescription;
+    invoke-virtual {p0}, Landroid/media/session/PlaybackState;->getExtras()Landroid/os/Bundle;
 
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public static b(Ljava/lang/Object;)J
-    .locals 2
-
-    .line 1
-    check-cast p0, Landroid/media/session/MediaSession$QueueItem;
-
-    invoke-virtual {p0}, Landroid/media/session/MediaSession$QueueItem;->getQueueId()J
-
-    move-result-wide v0
-
-    return-wide v0
 .end method

@@ -18,7 +18,7 @@ Lokhttp3/WebSocket$Factory;
 .end method
 .method public abstract request()Lokhttp3/Request;
 .end method
-.method public abstract send(Lhx;)Z
-.end method
 .method public abstract send(Ljava/lang/String;)Z
+.end method
+.method public abstract send(Lyv;)Z
 .end method

@@ -16,27 +16,50 @@
 	<pre class="source lang-smali" id='source'>
 		<code>.class public Lu;
 .super Ljava/lang/Object;
-.source "UserManagerCompat.java"
+.source "DebugUtils.java"
 
 
 
 
-<span class="cov">.method public static a(Landroid/content/Context;)Z</span>
+.method public static a(Ljava/lang/Object;Ljava/lang/StringBuilder;)V
 <span class="">	.locals 2</span>
 
-<span class="cov">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="cov">	const/16 v1, 0x18</span>
-<span class="cov">	if-lt v0, v1, :cond_0</span>
-<span class="cov">	const-class v0, Landroid/os/UserManager;</span>
-<span class="exec">	invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="cov">	check-cast p0, Landroid/os/UserManager;</span>
-<span class="exec">	invoke-virtual {p0}, Landroid/os/UserManager;->isUserUnlocked()Z</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	return p0</span>
+<span class="missed">	if-nez p0, :cond_0</span>
+<span class="missed">	const-string p0, "null"</span>
+<span class="missed">	invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
-<span class="missed">	const/4 p0, 0x1</span>
-<span class="">	return p0</span>
+<span class="">	invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-gtz v1, :cond_2</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/16 v1, 0x2e</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->lastIndexOf(I)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-lez v1, :cond_2</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const/16 v0, 0x7b</span>
+<span class="missed">	invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	invoke-static {p0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

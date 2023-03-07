@@ -33,8 +33,8 @@
 
     move-object/from16 v0, p1
 
-    .line 1
-    invoke-static/range {p1 .. p1}, Lq5;->b(Landroid/os/Parcel;)I
+    .line 7
+    invoke-static/range {p1 .. p1}, Lbb;->b(Landroid/os/Parcel;)I
 
     move-result v1
 
@@ -68,7 +68,7 @@
 
     const/4 v7, 0x0
 
-    .line 2
+    .line 20
     :goto_0
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->dataPosition()I
 
@@ -76,80 +76,80 @@
 
     if-ge v2, v1, :cond_0
 
-    .line 3
-    invoke-static/range {p1 .. p1}, Lq5;->a(Landroid/os/Parcel;)I
+    .line 21
+    invoke-static/range {p1 .. p1}, Lbb;->a(Landroid/os/Parcel;)I
 
     move-result v2
 
-    .line 4
-    invoke-static {v2}, Lq5;->a(I)I
+    .line 22
+    invoke-static {v2}, Lbb;->a(I)I
 
     move-result v3
 
     packed-switch v3, :pswitch_data_0
 
-    .line 5
-    invoke-static {v0, v2}, Lq5;->o(Landroid/os/Parcel;I)V
+    .line 59
+    invoke-static {v0, v2}, Lbb;->b(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
-    .line 6
+    .line 57
     :pswitch_0
-    invoke-static {v0, v2}, Lq5;->b(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v19
 
     goto :goto_0
 
-    .line 7
+    .line 54
     :pswitch_1
-    invoke-static {v0, v2}, Lq5;->b(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v18
 
     goto :goto_0
 
-    .line 8
+    .line 50
     :pswitch_2
     sget-object v3, Lcom/google/android/gms/common/api/Scope;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 9
-    invoke-static {v0, v2, v3}, Lq5;->c(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+    .line 51
+    invoke-static {v0, v2, v3}, Lbb;->c(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
 
     move-result-object v17
 
     goto :goto_0
 
-    .line 10
+    .line 48
     :pswitch_3
-    invoke-static {v0, v2}, Lq5;->b(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v16
 
     goto :goto_0
 
-    .line 11
+    .line 45
     :pswitch_4
-    invoke-static {v0, v2}, Lq5;->l(Landroid/os/Parcel;I)J
+    invoke-static {v0, v2}, Lbb;->e(Landroid/os/Parcel;I)J
 
     move-result-wide v14
 
     goto :goto_0
 
-    .line 12
+    .line 42
     :pswitch_5
-    invoke-static {v0, v2}, Lq5;->b(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v13
 
     goto :goto_0
 
-    .line 13
+    .line 38
     :pswitch_6
     sget-object v3, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 14
-    invoke-static {v0, v2, v3}, Lq5;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    .line 39
+    invoke-static {v0, v2, v3}, Lbb;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v2
 
@@ -159,51 +159,51 @@
 
     goto :goto_0
 
-    .line 15
+    .line 36
     :pswitch_7
-    invoke-static {v0, v2}, Lq5;->b(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v11
 
     goto :goto_0
 
-    .line 16
+    .line 33
     :pswitch_8
-    invoke-static {v0, v2}, Lq5;->b(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v10
 
     goto :goto_0
 
-    .line 17
+    .line 30
     :pswitch_9
-    invoke-static {v0, v2}, Lq5;->b(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v9
 
     goto :goto_0
 
-    .line 18
+    .line 27
     :pswitch_a
-    invoke-static {v0, v2}, Lq5;->b(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v8
 
     goto :goto_0
 
-    .line 19
+    .line 24
     :pswitch_b
-    invoke-static {v0, v2}, Lq5;->k(Landroid/os/Parcel;I)I
+    invoke-static {v0, v2}, Lbb;->d(Landroid/os/Parcel;I)I
 
     move-result v7
 
     goto :goto_0
 
-    .line 20
+    .line 61
     :cond_0
-    invoke-static {v0, v1}, Lq5;->d(Landroid/os/Parcel;I)V
+    invoke-static {v0, v1}, Lbb;->l(Landroid/os/Parcel;I)V
 
-    .line 21
+    .line 62
     new-instance v0, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
     move-object v6, v0
@@ -232,7 +232,7 @@
 .method public final synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 1
+    .line 4
     new-array p1, p1, [Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
     return-object p1

@@ -1,5 +1,13 @@
-.class final Lte;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.field private static final a:Lre;
-.field private static final b:Lre;
+.class public final Lte;
+.super Lth;
+.source "JsonIOException.java"
+.method public constructor <init>(Ljava/lang/String;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method public constructor <init>(Ljava/lang/Throwable;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method

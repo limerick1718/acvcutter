@@ -1,16 +1,13 @@
-.class public Lot;
+.class final Lot;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.implements Lqt;
-.field private final a:I
-.method public constructor <init>(I)V
+.implements Ljava/lang/Runnable;
+.field private final synthetic a:Loo;
+.method constructor <init>(Loo;)V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput p1, p0, Lot;->a:I
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public a([Ljava/lang/StackTraceElement;)[Ljava/lang/StackTraceElement;
-.locals 4
-const/4 v0, 0x0
-return-object v0
+.method public final run()V
+.locals 2
+return-void
 .end method

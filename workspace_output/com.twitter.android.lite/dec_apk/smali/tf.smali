@@ -1,32 +1,21 @@
-.class final Ltf;
-.super Lzf;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lzf;"
-}
-.end annotation
-.field private final synthetic b:Lof;
-.method private constructor <init>(Lof;)V
-.locals 1
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
-.end method
-.method synthetic constructor <init>(Lof;Lrf;)V
+.class public final Ltf;
+.super Ltd;
+.source "JsonNull.java"
+.field public static final a:Ltf;
+.method public constructor <init>()V
 .locals 0
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public final iterator()Ljava/util/Iterator;
-.locals 3
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"()",
-"Ljava/util/Iterator<",
-"Ljava/util/Map$Entry<",
-"TK;TV;>;>;"
-}
-.end annotation
+.method public equals(Ljava/lang/Object;)Z
+.locals 0
 const/4 v0, 0x0
-return-object v0
+return v0
+.end method
+.method public hashCode()I
+.locals 1
+const/4 v0, 0x0
+return v0
 .end method

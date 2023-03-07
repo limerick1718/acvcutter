@@ -7,10 +7,9 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroidx/core/app/f$a;,
-        Landroidx/core/app/f$c;,
         Landroidx/core/app/f$b;,
-        Landroidx/core/app/f$e;,
-        Landroidx/core/app/f$d;
+        Landroidx/core/app/f$d;,
+        Landroidx/core/app/f$c;
     }
 .end annotation
 
@@ -19,24 +18,27 @@
 .method public static a(Landroid/app/Notification;)Landroid/os/Bundle;
     .locals 2
 
-    .line 1
+    .line 5041
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x13
 
     if-lt v0, v1, :cond_0
 
-    .line 2
+    .line 5042
     iget-object p0, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
     return-object p0
 
+    .line 5043
     :cond_0
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
     const/16 v1, 0x10
 
     if-lt v0, v1, :cond_1
 
-    .line 3
+    .line 5044
     invoke-static {p0}, Landroidx/core/app/h;->a(Landroid/app/Notification;)Landroid/os/Bundle;
 
     move-result-object p0

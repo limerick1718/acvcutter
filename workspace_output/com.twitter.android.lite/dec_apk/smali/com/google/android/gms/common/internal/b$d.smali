@@ -15,14 +15,14 @@ iput-object p1, p0, Lcom/google/android/gms/common/internal/b$d;->a:Lcom/google/
 invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public a(Lc5;)V
+.method public a(Lcom/google/android/gms/common/b;)V
 .locals 2
-invoke-virtual {p1}, Lc5;->j()Z
+invoke-virtual {p1}, Lcom/google/android/gms/common/b;->b()Z
 move-result v0
 iget-object p1, p0, Lcom/google/android/gms/common/internal/b$d;->a:Lcom/google/android/gms/common/internal/b;
 const/4 v0, 0x0
-invoke-virtual {p1}, Lcom/google/android/gms/common/internal/b;->u()Ljava/util/Set;
+invoke-virtual {p1}, Lcom/google/android/gms/common/internal/b;->v()Ljava/util/Set;
 move-result-object v1
-invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/common/internal/b;->a(Lcom/google/android/gms/common/internal/k;Ljava/util/Set;)V
+invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/common/internal/b;->a(Lcom/google/android/gms/common/internal/j;Ljava/util/Set;)V
 return-void
 .end method

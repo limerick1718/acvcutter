@@ -1,6 +1,5 @@
 .class public Lcom/google/android/gms/measurement/AppMeasurement$ConditionalUserProperty;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lcom/google/android/gms/measurement/AppMeasurement;
 .end annotation
@@ -77,13 +76,8 @@ name = "ConditionalUserProperty"
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method constructor <init>(Landroid/os/Bundle;)V
-.locals 6
+.method public constructor <init>(Lcom/google/android/gms/measurement/AppMeasurement$ConditionalUserProperty;)V
+.locals 2
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
-.end method
-.method final a()Landroid/os/Bundle;
-.locals 4
-const/4 v0, 0x0
-return-object v0
 .end method

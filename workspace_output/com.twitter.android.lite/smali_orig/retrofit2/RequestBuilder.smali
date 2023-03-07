@@ -63,9 +63,9 @@
 
     const/16 v0, 0x10
 
+    .line 31
     new-array v0, v0, [C
 
-    .line 1
     fill-array-data v0, :array_0
 
     sput-object v0, Lretrofit2/RequestBuilder;->HEX_DIGITS:[C
@@ -108,40 +108,42 @@
         .end annotation
     .end param
 
-    .line 1
+    .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 52
     iput-object p1, p0, Lretrofit2/RequestBuilder;->method:Ljava/lang/String;
 
-    .line 3
+    .line 53
     iput-object p2, p0, Lretrofit2/RequestBuilder;->baseUrl:Lokhttp3/HttpUrl;
 
-    .line 4
+    .line 54
     iput-object p3, p0, Lretrofit2/RequestBuilder;->relativeUrl:Ljava/lang/String;
 
-    .line 5
+    .line 55
     new-instance p1, Lokhttp3/Request$Builder;
 
     invoke-direct {p1}, Lokhttp3/Request$Builder;-><init>()V
 
     iput-object p1, p0, Lretrofit2/RequestBuilder;->requestBuilder:Lokhttp3/Request$Builder;
 
-    .line 6
+    .line 56
     iput-object p5, p0, Lretrofit2/RequestBuilder;->contentType:Lokhttp3/MediaType;
 
-    .line 7
+    .line 57
     iput-boolean p6, p0, Lretrofit2/RequestBuilder;->hasBody:Z
 
     if-eqz p4, :cond_0
 
-    .line 8
+    .line 60
+    iget-object p1, p0, Lretrofit2/RequestBuilder;->requestBuilder:Lokhttp3/Request$Builder;
+
     invoke-virtual {p1, p4}, Lokhttp3/Request$Builder;->headers(Lokhttp3/Headers;)Lokhttp3/Request$Builder;
 
     :cond_0
     if-eqz p7, :cond_1
 
-    .line 9
+    .line 65
     new-instance p1, Lokhttp3/FormBody$Builder;
 
     invoke-direct {p1}, Lokhttp3/FormBody$Builder;-><init>()V
@@ -153,14 +155,16 @@
     :cond_1
     if-eqz p8, :cond_2
 
-    .line 10
+    .line 68
     new-instance p1, Lokhttp3/MultipartBody$Builder;
 
     invoke-direct {p1}, Lokhttp3/MultipartBody$Builder;-><init>()V
 
     iput-object p1, p0, Lretrofit2/RequestBuilder;->multipartBuilder:Lokhttp3/MultipartBody$Builder;
 
-    .line 11
+    .line 69
+    iget-object p1, p0, Lretrofit2/RequestBuilder;->multipartBuilder:Lokhttp3/MultipartBody$Builder;
+
     sget-object p2, Lokhttp3/MultipartBody;->FORM:Lokhttp3/MediaType;
 
     invoke-virtual {p1, p2}, Lokhttp3/MultipartBody$Builder;->setType(Lokhttp3/MediaType;)Lokhttp3/MultipartBody$Builder;
@@ -173,7 +177,7 @@
 .method private static canonicalizeForPath(Ljava/lang/String;Z)Ljava/lang/String;
     .locals 6
 
-    .line 1
+    .line 99
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -185,7 +189,7 @@
     :goto_0
     if-ge v2, v0, :cond_2
 
-    .line 2
+    .line 100
     invoke-virtual {p0, v2}, Ljava/lang/String;->codePointAt(I)I
 
     move-result v3
@@ -200,7 +204,7 @@
 
     const-string v4, " \"<>^`{}|\\?#"
 
-    .line 3
+    .line 102
     invoke-virtual {v4, v3}, Ljava/lang/String;->indexOf(I)I
 
     move-result v4
@@ -221,7 +225,7 @@
 
     goto :goto_1
 
-    .line 4
+    .line 99
     :cond_0
     invoke-static {v3}, Ljava/lang/Character;->charCount(I)I
 
@@ -231,21 +235,21 @@
 
     goto :goto_0
 
-    .line 5
+    .line 105
     :cond_1
     :goto_1
-    new-instance v3, Lex;
+    new-instance v3, Lys;
 
-    invoke-direct {v3}, Lex;-><init>()V
+    invoke-direct {v3}, Lys;-><init>()V
 
-    .line 6
-    invoke-virtual {v3, p0, v1, v2}, Lex;->a(Ljava/lang/String;II)Lex;
+    .line 106
+    invoke-virtual {v3, p0, v1, v2}, Lys;->a(Ljava/lang/String;II)Lys;
 
-    .line 7
-    invoke-static {v3, p0, v2, v0, p1}, Lretrofit2/RequestBuilder;->canonicalizeForPath(Lex;Ljava/lang/String;IIZ)V
+    .line 107
+    invoke-static {v3, p0, v2, v0, p1}, Lretrofit2/RequestBuilder;->canonicalizeForPath(Lys;Ljava/lang/String;IIZ)V
 
-    .line 8
-    invoke-virtual {v3}, Lex;->u()Ljava/lang/String;
+    .line 108
+    invoke-virtual {v3}, Lys;->t()Ljava/lang/String;
 
     move-result-object p0
 
@@ -253,7 +257,7 @@
     return-object p0
 .end method
 
-.method private static canonicalizeForPath(Lex;Ljava/lang/String;IIZ)V
+.method private static canonicalizeForPath(Lys;Ljava/lang/String;IIZ)V
     .locals 6
 
     const/4 v0, 0x0
@@ -261,7 +265,7 @@
     :goto_0
     if-ge p2, p3, :cond_5
 
-    .line 9
+    .line 121
     invoke-virtual {p1, p2}, Ljava/lang/String;->codePointAt(I)I
 
     move-result v1
@@ -299,7 +303,7 @@
 
     const-string v2, " \"<>^`{}|\\?#"
 
-    .line 10
+    .line 126
     invoke-virtual {v2, v1}, Ljava/lang/String;->indexOf(I)I
 
     move-result v2
@@ -318,9 +322,9 @@
 
     goto :goto_1
 
-    .line 11
+    .line 141
     :cond_1
-    invoke-virtual {p0, v1}, Lex;->c(I)Lex;
+    invoke-virtual {p0, v1}, Lys;->a(I)Lys;
 
     goto :goto_3
 
@@ -328,34 +332,34 @@
     :goto_1
     if-nez v0, :cond_3
 
-    .line 12
-    new-instance v0, Lex;
+    .line 130
+    new-instance v0, Lys;
 
-    invoke-direct {v0}, Lex;-><init>()V
+    invoke-direct {v0}, Lys;-><init>()V
 
-    .line 13
+    .line 132
     :cond_3
-    invoke-virtual {v0, v1}, Lex;->c(I)Lex;
+    invoke-virtual {v0, v1}, Lys;->a(I)Lys;
 
-    .line 14
+    .line 133
     :goto_2
-    invoke-virtual {v0}, Lex;->m()Z
+    invoke-virtual {v0}, Lys;->g()Z
 
     move-result v2
 
     if-nez v2, :cond_4
 
-    .line 15
-    invoke-virtual {v0}, Lex;->readByte()B
+    .line 134
+    invoke-virtual {v0}, Lys;->k()B
 
     move-result v2
 
     and-int/lit16 v2, v2, 0xff
 
-    .line 16
-    invoke-virtual {p0, v3}, Lex;->writeByte(I)Lex;
+    .line 135
+    invoke-virtual {p0, v3}, Lys;->b(I)Lys;
 
-    .line 17
+    .line 136
     sget-object v4, Lretrofit2/RequestBuilder;->HEX_DIGITS:[C
 
     shr-int/lit8 v5, v2, 0x4
@@ -364,20 +368,20 @@
 
     aget-char v4, v4, v5
 
-    invoke-virtual {p0, v4}, Lex;->writeByte(I)Lex;
+    invoke-virtual {p0, v4}, Lys;->b(I)Lys;
 
-    .line 18
+    .line 137
     sget-object v4, Lretrofit2/RequestBuilder;->HEX_DIGITS:[C
 
     and-int/lit8 v2, v2, 0xf
 
     aget-char v2, v4, v2
 
-    invoke-virtual {p0, v2}, Lex;->writeByte(I)Lex;
+    invoke-virtual {p0, v2}, Lys;->b(I)Lys;
 
     goto :goto_2
 
-    .line 19
+    .line 120
     :cond_4
     :goto_3
     invoke-static {v1}, Ljava/lang/Character;->charCount(I)I
@@ -399,14 +403,14 @@
 
     if-eqz p3, :cond_0
 
-    .line 1
+    .line 169
     iget-object p3, p0, Lretrofit2/RequestBuilder;->formBuilder:Lokhttp3/FormBody$Builder;
 
     invoke-virtual {p3, p1, p2}, Lokhttp3/FormBody$Builder;->addEncoded(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/FormBody$Builder;
 
     goto :goto_0
 
-    .line 2
+    .line 171
     :cond_0
     iget-object p3, p0, Lretrofit2/RequestBuilder;->formBuilder:Lokhttp3/FormBody$Builder;
 
@@ -421,26 +425,26 @@
 
     const-string v0, "Content-Type"
 
-    .line 1
+    .line 78
     invoke-virtual {v0, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 2
+    .line 79
     invoke-static {p2}, Lokhttp3/MediaType;->parse(Ljava/lang/String;)Lokhttp3/MediaType;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 3
+    .line 83
     iput-object p1, p0, Lretrofit2/RequestBuilder;->contentType:Lokhttp3/MediaType;
 
     goto :goto_0
 
-    .line 4
+    .line 81
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -462,7 +466,7 @@
 
     throw p1
 
-    .line 5
+    .line 85
     :cond_1
     iget-object v0, p0, Lretrofit2/RequestBuilder;->requestBuilder:Lokhttp3/Request$Builder;
 
@@ -475,7 +479,7 @@
 .method addPart(Lokhttp3/Headers;Lokhttp3/RequestBody;)V
     .locals 1
 
-    .line 1
+    .line 177
     iget-object v0, p0, Lretrofit2/RequestBuilder;->multipartBuilder:Lokhttp3/MultipartBody$Builder;
 
     invoke-virtual {v0, p1, p2}, Lokhttp3/MultipartBody$Builder;->addPart(Lokhttp3/Headers;Lokhttp3/RequestBody;)Lokhttp3/MultipartBody$Builder;
@@ -486,7 +490,7 @@
 .method addPart(Lokhttp3/MultipartBody$Part;)V
     .locals 1
 
-    .line 2
+    .line 182
     iget-object v0, p0, Lretrofit2/RequestBuilder;->multipartBuilder:Lokhttp3/MultipartBody$Builder;
 
     invoke-virtual {v0, p1}, Lokhttp3/MultipartBody$Builder;->addPart(Lokhttp3/MultipartBody$Part;)Lokhttp3/MultipartBody$Builder;
@@ -497,12 +501,12 @@
 .method addPathParam(Ljava/lang/String;Ljava/lang/String;Z)V
     .locals 3
 
-    .line 1
+    .line 90
     iget-object v0, p0, Lretrofit2/RequestBuilder;->relativeUrl:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 2
+    .line 94
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -533,7 +537,7 @@
 
     return-void
 
-    .line 3
+    .line 92
     :cond_0
     new-instance p1, Ljava/lang/AssertionError;
 
@@ -549,12 +553,12 @@
         .end annotation
     .end param
 
-    .line 1
+    .line 147
     iget-object v0, p0, Lretrofit2/RequestBuilder;->relativeUrl:Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    .line 2
+    .line 149
     iget-object v1, p0, Lretrofit2/RequestBuilder;->baseUrl:Lokhttp3/HttpUrl;
 
     invoke-virtual {v1, v0}, Lokhttp3/HttpUrl;->newBuilder(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
@@ -563,16 +567,19 @@
 
     iput-object v0, p0, Lretrofit2/RequestBuilder;->urlBuilder:Lokhttp3/HttpUrl$Builder;
 
+    .line 150
+    iget-object v0, p0, Lretrofit2/RequestBuilder;->urlBuilder:Lokhttp3/HttpUrl$Builder;
+
     if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 3
+    .line 154
     iput-object v0, p0, Lretrofit2/RequestBuilder;->relativeUrl:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 4
+    .line 151
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -608,14 +615,14 @@
     :goto_0
     if-eqz p3, :cond_2
 
-    .line 5
+    .line 159
     iget-object p3, p0, Lretrofit2/RequestBuilder;->urlBuilder:Lokhttp3/HttpUrl$Builder;
 
     invoke-virtual {p3, p1, p2}, Lokhttp3/HttpUrl$Builder;->addEncodedQueryParameter(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
 
     goto :goto_1
 
-    .line 6
+    .line 162
     :cond_2
     iget-object p3, p0, Lretrofit2/RequestBuilder;->urlBuilder:Lokhttp3/HttpUrl$Builder;
 
@@ -628,19 +635,19 @@
 .method build()Lokhttp3/Request;
     .locals 5
 
-    .line 1
+    .line 191
     iget-object v0, p0, Lretrofit2/RequestBuilder;->urlBuilder:Lokhttp3/HttpUrl$Builder;
 
     if-eqz v0, :cond_0
 
-    .line 2
+    .line 193
     invoke-virtual {v0}, Lokhttp3/HttpUrl$Builder;->build()Lokhttp3/HttpUrl;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 3
+    .line 197
     :cond_0
     iget-object v0, p0, Lretrofit2/RequestBuilder;->baseUrl:Lokhttp3/HttpUrl;
 
@@ -652,38 +659,38 @@
 
     if-eqz v0, :cond_6
 
-    .line 4
+    .line 204
     :goto_0
     iget-object v1, p0, Lretrofit2/RequestBuilder;->body:Lokhttp3/RequestBody;
 
     if-nez v1, :cond_3
 
-    .line 5
+    .line 207
     iget-object v2, p0, Lretrofit2/RequestBuilder;->formBuilder:Lokhttp3/FormBody$Builder;
 
     if-eqz v2, :cond_1
 
-    .line 6
+    .line 208
     invoke-virtual {v2}, Lokhttp3/FormBody$Builder;->build()Lokhttp3/FormBody;
 
     move-result-object v1
 
     goto :goto_1
 
-    .line 7
+    .line 209
     :cond_1
     iget-object v2, p0, Lretrofit2/RequestBuilder;->multipartBuilder:Lokhttp3/MultipartBody$Builder;
 
     if-eqz v2, :cond_2
 
-    .line 8
+    .line 210
     invoke-virtual {v2}, Lokhttp3/MultipartBody$Builder;->build()Lokhttp3/MultipartBody;
 
     move-result-object v1
 
     goto :goto_1
 
-    .line 9
+    .line 211
     :cond_2
     iget-boolean v2, p0, Lretrofit2/RequestBuilder;->hasBody:Z
 
@@ -693,14 +700,14 @@
 
     const/4 v2, 0x0
 
+    .line 213
     new-array v2, v2, [B
 
-    .line 10
     invoke-static {v1, v2}, Lokhttp3/RequestBody;->create(Lokhttp3/MediaType;[B)Lokhttp3/RequestBody;
 
     move-result-object v1
 
-    .line 11
+    .line 217
     :cond_3
     :goto_1
     iget-object v2, p0, Lretrofit2/RequestBuilder;->contentType:Lokhttp3/MediaType;
@@ -709,7 +716,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 12
+    .line 220
     new-instance v3, Lretrofit2/RequestBuilder$ContentTypeOverridingRequestBody;
 
     invoke-direct {v3, v1, v2}, Lretrofit2/RequestBuilder$ContentTypeOverridingRequestBody;-><init>(Lokhttp3/RequestBody;Lokhttp3/MediaType;)V
@@ -718,7 +725,7 @@
 
     goto :goto_2
 
-    .line 13
+    .line 222
     :cond_4
     iget-object v3, p0, Lretrofit2/RequestBuilder;->requestBuilder:Lokhttp3/Request$Builder;
 
@@ -730,31 +737,31 @@
 
     invoke-virtual {v3, v4, v2}, Lokhttp3/Request$Builder;->addHeader(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Request$Builder;
 
-    .line 14
+    .line 226
     :cond_5
     :goto_2
     iget-object v2, p0, Lretrofit2/RequestBuilder;->requestBuilder:Lokhttp3/Request$Builder;
 
-    .line 15
+    .line 227
     invoke-virtual {v2, v0}, Lokhttp3/Request$Builder;->url(Lokhttp3/HttpUrl;)Lokhttp3/Request$Builder;
 
     move-result-object v0
 
     iget-object v2, p0, Lretrofit2/RequestBuilder;->method:Ljava/lang/String;
 
-    .line 16
+    .line 228
     invoke-virtual {v0, v2, v1}, Lokhttp3/Request$Builder;->method(Ljava/lang/String;Lokhttp3/RequestBody;)Lokhttp3/Request$Builder;
 
     move-result-object v0
 
-    .line 17
+    .line 229
     invoke-virtual {v0}, Lokhttp3/Request$Builder;->build()Lokhttp3/Request;
 
     move-result-object v0
 
     return-object v0
 
-    .line 18
+    .line 199
     :cond_6
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -790,7 +797,7 @@
 .method setBody(Lokhttp3/RequestBody;)V
     .locals 0
 
-    .line 1
+    .line 186
     iput-object p1, p0, Lretrofit2/RequestBuilder;->body:Lokhttp3/RequestBody;
 
     return-void
@@ -799,7 +806,7 @@
 .method setRelativeUrl(Ljava/lang/Object;)V
     .locals 0
 
-    .line 1
+    .line 74
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p1

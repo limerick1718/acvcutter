@@ -1,57 +1,41 @@
-.class public final Loj;
+.class final Loj;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
 
 # interfaces
-.implements Llj;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field private static final a:Lva;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lva<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
+# instance fields
+.field private final synthetic a:Z
+
+.field private final synthetic b:Z
+
+.field private final synthetic c:Lko;
+
+.field private final synthetic d:Lpz;
+
+.field private final synthetic e:Ljava/lang/String;
+
+.field private final synthetic f:Loc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    .line 1
-    new-instance v0, Lbb;
-
-    const-string v1, "com.google.android.gms.measurement"
-
-    .line 2
-    invoke-static {v1}, Lsa;->a(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lbb;-><init>(Landroid/net/Uri;)V
-
-    const-string v1, "measurement.ga.ga_app_id"
-
-    const/4 v2, 0x0
-
-    .line 3
-    invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;
-
-    move-result-object v0
-
-    sput-object v0, Loj;->a:Lva;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Loc;ZZLko;Lpz;Ljava/lang/String;)V
     .locals 0
 
     .line 1
+    iput-object p1, p0, Loj;->f:Loc;
+
+    iput-boolean p2, p0, Loj;->a:Z
+
+    iput-boolean p3, p0, Loj;->b:Z
+
+    iput-object p4, p0, Loj;->c:Lko;
+
+    iput-object p5, p0, Loj;->d:Lpz;
+
+    iput-object p6, p0, Loj;->e:Ljava/lang/String;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -59,29 +43,127 @@
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method public final run()V
+    .locals 4
 
-    const/4 v0, 0x1
+    .line 2
+    iget-object v0, p0, Loj;->f:Loc;
 
-    return v0
-.end method
-
-.method public final b()Z
-    .locals 1
-
-    .line 1
-    sget-object v0, Loj;->a:Lva;
-
-    invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
+    invoke-static {v0}, Loc;->d(Loc;)Lkr;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Boolean;
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    .line 4
+    iget-object v0, p0, Loj;->f:Loc;
 
-    move-result v0
+    invoke-virtual {v0}, Lnb;->r()Lla;
 
-    return v0
+    move-result-object v0
+
+    invoke-virtual {v0}, Lla;->c_()Llc;
+
+    move-result-object v0
+
+    const-string v1, "Discarding data. Failed to send event to service"
+
+    invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V
+
+    return-void
+
+    .line 6
+    :cond_0
+    iget-boolean v1, p0, Loj;->a:Z
+
+    if-eqz v1, :cond_2
+
+    .line 7
+    iget-object v1, p0, Loj;->f:Loc;
+
+    iget-boolean v2, p0, Loj;->b:Z
+
+    if-eqz v2, :cond_1
+
+    const/4 v2, 0x0
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v2, p0, Loj;->c:Lko;
+
+    :goto_0
+    iget-object v3, p0, Loj;->d:Lpz;
+
+    invoke-virtual {v1, v0, v2, v3}, Loc;->a(Lkr;Lba;Lpz;)V
+
+    goto :goto_1
+
+    .line 8
+    :cond_2
+    :try_start_0
+    iget-object v1, p0, Loj;->e:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    .line 9
+    iget-object v1, p0, Loj;->c:Lko;
+
+    iget-object v2, p0, Loj;->d:Lpz;
+
+    invoke-interface {v0, v1, v2}, Lkr;->a(Lko;Lpz;)V
+
+    goto :goto_1
+
+    .line 10
+    :cond_3
+    iget-object v1, p0, Loj;->c:Lko;
+
+    iget-object v2, p0, Loj;->e:Ljava/lang/String;
+
+    iget-object v3, p0, Loj;->f:Loc;
+
+    invoke-virtual {v3}, Lnb;->r()Lla;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lla;->y()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v0, v1, v2, v3}, Lkr;->a(Lko;Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v0
+
+    .line 13
+    iget-object v1, p0, Loj;->f:Loc;
+
+    invoke-virtual {v1}, Lnb;->r()Lla;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lla;->c_()Llc;
+
+    move-result-object v1
+
+    const-string v2, "Failed to send event to the service"
+
+    invoke-virtual {v1, v2, v0}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V
+
+    .line 14
+    :goto_1
+    iget-object v0, p0, Loj;->f:Loc;
+
+    invoke-static {v0}, Loc;->e(Loc;)V
+
+    return-void
 .end method

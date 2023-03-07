@@ -1,80 +1,163 @@
 .class public final Ljb;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
+.super Ljava/util/AbstractList;
+
+# interfaces
+.implements Lgy;
+.implements Ljava/util/RandomAccess;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/util/AbstractList<",
+        "Ljava/lang/String;",
+        ">;",
+        "Lgy;",
+        "Ljava/util/RandomAccess;"
+    }
+.end annotation
+
+
+# instance fields
+.field private final a:Lgy;
 
 
 # direct methods
-.method public static a(Ljava/lang/Object;)Lkb;
+.method public constructor <init>(Lgy;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Ljb;->a:Lgy;
+
+    return-void
+.end method
+
+.method static synthetic a(Ljb;)Lgy;
+    .locals 0
+
+    .line 14
+    iget-object p0, p0, Ljb;->a:Lgy;
+
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public final a(Lew;)V
+    .locals 0
+
+    .line 6
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p1
+.end method
+
+.method public final b(I)Ljava/lang/Object;
     .locals 1
-    .param p0    # Ljava/lang/Object;
-        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
-        .end annotation
-    .end param
+
+    .line 4
+    iget-object v0, p0, Ljb;->a:Lgy;
+
+    invoke-interface {v0, p1}, Lgy;->b(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final d()Ljava/util/List;
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(TT;)",
-            "Lkb<",
-            "TT;>;"
+            "()",
+            "Ljava/util/List<",
+            "*>;"
         }
     .end annotation
 
-    .line 5
-    new-instance v0, Lob;
+    .line 9
+    iget-object v0, p0, Ljb;->a:Lgy;
 
-    invoke-direct {v0, p0}, Lob;-><init>(Ljava/lang/Object;)V
+    invoke-interface {v0}, Lgy;->d()Ljava/util/List;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public static a(Lkb;)Lkb;
+.method public final e()Lgy;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method public final synthetic get(I)Ljava/lang/Object;
+    .locals 1
+
+    .line 12
+    iget-object v0, p0, Ljb;->a:Lgy;
+
+    invoke-interface {v0, p1}, Lgy;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/String;
+
+    return-object p1
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Lkb<",
-            "TT;>;)",
-            "Lkb<",
-            "TT;>;"
+            "()",
+            "Ljava/util/Iterator<",
+            "Ljava/lang/String;",
+            ">;"
         }
     .end annotation
 
-    .line 1
-    instance-of v0, p0, Llb;
+    .line 8
+    new-instance v0, Ljd;
 
-    if-nez v0, :cond_2
-
-    instance-of v0, p0, Lmb;
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    .line 2
-    :cond_0
-    instance-of v0, p0, Ljava/io/Serializable;
-
-    if-eqz v0, :cond_1
-
-    .line 3
-    new-instance v0, Lmb;
-
-    invoke-direct {v0, p0}, Lmb;-><init>(Lkb;)V
+    invoke-direct {v0, p0}, Ljd;-><init>(Ljb;)V
 
     return-object v0
+.end method
 
-    .line 4
-    :cond_1
-    new-instance v0, Llb;
+.method public final listIterator(I)Ljava/util/ListIterator;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)",
+            "Ljava/util/ListIterator<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
 
-    invoke-direct {v0, p0}, Llb;-><init>(Lkb;)V
+    .line 7
+    new-instance v0, Ljc;
+
+    invoke-direct {v0, p0, p1}, Ljc;-><init>(Ljb;I)V
 
     return-object v0
+.end method
 
-    :cond_2
-    :goto_0
-    return-object p0
+.method public final size()I
+    .locals 1
+
+    .line 5
+    iget-object v0, p0, Ljb;->a:Lgy;
+
+    invoke-interface {v0}, Lgy;->size()I
+
+    move-result v0
+
+    return v0
 .end method

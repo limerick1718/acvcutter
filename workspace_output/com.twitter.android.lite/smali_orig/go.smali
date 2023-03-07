@@ -1,375 +1,137 @@
-.class public final Lgo;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-common@@19.3.0"
+.class public Lgo;
+.super Ljava/io/IOException;
 
 
 # instance fields
-.field private final a:Ljava/lang/String;
-
-.field private final b:Ljava/lang/String;
-
-.field private final c:Ljava/lang/String;
-
-.field private final d:Ljava/lang/String;
-
-.field private final e:Ljava/lang/String;
-
-.field private final f:Ljava/lang/String;
-
-.field private final g:Ljava/lang/String;
+.field private a:Lhp;
 
 
 # direct methods
-.method private constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 2
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    const/4 p1, 0x0
 
     .line 2
-    invoke-static {p1}, Lcom/google/android/gms/common/util/n;->a(Ljava/lang/String;)Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    const-string v1, "ApplicationId must be set."
-
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/q;->a(ZLjava/lang/Object;)V
-
-    .line 3
-    iput-object p1, p0, Lgo;->b:Ljava/lang/String;
-
-    .line 4
-    iput-object p2, p0, Lgo;->a:Ljava/lang/String;
-
-    .line 5
-    iput-object p3, p0, Lgo;->c:Ljava/lang/String;
-
-    .line 6
-    iput-object p4, p0, Lgo;->d:Ljava/lang/String;
-
-    .line 7
-    iput-object p5, p0, Lgo;->e:Ljava/lang/String;
-
-    .line 8
-    iput-object p6, p0, Lgo;->f:Ljava/lang/String;
-
-    .line 9
-    iput-object p7, p0, Lgo;->g:Ljava/lang/String;
+    iput-object p1, p0, Lgo;->a:Lhp;
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;)Lgo;
-    .locals 9
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/common/internal/u;
-
-    invoke-direct {v0, p0}, Lcom/google/android/gms/common/internal/u;-><init>(Landroid/content/Context;)V
-
-    const-string p0, "google_app_id"
-
-    .line 2
-    invoke-virtual {v0, p0}, Lcom/google/android/gms/common/internal/u;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 3
-    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    .line 4
-    :cond_0
-    new-instance p0, Lgo;
-
-    const-string v1, "google_api_key"
-
-    .line 5
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/internal/u;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v1, "firebase_database_url"
+.method static a()Lgo;
+    .locals 2
 
     .line 6
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/internal/u;->a(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v0, Lgo;
 
-    move-result-object v4
+    const-string v1, "While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length."
 
-    const-string v1, "ga_trackingId"
+    invoke-direct {v0, v1}, Lgo;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method static b()Lgo;
+    .locals 2
 
     .line 7
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/internal/u;->a(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v0, Lgo;
 
-    move-result-object v5
+    const-string v1, "CodedInputStream encountered an embedded string or message which claimed to have negative size."
 
-    const-string v1, "gcm_defaultSenderId"
+    invoke-direct {v0, v1}, Lgo;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method static c()Lgo;
+    .locals 2
 
     .line 8
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/internal/u;->a(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v0, Lgo;
 
-    move-result-object v6
+    const-string v1, "CodedInputStream encountered a malformed varint."
 
-    const-string v1, "google_storage_bucket"
+    invoke-direct {v0, v1}, Lgo;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method static d()Lgo;
+    .locals 2
 
     .line 9
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/internal/u;->a(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v0, Lgo;
 
-    move-result-object v7
+    const-string v1, "Protocol message end-group tag did not match expected tag."
 
-    const-string v1, "project_id"
+    invoke-direct {v0, v1}, Lgo;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method static e()Lgp;
+    .locals 2
 
     .line 10
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/internal/u;->a(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v0, Lgp;
 
-    move-result-object v8
+    const-string v1, "Protocol message tag had invalid wire type."
 
-    move-object v1, p0
+    invoke-direct {v0, v1}, Lgp;-><init>(Ljava/lang/String;)V
 
-    invoke-direct/range {v1 .. v8}, Lgo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    return-object v0
+.end method
 
-    return-object p0
+.method static f()Lgo;
+    .locals 2
+
+    .line 11
+    new-instance v0, Lgo;
+
+    const-string v1, "Protocol message had too many levels of nesting.  May be malicious.  Use CodedInputStream.setRecursionLimit() to increase the depth limit."
+
+    invoke-direct {v0, v1}, Lgo;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method static g()Lgo;
+    .locals 2
+
+    .line 12
+    new-instance v0, Lgo;
+
+    const-string v1, "Failed to parse the message."
+
+    invoke-direct {v0, v1}, Lgo;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method static h()Lgo;
+    .locals 2
+
+    .line 13
+    new-instance v0, Lgo;
+
+    const-string v1, "Protocol message had invalid UTF-8."
+
+    invoke-direct {v0, v1}, Lgo;-><init>(Ljava/lang/String;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public a()Ljava/lang/String;
-    .locals 1
-
-    .line 11
-    iget-object v0, p0, Lgo;->b:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public b()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lgo;->e:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    .line 1
-    instance-of v0, p1, Lgo;
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    return v1
-
-    .line 2
-    :cond_0
-    check-cast p1, Lgo;
-
-    .line 3
-    iget-object v0, p0, Lgo;->b:Ljava/lang/String;
-
-    iget-object v2, p1, Lgo;->b:Ljava/lang/String;
-
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lgo;->a:Ljava/lang/String;
-
-    iget-object v2, p1, Lgo;->a:Ljava/lang/String;
+.method public final a(Lhp;)Lgo;
+    .locals 0
 
     .line 4
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iput-object p1, p0, Lgo;->a:Lhp;
 
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lgo;->c:Ljava/lang/String;
-
-    iget-object v2, p1, Lgo;->c:Ljava/lang/String;
-
-    .line 5
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lgo;->d:Ljava/lang/String;
-
-    iget-object v2, p1, Lgo;->d:Ljava/lang/String;
-
-    .line 6
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lgo;->e:Ljava/lang/String;
-
-    iget-object v2, p1, Lgo;->e:Ljava/lang/String;
-
-    .line 7
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lgo;->f:Ljava/lang/String;
-
-    iget-object v2, p1, Lgo;->f:Ljava/lang/String;
-
-    .line 8
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lgo;->g:Ljava/lang/String;
-
-    iget-object p1, p1, Lgo;->g:Ljava/lang/String;
-
-    .line 9
-    invoke-static {v0, p1}, Lcom/google/android/gms/common/internal/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    const/4 v1, 0x1
-
-    :cond_1
-    return v1
-.end method
-
-.method public hashCode()I
-    .locals 3
-
-    const/4 v0, 0x7
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    .line 1
-    iget-object v1, p0, Lgo;->b:Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Lgo;->a:Ljava/lang/String;
-
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Lgo;->c:Ljava/lang/String;
-
-    const/4 v2, 0x2
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Lgo;->d:Ljava/lang/String;
-
-    const/4 v2, 0x3
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Lgo;->e:Ljava/lang/String;
-
-    const/4 v2, 0x4
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Lgo;->f:Ljava/lang/String;
-
-    const/4 v2, 0x5
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Lgo;->g:Ljava/lang/String;
-
-    const/4 v2, 0x6
-
-    aput-object v1, v0, v2
-
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/p;->a([Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 3
-
-    .line 1
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/p;->a(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/p$a;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lgo;->b:Ljava/lang/String;
-
-    const-string v2, "applicationId"
-
-    .line 2
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/p$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/p$a;
-
-    iget-object v1, p0, Lgo;->a:Ljava/lang/String;
-
-    const-string v2, "apiKey"
-
-    .line 3
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/p$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/p$a;
-
-    iget-object v1, p0, Lgo;->c:Ljava/lang/String;
-
-    const-string v2, "databaseUrl"
-
-    .line 4
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/p$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/p$a;
-
-    iget-object v1, p0, Lgo;->e:Ljava/lang/String;
-
-    const-string v2, "gcmSenderId"
-
-    .line 5
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/p$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/p$a;
-
-    iget-object v1, p0, Lgo;->f:Ljava/lang/String;
-
-    const-string v2, "storageBucket"
-
-    .line 6
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/p$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/p$a;
-
-    iget-object v1, p0, Lgo;->g:Ljava/lang/String;
-
-    const-string v2, "projectId"
-
-    .line 7
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/p$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/p$a;
-
-    .line 8
-    invoke-virtual {v0}, Lcom/google/android/gms/common/internal/p$a;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-object p0
 .end method

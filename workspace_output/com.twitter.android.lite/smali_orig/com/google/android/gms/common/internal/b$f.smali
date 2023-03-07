@@ -22,11 +22,11 @@
 
 
 # instance fields
-.field private final d:I
+.field private final a:I
 
-.field private final e:Landroid/os/Bundle;
+.field private final b:Landroid/os/Bundle;
 
-.field private final synthetic f:Lcom/google/android/gms/common/internal/b;
+.field private final synthetic c:Lcom/google/android/gms/common/internal/b;
 
 
 # direct methods
@@ -34,7 +34,7 @@
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/b$f;->f:Lcom/google/android/gms/common/internal/b;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/b$f;->c:Lcom/google/android/gms/common/internal/b;
 
     const/4 v0, 0x1
 
@@ -46,23 +46,23 @@
     invoke-direct {p0, p1, v0}, Lcom/google/android/gms/common/internal/b$h;-><init>(Lcom/google/android/gms/common/internal/b;Ljava/lang/Object;)V
 
     .line 3
-    iput p2, p0, Lcom/google/android/gms/common/internal/b$f;->d:I
+    iput p2, p0, Lcom/google/android/gms/common/internal/b$f;->a:I
 
     .line 4
-    iput-object p3, p0, Lcom/google/android/gms/common/internal/b$f;->e:Landroid/os/Bundle;
+    iput-object p3, p0, Lcom/google/android/gms/common/internal/b$f;->b:Landroid/os/Bundle;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected abstract a(Lc5;)V
+.method protected abstract a(Lcom/google/android/gms/common/b;)V
 .end method
 
 .method protected final synthetic a(Ljava/lang/Object;)V
     .locals 4
 
-    .line 1
+    .line 7
     check-cast p1, Ljava/lang/Boolean;
 
     const/4 v0, 0x1
@@ -71,16 +71,16 @@
 
     if-nez p1, :cond_0
 
-    .line 2
-    iget-object p1, p0, Lcom/google/android/gms/common/internal/b$f;->f:Lcom/google/android/gms/common/internal/b;
+    .line 9
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/b$f;->c:Lcom/google/android/gms/common/internal/b;
 
     invoke-static {p1, v0, v1}, Lcom/google/android/gms/common/internal/b;->a(Lcom/google/android/gms/common/internal/b;ILandroid/os/IInterface;)V
 
     return-void
 
-    .line 3
+    .line 11
     :cond_0
-    iget p1, p0, Lcom/google/android/gms/common/internal/b$f;->d:I
+    iget p1, p0, Lcom/google/android/gms/common/internal/b$f;->a:I
 
     if-eqz p1, :cond_3
 
@@ -88,19 +88,19 @@
 
     if-eq p1, v2, :cond_2
 
-    .line 4
-    iget-object p1, p0, Lcom/google/android/gms/common/internal/b$f;->f:Lcom/google/android/gms/common/internal/b;
+    .line 21
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/b$f;->c:Lcom/google/android/gms/common/internal/b;
 
     invoke-static {p1, v0, v1}, Lcom/google/android/gms/common/internal/b;->a(Lcom/google/android/gms/common/internal/b;ILandroid/os/IInterface;)V
 
-    .line 5
-    iget-object p1, p0, Lcom/google/android/gms/common/internal/b$f;->e:Landroid/os/Bundle;
+    .line 23
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/b$f;->b:Landroid/os/Bundle;
 
     if-eqz p1, :cond_1
 
     const-string v0, "pendingIntent"
 
-    .line 6
+    .line 24
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object p1
@@ -109,25 +109,25 @@
 
     check-cast v1, Landroid/app/PendingIntent;
 
-    .line 7
+    .line 25
     :cond_1
-    new-instance p1, Lc5;
+    new-instance p1, Lcom/google/android/gms/common/b;
 
-    iget v0, p0, Lcom/google/android/gms/common/internal/b$f;->d:I
+    iget v0, p0, Lcom/google/android/gms/common/internal/b$f;->a:I
 
-    invoke-direct {p1, v0, v1}, Lc5;-><init>(ILandroid/app/PendingIntent;)V
+    invoke-direct {p1, v0, v1}, Lcom/google/android/gms/common/b;-><init>(ILandroid/app/PendingIntent;)V
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/internal/b$f;->a(Lc5;)V
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/internal/b$f;->a(Lcom/google/android/gms/common/b;)V
 
     goto :goto_0
 
-    .line 8
+    .line 15
     :cond_2
-    iget-object p1, p0, Lcom/google/android/gms/common/internal/b$f;->f:Lcom/google/android/gms/common/internal/b;
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/b$f;->c:Lcom/google/android/gms/common/internal/b;
 
     invoke-static {p1, v0, v1}, Lcom/google/android/gms/common/internal/b;->a(Lcom/google/android/gms/common/internal/b;ILandroid/os/IInterface;)V
 
-    .line 9
+    .line 16
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const/4 v1, 0x3
@@ -136,7 +136,7 @@
 
     const/4 v2, 0x0
 
-    .line 10
+    .line 17
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v3
@@ -147,9 +147,9 @@
 
     aput-object v3, v1, v2
 
-    iget-object v2, p0, Lcom/google/android/gms/common/internal/b$f;->f:Lcom/google/android/gms/common/internal/b;
+    iget-object v2, p0, Lcom/google/android/gms/common/internal/b$f;->c:Lcom/google/android/gms/common/internal/b;
 
-    .line 11
+    .line 18
     invoke-virtual {v2}, Lcom/google/android/gms/common/internal/b;->i()Ljava/lang/String;
 
     move-result-object v2
@@ -158,10 +158,10 @@
 
     const/4 v0, 0x2
 
-    iget-object v2, p0, Lcom/google/android/gms/common/internal/b$f;->f:Lcom/google/android/gms/common/internal/b;
+    iget-object v2, p0, Lcom/google/android/gms/common/internal/b$f;->c:Lcom/google/android/gms/common/internal/b;
 
-    .line 12
-    invoke-virtual {v2}, Lcom/google/android/gms/common/internal/b;->e()Ljava/lang/String;
+    .line 19
+    invoke-virtual {v2}, Lcom/google/android/gms/common/internal/b;->k()Ljava/lang/String;
 
     move-result-object v2
 
@@ -169,7 +169,7 @@
 
     const-string v0, "A fatal developer error has occurred. Class name: %s. Start service action: %s. Service Descriptor: %s. "
 
-    .line 13
+    .line 20
     invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
@@ -178,38 +178,38 @@
 
     throw p1
 
-    .line 14
+    .line 12
     :cond_3
-    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$f;->e()Z
+    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$f;->a()Z
 
     move-result p1
 
     if-nez p1, :cond_4
 
-    .line 15
-    iget-object p1, p0, Lcom/google/android/gms/common/internal/b$f;->f:Lcom/google/android/gms/common/internal/b;
+    .line 13
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/b$f;->c:Lcom/google/android/gms/common/internal/b;
 
     invoke-static {p1, v0, v1}, Lcom/google/android/gms/common/internal/b;->a(Lcom/google/android/gms/common/internal/b;ILandroid/os/IInterface;)V
 
-    .line 16
-    new-instance p1, Lc5;
+    .line 14
+    new-instance p1, Lcom/google/android/gms/common/b;
 
     const/16 v0, 0x8
 
-    invoke-direct {p1, v0, v1}, Lc5;-><init>(ILandroid/app/PendingIntent;)V
+    invoke-direct {p1, v0, v1}, Lcom/google/android/gms/common/b;-><init>(ILandroid/app/PendingIntent;)V
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/internal/b$f;->a(Lc5;)V
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/internal/b$f;->a(Lcom/google/android/gms/common/b;)V
 
     :cond_4
     :goto_0
     return-void
 .end method
 
-.method protected final c()V
+.method protected abstract a()Z
+.end method
+
+.method protected final b()V
     .locals 0
 
     return-void
-.end method
-
-.method protected abstract e()Z
 .end method

@@ -1,9 +1,8 @@
 .class public Lcom/google/firebase/analytics/connector/internal/AnalyticsConnectorRegistrar;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-api@@17.4.0"
 
 # interfaces
-.implements Lcom/google/firebase/components/h;
+.implements Lcom/google/firebase/components/d;
 
 
 # annotations
@@ -24,7 +23,7 @@
 
 # virtual methods
 .method public getComponents()Ljava/util/List;
-    .locals 3
+    .locals 2
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "MissingPermission"
@@ -38,82 +37,71 @@
         value = {
             "()",
             "Ljava/util/List<",
-            "Lcom/google/firebase/components/d<",
+            "Lcom/google/firebase/components/a<",
             "*>;>;"
         }
     .end annotation
 
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Lcom/google/firebase/components/d;
-
-    .line 1
-    const-class v1, Lho;
-
     .line 2
-    invoke-static {v1}, Lcom/google/firebase/components/d;->a(Ljava/lang/Class;)Lcom/google/firebase/components/d$b;
-
-    move-result-object v1
-
-    const-class v2, Lfo;
+    const-class v0, Lsh;
 
     .line 3
-    invoke-static {v2}, Lcom/google/firebase/components/n;->b(Ljava/lang/Class;)Lcom/google/firebase/components/n;
+    invoke-static {v0}, Lcom/google/firebase/components/a;->a(Ljava/lang/Class;)Lcom/google/firebase/components/a$a;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Lcom/google/firebase/components/d$b;->a(Lcom/google/firebase/components/n;)Lcom/google/firebase/components/d$b;
-
-    const-class v2, Landroid/content/Context;
+    const-class v1, Lcom/google/firebase/FirebaseApp;
 
     .line 4
-    invoke-static {v2}, Lcom/google/firebase/components/n;->b(Ljava/lang/Class;)Lcom/google/firebase/components/n;
+    invoke-static {v1}, Lcom/google/firebase/components/e;->a(Ljava/lang/Class;)Lcom/google/firebase/components/e;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v1, v2}, Lcom/google/firebase/components/d$b;->a(Lcom/google/firebase/components/n;)Lcom/google/firebase/components/d$b;
+    invoke-virtual {v0, v1}, Lcom/google/firebase/components/a$a;->a(Lcom/google/firebase/components/e;)Lcom/google/firebase/components/a$a;
 
-    const-class v2, Lku;
+    move-result-object v0
+
+    const-class v1, Landroid/content/Context;
 
     .line 5
-    invoke-static {v2}, Lcom/google/firebase/components/n;->b(Ljava/lang/Class;)Lcom/google/firebase/components/n;
+    invoke-static {v1}, Lcom/google/firebase/components/e;->a(Ljava/lang/Class;)Lcom/google/firebase/components/e;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v1, v2}, Lcom/google/firebase/components/d$b;->a(Lcom/google/firebase/components/n;)Lcom/google/firebase/components/d$b;
+    invoke-virtual {v0, v1}, Lcom/google/firebase/components/a$a;->a(Lcom/google/firebase/components/e;)Lcom/google/firebase/components/a$a;
 
-    sget-object v2, Lcom/google/firebase/analytics/connector/internal/b;->a:Lcom/google/firebase/components/g;
+    move-result-object v0
+
+    const-class v1, Lso;
 
     .line 6
-    invoke-virtual {v1, v2}, Lcom/google/firebase/components/d$b;->a(Lcom/google/firebase/components/g;)Lcom/google/firebase/components/d$b;
+    invoke-static {v1}, Lcom/google/firebase/components/e;->a(Ljava/lang/Class;)Lcom/google/firebase/components/e;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/firebase/components/a$a;->a(Lcom/google/firebase/components/e;)Lcom/google/firebase/components/a$a;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/google/firebase/analytics/connector/internal/a;->a:Lcom/google/firebase/components/c;
 
     .line 7
-    invoke-virtual {v1}, Lcom/google/firebase/components/d$b;->c()Lcom/google/firebase/components/d$b;
+    invoke-virtual {v0, v1}, Lcom/google/firebase/components/a$a;->a(Lcom/google/firebase/components/c;)Lcom/google/firebase/components/a$a;
+
+    move-result-object v0
 
     .line 8
-    invoke-virtual {v1}, Lcom/google/firebase/components/d$b;->b()Lcom/google/firebase/components/d;
+    invoke-virtual {v0}, Lcom/google/firebase/components/a$a;->b()Lcom/google/firebase/components/a$a;
 
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
-
-    const-string v1, "fire-analytics"
-
-    const-string v2, "17.4.0"
+    move-result-object v0
 
     .line 9
-    invoke-static {v1, v2}, Lyu;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/google/firebase/components/d;
+    invoke-virtual {v0}, Lcom/google/firebase/components/a$a;->c()Lcom/google/firebase/components/a;
 
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
+    move-result-object v0
 
     .line 10
-    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 

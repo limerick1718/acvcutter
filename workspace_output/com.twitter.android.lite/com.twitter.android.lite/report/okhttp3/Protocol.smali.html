@@ -75,20 +75,21 @@ value = {
 <span class="cov">	const-string v8, "quic"</span>
 <span class="cov">	invoke-direct {v0, v7, v6, v8}, Lokhttp3/Protocol;-><init>(Ljava/lang/String;ILjava/lang/String;)V</span>
 <span class="cov">	sput-object v0, Lokhttp3/Protocol;->QUIC:Lokhttp3/Protocol;</span>
-<span class="cov">	const/4 v7, 0x6</span>
-<span class="cov">	new-array v7, v7, [Lokhttp3/Protocol;</span>
-<span class="cov">	sget-object v8, Lokhttp3/Protocol;->HTTP_1_0:Lokhttp3/Protocol;</span>
-<span class="cov">	aput-object v8, v7, v1</span>
+<span class="cov">	const/4 v0, 0x6</span>
+<span class="cov">	new-array v0, v0, [Lokhttp3/Protocol;</span>
+<span class="cov">	sget-object v7, Lokhttp3/Protocol;->HTTP_1_0:Lokhttp3/Protocol;</span>
+<span class="cov">	aput-object v7, v0, v1</span>
 <span class="cov">	sget-object v1, Lokhttp3/Protocol;->HTTP_1_1:Lokhttp3/Protocol;</span>
-<span class="cov">	aput-object v1, v7, v2</span>
+<span class="cov">	aput-object v1, v0, v2</span>
 <span class="cov">	sget-object v1, Lokhttp3/Protocol;->SPDY_3:Lokhttp3/Protocol;</span>
-<span class="cov">	aput-object v1, v7, v3</span>
+<span class="cov">	aput-object v1, v0, v3</span>
 <span class="cov">	sget-object v1, Lokhttp3/Protocol;->HTTP_2:Lokhttp3/Protocol;</span>
-<span class="cov">	aput-object v1, v7, v4</span>
+<span class="cov">	aput-object v1, v0, v4</span>
 <span class="cov">	sget-object v1, Lokhttp3/Protocol;->H2_PRIOR_KNOWLEDGE:Lokhttp3/Protocol;</span>
-<span class="cov">	aput-object v1, v7, v5</span>
-<span class="cov">	aput-object v0, v7, v6</span>
-<span class="cov">	sput-object v7, Lokhttp3/Protocol;->$VALUES:[Lokhttp3/Protocol;</span>
+<span class="cov">	aput-object v1, v0, v5</span>
+<span class="cov">	sget-object v1, Lokhttp3/Protocol;->QUIC:Lokhttp3/Protocol;</span>
+<span class="cov">	aput-object v1, v0, v6</span>
+<span class="cov">	sput-object v0, Lokhttp3/Protocol;->$VALUES:[Lokhttp3/Protocol;</span>
 <span class="exec">	return-void</span>
 .end method
 
@@ -107,7 +108,7 @@ value = {
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public static get(Ljava/lang/String;)Lokhttp3/Protocol;</span>
+.method public static get(Ljava/lang/String;)Lokhttp3/Protocol;
 <span class="">	.locals 3</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -115,37 +116,37 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	sget-object v0, Lokhttp3/Protocol;->HTTP_1_0:Lokhttp3/Protocol;</span>
-<span class="cov">	iget-object v0, v0, Lokhttp3/Protocol;->protocol:Ljava/lang/String;</span>
-<span class="exec">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v0</span>
+<span class="missed">	sget-object v0, Lokhttp3/Protocol;->HTTP_1_0:Lokhttp3/Protocol;</span>
+<span class="missed">	iget-object v0, v0, Lokhttp3/Protocol;->protocol:Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	sget-object p0, Lokhttp3/Protocol;->HTTP_1_0:Lokhttp3/Protocol;</span>
 <span class="">	return-object p0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	sget-object v0, Lokhttp3/Protocol;->HTTP_1_1:Lokhttp3/Protocol;</span>
-<span class="cov">	iget-object v0, v0, Lokhttp3/Protocol;->protocol:Ljava/lang/String;</span>
-<span class="exec">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sget-object v0, Lokhttp3/Protocol;->HTTP_1_1:Lokhttp3/Protocol;</span>
+<span class="missed">	iget-object v0, v0, Lokhttp3/Protocol;->protocol:Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_1</span>
 <span class="missed">	sget-object p0, Lokhttp3/Protocol;->HTTP_1_1:Lokhttp3/Protocol;</span>
 <span class="">	return-object p0</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	sget-object v0, Lokhttp3/Protocol;->H2_PRIOR_KNOWLEDGE:Lokhttp3/Protocol;</span>
-<span class="cov">	iget-object v0, v0, Lokhttp3/Protocol;->protocol:Ljava/lang/String;</span>
-<span class="exec">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	sget-object v0, Lokhttp3/Protocol;->H2_PRIOR_KNOWLEDGE:Lokhttp3/Protocol;</span>
+<span class="missed">	iget-object v0, v0, Lokhttp3/Protocol;->protocol:Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_2</span>
 <span class="missed">	sget-object p0, Lokhttp3/Protocol;->H2_PRIOR_KNOWLEDGE:Lokhttp3/Protocol;</span>
 <span class="">	return-object p0</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	sget-object v0, Lokhttp3/Protocol;->HTTP_2:Lokhttp3/Protocol;</span>
-<span class="cov">	iget-object v0, v0, Lokhttp3/Protocol;->protocol:Ljava/lang/String;</span>
-<span class="exec">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-eqz v0, :cond_3</span>
-<span class="cov">	sget-object p0, Lokhttp3/Protocol;->HTTP_2:Lokhttp3/Protocol;</span>
-<span class="exec">	return-object p0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	sget-object v0, Lokhttp3/Protocol;->HTTP_2:Lokhttp3/Protocol;</span>
+<span class="missed">	iget-object v0, v0, Lokhttp3/Protocol;->protocol:Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_3</span>
+<span class="missed">	sget-object p0, Lokhttp3/Protocol;->HTTP_2:Lokhttp3/Protocol;</span>
+<span class="">	return-object p0</span>
 <span class="">	:cond_3</span>
 <span class="missed">	sget-object v0, Lokhttp3/Protocol;->SPDY_3:Lokhttp3/Protocol;</span>
 <span class="missed">	iget-object v0, v0, Lokhttp3/Protocol;->protocol:Ljava/lang/String;</span>
@@ -195,11 +196,11 @@ value = {
 <span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public toString()Ljava/lang/String;</span>
+.method public toString()Ljava/lang/String;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/Protocol;->protocol:Ljava/lang/String;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Protocol;->protocol:Ljava/lang/String;</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

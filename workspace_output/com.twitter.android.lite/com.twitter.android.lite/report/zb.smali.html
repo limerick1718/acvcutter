@@ -14,220 +14,276 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class abstract Lzb;
-.super Ljava/util/AbstractList;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Lud;
-
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"<E:",
-"Ljava/lang/Object;",
-">",
-"Ljava/util/AbstractList<",
-"TE;>;",
-"Lud<",
-"TE;>;"
-}
-.end annotation
-
-.field private a:Z
+		<code>.class public final Lzb;
+.super Ljava/lang/Object;
+.source "Okio.java"
 
 
-.method constructor &lt;init&gt;()V
+.field static final a:Ljava/util/logging/Logger;
+
+
+.method static constructor &lt;clinit&gt;()V
 <span class="">	.locals 1</span>
 
-<span class="missed">	invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	iput-boolean v0, p0, Lzb;->a:Z</span>
+<span class="missed">	const-class v0, Lzb;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lzb;->a:Ljava/util/logging/Logger;</span>
 <span class="">	return-void</span>
 .end method
 
-.method public a()Z
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-boolean v0, p0, Lzb;->a:Z</span>
-<span class="">	return v0</span>
-.end method
-
-.method public add(Ljava/lang/Object;)Z
+.method private constructor &lt;init&gt;()V
 <span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(TE;)Z"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
 
-<span class="missed">	invoke-virtual {p0}, Lzb;->c()V</span>
-<span class="">	invoke-super {p0, p1}, Ljava/util/AbstractList;->add(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result p1</span>
-<span class="">	return p1</span>
-.end method
-
-.method public addAll(ILjava/util/Collection;)Z
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(I",</span>
-<span class="">	"Ljava/util/Collection<",</span>
-<span class="">	"+TE;>;)Z"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	invoke-virtual {p0}, Lzb;->c()V</span>
-<span class="">	invoke-super {p0, p1, p2}, Ljava/util/AbstractList;->addAll(ILjava/util/Collection;)Z</span>
-<span class="missed">	move-result p1</span>
-<span class="">	return p1</span>
-.end method
-
-.method public addAll(Ljava/util/Collection;)Z
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Ljava/util/Collection<",</span>
-<span class="">	"+TE;>;)Z"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	invoke-virtual {p0}, Lzb;->c()V</span>
-<span class="">	invoke-super {p0, p1}, Ljava/util/AbstractList;->addAll(Ljava/util/Collection;)Z</span>
-<span class="missed">	move-result p1</span>
-<span class="">	return p1</span>
-.end method
-
-.method public final b()V
-<span class="">	.locals 1</span>
-
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	iput-boolean v0, p0, Lzb;->a:Z</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
 <span class="">	return-void</span>
 .end method
 
-.method protected final c()V
+.method public static a(Lzj;)Lyt;
 <span class="">	.locals 1</span>
 
-<span class="missed">	iget-boolean v0, p0, Lzb;->a:Z</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="">	return-void</span>
+<span class="missed">	new-instance v0, Lze;</span>
+<span class="missed">	invoke-direct {v0, p0}, Lze;-><init>(Lzj;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public static a(Lzk;)Lyu;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lzf;</span>
+<span class="missed">	invoke-direct {v0, p0}, Lzf;-><init>(Lzk;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public static a()Lzj;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lzb$3;</span>
+<span class="missed">	invoke-direct {v0}, Lzb$3;-><init>()V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public static a(Ljava/io/OutputStream;)Lzj;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lzl;</span>
+<span class="missed">	invoke-direct {v0}, Lzl;-><init>()V</span>
+<span class="">	invoke-static {p0, v0}, Lzb;->a(Ljava/io/OutputStream;Lzl;)Lzj;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method private static a(Ljava/io/OutputStream;Lzl;)Lzj;
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p0, :cond_1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	new-instance v0, Lzb$1;</span>
+<span class="missed">	invoke-direct {v0, p1, p0}, Lzb$1;-><init>(Lzl;Ljava/io/OutputStream;)V</span>
+<span class="">	return-object v0</span>
 <span class="">	:cond_0</span>
-<span class="missed">	new-instance v0, Ljava/lang/UnsupportedOperationException;</span>
-<span class="missed">	invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V</span>
-<span class="">	throw v0</span>
-.end method
-
-.method public clear()V
-<span class="">	.locals 0</span>
-
-<span class="missed">	invoke-virtual {p0}, Lzb;->c()V</span>
-<span class="missed">	invoke-super {p0}, Ljava/util/AbstractList;->clear()V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-<span class="">	.locals 6</span>
-
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	if-ne p1, p0, :cond_0</span>
-<span class="">	return v0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	instance-of v1, p1, Ljava/util/List;</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="missed">	if-nez v1, :cond_1</span>
-<span class="">	return v2</span>
+<span class="missed">	new-instance p0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p1, "timeout == null"</span>
+<span class="missed">	invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
 <span class="">	:cond_1</span>
-<span class="missed">	instance-of v1, p1, Ljava/util/RandomAccess;</span>
-<span class="missed">	if-nez v1, :cond_2</span>
-<span class="">	invoke-super {p0, p1}, Ljava/util/AbstractList;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result p1</span>
-<span class="">	return p1</span>
-<span class="">	:cond_2</span>
-<span class="missed">	check-cast p1, Ljava/util/List;</span>
-<span class="">	invoke-virtual {p0}, Ljava/util/AbstractList;->size()I</span>
-<span class="missed">	move-result v1</span>
-<span class="">	invoke-interface {p1}, Ljava/util/List;->size()I</span>
-<span class="missed">	move-result v3</span>
-<span class="missed">	if-eq v1, v3, :cond_3</span>
-<span class="">	return v2</span>
-<span class="">	:cond_3</span>
-<span class="missed">	const/4 v3, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	if-ge v3, v1, :cond_5</span>
-<span class="">	invoke-virtual {p0, v3}, Ljava/util/AbstractList;->get(I)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v4</span>
-<span class="">	invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v5</span>
-<span class="">	invoke-virtual {v4, v5}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result v4</span>
-<span class="missed">	if-nez v4, :cond_4</span>
-<span class="">	return v2</span>
-<span class="">	:cond_4</span>
-<span class="missed">	add-int/lit8 v3, v3, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_5</span>
-<span class="">	return v0</span>
+<span class="missed">	new-instance p0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p1, "out == null"</span>
+<span class="missed">	invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
 .end method
 
-.method public hashCode()I
-<span class="">	.locals 4</span>
+.method public static a(Ljava/net/Socket;)Lzj;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="">	invoke-virtual {p0}, Ljava/util/AbstractList;->size()I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	const/4 v1, 0x1</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	if-ge v2, v0, :cond_0</span>
-<span class="missed">	mul-int/lit8 v1, v1, 0x1f</span>
-<span class="">	invoke-virtual {p0, v2}, Ljava/util/AbstractList;->get(I)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="">	invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I</span>
-<span class="missed">	move-result v3</span>
-<span class="missed">	add-int/2addr v1, v3</span>
-<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="missed">	if-eqz p0, :cond_1</span>
+<span class="">	invoke-virtual {p0}, Ljava/net/Socket;->getOutputStream()Ljava/io/OutputStream;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-static {p0}, Lzb;->c(Ljava/net/Socket;)Lyq;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p0}, Ljava/net/Socket;->getOutputStream()Ljava/io/OutputStream;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-static {p0, v0}, Lzb;->a(Ljava/io/OutputStream;Lzl;)Lzj;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-virtual {v0, p0}, Lyq;->sink(Lzj;)Lzj;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p0, Ljava/io/IOException;</span>
+<span class="missed">	const-string v0, "socket\'s output stream == null"</span>
+<span class="missed">	invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v0, "socket == null"</span>
+<span class="missed">	invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
+.end method
+
+.method public static a(Ljava/io/File;)Lzk;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/FileNotFoundException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-eqz p0, :cond_0</span>
+<span class="missed">	new-instance v0, Ljava/io/FileInputStream;</span>
+<span class="missed">	invoke-direct {v0, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V</span>
+<span class="">	invoke-static {v0}, Lzb;->a(Ljava/io/InputStream;)Lzk;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v0, "file == null"</span>
+<span class="missed">	invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
+.end method
+
+.method public static a(Ljava/io/InputStream;)Lzk;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lzl;</span>
+<span class="missed">	invoke-direct {v0}, Lzl;-><init>()V</span>
+<span class="">	invoke-static {p0, v0}, Lzb;->a(Ljava/io/InputStream;Lzl;)Lzk;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method private static a(Ljava/io/InputStream;Lzl;)Lzk;
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p0, :cond_1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	new-instance v0, Lzb$2;</span>
+<span class="missed">	invoke-direct {v0, p1, p0}, Lzb$2;-><init>(Lzl;Ljava/io/InputStream;)V</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p1, "timeout == null"</span>
+<span class="missed">	invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p1, "in == null"</span>
+<span class="missed">	invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
+.end method
+
+.method static a(Ljava/lang/AssertionError;)Z
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Ljava/lang/AssertionError;->getCause()Ljava/lang/Throwable;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Ljava/lang/AssertionError;->getMessage()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Ljava/lang/AssertionError;->getMessage()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	const-string v0, "getsockname failed"</span>
+<span class="">	invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_0</span>
+<span class="missed">	const/4 p0, 0x1</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
-<span class="">	return v1</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return p0</span>
 .end method
 
-.method public remove(Ljava/lang/Object;)Z
-<span class="">	.locals 0</span>
-
-<span class="missed">	invoke-virtual {p0}, Lzb;->c()V</span>
-<span class="">	invoke-super {p0, p1}, Ljava/util/AbstractList;->remove(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result p1</span>
-<span class="">	return p1</span>
-.end method
-
-.method public removeAll(Ljava/util/Collection;)Z
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+.method public static b(Ljava/io/File;)Lzj;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Ljava/util/Collection<",</span>
-<span class="">	"*>;)Z"</span>
+<span class="">	Ljava/io/FileNotFoundException;</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	invoke-virtual {p0}, Lzb;->c()V</span>
-<span class="">	invoke-super {p0, p1}, Ljava/util/AbstractList;->removeAll(Ljava/util/Collection;)Z</span>
-<span class="missed">	move-result p1</span>
-<span class="">	return p1</span>
+<span class="missed">	if-eqz p0, :cond_0</span>
+<span class="missed">	new-instance v0, Ljava/io/FileOutputStream;</span>
+<span class="missed">	invoke-direct {v0, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V</span>
+<span class="">	invoke-static {v0}, Lzb;->a(Ljava/io/OutputStream;)Lzj;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v0, "file == null"</span>
+<span class="missed">	invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
 .end method
 
-.method public retainAll(Ljava/util/Collection;)Z
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+.method public static b(Ljava/net/Socket;)Lzk;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Ljava/util/Collection<",</span>
-<span class="">	"*>;)Z"</span>
+<span class="">	Ljava/io/IOException;</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	invoke-virtual {p0}, Lzb;->c()V</span>
-<span class="">	invoke-super {p0, p1}, Ljava/util/AbstractList;->retainAll(Ljava/util/Collection;)Z</span>
-<span class="missed">	move-result p1</span>
-<span class="">	return p1</span>
+<span class="missed">	if-eqz p0, :cond_1</span>
+<span class="">	invoke-virtual {p0}, Ljava/net/Socket;->getInputStream()Ljava/io/InputStream;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-static {p0}, Lzb;->c(Ljava/net/Socket;)Lyq;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p0}, Ljava/net/Socket;->getInputStream()Ljava/io/InputStream;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-static {p0, v0}, Lzb;->a(Ljava/io/InputStream;Lzl;)Lzk;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-virtual {v0, p0}, Lyq;->source(Lzk;)Lzk;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p0, Ljava/io/IOException;</span>
+<span class="missed">	const-string v0, "socket\'s input stream == null"</span>
+<span class="missed">	invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v0, "socket == null"</span>
+<span class="missed">	invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
+.end method
+
+.method private static c(Ljava/net/Socket;)Lyq;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lzb$4;</span>
+<span class="missed">	invoke-direct {v0, p0}, Lzb$4;-><init>(Ljava/net/Socket;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public static c(Ljava/io/File;)Lzj;
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/FileNotFoundException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-eqz p0, :cond_0</span>
+<span class="missed">	new-instance v0, Ljava/io/FileOutputStream;</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	invoke-direct {v0, p0, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;Z)V</span>
+<span class="">	invoke-static {v0}, Lzb;->a(Ljava/io/OutputStream;)Lzj;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v0, "file == null"</span>
+<span class="missed">	invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

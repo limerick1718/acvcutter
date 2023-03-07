@@ -30,7 +30,7 @@
 .method constructor <init>(Lretrofit2/ParameterHandler;)V
     .locals 0
 
-    .line 1
+    .line 45
     iput-object p1, p0, Lretrofit2/ParameterHandler$2;->this$0:Lretrofit2/ParameterHandler;
 
     invoke-direct {p0}, Lretrofit2/ParameterHandler;-><init>()V
@@ -59,7 +59,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 1
+    .line 49
     invoke-static {p2}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v1
@@ -67,7 +67,7 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 2
+    .line 51
     iget-object v2, p0, Lretrofit2/ParameterHandler$2;->this$0:Lretrofit2/ParameterHandler;
 
     invoke-static {p2, v0}, Ljava/lang/reflect/Array;->get(Ljava/lang/Object;I)Ljava/lang/Object;

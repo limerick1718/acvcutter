@@ -1,24 +1,19 @@
 .class public Lcom/google/firebase/provider/FirebaseInitProvider;
 .super Landroid/content/ContentProvider;
-.source "com.google.firebase:firebase-common@@19.3.0"
+.source "com.google.firebase:firebase-common@@16.0.2"
 .method public constructor <init>()V
 .locals 0
 invoke-direct {p0}, Landroid/content/ContentProvider;-><init>()V
 return-void
 .end method
-.method private static a(Landroid/content/pm/ProviderInfo;)V
-.locals 1
-const-string v0, "FirebaseInitProvider ProviderInfo cannot be null."
-invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-iget-object p0, p0, Landroid/content/pm/ProviderInfo;->authority:Ljava/lang/String;
-const-string v0, "com.google.firebase.firebaseinitprovider"
-invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-move-result p0
-return-void
-.end method
 .method public attachInfo(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V
-.locals 0
-invoke-static {p2}, Lcom/google/firebase/provider/FirebaseInitProvider;->a(Landroid/content/pm/ProviderInfo;)V
+.locals 2
+const-string v0, "FirebaseInitProvider ProviderInfo cannot be null."
+invoke-static {p2, v0}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+iget-object v0, p2, Landroid/content/pm/ProviderInfo;->authority:Ljava/lang/String;
+const-string v1, "com.google.firebase.firebaseinitprovider"
+invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+move-result v0
 invoke-super {p0, p1, p2}, Landroid/content/ContentProvider;->attachInfo(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V
 return-void
 .end method
@@ -39,9 +34,9 @@ return-object v0
 .end method
 .method public onCreate()Z
 .locals 2
-invoke-virtual {p0}, Landroid/content/ContentProvider;->getContext()Landroid/content/Context;
+invoke-virtual {p0}, Lcom/google/firebase/provider/FirebaseInitProvider;->getContext()Landroid/content/Context;
 move-result-object v0
-invoke-static {v0}, Lfo;->a(Landroid/content/Context;)Lfo;
+invoke-static {v0}, Lcom/google/firebase/FirebaseApp;->a(Landroid/content/Context;)Lcom/google/firebase/FirebaseApp;
 move-result-object v0
 const-string v1, "FirebaseInitProvider"
 const-string v0, "FirebaseApp initialization successful"

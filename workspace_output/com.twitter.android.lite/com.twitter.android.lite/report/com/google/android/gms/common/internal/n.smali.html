@@ -14,21 +14,50 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lcom/google/android/gms/common/internal/n;
+		<code>.class public final Lcom/google/android/gms/common/internal/n;
 .super Ljava/lang/Object;
-.implements Landroid/os/IInterface;
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lcom/google/android/gms/common/internal/n$a;
+}
+.end annotation
 
 
 
+<span class="cov">.method public static varargs a([Ljava/lang/Object;)I</span>
+<span class="">	.locals 0</span>
 
-.method public abstract a(Lcom/google/android/gms/common/internal/l;Lcom/google/android/gms/common/internal/f;)V
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Landroid/os/RemoteException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
+<span class="exec">	invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I</span>
+<span class="cov">	move-result p0</span>
+<span class="exec">	return p0</span>
+.end method
 
+.method public static a(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n$a;
+<span class="">	.locals 2</span>
+
+<span class="missed">	new-instance v0, Lcom/google/android/gms/common/internal/n$a;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-direct {v0, p0, v1}, Lcom/google/android/gms/common/internal/n$a;-><init>(Ljava/lang/Object;Lcom/google/android/gms/common/internal/ap;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public static a(Ljava/lang/Object;Ljava/lang/Object;)Z</span>
+<span class="">	.locals 0</span>
+
+<span class="missed">	if-eq p0, p1, :cond_1</span>
+<span class="missed">	if-eqz p0, :cond_0</span>
+<span class="">	invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	return p0</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	const/4 p0, 0x1</span>
+<span class="exec">	return p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

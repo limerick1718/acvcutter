@@ -12,6 +12,17 @@ value = {
 }
 .end annotation
 .end field
+.field private static final b:Ljava/util/Map;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/Map<",
+"Ljava/lang/Class<",
+"*>;",
+"Ljava/lang/Class<",
+"*>;>;"
+}
+.end annotation
+.end field
 .method static constructor <clinit>()V
 .locals 4
 new-instance v0, Ljava/util/HashMap;
@@ -50,6 +61,8 @@ invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Lja
 move-result-object v0
 sput-object v0, Lcom/google/gson/internal/h;->a:Ljava/util/Map;
 invoke-static {v2}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
+move-result-object v0
+sput-object v0, Lcom/google/gson/internal/h;->b:Ljava/util/Map;
 return-void
 .end method
 .method private static a(Ljava/util/Map;Ljava/util/Map;Ljava/lang/Class;Ljava/lang/Class;)V

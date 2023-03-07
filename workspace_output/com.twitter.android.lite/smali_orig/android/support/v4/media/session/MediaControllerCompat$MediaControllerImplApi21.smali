@@ -4,6 +4,15 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/support/v4/media/session/MediaControllerCompat;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x8
+    name = "MediaControllerImplApi21"
+.end annotation
+
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21$a;,
@@ -15,36 +24,36 @@
 # instance fields
 .field final a:Ljava/lang/Object;
 
-.field private final b:Ljava/util/List;
+.field final b:Landroid/support/v4/media/session/MediaSessionCompat$Token;
+
+.field private final c:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
-            "Landroid/support/v4/media/session/c;",
+            "Landroid/support/v4/media/session/MediaControllerCompat$a;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private c:Ljava/util/HashMap;
+.field private d:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
-            "Landroid/support/v4/media/session/c;",
+            "Landroid/support/v4/media/session/MediaControllerCompat$a;",
             "Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21$a;",
             ">;"
         }
     .end annotation
 .end field
 
-.field final d:Landroid/support/v4/media/session/MediaSessionCompat$Token;
-
 
 # virtual methods
 .method a()V
     .locals 4
 
-    .line 1
-    iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21;->d:Landroid/support/v4/media/session/MediaSessionCompat$Token;
+    .line 2203
+    iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21;->b:Landroid/support/v4/media/session/MediaSessionCompat$Token;
 
     invoke-virtual {v0}, Landroid/support/v4/media/session/MediaSessionCompat$Token;->a()Landroid/support/v4/media/session/b;
 
@@ -54,9 +63,9 @@
 
     return-void
 
-    .line 2
+    .line 2206
     :cond_0
-    iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21;->b:Ljava/util/List;
+    iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21;->c:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -73,24 +82,24 @@
 
     move-result-object v1
 
-    check-cast v1, Landroid/support/v4/media/session/c;
+    check-cast v1, Landroid/support/v4/media/session/MediaControllerCompat$a;
 
-    .line 3
+    .line 2207
     new-instance v2, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21$a;
 
-    invoke-direct {v2, v1}, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21$a;-><init>(Landroid/support/v4/media/session/c;)V
+    invoke-direct {v2, v1}, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21$a;-><init>(Landroid/support/v4/media/session/MediaControllerCompat$a;)V
 
-    .line 4
-    iget-object v3, p0, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21;->c:Ljava/util/HashMap;
+    .line 2208
+    iget-object v3, p0, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21;->d:Ljava/util/HashMap;
 
     invoke-virtual {v3, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5
-    iput-object v2, v1, Landroid/support/v4/media/session/c;->c:Landroid/support/v4/media/session/a;
+    .line 2209
+    iput-object v2, v1, Landroid/support/v4/media/session/MediaControllerCompat$a;->c:Landroid/support/v4/media/session/a;
 
-    .line 6
+    .line 2211
     :try_start_0
-    iget-object v3, p0, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21;->d:Landroid/support/v4/media/session/MediaSessionCompat$Token;
+    iget-object v3, p0, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21;->b:Landroid/support/v4/media/session/MediaSessionCompat$Token;
 
     invoke-virtual {v3}, Landroid/support/v4/media/session/MediaSessionCompat$Token;->a()Landroid/support/v4/media/session/b;
 
@@ -104,8 +113,8 @@
 
     const/4 v3, 0x0
 
-    .line 7
-    invoke-virtual {v1, v2, v3, v3}, Landroid/support/v4/media/session/c;->a(ILjava/lang/Object;Landroid/os/Bundle;)V
+    .line 2216
+    invoke-virtual {v1, v2, v3, v3}, Landroid/support/v4/media/session/MediaControllerCompat$a;->a(ILjava/lang/Object;Landroid/os/Bundle;)V
 
     goto :goto_0
 
@@ -116,12 +125,12 @@
 
     const-string v2, "Dead object in registerCallback."
 
-    .line 8
+    .line 2213
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 9
+    .line 2218
     :cond_1
-    iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21;->b:Ljava/util/List;
+    iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21;->c:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 

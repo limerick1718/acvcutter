@@ -14,121 +14,89 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final enum Lkp;
-.super Ljava/lang/Enum;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+		<code>.class public final Lkp;
+.super Ljava/lang/Object;
+.implements Landroid/os/Parcelable$Creator;
 
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ljava/lang/Enum<",
-"Lkp;",
+"Ljava/lang/Object;",
+"Landroid/os/Parcelable$Creator<",
+"Lko;",
 ">;"
 }
 .end annotation
 
-.field public static final enum b:Lkp;
-.field public static final enum c:Lkp;
-.field public static final enum d:Lkp;
-.field public static final enum e:Lkp;
-.field private static final synthetic f:[Lkp;
-.field private final a:I
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 7</span>
+<span class="cov">.method public constructor &lt;init&gt;()V</span>
+<span class="">	.locals 0</span>
 
-<span class="cov">	new-instance v0, Lkp;</span>
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;</span>
+<span class="">	.locals 10</span>
+
+<span class="exec">	invoke-static {p1}, Lbb;->b(Landroid/os/Parcel;)I</span>
+<span class="cov">	move-result v0</span>
 <span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	const/4 v2, 0x1</span>
-<span class="cov">	const-string v3, "DEVELOPER"</span>
-<span class="cov">	invoke-direct {v0, v3, v1, v2}, Lkp;-><init>(Ljava/lang/String;II)V</span>
-<span class="cov">	sput-object v0, Lkp;->b:Lkp;</span>
-<span class="cov">	new-instance v0, Lkp;</span>
-<span class="cov">	const/4 v3, 0x2</span>
-<span class="cov">	const-string v4, "USER_SIDELOAD"</span>
-<span class="cov">	invoke-direct {v0, v4, v2, v3}, Lkp;-><init>(Ljava/lang/String;II)V</span>
-<span class="cov">	sput-object v0, Lkp;->c:Lkp;</span>
-<span class="cov">	new-instance v0, Lkp;</span>
-<span class="cov">	const/4 v4, 0x3</span>
-<span class="cov">	const-string v5, "TEST_DISTRIBUTION"</span>
-<span class="cov">	invoke-direct {v0, v5, v3, v4}, Lkp;-><init>(Ljava/lang/String;II)V</span>
-<span class="cov">	sput-object v0, Lkp;->d:Lkp;</span>
-<span class="cov">	new-instance v0, Lkp;</span>
-<span class="cov">	const/4 v5, 0x4</span>
-<span class="cov">	const-string v6, "APP_STORE"</span>
-<span class="cov">	invoke-direct {v0, v6, v4, v5}, Lkp;-><init>(Ljava/lang/String;II)V</span>
-<span class="cov">	sput-object v0, Lkp;->e:Lkp;</span>
-<span class="cov">	new-array v5, v5, [Lkp;</span>
-<span class="cov">	sget-object v6, Lkp;->b:Lkp;</span>
-<span class="cov">	aput-object v6, v5, v1</span>
-<span class="cov">	sget-object v1, Lkp;->c:Lkp;</span>
-<span class="cov">	aput-object v1, v5, v2</span>
-<span class="cov">	sget-object v1, Lkp;->d:Lkp;</span>
-<span class="cov">	aput-object v1, v5, v3</span>
-<span class="cov">	aput-object v0, v5, v4</span>
-<span class="cov">	sput-object v5, Lkp;->f:[Lkp;</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method private constructor &lt;init&gt;(Ljava/lang/String;II)V</span>
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(I)V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V</span>
-<span class="cov">	iput p3, p0, Lkp;->a:I</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public static a(Ljava/lang/String;)Lkp;</span>
-<span class="">	.locals 0</span>
-
-<span class="missed">	if-eqz p0, :cond_0</span>
-<span class="missed">	sget-object p0, Lkp;->e:Lkp;</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	sget-object p0, Lkp;->b:Lkp;</span>
+<span class="cov">	const-wide/16 v2, 0x0</span>
+<span class="cov">	move-object v5, v1</span>
+<span class="cov">	move-object v6, v5</span>
+<span class="cov">	move-object v7, v6</span>
+<span class="cov">	move-wide v8, v2</span>
 <span class="cov">	:goto_0</span>
-<span class="exec">	return-object p0</span>
+<span class="exec">	invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	if-ge v1, v0, :cond_4</span>
+<span class="exec">	invoke-static {p1}, Lbb;->a(Landroid/os/Parcel;)I</span>
+<span class="cov">	move-result v1</span>
+<span class="exec">	invoke-static {v1}, Lbb;->a(I)I</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	const/4 v3, 0x2</span>
+<span class="cov">	if-eq v2, v3, :cond_3</span>
+<span class="cov">	const/4 v3, 0x3</span>
+<span class="cov">	if-eq v2, v3, :cond_2</span>
+<span class="cov">	const/4 v3, 0x4</span>
+<span class="cov">	if-eq v2, v3, :cond_1</span>
+<span class="cov">	const/4 v3, 0x5</span>
+<span class="missed">	if-eq v2, v3, :cond_0</span>
+<span class="missed">	invoke-static {p1, v1}, Lbb;->b(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-static {p1, v1}, Lbb;->e(Landroid/os/Parcel;I)J</span>
+<span class="cov">	move-result-wide v8</span>
+<span class="">	goto :goto_0</span>
+<span class="cov">	:cond_1</span>
+<span class="exec">	invoke-static {p1, v1}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v7</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	sget-object v2, Lkl;->CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="exec">	invoke-static {p1, v1, v2}, Lbb;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	move-object v6, v1</span>
+<span class="cov">	check-cast v6, Lkl;</span>
+<span class="">	goto :goto_0</span>
+<span class="cov">	:cond_3</span>
+<span class="exec">	invoke-static {p1, v1}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v5</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_4</span>
+<span class="cov">	invoke-static {p1, v0}, Lbb;->l(Landroid/os/Parcel;I)V</span>
+<span class="cov">	new-instance p1, Lko;</span>
+<span class="cov">	move-object v4, p1</span>
+<span class="cov">	invoke-direct/range {v4 .. v9}, Lko;-><init>(Ljava/lang/String;Lkl;Ljava/lang/String;J)V</span>
+<span class="exec">	return-object p1</span>
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lkp;
-<span class="">	.locals 1</span>
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+<span class="">	.locals 0</span>
 
-<span class="missed">	const-class v0, Lkp;</span>
-<span class="">	invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	check-cast p0, Lkp;</span>
-<span class="">	return-object p0</span>
-.end method
-
-.method public static values()[Lkp;
-<span class="">	.locals 1</span>
-
-<span class="missed">	sget-object v0, Lkp;->f:[Lkp;</span>
-<span class="">	invoke-virtual {v0}, [Lkp;->clone()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, [Lkp;</span>
-<span class="">	return-object v0</span>
-.end method
-
-<span class="cov">.method public f()I</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	iget v0, p0, Lkp;->a:I</span>
-<span class="exec">	return v0</span>
-.end method
-
-.method public toString()Ljava/lang/String;
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget v0, p0, Lkp;->a:I</span>
-<span class="">	invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	return-object v0</span>
+<span class="missed">	new-array p1, p1, [Lko;</span>
+<span class="">	return-object p1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -14,49 +14,344 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final synthetic Lcom/google/firebase/analytics/connector/internal/b;
+		<code>.class public final Lcom/google/firebase/analytics/connector/internal/b;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-api@@17.4.0"
-.implements Lcom/google/firebase/components/g;
 
 
-.field static final a:Lcom/google/firebase/components/g;
+.field private static final a:Ljava/util/Set;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/Set<",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.end field
+.field private static final b:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.end field
+.field private static final c:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.end field
+.field private static final d:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.end field
+.field private static final e:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.end field
+.field private static final f:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.end field
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 16</span>
+
+<span class="missed">	new-instance v0, Ljava/util/HashSet;</span>
+<span class="missed">	const-string v1, "_in"</span>
+<span class="missed">	const-string v2, "_xa"</span>
+<span class="missed">	const-string v3, "_xu"</span>
+<span class="missed">	const-string v4, "_aq"</span>
+<span class="missed">	const-string v5, "_aa"</span>
+<span class="missed">	const-string v6, "_ai"</span>
+<span class="missed">	const-string v7, "_ac"</span>
+<span class="missed">	const-string v8, "campaign_details"</span>
+<span class="missed">	const-string v9, "_ug"</span>
+<span class="missed">	const-string v10, "_iapx"</span>
+<span class="missed">	const-string v11, "_exp_set"</span>
+<span class="missed">	const-string v12, "_exp_clear"</span>
+<span class="missed">	const-string v13, "_exp_activate"</span>
+<span class="missed">	const-string v14, "_exp_timeout"</span>
+<span class="missed">	const-string v15, "_exp_expire"</span>
+<span class="">	filled-new-array/range {v1 .. v15}, [Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V</span>
+<span class="missed">	sput-object v0, Lcom/google/firebase/analytics/connector/internal/b;->a:Ljava/util/Set;</span>
+<span class="missed">	const-string v2, "_e"</span>
+<span class="missed">	const-string v3, "_f"</span>
+<span class="missed">	const-string v4, "_iap"</span>
+<span class="missed">	const-string v5, "_s"</span>
+<span class="missed">	const-string v6, "_au"</span>
+<span class="missed">	const-string v7, "_ui"</span>
+<span class="missed">	const-string v8, "_cd"</span>
+<span class="missed">	const-string v9, "app_open"</span>
+<span class="">	filled-new-array/range {v2 .. v9}, [Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lcom/google/firebase/analytics/connector/internal/b;->b:Ljava/util/List;</span>
+<span class="missed">	const-string v0, "auto"</span>
+<span class="missed">	const-string v1, "app"</span>
+<span class="missed">	const-string v2, "am"</span>
+<span class="">	filled-new-array {v0, v1, v2}, [Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lcom/google/firebase/analytics/connector/internal/b;->c:Ljava/util/List;</span>
+<span class="missed">	const-string v0, "_r"</span>
+<span class="missed">	const-string v1, "_dbg"</span>
+<span class="">	filled-new-array {v0, v1}, [Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lcom/google/firebase/analytics/connector/internal/b;->d:Ljava/util/List;</span>
+<span class="missed">	const/4 v0, 0x2</span>
+<span class="missed">	new-array v0, v0, [[Ljava/lang/String;</span>
+<span class="missed">	sget-object v1, Lcom/google/android/gms/measurement/AppMeasurement$a;->a:[Ljava/lang/String;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	aput-object v1, v0, v2</span>
+<span class="missed">	sget-object v1, Lcom/google/android/gms/measurement/AppMeasurement$a;->b:[Ljava/lang/String;</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	aput-object v1, v0, v2</span>
+<span class="">	invoke-static {v0}, Lcom/google/android/gms/common/util/b;->a([[Ljava/lang/Object;)[Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, [Ljava/lang/String;</span>
+<span class="">	invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lcom/google/firebase/analytics/connector/internal/b;->e:Ljava/util/List;</span>
+<span class="missed">	const-string v0, "^_ltv_[A-Z]{3}$"</span>
+<span class="missed">	const-string v1, "^_cc[1-5]{1}$"</span>
+<span class="">	filled-new-array {v0, v1}, [Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lcom/google/firebase/analytics/connector/internal/b;->f:Ljava/util/List;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public static a(Ljava/lang/String;)Z
 <span class="">	.locals 1</span>
 
-<span class="cov">	new-instance v0, Lcom/google/firebase/analytics/connector/internal/b;</span>
-<span class="cov">	invoke-direct {v0}, Lcom/google/firebase/analytics/connector/internal/b;-><init>()V</span>
-<span class="cov">	sput-object v0, Lcom/google/firebase/analytics/connector/internal/b;->a:Lcom/google/firebase/components/g;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	sget-object v0, Lcom/google/firebase/analytics/connector/internal/b;->c:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0, p0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-nez p0, :cond_0</span>
+<span class="missed">	const/4 p0, 0x1</span>
+<span class="">	return p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	return p0</span>
 .end method
 
-<span class="cov">.method private constructor &lt;init&gt;()V</span>
-<span class="">	.locals 0</span>
+.method public static a(Ljava/lang/String;Landroid/os/Bundle;)Z
+<span class="">	.locals 2</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	sget-object v0, Lcom/google/firebase/analytics/connector/internal/b;->b:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0, p0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	if-eqz p0, :cond_0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	sget-object p0, Lcom/google/firebase/analytics/connector/internal/b;->d:Ljava/util/List;</span>
+<span class="">	invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_2</span>
+<span class="">	invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p1, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="">	return v0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 p0, 0x1</span>
+<span class="">	return p0</span>
 .end method
 
-<span class="cov">.method public final a(Lcom/google/firebase/components/e;)Ljava/lang/Object;</span>
-<span class="">	.locals 3</span>
+.method public static a(Ljava/lang/String;Ljava/lang/String;)Z
+<span class="">	.locals 4</span>
 
-<span class="cov">	const-class v0, Lfo;</span>
-<span class="exec">	invoke-interface {p1, v0}, Lcom/google/firebase/components/e;->a(Ljava/lang/Class;)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lfo;</span>
-<span class="cov">	const-class v1, Landroid/content/Context;</span>
-<span class="exec">	invoke-interface {p1, v1}, Lcom/google/firebase/components/e;->a(Ljava/lang/Class;)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	check-cast v1, Landroid/content/Context;</span>
-<span class="cov">	const-class v2, Lku;</span>
-<span class="exec">	invoke-interface {p1, v2}, Lcom/google/firebase/components/e;->a(Ljava/lang/Class;)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	check-cast p1, Lku;</span>
-<span class="exec">	invoke-static {v0, v1, p1}, Lio;->a(Lfo;Landroid/content/Context;Lku;)Lho;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	return-object p1</span>
+<span class="missed">	const-string v0, "_ce1"</span>
+<span class="">	invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const-string v1, "fcm"</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	if-nez v0, :cond_7</span>
+<span class="missed">	const-string v0, "_ce2"</span>
+<span class="">	invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const-string v0, "_ln"</span>
+<span class="">	invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_3</span>
+<span class="">	invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-nez p1, :cond_2</span>
+<span class="missed">	const-string p1, "fiam"</span>
+<span class="">	invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="">	return v3</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_2</span>
+<span class="">	return v2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	sget-object p0, Lcom/google/firebase/analytics/connector/internal/b;->e:Ljava/util/List;</span>
+<span class="">	invoke-interface {p0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_4</span>
+<span class="">	return v3</span>
+<span class="">	:cond_4</span>
+<span class="missed">	sget-object p0, Lcom/google/firebase/analytics/connector/internal/b;->f:Ljava/util/List;</span>
+<span class="">	invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	:cond_5</span>
+<span class="">	invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_6</span>
+<span class="">	invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p1, v0}, Ljava/lang/String;->matches(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_5</span>
+<span class="">	return v3</span>
+<span class="">	:cond_6</span>
+<span class="">	return v2</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_7</span>
+<span class="">	invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-nez p1, :cond_9</span>
+<span class="missed">	const-string p1, "frc"</span>
+<span class="">	invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_8</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_8</span>
+<span class="">	return v3</span>
+<span class="">	:goto_2</span>
+<span class="">	:cond_9</span>
+<span class="">	return v2</span>
+.end method
+
+.method public static a(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Z
+<span class="">	.locals 5</span>
+
+<span class="missed">	const-string v0, "_cmp"</span>
+<span class="">	invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {p0}, Lcom/google/firebase/analytics/connector/internal/b;->a(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	if-nez p1, :cond_1</span>
+<span class="">	return v1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	if-nez p2, :cond_2</span>
+<span class="">	return v1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	sget-object p1, Lcom/google/firebase/analytics/connector/internal/b;->d:Ljava/util/List;</span>
+<span class="">	invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_4</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p2, v2}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_3</span>
+<span class="">	return v1</span>
+<span class="">	:cond_4</span>
+<span class="missed">	const/4 p1, -0x1</span>
+<span class="">	invoke-virtual {p0}, Ljava/lang/String;->hashCode()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	const v3, 0x18b50</span>
+<span class="missed">	const/4 v4, 0x2</span>
+<span class="missed">	if-eq v2, v3, :cond_7</span>
+<span class="missed">	const v3, 0x18b6e</span>
+<span class="missed">	if-eq v2, v3, :cond_6</span>
+<span class="missed">	const v3, 0x2ff42f</span>
+<span class="missed">	if-eq v2, v3, :cond_5</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_5</span>
+<span class="missed">	const-string v2, "fiam"</span>
+<span class="">	invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_8</span>
+<span class="missed">	const/4 p1, 0x2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_6</span>
+<span class="missed">	const-string v2, "fdl"</span>
+<span class="">	invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_8</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_7</span>
+<span class="missed">	const-string v2, "fcm"</span>
+<span class="">	invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_8</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_8</span>
+<span class="missed">	const-string p0, "_cis"</span>
+<span class="missed">	if-eqz p1, :cond_b</span>
+<span class="missed">	if-eq p1, v0, :cond_a</span>
+<span class="missed">	if-eq p1, v4, :cond_9</span>
+<span class="">	return v1</span>
+<span class="">	:cond_9</span>
+<span class="missed">	const-string p1, "fiam_integration"</span>
+<span class="missed">	invoke-virtual {p2, p0, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return v0</span>
+<span class="">	:cond_a</span>
+<span class="missed">	const-string p1, "fdl_integration"</span>
+<span class="missed">	invoke-virtual {p2, p0, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return v0</span>
+<span class="">	:cond_b</span>
+<span class="missed">	const-string p1, "fcm_integration"</span>
+<span class="missed">	invoke-virtual {p2, p0, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

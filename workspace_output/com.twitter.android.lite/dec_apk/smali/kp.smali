@@ -1,78 +1,71 @@
-.class public final enum Lkp;
-.super Ljava/lang/Enum;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.class public final Lkp;
+.super Ljava/lang/Object;
+.implements Landroid/os/Parcelable$Creator;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ljava/lang/Enum<",
-"Lkp;",
+"Ljava/lang/Object;",
+"Landroid/os/Parcelable$Creator<",
+"Lko;",
 ">;"
 }
 .end annotation
-.field public static final enum b:Lkp;
-.field public static final enum c:Lkp;
-.field public static final enum d:Lkp;
-.field public static final enum e:Lkp;
-.field private static final synthetic f:[Lkp;
-.field private final a:I
-.method static constructor <clinit>()V
-.locals 7
-new-instance v0, Lkp;
+.method public constructor <init>()V
+.locals 0
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.locals 10
+invoke-static {p1}, Lbb;->b(Landroid/os/Parcel;)I
+move-result v0
 const/4 v1, 0x0
-const/4 v2, 0x1
-const-string v3, "DEVELOPER"
-invoke-direct {v0, v3, v1, v2}, Lkp;-><init>(Ljava/lang/String;II)V
-sput-object v0, Lkp;->b:Lkp;
-new-instance v0, Lkp;
-const/4 v3, 0x2
-const-string v4, "USER_SIDELOAD"
-invoke-direct {v0, v4, v2, v3}, Lkp;-><init>(Ljava/lang/String;II)V
-sput-object v0, Lkp;->c:Lkp;
-new-instance v0, Lkp;
-const/4 v4, 0x3
-const-string v5, "TEST_DISTRIBUTION"
-invoke-direct {v0, v5, v3, v4}, Lkp;-><init>(Ljava/lang/String;II)V
-sput-object v0, Lkp;->d:Lkp;
-new-instance v0, Lkp;
-const/4 v5, 0x4
-const-string v6, "APP_STORE"
-invoke-direct {v0, v6, v4, v5}, Lkp;-><init>(Ljava/lang/String;II)V
-sput-object v0, Lkp;->e:Lkp;
-new-array v5, v5, [Lkp;
-sget-object v6, Lkp;->b:Lkp;
-aput-object v6, v5, v1
-sget-object v1, Lkp;->c:Lkp;
-aput-object v1, v5, v2
-sget-object v1, Lkp;->d:Lkp;
-aput-object v1, v5, v3
-aput-object v0, v5, v4
-sput-object v5, Lkp;->f:[Lkp;
-return-void
-.end method
-.method private constructor <init>(Ljava/lang/String;II)V
-.locals 0
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"(I)V"
-}
-.end annotation
-invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-iput p3, p0, Lkp;->a:I
-return-void
-.end method
-.method public static a(Ljava/lang/String;)Lkp;
-.locals 0
-:cond_0
-sget-object p0, Lkp;->b:Lkp;
+const-wide/16 v2, 0x0
+move-object v5, v1
+move-object v6, v5
+move-object v7, v6
+move-wide v8, v2
 :goto_0
-return-object p0
+invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+move-result v1
+if-ge v1, v0, :cond_4
+invoke-static {p1}, Lbb;->a(Landroid/os/Parcel;)I
+move-result v1
+invoke-static {v1}, Lbb;->a(I)I
+move-result v2
+const/4 v3, 0x2
+if-eq v2, v3, :cond_3
+const/4 v3, 0x3
+if-eq v2, v3, :cond_2
+const/4 v3, 0x4
+if-eq v2, v3, :cond_1
+const/4 v3, 0x5
+invoke-static {p1, v1}, Lbb;->e(Landroid/os/Parcel;I)J
+move-result-wide v8
+goto :goto_0
+:cond_1
+invoke-static {p1, v1}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
+move-result-object v7
+goto :goto_0
+:cond_2
+sget-object v2, Lkl;->CREATOR:Landroid/os/Parcelable$Creator;
+invoke-static {p1, v1, v2}, Lbb;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+move-result-object v1
+move-object v6, v1
+check-cast v6, Lkl;
+goto :goto_0
+:cond_3
+invoke-static {p1, v1}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
+move-result-object v5
+goto :goto_0
+:cond_4
+invoke-static {p1, v0}, Lbb;->l(Landroid/os/Parcel;I)V
+new-instance p1, Lko;
+move-object v4, p1
+invoke-direct/range {v4 .. v9}, Lko;-><init>(Ljava/lang/String;Lkl;Ljava/lang/String;J)V
+return-object p1
 .end method
-.method public f()I
-.locals 1
-iget v0, p0, Lkp;->a:I
-return v0
-.end method
-.method public toString()Ljava/lang/String;
-.locals 1
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+.locals 0
 const/4 v0, 0x0
 return-object v0
 .end method

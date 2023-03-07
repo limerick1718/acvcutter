@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.crashlytics.android.answers</a></li>
+        <li><i class="ico ico-class"></i> Answers.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Lcom/crashlytics/android/answers/Answers;
+.super Luw;
+.source "Answers.java"
+
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Luw<",
+"Ljava/lang/Boolean;",
+">;"
+}
+.end annotation
+
+.field static final CRASHLYTICS_API_ENDPOINT:Ljava/lang/String; = "com.crashlytics.ApiEndpoint"
+.field public static final TAG:Ljava/lang/String; = "Answers"
+.field  analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;
+.field  firebaseEnabled:Z
+
+
+<span class="cov">.method public constructor &lt;init&gt;()V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	invoke-direct {p0}, Luw;-><init>()V</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	iput-boolean v0, p0, Lcom/crashlytics/android/answers/Answers;->firebaseEnabled:Z</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public static getInstance()Lcom/crashlytics/android/answers/Answers;
+<span class="">	.locals 1</span>
+
+<span class="missed">	const-class v0, Lcom/crashlytics/android/answers/Answers;</span>
+<span class="">	invoke-static {v0}, Luq;->a(Ljava/lang/Class;)Luw;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lcom/crashlytics/android/answers/Answers;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method private logFirebaseModeEnabledWarning(Ljava/lang/String;)V
+<span class="">	.locals 3</span>
+
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "Method "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string p1, " is not supported when using Crashlytics through Firebase."</span>
+<span class="missed">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v1, "Answers"</span>
+<span class="missed">	invoke-interface {v0, v1, p1}, Luz;->d(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method protected doInBackground()Ljava/lang/Boolean;</span>
+<span class="">	.locals 5</span>
+
+<span class="cov">	const-string v0, "Answers"</span>
+<span class="exec">	invoke-virtual {p0}, Lcom/crashlytics/android/answers/Answers;->getContext()Landroid/content/Context;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-static {v1}, Lvq;->a(Landroid/content/Context;)Lvq;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-virtual {v1}, Lvq;->a()Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="exec">	invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "Fabric"</span>
+<span class="missed">	const-string v3, "Analytics collection disabled, because data collection is disabled by Firebase."</span>
+<span class="missed">	invoke-interface {v0, v1, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	invoke-virtual {v0}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->disable()V</span>
+<span class="">	return-object v2</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-static {}, Lyh;->a()Lyh;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-virtual {v1}, Lyh;->b()Lyk;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	if-nez v1, :cond_1</span>
+<span class="exec">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const-string v3, "Failed to retrieve settings"</span>
+<span class="cov">	invoke-interface {v1, v0, v3}, Luz;->e(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="exec">	return-object v2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v3, v1, Lyk;->d:Lyd;</span>
+<span class="missed">	iget-boolean v3, v3, Lyd;->d:Z</span>
+<span class="missed">	if-eqz v3, :cond_2</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	const-string v4, "Analytics collection enabled"</span>
+<span class="missed">	invoke-interface {v3, v0, v4}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v3, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	iget-object v1, v1, Lyk;->e:Lxs;</span>
+<span class="">	invoke-virtual {p0}, Lcom/crashlytics/android/answers/Answers;->getOverridenSpiEndpoint()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	invoke-virtual {v3, v1, v4}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->setAnalyticsSettingsData(Lxs;Ljava/lang/String;)V</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v3, "Analytics collection disabled"</span>
+<span class="missed">	invoke-interface {v1, v0, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	invoke-virtual {v1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->disable()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object v2</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	const-string v4, "Error dealing with settings"</span>
+<span class="missed">	invoke-interface {v3, v0, v4, v1}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	return-object v2</span>
+.end method
+
+<span class="cov">.method protected bridge synthetic doInBackground()Ljava/lang/Object;</span>
+<span class="">	.locals 1</span>
+
+<span class="exec">	invoke-virtual {p0}, Lcom/crashlytics/android/answers/Answers;->doInBackground()Ljava/lang/Boolean;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public getIdentifier()Ljava/lang/String;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const-string v0, "com.crashlytics.sdk.android:answers"</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method  getOverridenSpiEndpoint()Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="">	invoke-virtual {p0}, Lcom/crashlytics/android/answers/Answers;->getContext()Landroid/content/Context;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "com.crashlytics.ApiEndpoint"</span>
+<span class="">	invoke-static {v0, v1}, Lvn;->b(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getVersion()Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	const-string v0, "1.4.7.32"</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public logAddToCart(Lcom/crashlytics/android/answers/AddToCartEvent;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/answers/Answers;->firebaseEnabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string p1, "logAddToCart"</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/crashlytics/android/answers/Answers;->logFirebaseModeEnabledWarning(Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onPredefined(Lcom/crashlytics/android/answers/PredefinedEvent;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "event must not be null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public logContentView(Lcom/crashlytics/android/answers/ContentViewEvent;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/answers/Answers;->firebaseEnabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string p1, "logContentView"</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/crashlytics/android/answers/Answers;->logFirebaseModeEnabledWarning(Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onPredefined(Lcom/crashlytics/android/answers/PredefinedEvent;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "event must not be null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public logCustom(Lcom/crashlytics/android/answers/CustomEvent;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/answers/Answers;->firebaseEnabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string p1, "logCustom"</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/crashlytics/android/answers/Answers;->logFirebaseModeEnabledWarning(Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onCustom(Lcom/crashlytics/android/answers/CustomEvent;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "event must not be null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public logInvite(Lcom/crashlytics/android/answers/InviteEvent;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/answers/Answers;->firebaseEnabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string p1, "logInvite"</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/crashlytics/android/answers/Answers;->logFirebaseModeEnabledWarning(Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onPredefined(Lcom/crashlytics/android/answers/PredefinedEvent;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "event must not be null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public logLevelEnd(Lcom/crashlytics/android/answers/LevelEndEvent;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/answers/Answers;->firebaseEnabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string p1, "logLevelEnd"</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/crashlytics/android/answers/Answers;->logFirebaseModeEnabledWarning(Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onPredefined(Lcom/crashlytics/android/answers/PredefinedEvent;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "event must not be null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public logLevelStart(Lcom/crashlytics/android/answers/LevelStartEvent;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/answers/Answers;->firebaseEnabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string p1, "logLevelStart"</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/crashlytics/android/answers/Answers;->logFirebaseModeEnabledWarning(Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onPredefined(Lcom/crashlytics/android/answers/PredefinedEvent;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "event must not be null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public logLogin(Lcom/crashlytics/android/answers/LoginEvent;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/answers/Answers;->firebaseEnabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string p1, "logLogin"</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/crashlytics/android/answers/Answers;->logFirebaseModeEnabledWarning(Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onPredefined(Lcom/crashlytics/android/answers/PredefinedEvent;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "event must not be null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public logPurchase(Lcom/crashlytics/android/answers/PurchaseEvent;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/answers/Answers;->firebaseEnabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string p1, "logPurchase"</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/crashlytics/android/answers/Answers;->logFirebaseModeEnabledWarning(Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onPredefined(Lcom/crashlytics/android/answers/PredefinedEvent;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "event must not be null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public logRating(Lcom/crashlytics/android/answers/RatingEvent;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/answers/Answers;->firebaseEnabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string p1, "logRating"</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/crashlytics/android/answers/Answers;->logFirebaseModeEnabledWarning(Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onPredefined(Lcom/crashlytics/android/answers/PredefinedEvent;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "event must not be null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public logSearch(Lcom/crashlytics/android/answers/SearchEvent;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/answers/Answers;->firebaseEnabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string p1, "logSearch"</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/crashlytics/android/answers/Answers;->logFirebaseModeEnabledWarning(Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onPredefined(Lcom/crashlytics/android/answers/PredefinedEvent;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "event must not be null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public logShare(Lcom/crashlytics/android/answers/ShareEvent;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/answers/Answers;->firebaseEnabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string p1, "logShare"</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/crashlytics/android/answers/Answers;->logFirebaseModeEnabledWarning(Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onPredefined(Lcom/crashlytics/android/answers/PredefinedEvent;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "event must not be null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public logSignUp(Lcom/crashlytics/android/answers/SignUpEvent;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/answers/Answers;->firebaseEnabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string p1, "logSignUp"</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/crashlytics/android/answers/Answers;->logFirebaseModeEnabledWarning(Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onPredefined(Lcom/crashlytics/android/answers/PredefinedEvent;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "event must not be null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public logStartCheckout(Lcom/crashlytics/android/answers/StartCheckoutEvent;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/answers/Answers;->firebaseEnabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string p1, "logStartCheckout"</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/crashlytics/android/answers/Answers;->logFirebaseModeEnabledWarning(Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onPredefined(Lcom/crashlytics/android/answers/PredefinedEvent;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "event must not be null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public onException(Lvo$a;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {p1}, Lvo$a;->a()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {p1}, Lvo$a;->b()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {v0, v1, p1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onCrash(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public onException(Lvo$b;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {p1}, Lvo$b;->a()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onError(Ljava/lang/String;)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method protected onPreExecute()Z</span>
+<span class="">	.locals 9</span>
+<span class="">	.annotation build Landroid/annotation/SuppressLint;</span>
+<span class="">	value = {</span>
+<span class="">	"NewApi"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	:try_start_0</span>
+<span class="exec">	invoke-virtual {p0}, Lcom/crashlytics/android/answers/Answers;->getContext()Landroid/content/Context;</span>
+<span class="cov">	move-result-object v8</span>
+<span class="exec">	invoke-virtual {v8}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-virtual {v8}, Landroid/content/Context;->getPackageName()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="exec">	invoke-virtual {v1, v2, v0}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	iget v4, v3, Landroid/content/pm/PackageInfo;->versionCode:I</span>
+<span class="exec">	invoke-static {v4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	iget-object v5, v3, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;</span>
+<span class="missed">	if-nez v5, :cond_0</span>
+<span class="missed">	const-string v5, "0.0"</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v5, v3, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	sget v6, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="cov">	const/16 v7, 0x9</span>
+<span class="cov">	if-lt v6, v7, :cond_1</span>
+<span class="cov">	iget-wide v1, v3, Landroid/content/pm/PackageInfo;->firstInstallTime:J</span>
+<span class="cov">	:goto_1</span>
+<span class="cov">	move-wide v6, v1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {v1, v2, v0}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	new-instance v2, Ljava/io/File;</span>
+<span class="missed">	iget-object v1, v1, Landroid/content/pm/ApplicationInfo;->sourceDir:Ljava/lang/String;</span>
+<span class="missed">	invoke-direct {v2, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V</span>
+<span class="">	invoke-virtual {v2}, Ljava/io/File;->lastModified()J</span>
+<span class="missed">	move-result-wide v1</span>
+<span class="">	goto :goto_1</span>
+<span class="cov">	:goto_2</span>
+<span class="exec">	invoke-virtual {p0}, Lcom/crashlytics/android/answers/Answers;->getIdManager()Lvx;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	move-object v1, p0</span>
+<span class="cov">	move-object v2, v8</span>
+<span class="exec">	invoke-static/range {v1 .. v7}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->build(Luw;Landroid/content/Context;Lvx;Ljava/lang/String;Ljava/lang/String;J)Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	iput-object v1, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="cov">	iget-object v1, p0, Lcom/crashlytics/android/answers/Answers;->analyticsManager:Lcom/crashlytics/android/answers/SessionAnalyticsManager;</span>
+<span class="cov">	invoke-virtual {v1}, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->enable()V</span>
+<span class="cov">	new-instance v1, Lvw;</span>
+<span class="cov">	invoke-direct {v1}, Lvw;-><init>()V</span>
+<span class="exec">	invoke-virtual {v1, v8}, Lvw;->b(Landroid/content/Context;)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	iput-boolean v1, p0, Lcom/crashlytics/android/answers/Answers;->firebaseEnabled:Z</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="exec">	return v0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v3, "Answers"</span>
+<span class="missed">	const-string v4, "Error retrieving app properties"</span>
+<span class="missed">	invoke-interface {v2, v3, v4, v1}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	return v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

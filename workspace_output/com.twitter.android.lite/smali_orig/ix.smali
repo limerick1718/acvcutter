@@ -1,149 +1,32 @@
-.class public abstract Lix;
-.super Ljava/lang/Object;
-.source "ForwardingSink.java"
-
-# interfaces
-.implements Lvx;
+.class public final Lix;
+.super Ljava/lang/RuntimeException;
 
 
 # instance fields
-.field private final delegate:Lvx;
+.field private final a:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lvx;)V
-    .locals 1
+.method public constructor <init>(Lhp;)V
+    .locals 0
+
+    const-string p1, "Message was missing required fields.  (Lite runtime could not determine which fields were missing)."
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    if-eqz p1, :cond_0
+    const/4 p1, 0x0
 
     .line 2
-    iput-object p1, p0, Lix;->delegate:Lvx;
-
-    return-void
-
-    .line 3
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "delegate == null"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-
-# virtual methods
-.method public close()V
-    .locals 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lix;->delegate:Lvx;
-
-    invoke-interface {v0}, Lvx;->close()V
-
-    return-void
-.end method
-
-.method public final delegate()Lvx;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lix;->delegate:Lvx;
-
-    return-object v0
-.end method
-
-.method public flush()V
-    .locals 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lix;->delegate:Lvx;
-
-    invoke-interface {v0}, Lvx;->flush()V
-
-    return-void
-.end method
-
-.method public timeout()Lxx;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lix;->delegate:Lvx;
-
-    invoke-interface {v0}, Lvx;->timeout()Lxx;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "("
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lix;->delegate:Lvx;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ")"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public write(Lex;J)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lix;->delegate:Lvx;
-
-    invoke-interface {v0, p1, p2, p3}, Lvx;->write(Lex;J)V
+    iput-object p1, p0, Lix;->a:Ljava/util/List;
 
     return-void
 .end method

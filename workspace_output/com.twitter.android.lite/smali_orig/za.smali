@@ -1,155 +1,427 @@
-.class final Lza;
-.super Lva;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
+.class public final Lza;
+.super Ljava/lang/Object;
+.source "InflaterSource.java"
+
+# interfaces
+.implements Lzk;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lva<",
-        "Ljava/lang/Double;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private final a:Lyu;
+
+.field private final b:Ljava/util/zip/Inflater;
+
+.field private c:I
+
+.field private d:Z
 
 
 # direct methods
-.method constructor <init>(Lbb;Ljava/lang/String;Ljava/lang/Double;)V
-    .locals 1
+.method constructor <init>(Lyu;Ljava/util/zip/Inflater;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    .line 48
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1
-    invoke-direct {p0, p1, p2, p3, v0}, Lva;-><init>(Lbb;Ljava/lang/String;Ljava/lang/Object;Lxa;)V
+    if-eqz p1, :cond_1
+
+    if-eqz p2, :cond_0
+
+    .line 51
+    iput-object p1, p0, Lza;->a:Lyu;
+
+    .line 52
+    iput-object p2, p0, Lza;->b:Ljava/util/zip/Inflater;
+
+    return-void
+
+    .line 50
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "inflater == null"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 49
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "source == null"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method private b()V
+    .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 113
+    iget v0, p0, Lza;->c:I
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 114
+    :cond_0
+    iget-object v1, p0, Lza;->b:Ljava/util/zip/Inflater;
+
+    invoke-virtual {v1}, Ljava/util/zip/Inflater;->getRemaining()I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    .line 115
+    iget v1, p0, Lza;->c:I
+
+    sub-int/2addr v1, v0
+
+    iput v1, p0, Lza;->c:I
+
+    .line 116
+    iget-object v1, p0, Lza;->a:Lyu;
+
+    int-to-long v2, v0
+
+    invoke-interface {v1, v2, v3}, Lyu;->i(J)V
 
     return-void
 .end method
 
-.method private final b(Ljava/lang/Object;)Ljava/lang/Double;
-    .locals 3
 
-    .line 1
-    instance-of v0, p1, Ljava/lang/Double;
+# virtual methods
+.method public final a()Z
+    .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    if-eqz v0, :cond_0
+    .line 96
+    iget-object v0, p0, Lza;->b:Ljava/util/zip/Inflater;
 
-    .line 2
-    check-cast p1, Ljava/lang/Double;
+    invoke-virtual {v0}, Ljava/util/zip/Inflater;->needsInput()Z
 
-    return-object p1
+    move-result v0
 
-    .line 3
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    return v1
+
+    .line 98
     :cond_0
-    instance-of v0, p1, Ljava/lang/Float;
+    invoke-direct {p0}, Lza;->b()V
+
+    .line 99
+    iget-object v0, p0, Lza;->b:Ljava/util/zip/Inflater;
+
+    invoke-virtual {v0}, Ljava/util/zip/Inflater;->getRemaining()I
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    .line 102
+    iget-object v0, p0, Lza;->a:Lyu;
+
+    invoke-interface {v0}, Lyu;->g()Z
+
+    move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 4
-    check-cast p1, Ljava/lang/Float;
+    const/4 v0, 0x1
 
-    invoke-virtual {p1}, Ljava/lang/Float;->doubleValue()D
+    return v0
 
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object p1
-
-    return-object p1
-
-    .line 5
+    .line 105
     :cond_1
-    instance-of v0, p1, Ljava/lang/String;
+    iget-object v0, p0, Lza;->a:Lyu;
 
-    if-eqz v0, :cond_2
-
-    .line 6
-    :try_start_0
-    move-object v0, p1
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object p1
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p1
-
-    .line 7
-    :catch_0
-    :cond_2
-    invoke-super {p0}, Lva;->a()Ljava/lang/String;
+    invoke-interface {v0}, Lyu;->b()Lys;
 
     move-result-object v0
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v0, v0, Lys;->a:Lzg;
 
-    move-result-object p1
+    .line 106
+    iget v2, v0, Lzg;->c:I
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget v3, v0, Lzg;->b:I
+
+    sub-int/2addr v2, v3
+
+    iput v2, p0, Lza;->c:I
+
+    .line 107
+    iget-object v2, p0, Lza;->b:Ljava/util/zip/Inflater;
+
+    iget-object v3, v0, Lzg;->a:[B
+
+    iget v0, v0, Lzg;->b:I
+
+    iget v4, p0, Lza;->c:I
+
+    invoke-virtual {v2, v3, v0, v4}, Ljava/util/zip/Inflater;->setInput([BII)V
+
+    return v1
+
+    .line 99
+    :cond_2
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "?"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public close()V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 124
+    iget-boolean v0, p0, Lza;->d:Z
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    .line 125
+    :cond_0
+    iget-object v0, p0, Lza;->b:Ljava/util/zip/Inflater;
+
+    invoke-virtual {v0}, Ljava/util/zip/Inflater;->end()V
+
+    const/4 v0, 0x1
+
+    .line 126
+    iput-boolean v0, p0, Lza;->d:Z
+
+    .line 127
+    iget-object v0, p0, Lza;->a:Lyu;
+
+    invoke-interface {v0}, Lyu;->close()V
+
+    return-void
+.end method
+
+.method public read(Lys;J)J
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v2, p2, v0
+
+    if-ltz v2, :cond_7
+
+    .line 58
+    iget-boolean v3, p0, Lza;->d:Z
+
+    if-nez v3, :cond_6
+
+    if-nez v2, :cond_0
+
+    return-wide v0
+
+    .line 62
+    :cond_0
+    :goto_0
+    invoke-virtual {p0}, Lza;->a()Z
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    .line 66
+    :try_start_0
+    invoke-virtual {p1, v1}, Lys;->e(I)Lzg;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    .line 67
+    iget v2, v1, Lzg;->c:I
 
-    move-result v1
+    rsub-int v2, v2, 0x2000
 
-    add-int/lit8 v1, v1, 0x1b
+    int-to-long v2, v2
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p3, v2, v3}, Ljava/lang/Math;->min(JJ)J
 
-    move-result-object v2
+    move-result-wide v2
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    long-to-int v3, v2
+
+    .line 68
+    iget-object v2, p0, Lza;->b:Ljava/util/zip/Inflater;
+
+    iget-object v4, v1, Lzg;->a:[B
+
+    iget v5, v1, Lzg;->c:I
+
+    invoke-virtual {v2, v4, v5, v3}, Ljava/util/zip/Inflater;->inflate([BII)I
 
     move-result v2
 
-    add-int/2addr v1, v2
+    if-lez v2, :cond_1
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    .line 70
+    iget p2, v1, Lzg;->c:I
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    add-int/2addr p2, v2
 
-    const-string v1, "Invalid double value for "
+    iput p2, v1, Lzg;->c:I
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 71
+    iget-wide p2, p1, Lys;->b:J
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    int-to-long v0, v2
 
-    const-string v0, ": "
+    add-long/2addr p2, v0
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput-wide p2, p1, Lys;->b:J
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-wide v0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 74
+    :cond_1
+    iget-object v2, p0, Lza;->b:Ljava/util/zip/Inflater;
 
-    move-result-object p1
+    invoke-virtual {v2}, Ljava/util/zip/Inflater;->finished()Z
 
-    const-string v0, "PhenotypeFlag"
+    move-result v2
 
-    invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    if-nez v2, :cond_4
 
-    const/4 p1, 0x0
+    iget-object v2, p0, Lza;->b:Ljava/util/zip/Inflater;
 
-    return-object p1
+    invoke-virtual {v2}, Ljava/util/zip/Inflater;->needsDictionary()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    if-nez v0, :cond_3
+
+    goto :goto_0
+
+    .line 83
+    :cond_3
+    new-instance p1, Ljava/io/EOFException;
+
+    const-string p2, "source exhausted prematurely"
+
+    invoke-direct {p1, p2}, Ljava/io/EOFException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 75
+    :cond_4
+    :goto_1
+    invoke-direct {p0}, Lza;->b()V
+
+    .line 76
+    iget p2, v1, Lzg;->b:I
+
+    iget p3, v1, Lzg;->c:I
+
+    if-ne p2, p3, :cond_5
+
+    .line 78
+    invoke-virtual {v1}, Lzg;->c()Lzg;
+
+    move-result-object p2
+
+    iput-object p2, p1, Lys;->a:Lzg;
+
+    .line 79
+    invoke-static {v1}, Lzh;->a(Lzg;)V
+    :try_end_0
+    .catch Ljava/util/zip/DataFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_5
+    const-wide/16 p1, -0x1
+
+    return-wide p1
+
+    :catch_0
+    move-exception p1
+
+    .line 85
+    new-instance p2, Ljava/io/IOException;
+
+    invoke-direct {p2, p1}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
+
+    throw p2
+
+    .line 58
+    :cond_6
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "closed"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 57
+    :cond_7
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "byteCount < 0: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
+.method public timeout()Lzl;
+    .locals 1
 
-# virtual methods
-.method final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    .line 120
+    iget-object v0, p0, Lza;->a:Lyu;
 
-    .line 1
-    invoke-direct {p0, p1}, Lza;->b(Ljava/lang/Object;)Ljava/lang/Double;
+    invoke-interface {v0}, Lyu;->timeout()Lzl;
 
-    move-result-object p1
+    move-result-object v0
 
-    return-object p1
+    return-object v0
 .end method

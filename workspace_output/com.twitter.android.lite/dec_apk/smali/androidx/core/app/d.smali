@@ -2,8 +2,21 @@
 .super Landroid/app/Activity;
 .source "ComponentActivity.java"
 .implements Landroidx/lifecycle/g;
-.implements Ly$a;
-.field private a:Landroidx/lifecycle/h;
+.implements Lx$a;
+.field private a:Lp;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lp<",
+"Ljava/lang/Class<",
+"+",
+"Ljava/lang/Object;",
+">;",
+"Ljava/lang/Object;",
+">;"
+}
+.end annotation
+.end field
+.field private b:Landroidx/lifecycle/h;
 .method public constructor <init>()V
 .locals 1
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

@@ -1,62 +1,46 @@
-.class public Lot;
+.class final Lot;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
 
 # interfaces
-.implements Lqt;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:I
+.field private final synthetic a:Loo;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method constructor <init>(Loo;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lot;->a:Loo;
 
-    .line 2
-    iput p1, p0, Lot;->a:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a([Ljava/lang/StackTraceElement;)[Ljava/lang/StackTraceElement;
-    .locals 4
-
-    .line 1
-    array-length v0, p1
-
-    iget v1, p0, Lot;->a:I
-
-    if-gt v0, v1, :cond_0
-
-    return-object p1
+.method public final run()V
+    .locals 2
 
     .line 2
-    :cond_0
-    div-int/lit8 v0, v1, 0x2
+    iget-object v0, p0, Lot;->a:Loo;
 
-    sub-int v2, v1, v0
+    iget-object v0, v0, Loo;->a:Loc;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Loc;->a(Loc;Lkr;)Lkr;
 
     .line 3
-    new-array v1, v1, [Ljava/lang/StackTraceElement;
+    iget-object v0, p0, Lot;->a:Loo;
 
-    const/4 v3, 0x0
+    iget-object v0, v0, Loo;->a:Loc;
 
-    .line 4
-    invoke-static {p1, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0}, Loc;->b(Loc;)V
 
-    .line 5
-    array-length v3, p1
-
-    sub-int/2addr v3, v0
-
-    invoke-static {p1, v3, v1, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    return-object v1
+    return-void
 .end method

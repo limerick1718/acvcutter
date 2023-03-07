@@ -20,26 +20,26 @@
 # instance fields
 .field public final client:Z
 
-.field public final sink:Lfx;
+.field public final sink:Lyt;
 
-.field public final source:Lgx;
+.field public final source:Lyu;
 
 
 # direct methods
-.method public constructor <init>(ZLgx;Lfx;)V
+.method public constructor <init>(ZLyu;Lyt;)V
     .locals 0
 
-    .line 1
+    .line 603
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 604
     iput-boolean p1, p0, Lokhttp3/internal/ws/RealWebSocket$Streams;->client:Z
 
-    .line 3
-    iput-object p2, p0, Lokhttp3/internal/ws/RealWebSocket$Streams;->source:Lgx;
+    .line 605
+    iput-object p2, p0, Lokhttp3/internal/ws/RealWebSocket$Streams;->source:Lyu;
 
-    .line 4
-    iput-object p3, p0, Lokhttp3/internal/ws/RealWebSocket$Streams;->sink:Lfx;
+    .line 606
+    iput-object p3, p0, Lokhttp3/internal/ws/RealWebSocket$Streams;->sink:Lyt;
 
     return-void
 .end method

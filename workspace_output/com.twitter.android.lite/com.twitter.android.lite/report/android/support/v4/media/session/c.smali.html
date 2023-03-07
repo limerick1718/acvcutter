@@ -14,121 +14,26 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public abstract Landroid/support/v4/media/session/c;
+		<code>.class  Landroid/support/v4/media/session/c;
 .super Ljava/lang/Object;
-.source "MediaControllerCompat.java"
-.implements Landroid/os/IBinder$DeathRecipient;
+.source "MediaControllerCompatApi21.java"
 
 .annotation system Ldalvik/annotation/MemberClasses;
 value = {
+Landroid/support/v4/media/session/c$b;,
 Landroid/support/v4/media/session/c$a;,
-Landroid/support/v4/media/session/c$c;,
-Landroid/support/v4/media/session/c$b;
+Landroid/support/v4/media/session/c$c;
 }
 .end annotation
 
-.field final a:Ljava/lang/Object;
-.field  b:Landroid/support/v4/media/session/c$a;
-.field  c:Landroid/support/v4/media/session/a;
 
 
-.method public constructor &lt;init&gt;()V
-<span class="">	.locals 2</span>
-
-<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="missed">	const/16 v1, 0x15</span>
-<span class="missed">	if-lt v0, v1, :cond_0</span>
-<span class="missed">	new-instance v0, Landroid/support/v4/media/session/c$b;</span>
-<span class="missed">	invoke-direct {v0, p0}, Landroid/support/v4/media/session/c$b;-><init>(Landroid/support/v4/media/session/c;)V</span>
-<span class="">	invoke-static {v0}, Landroid/support/v4/media/session/e;->a(Landroid/support/v4/media/session/e$a;)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	iput-object v0, p0, Landroid/support/v4/media/session/c;->a:Ljava/lang/Object;</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-instance v0, Landroid/support/v4/media/session/c$c;</span>
-<span class="missed">	invoke-direct {v0, p0}, Landroid/support/v4/media/session/c$c;-><init>(Landroid/support/v4/media/session/c;)V</span>
-<span class="missed">	iput-object v0, p0, Landroid/support/v4/media/session/c;->c:Landroid/support/v4/media/session/a;</span>
-<span class="">	:goto_0</span>
-<span class="">	return-void</span>
-.end method
-
-.method public a()V
-<span class="">	.locals 0</span>
-
-<span class="">	return-void</span>
-.end method
-
-.method  a(ILjava/lang/Object;Landroid/os/Bundle;)V
+.method public static a(Landroid/support/v4/media/session/c$a;)Ljava/lang/Object;
 <span class="">	.locals 1</span>
 
-<span class="missed">	iget-object v0, p0, Landroid/support/v4/media/session/c;->b:Landroid/support/v4/media/session/c$a;</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="">	invoke-virtual {v0, p1, p2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	invoke-virtual {p1, p3}, Landroid/os/Message;->setData(Landroid/os/Bundle;)V</span>
-<span class="missed">	invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V</span>
-<span class="">	:cond_0</span>
-<span class="">	return-void</span>
-.end method
-
-.method public a(Landroid/os/Bundle;)V
-<span class="">	.locals 0</span>
-
-<span class="">	return-void</span>
-.end method
-
-.method public a(Landroid/support/v4/media/MediaMetadataCompat;)V
-<span class="">	.locals 0</span>
-
-<span class="">	return-void</span>
-.end method
-
-.method public a(Landroid/support/v4/media/session/PlaybackStateCompat;)V
-<span class="">	.locals 0</span>
-
-<span class="">	return-void</span>
-.end method
-
-.method public a(Landroid/support/v4/media/session/d;)V
-<span class="">	.locals 0</span>
-
-<span class="">	return-void</span>
-.end method
-
-.method public a(Ljava/lang/CharSequence;)V
-<span class="">	.locals 0</span>
-
-<span class="">	return-void</span>
-.end method
-
-.method public a(Ljava/lang/String;Landroid/os/Bundle;)V
-<span class="">	.locals 0</span>
-
-<span class="">	return-void</span>
-.end method
-
-.method public a(Ljava/util/List;)V
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Ljava/util/List<",</span>
-<span class="">	"Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;",</span>
-<span class="">	">;)V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="">	return-void</span>
-.end method
-
-.method public binderDied()V
-<span class="">	.locals 2</span>
-
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	const/16 v1, 0x8</span>
-<span class="missed">	invoke-virtual {p0, v1, v0, v0}, Landroid/support/v4/media/session/c;->a(ILjava/lang/Object;Landroid/os/Bundle;)V</span>
-<span class="">	return-void</span>
+<span class="missed">	new-instance v0, Landroid/support/v4/media/session/c$b;</span>
+<span class="missed">	invoke-direct {v0, p0}, Landroid/support/v4/media/session/c$b;-><init>(Landroid/support/v4/media/session/c$a;)V</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

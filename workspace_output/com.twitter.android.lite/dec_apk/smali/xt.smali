@@ -1,31 +1,11 @@
-.class public interface abstract Lxt;
+.class  Lxt;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-encoders-json@@16.1.0"
-.method public abstract a(Ljava/lang/String;I)Lxt;
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-.end method
-.method public abstract a(Ljava/lang/String;J)Lxt;
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-.end method
-.method public abstract a(Ljava/lang/String;Ljava/lang/Object;)Lxt;
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-.end method
-.method public abstract a(Ljava/lang/String;Z)Lxt;
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
+.source "AppIconSettingsData.java"
+.field public final a:Ljava/lang/String;
+.field public final b:I
+.field public final c:I
+.method public constructor <init>(Ljava/lang/String;II)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method

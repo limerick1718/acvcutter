@@ -30,17 +30,17 @@
 .method constructor <init>(Ljava/lang/Appendable;)V
     .locals 1
 
-    .line 1
+    .line 87
     invoke-direct {p0}, Ljava/io/Writer;-><init>()V
 
-    .line 2
+    .line 85
     new-instance v0, Lcom/google/gson/internal/i$a$a;
 
     invoke-direct {v0}, Lcom/google/gson/internal/i$a$a;-><init>()V
 
     iput-object v0, p0, Lcom/google/gson/internal/i$a;->b:Lcom/google/gson/internal/i$a$a;
 
-    .line 3
+    .line 88
     iput-object p1, p0, Lcom/google/gson/internal/i$a;->a:Ljava/lang/Appendable;
 
     return-void
@@ -68,7 +68,7 @@
         }
     .end annotation
 
-    .line 3
+    .line 97
     iget-object v0, p0, Lcom/google/gson/internal/i$a;->a:Ljava/lang/Appendable;
 
     int-to-char p1, p1
@@ -86,12 +86,12 @@
         }
     .end annotation
 
-    .line 1
+    .line 92
     iget-object v0, p0, Lcom/google/gson/internal/i$a;->b:Lcom/google/gson/internal/i$a$a;
 
     iput-object p1, v0, Lcom/google/gson/internal/i$a$a;->a:[C
 
-    .line 2
+    .line 93
     iget-object p1, p0, Lcom/google/gson/internal/i$a;->a:Ljava/lang/Appendable;
 
     add-int/2addr p3, p2

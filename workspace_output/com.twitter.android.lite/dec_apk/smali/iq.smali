@@ -1,45 +1,96 @@
 .class final Liq;
-.super Lzq$c$b;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.annotation system Ldalvik/annotation/MemberClasses;
+.super Ljava/lang/Object;
+.implements Ljava/lang/Comparable;
+.implements Ljava/util/Map$Entry;
+.annotation system Ldalvik/annotation/Signature;
 value = {
-Liq$b;
+"Ljava/lang/Object;",
+"Ljava/lang/Comparable<",
+"Liq;",
+">;",
+"Ljava/util/Map$Entry<",
+"TK;TV;>;"
 }
 .end annotation
-.field private final a:Ljava/lang/String;
-.field private final b:[B
-.method private constructor <init>(Ljava/lang/String;[B)V
+.field private final a:Ljava/lang/Comparable;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"TK;"
+}
+.end annotation
+.end field
+.field private b:Ljava/lang/Object;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"TV;"
+}
+.end annotation
+.end field
+.field private final synthetic c:Lij;
+.method constructor <init>(Lij;Ljava/lang/Comparable;Ljava/lang/Object;)V
 .locals 0
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(TK;TV;)V"
+}
+.end annotation
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method synthetic constructor <init>(Ljava/lang/String;[BLiq$a;)V
-.locals 0
+.method constructor <init>(Lij;Ljava/util/Map$Entry;)V
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(",
+"Ljava/util/Map$Entry<",
+"TK;TV;>;)V"
+}
+.end annotation
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public a()[B
+.method public final synthetic compareTo(Ljava/lang/Object;)I
 .locals 1
 const/4 v0, 0x0
-return-object v0
+return v0
 .end method
-.method public b()Ljava/lang/String;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public equals(Ljava/lang/Object;)Z
+.method public final equals(Ljava/lang/Object;)Z
 .locals 4
 const/4 v0, 0x0
 return v0
 .end method
-.method public hashCode()I
-.locals 2
+.method public final synthetic getKey()Ljava/lang/Object;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final getValue()Ljava/lang/Object;
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"()TV;"
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final hashCode()I
+.locals 3
 const/4 v0, 0x0
 return v0
 .end method
-.method public toString()Ljava/lang/String;
-.locals 2
+.method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(TV;)TV;"
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final toString()Ljava/lang/String;
+.locals 4
 const/4 v0, 0x0
 return-object v0
 .end method

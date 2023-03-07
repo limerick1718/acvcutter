@@ -14,46 +14,128 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final synthetic Lvr;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.implements Ljava/util/Comparator;
+		<code>.class public final enum Lvr;
+.super Ljava/lang/Enum;
+.source "DeliveryMechanism.java"
+
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/Enum<",
+"Lvr;",
+">;"
+}
+.end annotation
+
+.field public static final enum a:Lvr;
+.field public static final enum b:Lvr;
+.field public static final enum c:Lvr;
+.field public static final enum d:Lvr;
+.field private static final synthetic f:[Lvr;
+.field private final e:I
 
 
-.field private static final a:Lvr;
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 7</span>
 
-
-.method static constructor &lt;clinit&gt;()V
-<span class="">	.locals 1</span>
-
-<span class="missed">	new-instance v0, Lvr;</span>
-<span class="missed">	invoke-direct {v0}, Lvr;-><init>()V</span>
-<span class="missed">	sput-object v0, Lvr;->a:Lvr;</span>
-<span class="">	return-void</span>
+<span class="cov">	new-instance v0, Lvr;</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	const/4 v2, 0x1</span>
+<span class="cov">	const-string v3, "DEVELOPER"</span>
+<span class="cov">	invoke-direct {v0, v3, v1, v2}, Lvr;-><init>(Ljava/lang/String;II)V</span>
+<span class="cov">	sput-object v0, Lvr;->a:Lvr;</span>
+<span class="cov">	new-instance v0, Lvr;</span>
+<span class="cov">	const/4 v3, 0x2</span>
+<span class="cov">	const-string v4, "USER_SIDELOAD"</span>
+<span class="cov">	invoke-direct {v0, v4, v2, v3}, Lvr;-><init>(Ljava/lang/String;II)V</span>
+<span class="cov">	sput-object v0, Lvr;->b:Lvr;</span>
+<span class="cov">	new-instance v0, Lvr;</span>
+<span class="cov">	const/4 v4, 0x3</span>
+<span class="cov">	const-string v5, "TEST_DISTRIBUTION"</span>
+<span class="cov">	invoke-direct {v0, v5, v3, v4}, Lvr;-><init>(Ljava/lang/String;II)V</span>
+<span class="cov">	sput-object v0, Lvr;->c:Lvr;</span>
+<span class="cov">	new-instance v0, Lvr;</span>
+<span class="cov">	const/4 v5, 0x4</span>
+<span class="cov">	const-string v6, "APP_STORE"</span>
+<span class="cov">	invoke-direct {v0, v6, v4, v5}, Lvr;-><init>(Ljava/lang/String;II)V</span>
+<span class="cov">	sput-object v0, Lvr;->d:Lvr;</span>
+<span class="cov">	new-array v0, v5, [Lvr;</span>
+<span class="cov">	sget-object v5, Lvr;->a:Lvr;</span>
+<span class="cov">	aput-object v5, v0, v1</span>
+<span class="cov">	sget-object v1, Lvr;->b:Lvr;</span>
+<span class="cov">	aput-object v1, v0, v2</span>
+<span class="cov">	sget-object v1, Lvr;->c:Lvr;</span>
+<span class="cov">	aput-object v1, v0, v3</span>
+<span class="cov">	sget-object v1, Lvr;->d:Lvr;</span>
+<span class="cov">	aput-object v1, v0, v4</span>
+<span class="cov">	sput-object v0, Lvr;->f:[Lvr;</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method private constructor &lt;init&gt;()V
+<span class="cov">.method private constructor &lt;init&gt;(Ljava/lang/String;II)V</span>
 <span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(I)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="">	return-void</span>
+<span class="cov">	invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V</span>
+<span class="cov">	iput p3, p0, Lvr;->e:I</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method public static a()Ljava/util/Comparator;
+<span class="cov">.method public static a(Ljava/lang/String;)Lvr;</span>
 <span class="">	.locals 1</span>
 
-<span class="missed">	sget-object v0, Lvr;->a:Lvr;</span>
+<span class="cov">	const-string v0, "io.crash.air"</span>
+<span class="exec">	invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	sget-object p0, Lvr;->c:Lvr;</span>
+<span class="">	return-object p0</span>
+<span class="cov">	:cond_0</span>
+<span class="missed">	if-eqz p0, :cond_1</span>
+<span class="missed">	sget-object p0, Lvr;->d:Lvr;</span>
+<span class="">	return-object p0</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	sget-object p0, Lvr;->a:Lvr;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lvr;
+<span class="">	.locals 1</span>
+
+<span class="missed">	const-class v0, Lvr;</span>
+<span class="">	invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	check-cast p0, Lvr;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static values()[Lvr;
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lvr;->f:[Lvr;</span>
+<span class="">	invoke-virtual {v0}, [Lvr;->clone()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, [Lvr;</span>
 <span class="">	return-object v0</span>
 .end method
 
-.method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
-<span class="">	.locals 0</span>
+<span class="cov">.method public a()I</span>
+<span class="">	.locals 1</span>
 
-<span class="missed">	check-cast p1, Ljava/io/File;</span>
-<span class="missed">	check-cast p2, Ljava/io/File;</span>
-<span class="">	invoke-static {p1, p2}, Lyr;->a(Ljava/io/File;Ljava/io/File;)I</span>
-<span class="missed">	move-result p1</span>
-<span class="">	return p1</span>
+<span class="cov">	iget v0, p0, Lvr;->e:I</span>
+<span class="exec">	return v0</span>
+.end method
+
+.method public toString()Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget v0, p0, Lvr;->e:I</span>
+<span class="">	invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -1,20 +1,16 @@
-.class public final Lnv;
-.super Llv;
-.source "JsonNull.java"
-.field public static final a:Lnv;
-.method public constructor <init>()V
+.class final Lnv;
+.super Lpk;
+.method public constructor <init>(Lpl;)V
 .locals 0
-.annotation runtime Ljava/lang/Deprecated;
-.end annotation
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public equals(Ljava/lang/Object;)Z
-.locals 0
+.method public final a(Lko;Ljava/lang/String;)[B
+.locals 31
 const/4 v0, 0x0
-return v0
+return-object v0
 .end method
-.method public hashCode()I
+.method protected final e()Z
 .locals 1
 const/4 v0, 0x0
 return v0

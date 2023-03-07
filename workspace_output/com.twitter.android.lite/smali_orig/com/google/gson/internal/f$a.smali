@@ -1,9 +1,6 @@
-.class final Lcom/google/gson/internal/f$a;
-.super Ljava/lang/Object;
+.class Lcom/google/gson/internal/f$a;
+.super Ljava/util/AbstractSet;
 .source "LinkedTreeMap.java"
-
-# interfaces
-.implements Ljava/util/Comparator;
 
 
 # annotations
@@ -12,54 +9,140 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
+    accessFlags = 0x0
+    name = "a"
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator<",
-        "Ljava/lang/Comparable;",
-        ">;"
+        "Ljava/util/AbstractSet<",
+        "Ljava/util/Map$Entry<",
+        "TK;TV;>;>;"
     }
 .end annotation
 
 
+# instance fields
+.field final synthetic a:Lcom/google/gson/internal/f;
+
+
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lcom/google/gson/internal/f;)V
     .locals 0
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 560
+    iput-object p1, p0, Lcom/google/gson/internal/f$a;->a:Lcom/google/gson/internal/f;
+
+    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
-    .locals 0
+.method public clear()V
+    .locals 1
 
-    .line 1
-    invoke-interface {p1, p2}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+    .line 591
+    iget-object v0, p0, Lcom/google/gson/internal/f$a;->a:Lcom/google/gson/internal/f;
 
-    move-result p1
+    invoke-virtual {v0}, Lcom/google/gson/internal/f;->clear()V
 
+    return-void
+.end method
+
+.method public contains(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 574
+    instance-of v0, p1, Ljava/util/Map$Entry;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/gson/internal/f$a;->a:Lcom/google/gson/internal/f;
+
+    check-cast p1, Ljava/util/Map$Entry;
+
+    invoke-virtual {v0, p1}, Lcom/google/gson/internal/f;->a(Ljava/util/Map$Entry;)Lcom/google/gson/internal/f$d;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
     return p1
 .end method
 
-.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 0
+.method public iterator()Ljava/util/Iterator;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Iterator<",
+            "Ljava/util/Map$Entry<",
+            "TK;TV;>;>;"
+        }
+    .end annotation
 
-    .line 1
-    check-cast p1, Ljava/lang/Comparable;
+    .line 566
+    new-instance v0, Lcom/google/gson/internal/f$a$1;
 
-    check-cast p2, Ljava/lang/Comparable;
+    invoke-direct {v0, p0}, Lcom/google/gson/internal/f$a$1;-><init>(Lcom/google/gson/internal/f$a;)V
 
-    invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/f$a;->a(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
+    return-object v0
+.end method
 
-    move-result p1
+.method public remove(Ljava/lang/Object;)Z
+    .locals 2
 
-    return p1
+    .line 578
+    instance-of v0, p1, Ljava/util/Map$Entry;
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    return v1
+
+    .line 582
+    :cond_0
+    iget-object v0, p0, Lcom/google/gson/internal/f$a;->a:Lcom/google/gson/internal/f;
+
+    check-cast p1, Ljava/util/Map$Entry;
+
+    invoke-virtual {v0, p1}, Lcom/google/gson/internal/f;->a(Ljava/util/Map$Entry;)Lcom/google/gson/internal/f$d;
+
+    move-result-object p1
+
+    if-nez p1, :cond_1
+
+    return v1
+
+    .line 586
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/internal/f$a;->a:Lcom/google/gson/internal/f;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, p1, v1}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$d;Z)V
+
+    return v1
+.end method
+
+.method public size()I
+    .locals 1
+
+    .line 562
+    iget-object v0, p0, Lcom/google/gson/internal/f$a;->a:Lcom/google/gson/internal/f;
+
+    iget v0, v0, Lcom/google/gson/internal/f;->c:I
+
+    return v0
 .end method

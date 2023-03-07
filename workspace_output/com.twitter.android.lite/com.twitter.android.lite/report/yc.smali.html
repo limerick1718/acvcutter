@@ -14,134 +14,337 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public Lyc;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-
-.annotation system Ldalvik/annotation/MemberClasses;
-value = {
-Lyc$a;
-}
-.end annotation
-
-.field private static volatile b:Lyc;
-.field private static volatile c:Lyc;
-.field private static final d:Lyc;
-.field private final a:Ljava/util/Map;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/Map<",
-"Lyc$a;",
-"Lmd$d<",
-"**>;>;"
-}
-.end annotation
-.end field
+		<code>.class  Lyc;
+.super Lvf;
+.source "DefaultSettingsSpiCall.java"
+.implements Lyo;
 
 
-.method static constructor &lt;clinit&gt;()V
-<span class="">	.locals 2</span>
 
-<span class="missed">	new-instance v0, Lyc;</span>
-<span class="missed">	const/4 v1, 0x1</span>
-<span class="missed">	invoke-direct {v0, v1}, Lyc;-><init>(Z)V</span>
-<span class="missed">	sput-object v0, Lyc;->d:Lyc;</span>
-<span class="">	return-void</span>
+
+<span class="cov">.method public constructor &lt;init&gt;(Luw;Ljava/lang/String;Ljava/lang/String;Lxi;)V</span>
+<span class="">	.locals 6</span>
+
+<span class="cov">	sget-object v5, Lxg;->a:Lxg;</span>
+<span class="cov">	move-object v0, p0</span>
+<span class="cov">	move-object v1, p1</span>
+<span class="cov">	move-object v2, p2</span>
+<span class="cov">	move-object v3, p3</span>
+<span class="cov">	move-object v4, p4</span>
+<span class="cov">	invoke-direct/range {v0 .. v5}, Lyc;-><init>(Luw;Ljava/lang/String;Ljava/lang/String;Lxi;Lxg;)V</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method constructor &lt;init&gt;()V
-<span class="">	.locals 1</span>
-
-<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="missed">	new-instance v0, Ljava/util/HashMap;</span>
-<span class="missed">	invoke-direct {v0}, Ljava/util/HashMap;-><init>()V</span>
-<span class="missed">	iput-object v0, p0, Lyc;->a:Ljava/util/Map;</span>
-<span class="">	return-void</span>
-.end method
-
-.method private constructor &lt;init&gt;(Z)V
+<span class="cov">.method constructor &lt;init&gt;(Luw;Ljava/lang/String;Ljava/lang/String;Lxi;Lxg;)V</span>
 <span class="">	.locals 0</span>
 
-<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="">	invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	iput-object p1, p0, Lyc;->a:Ljava/util/Map;</span>
-<span class="">	return-void</span>
+<span class="cov">	invoke-direct/range {p0 .. p5}, Lvf;-><init>(Luw;Ljava/lang/String;Ljava/lang/String;Lxi;Lxg;)V</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method public static a()Lyc;
-<span class="">	.locals 2</span>
+.method private a(Ljava/lang/String;)Lorg/json/JSONObject;
+<span class="">	.locals 4</span>
 
-<span class="missed">	sget-object v0, Lyc;->b:Lyc;</span>
-<span class="missed">	if-nez v0, :cond_1</span>
-<span class="missed">	const-class v1, Lyc;</span>
-<span class="missed">	monitor-enter v1</span>
 <span class="">	:try_start_0</span>
-<span class="missed">	sget-object v0, Lyc;->b:Lyc;</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="missed">	sget-object v0, Lyc;->d:Lyc;</span>
-<span class="missed">	sput-object v0, Lyc;->b:Lyc;</span>
-<span class="">	:cond_0</span>
-<span class="missed">	monitor-exit v1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:catchall_0</span>
-<span class="missed">	move-exception v0</span>
-<span class="missed">	monitor-exit v1</span>
+<span class="missed">	new-instance v0, Lorg/json/JSONObject;</span>
+<span class="missed">	invoke-direct {v0, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V</span>
 <span class="">	:try_end_0</span>
-<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="">	throw v0</span>
-<span class="">	:goto_0</span>
-<span class="">	:cond_1</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
 <span class="">	return-object v0</span>
-.end method
-
-.method public static b()Lyc;
-<span class="">	.locals 2</span>
-
-<span class="missed">	const-class v0, Lyc;</span>
-<span class="missed">	sget-object v1, Lyc;->c:Lyc;</span>
-<span class="missed">	if-eqz v1, :cond_0</span>
-<span class="">	return-object v1</span>
-<span class="">	:cond_0</span>
-<span class="missed">	monitor-enter v0</span>
-<span class="">	:try_start_0</span>
-<span class="missed">	sget-object v1, Lyc;->c:Lyc;</span>
-<span class="missed">	if-eqz v1, :cond_1</span>
-<span class="missed">	monitor-exit v0</span>
-<span class="">	return-object v1</span>
-<span class="">	:cond_1</span>
-<span class="">	invoke-static {v0}, Lld;->a(Ljava/lang/Class;)Lyc;</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
 <span class="missed">	move-result-object v1</span>
-<span class="missed">	sput-object v1, Lyc;->c:Lyc;</span>
-<span class="missed">	monitor-exit v0</span>
-<span class="">	return-object v1</span>
-<span class="">	:catchall_0</span>
-<span class="missed">	move-exception v1</span>
-<span class="missed">	monitor-exit v0</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="">	throw v1</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v3, "Failed to parse settings JSON from "</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p0}, Lyc;->getUrl()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v3, "Fabric"</span>
+<span class="missed">	invoke-interface {v1, v3, v2, v0}, Luz;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "Settings response "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {v0, v3, p1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	return-object p1</span>
 .end method
 
-.method public final a(Lue;I)Lmd$d;
+<span class="cov">.method private a(Lxh;Lyn;)Lxh;</span>
 <span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p2, Lyn;->a:Ljava/lang/String;</span>
+<span class="cov">	const-string v1, "X-CRASHLYTICS-API-KEY"</span>
+<span class="cov">	invoke-direct {p0, p1, v1, v0}, Lyc;->a(Lxh;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	const-string v0, "X-CRASHLYTICS-API-CLIENT-TYPE"</span>
+<span class="cov">	const-string v1, "android"</span>
+<span class="cov">	invoke-direct {p0, p1, v0, v1}, Lyc;->a(Lxh;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	iget-object v0, p0, Lyc;->kit:Luw;</span>
+<span class="exec">	invoke-virtual {v0}, Luw;->getVersion()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "X-CRASHLYTICS-API-CLIENT-VERSION"</span>
+<span class="cov">	invoke-direct {p0, p1, v1, v0}, Lyc;->a(Lxh;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	const-string v0, "Accept"</span>
+<span class="cov">	const-string v1, "application/json"</span>
+<span class="cov">	invoke-direct {p0, p1, v0, v1}, Lyc;->a(Lxh;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	iget-object v0, p2, Lyn;->b:Ljava/lang/String;</span>
+<span class="cov">	const-string v1, "X-CRASHLYTICS-DEVICE-MODEL"</span>
+<span class="cov">	invoke-direct {p0, p1, v1, v0}, Lyc;->a(Lxh;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	iget-object v0, p2, Lyn;->c:Ljava/lang/String;</span>
+<span class="cov">	const-string v1, "X-CRASHLYTICS-OS-BUILD-VERSION"</span>
+<span class="cov">	invoke-direct {p0, p1, v1, v0}, Lyc;->a(Lxh;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	iget-object v0, p2, Lyn;->d:Ljava/lang/String;</span>
+<span class="cov">	const-string v1, "X-CRASHLYTICS-OS-DISPLAY-VERSION"</span>
+<span class="cov">	invoke-direct {p0, p1, v1, v0}, Lyc;->a(Lxh;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	iget-object p2, p2, Lyn;->e:Ljava/lang/String;</span>
+<span class="cov">	const-string v0, "X-CRASHLYTICS-INSTALLATION-ID"</span>
+<span class="cov">	invoke-direct {p0, p1, v0, p2}, Lyc;->a(Lxh;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="exec">	return-object p1</span>
+.end method
+
+<span class="cov">.method private a(Lxh;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	if-eqz p3, :cond_0</span>
+<span class="cov">	invoke-virtual {p1, p2, p3}, Lxh;->a(Ljava/lang/String;Ljava/lang/String;)Lxh;</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private b(Lyn;)Ljava/util/Map;</span>
+<span class="">	.locals 3</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	"<ContainingType::",</span>
-<span class="">	"Lue;",</span>
-<span class="">	">(TContainingType;I)",</span>
-<span class="">	"Lmd$d<",</span>
-<span class="">	"TContainingType;*>;"</span>
+<span class="">	"(",</span>
+<span class="">	"Lyn;",</span>
+<span class="">	")",</span>
+<span class="">	"Ljava/util/Map<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	iget-object v0, p0, Lyc;->a:Ljava/util/Map;</span>
-<span class="missed">	new-instance v1, Lyc$a;</span>
-<span class="missed">	invoke-direct {v1, p1, p2}, Lyc$a;-><init>(Ljava/lang/Object;I)V</span>
-<span class="">	invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	new-instance v0, Ljava/util/HashMap;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/HashMap;-><init>()V</span>
+<span class="cov">	iget-object v1, p1, Lyn;->h:Ljava/lang/String;</span>
+<span class="cov">	const-string v2, "build_version"</span>
+<span class="cov">	invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	iget-object v1, p1, Lyn;->g:Ljava/lang/String;</span>
+<span class="cov">	const-string v2, "display_version"</span>
+<span class="cov">	invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	iget v1, p1, Lyn;->i:I</span>
+<span class="exec">	invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const-string v2, "source"</span>
+<span class="cov">	invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	iget-object v1, p1, Lyn;->j:Ljava/lang/String;</span>
+<span class="cov">	if-eqz v1, :cond_0</span>
+<span class="cov">	iget-object v1, p1, Lyn;->j:Ljava/lang/String;</span>
+<span class="cov">	const-string v2, "icon_hash"</span>
+<span class="cov">	invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object p1, p1, Lyn;->f:Ljava/lang/String;</span>
+<span class="exec">	invoke-static {p1}, Lvn;->d(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	if-nez v1, :cond_1</span>
+<span class="cov">	const-string v1, "instance"</span>
+<span class="cov">	invoke-interface {v0, v1, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	:cond_1</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method  a(Lxh;)Lorg/json/JSONObject;</span>
+<span class="">	.locals 4</span>
+
+<span class="">	invoke-virtual {p1}, Lxh;->b()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v3, "Settings result was: "</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v3, "Fabric"</span>
+<span class="missed">	invoke-interface {v1, v3, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	invoke-virtual {p0, v0}, Lyc;->a(I)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {p1}, Lxh;->d()Ljava/lang/String;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="missed">	check-cast p1, Lmd$d;</span>
+<span class="">	invoke-direct {p0, p1}, Lyc;->a(Ljava/lang/String;)Lorg/json/JSONObject;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v1, "Failed to retrieve settings from "</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p0}, Lyc;->getUrl()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-interface {p1, v3, v0}, Luz;->e(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	:goto_0</span>
 <span class="">	return-object p1</span>
+.end method
+
+<span class="cov">.method public a(Lyn;)Lorg/json/JSONObject;</span>
+<span class="">	.locals 9</span>
+
+<span class="cov">	const-string v0, "X-REQUEST-ID"</span>
+<span class="cov">	const-string v1, "Settings request ID: "</span>
+<span class="cov">	const-string v2, "Fabric"</span>
+<span class="cov">	const/4 v3, 0x0</span>
+<span class="cov">	:try_start_0</span>
+<span class="exec">	invoke-direct {p0, p1}, Lyc;->b(Lyn;)Ljava/util/Map;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="exec">	invoke-virtual {p0, v4}, Lyc;->getHttpRequest(Ljava/util/Map;)Lxh;</span>
+<span class="cov">	move-result-object v5</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Lxh$c; {:try_start_0 .. :try_end_0} :catch_2</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_1</span>
+<span class="cov">	:try_start_1</span>
+<span class="exec">	invoke-direct {p0, v5, p1}, Lyc;->a(Lxh;Lyn;)Lxh;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	:try_end_1</span>
+<span class="cov">	.catch Lxh$c; {:try_start_1 .. :try_end_1} :catch_1</span>
+<span class="cov">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="cov">	:try_start_2</span>
+<span class="exec">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="cov">	move-result-object v5</span>
+<span class="cov">	new-instance v6, Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="cov">	const-string v7, "Requesting settings from "</span>
+<span class="cov">	invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual {p0}, Lyc;->getUrl()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v7</span>
+<span class="cov">	invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v6</span>
+<span class="cov">	invoke-interface {v5, v2, v6}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="exec">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="cov">	move-result-object v5</span>
+<span class="cov">	new-instance v6, Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="cov">	const-string v7, "Settings query params were: "</span>
+<span class="cov">	invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	invoke-interface {v5, v2, v4}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	invoke-virtual {p0, p1}, Lyc;->a(Lxh;)Lorg/json/JSONObject;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	:try_end_2</span>
+<span class="missed">	.catch Lxh$c; {:try_start_2 .. :try_end_2} :catch_0</span>
+<span class="missed">	.catchall {:try_start_2 .. :try_end_2} :catchall_2</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	new-instance v5, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual {p1, v0}, Lxh;->b(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	invoke-interface {v4, v2, p1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="exec">	goto :goto_2</span>
+<span class="">	:catch_0</span>
+<span class="cov">	move-exception v4</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v3</span>
+<span class="missed">	move-object p1, v5</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception v4</span>
+<span class="missed">	move-object p1, v5</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catchall_1</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	move-object v8, v3</span>
+<span class="missed">	move-object v3, p1</span>
+<span class="missed">	move-object p1, v8</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:catch_2</span>
+<span class="missed">	move-exception v4</span>
+<span class="missed">	move-object p1, v3</span>
+<span class="cov">	:goto_1</span>
+<span class="cov">	:try_start_3</span>
+<span class="exec">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="cov">	move-result-object v5</span>
+<span class="cov">	const-string v6, "Settings request failed."</span>
+<span class="cov">	invoke-interface {v5, v2, v6, v4}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="cov">	:try_end_3</span>
+<span class="cov">	.catchall {:try_start_3 .. :try_end_3} :catchall_2</span>
+<span class="cov">	if-eqz p1, :cond_0</span>
+<span class="exec">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	new-instance v5, Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="">	goto :goto_0</span>
+<span class="cov">	:goto_2</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-object v3</span>
+<span class="">	:catchall_2</span>
+<span class="missed">	move-exception v3</span>
+<span class="">	:goto_3</span>
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	new-instance v5, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p1, v0}, Lxh;->b(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {v4, v2, p1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	throw v3</span>
+.end method
+
+.method  a(I)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/16 v0, 0xc8</span>
+<span class="missed">	if-eq p1, v0, :cond_1</span>
+<span class="missed">	const/16 v0, 0xc9</span>
+<span class="missed">	if-eq p1, v0, :cond_1</span>
+<span class="missed">	const/16 v0, 0xca</span>
+<span class="missed">	if-eq p1, v0, :cond_1</span>
+<span class="missed">	const/16 v0, 0xcb</span>
+<span class="missed">	if-ne p1, v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	:goto_1</span>
+<span class="">	return p1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

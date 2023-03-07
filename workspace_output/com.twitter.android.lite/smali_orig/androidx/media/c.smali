@@ -20,23 +20,23 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 1
+    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 2
+    .line 38
     iput v0, p0, Landroidx/media/c;->a:I
 
-    .line 3
+    .line 40
     iput v0, p0, Landroidx/media/c;->b:I
 
-    .line 4
+    .line 42
     iput v0, p0, Landroidx/media/c;->c:I
 
     const/4 v0, -0x1
 
-    .line 5
+    .line 44
     iput v0, p0, Landroidx/media/c;->d:I
 
     return-void
@@ -45,22 +45,58 @@
 
 # virtual methods
 .method public a()I
-    .locals 1
+    .locals 3
 
-    .line 1
-    iget v0, p0, Landroidx/media/c;->b:I
+    .line 73
+    iget v0, p0, Landroidx/media/c;->d:I
+
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_0
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 76
+    iget v1, p0, Landroidx/media/c;->c:I
+
+    iget v2, p0, Landroidx/media/c;->a:I
+
+    invoke-static {v0, v1, v2}, Landroidx/media/AudioAttributesCompat;->a(ZII)I
+
+    move-result v0
 
     return v0
 .end method
 
 .method public b()I
+    .locals 1
+
+    .line 86
+    iget v0, p0, Landroidx/media/c;->b:I
+
+    return v0
+.end method
+
+.method public c()I
+    .locals 1
+
+    .line 91
+    iget v0, p0, Landroidx/media/c;->a:I
+
+    return v0
+.end method
+
+.method public d()I
     .locals 3
 
-    .line 1
+    .line 96
     iget v0, p0, Landroidx/media/c;->c:I
 
-    .line 2
-    invoke-virtual {p0}, Landroidx/media/c;->c()I
+    .line 97
+    invoke-virtual {p0}, Landroidx/media/c;->a()I
 
     move-result v1
 
@@ -86,46 +122,10 @@
     return v0
 .end method
 
-.method public c()I
-    .locals 3
-
-    .line 1
-    iget v0, p0, Landroidx/media/c;->d:I
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_0
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    .line 2
-    iget v1, p0, Landroidx/media/c;->c:I
-
-    iget v2, p0, Landroidx/media/c;->a:I
-
-    invoke-static {v0, v1, v2}, Landroidx/media/AudioAttributesCompat;->a(ZII)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public d()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Landroidx/media/c;->a:I
-
-    return v0
-.end method
-
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
 
-    .line 1
+    .line 128
     instance-of v0, p1, Landroidx/media/c;
 
     const/4 v1, 0x0
@@ -134,14 +134,14 @@
 
     return v1
 
-    .line 2
+    .line 131
     :cond_0
     check-cast p1, Landroidx/media/c;
 
-    .line 3
+    .line 132
     iget v0, p0, Landroidx/media/c;->b:I
 
-    invoke-virtual {p1}, Landroidx/media/c;->a()I
+    invoke-virtual {p1}, Landroidx/media/c;->b()I
 
     move-result v2
 
@@ -149,8 +149,8 @@
 
     iget v0, p0, Landroidx/media/c;->c:I
 
-    .line 4
-    invoke-virtual {p1}, Landroidx/media/c;->b()I
+    .line 133
+    invoke-virtual {p1}, Landroidx/media/c;->d()I
 
     move-result v2
 
@@ -158,8 +158,8 @@
 
     iget v0, p0, Landroidx/media/c;->a:I
 
-    .line 5
-    invoke-virtual {p1}, Landroidx/media/c;->d()I
+    .line 134
+    invoke-virtual {p1}, Landroidx/media/c;->c()I
 
     move-result v2
 
@@ -182,9 +182,9 @@
 
     const/4 v0, 0x4
 
+    .line 123
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 1
     iget v1, p0, Landroidx/media/c;->b:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -235,14 +235,14 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 1
+    .line 140
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "AudioAttributesCompat:"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 2
+    .line 141
     iget v1, p0, Landroidx/media/c;->d:I
 
     const/4 v2, -0x1
@@ -251,7 +251,7 @@
 
     const-string v1, " stream="
 
-    .line 3
+    .line 142
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Landroidx/media/c;->d:I
@@ -260,18 +260,18 @@
 
     const-string v1, " derived"
 
-    .line 4
+    .line 143
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_0
     const-string v1, " usage="
 
-    .line 5
+    .line 145
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Landroidx/media/c;->a:I
 
-    .line 6
+    .line 146
     invoke-static {v1}, Landroidx/media/AudioAttributesCompat;->a(I)Ljava/lang/String;
 
     move-result-object v1
@@ -280,22 +280,22 @@
 
     const-string v1, " content="
 
-    .line 7
+    .line 147
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Landroidx/media/c;->b:I
 
-    .line 8
+    .line 148
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v1, " flags=0x"
 
-    .line 9
+    .line 149
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Landroidx/media/c;->c:I
 
-    .line 10
+    .line 150
     invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -306,7 +306,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11
+    .line 151
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0

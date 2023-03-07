@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> gh$a.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Lgh$a;
+.super Lep;
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Lgh;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x409
+name = "a"
+.end annotation
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<MessageType:",
+"Lgh<",
+"TMessageType;TBuilderType;>;BuilderType:",
+"Lgh$a<",
+"TMessageType;TBuilderType;>;>",
+"Lep<",
+"TMessageType;TBuilderType;>;"
+}
+.end annotation
+
+.field protected a:Lgh;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"TMessageType;"
+}
+.end annotation
+.end field
+.field private final b:Lgh;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"TMessageType;"
+}
+.end annotation
+.end field
+.field private c:Z
+
+
+.method protected constructor &lt;init&gt;(Lgh;)V
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TMessageType;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	invoke-direct {p0}, Lep;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Lgh$a;->b:Lgh;</span>
+<span class="missed">	sget v0, Lgh$e;->d:I</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-virtual {p1, v0, v1, v1}, Lgh;->a(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Lgh;</span>
+<span class="missed">	iput-object p1, p0, Lgh$a;->a:Lgh;</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	iput-boolean p1, p0, Lgh$a;->c:Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method private static a(Lgh;Lgh;)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TMessageType;TMessageType;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Lic;->a()Lic;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0, p0}, Lic;->a(Ljava/lang/Object;)Lig;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-interface {v0, p0, p1}, Lig;->b(Ljava/lang/Object;Ljava/lang/Object;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final synthetic a()Lep;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Lep;->clone()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lgh$a;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method protected final synthetic a(Leo;)Lep;
+<span class="">	.locals 0</span>
+
+<span class="missed">	check-cast p1, Lgh;</span>
+<span class="">	invoke-virtual {p0, p1}, Lgh$a;->a(Lgh;)Lgh$a;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public final a(Lgh;)Lgh$a;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TMessageType;)TBuilderType;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	invoke-virtual {p0}, Lgh$a;->b()V</span>
+<span class="missed">	iget-object v0, p0, Lgh$a;->a:Lgh;</span>
+<span class="missed">	invoke-static {v0, p1}, Lgh$a;->a(Lgh;Lgh;)V</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method protected final b()V
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-boolean v0, p0, Lgh$a;->c:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lgh$a;->a:Lgh;</span>
+<span class="missed">	sget v1, Lgh$e;->d:I</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	invoke-virtual {v0, v1, v2, v2}, Lgh;->a(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lgh;</span>
+<span class="missed">	iget-object v1, p0, Lgh$a;->a:Lgh;</span>
+<span class="missed">	invoke-static {v0, v1}, Lgh$a;->a(Lgh;Lgh;)V</span>
+<span class="missed">	iput-object v0, p0, Lgh$a;->a:Lgh;</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-boolean v0, p0, Lgh$a;->c:Z</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public c()Lgh;
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()TMessageType;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-boolean v0, p0, Lgh$a;->c:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lgh$a;->a:Lgh;</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lgh$a;->a:Lgh;</span>
+<span class="">	invoke-static {}, Lic;->a()Lic;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1, v0}, Lic;->a(Ljava/lang/Object;)Lig;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-interface {v1, v0}, Lig;->c(Ljava/lang/Object;)V</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	iput-boolean v0, p0, Lgh$a;->c:Z</span>
+<span class="missed">	iget-object v0, p0, Lgh$a;->a:Lgh;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public synthetic clone()Ljava/lang/Object;
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/lang/CloneNotSupportedException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lgh$a;->b:Lgh;</span>
+<span class="missed">	check-cast v0, Lgh;</span>
+<span class="missed">	sget v1, Lgh$e;->e:I</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	invoke-virtual {v0, v1, v2, v2}, Lgh;->a(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lgh$a;</span>
+<span class="">	invoke-virtual {p0}, Lgh$a;->e()Lhp;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, Lgh;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Lgh$a;->a(Lgh;)Lgh$a;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final d()Lgh;
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()TMessageType;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0}, Lgh$a;->e()Lhp;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lgh;</span>
+<span class="missed">	sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	sget v2, Lgh$e;->a:I</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	invoke-virtual {v0, v2, v3, v3}, Lgh;->a(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Ljava/lang/Byte;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/Byte;->byteValue()B</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	if-ne v2, v4, :cond_0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-nez v2, :cond_1</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-static {}, Lic;->a()Lic;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v2, v0}, Lic;->a(Ljava/lang/Object;)Lig;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-interface {v2, v0}, Lig;->d(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-eqz v1, :cond_3</span>
+<span class="missed">	sget v1, Lgh$e;->b:I</span>
+<span class="missed">	if-eqz v4, :cond_2</span>
+<span class="missed">	move-object v2, v0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	move-object v2, v3</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {v0, v1, v2, v3}, Lgh;->a(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	if-eqz v4, :cond_4</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_4</span>
+<span class="missed">	new-instance v1, Lix;</span>
+<span class="missed">	invoke-direct {v1, v0}, Lix;-><init>(Lhp;)V</span>
+<span class="">	throw v1</span>
+.end method
+
+.method public synthetic e()Lhp;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Lgh$a;->c()Lgh;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final f()Z
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lgh$a;->a:Lgh;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-static {v0, v1}, Lgh;->a(Lgh;Z)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public synthetic g()Lhp;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Lgh$a;->d()Lgh;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final synthetic l()Lhp;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lgh$a;->b:Lgh;</span>
+<span class="">	return-object v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

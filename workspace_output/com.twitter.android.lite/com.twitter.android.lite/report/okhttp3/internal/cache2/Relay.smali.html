@@ -25,18 +25,18 @@ Lokhttp3/internal/cache2/Relay$RelaySource;
 .end annotation
 
 .field private static final FILE_HEADER_SIZE:J = 0x20L
-.field static final PREFIX_CLEAN:Lhx;
-.field static final PREFIX_DIRTY:Lhx;
+.field static final PREFIX_CLEAN:Lyv;
+.field static final PREFIX_DIRTY:Lyv;
 .field private static final SOURCE_FILE:I = 0x2
 .field private static final SOURCE_UPSTREAM:I = 0x1
-.field final buffer:Lex;
+.field final buffer:Lys;
 .field final bufferMaxSize:J
 .field  complete:Z
 .field  file:Ljava/io/RandomAccessFile;
-.field private final metadata:Lhx;
+.field private final metadata:Lyv;
 .field  sourceCount:I
-.field  upstream:Lwx;
-.field final upstreamBuffer:Lex;
+.field  upstream:Lzk;
+.field final upstreamBuffer:Lys;
 .field  upstreamPos:J
 .field  upstreamReader:Ljava/lang/Thread;
 
@@ -45,28 +45,28 @@ Lokhttp3/internal/cache2/Relay$RelaySource;
 <span class="">	.locals 1</span>
 
 <span class="missed">	const-string v0, "OkHttp cache v1\n"</span>
-<span class="">	invoke-static {v0}, Lhx;->d(Ljava/lang/String;)Lhx;</span>
+<span class="">	invoke-static {v0}, Lyv;->a(Ljava/lang/String;)Lyv;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	sput-object v0, Lokhttp3/internal/cache2/Relay;->PREFIX_CLEAN:Lhx;</span>
+<span class="missed">	sput-object v0, Lokhttp3/internal/cache2/Relay;->PREFIX_CLEAN:Lyv;</span>
 <span class="missed">	const-string v0, "OkHttp DIRTY :(\n"</span>
-<span class="">	invoke-static {v0}, Lhx;->d(Ljava/lang/String;)Lhx;</span>
+<span class="">	invoke-static {v0}, Lyv;->a(Ljava/lang/String;)Lyv;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	sput-object v0, Lokhttp3/internal/cache2/Relay;->PREFIX_DIRTY:Lhx;</span>
+<span class="missed">	sput-object v0, Lokhttp3/internal/cache2/Relay;->PREFIX_DIRTY:Lyv;</span>
 <span class="">	return-void</span>
 .end method
 
-.method private constructor &lt;init&gt;(Ljava/io/RandomAccessFile;Lwx;JLhx;J)V
+.method private constructor &lt;init&gt;(Ljava/io/RandomAccessFile;Lzk;JLyv;J)V
 <span class="">	.locals 1</span>
 
 <span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="missed">	new-instance v0, Lex;</span>
-<span class="missed">	invoke-direct {v0}, Lex;-><init>()V</span>
-<span class="missed">	iput-object v0, p0, Lokhttp3/internal/cache2/Relay;->upstreamBuffer:Lex;</span>
-<span class="missed">	new-instance v0, Lex;</span>
-<span class="missed">	invoke-direct {v0}, Lex;-><init>()V</span>
-<span class="missed">	iput-object v0, p0, Lokhttp3/internal/cache2/Relay;->buffer:Lex;</span>
+<span class="missed">	new-instance v0, Lys;</span>
+<span class="missed">	invoke-direct {v0}, Lys;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/internal/cache2/Relay;->upstreamBuffer:Lys;</span>
+<span class="missed">	new-instance v0, Lys;</span>
+<span class="missed">	invoke-direct {v0}, Lys;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/internal/cache2/Relay;->buffer:Lys;</span>
 <span class="missed">	iput-object p1, p0, Lokhttp3/internal/cache2/Relay;->file:Ljava/io/RandomAccessFile;</span>
-<span class="missed">	iput-object p2, p0, Lokhttp3/internal/cache2/Relay;->upstream:Lwx;</span>
+<span class="missed">	iput-object p2, p0, Lokhttp3/internal/cache2/Relay;->upstream:Lzk;</span>
 <span class="missed">	if-nez p2, :cond_0</span>
 <span class="missed">	const/4 p1, 0x1</span>
 <span class="">	goto :goto_0</span>
@@ -75,12 +75,12 @@ Lokhttp3/internal/cache2/Relay$RelaySource;
 <span class="">	:goto_0</span>
 <span class="missed">	iput-boolean p1, p0, Lokhttp3/internal/cache2/Relay;->complete:Z</span>
 <span class="missed">	iput-wide p3, p0, Lokhttp3/internal/cache2/Relay;->upstreamPos:J</span>
-<span class="missed">	iput-object p5, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lhx;</span>
+<span class="missed">	iput-object p5, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lyv;</span>
 <span class="missed">	iput-wide p6, p0, Lokhttp3/internal/cache2/Relay;->bufferMaxSize:J</span>
 <span class="">	return-void</span>
 .end method
 
-.method public static edit(Ljava/io/File;Lwx;Lhx;J)Lokhttp3/internal/cache2/Relay;
+.method public static edit(Ljava/io/File;Lzk;Lyv;J)Lokhttp3/internal/cache2/Relay;
 <span class="">	.locals 9</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -98,14 +98,14 @@ Lokhttp3/internal/cache2/Relay$RelaySource;
 <span class="missed">	move-object v2, p1</span>
 <span class="missed">	move-object v5, p2</span>
 <span class="missed">	move-wide v6, p3</span>
-<span class="missed">	invoke-direct/range {v0 .. v7}, Lokhttp3/internal/cache2/Relay;-><init>(Ljava/io/RandomAccessFile;Lwx;JLhx;J)V</span>
+<span class="missed">	invoke-direct/range {v0 .. v7}, Lokhttp3/internal/cache2/Relay;-><init>(Ljava/io/RandomAccessFile;Lzk;JLyv;J)V</span>
 <span class="missed">	const-wide/16 p1, 0x0</span>
 <span class="missed">	invoke-virtual {v8, p1, p2}, Ljava/io/RandomAccessFile;->setLength(J)V</span>
-<span class="missed">	sget-object v2, Lokhttp3/internal/cache2/Relay;->PREFIX_DIRTY:Lhx;</span>
+<span class="missed">	sget-object v2, Lokhttp3/internal/cache2/Relay;->PREFIX_DIRTY:Lyv;</span>
 <span class="missed">	const-wide/16 v3, -0x1</span>
 <span class="missed">	const-wide/16 v5, -0x1</span>
 <span class="missed">	move-object v1, p0</span>
-<span class="missed">	invoke-direct/range {v1 .. v6}, Lokhttp3/internal/cache2/Relay;->writeHeader(Lhx;JJ)V</span>
+<span class="missed">	invoke-direct/range {v1 .. v6}, Lokhttp3/internal/cache2/Relay;->writeHeader(Lyv;JJ)V</span>
 <span class="">	return-object p0</span>
 .end method
 
@@ -124,42 +124,42 @@ Lokhttp3/internal/cache2/Relay$RelaySource;
 <span class="">	invoke-virtual {v1}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="missed">	invoke-direct {p0, v0}, Lokhttp3/internal/cache2/FileOperator;-><init>(Ljava/nio/channels/FileChannel;)V</span>
-<span class="missed">	new-instance v0, Lex;</span>
-<span class="missed">	invoke-direct {v0}, Lex;-><init>()V</span>
+<span class="missed">	new-instance v0, Lys;</span>
+<span class="missed">	invoke-direct {v0}, Lys;-><init>()V</span>
 <span class="missed">	const-wide/16 v3, 0x0</span>
 <span class="missed">	const-wide/16 v6, 0x20</span>
 <span class="missed">	move-object v2, p0</span>
 <span class="missed">	move-object v5, v0</span>
-<span class="missed">	invoke-virtual/range {v2 .. v7}, Lokhttp3/internal/cache2/FileOperator;->read(JLex;J)V</span>
-<span class="missed">	sget-object v2, Lokhttp3/internal/cache2/Relay;->PREFIX_CLEAN:Lhx;</span>
-<span class="">	invoke-virtual {v2}, Lhx;->l()I</span>
+<span class="missed">	invoke-virtual/range {v2 .. v7}, Lokhttp3/internal/cache2/FileOperator;->read(JLys;J)V</span>
+<span class="missed">	sget-object v2, Lokhttp3/internal/cache2/Relay;->PREFIX_CLEAN:Lyv;</span>
+<span class="">	invoke-virtual {v2}, Lyv;->h()I</span>
 <span class="missed">	move-result v2</span>
 <span class="missed">	int-to-long v2, v2</span>
-<span class="">	invoke-virtual {v0, v2, v3}, Lex;->b(J)Lhx;</span>
+<span class="">	invoke-virtual {v0, v2, v3}, Lys;->d(J)Lyv;</span>
 <span class="missed">	move-result-object v2</span>
-<span class="missed">	sget-object v3, Lokhttp3/internal/cache2/Relay;->PREFIX_CLEAN:Lhx;</span>
-<span class="">	invoke-virtual {v2, v3}, Lhx;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	sget-object v3, Lokhttp3/internal/cache2/Relay;->PREFIX_CLEAN:Lyv;</span>
+<span class="">	invoke-virtual {v2, v3}, Lyv;->equals(Ljava/lang/Object;)Z</span>
 <span class="missed">	move-result v2</span>
 <span class="missed">	if-eqz v2, :cond_0</span>
-<span class="">	invoke-virtual {v0}, Lex;->readLong()J</span>
+<span class="">	invoke-virtual {v0}, Lys;->n()J</span>
 <span class="missed">	move-result-wide v8</span>
-<span class="">	invoke-virtual {v0}, Lex;->readLong()J</span>
+<span class="">	invoke-virtual {v0}, Lys;->n()J</span>
 <span class="missed">	move-result-wide v6</span>
-<span class="missed">	new-instance v0, Lex;</span>
-<span class="missed">	invoke-direct {v0}, Lex;-><init>()V</span>
+<span class="missed">	new-instance v0, Lys;</span>
+<span class="missed">	invoke-direct {v0}, Lys;-><init>()V</span>
 <span class="missed">	const-wide/16 v2, 0x20</span>
 <span class="missed">	add-long v3, v8, v2</span>
 <span class="missed">	move-object v2, p0</span>
 <span class="missed">	move-object v5, v0</span>
-<span class="missed">	invoke-virtual/range {v2 .. v7}, Lokhttp3/internal/cache2/FileOperator;->read(JLex;J)V</span>
-<span class="">	invoke-virtual {v0}, Lex;->t()Lhx;</span>
+<span class="missed">	invoke-virtual/range {v2 .. v7}, Lokhttp3/internal/cache2/FileOperator;->read(JLys;J)V</span>
+<span class="">	invoke-virtual {v0}, Lys;->s()Lyv;</span>
 <span class="missed">	move-result-object v5</span>
 <span class="missed">	new-instance p0, Lokhttp3/internal/cache2/Relay;</span>
 <span class="missed">	const/4 v2, 0x0</span>
 <span class="missed">	const-wide/16 v6, 0x0</span>
 <span class="missed">	move-object v0, p0</span>
 <span class="missed">	move-wide v3, v8</span>
-<span class="missed">	invoke-direct/range {v0 .. v7}, Lokhttp3/internal/cache2/Relay;-><init>(Ljava/io/RandomAccessFile;Lwx;JLhx;J)V</span>
+<span class="missed">	invoke-direct/range {v0 .. v7}, Lokhttp3/internal/cache2/Relay;-><init>(Ljava/io/RandomAccessFile;Lzk;JLyv;J)V</span>
 <span class="">	return-object p0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	new-instance p0, Ljava/io/IOException;</span>
@@ -168,7 +168,7 @@ Lokhttp3/internal/cache2/Relay$RelaySource;
 <span class="">	throw p0</span>
 .end method
 
-.method private writeHeader(Lhx;JJ)V
+.method private writeHeader(Lyv;JJ)V
 <span class="">	.locals 6</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -176,12 +176,12 @@ Lokhttp3/internal/cache2/Relay$RelaySource;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	new-instance v3, Lex;</span>
-<span class="missed">	invoke-direct {v3}, Lex;-><init>()V</span>
-<span class="missed">	invoke-virtual {v3, p1}, Lex;->a(Lhx;)Lex;</span>
-<span class="missed">	invoke-virtual {v3, p2, p3}, Lex;->k(J)Lex;</span>
-<span class="missed">	invoke-virtual {v3, p4, p5}, Lex;->k(J)Lex;</span>
-<span class="">	invoke-virtual {v3}, Lex;->v()J</span>
+<span class="missed">	new-instance v3, Lys;</span>
+<span class="missed">	invoke-direct {v3}, Lys;-><init>()V</span>
+<span class="missed">	invoke-virtual {v3, p1}, Lys;->a(Lyv;)Lys;</span>
+<span class="missed">	invoke-virtual {v3, p2, p3}, Lys;->j(J)Lys;</span>
+<span class="missed">	invoke-virtual {v3, p4, p5}, Lys;->j(J)Lys;</span>
+<span class="">	invoke-virtual {v3}, Lys;->a()J</span>
 <span class="missed">	move-result-wide p1</span>
 <span class="missed">	const-wide/16 p3, 0x20</span>
 <span class="missed">	cmp-long p5, p1, p3</span>
@@ -193,7 +193,7 @@ Lokhttp3/internal/cache2/Relay$RelaySource;
 <span class="missed">	invoke-direct {v0, p1}, Lokhttp3/internal/cache2/FileOperator;-><init>(Ljava/nio/channels/FileChannel;)V</span>
 <span class="missed">	const-wide/16 v1, 0x0</span>
 <span class="missed">	const-wide/16 v4, 0x20</span>
-<span class="missed">	invoke-virtual/range {v0 .. v5}, Lokhttp3/internal/cache2/FileOperator;->write(JLex;J)V</span>
+<span class="missed">	invoke-virtual/range {v0 .. v5}, Lokhttp3/internal/cache2/FileOperator;->write(JLys;J)V</span>
 <span class="">	return-void</span>
 <span class="">	:cond_0</span>
 <span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
@@ -209,10 +209,10 @@ Lokhttp3/internal/cache2/Relay$RelaySource;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	new-instance v3, Lex;</span>
-<span class="missed">	invoke-direct {v3}, Lex;-><init>()V</span>
-<span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lhx;</span>
-<span class="missed">	invoke-virtual {v3, v0}, Lex;->a(Lhx;)Lex;</span>
+<span class="missed">	new-instance v3, Lys;</span>
+<span class="missed">	invoke-direct {v3}, Lys;-><init>()V</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lyv;</span>
+<span class="missed">	invoke-virtual {v3, v0}, Lys;->a(Lyv;)Lys;</span>
 <span class="missed">	new-instance v0, Lokhttp3/internal/cache2/FileOperator;</span>
 <span class="missed">	iget-object v1, p0, Lokhttp3/internal/cache2/Relay;->file:Ljava/io/RandomAccessFile;</span>
 <span class="">	invoke-virtual {v1}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;</span>
@@ -220,11 +220,11 @@ Lokhttp3/internal/cache2/Relay$RelaySource;
 <span class="missed">	invoke-direct {v0, v1}, Lokhttp3/internal/cache2/FileOperator;-><init>(Ljava/nio/channels/FileChannel;)V</span>
 <span class="missed">	const-wide/16 v1, 0x20</span>
 <span class="missed">	add-long/2addr v1, p1</span>
-<span class="missed">	iget-object p1, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lhx;</span>
-<span class="">	invoke-virtual {p1}, Lhx;->l()I</span>
+<span class="missed">	iget-object p1, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lyv;</span>
+<span class="">	invoke-virtual {p1}, Lyv;->h()I</span>
 <span class="missed">	move-result p1</span>
 <span class="missed">	int-to-long v4, p1</span>
-<span class="missed">	invoke-virtual/range {v0 .. v5}, Lokhttp3/internal/cache2/FileOperator;->write(JLex;J)V</span>
+<span class="missed">	invoke-virtual/range {v0 .. v5}, Lokhttp3/internal/cache2/FileOperator;->write(JLys;J)V</span>
 <span class="">	return-void</span>
 .end method
 
@@ -242,14 +242,14 @@ Lokhttp3/internal/cache2/Relay$RelaySource;
 <span class="missed">	move-result-object v0</span>
 <span class="missed">	const/4 v1, 0x0</span>
 <span class="missed">	invoke-virtual {v0, v1}, Ljava/nio/channels/FileChannel;->force(Z)V</span>
-<span class="missed">	sget-object v3, Lokhttp3/internal/cache2/Relay;->PREFIX_CLEAN:Lhx;</span>
-<span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lhx;</span>
-<span class="">	invoke-virtual {v0}, Lhx;->l()I</span>
+<span class="missed">	sget-object v3, Lokhttp3/internal/cache2/Relay;->PREFIX_CLEAN:Lyv;</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lyv;</span>
+<span class="">	invoke-virtual {v0}, Lyv;->h()I</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	int-to-long v6, v0</span>
 <span class="missed">	move-object v2, p0</span>
 <span class="missed">	move-wide v4, p1</span>
-<span class="missed">	invoke-direct/range {v2 .. v7}, Lokhttp3/internal/cache2/Relay;->writeHeader(Lhx;JJ)V</span>
+<span class="missed">	invoke-direct/range {v2 .. v7}, Lokhttp3/internal/cache2/Relay;->writeHeader(Lyv;JJ)V</span>
 <span class="missed">	iget-object p1, p0, Lokhttp3/internal/cache2/Relay;->file:Ljava/io/RandomAccessFile;</span>
 <span class="">	invoke-virtual {p1}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;</span>
 <span class="missed">	move-result-object p1</span>
@@ -261,10 +261,10 @@ Lokhttp3/internal/cache2/Relay$RelaySource;
 <span class="missed">	monitor-exit p0</span>
 <span class="">	:try_end_0</span>
 <span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="missed">	iget-object p1, p0, Lokhttp3/internal/cache2/Relay;->upstream:Lwx;</span>
+<span class="missed">	iget-object p1, p0, Lokhttp3/internal/cache2/Relay;->upstream:Lzk;</span>
 <span class="missed">	invoke-static {p1}, Lokhttp3/internal/Util;->closeQuietly(Ljava/io/Closeable;)V</span>
 <span class="missed">	const/4 p1, 0x0</span>
-<span class="missed">	iput-object p1, p0, Lokhttp3/internal/cache2/Relay;->upstream:Lwx;</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/internal/cache2/Relay;->upstream:Lzk;</span>
 <span class="">	return-void</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception p1</span>
@@ -288,14 +288,14 @@ Lokhttp3/internal/cache2/Relay$RelaySource;
 <span class="">	return v0</span>
 .end method
 
-.method public metadata()Lhx;
+.method public metadata()Lyv;
 <span class="">	.locals 1</span>
 
-<span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lhx;</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lyv;</span>
 <span class="">	return-object v0</span>
 .end method
 
-.method public newSource()Lwx;
+.method public newSource()Lzk;
 <span class="">	.locals 1</span>
 
 <span class="missed">	monitor-enter p0</span>

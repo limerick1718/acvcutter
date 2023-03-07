@@ -14,802 +14,164 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lfv;
+		<code>.class abstract Lfv;
 .super Ljava/lang/Object;
-.source "Gson.java"
 
-.annotation system Ldalvik/annotation/MemberClasses;
-value = {
-Lfv$f;
-}
-.end annotation
-
-.field private static final k:Ldw;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ldw<",
-"*>;"
+"<T::",
+"Lga<",
+"TT;>;>",
+"Ljava/lang/Object;"
 }
 .end annotation
-.end field
-.field private final a:Ljava/lang/ThreadLocal;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/ThreadLocal<",
-"Ljava/util/Map<",
-"Ldw<",
-"*>;",
-"Lfv$f<",
-"*>;>;>;"
-}
-.end annotation
-.end field
-.field private final b:Ljava/util/Map;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/Map<",
-"Ldw<",
-"*>;",
-"Lvv<",
-"*>;>;"
-}
-.end annotation
-.end field
-.field private final c:Ljava/util/List;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/List<",
-"Lwv;",
-">;"
-}
-.end annotation
-.end field
-.field private final d:Lcom/google/gson/internal/c;
-.field private final e:Z
-.field private final f:Z
-.field private final g:Z
-.field private final h:Z
-.field private final i:Z
-.field private final j:Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 1</span>
 
-<span class="cov">	const-class v0, Ljava/lang/Object;</span>
-<span class="exec">	invoke-static {v0}, Ldw;->a(Ljava/lang/Class;)Ldw;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	sput-object v0, Lfv;->k:Ldw;</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public constructor &lt;init&gt;()V</span>
-<span class="">	.locals 13</span>
-
-<span class="cov">	sget-object v1, Lcom/google/gson/internal/Excluder;->g:Lcom/google/gson/internal/Excluder;</span>
-<span class="cov">	sget-object v2, Ldv;->a:Ldv;</span>
-<span class="exec">	invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;</span>
-<span class="cov">	move-result-object v3</span>
-<span class="cov">	sget-object v11, Luv;->a:Luv;</span>
-<span class="exec">	invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;</span>
-<span class="cov">	move-result-object v12</span>
-<span class="cov">	const/4 v4, 0x0</span>
-<span class="cov">	const/4 v5, 0x0</span>
-<span class="cov">	const/4 v6, 0x0</span>
-<span class="cov">	const/4 v7, 0x1</span>
-<span class="cov">	const/4 v8, 0x0</span>
-<span class="cov">	const/4 v9, 0x0</span>
-<span class="cov">	const/4 v10, 0x0</span>
-<span class="cov">	move-object v0, p0</span>
-<span class="cov">	invoke-direct/range {v0 .. v12}, Lfv;-><init>(Lcom/google/gson/internal/Excluder;Lev;Ljava/util/Map;ZZZZZZZLuv;Ljava/util/List;)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method constructor &lt;init&gt;(Lcom/google/gson/internal/Excluder;Lev;Ljava/util/Map;ZZZZZZZLuv;Ljava/util/List;)V</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Lcom/google/gson/internal/Excluder;",</span>
-<span class="">	"Lev;",</span>
-<span class="">	"Ljava/util/Map<",</span>
-<span class="">	"Ljava/lang/reflect/Type;",</span>
-<span class="">	"Lhv<",</span>
-<span class="">	"*>;>;ZZZZZZZ",</span>
-<span class="">	"Luv;",</span>
-<span class="">	"Ljava/util/List<",</span>
-<span class="">	"Lwv;",</span>
-<span class="">	">;)V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	new-instance v0, Ljava/lang/ThreadLocal;</span>
-<span class="cov">	invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V</span>
-<span class="cov">	iput-object v0, p0, Lfv;->a:Ljava/lang/ThreadLocal;</span>
-<span class="cov">	new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;</span>
-<span class="cov">	invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V</span>
-<span class="cov">	iput-object v0, p0, Lfv;->b:Ljava/util/Map;</span>
-<span class="cov">	new-instance v0, Lcom/google/gson/internal/c;</span>
-<span class="cov">	invoke-direct {v0, p3}, Lcom/google/gson/internal/c;-><init>(Ljava/util/Map;)V</span>
-<span class="cov">	iput-object v0, p0, Lfv;->d:Lcom/google/gson/internal/c;</span>
-<span class="cov">	iput-boolean p4, p0, Lfv;->e:Z</span>
-<span class="cov">	iput-boolean p6, p0, Lfv;->g:Z</span>
-<span class="cov">	iput-boolean p7, p0, Lfv;->f:Z</span>
-<span class="cov">	iput-boolean p8, p0, Lfv;->h:Z</span>
-<span class="cov">	iput-boolean p9, p0, Lfv;->i:Z</span>
-<span class="cov">	new-instance p3, Ljava/util/ArrayList;</span>
-<span class="cov">	invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->Y:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/ObjectTypeAdapter;->b:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	invoke-interface {p3, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	invoke-interface {p3, p12}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->D:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->m:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->g:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->i:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->k:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="exec">	invoke-static {p11}, Lfv;->a(Luv;)Lvv;</span>
-<span class="cov">	move-result-object p4</span>
-<span class="cov">	sget-object p6, Ljava/lang/Long;->TYPE:Ljava/lang/Class;</span>
-<span class="cov">	const-class p7, Ljava/lang/Long;</span>
-<span class="exec">	invoke-static {p6, p7, p4}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Ljava/lang/Class;Lvv;)Lwv;</span>
-<span class="cov">	move-result-object p6</span>
-<span class="cov">	invoke-interface {p3, p6}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p6, Ljava/lang/Double;->TYPE:Ljava/lang/Class;</span>
-<span class="cov">	const-class p7, Ljava/lang/Double;</span>
-<span class="exec">	invoke-direct {p0, p10}, Lfv;->a(Z)Lvv;</span>
-<span class="cov">	move-result-object p8</span>
-<span class="exec">	invoke-static {p6, p7, p8}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Ljava/lang/Class;Lvv;)Lwv;</span>
-<span class="cov">	move-result-object p6</span>
-<span class="cov">	invoke-interface {p3, p6}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p6, Ljava/lang/Float;->TYPE:Ljava/lang/Class;</span>
-<span class="cov">	const-class p7, Ljava/lang/Float;</span>
-<span class="exec">	invoke-direct {p0, p10}, Lfv;->b(Z)Lvv;</span>
-<span class="cov">	move-result-object p8</span>
-<span class="exec">	invoke-static {p6, p7, p8}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Ljava/lang/Class;Lvv;)Lwv;</span>
-<span class="cov">	move-result-object p6</span>
-<span class="cov">	invoke-interface {p3, p6}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p6, Lcom/google/gson/internal/bind/TypeAdapters;->x:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p6}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p6, Lcom/google/gson/internal/bind/TypeAdapters;->o:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p6}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p6, Lcom/google/gson/internal/bind/TypeAdapters;->q:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p6}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	const-class p6, Ljava/util/concurrent/atomic/AtomicLong;</span>
-<span class="exec">	invoke-static {p4}, Lfv;->a(Lvv;)Lvv;</span>
-<span class="cov">	move-result-object p7</span>
-<span class="exec">	invoke-static {p6, p7}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
-<span class="cov">	move-result-object p6</span>
-<span class="cov">	invoke-interface {p3, p6}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	const-class p6, Ljava/util/concurrent/atomic/AtomicLongArray;</span>
-<span class="exec">	invoke-static {p4}, Lfv;->b(Lvv;)Lvv;</span>
-<span class="cov">	move-result-object p4</span>
-<span class="exec">	invoke-static {p6, p4}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
-<span class="cov">	move-result-object p4</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->s:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->z:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->F:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->H:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	const-class p4, Ljava/math/BigDecimal;</span>
-<span class="cov">	sget-object p6, Lcom/google/gson/internal/bind/TypeAdapters;->B:Lvv;</span>
-<span class="exec">	invoke-static {p4, p6}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
-<span class="cov">	move-result-object p4</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	const-class p4, Ljava/math/BigInteger;</span>
-<span class="cov">	sget-object p6, Lcom/google/gson/internal/bind/TypeAdapters;->C:Lvv;</span>
-<span class="exec">	invoke-static {p4, p6}, Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;</span>
-<span class="cov">	move-result-object p4</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->J:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->L:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->P:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->R:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->W:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->N:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->d:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/DateTypeAdapter;->c:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->U:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TimeTypeAdapter;->b:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/SqlDateTypeAdapter;->b:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->S:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/ArrayTypeAdapter;->c:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->b:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	new-instance p4, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory;</span>
-<span class="cov">	iget-object p6, p0, Lfv;->d:Lcom/google/gson/internal/c;</span>
-<span class="cov">	invoke-direct {p4, p6}, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory;-><init>(Lcom/google/gson/internal/c;)V</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	new-instance p4, Lcom/google/gson/internal/bind/MapTypeAdapterFactory;</span>
-<span class="cov">	iget-object p6, p0, Lfv;->d:Lcom/google/gson/internal/c;</span>
-<span class="cov">	invoke-direct {p4, p6, p5}, Lcom/google/gson/internal/bind/MapTypeAdapterFactory;-><init>(Lcom/google/gson/internal/c;Z)V</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	new-instance p4, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;</span>
-<span class="cov">	iget-object p5, p0, Lfv;->d:Lcom/google/gson/internal/c;</span>
-<span class="cov">	invoke-direct {p4, p5}, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;-><init>(Lcom/google/gson/internal/c;)V</span>
-<span class="cov">	iput-object p4, p0, Lfv;->j:Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/TypeAdapters;->Z:Lwv;</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	new-instance p4, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;</span>
-<span class="cov">	iget-object p5, p0, Lfv;->d:Lcom/google/gson/internal/c;</span>
-<span class="cov">	iget-object p6, p0, Lfv;->j:Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;</span>
-<span class="cov">	invoke-direct {p4, p5, p2, p1, p6}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;-><init>(Lcom/google/gson/internal/c;Lev;Lcom/google/gson/internal/Excluder;Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;)V</span>
-<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="exec">	invoke-static {p3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	iput-object p1, p0, Lfv;->c:Ljava/util/List;</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method private static a(Luv;)Lvv;</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Luv;",</span>
-<span class="">	")",</span>
-<span class="">	"Lvv<",</span>
-<span class="">	"Ljava/lang/Number;",</span>
-<span class="">	">;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	sget-object v0, Luv;->a:Luv;</span>
-<span class="cov">	if-ne p0, v0, :cond_0</span>
-<span class="cov">	sget-object p0, Lcom/google/gson/internal/bind/TypeAdapters;->t:Lvv;</span>
-<span class="exec">	return-object p0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-instance p0, Lfv$c;</span>
-<span class="missed">	invoke-direct {p0}, Lfv$c;-><init>()V</span>
-<span class="">	return-object p0</span>
-.end method
-
-<span class="cov">.method private static a(Lvv;)Lvv;</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Lvv<",</span>
-<span class="">	"Ljava/lang/Number;",</span>
-<span class="">	">;)",</span>
-<span class="">	"Lvv<",</span>
-<span class="">	"Ljava/util/concurrent/atomic/AtomicLong;",</span>
-<span class="">	">;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	new-instance v0, Lfv$d;</span>
-<span class="cov">	invoke-direct {v0, p0}, Lfv$d;-><init>(Lvv;)V</span>
-<span class="exec">	invoke-virtual {v0}, Lvv;->a()Lvv;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-<span class="cov">.method private a(Z)Lvv;</span>
+.method constructor &lt;init&gt;()V
 <span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(Z)",</span>
-<span class="">	"Lvv<",</span>
-<span class="">	"Ljava/lang/Number;",</span>
-<span class="">	">;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
 
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="missed">	sget-object p1, Lcom/google/gson/internal/bind/TypeAdapters;->v:Lvv;</span>
-<span class="">	return-object p1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	new-instance p1, Lfv$a;</span>
-<span class="cov">	invoke-direct {p1, p0}, Lfv$a;-><init>(Lfv;)V</span>
-<span class="exec">	return-object p1</span>
-.end method
-
-.method static a(D)V
-<span class="">	.locals 2</span>
-
-<span class="">	invoke-static {p0, p1}, Ljava/lang/Double;->isNaN(D)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="">	invoke-static {p0, p1}, Ljava/lang/Double;->isInfinite(D)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
 <span class="">	return-void</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
-<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	invoke-virtual {v1, p0, p1}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string p0, " is not a valid double value as per JSON specification. To override this"</span>
-<span class="missed">	invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string p0, " behavior, use GsonBuilder.serializeSpecialFloatingPointValues() method."</span>
-<span class="missed">	invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw v0</span>
 .end method
 
-<span class="cov">.method private static b(Lvv;)Lvv;</span>
-<span class="">	.locals 1</span>
+.method abstract a(Ljava/util/Map$Entry;)I
+<span class="">	</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
 <span class="">	"(",</span>
-<span class="">	"Lvv<",</span>
-<span class="">	"Ljava/lang/Number;",</span>
-<span class="">	">;)",</span>
-<span class="">	"Lvv<",</span>
-<span class="">	"Ljava/util/concurrent/atomic/AtomicLongArray;",</span>
-<span class="">	">;"</span>
+<span class="">	"Ljava/util/Map$Entry<",</span>
+<span class="">	"**>;)I"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	new-instance v0, Lfv$e;</span>
-<span class="cov">	invoke-direct {v0, p0}, Lfv$e;-><init>(Lvv;)V</span>
-<span class="exec">	invoke-virtual {v0}, Lvv;->a()Lvv;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	return-object p0</span>
 .end method
 
-<span class="cov">.method private b(Z)Lvv;</span>
-<span class="">	.locals 0</span>
+.method abstract a(Ljava/lang/Object;)Lfy;
+<span class="">	</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	"(Z)",</span>
-<span class="">	"Lvv<",</span>
-<span class="">	"Ljava/lang/Number;",</span>
-<span class="">	">;"</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	")",</span>
+<span class="">	"Lfy<",</span>
+<span class="">	"TT;>;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="missed">	sget-object p1, Lcom/google/gson/internal/bind/TypeAdapters;->u:Lvv;</span>
-<span class="">	return-object p1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	new-instance p1, Lfv$b;</span>
-<span class="cov">	invoke-direct {p1, p0}, Lfv$b;-><init>(Lfv;)V</span>
-<span class="exec">	return-object p1</span>
 .end method
 
-.method public a(Ljava/io/Reader;)Lew;
-<span class="">	.locals 1</span>
+.method abstract a(Lfu;Lhp;I)Ljava/lang/Object;
+<span class="">	</span>
 
-<span class="missed">	new-instance v0, Lew;</span>
-<span class="missed">	invoke-direct {v0, p1}, Lew;-><init>(Ljava/io/Reader;)V</span>
-<span class="missed">	iget-boolean p1, p0, Lfv;->i:Z</span>
-<span class="missed">	invoke-virtual {v0, p1}, Lew;->a(Z)V</span>
-<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public a(Ljava/io/Writer;)Lgw;</span>
-<span class="">	.locals 1</span>
+.method abstract a(Lif;Ljava/lang/Object;Lfu;Lfy;Ljava/lang/Object;Liy;)Ljava/lang/Object;
+<span class="">	</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
 <span class="">	Ljava/io/IOException;</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
-
-<span class="cov">	iget-boolean v0, p0, Lfv;->g:Z</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	const-string v0, ")]}\'\n"</span>
-<span class="missed">	invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	new-instance v0, Lgw;</span>
-<span class="cov">	invoke-direct {v0, p1}, Lgw;-><init>(Ljava/io/Writer;)V</span>
-<span class="cov">	iget-boolean p1, p0, Lfv;->h:Z</span>
-<span class="missed">	if-eqz p1, :cond_1</span>
-<span class="missed">	const-string p1, "  "</span>
-<span class="missed">	invoke-virtual {v0, p1}, Lgw;->c(Ljava/lang/String;)V</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	iget-boolean p1, p0, Lfv;->e:Z</span>
-<span class="cov">	invoke-virtual {v0, p1}, Lgw;->c(Z)V</span>
-<span class="exec">	return-object v0</span>
-.end method
-
-<span class="cov">.method public a(Ljava/lang/Object;)Ljava/lang/String;</span>
-<span class="">	.locals 1</span>
-
-<span class="missed">	if-nez p1, :cond_0</span>
-<span class="missed">	sget-object p1, Lnv;->a:Lnv;</span>
-<span class="">	invoke-virtual {p0, p1}, Lfv;->a(Llv;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	return-object p1</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-virtual {p0, p1, v0}, Lfv;->a(Ljava/lang/Object;Ljava/lang/reflect/Type;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	return-object p1</span>
-.end method
-
-<span class="cov">.method public a(Ljava/lang/Object;Ljava/lang/reflect/Type;)Ljava/lang/String;</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	new-instance v0, Ljava/io/StringWriter;</span>
-<span class="cov">	invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V</span>
-<span class="cov">	invoke-virtual {p0, p1, p2, v0}, Lfv;->a(Ljava/lang/Object;Ljava/lang/reflect/Type;Ljava/lang/Appendable;)V</span>
-<span class="exec">	invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	return-object p1</span>
-.end method
-
-.method public a(Llv;)Ljava/lang/String;
-<span class="">	.locals 1</span>
-
-<span class="missed">	new-instance v0, Ljava/io/StringWriter;</span>
-<span class="missed">	invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V</span>
-<span class="missed">	invoke-virtual {p0, p1, v0}, Lfv;->a(Llv;Ljava/lang/Appendable;)V</span>
-<span class="">	invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	return-object p1</span>
-.end method
-
-<span class="cov">.method public a(Ldw;)Lvv;</span>
-<span class="">	.locals 5</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	"<T:",</span>
+<span class="">	"<UT:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	"UB:",</span>
 <span class="">	"Ljava/lang/Object;",</span>
 <span class="">	">(",</span>
-<span class="">	"Ldw<",</span>
-<span class="">	"TT;>;)",</span>
-<span class="">	"Lvv<",</span>
+<span class="">	"Lif;",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	"Lfu;",</span>
+<span class="">	"Lfy<",</span>
+<span class="">	"TT;>;TUB;",</span>
+<span class="">	"Liy<",</span>
+<span class="">	"TUT;TUB;>;)TUB;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method abstract a(Lew;Ljava/lang/Object;Lfu;Lfy;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lew;",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	"Lfu;",</span>
+<span class="">	"Lfy<",</span>
+<span class="">	"TT;>;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method abstract a(Lif;Ljava/lang/Object;Lfu;Lfy;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lif;",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	"Lfu;",</span>
+<span class="">	"Lfy<",</span>
+<span class="">	"TT;>;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method abstract a(Ljt;Ljava/util/Map$Entry;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljt;",</span>
+<span class="">	"Ljava/util/Map$Entry<",</span>
+<span class="">	"**>;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method abstract a(Lhp;)Z
+<span class="">	</span>
+
+.end method
+
+.method abstract b(Ljava/lang/Object;)Lfy;
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	")",</span>
+<span class="">	"Lfy<",</span>
 <span class="">	"TT;>;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lfv;->b:Ljava/util/Map;</span>
-<span class="missed">	if-nez p1, :cond_0</span>
-<span class="missed">	sget-object v1, Lfv;->k:Ldw;</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	move-object v1, p1</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lvv;</span>
-<span class="cov">	if-eqz v0, :cond_1</span>
-<span class="exec">	return-object v0</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	iget-object v0, p0, Lfv;->a:Ljava/lang/ThreadLocal;</span>
-<span class="exec">	invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Ljava/util/Map;</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	if-nez v0, :cond_2</span>
-<span class="cov">	new-instance v0, Ljava/util/HashMap;</span>
-<span class="cov">	invoke-direct {v0}, Ljava/util/HashMap;-><init>()V</span>
-<span class="cov">	iget-object v1, p0, Lfv;->a:Ljava/lang/ThreadLocal;</span>
-<span class="cov">	invoke-virtual {v1, v0}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="cov">	:cond_2</span>
-<span class="exec">	invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v2</span>
-<span class="cov">	check-cast v2, Lfv$f;</span>
-<span class="missed">	if-eqz v2, :cond_3</span>
-<span class="">	return-object v2</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	:cond_3</span>
-<span class="cov">	new-instance v2, Lfv$f;</span>
-<span class="cov">	invoke-direct {v2}, Lfv$f;-><init>()V</span>
-<span class="cov">	invoke-interface {v0, p1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	iget-object v3, p0, Lfv;->c:Ljava/util/List;</span>
-<span class="exec">	invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
-<span class="cov">	move-result-object v3</span>
-<span class="cov">	:cond_4</span>
-<span class="exec">	invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z</span>
-<span class="cov">	move-result v4</span>
-<span class="cov">	if-eqz v4, :cond_6</span>
-<span class="exec">	invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v4</span>
-<span class="cov">	check-cast v4, Lwv;</span>
-<span class="exec">	invoke-interface {v4, p0, p1}, Lwv;->a(Lfv;Ldw;)Lvv;</span>
-<span class="cov">	move-result-object v4</span>
-<span class="cov">	if-eqz v4, :cond_4</span>
-<span class="cov">	invoke-virtual {v2, v4}, Lfv$f;->a(Lvv;)V</span>
-<span class="cov">	iget-object v2, p0, Lfv;->b:Ljava/util/Map;</span>
-<span class="cov">	invoke-interface {v2, p1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="cov">	invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	if-eqz v1, :cond_5</span>
-<span class="cov">	iget-object p1, p0, Lfv;->a:Ljava/lang/ThreadLocal;</span>
-<span class="cov">	invoke-virtual {p1}, Ljava/lang/ThreadLocal;->remove()V</span>
-<span class="cov">	:cond_5</span>
-<span class="exec">	return-object v4</span>
-<span class="">	:try_start_1</span>
-<span class="">	:cond_6</span>
-<span class="missed">	new-instance v2, Ljava/lang/IllegalArgumentException;</span>
-<span class="missed">	new-instance v3, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const-string v4, "GSON cannot handle "</span>
-<span class="missed">	invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="missed">	invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw v2</span>
-<span class="">	:try_end_1</span>
-<span class="">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
-<span class="">	:catchall_0</span>
-<span class="missed">	move-exception v2</span>
-<span class="missed">	invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	if-eqz v1, :cond_7</span>
-<span class="missed">	iget-object p1, p0, Lfv;->a:Ljava/lang/ThreadLocal;</span>
-<span class="missed">	invoke-virtual {p1}, Ljava/lang/ThreadLocal;->remove()V</span>
-<span class="">	:cond_7</span>
-<span class="">	throw v2</span>
 .end method
 
-<span class="cov">.method public a(Ljava/lang/Class;)Lvv;</span>
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"<T:",</span>
-<span class="">	"Ljava/lang/Object;",</span>
-<span class="">	">(",</span>
-<span class="">	"Ljava/lang/Class<",</span>
-<span class="">	"TT;>;)",</span>
-<span class="">	"Lvv<",</span>
-<span class="">	"TT;>;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
+.method abstract c(Ljava/lang/Object;)V
+<span class="">	</span>
 
-<span class="exec">	invoke-static {p1}, Ldw;->a(Ljava/lang/Class;)Ldw;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	invoke-virtual {p0, p1}, Lfv;->a(Ldw;)Lvv;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	return-object p1</span>
-.end method
-
-.method public a(Lwv;Ldw;)Lvv;
-<span class="">	.locals 3</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"<T:",</span>
-<span class="">	"Ljava/lang/Object;",</span>
-<span class="">	">(",</span>
-<span class="">	"Lwv;",</span>
-<span class="">	"Ldw<",</span>
-<span class="">	"TT;>;)",</span>
-<span class="">	"Lvv<",</span>
-<span class="">	"TT;>;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	iget-object v0, p0, Lfv;->c:Ljava/util/List;</span>
-<span class="">	invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="missed">	iget-object p1, p0, Lfv;->j:Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	iget-object v1, p0, Lfv;->c:Ljava/util/List;</span>
-<span class="">	invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="">	:cond_1</span>
-<span class="">	:goto_0</span>
-<span class="">	invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z</span>
-<span class="missed">	move-result v2</span>
-<span class="missed">	if-eqz v2, :cond_3</span>
-<span class="">	invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v2</span>
-<span class="missed">	check-cast v2, Lwv;</span>
-<span class="missed">	if-nez v0, :cond_2</span>
-<span class="missed">	if-ne v2, p1, :cond_1</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_2</span>
-<span class="">	invoke-interface {v2, p0, p2}, Lwv;->a(Lfv;Ldw;)Lvv;</span>
-<span class="missed">	move-result-object v2</span>
-<span class="missed">	if-eqz v2, :cond_1</span>
-<span class="">	return-object v2</span>
-<span class="">	:cond_3</span>
-<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
-<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const-string v1, "GSON cannot serialize "</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p2</span>
-<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw p1</span>
-.end method
-
-<span class="cov">.method public a(Ljava/lang/Object;Ljava/lang/reflect/Type;Lgw;)V</span>
-<span class="">	.locals 4</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Lmv;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="exec">	invoke-static {p2}, Ldw;->a(Ljava/lang/reflect/Type;)Ldw;</span>
-<span class="cov">	move-result-object p2</span>
-<span class="exec">	invoke-virtual {p0, p2}, Lfv;->a(Ldw;)Lvv;</span>
-<span class="cov">	move-result-object p2</span>
-<span class="exec">	invoke-virtual {p3}, Lgw;->t()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="cov">	invoke-virtual {p3, v1}, Lgw;->b(Z)V</span>
-<span class="exec">	invoke-virtual {p3}, Lgw;->s()Z</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	iget-boolean v2, p0, Lfv;->f:Z</span>
-<span class="cov">	invoke-virtual {p3, v2}, Lgw;->a(Z)V</span>
-<span class="exec">	invoke-virtual {p3}, Lgw;->r()Z</span>
-<span class="cov">	move-result v2</span>
-<span class="cov">	iget-boolean v3, p0, Lfv;->e:Z</span>
-<span class="cov">	invoke-virtual {p3, v3}, Lgw;->c(Z)V</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	invoke-virtual {p2, p3, p1}, Lvv;->a(Lgw;Ljava/lang/Object;)V</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="cov">	invoke-virtual {p3, v0}, Lgw;->b(Z)V</span>
-<span class="cov">	invoke-virtual {p3, v1}, Lgw;->a(Z)V</span>
-<span class="cov">	invoke-virtual {p3, v2}, Lgw;->c(Z)V</span>
-<span class="exec">	return-void</span>
-<span class="">	:catchall_0</span>
-<span class="missed">	move-exception p1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception p1</span>
-<span class="">	:try_start_1</span>
-<span class="missed">	new-instance p2, Lmv;</span>
-<span class="missed">	invoke-direct {p2, p1}, Lmv;-><init>(Ljava/lang/Throwable;)V</span>
-<span class="">	throw p2</span>
-<span class="">	:try_end_1</span>
-<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	invoke-virtual {p3, v0}, Lgw;->b(Z)V</span>
-<span class="missed">	invoke-virtual {p3, v1}, Lgw;->a(Z)V</span>
-<span class="missed">	invoke-virtual {p3, v2}, Lgw;->c(Z)V</span>
-<span class="">	throw p1</span>
-.end method
-
-<span class="cov">.method public a(Ljava/lang/Object;Ljava/lang/reflect/Type;Ljava/lang/Appendable;)V</span>
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Lmv;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	:try_start_0</span>
-<span class="exec">	invoke-static {p3}, Lcom/google/gson/internal/i;->a(Ljava/lang/Appendable;)Ljava/io/Writer;</span>
-<span class="cov">	move-result-object p3</span>
-<span class="exec">	invoke-virtual {p0, p3}, Lfv;->a(Ljava/io/Writer;)Lgw;</span>
-<span class="cov">	move-result-object p3</span>
-<span class="cov">	invoke-virtual {p0, p1, p2, p3}, Lfv;->a(Ljava/lang/Object;Ljava/lang/reflect/Type;Lgw;)V</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="exec">	return-void</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception p1</span>
-<span class="missed">	new-instance p2, Lmv;</span>
-<span class="missed">	invoke-direct {p2, p1}, Lmv;-><init>(Ljava/lang/Throwable;)V</span>
-<span class="">	throw p2</span>
-.end method
-
-.method public a(Llv;Lgw;)V
-<span class="">	.locals 4</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Lmv;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="">	invoke-virtual {p2}, Lgw;->t()Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	const/4 v1, 0x1</span>
-<span class="missed">	invoke-virtual {p2, v1}, Lgw;->b(Z)V</span>
-<span class="">	invoke-virtual {p2}, Lgw;->s()Z</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	iget-boolean v2, p0, Lfv;->f:Z</span>
-<span class="missed">	invoke-virtual {p2, v2}, Lgw;->a(Z)V</span>
-<span class="">	invoke-virtual {p2}, Lgw;->r()Z</span>
-<span class="missed">	move-result v2</span>
-<span class="missed">	iget-boolean v3, p0, Lfv;->e:Z</span>
-<span class="missed">	invoke-virtual {p2, v3}, Lgw;->c(Z)V</span>
-<span class="">	:try_start_0</span>
-<span class="missed">	invoke-static {p1, p2}, Lcom/google/gson/internal/i;->a(Llv;Lgw;)V</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="missed">	invoke-virtual {p2, v0}, Lgw;->b(Z)V</span>
-<span class="missed">	invoke-virtual {p2, v1}, Lgw;->a(Z)V</span>
-<span class="missed">	invoke-virtual {p2, v2}, Lgw;->c(Z)V</span>
-<span class="">	return-void</span>
-<span class="">	:catchall_0</span>
-<span class="missed">	move-exception p1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception p1</span>
-<span class="">	:try_start_1</span>
-<span class="missed">	new-instance v3, Lmv;</span>
-<span class="missed">	invoke-direct {v3, p1}, Lmv;-><init>(Ljava/lang/Throwable;)V</span>
-<span class="">	throw v3</span>
-<span class="">	:try_end_1</span>
-<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	invoke-virtual {p2, v0}, Lgw;->b(Z)V</span>
-<span class="missed">	invoke-virtual {p2, v1}, Lgw;->a(Z)V</span>
-<span class="missed">	invoke-virtual {p2, v2}, Lgw;->c(Z)V</span>
-<span class="">	throw p1</span>
-.end method
-
-.method public a(Llv;Ljava/lang/Appendable;)V
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Lmv;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="">	:try_start_0</span>
-<span class="">	invoke-static {p2}, Lcom/google/gson/internal/i;->a(Ljava/lang/Appendable;)Ljava/io/Writer;</span>
-<span class="missed">	move-result-object p2</span>
-<span class="">	invoke-virtual {p0, p2}, Lfv;->a(Ljava/io/Writer;)Lgw;</span>
-<span class="missed">	move-result-object p2</span>
-<span class="missed">	invoke-virtual {p0, p1, p2}, Lfv;->a(Llv;Lgw;)V</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="">	return-void</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception p1</span>
-<span class="missed">	new-instance p2, Lmv;</span>
-<span class="missed">	invoke-direct {p2, p1}, Lmv;-><init>(Ljava/lang/Throwable;)V</span>
-<span class="">	throw p2</span>
-.end method
-
-.method public toString()Ljava/lang/String;
-<span class="">	.locals 2</span>
-
-<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string v1, "{serializeNulls:"</span>
-<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V</span>
-<span class="missed">	iget-boolean v1, p0, Lfv;->e:Z</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string v1, ",factories:"</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	iget-object v1, p0, Lfv;->c:Ljava/util/List;</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string v1, ",instanceCreators:"</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	iget-object v1, p0, Lfv;->d:Lcom/google/gson/internal/c;</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string v1, "}"</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

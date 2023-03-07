@@ -26,7 +26,7 @@
 .method public final a(Z)V
     .locals 3
 
-    .line 1
+    .line 2
     iget-object v0, p0, Lcom/google/android/gms/common/api/internal/m;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
@@ -35,7 +35,7 @@
 
     iget-object v1, p0, Lcom/google/android/gms/common/api/internal/m;->a:Lcom/google/android/gms/common/api/internal/b;
 
-    .line 2
+    .line 3
     invoke-static {v1}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v1
@@ -50,7 +50,7 @@
 
     move-result-object p1
 
-    .line 3
+    .line 4
     invoke-virtual {v0, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void

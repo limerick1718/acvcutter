@@ -1,15 +1,11 @@
-.class final synthetic Ldr;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.implements Lir$a;
-.field private static final a:Ldr;
-.method private constructor <init>()V
+.class final Ldr;
+.super Landroid/database/ContentObserver;
+.method constructor <init>(Landroid/os/Handler;)V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public a(Landroid/util/JsonReader;)Ljava/lang/Object;
-.locals 0
-const/4 v0, 0x0
-return-object v0
+.method public final onChange(Z)V
+.locals 1
+return-void
 .end method

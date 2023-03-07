@@ -1,21 +1,16 @@
-.class public abstract Landroid/support/v4/media/c;
+.class Landroid/support/v4/media/c;
 .super Ljava/lang/Object;
-.source "MediaBrowserCompat.java"
+.source "MediaMetadataCompatApi21.java"
 
 
-# virtual methods
-.method public abstract a(Ljava/lang/String;Landroid/os/Bundle;)V
-.end method
+# direct methods
+.method public static a(Ljava/lang/Object;Landroid/os/Parcel;I)V
+    .locals 0
 
-.method public abstract a(Ljava/lang/String;Landroid/os/Bundle;Ljava/util/List;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Landroid/os/Bundle;",
-            "Ljava/util/List<",
-            "Landroid/support/v4/media/MediaBrowserCompat$MediaItem;",
-            ">;)V"
-        }
-    .end annotation
+    .line 51
+    check-cast p0, Landroid/media/MediaMetadata;
+
+    invoke-virtual {p0, p1, p2}, Landroid/media/MediaMetadata;->writeToParcel(Landroid/os/Parcel;I)V
+
+    return-void
 .end method

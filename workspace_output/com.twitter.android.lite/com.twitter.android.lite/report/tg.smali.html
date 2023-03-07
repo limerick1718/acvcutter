@@ -14,202 +14,93 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final synthetic Ltg;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+		<code>.class public final Ltg;
+.super Ltd;
+.source "JsonObject.java"
 
 
-.field private static final synthetic a:[I
+.field private final a:Lcom/google/gson/internal/f;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/gson/internal/f<",
+"Ljava/lang/String;",
+"Ltd;",
+">;"
+}
+.end annotation
+.end field
 
 
-.method static constructor &lt;clinit&gt;()V
-<span class="">	.locals 3</span>
+.method public constructor &lt;init&gt;()V
+<span class="">	.locals 1</span>
 
-<span class="">	invoke-static {}, Lsg;->values()[Lsg;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	array-length v0, v0</span>
-<span class="missed">	new-array v0, v0, [I</span>
-<span class="missed">	sput-object v0, Ltg;->a:[I</span>
-<span class="">	:try_start_0</span>
-<span class="missed">	sget-object v1, Lsg;->c:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/4 v2, 0x1</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="">	:try_start_1</span>
-<span class="">	:catch_0</span>
-<span class="missed">	sget-object v0, Ltg;->a:[I</span>
-<span class="missed">	sget-object v1, Lsg;->d:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/4 v2, 0x2</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_1</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1</span>
-<span class="">	:try_start_2</span>
-<span class="">	:catch_1</span>
-<span class="missed">	sget-object v0, Ltg;->a:[I</span>
-<span class="missed">	sget-object v1, Lsg;->e:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/4 v2, 0x3</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_2</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2</span>
-<span class="">	:try_start_3</span>
-<span class="">	:catch_2</span>
-<span class="missed">	sget-object v0, Ltg;->a:[I</span>
-<span class="missed">	sget-object v1, Lsg;->f:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/4 v2, 0x4</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_3</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3</span>
-<span class="">	:try_start_4</span>
-<span class="">	:catch_3</span>
-<span class="missed">	sget-object v0, Ltg;->a:[I</span>
-<span class="missed">	sget-object v1, Lsg;->g:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/4 v2, 0x5</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_4</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4</span>
-<span class="">	:try_start_5</span>
-<span class="">	:catch_4</span>
-<span class="missed">	sget-object v0, Ltg;->a:[I</span>
-<span class="missed">	sget-object v1, Lsg;->h:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/4 v2, 0x6</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_5</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5</span>
-<span class="">	:try_start_6</span>
-<span class="">	:catch_5</span>
-<span class="missed">	sget-object v0, Ltg;->a:[I</span>
-<span class="missed">	sget-object v1, Lsg;->i:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/4 v2, 0x7</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_6</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6</span>
-<span class="">	:try_start_7</span>
-<span class="">	:catch_6</span>
-<span class="missed">	sget-object v0, Ltg;->a:[I</span>
-<span class="missed">	sget-object v1, Lsg;->j:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/16 v2, 0x8</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_7</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7</span>
-<span class="">	:catch_7</span>
-<span class="">	:try_start_8</span>
-<span class="missed">	sget-object v0, Ltg;->a:[I</span>
-<span class="missed">	sget-object v1, Lsg;->n:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/16 v2, 0x9</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_8</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8</span>
-<span class="">	:catch_8</span>
-<span class="">	:try_start_9</span>
-<span class="missed">	sget-object v0, Ltg;->a:[I</span>
-<span class="missed">	sget-object v1, Lsg;->o:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/16 v2, 0xa</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_9</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_9</span>
-<span class="">	:catch_9</span>
-<span class="">	:try_start_a</span>
-<span class="missed">	sget-object v0, Ltg;->a:[I</span>
-<span class="missed">	sget-object v1, Lsg;->q:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/16 v2, 0xb</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_a</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_a</span>
-<span class="">	:try_start_b</span>
-<span class="">	:catch_a</span>
-<span class="missed">	sget-object v0, Ltg;->a:[I</span>
-<span class="missed">	sget-object v1, Lsg;->r:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/16 v2, 0xc</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_b</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_b .. :try_end_b} :catch_b</span>
-<span class="">	:try_start_c</span>
-<span class="">	:catch_b</span>
-<span class="missed">	sget-object v0, Ltg;->a:[I</span>
-<span class="missed">	sget-object v1, Lsg;->s:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/16 v2, 0xd</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_c</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_c .. :try_end_c} :catch_c</span>
-<span class="">	:try_start_d</span>
-<span class="">	:catch_c</span>
-<span class="missed">	sget-object v0, Ltg;->a:[I</span>
-<span class="missed">	sget-object v1, Lsg;->t:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/16 v2, 0xe</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_d</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_d .. :try_end_d} :catch_d</span>
-<span class="">	:try_start_e</span>
-<span class="">	:catch_d</span>
-<span class="missed">	sget-object v0, Ltg;->a:[I</span>
-<span class="missed">	sget-object v1, Lsg;->k:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/16 v2, 0xf</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_e</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_e .. :try_end_e} :catch_e</span>
-<span class="">	:try_start_f</span>
-<span class="">	:catch_e</span>
-<span class="missed">	sget-object v0, Ltg;->a:[I</span>
-<span class="missed">	sget-object v1, Lsg;->l:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/16 v2, 0x10</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_f</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_f .. :try_end_f} :catch_f</span>
-<span class="">	:try_start_10</span>
-<span class="">	:catch_f</span>
-<span class="missed">	sget-object v0, Ltg;->a:[I</span>
-<span class="missed">	sget-object v1, Lsg;->m:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/16 v2, 0x11</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_10</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_10 .. :try_end_10} :catch_10</span>
-<span class="">	:catch_10</span>
-<span class="">	:try_start_11</span>
-<span class="missed">	sget-object v0, Ltg;->a:[I</span>
-<span class="missed">	sget-object v1, Lsg;->p:Lsg;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/16 v2, 0x12</span>
-<span class="missed">	aput v2, v0, v1</span>
-<span class="">	:try_end_11</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_11 .. :try_end_11} :catch_11</span>
-<span class="">	:catch_11</span>
+<span class="missed">	invoke-direct {p0}, Ltd;-><init>()V</span>
+<span class="missed">	new-instance v0, Lcom/google/gson/internal/f;</span>
+<span class="missed">	invoke-direct {v0}, Lcom/google/gson/internal/f;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Ltg;->a:Lcom/google/gson/internal/f;</span>
 <span class="">	return-void</span>
+.end method
+
+.method public a(Ljava/lang/String;Ltd;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-nez p2, :cond_0</span>
+<span class="missed">	sget-object p2, Ltf;->a:Ltf;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Ltg;->a:Lcom/google/gson/internal/f;</span>
+<span class="missed">	invoke-virtual {v0, p1, p2}, Lcom/google/gson/internal/f;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eq p1, p0, :cond_1</span>
+<span class="missed">	instance-of v0, p1, Ltg;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	check-cast p1, Ltg;</span>
+<span class="missed">	iget-object p1, p1, Ltg;->a:Lcom/google/gson/internal/f;</span>
+<span class="missed">	iget-object v0, p0, Ltg;->a:Lcom/google/gson/internal/f;</span>
+<span class="">	invoke-virtual {p1, v0}, Lcom/google/gson/internal/f;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	:goto_1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public hashCode()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Ltg;->a:Lcom/google/gson/internal/f;</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/gson/internal/f;->hashCode()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public o()Ljava/util/Set;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/util/Set<",</span>
+<span class="">	"Ljava/util/Map$Entry<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ltd;",</span>
+<span class="">	">;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Ltg;->a:Lcom/google/gson/internal/f;</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/gson/internal/f;->entrySet()Ljava/util/Set;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

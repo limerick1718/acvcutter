@@ -54,13 +54,15 @@ value = {
 }
 .end annotation
 .end field
-.field private final e:Ljava/lang/String;
-.field private final f:Ljava/lang/String;
-.field private final g:Lfm;
-.field private h:Ljava/lang/Integer;
+.field private final e:I
+.field private final f:Landroid/view/View;
+.field private final g:Ljava/lang/String;
+.field private final h:Ljava/lang/String;
+.field private final i:Lqp;
+.field private j:Ljava/lang/Integer;
 
 
-.method public constructor &lt;init&gt;(Landroid/accounts/Account;Ljava/util/Set;Ljava/util/Map;ILandroid/view/View;Ljava/lang/String;Ljava/lang/String;Lfm;Z)V
+.method public constructor &lt;init&gt;(Landroid/accounts/Account;Ljava/util/Set;Ljava/util/Map;ILandroid/view/View;Ljava/lang/String;Ljava/lang/String;Lqp;)V
 <span class="">	.locals 0</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -77,8 +79,8 @@ value = {
 <span class="">	"Landroid/view/View;",</span>
 <span class="">	"Ljava/lang/String;",</span>
 <span class="">	"Ljava/lang/String;",</span>
-<span class="">	"Lfm;",</span>
-<span class="">	"Z)V"</span>
+<span class="">	"Lqp;",</span>
+<span class="">	")V"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
@@ -96,9 +98,11 @@ value = {
 <span class="missed">	sget-object p3, Ljava/util/Collections;->EMPTY_MAP:Ljava/util/Map;</span>
 <span class="">	:cond_1</span>
 <span class="missed">	iput-object p3, p0, Lcom/google/android/gms/common/internal/c;->d:Ljava/util/Map;</span>
-<span class="missed">	iput-object p6, p0, Lcom/google/android/gms/common/internal/c;->e:Ljava/lang/String;</span>
-<span class="missed">	iput-object p7, p0, Lcom/google/android/gms/common/internal/c;->f:Ljava/lang/String;</span>
-<span class="missed">	iput-object p8, p0, Lcom/google/android/gms/common/internal/c;->g:Lfm;</span>
+<span class="missed">	iput-object p5, p0, Lcom/google/android/gms/common/internal/c;->f:Landroid/view/View;</span>
+<span class="missed">	iput p4, p0, Lcom/google/android/gms/common/internal/c;->e:I</span>
+<span class="missed">	iput-object p6, p0, Lcom/google/android/gms/common/internal/c;->g:Ljava/lang/String;</span>
+<span class="missed">	iput-object p7, p0, Lcom/google/android/gms/common/internal/c;->h:Ljava/lang/String;</span>
+<span class="missed">	iput-object p8, p0, Lcom/google/android/gms/common/internal/c;->i:Lqp;</span>
 <span class="missed">	new-instance p1, Ljava/util/HashSet;</span>
 <span class="missed">	iget-object p2, p0, Lcom/google/android/gms/common/internal/c;->b:Ljava/util/Set;</span>
 <span class="missed">	invoke-direct {p1, p2}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V</span>
@@ -136,7 +140,7 @@ value = {
 .method public final a(Ljava/lang/Integer;)V
 <span class="">	.locals 0</span>
 
-<span class="missed">	iput-object p1, p0, Lcom/google/android/gms/common/internal/c;->h:Ljava/lang/Integer;</span>
+<span class="missed">	iput-object p1, p0, Lcom/google/android/gms/common/internal/c;->j:Ljava/lang/Integer;</span>
 <span class="">	return-void</span>
 .end method
 
@@ -165,38 +169,11 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/c;->c:Ljava/util/Set;</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/c;->b:Ljava/util/Set;</span>
 <span class="">	return-object v0</span>
 .end method
 
-.method public final d()Ljava/lang/Integer;
-<span class="">	.locals 1</span>
-<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/c;->h:Ljava/lang/Integer;</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public final e()Ljava/lang/String;
-<span class="">	.locals 1</span>
-<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/c;->f:Ljava/lang/String;</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public final f()Ljava/lang/String;
-<span class="">	.locals 1</span>
-<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/c;->e:Ljava/lang/String;</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public final g()Ljava/util/Set;
+.method public final d()Ljava/util/Set;
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -207,16 +184,43 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/c;->b:Ljava/util/Set;</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/c;->c:Ljava/util/Set;</span>
 <span class="">	return-object v0</span>
 .end method
 
-.method public final h()Lfm;
+.method public final e()Ljava/lang/String;
 <span class="">	.locals 1</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/c;->g:Lfm;</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/c;->g:Ljava/lang/String;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final f()Ljava/lang/String;
+<span class="">	.locals 1</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/c;->h:Ljava/lang/String;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final g()Lqp;
+<span class="">	.locals 1</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/c;->i:Lqp;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final h()Ljava/lang/Integer;
+<span class="">	.locals 1</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/internal/c;->j:Ljava/lang/Integer;</span>
 <span class="">	return-object v0</span>
 .end method</code>
 	</pre>

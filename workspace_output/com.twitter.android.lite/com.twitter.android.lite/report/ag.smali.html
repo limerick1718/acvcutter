@@ -14,39 +14,36 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final Lag;
+		<code>.class public abstract Lag;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Ldg;
+.source "FragmentContainer.java"
 
 
-.field private final synthetic a:Lfc;
 
 
-.method constructor &lt;init&gt;(Lfc;)V
+.method public constructor &lt;init&gt;()V
 <span class="">	.locals 0</span>
 
-<span class="missed">	iput-object p1, p0, Lag;->a:Lfc;</span>
 <span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
 <span class="">	return-void</span>
 .end method
 
-.method public final a(I)B
-<span class="">	.locals 1</span>
+.method public a(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Lae;
+<span class="">	.locals 0</span>
 
-<span class="missed">	iget-object v0, p0, Lag;->a:Lfc;</span>
-<span class="">	invoke-virtual {v0, p1}, Lfc;->a(I)B</span>
-<span class="missed">	move-result p1</span>
-<span class="">	return p1</span>
+<span class="">	invoke-static {p1, p2, p3}, Lae;->a(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Lae;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
 .end method
 
-.method public final a()I
-<span class="">	.locals 1</span>
+.method public abstract a(I)Landroid/view/View;
+<span class="">	</span>
 
-<span class="missed">	iget-object v0, p0, Lag;->a:Lfc;</span>
-<span class="">	invoke-virtual {v0}, Lfc;->a()I</span>
-<span class="missed">	move-result v0</span>
-<span class="">	return v0</span>
+.end method
+
+.method public abstract a()Z
+<span class="">	</span>
+
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

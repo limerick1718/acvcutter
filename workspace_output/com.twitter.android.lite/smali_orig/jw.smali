@@ -1,36 +1,39 @@
-.class public interface abstract Ljw;
-.super Ljava/lang/Object;
-.source "AuthService.java"
+.class public final Ljw;
+.super Ljava/io/IOException;
 
 
-# virtual methods
-.method public abstract a(Ljava/lang/String;Ljava/lang/String;)Lretrofit2/Call;
-    .param p1    # Ljava/lang/String;
-        .annotation runtime Lretrofit2/http/Header;
-            value = "authorization"
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/String;
-        .annotation runtime Lretrofit2/http/Field;
-            value = "grant_type"
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ")",
-            "Lretrofit2/Call<",
-            "Lcom/twitter/android/lite/model/AccessToken;",
-            ">;"
-        }
-    .end annotation
+# direct methods
+.method constructor <init>(II)V
+    .locals 2
 
-    .annotation runtime Lretrofit2/http/FormUrlEncoded;
-    .end annotation
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .annotation runtime Lretrofit2/http/POST;
-        value = "/oauth2/token"
-    .end annotation
+    const/16 v1, 0x6c
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "CodedOutputStream was writing to a flat byte array and ran out of space (pos "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p1, " limit "
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p1, ")."
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    return-void
 .end method

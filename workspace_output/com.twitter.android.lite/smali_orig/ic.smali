@@ -1,152 +1,157 @@
 .class final Lic;
-.super Lpc;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.super Ljava/lang/Object;
+
+
+# static fields
+.field private static final a:Lic;
 
 
 # instance fields
-.field private final e:I
+.field private final b:Lih;
 
-.field private final f:I
+.field private final c:Ljava/util/concurrent/ConcurrentMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/concurrent/ConcurrentMap<",
+            "Ljava/lang/Class<",
+            "*>;",
+            "Lig<",
+            "*>;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method constructor <init>([BII)V
+.method static constructor <clinit>()V
     .locals 1
 
-    .line 1
-    invoke-direct {p0, p1}, Lpc;-><init>([B)V
+    .line 19
+    new-instance v0, Lic;
 
-    add-int v0, p2, p3
+    invoke-direct {v0}, Lic;-><init>()V
 
-    .line 2
-    array-length p1, p1
-
-    invoke-static {p2, v0, p1}, Lfc;->b(III)I
-
-    .line 3
-    iput p2, p0, Lic;->e:I
-
-    .line 4
-    iput p3, p0, Lic;->f:I
+    sput-object v0, Lic;->a:Lic;
 
     return-void
 .end method
 
+.method private constructor <init>()V
+    .locals 1
+
+    .line 15
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 16
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object v0, p0, Lic;->c:Ljava/util/concurrent/ConcurrentMap;
+
+    .line 17
+    new-instance v0, Lhe;
+
+    invoke-direct {v0}, Lhe;-><init>()V
+
+    iput-object v0, p0, Lic;->b:Lih;
+
+    return-void
+.end method
+
+.method public static a()Lic;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lic;->a:Lic;
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final a(I)B
-    .locals 4
+.method public final a(Ljava/lang/Class;)Lig;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Class<",
+            "TT;>;)",
+            "Lig<",
+            "TT;>;"
+        }
+    .end annotation
 
-    .line 1
-    invoke-virtual {p0}, Lic;->a()I
-
-    move-result v0
-
-    add-int/lit8 v1, p1, 0x1
-
-    sub-int v1, v0, v1
-
-    or-int/2addr v1, p1
-
-    if-gez v1, :cond_1
-
-    if-gez p1, :cond_0
+    const-string v0, "messageType"
 
     .line 2
-    new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
-
-    const/16 v1, 0x16
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "Index < 0: "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    invoke-static {p1, v0}, Lgj;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 3
-    :cond_0
-    new-instance v1, Ljava/lang/ArrayIndexOutOfBoundsException;
+    iget-object v1, p0, Lic;->c:Ljava/util/concurrent/ConcurrentMap;
 
-    const/16 v2, 0x28
+    invoke-interface {v1, p1}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    check-cast v1, Lig;
 
-    const-string v2, "Index > length: "
+    if-nez v1, :cond_0
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 5
+    iget-object v1, p0, Lic;->b:Lih;
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-interface {v1, p1}, Lih;->a(Ljava/lang/Class;)Lig;
 
-    const-string p1, ", "
+    move-result-object v1
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 7
+    invoke-static {p1, v0}, Lgj;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v0, "schema"
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 8
+    invoke-static {v1, v0}, Lgj;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 9
+    iget-object v0, p0, Lic;->c:Ljava/util/concurrent/ConcurrentMap;
+
+    invoke-interface {v0, p1, v1}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    invoke-direct {v1, p1}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+    check-cast p1, Lig;
 
-    throw v1
+    if-eqz p1, :cond_0
 
-    .line 4
-    :cond_1
-    iget-object v0, p0, Lpc;->d:[B
+    move-object v1, p1
 
-    iget v1, p0, Lic;->e:I
-
-    add-int/2addr v1, p1
-
-    aget-byte p1, v0, v1
-
-    return p1
+    :cond_0
+    return-object v1
 .end method
 
-.method public final a()I
-    .locals 1
+.method public final a(Ljava/lang/Object;)Lig;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(TT;)",
+            "Lig<",
+            "TT;>;"
+        }
+    .end annotation
 
-    .line 5
-    iget v0, p0, Lic;->f:I
+    .line 14
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return v0
-.end method
+    move-result-object p1
 
-.method final b(I)B
-    .locals 2
+    invoke-virtual {p0, p1}, Lic;->a(Ljava/lang/Class;)Lig;
 
-    .line 1
-    iget-object v0, p0, Lpc;->d:[B
+    move-result-object p1
 
-    iget v1, p0, Lic;->e:I
-
-    add-int/2addr v1, p1
-
-    aget-byte p1, v0, v1
-
-    return p1
-.end method
-
-.method protected final e()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lic;->e:I
-
-    return v0
+    return-object p1
 .end method

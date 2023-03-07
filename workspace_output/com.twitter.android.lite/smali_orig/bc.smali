@@ -1,1195 +1,549 @@
-.class final Lbc;
+.class public Lbc;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
 
 
 # direct methods
-.method static a(I[BIILac;)I
-    .locals 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ltd;
-        }
-    .end annotation
+.method public static a(Landroid/os/Parcel;)I
+    .locals 1
 
-    ushr-int/lit8 v0, p0, 0x3
+    const/16 v0, 0x4f45
 
-    if-eqz v0, :cond_7
-
-    and-int/lit8 v0, p0, 0x7
-
-    if-eqz v0, :cond_6
-
-    const/4 v1, 0x1
-
-    if-eq v0, v1, :cond_5
-
-    const/4 v1, 0x2
-
-    if-eq v0, v1, :cond_4
-
-    const/4 v1, 0x3
-
-    if-eq v0, v1, :cond_1
-
-    const/4 p0, 0x5
-
-    if-ne v0, p0, :cond_0
-
-    add-int/lit8 p2, p2, 0x4
-
-    return p2
-
-    .line 66
-    :cond_0
-    invoke-static {}, Ltd;->c()Ltd;
-
-    move-result-object p0
-
-    throw p0
-
-    :cond_1
-    and-int/lit8 p0, p0, -0x8
-
-    or-int/lit8 p0, p0, 0x4
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-ge p2, p3, :cond_2
-
-    .line 67
-    invoke-static {p1, p2, p4}, Lbc;->a([BILac;)I
-
-    move-result p2
-
-    .line 68
-    iget v0, p4, Lac;->a:I
-
-    if-eq v0, p0, :cond_2
-
-    .line 69
-    invoke-static {v0, p1, p2, p3, p4}, Lbc;->a(I[BIILac;)I
-
-    move-result p2
-
-    goto :goto_0
-
-    :cond_2
-    if-gt p2, p3, :cond_3
-
-    if-ne v0, p0, :cond_3
-
-    return p2
-
-    .line 70
-    :cond_3
-    invoke-static {}, Ltd;->e()Ltd;
-
-    move-result-object p0
-
-    throw p0
-
-    .line 71
-    :cond_4
-    invoke-static {p1, p2, p4}, Lbc;->a([BILac;)I
-
-    move-result p0
-
-    .line 72
-    iget p1, p4, Lac;->a:I
-
-    add-int/2addr p0, p1
-
-    return p0
-
-    :cond_5
-    add-int/lit8 p2, p2, 0x8
-
-    return p2
-
-    .line 73
-    :cond_6
-    invoke-static {p1, p2, p4}, Lbc;->b([BILac;)I
+    .line 17
+    invoke-static {p0, v0}, Lbc;->b(Landroid/os/Parcel;I)I
 
     move-result p0
 
     return p0
-
-    .line 74
-    :cond_7
-    invoke-static {}, Ltd;->c()Ltd;
-
-    move-result-object p0
-
-    throw p0
 .end method
 
-.method static a(I[BIILeg;Lac;)I
-    .locals 9
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ltd;
-        }
-    .end annotation
+.method public static a(Landroid/os/Parcel;I)V
+    .locals 0
 
-    ushr-int/lit8 v0, p0, 0x3
+    .line 18
+    invoke-static {p0, p1}, Lbc;->c(Landroid/os/Parcel;I)V
 
-    if-eqz v0, :cond_b
+    return-void
+.end method
 
-    and-int/lit8 v0, p0, 0x7
+.method public static a(Landroid/os/Parcel;II)V
+    .locals 1
 
-    if-eqz v0, :cond_a
+    const/4 v0, 0x4
 
-    const/4 v1, 0x1
+    .line 39
+    invoke-static {p0, p1, v0}, Lbc;->b(Landroid/os/Parcel;II)V
 
-    if-eq v0, v1, :cond_9
+    .line 40
+    invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    const/4 v1, 0x2
+    return-void
+.end method
 
-    if-eq v0, v1, :cond_5
+.method public static a(Landroid/os/Parcel;IJ)V
+    .locals 1
 
-    const/4 v1, 0x3
+    const/16 v0, 0x8
 
-    if-eq v0, v1, :cond_1
+    .line 49
+    invoke-static {p0, p1, v0}, Lbc;->b(Landroid/os/Parcel;II)V
 
-    const/4 p3, 0x5
+    .line 50
+    invoke-virtual {p0, p2, p3}, Landroid/os/Parcel;->writeLong(J)V
 
-    if-ne v0, p3, :cond_0
+    return-void
+.end method
 
-    .line 47
-    invoke-static {p1, p2}, Lbc;->a([BI)I
+.method public static a(Landroid/os/Parcel;ILandroid/os/Bundle;Z)V
+    .locals 0
+
+    if-nez p2, :cond_1
+
+    if-eqz p3, :cond_0
+
+    const/4 p2, 0x0
+
+    .line 122
+    invoke-static {p0, p1, p2}, Lbc;->b(Landroid/os/Parcel;II)V
+
+    :cond_0
+    return-void
+
+    .line 124
+    :cond_1
+    invoke-static {p0, p1}, Lbc;->b(Landroid/os/Parcel;I)I
 
     move-result p1
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 125
+    invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
-    move-result-object p1
+    .line 126
+    invoke-static {p0, p1}, Lbc;->c(Landroid/os/Parcel;I)V
 
-    invoke-virtual {p4, p0, p1}, Leg;->a(ILjava/lang/Object;)V
+    return-void
+.end method
 
-    add-int/lit8 p2, p2, 0x4
+.method public static a(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
+    .locals 0
 
-    return p2
+    if-nez p2, :cond_1
 
-    .line 48
+    if-eqz p3, :cond_0
+
+    const/4 p2, 0x0
+
+    .line 106
+    invoke-static {p0, p1, p2}, Lbc;->b(Landroid/os/Parcel;II)V
+
     :cond_0
-    invoke-static {}, Ltd;->c()Ltd;
+    return-void
 
-    move-result-object p0
-
-    throw p0
-
-    .line 49
+    .line 108
     :cond_1
-    invoke-static {}, Leg;->e()Leg;
+    invoke-static {p0, p1}, Lbc;->b(Landroid/os/Parcel;I)I
 
-    move-result-object v6
+    move-result p1
 
-    and-int/lit8 v0, p0, -0x8
+    .line 109
+    invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    or-int/lit8 v7, v0, 0x4
+    .line 110
+    invoke-static {p0, p1}, Lbc;->c(Landroid/os/Parcel;I)V
+
+    return-void
+.end method
+
+.method public static a(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    .locals 0
+
+    if-nez p2, :cond_1
+
+    if-eqz p4, :cond_0
+
+    const/4 p2, 0x0
+
+    .line 114
+    invoke-static {p0, p1, p2}, Lbc;->b(Landroid/os/Parcel;II)V
+
+    :cond_0
+    return-void
+
+    .line 116
+    :cond_1
+    invoke-static {p0, p1}, Lbc;->b(Landroid/os/Parcel;I)I
+
+    move-result p1
+
+    .line 117
+    invoke-interface {p2, p0, p3}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 118
+    invoke-static {p0, p1}, Lbc;->c(Landroid/os/Parcel;I)V
+
+    return-void
+.end method
+
+.method public static a(Landroid/os/Parcel;ILjava/lang/Double;Z)V
+    .locals 0
+
+    if-nez p2, :cond_1
+
+    if-eqz p3, :cond_0
+
+    const/4 p2, 0x0
+
+    .line 82
+    invoke-static {p0, p1, p2}, Lbc;->b(Landroid/os/Parcel;II)V
+
+    :cond_0
+    return-void
+
+    :cond_1
+    const/16 p3, 0x8
+
+    .line 84
+    invoke-static {p0, p1, p3}, Lbc;->b(Landroid/os/Parcel;II)V
+
+    .line 85
+    invoke-virtual {p2}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide p1
+
+    invoke-virtual {p0, p1, p2}, Landroid/os/Parcel;->writeDouble(D)V
+
+    return-void
+.end method
+
+.method public static a(Landroid/os/Parcel;ILjava/lang/Float;Z)V
+    .locals 0
+
+    if-nez p2, :cond_1
+
+    if-eqz p3, :cond_0
+
+    const/4 p2, 0x0
+
+    .line 72
+    invoke-static {p0, p1, p2}, Lbc;->b(Landroid/os/Parcel;II)V
+
+    :cond_0
+    return-void
+
+    :cond_1
+    const/4 p3, 0x4
+
+    .line 74
+    invoke-static {p0, p1, p3}, Lbc;->b(Landroid/os/Parcel;II)V
+
+    .line 75
+    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeFloat(F)V
+
+    return-void
+.end method
+
+.method public static a(Landroid/os/Parcel;ILjava/lang/Long;Z)V
+    .locals 0
+
+    if-nez p2, :cond_1
+
+    if-eqz p3, :cond_0
+
+    const/4 p2, 0x0
+
+    .line 54
+    invoke-static {p0, p1, p2}, Lbc;->b(Landroid/os/Parcel;II)V
+
+    :cond_0
+    return-void
+
+    :cond_1
+    const/16 p3, 0x8
+
+    .line 56
+    invoke-static {p0, p1, p3}, Lbc;->b(Landroid/os/Parcel;II)V
+
+    .line 57
+    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide p1
+
+    invoke-virtual {p0, p1, p2}, Landroid/os/Parcel;->writeLong(J)V
+
+    return-void
+.end method
+
+.method public static a(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    .locals 0
+
+    if-nez p2, :cond_1
+
+    if-eqz p3, :cond_0
+
+    const/4 p2, 0x0
+
+    .line 98
+    invoke-static {p0, p1, p2}, Lbc;->b(Landroid/os/Parcel;II)V
+
+    :cond_0
+    return-void
+
+    .line 100
+    :cond_1
+    invoke-static {p0, p1}, Lbc;->b(Landroid/os/Parcel;I)I
+
+    move-result p1
+
+    .line 101
+    invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 102
+    invoke-static {p0, p1}, Lbc;->c(Landroid/os/Parcel;I)V
+
+    return-void
+.end method
+
+.method public static a(Landroid/os/Parcel;ILjava/util/List;Z)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Landroid/os/Parcelable;",
+            ">(",
+            "Landroid/os/Parcel;",
+            "I",
+            "Ljava/util/List<",
+            "TT;>;Z)V"
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
+    if-nez p2, :cond_1
+
+    if-eqz p3, :cond_0
+
+    .line 330
+    invoke-static {p0, p1, v0}, Lbc;->b(Landroid/os/Parcel;II)V
+
+    :cond_0
+    return-void
+
+    .line 332
+    :cond_1
+    invoke-static {p0, p1}, Lbc;->b(Landroid/os/Parcel;I)I
+
+    move-result p1
+
+    .line 333
+    invoke-interface {p2}, Ljava/util/List;->size()I
+
+    move-result p3
+
+    .line 334
+    invoke-virtual {p0, p3}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v1, 0x0
+
     :goto_0
-    if-ge p2, p3, :cond_3
+    if-ge v1, p3, :cond_3
 
-    .line 50
-    invoke-static {p1, p2, p5}, Lbc;->a([BILac;)I
+    .line 336
+    invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result v2
+    move-result-object v2
 
-    .line 51
-    iget p2, p5, Lac;->a:I
+    check-cast v2, Landroid/os/Parcelable;
 
-    move v0, p2
+    if-nez v2, :cond_2
 
-    if-eq p2, v7, :cond_2
-
-    move-object v1, p1
-
-    move v3, p3
-
-    move-object v4, v6
-
-    move-object v5, p5
-
-    .line 52
-    invoke-static/range {v0 .. v5}, Lbc;->a(I[BIILeg;Lac;)I
-
-    move-result v0
-
-    move v8, v0
-
-    move v0, p2
-
-    move p2, v8
-
-    goto :goto_0
-
-    :cond_2
-    move p2, v2
-
-    :cond_3
-    if-gt p2, p3, :cond_4
-
-    if-ne v0, v7, :cond_4
-
-    .line 53
-    invoke-virtual {p4, p0, v6}, Leg;->a(ILjava/lang/Object;)V
-
-    return p2
-
-    .line 54
-    :cond_4
-    invoke-static {}, Ltd;->e()Ltd;
-
-    move-result-object p0
-
-    throw p0
-
-    .line 55
-    :cond_5
-    invoke-static {p1, p2, p5}, Lbc;->a([BILac;)I
-
-    move-result p2
-
-    .line 56
-    iget p3, p5, Lac;->a:I
-
-    if-ltz p3, :cond_8
-
-    .line 57
-    array-length p5, p1
-
-    sub-int/2addr p5, p2
-
-    if-gt p3, p5, :cond_7
-
-    if-nez p3, :cond_6
-
-    .line 58
-    sget-object p1, Lfc;->b:Lfc;
-
-    invoke-virtual {p4, p0, p1}, Leg;->a(ILjava/lang/Object;)V
+    .line 338
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_1
 
-    .line 59
-    :cond_6
-    invoke-static {p1, p2, p3}, Lfc;->a([BII)Lfc;
-
-    move-result-object p1
-
-    invoke-virtual {p4, p0, p1}, Leg;->a(ILjava/lang/Object;)V
+    .line 339
+    :cond_2
+    invoke-static {p0, v2, v0}, Lbc;->a(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
 
     :goto_1
-    add-int/2addr p2, p3
-
-    return p2
-
-    .line 60
-    :cond_7
-    invoke-static {}, Ltd;->a()Ltd;
-
-    move-result-object p0
-
-    throw p0
-
-    .line 61
-    :cond_8
-    invoke-static {}, Ltd;->b()Ltd;
-
-    move-result-object p0
-
-    throw p0
-
-    .line 62
-    :cond_9
-    invoke-static {p1, p2}, Lbc;->b([BI)J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p1
-
-    invoke-virtual {p4, p0, p1}, Leg;->a(ILjava/lang/Object;)V
-
-    add-int/lit8 p2, p2, 0x8
-
-    return p2
-
-    .line 63
-    :cond_a
-    invoke-static {p1, p2, p5}, Lbc;->b([BILac;)I
-
-    move-result p1
-
-    .line 64
-    iget-wide p2, p5, Lac;->b:J
-
-    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p2
-
-    invoke-virtual {p4, p0, p2}, Leg;->a(ILjava/lang/Object;)V
-
-    return p1
-
-    .line 65
-    :cond_b
-    invoke-static {}, Ltd;->c()Ltd;
-
-    move-result-object p0
-
-    throw p0
-.end method
-
-.method static a(I[BIILud;Lac;)I
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I[BII",
-            "Lud<",
-            "*>;",
-            "Lac;",
-            ")I"
-        }
-    .end annotation
-
-    .line 28
-    check-cast p4, Lnd;
-
-    .line 29
-    invoke-static {p1, p2, p5}, Lbc;->a([BILac;)I
-
-    move-result p2
-
-    .line 30
-    iget v0, p5, Lac;->a:I
-
-    invoke-virtual {p4, v0}, Lnd;->d(I)V
-
-    :goto_0
-    if-ge p2, p3, :cond_0
-
-    .line 31
-    invoke-static {p1, p2, p5}, Lbc;->a([BILac;)I
-
-    move-result v0
-
-    .line 32
-    iget v1, p5, Lac;->a:I
-
-    if-ne p0, v1, :cond_0
-
-    .line 33
-    invoke-static {p1, v0, p5}, Lbc;->a([BILac;)I
-
-    move-result p2
-
-    .line 34
-    iget v0, p5, Lac;->a:I
-
-    invoke-virtual {p4, v0}, Lnd;->d(I)V
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_0
-    return p2
+    .line 341
+    :cond_3
+    invoke-static {p0, p1}, Lbc;->c(Landroid/os/Parcel;I)V
+
+    return-void
 .end method
 
-.method static a(I[BILac;)I
+.method public static a(Landroid/os/Parcel;IZ)V
     .locals 1
 
-    and-int/lit8 p0, p0, 0x7f
-
-    add-int/lit8 v0, p2, 0x1
-
-    .line 4
-    aget-byte p2, p1, p2
-
-    if-ltz p2, :cond_0
-
-    shl-int/lit8 p1, p2, 0x7
-
-    or-int/2addr p0, p1
-
-    .line 5
-    iput p0, p3, Lac;->a:I
-
-    return v0
-
-    :cond_0
-    and-int/lit8 p2, p2, 0x7f
-
-    shl-int/lit8 p2, p2, 0x7
-
-    or-int/2addr p0, p2
-
-    add-int/lit8 p2, v0, 0x1
-
-    .line 6
-    aget-byte v0, p1, v0
-
-    if-ltz v0, :cond_1
-
-    shl-int/lit8 p1, v0, 0xe
-
-    or-int/2addr p0, p1
-
-    .line 7
-    iput p0, p3, Lac;->a:I
-
-    return p2
-
-    :cond_1
-    and-int/lit8 v0, v0, 0x7f
-
-    shl-int/lit8 v0, v0, 0xe
-
-    or-int/2addr p0, v0
-
-    add-int/lit8 v0, p2, 0x1
-
-    .line 8
-    aget-byte p2, p1, p2
-
-    if-ltz p2, :cond_2
-
-    shl-int/lit8 p1, p2, 0x15
-
-    or-int/2addr p0, p1
-
-    .line 9
-    iput p0, p3, Lac;->a:I
-
-    return v0
-
-    :cond_2
-    and-int/lit8 p2, p2, 0x7f
-
-    shl-int/lit8 p2, p2, 0x15
-
-    or-int/2addr p0, p2
-
-    add-int/lit8 p2, v0, 0x1
-
-    .line 10
-    aget-byte v0, p1, v0
-
-    if-ltz v0, :cond_3
-
-    shl-int/lit8 p1, v0, 0x1c
-
-    or-int/2addr p0, p1
-
-    .line 11
-    iput p0, p3, Lac;->a:I
-
-    return p2
-
-    :cond_3
-    and-int/lit8 v0, v0, 0x7f
-
-    shl-int/lit8 v0, v0, 0x1c
-
-    or-int/2addr p0, v0
-
-    :goto_0
-    add-int/lit8 v0, p2, 0x1
-
-    .line 12
-    aget-byte p2, p1, p2
-
-    if-ltz p2, :cond_4
-
-    .line 13
-    iput p0, p3, Lac;->a:I
-
-    return v0
-
-    :cond_4
-    move p2, v0
-
-    goto :goto_0
-.end method
-
-.method static a(Lnf;I[BIILud;Lac;)I
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lnf<",
-            "*>;I[BII",
-            "Lud<",
-            "*>;",
-            "Lac;",
-            ")I"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .line 41
-    invoke-static {p0, p2, p3, p4, p6}, Lbc;->a(Lnf;[BIILac;)I
-
-    move-result p3
-
-    .line 42
-    iget-object v0, p6, Lac;->c:Ljava/lang/Object;
-
-    invoke-interface {p5, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :goto_0
-    if-ge p3, p4, :cond_0
-
-    .line 43
-    invoke-static {p2, p3, p6}, Lbc;->a([BILac;)I
-
-    move-result v0
-
-    .line 44
-    iget v1, p6, Lac;->a:I
-
-    if-ne p1, v1, :cond_0
-
-    .line 45
-    invoke-static {p0, p2, v0, p4, p6}, Lbc;->a(Lnf;[BIILac;)I
-
-    move-result p3
-
-    .line 46
-    iget-object v0, p6, Lac;->c:Ljava/lang/Object;
-
-    invoke-interface {p5, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_0
-    return p3
-.end method
-
-.method static a(Lnf;[BIIILac;)I
-    .locals 8
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .line 23
-    check-cast p0, Lye;
-
-    .line 24
-    invoke-virtual {p0}, Lye;->a()Ljava/lang/Object;
-
-    move-result-object v7
-
-    move-object v0, p0
-
-    move-object v1, v7
-
-    move-object v2, p1
-
-    move v3, p2
-
-    move v4, p3
-
-    move v5, p4
-
-    move-object v6, p5
-
-    .line 25
-    invoke-virtual/range {v0 .. v6}, Lye;->a(Ljava/lang/Object;[BIIILac;)I
-
-    move-result p1
-
-    .line 26
-    invoke-virtual {p0, v7}, Lye;->b(Ljava/lang/Object;)V
-
-    .line 27
-    iput-object v7, p5, Lac;->c:Ljava/lang/Object;
-
-    return p1
-.end method
-
-.method static a(Lnf;[BIILac;)I
-    .locals 6
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    add-int/lit8 v0, p2, 0x1
-
-    .line 15
-    aget-byte p2, p1, p2
-
-    if-gez p2, :cond_0
-
-    .line 16
-    invoke-static {p2, p1, v0, p4}, Lbc;->a(I[BILac;)I
-
-    move-result v0
-
-    .line 17
-    iget p2, p4, Lac;->a:I
-
-    :cond_0
-    move v3, v0
-
-    if-ltz p2, :cond_1
-
-    sub-int/2addr p3, v3
-
-    if-gt p2, p3, :cond_1
-
-    .line 18
-    invoke-interface {p0}, Lnf;->a()Ljava/lang/Object;
-
-    move-result-object p3
-
-    add-int/2addr p2, v3
-
-    move-object v0, p0
-
-    move-object v1, p3
-
-    move-object v2, p1
-
-    move v4, p2
-
-    move-object v5, p4
-
-    .line 19
-    invoke-interface/range {v0 .. v5}, Lnf;->a(Ljava/lang/Object;[BIILac;)V
+    const/4 v0, 0x4
 
     .line 20
-    invoke-interface {p0, p3}, Lnf;->b(Ljava/lang/Object;)V
+    invoke-static {p0, p1, v0}, Lbc;->b(Landroid/os/Parcel;II)V
 
     .line 21
-    iput-object p3, p4, Lac;->c:Ljava/lang/Object;
+    invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    return p2
-
-    .line 22
-    :cond_1
-    invoke-static {}, Ltd;->a()Ltd;
-
-    move-result-object p0
-
-    throw p0
+    return-void
 .end method
 
-.method static a([BI)I
-    .locals 2
+.method public static a(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Landroid/os/Parcelable;",
+            ">(",
+            "Landroid/os/Parcel;",
+            "I[TT;IZ)V"
+        }
+    .end annotation
 
-    .line 14
-    aget-byte v0, p0, p1
+    const/4 v0, 0x0
 
-    and-int/lit16 v0, v0, 0xff
+    if-nez p2, :cond_1
 
-    add-int/lit8 v1, p1, 0x1
+    if-eqz p4, :cond_0
 
-    aget-byte v1, p0, v1
+    .line 315
+    invoke-static {p0, p1, v0}, Lbc;->b(Landroid/os/Parcel;II)V
 
-    and-int/lit16 v1, v1, 0xff
-
-    shl-int/lit8 v1, v1, 0x8
-
-    or-int/2addr v0, v1
-
-    add-int/lit8 v1, p1, 0x2
-
-    aget-byte v1, p0, v1
-
-    and-int/lit16 v1, v1, 0xff
-
-    shl-int/lit8 v1, v1, 0x10
-
-    or-int/2addr v0, v1
-
-    add-int/lit8 p1, p1, 0x3
-
-    aget-byte p0, p0, p1
-
-    and-int/lit16 p0, p0, 0xff
-
-    shl-int/lit8 p0, p0, 0x18
-
-    or-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method static a([BILac;)I
-    .locals 1
-
-    add-int/lit8 v0, p1, 0x1
-
-    .line 1
-    aget-byte p1, p0, p1
-
-    if-ltz p1, :cond_0
-
-    .line 2
-    iput p1, p2, Lac;->a:I
-
-    return v0
-
-    .line 3
     :cond_0
-    invoke-static {p1, p0, v0, p2}, Lbc;->a(I[BILac;)I
+    return-void
 
-    move-result p0
+    .line 317
+    :cond_1
+    invoke-static {p0, p1}, Lbc;->b(Landroid/os/Parcel;I)I
 
-    return p0
+    move-result p1
+
+    .line 318
+    array-length p4, p2
+
+    .line 319
+    invoke-virtual {p0, p4}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, p4, :cond_3
+
+    .line 321
+    aget-object v2, p2, v1
+
+    if-nez v2, :cond_2
+
+    .line 323
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto :goto_1
+
+    .line 324
+    :cond_2
+    invoke-static {p0, v2, p3}, Lbc;->a(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
+
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 326
+    :cond_3
+    invoke-static {p0, p1}, Lbc;->c(Landroid/os/Parcel;I)V
+
+    return-void
 .end method
 
-.method static a([BILud;Lac;)I
+.method private static a(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "([BI",
-            "Lud<",
-            "*>;",
-            "Lac;",
-            ")I"
+            "<T::",
+            "Landroid/os/Parcelable;",
+            ">(",
+            "Landroid/os/Parcel;",
+            "TT;I)V"
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .line 343
+    invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
 
-    .line 35
-    check-cast p2, Lnd;
+    move-result v0
 
-    .line 36
-    invoke-static {p0, p1, p3}, Lbc;->a([BILac;)I
+    const/4 v1, 0x1
 
-    move-result p1
+    .line 344
+    invoke-virtual {p0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 37
-    iget v0, p3, Lac;->a:I
+    .line 345
+    invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
 
-    add-int/2addr v0, p1
+    move-result v1
 
-    :goto_0
-    if-ge p1, v0, :cond_0
+    .line 346
+    invoke-interface {p1, p0, p2}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 38
-    invoke-static {p0, p1, p3}, Lbc;->a([BILac;)I
+    .line 347
+    invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
 
     move-result p1
 
-    .line 39
-    iget v1, p3, Lac;->a:I
+    .line 348
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    invoke-virtual {p2, v1}, Lnd;->d(I)V
+    sub-int p2, p1, v1
 
-    goto :goto_0
+    .line 349
+    invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    :cond_0
-    if-ne p1, v0, :cond_1
+    .line 350
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    return p1
-
-    .line 40
-    :cond_1
-    invoke-static {}, Ltd;->a()Ltd;
-
-    move-result-object p0
-
-    throw p0
+    return-void
 .end method
 
-.method static b([BILac;)I
-    .locals 9
+.method private static b(Landroid/os/Parcel;I)I
+    .locals 1
 
-    add-int/lit8 v0, p1, 0x1
+    const/high16 v0, -0x10000
 
-    .line 1
-    aget-byte p1, p0, p1
+    or-int/2addr p1, v0
 
-    int-to-long v1, p1
+    .line 8
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    const-wide/16 v3, 0x0
+    const/4 p1, 0x0
 
-    cmp-long p1, v1, v3
+    .line 9
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    if-ltz p1, :cond_0
-
-    .line 2
-    iput-wide v1, p2, Lac;->b:J
-
-    return v0
-
-    :cond_0
-    const-wide/16 v3, 0x7f
-
-    and-long/2addr v1, v3
-
-    add-int/lit8 p1, v0, 0x1
-
-    .line 3
-    aget-byte v0, p0, v0
-
-    and-int/lit8 v3, v0, 0x7f
-
-    int-to-long v3, v3
-
-    const/4 v5, 0x7
-
-    shl-long/2addr v3, v5
-
-    or-long/2addr v1, v3
-
-    const/4 v3, 0x7
-
-    :goto_0
-    if-gez v0, :cond_1
-
-    add-int/lit8 v0, p1, 0x1
-
-    .line 4
-    aget-byte p1, p0, p1
-
-    add-int/2addr v3, v5
-
-    and-int/lit8 v4, p1, 0x7f
-
-    int-to-long v6, v4
-
-    shl-long/2addr v6, v3
-
-    or-long/2addr v1, v6
-
-    move v8, v0
-
-    move v0, p1
-
-    move p1, v8
-
-    goto :goto_0
-
-    .line 5
-    :cond_1
-    iput-wide v1, p2, Lac;->b:J
-
-    return p1
-.end method
-
-.method static b([BI)J
-    .locals 7
-
-    .line 6
-    aget-byte v0, p0, p1
-
-    int-to-long v0, v0
-
-    const-wide/16 v2, 0xff
-
-    and-long/2addr v0, v2
-
-    add-int/lit8 v4, p1, 0x1
-
-    aget-byte v4, p0, v4
-
-    int-to-long v4, v4
-
-    and-long/2addr v4, v2
-
-    const/16 v6, 0x8
-
-    shl-long/2addr v4, v6
-
-    or-long/2addr v0, v4
-
-    add-int/lit8 v4, p1, 0x2
-
-    aget-byte v4, p0, v4
-
-    int-to-long v4, v4
-
-    and-long/2addr v4, v2
-
-    const/16 v6, 0x10
-
-    shl-long/2addr v4, v6
-
-    or-long/2addr v0, v4
-
-    add-int/lit8 v4, p1, 0x3
-
-    aget-byte v4, p0, v4
-
-    int-to-long v4, v4
-
-    and-long/2addr v4, v2
-
-    const/16 v6, 0x18
-
-    shl-long/2addr v4, v6
-
-    or-long/2addr v0, v4
-
-    add-int/lit8 v4, p1, 0x4
-
-    aget-byte v4, p0, v4
-
-    int-to-long v4, v4
-
-    and-long/2addr v4, v2
-
-    const/16 v6, 0x20
-
-    shl-long/2addr v4, v6
-
-    or-long/2addr v0, v4
-
-    add-int/lit8 v4, p1, 0x5
-
-    aget-byte v4, p0, v4
-
-    int-to-long v4, v4
-
-    and-long/2addr v4, v2
-
-    const/16 v6, 0x28
-
-    shl-long/2addr v4, v6
-
-    or-long/2addr v0, v4
-
-    add-int/lit8 v4, p1, 0x6
-
-    aget-byte v4, p0, v4
-
-    int-to-long v4, v4
-
-    and-long/2addr v4, v2
-
-    const/16 v6, 0x30
-
-    shl-long/2addr v4, v6
-
-    or-long/2addr v0, v4
-
-    add-int/lit8 p1, p1, 0x7
-
-    aget-byte p0, p0, p1
-
-    int-to-long p0, p0
-
-    and-long/2addr p0, v2
-
-    const/16 v2, 0x38
-
-    shl-long/2addr p0, v2
-
-    or-long/2addr p0, v0
-
-    return-wide p0
-.end method
-
-.method static c([BI)D
-    .locals 0
-
-    .line 1
-    invoke-static {p0, p1}, Lbc;->b([BI)J
-
-    move-result-wide p0
-
-    invoke-static {p0, p1}, Ljava/lang/Double;->longBitsToDouble(J)D
-
-    move-result-wide p0
-
-    return-wide p0
-.end method
-
-.method static c([BILac;)I
-    .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ltd;
-        }
-    .end annotation
-
-    .line 2
-    invoke-static {p0, p1, p2}, Lbc;->a([BILac;)I
-
-    move-result p1
-
-    .line 3
-    iget v0, p2, Lac;->a:I
-
-    if-ltz v0, :cond_1
-
-    if-nez v0, :cond_0
-
-    const-string p0, ""
-
-    .line 4
-    iput-object p0, p2, Lac;->c:Ljava/lang/Object;
-
-    return p1
-
-    .line 5
-    :cond_0
-    new-instance v1, Ljava/lang/String;
-
-    sget-object v2, Lpd;->a:Ljava/nio/charset/Charset;
-
-    invoke-direct {v1, p0, p1, v0, v2}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
-
-    iput-object v1, p2, Lac;->c:Ljava/lang/Object;
-
-    add-int/2addr p1, v0
-
-    return p1
-
-    .line 6
-    :cond_1
-    invoke-static {}, Ltd;->b()Ltd;
-
-    move-result-object p0
-
-    throw p0
-.end method
-
-.method static d([BI)F
-    .locals 0
-
-    .line 1
-    invoke-static {p0, p1}, Lbc;->a([BI)I
-
-    move-result p0
-
-    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
+    .line 10
+    invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
 
     move-result p0
 
     return p0
 .end method
 
-.method static d([BILac;)I
+.method private static b(Landroid/os/Parcel;II)V
     .locals 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ltd;
-        }
-    .end annotation
 
-    .line 2
-    invoke-static {p0, p1, p2}, Lbc;->a([BILac;)I
+    const v0, 0xffff
 
-    move-result p1
+    if-lt p2, v0, :cond_0
 
-    .line 3
-    iget v0, p2, Lac;->a:I
+    const/high16 v0, -0x10000
 
-    if-ltz v0, :cond_1
-
-    if-nez v0, :cond_0
-
-    const-string p0, ""
+    or-int/2addr p1, v0
 
     .line 4
-    iput-object p0, p2, Lac;->c:Ljava/lang/Object;
-
-    return p1
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 5
+    invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    return-void
+
     :cond_0
-    invoke-static {p0, p1, v0}, Lng;->b([BII)Ljava/lang/String;
+    shl-int/lit8 p2, p2, 0x10
 
-    move-result-object p0
-
-    iput-object p0, p2, Lac;->c:Ljava/lang/Object;
-
-    add-int/2addr p1, v0
-
-    return p1
+    or-int/2addr p1, p2
 
     .line 6
-    :cond_1
-    invoke-static {}, Ltd;->b()Ltd;
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    move-result-object p0
-
-    throw p0
+    return-void
 .end method
 
-.method static e([BILac;)I
+.method private static c(Landroid/os/Parcel;I)V
     .locals 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ltd;
-        }
-    .end annotation
 
-    .line 1
-    invoke-static {p0, p1, p2}, Lbc;->a([BILac;)I
+    .line 11
+    invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
 
-    move-result p1
+    move-result v0
 
-    .line 2
-    iget v0, p2, Lac;->a:I
+    sub-int v1, v0, p1
 
-    if-ltz v0, :cond_2
+    add-int/lit8 p1, p1, -0x4
 
-    .line 3
-    array-length v1, p0
+    .line 13
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    sub-int/2addr v1, p1
+    .line 14
+    invoke-virtual {p0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    if-gt v0, v1, :cond_1
+    .line 15
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    if-nez v0, :cond_0
-
-    .line 4
-    sget-object p0, Lfc;->b:Lfc;
-
-    iput-object p0, p2, Lac;->c:Ljava/lang/Object;
-
-    return p1
-
-    .line 5
-    :cond_0
-    invoke-static {p0, p1, v0}, Lfc;->a([BII)Lfc;
-
-    move-result-object p0
-
-    iput-object p0, p2, Lac;->c:Ljava/lang/Object;
-
-    add-int/2addr p1, v0
-
-    return p1
-
-    .line 6
-    :cond_1
-    invoke-static {}, Ltd;->a()Ltd;
-
-    move-result-object p0
-
-    throw p0
-
-    .line 7
-    :cond_2
-    invoke-static {}, Ltd;->b()Ltd;
-
-    move-result-object p0
-
-    throw p0
+    return-void
 .end method

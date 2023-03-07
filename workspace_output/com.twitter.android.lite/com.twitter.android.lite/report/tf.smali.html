@@ -14,51 +14,56 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final Ltf;
-.super Lzf;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lzf;"
-}
-.end annotation
-
-.field private final synthetic b:Lof;
+		<code>.class public final Ltf;
+.super Ltd;
+.source "JsonNull.java"
 
 
-.method private constructor &lt;init&gt;(Lof;)V
+.field public static final a:Ltf;
+
+
+.method static constructor &lt;clinit&gt;()V
 <span class="">	.locals 1</span>
 
-<span class="missed">	iput-object p1, p0, Ltf;->b:Lof;</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	invoke-direct {p0, p1, v0}, Lzf;-><init>(Lof;Lrf;)V</span>
+<span class="missed">	new-instance v0, Ltf;</span>
+<span class="missed">	invoke-direct {v0}, Ltf;-><init>()V</span>
+<span class="missed">	sput-object v0, Ltf;->a:Ltf;</span>
 <span class="">	return-void</span>
 .end method
 
-.method synthetic constructor &lt;init&gt;(Lof;Lrf;)V
+.method public constructor &lt;init&gt;()V
 <span class="">	.locals 0</span>
-
-<span class="missed">	invoke-direct {p0, p1}, Ltf;-><init>(Lof;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public final iterator()Ljava/util/Iterator;
-<span class="">	.locals 3</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"()",</span>
-<span class="">	"Ljava/util/Iterator<",</span>
-<span class="">	"Ljava/util/Map$Entry<",</span>
-<span class="">	"TK;TV;>;>;"</span>
-<span class="">	}</span>
+<span class="">	.annotation runtime Ljava/lang/Deprecated;</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	new-instance v0, Lqf;</span>
-<span class="missed">	iget-object v1, p0, Ltf;->b:Lof;</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="missed">	invoke-direct {v0, v1, v2}, Lqf;-><init>(Lof;Lrf;)V</span>
-<span class="">	return-object v0</span>
+<span class="missed">	invoke-direct {p0}, Ltd;-><init>()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+<span class="">	.locals 0</span>
+
+<span class="missed">	if-eq p0, p1, :cond_1</span>
+<span class="missed">	instance-of p1, p1, Ltf;</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	:goto_1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public hashCode()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	const-class v0, Ltf;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -14,30 +14,39 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lbn;
-.super Ljava/lang/Object;
-
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"<TResult:",
-"Ljava/lang/Object;",
-">",
-"Ljava/lang/Object;"
-}
-.end annotation
+		<code>.class public Lbn;
+.super Landroid/os/Binder;
+.implements Landroid/os/IInterface;
 
 
+.field private static a:Lbp;
 
-.method public abstract a(Lgn;)V
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 0</span>
+
+<span class="">	return-void</span>
+.end method
+
+.method public asBinder()Landroid/os/IBinder;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Ljava/lang/NoSuchMethodError;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Lgn<",</span>
-<span class="">	"TTResult;>;)V"</span>
+<span class="">	Landroid/os/RemoteException;</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
+<span class="missed">	new-instance p1, Ljava/lang/NoSuchMethodError;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V</span>
+<span class="">	throw p1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

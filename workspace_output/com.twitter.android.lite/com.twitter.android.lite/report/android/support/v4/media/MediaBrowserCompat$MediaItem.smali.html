@@ -19,6 +19,13 @@
 .source "MediaBrowserCompat.java"
 .implements Landroid/os/Parcelable;
 
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Landroid/support/v4/media/MediaBrowserCompat;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x9
+name = "MediaItem"
+.end annotation
 
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
 .annotation system Ldalvik/annotation/Signature;
@@ -36,8 +43,8 @@ value = {
 .method static constructor &lt;clinit&gt;()V
 <span class="">	.locals 1</span>
 
-<span class="missed">	new-instance v0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem$a;</span>
-<span class="missed">	invoke-direct {v0}, Landroid/support/v4/media/MediaBrowserCompat$MediaItem$a;-><init>()V</span>
+<span class="missed">	new-instance v0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem$1;</span>
+<span class="missed">	invoke-direct {v0}, Landroid/support/v4/media/MediaBrowserCompat$MediaItem$1;-><init>()V</span>
 <span class="missed">	sput-object v0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->CREATOR:Landroid/os/Parcelable$Creator;</span>
 <span class="">	return-void</span>
 .end method

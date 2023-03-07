@@ -35,6 +35,7 @@ value = {
 .field final callTimeout:I
 .field final certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;
 .field final certificatePinner:Lokhttp3/CertificatePinner;
+.field final clientWindowSizeBytes:I
 .field final connectTimeout:I
 .field final connectionPool:Lokhttp3/ConnectionPool;
 .field final connectionSpecs:Ljava/util/List;
@@ -95,6 +96,7 @@ value = {
 .field final retryOnConnectionFailure:Z
 .field final socketFactory:Ljavax/net/SocketFactory;
 .field final sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;
+.field final twitterMCI1986Fix:Z
 .field final writeTimeout:I
 .method static constructor <clinit>()V
 .locals 5
@@ -124,9 +126,7 @@ return-void
 .end method
 .method public constructor <init>()V
 .locals 1
-new-instance v0, Lokhttp3/OkHttpClient$Builder;
-invoke-direct {v0}, Lokhttp3/OkHttpClient$Builder;-><init>()V
-invoke-direct {p0, v0}, Lokhttp3/OkHttpClient;-><init>(Lokhttp3/OkHttpClient$Builder;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method constructor <init>(Lokhttp3/OkHttpClient$Builder;)V
@@ -182,7 +182,6 @@ const/4 v2, 0x1
 goto :goto_0
 :cond_2
 iget-object v0, p1, Lokhttp3/OkHttpClient$Builder;->sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;
-if-nez v0, :cond_4
 invoke-static {}, Lokhttp3/internal/Util;->platformTrustManager()Ljavax/net/ssl/X509TrustManager;
 move-result-object v0
 invoke-static {v0}, Lokhttp3/OkHttpClient;->newSslSocketFactory(Ljavax/net/ssl/X509TrustManager;)Ljavax/net/ssl/SSLSocketFactory;
@@ -191,14 +190,6 @@ iput-object v1, p0, Lokhttp3/OkHttpClient;->sslSocketFactory:Ljavax/net/ssl/SSLS
 invoke-static {v0}, Lokhttp3/internal/tls/CertificateChainCleaner;->get(Ljavax/net/ssl/X509TrustManager;)Lokhttp3/internal/tls/CertificateChainCleaner;
 move-result-object v0
 iput-object v0, p0, Lokhttp3/OkHttpClient;->certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;
-goto :goto_2
-:cond_4
-:goto_1
-iget-object v0, p1, Lokhttp3/OkHttpClient$Builder;->sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;
-iput-object v0, p0, Lokhttp3/OkHttpClient;->sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;
-iget-object v0, p1, Lokhttp3/OkHttpClient$Builder;->certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;
-iput-object v0, p0, Lokhttp3/OkHttpClient;->certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;
-:goto_2
 iget-object v0, p0, Lokhttp3/OkHttpClient;->sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;
 if-eqz v0, :cond_5
 invoke-static {}, Lokhttp3/internal/platform/Platform;->get()Lokhttp3/internal/platform/Platform;
@@ -235,8 +226,12 @@ iget v0, p1, Lokhttp3/OkHttpClient$Builder;->readTimeout:I
 iput v0, p0, Lokhttp3/OkHttpClient;->readTimeout:I
 iget v0, p1, Lokhttp3/OkHttpClient$Builder;->writeTimeout:I
 iput v0, p0, Lokhttp3/OkHttpClient;->writeTimeout:I
-iget p1, p1, Lokhttp3/OkHttpClient$Builder;->pingInterval:I
-iput p1, p0, Lokhttp3/OkHttpClient;->pingInterval:I
+iget v0, p1, Lokhttp3/OkHttpClient$Builder;->pingInterval:I
+iput v0, p0, Lokhttp3/OkHttpClient;->pingInterval:I
+iget v0, p1, Lokhttp3/OkHttpClient$Builder;->clientWindowSizeBytes:I
+iput v0, p0, Lokhttp3/OkHttpClient;->clientWindowSizeBytes:I
+iget-boolean p1, p1, Lokhttp3/OkHttpClient$Builder;->twitterMCI1986Fix:Z
+iput-boolean p1, p0, Lokhttp3/OkHttpClient;->twitterMCI1986Fix:Z
 iget-object p1, p0, Lokhttp3/OkHttpClient;->interceptors:Ljava/util/List;
 const/4 v0, 0x0
 invoke-interface {p1, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
@@ -276,22 +271,22 @@ return-object v0
 .end method
 .method public callTimeoutMillis()I
 .locals 1
-iget v0, p0, Lokhttp3/OkHttpClient;->callTimeout:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public certificatePinner()Lokhttp3/CertificatePinner;
 .locals 1
-iget-object v0, p0, Lokhttp3/OkHttpClient;->certificatePinner:Lokhttp3/CertificatePinner;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public connectTimeoutMillis()I
 .locals 1
-iget v0, p0, Lokhttp3/OkHttpClient;->connectTimeout:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public connectionPool()Lokhttp3/ConnectionPool;
 .locals 1
-iget-object v0, p0, Lokhttp3/OkHttpClient;->connectionPool:Lokhttp3/ConnectionPool;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public connectionSpecs()Ljava/util/List;
@@ -304,27 +299,27 @@ value = {
 ">;"
 }
 .end annotation
-iget-object v0, p0, Lokhttp3/OkHttpClient;->connectionSpecs:Ljava/util/List;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public cookieJar()Lokhttp3/CookieJar;
 .locals 1
-iget-object v0, p0, Lokhttp3/OkHttpClient;->cookieJar:Lokhttp3/CookieJar;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public dispatcher()Lokhttp3/Dispatcher;
 .locals 1
-iget-object v0, p0, Lokhttp3/OkHttpClient;->dispatcher:Lokhttp3/Dispatcher;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public dns()Lokhttp3/Dns;
 .locals 1
-iget-object v0, p0, Lokhttp3/OkHttpClient;->dns:Lokhttp3/Dns;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public eventListenerFactory()Lokhttp3/EventListener$Factory;
 .locals 1
-iget-object v0, p0, Lokhttp3/OkHttpClient;->eventListenerFactory:Lokhttp3/EventListener$Factory;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public followRedirects()Z
@@ -339,8 +334,13 @@ return v0
 .end method
 .method public hostnameVerifier()Ljavax/net/ssl/HostnameVerifier;
 .locals 1
-iget-object v0, p0, Lokhttp3/OkHttpClient;->hostnameVerifier:Ljavax/net/ssl/HostnameVerifier;
+const/4 v0, 0x0
 return-object v0
+.end method
+.method public initialWindowSizeBytes()I
+.locals 1
+const/4 v0, 0x0
+return v0
 .end method
 .method public interceptors()Ljava/util/List;
 .locals 1
@@ -352,16 +352,14 @@ value = {
 ">;"
 }
 .end annotation
-iget-object v0, p0, Lokhttp3/OkHttpClient;->interceptors:Ljava/util/List;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method  internalCache()Lokhttp3/internal/cache/InternalCache;
 .locals 1
 .annotation runtime Ljavax/annotation/Nullable;
 .end annotation
-iget-object v0, p0, Lokhttp3/OkHttpClient;->cache:Lokhttp3/Cache;
-iget-object v0, p0, Lokhttp3/OkHttpClient;->internalCache:Lokhttp3/internal/cache/InternalCache;
-:goto_0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public networkInterceptors()Ljava/util/List;
@@ -374,21 +372,18 @@ value = {
 ">;"
 }
 .end annotation
-iget-object v0, p0, Lokhttp3/OkHttpClient;->networkInterceptors:Ljava/util/List;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public newBuilder()Lokhttp3/OkHttpClient$Builder;
 .locals 1
-new-instance v0, Lokhttp3/OkHttpClient$Builder;
-invoke-direct {v0, p0}, Lokhttp3/OkHttpClient$Builder;-><init>(Lokhttp3/OkHttpClient;)V
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public newCall(Lokhttp3/Request;)Lokhttp3/Call;
 .locals 1
 const/4 v0, 0x0
-invoke-static {p0, p1, v0}, Lokhttp3/RealCall;->newRealCall(Lokhttp3/OkHttpClient;Lokhttp3/Request;Z)Lokhttp3/RealCall;
-move-result-object p1
-return-object p1
+return-object v0
 .end method
 .method public newWebSocket(Lokhttp3/Request;Lokhttp3/WebSocketListener;)Lokhttp3/WebSocket;
 .locals 7
@@ -397,7 +392,7 @@ return-object v0
 .end method
 .method public pingIntervalMillis()I
 .locals 1
-iget v0, p0, Lokhttp3/OkHttpClient;->pingInterval:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public protocols()Ljava/util/List;
@@ -410,48 +405,53 @@ value = {
 ">;"
 }
 .end annotation
-iget-object v0, p0, Lokhttp3/OkHttpClient;->protocols:Ljava/util/List;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public proxy()Ljava/net/Proxy;
 .locals 1
 .annotation runtime Ljavax/annotation/Nullable;
 .end annotation
-iget-object v0, p0, Lokhttp3/OkHttpClient;->proxy:Ljava/net/Proxy;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public proxyAuthenticator()Lokhttp3/Authenticator;
 .locals 1
-iget-object v0, p0, Lokhttp3/OkHttpClient;->proxyAuthenticator:Lokhttp3/Authenticator;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public proxySelector()Ljava/net/ProxySelector;
 .locals 1
-iget-object v0, p0, Lokhttp3/OkHttpClient;->proxySelector:Ljava/net/ProxySelector;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public readTimeoutMillis()I
 .locals 1
-iget v0, p0, Lokhttp3/OkHttpClient;->readTimeout:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public retryOnConnectionFailure()Z
 .locals 1
-iget-boolean v0, p0, Lokhttp3/OkHttpClient;->retryOnConnectionFailure:Z
+const/4 v0, 0x0
 return v0
 .end method
 .method public socketFactory()Ljavax/net/SocketFactory;
 .locals 1
-iget-object v0, p0, Lokhttp3/OkHttpClient;->socketFactory:Ljavax/net/SocketFactory;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public sslSocketFactory()Ljavax/net/ssl/SSLSocketFactory;
 .locals 1
-iget-object v0, p0, Lokhttp3/OkHttpClient;->sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;
+const/4 v0, 0x0
 return-object v0
+.end method
+.method public twitterMCI1986Fix()Z
+.locals 1
+const/4 v0, 0x0
+return v0
 .end method
 .method public writeTimeoutMillis()I
 .locals 1
-iget v0, p0, Lokhttp3/OkHttpClient;->writeTimeout:I
+const/4 v0, 0x0
 return v0
 .end method

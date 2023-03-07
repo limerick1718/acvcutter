@@ -19,24 +19,24 @@
 .source "ResponseBody.java"
 
 .annotation system Ldalvik/annotation/EnclosingMethod;
-value = Lokhttp3/ResponseBody;->create(Lokhttp3/MediaType;JLgx;)Lokhttp3/ResponseBody;
+value = Lokhttp3/ResponseBody;->create(Lokhttp3/MediaType;JLyu;)Lokhttp3/ResponseBody;
 .end annotation
 .annotation system Ldalvik/annotation/InnerClass;
 accessFlags = 0x0
 name = null
 .end annotation
 
-.field final synthetic val$content:Lgx;
+.field final synthetic val$content:Lyu;
 .field final synthetic val$contentLength:J
 .field final synthetic val$contentType:Lokhttp3/MediaType;
 
 
-<span class="cov">.method constructor &lt;init&gt;(Lokhttp3/MediaType;JLgx;)V</span>
+<span class="cov">.method constructor &lt;init&gt;(Lokhttp3/MediaType;JLyu;)V</span>
 <span class="">	.locals 0</span>
 
 <span class="cov">	iput-object p1, p0, Lokhttp3/ResponseBody$1;->val$contentType:Lokhttp3/MediaType;</span>
 <span class="cov">	iput-wide p2, p0, Lokhttp3/ResponseBody$1;->val$contentLength:J</span>
-<span class="cov">	iput-object p4, p0, Lokhttp3/ResponseBody$1;->val$content:Lgx;</span>
+<span class="cov">	iput-object p4, p0, Lokhttp3/ResponseBody$1;->val$content:Lyu;</span>
 <span class="cov">	invoke-direct {p0}, Lokhttp3/ResponseBody;-><init>()V</span>
 <span class="exec">	return-void</span>
 .end method
@@ -57,10 +57,10 @@ name = null
 <span class="">	return-object v0</span>
 .end method
 
-.method public source()Lgx;
+.method public source()Lyu;
 <span class="">	.locals 1</span>
 
-<span class="missed">	iget-object v0, p0, Lokhttp3/ResponseBody$1;->val$content:Lgx;</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/ResponseBody$1;->val$content:Lyu;</span>
 <span class="">	return-object v0</span>
 .end method</code>
 	</pre>

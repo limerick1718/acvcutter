@@ -1,186 +1,297 @@
-.class public final Lfm;
+.class final synthetic Lfm;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/common/api/a$d$e;
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lfm$a;
-    }
-.end annotation
 
 
 # static fields
-.field public static final i:Lfm;
-
-
-# instance fields
-.field private final a:Z
-
-.field private final b:Z
-
-.field private final c:Ljava/lang/String;
-
-.field private final d:Z
-
-.field private final e:Ljava/lang/String;
-
-.field private final f:Z
-
-.field private final g:Ljava/lang/Long;
-
-.field private final h:Ljava/lang/Long;
+.field static final synthetic a:[I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 10
+    .locals 3
 
     .line 1
-    new-instance v0, Lfm$a;
+    invoke-static {}, Ljn;->values()[Ljn;
 
-    invoke-direct {v0}, Lfm$a;-><init>()V
+    move-result-object v0
 
-    .line 2
-    new-instance v0, Lfm;
+    array-length v0, v0
 
-    const/4 v2, 0x0
+    new-array v0, v0, [I
 
-    const/4 v3, 0x0
+    sput-object v0, Lfm;->a:[I
 
-    const/4 v4, 0x0
+    :try_start_0
+    sget-object v0, Lfm;->a:[I
 
-    const/4 v5, 0x0
+    sget-object v1, Ljn;->h:Ljn;
 
-    const/4 v6, 0x0
+    invoke-virtual {v1}, Ljn;->ordinal()I
 
-    const/4 v7, 0x0
+    move-result v1
 
-    const/4 v8, 0x0
+    const/4 v2, 0x1
 
-    const/4 v9, 0x0
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-object v1, v0
+    :catch_0
+    :try_start_1
+    sget-object v0, Lfm;->a:[I
 
-    .line 3
-    invoke-direct/range {v1 .. v9}, Lfm;-><init>(ZZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/Long;Ljava/lang/Long;)V
+    sget-object v1, Ljn;->l:Ljn;
 
-    .line 4
-    sput-object v0, Lfm;->i:Lfm;
+    invoke-virtual {v1}, Ljn;->ordinal()I
 
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    :try_start_2
+    sget-object v0, Lfm;->a:[I
+
+    sget-object v1, Ljn;->a:Ljn;
+
+    invoke-virtual {v1}, Ljn;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    :catch_2
+    :try_start_3
+    sget-object v0, Lfm;->a:[I
+
+    sget-object v1, Ljn;->n:Ljn;
+
+    invoke-virtual {v1}, Ljn;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    :catch_3
+    :try_start_4
+    sget-object v0, Lfm;->a:[I
+
+    sget-object v1, Ljn;->g:Ljn;
+
+    invoke-virtual {v1}, Ljn;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+
+    :catch_4
+    :try_start_5
+    sget-object v0, Lfm;->a:[I
+
+    sget-object v1, Ljn;->f:Ljn;
+
+    invoke-virtual {v1}, Ljn;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
+    :catch_5
+    :try_start_6
+    sget-object v0, Lfm;->a:[I
+
+    sget-object v1, Ljn;->b:Ljn;
+
+    invoke-virtual {v1}, Ljn;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x7
+
+    aput v2, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+
+    :catch_6
+    :try_start_7
+    sget-object v0, Lfm;->a:[I
+
+    sget-object v1, Ljn;->e:Ljn;
+
+    invoke-virtual {v1}, Ljn;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x8
+
+    aput v2, v0, v1
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
+
+    :catch_7
+    :try_start_8
+    sget-object v0, Lfm;->a:[I
+
+    sget-object v1, Ljn;->c:Ljn;
+
+    invoke-virtual {v1}, Ljn;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x9
+
+    aput v2, v0, v1
+    :try_end_8
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8
+
+    :catch_8
+    :try_start_9
+    sget-object v0, Lfm;->a:[I
+
+    sget-object v1, Ljn;->k:Ljn;
+
+    invoke-virtual {v1}, Ljn;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0xa
+
+    aput v2, v0, v1
+    :try_end_9
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_9
+
+    :catch_9
+    :try_start_a
+    sget-object v0, Lfm;->a:[I
+
+    sget-object v1, Ljn;->o:Ljn;
+
+    invoke-virtual {v1}, Ljn;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0xb
+
+    aput v2, v0, v1
+    :try_end_a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_a
+
+    :catch_a
+    :try_start_b
+    sget-object v0, Lfm;->a:[I
+
+    sget-object v1, Ljn;->p:Ljn;
+
+    invoke-virtual {v1}, Ljn;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0xc
+
+    aput v2, v0, v1
+    :try_end_b
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_b .. :try_end_b} :catch_b
+
+    :catch_b
+    :try_start_c
+    sget-object v0, Lfm;->a:[I
+
+    sget-object v1, Ljn;->q:Ljn;
+
+    invoke-virtual {v1}, Ljn;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0xd
+
+    aput v2, v0, v1
+    :try_end_c
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_c .. :try_end_c} :catch_c
+
+    :catch_c
+    :try_start_d
+    sget-object v0, Lfm;->a:[I
+
+    sget-object v1, Ljn;->r:Ljn;
+
+    invoke-virtual {v1}, Ljn;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0xe
+
+    aput v2, v0, v1
+    :try_end_d
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_d .. :try_end_d} :catch_d
+
+    :catch_d
+    :try_start_e
+    sget-object v0, Lfm;->a:[I
+
+    sget-object v1, Ljn;->i:Ljn;
+
+    invoke-virtual {v1}, Ljn;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0xf
+
+    aput v2, v0, v1
+    :try_end_e
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_e .. :try_end_e} :catch_e
+
+    :catch_e
+    :try_start_f
+    sget-object v0, Lfm;->a:[I
+
+    sget-object v1, Ljn;->m:Ljn;
+
+    invoke-virtual {v1}, Ljn;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x10
+
+    aput v2, v0, v1
+    :try_end_f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_f .. :try_end_f} :catch_f
+
+    :catch_f
+    :try_start_10
+    sget-object v0, Lfm;->a:[I
+
+    sget-object v1, Ljn;->d:Ljn;
+
+    invoke-virtual {v1}, Ljn;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x11
+
+    aput v2, v0, v1
+    :try_end_10
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_10 .. :try_end_10} :catch_10
+
+    :catch_10
     return-void
-.end method
-
-.method private constructor <init>(ZZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/Long;Ljava/lang/Long;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 p1, 0x0
-
-    .line 2
-    iput-boolean p1, p0, Lfm;->a:Z
-
-    .line 3
-    iput-boolean p1, p0, Lfm;->b:Z
-
-    const/4 p2, 0x0
-
-    .line 4
-    iput-object p2, p0, Lfm;->c:Ljava/lang/String;
-
-    .line 5
-    iput-boolean p1, p0, Lfm;->d:Z
-
-    .line 6
-    iput-boolean p1, p0, Lfm;->f:Z
-
-    .line 7
-    iput-object p2, p0, Lfm;->e:Ljava/lang/String;
-
-    .line 8
-    iput-object p2, p0, Lfm;->g:Ljava/lang/Long;
-
-    .line 9
-    iput-object p2, p0, Lfm;->h:Ljava/lang/Long;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b()Ljava/lang/Long;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lfm;->g:Ljava/lang/Long;
-
-    return-object v0
-.end method
-
-.method public final c()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lfm;->e:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final d()Ljava/lang/Long;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lfm;->h:Ljava/lang/Long;
-
-    return-object v0
-.end method
-
-.method public final e()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lfm;->c:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final g()Z
-    .locals 1
-
-    .line 1
-    iget-boolean v0, p0, Lfm;->d:Z
-
-    return v0
-.end method
-
-.method public final h()Z
-    .locals 1
-
-    .line 1
-    iget-boolean v0, p0, Lfm;->b:Z
-
-    return v0
-.end method
-
-.method public final i()Z
-    .locals 1
-
-    .line 1
-    iget-boolean v0, p0, Lfm;->a:Z
-
-    return v0
-.end method
-
-.method public final j()Z
-    .locals 1
-
-    .line 1
-    iget-boolean v0, p0, Lfm;->f:Z
-
-    return v0
 .end method

@@ -17,7 +17,7 @@
 		<code>.class final Lokhttp3/internal/ws/WebSocketWriter$FrameSink;
 .super Ljava/lang/Object;
 .source "WebSocketWriter.java"
-.implements Lvx;
+.implements Lzj;
 
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lokhttp3/internal/ws/WebSocketWriter;
@@ -54,8 +54,8 @@ name = "FrameSink"
 <span class="missed">	if-nez v0, :cond_0</span>
 <span class="missed">	iget-object v1, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->this$0:Lokhttp3/internal/ws/WebSocketWriter;</span>
 <span class="missed">	iget v2, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->formatOpcode:I</span>
-<span class="missed">	iget-object v0, v1, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lex;</span>
-<span class="">	invoke-virtual {v0}, Lex;->v()J</span>
+<span class="missed">	iget-object v0, v1, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lys;</span>
+<span class="">	invoke-virtual {v0}, Lys;->a()J</span>
 <span class="missed">	move-result-wide v3</span>
 <span class="missed">	iget-boolean v5, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->isFirstFrame:Z</span>
 <span class="missed">	const/4 v6, 0x1</span>
@@ -85,8 +85,8 @@ name = "FrameSink"
 <span class="missed">	if-nez v0, :cond_0</span>
 <span class="missed">	iget-object v1, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->this$0:Lokhttp3/internal/ws/WebSocketWriter;</span>
 <span class="missed">	iget v2, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->formatOpcode:I</span>
-<span class="missed">	iget-object v0, v1, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lex;</span>
-<span class="">	invoke-virtual {v0}, Lex;->v()J</span>
+<span class="missed">	iget-object v0, v1, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lys;</span>
+<span class="">	invoke-virtual {v0}, Lys;->a()J</span>
 <span class="missed">	move-result-wide v3</span>
 <span class="missed">	iget-boolean v5, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->isFirstFrame:Z</span>
 <span class="missed">	const/4 v6, 0x0</span>
@@ -101,17 +101,17 @@ name = "FrameSink"
 <span class="">	throw v0</span>
 .end method
 
-.method public timeout()Lxx;
+.method public timeout()Lzl;
 <span class="">	.locals 1</span>
 
 <span class="missed">	iget-object v0, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->this$0:Lokhttp3/internal/ws/WebSocketWriter;</span>
-<span class="missed">	iget-object v0, v0, Lokhttp3/internal/ws/WebSocketWriter;->sink:Lfx;</span>
-<span class="">	invoke-interface {v0}, Lvx;->timeout()Lxx;</span>
+<span class="missed">	iget-object v0, v0, Lokhttp3/internal/ws/WebSocketWriter;->sink:Lyt;</span>
+<span class="">	invoke-interface {v0}, Lyt;->timeout()Lzl;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="">	return-object v0</span>
 .end method
 
-.method public write(Lex;J)V
+.method public write(Lys;J)V
 <span class="">	.locals 6</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -122,8 +122,8 @@ name = "FrameSink"
 <span class="missed">	iget-boolean v0, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->closed:Z</span>
 <span class="missed">	if-nez v0, :cond_2</span>
 <span class="missed">	iget-object v0, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->this$0:Lokhttp3/internal/ws/WebSocketWriter;</span>
-<span class="missed">	iget-object v0, v0, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lex;</span>
-<span class="missed">	invoke-virtual {v0, p1, p2, p3}, Lex;->write(Lex;J)V</span>
+<span class="missed">	iget-object v0, v0, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lys;</span>
+<span class="missed">	invoke-virtual {v0, p1, p2, p3}, Lys;->write(Lys;J)V</span>
 <span class="missed">	iget-boolean p1, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->isFirstFrame:Z</span>
 <span class="missed">	const/4 p2, 0x0</span>
 <span class="missed">	if-eqz p1, :cond_0</span>
@@ -132,8 +132,8 @@ name = "FrameSink"
 <span class="missed">	cmp-long p1, v0, v2</span>
 <span class="missed">	if-eqz p1, :cond_0</span>
 <span class="missed">	iget-object p1, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->this$0:Lokhttp3/internal/ws/WebSocketWriter;</span>
-<span class="missed">	iget-object p1, p1, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lex;</span>
-<span class="">	invoke-virtual {p1}, Lex;->v()J</span>
+<span class="missed">	iget-object p1, p1, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lys;</span>
+<span class="">	invoke-virtual {p1}, Lys;->a()J</span>
 <span class="missed">	move-result-wide v0</span>
 <span class="missed">	iget-wide v2, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->contentLength:J</span>
 <span class="missed">	const-wide/16 v4, 0x2000</span>
@@ -146,8 +146,8 @@ name = "FrameSink"
 <span class="missed">	const/4 p1, 0x0</span>
 <span class="">	:goto_0</span>
 <span class="missed">	iget-object p3, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->this$0:Lokhttp3/internal/ws/WebSocketWriter;</span>
-<span class="missed">	iget-object p3, p3, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lex;</span>
-<span class="">	invoke-virtual {p3}, Lex;->r()J</span>
+<span class="missed">	iget-object p3, p3, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lys;</span>
+<span class="">	invoke-virtual {p3}, Lys;->j()J</span>
 <span class="missed">	move-result-wide v2</span>
 <span class="missed">	const-wide/16 v0, 0x0</span>
 <span class="missed">	cmp-long p3, v2, v0</span>

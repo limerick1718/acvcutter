@@ -23,11 +23,11 @@ Lokhttp3/internal/http1/Http1ExchangeCodec$KnownLengthSink;
 .field private final client:Lokhttp3/OkHttpClient;
 .field private headerLimit:J
 .field private final realConnection:Lokhttp3/internal/connection/RealConnection;
-.field private final sink:Lfx;
-.field private final source:Lgx;
+.field private final sink:Lyt;
+.field private final source:Lyu;
 .field private state:I
 .field private trailers:Lokhttp3/Headers;
-.method public constructor <init>(Lokhttp3/OkHttpClient;Lokhttp3/internal/connection/RealConnection;Lgx;Lfx;)V
+.method public constructor <init>(Lokhttp3/OkHttpClient;Lokhttp3/internal/connection/RealConnection;Lyu;Lyt;)V
 .locals 2
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
@@ -41,7 +41,7 @@ return-void
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public createRequestBody(Lokhttp3/Request;J)Lvx;
+.method public createRequestBody(Lokhttp3/Request;J)Lzj;
 .locals 2
 .annotation system Ldalvik/annotation/Throws;
 value = {
@@ -74,7 +74,7 @@ return-void
 const/4 v0, 0x0
 return v0
 .end method
-.method public openResponseBodySource(Lokhttp3/Response;)Lwx;
+.method public openResponseBodySource(Lokhttp3/Response;)Lzk;
 .locals 4
 const/4 v0, 0x0
 return-object v0

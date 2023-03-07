@@ -76,7 +76,7 @@
 <span class="">	:try_start_0</span>
 <span class="">	invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getSSLParameters()Ljavax/net/ssl/SSLParameters;</span>
 <span class="missed">	move-result-object p2</span>
-<span class="">	invoke-static {p3}, Lokhttp3/internal/platform/Platform;->alpnProtocolNames(Ljava/util/List;)Ljava/util/List;</span>
+<span class="">	invoke-static {p3}, Lokhttp3/internal/platform/Jdk9Platform;->alpnProtocolNames(Ljava/util/List;)Ljava/util/List;</span>
 <span class="missed">	move-result-object p3</span>
 <span class="missed">	iget-object v0, p0, Lokhttp3/internal/platform/Jdk9Platform;->setProtocolMethod:Ljava/lang/reflect/Method;</span>
 <span class="missed">	const/4 v1, 0x1</span>

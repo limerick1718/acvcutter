@@ -1,47 +1,85 @@
-.class public final Lnm;
-.super Lx6;
+.class final Lnm;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lmm;
+.implements Ljava/lang/Runnable;
 
 
-# direct methods
-.method constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
+# instance fields
+.field private final synthetic a:Ljava/util/concurrent/atomic/AtomicReference;
 
-    const-string v0, "com.google.android.gms.signin.internal.ISignInService"
-
-    .line 1
-    invoke-direct {p0, p1, v0}, Lx6;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
-
-    return-void
-.end method
+.field private final synthetic b:Lnl;
 
 
 # virtual methods
-.method public final a(Lom;Lkm;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .line 1
-    invoke-virtual {p0}, Lx6;->i()Landroid/os/Parcel;
-
-    move-result-object v0
+.method public final run()V
+    .locals 4
 
     .line 2
-    invoke-static {v0, p1}, Lz6;->a(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+    iget-object v0, p0, Lnm;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    monitor-enter v0
 
     .line 3
-    invoke-static {v0, p2}, Lz6;->a(Landroid/os/Parcel;Landroid/os/IInterface;)V
+    :try_start_0
+    iget-object v1, p0, Lnm;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
-    const/16 p1, 0xc
+    iget-object v2, p0, Lnm;->b:Lnl;
+
+    invoke-virtual {v2}, Lnb;->t()Lqf;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lnm;->b:Lnl;
+
+    invoke-virtual {v3}, Loa;->g()Lku;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lku;->x()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lqf;->h(Ljava/lang/String;)Z
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 4
-    invoke-virtual {p0, p1, v0}, Lx6;->a(ILandroid/os/Parcel;)V
+    :try_start_1
+    iget-object v1, p0, Lnm;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->notify()V
+
+    .line 7
+    monitor-exit v0
 
     return-void
+
+    :catchall_0
+    move-exception v1
+
+    .line 6
+    iget-object v2, p0, Lnm;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->notify()V
+
+    throw v1
+
+    :catchall_1
+    move-exception v1
+
+    .line 7
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    throw v1
 .end method

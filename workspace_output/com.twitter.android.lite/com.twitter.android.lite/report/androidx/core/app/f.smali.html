@@ -21,10 +21,9 @@
 .annotation system Ldalvik/annotation/MemberClasses;
 value = {
 Landroidx/core/app/f$a;,
-Landroidx/core/app/f$c;,
 Landroidx/core/app/f$b;,
-Landroidx/core/app/f$e;,
-Landroidx/core/app/f$d;
+Landroidx/core/app/f$d;,
+Landroidx/core/app/f$c;
 }
 .end annotation
 
@@ -39,6 +38,7 @@ Landroidx/core/app/f$d;
 <span class="missed">	iget-object p0, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;</span>
 <span class="">	return-object p0</span>
 <span class="">	:cond_0</span>
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
 <span class="missed">	const/16 v1, 0x10</span>
 <span class="missed">	if-lt v0, v1, :cond_1</span>
 <span class="">	invoke-static {p0}, Landroidx/core/app/h;->a(Landroid/app/Notification;)Landroid/os/Bundle;</span>

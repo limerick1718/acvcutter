@@ -21,6 +21,7 @@
 
 
 .field private static final b:Landroid/util/SparseIntArray;
+.field private static final c:[I
 .field  a:Landroidx/media/a;
 
 
@@ -30,6 +31,7 @@
 <span class="missed">	new-instance v0, Landroid/util/SparseIntArray;</span>
 <span class="missed">	invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V</span>
 <span class="missed">	sput-object v0, Landroidx/media/AudioAttributesCompat;->b:Landroid/util/SparseIntArray;</span>
+<span class="missed">	sget-object v0, Landroidx/media/AudioAttributesCompat;->b:Landroid/util/SparseIntArray;</span>
 <span class="missed">	const/4 v1, 0x1</span>
 <span class="missed">	const/4 v2, 0x5</span>
 <span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/util/SparseIntArray;->put(II)V</span>
@@ -49,7 +51,30 @@
 <span class="missed">	sget-object v0, Landroidx/media/AudioAttributesCompat;->b:Landroid/util/SparseIntArray;</span>
 <span class="missed">	const/16 v2, 0xa</span>
 <span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/util/SparseIntArray;->put(II)V</span>
+<span class="missed">	const/16 v0, 0x10</span>
+<span class="missed">	new-array v0, v0, [I</span>
+<span class="missed">	fill-array-data v0, :array_0</span>
+<span class="missed">	sput-object v0, Landroidx/media/AudioAttributesCompat;->c:[I</span>
 <span class="">	return-void</span>
+<span class="">	:array_0</span>
+<span class="">	.array-data 4</span>
+<span class="">	0x0</span>
+<span class="">	0x1</span>
+<span class="">	0x2</span>
+<span class="">	0x3</span>
+<span class="">	0x4</span>
+<span class="">	0x5</span>
+<span class="">	0x6</span>
+<span class="">	0x7</span>
+<span class="">	0x8</span>
+<span class="">	0x9</span>
+<span class="">	0xa</span>
+<span class="">	0xb</span>
+<span class="">	0xc</span>
+<span class="">	0xd</span>
+<span class="">	0xe</span>
+<span class="">	0x10</span>
+<span class="">	.end array-data</span>
 .end method
 
 .method constructor &lt;init&gt;()V

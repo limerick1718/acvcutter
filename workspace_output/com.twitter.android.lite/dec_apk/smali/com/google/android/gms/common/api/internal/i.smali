@@ -15,7 +15,7 @@ value = {
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "Ljava/util/Map<",
-"Lhn<",
+"Lrn<",
 "*>;",
 "Ljava/lang/Boolean;",
 ">;"

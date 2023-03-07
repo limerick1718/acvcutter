@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> zb$1.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Lzb$1;
+.super Ljava/lang/Object;
+.source "Okio.java"
+.implements Lzj;
+
+.annotation system Ldalvik/annotation/EnclosingMethod;
+value = Lzb;->a(Ljava/io/OutputStream;Lzl;)Lzj;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x0
+name = null
+.end annotation
+
+.field final synthetic a:Lzl;
+.field final synthetic b:Ljava/io/OutputStream;
+
+
+.method constructor &lt;init&gt;(Lzl;Ljava/io/OutputStream;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-object p1, p0, Lzb$1;->a:Lzl;</span>
+<span class="missed">	iput-object p2, p0, Lzb$1;->b:Ljava/io/OutputStream;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public close()V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lzb$1;->b:Ljava/io/OutputStream;</span>
+<span class="missed">	invoke-virtual {v0}, Ljava/io/OutputStream;->close()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public flush()V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lzb$1;->b:Ljava/io/OutputStream;</span>
+<span class="missed">	invoke-virtual {v0}, Ljava/io/OutputStream;->flush()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public timeout()Lzl;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lzb$1;->a:Lzl;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public toString()Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v1, "sink("</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v1, p0, Lzb$1;->b:Ljava/io/OutputStream;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v1, ")"</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public write(Lys;J)V
+<span class="">	.locals 6</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-wide v0, p1, Lys;->b:J</span>
+<span class="missed">	const-wide/16 v2, 0x0</span>
+<span class="missed">	move-wide v4, p2</span>
+<span class="missed">	invoke-static/range {v0 .. v5}, Lzm;->a(JJJ)V</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	cmp-long v2, p2, v0</span>
+<span class="missed">	if-lez v2, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lzb$1;->a:Lzl;</span>
+<span class="missed">	invoke-virtual {v0}, Lzl;->throwIfReached()V</span>
+<span class="missed">	iget-object v0, p1, Lys;->a:Lzg;</span>
+<span class="missed">	iget v1, v0, Lzg;->c:I</span>
+<span class="missed">	iget v2, v0, Lzg;->b:I</span>
+<span class="missed">	sub-int/2addr v1, v2</span>
+<span class="missed">	int-to-long v1, v1</span>
+<span class="">	invoke-static {p2, p3, v1, v2}, Ljava/lang/Math;->min(JJ)J</span>
+<span class="missed">	move-result-wide v1</span>
+<span class="missed">	long-to-int v2, v1</span>
+<span class="missed">	iget-object v1, p0, Lzb$1;->b:Ljava/io/OutputStream;</span>
+<span class="missed">	iget-object v3, v0, Lzg;->a:[B</span>
+<span class="missed">	iget v4, v0, Lzg;->b:I</span>
+<span class="missed">	invoke-virtual {v1, v3, v4, v2}, Ljava/io/OutputStream;->write([BII)V</span>
+<span class="missed">	iget v1, v0, Lzg;->b:I</span>
+<span class="missed">	add-int/2addr v1, v2</span>
+<span class="missed">	iput v1, v0, Lzg;->b:I</span>
+<span class="missed">	int-to-long v1, v2</span>
+<span class="missed">	sub-long/2addr p2, v1</span>
+<span class="missed">	iget-wide v3, p1, Lys;->b:J</span>
+<span class="missed">	sub-long/2addr v3, v1</span>
+<span class="missed">	iput-wide v3, p1, Lys;->b:J</span>
+<span class="missed">	iget v1, v0, Lzg;->b:I</span>
+<span class="missed">	iget v2, v0, Lzg;->c:I</span>
+<span class="missed">	if-ne v1, v2, :cond_0</span>
+<span class="">	invoke-virtual {v0}, Lzg;->c()Lzg;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iput-object v1, p1, Lys;->a:Lzg;</span>
+<span class="missed">	invoke-static {v0}, Lzh;->a(Lzg;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

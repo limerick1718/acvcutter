@@ -35,7 +35,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1
+    .line 50
     new-instance v0, Lretrofit2/BuiltInConverters$VoidResponseBodyConverter;
 
     invoke-direct {v0}, Lretrofit2/BuiltInConverters$VoidResponseBodyConverter;-><init>()V
@@ -48,7 +48,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -64,7 +64,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 49
     check-cast p1, Lokhttp3/ResponseBody;
 
     invoke-virtual {p0, p1}, Lretrofit2/BuiltInConverters$VoidResponseBodyConverter;->convert(Lokhttp3/ResponseBody;)Ljava/lang/Void;
@@ -82,7 +82,7 @@
         }
     .end annotation
 
-    .line 2
+    .line 53
     invoke-virtual {p1}, Lokhttp3/ResponseBody;->close()V
 
     const/4 p1, 0x0

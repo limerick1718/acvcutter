@@ -14,46 +14,16 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final synthetic Lvp;
+		<code>.class public interface abstract Lvp;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.implements Ljava/util/Comparator;
+.source "CurrentTimeProvider.java"
 
 
-.field private static final a:Lvp;
 
 
-.method static constructor &lt;clinit&gt;()V
-<span class="">	.locals 1</span>
+.method public abstract a()J
+<span class="">	</span>
 
-<span class="missed">	new-instance v0, Lvp;</span>
-<span class="missed">	invoke-direct {v0}, Lvp;-><init>()V</span>
-<span class="missed">	sput-object v0, Lvp;->a:Lvp;</span>
-<span class="">	return-void</span>
-.end method
-
-.method private constructor &lt;init&gt;()V
-<span class="">	.locals 0</span>
-
-<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public static a()Ljava/util/Comparator;
-<span class="">	.locals 1</span>
-
-<span class="missed">	sget-object v0, Lvp;->a:Lvp;</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
-<span class="">	.locals 0</span>
-
-<span class="missed">	check-cast p1, Lzq$b;</span>
-<span class="missed">	check-cast p2, Lzq$b;</span>
-<span class="">	invoke-static {p1, p2}, Lwp;->a(Lzq$b;Lzq$b;)I</span>
-<span class="missed">	move-result p1</span>
-<span class="">	return p1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

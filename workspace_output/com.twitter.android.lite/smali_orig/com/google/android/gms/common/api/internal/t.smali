@@ -1,24 +1,18 @@
-.class public final Lcom/google/android/gms/common/api/internal/t;
+.class public abstract Lcom/google/android/gms/common/api/internal/t;
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field public final a:Lcom/google/android/gms/common/api/internal/g;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/common/api/internal/g<",
-            "Lcom/google/android/gms/common/api/a$b;",
-            "*>;"
-        }
-    .end annotation
-.end field
+# direct methods
+.method public constructor <init>()V
+    .locals 0
 
-.field public final b:Lcom/google/android/gms/common/api/internal/h;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/common/api/internal/h<",
-            "Lcom/google/android/gms/common/api/a$b;",
-            "*>;"
-        }
-    .end annotation
-.end field
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public abstract a()V
+.end method

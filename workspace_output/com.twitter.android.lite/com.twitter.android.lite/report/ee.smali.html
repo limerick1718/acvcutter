@@ -14,39 +14,33 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lee;
+		<code>.class public final Lee;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Ljava/util/List;
 
 
 
 
-.method public abstract a(Lfc;)V
-<span class="">	</span>
+<span class="cov">.method public static a(Ljava/lang/String;)Landroid/net/Uri;</span>
+<span class="">	.locals 2</span>
 
-.end method
-
-.method public abstract b(I)Ljava/lang/Object;
-<span class="">	</span>
-
-.end method
-
-.method public abstract d()Ljava/util/List;
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"()",</span>
-<span class="">	"Ljava/util/List<",</span>
-<span class="">	"*>;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract e()Lee;
-<span class="">	</span>
-
+<span class="exec">	invoke-static {p0}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	invoke-virtual {p0}, Ljava/lang/String;->length()I</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	const-string v1, "content://com.google.android.gms.phenotype/"</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="exec">	invoke-virtual {v1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p0, Ljava/lang/String;</span>
+<span class="missed">	invoke-direct {p0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	return-object p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

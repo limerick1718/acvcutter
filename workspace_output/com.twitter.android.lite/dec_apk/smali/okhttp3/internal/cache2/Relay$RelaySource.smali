@@ -1,7 +1,7 @@
 .class  Lokhttp3/internal/cache2/Relay$RelaySource;
 .super Ljava/lang/Object;
 .source "Relay.java"
-.implements Lwx;
+.implements Lzk;
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lokhttp3/internal/cache2/Relay;
 .end annotation
@@ -12,7 +12,7 @@ name = "RelaySource"
 .field private fileOperator:Lokhttp3/internal/cache2/FileOperator;
 .field private sourcePos:J
 .field final synthetic this$0:Lokhttp3/internal/cache2/Relay;
-.field private final timeout:Lxx;
+.field private final timeout:Lzl;
 .method constructor <init>(Lokhttp3/internal/cache2/Relay;)V
 .locals 1
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@ Ljava/io/IOException;
 .end annotation
 return-void
 .end method
-.method public read(Lex;J)J
+.method public read(Lys;J)J
 .locals 21
 .annotation system Ldalvik/annotation/Throws;
 value = {
@@ -37,7 +37,7 @@ Ljava/io/IOException;
 const-wide v0, 0x0
 return-wide v0
 .end method
-.method public timeout()Lxx;
+.method public timeout()Lzl;
 .locals 1
 const/4 v0, 0x0
 return-object v0

@@ -1,155 +1,239 @@
-.class final Lun;
+.class public Lun;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lyn;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<TResult:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lyn<",
-        "TTResult;>;"
-    }
-.end annotation
+.source "NymizerParams.java"
 
 
 # instance fields
-.field private final a:Ljava/util/concurrent/Executor;
-
-.field private final b:Ljava/lang/Object;
-
-.field private c:Ldn;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ldn<",
-            "-TTResult;>;"
-        }
+.field private a:Ljava/lang/String;
+    .annotation runtime Ltr;
+        a = "aid"
     .end annotation
+.end field
 
-    .annotation build Ljavax/annotation/concurrent/GuardedBy;
-        value = "mLock"
+.field private b:I
+    .annotation runtime Ltr;
+        a = "limit_ad_tracking"
+    .end annotation
+.end field
+
+.field private c:Ljava/lang/String;
+    .annotation runtime Ltr;
+        a = "country_code"
+    .end annotation
+.end field
+
+.field private d:Ljava/lang/String;
+    .annotation runtime Ltr;
+        a = "dev_brand"
+    .end annotation
+.end field
+
+.field private e:Ljava/lang/String;
+    .annotation runtime Ltr;
+        a = "dev_model"
+    .end annotation
+.end field
+
+.field private f:Ljava/lang/String;
+    .annotation runtime Ltr;
+        a = "dev_carrier"
+    .end annotation
+.end field
+
+.field private g:Ljava/lang/String;
+    .annotation runtime Ltr;
+        a = "lang"
+    .end annotation
+.end field
+
+.field private h:I
+    .annotation runtime Ltr;
+        a = "os_ver"
+    .end annotation
+.end field
+
+.field private i:J
+    .annotation runtime Ltr;
+        a = "ts"
+    .end annotation
+.end field
+
+.field private j:Ljava/lang/String;
+    .annotation runtime Ltr;
+        a = "os_name"
+    .end annotation
+.end field
+
+.field private k:Ljava/lang/String;
+    .annotation runtime Ltr;
+        a = "action"
+    .end annotation
+.end field
+
+.field private l:Ljava/lang/String;
+    .annotation runtime Ltr;
+        a = "referrer"
+    .end annotation
+.end field
+
+.field private m:Ljava/lang/String;
+    .annotation runtime Ltr;
+        a = "ref"
+    .end annotation
+.end field
+
+.field private n:Ljava/lang/String;
+    .annotation runtime Ltr;
+        a = "mat_click_id"
     .end annotation
 .end field
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;Ldn;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/concurrent/Executor;",
-            "Ldn<",
-            "-TTResult;>;)V"
-        }
-    .end annotation
+.method private constructor <init>()V
+    .locals 0
 
-    .line 1
+    .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lun;->b:Ljava/lang/Object;
-
-    .line 3
-    iput-object p1, p0, Lun;->a:Ljava/util/concurrent/Executor;
-
-    .line 4
-    iput-object p2, p0, Lun;->c:Ldn;
 
     return-void
 .end method
 
-.method static synthetic a(Lun;)Ljava/lang/Object;
-    .locals 0
+.method public static a()Lun;
+    .locals 1
 
-    .line 8
-    iget-object p0, p0, Lun;->b:Ljava/lang/Object;
+    .line 56
+    new-instance v0, Lun;
 
-    return-object p0
-.end method
+    invoke-direct {v0}, Lun;-><init>()V
 
-.method static synthetic b(Lun;)Ldn;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lun;->c:Ldn;
-
-    return-object p0
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Lgn;)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lgn<",
-            "TTResult;>;)V"
-        }
-    .end annotation
+.method public a(I)Lun;
+    .locals 0
 
-    .line 1
-    invoke-virtual {p1}, Lgn;->e()Z
+    .line 103
+    iput p1, p0, Lun;->h:I
 
-    move-result v0
+    return-object p0
+.end method
 
-    if-eqz v0, :cond_1
+.method public a(J)Lun;
+    .locals 0
 
-    .line 2
-    iget-object v0, p0, Lun;->b:Ljava/lang/Object;
+    .line 109
+    iput-wide p1, p0, Lun;->i:J
 
-    monitor-enter v0
+    return-object p0
+.end method
 
-    .line 3
-    :try_start_0
-    iget-object v1, p0, Lun;->c:Ldn;
+.method public a(Ljava/lang/String;)Lun;
+    .locals 0
 
-    if-nez v1, :cond_0
+    .line 61
+    iput-object p1, p0, Lun;->a:Ljava/lang/String;
 
-    .line 4
-    monitor-exit v0
+    return-object p0
+.end method
 
-    return-void
+.method public a(Z)Lun;
+    .locals 0
 
-    .line 5
-    :cond_0
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .line 67
+    iput p1, p0, Lun;->b:I
 
-    .line 6
-    iget-object v0, p0, Lun;->a:Ljava/util/concurrent/Executor;
+    return-object p0
+.end method
 
-    new-instance v1, Lvn;
+.method public b(Ljava/lang/String;)Lun;
+    .locals 0
 
-    invoke-direct {v1, p0, p1}, Lvn;-><init>(Lun;Lgn;)V
+    .line 73
+    iput-object p1, p0, Lun;->c:Ljava/lang/String;
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    return-object p0
+.end method
 
-    goto :goto_0
+.method public c(Ljava/lang/String;)Lun;
+    .locals 0
 
-    :catchall_0
-    move-exception p1
+    .line 79
+    iput-object p1, p0, Lun;->d:Ljava/lang/String;
 
-    .line 7
-    :try_start_1
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    return-object p0
+.end method
 
-    throw p1
+.method public d(Ljava/lang/String;)Lun;
+    .locals 0
 
-    :cond_1
-    :goto_0
-    return-void
+    .line 85
+    iput-object p1, p0, Lun;->e:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public e(Ljava/lang/String;)Lun;
+    .locals 0
+
+    .line 91
+    iput-object p1, p0, Lun;->f:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public f(Ljava/lang/String;)Lun;
+    .locals 0
+
+    .line 97
+    iput-object p1, p0, Lun;->g:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public g(Ljava/lang/String;)Lun;
+    .locals 0
+
+    .line 115
+    iput-object p1, p0, Lun;->j:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public h(Ljava/lang/String;)Lun;
+    .locals 0
+
+    .line 121
+    iput-object p1, p0, Lun;->k:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public i(Ljava/lang/String;)Lun;
+    .locals 0
+
+    .line 127
+    iput-object p1, p0, Lun;->l:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public j(Ljava/lang/String;)Lun;
+    .locals 0
+
+    .line 133
+    iput-object p1, p0, Lun;->m:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public k(Ljava/lang/String;)Lun;
+    .locals 0
+
+    .line 139
+    iput-object p1, p0, Lun;->n:Ljava/lang/String;
+
+    return-object p0
 .end method

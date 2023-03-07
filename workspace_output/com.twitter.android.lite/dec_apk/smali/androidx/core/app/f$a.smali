@@ -9,14 +9,14 @@ accessFlags = 0x9
 name = "a"
 .end annotation
 .field final a:Landroid/os/Bundle;
-.field private final b:[Landroidx/core/app/j;
-.field private final c:[Landroidx/core/app/j;
-.field private d:Z
-.field  e:Z
-.field private final f:I
-.field public g:I
-.field public h:Ljava/lang/CharSequence;
-.field public i:Landroid/app/PendingIntent;
+.field  b:Z
+.field public c:I
+.field public d:Ljava/lang/CharSequence;
+.field public e:Landroid/app/PendingIntent;
+.field private final f:[Landroidx/core/app/j;
+.field private final g:[Landroidx/core/app/j;
+.field private h:Z
+.field private final i:I
 .method public constructor <init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 .locals 10
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -27,17 +27,17 @@ return-void
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public a()Landroid/app/PendingIntent;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public b()Z
+.method public a()I
 .locals 1
 const/4 v0, 0x0
 return v0
 .end method
-.method public c()[Landroidx/core/app/j;
+.method public b()Ljava/lang/CharSequence;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public c()Landroid/app/PendingIntent;
 .locals 1
 const/4 v0, 0x0
 return-object v0
@@ -47,7 +47,7 @@ return-object v0
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public e()I
+.method public e()Z
 .locals 1
 const/4 v0, 0x0
 return v0
@@ -62,13 +62,13 @@ return-object v0
 const/4 v0, 0x0
 return v0
 .end method
-.method public h()Z
-.locals 1
-const/4 v0, 0x0
-return v0
-.end method
-.method public i()Ljava/lang/CharSequence;
+.method public h()[Landroidx/core/app/j;
 .locals 1
 const/4 v0, 0x0
 return-object v0
+.end method
+.method public i()Z
+.locals 1
+const/4 v0, 0x0
+return v0
 .end method

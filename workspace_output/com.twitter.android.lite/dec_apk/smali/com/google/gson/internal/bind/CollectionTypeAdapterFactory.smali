@@ -1,7 +1,7 @@
 .class public final Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory;
 .super Ljava/lang/Object;
 .source "CollectionTypeAdapterFactory.java"
-.implements Lwv;
+.implements Lto;
 .annotation system Ldalvik/annotation/MemberClasses;
 value = {
 Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;
@@ -14,23 +14,23 @@ invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 iput-object p1, p0, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory;->a:Lcom/google/gson/internal/c;
 return-void
 .end method
-.method public a(Lfv;Ldw;)Lvv;
+.method public a(Lsx;Ltv;)Ltn;
 .locals 3
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "<T:",
 "Ljava/lang/Object;",
 ">(",
-"Lfv;",
-"Ldw<",
+"Lsx;",
+"Ltv<",
 "TT;>;)",
-"Lvv<",
+"Ltn<",
 "TT;>;"
 }
 .end annotation
-invoke-virtual {p2}, Ldw;->b()Ljava/lang/reflect/Type;
+invoke-virtual {p2}, Ltv;->b()Ljava/lang/reflect/Type;
 move-result-object v0
-invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;
+invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;
 move-result-object v1
 const-class v2, Ljava/util/Collection;
 invoke-virtual {v2, v1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z

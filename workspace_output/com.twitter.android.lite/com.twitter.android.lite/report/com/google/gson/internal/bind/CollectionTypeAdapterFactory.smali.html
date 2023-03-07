@@ -17,7 +17,7 @@
 		<code>.class public final Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory;
 .super Ljava/lang/Object;
 .source "CollectionTypeAdapterFactory.java"
-.implements Lwv;
+.implements Lto;
 
 .annotation system Ldalvik/annotation/MemberClasses;
 value = {
@@ -36,24 +36,24 @@ Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public a(Lfv;Ldw;)Lvv;</span>
+<span class="cov">.method public a(Lsx;Ltv;)Ltn;</span>
 <span class="">	.locals 3</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
 <span class="">	"<T:",</span>
 <span class="">	"Ljava/lang/Object;",</span>
 <span class="">	">(",</span>
-<span class="">	"Lfv;",</span>
-<span class="">	"Ldw<",</span>
+<span class="">	"Lsx;",</span>
+<span class="">	"Ltv<",</span>
 <span class="">	"TT;>;)",</span>
-<span class="">	"Lvv<",</span>
+<span class="">	"Ltn<",</span>
 <span class="">	"TT;>;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="exec">	invoke-virtual {p2}, Ldw;->b()Ljava/lang/reflect/Type;</span>
+<span class="exec">	invoke-virtual {p2}, Ltv;->b()Ljava/lang/reflect/Type;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;</span>
+<span class="exec">	invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;</span>
 <span class="cov">	move-result-object v1</span>
 <span class="cov">	const-class v2, Ljava/util/Collection;</span>
 <span class="exec">	invoke-virtual {v2, v1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z</span>
@@ -64,15 +64,15 @@ Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;
 <span class="">	:cond_0</span>
 <span class="">	invoke-static {v0, v1}, Lcom/google/gson/internal/b;->a(Ljava/lang/reflect/Type;Ljava/lang/Class;)Ljava/lang/reflect/Type;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	invoke-static {v0}, Ldw;->a(Ljava/lang/reflect/Type;)Ldw;</span>
+<span class="">	invoke-static {v0}, Ltv;->a(Ljava/lang/reflect/Type;)Ltv;</span>
 <span class="missed">	move-result-object v1</span>
-<span class="">	invoke-virtual {p1, v1}, Lfv;->a(Ldw;)Lvv;</span>
+<span class="">	invoke-virtual {p1, v1}, Lsx;->a(Ltv;)Ltn;</span>
 <span class="missed">	move-result-object v1</span>
 <span class="missed">	iget-object v2, p0, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory;->a:Lcom/google/gson/internal/c;</span>
-<span class="">	invoke-virtual {v2, p2}, Lcom/google/gson/internal/c;->a(Ldw;)Lcom/google/gson/internal/g;</span>
+<span class="">	invoke-virtual {v2, p2}, Lcom/google/gson/internal/c;->a(Ltv;)Lcom/google/gson/internal/g;</span>
 <span class="missed">	move-result-object p2</span>
 <span class="missed">	new-instance v2, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;</span>
-<span class="missed">	invoke-direct {v2, p1, v0, v1, p2}, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;-><init>(Lfv;Ljava/lang/reflect/Type;Lvv;Lcom/google/gson/internal/g;)V</span>
+<span class="missed">	invoke-direct {v2, p1, v0, v1, p2}, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;-><init>(Lsx;Ljava/lang/reflect/Type;Ltn;Lcom/google/gson/internal/g;)V</span>
 <span class="">	return-object v2</span>
 .end method</code>
 	</pre>

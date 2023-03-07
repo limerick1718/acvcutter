@@ -25,7 +25,7 @@ return-wide v0
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public source()Lgx;
+.method public source()Lyu;
 .locals 2
 const/4 v0, 0x0
 return-object v0

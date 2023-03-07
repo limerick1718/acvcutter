@@ -1,5 +1,5 @@
 .class  Lokhttp3/internal/connection/Transmitter$1;
-.super Lcx;
+.super Lyq;
 .source "Transmitter.java"
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lokhttp3/internal/connection/Transmitter;
@@ -11,8 +11,7 @@ name = null
 .field final synthetic this$0:Lokhttp3/internal/connection/Transmitter;
 .method constructor <init>(Lokhttp3/internal/connection/Transmitter;)V
 .locals 0
-iput-object p1, p0, Lokhttp3/internal/connection/Transmitter$1;->this$0:Lokhttp3/internal/connection/Transmitter;
-invoke-direct {p0}, Lcx;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method protected timedOut()V

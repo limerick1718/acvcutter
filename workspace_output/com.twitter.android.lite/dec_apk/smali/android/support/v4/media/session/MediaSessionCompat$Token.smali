@@ -20,6 +20,7 @@ value = {
 .end field
 .field private final a:Ljava/lang/Object;
 .field private b:Landroid/support/v4/media/session/b;
+.field private c:Landroid/os/Bundle;
 .method constructor <init>(Ljava/lang/Object;)V
 .locals 1
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

@@ -14,185 +14,156 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public Lpw;
-.super Ljava/lang/Object;
-.source "BrowserUtils.java"
+		<code>.class final Lpw;
+.super Ljavax/net/ssl/SSLSocketFactory;
 
 
-.field static final a:Ljava/util/regex/Pattern;
-.field private static b:Ljava/lang/Boolean;
+.field private final a:Ljavax/net/ssl/SSLSocketFactory;
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+.method constructor &lt;init&gt;()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	const-string v0, "^.*Chrome\\/(\\d+).*$"</span>
-<span class="exec">	invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	sput-object v0, Lpw;->a:Ljava/util/regex/Pattern;</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method private static a(Ljava/lang/String;)I</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	sget-object v0, Lpw;->a:Ljava/util/regex/Pattern;</span>
-<span class="exec">	invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	const/4 v0, 0x1</span>
-<span class="exec">	invoke-virtual {p0, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	invoke-static {p0}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	return p0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 p0, 0x0</span>
-<span class="">	return p0</span>
-.end method
-
-.method public static a(Landroid/app/Activity;Landroid/net/Uri;)V
-<span class="">	.locals 4</span>
-
-<span class="">	invoke-static {p0}, Lpw;->a(Landroid/content/Context;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	const/high16 v1, 0x40000000    # 2.0f</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	new-instance v0, Li$a;</span>
-<span class="missed">	invoke-direct {v0}, Li$a;-><init>()V</span>
-<span class="">	invoke-virtual {p0}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;</span>
-<span class="missed">	move-result-object v2</span>
-<span class="missed">	const v3, 0x7f020017</span>
-<span class="">	invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I</span>
-<span class="missed">	move-result v2</span>
-<span class="missed">	invoke-virtual {v0, v2}, Li$a;->a(I)Li$a;</span>
-<span class="missed">	const/4 v2, 0x1</span>
-<span class="missed">	invoke-virtual {v0, v2}, Li$a;->a(Z)Li$a;</span>
-<span class="">	invoke-virtual {v0}, Li$a;->a()Li;</span>
+<span class="">	invoke-static {}, Ljavax/net/ssl/HttpsURLConnection;->getDefaultSSLSocketFactory()Ljavax/net/ssl/SSLSocketFactory;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	iget-object v3, v0, Li;->a:Landroid/content/Intent;</span>
-<span class="missed">	invoke-virtual {v3, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;</span>
-<span class="missed">	iget-object v1, v0, Li;->a:Landroid/content/Intent;</span>
-<span class="missed">	const-string v3, "android.support.customtabs.extra.SEND_TO_EXTERNAL_HANDLER"</span>
-<span class="missed">	invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;</span>
-<span class="missed">	invoke-virtual {v0, p0, p1}, Li;->a(Landroid/content/Context;Landroid/net/Uri;)V</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-instance v0, Landroid/content/Intent;</span>
-<span class="missed">	const-string v2, "android.intent.action.VIEW"</span>
-<span class="missed">	invoke-direct {v0, v2, p1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V</span>
-<span class="">	invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;</span>
+<span class="missed">	invoke-direct {p0, v0}, Lpw;-><init>(Ljavax/net/ssl/SSLSocketFactory;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method private constructor &lt;init&gt;(Ljavax/net/ssl/SSLSocketFactory;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Ljavax/net/ssl/SSLSocketFactory;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Lpw;->a:Ljavax/net/ssl/SSLSocketFactory;</span>
+<span class="">	return-void</span>
+.end method
+
+.method private final a(Ljavax/net/ssl/SSLSocket;)Ljavax/net/ssl/SSLSocket;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lpy;</span>
+<span class="missed">	invoke-direct {v0, p0, p1}, Lpy;-><init>(Lpw;Ljavax/net/ssl/SSLSocket;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final createSocket()Ljava/net/Socket;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lpw;->a:Ljavax/net/ssl/SSLSocketFactory;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocketFactory;->createSocket()Ljava/net/Socket;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-direct {p0, v0}, Lpw;->a(Ljavax/net/ssl/SSLSocket;)Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final createSocket(Ljava/lang/String;I)Ljava/net/Socket;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lpw;->a:Ljavax/net/ssl/SSLSocketFactory;</span>
+<span class="">	invoke-virtual {v0, p1, p2}, Ljavax/net/ssl/SSLSocketFactory;->createSocket(Ljava/lang/String;I)Ljava/net/Socket;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="missed">	invoke-virtual {p0, p1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V</span>
-<span class="">	:goto_0</span>
-<span class="">	return-void</span>
+<span class="missed">	check-cast p1, Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-direct {p0, p1}, Lpw;->a(Ljavax/net/ssl/SSLSocket;)Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
 .end method
 
-.method public static a(Landroid/content/Context;)Z
-<span class="">	.locals 2</span>
+.method public final createSocket(Ljava/lang/String;ILjava/net/InetAddress;I)Ljava/net/Socket;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="missed">	sget-object v0, Lpw;->b:Ljava/lang/Boolean;</span>
-<span class="missed">	if-nez v0, :cond_1</span>
-<span class="missed">	new-instance v0, Landroid/content/Intent;</span>
-<span class="missed">	const-string v1, "android.support.customtabs.action.CustomTabsService"</span>
-<span class="missed">	invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V</span>
-<span class="missed">	const-string v1, "com.android.chrome"</span>
-<span class="missed">	invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;</span>
-<span class="">	invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="">	invoke-virtual {p0, v0, v1}, Landroid/content/pm/PackageManager;->queryIntentServices(Landroid/content/Intent;I)Ljava/util/List;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	if-eqz p0, :cond_0</span>
-<span class="">	invoke-interface {p0}, Ljava/util/List;->isEmpty()Z</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	if-nez p0, :cond_0</span>
-<span class="missed">	const/4 v1, 0x1</span>
-<span class="">	:cond_0</span>
-<span class="">	invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	sput-object p0, Lpw;->b:Ljava/lang/Boolean;</span>
-<span class="">	:cond_1</span>
-<span class="missed">	sget-object p0, Lpw;->b:Ljava/lang/Boolean;</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z</span>
-<span class="missed">	move-result p0</span>
-<span class="">	return p0</span>
+<span class="missed">	iget-object v0, p0, Lpw;->a:Ljavax/net/ssl/SSLSocketFactory;</span>
+<span class="">	invoke-virtual {v0, p1, p2, p3, p4}, Ljavax/net/ssl/SSLSocketFactory;->createSocket(Ljava/lang/String;ILjava/net/InetAddress;I)Ljava/net/Socket;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-direct {p0, p1}, Lpw;->a(Ljavax/net/ssl/SSLSocket;)Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
 .end method
 
-.method public static a(Landroid/net/Uri;)Z
+.method public final createSocket(Ljava/net/InetAddress;I)Ljava/net/Socket;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lpw;->a:Ljavax/net/ssl/SSLSocketFactory;</span>
+<span class="">	invoke-virtual {v0, p1, p2}, Ljavax/net/ssl/SSLSocketFactory;->createSocket(Ljava/net/InetAddress;I)Ljava/net/Socket;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-direct {p0, p1}, Lpw;->a(Ljavax/net/ssl/SSLSocket;)Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public final createSocket(Ljava/net/InetAddress;ILjava/net/InetAddress;I)Ljava/net/Socket;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lpw;->a:Ljavax/net/ssl/SSLSocketFactory;</span>
+<span class="">	invoke-virtual {v0, p1, p2, p3, p4}, Ljavax/net/ssl/SSLSocketFactory;->createSocket(Ljava/net/InetAddress;ILjava/net/InetAddress;I)Ljava/net/Socket;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-direct {p0, p1}, Lpw;->a(Ljavax/net/ssl/SSLSocket;)Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public final createSocket(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lpw;->a:Ljavax/net/ssl/SSLSocketFactory;</span>
+<span class="">	invoke-virtual {v0, p1, p2, p3, p4}, Ljavax/net/ssl/SSLSocketFactory;->createSocket(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Ljavax/net/ssl/SSLSocket;</span>
+<span class="">	invoke-direct {p0, p1}, Lpw;->a(Ljavax/net/ssl/SSLSocket;)Ljavax/net/ssl/SSLSocket;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public final getDefaultCipherSuites()[Ljava/lang/String;
 <span class="">	.locals 1</span>
 
-<span class="">	invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	const-string v0, "http"</span>
-<span class="">	invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-nez v0, :cond_1</span>
-<span class="missed">	const-string v0, "https"</span>
-<span class="">	invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	if-eqz p0, :cond_0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 p0, 0x0</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:cond_1</span>
-<span class="">	:goto_0</span>
-<span class="missed">	const/4 p0, 0x1</span>
-<span class="">	:goto_1</span>
-<span class="">	return p0</span>
+<span class="missed">	iget-object v0, p0, Lpw;->a:Ljavax/net/ssl/SSLSocketFactory;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocketFactory;->getDefaultCipherSuites()[Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
 .end method
 
-.method public static b(Landroid/content/Context;)V
-<span class="">	.locals 2</span>
-
-<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="missed">	const/16 v1, 0x18</span>
-<span class="missed">	if-ge v0, v1, :cond_0</span>
-<span class="missed">	const-string v0, "com.google.android.webview"</span>
-<span class="missed">	invoke-static {p0, v0}, Ltw;->a(Landroid/content/Context;Ljava/lang/String;)V</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const-string v0, "com.android.chrome"</span>
-<span class="missed">	invoke-static {p0, v0}, Ltw;->a(Landroid/content/Context;Ljava/lang/String;)V</span>
-<span class="">	:goto_0</span>
-<span class="">	return-void</span>
-.end method
-
-.method public static b(Landroid/net/Uri;)Z
+.method public final getSupportedCipherSuites()[Ljava/lang/String;
 <span class="">	.locals 1</span>
 
-<span class="">	invoke-static {p0}, Lvw;->b(Landroid/net/Uri;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="">	invoke-static {p0}, Lpw;->a(Landroid/net/Uri;)Z</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	if-eqz p0, :cond_0</span>
-<span class="missed">	const/4 p0, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 p0, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="">	return p0</span>
-.end method
-
-<span class="cov">.method public static b(Ljava/lang/String;)Z</span>
-<span class="">	.locals 1</span>
-
-<span class="exec">	invoke-static {p0}, Lpw;->a(Ljava/lang/String;)I</span>
-<span class="cov">	move-result p0</span>
-<span class="cov">	const/16 v0, 0x26</span>
-<span class="missed">	if-ge p0, v0, :cond_0</span>
-<span class="missed">	const/4 p0, 0x1</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 p0, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return p0</span>
+<span class="missed">	iget-object v0, p0, Lpw;->a:Ljavax/net/ssl/SSLSocketFactory;</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLSocketFactory;->getSupportedCipherSuites()[Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

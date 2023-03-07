@@ -2,13 +2,13 @@
 .super Ljava/lang/Object;
 .source "PushTokenInfo.java"
 .field public final clientAppId:I
-.annotation runtime Lzv;
-value = "client_application_id"
+.annotation runtime Ltr;
+a = "client_application_id"
 .end annotation
 .end field
 .field public final pushDeviceInfo:Lcom/twitter/android/lite/model/PushDeviceInfo;
-.annotation runtime Lzv;
-value = "push_device_info"
+.annotation runtime Ltr;
+a = "push_device_info"
 .end annotation
 .end field
 .method public constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V

@@ -54,7 +54,8 @@
 <span class="missed">	iput-object p1, p0, Landroidx/versionedparcelable/b;->b:Landroid/os/Parcel;</span>
 <span class="missed">	iput p2, p0, Landroidx/versionedparcelable/b;->c:I</span>
 <span class="missed">	iput p3, p0, Landroidx/versionedparcelable/b;->d:I</span>
-<span class="missed">	iput p2, p0, Landroidx/versionedparcelable/b;->g:I</span>
+<span class="missed">	iget p1, p0, Landroidx/versionedparcelable/b;->c:I</span>
+<span class="missed">	iput p1, p0, Landroidx/versionedparcelable/b;->g:I</span>
 <span class="missed">	iput-object p4, p0, Landroidx/versionedparcelable/b;->e:Ljava/lang/String;</span>
 <span class="">	return-void</span>
 .end method
@@ -87,25 +88,11 @@
 <span class="">	return p1</span>
 .end method
 
-.method public a()V
-<span class="">	.locals 4</span>
+.method public a(I)V
+<span class="">	.locals 1</span>
 
-<span class="missed">	iget v0, p0, Landroidx/versionedparcelable/b;->f:I</span>
-<span class="missed">	if-ltz v0, :cond_0</span>
-<span class="missed">	iget-object v1, p0, Landroidx/versionedparcelable/b;->a:Landroid/util/SparseIntArray;</span>
-<span class="">	invoke-virtual {v1, v0}, Landroid/util/SparseIntArray;->get(I)I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	iget-object v1, p0, Landroidx/versionedparcelable/b;->b:Landroid/os/Parcel;</span>
-<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->dataPosition()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	sub-int v2, v1, v0</span>
-<span class="missed">	iget-object v3, p0, Landroidx/versionedparcelable/b;->b:Landroid/os/Parcel;</span>
-<span class="missed">	invoke-virtual {v3, v0}, Landroid/os/Parcel;->setDataPosition(I)V</span>
 <span class="missed">	iget-object v0, p0, Landroidx/versionedparcelable/b;->b:Landroid/os/Parcel;</span>
-<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
-<span class="missed">	iget-object v0, p0, Landroidx/versionedparcelable/b;->b:Landroid/os/Parcel;</span>
-<span class="missed">	invoke-virtual {v0, v1}, Landroid/os/Parcel;->setDataPosition(I)V</span>
-<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V</span>
 <span class="">	return-void</span>
 .end method
 
@@ -144,7 +131,29 @@
 <span class="">	return-void</span>
 .end method
 
-.method public a(I)Z
+.method public b()V
+<span class="">	.locals 4</span>
+
+<span class="missed">	iget v0, p0, Landroidx/versionedparcelable/b;->f:I</span>
+<span class="missed">	if-ltz v0, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/versionedparcelable/b;->a:Landroid/util/SparseIntArray;</span>
+<span class="">	invoke-virtual {v1, v0}, Landroid/util/SparseIntArray;->get(I)I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/versionedparcelable/b;->b:Landroid/os/Parcel;</span>
+<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->dataPosition()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	sub-int v2, v1, v0</span>
+<span class="missed">	iget-object v3, p0, Landroidx/versionedparcelable/b;->b:Landroid/os/Parcel;</span>
+<span class="missed">	invoke-virtual {v3, v0}, Landroid/os/Parcel;->setDataPosition(I)V</span>
+<span class="missed">	iget-object v0, p0, Landroidx/versionedparcelable/b;->b:Landroid/os/Parcel;</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget-object v0, p0, Landroidx/versionedparcelable/b;->b:Landroid/os/Parcel;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Landroid/os/Parcel;->setDataPosition(I)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public b(I)Z
 <span class="">	.locals 1</span>
 
 <span class="">	invoke-direct {p0, p1}, Landroidx/versionedparcelable/b;->d(I)I</span>
@@ -160,7 +169,7 @@
 <span class="">	return p1</span>
 .end method
 
-.method protected b()Landroidx/versionedparcelable/a;
+.method protected c()Landroidx/versionedparcelable/a;
 <span class="">	.locals 6</span>
 
 <span class="missed">	new-instance v0, Landroidx/versionedparcelable/b;</span>
@@ -184,10 +193,10 @@
 <span class="">	return-object v0</span>
 .end method
 
-.method public b(I)V
+.method public c(I)V
 <span class="">	.locals 2</span>
 
-<span class="missed">	invoke-virtual {p0}, Landroidx/versionedparcelable/b;->a()V</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/versionedparcelable/b;->b()V</span>
 <span class="missed">	iput p1, p0, Landroidx/versionedparcelable/b;->f:I</span>
 <span class="missed">	iget-object v0, p0, Landroidx/versionedparcelable/b;->a:Landroid/util/SparseIntArray;</span>
 <span class="missed">	iget-object v1, p0, Landroidx/versionedparcelable/b;->b:Landroid/os/Parcel;</span>
@@ -195,20 +204,30 @@
 <span class="missed">	move-result v1</span>
 <span class="missed">	invoke-virtual {v0, p1, v1}, Landroid/util/SparseIntArray;->put(II)V</span>
 <span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	invoke-virtual {p0, v0}, Landroidx/versionedparcelable/b;->c(I)V</span>
-<span class="missed">	invoke-virtual {p0, p1}, Landroidx/versionedparcelable/b;->c(I)V</span>
+<span class="missed">	invoke-virtual {p0, v0}, Landroidx/versionedparcelable/b;->a(I)V</span>
+<span class="missed">	invoke-virtual {p0, p1}, Landroidx/versionedparcelable/b;->a(I)V</span>
 <span class="">	return-void</span>
 .end method
 
-.method public c(I)V
+.method public d()I
 <span class="">	.locals 1</span>
 
 <span class="missed">	iget-object v0, p0, Landroidx/versionedparcelable/b;->b:Landroid/os/Parcel;</span>
-<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V</span>
-<span class="">	return-void</span>
+<span class="">	invoke-virtual {v0}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
 .end method
 
-.method public d()[B
+.method public e()Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/versionedparcelable/b;->b:Landroid/os/Parcel;</span>
+<span class="">	invoke-virtual {v0}, Landroid/os/Parcel;->readString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public f()[B
 <span class="">	.locals 2</span>
 
 <span class="missed">	iget-object v0, p0, Landroidx/versionedparcelable/b;->b:Landroid/os/Parcel;</span>
@@ -224,16 +243,7 @@
 <span class="">	return-object v0</span>
 .end method
 
-.method public e()I
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Landroidx/versionedparcelable/b;->b:Landroid/os/Parcel;</span>
-<span class="">	invoke-virtual {v0}, Landroid/os/Parcel;->readInt()I</span>
-<span class="missed">	move-result v0</span>
-<span class="">	return v0</span>
-.end method
-
-.method public f()Landroid/os/Parcelable;
+.method public g()Landroid/os/Parcelable;
 <span class="">	.locals 2</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -244,19 +254,11 @@
 <span class="">	.end annotation</span>
 
 <span class="missed">	iget-object v0, p0, Landroidx/versionedparcelable/b;->b:Landroid/os/Parcel;</span>
-<span class="missed">	const-class v1, Landroidx/versionedparcelable/b;</span>
+<span class="">	invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v1</span>
 <span class="">	invoke-virtual {v1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;</span>
 <span class="missed">	move-result-object v1</span>
 <span class="">	invoke-virtual {v0, v1}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public g()Ljava/lang/String;
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Landroidx/versionedparcelable/b;->b:Landroid/os/Parcel;</span>
-<span class="">	invoke-virtual {v0}, Landroid/os/Parcel;->readString()Ljava/lang/String;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="">	return-object v0</span>
 .end method</code>

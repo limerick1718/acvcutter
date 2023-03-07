@@ -14,1483 +14,260 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public Les;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+		<code>.class abstract Les;
+.super Ljava/util/AbstractList;
+.implements Lgn;
+
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<E:",
+"Ljava/lang/Object;",
+">",
+"Ljava/util/AbstractList<",
+"TE;>;",
+"Lgn<",
+"TE;>;"
+}
+.end annotation
+
+.field private a:Z
 
 
-.field private static final a:Lbs;
-.field private static final b:Lbs;
-
-
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+.method constructor &lt;init&gt;()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	const-string v0, "0"</span>
-<span class="exec">	invoke-static {v0}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	sput-object v0, Les;->a:Lbs;</span>
-<span class="cov">	const-string v0, "Unity"</span>
-<span class="exec">	invoke-static {v0}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	sput-object v0, Les;->b:Lbs;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	iput-boolean v0, p0, Les;->a:Z</span>
+<span class="">	return-void</span>
 .end method
 
-.method private static a()I
-<span class="">	.locals 4</span>
+.method public a()Z
+<span class="">	.locals 1</span>
 
-<span class="missed">	sget-object v0, Les;->a:Lbs;</span>
-<span class="missed">	const/4 v1, 0x1</span>
-<span class="">	invoke-static {v1, v0}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	add-int/lit8 v0, v0, 0x0</span>
-<span class="missed">	sget-object v1, Les;->a:Lbs;</span>
-<span class="missed">	const/4 v2, 0x2</span>
-<span class="">	invoke-static {v2, v1}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	add-int/2addr v0, v1</span>
-<span class="missed">	const/4 v1, 0x3</span>
-<span class="missed">	const-wide/16 v2, 0x0</span>
-<span class="">	invoke-static {v1, v2, v3}, Lds;->b(IJ)I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	add-int/2addr v0, v1</span>
+<span class="missed">	iget-boolean v0, p0, Les;->a:Z</span>
 <span class="">	return v0</span>
 .end method
 
-<span class="cov">.method private static a(ILbs;IJJZILbs;Lbs;)I</span>
-<span class="">	.locals 2</span>
-
-<span class="cov">	const/4 v0, 0x3</span>
-<span class="exec">	invoke-static {v0, p0}, Lds;->e(II)I</span>
-<span class="cov">	move-result p0</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	add-int/2addr p0, v0</span>
-<span class="missed">	if-nez p1, :cond_0</span>
-<span class="missed">	const/4 p1, 0x0</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 v1, 0x4</span>
-<span class="exec">	invoke-static {v1, p1}, Lds;->b(ILbs;)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	add-int/2addr p0, p1</span>
-<span class="cov">	const/4 p1, 0x5</span>
-<span class="exec">	invoke-static {p1, p2}, Lds;->g(II)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	add-int/2addr p0, p1</span>
-<span class="cov">	const/4 p1, 0x6</span>
-<span class="exec">	invoke-static {p1, p3, p4}, Lds;->b(IJ)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	add-int/2addr p0, p1</span>
-<span class="cov">	const/4 p1, 0x7</span>
-<span class="exec">	invoke-static {p1, p5, p6}, Lds;->b(IJ)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	add-int/2addr p0, p1</span>
-<span class="cov">	const/16 p1, 0xa</span>
-<span class="exec">	invoke-static {p1, p7}, Lds;->b(IZ)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	add-int/2addr p0, p1</span>
-<span class="cov">	const/16 p1, 0xc</span>
-<span class="exec">	invoke-static {p1, p8}, Lds;->g(II)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	add-int/2addr p0, p1</span>
-<span class="missed">	if-nez p9, :cond_1</span>
-<span class="missed">	const/4 p1, 0x0</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	const/16 p1, 0xd</span>
-<span class="exec">	invoke-static {p1, p9}, Lds;->b(ILbs;)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	add-int/2addr p0, p1</span>
-<span class="missed">	if-nez p10, :cond_2</span>
-<span class="exec">	goto :goto_2</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	const/16 p1, 0xe</span>
-<span class="exec">	invoke-static {p1, p10}, Lds;->b(ILbs;)I</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	:goto_2</span>
-<span class="cov">	add-int/2addr p0, v0</span>
-<span class="exec">	return p0</span>
-.end method
-
-.method private static a(JLjava/lang/String;Lrt;Ljava/lang/Thread;[Ljava/lang/StackTraceElement;[Ljava/lang/Thread;Ljava/util/List;ILjava/util/Map;Landroid/app/ActivityManager$RunningAppProcessInfo;ILbs;Lbs;Ljava/lang/Float;IZJJLbs;)I
-<span class="">	.locals 12</span>
+.method public add(ILjava/lang/Object;)V
+<span class="">	.locals 0</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	"(J",</span>
-<span class="">	"Ljava/lang/String;",</span>
-<span class="">	"Lrt;",</span>
-<span class="">	"Ljava/lang/Thread;",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/StackTraceElement;",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/Thread;",</span>
-<span class="">	"Ljava/util/List<",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/StackTraceElement;",</span>
-<span class="">	">;I",</span>
-<span class="">	"Ljava/util/Map<",</span>
-<span class="">	"Ljava/lang/String;",</span>
-<span class="">	"Ljava/lang/String;",</span>
-<span class="">	">;",</span>
-<span class="">	"Landroid/app/ActivityManager$RunningAppProcessInfo;",</span>
-<span class="">	"I",</span>
-<span class="">	"Lbs;",</span>
-<span class="">	"Lbs;",</span>
-<span class="">	"Ljava/lang/Float;",</span>
-<span class="">	"IZJJ",</span>
-<span class="">	"Lbs;",</span>
-<span class="">	")I"</span>
+<span class="">	"(ITE;)V"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	move-wide v1, p0</span>
-<span class="">	invoke-static {v0, p0, p1}, Lds;->b(IJ)I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	add-int/lit8 v0, v0, 0x0</span>
-<span class="">	invoke-static {p2}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	const/4 v2, 0x2</span>
-<span class="">	invoke-static {v2, v1}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	add-int/2addr v0, v1</span>
-<span class="missed">	move-object v1, p3</span>
-<span class="missed">	move-object/from16 v2, p4</span>
-<span class="missed">	move-object/from16 v3, p5</span>
-<span class="missed">	move-object/from16 v4, p6</span>
-<span class="missed">	move-object/from16 v5, p7</span>
-<span class="missed">	move/from16 v6, p8</span>
-<span class="missed">	move-object/from16 v7, p12</span>
-<span class="missed">	move-object/from16 v8, p13</span>
-<span class="missed">	move-object/from16 v9, p9</span>
-<span class="missed">	move-object/from16 v10, p10</span>
-<span class="missed">	move/from16 v11, p11</span>
-<span class="">	invoke-static/range {v1 .. v11}, Les;->a(Lrt;Ljava/lang/Thread;[Ljava/lang/StackTraceElement;[Ljava/lang/Thread;Ljava/util/List;ILbs;Lbs;Ljava/util/Map;Landroid/app/ActivityManager$RunningAppProcessInfo;I)I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/4 v2, 0x3</span>
-<span class="">	invoke-static {v2}, Lds;->l(I)I</span>
-<span class="missed">	move-result v2</span>
-<span class="">	invoke-static {v1}, Lds;->j(I)I</span>
-<span class="missed">	move-result v3</span>
-<span class="missed">	add-int/2addr v2, v3</span>
-<span class="missed">	add-int/2addr v2, v1</span>
-<span class="missed">	add-int/2addr v0, v2</span>
-<span class="missed">	move-object/from16 p0, p14</span>
-<span class="missed">	move/from16 p1, p15</span>
-<span class="missed">	move/from16 p2, p16</span>
-<span class="missed">	move/from16 p3, p11</span>
-<span class="missed">	move-wide/from16 p4, p17</span>
-<span class="missed">	move-wide/from16 p6, p19</span>
-<span class="">	invoke-static/range {p0 .. p7}, Les;->a(Ljava/lang/Float;IZIJJ)I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/4 v2, 0x5</span>
-<span class="">	invoke-static {v2}, Lds;->l(I)I</span>
-<span class="missed">	move-result v2</span>
-<span class="">	invoke-static {v1}, Lds;->j(I)I</span>
-<span class="missed">	move-result v3</span>
-<span class="missed">	add-int/2addr v2, v3</span>
-<span class="missed">	add-int/2addr v2, v1</span>
-<span class="missed">	add-int/2addr v0, v2</span>
-<span class="missed">	if-eqz p21, :cond_0</span>
-<span class="">	invoke-static/range {p21 .. p21}, Les;->a(Lbs;)I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/4 v2, 0x6</span>
-<span class="">	invoke-static {v2}, Lds;->l(I)I</span>
-<span class="missed">	move-result v2</span>
-<span class="">	invoke-static {v1}, Lds;->j(I)I</span>
-<span class="missed">	move-result v3</span>
-<span class="missed">	add-int/2addr v2, v3</span>
-<span class="missed">	add-int/2addr v2, v1</span>
-<span class="missed">	add-int/2addr v0, v2</span>
-<span class="">	:cond_0</span>
-<span class="">	return v0</span>
+<span class="missed">	invoke-virtual {p0}, Les;->c()V</span>
+<span class="missed">	invoke-super {p0, p1, p2}, Ljava/util/AbstractList;->add(ILjava/lang/Object;)V</span>
+<span class="">	return-void</span>
 .end method
 
-.method private static a(Lbs;)I
+.method public add(Ljava/lang/Object;)Z
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TE;)Z"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	invoke-virtual {p0}, Les;->c()V</span>
+<span class="">	invoke-super {p0, p1}, Ljava/util/AbstractList;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public addAll(ILjava/util/Collection;)Z
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(I",</span>
+<span class="">	"Ljava/util/Collection<",</span>
+<span class="">	"+TE;>;)Z"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	invoke-virtual {p0}, Les;->c()V</span>
+<span class="">	invoke-super {p0, p1, p2}, Ljava/util/AbstractList;->addAll(ILjava/util/Collection;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public addAll(Ljava/util/Collection;)Z
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/Collection<",</span>
+<span class="">	"+TE;>;)Z"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	invoke-virtual {p0}, Les;->c()V</span>
+<span class="">	invoke-super {p0, p1}, Ljava/util/AbstractList;->addAll(Ljava/util/Collection;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public final b()V
 <span class="">	.locals 1</span>
 
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="">	invoke-static {v0, p0}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result p0</span>
-<span class="">	return p0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-boolean v0, p0, Les;->a:Z</span>
+<span class="">	return-void</span>
 .end method
 
-.method private static a(Lbs;Lbs;)I
-<span class="">	.locals 4</span>
+.method protected final c()V
+<span class="">	.locals 1</span>
 
-<span class="missed">	const-wide/16 v0, 0x0</span>
-<span class="missed">	const/4 v2, 0x1</span>
-<span class="">	invoke-static {v2, v0, v1}, Lds;->b(IJ)I</span>
-<span class="missed">	move-result v2</span>
-<span class="missed">	add-int/lit8 v2, v2, 0x0</span>
-<span class="missed">	const/4 v3, 0x2</span>
-<span class="">	invoke-static {v3, v0, v1}, Lds;->b(IJ)I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	add-int/2addr v2, v0</span>
-<span class="missed">	const/4 v0, 0x3</span>
-<span class="">	invoke-static {v0, p0}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	add-int/2addr v2, p0</span>
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="missed">	const/4 p0, 0x4</span>
-<span class="">	invoke-static {p0, p1}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	add-int/2addr v2, p0</span>
+<span class="missed">	iget-boolean v0, p0, Les;->a:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return-void</span>
 <span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/UnsupportedOperationException;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public clear()V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-virtual {p0}, Les;->c()V</span>
+<span class="missed">	invoke-super {p0}, Ljava/util/AbstractList;->clear()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+<span class="">	.locals 6</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-ne p1, p0, :cond_0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	instance-of v1, p1, Ljava/util/List;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-nez v1, :cond_1</span>
 <span class="">	return v2</span>
-.end method
-
-<span class="cov">.method private static a(Lbs;Lbs;Lbs;Lbs;ILbs;)I</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	const/4 v0, 0x1</span>
-<span class="exec">	invoke-static {v0, p0}, Lds;->b(ILbs;)I</span>
-<span class="cov">	move-result p0</span>
-<span class="cov">	add-int/lit8 p0, p0, 0x0</span>
-<span class="cov">	const/4 v0, 0x2</span>
-<span class="exec">	invoke-static {v0, p1}, Lds;->b(ILbs;)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	add-int/2addr p0, p1</span>
-<span class="cov">	const/4 p1, 0x3</span>
-<span class="exec">	invoke-static {p1, p2}, Lds;->b(ILbs;)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	add-int/2addr p0, p1</span>
-<span class="cov">	const/4 p1, 0x6</span>
-<span class="exec">	invoke-static {p1, p3}, Lds;->b(ILbs;)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	add-int/2addr p0, p1</span>
-<span class="missed">	if-eqz p5, :cond_0</span>
-<span class="missed">	const/16 p1, 0x8</span>
-<span class="missed">	sget-object p2, Les;->b:Lbs;</span>
-<span class="">	invoke-static {p1, p2}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	add-int/2addr p0, p1</span>
-<span class="missed">	const/16 p1, 0x9</span>
-<span class="">	invoke-static {p1, p5}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	add-int/2addr p0, p1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/16 p1, 0xa</span>
-<span class="exec">	invoke-static {p1, p4}, Lds;->e(II)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	add-int/2addr p0, p1</span>
-<span class="exec">	return p0</span>
-.end method
-
-<span class="cov">.method private static a(Lbs;Lbs;Z)I</span>
-<span class="">	.locals 3</span>
-
-<span class="cov">	const/4 v0, 0x3</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="exec">	invoke-static {v1, v0}, Lds;->e(II)I</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	add-int/lit8 v1, v1, 0x0</span>
-<span class="cov">	const/4 v2, 0x2</span>
-<span class="exec">	invoke-static {v2, p0}, Lds;->b(ILbs;)I</span>
-<span class="cov">	move-result p0</span>
-<span class="cov">	add-int/2addr v1, p0</span>
-<span class="exec">	invoke-static {v0, p1}, Lds;->b(ILbs;)I</span>
-<span class="cov">	move-result p0</span>
-<span class="cov">	add-int/2addr v1, p0</span>
-<span class="cov">	const/4 p0, 0x4</span>
-<span class="exec">	invoke-static {p0, p2}, Lds;->b(IZ)I</span>
-<span class="cov">	move-result p0</span>
-<span class="cov">	add-int/2addr v1, p0</span>
-<span class="exec">	return v1</span>
-.end method
-
-.method private static a(Ljava/lang/Float;IZIJJ)I
-<span class="">	.locals 2</span>
-
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	if-eqz p0, :cond_0</span>
-<span class="missed">	const/4 v1, 0x1</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/Float;->floatValue()F</span>
-<span class="missed">	move-result p0</span>
-<span class="">	invoke-static {v1, p0}, Lds;->b(IF)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	add-int/2addr v0, p0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 p0, 0x2</span>
-<span class="">	invoke-static {p0, p1}, Lds;->f(II)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	add-int/2addr v0, p0</span>
-<span class="missed">	const/4 p0, 0x3</span>
-<span class="">	invoke-static {p0, p2}, Lds;->b(IZ)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	add-int/2addr v0, p0</span>
-<span class="missed">	const/4 p0, 0x4</span>
-<span class="">	invoke-static {p0, p3}, Lds;->g(II)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	add-int/2addr v0, p0</span>
-<span class="missed">	const/4 p0, 0x5</span>
-<span class="">	invoke-static {p0, p4, p5}, Lds;->b(IJ)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	add-int/2addr v0, p0</span>
-<span class="missed">	const/4 p0, 0x6</span>
-<span class="">	invoke-static {p0, p6, p7}, Lds;->b(IJ)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	add-int/2addr v0, p0</span>
-<span class="">	return v0</span>
-.end method
-
-.method private static a(Ljava/lang/StackTraceElement;Z)I
-<span class="">	.locals 6</span>
-
-<span class="">	invoke-virtual {p0}, Ljava/lang/StackTraceElement;->isNativeMethod()Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	const/4 v1, 0x1</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/StackTraceElement;->getLineNumber()I</span>
-<span class="missed">	move-result v0</span>
-<span class="">	invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	int-to-long v3, v0</span>
-<span class="">	invoke-static {v1, v3, v4}, Lds;->b(IJ)I</span>
-<span class="missed">	move-result v0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const-wide/16 v3, 0x0</span>
-<span class="">	invoke-static {v1, v3, v4}, Lds;->b(IJ)I</span>
-<span class="missed">	move-result v0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	add-int/2addr v0, v2</span>
-<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/StackTraceElement;->getClassName()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="missed">	invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string v3, "."</span>
-<span class="missed">	invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/StackTraceElement;->getMethodName()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="missed">	invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="">	invoke-static {v1}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	const/4 v3, 0x2</span>
-<span class="">	invoke-static {v3, v1}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	add-int/2addr v0, v1</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/StackTraceElement;->getFileName()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	if-eqz v1, :cond_1</span>
-<span class="missed">	const/4 v1, 0x3</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/StackTraceElement;->getFileName()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v4</span>
-<span class="">	invoke-static {v4}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object v4</span>
-<span class="">	invoke-static {v1, v4}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	add-int/2addr v0, v1</span>
 <span class="">	:cond_1</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/StackTraceElement;->isNativeMethod()Z</span>
-<span class="missed">	move-result v1</span>
+<span class="missed">	instance-of v1, p1, Ljava/util/RandomAccess;</span>
 <span class="missed">	if-nez v1, :cond_2</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/StackTraceElement;->getLineNumber()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	if-lez v1, :cond_2</span>
-<span class="missed">	const/4 v1, 0x4</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/StackTraceElement;->getLineNumber()I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	int-to-long v4, p0</span>
-<span class="">	invoke-static {v1, v4, v5}, Lds;->b(IJ)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	add-int/2addr v0, p0</span>
+<span class="">	invoke-super {p0, p1}, Ljava/util/AbstractList;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
 <span class="">	:cond_2</span>
-<span class="missed">	const/4 p0, 0x5</span>
-<span class="missed">	if-eqz p1, :cond_3</span>
-<span class="missed">	const/4 v2, 0x2</span>
-<span class="">	:cond_3</span>
-<span class="">	invoke-static {p0, v2}, Lds;->g(II)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	add-int/2addr v0, p0</span>
-<span class="">	return v0</span>
-.end method
-
-.method private static a(Ljava/lang/String;Ljava/lang/String;)I
-<span class="">	.locals 1</span>
-
-<span class="">	invoke-static {p0}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="">	invoke-static {v0, p0}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	if-nez p1, :cond_0</span>
-<span class="missed">	const-string p1, ""</span>
-<span class="">	:cond_0</span>
-<span class="">	invoke-static {p1}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	const/4 v0, 0x2</span>
-<span class="">	invoke-static {v0, p1}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	add-int/2addr p0, p1</span>
-<span class="">	return p0</span>
-.end method
-
-.method private static a(Ljava/lang/Thread;[Ljava/lang/StackTraceElement;IZ)I
-<span class="">	.locals 4</span>
-
-<span class="">	invoke-virtual {p0}, Ljava/lang/Thread;->getName()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	invoke-static {p0}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="">	invoke-static {v0, p0}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	const/4 v0, 0x2</span>
-<span class="">	invoke-static {v0, p2}, Lds;->g(II)I</span>
-<span class="missed">	move-result p2</span>
-<span class="missed">	add-int/2addr p0, p2</span>
-<span class="missed">	array-length p2, p1</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	if-ge v0, p2, :cond_0</span>
-<span class="missed">	aget-object v1, p1, v0</span>
-<span class="">	invoke-static {v1, p3}, Les;->a(Ljava/lang/StackTraceElement;Z)I</span>
+<span class="missed">	check-cast p1, Ljava/util/List;</span>
+<span class="">	invoke-virtual {p0}, Les;->size()I</span>
 <span class="missed">	move-result v1</span>
-<span class="missed">	const/4 v2, 0x3</span>
-<span class="">	invoke-static {v2}, Lds;->l(I)I</span>
-<span class="missed">	move-result v2</span>
-<span class="">	invoke-static {v1}, Lds;->j(I)I</span>
+<span class="">	invoke-interface {p1}, Ljava/util/List;->size()I</span>
 <span class="missed">	move-result v3</span>
-<span class="missed">	add-int/2addr v2, v3</span>
-<span class="missed">	add-int/2addr v2, v1</span>
-<span class="missed">	add-int/2addr p0, v2</span>
-<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="">	return p0</span>
-.end method
-
-.method private static a(Lrt;II)I
-<span class="">	.locals 9</span>
-
-<span class="missed">	iget-object v0, p0, Lrt;->b:Ljava/lang/String;</span>
-<span class="">	invoke-static {v0}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	const/4 v1, 0x1</span>
-<span class="">	invoke-static {v1, v0}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="missed">	add-int/2addr v0, v2</span>
-<span class="missed">	iget-object v3, p0, Lrt;->a:Ljava/lang/String;</span>
-<span class="missed">	if-eqz v3, :cond_0</span>
-<span class="missed">	const/4 v4, 0x3</span>
-<span class="">	invoke-static {v3}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="">	invoke-static {v4, v3}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result v3</span>
-<span class="missed">	add-int/2addr v0, v3</span>
-<span class="">	:cond_0</span>
-<span class="missed">	iget-object v3, p0, Lrt;->c:[Ljava/lang/StackTraceElement;</span>
-<span class="missed">	array-length v4, v3</span>
-<span class="missed">	const/4 v5, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	if-ge v5, v4, :cond_1</span>
-<span class="missed">	aget-object v6, v3, v5</span>
-<span class="">	invoke-static {v6, v1}, Les;->a(Ljava/lang/StackTraceElement;Z)I</span>
-<span class="missed">	move-result v6</span>
-<span class="missed">	const/4 v7, 0x4</span>
-<span class="">	invoke-static {v7}, Lds;->l(I)I</span>
-<span class="missed">	move-result v7</span>
-<span class="">	invoke-static {v6}, Lds;->j(I)I</span>
-<span class="missed">	move-result v8</span>
-<span class="missed">	add-int/2addr v7, v8</span>
-<span class="missed">	add-int/2addr v7, v6</span>
-<span class="missed">	add-int/2addr v0, v7</span>
-<span class="missed">	add-int/lit8 v5, v5, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_1</span>
-<span class="missed">	iget-object p0, p0, Lrt;->d:Lrt;</span>
-<span class="missed">	if-eqz p0, :cond_4</span>
-<span class="missed">	if-ge p1, p2, :cond_2</span>
-<span class="missed">	add-int/2addr p1, v1</span>
-<span class="">	invoke-static {p0, p1, p2}, Les;->a(Lrt;II)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	const/4 p1, 0x6</span>
-<span class="">	invoke-static {p1}, Lds;->l(I)I</span>
-<span class="missed">	move-result p1</span>
-<span class="">	invoke-static {p0}, Lds;->j(I)I</span>
-<span class="missed">	move-result p2</span>
-<span class="missed">	add-int/2addr p1, p2</span>
-<span class="missed">	add-int/2addr p1, p0</span>
-<span class="missed">	add-int/2addr v0, p1</span>
-<span class="">	goto :goto_2</span>
-<span class="">	:goto_1</span>
-<span class="">	:cond_2</span>
-<span class="missed">	if-eqz p0, :cond_3</span>
-<span class="missed">	iget-object p0, p0, Lrt;->d:Lrt;</span>
-<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
-<span class="">	goto :goto_1</span>
+<span class="missed">	if-eq v1, v3, :cond_3</span>
+<span class="">	return v2</span>
 <span class="">	:cond_3</span>
-<span class="missed">	const/4 p0, 0x7</span>
-<span class="">	invoke-static {p0, v2}, Lds;->g(II)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	add-int/2addr v0, p0</span>
-<span class="">	:goto_2</span>
-<span class="">	:cond_4</span>
-<span class="">	return v0</span>
-.end method
-
-.method private static a(Lrt;Ljava/lang/Thread;[Ljava/lang/StackTraceElement;[Ljava/lang/Thread;Ljava/util/List;ILbs;Lbs;)I
-<span class="">	.locals 6</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Lrt;",</span>
-<span class="">	"Ljava/lang/Thread;",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/StackTraceElement;",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/Thread;",</span>
-<span class="">	"Ljava/util/List<",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/StackTraceElement;",</span>
-<span class="">	">;I",</span>
-<span class="">	"Lbs;",</span>
-<span class="">	"Lbs;",</span>
-<span class="">	")I"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	const/4 v1, 0x4</span>
-<span class="">	invoke-static {p1, p2, v1, v0}, Les;->a(Ljava/lang/Thread;[Ljava/lang/StackTraceElement;IZ)I</span>
-<span class="missed">	move-result p1</span>
-<span class="">	invoke-static {v0}, Lds;->l(I)I</span>
-<span class="missed">	move-result p2</span>
-<span class="">	invoke-static {p1}, Lds;->j(I)I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	add-int/2addr p2, v1</span>
-<span class="missed">	add-int/2addr p2, p1</span>
-<span class="missed">	const/4 p1, 0x0</span>
-<span class="missed">	add-int/2addr p2, p1</span>
-<span class="missed">	array-length v1, p3</span>
-<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x0</span>
 <span class="">	:goto_0</span>
-<span class="missed">	if-ge v2, v1, :cond_0</span>
-<span class="missed">	aget-object v3, p3, v2</span>
-<span class="">	invoke-interface {p4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	if-ge v3, v1, :cond_5</span>
+<span class="">	invoke-virtual {p0, v3}, Les;->get(I)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v4</span>
-<span class="missed">	check-cast v4, [Ljava/lang/StackTraceElement;</span>
-<span class="">	invoke-static {v3, v4, p1, p1}, Les;->a(Ljava/lang/Thread;[Ljava/lang/StackTraceElement;IZ)I</span>
-<span class="missed">	move-result v3</span>
-<span class="">	invoke-static {v0}, Lds;->l(I)I</span>
-<span class="missed">	move-result v4</span>
-<span class="">	invoke-static {v3}, Lds;->j(I)I</span>
-<span class="missed">	move-result v5</span>
-<span class="missed">	add-int/2addr v4, v5</span>
-<span class="missed">	add-int/2addr v4, v3</span>
-<span class="missed">	add-int/2addr p2, v4</span>
-<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="">	invoke-static {p0, v0, p5}, Les;->a(Lrt;II)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	const/4 p1, 0x2</span>
-<span class="">	invoke-static {p1}, Lds;->l(I)I</span>
-<span class="missed">	move-result p1</span>
-<span class="">	invoke-static {p0}, Lds;->j(I)I</span>
-<span class="missed">	move-result p3</span>
-<span class="missed">	add-int/2addr p1, p3</span>
-<span class="missed">	add-int/2addr p1, p0</span>
-<span class="missed">	add-int/2addr p2, p1</span>
-<span class="">	invoke-static {}, Les;->a()I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	const/4 p1, 0x3</span>
-<span class="">	invoke-static {p1}, Lds;->l(I)I</span>
-<span class="missed">	move-result p3</span>
-<span class="">	invoke-static {p0}, Lds;->j(I)I</span>
-<span class="missed">	move-result p4</span>
-<span class="missed">	add-int/2addr p3, p4</span>
-<span class="missed">	add-int/2addr p3, p0</span>
-<span class="missed">	add-int/2addr p2, p3</span>
-<span class="">	invoke-static {p6, p7}, Les;->a(Lbs;Lbs;)I</span>
-<span class="missed">	move-result p0</span>
-<span class="">	invoke-static {p1}, Lds;->l(I)I</span>
-<span class="missed">	move-result p1</span>
-<span class="">	invoke-static {p0}, Lds;->j(I)I</span>
-<span class="missed">	move-result p3</span>
-<span class="missed">	add-int/2addr p1, p3</span>
-<span class="missed">	add-int/2addr p1, p0</span>
-<span class="missed">	add-int/2addr p2, p1</span>
-<span class="">	return p2</span>
-.end method
-
-.method private static a(Lrt;Ljava/lang/Thread;[Ljava/lang/StackTraceElement;[Ljava/lang/Thread;Ljava/util/List;ILbs;Lbs;Ljava/util/Map;Landroid/app/ActivityManager$RunningAppProcessInfo;I)I
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Lrt;",</span>
-<span class="">	"Ljava/lang/Thread;",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/StackTraceElement;",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/Thread;",</span>
-<span class="">	"Ljava/util/List<",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/StackTraceElement;",</span>
-<span class="">	">;I",</span>
-<span class="">	"Lbs;",</span>
-<span class="">	"Lbs;",</span>
-<span class="">	"Ljava/util/Map<",</span>
-<span class="">	"Ljava/lang/String;",</span>
-<span class="">	"Ljava/lang/String;",</span>
-<span class="">	">;",</span>
-<span class="">	"Landroid/app/ActivityManager$RunningAppProcessInfo;",</span>
-<span class="">	"I)I"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="">	invoke-static/range {p0 .. p7}, Les;->a(Lrt;Ljava/lang/Thread;[Ljava/lang/StackTraceElement;[Ljava/lang/Thread;Ljava/util/List;ILbs;Lbs;)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	const/4 p1, 0x1</span>
-<span class="">	invoke-static {p1}, Lds;->l(I)I</span>
-<span class="missed">	move-result p2</span>
-<span class="">	invoke-static {p0}, Lds;->j(I)I</span>
-<span class="missed">	move-result p3</span>
-<span class="missed">	add-int/2addr p2, p3</span>
-<span class="missed">	add-int/2addr p2, p0</span>
-<span class="missed">	const/4 p0, 0x0</span>
-<span class="missed">	add-int/2addr p2, p0</span>
-<span class="missed">	if-eqz p8, :cond_0</span>
-<span class="">	invoke-interface {p8}, Ljava/util/Map;->entrySet()Ljava/util/Set;</span>
-<span class="missed">	move-result-object p3</span>
-<span class="">	invoke-interface {p3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;</span>
-<span class="missed">	move-result-object p3</span>
-<span class="">	:goto_0</span>
-<span class="">	invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z</span>
-<span class="missed">	move-result p4</span>
-<span class="missed">	if-eqz p4, :cond_0</span>
-<span class="">	invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object p4</span>
-<span class="missed">	check-cast p4, Ljava/util/Map$Entry;</span>
-<span class="">	invoke-interface {p4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object p5</span>
-<span class="missed">	check-cast p5, Ljava/lang/String;</span>
-<span class="">	invoke-interface {p4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object p4</span>
-<span class="missed">	check-cast p4, Ljava/lang/String;</span>
-<span class="">	invoke-static {p5, p4}, Les;->a(Ljava/lang/String;Ljava/lang/String;)I</span>
-<span class="missed">	move-result p4</span>
-<span class="missed">	const/4 p5, 0x2</span>
-<span class="">	invoke-static {p5}, Lds;->l(I)I</span>
-<span class="missed">	move-result p5</span>
-<span class="">	invoke-static {p4}, Lds;->j(I)I</span>
-<span class="missed">	move-result p6</span>
-<span class="missed">	add-int/2addr p5, p6</span>
-<span class="missed">	add-int/2addr p5, p4</span>
-<span class="missed">	add-int/2addr p2, p5</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	if-eqz p9, :cond_2</span>
-<span class="missed">	const/4 p3, 0x3</span>
-<span class="missed">	iget p4, p9, Landroid/app/ActivityManager$RunningAppProcessInfo;->importance:I</span>
-<span class="missed">	const/16 p5, 0x64</span>
-<span class="missed">	if-eq p4, p5, :cond_1</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:cond_1</span>
-<span class="missed">	const/4 p1, 0x0</span>
-<span class="">	:goto_1</span>
-<span class="">	invoke-static {p3, p1}, Lds;->b(IZ)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	add-int/2addr p2, p0</span>
-<span class="">	:cond_2</span>
-<span class="missed">	const/4 p0, 0x4</span>
-<span class="">	invoke-static {p0, p10}, Lds;->g(II)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	add-int/2addr p2, p0</span>
-<span class="">	return p2</span>
-.end method
-
-<span class="cov">.method private static a(Ljava/lang/String;)Lbs;</span>
-<span class="">	.locals 0</span>
-
-<span class="missed">	if-nez p0, :cond_0</span>
-<span class="missed">	const/4 p0, 0x0</span>
-<span class="">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-static {p0}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-.method private static a(Lds;ILjava/lang/StackTraceElement;Z)V
-<span class="">	.locals 5</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	const/4 v0, 0x2</span>
-<span class="missed">	invoke-virtual {p0, p1, v0}, Lds;->c(II)V</span>
-<span class="">	invoke-static {p2, p3}, Les;->a(Ljava/lang/StackTraceElement;Z)I</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	invoke-virtual {p0, p1}, Lds;->e(I)V</span>
-<span class="">	invoke-virtual {p2}, Ljava/lang/StackTraceElement;->isNativeMethod()Z</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="missed">	const/4 v2, 0x1</span>
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="">	invoke-virtual {p2}, Ljava/lang/StackTraceElement;->getLineNumber()I</span>
-<span class="missed">	move-result p1</span>
-<span class="">	invoke-static {p1, v1}, Ljava/lang/Math;->max(II)I</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	int-to-long v3, p1</span>
-<span class="missed">	invoke-virtual {p0, v2, v3, v4}, Lds;->a(IJ)V</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const-wide/16 v3, 0x0</span>
-<span class="missed">	invoke-virtual {p0, v2, v3, v4}, Lds;->a(IJ)V</span>
-<span class="">	:goto_0</span>
-<span class="missed">	new-instance p1, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="">	invoke-virtual {p2}, Ljava/lang/StackTraceElement;->getClassName()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v2</span>
-<span class="missed">	invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string v2, "."</span>
-<span class="missed">	invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {p2}, Ljava/lang/StackTraceElement;->getMethodName()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v2</span>
-<span class="missed">	invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	invoke-static {p1}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	invoke-virtual {p0, v0, p1}, Lds;->a(ILbs;)V</span>
-<span class="">	invoke-virtual {p2}, Ljava/lang/StackTraceElement;->getFileName()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	if-eqz p1, :cond_1</span>
-<span class="missed">	const/4 p1, 0x3</span>
-<span class="">	invoke-virtual {p2}, Ljava/lang/StackTraceElement;->getFileName()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	invoke-static {v0}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	invoke-virtual {p0, p1, v0}, Lds;->a(ILbs;)V</span>
-<span class="">	:cond_1</span>
-<span class="">	invoke-virtual {p2}, Ljava/lang/StackTraceElement;->isNativeMethod()Z</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	const/4 v0, 0x4</span>
-<span class="missed">	if-nez p1, :cond_2</span>
-<span class="">	invoke-virtual {p2}, Ljava/lang/StackTraceElement;->getLineNumber()I</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	if-lez p1, :cond_2</span>
-<span class="">	invoke-virtual {p2}, Ljava/lang/StackTraceElement;->getLineNumber()I</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	int-to-long p1, p1</span>
-<span class="missed">	invoke-virtual {p0, v0, p1, p2}, Lds;->a(IJ)V</span>
-<span class="">	:cond_2</span>
-<span class="missed">	const/4 p1, 0x5</span>
-<span class="missed">	if-eqz p3, :cond_3</span>
-<span class="missed">	const/4 v1, 0x4</span>
-<span class="">	:cond_3</span>
-<span class="missed">	invoke-virtual {p0, p1, v1}, Lds;->d(II)V</span>
-<span class="">	return-void</span>
-.end method
-
-<span class="cov">.method public static a(Lds;ILjava/lang/String;IJJZILjava/lang/String;Ljava/lang/String;)V</span>
-<span class="">	.locals 15</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	move-object v0, p0</span>
-<span class="exec">	invoke-static/range {p2 .. p2}, Les;->a(Ljava/lang/String;)Lbs;</span>
-<span class="cov">	move-result-object v12</span>
-<span class="exec">	invoke-static/range {p11 .. p11}, Les;->a(Ljava/lang/String;)Lbs;</span>
-<span class="cov">	move-result-object v13</span>
-<span class="exec">	invoke-static/range {p10 .. p10}, Les;->a(Ljava/lang/String;)Lbs;</span>
-<span class="cov">	move-result-object v14</span>
-<span class="cov">	const/16 v1, 0x9</span>
-<span class="cov">	const/4 v2, 0x2</span>
-<span class="cov">	invoke-virtual {p0, v1, v2}, Lds;->c(II)V</span>
-<span class="cov">	move/from16 v1, p1</span>
-<span class="cov">	move-object v2, v12</span>
-<span class="cov">	move/from16 v3, p3</span>
-<span class="cov">	move-wide/from16 v4, p4</span>
-<span class="cov">	move-wide/from16 v6, p6</span>
-<span class="cov">	move/from16 v8, p8</span>
-<span class="cov">	move/from16 v9, p9</span>
-<span class="cov">	move-object v10, v14</span>
-<span class="cov">	move-object v11, v13</span>
-<span class="exec">	invoke-static/range {v1 .. v11}, Les;->a(ILbs;IJJZILbs;Lbs;)I</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	invoke-virtual {p0, v1}, Lds;->e(I)V</span>
-<span class="cov">	const/4 v1, 0x3</span>
-<span class="cov">	move/from16 v2, p1</span>
-<span class="cov">	invoke-virtual {p0, v1, v2}, Lds;->a(II)V</span>
-<span class="cov">	const/4 v1, 0x4</span>
-<span class="cov">	invoke-virtual {p0, v1, v12}, Lds;->a(ILbs;)V</span>
-<span class="cov">	const/4 v1, 0x5</span>
-<span class="cov">	move/from16 v2, p3</span>
-<span class="cov">	invoke-virtual {p0, v1, v2}, Lds;->d(II)V</span>
-<span class="cov">	const/4 v1, 0x6</span>
-<span class="cov">	move-wide/from16 v2, p4</span>
-<span class="cov">	invoke-virtual {p0, v1, v2, v3}, Lds;->a(IJ)V</span>
-<span class="cov">	const/4 v1, 0x7</span>
-<span class="cov">	move-wide/from16 v2, p6</span>
-<span class="cov">	invoke-virtual {p0, v1, v2, v3}, Lds;->a(IJ)V</span>
-<span class="cov">	const/16 v1, 0xa</span>
-<span class="cov">	move/from16 v2, p8</span>
-<span class="cov">	invoke-virtual {p0, v1, v2}, Lds;->a(IZ)V</span>
-<span class="cov">	const/16 v1, 0xc</span>
-<span class="cov">	move/from16 v2, p9</span>
-<span class="cov">	invoke-virtual {p0, v1, v2}, Lds;->d(II)V</span>
-<span class="cov">	if-eqz v14, :cond_0</span>
-<span class="cov">	const/16 v1, 0xd</span>
-<span class="cov">	invoke-virtual {p0, v1, v14}, Lds;->a(ILbs;)V</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	if-eqz v13, :cond_1</span>
-<span class="cov">	const/16 v1, 0xe</span>
-<span class="cov">	invoke-virtual {p0, v1, v13}, Lds;->a(ILbs;)V</span>
-<span class="cov">	:cond_1</span>
-<span class="exec">	return-void</span>
-.end method
-
-.method public static a(Lds;JLjava/lang/String;Lrt;Ljava/lang/Thread;[Ljava/lang/StackTraceElement;[Ljava/lang/Thread;Ljava/util/List;ILjava/util/Map;[BLandroid/app/ActivityManager$RunningAppProcessInfo;ILjava/lang/String;Ljava/lang/String;Ljava/lang/Float;IZJJ)V
-<span class="">	.locals 35</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Lds;",</span>
-<span class="">	"J",</span>
-<span class="">	"Ljava/lang/String;",</span>
-<span class="">	"Lrt;",</span>
-<span class="">	"Ljava/lang/Thread;",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/StackTraceElement;",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/Thread;",</span>
-<span class="">	"Ljava/util/List<",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/StackTraceElement;",</span>
-<span class="">	">;I",</span>
-<span class="">	"Ljava/util/Map<",</span>
-<span class="">	"Ljava/lang/String;",</span>
-<span class="">	"Ljava/lang/String;",</span>
-<span class="">	">;[B",</span>
-<span class="">	"Landroid/app/ActivityManager$RunningAppProcessInfo;",</span>
-<span class="">	"I",</span>
-<span class="">	"Ljava/lang/String;",</span>
-<span class="">	"Ljava/lang/String;",</span>
-<span class="">	"Ljava/lang/Float;",</span>
-<span class="">	"IZJJ)V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	move-object/from16 v12, p0</span>
-<span class="missed">	move-object/from16 v0, p15</span>
-<span class="">	invoke-static/range {p14 .. p14}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object v7</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="missed">	move-object v8, v1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const-string v2, "-"</span>
-<span class="missed">	const-string v3, ""</span>
-<span class="">	invoke-virtual {v0, v2, v3}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	invoke-static {v0}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	move-object v8, v0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	if-eqz p11, :cond_1</span>
-<span class="">	invoke-static/range {p11 .. p11}, Lbs;->a([B)Lbs;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:cond_1</span>
-<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	const-string v2, "No log data to include with this event."</span>
-<span class="missed">	invoke-virtual {v0, v2}, Lmo;->a(Ljava/lang/String;)V</span>
-<span class="">	:goto_1</span>
-<span class="missed">	move-object v11, v1</span>
-<span class="missed">	const/16 v0, 0xa</span>
-<span class="missed">	const/4 v1, 0x2</span>
-<span class="missed">	invoke-virtual {v12, v0, v1}, Lds;->c(II)V</span>
-<span class="missed">	move-wide/from16 v13, p1</span>
-<span class="missed">	move-object/from16 v15, p3</span>
-<span class="missed">	move-object/from16 v16, p4</span>
-<span class="missed">	move-object/from16 v17, p5</span>
-<span class="missed">	move-object/from16 v18, p6</span>
-<span class="missed">	move-object/from16 v19, p7</span>
-<span class="missed">	move-object/from16 v20, p8</span>
-<span class="missed">	move/from16 v21, p9</span>
-<span class="missed">	move-object/from16 v22, p10</span>
-<span class="missed">	move-object/from16 v23, p12</span>
-<span class="missed">	move/from16 v24, p13</span>
-<span class="missed">	move-object/from16 v25, v7</span>
-<span class="missed">	move-object/from16 v26, v8</span>
-<span class="missed">	move-object/from16 v27, p16</span>
-<span class="missed">	move/from16 v28, p17</span>
-<span class="missed">	move/from16 v29, p18</span>
-<span class="missed">	move-wide/from16 v30, p19</span>
-<span class="missed">	move-wide/from16 v32, p21</span>
-<span class="missed">	move-object/from16 v34, v11</span>
-<span class="">	invoke-static/range {v13 .. v34}, Les;->a(JLjava/lang/String;Lrt;Ljava/lang/Thread;[Ljava/lang/StackTraceElement;[Ljava/lang/Thread;Ljava/util/List;ILjava/util/Map;Landroid/app/ActivityManager$RunningAppProcessInfo;ILbs;Lbs;Ljava/lang/Float;IZJJLbs;)I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	invoke-virtual {v12, v0}, Lds;->e(I)V</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	move-wide/from16 v2, p1</span>
-<span class="missed">	invoke-virtual {v12, v0, v2, v3}, Lds;->a(IJ)V</span>
-<span class="">	invoke-static/range {p3 .. p3}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	invoke-virtual {v12, v1, v0}, Lds;->a(ILbs;)V</span>
-<span class="missed">	move-object/from16 v0, p0</span>
-<span class="missed">	move-object/from16 v1, p4</span>
-<span class="missed">	move-object/from16 v2, p5</span>
-<span class="missed">	move-object/from16 v3, p6</span>
-<span class="missed">	move-object/from16 v4, p7</span>
-<span class="missed">	move-object/from16 v5, p8</span>
-<span class="missed">	move/from16 v6, p9</span>
-<span class="missed">	move-object/from16 v9, p10</span>
-<span class="missed">	move-object/from16 v10, p12</span>
-<span class="missed">	move-object v13, v11</span>
-<span class="missed">	move/from16 v11, p13</span>
-<span class="missed">	invoke-static/range {v0 .. v11}, Les;->a(Lds;Lrt;Ljava/lang/Thread;[Ljava/lang/StackTraceElement;[Ljava/lang/Thread;Ljava/util/List;ILbs;Lbs;Ljava/util/Map;Landroid/app/ActivityManager$RunningAppProcessInfo;I)V</span>
-<span class="missed">	move-object/from16 p1, p0</span>
-<span class="missed">	move-object/from16 p2, p16</span>
-<span class="missed">	move/from16 p3, p17</span>
-<span class="missed">	move/from16 p4, p18</span>
-<span class="missed">	move/from16 p5, p13</span>
-<span class="missed">	move-wide/from16 p6, p19</span>
-<span class="missed">	move-wide/from16 p8, p21</span>
-<span class="missed">	invoke-static/range {p1 .. p9}, Les;->a(Lds;Ljava/lang/Float;IZIJJ)V</span>
-<span class="missed">	invoke-static {v12, v13}, Les;->a(Lds;Lbs;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method private static a(Lds;Lbs;)V
-<span class="">	.locals 2</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="missed">	const/4 v0, 0x6</span>
-<span class="missed">	const/4 v1, 0x2</span>
-<span class="missed">	invoke-virtual {p0, v0, v1}, Lds;->c(II)V</span>
-<span class="">	invoke-static {p1}, Les;->a(Lbs;)I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	invoke-virtual {p0, v0}, Lds;->e(I)V</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	invoke-virtual {p0, v0, p1}, Lds;->a(ILbs;)V</span>
-<span class="">	:cond_0</span>
-<span class="">	return-void</span>
-.end method
-
-.method private static a(Lds;Ljava/lang/Float;IZIJJ)V
-<span class="">	.locals 3</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	const/4 v0, 0x2</span>
-<span class="missed">	const/4 v1, 0x5</span>
-<span class="missed">	invoke-virtual {p0, v1, v0}, Lds;->c(II)V</span>
-<span class="">	invoke-static/range {p1 .. p8}, Les;->a(Ljava/lang/Float;IZIJJ)I</span>
-<span class="missed">	move-result v2</span>
-<span class="missed">	invoke-virtual {p0, v2}, Lds;->e(I)V</span>
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="missed">	const/4 v2, 0x1</span>
-<span class="">	invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	invoke-virtual {p0, v2, p1}, Lds;->a(IF)V</span>
-<span class="">	:cond_0</span>
-<span class="missed">	invoke-virtual {p0, v0, p2}, Lds;->b(II)V</span>
-<span class="missed">	const/4 p1, 0x3</span>
-<span class="missed">	invoke-virtual {p0, p1, p3}, Lds;->a(IZ)V</span>
-<span class="missed">	const/4 p1, 0x4</span>
-<span class="missed">	invoke-virtual {p0, p1, p4}, Lds;->d(II)V</span>
-<span class="missed">	invoke-virtual {p0, v1, p5, p6}, Lds;->a(IJ)V</span>
-<span class="missed">	const/4 p1, 0x6</span>
-<span class="missed">	invoke-virtual {p0, p1, p7, p8}, Lds;->a(IJ)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public static a(Lds;Ljava/lang/String;)V
-<span class="">	.locals 5</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="">	invoke-static {p1}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	const/4 v0, 0x2</span>
-<span class="missed">	const/4 v1, 0x7</span>
-<span class="missed">	invoke-virtual {p0, v1, v0}, Lds;->c(II)V</span>
-<span class="">	invoke-static {v0, p1}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/4 v2, 0x5</span>
-<span class="">	invoke-static {v2}, Lds;->l(I)I</span>
-<span class="missed">	move-result v3</span>
-<span class="">	invoke-static {v1}, Lds;->j(I)I</span>
-<span class="missed">	move-result v4</span>
-<span class="missed">	add-int/2addr v3, v4</span>
-<span class="missed">	add-int/2addr v3, v1</span>
-<span class="missed">	invoke-virtual {p0, v3}, Lds;->e(I)V</span>
-<span class="missed">	invoke-virtual {p0, v2, v0}, Lds;->c(II)V</span>
-<span class="missed">	invoke-virtual {p0, v1}, Lds;->e(I)V</span>
-<span class="missed">	invoke-virtual {p0, v0, p1}, Lds;->a(ILbs;)V</span>
-<span class="">	return-void</span>
-.end method
-
-<span class="cov">.method public static a(Lds;Ljava/lang/String;Ljava/lang/String;J)V</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="exec">	invoke-static {p2}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="cov">	move-result-object p2</span>
-<span class="cov">	const/4 v0, 0x1</span>
-<span class="cov">	invoke-virtual {p0, v0, p2}, Lds;->a(ILbs;)V</span>
-<span class="exec">	invoke-static {p1}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	const/4 p2, 0x2</span>
-<span class="cov">	invoke-virtual {p0, p2, p1}, Lds;->a(ILbs;)V</span>
-<span class="cov">	const/4 p1, 0x3</span>
-<span class="cov">	invoke-virtual {p0, p1, p3, p4}, Lds;->a(IJ)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-.method public static a(Lds;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-<span class="">	.locals 7</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	if-nez p1, :cond_0</span>
-<span class="missed">	const-string p1, ""</span>
-<span class="">	:cond_0</span>
-<span class="">	invoke-static {p1}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	invoke-static {p2}, Les;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	invoke-static {p3}, Les;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	const/4 v2, 0x1</span>
-<span class="">	invoke-static {v2, p1}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result v3</span>
-<span class="missed">	add-int/lit8 v3, v3, 0x0</span>
-<span class="missed">	const/4 v4, 0x2</span>
-<span class="missed">	if-eqz p2, :cond_1</span>
-<span class="">	invoke-static {v4, v0}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result v5</span>
-<span class="missed">	add-int/2addr v3, v5</span>
-<span class="">	:cond_1</span>
-<span class="missed">	const/4 v5, 0x3</span>
-<span class="missed">	if-eqz p3, :cond_2</span>
-<span class="">	invoke-static {v5, v1}, Lds;->b(ILbs;)I</span>
-<span class="missed">	move-result v6</span>
-<span class="missed">	add-int/2addr v3, v6</span>
-<span class="">	:cond_2</span>
-<span class="missed">	const/4 v6, 0x6</span>
-<span class="missed">	invoke-virtual {p0, v6, v4}, Lds;->c(II)V</span>
-<span class="missed">	invoke-virtual {p0, v3}, Lds;->e(I)V</span>
-<span class="missed">	invoke-virtual {p0, v2, p1}, Lds;->a(ILbs;)V</span>
-<span class="missed">	if-eqz p2, :cond_3</span>
-<span class="missed">	invoke-virtual {p0, v4, v0}, Lds;->a(ILbs;)V</span>
-<span class="">	:cond_3</span>
-<span class="missed">	if-eqz p3, :cond_4</span>
-<span class="missed">	invoke-virtual {p0, v5, v1}, Lds;->a(ILbs;)V</span>
-<span class="">	:cond_4</span>
-<span class="">	return-void</span>
-.end method
-
-<span class="cov">.method public static a(Lds;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V</span>
-<span class="">	.locals 7</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="exec">	invoke-static {p1}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	invoke-static {p2}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="cov">	move-result-object p2</span>
-<span class="exec">	invoke-static {p3}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="cov">	move-result-object p3</span>
-<span class="exec">	invoke-static {p4}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="cov">	move-result-object p4</span>
-<span class="missed">	if-eqz p6, :cond_0</span>
-<span class="">	invoke-static {p6}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object p6</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 p6, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	const/4 v0, 0x7</span>
-<span class="cov">	const/4 v6, 0x2</span>
-<span class="cov">	invoke-virtual {p0, v0, v6}, Lds;->c(II)V</span>
-<span class="cov">	move-object v0, p1</span>
-<span class="cov">	move-object v1, p2</span>
-<span class="cov">	move-object v2, p3</span>
-<span class="cov">	move-object v3, p4</span>
-<span class="cov">	move v4, p5</span>
-<span class="cov">	move-object v5, p6</span>
-<span class="exec">	invoke-static/range {v0 .. v5}, Les;->a(Lbs;Lbs;Lbs;Lbs;ILbs;)I</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	invoke-virtual {p0, v0}, Lds;->e(I)V</span>
-<span class="cov">	const/4 v0, 0x1</span>
-<span class="cov">	invoke-virtual {p0, v0, p1}, Lds;->a(ILbs;)V</span>
-<span class="cov">	invoke-virtual {p0, v6, p2}, Lds;->a(ILbs;)V</span>
-<span class="cov">	const/4 p1, 0x3</span>
-<span class="cov">	invoke-virtual {p0, p1, p3}, Lds;->a(ILbs;)V</span>
-<span class="cov">	const/4 p1, 0x6</span>
-<span class="cov">	invoke-virtual {p0, p1, p4}, Lds;->a(ILbs;)V</span>
-<span class="missed">	if-eqz p6, :cond_1</span>
-<span class="missed">	const/16 p1, 0x8</span>
-<span class="missed">	sget-object p2, Les;->b:Lbs;</span>
-<span class="missed">	invoke-virtual {p0, p1, p2}, Lds;->a(ILbs;)V</span>
-<span class="missed">	const/16 p1, 0x9</span>
-<span class="missed">	invoke-virtual {p0, p1, p6}, Lds;->a(ILbs;)V</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	const/16 p1, 0xa</span>
-<span class="cov">	invoke-virtual {p0, p1, p5}, Lds;->a(II)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public static a(Lds;Ljava/lang/String;Ljava/lang/String;Z)V</span>
-<span class="">	.locals 3</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="exec">	invoke-static {p1}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	invoke-static {p2}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="cov">	move-result-object p2</span>
-<span class="cov">	const/4 v0, 0x2</span>
-<span class="cov">	const/16 v1, 0x8</span>
-<span class="cov">	invoke-virtual {p0, v1, v0}, Lds;->c(II)V</span>
-<span class="exec">	invoke-static {p1, p2, p3}, Les;->a(Lbs;Lbs;Z)I</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	invoke-virtual {p0, v1}, Lds;->e(I)V</span>
-<span class="cov">	const/4 v1, 0x3</span>
-<span class="cov">	const/4 v2, 0x1</span>
-<span class="cov">	invoke-virtual {p0, v2, v1}, Lds;->a(II)V</span>
-<span class="cov">	invoke-virtual {p0, v0, p1}, Lds;->a(ILbs;)V</span>
-<span class="cov">	invoke-virtual {p0, v1, p2}, Lds;->a(ILbs;)V</span>
-<span class="cov">	const/4 p1, 0x4</span>
-<span class="cov">	invoke-virtual {p0, p1, p3}, Lds;->a(IZ)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-.method private static a(Lds;Ljava/lang/Thread;[Ljava/lang/StackTraceElement;IZ)V
-<span class="">	.locals 3</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	const/4 v0, 0x2</span>
-<span class="missed">	const/4 v1, 0x1</span>
-<span class="missed">	invoke-virtual {p0, v1, v0}, Lds;->c(II)V</span>
-<span class="">	invoke-static {p1, p2, p3, p4}, Les;->a(Ljava/lang/Thread;[Ljava/lang/StackTraceElement;IZ)I</span>
-<span class="missed">	move-result v2</span>
-<span class="missed">	invoke-virtual {p0, v2}, Lds;->e(I)V</span>
-<span class="">	invoke-virtual {p1}, Ljava/lang/Thread;->getName()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	invoke-static {p1}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	invoke-virtual {p0, v1, p1}, Lds;->a(ILbs;)V</span>
-<span class="missed">	invoke-virtual {p0, v0, p3}, Lds;->d(II)V</span>
-<span class="missed">	array-length p1, p2</span>
-<span class="missed">	const/4 p3, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	if-ge p3, p1, :cond_0</span>
-<span class="missed">	aget-object v0, p2, p3</span>
-<span class="missed">	const/4 v1, 0x3</span>
-<span class="missed">	invoke-static {p0, v1, v0, p4}, Les;->a(Lds;ILjava/lang/StackTraceElement;Z)V</span>
-<span class="missed">	add-int/lit8 p3, p3, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="">	return-void</span>
-.end method
-
-.method private static a(Lds;Ljava/util/Map;)V
-<span class="">	.locals 4</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Lds;",</span>
-<span class="">	"Ljava/util/Map<",</span>
-<span class="">	"Ljava/lang/String;",</span>
-<span class="">	"Ljava/lang/String;",</span>
-<span class="">	">;)V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="">	invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	:goto_0</span>
-<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_1</span>
-<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Ljava/util/Map$Entry;</span>
-<span class="missed">	const/4 v1, 0x2</span>
-<span class="missed">	invoke-virtual {p0, v1, v1}, Lds;->c(II)V</span>
-<span class="">	invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v2</span>
-<span class="missed">	check-cast v2, Ljava/lang/String;</span>
-<span class="">	invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="missed">	check-cast v3, Ljava/lang/String;</span>
-<span class="">	invoke-static {v2, v3}, Les;->a(Ljava/lang/String;Ljava/lang/String;)I</span>
-<span class="missed">	move-result v2</span>
-<span class="missed">	invoke-virtual {p0, v2}, Lds;->e(I)V</span>
-<span class="missed">	const/4 v2, 0x1</span>
-<span class="">	invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="missed">	check-cast v3, Ljava/lang/String;</span>
-<span class="">	invoke-static {v3}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="missed">	invoke-virtual {p0, v2, v3}, Lds;->a(ILbs;)V</span>
-<span class="">	invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Ljava/lang/String;</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="missed">	const-string v0, ""</span>
-<span class="">	:cond_0</span>
-<span class="">	invoke-static {v0}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	invoke-virtual {p0, v1, v0}, Lds;->a(ILbs;)V</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_1</span>
-<span class="">	return-void</span>
-.end method
-
-.method private static a(Lds;Lrt;III)V
-<span class="">	.locals 6</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	const/4 v0, 0x2</span>
-<span class="missed">	invoke-virtual {p0, p4, v0}, Lds;->c(II)V</span>
-<span class="missed">	const/4 p4, 0x1</span>
-<span class="">	invoke-static {p1, p4, p3}, Les;->a(Lrt;II)I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	invoke-virtual {p0, v0}, Lds;->e(I)V</span>
-<span class="missed">	iget-object v0, p1, Lrt;->b:Ljava/lang/String;</span>
-<span class="">	invoke-static {v0}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	invoke-virtual {p0, p4, v0}, Lds;->a(ILbs;)V</span>
-<span class="missed">	iget-object v0, p1, Lrt;->a:Ljava/lang/String;</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	const/4 v1, 0x3</span>
-<span class="">	invoke-static {v0}, Lbs;->a(Ljava/lang/String;)Lbs;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	invoke-virtual {p0, v1, v0}, Lds;->a(ILbs;)V</span>
-<span class="">	:cond_0</span>
-<span class="missed">	iget-object v0, p1, Lrt;->c:[Ljava/lang/StackTraceElement;</span>
-<span class="missed">	array-length v1, v0</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="missed">	const/4 v3, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	if-ge v3, v1, :cond_1</span>
-<span class="missed">	aget-object v4, v0, v3</span>
-<span class="missed">	const/4 v5, 0x4</span>
-<span class="missed">	invoke-static {p0, v5, v4, p4}, Les;->a(Lds;ILjava/lang/StackTraceElement;Z)V</span>
-<span class="missed">	add-int/lit8 v3, v3, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_1</span>
-<span class="missed">	iget-object p1, p1, Lrt;->d:Lrt;</span>
-<span class="missed">	if-eqz p1, :cond_4</span>
-<span class="missed">	if-ge p2, p3, :cond_2</span>
-<span class="missed">	add-int/2addr p2, p4</span>
-<span class="missed">	const/4 p4, 0x6</span>
-<span class="missed">	invoke-static {p0, p1, p2, p3, p4}, Les;->a(Lds;Lrt;III)V</span>
-<span class="">	goto :goto_2</span>
-<span class="">	:goto_1</span>
-<span class="">	:cond_2</span>
-<span class="missed">	if-eqz p1, :cond_3</span>
-<span class="missed">	iget-object p1, p1, Lrt;->d:Lrt;</span>
-<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:cond_3</span>
-<span class="missed">	const/4 p1, 0x7</span>
-<span class="missed">	invoke-virtual {p0, p1, v2}, Lds;->d(II)V</span>
-<span class="">	:goto_2</span>
-<span class="">	:cond_4</span>
-<span class="">	return-void</span>
-.end method
-
-.method private static a(Lds;Lrt;Ljava/lang/Thread;[Ljava/lang/StackTraceElement;[Ljava/lang/Thread;Ljava/util/List;ILbs;Lbs;)V
-<span class="">	.locals 6</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Lds;",</span>
-<span class="">	"Lrt;",</span>
-<span class="">	"Ljava/lang/Thread;",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/StackTraceElement;",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/Thread;",</span>
-<span class="">	"Ljava/util/List<",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/StackTraceElement;",</span>
-<span class="">	">;I",</span>
-<span class="">	"Lbs;",</span>
-<span class="">	"Lbs;",</span>
-<span class="">	")V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	const/4 v0, 0x2</span>
-<span class="missed">	const/4 v1, 0x1</span>
-<span class="missed">	invoke-virtual {p0, v1, v0}, Lds;->c(II)V</span>
-<span class="">	invoke-static/range {p1 .. p8}, Les;->a(Lrt;Ljava/lang/Thread;[Ljava/lang/StackTraceElement;[Ljava/lang/Thread;Ljava/util/List;ILbs;Lbs;)I</span>
-<span class="missed">	move-result v2</span>
-<span class="missed">	invoke-virtual {p0, v2}, Lds;->e(I)V</span>
-<span class="missed">	const/4 v2, 0x4</span>
-<span class="missed">	invoke-static {p0, p2, p3, v2, v1}, Les;->a(Lds;Ljava/lang/Thread;[Ljava/lang/StackTraceElement;IZ)V</span>
-<span class="missed">	array-length p2, p4</span>
-<span class="missed">	const/4 p3, 0x0</span>
-<span class="missed">	const/4 v3, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	if-ge v3, p2, :cond_0</span>
-<span class="missed">	aget-object v4, p4, v3</span>
-<span class="">	invoke-interface {p5, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="">	invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v5</span>
-<span class="missed">	check-cast v5, [Ljava/lang/StackTraceElement;</span>
-<span class="missed">	invoke-static {p0, v4, v5, p3, p3}, Les;->a(Lds;Ljava/lang/Thread;[Ljava/lang/StackTraceElement;IZ)V</span>
+<span class="">	invoke-virtual {v4, v5}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-nez v4, :cond_4</span>
+<span class="">	return v2</span>
+<span class="">	:cond_4</span>
 <span class="missed">	add-int/lit8 v3, v3, 0x1</span>
 <span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	invoke-static {p0, p1, v1, p6, v0}, Les;->a(Lds;Lrt;III)V</span>
-<span class="missed">	const/4 p1, 0x3</span>
-<span class="missed">	invoke-virtual {p0, p1, v0}, Lds;->c(II)V</span>
-<span class="">	invoke-static {}, Les;->a()I</span>
-<span class="missed">	move-result p2</span>
-<span class="missed">	invoke-virtual {p0, p2}, Lds;->e(I)V</span>
-<span class="missed">	sget-object p2, Les;->a:Lbs;</span>
-<span class="missed">	invoke-virtual {p0, v1, p2}, Lds;->a(ILbs;)V</span>
-<span class="missed">	sget-object p2, Les;->a:Lbs;</span>
-<span class="missed">	invoke-virtual {p0, v0, p2}, Lds;->a(ILbs;)V</span>
-<span class="missed">	const-wide/16 p2, 0x0</span>
-<span class="missed">	invoke-virtual {p0, p1, p2, p3}, Lds;->a(IJ)V</span>
-<span class="missed">	invoke-virtual {p0, v2, v0}, Lds;->c(II)V</span>
-<span class="">	invoke-static {p7, p8}, Les;->a(Lbs;Lbs;)I</span>
-<span class="missed">	move-result p4</span>
-<span class="missed">	invoke-virtual {p0, p4}, Lds;->e(I)V</span>
-<span class="missed">	invoke-virtual {p0, v1, p2, p3}, Lds;->a(IJ)V</span>
-<span class="missed">	invoke-virtual {p0, v0, p2, p3}, Lds;->a(IJ)V</span>
-<span class="missed">	invoke-virtual {p0, p1, p7}, Lds;->a(ILbs;)V</span>
-<span class="missed">	if-eqz p8, :cond_1</span>
-<span class="missed">	invoke-virtual {p0, v2, p8}, Lds;->a(ILbs;)V</span>
-<span class="">	:cond_1</span>
-<span class="">	return-void</span>
+<span class="">	:cond_5</span>
+<span class="">	return v0</span>
 .end method
 
-.method private static a(Lds;Lrt;Ljava/lang/Thread;[Ljava/lang/StackTraceElement;[Ljava/lang/Thread;Ljava/util/List;ILbs;Lbs;Ljava/util/Map;Landroid/app/ActivityManager$RunningAppProcessInfo;I)V
-<span class="">	.locals 2</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+.method public hashCode()I
+<span class="">	.locals 4</span>
+
+<span class="">	invoke-virtual {p0}, Les;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v2, v0, :cond_0</span>
+<span class="missed">	mul-int/lit8 v1, v1, 0x1f</span>
+<span class="">	invoke-virtual {p0, v2}, Les;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	add-int/2addr v1, v3</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	return v1</span>
+.end method
+
+.method public remove(I)Ljava/lang/Object;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
+<span class="">	"(I)TE;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
+
+<span class="missed">	invoke-virtual {p0}, Les;->c()V</span>
+<span class="">	invoke-super {p0, p1}, Ljava/util/AbstractList;->remove(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public remove(Ljava/lang/Object;)Z
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-virtual {p0}, Les;->c()V</span>
+<span class="">	invoke-super {p0, p1}, Ljava/util/AbstractList;->remove(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public removeAll(Ljava/util/Collection;)Z
+<span class="">	.locals 0</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
 <span class="">	"(",</span>
-<span class="">	"Lds;",</span>
-<span class="">	"Lrt;",</span>
-<span class="">	"Ljava/lang/Thread;",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/StackTraceElement;",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/Thread;",</span>
-<span class="">	"Ljava/util/List<",</span>
-<span class="">	"[",</span>
-<span class="">	"Ljava/lang/StackTraceElement;",</span>
-<span class="">	">;I",</span>
-<span class="">	"Lbs;",</span>
-<span class="">	"Lbs;",</span>
-<span class="">	"Ljava/util/Map<",</span>
-<span class="">	"Ljava/lang/String;",</span>
-<span class="">	"Ljava/lang/String;",</span>
-<span class="">	">;",</span>
-<span class="">	"Landroid/app/ActivityManager$RunningAppProcessInfo;",</span>
-<span class="">	"I)V"</span>
+<span class="">	"Ljava/util/Collection<",</span>
+<span class="">	"*>;)Z"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	const/4 v0, 0x3</span>
-<span class="missed">	const/4 v1, 0x2</span>
-<span class="missed">	invoke-virtual {p0, v0, v1}, Lds;->c(II)V</span>
-<span class="">	invoke-static/range {p1 .. p11}, Les;->a(Lrt;Ljava/lang/Thread;[Ljava/lang/StackTraceElement;[Ljava/lang/Thread;Ljava/util/List;ILbs;Lbs;Ljava/util/Map;Landroid/app/ActivityManager$RunningAppProcessInfo;I)I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	invoke-virtual {p0, v1}, Lds;->e(I)V</span>
-<span class="missed">	invoke-static/range {p0 .. p8}, Les;->a(Lds;Lrt;Ljava/lang/Thread;[Ljava/lang/StackTraceElement;[Ljava/lang/Thread;Ljava/util/List;ILbs;Lbs;)V</span>
-<span class="missed">	if-eqz p9, :cond_0</span>
-<span class="">	invoke-interface {p9}, Ljava/util/Map;->isEmpty()Z</span>
+<span class="missed">	invoke-virtual {p0}, Les;->c()V</span>
+<span class="">	invoke-super {p0, p1}, Ljava/util/AbstractList;->removeAll(Ljava/util/Collection;)Z</span>
 <span class="missed">	move-result p1</span>
-<span class="missed">	if-nez p1, :cond_0</span>
-<span class="missed">	invoke-static {p0, p9}, Les;->a(Lds;Ljava/util/Map;)V</span>
-<span class="">	:cond_0</span>
-<span class="missed">	if-eqz p10, :cond_2</span>
-<span class="missed">	iget p1, p10, Landroid/app/ActivityManager$RunningAppProcessInfo;->importance:I</span>
-<span class="missed">	const/16 p2, 0x64</span>
-<span class="missed">	if-eq p1, p2, :cond_1</span>
-<span class="missed">	const/4 p1, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_1</span>
-<span class="missed">	const/4 p1, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	invoke-virtual {p0, v0, p1}, Lds;->a(IZ)V</span>
-<span class="">	:cond_2</span>
-<span class="missed">	const/4 p1, 0x4</span>
-<span class="missed">	invoke-virtual {p0, p1, p11}, Lds;->d(II)V</span>
-<span class="">	return-void</span>
+<span class="">	return p1</span>
+.end method
+
+.method public retainAll(Ljava/util/Collection;)Z
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/Collection<",</span>
+<span class="">	"*>;)Z"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	invoke-virtual {p0}, Les;->c()V</span>
+<span class="">	invoke-super {p0, p1}, Ljava/util/AbstractList;->retainAll(Ljava/util/Collection;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public set(ILjava/lang/Object;)Ljava/lang/Object;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(ITE;)TE;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	invoke-virtual {p0}, Les;->c()V</span>
+<span class="">	invoke-super {p0, p1, p2}, Ljava/util/AbstractList;->set(ILjava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

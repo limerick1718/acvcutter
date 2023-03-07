@@ -16,786 +16,196 @@
 	<pre class="source lang-smali" id='source'>
 		<code>.class public Lgw;
 .super Ljava/lang/Object;
-.source "JsonWriter.java"
-.implements Ljava/io/Closeable;
-.implements Ljava/io/Flushable;
 
 
-.field private static final j:[Ljava/lang/String;
-.field private static final k:[Ljava/lang/String;
-.field private final a:Ljava/io/Writer;
-.field private b:[I
-.field private c:I
-.field private d:Ljava/lang/String;
-.field private e:Ljava/lang/String;
-.field private f:Z
-.field private g:Z
-.field private h:Ljava/lang/String;
-.field private i:Z
+.field private static final a:Lfu;
+.field private b:Lew;
+.field private volatile c:Lhp;
+.field private volatile d:Lew;
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 5</span>
-
-<span class="cov">	const/16 v0, 0x80</span>
-<span class="cov">	new-array v0, v0, [Ljava/lang/String;</span>
-<span class="cov">	sput-object v0, Lgw;->j:[Ljava/lang/String;</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	const/16 v2, 0x1f</span>
-<span class="cov">	if-gt v1, v2, :cond_0</span>
-<span class="cov">	sget-object v2, Lgw;->j:[Ljava/lang/String;</span>
-<span class="cov">	const/4 v3, 0x1</span>
-<span class="cov">	new-array v3, v3, [Ljava/lang/Object;</span>
-<span class="exec">	invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
-<span class="cov">	move-result-object v4</span>
-<span class="cov">	aput-object v4, v3, v0</span>
-<span class="cov">	const-string v4, "\\u%04x"</span>
-<span class="exec">	invoke-static {v4, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object v3</span>
-<span class="cov">	aput-object v3, v2, v1</span>
-<span class="cov">	add-int/lit8 v1, v1, 0x1</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	sget-object v0, Lgw;->j:[Ljava/lang/String;</span>
-<span class="cov">	const/16 v1, 0x22</span>
-<span class="cov">	const-string v2, "\\\""</span>
-<span class="cov">	aput-object v2, v0, v1</span>
-<span class="cov">	const/16 v1, 0x5c</span>
-<span class="cov">	const-string v2, "\\\\"</span>
-<span class="cov">	aput-object v2, v0, v1</span>
-<span class="cov">	const/16 v1, 0x9</span>
-<span class="cov">	const-string v2, "\\t"</span>
-<span class="cov">	aput-object v2, v0, v1</span>
-<span class="cov">	const/16 v1, 0x8</span>
-<span class="cov">	const-string v2, "\\b"</span>
-<span class="cov">	aput-object v2, v0, v1</span>
-<span class="cov">	const/16 v1, 0xa</span>
-<span class="cov">	const-string v2, "\\n"</span>
-<span class="cov">	aput-object v2, v0, v1</span>
-<span class="cov">	const/16 v1, 0xd</span>
-<span class="cov">	const-string v2, "\\r"</span>
-<span class="cov">	aput-object v2, v0, v1</span>
-<span class="cov">	const/16 v1, 0xc</span>
-<span class="cov">	const-string v2, "\\f"</span>
-<span class="cov">	aput-object v2, v0, v1</span>
-<span class="exec">	invoke-virtual {v0}, [Ljava/lang/String;->clone()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, [Ljava/lang/String;</span>
-<span class="cov">	sput-object v0, Lgw;->k:[Ljava/lang/String;</span>
-<span class="cov">	const/16 v1, 0x3c</span>
-<span class="cov">	const-string v2, "\\u003c"</span>
-<span class="cov">	aput-object v2, v0, v1</span>
-<span class="cov">	const/16 v1, 0x3e</span>
-<span class="cov">	const-string v2, "\\u003e"</span>
-<span class="cov">	aput-object v2, v0, v1</span>
-<span class="cov">	const/16 v1, 0x26</span>
-<span class="cov">	const-string v2, "\\u0026"</span>
-<span class="cov">	aput-object v2, v0, v1</span>
-<span class="cov">	const/16 v1, 0x3d</span>
-<span class="cov">	const-string v2, "\\u003d"</span>
-<span class="cov">	aput-object v2, v0, v1</span>
-<span class="cov">	const/16 v1, 0x27</span>
-<span class="cov">	const-string v2, "\\u0027"</span>
-<span class="cov">	aput-object v2, v0, v1</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public constructor &lt;init&gt;(Ljava/io/Writer;)V</span>
+.method static constructor &lt;clinit&gt;()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	const/16 v0, 0x20</span>
-<span class="cov">	new-array v0, v0, [I</span>
-<span class="cov">	iput-object v0, p0, Lgw;->b:[I</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	iput v0, p0, Lgw;->c:I</span>
-<span class="cov">	const/4 v0, 0x6</span>
-<span class="cov">	invoke-direct {p0, v0}, Lgw;->a(I)V</span>
-<span class="cov">	const-string v0, ":"</span>
-<span class="cov">	iput-object v0, p0, Lgw;->e:Ljava/lang/String;</span>
-<span class="cov">	const/4 v0, 0x1</span>
-<span class="cov">	iput-boolean v0, p0, Lgw;->i:Z</span>
-<span class="cov">	if-eqz p1, :cond_0</span>
-<span class="cov">	iput-object p1, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="exec">	return-void</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
-<span class="missed">	const-string v0, "out == null"</span>
-<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw p1</span>
-.end method
-
-<span class="cov">.method private a(IILjava/lang/String;)Lgw;</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="exec">	invoke-direct {p0}, Lgw;->peek()I</span>
-<span class="cov">	move-result v0</span>
-<span class="missed">	if-eq v0, p2, :cond_1</span>
-<span class="missed">	if-ne v0, p1, :cond_0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
-<span class="missed">	const-string p2, "Nesting problem."</span>
-<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw p1</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	iget-object p1, p0, Lgw;->h:Ljava/lang/String;</span>
-<span class="cov">	if-nez p1, :cond_3</span>
-<span class="cov">	iget p1, p0, Lgw;->c:I</span>
-<span class="cov">	add-int/lit8 p1, p1, -0x1</span>
-<span class="cov">	iput p1, p0, Lgw;->c:I</span>
-<span class="cov">	if-ne v0, p2, :cond_2</span>
-<span class="cov">	invoke-direct {p0}, Lgw;->x()V</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	iget-object p1, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="cov">	invoke-virtual {p1, p3}, Ljava/io/Writer;->write(Ljava/lang/String;)V</span>
-<span class="exec">	return-object p0</span>
-<span class="">	:cond_3</span>
-<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
-<span class="missed">	new-instance p2, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const-string p3, "Dangling name: "</span>
-<span class="missed">	invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	iget-object p3, p0, Lgw;->h:Ljava/lang/String;</span>
-<span class="missed">	invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p2</span>
-<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw p1</span>
-.end method
-
-<span class="cov">.method private a(ILjava/lang/String;)Lgw;</span>
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	invoke-direct {p0}, Lgw;->w()V</span>
-<span class="cov">	invoke-direct {p0, p1}, Lgw;->a(I)V</span>
-<span class="cov">	iget-object p1, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="cov">	invoke-virtual {p1, p2}, Ljava/io/Writer;->write(Ljava/lang/String;)V</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-<span class="cov">.method private a(I)V</span>
-<span class="">	.locals 4</span>
-
-<span class="cov">	iget v0, p0, Lgw;->c:I</span>
-<span class="cov">	iget-object v1, p0, Lgw;->b:[I</span>
-<span class="cov">	array-length v2, v1</span>
-<span class="missed">	if-ne v0, v2, :cond_0</span>
-<span class="missed">	mul-int/lit8 v2, v0, 0x2</span>
-<span class="missed">	new-array v2, v2, [I</span>
-<span class="missed">	const/4 v3, 0x0</span>
-<span class="missed">	invoke-static {v1, v3, v2, v3, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
-<span class="missed">	iput-object v2, p0, Lgw;->b:[I</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	iget-object v0, p0, Lgw;->b:[I</span>
-<span class="cov">	iget v1, p0, Lgw;->c:I</span>
-<span class="cov">	add-int/lit8 v2, v1, 0x1</span>
-<span class="cov">	iput v2, p0, Lgw;->c:I</span>
-<span class="cov">	aput p1, v0, v1</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method private b(I)V</span>
-<span class="">	.locals 2</span>
-
-<span class="cov">	iget-object v0, p0, Lgw;->b:[I</span>
-<span class="cov">	iget v1, p0, Lgw;->c:I</span>
-<span class="cov">	add-int/lit8 v1, v1, -0x1</span>
-<span class="cov">	aput p1, v0, v1</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method private e(Ljava/lang/String;)V</span>
-<span class="">	.locals 8</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	iget-boolean v0, p0, Lgw;->g:Z</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	sget-object v0, Lgw;->k:[Ljava/lang/String;</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	sget-object v0, Lgw;->j:[Ljava/lang/String;</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	iget-object v1, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="cov">	const-string v2, "\""</span>
-<span class="cov">	invoke-virtual {v1, v2}, Ljava/io/Writer;->write(Ljava/lang/String;)V</span>
-<span class="exec">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	const/4 v3, 0x0</span>
-<span class="cov">	const/4 v4, 0x0</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	if-ge v3, v1, :cond_6</span>
-<span class="exec">	invoke-virtual {p1, v3}, Ljava/lang/String;->charAt(I)C</span>
-<span class="cov">	move-result v5</span>
-<span class="cov">	const/16 v6, 0x80</span>
-<span class="cov">	if-ge v5, v6, :cond_1</span>
-<span class="cov">	aget-object v5, v0, v5</span>
-<span class="cov">	if-nez v5, :cond_3</span>
-<span class="">	goto :goto_3</span>
-<span class="">	:cond_1</span>
-<span class="missed">	const/16 v6, 0x2028</span>
-<span class="missed">	if-ne v5, v6, :cond_2</span>
-<span class="missed">	const-string v5, "\\u2028"</span>
-<span class="">	goto :goto_2</span>
-<span class="">	:cond_2</span>
-<span class="missed">	const/16 v6, 0x2029</span>
-<span class="missed">	if-ne v5, v6, :cond_5</span>
-<span class="missed">	const-string v5, "\\u2029"</span>
-<span class="">	:goto_2</span>
-<span class="">	:cond_3</span>
-<span class="missed">	if-ge v4, v3, :cond_4</span>
-<span class="missed">	iget-object v6, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="missed">	sub-int v7, v3, v4</span>
-<span class="missed">	invoke-virtual {v6, p1, v4, v7}, Ljava/io/Writer;->write(Ljava/lang/String;II)V</span>
-<span class="">	:cond_4</span>
-<span class="missed">	iget-object v4, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="missed">	invoke-virtual {v4, v5}, Ljava/io/Writer;->write(Ljava/lang/String;)V</span>
-<span class="missed">	add-int/lit8 v4, v3, 0x1</span>
-<span class="cov">	:goto_3</span>
-<span class="cov">	:cond_5</span>
-<span class="cov">	add-int/lit8 v3, v3, 0x1</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:cond_6</span>
-<span class="cov">	if-ge v4, v1, :cond_7</span>
-<span class="cov">	iget-object v0, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="cov">	sub-int/2addr v1, v4</span>
-<span class="cov">	invoke-virtual {v0, p1, v4, v1}, Ljava/io/Writer;->write(Ljava/lang/String;II)V</span>
-<span class="cov">	:cond_7</span>
-<span class="cov">	iget-object p1, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="cov">	invoke-virtual {p1, v2}, Ljava/io/Writer;->write(Ljava/lang/String;)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method private peek()I</span>
-<span class="">	.locals 2</span>
-
-<span class="cov">	iget v0, p0, Lgw;->c:I</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	iget-object v1, p0, Lgw;->b:[I</span>
-<span class="cov">	add-int/lit8 v0, v0, -0x1</span>
-<span class="cov">	aget v0, v1, v0</span>
-<span class="exec">	return v0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
-<span class="missed">	const-string v1, "JsonWriter is closed."</span>
-<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw v0</span>
-.end method
-
-<span class="cov">.method private v()V</span>
-<span class="">	.locals 2</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="exec">	invoke-direct {p0}, Lgw;->peek()I</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	const/4 v1, 0x5</span>
-<span class="cov">	if-ne v0, v1, :cond_0</span>
-<span class="cov">	iget-object v0, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="cov">	const/16 v1, 0x2c</span>
-<span class="cov">	invoke-virtual {v0, v1}, Ljava/io/Writer;->write(I)V</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 v1, 0x3</span>
-<span class="cov">	if-ne v0, v1, :cond_1</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	invoke-direct {p0}, Lgw;->x()V</span>
-<span class="cov">	const/4 v0, 0x4</span>
-<span class="cov">	invoke-direct {p0, v0}, Lgw;->b(I)V</span>
-<span class="exec">	return-void</span>
-<span class="">	:cond_1</span>
-<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
-<span class="missed">	const-string v1, "Nesting problem."</span>
-<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw v0</span>
-.end method
-
-<span class="cov">.method private w()V</span>
-<span class="">	.locals 3</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="exec">	invoke-direct {p0}, Lgw;->peek()I</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="cov">	const/4 v2, 0x2</span>
-<span class="cov">	if-eq v0, v1, :cond_5</span>
-<span class="cov">	if-eq v0, v2, :cond_4</span>
-<span class="cov">	const/4 v1, 0x4</span>
-<span class="cov">	if-eq v0, v1, :cond_3</span>
-<span class="cov">	const/4 v1, 0x6</span>
-<span class="cov">	const/4 v2, 0x7</span>
-<span class="missed">	if-eq v0, v1, :cond_2</span>
-<span class="missed">	if-ne v0, v2, :cond_1</span>
-<span class="missed">	iget-boolean v0, p0, Lgw;->f:Z</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
-<span class="missed">	const-string v1, "JSON must have only one top-level value."</span>
-<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw v0</span>
-<span class="">	:cond_1</span>
-<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
-<span class="missed">	const-string v1, "Nesting problem."</span>
-<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw v0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	invoke-direct {p0, v2}, Lgw;->b(I)V</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:cond_3</span>
-<span class="cov">	iget-object v0, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="cov">	iget-object v1, p0, Lgw;->e:Ljava/lang/String;</span>
-<span class="cov">	invoke-virtual {v0, v1}, Ljava/io/Writer;->append(Ljava/lang/CharSequence;)Ljava/io/Writer;</span>
-<span class="cov">	const/4 v0, 0x5</span>
-<span class="cov">	invoke-direct {p0, v0}, Lgw;->b(I)V</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:cond_4</span>
-<span class="missed">	iget-object v0, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="missed">	const/16 v1, 0x2c</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/io/Writer;->append(C)Ljava/io/Writer;</span>
-<span class="missed">	invoke-direct {p0}, Lgw;->x()V</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:cond_5</span>
-<span class="missed">	invoke-direct {p0, v2}, Lgw;->b(I)V</span>
-<span class="missed">	invoke-direct {p0}, Lgw;->x()V</span>
-<span class="cov">	:goto_1</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method private x()V</span>
-<span class="">	.locals 4</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	iget-object v0, p0, Lgw;->d:Ljava/lang/String;</span>
-<span class="cov">	if-nez v0, :cond_0</span>
-<span class="exec">	return-void</span>
-<span class="">	:cond_0</span>
-<span class="missed">	iget-object v0, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="missed">	const-string v1, "\n"</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V</span>
-<span class="missed">	iget v0, p0, Lgw;->c:I</span>
-<span class="missed">	const/4 v1, 0x1</span>
-<span class="">	:goto_0</span>
-<span class="missed">	if-ge v1, v0, :cond_1</span>
-<span class="missed">	iget-object v2, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="missed">	iget-object v3, p0, Lgw;->d:Ljava/lang/String;</span>
-<span class="missed">	invoke-virtual {v2, v3}, Ljava/io/Writer;->write(Ljava/lang/String;)V</span>
-<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_1</span>
+<span class="">	invoke-static {}, Lfu;->a()Lfu;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lgw;->a:Lfu;</span>
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method private y()V</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
+.method public constructor &lt;init&gt;()V
+<span class="">	.locals 0</span>
 
-<span class="cov">	iget-object v0, p0, Lgw;->h:Ljava/lang/String;</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	invoke-direct {p0}, Lgw;->v()V</span>
-<span class="cov">	iget-object v0, p0, Lgw;->h:Ljava/lang/String;</span>
-<span class="cov">	invoke-direct {p0, v0}, Lgw;->e(Ljava/lang/String;)V</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	iput-object v0, p0, Lgw;->h:Ljava/lang/String;</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	return-void</span>
 .end method
 
-.method public a()Lgw;
-<span class="">	.locals 2</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	invoke-direct {p0}, Lgw;->y()V</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	const-string v1, "["</span>
-<span class="missed">	invoke-direct {p0, v0, v1}, Lgw;->a(ILjava/lang/String;)Lgw;</span>
-<span class="">	return-object p0</span>
-.end method
-
-.method public a(Ljava/lang/Boolean;)Lgw;
+.method private final b(Lhp;)Lhp;
 <span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
 
-<span class="missed">	if-nez p1, :cond_0</span>
-<span class="">	invoke-virtual {p0}, Lgw;->u()Lgw;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	return-object p1</span>
+<span class="missed">	iget-object v0, p0, Lgw;->c:Lhp;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lgw;->c:Lhp;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:try_start_1</span>
 <span class="">	:cond_0</span>
-<span class="missed">	invoke-direct {p0}, Lgw;->y()V</span>
-<span class="missed">	invoke-direct {p0}, Lgw;->w()V</span>
-<span class="missed">	iget-object v0, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="">	invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	if-eqz p1, :cond_1</span>
-<span class="missed">	const-string p1, "true"</span>
+<span class="missed">	iput-object p1, p0, Lgw;->c:Lhp;</span>
+<span class="missed">	sget-object v0, Lew;->a:Lew;</span>
+<span class="missed">	iput-object v0, p0, Lgw;->d:Lew;</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catch Lgo; {:try_start_1 .. :try_end_1} :catch_0</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
 <span class="">	goto :goto_0</span>
-<span class="">	:cond_1</span>
-<span class="missed">	const-string p1, "false"</span>
+<span class="">	:try_start_2</span>
+<span class="">	:catch_0</span>
+<span class="missed">	iput-object p1, p0, Lgw;->c:Lhp;</span>
+<span class="missed">	sget-object p1, Lew;->a:Lew;</span>
+<span class="missed">	iput-object p1, p0, Lgw;->d:Lew;</span>
 <span class="">	:goto_0</span>
-<span class="missed">	invoke-virtual {v0, p1}, Ljava/io/Writer;->write(Ljava/lang/String;)V</span>
-<span class="">	return-object p0</span>
-.end method
-
-<span class="cov">.method public a(Ljava/lang/Number;)Lgw;</span>
-<span class="">	.locals 3</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	if-nez p1, :cond_0</span>
-<span class="">	invoke-virtual {p0}, Lgw;->u()Lgw;</span>
-<span class="missed">	move-result-object p1</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	:try_end_2</span>
+<span class="missed">	.catchall {:try_start_2 .. :try_end_2} :catchall_0</span>
+<span class="">	throw p1</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object p1, p0, Lgw;->c:Lhp;</span>
 <span class="">	return-object p1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	invoke-direct {p0}, Lgw;->y()V</span>
-<span class="exec">	invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	iget-boolean v1, p0, Lgw;->f:Z</span>
-<span class="missed">	if-nez v1, :cond_2</span>
-<span class="missed">	const-string v1, "-Infinity"</span>
-<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	if-nez v1, :cond_1</span>
-<span class="missed">	const-string v1, "Infinity"</span>
-<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	if-nez v1, :cond_1</span>
-<span class="missed">	const-string v1, "NaN"</span>
-<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	if-nez v1, :cond_1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_1</span>
-<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
-<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const-string v2, "Numeric values must be finite, but was "</span>
-<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw v0</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	invoke-direct {p0}, Lgw;->w()V</span>
-<span class="cov">	iget-object p1, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="cov">	invoke-virtual {p1, v0}, Ljava/io/Writer;->append(Ljava/lang/CharSequence;)Ljava/io/Writer;</span>
-<span class="exec">	return-object p0</span>
 .end method
 
-<span class="cov">.method public final a(Z)V</span>
-<span class="">	.locals 0</span>
+.method public final a(Lhp;)Lhp;
+<span class="">	.locals 2</span>
 
-<span class="cov">	iput-boolean p1, p0, Lgw;->g:Z</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iget-object v0, p0, Lgw;->c:Lhp;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	iput-object v1, p0, Lgw;->b:Lew;</span>
+<span class="missed">	iput-object v1, p0, Lgw;->d:Lew;</span>
+<span class="missed">	iput-object p1, p0, Lgw;->c:Lhp;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public b(Ljava/lang/String;)Lgw;</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	if-eqz p1, :cond_2</span>
-<span class="cov">	iget-object v0, p0, Lgw;->h:Ljava/lang/String;</span>
-<span class="cov">	if-nez v0, :cond_1</span>
-<span class="cov">	iget v0, p0, Lgw;->c:I</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	iput-object p1, p0, Lgw;->h:Ljava/lang/String;</span>
-<span class="exec">	return-object p0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
-<span class="missed">	const-string v0, "JsonWriter is closed."</span>
-<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw p1</span>
-<span class="">	:cond_1</span>
-<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
-<span class="missed">	invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V</span>
-<span class="">	throw p1</span>
-<span class="">	:cond_2</span>
-<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
-<span class="missed">	const-string v0, "name == null"</span>
-<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw p1</span>
-.end method
-
-<span class="cov">.method public final b(Z)V</span>
-<span class="">	.locals 0</span>
-
-<span class="cov">	iput-boolean p1, p0, Lgw;->f:Z</span>
-<span class="exec">	return-void</span>
-.end method
-
-.method public final c(Ljava/lang/String;)V
+.method public final b()I
 <span class="">	.locals 1</span>
 
-<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	iget-object v0, p0, Lgw;->d:Lew;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lgw;->d:Lew;</span>
+<span class="">	invoke-virtual {v0}, Lew;->a()I</span>
 <span class="missed">	move-result v0</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="missed">	const/4 p1, 0x0</span>
-<span class="missed">	iput-object p1, p0, Lgw;->d:Ljava/lang/String;</span>
-<span class="missed">	const-string p1, ":"</span>
-<span class="missed">	iput-object p1, p0, Lgw;->e:Ljava/lang/String;</span>
-<span class="">	goto :goto_0</span>
+<span class="">	return v0</span>
 <span class="">	:cond_0</span>
-<span class="missed">	iput-object p1, p0, Lgw;->d:Ljava/lang/String;</span>
-<span class="missed">	const-string p1, ": "</span>
-<span class="missed">	iput-object p1, p0, Lgw;->e:Ljava/lang/String;</span>
-<span class="">	:goto_0</span>
-<span class="">	return-void</span>
-.end method
-
-<span class="cov">.method public final c(Z)V</span>
-<span class="">	.locals 0</span>
-
-<span class="cov">	iput-boolean p1, p0, Lgw;->i:Z</span>
-<span class="exec">	return-void</span>
-.end method
-
-.method public close()V
-<span class="">	.locals 3</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	iget-object v0, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="missed">	invoke-virtual {v0}, Ljava/io/Writer;->close()V</span>
-<span class="missed">	iget v0, p0, Lgw;->c:I</span>
-<span class="missed">	const/4 v1, 0x1</span>
-<span class="missed">	if-gt v0, v1, :cond_1</span>
-<span class="missed">	if-ne v0, v1, :cond_0</span>
-<span class="missed">	iget-object v2, p0, Lgw;->b:[I</span>
-<span class="missed">	sub-int/2addr v0, v1</span>
-<span class="missed">	aget v0, v2, v0</span>
-<span class="missed">	const/4 v1, 0x7</span>
-<span class="missed">	if-ne v0, v1, :cond_1</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	iput v0, p0, Lgw;->c:I</span>
-<span class="">	return-void</span>
+<span class="missed">	iget-object v0, p0, Lgw;->c:Lhp;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lgw;->c:Lhp;</span>
+<span class="">	invoke-interface {v0}, Lhp;->h()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
 <span class="">	:cond_1</span>
-<span class="missed">	new-instance v0, Ljava/io/IOException;</span>
-<span class="missed">	const-string v1, "Incomplete document"</span>
-<span class="missed">	invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw v0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public d(Ljava/lang/String;)Lgw;</span>
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	if-nez p1, :cond_0</span>
-<span class="">	invoke-virtual {p0}, Lgw;->u()Lgw;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	return-object p1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	invoke-direct {p0}, Lgw;->y()V</span>
-<span class="cov">	invoke-direct {p0}, Lgw;->w()V</span>
-<span class="cov">	invoke-direct {p0, p1}, Lgw;->e(Ljava/lang/String;)V</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-.method public d(Z)Lgw;
+.method public final c()Lew;
 <span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
 
-<span class="missed">	invoke-direct {p0}, Lgw;->y()V</span>
-<span class="missed">	invoke-direct {p0}, Lgw;->w()V</span>
-<span class="missed">	iget-object v0, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="missed">	const-string p1, "true"</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const-string p1, "false"</span>
-<span class="">	:goto_0</span>
-<span class="missed">	invoke-virtual {v0, p1}, Ljava/io/Writer;->write(Ljava/lang/String;)V</span>
-<span class="">	return-object p0</span>
-.end method
-
-<span class="cov">.method public f()Lgw;</span>
-<span class="">	.locals 2</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	invoke-direct {p0}, Lgw;->y()V</span>
-<span class="cov">	const/4 v0, 0x3</span>
-<span class="cov">	const-string v1, "{"</span>
-<span class="cov">	invoke-direct {p0, v0, v1}, Lgw;->a(ILjava/lang/String;)Lgw;</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-.method public flush()V
-<span class="">	.locals 2</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	iget v0, p0, Lgw;->c:I</span>
+<span class="missed">	iget-object v0, p0, Lgw;->d:Lew;</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	iget-object v0, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="missed">	invoke-virtual {v0}, Ljava/io/Writer;->flush()V</span>
-<span class="">	return-void</span>
+<span class="missed">	iget-object v0, p0, Lgw;->d:Lew;</span>
+<span class="">	return-object v0</span>
 <span class="">	:cond_0</span>
-<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
-<span class="missed">	const-string v1, "JsonWriter is closed."</span>
-<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lgw;->d:Lew;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lgw;->d:Lew;</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v0, p0, Lgw;->c:Lhp;</span>
+<span class="missed">	if-nez v0, :cond_2</span>
+<span class="missed">	sget-object v0, Lew;->a:Lew;</span>
+<span class="missed">	iput-object v0, p0, Lgw;->d:Lew;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object v0, p0, Lgw;->c:Lhp;</span>
+<span class="">	invoke-interface {v0}, Lhp;->d()Lew;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lgw;->d:Lew;</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object v0, p0, Lgw;->d:Lew;</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return-object v0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
 <span class="">	throw v0</span>
 .end method
 
-.method public h(J)Lgw;
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
+.method public equals(Ljava/lang/Object;)Z
+<span class="">	.locals 2</span>
 
-<span class="missed">	invoke-direct {p0}, Lgw;->y()V</span>
-<span class="missed">	invoke-direct {p0}, Lgw;->w()V</span>
-<span class="missed">	iget-object v0, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="">	invoke-static {p1, p2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;</span>
+<span class="missed">	if-ne p0, p1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	instance-of v0, p1, Lgw;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	return p1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	check-cast p1, Lgw;</span>
+<span class="missed">	iget-object v0, p0, Lgw;->c:Lhp;</span>
+<span class="missed">	iget-object v1, p1, Lgw;->c:Lhp;</span>
+<span class="missed">	if-nez v0, :cond_2</span>
+<span class="missed">	if-nez v1, :cond_2</span>
+<span class="">	invoke-virtual {p0}, Lgw;->c()Lew;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p1}, Lgw;->c()Lew;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="missed">	invoke-virtual {v0, p1}, Ljava/io/Writer;->write(Ljava/lang/String;)V</span>
-<span class="">	return-object p0</span>
+<span class="">	invoke-virtual {v0, p1}, Lew;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	if-eqz v0, :cond_3</span>
+<span class="missed">	if-eqz v1, :cond_3</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	if-eqz v0, :cond_4</span>
+<span class="">	invoke-interface {v0}, Lhp;->l()Lhp;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-direct {p1, v1}, Lgw;->b(Lhp;)Lhp;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+<span class="">	:cond_4</span>
+<span class="">	invoke-interface {v1}, Lhp;->l()Lhp;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-direct {p0, p1}, Lgw;->b(Lhp;)Lhp;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
 .end method
 
-.method public l()Lgw;
-<span class="">	.locals 3</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
+.method public hashCode()I
+<span class="">	.locals 1</span>
 
 <span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	const/4 v1, 0x2</span>
-<span class="missed">	const-string v2, "]"</span>
-<span class="missed">	invoke-direct {p0, v0, v1, v2}, Lgw;->a(IILjava/lang/String;)Lgw;</span>
-<span class="">	return-object p0</span>
-.end method
-
-<span class="cov">.method public q()Lgw;</span>
-<span class="">	.locals 3</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	const/4 v0, 0x3</span>
-<span class="cov">	const/4 v1, 0x5</span>
-<span class="cov">	const-string v2, "}"</span>
-<span class="cov">	invoke-direct {p0, v0, v1, v2}, Lgw;->a(IILjava/lang/String;)Lgw;</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-<span class="cov">.method public final r()Z</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	iget-boolean v0, p0, Lgw;->i:Z</span>
-<span class="exec">	return v0</span>
-.end method
-
-<span class="cov">.method public final s()Z</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	iget-boolean v0, p0, Lgw;->g:Z</span>
-<span class="exec">	return v0</span>
-.end method
-
-<span class="cov">.method public t()Z</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	iget-boolean v0, p0, Lgw;->f:Z</span>
-<span class="exec">	return v0</span>
-.end method
-
-.method public u()Lgw;
-<span class="">	.locals 2</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	iget-object v0, p0, Lgw;->h:Ljava/lang/String;</span>
-<span class="missed">	if-eqz v0, :cond_1</span>
-<span class="missed">	iget-boolean v0, p0, Lgw;->i:Z</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	invoke-direct {p0}, Lgw;->y()V</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	iput-object v0, p0, Lgw;->h:Ljava/lang/String;</span>
-<span class="">	return-object p0</span>
-<span class="">	:cond_1</span>
-<span class="">	:goto_0</span>
-<span class="missed">	invoke-direct {p0}, Lgw;->w()V</span>
-<span class="missed">	iget-object v0, p0, Lgw;->a:Ljava/io/Writer;</span>
-<span class="missed">	const-string v1, "null"</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V</span>
-<span class="">	return-object p0</span>
+<span class="">	return v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

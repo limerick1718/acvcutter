@@ -16,20 +16,22 @@
 .method constructor <init>(Ljava/lang/Object;)V
     .locals 1
 
-    .line 1
+    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 30
     iput-object p1, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->a:Ljava/lang/Object;
 
-    .line 3
-    sget-object v0, Landroidx/lifecycle/a;->c:Landroidx/lifecycle/a;
+    .line 31
+    sget-object p1, Landroidx/lifecycle/a;->a:Landroidx/lifecycle/a;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v0, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->a:Ljava/lang/Object;
 
-    move-result-object p1
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {v0, p1}, Landroidx/lifecycle/a;->a(Ljava/lang/Class;)Landroidx/lifecycle/a$a;
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroidx/lifecycle/a;->b(Ljava/lang/Class;)Landroidx/lifecycle/a$a;
 
     move-result-object p1
 
@@ -43,7 +45,7 @@
 .method public a(Landroidx/lifecycle/g;Landroidx/lifecycle/e$a;)V
     .locals 2
 
-    .line 1
+    .line 36
     iget-object v0, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->b:Landroidx/lifecycle/a$a;
 
     iget-object v1, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->a:Ljava/lang/Object;

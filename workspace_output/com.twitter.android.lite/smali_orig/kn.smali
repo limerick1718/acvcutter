@@ -1,114 +1,95 @@
-.class final Lkn;
+.class public final Lkn;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lyn;
+.implements Landroid/os/Parcelable$Creator;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<TResult:",
         "Ljava/lang/Object;",
-        "TContinuationResult:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lyn<",
-        "TTResult;>;"
+        "Landroid/os/Parcelable$Creator<",
+        "Lkl;",
+        ">;"
     }
 .end annotation
 
 
-# instance fields
-.field private final a:Ljava/util/concurrent/Executor;
-
-.field private final b:Lzm;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lzm<",
-            "TTResult;TTContinuationResult;>;"
-        }
-    .end annotation
-.end field
-
-.field private final c:Lbo;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lbo<",
-            "TTContinuationResult;>;"
-        }
-    .end annotation
-.end field
-
-
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;Lzm;Lbo;)V
+.method public constructor <init>()V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/concurrent/Executor;",
-            "Lzm<",
-            "TTResult;TTContinuationResult;>;",
-            "Lbo<",
-            "TTContinuationResult;>;)V"
-        }
-    .end annotation
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput-object p1, p0, Lkn;->a:Ljava/util/concurrent/Executor;
-
-    .line 3
-    iput-object p2, p0, Lkn;->b:Lzm;
-
-    .line 4
-    iput-object p3, p0, Lkn;->c:Lbo;
-
     return-void
-.end method
-
-.method static synthetic a(Lkn;)Lbo;
-    .locals 0
-
-    .line 2
-    iget-object p0, p0, Lkn;->c:Lbo;
-
-    return-object p0
-.end method
-
-.method static synthetic b(Lkn;)Lzm;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lkn;->b:Lzm;
-
-    return-object p0
 .end method
 
 
 # virtual methods
-.method public final a(Lgn;)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lgn<",
-            "TTResult;>;)V"
-        }
-    .end annotation
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 5
 
-    .line 1
-    iget-object v0, p0, Lkn;->a:Ljava/util/concurrent/Executor;
+    .line 7
+    invoke-static {p1}, Lbb;->b(Landroid/os/Parcel;)I
 
-    new-instance v1, Lln;
+    move-result v0
 
-    invoke-direct {v1, p0, p1}, Lln;-><init>(Lkn;Lgn;)V
+    const/4 v1, 0x0
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    .line 9
+    :goto_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    return-void
+    move-result v2
+
+    if-ge v2, v0, :cond_1
+
+    .line 10
+    invoke-static {p1}, Lbb;->a(Landroid/os/Parcel;)I
+
+    move-result v2
+
+    .line 11
+    invoke-static {v2}, Lbb;->a(I)I
+
+    move-result v3
+
+    const/4 v4, 0x2
+
+    if-eq v3, v4, :cond_0
+
+    .line 15
+    invoke-static {p1, v2}, Lbb;->b(Landroid/os/Parcel;I)V
+
+    goto :goto_0
+
+    .line 13
+    :cond_0
+    invoke-static {p1, v2}, Lbb;->k(Landroid/os/Parcel;I)Landroid/os/Bundle;
+
+    move-result-object v1
+
+    goto :goto_0
+
+    .line 17
+    :cond_1
+    invoke-static {p1, v0}, Lbb;->l(Landroid/os/Parcel;I)V
+
+    .line 18
+    new-instance p1, Lkl;
+
+    invoke-direct {p1, v1}, Lkl;-><init>(Landroid/os/Bundle;)V
+
+    return-object p1
+.end method
+
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 0
+
+    .line 4
+    new-array p1, p1, [Lkl;
+
+    return-object p1
 .end method

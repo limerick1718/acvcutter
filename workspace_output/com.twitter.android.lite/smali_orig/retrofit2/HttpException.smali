@@ -29,28 +29,28 @@
         }
     .end annotation
 
-    .line 1
+    .line 32
     invoke-static {p1}, Lretrofit2/HttpException;->getMessage(Lretrofit2/Response;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 2
+    .line 33
     invoke-virtual {p1}, Lretrofit2/Response;->code()I
 
     move-result v0
 
     iput v0, p0, Lretrofit2/HttpException;->code:I
 
-    .line 3
+    .line 34
     invoke-virtual {p1}, Lretrofit2/Response;->message()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lretrofit2/HttpException;->message:Ljava/lang/String;
 
-    .line 4
+    .line 35
     iput-object p1, p0, Lretrofit2/HttpException;->response:Lretrofit2/Response;
 
     return-void
@@ -69,10 +69,10 @@
 
     const-string v0, "response == null"
 
-    .line 1
+    .line 23
     invoke-static {p0, v0}, Lretrofit2/Utils;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 2
+    .line 24
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -109,7 +109,7 @@
 .method public code()I
     .locals 1
 
-    .line 1
+    .line 40
     iget v0, p0, Lretrofit2/HttpException;->code:I
 
     return v0
@@ -118,7 +118,7 @@
 .method public message()Ljava/lang/String;
     .locals 1
 
-    .line 1
+    .line 45
     iget-object v0, p0, Lretrofit2/HttpException;->message:Ljava/lang/String;
 
     return-object v0
@@ -134,7 +134,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 52
     iget-object v0, p0, Lretrofit2/HttpException;->response:Lretrofit2/Response;
 
     return-object v0

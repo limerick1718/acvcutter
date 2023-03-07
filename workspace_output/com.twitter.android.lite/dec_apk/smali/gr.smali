@@ -1,15 +1,17 @@
-.class final synthetic Lgr;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.implements Lir$a;
-.field private static final a:Lgr;
-.method private constructor <init>()V
+.class public final Lgr;
+.super Lgw;
+.method public final equals(Ljava/lang/Object;)Z
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
+const/4 v0, 0x0
+return v0
 .end method
-.method public a(Landroid/util/JsonReader;)Ljava/lang/Object;
-.locals 0
+.method public final hashCode()I
+.locals 1
+const/4 v0, 0x0
+return v0
+.end method
+.method public final toString()Ljava/lang/String;
+.locals 1
 const/4 v0, 0x0
 return-object v0
 .end method

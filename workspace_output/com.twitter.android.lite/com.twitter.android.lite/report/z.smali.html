@@ -14,92 +14,162 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lz;
+		<code>.class public Lz;
 .super Ljava/lang/Object;
-.source "LayoutInflaterCompat.java"
+.source "ViewCompat.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lz$b;,
+Lz$a;
+}
+.end annotation
+
+.field private static final a:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private static b:Ljava/util/WeakHashMap;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/WeakHashMap<",
+"Landroid/view/View;",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.end field
+.field private static c:Ljava/util/WeakHashMap;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/WeakHashMap<",
+"Landroid/view/View;",
+"Ljava/lang/Object;",
+">;"
+}
+.end annotation
+.end field
+.field private static d:Z
 
 
-.field private static a:Ljava/lang/reflect/Field;
-.field private static b:Z
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 2</span>
 
-
-.method private static a(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
-<span class="">	.locals 6</span>
-
-<span class="missed">	sget-boolean v0, Lz;->b:Z</span>
-<span class="missed">	const-string v1, "; inflation may have unexpected results."</span>
-<span class="missed">	const-string v2, "LayoutInflaterCompatHC"</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="">	:try_start_0</span>
-<span class="missed">	const-class v3, Landroid/view/LayoutInflater;</span>
-<span class="missed">	const-string v4, "mFactory2"</span>
-<span class="">	invoke-virtual {v3, v4}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="missed">	sput-object v3, Lz;->a:Ljava/lang/reflect/Field;</span>
-<span class="missed">	invoke-virtual {v3, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception v3</span>
-<span class="missed">	new-instance v4, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const-string v5, "forceSetFactory2 Could not find field \'mFactory2\' on class "</span>
-<span class="missed">	invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-class v5, Landroid/view/LayoutInflater;</span>
-<span class="">	invoke-virtual {v5}, Ljava/lang/Class;->getName()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v5</span>
-<span class="missed">	invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v4</span>
-<span class="missed">	invoke-static {v2, v4, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
-<span class="">	:goto_0</span>
-<span class="missed">	sput-boolean v0, Lz;->b:Z</span>
-<span class="">	:cond_0</span>
-<span class="missed">	sget-object v0, Lz;->a:Ljava/lang/reflect/Field;</span>
-<span class="missed">	if-eqz v0, :cond_1</span>
-<span class="">	:try_start_1</span>
-<span class="missed">	invoke-virtual {v0, p0, p1}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V</span>
-<span class="">	:try_end_1</span>
-<span class="missed">	.catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:catch_1</span>
-<span class="missed">	move-exception p1</span>
-<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const-string v3, "forceSetFactory2 could not set the Factory2 on LayoutInflater "</span>
-<span class="missed">	invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	invoke-static {v2, p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
-<span class="">	:goto_1</span>
-<span class="">	:cond_1</span>
+<span class="missed">	new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V</span>
+<span class="missed">	sput-object v0, Lz;->a:Ljava/util/concurrent/atomic/AtomicInteger;</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	sput-object v0, Lz;->c:Ljava/util/WeakHashMap;</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	sput-boolean v0, Lz;->d:Z</span>
 <span class="">	return-void</span>
 .end method
 
-.method public static b(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
+.method public static a(Landroid/view/View;)Ljava/lang/String;
 <span class="">	.locals 2</span>
 
-<span class="missed">	invoke-virtual {p0, p1}, Landroid/view/LayoutInflater;->setFactory2(Landroid/view/LayoutInflater$Factory2;)V</span>
 <span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
 <span class="missed">	const/16 v1, 0x15</span>
-<span class="missed">	if-ge v0, v1, :cond_1</span>
-<span class="">	invoke-virtual {p0}, Landroid/view/LayoutInflater;->getFactory()Landroid/view/LayoutInflater$Factory;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	instance-of v1, v0, Landroid/view/LayoutInflater$Factory2;</span>
-<span class="missed">	if-eqz v1, :cond_0</span>
-<span class="missed">	check-cast v0, Landroid/view/LayoutInflater$Factory2;</span>
-<span class="missed">	invoke-static {p0, v0}, Lz;->a(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V</span>
+<span class="missed">	if-lt v0, v1, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Landroid/view/View;->getTransitionName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sget-object v0, Lz;->b:Ljava/util/WeakHashMap;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {v0, p0}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	check-cast p0, Ljava/lang/String;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static a(Landroid/view/View;Ljava/lang/String;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x15</span>
+<span class="missed">	if-lt v0, v1, :cond_0</span>
+<span class="missed">	invoke-virtual {p0, p1}, Landroid/view/View;->setTransitionName(Ljava/lang/String;)V</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
-<span class="missed">	invoke-static {p0, p1}, Lz;->a(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V</span>
+<span class="missed">	sget-object v0, Lz;->b:Ljava/util/WeakHashMap;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	new-instance v0, Ljava/util/WeakHashMap;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V</span>
+<span class="missed">	sput-object v0, Lz;->b:Ljava/util/WeakHashMap;</span>
 <span class="">	:cond_1</span>
+<span class="missed">	sget-object v0, Lz;->b:Ljava/util/WeakHashMap;</span>
+<span class="missed">	invoke-virtual {v0, p0, p1}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
 <span class="">	:goto_0</span>
 <span class="">	return-void</span>
+.end method
+
+.method static a(Landroid/view/View;Landroid/view/KeyEvent;)Z
+<span class="">	.locals 2</span>
+
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x1c</span>
+<span class="missed">	if-lt v0, v1, :cond_0</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	return p0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {p0}, Lz$b;->a(Landroid/view/View;)Lz$b;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-virtual {p0, p1}, Lz$b;->a(Landroid/view/KeyEvent;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method public static b(Landroid/view/View;)Z
+<span class="">	.locals 2</span>
+
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x10</span>
+<span class="missed">	if-lt v0, v1, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Landroid/view/View;->hasOverlappingRendering()Z</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p0, 0x1</span>
+<span class="">	return p0</span>
+.end method
+
+.method static b(Landroid/view/View;Landroid/view/KeyEvent;)Z
+<span class="">	.locals 2</span>
+
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x1c</span>
+<span class="missed">	if-lt v0, v1, :cond_0</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	return p0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {p0}, Lz$b;->a(Landroid/view/View;)Lz$b;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0, p0, p1}, Lz$b;->a(Landroid/view/View;Landroid/view/KeyEvent;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method public static c(Landroid/view/View;)Z
+<span class="">	.locals 2</span>
+
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x13</span>
+<span class="missed">	if-lt v0, v1, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p0}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	if-eqz p0, :cond_1</span>
+<span class="missed">	const/4 p0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

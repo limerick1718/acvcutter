@@ -14,37 +14,85 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class abstract Lgc;
+		<code>.class final synthetic Lgc;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Lkc;
 
 
+.field static final synthetic a:[I
+.field static final synthetic b:[I
 
 
-.method constructor &lt;init&gt;()V
-<span class="">	.locals 0</span>
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 5</span>
 
-<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public synthetic next()Ljava/lang/Object;
-<span class="">	.locals 1</span>
-
-<span class="">	invoke-interface {p0}, Lkc;->a()B</span>
-<span class="missed">	move-result v0</span>
-<span class="">	invoke-static {v0}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;</span>
+<span class="">	invoke-static {}, Lgq;->values()[Lgq;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public final remove()V
-<span class="">	.locals 1</span>
-
-<span class="missed">	new-instance v0, Ljava/lang/UnsupportedOperationException;</span>
-<span class="missed">	invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V</span>
-<span class="">	throw v0</span>
+<span class="missed">	array-length v0, v0</span>
+<span class="missed">	new-array v0, v0, [I</span>
+<span class="missed">	sput-object v0, Lgc;->b:[I</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	sget-object v1, Lgc;->b:[I</span>
+<span class="missed">	sget-object v2, Lgq;->h:Lgq;</span>
+<span class="">	invoke-virtual {v2}, Lgq;->ordinal()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	aput v0, v1, v2</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	const/4 v1, 0x2</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	sget-object v2, Lgc;->b:[I</span>
+<span class="missed">	sget-object v3, Lgq;->j:Lgq;</span>
+<span class="">	invoke-virtual {v3}, Lgq;->ordinal()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	aput v1, v2, v3</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1</span>
+<span class="">	:catch_1</span>
+<span class="missed">	const/4 v2, 0x3</span>
+<span class="">	:try_start_2</span>
+<span class="missed">	sget-object v3, Lgc;->b:[I</span>
+<span class="missed">	sget-object v4, Lgq;->g:Lgq;</span>
+<span class="">	invoke-virtual {v4}, Lgq;->ordinal()I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	aput v2, v3, v4</span>
+<span class="">	:try_end_2</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2</span>
+<span class="">	:catch_2</span>
+<span class="">	invoke-static {}, Lgd;->values()[Lgd;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	array-length v3, v3</span>
+<span class="missed">	new-array v3, v3, [I</span>
+<span class="missed">	sput-object v3, Lgc;->a:[I</span>
+<span class="">	:try_start_3</span>
+<span class="missed">	sget-object v3, Lgc;->a:[I</span>
+<span class="missed">	sget-object v4, Lgd;->d:Lgd;</span>
+<span class="">	invoke-virtual {v4}, Lgd;->ordinal()I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	aput v0, v3, v4</span>
+<span class="">	:try_end_3</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3</span>
+<span class="">	:try_start_4</span>
+<span class="">	:catch_3</span>
+<span class="missed">	sget-object v0, Lgc;->a:[I</span>
+<span class="missed">	sget-object v3, Lgd;->b:Lgd;</span>
+<span class="">	invoke-virtual {v3}, Lgd;->ordinal()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	aput v1, v0, v3</span>
+<span class="">	:try_end_4</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4</span>
+<span class="">	:try_start_5</span>
+<span class="">	:catch_4</span>
+<span class="missed">	sget-object v0, Lgc;->a:[I</span>
+<span class="missed">	sget-object v1, Lgd;->a:Lgd;</span>
+<span class="">	invoke-virtual {v1}, Lgd;->ordinal()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	aput v2, v0, v1</span>
+<span class="">	:try_end_5</span>
+<span class="missed">	.catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5</span>
+<span class="">	:catch_5</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

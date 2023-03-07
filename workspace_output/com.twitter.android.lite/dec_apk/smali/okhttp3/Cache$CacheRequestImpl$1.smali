@@ -1,5 +1,5 @@
 .class  Lokhttp3/Cache$CacheRequestImpl$1;
-.super Lix;
+.super Lyw;
 .source "Cache.java"
 .annotation system Ldalvik/annotation/EnclosingMethod;
 value = Lokhttp3/Cache$CacheRequestImpl;-><init>(Lokhttp3/Cache;Lokhttp3/internal/cache/DiskLruCache$Editor;)V
@@ -11,7 +11,7 @@ name = null
 .field final synthetic this$1:Lokhttp3/Cache$CacheRequestImpl;
 .field final synthetic val$editor:Lokhttp3/internal/cache/DiskLruCache$Editor;
 .field final synthetic val$this$0:Lokhttp3/Cache;
-.method constructor <init>(Lokhttp3/Cache$CacheRequestImpl;Lvx;Lokhttp3/Cache;Lokhttp3/internal/cache/DiskLruCache$Editor;)V
+.method constructor <init>(Lokhttp3/Cache$CacheRequestImpl;Lzj;Lokhttp3/Cache;Lokhttp3/internal/cache/DiskLruCache$Editor;)V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void

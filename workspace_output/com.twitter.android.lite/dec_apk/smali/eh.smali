@@ -1,45 +1,34 @@
-.class public final Leh;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.implements Lfh;
-.field private static final a:Lva;
+.class final Leh;
+.super Lef;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lva<",
-"Ljava/lang/Boolean;",
+"Lef<",
+"Ljava/lang/Integer;",
 ">;"
 }
 .end annotation
-.end field
-.method static constructor <clinit>()V
-.locals 3
-new-instance v0, Lbb;
-const-string v1, "com.google.android.gms.measurement"
-invoke-static {v1}, Lsa;->a(Ljava/lang/String;)Landroid/net/Uri;
-move-result-object v1
-invoke-direct {v0, v1}, Lbb;-><init>(Landroid/net/Uri;)V
-const-string v1, "measurement.androidId.delete_feature"
-const/4 v2, 0x1
-invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;
-move-result-object v1
-sput-object v1, Leh;->a:Lva;
-const-string v1, "measurement.log_androidId_enabled"
-const/4 v2, 0x0
-invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;
-return-void
-.end method
-.method public constructor <init>()V
-.locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-return-void
-.end method
-.method public final a()Z
+.method constructor <init>(Lel;Ljava/lang/String;Ljava/lang/Integer;)V
 .locals 1
-sget-object v0, Leh;->a:Lva;
-invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
-move-result-object v0
-check-cast v0, Ljava/lang/Boolean;
-invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+const/4 v0, 0x0
+invoke-direct {p0, p1, p2, p3, v0}, Lef;-><init>(Lel;Ljava/lang/String;Ljava/lang/Object;Leg;)V
+return-void
+.end method
+.method private final b(Ljava/lang/Object;)Ljava/lang/Integer;
+.locals 3
+instance-of v0, p1, Ljava/lang/Integer;
+instance-of v0, p1, Ljava/lang/Long;
+instance-of v0, p1, Ljava/lang/String;
+move-object v0, p1
+check-cast v0, Ljava/lang/String;
+invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 move-result v0
-return v0
+invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+move-result-object p1
+return-object p1
+.end method
+.method final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+.locals 0
+invoke-direct {p0, p1}, Leh;->b(Ljava/lang/Object;)Ljava/lang/Integer;
+move-result-object p1
+return-object p1
 .end method

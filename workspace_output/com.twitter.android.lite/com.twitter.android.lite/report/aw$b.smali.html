@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> aw$b.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Law$b;
+.super Ljava/lang/Object;
+.source "LoaderManagerImpl.java"
+.implements Landroidx/lifecycle/m;
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Law;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x8
+name = "b"
+.end annotation
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<D:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;",
+"Landroidx/lifecycle/m<",
+"TD;>;"
+}
+.end annotation
+
+.field private final a:Lax;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lax<",
+"TD;>;"
+}
+.end annotation
+.end field
+.field private final b:Lav$a;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lav$a<",
+"TD;>;"
+}
+.end annotation
+.end field
+.field private c:Z
+
+
+.method public a(Ljava/lang/Object;)V
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TD;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	sget-boolean v0, Law;->a:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v1, "  onLoadFinished in "</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v1, p0, Law$b;->a:Lax;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v1, ": "</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v1, p0, Law$b;->a:Lax;</span>
+<span class="">	invoke-virtual {v1, p1}, Lax;->a(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "LoaderManager"</span>
+<span class="missed">	invoke-static {v1, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Law$b;->b:Lav$a;</span>
+<span class="missed">	iget-object v1, p0, Law$b;->a:Lax;</span>
+<span class="missed">	invoke-interface {v0, v1, p1}, Lav$a;->a(Lax;Ljava/lang/Object;)V</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="missed">	iput-boolean p1, p0, Law$b;->c:Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method public a(Ljava/lang/String;Ljava/io/PrintWriter;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V</span>
+<span class="missed">	const-string p1, "mDeliveredData="</span>
+<span class="missed">	invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V</span>
+<span class="missed">	iget-boolean p1, p0, Law$b;->c:Z</span>
+<span class="missed">	invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->println(Z)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method  a()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-boolean v0, p0, Law$b;->c:Z</span>
+<span class="">	return v0</span>
+.end method
+
+.method  b()V
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-boolean v0, p0, Law$b;->c:Z</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	sget-boolean v0, Law;->a:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v1, "  Resetting: "</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v1, p0, Law$b;->a:Lax;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "LoaderManager"</span>
+<span class="missed">	invoke-static {v1, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Law$b;->b:Lav$a;</span>
+<span class="missed">	iget-object v1, p0, Law$b;->a:Lax;</span>
+<span class="missed">	invoke-interface {v0, v1}, Lav$a;->a(Lax;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+.end method
+
+.method public toString()Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Law$b;->b:Lav$a;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

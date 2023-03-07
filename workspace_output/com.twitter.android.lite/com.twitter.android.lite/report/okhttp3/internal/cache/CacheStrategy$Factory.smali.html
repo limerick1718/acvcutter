@@ -40,15 +40,15 @@ name = "Factory"
 .field private servedDateString:Ljava/lang/String;
 
 
-<span class="cov">.method public constructor &lt;init&gt;(JLokhttp3/Request;Lokhttp3/Response;)V</span>
+.method public constructor &lt;init&gt;(JLokhttp3/Request;Lokhttp3/Response;)V
 <span class="">	.locals 3</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	const/4 v0, -0x1</span>
-<span class="cov">	iput v0, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->ageSeconds:I</span>
-<span class="cov">	iput-wide p1, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->nowMillis:J</span>
-<span class="cov">	iput-object p3, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->request:Lokhttp3/Request;</span>
-<span class="cov">	iput-object p4, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->cacheResponse:Lokhttp3/Response;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	const/4 v0, -0x1</span>
+<span class="missed">	iput v0, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->ageSeconds:I</span>
+<span class="missed">	iput-wide p1, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->nowMillis:J</span>
+<span class="missed">	iput-object p3, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->request:Lokhttp3/Request;</span>
+<span class="missed">	iput-object p4, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->cacheResponse:Lokhttp3/Response;</span>
 <span class="missed">	if-eqz p4, :cond_5</span>
 <span class="">	invoke-virtual {p4}, Lokhttp3/Response;->sentRequestAtMillis()J</span>
 <span class="missed">	move-result-wide p1</span>
@@ -114,8 +114,8 @@ name = "Factory"
 <span class="">	:cond_4</span>
 <span class="missed">	add-int/lit8 p2, p2, 0x1</span>
 <span class="">	goto :goto_0</span>
-<span class="cov">	:cond_5</span>
-<span class="exec">	return-void</span>
+<span class="">	:cond_5</span>
+<span class="">	return-void</span>
 .end method
 
 .method private cacheResponseAge()J
@@ -134,9 +134,10 @@ name = "Factory"
 <span class="missed">	iget v0, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->ageSeconds:I</span>
 <span class="missed">	const/4 v3, -0x1</span>
 <span class="missed">	if-eq v0, v3, :cond_1</span>
-<span class="missed">	sget-object v3, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;</span>
-<span class="missed">	int-to-long v4, v0</span>
-<span class="">	invoke-virtual {v3, v4, v5}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J</span>
+<span class="missed">	sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;</span>
+<span class="missed">	iget v3, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->ageSeconds:I</span>
+<span class="missed">	int-to-long v3, v3</span>
+<span class="">	invoke-virtual {v0, v3, v4}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J</span>
 <span class="missed">	move-result-wide v3</span>
 <span class="">	invoke-static {v1, v2, v3, v4}, Ljava/lang/Math;->max(JJ)J</span>
 <span class="missed">	move-result-wide v1</span>
@@ -183,10 +184,10 @@ name = "Factory"
 <span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->expires:Ljava/util/Date;</span>
 <span class="">	invoke-virtual {v0}, Ljava/util/Date;->getTime()J</span>
 <span class="missed">	move-result-wide v5</span>
-<span class="missed">	sub-long/2addr v5, v3</span>
-<span class="missed">	cmp-long v0, v5, v1</span>
+<span class="missed">	sub-long v3, v5, v3</span>
+<span class="missed">	cmp-long v0, v3, v1</span>
 <span class="missed">	if-lez v0, :cond_2</span>
-<span class="missed">	move-wide v1, v5</span>
+<span class="missed">	move-wide v1, v3</span>
 <span class="">	:cond_2</span>
 <span class="">	return-wide v1</span>
 <span class="">	:cond_3</span>
@@ -220,16 +221,16 @@ name = "Factory"
 <span class="">	return-wide v1</span>
 .end method
 
-<span class="cov">.method private getCandidate()Lokhttp3/internal/cache/CacheStrategy;</span>
+.method private getCandidate()Lokhttp3/internal/cache/CacheStrategy;
 <span class="">	.locals 13</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->cacheResponse:Lokhttp3/Response;</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	if-nez v0, :cond_0</span>
-<span class="cov">	new-instance v0, Lokhttp3/internal/cache/CacheStrategy;</span>
-<span class="cov">	iget-object v2, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->request:Lokhttp3/Request;</span>
-<span class="cov">	invoke-direct {v0, v2, v1}, Lokhttp3/internal/cache/CacheStrategy;-><init>(Lokhttp3/Request;Lokhttp3/Response;)V</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->cacheResponse:Lokhttp3/Response;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	new-instance v0, Lokhttp3/internal/cache/CacheStrategy;</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->request:Lokhttp3/Request;</span>
+<span class="missed">	invoke-direct {v0, v2, v1}, Lokhttp3/internal/cache/CacheStrategy;-><init>(Lokhttp3/Request;Lokhttp3/Response;)V</span>
+<span class="">	return-object v0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->request:Lokhttp3/Request;</span>
 <span class="">	invoke-virtual {v0}, Lokhttp3/Request;->isHttps()Z</span>
@@ -434,24 +435,24 @@ name = "Factory"
 <span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public get()Lokhttp3/internal/cache/CacheStrategy;</span>
+.method public get()Lokhttp3/internal/cache/CacheStrategy;
 <span class="">	.locals 2</span>
 
-<span class="exec">	invoke-direct {p0}, Lokhttp3/internal/cache/CacheStrategy$Factory;->getCandidate()Lokhttp3/internal/cache/CacheStrategy;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	iget-object v1, v0, Lokhttp3/internal/cache/CacheStrategy;->networkRequest:Lokhttp3/Request;</span>
-<span class="cov">	if-eqz v1, :cond_0</span>
-<span class="cov">	iget-object v1, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->request:Lokhttp3/Request;</span>
-<span class="exec">	invoke-virtual {v1}, Lokhttp3/Request;->cacheControl()Lokhttp3/CacheControl;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="exec">	invoke-virtual {v1}, Lokhttp3/CacheControl;->onlyIfCached()Z</span>
-<span class="cov">	move-result v1</span>
+<span class="">	invoke-direct {p0}, Lokhttp3/internal/cache/CacheStrategy$Factory;->getCandidate()Lokhttp3/internal/cache/CacheStrategy;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, v0, Lokhttp3/internal/cache/CacheStrategy;->networkRequest:Lokhttp3/Request;</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/cache/CacheStrategy$Factory;->request:Lokhttp3/Request;</span>
+<span class="">	invoke-virtual {v1}, Lokhttp3/Request;->cacheControl()Lokhttp3/CacheControl;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1}, Lokhttp3/CacheControl;->onlyIfCached()Z</span>
+<span class="missed">	move-result v1</span>
 <span class="missed">	if-eqz v1, :cond_0</span>
 <span class="missed">	new-instance v0, Lokhttp3/internal/cache/CacheStrategy;</span>
 <span class="missed">	const/4 v1, 0x0</span>
 <span class="missed">	invoke-direct {v0, v1, v1}, Lokhttp3/internal/cache/CacheStrategy;-><init>(Lokhttp3/Request;Lokhttp3/Response;)V</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -4,5 +4,5 @@
 .implements Landroidx/lifecycle/g;
 .annotation runtime Ljava/lang/Deprecated;
 .end annotation
-.method public abstract a()Landroidx/lifecycle/h;
+.method public abstract b()Landroidx/lifecycle/h;
 .end method

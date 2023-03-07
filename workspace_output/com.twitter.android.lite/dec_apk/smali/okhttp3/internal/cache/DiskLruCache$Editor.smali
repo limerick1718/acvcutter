@@ -43,12 +43,12 @@ return-void
 .locals 3
 return-void
 .end method
-.method public newSink(I)Lvx;
+.method public newSink(I)Lzj;
 .locals 3
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public newSource(I)Lwx;
+.method public newSource(I)Lzk;
 .locals 4
 const/4 v0, 0x0
 return-object v0

@@ -66,33 +66,6 @@
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
-
-    .line 1
-    monitor-enter p0
-
-    const/4 v0, 0x0
-
-    .line 2
-    :try_start_0
-    iput-object v0, p0, Lcom/google/android/gms/common/internal/b$h;->a:Ljava/lang/Object;
-
-    .line 3
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
 .method protected abstract a(Ljava/lang/Object;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -103,67 +76,27 @@
     .end annotation
 .end method
 
-.method public final b()V
-    .locals 2
-
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$h;->a()V
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/b$h;->c:Lcom/google/android/gms/common/internal/b;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/b;->f(Lcom/google/android/gms/common/internal/b;)Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    monitor-enter v0
-
-    .line 3
-    :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/b$h;->c:Lcom/google/android/gms/common/internal/b;
-
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/b;->f(Lcom/google/android/gms/common/internal/b;)Ljava/util/ArrayList;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    .line 4
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
+.method protected abstract b()V
 .end method
 
-.method protected abstract c()V
-.end method
-
-.method public final d()V
+.method public final c()V
     .locals 5
 
-    .line 1
+    .line 5
     monitor-enter p0
 
-    .line 2
+    .line 6
     :try_start_0
     iget-object v0, p0, Lcom/google/android/gms/common/internal/b$h;->a:Ljava/lang/Object;
 
-    .line 3
+    .line 7
     iget-boolean v1, p0, Lcom/google/android/gms/common/internal/b$h;->b:Z
 
     if-eqz v1, :cond_0
 
     const-string v1, "GmsClient"
 
-    .line 4
+    .line 8
     invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
@@ -198,7 +131,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5
+    .line 9
     :cond_0
     monitor-exit p0
     :try_end_0
@@ -206,7 +139,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 6
+    .line 11
     :try_start_1
     invoke-virtual {p0, v0}, Lcom/google/android/gms/common/internal/b$h;->a(Ljava/lang/Object;)V
     :try_end_1
@@ -217,40 +150,40 @@
     :catch_0
     move-exception v0
 
-    .line 7
-    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$h;->c()V
+    .line 14
+    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$h;->b()V
 
-    .line 8
+    .line 15
     throw v0
 
-    .line 9
+    .line 16
     :cond_1
-    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$h;->c()V
+    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$h;->b()V
 
-    .line 10
+    .line 17
     :goto_0
     monitor-enter p0
 
     const/4 v0, 0x1
 
-    .line 11
+    .line 18
     :try_start_2
     iput-boolean v0, p0, Lcom/google/android/gms/common/internal/b$h;->b:Z
 
-    .line 12
+    .line 19
     monitor-exit p0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 13
-    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$h;->b()V
+    .line 20
+    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$h;->d()V
 
     return-void
 
     :catchall_0
     move-exception v0
 
-    .line 14
+    .line 19
     :try_start_3
     monitor-exit p0
     :try_end_3
@@ -261,11 +194,78 @@
     :catchall_1
     move-exception v0
 
-    .line 15
+    .line 9
     :try_start_4
     monitor-exit p0
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    throw v0
+.end method
+
+.method public final d()V
+    .locals 2
+
+    .line 22
+    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$h;->e()V
+
+    .line 23
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/b$h;->c:Lcom/google/android/gms/common/internal/b;
+
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/b;->f(Lcom/google/android/gms/common/internal/b;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    monitor-enter v0
+
+    .line 24
+    :try_start_0
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/b$h;->c:Lcom/google/android/gms/common/internal/b;
+
+    invoke-static {v1}, Lcom/google/android/gms/common/internal/b;->f(Lcom/google/android/gms/common/internal/b;)Ljava/util/ArrayList;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    .line 25
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final e()V
+    .locals 1
+
+    .line 26
+    monitor-enter p0
+
+    const/4 v0, 0x0
+
+    .line 27
+    :try_start_0
+    iput-object v0, p0, Lcom/google/android/gms/common/internal/b$h;->a:Ljava/lang/Object;
+
+    .line 28
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method

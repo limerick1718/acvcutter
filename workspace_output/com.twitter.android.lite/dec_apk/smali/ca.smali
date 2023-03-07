@@ -1,105 +1,45 @@
 .class public Lca;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.field public static final a:Landroid/net/Uri;
-.field private static final b:Landroid/net/Uri;
-.field public static final c:Ljava/util/regex/Pattern;
-.field public static final d:Ljava/util/regex/Pattern;
-.field private static final e:Ljava/util/concurrent/atomic/AtomicBoolean;
-.field private static f:Ljava/util/HashMap;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/HashMap<",
-"Ljava/lang/String;",
-"Ljava/lang/String;",
-">;"
-}
-.end annotation
-.end field
-.field private static final g:Ljava/util/HashMap;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/HashMap<",
-"Ljava/lang/String;",
-"Ljava/lang/Boolean;",
-">;"
-}
-.end annotation
-.end field
-.field private static final h:Ljava/util/HashMap;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/HashMap<",
-"Ljava/lang/String;",
-"Ljava/lang/Integer;",
-">;"
-}
-.end annotation
-.end field
-.field private static final i:Ljava/util/HashMap;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/HashMap<",
-"Ljava/lang/String;",
-"Ljava/lang/Long;",
-">;"
-}
-.end annotation
-.end field
-.field private static final j:Ljava/util/HashMap;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/HashMap<",
-"Ljava/lang/String;",
-"Ljava/lang/Float;",
-">;"
-}
-.end annotation
-.end field
-.field private static k:Ljava/lang/Object;
-.field private static l:Z
-.field private static m:[Ljava/lang/String;
+.super Landroid/os/Binder;
+.implements Landroid/os/IInterface;
+.field private static a:Lcc;
 .method static constructor <clinit>()V
-.locals 2
-const-string v0, "content://com.google.android.gsf.gservices"
-invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-move-result-object v0
-sput-object v0, Lca;->a:Landroid/net/Uri;
-const-string v0, "content://com.google.android.gsf.gservices/prefix"
-invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-move-result-object v0
-sput-object v0, Lca;->b:Landroid/net/Uri;
-const/4 v0, 0x2
-const-string v1, "^(1|true|t|on|yes|y)$"
-invoke-static {v1, v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
-move-result-object v1
-sput-object v1, Lca;->c:Ljava/util/regex/Pattern;
-const-string v1, "^(0|false|f|off|no|n)$"
-invoke-static {v1, v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
-move-result-object v0
-sput-object v0, Lca;->d:Ljava/util/regex/Pattern;
-new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
-sput-object v0, Lca;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
-new-instance v0, Ljava/util/HashMap;
-invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-sput-object v0, Lca;->g:Ljava/util/HashMap;
-new-instance v0, Ljava/util/HashMap;
-invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-sput-object v0, Lca;->h:Ljava/util/HashMap;
-new-instance v0, Ljava/util/HashMap;
-invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-sput-object v0, Lca;->i:Ljava/util/HashMap;
-new-instance v0, Ljava/util/HashMap;
-invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-sput-object v0, Lca;->j:Ljava/util/HashMap;
-const/4 v0, 0x0
-new-array v0, v0, [Ljava/lang/String;
-sput-object v0, Lca;->m:[Ljava/lang/String;
+.locals 0
 return-void
 .end method
-.method public constructor <init>()V
+.method protected constructor <init>(Ljava/lang/String;)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Landroid/os/Binder;-><init>()V
+invoke-virtual {p0, p0, p1}, Lca;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 return-void
+.end method
+.method protected a(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+.locals 0
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Landroid/os/RemoteException;
+}
+.end annotation
+const/4 v0, 0x0
+return v0
+.end method
+.method public asBinder()Landroid/os/IBinder;
+.locals 0
+return-object p0
+.end method
+.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+.locals 1
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Landroid/os/RemoteException;
+}
+.end annotation
+const v0, 0xffffff
+invoke-virtual {p0}, Lca;->getInterfaceDescriptor()Ljava/lang/String;
+move-result-object v0
+invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+const/4 v0, 0x0
+:goto_0
+invoke-virtual {p0, p1, p2, p3, p4}, Lca;->a(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+move-result p1
+return p1
 .end method

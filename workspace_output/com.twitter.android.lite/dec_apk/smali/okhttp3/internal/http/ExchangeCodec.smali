@@ -6,7 +6,7 @@
 .end method
 .method public abstract connection()Lokhttp3/internal/connection/RealConnection;
 .end method
-.method public abstract createRequestBody(Lokhttp3/Request;J)Lvx;
+.method public abstract createRequestBody(Lokhttp3/Request;J)Lzj;
 .annotation system Ldalvik/annotation/Throws;
 value = {
 Ljava/io/IOException;
@@ -27,7 +27,7 @@ Ljava/io/IOException;
 }
 .end annotation
 .end method
-.method public abstract openResponseBodySource(Lokhttp3/Response;)Lwx;
+.method public abstract openResponseBodySource(Lokhttp3/Response;)Lzk;
 .annotation system Ldalvik/annotation/Throws;
 value = {
 Ljava/io/IOException;

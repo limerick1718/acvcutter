@@ -67,10 +67,6 @@ value = {
 Ljavax/net/ssl/SSLPeerUnverifiedException;
 }
 .end annotation
-invoke-virtual {p0, p1}, Lokhttp3/CertificatePinner;->findMatchingPins(Ljava/lang/String;)Ljava/util/List;
-move-result-object v0
-invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-move-result v1
 return-void
 .end method
 .method public varargs check(Ljava/lang/String;[Ljava/security/cert/Certificate;)V
@@ -103,27 +99,12 @@ value = {
 ">;"
 }
 .end annotation
-invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-move-result-object v0
-iget-object v1, p0, Lokhttp3/CertificatePinner;->pins:Ljava/util/Set;
-invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-move-result-object v1
-:cond_0
-:goto_0
-invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-move-result v2
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public hashCode()I
 .locals 2
-iget-object v0, p0, Lokhttp3/CertificatePinner;->certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;
-invoke-static {v0}, Ljava/util/Objects;->hashCode(Ljava/lang/Object;)I
-move-result v0
-mul-int/lit8 v0, v0, 0x1f
-iget-object v1, p0, Lokhttp3/CertificatePinner;->pins:Ljava/util/Set;
-invoke-interface {v1}, Ljava/util/Set;->hashCode()I
-move-result v1
-add-int/2addr v0, v1
+const/4 v0, 0x0
 return v0
 .end method
 .method  withCertificateChainCleaner(Lokhttp3/internal/tls/CertificateChainCleaner;)Lokhttp3/CertificatePinner;
@@ -135,10 +116,6 @@ return v0
 iget-object v0, p0, Lokhttp3/CertificatePinner;->certificateChainCleaner:Lokhttp3/internal/tls/CertificateChainCleaner;
 invoke-static {v0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 move-result v0
-if-eqz v0, :cond_0
-move-object v0, p0
-goto :goto_0
-:cond_0
 new-instance v0, Lokhttp3/CertificatePinner;
 iget-object v1, p0, Lokhttp3/CertificatePinner;->pins:Ljava/util/Set;
 invoke-direct {v0, v1, p1}, Lokhttp3/CertificatePinner;-><init>(Ljava/util/Set;Lokhttp3/internal/tls/CertificateChainCleaner;)V

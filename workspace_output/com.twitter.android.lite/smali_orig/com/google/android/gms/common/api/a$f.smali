@@ -17,17 +17,20 @@
 
 
 # virtual methods
+.method public abstract a()V
+.end method
+
 .method public abstract a(Lcom/google/android/gms/common/internal/b$c;)V
 .end method
 
 .method public abstract a(Lcom/google/android/gms/common/internal/b$e;)V
 .end method
 
-.method public abstract a(Lcom/google/android/gms/common/internal/k;Ljava/util/Set;)V
+.method public abstract a(Lcom/google/android/gms/common/internal/j;Ljava/util/Set;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/android/gms/common/internal/k;",
+            "Lcom/google/android/gms/common/internal/j;",
             "Ljava/util/Set<",
             "Lcom/google/android/gms/common/api/Scope;",
             ">;)V"
@@ -35,26 +38,23 @@
     .end annotation
 .end method
 
-.method public abstract a()Z
-.end method
-
-.method public abstract b()[Le5;
+.method public abstract b()Z
 .end method
 
 .method public abstract c()Z
 .end method
 
-.method public abstract d()Ljava/lang/String;
+.method public abstract d()Z
 .end method
 
-.method public abstract f()V
+.method public abstract e()Z
 .end method
 
-.method public abstract h()Z
+.method public abstract f()Ljava/lang/String;
 .end method
 
-.method public abstract j()Z
+.method public abstract g()I
 .end method
 
-.method public abstract k()I
+.method public abstract h()[Lcom/google/android/gms/common/d;
 .end method

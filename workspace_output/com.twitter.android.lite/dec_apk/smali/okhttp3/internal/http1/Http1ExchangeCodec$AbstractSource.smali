@@ -1,7 +1,7 @@
 .class abstract Lokhttp3/internal/http1/Http1ExchangeCodec$AbstractSource;
 .super Ljava/lang/Object;
 .source "Http1ExchangeCodec.java"
-.implements Lwx;
+.implements Lzk;
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lokhttp3/internal/http1/Http1ExchangeCodec;
 .end annotation
@@ -11,7 +11,7 @@ name = "AbstractSource"
 .end annotation
 .field protected closed:Z
 .field final synthetic this$0:Lokhttp3/internal/http1/Http1ExchangeCodec;
-.field protected final timeout:Lkx;
+.field protected final timeout:Lyy;
 .method private constructor <init>(Lokhttp3/internal/http1/Http1ExchangeCodec;)V
 .locals 1
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@ return-void
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public read(Lex;J)J
+.method public read(Lys;J)J
 .locals 1
 .annotation system Ldalvik/annotation/Throws;
 value = {
@@ -36,7 +36,7 @@ return-wide v0
 .locals 3
 return-void
 .end method
-.method public timeout()Lxx;
+.method public timeout()Lzl;
 .locals 1
 const/4 v0, 0x0
 return-object v0

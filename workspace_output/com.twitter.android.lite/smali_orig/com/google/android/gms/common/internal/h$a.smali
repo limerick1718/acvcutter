@@ -27,25 +27,29 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;I)V
     .locals 0
 
-    .line 1
+    .line 7
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/q;->b(Ljava/lang/String;)Ljava/lang/String;
+    .line 8
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/gms/common/internal/h$a;->a:Ljava/lang/String;
 
-    .line 3
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/q;->b(Ljava/lang/String;)Ljava/lang/String;
+    .line 9
+    invoke-static {p2}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object p2, p0, Lcom/google/android/gms/common/internal/h$a;->b:Ljava/lang/String;
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/h$a;->b:Ljava/lang/String;
 
     const/4 p1, 0x0
 
-    .line 4
+    .line 10
     iput-object p1, p0, Lcom/google/android/gms/common/internal/h$a;->c:Landroid/content/ComponentName;
 
-    .line 5
+    .line 11
     iput p3, p0, Lcom/google/android/gms/common/internal/h$a;->d:I
 
     return-void
@@ -53,39 +57,28 @@
 
 
 # virtual methods
-.method public final a()Landroid/content/ComponentName;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/h$a;->c:Landroid/content/ComponentName;
-
-    return-object v0
-.end method
-
 .method public final a(Landroid/content/Context;)Landroid/content/Intent;
     .locals 1
 
-    .line 2
+    .line 23
     iget-object p1, p0, Lcom/google/android/gms/common/internal/h$a;->a:Ljava/lang/String;
 
     if-eqz p1, :cond_0
 
-    .line 3
-    new-instance p1, Landroid/content/Intent;
+    .line 24
+    new-instance v0, Landroid/content/Intent;
 
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/h$a;->a:Ljava/lang/String;
+    invoke-direct {v0, p1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {p1, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/h$a;->b:Ljava/lang/String;
 
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/h$a;->b:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, p1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 4
+    .line 25
     :cond_0
     new-instance p1, Landroid/content/Intent;
 
@@ -101,11 +94,20 @@
     return-object p1
 .end method
 
-.method public final b()Ljava/lang/String;
+.method public final a()Ljava/lang/String;
     .locals 1
 
-    .line 1
+    .line 20
     iget-object v0, p0, Lcom/google/android/gms/common/internal/h$a;->b:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final b()Landroid/content/ComponentName;
+    .locals 1
+
+    .line 21
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/h$a;->c:Landroid/content/ComponentName;
 
     return-object v0
 .end method
@@ -113,7 +115,7 @@
 .method public final c()I
     .locals 1
 
-    .line 1
+    .line 22
     iget v0, p0, Lcom/google/android/gms/common/internal/h$a;->d:I
 
     return v0
@@ -128,7 +130,7 @@
 
     return v0
 
-    .line 1
+    .line 30
     :cond_0
     instance-of v1, p1, Lcom/google/android/gms/common/internal/h$a;
 
@@ -138,16 +140,16 @@
 
     return v2
 
-    .line 2
+    .line 32
     :cond_1
     check-cast p1, Lcom/google/android/gms/common/internal/h$a;
 
-    .line 3
+    .line 33
     iget-object v1, p0, Lcom/google/android/gms/common/internal/h$a;->a:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/google/android/gms/common/internal/h$a;->a:Ljava/lang/String;
 
-    invoke-static {v1, v3}, Lcom/google/android/gms/common/internal/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lcom/google/android/gms/common/internal/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -157,8 +159,8 @@
 
     iget-object v3, p1, Lcom/google/android/gms/common/internal/h$a;->b:Ljava/lang/String;
 
-    .line 4
-    invoke-static {v1, v3}, Lcom/google/android/gms/common/internal/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .line 34
+    invoke-static {v1, v3}, Lcom/google/android/gms/common/internal/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -168,8 +170,8 @@
 
     iget-object v3, p1, Lcom/google/android/gms/common/internal/h$a;->c:Landroid/content/ComponentName;
 
-    .line 5
-    invoke-static {v1, v3}, Lcom/google/android/gms/common/internal/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .line 35
+    invoke-static {v1, v3}, Lcom/google/android/gms/common/internal/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -192,9 +194,9 @@
 
     const/4 v0, 0x4
 
+    .line 27
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 1
     iget-object v1, p0, Lcom/google/android/gms/common/internal/h$a;->a:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -223,7 +225,7 @@
 
     aput-object v1, v0, v2
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/p;->a([Ljava/lang/Object;)I
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/n;->a([Ljava/lang/Object;)I
 
     move-result v0
 
@@ -233,7 +235,7 @@
 .method public final toString()Ljava/lang/String;
     .locals 1
 
-    .line 1
+    .line 19
     iget-object v0, p0, Lcom/google/android/gms/common/internal/h$a;->a:Ljava/lang/String;
 
     if-nez v0, :cond_0

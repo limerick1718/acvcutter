@@ -3,7 +3,7 @@
 .source "WebSocketWriter.java"
 
 # interfaces
-.implements Lvx;
+.implements Lzj;
 
 
 # annotations
@@ -33,7 +33,7 @@
 .method constructor <init>(Lokhttp3/internal/ws/WebSocketWriter;)V
     .locals 0
 
-    .line 1
+    .line 215
     iput-object p1, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->this$0:Lokhttp3/internal/ws/WebSocketWriter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,19 +51,19 @@
         }
     .end annotation
 
-    .line 1
+    .line 250
     iget-boolean v0, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->closed:Z
 
     if-nez v0, :cond_0
 
-    .line 2
+    .line 252
     iget-object v1, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->this$0:Lokhttp3/internal/ws/WebSocketWriter;
 
     iget v2, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->formatOpcode:I
 
-    iget-object v0, v1, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lex;
+    iget-object v0, v1, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lys;
 
-    invoke-virtual {v0}, Lex;->v()J
+    invoke-virtual {v0}, Lys;->a()J
 
     move-result-wide v3
 
@@ -75,10 +75,10 @@
 
     const/4 v0, 0x1
 
-    .line 3
+    .line 253
     iput-boolean v0, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->closed:Z
 
-    .line 4
+    .line 254
     iget-object v0, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->this$0:Lokhttp3/internal/ws/WebSocketWriter;
 
     const/4 v1, 0x0
@@ -87,7 +87,7 @@
 
     return-void
 
-    .line 5
+    .line 250
     :cond_0
     new-instance v0, Ljava/io/IOException;
 
@@ -106,19 +106,19 @@
         }
     .end annotation
 
-    .line 1
+    .line 239
     iget-boolean v0, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->closed:Z
 
     if-nez v0, :cond_0
 
-    .line 2
+    .line 241
     iget-object v1, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->this$0:Lokhttp3/internal/ws/WebSocketWriter;
 
     iget v2, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->formatOpcode:I
 
-    iget-object v0, v1, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lex;
+    iget-object v0, v1, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lys;
 
-    invoke-virtual {v0}, Lex;->v()J
+    invoke-virtual {v0}, Lys;->a()J
 
     move-result-wide v3
 
@@ -130,12 +130,12 @@
 
     const/4 v0, 0x0
 
-    .line 3
+    .line 242
     iput-boolean v0, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->isFirstFrame:Z
 
     return-void
 
-    .line 4
+    .line 239
     :cond_0
     new-instance v0, Ljava/io/IOException;
 
@@ -146,22 +146,22 @@
     throw v0
 .end method
 
-.method public timeout()Lxx;
+.method public timeout()Lzl;
     .locals 1
 
-    .line 1
+    .line 246
     iget-object v0, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->this$0:Lokhttp3/internal/ws/WebSocketWriter;
 
-    iget-object v0, v0, Lokhttp3/internal/ws/WebSocketWriter;->sink:Lfx;
+    iget-object v0, v0, Lokhttp3/internal/ws/WebSocketWriter;->sink:Lyt;
 
-    invoke-interface {v0}, Lvx;->timeout()Lxx;
+    invoke-interface {v0}, Lyt;->timeout()Lzl;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public write(Lex;J)V
+.method public write(Lys;J)V
     .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -169,19 +169,19 @@
         }
     .end annotation
 
-    .line 1
+    .line 222
     iget-boolean v0, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->closed:Z
 
     if-nez v0, :cond_2
 
-    .line 2
+    .line 224
     iget-object v0, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->this$0:Lokhttp3/internal/ws/WebSocketWriter;
 
-    iget-object v0, v0, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lex;
+    iget-object v0, v0, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lys;
 
-    invoke-virtual {v0, p1, p2, p3}, Lex;->write(Lex;J)V
+    invoke-virtual {v0, p1, p2, p3}, Lys;->write(Lys;J)V
 
-    .line 3
+    .line 227
     iget-boolean p1, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->isFirstFrame:Z
 
     const/4 p2, 0x0
@@ -198,10 +198,10 @@
 
     iget-object p1, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->this$0:Lokhttp3/internal/ws/WebSocketWriter;
 
-    iget-object p1, p1, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lex;
+    iget-object p1, p1, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lys;
 
-    .line 4
-    invoke-virtual {p1}, Lex;->v()J
+    .line 229
+    invoke-virtual {p1}, Lys;->a()J
 
     move-result-wide v0
 
@@ -222,13 +222,13 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 5
+    .line 231
     :goto_0
     iget-object p3, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->this$0:Lokhttp3/internal/ws/WebSocketWriter;
 
-    iget-object p3, p3, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lex;
+    iget-object p3, p3, Lokhttp3/internal/ws/WebSocketWriter;->buffer:Lys;
 
-    invoke-virtual {p3}, Lex;->r()J
+    invoke-virtual {p3}, Lys;->j()J
 
     move-result-wide v2
 
@@ -240,7 +240,7 @@
 
     if-nez p1, :cond_1
 
-    .line 6
+    .line 233
     iget-object v0, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->this$0:Lokhttp3/internal/ws/WebSocketWriter;
 
     iget v1, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->formatOpcode:I
@@ -251,13 +251,13 @@
 
     invoke-virtual/range {v0 .. v5}, Lokhttp3/internal/ws/WebSocketWriter;->writeMessageFrame(IJZZ)V
 
-    .line 7
+    .line 234
     iput-boolean p2, p0, Lokhttp3/internal/ws/WebSocketWriter$FrameSink;->isFirstFrame:Z
 
     :cond_1
     return-void
 
-    .line 8
+    .line 222
     :cond_2
     new-instance p1, Ljava/io/IOException;
 

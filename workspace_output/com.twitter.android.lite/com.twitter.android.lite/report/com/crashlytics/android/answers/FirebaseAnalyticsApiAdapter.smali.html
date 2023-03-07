@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.crashlytics.android.answers</a></li>
+        <li><i class="ico ico-class"></i> FirebaseAnalyticsApiAdapter.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;
+.super Ljava/lang/Object;
+.source "FirebaseAnalyticsApiAdapter.java"
+
+
+.field private final context:Landroid/content/Context;
+.field private eventLogger:Lcom/crashlytics/android/answers/EventLogger;
+.field private final eventMapper:Lcom/crashlytics/android/answers/FirebaseAnalyticsEventMapper;
+
+
+<span class="cov">.method public constructor &lt;init&gt;(Landroid/content/Context;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	new-instance v0, Lcom/crashlytics/android/answers/FirebaseAnalyticsEventMapper;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/crashlytics/android/answers/FirebaseAnalyticsEventMapper;-><init>()V</span>
+<span class="cov">	invoke-direct {p0, p1, v0}, Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;-><init>(Landroid/content/Context;Lcom/crashlytics/android/answers/FirebaseAnalyticsEventMapper;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public constructor &lt;init&gt;(Landroid/content/Context;Lcom/crashlytics/android/answers/FirebaseAnalyticsEventMapper;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	iput-object p1, p0, Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;->context:Landroid/content/Context;</span>
+<span class="cov">	iput-object p2, p0, Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;->eventMapper:Lcom/crashlytics/android/answers/FirebaseAnalyticsEventMapper;</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public getFirebaseAnalytics()Lcom/crashlytics/android/answers/EventLogger;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;->eventLogger:Lcom/crashlytics/android/answers/EventLogger;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;->context:Landroid/content/Context;</span>
+<span class="">	invoke-static {v0}, Lcom/crashlytics/android/answers/AppMeasurementEventLogger;->getEventLogger(Landroid/content/Context;)Lcom/crashlytics/android/answers/EventLogger;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;->eventLogger:Lcom/crashlytics/android/answers/EventLogger;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;->eventLogger:Lcom/crashlytics/android/answers/EventLogger;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public processEvent(Lcom/crashlytics/android/answers/SessionEvent;)V
+<span class="">	.locals 4</span>
+
+<span class="">	invoke-virtual {p0}, Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;->getFirebaseAnalytics()Lcom/crashlytics/android/answers/EventLogger;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "Answers"</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v0, "Firebase analytics logging was enabled, but not available..."</span>
+<span class="missed">	invoke-interface {p1, v1, v0}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v2, p0, Lcom/crashlytics/android/answers/FirebaseAnalyticsApiAdapter;->eventMapper:Lcom/crashlytics/android/answers/FirebaseAnalyticsEventMapper;</span>
+<span class="">	invoke-virtual {v2, p1}, Lcom/crashlytics/android/answers/FirebaseAnalyticsEventMapper;->mapEvent(Lcom/crashlytics/android/answers/SessionEvent;)Lcom/crashlytics/android/answers/FirebaseAnalyticsEvent;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	if-nez v2, :cond_1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v3, "Fabric event was not mappable to Firebase event: "</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {v0, v1, p1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {v2}, Lcom/crashlytics/android/answers/FirebaseAnalyticsEvent;->getEventName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v2}, Lcom/crashlytics/android/answers/FirebaseAnalyticsEvent;->getEventParams()Landroid/os/Bundle;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-interface {v0, v1, v3}, Lcom/crashlytics/android/answers/EventLogger;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V</span>
+<span class="missed">	iget-object p1, p1, Lcom/crashlytics/android/answers/SessionEvent;->predefinedType:Ljava/lang/String;</span>
+<span class="missed">	const-string v1, "levelEnd"</span>
+<span class="">	invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="">	invoke-virtual {v2}, Lcom/crashlytics/android/answers/FirebaseAnalyticsEvent;->getEventParams()Landroid/os/Bundle;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v1, "post_score"</span>
+<span class="missed">	invoke-interface {v0, v1, p1}, Lcom/crashlytics/android/answers/EventLogger;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V</span>
+<span class="">	:cond_2</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

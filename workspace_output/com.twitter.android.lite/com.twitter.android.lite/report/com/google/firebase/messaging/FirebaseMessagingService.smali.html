@@ -15,11 +15,10 @@
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
 		<code>.class public Lcom/google/firebase/messaging/FirebaseMessagingService;
-.super Lcom/google/firebase/messaging/g;
-.source "com.google.firebase:firebase-messaging@@20.0.0"
+.super Lcom/google/firebase/iid/ad;
 
 
-.field private static final f:Ljava/util/Queue;
+.field private static final b:Ljava/util/Queue;
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "Ljava/util/Queue<",
@@ -36,25 +35,51 @@ value = {
 <span class="cov">	new-instance v0, Ljava/util/ArrayDeque;</span>
 <span class="cov">	const/16 v1, 0xa</span>
 <span class="cov">	invoke-direct {v0, v1}, Ljava/util/ArrayDeque;-><init>(I)V</span>
-<span class="cov">	sput-object v0, Lcom/google/firebase/messaging/FirebaseMessagingService;->f:Ljava/util/Queue;</span>
+<span class="cov">	sput-object v0, Lcom/google/firebase/messaging/FirebaseMessagingService;->b:Ljava/util/Queue;</span>
 <span class="exec">	return-void</span>
 .end method
 
 <span class="cov">.method public constructor &lt;init&gt;()V</span>
 <span class="">	.locals 0</span>
 
-<span class="cov">	invoke-direct {p0}, Lcom/google/firebase/messaging/g;-><init>()V</span>
+<span class="cov">	invoke-direct {p0}, Lcom/google/firebase/iid/ad;-><init>()V</span>
 <span class="exec">	return-void</span>
 .end method
 
-.method protected final a(Landroid/content/Intent;)Landroid/content/Intent;
+.method static a(Landroid/os/Bundle;)V
+<span class="">	.locals 2</span>
+
+<span class="">	invoke-virtual {p0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ljava/lang/String;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string v1, "google.c."</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-interface {p0}, Ljava/util/Iterator;->remove()V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method protected final a(Landroid/content/Intent;)Landroid/content/Intent;</span>
 <span class="">	.locals 0</span>
 
-<span class="">	invoke-static {}, Lcom/google/firebase/iid/s;->b()Lcom/google/firebase/iid/s;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	invoke-virtual {p1}, Lcom/google/firebase/iid/s;->a()Landroid/content/Intent;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	return-object p1</span>
+<span class="exec">	invoke-static {}, Lcom/google/firebase/iid/y;->a()Lcom/google/firebase/iid/y;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	invoke-virtual {p1}, Lcom/google/firebase/iid/y;->b()Landroid/content/Intent;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	return-object p1</span>
 .end method
 
 .method public a()V
@@ -63,7 +88,7 @@ value = {
 <span class="">	return-void</span>
 .end method
 
-.method public a(Lcom/google/firebase/messaging/c;)V
+.method public a(Lcom/google/firebase/messaging/d;)V
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>
@@ -81,50 +106,7 @@ value = {
 <span class="">	return-void</span>
 .end method
 
-.method public b(Ljava/lang/String;)V
-<span class="">	.locals 0</span>
-
-<span class="">	return-void</span>
-.end method
-
-<span class="cov">.method public final b(Landroid/content/Intent;)Z</span>
-<span class="">	.locals 2</span>
-
-<span class="exec">	invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	const-string v1, "com.google.firebase.messaging.NOTIFICATION_OPEN"</span>
-<span class="exec">	invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_2</span>
-<span class="missed">	const-string v0, "pending_intent"</span>
-<span class="">	invoke-virtual {p1, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Landroid/app/PendingIntent;</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="">	:try_start_0</span>
-<span class="missed">	invoke-virtual {v0}, Landroid/app/PendingIntent;->send()V</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Landroid/app/PendingIntent$CanceledException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:catch_0</span>
-<span class="missed">	const-string v0, "FirebaseMessaging"</span>
-<span class="missed">	const-string v1, "Notification pending intent canceled"</span>
-<span class="missed">	invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
-<span class="">	:goto_0</span>
-<span class="">	:cond_0</span>
-<span class="">	invoke-static {p1}, Lcom/google/firebase/messaging/b;->e(Landroid/content/Intent;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_1</span>
-<span class="missed">	invoke-static {p1}, Lcom/google/firebase/messaging/b;->c(Landroid/content/Intent;)V</span>
-<span class="">	:cond_1</span>
-<span class="missed">	const/4 p1, 0x1</span>
-<span class="">	return p1</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	const/4 p1, 0x0</span>
-<span class="exec">	return p1</span>
-.end method
-
-<span class="cov">.method public final c(Landroid/content/Intent;)V</span>
+<span class="cov">.method public final b(Landroid/content/Intent;)V</span>
 <span class="">	.locals 11</span>
 
 <span class="exec">	invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;</span>
@@ -147,7 +129,7 @@ value = {
 <span class="">	invoke-static {p1}, Lcom/google/firebase/messaging/b;->e(Landroid/content/Intent;)Z</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_4</span>
-<span class="missed">	invoke-static {p1}, Lcom/google/firebase/messaging/b;->a(Landroid/content/Intent;)V</span>
+<span class="missed">	invoke-static {p1}, Lcom/google/firebase/messaging/b;->c(Landroid/content/Intent;)V</span>
 <span class="">	return-void</span>
 <span class="cov">	:cond_1</span>
 <span class="cov">	const-string v1, "com.google.firebase.messaging.NEW_TOKEN"</span>
@@ -188,16 +170,16 @@ value = {
 <span class="missed">	const/4 v4, 0x2</span>
 <span class="missed">	if-eqz v3, :cond_6</span>
 <span class="missed">	const/4 v3, 0x0</span>
-<span class="">	invoke-static {v3}, Ljn;->a(Ljava/lang/Object;)Lgn;</span>
+<span class="">	invoke-static {v3}, Lrp;->a(Ljava/lang/Object;)Lrm;</span>
 <span class="missed">	move-result-object v3</span>
 <span class="">	goto :goto_2</span>
 <span class="">	:cond_6</span>
 <span class="missed">	new-instance v3, Landroid/os/Bundle;</span>
 <span class="missed">	invoke-direct {v3}, Landroid/os/Bundle;-><init>()V</span>
 <span class="missed">	invoke-virtual {v3, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V</span>
-<span class="">	invoke-static {p0}, Lcom/google/firebase/iid/a1;->a(Landroid/content/Context;)Lcom/google/firebase/iid/a1;</span>
+<span class="">	invoke-static {p0}, Lcom/google/firebase/iid/e;->a(Landroid/content/Context;)Lcom/google/firebase/iid/e;</span>
 <span class="missed">	move-result-object v5</span>
-<span class="">	invoke-virtual {v5, v4, v3}, Lcom/google/firebase/iid/a1;->a(ILandroid/os/Bundle;)Lgn;</span>
+<span class="">	invoke-virtual {v5, v4, v3}, Lcom/google/firebase/iid/e;->a(ILandroid/os/Bundle;)Lrm;</span>
 <span class="missed">	move-result-object v3</span>
 <span class="">	:goto_2</span>
 <span class="">	invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
@@ -210,7 +192,7 @@ value = {
 <span class="missed">	const/4 v1, 0x0</span>
 <span class="">	goto :goto_5</span>
 <span class="">	:cond_7</span>
-<span class="missed">	sget-object v5, Lcom/google/firebase/messaging/FirebaseMessagingService;->f:Ljava/util/Queue;</span>
+<span class="missed">	sget-object v5, Lcom/google/firebase/messaging/FirebaseMessagingService;->b:Ljava/util/Queue;</span>
 <span class="">	invoke-interface {v5, v1}, Ljava/util/Queue;->contains(Ljava/lang/Object;)Z</span>
 <span class="missed">	move-result v5</span>
 <span class="missed">	if-eqz v5, :cond_a</span>
@@ -235,19 +217,19 @@ value = {
 <span class="missed">	const/4 v1, 0x1</span>
 <span class="">	goto :goto_5</span>
 <span class="">	:cond_a</span>
-<span class="missed">	sget-object v5, Lcom/google/firebase/messaging/FirebaseMessagingService;->f:Ljava/util/Queue;</span>
+<span class="missed">	sget-object v5, Lcom/google/firebase/messaging/FirebaseMessagingService;->b:Ljava/util/Queue;</span>
 <span class="">	invoke-interface {v5}, Ljava/util/Queue;->size()I</span>
 <span class="missed">	move-result v5</span>
 <span class="missed">	const/16 v9, 0xa</span>
 <span class="missed">	if-lt v5, v9, :cond_b</span>
-<span class="missed">	sget-object v5, Lcom/google/firebase/messaging/FirebaseMessagingService;->f:Ljava/util/Queue;</span>
+<span class="missed">	sget-object v5, Lcom/google/firebase/messaging/FirebaseMessagingService;->b:Ljava/util/Queue;</span>
 <span class="missed">	invoke-interface {v5}, Ljava/util/Queue;->remove()Ljava/lang/Object;</span>
 <span class="">	:cond_b</span>
-<span class="missed">	sget-object v5, Lcom/google/firebase/messaging/FirebaseMessagingService;->f:Ljava/util/Queue;</span>
+<span class="missed">	sget-object v5, Lcom/google/firebase/messaging/FirebaseMessagingService;->b:Ljava/util/Queue;</span>
 <span class="missed">	invoke-interface {v5, v1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z</span>
 <span class="">	goto :goto_3</span>
 <span class="">	:goto_5</span>
-<span class="missed">	if-nez v1, :cond_18</span>
+<span class="missed">	if-nez v1, :cond_17</span>
 <span class="missed">	const-string v1, "message_type"</span>
 <span class="">	invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v1</span>
@@ -309,7 +291,7 @@ value = {
 <span class="missed">	move-object p1, v0</span>
 <span class="">	:goto_8</span>
 <span class="missed">	invoke-static {v2, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I</span>
-<span class="">	goto/16 :goto_a</span>
+<span class="">	goto :goto_9</span>
 <span class="">	:cond_f</span>
 <span class="">	invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v0</span>
@@ -318,26 +300,26 @@ value = {
 <span class="">	invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="">	:cond_10</span>
-<span class="missed">	new-instance v1, Lcom/google/firebase/messaging/d;</span>
+<span class="missed">	new-instance v1, Lcom/google/firebase/messaging/e;</span>
 <span class="missed">	const-string v4, "error"</span>
 <span class="">	invoke-virtual {p1, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="missed">	invoke-direct {v1, p1}, Lcom/google/firebase/messaging/d;-><init>(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-direct {v1, p1}, Lcom/google/firebase/messaging/e;-><init>(Ljava/lang/String;)V</span>
 <span class="missed">	invoke-virtual {p0, v0, v1}, Lcom/google/firebase/messaging/FirebaseMessagingService;->a(Ljava/lang/String;Ljava/lang/Exception;)V</span>
-<span class="">	goto :goto_a</span>
+<span class="">	goto :goto_9</span>
 <span class="">	:cond_11</span>
 <span class="">	invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="missed">	invoke-virtual {p0, p1}, Lcom/google/firebase/messaging/FirebaseMessagingService;->a(Ljava/lang/String;)V</span>
-<span class="">	goto :goto_a</span>
+<span class="">	goto :goto_9</span>
 <span class="">	:cond_12</span>
 <span class="missed">	invoke-virtual {p0}, Lcom/google/firebase/messaging/FirebaseMessagingService;->a()V</span>
-<span class="">	goto :goto_a</span>
+<span class="">	goto :goto_9</span>
 <span class="">	:cond_13</span>
 <span class="">	invoke-static {p1}, Lcom/google/firebase/messaging/b;->e(Landroid/content/Intent;)Z</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_14</span>
-<span class="missed">	invoke-static {p1}, Lcom/google/firebase/messaging/b;->d(Landroid/content/Intent;)V</span>
+<span class="missed">	invoke-static {p1}, Lcom/google/firebase/messaging/b;->a(Landroid/content/Intent;)V</span>
 <span class="">	:cond_14</span>
 <span class="">	invoke-virtual {p1}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;</span>
 <span class="missed">	move-result-object v0</span>
@@ -347,59 +329,42 @@ value = {
 <span class="">	:cond_15</span>
 <span class="missed">	const-string v1, "androidx.contentpager.content.wakelockid"</span>
 <span class="missed">	invoke-virtual {v0, v1}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V</span>
-<span class="">	invoke-static {v0}, Lcom/google/firebase/messaging/o;->a(Landroid/os/Bundle;)Z</span>
+<span class="">	invoke-static {v0}, Lcom/google/firebase/messaging/f;->a(Landroid/os/Bundle;)Z</span>
 <span class="missed">	move-result v1</span>
-<span class="missed">	if-eqz v1, :cond_17</span>
-<span class="missed">	new-instance v1, Lcom/google/firebase/messaging/o;</span>
-<span class="missed">	invoke-direct {v1, v0}, Lcom/google/firebase/messaging/o;-><init>(Landroid/os/Bundle;)V</span>
-<span class="">	invoke-static {}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor()Ljava/util/concurrent/ExecutorService;</span>
-<span class="missed">	move-result-object v4</span>
-<span class="missed">	new-instance v5, Lcom/google/firebase/messaging/h;</span>
-<span class="missed">	invoke-direct {v5, p0, v1, v4}, Lcom/google/firebase/messaging/h;-><init>(Landroid/content/Context;Lcom/google/firebase/messaging/o;Ljava/util/concurrent/Executor;)V</span>
-<span class="">	:try_start_0</span>
-<span class="">	invoke-virtual {v5}, Lcom/google/firebase/messaging/h;->a()Z</span>
-<span class="missed">	move-result v1</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
 <span class="missed">	if-eqz v1, :cond_16</span>
-<span class="missed">	invoke-interface {v4}, Ljava/util/concurrent/ExecutorService;->shutdown()V</span>
-<span class="">	goto :goto_a</span>
-<span class="">	:cond_16</span>
-<span class="missed">	invoke-interface {v4}, Ljava/util/concurrent/ExecutorService;->shutdown()V</span>
+<span class="missed">	new-instance v1, Lcom/google/firebase/messaging/f;</span>
+<span class="missed">	invoke-direct {v1, p0}, Lcom/google/firebase/messaging/f;-><init>(Landroid/content/Context;)V</span>
+<span class="">	invoke-virtual {v1, v0}, Lcom/google/firebase/messaging/f;->c(Landroid/os/Bundle;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_17</span>
 <span class="">	invoke-static {p1}, Lcom/google/firebase/messaging/b;->e(Landroid/content/Intent;)Z</span>
 <span class="missed">	move-result v1</span>
-<span class="missed">	if-eqz v1, :cond_17</span>
-<span class="missed">	invoke-static {p1}, Lcom/google/firebase/messaging/b;->b(Landroid/content/Intent;)V</span>
-<span class="">	goto :goto_9</span>
-<span class="">	:catchall_0</span>
-<span class="missed">	move-exception p1</span>
-<span class="missed">	invoke-interface {v4}, Ljava/util/concurrent/ExecutorService;->shutdown()V</span>
-<span class="">	throw p1</span>
-<span class="">	:goto_9</span>
+<span class="missed">	if-eqz v1, :cond_16</span>
+<span class="missed">	invoke-static {p1}, Lcom/google/firebase/messaging/b;->d(Landroid/content/Intent;)V</span>
+<span class="">	:cond_16</span>
+<span class="missed">	new-instance p1, Lcom/google/firebase/messaging/d;</span>
+<span class="missed">	invoke-direct {p1, v0}, Lcom/google/firebase/messaging/d;-><init>(Landroid/os/Bundle;)V</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lcom/google/firebase/messaging/FirebaseMessagingService;->a(Lcom/google/firebase/messaging/d;)V</span>
 <span class="">	:cond_17</span>
-<span class="missed">	new-instance p1, Lcom/google/firebase/messaging/c;</span>
-<span class="missed">	invoke-direct {p1, v0}, Lcom/google/firebase/messaging/c;-><init>(Landroid/os/Bundle;)V</span>
-<span class="missed">	invoke-virtual {p0, p1}, Lcom/google/firebase/messaging/FirebaseMessagingService;->a(Lcom/google/firebase/messaging/c;)V</span>
-<span class="">	:cond_18</span>
-<span class="">	:goto_a</span>
+<span class="">	:goto_9</span>
 <span class="missed">	const-wide/16 v0, 0x1</span>
-<span class="">	:try_start_1</span>
+<span class="">	:try_start_0</span>
 <span class="missed">	sget-object p1, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;</span>
-<span class="missed">	invoke-static {v3, v0, v1, p1}, Ljn;->a(Lgn;JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;</span>
-<span class="">	:try_end_1</span>
-<span class="missed">	.catch Ljava/util/concurrent/ExecutionException; {:try_start_1 .. :try_end_1} :catch_2</span>
-<span class="missed">	.catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_1</span>
-<span class="missed">	.catch Ljava/util/concurrent/TimeoutException; {:try_start_1 .. :try_end_1} :catch_0</span>
+<span class="missed">	invoke-static {v3, v0, v1, p1}, Lrp;->a(Lrm;JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_2</span>
+<span class="missed">	.catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1</span>
+<span class="missed">	.catch Ljava/util/concurrent/TimeoutException; {:try_start_0 .. :try_end_0} :catch_0</span>
 <span class="">	return-void</span>
 <span class="">	:catch_0</span>
 <span class="missed">	move-exception p1</span>
-<span class="">	goto :goto_b</span>
+<span class="">	goto :goto_a</span>
 <span class="">	:catch_1</span>
 <span class="missed">	move-exception p1</span>
-<span class="">	goto :goto_b</span>
+<span class="">	goto :goto_a</span>
 <span class="">	:catch_2</span>
 <span class="missed">	move-exception p1</span>
-<span class="">	:goto_b</span>
+<span class="">	:goto_a</span>
 <span class="">	invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
@@ -416,7 +381,6 @@ value = {
 <span class="missed">	move-result-object p1</span>
 <span class="missed">	invoke-static {v2, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I</span>
 <span class="">	return-void</span>
-<span class="">	nop</span>
 <span class="">	:sswitch_data_0</span>
 <span class="">	.sparse-switch</span>
 <span class="">	-0x7aedf14e -> :sswitch_3</span>
@@ -424,6 +388,49 @@ value = {
 <span class="">	0x308f3e91 -> :sswitch_1</span>
 <span class="">	0x3090df23 -> :sswitch_0</span>
 <span class="">	.end sparse-switch</span>
+.end method
+
+<span class="cov">.method public b(Ljava/lang/String;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public final c(Landroid/content/Intent;)Z</span>
+<span class="">	.locals 2</span>
+
+<span class="exec">	invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "com.google.firebase.messaging.NOTIFICATION_OPEN"</span>
+<span class="exec">	invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="missed">	const-string v0, "pending_intent"</span>
+<span class="">	invoke-virtual {p1, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Landroid/app/PendingIntent;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/app/PendingIntent;->send()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Landroid/app/PendingIntent$CanceledException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	const-string v0, "FirebaseMessaging"</span>
+<span class="missed">	const-string v1, "Notification pending intent canceled"</span>
+<span class="missed">	invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {p1}, Lcom/google/firebase/messaging/b;->e(Landroid/content/Intent;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-static {p1}, Lcom/google/firebase/messaging/b;->b(Landroid/content/Intent;)V</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	return p1</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	const/4 p1, 0x0</span>
+<span class="exec">	return p1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

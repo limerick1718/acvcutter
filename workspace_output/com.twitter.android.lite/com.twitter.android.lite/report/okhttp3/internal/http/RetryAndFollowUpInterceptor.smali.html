@@ -24,15 +24,15 @@
 .field private final client:Lokhttp3/OkHttpClient;
 
 
-<span class="cov">.method public constructor &lt;init&gt;(Lokhttp3/OkHttpClient;)V</span>
+.method public constructor &lt;init&gt;(Lokhttp3/OkHttpClient;)V
 <span class="">	.locals 0</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	iput-object p1, p0, Lokhttp3/internal/http/RetryAndFollowUpInterceptor;->client:Lokhttp3/OkHttpClient;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/internal/http/RetryAndFollowUpInterceptor;->client:Lokhttp3/OkHttpClient;</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method private followUpRequest(Lokhttp3/Response;Lokhttp3/Route;)Lokhttp3/Request;</span>
+.method private followUpRequest(Lokhttp3/Response;Lokhttp3/Route;)Lokhttp3/Request;
 <span class="">	.locals 6</span>
 <span class="">	.param p2    # Lokhttp3/Route;</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
@@ -44,27 +44,27 @@
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	if-eqz p1, :cond_16</span>
-<span class="exec">	invoke-virtual {p1}, Lokhttp3/Response;->code()I</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	invoke-virtual {p1}, Lokhttp3/Response;->request()Lokhttp3/Request;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="exec">	invoke-virtual {v1}, Lokhttp3/Request;->method()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	const/16 v2, 0x133</span>
-<span class="cov">	const-string v3, "GET"</span>
-<span class="cov">	const/4 v4, 0x0</span>
-<span class="cov">	if-eq v0, v2, :cond_c</span>
-<span class="cov">	const/16 v2, 0x134</span>
-<span class="cov">	if-eq v0, v2, :cond_c</span>
-<span class="cov">	const/16 v2, 0x191</span>
-<span class="cov">	if-eq v0, v2, :cond_b</span>
-<span class="cov">	const/16 v2, 0x1f7</span>
-<span class="cov">	if-eq v0, v2, :cond_8</span>
-<span class="cov">	const/16 v2, 0x197</span>
-<span class="cov">	if-eq v0, v2, :cond_5</span>
-<span class="cov">	const/16 p2, 0x198</span>
-<span class="cov">	if-eq v0, p2, :cond_0</span>
+<span class="missed">	if-eqz p1, :cond_16</span>
+<span class="">	invoke-virtual {p1}, Lokhttp3/Response;->code()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-virtual {p1}, Lokhttp3/Response;->request()Lokhttp3/Request;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1}, Lokhttp3/Request;->method()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const/16 v2, 0x133</span>
+<span class="missed">	const-string v3, "GET"</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	if-eq v0, v2, :cond_c</span>
+<span class="missed">	const/16 v2, 0x134</span>
+<span class="missed">	if-eq v0, v2, :cond_c</span>
+<span class="missed">	const/16 v2, 0x191</span>
+<span class="missed">	if-eq v0, v2, :cond_b</span>
+<span class="missed">	const/16 v2, 0x1f7</span>
+<span class="missed">	if-eq v0, v2, :cond_8</span>
+<span class="missed">	const/16 v2, 0x197</span>
+<span class="missed">	if-eq v0, v2, :cond_5</span>
+<span class="missed">	const/16 p2, 0x198</span>
+<span class="missed">	if-eq v0, p2, :cond_0</span>
 <span class="">	packed-switch v0, :pswitch_data_0</span>
 <span class="">	return-object v4</span>
 <span class="">	:cond_0</span>
@@ -373,7 +373,7 @@
 <span class="">	return p1</span>
 .end method
 
-<span class="cov">.method public intercept(Lokhttp3/Interceptor$Chain;)Lokhttp3/Response;</span>
+.method public intercept(Lokhttp3/Interceptor$Chain;)Lokhttp3/Response;
 <span class="">	.locals 8</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -381,27 +381,27 @@
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="exec">	invoke-interface {p1}, Lokhttp3/Interceptor$Chain;->request()Lokhttp3/Request;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast p1, Lokhttp3/internal/http/RealInterceptorChain;</span>
-<span class="exec">	invoke-virtual {p1}, Lokhttp3/internal/http/RealInterceptorChain;->transmitter()Lokhttp3/internal/connection/Transmitter;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	const/4 v2, 0x0</span>
-<span class="cov">	const/4 v3, 0x0</span>
-<span class="cov">	move-object v4, v3</span>
-<span class="cov">	const/4 v5, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	invoke-virtual {v1, v0}, Lokhttp3/internal/connection/Transmitter;->prepareToConnect(Lokhttp3/Request;)V</span>
-<span class="exec">	invoke-virtual {v1}, Lokhttp3/internal/connection/Transmitter;->isCanceled()Z</span>
-<span class="cov">	move-result v6</span>
-<span class="cov">	if-nez v6, :cond_a</span>
-<span class="cov">	:try_start_0</span>
-<span class="exec">	invoke-virtual {p1, v0, v1, v3}, Lokhttp3/internal/http/RealInterceptorChain;->proceed(Lokhttp3/Request;Lokhttp3/internal/connection/Transmitter;Lokhttp3/internal/connection/Exchange;)Lokhttp3/Response;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catch Lokhttp3/internal/connection/RouteException; {:try_start_0 .. :try_end_0} :catch_1</span>
-<span class="cov">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	invoke-interface {p1}, Lokhttp3/Interceptor$Chain;->request()Lokhttp3/Request;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast p1, Lokhttp3/internal/http/RealInterceptorChain;</span>
+<span class="">	invoke-virtual {p1}, Lokhttp3/internal/http/RealInterceptorChain;->transmitter()Lokhttp3/internal/connection/Transmitter;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	move-object v4, v3</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {v1, v0}, Lokhttp3/internal/connection/Transmitter;->prepareToConnect(Lokhttp3/Request;)V</span>
+<span class="">	invoke-virtual {v1}, Lokhttp3/internal/connection/Transmitter;->isCanceled()Z</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	if-nez v6, :cond_a</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-virtual {p1, v0, v1, v3}, Lokhttp3/internal/http/RealInterceptorChain;->proceed(Lokhttp3/Request;Lokhttp3/internal/connection/Transmitter;Lokhttp3/internal/connection/Exchange;)Lokhttp3/Response;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Lokhttp3/internal/connection/RouteException; {:try_start_0 .. :try_end_0} :catch_1</span>
+<span class="missed">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
 <span class="missed">	if-eqz v4, :cond_0</span>
 <span class="">	invoke-virtual {v0}, Lokhttp3/Response;->newBuilder()Lokhttp3/Response$Builder;</span>
 <span class="missed">	move-result-object v0</span>
@@ -415,30 +415,30 @@
 <span class="missed">	move-result-object v0</span>
 <span class="">	invoke-virtual {v0}, Lokhttp3/Response$Builder;->build()Lokhttp3/Response;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	move-object v4, v0</span>
-<span class="cov">	sget-object v0, Lokhttp3/internal/Internal;->instance:Lokhttp3/internal/Internal;</span>
-<span class="exec">	invoke-virtual {v0, v4}, Lokhttp3/internal/Internal;->exchange(Lokhttp3/Response;)Lokhttp3/internal/connection/Exchange;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	if-eqz v0, :cond_1</span>
-<span class="exec">	invoke-virtual {v0}, Lokhttp3/internal/connection/Exchange;->connection()Lokhttp3/internal/connection/RealConnection;</span>
-<span class="cov">	move-result-object v6</span>
-<span class="exec">	invoke-virtual {v6}, Lokhttp3/internal/connection/RealConnection;->route()Lokhttp3/Route;</span>
-<span class="cov">	move-result-object v6</span>
+<span class="">	:cond_0</span>
+<span class="missed">	move-object v4, v0</span>
+<span class="missed">	sget-object v0, Lokhttp3/internal/Internal;->instance:Lokhttp3/internal/Internal;</span>
+<span class="">	invoke-virtual {v0, v4}, Lokhttp3/internal/Internal;->exchange(Lokhttp3/Response;)Lokhttp3/internal/connection/Exchange;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-virtual {v0}, Lokhttp3/internal/connection/Exchange;->connection()Lokhttp3/internal/connection/RealConnection;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="">	invoke-virtual {v6}, Lokhttp3/internal/connection/RealConnection;->route()Lokhttp3/Route;</span>
+<span class="missed">	move-result-object v6</span>
 <span class="">	goto :goto_1</span>
 <span class="">	:cond_1</span>
 <span class="missed">	move-object v6, v3</span>
-<span class="cov">	:goto_1</span>
-<span class="exec">	invoke-direct {p0, v4, v6}, Lokhttp3/internal/http/RetryAndFollowUpInterceptor;->followUpRequest(Lokhttp3/Response;Lokhttp3/Route;)Lokhttp3/Request;</span>
-<span class="cov">	move-result-object v6</span>
-<span class="cov">	if-nez v6, :cond_3</span>
-<span class="cov">	if-eqz v0, :cond_2</span>
-<span class="exec">	invoke-virtual {v0}, Lokhttp3/internal/connection/Exchange;->isDuplex()Z</span>
-<span class="cov">	move-result p1</span>
+<span class="">	:goto_1</span>
+<span class="">	invoke-direct {p0, v4, v6}, Lokhttp3/internal/http/RetryAndFollowUpInterceptor;->followUpRequest(Lokhttp3/Response;Lokhttp3/Route;)Lokhttp3/Request;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	if-nez v6, :cond_3</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="">	invoke-virtual {v0}, Lokhttp3/internal/connection/Exchange;->isDuplex()Z</span>
+<span class="missed">	move-result p1</span>
 <span class="missed">	if-eqz p1, :cond_2</span>
 <span class="missed">	invoke-virtual {v1}, Lokhttp3/internal/connection/Transmitter;->timeoutEarlyExit()V</span>
-<span class="cov">	:cond_2</span>
-<span class="exec">	return-object v4</span>
+<span class="">	:cond_2</span>
+<span class="">	return-object v4</span>
 <span class="">	:cond_3</span>
 <span class="">	invoke-virtual {v6}, Lokhttp3/Request;->body()Lokhttp3/RequestBody;</span>
 <span class="missed">	move-result-object v7</span>

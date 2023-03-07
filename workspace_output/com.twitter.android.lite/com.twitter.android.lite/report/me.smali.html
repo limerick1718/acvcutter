@@ -14,76 +14,292 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lme;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+		<code>.class final Lme;
+.super Ljava/lang/Thread;
 
+
+.field private final a:Ljava/lang/Object;
+.field private final b:Ljava/util/concurrent/BlockingQueue;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"<K:",
-"Ljava/lang/Object;",
-"V:",
-"Ljava/lang/Object;",
-">",
-"Ljava/lang/Object;"
+"Ljava/util/concurrent/BlockingQueue<",
+"Lmd<",
+"*>;>;"
 }
 .end annotation
+.end field
+.field private final synthetic c:Lma;
 
 
-
-.method static a(Lpe;Ljava/lang/Object;Ljava/lang/Object;)I
-<span class="">	.locals 2</span>
+<span class="cov">.method public constructor &lt;init&gt;(Lma;Ljava/lang/String;Ljava/util/concurrent/BlockingQueue;)V</span>
+<span class="">	.locals 0</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	"<K:",</span>
-<span class="">	"Ljava/lang/Object;",</span>
-<span class="">	"V:",</span>
-<span class="">	"Ljava/lang/Object;",</span>
-<span class="">	">(",</span>
-<span class="">	"Lpe<",</span>
-<span class="">	"TK;TV;>;TK;TV;)I"</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ljava/util/concurrent/BlockingQueue<",</span>
+<span class="">	"Lmd<",</span>
+<span class="">	"*>;>;)V"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	iget-object v0, p0, Lpe;->a:Lsg;</span>
-<span class="missed">	const/4 v1, 0x1</span>
-<span class="">	invoke-static {v0, v1, p1}, Lbd;->a(Lsg;ILjava/lang/Object;)I</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	iget-object p0, p0, Lpe;->c:Lsg;</span>
-<span class="missed">	const/4 v0, 0x2</span>
-<span class="">	invoke-static {p0, v0, p2}, Lbd;->a(Lsg;ILjava/lang/Object;)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	add-int/2addr p1, p0</span>
-<span class="">	return p1</span>
+<span class="cov">	iput-object p1, p0, Lme;->c:Lma;</span>
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Thread;-><init>()V</span>
+<span class="cov">	invoke-static {p2}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	invoke-static {p3}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	new-instance p1, Ljava/lang/Object;</span>
+<span class="cov">	invoke-direct {p1}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	iput-object p1, p0, Lme;->a:Ljava/lang/Object;</span>
+<span class="cov">	iput-object p3, p0, Lme;->b:Ljava/util/concurrent/BlockingQueue;</span>
+<span class="cov">	invoke-virtual {p0, p2}, Lme;->setName(Ljava/lang/String;)V</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method static a(Ltc;Lpe;Ljava/lang/Object;Ljava/lang/Object;)V
-<span class="">	.locals 2</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"<K:",</span>
-<span class="">	"Ljava/lang/Object;",</span>
-<span class="">	"V:",</span>
-<span class="">	"Ljava/lang/Object;",</span>
-<span class="">	">(",</span>
-<span class="">	"Ltc;",</span>
-<span class="">	"Lpe<",</span>
-<span class="">	"TK;TV;>;TK;TV;)V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
+.method private final a(Ljava/lang/InterruptedException;)V
+<span class="">	.locals 3</span>
 
-<span class="missed">	iget-object v0, p1, Lpe;->a:Lsg;</span>
-<span class="missed">	const/4 v1, 0x1</span>
-<span class="missed">	invoke-static {p0, v0, v1, p2}, Lbd;->a(Ltc;Lsg;ILjava/lang/Object;)V</span>
-<span class="missed">	iget-object p1, p1, Lpe;->c:Lsg;</span>
-<span class="missed">	const/4 p2, 0x2</span>
-<span class="missed">	invoke-static {p0, p1, p2, p3}, Lbd;->a(Ltc;Lsg;ILjava/lang/Object;)V</span>
+<span class="missed">	iget-object v0, p0, Lme;->c:Lma;</span>
+<span class="">	invoke-virtual {v0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lla;->i()Llc;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p0}, Lme;->getName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, " was interrupted"</span>
+<span class="">	invoke-virtual {v1, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v0, v1, p1}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
 <span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public final a()V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Lme;->a:Ljava/lang/Object;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v1, p0, Lme;->a:Ljava/lang/Object;</span>
+<span class="cov">	invoke-virtual {v1}, Ljava/lang/Object;->notifyAll()V</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="exec">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method
+
+<span class="cov">.method public final run()V</span>
+<span class="">	.locals 6</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v1, p0, Lme;->c:Lma;</span>
+<span class="exec">	invoke-static {v1}, Lma;->a(Lma;)Ljava/util/concurrent/Semaphore;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	invoke-virtual {v1}, Ljava/util/concurrent/Semaphore;->acquire()V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	invoke-direct {p0, v1}, Lme;->a(Ljava/lang/InterruptedException;)V</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	:try_start_1</span>
+<span class="exec">	invoke-static {}, Landroid/os/Process;->myTid()I</span>
+<span class="cov">	move-result v1</span>
+<span class="exec">	invoke-static {v1}, Landroid/os/Process;->getThreadPriority(I)I</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	:goto_1</span>
+<span class="cov">	iget-object v2, p0, Lme;->b:Ljava/util/concurrent/BlockingQueue;</span>
+<span class="exec">	invoke-interface {v2}, Ljava/util/concurrent/BlockingQueue;->poll()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	check-cast v2, Lmd;</span>
+<span class="cov">	if-eqz v2, :cond_2</span>
+<span class="cov">	iget-boolean v3, v2, Lmd;->a:Z</span>
+<span class="missed">	if-eqz v3, :cond_1</span>
+<span class="missed">	move v3, v1</span>
+<span class="exec">	goto :goto_2</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	const/16 v3, 0xa</span>
+<span class="cov">	:goto_2</span>
+<span class="cov">	invoke-static {v3}, Landroid/os/Process;->setThreadPriority(I)V</span>
+<span class="cov">	invoke-virtual {v2}, Lmd;->run()V</span>
+<span class="exec">	goto :goto_1</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	iget-object v2, p0, Lme;->a:Ljava/lang/Object;</span>
+<span class="">	monitor-enter v2</span>
+<span class="cov">	:try_end_1</span>
+<span class="cov">	.catchall {:try_start_1 .. :try_end_1} :catchall_3</span>
+<span class="cov">	:try_start_2</span>
+<span class="cov">	iget-object v3, p0, Lme;->b:Ljava/util/concurrent/BlockingQueue;</span>
+<span class="exec">	invoke-interface {v3}, Ljava/util/concurrent/BlockingQueue;->peek()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	if-nez v3, :cond_3</span>
+<span class="cov">	iget-object v3, p0, Lme;->c:Lma;</span>
+<span class="exec">	invoke-static {v3}, Lma;->b(Lma;)Z</span>
+<span class="cov">	move-result v3</span>
+<span class="cov">	:try_end_2</span>
+<span class="cov">	.catchall {:try_start_2 .. :try_end_2} :catchall_2</span>
+<span class="cov">	if-nez v3, :cond_3</span>
+<span class="cov">	:try_start_3</span>
+<span class="cov">	iget-object v3, p0, Lme;->a:Ljava/lang/Object;</span>
+<span class="cov">	const-wide/16 v4, 0x7530</span>
+<span class="cov">	invoke-virtual {v3, v4, v5}, Ljava/lang/Object;->wait(J)V</span>
+<span class="cov">	:try_end_3</span>
+<span class="cov">	.catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_1</span>
+<span class="cov">	.catchall {:try_start_3 .. :try_end_3} :catchall_2</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception v3</span>
+<span class="">	:try_start_4</span>
+<span class="missed">	invoke-direct {p0, v3}, Lme;->a(Ljava/lang/InterruptedException;)V</span>
+<span class="cov">	:goto_3</span>
+<span class="cov">	:cond_3</span>
+<span class="cov">	monitor-exit v2</span>
+<span class="cov">	:try_end_4</span>
+<span class="cov">	.catchall {:try_start_4 .. :try_end_4} :catchall_2</span>
+<span class="cov">	:try_start_5</span>
+<span class="cov">	iget-object v2, p0, Lme;->c:Lma;</span>
+<span class="exec">	invoke-static {v2}, Lma;->c(Lma;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="">	monitor-enter v2</span>
+<span class="cov">	:try_end_5</span>
+<span class="cov">	.catchall {:try_start_5 .. :try_end_5} :catchall_3</span>
+<span class="cov">	:try_start_6</span>
+<span class="cov">	iget-object v3, p0, Lme;->b:Ljava/util/concurrent/BlockingQueue;</span>
+<span class="exec">	invoke-interface {v3}, Ljava/util/concurrent/BlockingQueue;->peek()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	if-nez v3, :cond_6</span>
+<span class="cov">	monitor-exit v2</span>
+<span class="cov">	:try_end_6</span>
+<span class="cov">	.catchall {:try_start_6 .. :try_end_6} :catchall_1</span>
+<span class="cov">	iget-object v1, p0, Lme;->c:Lma;</span>
+<span class="exec">	invoke-static {v1}, Lma;->c(Lma;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	monitor-enter v1</span>
+<span class="cov">	:try_start_7</span>
+<span class="cov">	iget-object v2, p0, Lme;->c:Lma;</span>
+<span class="exec">	invoke-static {v2}, Lma;->a(Lma;)Ljava/util/concurrent/Semaphore;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	invoke-virtual {v2}, Ljava/util/concurrent/Semaphore;->release()V</span>
+<span class="cov">	iget-object v2, p0, Lme;->c:Lma;</span>
+<span class="exec">	invoke-static {v2}, Lma;->c(Lma;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	invoke-virtual {v2}, Ljava/lang/Object;->notifyAll()V</span>
+<span class="cov">	iget-object v2, p0, Lme;->c:Lma;</span>
+<span class="exec">	invoke-static {v2}, Lma;->d(Lma;)Lme;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	if-ne p0, v2, :cond_4</span>
+<span class="cov">	iget-object v2, p0, Lme;->c:Lma;</span>
+<span class="cov">	invoke-static {v2, v0}, Lma;->a(Lma;Lme;)Lme;</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget-object v2, p0, Lme;->c:Lma;</span>
+<span class="">	invoke-static {v2}, Lma;->e(Lma;)Lme;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	if-ne p0, v2, :cond_5</span>
+<span class="missed">	iget-object v2, p0, Lme;->c:Lma;</span>
+<span class="missed">	invoke-static {v2, v0}, Lma;->b(Lma;Lme;)Lme;</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_5</span>
+<span class="missed">	iget-object v0, p0, Lme;->c:Lma;</span>
+<span class="">	invoke-virtual {v0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v2, "Current scheduler thread is neither worker nor network"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="cov">	:goto_4</span>
+<span class="cov">	monitor-exit v1</span>
+<span class="exec">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	monitor-exit v1</span>
+<span class="">	:try_end_7</span>
+<span class="missed">	.catchall {:try_start_7 .. :try_end_7} :catchall_0</span>
+<span class="">	throw v0</span>
+<span class="cov">	:cond_6</span>
+<span class="cov">	:try_start_8</span>
+<span class="cov">	monitor-exit v2</span>
+<span class="">	goto/16 :goto_1</span>
+<span class="">	:catchall_1</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v2</span>
+<span class="">	:try_end_8</span>
+<span class="missed">	.catchall {:try_start_8 .. :try_end_8} :catchall_1</span>
+<span class="">	:try_start_9</span>
+<span class="">	throw v1</span>
+<span class="">	:try_end_9</span>
+<span class="">	.catchall {:try_start_9 .. :try_end_9} :catchall_3</span>
+<span class="">	:catchall_2</span>
+<span class="missed">	move-exception v1</span>
+<span class="">	:try_start_a</span>
+<span class="missed">	monitor-exit v2</span>
+<span class="">	:try_end_a</span>
+<span class="missed">	.catchall {:try_start_a .. :try_end_a} :catchall_2</span>
+<span class="">	:try_start_b</span>
+<span class="">	throw v1</span>
+<span class="">	:try_end_b</span>
+<span class="">	.catchall {:try_start_b .. :try_end_b} :catchall_3</span>
+<span class="">	:catchall_3</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	iget-object v2, p0, Lme;->c:Lma;</span>
+<span class="">	invoke-static {v2}, Lma;->c(Lma;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	monitor-enter v2</span>
+<span class="">	:try_start_c</span>
+<span class="missed">	iget-object v3, p0, Lme;->c:Lma;</span>
+<span class="">	invoke-static {v3}, Lma;->a(Lma;)Ljava/util/concurrent/Semaphore;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-virtual {v3}, Ljava/util/concurrent/Semaphore;->release()V</span>
+<span class="missed">	iget-object v3, p0, Lme;->c:Lma;</span>
+<span class="">	invoke-static {v3}, Lma;->c(Lma;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-virtual {v3}, Ljava/lang/Object;->notifyAll()V</span>
+<span class="missed">	iget-object v3, p0, Lme;->c:Lma;</span>
+<span class="">	invoke-static {v3}, Lma;->d(Lma;)Lme;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	if-eq p0, v3, :cond_8</span>
+<span class="missed">	iget-object v3, p0, Lme;->c:Lma;</span>
+<span class="">	invoke-static {v3}, Lma;->e(Lma;)Lme;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	if-ne p0, v3, :cond_7</span>
+<span class="missed">	iget-object v3, p0, Lme;->c:Lma;</span>
+<span class="missed">	invoke-static {v3, v0}, Lma;->b(Lma;Lme;)Lme;</span>
+<span class="">	goto :goto_5</span>
+<span class="">	:cond_7</span>
+<span class="missed">	iget-object v0, p0, Lme;->c:Lma;</span>
+<span class="">	invoke-virtual {v0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v3, "Current scheduler thread is neither worker nor network"</span>
+<span class="missed">	invoke-virtual {v0, v3}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="">	goto :goto_5</span>
+<span class="">	:cond_8</span>
+<span class="missed">	iget-object v3, p0, Lme;->c:Lma;</span>
+<span class="missed">	invoke-static {v3, v0}, Lma;->a(Lma;Lme;)Lme;</span>
+<span class="">	:goto_5</span>
+<span class="missed">	monitor-exit v2</span>
+<span class="">	:try_end_c</span>
+<span class="missed">	.catchall {:try_start_c .. :try_end_c} :catchall_4</span>
+<span class="">	throw v1</span>
+<span class="">	:catchall_4</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	:try_start_d</span>
+<span class="missed">	monitor-exit v2</span>
+<span class="">	:try_end_d</span>
+<span class="missed">	.catchall {:try_start_d .. :try_end_d} :catchall_4</span>
+<span class="">	throw v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

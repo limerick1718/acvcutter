@@ -14,92 +14,61 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lhm;
-.super Lp5;
-.implements Lcom/google/android/gms/common/api/j;
+		<code>.class final Lhm;
+.super Ljava/lang/Object;
 
 
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Landroid/os/Parcelable$Creator<",
-"Lhm;",
-">;"
-}
-.end annotation
-.end field
-.field private final a:I
-.field private b:I
-.field private c:Landroid/content/Intent;
+.field private static final a:Lhk;
+.field private static final b:Lhk;
 
 
 .method static constructor &lt;clinit&gt;()V
 <span class="">	.locals 1</span>
 
-<span class="missed">	new-instance v0, Lim;</span>
-<span class="missed">	invoke-direct {v0}, Lim;-><init>()V</span>
-<span class="missed">	sput-object v0, Lhm;->CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="">	invoke-static {}, Lhm;->c()Lhk;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lhm;->a:Lhk;</span>
+<span class="missed">	new-instance v0, Lhl;</span>
+<span class="missed">	invoke-direct {v0}, Lhl;-><init>()V</span>
+<span class="missed">	sput-object v0, Lhm;->b:Lhk;</span>
 <span class="">	return-void</span>
 .end method
 
-.method public constructor &lt;init&gt;()V
-<span class="">	.locals 2</span>
+.method static a()Lhk;
+<span class="">	.locals 1</span>
 
-<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	sget-object v0, Lhm;->a:Lhk;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method static b()Lhk;
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lhm;->b:Lhk;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method private static c()Lhk;
+<span class="">	.locals 3</span>
+
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v0, "com.google.protobuf.MapFieldSchemaFull"</span>
+<span class="">	invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v0</span>
 <span class="missed">	const/4 v1, 0x0</span>
-<span class="missed">	invoke-direct {p0, v0, v1}, Lhm;-><init>(ILandroid/content/Intent;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method constructor &lt;init&gt;(IILandroid/content/Intent;)V
-<span class="">	.locals 0</span>
-
-<span class="missed">	invoke-direct {p0}, Lp5;-><init>()V</span>
-<span class="missed">	iput p1, p0, Lhm;->a:I</span>
-<span class="missed">	iput p2, p0, Lhm;->b:I</span>
-<span class="missed">	iput-object p3, p0, Lhm;->c:Landroid/content/Intent;</span>
-<span class="">	return-void</span>
-.end method
-
-.method private constructor &lt;init&gt;(ILandroid/content/Intent;)V
-<span class="">	.locals 1</span>
-
-<span class="missed">	const/4 p1, 0x2</span>
-<span class="missed">	const/4 p2, 0x0</span>
+<span class="missed">	new-array v2, v1, [Ljava/lang/Class;</span>
+<span class="">	invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-array v1, v1, [Ljava/lang/Object;</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lhk;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object v0</span>
+<span class="">	:catch_0</span>
 <span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	invoke-direct {p0, p1, p2, v0}, Lhm;-><init>(IILandroid/content/Intent;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public final c()Lcom/google/android/gms/common/api/Status;
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget v0, p0, Lhm;->b:I</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="missed">	sget-object v0, Lcom/google/android/gms/common/api/Status;->e:Lcom/google/android/gms/common/api/Status;</span>
 <span class="">	return-object v0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	sget-object v0, Lcom/google/android/gms/common/api/Status;->g:Lcom/google/android/gms/common/api/Status;</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-<span class="">	.locals 4</span>
-
-<span class="">	invoke-static {p1}, Lr5;->a(Landroid/os/Parcel;)I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	iget v1, p0, Lhm;->a:I</span>
-<span class="missed">	const/4 v2, 0x1</span>
-<span class="missed">	invoke-static {p1, v2, v1}, Lr5;->a(Landroid/os/Parcel;II)V</span>
-<span class="missed">	iget v1, p0, Lhm;->b:I</span>
-<span class="missed">	const/4 v2, 0x2</span>
-<span class="missed">	invoke-static {p1, v2, v1}, Lr5;->a(Landroid/os/Parcel;II)V</span>
-<span class="missed">	iget-object v1, p0, Lhm;->c:Landroid/content/Intent;</span>
-<span class="missed">	const/4 v2, 0x3</span>
-<span class="missed">	const/4 v3, 0x0</span>
-<span class="missed">	invoke-static {p1, v2, v1, p2, v3}, Lr5;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V</span>
-<span class="missed">	invoke-static {p1, v0}, Lr5;->a(Landroid/os/Parcel;I)V</span>
-<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -163,7 +163,7 @@ value = {
 <span class="cov">.method static constructor &lt;clinit&gt;()V</span>
 <span class="">	.locals 2</span>
 
-<span class="cov">	sget-object v0, Lokhttp3/b;->a:Lokhttp3/b;</span>
+<span class="cov">	sget-object v0, Lokhttp3/-$$Lambda$CipherSuite$9SWcmR6qHxy1V18Yo6Z-Hyn4RNk;->INSTANCE:Lokhttp3/-$$Lambda$CipherSuite$9SWcmR6qHxy1V18Yo6Z-Hyn4RNk;</span>
 <span class="cov">	sput-object v0, Lokhttp3/CipherSuite;->ORDER_BY_NAME:Ljava/util/Comparator;</span>
 <span class="cov">	new-instance v0, Ljava/util/LinkedHashMap;</span>
 <span class="cov">	invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V</span>
@@ -774,65 +774,21 @@ value = {
 <span class="cov">	iput-object p1, p0, Lokhttp3/CipherSuite;->javaName:Ljava/lang/String;</span>
 <span class="exec">	return-void</span>
 <span class="">	:cond_0</span>
-<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V</span>
 <span class="">	throw p1</span>
 .end method
 
-<span class="cov">.method static synthetic a(Ljava/lang/String;Ljava/lang/String;)I</span>
-<span class="">	.locals 6</span>
-
-<span class="exec">	invoke-virtual {p0}, Ljava/lang/String;->length()I</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
-<span class="cov">	move-result v1</span>
-<span class="exec">	invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	const/4 v1, 0x4</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	const/4 v2, -0x1</span>
-<span class="cov">	const/4 v3, 0x1</span>
-<span class="cov">	if-ge v1, v0, :cond_2</span>
-<span class="exec">	invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C</span>
-<span class="cov">	move-result v4</span>
-<span class="exec">	invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C</span>
-<span class="cov">	move-result v5</span>
-<span class="cov">	if-eq v4, v5, :cond_1</span>
-<span class="cov">	if-ge v4, v5, :cond_0</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 v2, 0x1</span>
-<span class="cov">	:goto_1</span>
-<span class="exec">	return v2</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	add-int/lit8 v1, v1, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="cov">	:cond_2</span>
-<span class="exec">	invoke-virtual {p0}, Ljava/lang/String;->length()I</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
-<span class="cov">	move-result p1</span>
-<span class="missed">	if-eq p0, p1, :cond_4</span>
-<span class="missed">	if-ge p0, p1, :cond_3</span>
-<span class="">	goto :goto_2</span>
-<span class="">	:cond_3</span>
-<span class="missed">	const/4 v2, 0x1</span>
-<span class="">	:goto_2</span>
-<span class="">	return v2</span>
-<span class="cov">	:cond_4</span>
-<span class="cov">	const/4 p0, 0x0</span>
-<span class="exec">	return p0</span>
-.end method
-
-<span class="cov">.method public static declared-synchronized forJavaName(Ljava/lang/String;)Lokhttp3/CipherSuite;</span>
+.method public static declared-synchronized forJavaName(Ljava/lang/String;)Lokhttp3/CipherSuite;
 <span class="">	.locals 3</span>
 
-<span class="cov">	const-class v0, Lokhttp3/CipherSuite;</span>
-<span class="cov">	monitor-enter v0</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	sget-object v1, Lokhttp3/CipherSuite;->INSTANCES:Ljava/util/Map;</span>
-<span class="exec">	invoke-interface {v1, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	check-cast v1, Lokhttp3/CipherSuite;</span>
+<span class="missed">	const-class v0, Lokhttp3/CipherSuite;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	sget-object v1, Lokhttp3/CipherSuite;->INSTANCES:Ljava/util/Map;</span>
+<span class="">	invoke-interface {v1, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, Lokhttp3/CipherSuite;</span>
 <span class="missed">	if-nez v1, :cond_1</span>
 <span class="missed">	sget-object v1, Lokhttp3/CipherSuite;->INSTANCES:Ljava/util/Map;</span>
 <span class="">	invoke-static {p0}, Lokhttp3/CipherSuite;->secondaryName(Ljava/lang/String;)Ljava/lang/String;</span>
@@ -848,9 +804,9 @@ value = {
 <span class="missed">	invoke-interface {v2, p0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
 <span class="">	:try_end_0</span>
 <span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	monitor-exit v0</span>
-<span class="exec">	return-object v1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-object v1</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception p0</span>
 <span class="missed">	monitor-exit v0</span>
@@ -897,6 +853,51 @@ value = {
 <span class="cov">	sget-object v0, Lokhttp3/CipherSuite;->INSTANCES:Ljava/util/Map;</span>
 <span class="cov">	invoke-interface {v0, p0, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
 <span class="exec">	return-object p1</span>
+.end method
+
+.method static synthetic lambda$static$0(Ljava/lang/String;Ljava/lang/String;)I
+<span class="">	.locals 6</span>
+
+<span class="">	invoke-virtual {p0}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v1</span>
+<span class="">	invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x4</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 v2, -0x1</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	if-ge v1, v0, :cond_2</span>
+<span class="">	invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C</span>
+<span class="missed">	move-result v4</span>
+<span class="">	invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	if-eq v4, v5, :cond_1</span>
+<span class="missed">	if-ge v4, v5, :cond_0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="">	:goto_1</span>
+<span class="">	return v2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-virtual {p0}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-eq p0, p1, :cond_4</span>
+<span class="missed">	if-ge p0, p1, :cond_3</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="">	:goto_2</span>
+<span class="">	return v2</span>
+<span class="">	:cond_4</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	return p0</span>
 .end method
 
 .method private static secondaryName(Ljava/lang/String;)Ljava/lang/String;

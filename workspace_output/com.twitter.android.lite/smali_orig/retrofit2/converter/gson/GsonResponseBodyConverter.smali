@@ -21,38 +21,38 @@
 
 
 # instance fields
-.field private final adapter:Lvv;
+.field private final adapter:Ltn;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lvv<",
+            "Ltn<",
             "TT;>;"
         }
     .end annotation
 .end field
 
-.field private final gson:Lfv;
+.field private final gson:Lsx;
 
 
 # direct methods
-.method constructor <init>(Lfv;Lvv;)V
+.method constructor <init>(Lsx;Ltn;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lfv;",
-            "Lvv<",
+            "Lsx;",
+            "Ltn<",
             "TT;>;)V"
         }
     .end annotation
 
-    .line 1
+    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput-object p1, p0, Lretrofit2/converter/gson/GsonResponseBodyConverter;->gson:Lfv;
+    .line 30
+    iput-object p1, p0, Lretrofit2/converter/gson/GsonResponseBodyConverter;->gson:Lsx;
 
-    .line 3
-    iput-object p2, p0, Lretrofit2/converter/gson/GsonResponseBodyConverter;->adapter:Lvv;
+    .line 31
+    iput-object p2, p0, Lretrofit2/converter/gson/GsonResponseBodyConverter;->adapter:Ltn;
 
     return-void
 .end method
@@ -67,7 +67,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 25
     check-cast p1, Lokhttp3/ResponseBody;
 
     invoke-virtual {p0, p1}, Lretrofit2/converter/gson/GsonResponseBodyConverter;->convert(Lokhttp3/ResponseBody;)Ljava/lang/Object;
@@ -93,28 +93,28 @@
         }
     .end annotation
 
-    .line 2
-    iget-object v0, p0, Lretrofit2/converter/gson/GsonResponseBodyConverter;->gson:Lfv;
+    .line 35
+    iget-object v0, p0, Lretrofit2/converter/gson/GsonResponseBodyConverter;->gson:Lsx;
 
     invoke-virtual {p1}, Lokhttp3/ResponseBody;->charStream()Ljava/io/Reader;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lfv;->a(Ljava/io/Reader;)Lew;
+    invoke-virtual {v0, v1}, Lsx;->a(Ljava/io/Reader;)Ltw;
 
     move-result-object v0
 
-    .line 3
+    .line 37
     :try_start_0
-    iget-object v1, p0, Lretrofit2/converter/gson/GsonResponseBodyConverter;->adapter:Lvv;
+    iget-object v1, p0, Lretrofit2/converter/gson/GsonResponseBodyConverter;->adapter:Ltn;
 
-    invoke-virtual {v1, v0}, Lvv;->a(Lew;)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Ltn;->b(Ltw;)Ljava/lang/Object;
 
     move-result-object v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 4
+    .line 39
     invoke-virtual {p1}, Lokhttp3/ResponseBody;->close()V
 
     return-object v0

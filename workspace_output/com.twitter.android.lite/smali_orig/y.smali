@@ -1,416 +1,160 @@
-.class public Ly;
+.class public final Ly;
 .super Ljava/lang/Object;
-.source "KeyEventDispatcher.java"
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Ly$a;
-    }
-.end annotation
+.source "LayoutInflaterCompat.java"
 
 
 # static fields
-.field private static a:Z = false
+.field private static a:Ljava/lang/reflect/Field;
 
-.field private static b:Ljava/lang/reflect/Method; = null
-
-.field private static c:Z = false
-
-.field private static d:Ljava/lang/reflect/Field;
+.field private static b:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
+.method public static a(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
+    .locals 2
 
+    .line 139
+    invoke-virtual {p0, p1}, Landroid/view/LayoutInflater;->setFactory2(Landroid/view/LayoutInflater$Factory2;)V
+
+    .line 141
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x15
+
+    if-ge v0, v1, :cond_1
+
+    .line 142
+    invoke-virtual {p0}, Landroid/view/LayoutInflater;->getFactory()Landroid/view/LayoutInflater$Factory;
+
+    move-result-object v0
+
+    .line 143
+    instance-of v1, v0, Landroid/view/LayoutInflater$Factory2;
+
+    if-eqz v1, :cond_0
+
+    .line 146
+    check-cast v0, Landroid/view/LayoutInflater$Factory2;
+
+    invoke-static {p0, v0}, Ly;->b(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
+
+    goto :goto_0
+
+    .line 149
+    :cond_0
+    invoke-static {p0, p1}, Ly;->b(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
+
+    :cond_1
+    :goto_0
     return-void
 .end method
 
-.method private static a(Landroid/app/Dialog;)Landroid/content/DialogInterface$OnKeyListener;
-    .locals 3
+.method private static b(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
+    .locals 6
 
-    .line 26
-    sget-boolean v0, Ly;->c:Z
+    .line 71
+    sget-boolean v0, Ly;->b:Z
+
+    const-string v1, "; inflation may have unexpected results."
+
+    const-string v2, "LayoutInflaterCompatHC"
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    .line 27
+    .line 73
     :try_start_0
-    const-class v1, Landroid/app/Dialog;
+    const-class v3, Landroid/view/LayoutInflater;
 
-    const-string v2, "mOnKeyListener"
+    const-string v4, "mFactory2"
 
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-virtual {v3, v4}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    move-result-object v1
+    move-result-object v3
 
-    sput-object v1, Ly;->d:Ljava/lang/reflect/Field;
+    sput-object v3, Ly;->a:Ljava/lang/reflect/Field;
 
-    .line 28
-    invoke-virtual {v1, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    .line 74
+    sget-object v3, Ly;->a:Ljava/lang/reflect/Field;
+
+    invoke-virtual {v3, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
     :try_end_0
     .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 29
-    :catch_0
-    sput-boolean v0, Ly;->c:Z
+    goto :goto_0
 
-    .line 30
+    :catch_0
+    move-exception v3
+
+    .line 76
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "forceSetFactory2 Could not find field \'mFactory2\' on class "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-class v5, Landroid/view/LayoutInflater;
+
+    .line 77
+    invoke-virtual {v5}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 76
+    invoke-static {v2, v4, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 80
+    :goto_0
+    sput-boolean v0, Ly;->b:Z
+
+    .line 82
     :cond_0
-    sget-object v0, Ly;->d:Ljava/lang/reflect/Field;
+    sget-object v0, Ly;->a:Ljava/lang/reflect/Field;
 
     if-eqz v0, :cond_1
 
-    .line 31
+    .line 84
     :try_start_1
-    invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/content/DialogInterface$OnKeyListener;
+    invoke-virtual {v0, p0, p1}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
     :try_end_1
     .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
 
-    return-object p0
+    goto :goto_1
 
     :catch_1
-    :cond_1
-    const/4 p0, 0x0
+    move-exception p1
 
-    return-object p0
-.end method
+    .line 86
+    new-instance v0, Ljava/lang/StringBuilder;
 
-.method private static a(Landroid/app/ActionBar;Landroid/view/KeyEvent;)Z
-    .locals 6
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 10
-    sget-boolean v0, Ly;->a:Z
+    const-string v3, "forceSetFactory2 could not set the Factory2 on LayoutInflater "
 
-    const/4 v1, 0x1
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v2, 0x0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11
-    :try_start_0
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    const-string v3, "onMenuKeyEvent"
-
-    new-array v4, v1, [Ljava/lang/Class;
-
-    const-class v5, Landroid/view/KeyEvent;
-
-    aput-object v5, v4, v2
-
-    invoke-virtual {v0, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    sput-object v0, Ly;->b:Ljava/lang/reflect/Method;
-    :try_end_0
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 12
-    :catch_0
-    sput-boolean v1, Ly;->a:Z
-
-    .line 13
-    :cond_0
-    sget-object v0, Ly;->b:Ljava/lang/reflect/Method;
-
-    if-eqz v0, :cond_1
-
-    :try_start_1
-    new-array v1, v1, [Ljava/lang/Object;
-
-    aput-object p1, v1, v2
-
-    .line 14
-    invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Ljava/lang/Boolean;
+    invoke-static {v2, p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
-    :try_end_1
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_1} :catch_1
-
-    return p0
-
-    :catch_1
     :cond_1
-    return v2
-.end method
-
-.method private static a(Landroid/app/Activity;Landroid/view/KeyEvent;)Z
-    .locals 5
-
-    .line 15
-    invoke-virtual {p0}, Landroid/app/Activity;->onUserInteraction()V
-
-    .line 16
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    const/16 v1, 0x8
-
-    .line 17
-    invoke-virtual {v0, v1}, Landroid/view/Window;->hasFeature(I)Z
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_0
-
-    .line 18
-    invoke-virtual {p0}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
-
-    move-result-object v1
-
-    .line 19
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
-
-    move-result v3
-
-    const/16 v4, 0x52
-
-    if-ne v3, v4, :cond_0
-
-    if-eqz v1, :cond_0
-
-    .line 20
-    invoke-static {v1, p1}, Ly;->a(Landroid/app/ActionBar;Landroid/view/KeyEvent;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return v2
-
-    .line 21
-    :cond_0
-    invoke-virtual {v0, p1}, Landroid/view/Window;->superDispatchKeyEvent(Landroid/view/KeyEvent;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    return v2
-
-    .line 22
-    :cond_1
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object v0
-
-    .line 23
-    invoke-static {v0, p1}, La0;->a(Landroid/view/View;Landroid/view/KeyEvent;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    return v2
-
-    :cond_2
-    if-eqz v0, :cond_3
-
-    .line 24
-    invoke-virtual {v0}, Landroid/view/View;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_3
-    const/4 v0, 0x0
-
-    .line 25
-    :goto_0
-    invoke-virtual {p1, p0, v0, p0}, Landroid/view/KeyEvent;->dispatch(Landroid/view/KeyEvent$Callback;Landroid/view/KeyEvent$DispatcherState;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method private static a(Landroid/app/Dialog;Landroid/view/KeyEvent;)Z
-    .locals 3
-
-    .line 32
-    invoke-static {p0}, Ly;->a(Landroid/app/Dialog;)Landroid/content/DialogInterface$OnKeyListener;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_0
-
-    .line 33
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
-
-    move-result v2
-
-    invoke-interface {v0, p0, v2, p1}, Landroid/content/DialogInterface$OnKeyListener;->onKey(Landroid/content/DialogInterface;ILandroid/view/KeyEvent;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    return v1
-
-    .line 34
-    :cond_0
-    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    .line 35
-    invoke-virtual {v0, p1}, Landroid/view/Window;->superDispatchKeyEvent(Landroid/view/KeyEvent;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    return v1
-
-    .line 36
-    :cond_1
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object v0
-
-    .line 37
-    invoke-static {v0, p1}, La0;->a(Landroid/view/View;Landroid/view/KeyEvent;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    return v1
-
-    :cond_2
-    if-eqz v0, :cond_3
-
-    .line 38
-    invoke-virtual {v0}, Landroid/view/View;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_3
-    const/4 v0, 0x0
-
-    .line 39
-    :goto_0
-    invoke-virtual {p1, p0, v0, p0}, Landroid/view/KeyEvent;->dispatch(Landroid/view/KeyEvent$Callback;Landroid/view/KeyEvent$DispatcherState;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static a(Landroid/view/View;Landroid/view/KeyEvent;)Z
-    .locals 0
-
-    .line 1
-    invoke-static {p0, p1}, La0;->b(Landroid/view/View;Landroid/view/KeyEvent;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static a(Ly$a;Landroid/view/View;Landroid/view/Window$Callback;Landroid/view/KeyEvent;)Z
-    .locals 3
-
-    const/4 v0, 0x0
-
-    if-nez p0, :cond_0
-
-    return v0
-
-    .line 2
-    :cond_0
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x1c
-
-    if-lt v1, v2, :cond_1
-
-    .line 3
-    invoke-interface {p0, p3}, Ly$a;->a(Landroid/view/KeyEvent;)Z
-
-    move-result p0
-
-    return p0
-
-    .line 4
-    :cond_1
-    instance-of v1, p2, Landroid/app/Activity;
-
-    if-eqz v1, :cond_2
-
-    .line 5
-    check-cast p2, Landroid/app/Activity;
-
-    invoke-static {p2, p3}, Ly;->a(Landroid/app/Activity;Landroid/view/KeyEvent;)Z
-
-    move-result p0
-
-    return p0
-
-    .line 6
-    :cond_2
-    instance-of v1, p2, Landroid/app/Dialog;
-
-    if-eqz v1, :cond_3
-
-    .line 7
-    check-cast p2, Landroid/app/Dialog;
-
-    invoke-static {p2, p3}, Ly;->a(Landroid/app/Dialog;Landroid/view/KeyEvent;)Z
-
-    move-result p0
-
-    return p0
-
-    :cond_3
-    if-eqz p1, :cond_4
-
-    .line 8
-    invoke-static {p1, p3}, La0;->a(Landroid/view/View;Landroid/view/KeyEvent;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_5
-
-    .line 9
-    :cond_4
-    invoke-interface {p0, p3}, Ly$a;->a(Landroid/view/KeyEvent;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_6
-
-    :cond_5
-    const/4 v0, 0x1
-
-    :cond_6
-    return v0
+    :goto_1
+    return-void
 .end method

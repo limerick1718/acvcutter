@@ -33,7 +33,7 @@ value = {
 }
 .end annotation
 .end field
-.field private static final UNICODE_BOMS:Lox;
+.field private static final UNICODE_BOMS:Lzc;
 .field public static final UTC:Ljava/util/TimeZone;
 .field private static final UTF_32BE:Ljava/nio/charset/Charset;
 .field private static final UTF_32LE:Ljava/nio/charset/Charset;
@@ -63,34 +63,34 @@ value = {
 <span class="cov">	move-result-object v1</span>
 <span class="cov">	sput-object v1, Lokhttp3/internal/Util;->EMPTY_REQUEST:Lokhttp3/RequestBody;</span>
 <span class="cov">	const/4 v1, 0x5</span>
-<span class="cov">	new-array v1, v1, [Lhx;</span>
+<span class="cov">	new-array v1, v1, [Lyv;</span>
 <span class="cov">	const-string v3, "efbbbf"</span>
-<span class="exec">	invoke-static {v3}, Lhx;->b(Ljava/lang/String;)Lhx;</span>
+<span class="exec">	invoke-static {v3}, Lyv;->c(Ljava/lang/String;)Lyv;</span>
 <span class="cov">	move-result-object v3</span>
 <span class="cov">	aput-object v3, v1, v0</span>
 <span class="cov">	const-string v3, "feff"</span>
-<span class="exec">	invoke-static {v3}, Lhx;->b(Ljava/lang/String;)Lhx;</span>
+<span class="exec">	invoke-static {v3}, Lyv;->c(Ljava/lang/String;)Lyv;</span>
 <span class="cov">	move-result-object v3</span>
 <span class="cov">	const/4 v4, 0x1</span>
 <span class="cov">	aput-object v3, v1, v4</span>
 <span class="cov">	const-string v3, "fffe"</span>
-<span class="exec">	invoke-static {v3}, Lhx;->b(Ljava/lang/String;)Lhx;</span>
+<span class="exec">	invoke-static {v3}, Lyv;->c(Ljava/lang/String;)Lyv;</span>
 <span class="cov">	move-result-object v3</span>
 <span class="cov">	const/4 v5, 0x2</span>
 <span class="cov">	aput-object v3, v1, v5</span>
 <span class="cov">	const-string v3, "0000ffff"</span>
-<span class="exec">	invoke-static {v3}, Lhx;->b(Ljava/lang/String;)Lhx;</span>
+<span class="exec">	invoke-static {v3}, Lyv;->c(Ljava/lang/String;)Lyv;</span>
 <span class="cov">	move-result-object v3</span>
 <span class="cov">	const/4 v5, 0x3</span>
 <span class="cov">	aput-object v3, v1, v5</span>
 <span class="cov">	const-string v3, "ffff0000"</span>
-<span class="exec">	invoke-static {v3}, Lhx;->b(Ljava/lang/String;)Lhx;</span>
+<span class="exec">	invoke-static {v3}, Lyv;->c(Ljava/lang/String;)Lyv;</span>
 <span class="cov">	move-result-object v3</span>
 <span class="cov">	const/4 v5, 0x4</span>
 <span class="cov">	aput-object v3, v1, v5</span>
-<span class="exec">	invoke-static {v1}, Lox;->a([Lhx;)Lox;</span>
+<span class="exec">	invoke-static {v1}, Lzc;->a([Lyv;)Lzc;</span>
 <span class="cov">	move-result-object v1</span>
-<span class="cov">	sput-object v1, Lokhttp3/internal/Util;->UNICODE_BOMS:Lox;</span>
+<span class="cov">	sput-object v1, Lokhttp3/internal/Util;->UNICODE_BOMS:Lzc;</span>
 <span class="cov">	const-string v1, "UTF-32BE"</span>
 <span class="exec">	invoke-static {v1}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;</span>
 <span class="cov">	move-result-object v1</span>
@@ -103,7 +103,7 @@ value = {
 <span class="exec">	invoke-static {v1}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;</span>
 <span class="cov">	move-result-object v1</span>
 <span class="cov">	sput-object v1, Lokhttp3/internal/Util;->UTC:Ljava/util/TimeZone;</span>
-<span class="cov">	sget-object v1, Lokhttp3/internal/a;->a:Lokhttp3/internal/a;</span>
+<span class="cov">	sget-object v1, Lokhttp3/internal/-$$Lambda$TEfSBt3hRUlBSSARfPEHsJesTtE;->INSTANCE:Lokhttp3/internal/-$$Lambda$TEfSBt3hRUlBSSARfPEHsJesTtE;</span>
 <span class="cov">	sput-object v1, Lokhttp3/internal/Util;->NATURAL_ORDER:Ljava/util/Comparator;</span>
 <span class="cov">	:try_start_0</span>
 <span class="cov">	const-class v1, Ljava/lang/Throwable;</span>
@@ -131,15 +131,6 @@ value = {
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method static synthetic a(Ljava/lang/String;ZLjava/lang/Runnable;)Ljava/lang/Thread;</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	new-instance v0, Ljava/lang/Thread;</span>
-<span class="cov">	invoke-direct {v0, p2, p0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V</span>
-<span class="cov">	invoke-virtual {v0, p1}, Ljava/lang/Thread;->setDaemon(Z)V</span>
-<span class="exec">	return-object v0</span>
-.end method
-
 .method public static addSuppressedIfPossible(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 <span class="">	.locals 3</span>
 
@@ -159,7 +150,7 @@ value = {
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public static bomAwareCharset(Lgx;Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;</span>
+.method public static bomAwareCharset(Lyu;Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -167,10 +158,10 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	sget-object v0, Lokhttp3/internal/Util;->UNICODE_BOMS:Lox;</span>
-<span class="exec">	invoke-interface {p0, v0}, Lgx;->a(Lox;)I</span>
-<span class="cov">	move-result p0</span>
-<span class="cov">	const/4 v0, -0x1</span>
+<span class="missed">	sget-object v0, Lokhttp3/internal/Util;->UNICODE_BOMS:Lzc;</span>
+<span class="">	invoke-interface {p0, v0}, Lyu;->a(Lzc;)I</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	const/4 v0, -0x1</span>
 <span class="missed">	if-eq p0, v0, :cond_5</span>
 <span class="missed">	if-eqz p0, :cond_4</span>
 <span class="missed">	const/4 p1, 0x1</span>
@@ -199,8 +190,8 @@ value = {
 <span class="">	:cond_4</span>
 <span class="missed">	sget-object p0, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;</span>
 <span class="">	return-object p0</span>
-<span class="cov">	:cond_5</span>
-<span class="exec">	return-object p1</span>
+<span class="">	:cond_5</span>
+<span class="">	return-object p1</span>
 .end method
 
 <span class="cov">.method public static canonicalizeHost(Ljava/lang/String;)Ljava/lang/String;</span>
@@ -288,19 +279,19 @@ value = {
 <span class="">	return-object v1</span>
 .end method
 
-<span class="cov">.method public static checkDuration(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;)I</span>
+.method public static checkDuration(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;)I
 <span class="">	.locals 5</span>
 
-<span class="cov">	const-wide/16 v0, 0x0</span>
-<span class="cov">	cmp-long v2, p1, v0</span>
-<span class="cov">	if-ltz v2, :cond_4</span>
-<span class="cov">	if-eqz p3, :cond_3</span>
-<span class="exec">	invoke-virtual {p3, p1, p2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J</span>
-<span class="cov">	move-result-wide p1</span>
-<span class="cov">	const-wide/32 v3, 0x7fffffff</span>
-<span class="cov">	cmp-long p3, p1, v3</span>
-<span class="cov">	if-gtz p3, :cond_2</span>
-<span class="cov">	cmp-long p3, p1, v0</span>
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	cmp-long v2, p1, v0</span>
+<span class="missed">	if-ltz v2, :cond_4</span>
+<span class="missed">	if-eqz p3, :cond_3</span>
+<span class="">	invoke-virtual {p3, p1, p2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J</span>
+<span class="missed">	move-result-wide p1</span>
+<span class="missed">	const-wide/32 v3, 0x7fffffff</span>
+<span class="missed">	cmp-long p3, p1, v3</span>
+<span class="missed">	if-gtz p3, :cond_2</span>
+<span class="missed">	cmp-long p3, p1, v0</span>
 <span class="missed">	if-nez p3, :cond_1</span>
 <span class="missed">	if-gtz v2, :cond_0</span>
 <span class="">	goto :goto_0</span>
@@ -315,10 +306,10 @@ value = {
 <span class="missed">	move-result-object p0</span>
 <span class="missed">	invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
 <span class="">	throw p1</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	long-to-int p0, p1</span>
-<span class="exec">	return p0</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	long-to-int p0, p1</span>
+<span class="">	return p0</span>
 <span class="">	:cond_2</span>
 <span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
 <span class="missed">	new-instance p2, Ljava/lang/StringBuilder;</span>
@@ -405,7 +396,7 @@ value = {
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public static closeQuietly(Ljava/net/Socket;)V</span>
+.method public static closeQuietly(Ljava/net/Socket;)V
 <span class="">	.locals 1</span>
 
 <span class="missed">	if-eqz p0, :cond_1</span>
@@ -427,24 +418,25 @@ value = {
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="">	throw p0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	:catch_2</span>
-<span class="cov">	:cond_1</span>
-<span class="exec">	return-void</span>
+<span class="">	:goto_0</span>
+<span class="">	:catch_2</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
 .end method
 
 .method public static concat([Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
-<span class="">	.locals 4</span>
+<span class="">	.locals 3</span>
 
 <span class="missed">	array-length v0, p0</span>
 <span class="missed">	add-int/lit8 v0, v0, 0x1</span>
-<span class="missed">	new-array v1, v0, [Ljava/lang/String;</span>
-<span class="missed">	array-length v2, p0</span>
-<span class="missed">	const/4 v3, 0x0</span>
-<span class="missed">	invoke-static {p0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
-<span class="missed">	add-int/lit8 v0, v0, -0x1</span>
-<span class="missed">	aput-object p1, v1, v0</span>
-<span class="">	return-object v1</span>
+<span class="missed">	new-array v0, v0, [Ljava/lang/String;</span>
+<span class="missed">	array-length v1, p0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	invoke-static {p0, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
+<span class="missed">	array-length p0, v0</span>
+<span class="missed">	add-int/lit8 p0, p0, -0x1</span>
+<span class="missed">	aput-object p1, v0, p0</span>
+<span class="">	return-object v0</span>
 .end method
 
 <span class="cov">.method private static containsInvalidHostnameAsciiCodes(Ljava/lang/String;)Z</span>
@@ -577,119 +569,124 @@ value = {
 .end method
 
 .method private static decodeIpv6(Ljava/lang/String;II)Ljava/net/InetAddress;
-<span class="">	.locals 11</span>
+<span class="">	.locals 10</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
 <span class="">	.end annotation</span>
 
 <span class="missed">	const/16 v0, 0x10</span>
-<span class="missed">	new-array v1, v0, [B</span>
-<span class="missed">	const/4 v2, -0x1</span>
+<span class="missed">	new-array v0, v0, [B</span>
+<span class="missed">	const/4 v1, -0x1</span>
+<span class="missed">	const/4 v2, 0x0</span>
 <span class="missed">	const/4 v3, 0x0</span>
-<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	const/4 v4, -0x1</span>
 <span class="missed">	const/4 v5, -0x1</span>
-<span class="missed">	const/4 v6, -0x1</span>
 <span class="">	:goto_0</span>
-<span class="missed">	const/4 v7, 0x0</span>
+<span class="missed">	const/4 v6, 0x0</span>
 <span class="missed">	if-ge p1, p2, :cond_c</span>
-<span class="missed">	if-ne v4, v0, :cond_0</span>
-<span class="">	return-object v7</span>
+<span class="missed">	array-length v7, v0</span>
+<span class="missed">	if-ne v3, v7, :cond_0</span>
+<span class="">	return-object v6</span>
 <span class="">	:cond_0</span>
-<span class="missed">	add-int/lit8 v8, p1, 0x2</span>
-<span class="missed">	if-gt v8, p2, :cond_3</span>
-<span class="missed">	const/4 v9, 0x2</span>
-<span class="missed">	const-string v10, "::"</span>
-<span class="">	invoke-virtual {p0, p1, v10, v3, v9}, Ljava/lang/String;->regionMatches(ILjava/lang/String;II)Z</span>
-<span class="missed">	move-result v9</span>
-<span class="missed">	if-eqz v9, :cond_3</span>
-<span class="missed">	if-eq v5, v2, :cond_1</span>
-<span class="">	return-object v7</span>
+<span class="missed">	add-int/lit8 v7, p1, 0x2</span>
+<span class="missed">	if-gt v7, p2, :cond_3</span>
+<span class="missed">	const/4 v8, 0x2</span>
+<span class="missed">	const-string v9, "::"</span>
+<span class="">	invoke-virtual {p0, p1, v9, v2, v8}, Ljava/lang/String;->regionMatches(ILjava/lang/String;II)Z</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	if-eqz v8, :cond_3</span>
+<span class="missed">	if-eq v4, v1, :cond_1</span>
+<span class="">	return-object v6</span>
 <span class="">	:cond_1</span>
-<span class="missed">	add-int/lit8 v4, v4, 0x2</span>
-<span class="missed">	move v5, v4</span>
-<span class="missed">	if-ne v8, p2, :cond_2</span>
+<span class="missed">	add-int/lit8 v3, v3, 0x2</span>
+<span class="missed">	if-ne v7, p2, :cond_2</span>
+<span class="missed">	move v4, v3</span>
 <span class="">	goto :goto_6</span>
 <span class="">	:cond_2</span>
-<span class="missed">	move v6, v8</span>
+<span class="missed">	move v4, v3</span>
+<span class="missed">	move v5, v7</span>
 <span class="">	goto :goto_2</span>
 <span class="">	:cond_3</span>
-<span class="missed">	if-eqz v4, :cond_7</span>
-<span class="missed">	const/4 v8, 0x1</span>
-<span class="missed">	const-string v9, ":"</span>
-<span class="">	invoke-virtual {p0, p1, v9, v3, v8}, Ljava/lang/String;->regionMatches(ILjava/lang/String;II)Z</span>
-<span class="missed">	move-result v9</span>
-<span class="missed">	if-eqz v9, :cond_4</span>
+<span class="missed">	if-eqz v3, :cond_7</span>
+<span class="missed">	const/4 v7, 0x1</span>
+<span class="missed">	const-string v8, ":"</span>
+<span class="">	invoke-virtual {p0, p1, v8, v2, v7}, Ljava/lang/String;->regionMatches(ILjava/lang/String;II)Z</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	if-eqz v8, :cond_4</span>
 <span class="missed">	add-int/lit8 p1, p1, 0x1</span>
 <span class="">	goto :goto_1</span>
 <span class="">	:cond_4</span>
-<span class="missed">	const-string v9, "."</span>
-<span class="">	invoke-virtual {p0, p1, v9, v3, v8}, Ljava/lang/String;->regionMatches(ILjava/lang/String;II)Z</span>
+<span class="missed">	const-string v8, "."</span>
+<span class="">	invoke-virtual {p0, p1, v8, v2, v7}, Ljava/lang/String;->regionMatches(ILjava/lang/String;II)Z</span>
 <span class="missed">	move-result p1</span>
 <span class="missed">	if-eqz p1, :cond_6</span>
-<span class="missed">	add-int/lit8 p1, v4, -0x2</span>
-<span class="">	invoke-static {p0, v6, p2, v1, p1}, Lokhttp3/internal/Util;->decodeIpv4Suffix(Ljava/lang/String;II[BI)Z</span>
+<span class="missed">	add-int/lit8 p1, v3, -0x2</span>
+<span class="">	invoke-static {p0, v5, p2, v0, p1}, Lokhttp3/internal/Util;->decodeIpv4Suffix(Ljava/lang/String;II[BI)Z</span>
 <span class="missed">	move-result p0</span>
 <span class="missed">	if-nez p0, :cond_5</span>
-<span class="">	return-object v7</span>
+<span class="">	return-object v6</span>
 <span class="">	:cond_5</span>
-<span class="missed">	add-int/lit8 v4, v4, 0x2</span>
+<span class="missed">	add-int/lit8 v3, v3, 0x2</span>
 <span class="">	goto :goto_6</span>
 <span class="">	:cond_6</span>
-<span class="">	return-object v7</span>
+<span class="">	return-object v6</span>
 <span class="">	:goto_1</span>
 <span class="">	:cond_7</span>
-<span class="missed">	move v6, p1</span>
+<span class="missed">	move v5, p1</span>
 <span class="">	:goto_2</span>
-<span class="missed">	move p1, v6</span>
-<span class="missed">	const/4 v8, 0x0</span>
+<span class="missed">	move p1, v5</span>
+<span class="missed">	const/4 v7, 0x0</span>
 <span class="">	:goto_3</span>
 <span class="missed">	if-ge p1, p2, :cond_9</span>
 <span class="">	invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C</span>
-<span class="missed">	move-result v9</span>
-<span class="">	invoke-static {v9}, Lokhttp3/internal/Util;->decodeHexDigit(C)I</span>
-<span class="missed">	move-result v9</span>
-<span class="missed">	if-ne v9, v2, :cond_8</span>
+<span class="missed">	move-result v8</span>
+<span class="">	invoke-static {v8}, Lokhttp3/internal/Util;->decodeHexDigit(C)I</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	if-ne v8, v1, :cond_8</span>
 <span class="">	goto :goto_4</span>
 <span class="">	:cond_8</span>
-<span class="missed">	shl-int/lit8 v8, v8, 0x4</span>
-<span class="missed">	add-int/2addr v8, v9</span>
+<span class="missed">	shl-int/lit8 v7, v7, 0x4</span>
+<span class="missed">	add-int/2addr v7, v8</span>
 <span class="missed">	add-int/lit8 p1, p1, 0x1</span>
 <span class="">	goto :goto_3</span>
 <span class="">	:goto_4</span>
 <span class="">	:cond_9</span>
-<span class="missed">	sub-int v9, p1, v6</span>
-<span class="missed">	if-eqz v9, :cond_b</span>
-<span class="missed">	const/4 v10, 0x4</span>
-<span class="missed">	if-le v9, v10, :cond_a</span>
+<span class="missed">	sub-int v8, p1, v5</span>
+<span class="missed">	if-eqz v8, :cond_b</span>
+<span class="missed">	const/4 v9, 0x4</span>
+<span class="missed">	if-le v8, v9, :cond_a</span>
 <span class="">	goto :goto_5</span>
 <span class="">	:cond_a</span>
-<span class="missed">	add-int/lit8 v7, v4, 0x1</span>
-<span class="missed">	ushr-int/lit8 v9, v8, 0x8</span>
-<span class="missed">	and-int/lit16 v9, v9, 0xff</span>
-<span class="missed">	int-to-byte v9, v9</span>
-<span class="missed">	aput-byte v9, v1, v4</span>
-<span class="missed">	add-int/lit8 v4, v7, 0x1</span>
+<span class="missed">	add-int/lit8 v6, v3, 0x1</span>
+<span class="missed">	ushr-int/lit8 v8, v7, 0x8</span>
 <span class="missed">	and-int/lit16 v8, v8, 0xff</span>
 <span class="missed">	int-to-byte v8, v8</span>
-<span class="missed">	aput-byte v8, v1, v7</span>
+<span class="missed">	aput-byte v8, v0, v3</span>
+<span class="missed">	add-int/lit8 v3, v6, 0x1</span>
+<span class="missed">	and-int/lit16 v7, v7, 0xff</span>
+<span class="missed">	int-to-byte v7, v7</span>
+<span class="missed">	aput-byte v7, v0, v6</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:goto_5</span>
 <span class="">	:cond_b</span>
-<span class="">	return-object v7</span>
+<span class="">	return-object v6</span>
 <span class="">	:goto_6</span>
 <span class="">	:cond_c</span>
-<span class="missed">	if-eq v4, v0, :cond_e</span>
-<span class="missed">	if-ne v5, v2, :cond_d</span>
-<span class="">	return-object v7</span>
+<span class="missed">	array-length p0, v0</span>
+<span class="missed">	if-eq v3, p0, :cond_e</span>
+<span class="missed">	if-ne v4, v1, :cond_d</span>
+<span class="">	return-object v6</span>
 <span class="">	:cond_d</span>
-<span class="missed">	sub-int p0, v4, v5</span>
-<span class="missed">	rsub-int/lit8 p1, p0, 0x10</span>
-<span class="missed">	invoke-static {v1, v5, v1, p1, p0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
-<span class="missed">	sub-int/2addr v0, v4</span>
-<span class="missed">	add-int/2addr v0, v5</span>
-<span class="missed">	invoke-static {v1, v5, v0, v3}, Ljava/util/Arrays;->fill([BIIB)V</span>
+<span class="missed">	array-length p0, v0</span>
+<span class="missed">	sub-int p1, v3, v4</span>
+<span class="missed">	sub-int/2addr p0, p1</span>
+<span class="missed">	invoke-static {v0, v4, v0, p0, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
+<span class="missed">	array-length p0, v0</span>
+<span class="missed">	sub-int/2addr p0, v3</span>
+<span class="missed">	add-int/2addr p0, v4</span>
+<span class="missed">	invoke-static {v0, v4, p0, v2}, Ljava/util/Arrays;->fill([BIIB)V</span>
 <span class="">	:try_start_0</span>
 <span class="">	:cond_e</span>
-<span class="">	invoke-static {v1}, Ljava/net/InetAddress;->getByAddress([B)Ljava/net/InetAddress;</span>
+<span class="">	invoke-static {v0}, Ljava/net/InetAddress;->getByAddress([B)Ljava/net/InetAddress;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="">	:try_end_0</span>
 <span class="missed">	.catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_0</span>
@@ -700,20 +697,20 @@ value = {
 <span class="">	throw p0</span>
 .end method
 
-<span class="cov">.method public static delimiterOffset(Ljava/lang/String;IIC)I</span>
+.method public static delimiterOffset(Ljava/lang/String;IIC)I
 <span class="">	.locals 1</span>
 
-<span class="cov">	:goto_0</span>
-<span class="cov">	if-ge p1, p2, :cond_1</span>
-<span class="exec">	invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-ne v0, p3, :cond_0</span>
-<span class="exec">	return p1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	add-int/lit8 p1, p1, 0x1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge p1, p2, :cond_1</span>
+<span class="">	invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-ne v0, p3, :cond_0</span>
+<span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/lit8 p1, p1, 0x1</span>
 <span class="">	goto :goto_0</span>
-<span class="cov">	:cond_1</span>
-<span class="exec">	return p2</span>
+<span class="">	:cond_1</span>
+<span class="">	return p2</span>
 .end method
 
 <span class="cov">.method public static delimiterOffset(Ljava/lang/String;IILjava/lang/String;)I</span>
@@ -726,8 +723,8 @@ value = {
 <span class="exec">	invoke-virtual {p3, v0}, Ljava/lang/String;->indexOf(I)I</span>
 <span class="cov">	move-result v0</span>
 <span class="cov">	const/4 v1, -0x1</span>
-<span class="cov">	if-eq v0, v1, :cond_0</span>
-<span class="exec">	return p1</span>
+<span class="missed">	if-eq v0, v1, :cond_0</span>
+<span class="">	return p1</span>
 <span class="cov">	:cond_0</span>
 <span class="cov">	add-int/lit8 p1, p1, 0x1</span>
 <span class="">	goto :goto_0</span>
@@ -735,11 +732,11 @@ value = {
 <span class="exec">	return p2</span>
 .end method
 
-.method public static discard(Lwx;ILjava/util/concurrent/TimeUnit;)Z
+.method public static discard(Lzk;ILjava/util/concurrent/TimeUnit;)Z
 <span class="">	.locals 0</span>
 
 <span class="">	:try_start_0</span>
-<span class="">	invoke-static {p0, p1, p2}, Lokhttp3/internal/Util;->skipAll(Lwx;ILjava/util/concurrent/TimeUnit;)Z</span>
+<span class="">	invoke-static {p0, p1, p2}, Lokhttp3/internal/Util;->skipAll(Lzk;ILjava/util/concurrent/TimeUnit;)Z</span>
 <span class="missed">	move-result p0</span>
 <span class="">	:try_end_0</span>
 <span class="missed">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
@@ -749,13 +746,13 @@ value = {
 <span class="">	return p0</span>
 .end method
 
-<span class="cov">.method public static varargs format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
+.method public static varargs format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 <span class="">	.locals 1</span>
 
-<span class="cov">	sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;</span>
-<span class="exec">	invoke-static {v0, p0, p1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	return-object p0</span>
+<span class="missed">	sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;</span>
+<span class="">	invoke-static {v0, p0, p1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
 .end method
 
 .method public static getSystemProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -771,20 +768,23 @@ value = {
 <span class="">	:try_end_0</span>
 <span class="missed">	.catch Ljava/security/AccessControlException; {:try_start_0 .. :try_end_0} :catch_0</span>
 <span class="missed">	if-eqz p0, :cond_0</span>
-<span class="missed">	move-object p1, p0</span>
+<span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
+<span class="missed">	move-object p0, p1</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object p0</span>
 <span class="">	:catch_0</span>
 <span class="">	return-object p1</span>
 .end method
 
-<span class="cov">.method public static hostHeader(Lokhttp3/HttpUrl;Z)Ljava/lang/String;</span>
+.method public static hostHeader(Lokhttp3/HttpUrl;Z)Ljava/lang/String;
 <span class="">	.locals 3</span>
 
-<span class="exec">	invoke-virtual {p0}, Lokhttp3/HttpUrl;->host()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	const-string v1, ":"</span>
-<span class="exec">	invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z</span>
-<span class="cov">	move-result v0</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/HttpUrl;->host()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, ":"</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z</span>
+<span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
 <span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
@@ -798,17 +798,17 @@ value = {
 <span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-virtual {p0}, Lokhttp3/HttpUrl;->host()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	if-nez p1, :cond_1</span>
-<span class="exec">	invoke-virtual {p0}, Lokhttp3/HttpUrl;->port()I</span>
-<span class="cov">	move-result p1</span>
-<span class="exec">	invoke-virtual {p0}, Lokhttp3/HttpUrl;->scheme()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v2</span>
-<span class="exec">	invoke-static {v2}, Lokhttp3/HttpUrl;->defaultPort(Ljava/lang/String;)I</span>
-<span class="cov">	move-result v2</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/HttpUrl;->host()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-nez p1, :cond_1</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/HttpUrl;->port()I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/HttpUrl;->scheme()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-static {v2}, Lokhttp3/HttpUrl;->defaultPort(Ljava/lang/String;)I</span>
+<span class="missed">	move-result v2</span>
 <span class="missed">	if-eq p1, v2, :cond_2</span>
 <span class="">	:cond_1</span>
 <span class="missed">	new-instance p1, Ljava/lang/StringBuilder;</span>
@@ -820,8 +820,8 @@ value = {
 <span class="missed">	invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
 <span class="">	invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="cov">	:cond_2</span>
-<span class="exec">	return-object v0</span>
+<span class="">	:cond_2</span>
+<span class="">	return-object v0</span>
 .end method
 
 <span class="cov">.method public static immutableList(Ljava/util/List;)Ljava/util/List;</span>
@@ -869,7 +869,7 @@ value = {
 <span class="exec">	return-object p0</span>
 .end method
 
-<span class="cov">.method public static immutableMap(Ljava/util/Map;)Ljava/util/Map;</span>
+.method public static immutableMap(Ljava/util/Map;)Ljava/util/Map;
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -885,22 +885,22 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="exec">	invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="exec">	invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;</span>
-<span class="cov">	move-result-object p0</span>
+<span class="">	invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;</span>
+<span class="missed">	move-result-object p0</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	new-instance v0, Ljava/util/LinkedHashMap;</span>
 <span class="missed">	invoke-direct {v0, p0}, Ljava/util/LinkedHashMap;-><init>(Ljava/util/Map;)V</span>
 <span class="">	invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;</span>
 <span class="missed">	move-result-object p0</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return-object p0</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object p0</span>
 .end method
 
-<span class="cov">.method public static indexOf(Ljava/util/Comparator;[Ljava/lang/String;Ljava/lang/String;)I</span>
+.method public static indexOf(Ljava/util/Comparator;[Ljava/lang/String;Ljava/lang/String;)I
 <span class="">	.locals 3</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -914,17 +914,17 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	array-length v0, p1</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	if-ge v1, v0, :cond_1</span>
-<span class="cov">	aget-object v2, p1, v1</span>
-<span class="exec">	invoke-interface {p0, v2, p2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I</span>
-<span class="cov">	move-result v2</span>
-<span class="cov">	if-nez v2, :cond_0</span>
-<span class="exec">	return v1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	add-int/lit8 v1, v1, 0x1</span>
+<span class="missed">	array-length v0, p1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v1, v0, :cond_1</span>
+<span class="missed">	aget-object v2, p1, v1</span>
+<span class="">	invoke-interface {p0, v2, p2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-nez v2, :cond_0</span>
+<span class="">	return v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_1</span>
 <span class="missed">	const/4 p0, -0x1</span>
@@ -962,13 +962,14 @@ value = {
 
 <span class="missed">	const/4 v0, 0x0</span>
 <span class="missed">	const/4 v1, -0x1</span>
-<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	const/4 v2, -0x1</span>
 <span class="missed">	const/4 v3, 0x0</span>
 <span class="">	:goto_0</span>
 <span class="missed">	array-length v4, p0</span>
 <span class="missed">	const/16 v5, 0x10</span>
-<span class="missed">	if-ge v2, v4, :cond_2</span>
-<span class="missed">	move v4, v2</span>
+<span class="missed">	if-ge v1, v4, :cond_2</span>
+<span class="missed">	move v4, v1</span>
 <span class="">	:goto_1</span>
 <span class="missed">	if-ge v4, v5, :cond_0</span>
 <span class="missed">	aget-byte v6, p0, v4</span>
@@ -979,32 +980,32 @@ value = {
 <span class="missed">	add-int/lit8 v4, v4, 0x2</span>
 <span class="">	goto :goto_1</span>
 <span class="">	:cond_0</span>
-<span class="missed">	sub-int v5, v4, v2</span>
+<span class="missed">	sub-int v5, v4, v1</span>
 <span class="missed">	if-le v5, v3, :cond_1</span>
 <span class="missed">	const/4 v6, 0x4</span>
 <span class="missed">	if-lt v5, v6, :cond_1</span>
-<span class="missed">	move v1, v2</span>
+<span class="missed">	move v2, v1</span>
 <span class="missed">	move v3, v5</span>
 <span class="">	:cond_1</span>
-<span class="missed">	add-int/lit8 v2, v4, 0x2</span>
+<span class="missed">	add-int/lit8 v1, v4, 0x2</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_2</span>
-<span class="missed">	new-instance v2, Lex;</span>
-<span class="missed">	invoke-direct {v2}, Lex;-><init>()V</span>
+<span class="missed">	new-instance v1, Lys;</span>
+<span class="missed">	invoke-direct {v1}, Lys;-><init>()V</span>
 <span class="">	:goto_2</span>
 <span class="">	:cond_3</span>
 <span class="missed">	array-length v4, p0</span>
 <span class="missed">	if-ge v0, v4, :cond_6</span>
 <span class="missed">	const/16 v4, 0x3a</span>
-<span class="missed">	if-ne v0, v1, :cond_4</span>
-<span class="missed">	invoke-virtual {v2, v4}, Lex;->writeByte(I)Lex;</span>
+<span class="missed">	if-ne v0, v2, :cond_4</span>
+<span class="missed">	invoke-virtual {v1, v4}, Lys;->b(I)Lys;</span>
 <span class="missed">	add-int/2addr v0, v3</span>
 <span class="missed">	if-ne v0, v5, :cond_3</span>
-<span class="missed">	invoke-virtual {v2, v4}, Lex;->writeByte(I)Lex;</span>
+<span class="missed">	invoke-virtual {v1, v4}, Lys;->b(I)Lys;</span>
 <span class="">	goto :goto_2</span>
 <span class="">	:cond_4</span>
 <span class="missed">	if-lez v0, :cond_5</span>
-<span class="missed">	invoke-virtual {v2, v4}, Lex;->writeByte(I)Lex;</span>
+<span class="missed">	invoke-virtual {v1, v4}, Lys;->b(I)Lys;</span>
 <span class="">	:cond_5</span>
 <span class="missed">	aget-byte v4, p0, v0</span>
 <span class="missed">	and-int/lit16 v4, v4, 0xff</span>
@@ -1014,16 +1015,16 @@ value = {
 <span class="missed">	and-int/lit16 v6, v6, 0xff</span>
 <span class="missed">	or-int/2addr v4, v6</span>
 <span class="missed">	int-to-long v6, v4</span>
-<span class="missed">	invoke-virtual {v2, v6, v7}, Lex;->a(J)Lex;</span>
+<span class="missed">	invoke-virtual {v1, v6, v7}, Lys;->l(J)Lys;</span>
 <span class="missed">	add-int/lit8 v0, v0, 0x2</span>
 <span class="">	goto :goto_2</span>
 <span class="">	:cond_6</span>
-<span class="">	invoke-virtual {v2}, Lex;->u()Ljava/lang/String;</span>
+<span class="">	invoke-virtual {v1}, Lys;->t()Ljava/lang/String;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="">	return-object p0</span>
 .end method
 
-<span class="cov">.method public static intersect(Ljava/util/Comparator;[Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;</span>
+.method public static intersect(Ljava/util/Comparator;[Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
 <span class="">	.locals 8</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -1040,39 +1041,39 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	new-instance v0, Ljava/util/ArrayList;</span>
-<span class="cov">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
-<span class="cov">	array-length v1, p1</span>
-<span class="cov">	const/4 v2, 0x0</span>
-<span class="cov">	const/4 v3, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	if-ge v3, v1, :cond_2</span>
-<span class="cov">	aget-object v4, p1, v3</span>
-<span class="cov">	array-length v5, p2</span>
-<span class="cov">	const/4 v6, 0x0</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	if-ge v6, v5, :cond_1</span>
-<span class="cov">	aget-object v7, p2, v6</span>
-<span class="exec">	invoke-interface {p0, v4, v7}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I</span>
-<span class="cov">	move-result v7</span>
-<span class="cov">	if-nez v7, :cond_0</span>
-<span class="cov">	invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="exec">	goto :goto_2</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	add-int/lit8 v6, v6, 0x1</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:goto_2</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	add-int/lit8 v3, v3, 0x1</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	array-length v1, p1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v3, v1, :cond_2</span>
+<span class="missed">	aget-object v4, p1, v3</span>
+<span class="missed">	array-length v5, p2</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ge v6, v5, :cond_1</span>
+<span class="missed">	aget-object v7, p2, v6</span>
+<span class="">	invoke-interface {p0, v4, v7}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I</span>
+<span class="missed">	move-result v7</span>
+<span class="missed">	if-nez v7, :cond_0</span>
+<span class="missed">	invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/lit8 v6, v6, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:goto_2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	add-int/lit8 v3, v3, 0x1</span>
 <span class="">	goto :goto_0</span>
-<span class="cov">	:cond_2</span>
-<span class="exec">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
-<span class="cov">	move-result p0</span>
-<span class="cov">	new-array p0, p0, [Ljava/lang/String;</span>
-<span class="exec">	invoke-interface {v0, p0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="cov">	check-cast p0, [Ljava/lang/String;</span>
-<span class="exec">	return-object p0</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	new-array p0, p0, [Ljava/lang/String;</span>
+<span class="">	invoke-interface {v0, p0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	check-cast p0, [Ljava/lang/String;</span>
+<span class="">	return-object p0</span>
 .end method
 
 .method public static isAndroidGetsocknameError(Ljava/lang/AssertionError;)Z
@@ -1098,7 +1099,16 @@ value = {
 <span class="">	return p0</span>
 .end method
 
-<span class="cov">.method public static nonEmptyIntersection(Ljava/util/Comparator;[Ljava/lang/String;[Ljava/lang/String;)Z</span>
+.method static synthetic lambda$threadFactory$0(Ljava/lang/String;ZLjava/lang/Runnable;)Ljava/lang/Thread;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Ljava/lang/Thread;</span>
+<span class="missed">	invoke-direct {v0, p2, p0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljava/lang/Thread;->setDaemon(Z)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public static nonEmptyIntersection(Ljava/util/Comparator;[Ljava/lang/String;[Ljava/lang/String;)Z
 <span class="">	.locals 7</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -1113,35 +1123,35 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	if-eqz p1, :cond_3</span>
-<span class="cov">	if-eqz p2, :cond_3</span>
-<span class="cov">	array-length v1, p1</span>
-<span class="cov">	if-eqz v1, :cond_3</span>
-<span class="cov">	array-length v1, p2</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	if-eqz p1, :cond_3</span>
+<span class="missed">	if-eqz p2, :cond_3</span>
+<span class="missed">	array-length v1, p1</span>
+<span class="missed">	if-eqz v1, :cond_3</span>
+<span class="missed">	array-length v1, p2</span>
 <span class="missed">	if-nez v1, :cond_0</span>
-<span class="exec">	goto :goto_2</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	array-length v1, p1</span>
-<span class="cov">	const/4 v2, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	if-ge v2, v1, :cond_3</span>
-<span class="cov">	aget-object v3, p1, v2</span>
-<span class="cov">	array-length v4, p2</span>
-<span class="cov">	const/4 v5, 0x0</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	if-ge v5, v4, :cond_2</span>
-<span class="cov">	aget-object v6, p2, v5</span>
-<span class="exec">	invoke-interface {p0, v3, v6}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I</span>
-<span class="cov">	move-result v6</span>
-<span class="cov">	if-nez v6, :cond_1</span>
-<span class="cov">	const/4 p0, 0x1</span>
-<span class="exec">	return p0</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	add-int/lit8 v5, v5, 0x1</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_0</span>
+<span class="missed">	array-length v1, p1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v2, v1, :cond_3</span>
+<span class="missed">	aget-object v3, p1, v2</span>
+<span class="missed">	array-length v4, p2</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ge v5, v4, :cond_2</span>
+<span class="missed">	aget-object v6, p2, v5</span>
+<span class="">	invoke-interface {p0, v3, v6}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	if-nez v6, :cond_1</span>
+<span class="missed">	const/4 p0, 0x1</span>
+<span class="">	return p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	add-int/lit8 v5, v5, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:goto_2</span>
 <span class="">	:cond_3</span>
@@ -1157,6 +1167,7 @@ value = {
 <span class="exec">	invoke-static {v0}, Ljavax/net/ssl/TrustManagerFactory;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/TrustManagerFactory;</span>
 <span class="cov">	move-result-object v0</span>
 <span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	check-cast v1, Ljava/security/KeyStore;</span>
 <span class="cov">	invoke-virtual {v0, v1}, Ljavax/net/ssl/TrustManagerFactory;->init(Ljava/security/KeyStore;)V</span>
 <span class="exec">	invoke-virtual {v0}, Ljavax/net/ssl/TrustManagerFactory;->getTrustManagers()[Ljavax/net/ssl/TrustManager;</span>
 <span class="cov">	move-result-object v0</span>
@@ -1223,7 +1234,7 @@ value = {
 <span class="">	return p0</span>
 .end method
 
-.method public static skipAll(Lwx;ILjava/util/concurrent/TimeUnit;)Z
+.method public static skipAll(Lzk;ILjava/util/concurrent/TimeUnit;)Z
 <span class="">	.locals 11</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -1233,22 +1244,22 @@ value = {
 
 <span class="">	invoke-static {}, Ljava/lang/System;->nanoTime()J</span>
 <span class="missed">	move-result-wide v0</span>
-<span class="">	invoke-interface {p0}, Lwx;->timeout()Lxx;</span>
+<span class="">	invoke-interface {p0}, Lzk;->timeout()Lzl;</span>
 <span class="missed">	move-result-object v2</span>
-<span class="">	invoke-virtual {v2}, Lxx;->hasDeadline()Z</span>
+<span class="">	invoke-virtual {v2}, Lzl;->hasDeadline()Z</span>
 <span class="missed">	move-result v2</span>
 <span class="missed">	const-wide v3, 0x7fffffffffffffffL</span>
 <span class="missed">	if-eqz v2, :cond_0</span>
-<span class="">	invoke-interface {p0}, Lwx;->timeout()Lxx;</span>
+<span class="">	invoke-interface {p0}, Lzk;->timeout()Lzl;</span>
 <span class="missed">	move-result-object v2</span>
-<span class="">	invoke-virtual {v2}, Lxx;->deadlineNanoTime()J</span>
+<span class="">	invoke-virtual {v2}, Lzl;->deadlineNanoTime()J</span>
 <span class="missed">	move-result-wide v5</span>
 <span class="missed">	sub-long/2addr v5, v0</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	move-wide v5, v3</span>
 <span class="">	:goto_0</span>
-<span class="">	invoke-interface {p0}, Lwx;->timeout()Lxx;</span>
+<span class="">	invoke-interface {p0}, Lzk;->timeout()Lzl;</span>
 <span class="missed">	move-result-object v2</span>
 <span class="missed">	int-to-long v7, p1</span>
 <span class="">	invoke-virtual {p2, v7, v8}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J</span>
@@ -1256,18 +1267,18 @@ value = {
 <span class="">	invoke-static {v5, v6, p1, p2}, Ljava/lang/Math;->min(JJ)J</span>
 <span class="missed">	move-result-wide p1</span>
 <span class="missed">	add-long/2addr p1, v0</span>
-<span class="missed">	invoke-virtual {v2, p1, p2}, Lxx;->deadlineNanoTime(J)Lxx;</span>
+<span class="missed">	invoke-virtual {v2, p1, p2}, Lzl;->deadlineNanoTime(J)Lzl;</span>
 <span class="">	:try_start_0</span>
-<span class="missed">	new-instance p1, Lex;</span>
-<span class="missed">	invoke-direct {p1}, Lex;-><init>()V</span>
+<span class="missed">	new-instance p1, Lys;</span>
+<span class="missed">	invoke-direct {p1}, Lys;-><init>()V</span>
 <span class="">	:goto_1</span>
 <span class="missed">	const-wide/16 v7, 0x2000</span>
-<span class="">	invoke-interface {p0, p1, v7, v8}, Lwx;->read(Lex;J)J</span>
+<span class="">	invoke-interface {p0, p1, v7, v8}, Lzk;->read(Lys;J)J</span>
 <span class="missed">	move-result-wide v7</span>
 <span class="missed">	const-wide/16 v9, -0x1</span>
 <span class="missed">	cmp-long p2, v7, v9</span>
 <span class="missed">	if-eqz p2, :cond_1</span>
-<span class="missed">	invoke-virtual {p1}, Lex;->q()V</span>
+<span class="missed">	invoke-virtual {p1}, Lys;->w()V</span>
 <span class="">	:try_end_0</span>
 <span class="missed">	.catch Ljava/io/InterruptedIOException; {:try_start_0 .. :try_end_0} :catch_0</span>
 <span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
@@ -1276,30 +1287,30 @@ value = {
 <span class="missed">	const/4 p1, 0x1</span>
 <span class="missed">	cmp-long p2, v5, v3</span>
 <span class="missed">	if-nez p2, :cond_2</span>
-<span class="">	invoke-interface {p0}, Lwx;->timeout()Lxx;</span>
+<span class="">	invoke-interface {p0}, Lzk;->timeout()Lzl;</span>
 <span class="missed">	move-result-object p0</span>
-<span class="missed">	invoke-virtual {p0}, Lxx;->clearDeadline()Lxx;</span>
+<span class="missed">	invoke-virtual {p0}, Lzl;->clearDeadline()Lzl;</span>
 <span class="">	goto :goto_2</span>
 <span class="">	:cond_2</span>
-<span class="">	invoke-interface {p0}, Lwx;->timeout()Lxx;</span>
+<span class="">	invoke-interface {p0}, Lzk;->timeout()Lzl;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="missed">	add-long/2addr v0, v5</span>
-<span class="missed">	invoke-virtual {p0, v0, v1}, Lxx;->deadlineNanoTime(J)Lxx;</span>
+<span class="missed">	invoke-virtual {p0, v0, v1}, Lzl;->deadlineNanoTime(J)Lzl;</span>
 <span class="">	:goto_2</span>
 <span class="">	return p1</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception p1</span>
 <span class="missed">	cmp-long p2, v5, v3</span>
 <span class="missed">	if-nez p2, :cond_3</span>
-<span class="">	invoke-interface {p0}, Lwx;->timeout()Lxx;</span>
+<span class="">	invoke-interface {p0}, Lzk;->timeout()Lzl;</span>
 <span class="missed">	move-result-object p0</span>
-<span class="missed">	invoke-virtual {p0}, Lxx;->clearDeadline()Lxx;</span>
+<span class="missed">	invoke-virtual {p0}, Lzl;->clearDeadline()Lzl;</span>
 <span class="">	goto :goto_3</span>
 <span class="">	:cond_3</span>
-<span class="">	invoke-interface {p0}, Lwx;->timeout()Lxx;</span>
+<span class="">	invoke-interface {p0}, Lzk;->timeout()Lzl;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="missed">	add-long/2addr v0, v5</span>
-<span class="missed">	invoke-virtual {p0, v0, v1}, Lxx;->deadlineNanoTime(J)Lxx;</span>
+<span class="missed">	invoke-virtual {p0, v0, v1}, Lzl;->deadlineNanoTime(J)Lzl;</span>
 <span class="">	:goto_3</span>
 <span class="">	throw p1</span>
 <span class="">	:catch_0</span>
@@ -1307,15 +1318,15 @@ value = {
 <span class="missed">	const/4 p1, 0x0</span>
 <span class="missed">	cmp-long p2, v5, v3</span>
 <span class="missed">	if-nez p2, :cond_4</span>
-<span class="">	invoke-interface {p0}, Lwx;->timeout()Lxx;</span>
+<span class="">	invoke-interface {p0}, Lzk;->timeout()Lzl;</span>
 <span class="missed">	move-result-object p0</span>
-<span class="missed">	invoke-virtual {p0}, Lxx;->clearDeadline()Lxx;</span>
+<span class="missed">	invoke-virtual {p0}, Lzl;->clearDeadline()Lzl;</span>
 <span class="">	goto :goto_4</span>
 <span class="">	:cond_4</span>
-<span class="">	invoke-interface {p0}, Lwx;->timeout()Lxx;</span>
+<span class="">	invoke-interface {p0}, Lzk;->timeout()Lzl;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="missed">	add-long/2addr v0, v5</span>
-<span class="missed">	invoke-virtual {p0, v0, v1}, Lxx;->deadlineNanoTime(J)Lxx;</span>
+<span class="missed">	invoke-virtual {p0, v0, v1}, Lzl;->deadlineNanoTime(J)Lzl;</span>
 <span class="">	:goto_4</span>
 <span class="">	return p1</span>
 .end method
@@ -1375,8 +1386,8 @@ value = {
 <span class="cov">.method public static threadFactory(Ljava/lang/String;Z)Ljava/util/concurrent/ThreadFactory;</span>
 <span class="">	.locals 1</span>
 
-<span class="cov">	new-instance v0, Lokhttp3/internal/b;</span>
-<span class="cov">	invoke-direct {v0, p0, p1}, Lokhttp3/internal/b;-><init>(Ljava/lang/String;Z)V</span>
+<span class="cov">	new-instance v0, Lokhttp3/internal/-$$Lambda$Util$h7t7benxn5wsEKvjxE9svqr_kuY;</span>
+<span class="cov">	invoke-direct {v0, p0, p1}, Lokhttp3/internal/-$$Lambda$Util$h7t7benxn5wsEKvjxE9svqr_kuY;-><init>(Ljava/lang/String;Z)V</span>
 <span class="exec">	return-object v0</span>
 .end method
 
@@ -1413,7 +1424,7 @@ value = {
 <span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public static toHeaders(Ljava/util/List;)Lokhttp3/Headers;</span>
+.method public static toHeaders(Ljava/util/List;)Lokhttp3/Headers;
 <span class="">	.locals 4</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -1425,30 +1436,30 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	new-instance v0, Lokhttp3/Headers$Builder;</span>
-<span class="cov">	invoke-direct {v0}, Lokhttp3/Headers$Builder;-><init>()V</span>
-<span class="exec">	invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	if-eqz v1, :cond_0</span>
-<span class="exec">	invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	check-cast v1, Lokhttp3/internal/http2/Header;</span>
-<span class="cov">	sget-object v2, Lokhttp3/internal/Internal;->instance:Lokhttp3/internal/Internal;</span>
-<span class="cov">	iget-object v3, v1, Lokhttp3/internal/http2/Header;->name:Lhx;</span>
-<span class="exec">	invoke-virtual {v3}, Lhx;->o()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v3</span>
-<span class="cov">	iget-object v1, v1, Lokhttp3/internal/http2/Header;->value:Lhx;</span>
-<span class="exec">	invoke-virtual {v1}, Lhx;->o()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	invoke-virtual {v2, v0, v3, v1}, Lokhttp3/internal/Internal;->addLenient(Lokhttp3/Headers$Builder;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	new-instance v0, Lokhttp3/Headers$Builder;</span>
+<span class="missed">	invoke-direct {v0}, Lokhttp3/Headers$Builder;-><init>()V</span>
+<span class="">	invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="">	invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, Lokhttp3/internal/http2/Header;</span>
+<span class="missed">	sget-object v2, Lokhttp3/internal/Internal;->instance:Lokhttp3/internal/Internal;</span>
+<span class="missed">	iget-object v3, v1, Lokhttp3/internal/http2/Header;->name:Lyv;</span>
+<span class="">	invoke-virtual {v3}, Lyv;->a()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	iget-object v1, v1, Lokhttp3/internal/http2/Header;->value:Lyv;</span>
+<span class="">	invoke-virtual {v1}, Lyv;->a()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v2, v0, v3, v1}, Lokhttp3/internal/Internal;->addLenient(Lokhttp3/Headers$Builder;Ljava/lang/String;Ljava/lang/String;)V</span>
 <span class="">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-virtual {v0}, Lokhttp3/Headers$Builder;->build()Lokhttp3/Headers;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {v0}, Lokhttp3/Headers$Builder;->build()Lokhttp3/Headers;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
 .end method
 
 .method public static trimSubstring(Ljava/lang/String;II)Ljava/lang/String;
@@ -1463,15 +1474,15 @@ value = {
 <span class="">	return-object p0</span>
 .end method
 
-<span class="cov">.method public static verifyAsIpAddress(Ljava/lang/String;)Z</span>
+.method public static verifyAsIpAddress(Ljava/lang/String;)Z
 <span class="">	.locals 1</span>
 
-<span class="cov">	sget-object v0, Lokhttp3/internal/Util;->VERIFY_AS_IP_ADDRESS:Ljava/util/regex/Pattern;</span>
-<span class="exec">	invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	invoke-virtual {p0}, Ljava/util/regex/Matcher;->matches()Z</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	return p0</span>
+<span class="missed">	sget-object v0, Lokhttp3/internal/Util;->VERIFY_AS_IP_ADDRESS:Ljava/util/regex/Pattern;</span>
+<span class="">	invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-virtual {p0}, Ljava/util/regex/Matcher;->matches()Z</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

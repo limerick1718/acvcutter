@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,13 +37,13 @@
     return-void
 .end method
 
-.method public onMessage(Lokhttp3/WebSocket;Lhx;)V
+.method public onMessage(Lokhttp3/WebSocket;Ljava/lang/String;)V
     .locals 0
 
     return-void
 .end method
 
-.method public onMessage(Lokhttp3/WebSocket;Ljava/lang/String;)V
+.method public onMessage(Lokhttp3/WebSocket;Lyv;)V
     .locals 0
 
     return-void

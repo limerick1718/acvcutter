@@ -40,33 +40,6 @@
 .end method
 
 .method public a()I
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget v0, p0, Landroidx/media/c;->b:I</span>
-<span class="">	return v0</span>
-.end method
-
-.method public b()I
-<span class="">	.locals 3</span>
-
-<span class="missed">	iget v0, p0, Landroidx/media/c;->c:I</span>
-<span class="">	invoke-virtual {p0}, Landroidx/media/c;->c()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/4 v2, 0x6</span>
-<span class="missed">	if-ne v1, v2, :cond_0</span>
-<span class="missed">	or-int/lit8 v0, v0, 0x4</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 v2, 0x7</span>
-<span class="missed">	if-ne v1, v2, :cond_1</span>
-<span class="missed">	or-int/lit8 v0, v0, 0x1</span>
-<span class="">	:cond_1</span>
-<span class="">	:goto_0</span>
-<span class="missed">	and-int/lit16 v0, v0, 0x111</span>
-<span class="">	return v0</span>
-.end method
-
-.method public c()I
 <span class="">	.locals 3</span>
 
 <span class="missed">	iget v0, p0, Landroidx/media/c;->d:I</span>
@@ -82,10 +55,37 @@
 <span class="">	return v0</span>
 .end method
 
-.method public d()I
+.method public b()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget v0, p0, Landroidx/media/c;->b:I</span>
+<span class="">	return v0</span>
+.end method
+
+.method public c()I
 <span class="">	.locals 1</span>
 
 <span class="missed">	iget v0, p0, Landroidx/media/c;->a:I</span>
+<span class="">	return v0</span>
+.end method
+
+.method public d()I
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget v0, p0, Landroidx/media/c;->c:I</span>
+<span class="">	invoke-virtual {p0}, Landroidx/media/c;->a()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x6</span>
+<span class="missed">	if-ne v1, v2, :cond_0</span>
+<span class="missed">	or-int/lit8 v0, v0, 0x4</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v2, 0x7</span>
+<span class="missed">	if-ne v1, v2, :cond_1</span>
+<span class="missed">	or-int/lit8 v0, v0, 0x1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	and-int/lit16 v0, v0, 0x111</span>
 <span class="">	return v0</span>
 .end method
 
@@ -99,15 +99,15 @@
 <span class="">	:cond_0</span>
 <span class="missed">	check-cast p1, Landroidx/media/c;</span>
 <span class="missed">	iget v0, p0, Landroidx/media/c;->b:I</span>
-<span class="">	invoke-virtual {p1}, Landroidx/media/c;->a()I</span>
-<span class="missed">	move-result v2</span>
-<span class="missed">	if-ne v0, v2, :cond_1</span>
-<span class="missed">	iget v0, p0, Landroidx/media/c;->c:I</span>
 <span class="">	invoke-virtual {p1}, Landroidx/media/c;->b()I</span>
 <span class="missed">	move-result v2</span>
 <span class="missed">	if-ne v0, v2, :cond_1</span>
-<span class="missed">	iget v0, p0, Landroidx/media/c;->a:I</span>
+<span class="missed">	iget v0, p0, Landroidx/media/c;->c:I</span>
 <span class="">	invoke-virtual {p1}, Landroidx/media/c;->d()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-ne v0, v2, :cond_1</span>
+<span class="missed">	iget v0, p0, Landroidx/media/c;->a:I</span>
+<span class="">	invoke-virtual {p1}, Landroidx/media/c;->c()I</span>
 <span class="missed">	move-result v2</span>
 <span class="missed">	if-ne v0, v2, :cond_1</span>
 <span class="missed">	iget v0, p0, Landroidx/media/c;->d:I</span>

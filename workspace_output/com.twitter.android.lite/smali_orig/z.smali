@@ -1,158 +1,256 @@
-.class public final Lz;
+.class public Lz;
 .super Ljava/lang/Object;
-.source "LayoutInflaterCompat.java"
+.source "ViewCompat.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lz$b;,
+        Lz$a;
+    }
+.end annotation
 
 
 # static fields
-.field private static a:Ljava/lang/reflect/Field;
+.field private static final a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-.field private static b:Z
+.field private static b:Ljava/util/WeakHashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/WeakHashMap<",
+            "Landroid/view/View;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static c:Ljava/util/WeakHashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/WeakHashMap<",
+            "Landroid/view/View;",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static d:Z
 
 
 # direct methods
-.method private static a(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
-    .locals 6
+.method static constructor <clinit>()V
+    .locals 2
 
-    .line 1
-    sget-boolean v0, Lz;->b:Z
+    .line 452
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    const-string v1, "; inflation may have unexpected results."
+    const/4 v1, 0x1
 
-    const-string v2, "LayoutInflaterCompatHC"
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
-    if-nez v0, :cond_0
+    sput-object v0, Lz;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    .line 2
-    :try_start_0
-    const-class v3, Landroid/view/LayoutInflater;
+    .line 464
+    sput-object v0, Lz;->c:Ljava/util/WeakHashMap;
 
-    const-string v4, "mFactory2"
+    const/4 v0, 0x0
 
-    invoke-virtual {v3, v4}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    .line 468
+    sput-boolean v0, Lz;->d:Z
 
-    move-result-object v3
-
-    sput-object v3, Lz;->a:Ljava/lang/reflect/Field;
-
-    .line 3
-    invoke-virtual {v3, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v3
-
-    .line 4
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "forceSetFactory2 Could not find field \'mFactory2\' on class "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-class v5, Landroid/view/LayoutInflater;
-
-    .line 5
-    invoke-virtual {v5}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 6
-    invoke-static {v2, v4, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 7
-    :goto_0
-    sput-boolean v0, Lz;->b:Z
-
-    .line 8
-    :cond_0
-    sget-object v0, Lz;->a:Ljava/lang/reflect/Field;
-
-    if-eqz v0, :cond_1
-
-    .line 9
-    :try_start_1
-    invoke-virtual {v0, p0, p1}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_1
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto :goto_1
-
-    :catch_1
-    move-exception p1
-
-    .line 10
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "forceSetFactory2 could not set the Factory2 on LayoutInflater "
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {v2, p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    :cond_1
-    :goto_1
     return-void
 .end method
 
-.method public static b(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
+.method public static a(Landroid/view/View;)Ljava/lang/String;
     .locals 2
 
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/view/LayoutInflater;->setFactory2(Landroid/view/LayoutInflater$Factory2;)V
-
-    .line 2
+    .line 2095
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
-    if-ge v0, v1, :cond_1
+    if-lt v0, v1, :cond_0
 
-    .line 3
-    invoke-virtual {p0}, Landroid/view/LayoutInflater;->getFactory()Landroid/view/LayoutInflater$Factory;
+    .line 2096
+    invoke-virtual {p0}, Landroid/view/View;->getTransitionName()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    .line 4
-    instance-of v1, v0, Landroid/view/LayoutInflater$Factory2;
+    return-object p0
 
-    if-eqz v1, :cond_0
+    .line 2098
+    :cond_0
+    sget-object v0, Lz;->b:Ljava/util/WeakHashMap;
 
-    .line 5
-    check-cast v0, Landroid/view/LayoutInflater$Factory2;
+    if-nez v0, :cond_1
 
-    invoke-static {p0, v0}, Lz;->a(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
+    const/4 p0, 0x0
+
+    return-object p0
+
+    .line 2101
+    :cond_1
+    invoke-virtual {v0, p0}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public static a(Landroid/view/View;Ljava/lang/String;)V
+    .locals 2
+
+    .line 2073
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x15
+
+    if-lt v0, v1, :cond_0
+
+    .line 2074
+    invoke-virtual {p0, p1}, Landroid/view/View;->setTransitionName(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 6
+    .line 2076
     :cond_0
-    invoke-static {p0, p1}, Lz;->a(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
+    sget-object v0, Lz;->b:Ljava/util/WeakHashMap;
 
+    if-nez v0, :cond_1
+
+    .line 2077
+    new-instance v0, Ljava/util/WeakHashMap;
+
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
+
+    sput-object v0, Lz;->b:Ljava/util/WeakHashMap;
+
+    .line 2079
     :cond_1
+    sget-object v0, Lz;->b:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v0, p0, p1}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     :goto_0
     return-void
+.end method
+
+.method static a(Landroid/view/View;Landroid/view/KeyEvent;)Z
+    .locals 2
+
+    .line 3497
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x1c
+
+    if-lt v0, v1, :cond_0
+
+    const/4 p0, 0x0
+
+    return p0
+
+    .line 3500
+    :cond_0
+    invoke-static {p0}, Lz$b;->a(Landroid/view/View;)Lz$b;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p1}, Lz$b;->a(Landroid/view/KeyEvent;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static b(Landroid/view/View;)Z
+    .locals 2
+
+    .line 2315
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x10
+
+    if-lt v0, v1, :cond_0
+
+    .line 2316
+    invoke-virtual {p0}, Landroid/view/View;->hasOverlappingRendering()Z
+
+    move-result p0
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method static b(Landroid/view/View;Landroid/view/KeyEvent;)Z
+    .locals 2
+
+    .line 3505
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x1c
+
+    if-lt v0, v1, :cond_0
+
+    const/4 p0, 0x0
+
+    return p0
+
+    .line 3508
+    :cond_0
+    invoke-static {p0}, Lz$b;->a(Landroid/view/View;)Lz$b;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0, p1}, Lz$b;->a(Landroid/view/View;Landroid/view/KeyEvent;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static c(Landroid/view/View;)Z
+    .locals 2
+
+    .line 3049
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x13
+
+    if-lt v0, v1, :cond_0
+
+    .line 3050
+    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
+
+    move-result p0
+
+    return p0
+
+    .line 3052
+    :cond_0
+    invoke-virtual {p0}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_1
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 p0, 0x0
+
+    :goto_0
+    return p0
 .end method

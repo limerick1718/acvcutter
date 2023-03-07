@@ -14,32 +14,73 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lul;
+		<code>.class public Lul;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Landroid/os/IInterface;
+.source "PushParamUtils.java"
 
 
 
 
-.method public abstract a()I
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Landroid/os/RemoteException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
+<span class="cov">.method public static a(Landroid/content/Context;)Lcom/twitter/android/lite/model/PushTokenInfo;</span>
+<span class="">	.locals 8</span>
 
+<span class="cov">	new-instance v7, Lcom/twitter/android/lite/model/PushTokenInfo;</span>
+<span class="exec">	invoke-static {p0}, Lug;->a(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-static {p0}, Lul;->b(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	const-string v0, "-"</span>
+<span class="exec">	invoke-static {p0, v0}, Luj;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	sget p0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="exec">	invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v5</span>
+<span class="cov">	const/4 v2, 0x3</span>
+<span class="cov">	const v6, 0xd88b0d</span>
+<span class="cov">	move-object v0, v7</span>
+<span class="cov">	invoke-direct/range {v0 .. v6}, Lcom/twitter/android/lite/model/PushTokenInfo;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V</span>
+<span class="exec">	return-object v7</span>
 .end method
 
-.method public abstract a(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;J)V
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Landroid/os/RemoteException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
+<span class="cov">.method public static a()Ljava/lang/String;</span>
+<span class="">	.locals 1</span>
 
+<span class="cov">	const-string v0, "apk.2.1.2--28"</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public static b()Ljava/lang/String;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const-string v0, "x-twitter-client-version"</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public static b(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="">	.locals 1</span>
+
+<span class="exec">	invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	const-string v0, "android_id"</span>
+<span class="exec">	invoke-static {p0, v0}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+.method public static c()Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	const-string v0, "x-twitter-client-language"</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public static c(Landroid/content/Context;)Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	const-string v0, "-"</span>
+<span class="">	invoke-static {p0, v0}, Luj;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

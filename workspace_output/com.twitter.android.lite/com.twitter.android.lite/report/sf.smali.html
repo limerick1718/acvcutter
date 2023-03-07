@@ -15,63 +15,567 @@
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
 		<code>.class final Lsf;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.super Lrm;
 
-
-.field private static final a:Ljava/util/Iterator;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ljava/util/Iterator<",
+"<TResult:",
 "Ljava/lang/Object;",
-">;"
+">",
+"Lrm<",
+"TTResult;>;"
+}
+.end annotation
+
+.field private final a:Ljava/lang/Object;
+.field private final b:Lsd;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lsd<",
+"TTResult;>;"
 }
 .end annotation
 .end field
-.field private static final b:Ljava/lang/Iterable;
+.field private c:Z
+.annotation build Ljavax/annotation/concurrent/GuardedBy;
+value = "mLock"
+.end annotation
+.end field
+.field private volatile d:Z
+.field private e:Ljava/lang/Object;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ljava/lang/Iterable<",
-"Ljava/lang/Object;",
-">;"
+"TTResult;"
 }
+.end annotation
+.annotation build Ljavax/annotation/concurrent/GuardedBy;
+value = "mLock"
+.end annotation
+.end field
+.field private f:Ljava/lang/Exception;
+.annotation build Ljavax/annotation/concurrent/GuardedBy;
+value = "mLock"
 .end annotation
 .end field
 
 
-.method static constructor &lt;clinit&gt;()V
+<span class="cov">.method constructor &lt;init&gt;()V</span>
 <span class="">	.locals 1</span>
 
-<span class="missed">	new-instance v0, Lvf;</span>
-<span class="missed">	invoke-direct {v0}, Lvf;-><init>()V</span>
-<span class="missed">	sput-object v0, Lsf;->a:Ljava/util/Iterator;</span>
-<span class="missed">	new-instance v0, Luf;</span>
-<span class="missed">	invoke-direct {v0}, Luf;-><init>()V</span>
-<span class="missed">	sput-object v0, Lsf;->b:Ljava/lang/Iterable;</span>
-<span class="">	return-void</span>
+<span class="cov">	invoke-direct {p0}, Lrm;-><init>()V</span>
+<span class="cov">	new-instance v0, Ljava/lang/Object;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Lsf;->a:Ljava/lang/Object;</span>
+<span class="cov">	new-instance v0, Lsd;</span>
+<span class="cov">	invoke-direct {v0}, Lsd;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Lsf;->b:Lsd;</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method static a()Ljava/lang/Iterable;
-<span class="">	.locals 1</span>
+<span class="cov">.method private final g()V</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation build Ljavax/annotation/concurrent/GuardedBy;</span>
+<span class="">	value = "mLock"</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-boolean v0, p0, Lsf;->c:Z</span>
+<span class="cov">	const-string v1, "Task is not yet complete"</span>
+<span class="cov">	invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/o;->a(ZLjava/lang/Object;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private final h()V</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation build Ljavax/annotation/concurrent/GuardedBy;</span>
+<span class="">	value = "mLock"</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-boolean v0, p0, Lsf;->c:Z</span>
+<span class="cov">	xor-int/lit8 v0, v0, 0x1</span>
+<span class="cov">	const-string v1, "Task is already complete"</span>
+<span class="cov">	invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/o;->a(ZLjava/lang/Object;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private final i()V</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation build Ljavax/annotation/concurrent/GuardedBy;</span>
+<span class="">	value = "mLock"</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-boolean v0, p0, Lsf;->d:Z</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="exec">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/util/concurrent/CancellationException;</span>
+<span class="missed">	const-string v1, "Task is already canceled."</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+<span class="cov">.method private final j()V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Lsf;->a:Ljava/lang/Object;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-boolean v1, p0, Lsf;->c:Z</span>
+<span class="cov">	if-nez v1, :cond_0</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="exec">	return-void</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="cov">	iget-object v0, p0, Lsf;->b:Lsd;</span>
+<span class="cov">	invoke-virtual {v0, p0}, Lsd;->a(Lrm;)V</span>
+<span class="exec">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method
+
+<span class="cov">.method public final a(Ljava/lang/Class;)Ljava/lang/Object;</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/lang/Throwable;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	"<T:",</span>
-<span class="">	"Ljava/lang/Object;",</span>
-<span class="">	">()",</span>
-<span class="">	"Ljava/lang/Iterable<",</span>
-<span class="">	"TT;>;"</span>
+<span class="">	"<X:",</span>
+<span class="">	"Ljava/lang/Throwable;",</span>
+<span class="">	">(",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"TX;>;)TTResult;^TX;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	sget-object v0, Lsf;->b:Ljava/lang/Iterable;</span>
-<span class="">	return-object v0</span>
+<span class="cov">	iget-object v0, p0, Lsf;->a:Ljava/lang/Object;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	invoke-direct {p0}, Lsf;->g()V</span>
+<span class="cov">	invoke-direct {p0}, Lsf;->i()V</span>
+<span class="cov">	iget-object v1, p0, Lsf;->f:Ljava/lang/Exception;</span>
+<span class="exec">	invoke-virtual {p1, v1}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	if-nez v1, :cond_1</span>
+<span class="cov">	iget-object p1, p0, Lsf;->f:Ljava/lang/Exception;</span>
+<span class="cov">	if-nez p1, :cond_0</span>
+<span class="cov">	iget-object p1, p0, Lsf;->e:Ljava/lang/Object;</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="exec">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Lrl;</span>
+<span class="missed">	iget-object v1, p0, Lsf;->f:Ljava/lang/Exception;</span>
+<span class="missed">	invoke-direct {p1, v1}, Lrl;-><init>(Ljava/lang/Throwable;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v1, p0, Lsf;->f:Ljava/lang/Exception;</span>
+<span class="">	invoke-virtual {p1, v1}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Ljava/lang/Throwable;</span>
+<span class="">	throw p1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw p1</span>
 .end method
 
-.method static synthetic b()Ljava/util/Iterator;
+<span class="cov">.method public final a(Ljava/util/concurrent/Executor;Lrg;)Lrm;</span>
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<TContinuationResult:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Ljava/util/concurrent/Executor;",</span>
+<span class="">	"Lrg<",</span>
+<span class="">	"TTResult;TTContinuationResult;>;)",</span>
+<span class="">	"Lrm<",</span>
+<span class="">	"TTContinuationResult;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	new-instance v0, Lsf;</span>
+<span class="cov">	invoke-direct {v0}, Lsf;-><init>()V</span>
+<span class="cov">	iget-object v1, p0, Lsf;->b:Lsd;</span>
+<span class="cov">	new-instance v2, Lrq;</span>
+<span class="cov">	invoke-direct {v2, p1, p2, v0}, Lrq;-><init>(Ljava/util/concurrent/Executor;Lrg;Lsf;)V</span>
+<span class="cov">	invoke-virtual {v1, v2}, Lsd;->a(Lsc;)V</span>
+<span class="cov">	invoke-direct {p0}, Lsf;->j()V</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public final a(Ljava/util/concurrent/Executor;Lrh;)Lrm;</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/concurrent/Executor;",</span>
+<span class="">	"Lrh;",</span>
+<span class="">	")",</span>
+<span class="">	"Lrm<",</span>
+<span class="">	"TTResult;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-object v0, p0, Lsf;->b:Lsd;</span>
+<span class="cov">	new-instance v1, Lru;</span>
+<span class="cov">	invoke-direct {v1, p1, p2}, Lru;-><init>(Ljava/util/concurrent/Executor;Lrh;)V</span>
+<span class="cov">	invoke-virtual {v0, v1}, Lsd;->a(Lsc;)V</span>
+<span class="cov">	invoke-direct {p0}, Lsf;->j()V</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public final a(Ljava/util/concurrent/Executor;Lri;)Lrm;</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/concurrent/Executor;",</span>
+<span class="">	"Lri<",</span>
+<span class="">	"TTResult;>;)",</span>
+<span class="">	"Lrm<",</span>
+<span class="">	"TTResult;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-object v0, p0, Lsf;->b:Lsd;</span>
+<span class="cov">	new-instance v1, Lrw;</span>
+<span class="cov">	invoke-direct {v1, p1, p2}, Lrw;-><init>(Ljava/util/concurrent/Executor;Lri;)V</span>
+<span class="cov">	invoke-virtual {v0, v1}, Lsd;->a(Lsc;)V</span>
+<span class="cov">	invoke-direct {p0}, Lsf;->j()V</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public final a(Ljava/util/concurrent/Executor;Lrj;)Lrm;</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/concurrent/Executor;",</span>
+<span class="">	"Lrj;",</span>
+<span class="">	")",</span>
+<span class="">	"Lrm<",</span>
+<span class="">	"TTResult;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-object v0, p0, Lsf;->b:Lsd;</span>
+<span class="cov">	new-instance v1, Lry;</span>
+<span class="cov">	invoke-direct {v1, p1, p2}, Lry;-><init>(Ljava/util/concurrent/Executor;Lrj;)V</span>
+<span class="cov">	invoke-virtual {v0, v1}, Lsd;->a(Lsc;)V</span>
+<span class="cov">	invoke-direct {p0}, Lsf;->j()V</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public final a(Ljava/util/concurrent/Executor;Lrk;)Lrm;</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/concurrent/Executor;",</span>
+<span class="">	"Lrk<",</span>
+<span class="">	"-TTResult;>;)",</span>
+<span class="">	"Lrm<",</span>
+<span class="">	"TTResult;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-object v0, p0, Lsf;->b:Lsd;</span>
+<span class="cov">	new-instance v1, Lsa;</span>
+<span class="cov">	invoke-direct {v1, p1, p2}, Lsa;-><init>(Ljava/util/concurrent/Executor;Lrk;)V</span>
+<span class="cov">	invoke-virtual {v0, v1}, Lsd;->a(Lsc;)V</span>
+<span class="cov">	invoke-direct {p0}, Lsf;->j()V</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+.method public final a(Ljava/lang/Exception;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	const-string v0, "Exception must not be null"</span>
+<span class="missed">	invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	iget-object v0, p0, Lsf;->a:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	invoke-direct {p0}, Lsf;->h()V</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	iput-boolean v1, p0, Lsf;->c:Z</span>
+<span class="missed">	iput-object p1, p0, Lsf;->f:Ljava/lang/Exception;</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	iget-object p1, p0, Lsf;->b:Lsd;</span>
+<span class="missed">	invoke-virtual {p1, p0}, Lsd;->a(Lrm;)V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public final a(Ljava/lang/Object;)V</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TTResult;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-object v0, p0, Lsf;->a:Ljava/lang/Object;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	invoke-direct {p0}, Lsf;->h()V</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	iput-boolean v1, p0, Lsf;->c:Z</span>
+<span class="cov">	iput-object p1, p0, Lsf;->e:Ljava/lang/Object;</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="cov">	iget-object p1, p0, Lsf;->b:Lsd;</span>
+<span class="cov">	invoke-virtual {p1, p0}, Lsd;->a(Lrm;)V</span>
+<span class="exec">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public final a()Z</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Lsf;->a:Ljava/lang/Object;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-boolean v1, p0, Lsf;->c:Z</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="exec">	return v1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method
+
+<span class="cov">.method public final b(Ljava/util/concurrent/Executor;Lrg;)Lrm;</span>
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<TContinuationResult:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Ljava/util/concurrent/Executor;",</span>
+<span class="">	"Lrg<",</span>
+<span class="">	"TTResult;",</span>
+<span class="">	"Lrm<",</span>
+<span class="">	"TTContinuationResult;>;>;)",</span>
+<span class="">	"Lrm<",</span>
+<span class="">	"TTContinuationResult;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	new-instance v0, Lsf;</span>
+<span class="cov">	invoke-direct {v0}, Lsf;-><init>()V</span>
+<span class="cov">	iget-object v1, p0, Lsf;->b:Lsd;</span>
+<span class="cov">	new-instance v2, Lrs;</span>
+<span class="cov">	invoke-direct {v2, p1, p2, v0}, Lrs;-><init>(Ljava/util/concurrent/Executor;Lrg;Lsf;)V</span>
+<span class="cov">	invoke-virtual {v1, v2}, Lsd;->a(Lsc;)V</span>
+<span class="cov">	invoke-direct {p0}, Lsf;->j()V</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public final b()Z</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Lsf;->a:Ljava/lang/Object;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-boolean v1, p0, Lsf;->c:Z</span>
+<span class="cov">	if-eqz v1, :cond_0</span>
+<span class="cov">	iget-boolean v1, p0, Lsf;->d:Z</span>
+<span class="cov">	if-nez v1, :cond_0</span>
+<span class="cov">	iget-object v1, p0, Lsf;->f:Ljava/lang/Exception;</span>
+<span class="cov">	if-nez v1, :cond_0</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="exec">	return v1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method
+
+.method public final b(Ljava/lang/Exception;)Z
+<span class="">	.locals 2</span>
+
+<span class="missed">	const-string v0, "Exception must not be null"</span>
+<span class="missed">	invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	iget-object v0, p0, Lsf;->a:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-boolean v1, p0, Lsf;->c:Z</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	iput-boolean v1, p0, Lsf;->c:Z</span>
+<span class="missed">	iput-object p1, p0, Lsf;->f:Ljava/lang/Exception;</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	iget-object p1, p0, Lsf;->b:Lsd;</span>
+<span class="missed">	invoke-virtual {p1, p0}, Lsd;->a(Lrm;)V</span>
+<span class="">	return v1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public final b(Ljava/lang/Object;)Z
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TTResult;)Z"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lsf;->a:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-boolean v1, p0, Lsf;->c:Z</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	iput-boolean v1, p0, Lsf;->c:Z</span>
+<span class="missed">	iput-object p1, p0, Lsf;->e:Ljava/lang/Object;</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	iget-object p1, p0, Lsf;->b:Lsd;</span>
+<span class="missed">	invoke-virtual {p1, p0}, Lsd;->a(Lrm;)V</span>
+<span class="">	return v1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public final c()Z</span>
 <span class="">	.locals 1</span>
 
-<span class="missed">	sget-object v0, Lsf;->a:Ljava/util/Iterator;</span>
-<span class="">	return-object v0</span>
+<span class="cov">	iget-boolean v0, p0, Lsf;->d:Z</span>
+<span class="exec">	return v0</span>
+.end method
+
+<span class="cov">.method public final d()Ljava/lang/Object;</span>
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()TTResult;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-object v0, p0, Lsf;->a:Ljava/lang/Object;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	invoke-direct {p0}, Lsf;->g()V</span>
+<span class="cov">	invoke-direct {p0}, Lsf;->i()V</span>
+<span class="cov">	iget-object v1, p0, Lsf;->f:Ljava/lang/Exception;</span>
+<span class="cov">	if-nez v1, :cond_0</span>
+<span class="cov">	iget-object v1, p0, Lsf;->e:Ljava/lang/Object;</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="exec">	return-object v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v1, Lrl;</span>
+<span class="missed">	iget-object v2, p0, Lsf;->f:Ljava/lang/Exception;</span>
+<span class="missed">	invoke-direct {v1, v2}, Lrl;-><init>(Ljava/lang/Throwable;)V</span>
+<span class="">	throw v1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method
+
+.method public final e()Ljava/lang/Exception;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lsf;->a:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v1, p0, Lsf;->f:Ljava/lang/Exception;</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-object v1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method
+
+.method public final f()Z
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lsf;->a:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-boolean v1, p0, Lsf;->c:Z</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	iput-boolean v1, p0, Lsf;->c:Z</span>
+<span class="missed">	iput-boolean v1, p0, Lsf;->d:Z</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	iget-object v0, p0, Lsf;->b:Lsd;</span>
+<span class="missed">	invoke-virtual {v0, p0}, Lsd;->a(Lrm;)V</span>
+<span class="">	return v1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	throw v1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

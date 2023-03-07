@@ -10,8 +10,8 @@ name = "Close"
 .end annotation
 .field final cancelAfterCloseMillis:J
 .field final code:I
-.field final reason:Lhx;
-.method constructor <init>(ILhx;J)V
+.field final reason:Lyv;
+.method constructor <init>(ILyv;J)V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void

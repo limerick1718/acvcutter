@@ -1,153 +1,116 @@
 .class public Lcom/google/android/gms/common/internal/r;
-.super Lp5;
+.super Lcom/google/android/gms/common/internal/g;
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T::",
+        "Landroid/os/IInterface;",
+        ">",
+        "Lcom/google/android/gms/common/internal/g<",
+        "TT;>;"
+    }
+.end annotation
+
+
+# instance fields
+.field private final e:Lcom/google/android/gms/common/api/a$h;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lcom/google/android/gms/common/internal/r;",
-            ">;"
+            "Lcom/google/android/gms/common/api/a$h<",
+            "TT;>;"
         }
     .end annotation
 .end field
 
 
-# instance fields
-.field private final a:I
-
-.field private final b:Landroid/accounts/Account;
-
-.field private final c:I
-
-.field private final d:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
-
-
-# direct methods
-.method static constructor <clinit>()V
+# virtual methods
+.method protected a(Landroid/os/IBinder;)Landroid/os/IInterface;
     .locals 1
-
-    .line 1
-    new-instance v0, Lcom/google/android/gms/common/internal/y;
-
-    invoke-direct {v0}, Lcom/google/android/gms/common/internal/y;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/common/internal/r;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method constructor <init>(ILandroid/accounts/Account;ILcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Lp5;-><init>()V
-
-    .line 2
-    iput p1, p0, Lcom/google/android/gms/common/internal/r;->a:I
-
-    .line 3
-    iput-object p2, p0, Lcom/google/android/gms/common/internal/r;->b:Landroid/accounts/Account;
-
-    .line 4
-    iput p3, p0, Lcom/google/android/gms/common/internal/r;->c:I
-
-    .line 5
-    iput-object p4, p0, Lcom/google/android/gms/common/internal/r;->d:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/accounts/Account;ILcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)V
-    .locals 1
-
-    const/4 v0, 0x2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/os/IBinder;",
+            ")TT;"
+        }
+    .end annotation
 
     .line 6
-    invoke-direct {p0, v0, p1, p2, p3}, Lcom/google/android/gms/common/internal/r;-><init>(ILandroid/accounts/Account;ILcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)V
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/r;->e:Lcom/google/android/gms/common/api/a$h;
 
-    return-void
+    invoke-interface {v0, p1}, Lcom/google/android/gms/common/api/a$h;->a(Landroid/os/IBinder;)Landroid/os/IInterface;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
-
-# virtual methods
-.method public f()Landroid/accounts/Account;
+.method protected a(ILandroid/os/IInterface;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(ITT;)V"
+        }
+    .end annotation
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/r;->b:Landroid/accounts/Account;
+    .line 7
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/r;->e:Lcom/google/android/gms/common/api/a$h;
 
-    return-object v0
+    invoke-interface {v0, p1, p2}, Lcom/google/android/gms/common/api/a$h;->a(ILandroid/os/IInterface;)V
+
+    return-void
 .end method
 
 .method public g()I
     .locals 1
 
-    .line 1
-    iget v0, p0, Lcom/google/android/gms/common/internal/r;->c:I
+    .line 10
+    invoke-super {p0}, Lcom/google/android/gms/common/internal/g;->g()I
+
+    move-result v0
 
     return v0
 .end method
 
-.method public h()Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+.method protected i()Ljava/lang/String;
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/r;->d:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+    .line 4
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/r;->e:Lcom/google/android/gms/common/api/a$h;
+
+    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$h;->a()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public writeToParcel(Landroid/os/Parcel;I)V
-    .locals 4
-
-    .line 1
-    invoke-static {p1}, Lr5;->a(Landroid/os/Parcel;)I
-
-    move-result v0
-
-    .line 2
-    iget v1, p0, Lcom/google/android/gms/common/internal/r;->a:I
-
-    const/4 v2, 0x1
-
-    invoke-static {p1, v2, v1}, Lr5;->a(Landroid/os/Parcel;II)V
-
-    .line 3
-    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/r;->f()Landroid/accounts/Account;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x2
-
-    .line 4
-    invoke-static {p1, v3, v1, p2, v2}, Lr5;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+.method protected k()Ljava/lang/String;
+    .locals 1
 
     .line 5
-    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/r;->g()I
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/r;->e:Lcom/google/android/gms/common/api/a$h;
 
-    move-result v1
+    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$h;->b()Ljava/lang/String;
 
-    const/4 v3, 0x3
+    move-result-object v0
 
-    .line 6
-    invoke-static {p1, v3, v1}, Lr5;->a(Landroid/os/Parcel;II)V
+    return-object v0
+.end method
 
-    .line 7
-    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/r;->h()Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
-
-    move-result-object v1
-
-    const/4 v3, 0x4
-
-    .line 8
-    invoke-static {p1, v3, v1, p2, v2}, Lr5;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+.method public w()Lcom/google/android/gms/common/api/a$h;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/common/api/a$h<",
+            "TT;>;"
+        }
+    .end annotation
 
     .line 9
-    invoke-static {p1, v0}, Lr5;->a(Landroid/os/Parcel;I)V
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/r;->e:Lcom/google/android/gms/common/api/a$h;
 
-    return-void
+    return-object v0
 .end method

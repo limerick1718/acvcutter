@@ -9,5 +9,5 @@ value = Lcom/google/android/gms/common/api/a$d;
 accessFlags = 0x609
 name = "a"
 .end annotation
-.method public abstract f()Landroid/accounts/Account;
+.method public abstract a()Landroid/accounts/Account;
 .end method

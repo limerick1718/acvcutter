@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.crashlytics.android.core</a></li>
+        <li><i class="ico ico-class"></i> CrashlyticsController$SendReportRunnable.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Lcom/crashlytics/android/core/CrashlyticsController$SendReportRunnable;
+.super Ljava/lang/Object;
+.source "CrashlyticsController.java"
+.implements Ljava/lang/Runnable;
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Lcom/crashlytics/android/core/CrashlyticsController;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x1a
+name = "SendReportRunnable"
+.end annotation
+
+.field private final context:Landroid/content/Context;
+.field private final report:Lcom/crashlytics/android/core/Report;
+.field private final reportUploader:Lcom/crashlytics/android/core/ReportUploader;
+
+
+.method public constructor &lt;init&gt;(Landroid/content/Context;Lcom/crashlytics/android/core/Report;Lcom/crashlytics/android/core/ReportUploader;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsController$SendReportRunnable;->context:Landroid/content/Context;</span>
+<span class="missed">	iput-object p2, p0, Lcom/crashlytics/android/core/CrashlyticsController$SendReportRunnable;->report:Lcom/crashlytics/android/core/Report;</span>
+<span class="missed">	iput-object p3, p0, Lcom/crashlytics/android/core/CrashlyticsController$SendReportRunnable;->reportUploader:Lcom/crashlytics/android/core/ReportUploader;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public run()V
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController$SendReportRunnable;->context:Landroid/content/Context;</span>
+<span class="">	invoke-static {v0}, Lvn;->o(Landroid/content/Context;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "CrashlyticsCore"</span>
+<span class="missed">	const-string v2, "Attempting to send crash report at time of crash..."</span>
+<span class="missed">	invoke-interface {v0, v1, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController$SendReportRunnable;->reportUploader:Lcom/crashlytics/android/core/ReportUploader;</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/core/CrashlyticsController$SendReportRunnable;->report:Lcom/crashlytics/android/core/Report;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Lcom/crashlytics/android/core/ReportUploader;->forceUpload(Lcom/crashlytics/android/core/Report;)Z</span>
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

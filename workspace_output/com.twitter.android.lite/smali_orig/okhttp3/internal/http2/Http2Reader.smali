@@ -26,14 +26,14 @@
 
 .field final hpackReader:Lokhttp3/internal/http2/Hpack$Reader;
 
-.field private final source:Lgx;
+.field private final source:Lyu;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1
+    .line 61
     const-class v0, Lokhttp3/internal/http2/Http2;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -49,31 +49,35 @@
     return-void
 .end method
 
-.method constructor <init>(Lgx;Z)V
+.method constructor <init>(Lyu;Z)V
     .locals 1
 
-    .line 1
+    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 72
+    iput-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    .line 3
+    .line 73
     iput-boolean p2, p0, Lokhttp3/internal/http2/Http2Reader;->client:Z
 
-    .line 4
-    new-instance p2, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
+    .line 74
+    new-instance p1, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 
-    invoke-direct {p2, p1}, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;-><init>(Lgx;)V
+    iget-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    iput-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->continuation:Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
+    invoke-direct {p1, p2}, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;-><init>(Lyu;)V
 
-    .line 5
+    iput-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->continuation:Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
+
+    .line 75
     new-instance p1, Lokhttp3/internal/http2/Hpack$Reader;
+
+    iget-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->continuation:Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 
     const/16 v0, 0x1000
 
-    invoke-direct {p1, v0, p2}, Lokhttp3/internal/http2/Hpack$Reader;-><init>(ILwx;)V
+    invoke-direct {p1, v0, p2}, Lokhttp3/internal/http2/Hpack$Reader;-><init>(ILzk;)V
 
     iput-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->hpackReader:Lokhttp3/internal/http2/Hpack$Reader;
 
@@ -106,11 +110,11 @@
     :cond_1
     const/4 p1, 0x2
 
+    .line 409
     new-array p1, p1, [Ljava/lang/Object;
 
     const/4 v0, 0x0
 
-    .line 1
     invoke-static {p2}, Ljava/lang/Short;->valueOf(S)Ljava/lang/Short;
 
     move-result-object p2
@@ -176,10 +180,10 @@
 
     if-eqz v2, :cond_2
 
-    .line 1
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 212
+    iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {v0}, Lgx;->readByte()B
+    invoke-interface {v0}, Lyu;->k()B
 
     move-result v0
 
@@ -187,44 +191,44 @@
 
     int-to-short v0, v0
 
-    .line 2
+    .line 213
     :cond_2
     invoke-static {p2, p3, v0}, Lokhttp3/internal/http2/Http2Reader;->lengthWithoutPadding(IBS)I
 
     move-result p2
 
-    .line 3
-    iget-object p3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 215
+    iget-object p3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {p1, v1, p4, p3, p2}, Lokhttp3/internal/http2/Http2Reader$Handler;->data(ZILgx;I)V
+    invoke-interface {p1, v1, p4, p3, p2}, Lokhttp3/internal/http2/Http2Reader$Handler;->data(ZILyu;I)V
 
-    .line 4
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 216
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
     int-to-long p2, v0
 
-    invoke-interface {p1, p2, p3}, Lgx;->skip(J)V
+    invoke-interface {p1, p2, p3}, Lyu;->i(J)V
 
     return-void
 
+    .line 209
     :cond_3
     new-array p1, v0, [Ljava/lang/Object;
 
     const-string p2, "PROTOCOL_ERROR: FLAG_COMPRESSED without SETTINGS_COMPRESS_DATA"
 
-    .line 5
     invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;
 
     move-result-object p1
 
     throw p1
 
+    .line 203
     :cond_4
     new-array p1, v0, [Ljava/lang/Object;
 
     const-string p2, "PROTOCOL_ERROR: TYPE_DATA streamId == 0"
 
-    .line 6
     invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;
 
     move-result-object p1
@@ -250,53 +254,53 @@
 
     if-nez p4, :cond_2
 
-    .line 1
-    iget-object p4, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 320
+    iget-object p4, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {p4}, Lgx;->readInt()I
+    invoke-interface {p4}, Lyu;->m()I
 
     move-result p4
 
-    .line 2
-    iget-object v2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 321
+    iget-object v2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {v2}, Lgx;->readInt()I
+    invoke-interface {v2}, Lyu;->m()I
 
     move-result v2
 
     sub-int/2addr p2, v0
 
-    .line 3
+    .line 323
     invoke-static {v2}, Lokhttp3/internal/http2/ErrorCode;->fromHttp2(I)Lokhttp3/internal/http2/ErrorCode;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 4
-    sget-object p3, Lhx;->e:Lhx;
+    .line 327
+    sget-object p3, Lyv;->b:Lyv;
 
     if-lez p2, :cond_0
 
-    .line 5
-    iget-object p3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 329
+    iget-object p3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
     int-to-long v1, p2
 
-    invoke-interface {p3, v1, v2}, Lgx;->b(J)Lhx;
+    invoke-interface {p3, v1, v2}, Lyu;->d(J)Lyv;
 
     move-result-object p3
 
-    .line 6
+    .line 331
     :cond_0
-    invoke-interface {p1, p4, v0, p3}, Lokhttp3/internal/http2/Http2Reader$Handler;->goAway(ILokhttp3/internal/http2/ErrorCode;Lhx;)V
+    invoke-interface {p1, p4, v0, p3}, Lokhttp3/internal/http2/Http2Reader$Handler;->goAway(ILokhttp3/internal/http2/ErrorCode;Lyv;)V
 
     return-void
 
+    .line 325
     :cond_1
     new-array p1, p3, [Ljava/lang/Object;
 
-    .line 7
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -311,22 +315,22 @@
 
     throw p1
 
+    .line 319
     :cond_2
     new-array p1, v1, [Ljava/lang/Object;
 
     const-string p2, "TYPE_GOAWAY streamId != 0"
 
-    .line 8
     invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;
 
     move-result-object p1
 
     throw p1
 
+    .line 318
     :cond_3
     new-array p1, p3, [Ljava/lang/Object;
 
-    .line 9
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -359,28 +363,28 @@
         }
     .end annotation
 
-    .line 1
+    .line 190
     iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->continuation:Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 
     iput p1, v0, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;->left:I
 
     iput p1, v0, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;->length:I
 
-    .line 2
+    .line 191
     iput-short p2, v0, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;->padding:S
 
-    .line 3
+    .line 192
     iput-byte p3, v0, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;->flags:B
 
-    .line 4
+    .line 193
     iput p4, v0, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;->streamId:I
 
-    .line 5
+    .line 197
     iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->hpackReader:Lokhttp3/internal/http2/Hpack$Reader;
 
     invoke-virtual {p1}, Lokhttp3/internal/http2/Hpack$Reader;->readHeaders()V
 
-    .line 6
+    .line 198
     iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->hpackReader:Lokhttp3/internal/http2/Hpack$Reader;
 
     invoke-virtual {p1}, Lokhttp3/internal/http2/Hpack$Reader;->getAndResetHeaderList()Ljava/util/List;
@@ -418,10 +422,10 @@
 
     if-eqz v2, :cond_1
 
-    .line 1
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 174
+    iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {v0}, Lgx;->readByte()B
+    invoke-interface {v0}, Lyu;->k()B
 
     move-result v0
 
@@ -434,35 +438,35 @@
 
     if-eqz v2, :cond_2
 
-    .line 2
+    .line 177
     invoke-direct {p0, p1, p4}, Lokhttp3/internal/http2/Http2Reader;->readPriority(Lokhttp3/internal/http2/Http2Reader$Handler;I)V
 
     add-int/lit8 p2, p2, -0x5
 
-    .line 3
+    .line 181
     :cond_2
     invoke-static {p2, p3, v0}, Lokhttp3/internal/http2/Http2Reader;->lengthWithoutPadding(IBS)I
 
     move-result p2
 
-    .line 4
+    .line 183
     invoke-direct {p0, p2, v0, p3, p4}, Lokhttp3/internal/http2/Http2Reader;->readHeaderBlock(ISBI)Ljava/util/List;
 
     move-result-object p2
 
     const/4 p3, -0x1
 
-    .line 5
+    .line 185
     invoke-interface {p1, v1, p4, p3, p2}, Lokhttp3/internal/http2/Http2Reader$Handler;->headers(ZIILjava/util/List;)V
 
     return-void
 
+    .line 170
     :cond_3
     new-array p1, v0, [Ljava/lang/Object;
 
     const-string p2, "PROTOCOL_ERROR: TYPE_HEADERS streamId == 0"
 
-    .line 6
     invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;
 
     move-result-object p1
@@ -470,7 +474,7 @@
     throw p1
 .end method
 
-.method static readMedium(Lgx;)I
+.method static readMedium(Lyu;)I
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -478,8 +482,8 @@
         }
     .end annotation
 
-    .line 1
-    invoke-interface {p0}, Lgx;->readByte()B
+    .line 400
+    invoke-interface {p0}, Lyu;->k()B
 
     move-result v0
 
@@ -487,8 +491,8 @@
 
     shl-int/lit8 v0, v0, 0x10
 
-    .line 2
-    invoke-interface {p0}, Lgx;->readByte()B
+    .line 401
+    invoke-interface {p0}, Lyu;->k()B
 
     move-result v1
 
@@ -498,8 +502,8 @@
 
     or-int/2addr v0, v1
 
-    .line 3
-    invoke-interface {p0}, Lgx;->readByte()B
+    .line 402
+    invoke-interface {p0}, Lyu;->k()B
 
     move-result p0
 
@@ -528,17 +532,17 @@
 
     if-nez p4, :cond_1
 
-    .line 1
-    iget-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 310
+    iget-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {p2}, Lgx;->readInt()I
+    invoke-interface {p2}, Lyu;->m()I
 
     move-result p2
 
-    .line 2
-    iget-object p4, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 311
+    iget-object p4, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {p4}, Lgx;->readInt()I
+    invoke-interface {p4}, Lyu;->m()I
 
     move-result p4
 
@@ -548,28 +552,28 @@
 
     const/4 v0, 0x1
 
-    .line 3
+    .line 313
     :cond_0
     invoke-interface {p1, v0, p2, p4}, Lokhttp3/internal/http2/Http2Reader$Handler;->ping(ZII)V
 
     return-void
 
+    .line 309
     :cond_1
     new-array p1, v0, [Ljava/lang/Object;
 
     const-string p2, "TYPE_PING streamId != 0"
 
-    .line 4
     invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;
 
     move-result-object p1
 
     throw p1
 
+    .line 308
     :cond_2
     new-array p1, v1, [Ljava/lang/Object;
 
-    .line 5
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -593,10 +597,10 @@
         }
     .end annotation
 
-    .line 4
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 227
+    iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {v0}, Lgx;->readInt()I
+    invoke-interface {v0}, Lyu;->m()I
 
     move-result v0
 
@@ -620,10 +624,10 @@
 
     and-int/2addr v0, v3
 
-    .line 5
-    iget-object v3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 230
+    iget-object v3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {v3}, Lgx;->readByte()B
+    invoke-interface {v3}, Lyu;->k()B
 
     move-result v3
 
@@ -631,7 +635,7 @@
 
     add-int/2addr v3, v2
 
-    .line 6
+    .line 231
     invoke-interface {p1, p2, v0, v3, v1}, Lokhttp3/internal/http2/Http2Reader$Handler;->priority(IIIZ)V
 
     return-void
@@ -653,17 +657,17 @@
 
     if-eqz p4, :cond_0
 
-    .line 1
+    .line 223
     invoke-direct {p0, p1, p4}, Lokhttp3/internal/http2/Http2Reader;->readPriority(Lokhttp3/internal/http2/Http2Reader$Handler;I)V
 
     return-void
 
+    .line 222
     :cond_0
     new-array p1, p3, [Ljava/lang/Object;
 
     const-string p2, "TYPE_PRIORITY streamId == 0"
 
-    .line 2
     invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;
 
     move-result-object p1
@@ -673,9 +677,9 @@
     :cond_1
     const/4 p1, 0x1
 
+    .line 221
     new-array p1, p1, [Ljava/lang/Object;
 
-    .line 3
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -707,10 +711,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 1
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 298
+    iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {v0}, Lgx;->readByte()B
+    invoke-interface {v0}, Lyu;->k()B
 
     move-result v0
 
@@ -718,11 +722,11 @@
 
     int-to-short v0, v0
 
-    .line 2
+    .line 299
     :cond_0
-    iget-object v1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    iget-object v1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {v1}, Lgx;->readInt()I
+    invoke-interface {v1}, Lyu;->m()I
 
     move-result v1
 
@@ -732,27 +736,27 @@
 
     add-int/lit8 p2, p2, -0x4
 
-    .line 3
+    .line 301
     invoke-static {p2, p3, v0}, Lokhttp3/internal/http2/Http2Reader;->lengthWithoutPadding(IBS)I
 
     move-result p2
 
-    .line 4
+    .line 302
     invoke-direct {p0, p2, v0, p3, p4}, Lokhttp3/internal/http2/Http2Reader;->readHeaderBlock(ISBI)Ljava/util/List;
 
     move-result-object p2
 
-    .line 5
+    .line 303
     invoke-interface {p1, p4, v1, p2}, Lokhttp3/internal/http2/Http2Reader$Handler;->pushPromise(IILjava/util/List;)V
 
     return-void
 
+    .line 296
     :cond_1
     new-array p1, v0, [Ljava/lang/Object;
 
     const-string p2, "PROTOCOL_ERROR: TYPE_PUSH_PROMISE streamId == 0"
 
-    .line 6
     invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;
 
     move-result-object p1
@@ -778,29 +782,29 @@
 
     if-eqz p4, :cond_1
 
-    .line 1
-    iget-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 238
+    iget-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {p2}, Lgx;->readInt()I
+    invoke-interface {p2}, Lyu;->m()I
 
     move-result p2
 
-    .line 2
+    .line 239
     invoke-static {p2}, Lokhttp3/internal/http2/ErrorCode;->fromHttp2(I)Lokhttp3/internal/http2/ErrorCode;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 3
+    .line 243
     invoke-interface {p1, p4, v1}, Lokhttp3/internal/http2/Http2Reader$Handler;->rstStream(ILokhttp3/internal/http2/ErrorCode;)V
 
     return-void
 
+    .line 241
     :cond_0
     new-array p1, p3, [Ljava/lang/Object;
 
-    .line 4
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -815,22 +819,22 @@
 
     throw p1
 
+    .line 237
     :cond_1
     new-array p1, v0, [Ljava/lang/Object;
 
     const-string p2, "TYPE_RST_STREAM streamId == 0"
 
-    .line 5
     invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;
 
     move-result-object p1
 
     throw p1
 
+    .line 236
     :cond_2
     new-array p1, p3, [Ljava/lang/Object;
 
-    .line 6
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -847,7 +851,7 @@
 .end method
 
 .method private readSettings(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -856,7 +860,7 @@
 
     const/4 v0, 0x0
 
-    if-nez p4, :cond_c
+    if-nez p4, :cond_8
 
     const/4 p4, 0x1
 
@@ -866,30 +870,30 @@
 
     if-nez p2, :cond_0
 
-    .line 1
+    .line 251
     invoke-interface {p1}, Lokhttp3/internal/http2/Http2Reader$Handler;->ackSettings()V
 
     return-void
 
+    .line 250
     :cond_0
     new-array p1, v0, [Ljava/lang/Object;
 
     const-string p2, "FRAME_SIZE_ERROR ack frame should be empty!"
 
-    .line 2
     invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;
 
     move-result-object p1
 
     throw p1
 
-    .line 3
+    .line 255
     :cond_1
     rem-int/lit8 p3, p2, 0x6
 
-    if-nez p3, :cond_b
+    if-nez p3, :cond_7
 
-    .line 4
+    .line 256
     new-instance p3, Lokhttp3/internal/http2/Settings;
 
     invoke-direct {p3}, Lokhttp3/internal/http2/Settings;-><init>()V
@@ -897,12 +901,12 @@
     const/4 v1, 0x0
 
     :goto_0
-    if-ge v1, p2, :cond_a
+    if-ge v1, p2, :cond_6
 
-    .line 5
-    iget-object v2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 258
+    iget-object v2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {v2}, Lgx;->readShort()S
+    invoke-interface {v2}, Lyu;->l()S
 
     move-result v2
 
@@ -910,46 +914,32 @@
 
     and-int/2addr v2, v3
 
-    .line 6
-    iget-object v3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 259
+    iget-object v3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {v3}, Lgx;->readInt()I
+    invoke-interface {v3}, Lyu;->m()I
 
     move-result v3
 
-    const/4 v4, 0x2
-
-    const/4 v5, 0x4
-
-    if-eq v2, v4, :cond_7
-
-    const/4 v4, 0x3
-
-    if-eq v2, v4, :cond_6
-
-    if-eq v2, v5, :cond_4
-
-    const/4 v4, 0x5
-
-    if-eq v2, v4, :cond_2
+    packed-switch v2, :pswitch_data_0
 
     goto :goto_1
 
-    :cond_2
+    :pswitch_0
     const/16 v4, 0x4000
 
-    if-lt v3, v4, :cond_3
+    if-lt v3, v4, :cond_2
 
     const v4, 0xffffff
 
-    if-gt v3, v4, :cond_3
+    if-gt v3, v4, :cond_2
 
     goto :goto_1
 
-    :cond_3
+    .line 280
+    :cond_2
     new-array p1, p4, [Ljava/lang/Object;
 
-    .line 7
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -964,68 +954,69 @@
 
     throw p1
 
-    :cond_4
+    :pswitch_1
     const/4 v2, 0x7
 
-    if-ltz v3, :cond_5
+    if-ltz v3, :cond_3
 
     goto :goto_1
 
-    :cond_5
+    .line 275
+    :cond_3
     new-array p1, v0, [Ljava/lang/Object;
 
     const-string p2, "PROTOCOL_ERROR SETTINGS_INITIAL_WINDOW_SIZE > 2^31 - 1"
 
-    .line 8
     invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;
 
     move-result-object p1
 
     throw p1
 
-    :cond_6
+    :pswitch_2
     const/4 v2, 0x4
 
     goto :goto_1
 
-    :cond_7
-    if-eqz v3, :cond_9
+    :pswitch_3
+    if-eqz v3, :cond_5
 
-    if-ne v3, p4, :cond_8
+    if-ne v3, p4, :cond_4
 
     goto :goto_1
 
-    :cond_8
+    .line 266
+    :cond_4
     new-array p1, v0, [Ljava/lang/Object;
 
     const-string p2, "PROTOCOL_ERROR SETTINGS_ENABLE_PUSH != 0 or 1"
 
-    .line 9
     invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;
 
     move-result-object p1
 
     throw p1
 
-    .line 10
-    :cond_9
+    .line 288
+    :cond_5
     :goto_1
+    :pswitch_4
     invoke-virtual {p3, v2, v3}, Lokhttp3/internal/http2/Settings;->set(II)Lokhttp3/internal/http2/Settings;
 
     add-int/lit8 v1, v1, 0x6
 
     goto :goto_0
 
-    .line 11
-    :cond_a
+    .line 290
+    :cond_6
     invoke-interface {p1, v0, p3}, Lokhttp3/internal/http2/Http2Reader$Handler;->settings(ZLokhttp3/internal/http2/Settings;)V
 
     return-void
 
-    :cond_b
+    .line 255
+    :cond_7
     new-array p1, p4, [Ljava/lang/Object;
 
-    .line 12
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -1040,17 +1031,27 @@
 
     throw p1
 
-    :cond_c
+    .line 248
+    :cond_8
     new-array p1, v0, [Ljava/lang/Object;
 
     const-string p2, "TYPE_SETTINGS streamId != 0"
 
-    .line 13
     invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;
 
     move-result-object p1
 
     throw p1
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_4
+    .end packed-switch
 .end method
 
 .method private readWindowUpdate(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V
@@ -1069,10 +1070,10 @@
 
     if-ne p2, v1, :cond_1
 
-    .line 1
-    iget-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 337
+    iget-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {p2}, Lgx;->readInt()I
+    invoke-interface {p2}, Lyu;->m()I
 
     move-result p2
 
@@ -1088,15 +1089,15 @@
 
     if-eqz p2, :cond_0
 
-    .line 2
+    .line 339
     invoke-interface {p1, p4, v1, v2}, Lokhttp3/internal/http2/Http2Reader$Handler;->windowUpdate(IJ)V
 
     return-void
 
+    .line 338
     :cond_0
     new-array p1, v0, [Ljava/lang/Object;
 
-    .line 3
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p2
@@ -1111,10 +1112,10 @@
 
     throw p1
 
+    .line 336
     :cond_1
     new-array p1, v0, [Ljava/lang/Object;
 
-    .line 4
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -1140,10 +1141,10 @@
         }
     .end annotation
 
-    .line 1
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 343
+    iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {v0}, Lwx;->close()V
+    invoke-interface {v0}, Lyu;->close()V
 
     return-void
 .end method
@@ -1158,20 +1159,20 @@
 
     const/4 v0, 0x0
 
-    .line 1
+    .line 96
     :try_start_0
-    iget-object v1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    iget-object v1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
     const-wide/16 v2, 0x9
 
-    invoke-interface {v1, v2, v3}, Lgx;->e(J)V
+    invoke-interface {v1, v2, v3}, Lyu;->a(J)V
     :try_end_0
     .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2
-    iget-object v1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 112
+    iget-object v1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-static {v1}, Lokhttp3/internal/http2/Http2Reader;->readMedium(Lgx;)I
+    invoke-static {v1}, Lokhttp3/internal/http2/Http2Reader;->readMedium(Lyu;)I
 
     move-result v1
 
@@ -1183,10 +1184,10 @@
 
     if-gt v1, v3, :cond_3
 
-    .line 3
-    iget-object v3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 116
+    iget-object v3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {v3}, Lgx;->readByte()B
+    invoke-interface {v3}, Lyu;->k()B
 
     move-result v3
 
@@ -1202,10 +1203,10 @@
 
     goto :goto_0
 
+    .line 118
     :cond_0
     new-array p1, v2, [Ljava/lang/Object;
 
-    .line 4
     invoke-static {v3}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     move-result-object p2
@@ -1220,12 +1221,12 @@
 
     throw p1
 
-    .line 5
+    .line 120
     :cond_1
     :goto_0
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {p1}, Lgx;->readByte()B
+    invoke-interface {p1}, Lyu;->k()B
 
     move-result p1
 
@@ -1233,10 +1234,10 @@
 
     int-to-byte p1, p1
 
-    .line 6
-    iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 121
+    iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    invoke-interface {v0}, Lgx;->readInt()I
+    invoke-interface {v0}, Lyu;->m()I
 
     move-result v0
 
@@ -1244,7 +1245,7 @@
 
     and-int/2addr v0, v4
 
-    .line 7
+    .line 122
     sget-object v4, Lokhttp3/internal/http2/Http2Reader;->logger:Ljava/util/logging/Logger;
 
     sget-object v5, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;
@@ -1266,74 +1267,74 @@
     :cond_2
     packed-switch v3, :pswitch_data_0
 
-    .line 8
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    .line 163
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
     int-to-long v0, v1
 
-    invoke-interface {p1, v0, v1}, Lgx;->skip(J)V
+    invoke-interface {p1, v0, v1}, Lyu;->i(J)V
 
     goto :goto_1
 
-    .line 9
+    .line 158
     :pswitch_0
     invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readWindowUpdate(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V
 
     goto :goto_1
 
-    .line 10
+    .line 154
     :pswitch_1
     invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readGoAway(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V
 
     goto :goto_1
 
-    .line 11
+    .line 150
     :pswitch_2
     invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readPing(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V
 
     goto :goto_1
 
-    .line 12
+    .line 146
     :pswitch_3
     invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readPushPromise(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V
 
     goto :goto_1
 
-    .line 13
+    .line 142
     :pswitch_4
     invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readSettings(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V
 
     goto :goto_1
 
-    .line 14
+    .line 138
     :pswitch_5
     invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readRstStream(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V
 
     goto :goto_1
 
-    .line 15
+    .line 134
     :pswitch_6
     invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readPriority(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V
 
     goto :goto_1
 
-    .line 16
+    .line 130
     :pswitch_7
     invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readHeaders(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V
 
     goto :goto_1
 
-    .line 17
+    .line 126
     :pswitch_8
     invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readData(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V
 
     :goto_1
     return v2
 
+    .line 114
     :cond_3
     new-array p1, v2, [Ljava/lang/Object;
 
-    .line 18
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -1375,7 +1376,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 79
     iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Reader;->client:Z
 
     const/4 v1, 0x0
@@ -1384,7 +1385,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2
+    .line 81
     invoke-virtual {p0, v2, p1}, Lokhttp3/internal/http2/Http2Reader;->nextFrame(ZLokhttp3/internal/http2/Http2Reader$Handler;)Z
 
     move-result p1
@@ -1393,35 +1394,35 @@
 
     goto :goto_0
 
+    .line 82
     :cond_0
     new-array p1, v1, [Ljava/lang/Object;
 
     const-string v0, "Required SETTINGS preface not received"
 
-    .line 3
     invoke-static {v0, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;
 
     move-result-object p1
 
     throw p1
 
-    .line 4
+    .line 86
     :cond_1
-    iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;
+    iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;
 
-    sget-object v0, Lokhttp3/internal/http2/Http2;->CONNECTION_PREFACE:Lhx;
+    sget-object v0, Lokhttp3/internal/http2/Http2;->CONNECTION_PREFACE:Lyv;
 
-    invoke-virtual {v0}, Lhx;->l()I
+    invoke-virtual {v0}, Lyv;->h()I
 
     move-result v0
 
     int-to-long v3, v0
 
-    invoke-interface {p1, v3, v4}, Lgx;->b(J)Lhx;
+    invoke-interface {p1, v3, v4}, Lyu;->d(J)Lyv;
 
     move-result-object p1
 
-    .line 5
+    .line 87
     sget-object v0, Lokhttp3/internal/http2/Http2Reader;->logger:Ljava/util/logging/Logger;
 
     sget-object v3, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;
@@ -1436,7 +1437,7 @@
 
     new-array v3, v2, [Ljava/lang/Object;
 
-    invoke-virtual {p1}, Lhx;->g()Ljava/lang/String;
+    invoke-virtual {p1}, Lyv;->f()Ljava/lang/String;
 
     move-result-object v4
 
@@ -1450,11 +1451,11 @@
 
     invoke-virtual {v0, v3}, Ljava/util/logging/Logger;->fine(Ljava/lang/String;)V
 
-    .line 6
+    .line 88
     :cond_2
-    sget-object v0, Lokhttp3/internal/http2/Http2;->CONNECTION_PREFACE:Lhx;
+    sget-object v0, Lokhttp3/internal/http2/Http2;->CONNECTION_PREFACE:Lyv;
 
-    invoke-virtual {v0, p1}, Lhx;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Lyv;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -1463,11 +1464,11 @@
     :goto_0
     return-void
 
+    .line 89
     :cond_3
     new-array v0, v2, [Ljava/lang/Object;
 
-    .line 7
-    invoke-virtual {p1}, Lhx;->o()Ljava/lang/String;
+    invoke-virtual {p1}, Lyv;->a()Ljava/lang/String;
 
     move-result-object p1
 

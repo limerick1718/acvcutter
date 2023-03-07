@@ -18,54 +18,24 @@
 .super Ljava/lang/Object;
 
 
+.field private static a:Ljava/util/regex/Pattern;
 
 
-.method public static a(Landroid/content/Context;I)Z
-<span class="">	.locals 3</span>
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 0</span>
 
-<span class="missed">	const-string v0, "com.google.android.gms"</span>
-<span class="">	invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/util/o;->a(Landroid/content/Context;ILjava/lang/String;)Z</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="missed">	if-nez p1, :cond_0</span>
-<span class="">	return v1</span>
-<span class="">	:cond_0</span>
-<span class="">	invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	const/16 v2, 0x40</span>
-<span class="">	:try_start_0</span>
-<span class="">	invoke-virtual {p1, v0, v2}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="">	invoke-static {p0}, Ll5;->a(Landroid/content/Context;)Ll5;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	invoke-virtual {p0, p1}, Ll5;->a(Landroid/content/pm/PackageInfo;)Z</span>
-<span class="missed">	move-result p0</span>
-<span class="">	return p0</span>
-<span class="">	:catch_0</span>
-<span class="missed">	const/4 p0, 0x3</span>
-<span class="missed">	const-string p1, "UidVerifier"</span>
-<span class="">	invoke-static {p1, p0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	if-eqz p0, :cond_1</span>
-<span class="missed">	const-string p0, "Package manager can\'t find google play services package, defaulting to false"</span>
-<span class="missed">	invoke-static {p1, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I</span>
-<span class="">	:cond_1</span>
-<span class="">	return v1</span>
+<span class="">	return-void</span>
 .end method
 
-.method public static a(Landroid/content/Context;ILjava/lang/String;)Z
-<span class="">	.locals 0</span>
-<span class="">	.annotation build Landroid/annotation/TargetApi;</span>
-<span class="">	value = 0x13</span>
-<span class="">	.end annotation</span>
+<span class="cov">.method public static a(I)I</span>
+<span class="">	.locals 1</span>
 
-<span class="">	invoke-static {p0}, Lz5;->a(Landroid/content/Context;)Ly5;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	invoke-virtual {p0, p1, p2}, Ly5;->a(ILjava/lang/String;)Z</span>
-<span class="missed">	move-result p0</span>
-<span class="">	return p0</span>
+<span class="cov">	const/4 v0, -0x1</span>
+<span class="missed">	if-ne p0, v0, :cond_0</span>
+<span class="">	return v0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	div-int/lit16 p0, p0, 0x3e8</span>
+<span class="exec">	return p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

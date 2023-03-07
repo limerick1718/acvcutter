@@ -1,6 +1,6 @@
-.class public interface abstract Landroid/support/v4/media/session/e$a;
+.class final Landroid/support/v4/media/session/e$a;
 .super Ljava/lang/Object;
-.source "MediaControllerCompatApi21.java"
+.source "PlaybackStateCompatApi21.java"
 
 
 # annotations
@@ -9,39 +9,60 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x609
+    accessFlags = 0x18
     name = "a"
 .end annotation
 
 
-# virtual methods
-.method public abstract a(IIIII)V
+# direct methods
+.method public static a(Ljava/lang/Object;)Ljava/lang/String;
+    .locals 0
+
+    .line 82
+    check-cast p0, Landroid/media/session/PlaybackState$CustomAction;
+
+    invoke-virtual {p0}, Landroid/media/session/PlaybackState$CustomAction;->getAction()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public abstract a(Ljava/lang/CharSequence;)V
+.method public static b(Ljava/lang/Object;)Ljava/lang/CharSequence;
+    .locals 0
+
+    .line 86
+    check-cast p0, Landroid/media/session/PlaybackState$CustomAction;
+
+    invoke-virtual {p0}, Landroid/media/session/PlaybackState$CustomAction;->getName()Ljava/lang/CharSequence;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public abstract a(Ljava/lang/Object;)V
+.method public static c(Ljava/lang/Object;)I
+    .locals 0
+
+    .line 90
+    check-cast p0, Landroid/media/session/PlaybackState$CustomAction;
+
+    invoke-virtual {p0}, Landroid/media/session/PlaybackState$CustomAction;->getIcon()I
+
+    move-result p0
+
+    return p0
 .end method
 
-.method public abstract a(Ljava/lang/String;Landroid/os/Bundle;)V
-.end method
+.method public static d(Ljava/lang/Object;)Landroid/os/Bundle;
+    .locals 0
 
-.method public abstract a(Ljava/util/List;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "*>;)V"
-        }
-    .end annotation
-.end method
+    .line 93
+    check-cast p0, Landroid/media/session/PlaybackState$CustomAction;
 
-.method public abstract b(Landroid/os/Bundle;)V
-.end method
+    invoke-virtual {p0}, Landroid/media/session/PlaybackState$CustomAction;->getExtras()Landroid/os/Bundle;
 
-.method public abstract b(Ljava/lang/Object;)V
-.end method
+    move-result-object p0
 
-.method public abstract e()V
+    return-object p0
 .end method

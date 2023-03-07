@@ -1,26 +1,70 @@
-.class public Lmt;
-.super Lit;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.class final Lmt;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic a:Lko;
+
+.field private final synthetic b:Lpz;
+
+.field private final synthetic c:Lmh;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lqr;Ljava/lang/String;)V
-    .locals 6
+.method constructor <init>(Lmh;Lko;Lpz;)V
+    .locals 0
 
     .line 1
-    sget-object v4, Lor;->c:Lor;
+    iput-object p1, p0, Lmt;->c:Lmh;
 
-    move-object v0, p0
+    iput-object p2, p0, Lmt;->a:Lko;
 
-    move-object v1, p1
+    iput-object p3, p0, Lmt;->b:Lpz;
 
-    move-object v2, p2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object v3, p3
+    return-void
+.end method
 
-    move-object v5, p4
 
-    invoke-direct/range {v0 .. v5}, Lit;-><init>(Ljava/lang/String;Ljava/lang/String;Lqr;Lor;Ljava/lang/String;)V
+# virtual methods
+.method public final run()V
+    .locals 3
+
+    .line 2
+    iget-object v0, p0, Lmt;->c:Lmh;
+
+    iget-object v1, p0, Lmt;->a:Lko;
+
+    iget-object v2, p0, Lmt;->b:Lpz;
+
+    .line 3
+    invoke-virtual {v0, v1, v2}, Lmh;->b(Lko;Lpz;)Lko;
+
+    move-result-object v0
+
+    .line 4
+    iget-object v1, p0, Lmt;->c:Lmh;
+
+    invoke-static {v1}, Lmh;->a(Lmh;)Lpl;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lpl;->l()V
+
+    .line 5
+    iget-object v1, p0, Lmt;->c:Lmh;
+
+    invoke-static {v1}, Lmh;->a(Lmh;)Lpl;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lmt;->b:Lpz;
+
+    invoke-virtual {v1, v0, v2}, Lpl;->a(Lko;Lpz;)V
 
     return-void
 .end method

@@ -14,148 +14,102 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lfx;
+		<code>.class final Lfx;
 .super Ljava/lang/Object;
-.source "BufferedSink.java"
-.implements Lvx;
-.implements Ljava/nio/channels/WritableByteChannel;
 
 
+.field private static final a:Lfv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lfv<",
+"*>;"
+}
+.end annotation
+.end field
+.field private static final b:Lfv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lfv<",
+"*>;"
+}
+.end annotation
+.end field
 
 
-.method public abstract a(Lwx;)J
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lfw;</span>
+<span class="missed">	invoke-direct {v0}, Lfw;-><init>()V</span>
+<span class="missed">	sput-object v0, Lfx;->a:Lfv;</span>
+<span class="">	invoke-static {}, Lfx;->c()Lfv;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lfx;->b:Lfv;</span>
+<span class="">	return-void</span>
+.end method
+
+.method static a()Lfv;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
+<span class="">	"()",</span>
+<span class="">	"Lfv<",</span>
+<span class="">	"*>;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
+<span class="missed">	sget-object v0, Lfx;->a:Lfv;</span>
+<span class="">	return-object v0</span>
 .end method
 
-.method public abstract a(J)Lfx;
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+.method static b()Lfv;
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
+<span class="">	"()",</span>
+<span class="">	"Lfv<",</span>
+<span class="">	"*>;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
+<span class="missed">	sget-object v0, Lfx;->b:Lfv;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v1, "Protobuf runtime is not correctly loaded."</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
 .end method
 
-.method public abstract a(Lhx;)Lfx;
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+.method private static c()Lfv;
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
+<span class="">	"()",</span>
+<span class="">	"Lfv<",</span>
+<span class="">	"*>;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-.end method
-
-.method public abstract a(Ljava/lang/String;)Lfx;
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract b()Lex;
-<span class="">	</span>
-
-.end method
-
-.method public abstract e()Lfx;
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract f(J)Lfx;
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract flush()V
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract h()Lfx;
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract write([B)Lfx;
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract write([BII)Lfx;
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract writeByte(I)Lfx;
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract writeInt(I)Lfx;
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract writeShort(I)Lfx;
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v0, "com.google.protobuf.ExtensionSchemaFull"</span>
+<span class="">	invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	new-array v2, v1, [Ljava/lang/Class;</span>
+<span class="">	invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-array v1, v1, [Ljava/lang/Object;</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lfv;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object v0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

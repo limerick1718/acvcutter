@@ -10,7 +10,7 @@ name = null
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct {p0}, Lokhttp3/internal/http2/Http2Connection$Listener;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onStream(Lokhttp3/internal/http2/Http2Stream;)V

@@ -16,476 +16,214 @@
 	<pre class="source lang-smali" id='source'>
 		<code>.class public Lwm;
 .super Ljava/lang/Object;
+.source "PriorityTask.java"
+.implements Lwe;
+.implements Lwl;
+.implements Lwo;
 
-.annotation build Ljavax/annotation/concurrent/ThreadSafe;
-.end annotation
-
-.field private static l:Ljava/util/concurrent/ScheduledExecutorService;
-.field private final a:Ljava/lang/Object;
-.field private final b:Landroid/os/PowerManager$WakeLock;
-.field private c:Landroid/os/WorkSource;
-.field private final d:I
-.field private final e:Ljava/lang/String;
-.field private final f:Ljava/lang/String;
-.field private final g:Landroid/content/Context;
-.field private h:Z
-.field private final i:Ljava/util/Map;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ljava/util/Map<",
-"Ljava/lang/String;",
-"[",
-"Ljava/lang/Integer;",
+"Ljava/lang/Object;",
+"Lwe<",
+"Lwo;",
+">;",
+"Lwl;",
+"Lwo;"
+}
+.end annotation
+
+.field private final dependencies:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Lwo;",
 ">;"
 }
 .end annotation
 .end field
-.field private j:I
-.field private k:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private final hasRun:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final throwable:Ljava/util/concurrent/atomic/AtomicReference;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/concurrent/atomic/AtomicReference<",
+"Ljava/lang/Throwable;",
+">;"
+}
+.end annotation
+.end field
 
 
-.method static constructor &lt;clinit&gt;()V
-<span class="">	.locals 1</span>
-
-<span class="missed">	new-instance v0, Lxm;</span>
-<span class="missed">	invoke-direct {v0}, Lxm;-><init>()V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public constructor &lt;init&gt;(Landroid/content/Context;ILjava/lang/String;)V
-<span class="">	.locals 7</span>
-
-<span class="missed">	if-nez p1, :cond_0</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="">	invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	move-object v6, v0</span>
-<span class="missed">	const/4 v5, 0x0</span>
-<span class="missed">	move-object v1, p0</span>
-<span class="missed">	move-object v2, p1</span>
-<span class="missed">	move v3, p2</span>
-<span class="missed">	move-object v4, p3</span>
-<span class="missed">	invoke-direct/range {v1 .. v6}, Lwm;-><init>(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method private constructor &lt;init&gt;(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-<span class="">	.locals 7</span>
-
-<span class="missed">	const/4 v4, 0x0</span>
-<span class="missed">	const/4 v6, 0x0</span>
-<span class="missed">	move-object v0, p0</span>
-<span class="missed">	move-object v1, p1</span>
-<span class="missed">	move v2, p2</span>
-<span class="missed">	move-object v3, p3</span>
-<span class="missed">	move-object v5, p5</span>
-<span class="missed">	invoke-direct/range {v0 .. v6}, Lwm;-><init>(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method private constructor &lt;init&gt;(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-<span class="">	.locals 1</span>
-<span class="">	.annotation build Landroid/annotation/SuppressLint;</span>
-<span class="">	value = {</span>
-<span class="">	"UnwrappedWakeLock"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="missed">	iput-object p0, p0, Lwm;->a:Ljava/lang/Object;</span>
-<span class="missed">	const/4 p4, 0x1</span>
-<span class="missed">	iput-boolean p4, p0, Lwm;->h:Z</span>
-<span class="missed">	new-instance p4, Ljava/util/HashMap;</span>
-<span class="missed">	invoke-direct {p4}, Ljava/util/HashMap;-><init>()V</span>
-<span class="missed">	iput-object p4, p0, Lwm;->i:Ljava/util/Map;</span>
-<span class="missed">	new-instance p4, Ljava/util/HashSet;</span>
-<span class="missed">	invoke-direct {p4}, Ljava/util/HashSet;-><init>()V</span>
-<span class="missed">	invoke-static {p4}, Ljava/util/Collections;->synchronizedSet(Ljava/util/Set;)Ljava/util/Set;</span>
-<span class="missed">	new-instance p4, Ljava/util/concurrent/atomic/AtomicInteger;</span>
-<span class="missed">	const/4 p6, 0x0</span>
-<span class="missed">	invoke-direct {p4, p6}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V</span>
-<span class="missed">	iput-object p4, p0, Lwm;->k:Ljava/util/concurrent/atomic/AtomicInteger;</span>
-<span class="missed">	const-string p4, "WakeLock: context must not be null"</span>
-<span class="missed">	invoke-static {p1, p4}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	const-string p4, "WakeLock: wakeLockName must not be empty"</span>
-<span class="missed">	invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;</span>
-<span class="missed">	iput p2, p0, Lwm;->d:I</span>
-<span class="missed">	const/4 p4, 0x0</span>
-<span class="missed">	iput-object p4, p0, Lwm;->f:Ljava/lang/String;</span>
-<span class="">	invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;</span>
-<span class="missed">	move-result-object p4</span>
-<span class="missed">	iput-object p4, p0, Lwm;->g:Landroid/content/Context;</span>
-<span class="">	invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p4</span>
-<span class="missed">	const-string p6, "com.google.android.gms"</span>
-<span class="">	invoke-virtual {p6, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result p4</span>
-<span class="missed">	if-nez p4, :cond_1</span>
-<span class="missed">	const-string p4, "*gcore*:"</span>
-<span class="">	invoke-static {p3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object p6</span>
-<span class="">	invoke-virtual {p6}, Ljava/lang/String;->length()I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="">	invoke-virtual {p4, p6}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object p4</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-instance p6, Ljava/lang/String;</span>
-<span class="missed">	invoke-direct {p6, p4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V</span>
-<span class="missed">	move-object p4, p6</span>
-<span class="">	:goto_0</span>
-<span class="missed">	iput-object p4, p0, Lwm;->e:Ljava/lang/String;</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:cond_1</span>
-<span class="missed">	iput-object p3, p0, Lwm;->e:Ljava/lang/String;</span>
-<span class="">	:goto_1</span>
-<span class="missed">	const-string p4, "power"</span>
-<span class="">	invoke-virtual {p1, p4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object p4</span>
-<span class="missed">	check-cast p4, Landroid/os/PowerManager;</span>
-<span class="">	invoke-virtual {p4, p2, p3}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;</span>
-<span class="missed">	move-result-object p2</span>
-<span class="missed">	iput-object p2, p0, Lwm;->b:Landroid/os/PowerManager$WakeLock;</span>
-<span class="">	invoke-static {p1}, Lcom/google/android/gms/common/util/p;->a(Landroid/content/Context;)Z</span>
-<span class="missed">	move-result p2</span>
-<span class="missed">	if-eqz p2, :cond_4</span>
-<span class="">	invoke-static {p5}, Lcom/google/android/gms/common/util/n;->a(Ljava/lang/String;)Z</span>
-<span class="missed">	move-result p2</span>
-<span class="missed">	if-eqz p2, :cond_2</span>
-<span class="">	invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p5</span>
-<span class="">	:cond_2</span>
-<span class="">	invoke-static {p1, p5}, Lcom/google/android/gms/common/util/p;->a(Landroid/content/Context;Ljava/lang/String;)Landroid/os/WorkSource;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	iput-object p1, p0, Lwm;->c:Landroid/os/WorkSource;</span>
-<span class="missed">	if-eqz p1, :cond_4</span>
-<span class="missed">	iget-object p2, p0, Lwm;->g:Landroid/content/Context;</span>
-<span class="">	invoke-static {p2}, Lcom/google/android/gms/common/util/p;->a(Landroid/content/Context;)Z</span>
-<span class="missed">	move-result p2</span>
-<span class="missed">	if-eqz p2, :cond_4</span>
-<span class="missed">	iget-object p2, p0, Lwm;->c:Landroid/os/WorkSource;</span>
-<span class="missed">	if-eqz p2, :cond_3</span>
-<span class="missed">	invoke-virtual {p2, p1}, Landroid/os/WorkSource;->add(Landroid/os/WorkSource;)Z</span>
-<span class="">	goto :goto_2</span>
-<span class="">	:cond_3</span>
-<span class="missed">	iput-object p1, p0, Lwm;->c:Landroid/os/WorkSource;</span>
-<span class="">	:goto_2</span>
-<span class="missed">	iget-object p1, p0, Lwm;->c:Landroid/os/WorkSource;</span>
-<span class="">	:try_start_0</span>
-<span class="missed">	iget-object p2, p0, Lwm;->b:Landroid/os/PowerManager$WakeLock;</span>
-<span class="missed">	invoke-virtual {p2, p1}, Landroid/os/PowerManager$WakeLock;->setWorkSource(Landroid/os/WorkSource;)V</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1</span>
-<span class="missed">	.catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="">	goto :goto_4</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception p1</span>
-<span class="">	goto :goto_3</span>
-<span class="">	:catch_1</span>
-<span class="missed">	move-exception p1</span>
-<span class="">	:goto_3</span>
-<span class="">	invoke-virtual {p1}, Ljava/lang/RuntimeException;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	const-string p2, "WakeLock"</span>
-<span class="missed">	invoke-static {p2, p1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I</span>
-<span class="">	:goto_4</span>
-<span class="">	:cond_4</span>
-<span class="missed">	sget-object p1, Lwm;->l:Ljava/util/concurrent/ScheduledExecutorService;</span>
-<span class="missed">	if-nez p1, :cond_5</span>
-<span class="">	invoke-static {}, Lt5;->a()Lt5$a;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	invoke-interface {p1}, Lt5$a;->a()Ljava/util/concurrent/ScheduledExecutorService;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	sput-object p1, Lwm;->l:Ljava/util/concurrent/ScheduledExecutorService;</span>
-<span class="">	:cond_5</span>
-<span class="">	return-void</span>
-.end method
-
-.method private final a(Ljava/lang/String;)Ljava/lang/String;
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-boolean v0, p0, Lwm;->h:Z</span>
-<span class="missed">	if-eqz v0, :cond_1</span>
-<span class="">	invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="">	return-object p1</span>
-<span class="">	:cond_0</span>
-<span class="missed">	iget-object p1, p0, Lwm;->f:Ljava/lang/String;</span>
-<span class="">	return-object p1</span>
-<span class="">	:cond_1</span>
-<span class="missed">	iget-object p1, p0, Lwm;->f:Ljava/lang/String;</span>
-<span class="">	return-object p1</span>
-.end method
-
-.method private final a(I)V
+<span class="cov">.method public constructor &lt;init&gt;()V</span>
 <span class="">	.locals 2</span>
 
-<span class="missed">	iget-object p1, p0, Lwm;->b:Landroid/os/PowerManager$WakeLock;</span>
-<span class="">	invoke-virtual {p1}, Landroid/os/PowerManager$WakeLock;->isHeld()Z</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	if-eqz p1, :cond_1</span>
-<span class="">	:try_start_0</span>
-<span class="missed">	iget-object p1, p0, Lwm;->b:Landroid/os/PowerManager$WakeLock;</span>
-<span class="missed">	invoke-virtual {p1}, Landroid/os/PowerManager$WakeLock;->release()V</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception p1</span>
-<span class="">	invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	const-class v1, Ljava/lang/RuntimeException;</span>
-<span class="">	invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	iget-object v0, p0, Lwm;->e:Ljava/lang/String;</span>
-<span class="">	invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	const-string v1, " was already released!"</span>
-<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	const-string v1, "WakeLock"</span>
-<span class="missed">	invoke-static {v1, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
-<span class="">	:goto_0</span>
-<span class="missed">	iget-object p1, p0, Lwm;->b:Landroid/os/PowerManager$WakeLock;</span>
-<span class="missed">	invoke-virtual {p1}, Landroid/os/PowerManager$WakeLock;->isHeld()Z</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:cond_0</span>
-<span class="">	throw p1</span>
-<span class="">	:goto_1</span>
-<span class="">	:cond_1</span>
-<span class="">	return-void</span>
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Lwm;->dependencies:Ljava/util/List;</span>
+<span class="cov">	new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V</span>
+<span class="cov">	iput-object v0, p0, Lwm;->hasRun:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="cov">	new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V</span>
+<span class="cov">	iput-object v0, p0, Lwm;->throwable:Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method static synthetic a(Lwm;I)V
+<span class="cov">.method public static isProperDelegate(Ljava/lang/Object;)Z</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	move-object v1, p0</span>
+<span class="cov">	check-cast v1, Lwe;</span>
+<span class="cov">	move-object v2, p0</span>
+<span class="cov">	check-cast v2, Lwo;</span>
+<span class="cov">	check-cast p0, Lwl;</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="cov">	if-eqz v1, :cond_0</span>
+<span class="cov">	if-eqz v2, :cond_0</span>
+<span class="cov">	if-eqz p0, :cond_0</span>
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	:catch_0</span>
+<span class="exec">	return v0</span>
+.end method
+
+<span class="cov">.method public bridge synthetic addDependency(Ljava/lang/Object;)V</span>
 <span class="">	.locals 0</span>
 
-<span class="missed">	const/4 p1, 0x0</span>
-<span class="missed">	invoke-direct {p0, p1}, Lwm;->a(I)V</span>
-<span class="">	return-void</span>
+<span class="cov">	check-cast p1, Lwo;</span>
+<span class="cov">	invoke-virtual {p0, p1}, Lwm;->addDependency(Lwo;)V</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method private final b()Ljava/util/List;
+<span class="cov">.method public declared-synchronized addDependency(Lwo;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	monitor-enter p0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v0, p0, Lwm;->dependencies:Ljava/util/List;</span>
+<span class="cov">	invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="cov">	monitor-exit p0</span>
+<span class="exec">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public areDependenciesMet()Z</span>
+<span class="">	.locals 2</span>
+
+<span class="exec">	invoke-virtual {p0}, Lwm;->getDependencies()Ljava/util/Collection;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	if-eqz v1, :cond_1</span>
+<span class="exec">	invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	check-cast v1, Lwo;</span>
+<span class="exec">	invoke-interface {v1}, Lwo;->isFinished()Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	if-nez v1, :cond_0</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="exec">	return v0</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="exec">	return v0</span>
+.end method
+
+.method public compareTo(Ljava/lang/Object;)I
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-static {p0, p1}, Lwh;->a(Lwl;Ljava/lang/Object;)I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+<span class="cov">.method public declared-synchronized getDependencies()Ljava/util/Collection;</span>
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
 <span class="">	"()",</span>
-<span class="">	"Ljava/util/List<",</span>
-<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ljava/util/Collection<",</span>
+<span class="">	"Lwo;",</span>
 <span class="">	">;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	iget-object v0, p0, Lwm;->c:Landroid/os/WorkSource;</span>
-<span class="">	invoke-static {v0}, Lcom/google/android/gms/common/util/p;->a(Landroid/os/WorkSource;)Ljava/util/List;</span>
+<span class="cov">	monitor-enter p0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v0, p0, Lwm;->dependencies:Ljava/util/List;</span>
+<span class="exec">	invoke-static {v0}, Ljava/util/Collections;->unmodifiableCollection(Ljava/util/Collection;)Ljava/util/Collection;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="cov">	monitor-exit p0</span>
+<span class="exec">	return-object v0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public getError()Ljava/lang/Throwable;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lwm;->throwable:Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="">	invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ljava/lang/Throwable;</span>
 <span class="">	return-object v0</span>
 .end method
 
-.method public a()V
-<span class="">	.locals 12</span>
-
-<span class="missed">	iget-object v0, p0, Lwm;->k:Ljava/util/concurrent/atomic/AtomicInteger;</span>
-<span class="">	invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-gez v0, :cond_0</span>
-<span class="missed">	iget-object v0, p0, Lwm;->e:Ljava/lang/String;</span>
-<span class="">	invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	const-string v1, " release without a matched acquire!"</span>
-<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	const-string v1, "WakeLock"</span>
-<span class="missed">	invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="">	invoke-direct {p0, v0}, Lwm;->a(Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object v6</span>
-<span class="missed">	iget-object v0, p0, Lwm;->a:Ljava/lang/Object;</span>
-<span class="missed">	monitor-enter v0</span>
-<span class="">	:try_start_0</span>
-<span class="missed">	iget-boolean v1, p0, Lwm;->h:Z</span>
-<span class="missed">	const/4 v10, 0x1</span>
-<span class="missed">	const/4 v11, 0x0</span>
-<span class="missed">	if-eqz v1, :cond_3</span>
-<span class="missed">	iget-object v1, p0, Lwm;->i:Ljava/util/Map;</span>
-<span class="">	invoke-interface {v1, v6}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	check-cast v1, [Ljava/lang/Integer;</span>
-<span class="missed">	if-nez v1, :cond_1</span>
-<span class="">	:goto_0</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:cond_1</span>
-<span class="missed">	aget-object v2, v1, v11</span>
-<span class="">	invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I</span>
-<span class="missed">	move-result v2</span>
-<span class="missed">	if-ne v2, v10, :cond_2</span>
-<span class="missed">	iget-object v1, p0, Lwm;->i:Ljava/util/Map;</span>
-<span class="missed">	invoke-interface {v1, v6}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	const/4 v1, 0x1</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:cond_2</span>
-<span class="missed">	aget-object v2, v1, v11</span>
-<span class="">	invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I</span>
-<span class="missed">	move-result v2</span>
-<span class="missed">	sub-int/2addr v2, v10</span>
-<span class="">	invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
-<span class="missed">	move-result-object v2</span>
-<span class="missed">	aput-object v2, v1, v11</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:goto_1</span>
-<span class="missed">	if-nez v1, :cond_4</span>
-<span class="">	:cond_3</span>
-<span class="missed">	iget-boolean v1, p0, Lwm;->h:Z</span>
-<span class="missed">	if-nez v1, :cond_5</span>
-<span class="missed">	iget v1, p0, Lwm;->j:I</span>
-<span class="missed">	if-ne v1, v10, :cond_5</span>
-<span class="">	:cond_4</span>
-<span class="">	invoke-static {}, Lcom/google/android/gms/common/stats/d;->a()Lcom/google/android/gms/common/stats/d;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	iget-object v2, p0, Lwm;->g:Landroid/content/Context;</span>
-<span class="missed">	iget-object v3, p0, Lwm;->b:Landroid/os/PowerManager$WakeLock;</span>
-<span class="">	invoke-static {v3, v6}, Lcom/google/android/gms/common/stats/c;->a(Landroid/os/PowerManager$WakeLock;Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="missed">	const/16 v4, 0x8</span>
-<span class="missed">	iget-object v5, p0, Lwm;->e:Ljava/lang/String;</span>
-<span class="missed">	const/4 v7, 0x0</span>
-<span class="missed">	iget v8, p0, Lwm;->d:I</span>
-<span class="">	invoke-direct {p0}, Lwm;->b()Ljava/util/List;</span>
-<span class="missed">	move-result-object v9</span>
-<span class="missed">	invoke-virtual/range {v1 .. v9}, Lcom/google/android/gms/common/stats/d;->a(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/util/List;)V</span>
-<span class="missed">	iget v1, p0, Lwm;->j:I</span>
-<span class="missed">	sub-int/2addr v1, v10</span>
-<span class="missed">	iput v1, p0, Lwm;->j:I</span>
-<span class="">	:cond_5</span>
-<span class="missed">	monitor-exit v0</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="missed">	invoke-direct {p0, v11}, Lwm;->a(I)V</span>
-<span class="">	return-void</span>
-<span class="">	:catchall_0</span>
-<span class="missed">	move-exception v1</span>
-<span class="">	:try_start_1</span>
-<span class="missed">	monitor-exit v0</span>
-<span class="">	:try_end_1</span>
-<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
-<span class="">	throw v1</span>
-.end method
-
-.method public a(J)V
-<span class="">	.locals 13</span>
-
-<span class="missed">	iget-object v0, p0, Lwm;->k:Ljava/util/concurrent/atomic/AtomicInteger;</span>
-<span class="missed">	invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="">	invoke-direct {p0, v0}, Lwm;->a(Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object v6</span>
-<span class="missed">	iget-object v0, p0, Lwm;->a:Ljava/lang/Object;</span>
-<span class="missed">	monitor-enter v0</span>
-<span class="">	:try_start_0</span>
-<span class="missed">	iget-object v1, p0, Lwm;->i:Ljava/util/Map;</span>
-<span class="">	invoke-interface {v1}, Ljava/util/Map;->isEmpty()Z</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="missed">	if-eqz v1, :cond_0</span>
-<span class="missed">	iget v1, p0, Lwm;->j:I</span>
-<span class="missed">	if-lez v1, :cond_1</span>
-<span class="">	:cond_0</span>
-<span class="missed">	iget-object v1, p0, Lwm;->b:Landroid/os/PowerManager$WakeLock;</span>
-<span class="">	invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->isHeld()Z</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	if-nez v1, :cond_1</span>
-<span class="missed">	iget-object v1, p0, Lwm;->i:Ljava/util/Map;</span>
-<span class="missed">	invoke-interface {v1}, Ljava/util/Map;->clear()V</span>
-<span class="missed">	iput v2, p0, Lwm;->j:I</span>
-<span class="">	:cond_1</span>
-<span class="missed">	iget-boolean v1, p0, Lwm;->h:Z</span>
-<span class="missed">	const/4 v12, 0x1</span>
-<span class="missed">	if-eqz v1, :cond_3</span>
-<span class="missed">	iget-object v1, p0, Lwm;->i:Ljava/util/Map;</span>
-<span class="">	invoke-interface {v1, v6}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	check-cast v1, [Ljava/lang/Integer;</span>
-<span class="missed">	if-nez v1, :cond_2</span>
-<span class="missed">	iget-object v1, p0, Lwm;->i:Ljava/util/Map;</span>
-<span class="missed">	new-array v3, v12, [Ljava/lang/Integer;</span>
-<span class="">	invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
-<span class="missed">	move-result-object v4</span>
-<span class="missed">	aput-object v4, v3, v2</span>
-<span class="missed">	invoke-interface {v1, v6, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	const/4 v2, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_2</span>
-<span class="missed">	aget-object v3, v1, v2</span>
-<span class="">	invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I</span>
-<span class="missed">	move-result v3</span>
-<span class="missed">	add-int/2addr v3, v12</span>
-<span class="">	invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="missed">	aput-object v3, v1, v2</span>
-<span class="">	:goto_0</span>
-<span class="missed">	if-nez v2, :cond_4</span>
-<span class="">	:cond_3</span>
-<span class="missed">	iget-boolean v1, p0, Lwm;->h:Z</span>
-<span class="missed">	if-nez v1, :cond_5</span>
-<span class="missed">	iget v1, p0, Lwm;->j:I</span>
-<span class="missed">	if-nez v1, :cond_5</span>
-<span class="">	:cond_4</span>
-<span class="">	invoke-static {}, Lcom/google/android/gms/common/stats/d;->a()Lcom/google/android/gms/common/stats/d;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	iget-object v2, p0, Lwm;->g:Landroid/content/Context;</span>
-<span class="missed">	iget-object v3, p0, Lwm;->b:Landroid/os/PowerManager$WakeLock;</span>
-<span class="">	invoke-static {v3, v6}, Lcom/google/android/gms/common/stats/c;->a(Landroid/os/PowerManager$WakeLock;Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="missed">	const/4 v4, 0x7</span>
-<span class="missed">	iget-object v5, p0, Lwm;->e:Ljava/lang/String;</span>
-<span class="missed">	const/4 v7, 0x0</span>
-<span class="missed">	iget v8, p0, Lwm;->d:I</span>
-<span class="">	invoke-direct {p0}, Lwm;->b()Ljava/util/List;</span>
-<span class="missed">	move-result-object v9</span>
-<span class="missed">	move-wide v10, p1</span>
-<span class="missed">	invoke-virtual/range {v1 .. v11}, Lcom/google/android/gms/common/stats/d;->a(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/util/List;J)V</span>
-<span class="missed">	iget v1, p0, Lwm;->j:I</span>
-<span class="missed">	add-int/2addr v1, v12</span>
-<span class="missed">	iput v1, p0, Lwm;->j:I</span>
-<span class="">	:cond_5</span>
-<span class="missed">	monitor-exit v0</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="missed">	iget-object v0, p0, Lwm;->b:Landroid/os/PowerManager$WakeLock;</span>
-<span class="missed">	invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V</span>
-<span class="missed">	const-wide/16 v0, 0x0</span>
-<span class="missed">	cmp-long v2, p1, v0</span>
-<span class="missed">	if-lez v2, :cond_6</span>
-<span class="missed">	sget-object v0, Lwm;->l:Ljava/util/concurrent/ScheduledExecutorService;</span>
-<span class="missed">	new-instance v1, Lym;</span>
-<span class="missed">	invoke-direct {v1, p0}, Lym;-><init>(Lwm;)V</span>
-<span class="missed">	sget-object v2, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;</span>
-<span class="missed">	invoke-interface {v0, v1, p1, p2, v2}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;</span>
-<span class="">	:cond_6</span>
-<span class="">	return-void</span>
-<span class="">	:catchall_0</span>
-<span class="missed">	move-exception p1</span>
-<span class="">	:try_start_1</span>
-<span class="missed">	monitor-exit v0</span>
-<span class="">	:try_end_1</span>
-<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
-<span class="">	throw p1</span>
-.end method
-
-.method public a(Z)V
+.method public getPriority()Lwh;
 <span class="">	.locals 1</span>
 
-<span class="missed">	iget-object v0, p0, Lwm;->b:Landroid/os/PowerManager$WakeLock;</span>
-<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V</span>
-<span class="missed">	iput-boolean p1, p0, Lwm;->h:Z</span>
-<span class="">	return-void</span>
+<span class="missed">	sget-object v0, Lwh;->b:Lwh;</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public isFinished()Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-object v0, p0, Lwm;->hasRun:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="exec">	invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="exec">	return v0</span>
+.end method
+
+<span class="cov">.method public setError(Ljava/lang/Throwable;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-object v0, p0, Lwm;->throwable:Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="cov">	invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public declared-synchronized setFinished(Z)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	monitor-enter p0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v0, p0, Lwm;->hasRun:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="cov">	invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="cov">	monitor-exit p0</span>
+<span class="exec">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw p1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

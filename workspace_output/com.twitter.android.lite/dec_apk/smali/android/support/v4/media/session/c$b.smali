@@ -1,64 +1,75 @@
 .class  Landroid/support/v4/media/session/c$b;
-.super Ljava/lang/Object;
-.source "MediaControllerCompat.java"
-.implements Landroid/support/v4/media/session/e$a;
+.super Landroid/media/session/MediaController$Callback;
+.source "MediaControllerCompatApi21.java"
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Landroid/support/v4/media/session/c;
 .end annotation
 .annotation system Ldalvik/annotation/InnerClass;
-accessFlags = 0xa
+accessFlags = 0x8
 name = "b"
 .end annotation
-.field private final a:Ljava/lang/ref/WeakReference;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ljava/lang/ref/WeakReference<",
-"Landroid/support/v4/media/session/c;",
-">;"
+"<T::",
+"Landroid/support/v4/media/session/c$a;",
+">",
+"Landroid/media/session/MediaController$Callback;"
+}
+.end annotation
+.field protected final a:Landroid/support/v4/media/session/c$a;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"TT;"
 }
 .end annotation
 .end field
-.method constructor <init>(Landroid/support/v4/media/session/c;)V
-.locals 1
+.method public constructor <init>(Landroid/support/v4/media/session/c$a;)V
+.locals 0
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(TT;)V"
+}
+.end annotation
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public a(IIIII)V
-.locals 8
+.method public onAudioInfoChanged(Landroid/media/session/MediaController$PlaybackInfo;)V
+.locals 6
 return-void
 .end method
-.method public a(Ljava/lang/CharSequence;)V
+.method public onExtrasChanged(Landroid/os/Bundle;)V
 .locals 1
 return-void
 .end method
-.method public a(Ljava/lang/Object;)V
-.locals 2
+.method public onMetadataChanged(Landroid/media/MediaMetadata;)V
+.locals 1
 return-void
 .end method
-.method public a(Ljava/lang/String;Landroid/os/Bundle;)V
-.locals 3
+.method public onPlaybackStateChanged(Landroid/media/session/PlaybackState;)V
+.locals 1
 return-void
 .end method
-.method public a(Ljava/util/List;)V
+.method public onQueueChanged(Ljava/util/List;)V
 .locals 1
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "(",
 "Ljava/util/List<",
-"*>;)V"
+"Landroid/media/session/MediaSession$QueueItem;",
+">;)V"
 }
 .end annotation
 return-void
 .end method
-.method public b(Landroid/os/Bundle;)V
+.method public onQueueTitleChanged(Ljava/lang/CharSequence;)V
 .locals 1
 return-void
 .end method
-.method public b(Ljava/lang/Object;)V
+.method public onSessionDestroyed()V
 .locals 1
 return-void
 .end method
-.method public e()V
+.method public onSessionEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 .locals 1
 return-void
 .end method

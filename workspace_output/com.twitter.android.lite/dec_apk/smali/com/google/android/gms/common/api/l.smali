@@ -1,13 +1,26 @@
 .class public final Lcom/google/android/gms/common/api/l;
-.super Ljava/lang/UnsupportedOperationException;
-.field private final a:Le5;
-.method public constructor <init>(Le5;)V
+.super Ljava/lang/Object;
+.implements Landroid/os/Parcelable$Creator;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/Object;",
+"Landroid/os/Parcelable$Creator<",
+"Lcom/google/android/gms/common/api/Scope;",
+">;"
+}
+.end annotation
+.method public constructor <init>()V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public final getMessage()Ljava/lang/String;
-.locals 3
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.locals 6
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+.locals 0
 const/4 v0, 0x0
 return-object v0
 .end method

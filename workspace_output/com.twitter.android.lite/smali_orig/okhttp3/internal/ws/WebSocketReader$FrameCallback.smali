@@ -18,14 +18,6 @@
 .method public abstract onReadClose(ILjava/lang/String;)V
 .end method
 
-.method public abstract onReadMessage(Lhx;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-.end method
-
 .method public abstract onReadMessage(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -34,8 +26,16 @@
     .end annotation
 .end method
 
-.method public abstract onReadPing(Lhx;)V
+.method public abstract onReadMessage(Lyv;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
-.method public abstract onReadPong(Lhx;)V
+.method public abstract onReadPing(Lyv;)V
+.end method
+
+.method public abstract onReadPong(Lyv;)V
 .end method

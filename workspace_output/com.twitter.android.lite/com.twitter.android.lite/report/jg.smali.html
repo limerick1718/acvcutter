@@ -16,127 +16,308 @@
 	<pre class="source lang-smali" id='source'>
 		<code>.class final Ljg;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Ljava/util/ListIterator;
-
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/Object;",
-"Ljava/util/ListIterator<",
-"Ljava/lang/String;",
-">;"
-}
-.end annotation
-
-.field private a:Ljava/util/ListIterator;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/ListIterator<",
-"Ljava/lang/String;",
-">;"
-}
-.end annotation
-.end field
-.field private final synthetic b:I
-.field private final synthetic c:Lgg;
 
 
-.method constructor &lt;init&gt;(Lgg;I)V
-<span class="">	.locals 0</span>
+.field private static final a:Lji;
 
-<span class="missed">	iput-object p1, p0, Ljg;->c:Lgg;</span>
-<span class="missed">	iput p2, p0, Ljg;->b:I</span>
-<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="missed">	iget-object p1, p0, Ljg;->c:Lgg;</span>
-<span class="">	invoke-static {p1}, Lgg;->a(Lgg;)Lee;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	iget p2, p0, Ljg;->b:I</span>
-<span class="">	invoke-interface {p1, p2}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	iput-object p1, p0, Ljg;->a:Ljava/util/ListIterator;</span>
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-static {}, Lje;->a()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-static {}, Lje;->b()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-static {}, Let;->a()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	new-instance v0, Ljl;</span>
+<span class="missed">	invoke-direct {v0}, Ljl;-><init>()V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v0, Ljj;</span>
+<span class="missed">	invoke-direct {v0}, Ljj;-><init>()V</span>
+<span class="">	:goto_1</span>
+<span class="missed">	sput-object v0, Ljg;->a:Lji;</span>
 <span class="">	return-void</span>
 .end method
 
-.method public final synthetic add(Ljava/lang/Object;)V
+.method static synthetic a(I)I
 <span class="">	.locals 0</span>
 
-<span class="missed">	check-cast p1, Ljava/lang/String;</span>
-<span class="missed">	new-instance p1, Ljava/lang/UnsupportedOperationException;</span>
-<span class="missed">	invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V</span>
-<span class="">	throw p1</span>
+<span class="">	invoke-static {p0}, Ljg;->b(I)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
 .end method
 
-.method public final hasNext()Z
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Ljg;->a:Ljava/util/ListIterator;</span>
-<span class="">	invoke-interface {v0}, Ljava/util/ListIterator;->hasNext()Z</span>
-<span class="missed">	move-result v0</span>
-<span class="">	return v0</span>
-.end method
-
-.method public final hasPrevious()Z
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Ljg;->a:Ljava/util/ListIterator;</span>
-<span class="">	invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z</span>
-<span class="missed">	move-result v0</span>
-<span class="">	return v0</span>
-.end method
-
-.method public final synthetic next()Ljava/lang/Object;
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Ljg;->a:Ljava/util/ListIterator;</span>
-<span class="">	invoke-interface {v0}, Ljava/util/ListIterator;->next()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Ljava/lang/String;</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public final nextIndex()I
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Ljg;->a:Ljava/util/ListIterator;</span>
-<span class="">	invoke-interface {v0}, Ljava/util/ListIterator;->nextIndex()I</span>
-<span class="missed">	move-result v0</span>
-<span class="">	return v0</span>
-.end method
-
-.method public final synthetic previous()Ljava/lang/Object;
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Ljg;->a:Ljava/util/ListIterator;</span>
-<span class="">	invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Ljava/lang/String;</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public final previousIndex()I
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Ljg;->a:Ljava/util/ListIterator;</span>
-<span class="">	invoke-interface {v0}, Ljava/util/ListIterator;->previousIndex()I</span>
-<span class="missed">	move-result v0</span>
-<span class="">	return v0</span>
-.end method
-
-.method public final remove()V
-<span class="">	.locals 1</span>
-
-<span class="missed">	new-instance v0, Ljava/lang/UnsupportedOperationException;</span>
-<span class="missed">	invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V</span>
-<span class="">	throw v0</span>
-.end method
-
-.method public final synthetic set(Ljava/lang/Object;)V
+.method static synthetic a(II)I
 <span class="">	.locals 0</span>
 
-<span class="missed">	check-cast p1, Ljava/lang/String;</span>
-<span class="missed">	new-instance p1, Ljava/lang/UnsupportedOperationException;</span>
-<span class="missed">	invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V</span>
-<span class="">	throw p1</span>
+<span class="">	invoke-static {p0, p1}, Ljg;->b(II)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method static synthetic a(III)I
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-static {p0, p1, p2}, Ljg;->b(III)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method static a(Ljava/lang/CharSequence;)I
+<span class="">	.locals 8</span>
+
+<span class="">	invoke-interface {p0}, Ljava/lang/CharSequence;->length()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v2, v0, :cond_0</span>
+<span class="">	invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	const/16 v4, 0x80</span>
+<span class="missed">	if-ge v3, v4, :cond_0</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	move v3, v0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ge v2, v0, :cond_6</span>
+<span class="">	invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	const/16 v5, 0x800</span>
+<span class="missed">	if-ge v4, v5, :cond_1</span>
+<span class="missed">	rsub-int/lit8 v4, v4, 0x7f</span>
+<span class="missed">	ushr-int/lit8 v4, v4, 0x1f</span>
+<span class="missed">	add-int/2addr v3, v4</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-interface {p0}, Ljava/lang/CharSequence;->length()I</span>
+<span class="missed">	move-result v4</span>
+<span class="">	:goto_2</span>
+<span class="missed">	if-ge v2, v4, :cond_5</span>
+<span class="">	invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	if-ge v6, v5, :cond_2</span>
+<span class="missed">	rsub-int/lit8 v6, v6, 0x7f</span>
+<span class="missed">	ushr-int/lit8 v6, v6, 0x1f</span>
+<span class="missed">	add-int/2addr v1, v6</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_2</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x2</span>
+<span class="missed">	const v7, 0xd800</span>
+<span class="missed">	if-gt v7, v6, :cond_4</span>
+<span class="missed">	const v7, 0xdfff</span>
+<span class="missed">	if-gt v6, v7, :cond_4</span>
+<span class="">	invoke-static {p0, v2}, Ljava/lang/Character;->codePointAt(Ljava/lang/CharSequence;I)I</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	const/high16 v7, 0x10000</span>
+<span class="missed">	if-lt v6, v7, :cond_3</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_3</span>
+<span class="missed">	new-instance p0, Ljk;</span>
+<span class="missed">	invoke-direct {p0, v2, v4}, Ljk;-><init>(II)V</span>
+<span class="">	throw p0</span>
+<span class="">	:goto_3</span>
+<span class="">	:cond_4</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_5</span>
+<span class="missed">	add-int/2addr v3, v1</span>
+<span class="">	:cond_6</span>
+<span class="missed">	if-lt v3, v0, :cond_7</span>
+<span class="">	return v3</span>
+<span class="">	:cond_7</span>
+<span class="missed">	new-instance p0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	int-to-long v0, v3</span>
+<span class="missed">	const-wide v2, 0x100000000L</span>
+<span class="missed">	add-long/2addr v0, v2</span>
+<span class="missed">	const/16 v2, 0x36</span>
+<span class="missed">	new-instance v3, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V</span>
+<span class="missed">	const-string v2, "UTF-8 length does not fit in int: "</span>
+<span class="missed">	invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
+.end method
+
+.method static a(Ljava/lang/CharSequence;[BII)I
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Ljg;->a:Lji;</span>
+<span class="">	invoke-virtual {v0, p0, p1, p2, p3}, Lji;->a(Ljava/lang/CharSequence;[BII)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method static a(Ljava/lang/CharSequence;Ljava/nio/ByteBuffer;)V
+<span class="">	.locals 4</span>
+
+<span class="missed">	sget-object v0, Ljg;->a:Lji;</span>
+<span class="">	invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasArray()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="">	invoke-virtual {p1}, Ljava/nio/ByteBuffer;->arrayOffset()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	add-int/2addr v2, v0</span>
+<span class="">	invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I</span>
+<span class="missed">	move-result v3</span>
+<span class="">	invoke-static {p0, v1, v2, v3}, Ljg;->a(Ljava/lang/CharSequence;[BII)I</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	sub-int/2addr p0, v0</span>
+<span class="missed">	invoke-virtual {p1, p0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p1}, Ljava/nio/ByteBuffer;->isDirect()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, p0, p1}, Lji;->a(Ljava/lang/CharSequence;Ljava/nio/ByteBuffer;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="missed">	invoke-static {p0, p1}, Lji;->b(Ljava/lang/CharSequence;Ljava/nio/ByteBuffer;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public static a([B)Z
+<span class="">	.locals 3</span>
+
+<span class="missed">	sget-object v0, Ljg;->a:Lji;</span>
+<span class="missed">	array-length v1, p0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	invoke-virtual {v0, p0, v2, v1}, Lji;->a([BII)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method public static a([BII)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Ljg;->a:Lji;</span>
+<span class="">	invoke-virtual {v0, p0, p1, p2}, Lji;->a([BII)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method private static b(I)I
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/16 v0, -0xc</span>
+<span class="missed">	if-le p0, v0, :cond_0</span>
+<span class="missed">	const/4 p0, -0x1</span>
+<span class="">	:cond_0</span>
+<span class="">	return p0</span>
+.end method
+
+.method private static b(II)I
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/16 v0, -0xc</span>
+<span class="missed">	if-gt p0, v0, :cond_1</span>
+<span class="missed">	const/16 v0, -0x41</span>
+<span class="missed">	if-le p1, v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	shl-int/lit8 p1, p1, 0x8</span>
+<span class="missed">	xor-int/2addr p0, p1</span>
+<span class="">	return p0</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 p0, -0x1</span>
+<span class="">	return p0</span>
+.end method
+
+.method private static b(III)I
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/16 v0, -0xc</span>
+<span class="missed">	if-gt p0, v0, :cond_1</span>
+<span class="missed">	const/16 v0, -0x41</span>
+<span class="missed">	if-gt p1, v0, :cond_1</span>
+<span class="missed">	if-le p2, v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	shl-int/lit8 p1, p1, 0x8</span>
+<span class="missed">	xor-int/2addr p0, p1</span>
+<span class="missed">	shl-int/lit8 p1, p2, 0x10</span>
+<span class="missed">	xor-int/2addr p0, p1</span>
+<span class="">	return p0</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 p0, -0x1</span>
+<span class="">	return p0</span>
+.end method
+
+.method static b([BII)Ljava/lang/String;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Lgo;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	sget-object v0, Ljg;->a:Lji;</span>
+<span class="">	invoke-virtual {v0, p0, p1, p2}, Lji;->b([BII)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method static synthetic c([BII)I
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-static {p0, p1, p2}, Ljg;->d([BII)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method private static d([BII)I
+<span class="">	.locals 3</span>
+
+<span class="missed">	add-int/lit8 v0, p1, -0x1</span>
+<span class="missed">	aget-byte v0, p0, v0</span>
+<span class="missed">	sub-int/2addr p2, p1</span>
+<span class="missed">	if-eqz p2, :cond_2</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-eq p2, v1, :cond_1</span>
+<span class="missed">	const/4 v2, 0x2</span>
+<span class="missed">	if-ne p2, v2, :cond_0</span>
+<span class="missed">	aget-byte p2, p0, p1</span>
+<span class="missed">	add-int/2addr p1, v1</span>
+<span class="missed">	aget-byte p0, p0, p1</span>
+<span class="">	invoke-static {v0, p2, p0}, Ljg;->b(III)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p0, Ljava/lang/AssertionError;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/AssertionError;-><init>()V</span>
+<span class="">	throw p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	aget-byte p0, p0, p1</span>
+<span class="">	invoke-static {v0, p0}, Ljg;->b(II)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-static {v0}, Ljg;->b(I)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

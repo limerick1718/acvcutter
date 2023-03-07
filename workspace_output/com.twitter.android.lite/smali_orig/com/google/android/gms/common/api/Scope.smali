@@ -1,5 +1,5 @@
 .class public final Lcom/google/android/gms/common/api/Scope;
-.super Lp5;
+.super Lba;
 
 # interfaces
 .implements Lcom/google/android/gms/common/internal/ReflectedParcelable;
@@ -27,10 +27,10 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1
-    new-instance v0, Lcom/google/android/gms/common/api/m;
+    .line 24
+    new-instance v0, Lcom/google/android/gms/common/api/l;
 
-    invoke-direct {v0}, Lcom/google/android/gms/common/api/m;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/common/api/l;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/common/api/Scope;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -41,12 +41,12 @@
     .locals 1
 
     .line 1
-    invoke-direct {p0}, Lp5;-><init>()V
+    invoke-direct {p0}, Lba;-><init>()V
 
     const-string v0, "scopeUri must not be null or empty"
 
     .line 2
-    invoke-static {p2, v0}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     .line 3
     iput p1, p0, Lcom/google/android/gms/common/api/Scope;->a:I
@@ -62,7 +62,7 @@
 
     const/4 v0, 0x1
 
-    .line 5
+    .line 6
     invoke-direct {p0, v0, p1}, Lcom/google/android/gms/common/api/Scope;-><init>(ILjava/lang/String;)V
 
     return-void
@@ -70,6 +70,15 @@
 
 
 # virtual methods
+.method public final a()Ljava/lang/String;
+    .locals 1
+
+    .line 8
+    iget-object v0, p0, Lcom/google/android/gms/common/api/Scope;->b:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
@@ -79,7 +88,7 @@
 
     return p1
 
-    .line 1
+    .line 11
     :cond_0
     instance-of v0, p1, Lcom/google/android/gms/common/api/Scope;
 
@@ -89,7 +98,7 @@
 
     return p1
 
-    .line 2
+    .line 13
     :cond_1
     iget-object v0, p0, Lcom/google/android/gms/common/api/Scope;->b:Ljava/lang/String;
 
@@ -104,19 +113,10 @@
     return p1
 .end method
 
-.method public final f()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/Scope;->b:Ljava/lang/String;
-
-    return-object v0
-.end method
-
 .method public final hashCode()I
     .locals 1
 
-    .line 1
+    .line 14
     iget-object v0, p0, Lcom/google/android/gms/common/api/Scope;->b:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -129,7 +129,7 @@
 .method public final toString()Ljava/lang/String;
     .locals 1
 
-    .line 1
+    .line 15
     iget-object v0, p0, Lcom/google/android/gms/common/api/Scope;->b:Ljava/lang/String;
 
     return-object v0
@@ -138,20 +138,20 @@
 .method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 3
 
-    .line 1
-    invoke-static {p1}, Lr5;->a(Landroid/os/Parcel;)I
+    .line 17
+    invoke-static {p1}, Lbc;->a(Landroid/os/Parcel;)I
 
     move-result p2
 
-    .line 2
+    .line 18
     iget v0, p0, Lcom/google/android/gms/common/api/Scope;->a:I
 
     const/4 v1, 0x1
 
-    invoke-static {p1, v1, v0}, Lr5;->a(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v0}, Lbc;->a(Landroid/os/Parcel;II)V
 
-    .line 3
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/Scope;->f()Ljava/lang/String;
+    .line 20
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/Scope;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -159,11 +159,11 @@
 
     const/4 v2, 0x0
 
-    .line 4
-    invoke-static {p1, v1, v0, v2}, Lr5;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    .line 21
+    invoke-static {p1, v1, v0, v2}, Lbc;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    .line 5
-    invoke-static {p1, p2}, Lr5;->a(Landroid/os/Parcel;I)V
+    .line 22
+    invoke-static {p1, p2}, Lbc;->a(Landroid/os/Parcel;I)V
 
     return-void
 .end method

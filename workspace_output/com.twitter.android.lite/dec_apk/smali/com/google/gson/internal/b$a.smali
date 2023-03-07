@@ -1,8 +1,8 @@
 .class final Lcom/google/gson/internal/b$a;
 .super Ljava/lang/Object;
 .source "$Gson$Types.java"
-.implements Ljava/lang/reflect/GenericArrayType;
 .implements Ljava/io/Serializable;
+.implements Ljava/lang/reflect/GenericArrayType;
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lcom/google/gson/internal/b;
 .end annotation

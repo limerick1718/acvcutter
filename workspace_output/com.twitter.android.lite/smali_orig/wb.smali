@@ -1,39 +1,30 @@
 .class public Lwb;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.source "SystemCurrentTimeProvider.java"
 
 # interfaces
-.implements Lhf;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<MessageType::",
-        "Lue;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lhf<",
-        "TMessageType;>;"
-    }
-.end annotation
+.implements Lvp;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 0
 
-    .line 1
-    invoke-static {}, Lyc;->a()Lyc;
+    .line 25
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 0
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public a()J
+    .locals 2
 
-    return-void
+    .line 29
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    return-wide v0
 .end method

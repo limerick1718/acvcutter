@@ -14,70 +14,106 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public abstract Lrc;
+		<code>.class public final Lrc;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
 
 
+.field public static final a:Lcom/google/android/gms/common/api/a$a;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/android/gms/common/api/a$a<",
+"Lqq;",
+"Lqp;",
+">;"
+}
+.end annotation
+.end field
+.field public static final b:Lcom/google/android/gms/common/api/a;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/android/gms/common/api/a<",
+"Lqp;",
+">;"
+}
+.end annotation
+.end field
+.field private static final c:Lcom/google/android/gms/common/api/a$g;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/android/gms/common/api/a$g<",
+"Lqq;",
+">;"
+}
+.end annotation
+.end field
+.field private static final d:Lcom/google/android/gms/common/api/a$g;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/android/gms/common/api/a$g<",
+"Lqq;",
+">;"
+}
+.end annotation
+.end field
+.field private static final e:Lcom/google/android/gms/common/api/a$a;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/android/gms/common/api/a$a<",
+"Lqq;",
+"Ljava/lang/Object;",
+">;"
+}
+.end annotation
+.end field
+.field private static final f:Lcom/google/android/gms/common/api/Scope;
+.field private static final g:Lcom/google/android/gms/common/api/Scope;
+.field private static final h:Lcom/google/android/gms/common/api/a;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/android/gms/common/api/a<",
+"Ljava/lang/Object;",
+">;"
+}
+.end annotation
+.end field
 
 
-.method private constructor &lt;init&gt;()V
-<span class="">	.locals 0</span>
-
-<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="">	return-void</span>
-.end method
-
-.method synthetic constructor &lt;init&gt;(Lqc;)V
-<span class="">	.locals 0</span>
-
-<span class="missed">	invoke-direct {p0}, Lrc;-><init>()V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public static a(I)I
-<span class="">	.locals 1</span>
-
-<span class="missed">	ushr-int/lit8 v0, p0, 0x1</span>
-<span class="missed">	and-int/lit8 p0, p0, 0x1</span>
-<span class="missed">	neg-int p0, p0</span>
-<span class="missed">	xor-int/2addr p0, v0</span>
-<span class="">	return p0</span>
-.end method
-
-.method public static a(J)J
+.method static constructor &lt;clinit&gt;()V
 <span class="">	.locals 4</span>
 
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	ushr-long v0, p0, v0</span>
-<span class="missed">	const-wide/16 v2, 0x1</span>
-<span class="missed">	and-long/2addr p0, v2</span>
-<span class="missed">	neg-long p0, p0</span>
-<span class="missed">	xor-long/2addr p0, v0</span>
-<span class="">	return-wide p0</span>
-.end method
-
-.method static a([BIIZ)Lrc;
-<span class="">	.locals 6</span>
-
-<span class="missed">	new-instance p1, Lsc;</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="missed">	const/4 v4, 0x0</span>
-<span class="missed">	const/4 v5, 0x0</span>
-<span class="missed">	move-object v0, p1</span>
-<span class="missed">	move-object v1, p0</span>
-<span class="missed">	move v3, p2</span>
-<span class="missed">	invoke-direct/range {v0 .. v5}, Lsc;-><init>([BIIZLqc;)V</span>
-<span class="">	:try_start_0</span>
-<span class="missed">	invoke-virtual {p1, p2}, Lsc;->b(I)I</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Ltd; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="">	return-object p1</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception p0</span>
-<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
-<span class="missed">	invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V</span>
-<span class="">	throw p1</span>
+<span class="missed">	new-instance v0, Lcom/google/android/gms/common/api/a$g;</span>
+<span class="missed">	invoke-direct {v0}, Lcom/google/android/gms/common/api/a$g;-><init>()V</span>
+<span class="missed">	sput-object v0, Lrc;->c:Lcom/google/android/gms/common/api/a$g;</span>
+<span class="missed">	new-instance v0, Lcom/google/android/gms/common/api/a$g;</span>
+<span class="missed">	invoke-direct {v0}, Lcom/google/android/gms/common/api/a$g;-><init>()V</span>
+<span class="missed">	sput-object v0, Lrc;->d:Lcom/google/android/gms/common/api/a$g;</span>
+<span class="missed">	new-instance v0, Lrd;</span>
+<span class="missed">	invoke-direct {v0}, Lrd;-><init>()V</span>
+<span class="missed">	sput-object v0, Lrc;->a:Lcom/google/android/gms/common/api/a$a;</span>
+<span class="missed">	new-instance v0, Lre;</span>
+<span class="missed">	invoke-direct {v0}, Lre;-><init>()V</span>
+<span class="missed">	sput-object v0, Lrc;->e:Lcom/google/android/gms/common/api/a$a;</span>
+<span class="missed">	new-instance v0, Lcom/google/android/gms/common/api/Scope;</span>
+<span class="missed">	const-string v1, "profile"</span>
+<span class="missed">	invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/Scope;-><init>(Ljava/lang/String;)V</span>
+<span class="missed">	sput-object v0, Lrc;->f:Lcom/google/android/gms/common/api/Scope;</span>
+<span class="missed">	new-instance v0, Lcom/google/android/gms/common/api/Scope;</span>
+<span class="missed">	const-string v1, "email"</span>
+<span class="missed">	invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/Scope;-><init>(Ljava/lang/String;)V</span>
+<span class="missed">	sput-object v0, Lrc;->g:Lcom/google/android/gms/common/api/Scope;</span>
+<span class="missed">	new-instance v0, Lcom/google/android/gms/common/api/a;</span>
+<span class="missed">	sget-object v1, Lrc;->a:Lcom/google/android/gms/common/api/a$a;</span>
+<span class="missed">	sget-object v2, Lrc;->c:Lcom/google/android/gms/common/api/a$g;</span>
+<span class="missed">	const-string v3, "SignIn.API"</span>
+<span class="missed">	invoke-direct {v0, v3, v1, v2}, Lcom/google/android/gms/common/api/a;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/a$a;Lcom/google/android/gms/common/api/a$g;)V</span>
+<span class="missed">	sput-object v0, Lrc;->b:Lcom/google/android/gms/common/api/a;</span>
+<span class="missed">	new-instance v0, Lcom/google/android/gms/common/api/a;</span>
+<span class="missed">	sget-object v1, Lrc;->e:Lcom/google/android/gms/common/api/a$a;</span>
+<span class="missed">	sget-object v2, Lrc;->d:Lcom/google/android/gms/common/api/a$g;</span>
+<span class="missed">	const-string v3, "SignIn.INTERNAL_API"</span>
+<span class="missed">	invoke-direct {v0, v3, v1, v2}, Lcom/google/android/gms/common/api/a;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/a$a;Lcom/google/android/gms/common/api/a$g;)V</span>
+<span class="missed">	sput-object v0, Lrc;->h:Lcom/google/android/gms/common/api/a;</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

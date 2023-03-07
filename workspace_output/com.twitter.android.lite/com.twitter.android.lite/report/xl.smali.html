@@ -14,59 +14,311 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public abstract Lxl;
-.super Lha;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Lul;
+		<code>.class  Lxl;
+.super Ljava/lang/Object;
+.source "PinningTrustManager.java"
+.implements Ljavax/net/ssl/X509TrustManager;
 
 
+.field private static final a:[Ljava/security/cert/X509Certificate;
+.field private final b:[Ljavax/net/ssl/TrustManager;
+.field private final c:Lxm;
+.field private final d:J
+.field private final e:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"[B>;"
+}
+.end annotation
+.end field
+.field private final f:Ljava/util/Set;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/Set<",
+"Ljava/security/cert/X509Certificate;",
+">;"
+}
+.end annotation
+.end field
 
 
-<span class="cov">.method public constructor &lt;init&gt;()V</span>
+.method static constructor &lt;clinit&gt;()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	const-string v0, "com.google.android.gms.measurement.api.internal.IEventHandlerProxy"</span>
-<span class="cov">	invoke-direct {p0, v0}, Lha;-><init>(Ljava/lang/String;)V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	new-array v0, v0, [Ljava/security/cert/X509Certificate;</span>
+<span class="missed">	sput-object v0, Lxl;->a:[Ljava/security/cert/X509Certificate;</span>
+<span class="">	return-void</span>
 .end method
 
-.method protected final a(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-<span class="">	.locals 6</span>
+.method public constructor &lt;init&gt;(Lxm;Lxk;)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	new-instance v0, Ljava/util/LinkedList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lxl;->e:Ljava/util/List;</span>
+<span class="missed">	new-instance v0, Ljava/util/HashSet;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/HashSet;-><init>()V</span>
+<span class="">	invoke-static {v0}, Ljava/util/Collections;->synchronizedSet(Ljava/util/Set;)Ljava/util/Set;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lxl;->f:Ljava/util/Set;</span>
+<span class="">	invoke-direct {p0, p1}, Lxl;->a(Lxm;)[Ljavax/net/ssl/TrustManager;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lxl;->b:[Ljavax/net/ssl/TrustManager;</span>
+<span class="missed">	iput-object p1, p0, Lxl;->c:Lxm;</span>
+<span class="">	invoke-interface {p2}, Lxk;->getPinCreationTimeInMillis()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="missed">	iput-wide v0, p0, Lxl;->d:J</span>
+<span class="">	invoke-interface {p2}, Lxk;->getPins()[Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	array-length p2, p1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v0, p2, :cond_0</span>
+<span class="missed">	aget-object v1, p1, v0</span>
+<span class="missed">	iget-object v2, p0, Lxl;->e:Ljava/util/List;</span>
+<span class="">	invoke-direct {p0, v1}, Lxl;->a(Ljava/lang/String;)[B</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method private a([Ljava/security/cert/X509Certificate;)V
+<span class="">	.locals 8</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
-<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	Ljava/security/cert/CertificateException;</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	const/4 p4, 0x1</span>
-<span class="missed">	if-eq p1, p4, :cond_1</span>
-<span class="missed">	const/4 p2, 0x2</span>
-<span class="missed">	if-eq p1, p2, :cond_0</span>
+<span class="missed">	iget-wide v0, p0, Lxl;->d:J</span>
+<span class="missed">	const-wide/16 v2, -0x1</span>
+<span class="missed">	cmp-long v4, v0, v2</span>
+<span class="missed">	if-eqz v4, :cond_0</span>
+<span class="">	invoke-static {}, Ljava/lang/System;->currentTimeMillis()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="missed">	iget-wide v2, p0, Lxl;->d:J</span>
+<span class="missed">	sub-long/2addr v0, v2</span>
+<span class="missed">	const-wide v2, 0x39ef8b000L</span>
+<span class="missed">	cmp-long v4, v0, v2</span>
+<span class="missed">	if-lez v4, :cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v1, "Certificate pins are stale, ("</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-static {}, Ljava/lang/System;->currentTimeMillis()J</span>
+<span class="missed">	move-result-wide v4</span>
+<span class="missed">	iget-wide v6, p0, Lxl;->d:J</span>
+<span class="missed">	sub-long/2addr v4, v6</span>
+<span class="missed">	invoke-virtual {v0, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v1, " millis vs "</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v1, " millis) falling back to system trust."</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "Fabric"</span>
+<span class="missed">	invoke-interface {p1, v1, v0}, Luz;->d(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lxl;->c:Lxm;</span>
+<span class="">	invoke-static {p1, v0}, Lxe;->a([Ljava/security/cert/X509Certificate;Lxm;)[Ljava/security/cert/X509Certificate;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	array-length v0, p1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v1, v0, :cond_2</span>
+<span class="missed">	aget-object v2, p1, v1</span>
+<span class="">	invoke-direct {p0, v2}, Lxl;->a(Ljava/security/cert/X509Certificate;)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/security/cert/CertificateException;</span>
+<span class="missed">	const-string v0, "No valid pins found in chain!"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/security/cert/CertificateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method private a([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/security/cert/CertificateException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lxl;->b:[Ljavax/net/ssl/TrustManager;</span>
+<span class="missed">	array-length v1, v0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v2, v1, :cond_0</span>
+<span class="missed">	aget-object v3, v0, v2</span>
+<span class="missed">	check-cast v3, Ljavax/net/ssl/X509TrustManager;</span>
+<span class="missed">	invoke-interface {v3, p1, p2}, Ljavax/net/ssl/X509TrustManager;->checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method private a(Ljava/security/cert/X509Certificate;)Z
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/security/cert/CertificateException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v0, "SHA1"</span>
+<span class="">	invoke-static {v0}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p1}, Ljava/security/cert/X509Certificate;->getPublicKey()Ljava/security/PublicKey;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-interface {p1}, Ljava/security/PublicKey;->getEncoded()[B</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {v0, p1}, Ljava/security/MessageDigest;->digest([B)[B</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object v0, p0, Lxl;->e:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, [B</span>
+<span class="">	invoke-static {v1, p1}, Ljava/util/Arrays;->equals([B[B)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	return p1</span>
+<span class="">	:cond_1</span>
 <span class="missed">	const/4 p1, 0x0</span>
 <span class="">	return p1</span>
-<span class="">	:cond_0</span>
-<span class="">	invoke-interface {p0}, Lul;->a()I</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V</span>
-<span class="missed">	invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_1</span>
-<span class="">	invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="">	invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v2</span>
-<span class="missed">	sget-object p1, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;</span>
-<span class="">	invoke-static {p2, p1}, Lp8;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	move-object v3, p1</span>
-<span class="missed">	check-cast v3, Landroid/os/Bundle;</span>
-<span class="">	invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J</span>
-<span class="missed">	move-result-wide v4</span>
-<span class="missed">	move-object v0, p0</span>
-<span class="missed">	invoke-interface/range {v0 .. v5}, Lul;->a(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;J)V</span>
-<span class="missed">	invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	new-instance v0, Ljava/security/cert/CertificateException;</span>
+<span class="missed">	invoke-direct {v0, p1}, Ljava/security/cert/CertificateException;-><init>(Ljava/lang/Throwable;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method private a(Ljava/lang/String;)[B
+<span class="">	.locals 7</span>
+
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	div-int/lit8 v1, v0, 0x2</span>
+<span class="missed">	new-array v1, v1, [B</span>
+<span class="missed">	const/4 v2, 0x0</span>
 <span class="">	:goto_0</span>
-<span class="">	return p4</span>
+<span class="missed">	if-ge v2, v0, :cond_0</span>
+<span class="missed">	div-int/lit8 v3, v2, 0x2</span>
+<span class="">	invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	const/16 v5, 0x10</span>
+<span class="">	invoke-static {v4, v5}, Ljava/lang/Character;->digit(CI)I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	shl-int/lit8 v4, v4, 0x4</span>
+<span class="missed">	add-int/lit8 v6, v2, 0x1</span>
+<span class="">	invoke-virtual {p1, v6}, Ljava/lang/String;->charAt(I)C</span>
+<span class="missed">	move-result v6</span>
+<span class="">	invoke-static {v6, v5}, Ljava/lang/Character;->digit(CI)I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	add-int/2addr v4, v5</span>
+<span class="missed">	int-to-byte v4, v4</span>
+<span class="missed">	aput-byte v4, v1, v3</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object v1</span>
+.end method
+
+.method private a(Lxm;)[Ljavax/net/ssl/TrustManager;
+<span class="">	.locals 1</span>
+
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v0, "X509"</span>
+<span class="">	invoke-static {v0}, Ljavax/net/ssl/TrustManagerFactory;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/TrustManagerFactory;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object p1, p1, Lxm;->a:Ljava/security/KeyStore;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljavax/net/ssl/TrustManagerFactory;->init(Ljava/security/KeyStore;)V</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/TrustManagerFactory;->getTrustManagers()[Ljavax/net/ssl/TrustManager;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_1</span>
+<span class="missed">	.catch Ljava/security/KeyStoreException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object p1</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	new-instance v0, Ljava/lang/AssertionError;</span>
+<span class="missed">	invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V</span>
+<span class="">	throw v0</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	new-instance v0, Ljava/lang/AssertionError;</span>
+<span class="missed">	invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/security/cert/CertificateException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance p1, Ljava/security/cert/CertificateException;</span>
+<span class="missed">	const-string p2, "Client certificates not supported!"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/security/cert/CertificateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/security/cert/CertificateException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lxl;->f:Ljava/util/Set;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	aget-object v2, p1, v1</span>
+<span class="">	invoke-interface {v0, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-direct {p0, p1, p2}, Lxl;->a([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V</span>
+<span class="missed">	invoke-direct {p0, p1}, Lxl;->a([Ljava/security/cert/X509Certificate;)V</span>
+<span class="missed">	iget-object p2, p0, Lxl;->f:Ljava/util/Set;</span>
+<span class="missed">	aget-object p1, p1, v1</span>
+<span class="missed">	invoke-interface {p2, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method public getAcceptedIssuers()[Ljava/security/cert/X509Certificate;
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lxl;->a:[Ljava/security/cert/X509Certificate;</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

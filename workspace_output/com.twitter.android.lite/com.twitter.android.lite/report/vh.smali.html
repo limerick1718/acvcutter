@@ -14,162 +14,206 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lvh;
+		<code>.class  Lvh;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.implements Lkb;
-
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/Object;",
-"Lkb<",
-"Lyh;",
-">;"
-}
-.end annotation
-
-.field private static b:Lvh;
-.field private final a:Lkb;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lkb<",
-"Lyh;",
-">;"
-}
-.end annotation
-.end field
+.source "AdvertisingInfoProvider.java"
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 1</span>
+.field private final a:Landroid/content/Context;
+.field private final b:Lxp;
 
-<span class="cov">	new-instance v0, Lvh;</span>
-<span class="cov">	invoke-direct {v0}, Lvh;-><init>()V</span>
-<span class="cov">	sput-object v0, Lvh;->b:Lvh;</span>
-<span class="exec">	return-void</span>
-.end method
 
-<span class="cov">.method public constructor &lt;init&gt;()V</span>
-<span class="">	.locals 1</span>
+<span class="cov">.method public constructor &lt;init&gt;(Landroid/content/Context;)V</span>
+<span class="">	.locals 2</span>
 
-<span class="cov">	new-instance v0, Lxh;</span>
-<span class="cov">	invoke-direct {v0}, Lxh;-><init>()V</span>
-<span class="exec">	invoke-static {v0}, Ljb;->a(Ljava/lang/Object;)Lkb;</span>
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="exec">	invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="cov">	invoke-direct {p0, v0}, Lvh;-><init>(Lkb;)V</span>
+<span class="cov">	iput-object v0, p0, Lvh;->a:Landroid/content/Context;</span>
+<span class="cov">	new-instance v0, Lxq;</span>
+<span class="cov">	const-string v1, "TwitterAdvertisingInfoPreferences"</span>
+<span class="cov">	invoke-direct {v0, p1, v1}, Lxq;-><init>(Landroid/content/Context;Ljava/lang/String;)V</span>
+<span class="cov">	iput-object v0, p0, Lvh;->b:Lxp;</span>
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method private constructor &lt;init&gt;(Lkb;)V</span>
+.method static synthetic a(Lvh;)Lvg;
 <span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+
+<span class="">	invoke-direct {p0}, Lvh;->e()Lvg;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method private a(Lvg;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	new-instance v0, Ljava/lang/Thread;</span>
+<span class="missed">	new-instance v1, Lvh$1;</span>
+<span class="missed">	invoke-direct {v1, p0, p1}, Lvh$1;-><init>(Lvh;Lvg;)V</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V</span>
+<span class="missed">	invoke-virtual {v0}, Ljava/lang/Thread;->start()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method static synthetic a(Lvh;Lvg;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0, p1}, Lvh;->b(Lvg;)V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method private b(Lvg;)V</span>
+<span class="">	.locals 5</span>
+<span class="">	.annotation build Landroid/annotation/SuppressLint;</span>
 <span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Lkb<",</span>
-<span class="">	"Lyh;",</span>
-<span class="">	">;)V"</span>
+<span class="">	"CommitPrefEdits"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="exec">	invoke-static {p1}, Ljb;->a(Lkb;)Lkb;</span>
+<span class="exec">	invoke-direct {p0, p1}, Lvh;->c(Lvg;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	const-string v1, "limit_ad_tracking_enabled"</span>
+<span class="cov">	const-string v2, "advertising_id"</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	iget-object v0, p0, Lvh;->b:Lxp;</span>
+<span class="exec">	invoke-interface {v0}, Lxp;->b()Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	iget-object v4, p1, Lvg;->a:Ljava/lang/String;</span>
+<span class="exec">	invoke-interface {v3, v2, v4}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	iget-boolean p1, p1, Lvg;->b:Z</span>
+<span class="exec">	invoke-interface {v2, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;</span>
 <span class="cov">	move-result-object p1</span>
-<span class="cov">	iput-object p1, p0, Lvh;->a:Lkb;</span>
+<span class="cov">	invoke-interface {v0, p1}, Lxp;->a(Landroid/content/SharedPreferences$Editor;)Z</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object p1, p0, Lvh;->b:Lxp;</span>
+<span class="">	invoke-interface {p1}, Lxp;->b()Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-interface {v0, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-interface {p1, v0}, Lxp;->a(Landroid/content/SharedPreferences$Editor;)Z</span>
+<span class="cov">	:goto_0</span>
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public static b()Z</span>
-<span class="">	.locals 1</span>
+<span class="cov">.method private c(Lvg;)Z</span>
+<span class="">	.locals 0</span>
 
-<span class="cov">	sget-object v0, Lvh;->b:Lvh;</span>
-<span class="exec">	invoke-virtual {v0}, Lvh;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lyh;</span>
-<span class="exec">	invoke-interface {v0}, Lyh;->a()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
+<span class="cov">	if-eqz p1, :cond_0</span>
+<span class="cov">	iget-object p1, p1, Lvg;->a:Ljava/lang/String;</span>
+<span class="exec">	invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="cov">	if-nez p1, :cond_0</span>
+<span class="cov">	const/4 p1, 0x1</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 p1, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return p1</span>
 .end method
 
-<span class="cov">.method public static c()Z</span>
-<span class="">	.locals 1</span>
+<span class="cov">.method private e()Lvg;</span>
+<span class="">	.locals 4</span>
 
-<span class="cov">	sget-object v0, Lvh;->b:Lvh;</span>
-<span class="exec">	invoke-virtual {v0}, Lvh;->a()Ljava/lang/Object;</span>
+<span class="exec">	invoke-virtual {p0}, Lvh;->c()Lvk;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lyh;</span>
-<span class="exec">	invoke-interface {v0}, Lyh;->b()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
-.end method
-
-<span class="cov">.method public static d()Z</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	sget-object v0, Lvh;->b:Lvh;</span>
-<span class="exec">	invoke-virtual {v0}, Lvh;->a()Ljava/lang/Object;</span>
+<span class="exec">	invoke-interface {v0}, Lvk;->a()Lvg;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lyh;</span>
-<span class="exec">	invoke-interface {v0}, Lyh;->c()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
-.end method
-
-<span class="cov">.method public static e()Z</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	sget-object v0, Lvh;->b:Lvh;</span>
-<span class="exec">	invoke-virtual {v0}, Lvh;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lyh;</span>
-<span class="exec">	invoke-interface {v0}, Lyh;->d()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
-.end method
-
-<span class="cov">.method public static f()Z</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	sget-object v0, Lvh;->b:Lvh;</span>
-<span class="exec">	invoke-virtual {v0}, Lvh;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lyh;</span>
-<span class="exec">	invoke-interface {v0}, Lyh;->e()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
-.end method
-
-<span class="cov">.method public static g()Z</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	sget-object v0, Lvh;->b:Lvh;</span>
-<span class="exec">	invoke-virtual {v0}, Lvh;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lyh;</span>
-<span class="exec">	invoke-interface {v0}, Lyh;->h()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
-.end method
-
-<span class="cov">.method public static h()Z</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	sget-object v0, Lvh;->b:Lvh;</span>
-<span class="exec">	invoke-virtual {v0}, Lvh;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lyh;</span>
-<span class="exec">	invoke-interface {v0}, Lyh;->k()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
-.end method
-
-<span class="cov">.method public final synthetic a()Ljava/lang/Object;</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	iget-object v0, p0, Lvh;->a:Lkb;</span>
-<span class="exec">	invoke-interface {v0}, Lkb;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lyh;</span>
+<span class="exec">	invoke-direct {p0, v0}, Lvh;->c(Lvg;)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	const-string v2, "Fabric"</span>
+<span class="missed">	if-nez v1, :cond_1</span>
+<span class="">	invoke-virtual {p0}, Lvh;->d()Lvk;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-interface {v0}, Lvk;->a()Lvg;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-direct {p0, v0}, Lvh;->c(Lvg;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v3, "AdvertisingInfo not present"</span>
+<span class="missed">	invoke-interface {v1, v2, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v3, "Using AdvertisingInfo from Service Provider"</span>
+<span class="missed">	invoke-interface {v1, v2, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="cov">	:cond_1</span>
+<span class="exec">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const-string v3, "Using AdvertisingInfo from Reflection Provider"</span>
+<span class="cov">	invoke-interface {v1, v2, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	:goto_0</span>
 <span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public a()Lvg;</span>
+<span class="">	.locals 4</span>
+
+<span class="exec">	invoke-virtual {p0}, Lvh;->b()Lvg;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-direct {p0, v0}, Lvh;->c(Lvg;)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Fabric"</span>
+<span class="missed">	const-string v3, "Using AdvertisingInfo from Preference Store"</span>
+<span class="missed">	invoke-interface {v1, v2, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	invoke-direct {p0, v0}, Lvh;->a(Lvg;)V</span>
+<span class="">	return-object v0</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-direct {p0}, Lvh;->e()Lvg;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	invoke-direct {p0, v0}, Lvh;->b(Lvg;)V</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method protected b()Lvg;</span>
+<span class="">	.locals 4</span>
+
+<span class="cov">	iget-object v0, p0, Lvh;->b:Lxp;</span>
+<span class="exec">	invoke-interface {v0}, Lxp;->a()Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "advertising_id"</span>
+<span class="cov">	const-string v2, ""</span>
+<span class="exec">	invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iget-object v1, p0, Lvh;->b:Lxp;</span>
+<span class="exec">	invoke-interface {v1}, Lxp;->a()Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const-string v2, "limit_ad_tracking_enabled"</span>
+<span class="cov">	const/4 v3, 0x0</span>
+<span class="exec">	invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	new-instance v2, Lvg;</span>
+<span class="cov">	invoke-direct {v2, v0, v1}, Lvg;-><init>(Ljava/lang/String;Z)V</span>
+<span class="exec">	return-object v2</span>
+.end method
+
+<span class="cov">.method public c()Lvk;</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	new-instance v0, Lvi;</span>
+<span class="cov">	iget-object v1, p0, Lvh;->a:Landroid/content/Context;</span>
+<span class="cov">	invoke-direct {v0, v1}, Lvi;-><init>(Landroid/content/Context;)V</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method public d()Lvk;
+<span class="">	.locals 2</span>
+
+<span class="missed">	new-instance v0, Lvj;</span>
+<span class="missed">	iget-object v1, p0, Lvh;->a:Landroid/content/Context;</span>
+<span class="missed">	invoke-direct {v0, v1}, Lvj;-><init>(Landroid/content/Context;)V</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

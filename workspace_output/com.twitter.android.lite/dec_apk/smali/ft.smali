@@ -1,7 +1,10 @@
-.class public interface abstract Lft;
+.class final Lft;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.method public abstract a()Let;
-.end method
-.method public abstract b()Ldt;
-.end method
+.field private static final a:Ljava/lang/Class;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/Class<",
+"*>;"
+}
+.end annotation
+.end field

@@ -35,7 +35,7 @@ return-void
 const/4 v0, 0x0
 return-object v0
 .end method
-.method  writeLengths(Lfx;)V
+.method  writeLengths(Lyt;)V
 .locals 6
 .annotation system Ldalvik/annotation/Throws;
 value = {

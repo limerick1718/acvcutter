@@ -16,7 +16,6 @@
 	<pre class="source lang-smali" id='source'>
 		<code>.class public Lcom/google/firebase/messaging/b;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-messaging@@20.0.0"
 
 
 
@@ -24,7 +23,7 @@
 .method public static a(Landroid/content/Intent;)V
 <span class="">	.locals 1</span>
 
-<span class="missed">	const-string v0, "_nd"</span>
+<span class="missed">	const-string v0, "_nr"</span>
 <span class="missed">	invoke-static {v0, p0}, Lcom/google/firebase/messaging/b;->a(Ljava/lang/String;Landroid/content/Intent;)V</span>
 <span class="">	return-void</span>
 .end method
@@ -109,49 +108,24 @@
 <span class="missed">	if-eqz v2, :cond_7</span>
 <span class="">	:try_start_1</span>
 <span class="">	invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	const-string v2, "_ndt"</span>
-<span class="">	invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v1, "_ndt"</span>
+<span class="">	invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V</span>
 <span class="">	:try_end_1</span>
 <span class="missed">	.catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1</span>
 <span class="">	goto :goto_2</span>
 <span class="">	:catch_1</span>
-<span class="missed">	move-exception v1</span>
-<span class="missed">	const-string v2, "Error while parsing use_device_time in GCM event"</span>
-<span class="missed">	invoke-static {v3, v2, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	const-string v1, "Error while parsing use_device_time in GCM event"</span>
+<span class="missed">	invoke-static {v3, v1, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
 <span class="">	:goto_2</span>
 <span class="">	:cond_7</span>
-<span class="missed">	const-string v1, "_nr"</span>
-<span class="">	invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	if-nez v1, :cond_8</span>
-<span class="missed">	const-string v1, "_nf"</span>
-<span class="">	invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	if-eqz v1, :cond_a</span>
-<span class="">	:cond_8</span>
-<span class="">	invoke-virtual {p1}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	if-eqz v1, :cond_9</span>
-<span class="">	invoke-virtual {p1}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	invoke-static {p1}, Lcom/google/firebase/messaging/o;->a(Landroid/os/Bundle;)Z</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	if-eqz p1, :cond_9</span>
-<span class="missed">	const-string p1, "display"</span>
-<span class="">	goto :goto_3</span>
-<span class="">	:cond_9</span>
-<span class="missed">	const-string p1, "data"</span>
-<span class="">	:goto_3</span>
-<span class="missed">	const-string v1, "_nmc"</span>
-<span class="missed">	invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V</span>
-<span class="">	:cond_a</span>
 <span class="missed">	const/4 p1, 0x3</span>
 <span class="">	invoke-static {v3, p1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z</span>
 <span class="missed">	move-result p1</span>
-<span class="missed">	if-eqz p1, :cond_b</span>
+<span class="missed">	if-eqz p1, :cond_8</span>
 <span class="">	invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
@@ -175,32 +149,24 @@
 <span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="missed">	invoke-static {v3, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I</span>
-<span class="">	:cond_b</span>
-<span class="">	invoke-static {}, Lfo;->i()Lfo;</span>
+<span class="">	:cond_8</span>
+<span class="">	invoke-static {}, Lcom/google/firebase/FirebaseApp;->getInstance()Lcom/google/firebase/FirebaseApp;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="missed">	const-class v1, Lho;</span>
-<span class="">	invoke-virtual {p1, v1}, Lfo;->a(Ljava/lang/Class;)Ljava/lang/Object;</span>
+<span class="missed">	const-class v1, Lsh;</span>
+<span class="">	invoke-virtual {p1, v1}, Lcom/google/firebase/FirebaseApp;->a(Ljava/lang/Class;)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="missed">	check-cast p1, Lho;</span>
-<span class="missed">	if-eqz p1, :cond_c</span>
+<span class="missed">	check-cast p1, Lsh;</span>
+<span class="missed">	if-eqz p1, :cond_9</span>
 <span class="missed">	const-string v1, "fcm"</span>
-<span class="missed">	invoke-interface {p1, v1, p0, v0}, Lho;->a(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V</span>
+<span class="missed">	invoke-interface {p1, v1, p0, v0}, Lsh;->a(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V</span>
 <span class="">	return-void</span>
-<span class="">	:cond_c</span>
+<span class="">	:cond_9</span>
 <span class="missed">	const-string p0, "Unable to log event: analytics library is missing"</span>
 <span class="missed">	invoke-static {v3, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I</span>
 <span class="">	return-void</span>
 .end method
 
 .method public static b(Landroid/content/Intent;)V
-<span class="">	.locals 1</span>
-
-<span class="missed">	const-string v0, "_nf"</span>
-<span class="missed">	invoke-static {v0, p0}, Lcom/google/firebase/messaging/b;->a(Ljava/lang/String;Landroid/content/Intent;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public static c(Landroid/content/Intent;)V
 <span class="">	.locals 6</span>
 
 <span class="missed">	if-eqz p0, :cond_3</span>
@@ -213,12 +179,12 @@
 <span class="missed">	const/4 v1, 0x3</span>
 <span class="missed">	const-string v2, "FirebaseMessaging"</span>
 <span class="missed">	if-eqz v0, :cond_2</span>
-<span class="">	invoke-static {}, Lfo;->i()Lfo;</span>
+<span class="">	invoke-static {}, Lcom/google/firebase/FirebaseApp;->getInstance()Lcom/google/firebase/FirebaseApp;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	const-class v3, Lho;</span>
-<span class="">	invoke-virtual {v0, v3}, Lfo;->a(Ljava/lang/Class;)Ljava/lang/Object;</span>
+<span class="missed">	const-class v3, Lsh;</span>
+<span class="">	invoke-virtual {v0, v3}, Lcom/google/firebase/FirebaseApp;->a(Ljava/lang/Class;)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Lho;</span>
+<span class="missed">	check-cast v0, Lsh;</span>
 <span class="">	invoke-static {v2, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z</span>
 <span class="missed">	move-result v1</span>
 <span class="missed">	if-eqz v1, :cond_0</span>
@@ -231,7 +197,7 @@
 <span class="missed">	move-result-object v1</span>
 <span class="missed">	const-string v2, "fcm"</span>
 <span class="missed">	const-string v3, "_ln"</span>
-<span class="missed">	invoke-interface {v0, v2, v3, v1}, Lho;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="missed">	invoke-interface {v0, v2, v3, v1}, Lsh;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V</span>
 <span class="missed">	new-instance v3, Landroid/os/Bundle;</span>
 <span class="missed">	invoke-direct {v3}, Landroid/os/Bundle;-><init>()V</span>
 <span class="missed">	const-string v4, "source"</span>
@@ -243,7 +209,7 @@
 <span class="missed">	const-string v4, "campaign"</span>
 <span class="missed">	invoke-virtual {v3, v4, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V</span>
 <span class="missed">	const-string v1, "_cmp"</span>
-<span class="missed">	invoke-interface {v0, v2, v1, v3}, Lho;->a(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V</span>
+<span class="missed">	invoke-interface {v0, v2, v1, v3}, Lsh;->a(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_1</span>
 <span class="missed">	const-string v0, "Unable to set user property for conversion tracking:  analytics library is missing"</span>
@@ -262,10 +228,18 @@
 <span class="">	return-void</span>
 .end method
 
+.method public static c(Landroid/content/Intent;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	const-string v0, "_nd"</span>
+<span class="missed">	invoke-static {v0, p0}, Lcom/google/firebase/messaging/b;->a(Ljava/lang/String;Landroid/content/Intent;)V</span>
+<span class="">	return-void</span>
+.end method
+
 .method public static d(Landroid/content/Intent;)V
 <span class="">	.locals 1</span>
 
-<span class="missed">	const-string v0, "_nr"</span>
+<span class="missed">	const-string v0, "_nf"</span>
 <span class="missed">	invoke-static {v0, p0}, Lcom/google/firebase/messaging/b;->a(Ljava/lang/String;Landroid/content/Intent;)V</span>
 <span class="">	return-void</span>
 .end method

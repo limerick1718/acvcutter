@@ -1,51 +1,47 @@
-.class public final Lbj;
+.class public Lbj;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.implements Lyi;
-.field private static final a:Lva;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lva<",
-"Ljava/lang/Boolean;",
-">;"
-}
-.end annotation
-.end field
+.field private static b:Lbj;
+.field private a:Lbi;
 .method static constructor <clinit>()V
-.locals 3
-new-instance v0, Lbb;
-const-string v1, "com.google.android.gms.measurement"
-invoke-static {v1}, Lsa;->a(Ljava/lang/String;)Landroid/net/Uri;
-move-result-object v1
-invoke-direct {v0, v1}, Lbb;-><init>(Landroid/net/Uri;)V
-const/4 v1, 0x1
-const-string v2, "measurement.client.sessions.check_on_reset_and_enable2"
-invoke-virtual {v0, v2, v1}, Lbb;->a(Ljava/lang/String;Z)Lva;
-move-result-object v2
-sput-object v2, Lbj;->a:Lva;
-const-string v2, "measurement.client.sessions.check_on_startup"
-invoke-virtual {v0, v2, v1}, Lbb;->a(Ljava/lang/String;Z)Lva;
-const-string v2, "measurement.client.sessions.start_session_before_view_screen"
-invoke-virtual {v0, v2, v1}, Lbb;->a(Ljava/lang/String;Z)Lva;
+.locals 1
+new-instance v0, Lbj;
+invoke-direct {v0}, Lbj;-><init>()V
+sput-object v0, Lbj;->b:Lbj;
 return-void
 .end method
 .method public constructor <init>()V
-.locals 0
+.locals 1
 invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+const/4 v0, 0x0
+iput-object v0, p0, Lbj;->a:Lbi;
 return-void
 .end method
-.method public final a()Z
+.method public static a(Landroid/content/Context;)Lbi;
 .locals 1
-const/4 v0, 0x1
-return v0
+sget-object v0, Lbj;->b:Lbj;
+invoke-direct {v0, p0}, Lbj;->b(Landroid/content/Context;)Lbi;
+move-result-object p0
+return-object p0
 .end method
-.method public final b()Z
+.method private final declared-synchronized b(Landroid/content/Context;)Lbi;
 .locals 1
-sget-object v0, Lbj;->a:Lva;
-invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
+monitor-enter p0
+iget-object v0, p0, Lbj;->a:Lbi;
+if-nez v0, :cond_1
+invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 move-result-object v0
-check-cast v0, Ljava/lang/Boolean;
-invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-move-result v0
-return v0
+invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+move-result-object p1
+:goto_0
+new-instance v0, Lbi;
+invoke-direct {v0, p1}, Lbi;-><init>(Landroid/content/Context;)V
+iput-object v0, p0, Lbj;->a:Lbi;
+:cond_1
+iget-object p1, p0, Lbj;->a:Lbi;
+monitor-exit p0
+return-object p1
+:catchall_0
+move-exception p1
+monitor-exit p0
+throw p1
 .end method

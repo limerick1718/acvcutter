@@ -14,21 +14,25 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public abstract Landroid/support/v4/media/b;
+		<code>.class  Landroid/support/v4/media/b;
 .super Ljava/lang/Object;
-.source "MediaBrowserCompat.java"
+.source "MediaDescriptionCompatApi23.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Landroid/support/v4/media/b$a;
+}
+.end annotation
 
 
 
+.method public static a(Ljava/lang/Object;)Landroid/net/Uri;
+<span class="">	.locals 0</span>
 
-.method public abstract a(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;)V
-<span class="">	</span>
-
-.end method
-
-.method public abstract a(Ljava/lang/String;)V
-<span class="">	</span>
-
+<span class="missed">	check-cast p0, Landroid/media/MediaDescription;</span>
+<span class="">	invoke-virtual {p0}, Landroid/media/MediaDescription;->getMediaUri()Landroid/net/Uri;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

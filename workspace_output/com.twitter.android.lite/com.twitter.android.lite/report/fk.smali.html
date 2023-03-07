@@ -14,90 +14,1050 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lfk;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.implements Lkb;
-
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/Object;",
-"Lkb<",
-"Lik;",
-">;"
-}
-.end annotation
-
-.field private static b:Lfk;
-.field private final a:Lkb;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lkb<",
-"Lik;",
-">;"
-}
-.end annotation
-.end field
+		<code>.class final Lfk;
+.super Lfi;
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+.field private final d:[B
+.field private final e:Z
+.field private f:I
+.field private g:I
+.field private h:I
+.field private i:I
+.field private j:I
+.field private k:I
+
+
+.method private constructor &lt;init&gt;([BIIZ)V
 <span class="">	.locals 1</span>
 
-<span class="cov">	new-instance v0, Lfk;</span>
-<span class="cov">	invoke-direct {v0}, Lfk;-><init>()V</span>
-<span class="cov">	sput-object v0, Lfk;->b:Lfk;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	invoke-direct {p0, v0}, Lfi;-><init>(Lfj;)V</span>
+<span class="missed">	const v0, 0x7fffffff</span>
+<span class="missed">	iput v0, p0, Lfk;->k:I</span>
+<span class="missed">	iput-object p1, p0, Lfk;->d:[B</span>
+<span class="missed">	add-int/2addr p3, p2</span>
+<span class="missed">	iput p3, p0, Lfk;->f:I</span>
+<span class="missed">	iput p2, p0, Lfk;->h:I</span>
+<span class="missed">	iget p1, p0, Lfk;->h:I</span>
+<span class="missed">	iput p1, p0, Lfk;->i:I</span>
+<span class="missed">	iput-boolean p4, p0, Lfk;->e:Z</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public constructor &lt;init&gt;()V</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	new-instance v0, Lhk;</span>
-<span class="cov">	invoke-direct {v0}, Lhk;-><init>()V</span>
-<span class="exec">	invoke-static {v0}, Ljb;->a(Ljava/lang/Object;)Lkb;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	invoke-direct {p0, v0}, Lfk;-><init>(Lkb;)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method private constructor &lt;init&gt;(Lkb;)V</span>
+.method synthetic constructor &lt;init&gt;([BIIZLfj;)V
 <span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+
+<span class="missed">	invoke-direct {p0, p1, p2, p3, p4}, Lfk;-><init>([BIIZ)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method private final A()B
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Lkb<",</span>
-<span class="">	"Lik;",</span>
-<span class="">	">;)V"</span>
+<span class="">	Ljava/io/IOException;</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="exec">	invoke-static {p1}, Ljb;->a(Lkb;)Lkb;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	iput-object p1, p0, Lfk;->a:Lkb;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iget v0, p0, Lfk;->h:I</span>
+<span class="missed">	iget v1, p0, Lfk;->f:I</span>
+<span class="missed">	if-eq v0, v1, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Lfk;->d:[B</span>
+<span class="missed">	add-int/lit8 v2, v0, 0x1</span>
+<span class="missed">	iput v2, p0, Lfk;->h:I</span>
+<span class="missed">	aget-byte v0, v1, v0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {}, Lgo;->a()Lgo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	throw v0</span>
 .end method
 
-<span class="cov">.method public static b()Z</span>
-<span class="">	.locals 1</span>
+.method private final v()I
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="cov">	sget-object v0, Lfk;->b:Lfk;</span>
-<span class="exec">	invoke-virtual {v0}, Lfk;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lik;</span>
-<span class="exec">	invoke-interface {v0}, Lik;->a()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
+<span class="missed">	iget v0, p0, Lfk;->h:I</span>
+<span class="missed">	iget v1, p0, Lfk;->f:I</span>
+<span class="missed">	if-eq v1, v0, :cond_6</span>
+<span class="missed">	iget-object v2, p0, Lfk;->d:[B</span>
+<span class="missed">	add-int/lit8 v3, v0, 0x1</span>
+<span class="missed">	aget-byte v0, v2, v0</span>
+<span class="missed">	if-ltz v0, :cond_0</span>
+<span class="missed">	iput v3, p0, Lfk;->h:I</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sub-int/2addr v1, v3</span>
+<span class="missed">	const/16 v4, 0x9</span>
+<span class="missed">	if-lt v1, v4, :cond_6</span>
+<span class="missed">	add-int/lit8 v1, v3, 0x1</span>
+<span class="missed">	aget-byte v3, v2, v3</span>
+<span class="missed">	shl-int/lit8 v3, v3, 0x7</span>
+<span class="missed">	xor-int/2addr v0, v3</span>
+<span class="missed">	if-gez v0, :cond_1</span>
+<span class="missed">	xor-int/lit8 v0, v0, -0x80</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	add-int/lit8 v3, v1, 0x1</span>
+<span class="missed">	aget-byte v1, v2, v1</span>
+<span class="missed">	shl-int/lit8 v1, v1, 0xe</span>
+<span class="missed">	xor-int/2addr v0, v1</span>
+<span class="missed">	if-ltz v0, :cond_3</span>
+<span class="missed">	xor-int/lit16 v0, v0, 0x3f80</span>
+<span class="">	:cond_2</span>
+<span class="missed">	move v1, v3</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	add-int/lit8 v1, v3, 0x1</span>
+<span class="missed">	aget-byte v3, v2, v3</span>
+<span class="missed">	shl-int/lit8 v3, v3, 0x15</span>
+<span class="missed">	xor-int/2addr v0, v3</span>
+<span class="missed">	if-gez v0, :cond_4</span>
+<span class="missed">	const v2, -0x1fc080</span>
+<span class="missed">	xor-int/2addr v0, v2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_4</span>
+<span class="missed">	add-int/lit8 v3, v1, 0x1</span>
+<span class="missed">	aget-byte v1, v2, v1</span>
+<span class="missed">	shl-int/lit8 v4, v1, 0x1c</span>
+<span class="missed">	xor-int/2addr v0, v4</span>
+<span class="missed">	const v4, 0xfe03f80</span>
+<span class="missed">	xor-int/2addr v0, v4</span>
+<span class="missed">	if-gez v1, :cond_2</span>
+<span class="missed">	add-int/lit8 v1, v3, 0x1</span>
+<span class="missed">	aget-byte v3, v2, v3</span>
+<span class="missed">	if-gez v3, :cond_5</span>
+<span class="missed">	add-int/lit8 v3, v1, 0x1</span>
+<span class="missed">	aget-byte v1, v2, v1</span>
+<span class="missed">	if-gez v1, :cond_2</span>
+<span class="missed">	add-int/lit8 v1, v3, 0x1</span>
+<span class="missed">	aget-byte v3, v2, v3</span>
+<span class="missed">	if-gez v3, :cond_5</span>
+<span class="missed">	add-int/lit8 v3, v1, 0x1</span>
+<span class="missed">	aget-byte v1, v2, v1</span>
+<span class="missed">	if-gez v1, :cond_2</span>
+<span class="missed">	add-int/lit8 v1, v3, 0x1</span>
+<span class="missed">	aget-byte v2, v2, v3</span>
+<span class="missed">	if-ltz v2, :cond_6</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_5</span>
+<span class="missed">	iput v1, p0, Lfk;->h:I</span>
+<span class="">	return v0</span>
+<span class="">	:cond_6</span>
+<span class="">	invoke-virtual {p0}, Lfi;->s()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="missed">	long-to-int v1, v0</span>
+<span class="">	return v1</span>
 .end method
 
-<span class="cov">.method public final synthetic a()Ljava/lang/Object;</span>
-<span class="">	.locals 1</span>
+.method private final w()J
+<span class="">	.locals 11</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lfk;->a:Lkb;</span>
-<span class="exec">	invoke-interface {v0}, Lkb;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lik;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget v0, p0, Lfk;->h:I</span>
+<span class="missed">	iget v1, p0, Lfk;->f:I</span>
+<span class="missed">	if-eq v1, v0, :cond_9</span>
+<span class="missed">	iget-object v2, p0, Lfk;->d:[B</span>
+<span class="missed">	add-int/lit8 v3, v0, 0x1</span>
+<span class="missed">	aget-byte v0, v2, v0</span>
+<span class="missed">	if-ltz v0, :cond_0</span>
+<span class="missed">	iput v3, p0, Lfk;->h:I</span>
+<span class="missed">	int-to-long v0, v0</span>
+<span class="">	return-wide v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sub-int/2addr v1, v3</span>
+<span class="missed">	const/16 v4, 0x9</span>
+<span class="missed">	if-lt v1, v4, :cond_9</span>
+<span class="missed">	add-int/lit8 v1, v3, 0x1</span>
+<span class="missed">	aget-byte v3, v2, v3</span>
+<span class="missed">	shl-int/lit8 v3, v3, 0x7</span>
+<span class="missed">	xor-int/2addr v0, v3</span>
+<span class="missed">	if-gez v0, :cond_1</span>
+<span class="missed">	xor-int/lit8 v0, v0, -0x80</span>
+<span class="">	:goto_0</span>
+<span class="missed">	int-to-long v2, v0</span>
+<span class="">	goto/16 :goto_4</span>
+<span class="">	:cond_1</span>
+<span class="missed">	add-int/lit8 v3, v1, 0x1</span>
+<span class="missed">	aget-byte v1, v2, v1</span>
+<span class="missed">	shl-int/lit8 v1, v1, 0xe</span>
+<span class="missed">	xor-int/2addr v0, v1</span>
+<span class="missed">	if-ltz v0, :cond_2</span>
+<span class="missed">	xor-int/lit16 v0, v0, 0x3f80</span>
+<span class="missed">	int-to-long v0, v0</span>
+<span class="missed">	move-wide v9, v0</span>
+<span class="missed">	move v1, v3</span>
+<span class="missed">	move-wide v2, v9</span>
+<span class="">	goto/16 :goto_4</span>
+<span class="">	:cond_2</span>
+<span class="missed">	add-int/lit8 v1, v3, 0x1</span>
+<span class="missed">	aget-byte v3, v2, v3</span>
+<span class="missed">	shl-int/lit8 v3, v3, 0x15</span>
+<span class="missed">	xor-int/2addr v0, v3</span>
+<span class="missed">	if-gez v0, :cond_3</span>
+<span class="missed">	const v2, -0x1fc080</span>
+<span class="missed">	xor-int/2addr v0, v2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	int-to-long v3, v0</span>
+<span class="missed">	add-int/lit8 v0, v1, 0x1</span>
+<span class="missed">	aget-byte v1, v2, v1</span>
+<span class="missed">	int-to-long v5, v1</span>
+<span class="missed">	const/16 v1, 0x1c</span>
+<span class="missed">	shl-long/2addr v5, v1</span>
+<span class="missed">	xor-long/2addr v3, v5</span>
+<span class="missed">	const-wide/16 v5, 0x0</span>
+<span class="missed">	cmp-long v1, v3, v5</span>
+<span class="missed">	if-ltz v1, :cond_4</span>
+<span class="missed">	const-wide/32 v1, 0xfe03f80</span>
+<span class="">	:goto_1</span>
+<span class="missed">	xor-long v2, v3, v1</span>
+<span class="missed">	move v1, v0</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_4</span>
+<span class="missed">	add-int/lit8 v1, v0, 0x1</span>
+<span class="missed">	aget-byte v0, v2, v0</span>
+<span class="missed">	int-to-long v7, v0</span>
+<span class="missed">	const/16 v0, 0x23</span>
+<span class="missed">	shl-long/2addr v7, v0</span>
+<span class="missed">	xor-long/2addr v3, v7</span>
+<span class="missed">	cmp-long v0, v3, v5</span>
+<span class="missed">	if-gez v0, :cond_5</span>
+<span class="missed">	const-wide v5, -0x7f01fc080L</span>
+<span class="">	:goto_2</span>
+<span class="missed">	xor-long v2, v3, v5</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_5</span>
+<span class="missed">	add-int/lit8 v0, v1, 0x1</span>
+<span class="missed">	aget-byte v1, v2, v1</span>
+<span class="missed">	int-to-long v7, v1</span>
+<span class="missed">	const/16 v1, 0x2a</span>
+<span class="missed">	shl-long/2addr v7, v1</span>
+<span class="missed">	xor-long/2addr v3, v7</span>
+<span class="missed">	cmp-long v1, v3, v5</span>
+<span class="missed">	if-ltz v1, :cond_6</span>
+<span class="missed">	const-wide v1, 0x3f80fe03f80L</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_6</span>
+<span class="missed">	add-int/lit8 v1, v0, 0x1</span>
+<span class="missed">	aget-byte v0, v2, v0</span>
+<span class="missed">	int-to-long v7, v0</span>
+<span class="missed">	const/16 v0, 0x31</span>
+<span class="missed">	shl-long/2addr v7, v0</span>
+<span class="missed">	xor-long/2addr v3, v7</span>
+<span class="missed">	cmp-long v0, v3, v5</span>
+<span class="missed">	if-gez v0, :cond_7</span>
+<span class="missed">	const-wide v5, -0x1fc07f01fc080L</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_7</span>
+<span class="missed">	add-int/lit8 v0, v1, 0x1</span>
+<span class="missed">	aget-byte v1, v2, v1</span>
+<span class="missed">	int-to-long v7, v1</span>
+<span class="missed">	const/16 v1, 0x38</span>
+<span class="missed">	shl-long/2addr v7, v1</span>
+<span class="missed">	xor-long/2addr v3, v7</span>
+<span class="missed">	const-wide v7, 0xfe03f80fe03f80L</span>
+<span class="missed">	xor-long/2addr v3, v7</span>
+<span class="missed">	cmp-long v1, v3, v5</span>
+<span class="missed">	if-gez v1, :cond_8</span>
+<span class="missed">	add-int/lit8 v1, v0, 0x1</span>
+<span class="missed">	aget-byte v0, v2, v0</span>
+<span class="missed">	int-to-long v7, v0</span>
+<span class="missed">	cmp-long v0, v7, v5</span>
+<span class="missed">	if-ltz v0, :cond_9</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_8</span>
+<span class="missed">	move v1, v0</span>
+<span class="">	:goto_3</span>
+<span class="missed">	move-wide v2, v3</span>
+<span class="">	:goto_4</span>
+<span class="missed">	iput v1, p0, Lfk;->h:I</span>
+<span class="">	return-wide v2</span>
+<span class="">	:cond_9</span>
+<span class="">	invoke-virtual {p0}, Lfi;->s()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	return-wide v0</span>
+.end method
+
+.method private final x()I
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget v0, p0, Lfk;->h:I</span>
+<span class="missed">	iget v1, p0, Lfk;->f:I</span>
+<span class="missed">	sub-int/2addr v1, v0</span>
+<span class="missed">	const/4 v2, 0x4</span>
+<span class="missed">	if-lt v1, v2, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Lfk;->d:[B</span>
+<span class="missed">	add-int/lit8 v2, v0, 0x4</span>
+<span class="missed">	iput v2, p0, Lfk;->h:I</span>
+<span class="missed">	aget-byte v2, v1, v0</span>
+<span class="missed">	and-int/lit16 v2, v2, 0xff</span>
+<span class="missed">	add-int/lit8 v3, v0, 0x1</span>
+<span class="missed">	aget-byte v3, v1, v3</span>
+<span class="missed">	and-int/lit16 v3, v3, 0xff</span>
+<span class="missed">	shl-int/lit8 v3, v3, 0x8</span>
+<span class="missed">	or-int/2addr v2, v3</span>
+<span class="missed">	add-int/lit8 v3, v0, 0x2</span>
+<span class="missed">	aget-byte v3, v1, v3</span>
+<span class="missed">	and-int/lit16 v3, v3, 0xff</span>
+<span class="missed">	shl-int/lit8 v3, v3, 0x10</span>
+<span class="missed">	or-int/2addr v2, v3</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x3</span>
+<span class="missed">	aget-byte v0, v1, v0</span>
+<span class="missed">	and-int/lit16 v0, v0, 0xff</span>
+<span class="missed">	shl-int/lit8 v0, v0, 0x18</span>
+<span class="missed">	or-int/2addr v0, v2</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {}, Lgo;->a()Lgo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	throw v0</span>
+.end method
+
+.method private final y()J
+<span class="">	.locals 9</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget v0, p0, Lfk;->h:I</span>
+<span class="missed">	iget v1, p0, Lfk;->f:I</span>
+<span class="missed">	sub-int/2addr v1, v0</span>
+<span class="missed">	const/16 v2, 0x8</span>
+<span class="missed">	if-lt v1, v2, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Lfk;->d:[B</span>
+<span class="missed">	add-int/lit8 v3, v0, 0x8</span>
+<span class="missed">	iput v3, p0, Lfk;->h:I</span>
+<span class="missed">	aget-byte v3, v1, v0</span>
+<span class="missed">	int-to-long v3, v3</span>
+<span class="missed">	const-wide/16 v5, 0xff</span>
+<span class="missed">	and-long/2addr v3, v5</span>
+<span class="missed">	add-int/lit8 v7, v0, 0x1</span>
+<span class="missed">	aget-byte v7, v1, v7</span>
+<span class="missed">	int-to-long v7, v7</span>
+<span class="missed">	and-long/2addr v7, v5</span>
+<span class="missed">	shl-long/2addr v7, v2</span>
+<span class="missed">	or-long v2, v3, v7</span>
+<span class="missed">	add-int/lit8 v4, v0, 0x2</span>
+<span class="missed">	aget-byte v4, v1, v4</span>
+<span class="missed">	int-to-long v7, v4</span>
+<span class="missed">	and-long/2addr v7, v5</span>
+<span class="missed">	const/16 v4, 0x10</span>
+<span class="missed">	shl-long/2addr v7, v4</span>
+<span class="missed">	or-long/2addr v2, v7</span>
+<span class="missed">	add-int/lit8 v4, v0, 0x3</span>
+<span class="missed">	aget-byte v4, v1, v4</span>
+<span class="missed">	int-to-long v7, v4</span>
+<span class="missed">	and-long/2addr v7, v5</span>
+<span class="missed">	const/16 v4, 0x18</span>
+<span class="missed">	shl-long/2addr v7, v4</span>
+<span class="missed">	or-long/2addr v2, v7</span>
+<span class="missed">	add-int/lit8 v4, v0, 0x4</span>
+<span class="missed">	aget-byte v4, v1, v4</span>
+<span class="missed">	int-to-long v7, v4</span>
+<span class="missed">	and-long/2addr v7, v5</span>
+<span class="missed">	const/16 v4, 0x20</span>
+<span class="missed">	shl-long/2addr v7, v4</span>
+<span class="missed">	or-long/2addr v2, v7</span>
+<span class="missed">	add-int/lit8 v4, v0, 0x5</span>
+<span class="missed">	aget-byte v4, v1, v4</span>
+<span class="missed">	int-to-long v7, v4</span>
+<span class="missed">	and-long/2addr v7, v5</span>
+<span class="missed">	const/16 v4, 0x28</span>
+<span class="missed">	shl-long/2addr v7, v4</span>
+<span class="missed">	or-long/2addr v2, v7</span>
+<span class="missed">	add-int/lit8 v4, v0, 0x6</span>
+<span class="missed">	aget-byte v4, v1, v4</span>
+<span class="missed">	int-to-long v7, v4</span>
+<span class="missed">	and-long/2addr v7, v5</span>
+<span class="missed">	const/16 v4, 0x30</span>
+<span class="missed">	shl-long/2addr v7, v4</span>
+<span class="missed">	or-long/2addr v2, v7</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x7</span>
+<span class="missed">	aget-byte v0, v1, v0</span>
+<span class="missed">	int-to-long v0, v0</span>
+<span class="missed">	and-long/2addr v0, v5</span>
+<span class="missed">	const/16 v4, 0x38</span>
+<span class="missed">	shl-long/2addr v0, v4</span>
+<span class="missed">	or-long/2addr v0, v2</span>
+<span class="">	return-wide v0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {}, Lgo;->a()Lgo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	throw v0</span>
+.end method
+
+.method private final z()V
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget v0, p0, Lfk;->f:I</span>
+<span class="missed">	iget v1, p0, Lfk;->g:I</span>
+<span class="missed">	add-int/2addr v0, v1</span>
+<span class="missed">	iput v0, p0, Lfk;->f:I</span>
+<span class="missed">	iget v0, p0, Lfk;->f:I</span>
+<span class="missed">	iget v1, p0, Lfk;->i:I</span>
+<span class="missed">	sub-int v1, v0, v1</span>
+<span class="missed">	iget v2, p0, Lfk;->k:I</span>
+<span class="missed">	if-le v1, v2, :cond_0</span>
+<span class="missed">	sub-int/2addr v1, v2</span>
+<span class="missed">	iput v1, p0, Lfk;->g:I</span>
+<span class="missed">	iget v1, p0, Lfk;->g:I</span>
+<span class="missed">	sub-int/2addr v0, v1</span>
+<span class="missed">	iput v0, p0, Lfk;->f:I</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput v0, p0, Lfk;->g:I</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final a()I
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0}, Lfi;->t()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput v0, p0, Lfk;->j:I</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-direct {p0}, Lfk;->v()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iput v0, p0, Lfk;->j:I</span>
+<span class="missed">	iget v0, p0, Lfk;->j:I</span>
+<span class="missed">	ushr-int/lit8 v1, v0, 0x3</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="">	return v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v0, Lgo;</span>
+<span class="missed">	const-string v1, "Protocol message contained an invalid tag (zero)."</span>
+<span class="missed">	invoke-direct {v0, v1}, Lgo;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public final a(Lia;Lfu;)Lhp;
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<T::",</span>
+<span class="">	"Lhp;",</span>
+<span class="">	">(",</span>
+<span class="">	"Lia<",</span>
+<span class="">	"TT;>;",</span>
+<span class="">	"Lfu;",</span>
+<span class="">	")TT;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->v()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iget v1, p0, Lfk;->a:I</span>
+<span class="missed">	iget v2, p0, Lfk;->b:I</span>
+<span class="missed">	if-ge v1, v2, :cond_0</span>
+<span class="">	invoke-virtual {p0, v0}, Lfi;->d(I)I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iget v1, p0, Lfk;->a:I</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="missed">	iput v1, p0, Lfk;->a:I</span>
+<span class="">	invoke-interface {p1, p0, p2}, Lia;->a(Lfi;Lfu;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Lhp;</span>
+<span class="missed">	const/4 p2, 0x0</span>
+<span class="missed">	invoke-virtual {p0, p2}, Lfi;->a(I)V</span>
+<span class="missed">	iget p2, p0, Lfk;->a:I</span>
+<span class="missed">	add-int/lit8 p2, p2, -0x1</span>
+<span class="missed">	iput p2, p0, Lfk;->a:I</span>
+<span class="missed">	invoke-virtual {p0, v0}, Lfi;->e(I)V</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {}, Lgo;->f()Lgo;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public final a(I)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Lgo;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget v0, p0, Lfk;->j:I</span>
+<span class="missed">	if-ne v0, p1, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {}, Lgo;->d()Lgo;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public final b()D
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->y()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	invoke-static {v0, v1}, Ljava/lang/Double;->longBitsToDouble(J)D</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	return-wide v0</span>
+.end method
+
+.method public final b(I)Z
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	and-int/lit8 v0, p1, 0x7</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	if-eqz v0, :cond_6</span>
+<span class="missed">	if-eq v0, v2, :cond_5</span>
+<span class="missed">	const/4 v3, 0x2</span>
+<span class="missed">	if-eq v0, v3, :cond_4</span>
+<span class="missed">	const/4 v3, 0x4</span>
+<span class="missed">	const/4 v4, 0x3</span>
+<span class="missed">	if-eq v0, v4, :cond_2</span>
+<span class="missed">	if-eq v0, v3, :cond_1</span>
+<span class="missed">	const/4 p1, 0x5</span>
+<span class="missed">	if-ne v0, p1, :cond_0</span>
+<span class="missed">	invoke-virtual {p0, v3}, Lfi;->f(I)V</span>
+<span class="">	return v2</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {}, Lgo;->e()Lgp;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_1</span>
+<span class="">	return v1</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-virtual {p0}, Lfi;->a()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_3</span>
+<span class="">	invoke-virtual {p0, v0}, Lfi;->b(I)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	ushr-int/2addr p1, v4</span>
+<span class="missed">	shl-int/2addr p1, v4</span>
+<span class="missed">	or-int/2addr p1, v3</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lfi;->a(I)V</span>
+<span class="">	return v2</span>
+<span class="">	:cond_4</span>
+<span class="">	invoke-direct {p0}, Lfk;->v()I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lfi;->f(I)V</span>
+<span class="">	return v2</span>
+<span class="">	:cond_5</span>
+<span class="missed">	const/16 p1, 0x8</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lfi;->f(I)V</span>
+<span class="">	return v2</span>
+<span class="">	:cond_6</span>
+<span class="missed">	iget p1, p0, Lfk;->f:I</span>
+<span class="missed">	iget v0, p0, Lfk;->h:I</span>
+<span class="missed">	sub-int/2addr p1, v0</span>
+<span class="missed">	const/16 v0, 0xa</span>
+<span class="missed">	if-lt p1, v0, :cond_8</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v1, v0, :cond_7</span>
+<span class="missed">	iget-object p1, p0, Lfk;->d:[B</span>
+<span class="missed">	iget v3, p0, Lfk;->h:I</span>
+<span class="missed">	add-int/lit8 v4, v3, 0x1</span>
+<span class="missed">	iput v4, p0, Lfk;->h:I</span>
+<span class="missed">	aget-byte p1, p1, v3</span>
+<span class="missed">	if-gez p1, :cond_9</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_7</span>
+<span class="">	invoke-static {}, Lgo;->c()Lgo;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	throw p1</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_8</span>
+<span class="missed">	if-ge v1, v0, :cond_a</span>
+<span class="">	invoke-direct {p0}, Lfk;->A()B</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-gez p1, :cond_9</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_9</span>
+<span class="">	return v2</span>
+<span class="">	:cond_a</span>
+<span class="">	invoke-static {}, Lgo;->c()Lgo;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public final c()F
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->x()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final d(I)I
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Lgo;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-ltz p1, :cond_1</span>
+<span class="">	invoke-virtual {p0}, Lfi;->u()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	add-int/2addr p1, v0</span>
+<span class="missed">	iget v0, p0, Lfk;->k:I</span>
+<span class="missed">	if-gt p1, v0, :cond_0</span>
+<span class="missed">	iput p1, p0, Lfk;->k:I</span>
+<span class="missed">	invoke-direct {p0}, Lfk;->z()V</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {}, Lgo;->a()Lgo;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-static {}, Lgo;->b()Lgo;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public final d()J
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->w()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	return-wide v0</span>
+.end method
+
+.method public final e()J
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->w()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	return-wide v0</span>
+.end method
+
+.method public final e(I)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput p1, p0, Lfk;->k:I</span>
+<span class="missed">	invoke-direct {p0}, Lfk;->z()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final f()I
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->v()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final f(I)V
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-ltz p1, :cond_0</span>
+<span class="missed">	iget v0, p0, Lfk;->f:I</span>
+<span class="missed">	iget v1, p0, Lfk;->h:I</span>
+<span class="missed">	sub-int/2addr v0, v1</span>
+<span class="missed">	if-gt p1, v0, :cond_0</span>
+<span class="missed">	add-int/2addr v1, p1</span>
+<span class="missed">	iput v1, p0, Lfk;->h:I</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-gez p1, :cond_1</span>
+<span class="">	invoke-static {}, Lgo;->b()Lgo;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-static {}, Lgo;->a()Lgo;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public final g()J
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->y()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	return-wide v0</span>
+.end method
+
+.method public final h()I
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->x()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final i()Z
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->w()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="missed">	const-wide/16 v2, 0x0</span>
+<span class="missed">	cmp-long v4, v0, v2</span>
+<span class="missed">	if-eqz v4, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final j()Ljava/lang/String;
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->v()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-lez v0, :cond_0</span>
+<span class="missed">	iget v1, p0, Lfk;->f:I</span>
+<span class="missed">	iget v2, p0, Lfk;->h:I</span>
+<span class="missed">	sub-int/2addr v1, v2</span>
+<span class="missed">	if-gt v0, v1, :cond_0</span>
+<span class="missed">	new-instance v1, Ljava/lang/String;</span>
+<span class="missed">	iget-object v3, p0, Lfk;->d:[B</span>
+<span class="missed">	sget-object v4, Lgj;->a:Ljava/nio/charset/Charset;</span>
+<span class="missed">	invoke-direct {v1, v3, v2, v0, v4}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V</span>
+<span class="missed">	iget v2, p0, Lfk;->h:I</span>
+<span class="missed">	add-int/2addr v2, v0</span>
+<span class="missed">	iput v2, p0, Lfk;->h:I</span>
+<span class="">	return-object v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	const-string v0, ""</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	if-gez v0, :cond_2</span>
+<span class="">	invoke-static {}, Lgo;->b()Lgo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-static {}, Lgo;->a()Lgo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public final k()Ljava/lang/String;
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->v()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-lez v0, :cond_0</span>
+<span class="missed">	iget v1, p0, Lfk;->f:I</span>
+<span class="missed">	iget v2, p0, Lfk;->h:I</span>
+<span class="missed">	sub-int/2addr v1, v2</span>
+<span class="missed">	if-gt v0, v1, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Lfk;->d:[B</span>
+<span class="">	invoke-static {v1, v2, v0}, Ljg;->b([BII)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iget v2, p0, Lfk;->h:I</span>
+<span class="missed">	add-int/2addr v2, v0</span>
+<span class="missed">	iput v2, p0, Lfk;->h:I</span>
+<span class="">	return-object v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	const-string v0, ""</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	if-gtz v0, :cond_2</span>
+<span class="">	invoke-static {}, Lgo;->b()Lgo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-static {}, Lgo;->a()Lgo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public final l()Lew;
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->v()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-lez v0, :cond_0</span>
+<span class="missed">	iget v1, p0, Lfk;->f:I</span>
+<span class="missed">	iget v2, p0, Lfk;->h:I</span>
+<span class="missed">	sub-int/2addr v1, v2</span>
+<span class="missed">	if-gt v0, v1, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Lfk;->d:[B</span>
+<span class="">	invoke-static {v1, v2, v0}, Lew;->a([BII)Lew;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iget v2, p0, Lfk;->h:I</span>
+<span class="missed">	add-int/2addr v2, v0</span>
+<span class="missed">	iput v2, p0, Lfk;->h:I</span>
+<span class="">	return-object v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	sget-object v0, Lew;->a:Lew;</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	if-lez v0, :cond_2</span>
+<span class="missed">	iget v1, p0, Lfk;->f:I</span>
+<span class="missed">	iget v2, p0, Lfk;->h:I</span>
+<span class="missed">	sub-int/2addr v1, v2</span>
+<span class="missed">	if-gt v0, v1, :cond_2</span>
+<span class="missed">	add-int/2addr v0, v2</span>
+<span class="missed">	iput v0, p0, Lfk;->h:I</span>
+<span class="missed">	iget-object v0, p0, Lfk;->d:[B</span>
+<span class="missed">	iget v1, p0, Lfk;->h:I</span>
+<span class="">	invoke-static {v0, v2, v1}, Ljava/util/Arrays;->copyOfRange([BII)[B</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	if-gtz v0, :cond_4</span>
+<span class="missed">	if-nez v0, :cond_3</span>
+<span class="missed">	sget-object v0, Lgj;->b:[B</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-static {v0}, Lew;->a([B)Lew;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-static {}, Lgo;->b()Lgo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_4</span>
+<span class="">	invoke-static {}, Lgo;->a()Lgo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public final m()I
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->v()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final n()I
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->v()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final o()I
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->x()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final p()J
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->y()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	return-wide v0</span>
+.end method
+
+.method public final q()I
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->v()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	ushr-int/lit8 v1, v0, 0x1</span>
+<span class="missed">	and-int/lit8 v0, v0, 0x1</span>
+<span class="missed">	neg-int v0, v0</span>
+<span class="missed">	xor-int/2addr v0, v1</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final r()J
+<span class="">	.locals 6</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-direct {p0}, Lfk;->w()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	ushr-long v2, v0, v2</span>
+<span class="missed">	const-wide/16 v4, 0x1</span>
+<span class="missed">	and-long/2addr v0, v4</span>
+<span class="missed">	neg-long v0, v0</span>
+<span class="missed">	xor-long/2addr v0, v2</span>
+<span class="">	return-wide v0</span>
+.end method
+
+.method final s()J
+<span class="">	.locals 6</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/16 v3, 0x40</span>
+<span class="missed">	if-ge v2, v3, :cond_1</span>
+<span class="">	invoke-direct {p0}, Lfk;->A()B</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	and-int/lit8 v4, v3, 0x7f</span>
+<span class="missed">	int-to-long v4, v4</span>
+<span class="missed">	shl-long/2addr v4, v2</span>
+<span class="missed">	or-long/2addr v0, v4</span>
+<span class="missed">	and-int/lit16 v3, v3, 0x80</span>
+<span class="missed">	if-nez v3, :cond_0</span>
+<span class="">	return-wide v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x7</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-static {}, Lgo;->c()Lgo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public final t()Z
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget v0, p0, Lfk;->h:I</span>
+<span class="missed">	iget v1, p0, Lfk;->f:I</span>
+<span class="missed">	if-ne v0, v1, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final u()I
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget v0, p0, Lfk;->h:I</span>
+<span class="missed">	iget v1, p0, Lfk;->i:I</span>
+<span class="missed">	sub-int/2addr v0, v1</span>
+<span class="">	return v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

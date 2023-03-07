@@ -1,15 +1,13 @@
-.class public interface abstract Lcom/google/android/gms/common/api/internal/y;
+.class final Lcom/google/android/gms/common/api/internal/y;
 .super Ljava/lang/Object;
-.method public abstract a(Lcom/google/android/gms/common/internal/k;Ljava/util/Set;)V
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"(",
-"Lcom/google/android/gms/common/internal/k;",
-"Ljava/util/Set<",
-"Lcom/google/android/gms/common/api/Scope;",
-">;)V"
-}
-.end annotation
+.implements Ljava/lang/Runnable;
+.field private final synthetic a:Lcom/google/android/gms/common/api/internal/x;
+.method constructor <init>(Lcom/google/android/gms/common/api/internal/x;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method
-.method public abstract b(Lc5;)V
+.method public final run()V
+.locals 3
+return-void
 .end method

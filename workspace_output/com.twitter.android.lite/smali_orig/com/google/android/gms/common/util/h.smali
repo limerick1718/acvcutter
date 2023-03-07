@@ -1,77 +1,249 @@
-.class public Lcom/google/android/gms/common/util/h;
+.class public final Lcom/google/android/gms/common/util/h;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/common/util/e;
 
 
 # static fields
-.field private static final a:Lcom/google/android/gms/common/util/h;
+.field private static a:Ljava/lang/Boolean;
+
+.field private static b:Ljava/lang/Boolean;
+
+.field private static c:Ljava/lang/Boolean;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static a()Z
+    .locals 2
+
+    .line 55
+    sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;
+
+    const-string v1, "user"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static a(Landroid/content/Context;)Z
     .locals 1
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x14
+    .end annotation
 
-    .line 1
-    new-instance v0, Lcom/google/android/gms/common/util/h;
+    .line 15
+    sget-object v0, Lcom/google/android/gms/common/util/h;->a:Ljava/lang/Boolean;
 
-    invoke-direct {v0}, Lcom/google/android/gms/common/util/h;-><init>()V
+    if-nez v0, :cond_1
 
-    sput-object v0, Lcom/google/android/gms/common/util/h;->a:Lcom/google/android/gms/common/util/h;
+    .line 16
+    invoke-static {}, Lcom/google/android/gms/common/util/k;->f()Z
 
-    return-void
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 17
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object p0
+
+    const-string v0, "android.hardware.type.watch"
+
+    invoke-virtual {p0, v0}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 18
+    :goto_0
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p0
+
+    sput-object p0, Lcom/google/android/gms/common/util/h;->a:Ljava/lang/Boolean;
+
+    .line 19
+    :cond_1
+    sget-object p0, Lcom/google/android/gms/common/util/h;->a:Ljava/lang/Boolean;
+
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p0
+
+    return p0
 .end method
 
-.method private constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static d()Lcom/google/android/gms/common/util/e;
+.method public static b(Landroid/content/Context;)Z
     .locals 1
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x1a
+    .end annotation
 
-    .line 1
-    sget-object v0, Lcom/google/android/gms/common/util/h;->a:Lcom/google/android/gms/common/util/h;
+    .line 20
+    invoke-static {p0}, Lcom/google/android/gms/common/util/h;->a(Landroid/content/Context;)Z
 
-    return-object v0
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 21
+    invoke-static {}, Lcom/google/android/gms/common/util/k;->h()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 22
+    invoke-static {p0}, Lcom/google/android/gms/common/util/h;->c(Landroid/content/Context;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    invoke-static {}, Lcom/google/android/gms/common/util/k;->i()Z
+
+    move-result p0
+
+    if-nez p0, :cond_1
+
+    :cond_0
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_1
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
+.method public static c(Landroid/content/Context;)Z
+    .locals 1
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x15
+    .end annotation
 
-# virtual methods
-.method public a()J
-    .locals 2
+    .line 24
+    sget-object v0, Lcom/google/android/gms/common/util/h;->b:Ljava/lang/Boolean;
 
-    .line 1
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    if-nez v0, :cond_1
 
-    move-result-wide v0
+    .line 25
+    invoke-static {}, Lcom/google/android/gms/common/util/k;->g()Z
 
-    return-wide v0
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 26
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object p0
+
+    const-string v0, "cn.google"
+
+    invoke-virtual {p0, v0}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 27
+    :goto_0
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p0
+
+    sput-object p0, Lcom/google/android/gms/common/util/h;->b:Ljava/lang/Boolean;
+
+    .line 28
+    :cond_1
+    sget-object p0, Lcom/google/android/gms/common/util/h;->b:Ljava/lang/Boolean;
+
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p0
+
+    return p0
 .end method
 
-.method public b()J
+.method public static d(Landroid/content/Context;)Z
     .locals 2
 
-    .line 1
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+    .line 36
+    sget-object v0, Lcom/google/android/gms/common/util/h;->c:Ljava/lang/Boolean;
 
-    move-result-wide v0
+    if-nez v0, :cond_2
 
-    return-wide v0
-.end method
+    .line 38
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-.method public c()J
-    .locals 2
+    move-result-object v0
 
-    .line 1
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
+    const-string v1, "android.hardware.type.iot"
 
-    move-result-wide v0
+    invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
 
-    return-wide v0
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 39
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object p0
+
+    const-string v0, "android.hardware.type.embedded"
+
+    invoke-virtual {p0, v0}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
+
+    .line 40
+    :goto_1
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p0
+
+    sput-object p0, Lcom/google/android/gms/common/util/h;->c:Ljava/lang/Boolean;
+
+    .line 41
+    :cond_2
+    sget-object p0, Lcom/google/android/gms/common/util/h;->c:Ljava/lang/Boolean;
+
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p0
+
+    return p0
 .end method

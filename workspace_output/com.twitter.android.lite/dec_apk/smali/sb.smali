@@ -1,35 +1,37 @@
 .class final Lsb;
-.super Ljava/lang/ref/WeakReference;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/ref/WeakReference<",
-"Ljava/lang/Throwable;",
-">;"
-}
-.end annotation
-.field private final a:I
-.method public constructor <init>(Ljava/lang/Throwable;Ljava/lang/ref/ReferenceQueue;)V
+.super Ljava/lang/Object;
+.implements Ljava/lang/Runnable;
+.field private final synthetic a:Lrm;
+.field private final synthetic b:Lsa;
+.method constructor <init>(Lsa;Lrm;)V
 .locals 0
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"(",
-"Ljava/lang/Throwable;",
-"Ljava/lang/ref/ReferenceQueue<",
-"Ljava/lang/Throwable;",
-">;)V"
-}
-.end annotation
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lsb;->b:Lsa;
+iput-object p2, p0, Lsb;->a:Lrm;
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public final equals(Ljava/lang/Object;)Z
-.locals 4
-const/4 v0, 0x0
-return v0
-.end method
-.method public final hashCode()I
-.locals 1
-const/4 v0, 0x0
-return v0
+.method public final run()V
+.locals 3
+iget-object v0, p0, Lsb;->b:Lsa;
+invoke-static {v0}, Lsa;->a(Lsa;)Ljava/lang/Object;
+move-result-object v0
+monitor-enter v0
+iget-object v1, p0, Lsb;->b:Lsa;
+invoke-static {v1}, Lsa;->b(Lsa;)Lrk;
+move-result-object v1
+if-eqz v1, :cond_0
+iget-object v1, p0, Lsb;->b:Lsa;
+invoke-static {v1}, Lsa;->b(Lsa;)Lrk;
+move-result-object v1
+iget-object v2, p0, Lsb;->a:Lrm;
+invoke-virtual {v2}, Lrm;->d()Ljava/lang/Object;
+move-result-object v2
+invoke-interface {v1, v2}, Lrk;->a(Ljava/lang/Object;)V
+:cond_0
+monitor-exit v0
+return-void
+:catchall_0
+move-exception v1
+monitor-exit v0
+throw v1
 .end method

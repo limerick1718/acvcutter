@@ -11,10 +11,10 @@
 .method constructor <init>(Ljava/nio/channels/FileChannel;)V
     .locals 0
 
-    .line 1
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 40
     iput-object p1, p0, Lokhttp3/internal/cache2/FileOperator;->fileChannel:Ljava/nio/channels/FileChannel;
 
     return-void
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public read(JLex;J)V
+.method public read(JLys;J)V
     .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -41,7 +41,7 @@
 
     if-lez v2, :cond_0
 
-    .line 1
+    .line 63
     iget-object v3, p0, Lokhttp3/internal/cache2/FileOperator;->fileChannel:Ljava/nio/channels/FileChannel;
 
     move-wide v4, p1
@@ -63,7 +63,7 @@
     :cond_0
     return-void
 
-    .line 2
+    .line 60
     :cond_1
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
@@ -72,7 +72,7 @@
     throw p1
 .end method
 
-.method public write(JLex;J)V
+.method public write(JLys;J)V
     .locals 13
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -86,8 +86,8 @@
 
     if-ltz v2, :cond_1
 
-    .line 1
-    invoke-virtual/range {p3 .. p3}, Lex;->v()J
+    .line 45
+    invoke-virtual/range {p3 .. p3}, Lys;->a()J
 
     move-result-wide v2
 
@@ -95,33 +95,33 @@
 
     if-gtz v4, :cond_1
 
-    move-wide v2, p1
+    move-wide v11, p1
 
-    move-wide/from16 v11, p4
+    move-wide/from16 v2, p4
 
     :goto_0
-    cmp-long v4, v11, v0
+    cmp-long v4, v2, v0
 
     if-lez v4, :cond_0
 
     move-object v4, p0
 
-    .line 2
+    .line 48
     iget-object v5, v4, Lokhttp3/internal/cache2/FileOperator;->fileChannel:Ljava/nio/channels/FileChannel;
 
     move-object/from16 v6, p3
 
-    move-wide v7, v2
+    move-wide v7, v11
 
-    move-wide v9, v11
+    move-wide v9, v2
 
     invoke-virtual/range {v5 .. v10}, Ljava/nio/channels/FileChannel;->transferFrom(Ljava/nio/channels/ReadableByteChannel;JJ)J
 
     move-result-wide v5
 
-    add-long/2addr v2, v5
+    add-long/2addr v11, v5
 
-    sub-long/2addr v11, v5
+    sub-long/2addr v2, v5
 
     goto :goto_0
 
@@ -133,7 +133,7 @@
     :cond_1
     move-object v4, p0
 
-    .line 3
+    .line 45
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {v0}, Ljava/lang/IndexOutOfBoundsException;-><init>()V

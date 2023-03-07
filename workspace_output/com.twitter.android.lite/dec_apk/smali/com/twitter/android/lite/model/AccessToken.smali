@@ -2,8 +2,8 @@
 .super Ljava/lang/Object;
 .source "AccessToken.java"
 .field public accessToken:Ljava/lang/String;
-.annotation runtime Lzv;
-value = "access_token"
+.annotation runtime Ltr;
+a = "access_token"
 .end annotation
 .end field
 .method public constructor <init>()V

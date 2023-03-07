@@ -7,7 +7,7 @@
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public abstract a(Lew;)V
+.method public abstract a(Ltw;)V
 .annotation system Ldalvik/annotation/Throws;
 value = {
 Ljava/io/IOException;

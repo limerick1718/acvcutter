@@ -25,10 +25,10 @@ Lcom/google/android/gms/common/api/internal/a$a;
 }
 .end annotation
 
-.field private static final e:Lcom/google/android/gms/common/api/internal/a;
-.field private final a:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private static final a:Lcom/google/android/gms/common/api/internal/a;
 .field private final b:Ljava/util/concurrent/atomic/AtomicBoolean;
-.field private final c:Ljava/util/ArrayList;
+.field private final c:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final d:Ljava/util/ArrayList;
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "Ljava/util/ArrayList<",
@@ -40,7 +40,7 @@ value = {
 value = "sInstance"
 .end annotation
 .end field
-.field private d:Z
+.field private e:Z
 .annotation build Ljavax/annotation/concurrent/GuardedBy;
 value = "sInstance"
 .end annotation
@@ -52,7 +52,7 @@ value = "sInstance"
 
 <span class="cov">	new-instance v0, Lcom/google/android/gms/common/api/internal/a;</span>
 <span class="cov">	invoke-direct {v0}, Lcom/google/android/gms/common/api/internal/a;-><init>()V</span>
-<span class="cov">	sput-object v0, Lcom/google/android/gms/common/api/internal/a;->e:Lcom/google/android/gms/common/api/internal/a;</span>
+<span class="cov">	sput-object v0, Lcom/google/android/gms/common/api/internal/a;->a:Lcom/google/android/gms/common/api/internal/a;</span>
 <span class="exec">	return-void</span>
 .end method
 
@@ -62,34 +62,41 @@ value = "sInstance"
 <span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
 <span class="cov">	new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;</span>
 <span class="cov">	invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V</span>
-<span class="cov">	iput-object v0, p0, Lcom/google/android/gms/common/api/internal/a;->a:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="cov">	iput-object v0, p0, Lcom/google/android/gms/common/api/internal/a;->b:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
 <span class="cov">	new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;</span>
 <span class="cov">	invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V</span>
-<span class="cov">	iput-object v0, p0, Lcom/google/android/gms/common/api/internal/a;->b:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="cov">	iput-object v0, p0, Lcom/google/android/gms/common/api/internal/a;->c:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
 <span class="cov">	new-instance v0, Ljava/util/ArrayList;</span>
 <span class="cov">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
-<span class="cov">	iput-object v0, p0, Lcom/google/android/gms/common/api/internal/a;->c:Ljava/util/ArrayList;</span>
+<span class="cov">	iput-object v0, p0, Lcom/google/android/gms/common/api/internal/a;->d:Ljava/util/ArrayList;</span>
 <span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	iput-boolean v0, p0, Lcom/google/android/gms/common/api/internal/a;->d:Z</span>
+<span class="cov">	iput-boolean v0, p0, Lcom/google/android/gms/common/api/internal/a;->e:Z</span>
 <span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public static a()Lcom/google/android/gms/common/api/internal/a;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	sget-object v0, Lcom/google/android/gms/common/api/internal/a;->a:Lcom/google/android/gms/common/api/internal/a;</span>
+<span class="exec">	return-object v0</span>
 .end method
 
 <span class="cov">.method public static a(Landroid/app/Application;)V</span>
 <span class="">	.locals 2</span>
 
-<span class="cov">	sget-object v0, Lcom/google/android/gms/common/api/internal/a;->e:Lcom/google/android/gms/common/api/internal/a;</span>
+<span class="cov">	sget-object v0, Lcom/google/android/gms/common/api/internal/a;->a:Lcom/google/android/gms/common/api/internal/a;</span>
 <span class="cov">	monitor-enter v0</span>
 <span class="cov">	:try_start_0</span>
-<span class="cov">	sget-object v1, Lcom/google/android/gms/common/api/internal/a;->e:Lcom/google/android/gms/common/api/internal/a;</span>
-<span class="cov">	iget-boolean v1, v1, Lcom/google/android/gms/common/api/internal/a;->d:Z</span>
+<span class="cov">	sget-object v1, Lcom/google/android/gms/common/api/internal/a;->a:Lcom/google/android/gms/common/api/internal/a;</span>
+<span class="cov">	iget-boolean v1, v1, Lcom/google/android/gms/common/api/internal/a;->e:Z</span>
 <span class="cov">	if-nez v1, :cond_0</span>
-<span class="cov">	sget-object v1, Lcom/google/android/gms/common/api/internal/a;->e:Lcom/google/android/gms/common/api/internal/a;</span>
+<span class="cov">	sget-object v1, Lcom/google/android/gms/common/api/internal/a;->a:Lcom/google/android/gms/common/api/internal/a;</span>
 <span class="cov">	invoke-virtual {p0, v1}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V</span>
-<span class="cov">	sget-object v1, Lcom/google/android/gms/common/api/internal/a;->e:Lcom/google/android/gms/common/api/internal/a;</span>
+<span class="cov">	sget-object v1, Lcom/google/android/gms/common/api/internal/a;->a:Lcom/google/android/gms/common/api/internal/a;</span>
 <span class="cov">	invoke-virtual {p0, v1}, Landroid/app/Application;->registerComponentCallbacks(Landroid/content/ComponentCallbacks;)V</span>
-<span class="cov">	sget-object p0, Lcom/google/android/gms/common/api/internal/a;->e:Lcom/google/android/gms/common/api/internal/a;</span>
+<span class="cov">	sget-object p0, Lcom/google/android/gms/common/api/internal/a;->a:Lcom/google/android/gms/common/api/internal/a;</span>
 <span class="cov">	const/4 v1, 0x1</span>
-<span class="cov">	iput-boolean v1, p0, Lcom/google/android/gms/common/api/internal/a;->d:Z</span>
+<span class="cov">	iput-boolean v1, p0, Lcom/google/android/gms/common/api/internal/a;->e:Z</span>
 <span class="cov">	:cond_0</span>
 <span class="cov">	monitor-exit v0</span>
 <span class="exec">	return-void</span>
@@ -101,20 +108,14 @@ value = "sInstance"
 <span class="">	throw p0</span>
 .end method
 
-<span class="cov">.method public static b()Lcom/google/android/gms/common/api/internal/a;</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	sget-object v0, Lcom/google/android/gms/common/api/internal/a;->e:Lcom/google/android/gms/common/api/internal/a;</span>
-<span class="exec">	return-object v0</span>
-.end method
-
 .method private final b(Z)V
 <span class="">	.locals 5</span>
 
-<span class="missed">	sget-object v0, Lcom/google/android/gms/common/api/internal/a;->e:Lcom/google/android/gms/common/api/internal/a;</span>
+<span class="missed">	sget-object v0, Lcom/google/android/gms/common/api/internal/a;->a:Lcom/google/android/gms/common/api/internal/a;</span>
 <span class="missed">	monitor-enter v0</span>
 <span class="">	:try_start_0</span>
-<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/a;->c:Ljava/util/ArrayList;</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/a;->d:Ljava/util/ArrayList;</span>
+<span class="missed">	check-cast v1, Ljava/util/ArrayList;</span>
 <span class="">	invoke-virtual {v1}, Ljava/util/ArrayList;->size()I</span>
 <span class="missed">	move-result v2</span>
 <span class="missed">	const/4 v3, 0x0</span>
@@ -140,10 +141,10 @@ value = "sInstance"
 <span class="cov">.method public final a(Lcom/google/android/gms/common/api/internal/a$a;)V</span>
 <span class="">	.locals 2</span>
 
-<span class="cov">	sget-object v0, Lcom/google/android/gms/common/api/internal/a;->e:Lcom/google/android/gms/common/api/internal/a;</span>
+<span class="cov">	sget-object v0, Lcom/google/android/gms/common/api/internal/a;->a:Lcom/google/android/gms/common/api/internal/a;</span>
 <span class="cov">	monitor-enter v0</span>
 <span class="cov">	:try_start_0</span>
-<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/a;->c:Ljava/util/ArrayList;</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/a;->d:Ljava/util/ArrayList;</span>
 <span class="cov">	invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z</span>
 <span class="cov">	monitor-exit v0</span>
 <span class="exec">	return-void</span>
@@ -155,32 +156,23 @@ value = "sInstance"
 <span class="">	throw p1</span>
 .end method
 
-.method public final a()Z
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/a;->a:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
-<span class="">	invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z</span>
-<span class="missed">	move-result v0</span>
-<span class="">	return v0</span>
-.end method
-
 .method public final a(Z)Z
 <span class="">	.locals 2</span>
 <span class="">	.annotation build Landroid/annotation/TargetApi;</span>
 <span class="">	value = 0x10</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/a;->b:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/a;->c:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
 <span class="">	invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-nez v0, :cond_1</span>
-<span class="">	invoke-static {}, Lcom/google/android/gms/common/util/l;->c()Z</span>
+<span class="">	invoke-static {}, Lcom/google/android/gms/common/util/k;->c()Z</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	new-instance p1, Landroid/app/ActivityManager$RunningAppProcessInfo;</span>
 <span class="missed">	invoke-direct {p1}, Landroid/app/ActivityManager$RunningAppProcessInfo;-><init>()V</span>
 <span class="missed">	invoke-static {p1}, Landroid/app/ActivityManager;->getMyMemoryState(Landroid/app/ActivityManager$RunningAppProcessInfo;)V</span>
-<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/a;->b:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/a;->c:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
 <span class="missed">	const/4 v1, 0x1</span>
 <span class="">	invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z</span>
 <span class="missed">	move-result v0</span>
@@ -188,27 +180,36 @@ value = "sInstance"
 <span class="missed">	iget p1, p1, Landroid/app/ActivityManager$RunningAppProcessInfo;->importance:I</span>
 <span class="missed">	const/16 v0, 0x64</span>
 <span class="missed">	if-le p1, v0, :cond_1</span>
-<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/a;->a:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/a;->b:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
 <span class="missed">	invoke-virtual {p1, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="">	return p1</span>
 <span class="">	:cond_1</span>
 <span class="">	:goto_0</span>
-<span class="">	invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/a;->a()Z</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/a;->b()Z</span>
 <span class="missed">	move-result p1</span>
 <span class="">	return p1</span>
+.end method
+
+.method public final b()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/a;->b:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="">	invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
 .end method
 
 <span class="cov">.method public final onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V</span>
 <span class="">	.locals 2</span>
 
-<span class="cov">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/a;->a:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="cov">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/a;->b:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
 <span class="cov">	const/4 p2, 0x0</span>
 <span class="cov">	const/4 v0, 0x1</span>
 <span class="exec">	invoke-virtual {p1, v0, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z</span>
 <span class="cov">	move-result p1</span>
-<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/a;->b:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/a;->c:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
 <span class="cov">	invoke-virtual {v1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V</span>
 <span class="missed">	if-eqz p1, :cond_0</span>
 <span class="missed">	invoke-direct {p0, p2}, Lcom/google/android/gms/common/api/internal/a;->b(Z)V</span>
@@ -222,7 +223,7 @@ value = "sInstance"
 <span class="">	return-void</span>
 .end method
 
-.method public final onActivityPaused(Landroid/app/Activity;)V
+<span class="cov">.method public final onActivityPaused(Landroid/app/Activity;)V</span>
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>
@@ -231,12 +232,12 @@ value = "sInstance"
 <span class="cov">.method public final onActivityResumed(Landroid/app/Activity;)V</span>
 <span class="">	.locals 3</span>
 
-<span class="cov">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/a;->a:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="cov">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/a;->b:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
 <span class="cov">	const/4 v0, 0x0</span>
 <span class="cov">	const/4 v1, 0x1</span>
 <span class="exec">	invoke-virtual {p1, v1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z</span>
 <span class="cov">	move-result p1</span>
-<span class="cov">	iget-object v2, p0, Lcom/google/android/gms/common/api/internal/a;->b:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="cov">	iget-object v2, p0, Lcom/google/android/gms/common/api/internal/a;->c:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
 <span class="cov">	invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V</span>
 <span class="missed">	if-eqz p1, :cond_0</span>
 <span class="missed">	invoke-direct {p0, v0}, Lcom/google/android/gms/common/api/internal/a;->b(Z)V</span>
@@ -244,7 +245,7 @@ value = "sInstance"
 <span class="exec">	return-void</span>
 .end method
 
-.method public final onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
+<span class="cov">.method public final onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V</span>
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>
@@ -256,7 +257,7 @@ value = "sInstance"
 <span class="">	return-void</span>
 .end method
 
-.method public final onActivityStopped(Landroid/app/Activity;)V
+<span class="cov">.method public final onActivityStopped(Landroid/app/Activity;)V</span>
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>
@@ -279,13 +280,13 @@ value = "sInstance"
 
 <span class="missed">	const/16 v0, 0x14</span>
 <span class="missed">	if-ne p1, v0, :cond_0</span>
-<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/a;->a:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/a;->b:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
 <span class="missed">	const/4 v0, 0x0</span>
 <span class="missed">	const/4 v1, 0x1</span>
 <span class="">	invoke-virtual {p1, v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z</span>
 <span class="missed">	move-result p1</span>
 <span class="missed">	if-eqz p1, :cond_0</span>
-<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/a;->b:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/android/gms/common/api/internal/a;->c:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
 <span class="missed">	invoke-virtual {p1, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V</span>
 <span class="missed">	invoke-direct {p0, v1}, Lcom/google/android/gms/common/api/internal/a;->b(Z)V</span>
 <span class="">	:cond_0</span>

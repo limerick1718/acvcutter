@@ -1,13 +1,10 @@
-.class final Lym;
+.class public interface abstract Lym;
 .super Ljava/lang/Object;
-.implements Ljava/lang/Runnable;
-.field private final synthetic a:Lwm;
-.method constructor <init>(Lwm;)V
-.locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
-.end method
-.method public final run()V
-.locals 2
-return-void
+.source "SettingsJsonTransform.java"
+.method public abstract a(Lvp;Lorg/json/JSONObject;)Lyk;
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Lorg/json/JSONException;
+}
+.end annotation
 .end method

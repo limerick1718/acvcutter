@@ -2,132 +2,92 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lyn;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<TResult:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lyn<",
-        "TTResult;>;"
-    }
-.end annotation
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Ljava/util/concurrent/Executor;
+.field private final synthetic a:Z
 
-.field private final b:Ljava/lang/Object;
+.field private final synthetic b:Lps;
 
-.field private c:Lan;
-    .annotation build Ljavax/annotation/concurrent/GuardedBy;
-        value = "mLock"
-    .end annotation
-.end field
+.field private final synthetic c:Lpz;
+
+.field private final synthetic d:Loc;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;Lan;)V
-    .locals 1
+.method constructor <init>(Loc;ZLps;Lpz;)V
+    .locals 0
 
     .line 1
+    iput-object p1, p0, Lon;->d:Loc;
+
+    iput-boolean p2, p0, Lon;->a:Z
+
+    iput-object p3, p0, Lon;->b:Lps;
+
+    iput-object p4, p0, Lon;->c:Lpz;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lon;->b:Ljava/lang/Object;
-
-    .line 3
-    iput-object p1, p0, Lon;->a:Ljava/util/concurrent/Executor;
-
-    .line 4
-    iput-object p2, p0, Lon;->c:Lan;
-
     return-void
-.end method
-
-.method static synthetic a(Lon;)Ljava/lang/Object;
-    .locals 0
-
-    .line 8
-    iget-object p0, p0, Lon;->b:Ljava/lang/Object;
-
-    return-object p0
-.end method
-
-.method static synthetic b(Lon;)Lan;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lon;->c:Lan;
-
-    return-object p0
 .end method
 
 
 # virtual methods
-.method public final a(Lgn;)V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p1}, Lgn;->c()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
+.method public final run()V
+    .locals 4
 
     .line 2
-    iget-object p1, p0, Lon;->b:Ljava/lang/Object;
+    iget-object v0, p0, Lon;->d:Loc;
 
-    monitor-enter p1
+    invoke-static {v0}, Loc;->d(Loc;)Lkr;
 
-    .line 3
-    :try_start_0
-    iget-object v0, p0, Lon;->c:Lan;
+    move-result-object v0
 
     if-nez v0, :cond_0
 
     .line 4
-    monitor-exit p1
+    iget-object v0, p0, Lon;->d:Loc;
+
+    invoke-virtual {v0}, Lnb;->r()Lla;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lla;->c_()Llc;
+
+    move-result-object v0
+
+    const-string v1, "Discarding data. Failed to set user attribute"
+
+    invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V
 
     return-void
 
-    .line 5
-    :cond_0
-    monitor-exit p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
     .line 6
-    iget-object p1, p0, Lon;->a:Ljava/util/concurrent/Executor;
+    :cond_0
+    iget-object v1, p0, Lon;->d:Loc;
 
-    new-instance v0, Lpn;
+    iget-boolean v2, p0, Lon;->a:Z
 
-    invoke-direct {v0, p0}, Lpn;-><init>(Lon;)V
+    if-eqz v2, :cond_1
 
-    invoke-interface {p1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    const/4 v2, 0x0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
+    :cond_1
+    iget-object v2, p0, Lon;->b:Lps;
+
+    :goto_0
+    iget-object v3, p0, Lon;->c:Lpz;
+
+    invoke-virtual {v1, v0, v2, v3}, Loc;->a(Lkr;Lba;Lpz;)V
 
     .line 7
-    :try_start_1
-    monitor-exit p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    iget-object v0, p0, Lon;->d:Loc;
 
-    throw v0
+    invoke-static {v0}, Loc;->e(Loc;)V
 
-    :cond_1
-    :goto_0
     return-void
 .end method

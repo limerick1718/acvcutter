@@ -14,44 +14,310 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final synthetic Lxr;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.implements Ljava/io/FilenameFilter;
+		<code>.class abstract Lxr;
+.super Lvf;
+.source "AbstractAppSpiCall.java"
 
 
-.field private static final a:Lxr;
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	new-instance v0, Lxr;</span>
-<span class="cov">	invoke-direct {v0}, Lxr;-><init>()V</span>
-<span class="cov">	sput-object v0, Lxr;->a:Lxr;</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method private constructor &lt;init&gt;()V</span>
+.method public constructor &lt;init&gt;(Luw;Ljava/lang/String;Ljava/lang/String;Lxi;Lxg;)V
 <span class="">	.locals 0</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct/range {p0 .. p5}, Lvf;-><init>(Luw;Ljava/lang/String;Ljava/lang/String;Lxi;Lxg;)V</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public static a()Ljava/io/FilenameFilter;</span>
+.method private a(Lxh;Lxu;)Lxh;
 <span class="">	.locals 1</span>
 
-<span class="cov">	sget-object v0, Lxr;->a:Lxr;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object p2, p2, Lxu;->a:Ljava/lang/String;</span>
+<span class="missed">	const-string v0, "X-CRASHLYTICS-API-KEY"</span>
+<span class="">	invoke-virtual {p1, v0, p2}, Lxh;->a(Ljava/lang/String;Ljava/lang/String;)Lxh;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string p2, "X-CRASHLYTICS-API-CLIENT-TYPE"</span>
+<span class="missed">	const-string v0, "android"</span>
+<span class="">	invoke-virtual {p1, p2, v0}, Lxh;->a(Ljava/lang/String;Ljava/lang/String;)Lxh;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object p2, p0, Lxr;->kit:Luw;</span>
+<span class="">	invoke-virtual {p2}, Luw;->getVersion()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	const-string v0, "X-CRASHLYTICS-API-CLIENT-VERSION"</span>
+<span class="">	invoke-virtual {p1, v0, p2}, Lxh;->a(Ljava/lang/String;Ljava/lang/String;)Lxh;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
 .end method
 
-.method public accept(Ljava/io/File;Ljava/lang/String;)Z
-<span class="">	.locals 0</span>
+.method private b(Lxh;Lxu;)Lxh;
+<span class="">	.locals 7</span>
 
-<span class="">	invoke-static {p1, p2}, Lyr;->c(Ljava/io/File;Ljava/lang/String;)Z</span>
+<span class="missed">	const-string v0, "Failed to close app icon InputStream."</span>
+<span class="missed">	iget-object v1, p2, Lxu;->b:Ljava/lang/String;</span>
+<span class="missed">	const-string v2, "app[identifier]"</span>
+<span class="">	invoke-virtual {p1, v2, v1}, Lxh;->e(Ljava/lang/String;Ljava/lang/String;)Lxh;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object v1, p2, Lxu;->f:Ljava/lang/String;</span>
+<span class="missed">	const-string v2, "app[name]"</span>
+<span class="">	invoke-virtual {p1, v2, v1}, Lxh;->e(Ljava/lang/String;Ljava/lang/String;)Lxh;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object v1, p2, Lxu;->c:Ljava/lang/String;</span>
+<span class="missed">	const-string v2, "app[display_version]"</span>
+<span class="">	invoke-virtual {p1, v2, v1}, Lxh;->e(Ljava/lang/String;Ljava/lang/String;)Lxh;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object v1, p2, Lxu;->d:Ljava/lang/String;</span>
+<span class="missed">	const-string v2, "app[build_version]"</span>
+<span class="">	invoke-virtual {p1, v2, v1}, Lxh;->e(Ljava/lang/String;Ljava/lang/String;)Lxh;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget v1, p2, Lxu;->g:I</span>
+<span class="">	invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "app[source]"</span>
+<span class="">	invoke-virtual {p1, v2, v1}, Lxh;->a(Ljava/lang/String;Ljava/lang/Number;)Lxh;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object v1, p2, Lxu;->h:Ljava/lang/String;</span>
+<span class="missed">	const-string v2, "app[minimum_sdk_version]"</span>
+<span class="">	invoke-virtual {p1, v2, v1}, Lxh;->e(Ljava/lang/String;Ljava/lang/String;)Lxh;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object v1, p2, Lxu;->i:Ljava/lang/String;</span>
+<span class="missed">	const-string v2, "app[built_sdk_version]"</span>
+<span class="">	invoke-virtual {p1, v2, v1}, Lxh;->e(Ljava/lang/String;Ljava/lang/String;)Lxh;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object v1, p2, Lxu;->e:Ljava/lang/String;</span>
+<span class="">	invoke-static {v1}, Lvn;->d(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="missed">	iget-object v1, p2, Lxu;->e:Ljava/lang/String;</span>
+<span class="missed">	const-string v2, "app[instance_identifier]"</span>
+<span class="missed">	invoke-virtual {p1, v2, v1}, Lxh;->e(Ljava/lang/String;Ljava/lang/String;)Lxh;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v1, p2, Lxu;->j:Lye;</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v2, p0, Lxr;->kit:Luw;</span>
+<span class="">	invoke-virtual {v2}, Luw;->getContext()Landroid/content/Context;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	iget-object v3, p2, Lxu;->j:Lye;</span>
+<span class="missed">	iget v3, v3, Lye;->b:I</span>
+<span class="">	invoke-virtual {v2, v3}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "app[icon][hash]"</span>
+<span class="missed">	iget-object v3, p2, Lxu;->j:Lye;</span>
+<span class="missed">	iget-object v3, v3, Lye;->a:Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p1, v2, v3}, Lxh;->e(Ljava/lang/String;Ljava/lang/String;)Lxh;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v3, "app[icon][data]"</span>
+<span class="missed">	const-string v4, "icon.png"</span>
+<span class="missed">	const-string v5, "application/octet-stream"</span>
+<span class="">	invoke-virtual {v2, v3, v4, v5, v1}, Lxh;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/io/InputStream;)Lxh;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v3, "app[icon][width]"</span>
+<span class="missed">	iget-object v4, p2, Lxu;->j:Lye;</span>
+<span class="missed">	iget v4, v4, Lye;->c:I</span>
+<span class="">	invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="">	invoke-virtual {v2, v3, v4}, Lxh;->a(Ljava/lang/String;Ljava/lang/Number;)Lxh;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v3, "app[icon][height]"</span>
+<span class="missed">	iget-object v4, p2, Lxu;->j:Lye;</span>
+<span class="missed">	iget v4, v4, Lye;->d:I</span>
+<span class="">	invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	invoke-virtual {v2, v3, v4}, Lxh;->a(Ljava/lang/String;Ljava/lang/Number;)Lxh;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="">	:try_start_1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	const-string v4, "Fabric"</span>
+<span class="missed">	new-instance v5, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v6, "Failed to find app icon with resource ID: "</span>
+<span class="missed">	invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v6, p2, Lxu;->j:Lye;</span>
+<span class="missed">	iget v6, v6, Lye;->b:I</span>
+<span class="missed">	invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="missed">	invoke-interface {v3, v4, v5, v2}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-static {v1, v0}, Lvn;->a(Ljava/io/Closeable;Ljava/lang/String;)V</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:goto_1</span>
+<span class="missed">	invoke-static {v1, v0}, Lvn;->a(Ljava/io/Closeable;Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:goto_2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v0, p2, Lxu;->k:Ljava/util/Collection;</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="missed">	iget-object p2, p2, Lxu;->k:Ljava/util/Collection;</span>
+<span class="">	invoke-interface {p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="">	:goto_3</span>
+<span class="">	invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="">	invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Luy;</span>
+<span class="">	invoke-virtual {p0, v0}, Lxr;->a(Luy;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v0}, Luy;->b()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-virtual {p1, v1, v2}, Lxh;->e(Ljava/lang/String;Ljava/lang/String;)Lxh;</span>
+<span class="">	invoke-virtual {p0, v0}, Lxr;->b(Luy;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v0}, Luy;->c()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {p1, v1, v0}, Lxh;->e(Ljava/lang/String;Ljava/lang/String;)Lxh;</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_2</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method  a(Luy;)Ljava/lang/String;
+<span class="">	.locals 3</span>
+
+<span class="missed">	sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	new-array v1, v1, [Ljava/lang/Object;</span>
+<span class="">	invoke-virtual {p1}, Luy;->a()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	aput-object p1, v1, v2</span>
+<span class="missed">	const-string p1, "app[build][libraries][%s][version]"</span>
+<span class="">	invoke-static {v0, p1, v1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public a(Lxu;)Z
+<span class="">	.locals 5</span>
+
+<span class="">	invoke-virtual {p0}, Lxr;->getHttpRequest()Lxh;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-direct {p0, v0, p1}, Lxr;->a(Lxh;Lxu;)Lxh;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-direct {p0, v0, p1}, Lxr;->b(Lxh;Lxu;)Lxh;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v3, "Sending app info to "</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p0}, Lxr;->getUrl()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v3, "Fabric"</span>
+<span class="missed">	invoke-interface {v1, v3, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v1, p1, Lxu;->j:Lye;</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "App icon hash is "</span>
+<span class="missed">	invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v4, p1, Lxu;->j:Lye;</span>
+<span class="missed">	iget-object v4, v4, Lye;->a:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-interface {v1, v3, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "App icon size is "</span>
+<span class="missed">	invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v4, p1, Lxu;->j:Lye;</span>
+<span class="missed">	iget v4, v4, Lye;->c:I</span>
+<span class="missed">	invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v4, "x"</span>
+<span class="missed">	invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object p1, p1, Lxu;->j:Lye;</span>
+<span class="missed">	iget p1, p1, Lye;->d:I</span>
+<span class="missed">	invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {v1, v3, p1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {v0}, Lxh;->b()I</span>
 <span class="missed">	move-result p1</span>
+<span class="">	invoke-virtual {v0}, Lxh;->o()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "POST"</span>
+<span class="">	invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="missed">	const-string v1, "Create"</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const-string v1, "Update"</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	new-instance v4, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v1, " app request ID: "</span>
+<span class="missed">	invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v1, "X-REQUEST-ID"</span>
+<span class="">	invoke-virtual {v0, v1}, Lxh;->b(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-interface {v2, v3, v0}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "Result was "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-interface {v0, v3, v1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	invoke-static {p1}, Lwa;->a(I)I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-nez p1, :cond_2</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	:goto_1</span>
 <span class="">	return p1</span>
+.end method
+
+.method  b(Luy;)Ljava/lang/String;
+<span class="">	.locals 3</span>
+
+<span class="missed">	sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	new-array v1, v1, [Ljava/lang/Object;</span>
+<span class="">	invoke-virtual {p1}, Luy;->a()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	aput-object p1, v1, v2</span>
+<span class="missed">	const-string p1, "app[build][libraries][%s][type]"</span>
+<span class="">	invoke-static {v0, p1, v1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

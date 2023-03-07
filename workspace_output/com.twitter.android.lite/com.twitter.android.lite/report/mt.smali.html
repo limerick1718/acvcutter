@@ -14,23 +14,43 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public Lmt;
-.super Lit;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+		<code>.class final Lmt;
+.super Ljava/lang/Object;
+.implements Ljava/lang/Runnable;
 
 
+.field private final synthetic a:Lko;
+.field private final synthetic b:Lpz;
+.field private final synthetic c:Lmh;
 
 
-.method public constructor &lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Lqr;Ljava/lang/String;)V
-<span class="">	.locals 6</span>
+.method constructor &lt;init&gt;(Lmh;Lko;Lpz;)V
+<span class="">	.locals 0</span>
 
-<span class="missed">	sget-object v4, Lor;->c:Lor;</span>
-<span class="missed">	move-object v0, p0</span>
-<span class="missed">	move-object v1, p1</span>
-<span class="missed">	move-object v2, p2</span>
-<span class="missed">	move-object v3, p3</span>
-<span class="missed">	move-object v5, p4</span>
-<span class="missed">	invoke-direct/range {v0 .. v5}, Lit;-><init>(Ljava/lang/String;Ljava/lang/String;Lqr;Lor;Ljava/lang/String;)V</span>
+<span class="missed">	iput-object p1, p0, Lmt;->c:Lmh;</span>
+<span class="missed">	iput-object p2, p0, Lmt;->a:Lko;</span>
+<span class="missed">	iput-object p3, p0, Lmt;->b:Lpz;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final run()V
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-object v0, p0, Lmt;->c:Lmh;</span>
+<span class="missed">	iget-object v1, p0, Lmt;->a:Lko;</span>
+<span class="missed">	iget-object v2, p0, Lmt;->b:Lpz;</span>
+<span class="">	invoke-virtual {v0, v1, v2}, Lmh;->b(Lko;Lpz;)Lko;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lmt;->c:Lmh;</span>
+<span class="">	invoke-static {v1}, Lmh;->a(Lmh;)Lpl;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v1}, Lpl;->l()V</span>
+<span class="missed">	iget-object v1, p0, Lmt;->c:Lmh;</span>
+<span class="">	invoke-static {v1}, Lmh;->a(Lmh;)Lpl;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iget-object v2, p0, Lmt;->b:Lpz;</span>
+<span class="missed">	invoke-virtual {v1, v0, v2}, Lpl;->a(Lko;Lpz;)V</span>
 <span class="">	return-void</span>
 .end method</code>
 	</pre>

@@ -14,40 +14,170 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final synthetic Lup;
+		<code>.class public Lup;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.implements Lzm;
+.source "DefaultLogger.java"
+.implements Luz;
 
 
-.field private final a:Lwp;
+.field private a:I
 
 
-.method private constructor &lt;init&gt;(Lwp;)V
+<span class="cov">.method public constructor &lt;init&gt;()V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	const/4 v0, 0x4</span>
+<span class="cov">	iput v0, p0, Lup;->a:I</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public constructor &lt;init&gt;(I)V
 <span class="">	.locals 0</span>
 
 <span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="missed">	iput-object p1, p0, Lup;->a:Lwp;</span>
+<span class="missed">	iput p1, p0, Lup;->a:I</span>
 <span class="">	return-void</span>
 .end method
 
-.method public static a(Lwp;)Lzm;
+.method public a(ILjava/lang/String;Ljava/lang/String;)V
 <span class="">	.locals 1</span>
 
-<span class="missed">	new-instance v0, Lup;</span>
-<span class="missed">	invoke-direct {v0, p0}, Lup;-><init>(Lwp;)V</span>
-<span class="">	return-object v0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	invoke-virtual {p0, p1, p2, p3, v0}, Lup;->a(ILjava/lang/String;Ljava/lang/String;Z)V</span>
+<span class="">	return-void</span>
 .end method
 
-.method public a(Lgn;)Ljava/lang/Object;
+.method public a(ILjava/lang/String;Ljava/lang/String;Z)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	if-nez p4, :cond_0</span>
+<span class="">	invoke-virtual {p0, p2, p1}, Lup;->a(Ljava/lang/String;I)Z</span>
+<span class="missed">	move-result p4</span>
+<span class="missed">	if-eqz p4, :cond_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-static {p1, p2, p3}, Landroid/util/Log;->println(ILjava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public a(Ljava/lang/String;Ljava/lang/String;)V</span>
 <span class="">	.locals 1</span>
 
-<span class="missed">	iget-object v0, p0, Lup;->a:Lwp;</span>
-<span class="">	invoke-static {v0, p1}, Lwp;->a(Lwp;Lgn;)Z</span>
-<span class="missed">	move-result p1</span>
-<span class="">	invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	return-object p1</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	invoke-virtual {p0, p1, p2, v0}, Lup;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const/4 v0, 0x3</span>
+<span class="exec">	invoke-virtual {p0, p1, v0}, Lup;->a(Ljava/lang/String;I)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-static {p1, p2, p3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public a(Ljava/lang/String;I)Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget v0, p0, Lup;->a:I</span>
+<span class="cov">	if-le v0, p2, :cond_1</span>
+<span class="exec">	invoke-static {p1, p2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 p1, 0x0</span>
+<span class="exec">	goto :goto_1</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	const/4 p1, 0x1</span>
+<span class="cov">	:goto_1</span>
+<span class="exec">	return p1</span>
+.end method
+
+<span class="cov">.method public b(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	invoke-virtual {p0, p1, p2, v0}, Lup;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const/4 v0, 0x2</span>
+<span class="exec">	invoke-virtual {p0, p1, v0}, Lup;->a(Ljava/lang/String;I)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-static {p1, p2, p3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public c(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	invoke-virtual {p0, p1, p2, v0}, Lup;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const/4 v0, 0x4</span>
+<span class="exec">	invoke-virtual {p0, p1, v0}, Lup;->a(Ljava/lang/String;I)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	invoke-static {p1, p2, p3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public d(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	invoke-virtual {p0, p1, p2, v0}, Lup;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const/4 v0, 0x5</span>
+<span class="exec">	invoke-virtual {p0, p1, v0}, Lup;->a(Ljava/lang/String;I)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	invoke-static {p1, p2, p3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public e(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	invoke-virtual {p0, p1, p2, v0}, Lup;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const/4 v0, 0x6</span>
+<span class="exec">	invoke-virtual {p0, p1, v0}, Lup;->a(Ljava/lang/String;I)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	invoke-static {p1, p2, p3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

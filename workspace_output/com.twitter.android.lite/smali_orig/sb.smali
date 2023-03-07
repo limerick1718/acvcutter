@@ -1,120 +1,81 @@
 .class final Lsb;
-.super Ljava/lang/ref/WeakReference;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.super Ljava/lang/Object;
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/ref/WeakReference<",
-        "Ljava/lang/Throwable;",
-        ">;"
-    }
-.end annotation
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:I
+.field private final synthetic a:Lrm;
+
+.field private final synthetic b:Lsa;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Throwable;Ljava/lang/ref/ReferenceQueue;)V
+.method constructor <init>(Lsa;Lrm;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Throwable;",
-            "Ljava/lang/ref/ReferenceQueue<",
-            "Ljava/lang/Throwable;",
-            ">;)V"
-        }
-    .end annotation
 
     .line 1
-    invoke-direct {p0, p1, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
+    iput-object p1, p0, Lsb;->b:Lsa;
 
-    if-eqz p1, :cond_0
+    iput-object p2, p0, Lsb;->a:Lrm;
 
-    .line 2
-    invoke-static {p1}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
-
-    move-result p1
-
-    iput p1, p0, Lsb;->a:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-
-    .line 3
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "The referent cannot be null"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final run()V
+    .locals 3
 
-    const/4 v0, 0x0
+    .line 2
+    iget-object v0, p0, Lsb;->b:Lsa;
 
-    if-eqz p1, :cond_2
+    invoke-static {v0}, Lsa;->a(Lsa;)Ljava/lang/Object;
 
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v0
+
+    monitor-enter v0
+
+    .line 3
+    :try_start_0
+    iget-object v1, p0, Lsb;->b:Lsa;
+
+    invoke-static {v1}, Lsa;->b(Lsa;)Lrk;
 
     move-result-object v1
 
-    const-class v2, Lsb;
+    if-eqz v1, :cond_0
 
-    if-eq v1, v2, :cond_0
+    .line 4
+    iget-object v1, p0, Lsb;->b:Lsa;
 
-    goto :goto_0
+    invoke-static {v1}, Lsa;->b(Lsa;)Lrk;
 
-    :cond_0
-    const/4 v1, 0x1
+    move-result-object v1
 
-    if-ne p0, p1, :cond_1
+    iget-object v2, p0, Lsb;->a:Lrm;
 
-    return v1
-
-    .line 2
-    :cond_1
-    check-cast p1, Lsb;
-
-    .line 3
-    iget v2, p0, Lsb;->a:I
-
-    iget v3, p1, Lsb;->a:I
-
-    if-ne v2, v3, :cond_2
-
-    invoke-virtual {p0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v2}, Lrm;->d()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-virtual {p1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-interface {v1, v2}, Lrk;->a(Ljava/lang/Object;)V
 
-    move-result-object p1
+    .line 5
+    :cond_0
+    monitor-exit v0
 
-    if-ne v2, p1, :cond_2
+    return-void
 
-    return v1
+    :catchall_0
+    move-exception v1
 
-    :cond_2
-    :goto_0
-    return v0
-.end method
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-.method public final hashCode()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lsb;->a:I
-
-    return v0
+    throw v1
 .end method

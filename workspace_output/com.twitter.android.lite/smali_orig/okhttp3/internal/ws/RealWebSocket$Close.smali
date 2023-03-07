@@ -19,23 +19,23 @@
 
 .field final code:I
 
-.field final reason:Lhx;
+.field final reason:Lyv;
 
 
 # direct methods
-.method constructor <init>(ILhx;J)V
+.method constructor <init>(ILyv;J)V
     .locals 0
 
-    .line 1
+    .line 591
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 592
     iput p1, p0, Lokhttp3/internal/ws/RealWebSocket$Close;->code:I
 
-    .line 3
-    iput-object p2, p0, Lokhttp3/internal/ws/RealWebSocket$Close;->reason:Lhx;
+    .line 593
+    iput-object p2, p0, Lokhttp3/internal/ws/RealWebSocket$Close;->reason:Lyv;
 
-    .line 4
+    .line 594
     iput-wide p3, p0, Lokhttp3/internal/ws/RealWebSocket$Close;->cancelAfterCloseMillis:J
 
     return-void

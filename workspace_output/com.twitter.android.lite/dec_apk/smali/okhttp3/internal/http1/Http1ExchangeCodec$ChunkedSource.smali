@@ -27,7 +27,7 @@ Ljava/io/IOException;
 .end annotation
 return-void
 .end method
-.method public read(Lex;J)J
+.method public read(Lys;J)J
 .locals 7
 .annotation system Ldalvik/annotation/Throws;
 value = {

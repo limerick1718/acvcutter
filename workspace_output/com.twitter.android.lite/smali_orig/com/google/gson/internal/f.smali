@@ -9,10 +9,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/gson/internal/f$c;,
         Lcom/google/gson/internal/f$b;,
-        Lcom/google/gson/internal/f$d;,
-        Lcom/google/gson/internal/f$e;
+        Lcom/google/gson/internal/f$a;,
+        Lcom/google/gson/internal/f$c;,
+        Lcom/google/gson/internal/f$d;
     }
 .end annotation
 
@@ -31,7 +31,9 @@
 
 
 # static fields
-.field private static final h:Ljava/util/Comparator;
+.field static final synthetic f:Z
+
+.field private static final g:Ljava/util/Comparator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Comparator<",
@@ -52,10 +54,10 @@
     .end annotation
 .end field
 
-.field b:Lcom/google/gson/internal/f$e;
+.field b:Lcom/google/gson/internal/f$d;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/google/gson/internal/f$e<",
+            "Lcom/google/gson/internal/f$d<",
             "TK;TV;>;"
         }
     .end annotation
@@ -65,29 +67,29 @@
 
 .field d:I
 
-.field final e:Lcom/google/gson/internal/f$e;
+.field final e:Lcom/google/gson/internal/f$d;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/google/gson/internal/f$e<",
+            "Lcom/google/gson/internal/f$d<",
             "TK;TV;>;"
         }
     .end annotation
 .end field
 
-.field private f:Lcom/google/gson/internal/f$b;
+.field private h:Lcom/google/gson/internal/f$a;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/gson/internal/f<",
-            "TK;TV;>.b;"
+            "TK;TV;>.a;"
         }
     .end annotation
 .end field
 
-.field private g:Lcom/google/gson/internal/f$c;
+.field private i:Lcom/google/gson/internal/f$b;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/gson/internal/f<",
-            "TK;TV;>.c;"
+            "TK;TV;>.b;"
         }
     .end annotation
 .end field
@@ -97,15 +99,23 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1
+    .line 38
     const-class v0, Lcom/google/gson/internal/f;
 
-    .line 2
-    new-instance v0, Lcom/google/gson/internal/f$a;
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
 
-    invoke-direct {v0}, Lcom/google/gson/internal/f$a;-><init>()V
+    move-result v0
 
-    sput-object v0, Lcom/google/gson/internal/f;->h:Ljava/util/Comparator;
+    xor-int/lit8 v0, v0, 0x1
+
+    sput-boolean v0, Lcom/google/gson/internal/f;->f:Z
+
+    .line 40
+    new-instance v0, Lcom/google/gson/internal/f$1;
+
+    invoke-direct {v0}, Lcom/google/gson/internal/f$1;-><init>()V
+
+    sput-object v0, Lcom/google/gson/internal/f;->g:Ljava/util/Comparator;
 
     return-void
 .end method
@@ -113,8 +123,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 1
-    sget-object v0, Lcom/google/gson/internal/f;->h:Ljava/util/Comparator;
+    .line 60
+    sget-object v0, Lcom/google/gson/internal/f;->g:Ljava/util/Comparator;
 
     invoke-direct {p0, v0}, Lcom/google/gson/internal/f;-><init>(Ljava/util/Comparator;)V
 
@@ -131,31 +141,31 @@
         }
     .end annotation
 
-    .line 2
+    .line 71
     invoke-direct {p0}, Ljava/util/AbstractMap;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 3
+    .line 48
     iput v0, p0, Lcom/google/gson/internal/f;->c:I
 
-    .line 4
+    .line 49
     iput v0, p0, Lcom/google/gson/internal/f;->d:I
 
-    .line 5
-    new-instance v0, Lcom/google/gson/internal/f$e;
+    .line 52
+    new-instance v0, Lcom/google/gson/internal/f$d;
 
-    invoke-direct {v0}, Lcom/google/gson/internal/f$e;-><init>()V
+    invoke-direct {v0}, Lcom/google/gson/internal/f$d;-><init>()V
 
-    iput-object v0, p0, Lcom/google/gson/internal/f;->e:Lcom/google/gson/internal/f$e;
+    iput-object v0, p0, Lcom/google/gson/internal/f;->e:Lcom/google/gson/internal/f$d;
 
     if-eqz p1, :cond_0
 
     goto :goto_0
 
-    .line 6
+    .line 72
     :cond_0
-    sget-object p1, Lcom/google/gson/internal/f;->h:Ljava/util/Comparator;
+    sget-object p1, Lcom/google/gson/internal/f;->g:Ljava/util/Comparator;
 
     :goto_0
     iput-object p1, p0, Lcom/google/gson/internal/f;->a:Ljava/util/Comparator;
@@ -163,52 +173,52 @@
     return-void
 .end method
 
-.method private a(Lcom/google/gson/internal/f$e;)V
+.method private a(Lcom/google/gson/internal/f$d;)V
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/gson/internal/f$e<",
+            "Lcom/google/gson/internal/f$d<",
             "TK;TV;>;)V"
         }
     .end annotation
 
-    .line 57
-    iget-object v0, p1, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
+    .line 374
+    iget-object v0, p1, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
 
-    .line 58
-    iget-object v1, p1, Lcom/google/gson/internal/f$e;->c:Lcom/google/gson/internal/f$e;
+    .line 375
+    iget-object v1, p1, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
 
-    .line 59
-    iget-object v2, v1, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
+    .line 376
+    iget-object v2, v1, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
 
-    .line 60
-    iget-object v3, v1, Lcom/google/gson/internal/f$e;->c:Lcom/google/gson/internal/f$e;
+    .line 377
+    iget-object v3, v1, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
 
-    .line 61
-    iput-object v2, p1, Lcom/google/gson/internal/f$e;->c:Lcom/google/gson/internal/f$e;
+    .line 380
+    iput-object v2, p1, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
 
     if-eqz v2, :cond_0
 
-    .line 62
-    iput-object p1, v2, Lcom/google/gson/internal/f$e;->a:Lcom/google/gson/internal/f$e;
+    .line 382
+    iput-object p1, v2, Lcom/google/gson/internal/f$d;->a:Lcom/google/gson/internal/f$d;
 
-    .line 63
+    .line 385
     :cond_0
-    invoke-direct {p0, p1, v1}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$e;Lcom/google/gson/internal/f$e;)V
+    invoke-direct {p0, p1, v1}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$d;Lcom/google/gson/internal/f$d;)V
 
-    .line 64
-    iput-object p1, v1, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
+    .line 388
+    iput-object p1, v1, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
 
-    .line 65
-    iput-object v1, p1, Lcom/google/gson/internal/f$e;->a:Lcom/google/gson/internal/f$e;
+    .line 389
+    iput-object v1, p1, Lcom/google/gson/internal/f$d;->a:Lcom/google/gson/internal/f$d;
 
     const/4 v4, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 66
-    iget v0, v0, Lcom/google/gson/internal/f$e;->h:I
+    .line 392
+    iget v0, v0, Lcom/google/gson/internal/f$d;->h:I
 
     goto :goto_0
 
@@ -218,7 +228,7 @@
     :goto_0
     if-eqz v2, :cond_2
 
-    iget v2, v2, Lcom/google/gson/internal/f$e;->h:I
+    iget v2, v2, Lcom/google/gson/internal/f$d;->h:I
 
     goto :goto_1
 
@@ -232,74 +242,96 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p1, Lcom/google/gson/internal/f$e;->h:I
+    iput v0, p1, Lcom/google/gson/internal/f$d;->h:I
+
+    .line 394
+    iget p1, p1, Lcom/google/gson/internal/f$d;->h:I
 
     if-eqz v3, :cond_3
 
-    .line 67
-    iget v4, v3, Lcom/google/gson/internal/f$e;->h:I
+    iget v4, v3, Lcom/google/gson/internal/f$d;->h:I
 
     :cond_3
-    invoke-static {v0, v4}, Ljava/lang/Math;->max(II)I
+    invoke-static {p1, v4}, Ljava/lang/Math;->max(II)I
 
     move-result p1
 
     add-int/lit8 p1, p1, 0x1
 
-    iput p1, v1, Lcom/google/gson/internal/f$e;->h:I
+    iput p1, v1, Lcom/google/gson/internal/f$d;->h:I
 
     return-void
 .end method
 
-.method private a(Lcom/google/gson/internal/f$e;Lcom/google/gson/internal/f$e;)V
+.method private a(Lcom/google/gson/internal/f$d;Lcom/google/gson/internal/f$d;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/gson/internal/f$e<",
+            "Lcom/google/gson/internal/f$d<",
             "TK;TV;>;",
-            "Lcom/google/gson/internal/f$e<",
+            "Lcom/google/gson/internal/f$d<",
             "TK;TV;>;)V"
         }
     .end annotation
 
-    .line 50
-    iget-object v0, p1, Lcom/google/gson/internal/f$e;->a:Lcom/google/gson/internal/f$e;
+    .line 285
+    iget-object v0, p1, Lcom/google/gson/internal/f$d;->a:Lcom/google/gson/internal/f$d;
 
     const/4 v1, 0x0
 
-    .line 51
-    iput-object v1, p1, Lcom/google/gson/internal/f$e;->a:Lcom/google/gson/internal/f$e;
+    .line 286
+    iput-object v1, p1, Lcom/google/gson/internal/f$d;->a:Lcom/google/gson/internal/f$d;
 
     if-eqz p2, :cond_0
 
-    .line 52
-    iput-object v0, p2, Lcom/google/gson/internal/f$e;->a:Lcom/google/gson/internal/f$e;
+    .line 288
+    iput-object v0, p2, Lcom/google/gson/internal/f$d;->a:Lcom/google/gson/internal/f$d;
 
     :cond_0
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_4
 
-    .line 53
-    iget-object v1, v0, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
+    .line 292
+    iget-object v1, v0, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
 
     if-ne v1, p1, :cond_1
 
-    .line 54
-    iput-object p2, v0, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
+    .line 293
+    iput-object p2, v0, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 55
+    .line 295
     :cond_1
-    iput-object p2, v0, Lcom/google/gson/internal/f$e;->c:Lcom/google/gson/internal/f$e;
+    sget-boolean v1, Lcom/google/gson/internal/f;->f:Z
+
+    if-nez v1, :cond_3
+
+    iget-object v1, v0, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
+
+    if-ne v1, p1, :cond_2
 
     goto :goto_0
 
-    .line 56
     :cond_2
-    iput-object p2, p0, Lcom/google/gson/internal/f;->b:Lcom/google/gson/internal/f$e;
+    new-instance p1, Ljava/lang/AssertionError;
 
+    invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V
+
+    throw p1
+
+    .line 296
+    :cond_3
     :goto_0
+    iput-object p2, v0, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
+
+    goto :goto_1
+
+    .line 299
+    :cond_4
+    iput-object p2, p0, Lcom/google/gson/internal/f;->b:Lcom/google/gson/internal/f$d;
+
+    :goto_1
     return-void
 .end method
 
@@ -310,7 +342,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 22
+    .line 208
     invoke-virtual {p1, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -332,52 +364,52 @@
     return p1
 .end method
 
-.method private b(Lcom/google/gson/internal/f$e;)V
+.method private b(Lcom/google/gson/internal/f$d;)V
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/gson/internal/f$e<",
+            "Lcom/google/gson/internal/f$d<",
             "TK;TV;>;)V"
         }
     .end annotation
 
-    .line 24
-    iget-object v0, p1, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
+    .line 402
+    iget-object v0, p1, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
 
-    .line 25
-    iget-object v1, p1, Lcom/google/gson/internal/f$e;->c:Lcom/google/gson/internal/f$e;
+    .line 403
+    iget-object v1, p1, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
 
-    .line 26
-    iget-object v2, v0, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
+    .line 404
+    iget-object v2, v0, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
 
-    .line 27
-    iget-object v3, v0, Lcom/google/gson/internal/f$e;->c:Lcom/google/gson/internal/f$e;
+    .line 405
+    iget-object v3, v0, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
 
-    .line 28
-    iput-object v3, p1, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
+    .line 408
+    iput-object v3, p1, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
 
     if-eqz v3, :cond_0
 
-    .line 29
-    iput-object p1, v3, Lcom/google/gson/internal/f$e;->a:Lcom/google/gson/internal/f$e;
+    .line 410
+    iput-object p1, v3, Lcom/google/gson/internal/f$d;->a:Lcom/google/gson/internal/f$d;
 
-    .line 30
+    .line 413
     :cond_0
-    invoke-direct {p0, p1, v0}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$e;Lcom/google/gson/internal/f$e;)V
+    invoke-direct {p0, p1, v0}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$d;Lcom/google/gson/internal/f$d;)V
 
-    .line 31
-    iput-object p1, v0, Lcom/google/gson/internal/f$e;->c:Lcom/google/gson/internal/f$e;
+    .line 416
+    iput-object p1, v0, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
 
-    .line 32
-    iput-object v0, p1, Lcom/google/gson/internal/f$e;->a:Lcom/google/gson/internal/f$e;
+    .line 417
+    iput-object v0, p1, Lcom/google/gson/internal/f$d;->a:Lcom/google/gson/internal/f$d;
 
     const/4 v4, 0x0
 
     if-eqz v1, :cond_1
 
-    .line 33
-    iget v1, v1, Lcom/google/gson/internal/f$e;->h:I
+    .line 420
+    iget v1, v1, Lcom/google/gson/internal/f$d;->h:I
 
     goto :goto_0
 
@@ -387,7 +419,7 @@
     :goto_0
     if-eqz v3, :cond_2
 
-    iget v3, v3, Lcom/google/gson/internal/f$e;->h:I
+    iget v3, v3, Lcom/google/gson/internal/f$d;->h:I
 
     goto :goto_1
 
@@ -401,50 +433,52 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, p1, Lcom/google/gson/internal/f$e;->h:I
+    iput v1, p1, Lcom/google/gson/internal/f$d;->h:I
+
+    .line 422
+    iget p1, p1, Lcom/google/gson/internal/f$d;->h:I
 
     if-eqz v2, :cond_3
 
-    .line 34
-    iget v4, v2, Lcom/google/gson/internal/f$e;->h:I
+    iget v4, v2, Lcom/google/gson/internal/f$d;->h:I
 
     :cond_3
-    invoke-static {v1, v4}, Ljava/lang/Math;->max(II)I
+    invoke-static {p1, v4}, Ljava/lang/Math;->max(II)I
 
     move-result p1
 
     add-int/lit8 p1, p1, 0x1
 
-    iput p1, v0, Lcom/google/gson/internal/f$e;->h:I
+    iput p1, v0, Lcom/google/gson/internal/f$d;->h:I
 
     return-void
 .end method
 
-.method private b(Lcom/google/gson/internal/f$e;Z)V
-    .locals 7
+.method private b(Lcom/google/gson/internal/f$d;Z)V
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/gson/internal/f$e<",
+            "Lcom/google/gson/internal/f$d<",
             "TK;TV;>;Z)V"
         }
     .end annotation
 
     :goto_0
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_14
 
-    .line 3
-    iget-object v0, p1, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
+    .line 312
+    iget-object v0, p1, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
 
-    .line 4
-    iget-object v1, p1, Lcom/google/gson/internal/f$e;->c:Lcom/google/gson/internal/f$e;
+    .line 313
+    iget-object v1, p1, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
 
     const/4 v2, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 5
-    iget v3, v0, Lcom/google/gson/internal/f$e;->h:I
+    .line 314
+    iget v3, v0, Lcom/google/gson/internal/f$d;->h:I
 
     goto :goto_1
 
@@ -454,8 +488,8 @@
     :goto_1
     if-eqz v1, :cond_1
 
-    .line 6
-    iget v4, v1, Lcom/google/gson/internal/f$e;->h:I
+    .line 315
+    iget v4, v1, Lcom/google/gson/internal/f$d;->h:I
 
     goto :goto_2
 
@@ -467,18 +501,22 @@
 
     const/4 v6, -0x2
 
-    if-ne v5, v6, :cond_6
+    const/4 v7, -0x1
 
-    .line 7
-    iget-object v0, v1, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
+    const/4 v8, 0x1
 
-    .line 8
-    iget-object v3, v1, Lcom/google/gson/internal/f$e;->c:Lcom/google/gson/internal/f$e;
+    if-ne v5, v6, :cond_8
+
+    .line 319
+    iget-object v0, v1, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
+
+    .line 320
+    iget-object v3, v1, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
 
     if-eqz v3, :cond_2
 
-    .line 9
-    iget v3, v3, Lcom/google/gson/internal/f$e;->h:I
+    .line 321
+    iget v3, v3, Lcom/google/gson/internal/f$d;->h:I
 
     goto :goto_3
 
@@ -488,147 +526,199 @@
     :goto_3
     if-eqz v0, :cond_3
 
-    .line 10
-    iget v2, v0, Lcom/google/gson/internal/f$e;->h:I
+    .line 322
+    iget v2, v0, Lcom/google/gson/internal/f$d;->h:I
 
     :cond_3
     sub-int/2addr v2, v3
 
-    const/4 v0, -0x1
-
-    if-eq v2, v0, :cond_5
+    if-eq v2, v7, :cond_7
 
     if-nez v2, :cond_4
 
     if-nez p2, :cond_4
 
-    goto :goto_4
-
-    .line 11
-    :cond_4
-    invoke-direct {p0, v1}, Lcom/google/gson/internal/f;->b(Lcom/google/gson/internal/f$e;)V
-
-    .line 12
-    invoke-direct {p0, p1}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$e;)V
-
     goto :goto_5
 
-    .line 13
+    .line 328
+    :cond_4
+    sget-boolean v0, Lcom/google/gson/internal/f;->f:Z
+
+    if-nez v0, :cond_6
+
+    if-ne v2, v8, :cond_5
+
+    goto :goto_4
+
     :cond_5
-    :goto_4
-    invoke-direct {p0, p1}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$e;)V
+    new-instance p1, Ljava/lang/AssertionError;
 
-    :goto_5
-    if-eqz p2, :cond_d
+    invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V
 
-    goto :goto_9
+    throw p1
 
+    .line 329
     :cond_6
-    const/4 v1, 0x2
+    :goto_4
+    invoke-direct {p0, v1}, Lcom/google/gson/internal/f;->b(Lcom/google/gson/internal/f$d;)V
 
-    const/4 v6, 0x1
-
-    if-ne v5, v1, :cond_b
-
-    .line 14
-    iget-object v1, v0, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
-
-    .line 15
-    iget-object v3, v0, Lcom/google/gson/internal/f$e;->c:Lcom/google/gson/internal/f$e;
-
-    if-eqz v3, :cond_7
-
-    .line 16
-    iget v3, v3, Lcom/google/gson/internal/f$e;->h:I
+    .line 330
+    invoke-direct {p0, p1}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$d;)V
 
     goto :goto_6
 
+    .line 326
     :cond_7
-    const/4 v3, 0x0
+    :goto_5
+    invoke-direct {p0, p1}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$d;)V
 
     :goto_6
-    if-eqz v1, :cond_8
+    if-eqz p2, :cond_13
 
-    .line 17
-    iget v2, v1, Lcom/google/gson/internal/f$e;->h:I
+    goto :goto_c
 
     :cond_8
-    sub-int/2addr v2, v3
+    const/4 v1, 0x2
 
-    if-eq v2, v6, :cond_a
+    if-ne v5, v1, :cond_f
 
-    if-nez v2, :cond_9
+    .line 337
+    iget-object v1, v0, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
 
-    if-nez p2, :cond_9
+    .line 338
+    iget-object v3, v0, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
+
+    if-eqz v3, :cond_9
+
+    .line 339
+    iget v3, v3, Lcom/google/gson/internal/f$d;->h:I
 
     goto :goto_7
 
-    .line 18
     :cond_9
-    invoke-direct {p0, v0}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$e;)V
+    const/4 v3, 0x0
 
-    .line 19
-    invoke-direct {p0, p1}, Lcom/google/gson/internal/f;->b(Lcom/google/gson/internal/f$e;)V
+    :goto_7
+    if-eqz v1, :cond_a
+
+    .line 340
+    iget v2, v1, Lcom/google/gson/internal/f$d;->h:I
+
+    :cond_a
+    sub-int/2addr v2, v3
+
+    if-eq v2, v8, :cond_e
+
+    if-nez v2, :cond_b
+
+    if-nez p2, :cond_b
+
+    goto :goto_9
+
+    .line 346
+    :cond_b
+    sget-boolean v1, Lcom/google/gson/internal/f;->f:Z
+
+    if-nez v1, :cond_d
+
+    if-ne v2, v7, :cond_c
 
     goto :goto_8
 
-    .line 20
-    :cond_a
-    :goto_7
-    invoke-direct {p0, p1}, Lcom/google/gson/internal/f;->b(Lcom/google/gson/internal/f$e;)V
+    :cond_c
+    new-instance p1, Ljava/lang/AssertionError;
 
+    invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V
+
+    throw p1
+
+    .line 347
+    :cond_d
     :goto_8
-    if-eqz p2, :cond_d
+    invoke-direct {p0, v0}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$d;)V
 
-    goto :goto_9
+    .line 348
+    invoke-direct {p0, p1}, Lcom/google/gson/internal/f;->b(Lcom/google/gson/internal/f$d;)V
 
-    :cond_b
-    if-nez v5, :cond_c
+    goto :goto_a
+
+    .line 344
+    :cond_e
+    :goto_9
+    invoke-direct {p0, p1}, Lcom/google/gson/internal/f;->b(Lcom/google/gson/internal/f$d;)V
+
+    :goto_a
+    if-eqz p2, :cond_13
+
+    goto :goto_c
+
+    :cond_f
+    if-nez v5, :cond_10
 
     add-int/lit8 v3, v3, 0x1
 
-    .line 21
-    iput v3, p1, Lcom/google/gson/internal/f$e;->h:I
+    .line 355
+    iput v3, p1, Lcom/google/gson/internal/f$d;->h:I
 
-    if-eqz p2, :cond_d
+    if-eqz p2, :cond_13
 
-    goto :goto_9
+    goto :goto_c
 
-    .line 22
-    :cond_c
+    .line 361
+    :cond_10
+    sget-boolean v0, Lcom/google/gson/internal/f;->f:Z
+
+    if-nez v0, :cond_12
+
+    if-eq v5, v7, :cond_12
+
+    if-ne v5, v8, :cond_11
+
+    goto :goto_b
+
+    :cond_11
+    new-instance p1, Ljava/lang/AssertionError;
+
+    invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V
+
+    throw p1
+
+    .line 362
+    :cond_12
+    :goto_b
     invoke-static {v3, v4}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
-    add-int/2addr v0, v6
+    add-int/2addr v0, v8
 
-    iput v0, p1, Lcom/google/gson/internal/f$e;->h:I
+    iput v0, p1, Lcom/google/gson/internal/f$d;->h:I
 
-    if-nez p2, :cond_d
+    if-nez p2, :cond_13
 
-    goto :goto_9
+    goto :goto_c
 
-    .line 23
-    :cond_d
-    iget-object p1, p1, Lcom/google/gson/internal/f$e;->a:Lcom/google/gson/internal/f$e;
+    .line 311
+    :cond_13
+    iget-object p1, p1, Lcom/google/gson/internal/f$d;->a:Lcom/google/gson/internal/f$d;
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :cond_e
-    :goto_9
+    :cond_14
+    :goto_c
     return-void
 .end method
 
 
 # virtual methods
-.method a(Ljava/lang/Object;)Lcom/google/gson/internal/f$e;
+.method a(Ljava/lang/Object;)Lcom/google/gson/internal/f$d;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Object;",
             ")",
-            "Lcom/google/gson/internal/f$e<",
+            "Lcom/google/gson/internal/f$d<",
             "TK;TV;>;"
         }
     .end annotation
@@ -639,9 +729,9 @@
 
     const/4 v1, 0x0
 
-    .line 19
+    .line 186
     :try_start_0
-    invoke-virtual {p0, p1, v1}, Lcom/google/gson/internal/f;->a(Ljava/lang/Object;Z)Lcom/google/gson/internal/f$e;
+    invoke-virtual {p0, p1, v1}, Lcom/google/gson/internal/f;->a(Ljava/lang/Object;Z)Lcom/google/gson/internal/f$d;
 
     move-result-object v0
     :try_end_0
@@ -654,28 +744,28 @@
     return-object v0
 .end method
 
-.method a(Ljava/lang/Object;Z)Lcom/google/gson/internal/f$e;
+.method a(Ljava/lang/Object;Z)Lcom/google/gson/internal/f$d;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;Z)",
-            "Lcom/google/gson/internal/f$e<",
+            "Lcom/google/gson/internal/f$d<",
             "TK;TV;>;"
         }
     .end annotation
 
-    .line 1
+    .line 122
     iget-object v0, p0, Lcom/google/gson/internal/f;->a:Ljava/util/Comparator;
 
-    .line 2
-    iget-object v1, p0, Lcom/google/gson/internal/f;->b:Lcom/google/gson/internal/f$e;
+    .line 123
+    iget-object v1, p0, Lcom/google/gson/internal/f;->b:Lcom/google/gson/internal/f$d;
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_5
 
-    .line 3
-    sget-object v3, Lcom/google/gson/internal/f;->h:Ljava/util/Comparator;
+    .line 129
+    sget-object v3, Lcom/google/gson/internal/f;->g:Ljava/util/Comparator;
 
     if-ne v0, v3, :cond_0
 
@@ -691,10 +781,10 @@
     :goto_0
     if-eqz v3, :cond_1
 
-    .line 4
-    iget-object v4, v1, Lcom/google/gson/internal/f$e;->f:Ljava/lang/Object;
+    .line 134
+    iget-object v4, v1, Lcom/google/gson/internal/f$d;->f:Ljava/lang/Object;
 
-    .line 5
+    .line 135
     invoke-interface {v3, v4}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
     move-result v4
@@ -702,9 +792,9 @@
     goto :goto_1
 
     :cond_1
-    iget-object v4, v1, Lcom/google/gson/internal/f$e;->f:Ljava/lang/Object;
+    iget-object v4, v1, Lcom/google/gson/internal/f$d;->f:Ljava/lang/Object;
 
-    .line 6
+    .line 136
     invoke-interface {v0, p1, v4}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
 
     move-result v4
@@ -717,13 +807,13 @@
     :cond_2
     if-gez v4, :cond_3
 
-    .line 7
-    iget-object v5, v1, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
+    .line 144
+    iget-object v5, v1, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
 
     goto :goto_2
 
     :cond_3
-    iget-object v5, v1, Lcom/google/gson/internal/f$e;->c:Lcom/google/gson/internal/f$e;
+    iget-object v5, v1, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
 
     :goto_2
     if-nez v5, :cond_4
@@ -743,16 +833,16 @@
 
     return-object v2
 
-    .line 8
+    .line 159
     :cond_6
-    iget-object p2, p0, Lcom/google/gson/internal/f;->e:Lcom/google/gson/internal/f$e;
+    iget-object p2, p0, Lcom/google/gson/internal/f;->e:Lcom/google/gson/internal/f$d;
 
     const/4 v2, 0x1
 
     if-nez v1, :cond_9
 
-    .line 9
-    sget-object v3, Lcom/google/gson/internal/f;->h:Ljava/util/Comparator;
+    .line 163
+    sget-object v3, Lcom/google/gson/internal/f;->g:Ljava/util/Comparator;
 
     if-ne v0, v3, :cond_8
 
@@ -762,7 +852,7 @@
 
     goto :goto_4
 
-    .line 10
+    .line 164
     :cond_7
     new-instance p2, Ljava/lang/ClassCastException;
 
@@ -792,44 +882,44 @@
 
     throw p2
 
-    .line 11
+    .line 166
     :cond_8
     :goto_4
-    new-instance v0, Lcom/google/gson/internal/f$e;
+    new-instance v0, Lcom/google/gson/internal/f$d;
 
-    iget-object v3, p2, Lcom/google/gson/internal/f$e;->e:Lcom/google/gson/internal/f$e;
+    iget-object v3, p2, Lcom/google/gson/internal/f$d;->e:Lcom/google/gson/internal/f$d;
 
-    invoke-direct {v0, v1, p1, p2, v3}, Lcom/google/gson/internal/f$e;-><init>(Lcom/google/gson/internal/f$e;Ljava/lang/Object;Lcom/google/gson/internal/f$e;Lcom/google/gson/internal/f$e;)V
+    invoke-direct {v0, v1, p1, p2, v3}, Lcom/google/gson/internal/f$d;-><init>(Lcom/google/gson/internal/f$d;Ljava/lang/Object;Lcom/google/gson/internal/f$d;Lcom/google/gson/internal/f$d;)V
 
-    .line 12
-    iput-object v0, p0, Lcom/google/gson/internal/f;->b:Lcom/google/gson/internal/f$e;
+    .line 167
+    iput-object v0, p0, Lcom/google/gson/internal/f;->b:Lcom/google/gson/internal/f$d;
 
     goto :goto_6
 
-    .line 13
+    .line 169
     :cond_9
-    new-instance v0, Lcom/google/gson/internal/f$e;
+    new-instance v0, Lcom/google/gson/internal/f$d;
 
-    iget-object v3, p2, Lcom/google/gson/internal/f$e;->e:Lcom/google/gson/internal/f$e;
+    iget-object v3, p2, Lcom/google/gson/internal/f$d;->e:Lcom/google/gson/internal/f$d;
 
-    invoke-direct {v0, v1, p1, p2, v3}, Lcom/google/gson/internal/f$e;-><init>(Lcom/google/gson/internal/f$e;Ljava/lang/Object;Lcom/google/gson/internal/f$e;Lcom/google/gson/internal/f$e;)V
+    invoke-direct {v0, v1, p1, p2, v3}, Lcom/google/gson/internal/f$d;-><init>(Lcom/google/gson/internal/f$d;Ljava/lang/Object;Lcom/google/gson/internal/f$d;Lcom/google/gson/internal/f$d;)V
 
     if-gez v4, :cond_a
 
-    .line 14
-    iput-object v0, v1, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
+    .line 171
+    iput-object v0, v1, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
 
     goto :goto_5
 
-    .line 15
+    .line 173
     :cond_a
-    iput-object v0, v1, Lcom/google/gson/internal/f$e;->c:Lcom/google/gson/internal/f$e;
+    iput-object v0, v1, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
 
-    .line 16
+    .line 175
     :goto_5
-    invoke-direct {p0, v1, v2}, Lcom/google/gson/internal/f;->b(Lcom/google/gson/internal/f$e;Z)V
+    invoke-direct {p0, v1, v2}, Lcom/google/gson/internal/f;->b(Lcom/google/gson/internal/f$d;Z)V
 
-    .line 17
+    .line 177
     :goto_6
     iget p1, p0, Lcom/google/gson/internal/f;->c:I
 
@@ -837,7 +927,7 @@
 
     iput p1, p0, Lcom/google/gson/internal/f;->c:I
 
-    .line 18
+    .line 178
     iget p1, p0, Lcom/google/gson/internal/f;->d:I
 
     add-int/2addr p1, v2
@@ -847,31 +937,31 @@
     return-object v0
 .end method
 
-.method a(Ljava/util/Map$Entry;)Lcom/google/gson/internal/f$e;
+.method a(Ljava/util/Map$Entry;)Lcom/google/gson/internal/f$d;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/Map$Entry<",
             "**>;)",
-            "Lcom/google/gson/internal/f$e<",
+            "Lcom/google/gson/internal/f$d<",
             "TK;TV;>;"
         }
     .end annotation
 
-    .line 20
+    .line 202
     invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/google/gson/internal/f;->a(Ljava/lang/Object;)Lcom/google/gson/internal/f$e;
+    invoke-virtual {p0, v0}, Lcom/google/gson/internal/f;->a(Ljava/lang/Object;)Lcom/google/gson/internal/f$d;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 21
-    iget-object v1, v0, Lcom/google/gson/internal/f$e;->g:Ljava/lang/Object;
+    .line 203
+    iget-object v1, v0, Lcom/google/gson/internal/f$d;->g:Ljava/lang/Object;
 
     invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -902,39 +992,41 @@
     return-object v0
 .end method
 
-.method a(Lcom/google/gson/internal/f$e;Z)V
+.method a(Lcom/google/gson/internal/f$d;Z)V
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/gson/internal/f$e<",
+            "Lcom/google/gson/internal/f$d<",
             "TK;TV;>;Z)V"
         }
     .end annotation
 
     if-eqz p2, :cond_0
 
-    .line 23
-    iget-object p2, p1, Lcom/google/gson/internal/f$e;->e:Lcom/google/gson/internal/f$e;
+    .line 219
+    iget-object p2, p1, Lcom/google/gson/internal/f$d;->e:Lcom/google/gson/internal/f$d;
 
-    iget-object v0, p1, Lcom/google/gson/internal/f$e;->d:Lcom/google/gson/internal/f$e;
+    iget-object v0, p1, Lcom/google/gson/internal/f$d;->d:Lcom/google/gson/internal/f$d;
 
-    iput-object v0, p2, Lcom/google/gson/internal/f$e;->d:Lcom/google/gson/internal/f$e;
+    iput-object v0, p2, Lcom/google/gson/internal/f$d;->d:Lcom/google/gson/internal/f$d;
 
-    .line 24
-    iget-object v0, p1, Lcom/google/gson/internal/f$e;->d:Lcom/google/gson/internal/f$e;
+    .line 220
+    iget-object p2, p1, Lcom/google/gson/internal/f$d;->d:Lcom/google/gson/internal/f$d;
 
-    iput-object p2, v0, Lcom/google/gson/internal/f$e;->e:Lcom/google/gson/internal/f$e;
+    iget-object v0, p1, Lcom/google/gson/internal/f$d;->e:Lcom/google/gson/internal/f$d;
 
-    .line 25
+    iput-object v0, p2, Lcom/google/gson/internal/f$d;->e:Lcom/google/gson/internal/f$d;
+
+    .line 223
     :cond_0
-    iget-object p2, p1, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
+    iget-object p2, p1, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
 
-    .line 26
-    iget-object v0, p1, Lcom/google/gson/internal/f$e;->c:Lcom/google/gson/internal/f$e;
+    .line 224
+    iget-object v0, p1, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
 
-    .line 27
-    iget-object v1, p1, Lcom/google/gson/internal/f$e;->a:Lcom/google/gson/internal/f$e;
+    .line 225
+    iget-object v1, p1, Lcom/google/gson/internal/f$d;->a:Lcom/google/gson/internal/f$d;
 
     const/4 v2, 0x0
 
@@ -944,69 +1036,69 @@
 
     if-eqz v0, :cond_4
 
-    .line 28
-    iget v1, p2, Lcom/google/gson/internal/f$e;->h:I
+    .line 237
+    iget v1, p2, Lcom/google/gson/internal/f$d;->h:I
 
-    iget v4, v0, Lcom/google/gson/internal/f$e;->h:I
+    iget v4, v0, Lcom/google/gson/internal/f$d;->h:I
 
     if-le v1, v4, :cond_1
 
-    invoke-virtual {p2}, Lcom/google/gson/internal/f$e;->b()Lcom/google/gson/internal/f$e;
+    invoke-virtual {p2}, Lcom/google/gson/internal/f$d;->b()Lcom/google/gson/internal/f$d;
 
     move-result-object p2
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {v0}, Lcom/google/gson/internal/f$e;->a()Lcom/google/gson/internal/f$e;
+    invoke-virtual {v0}, Lcom/google/gson/internal/f$d;->a()Lcom/google/gson/internal/f$d;
 
     move-result-object p2
 
-    .line 29
+    .line 238
     :goto_0
-    invoke-virtual {p0, p2, v2}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$e;Z)V
+    invoke-virtual {p0, p2, v2}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$d;Z)V
 
-    .line 30
-    iget-object v0, p1, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
+    .line 241
+    iget-object v0, p1, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
 
     if-eqz v0, :cond_2
 
-    .line 31
-    iget v1, v0, Lcom/google/gson/internal/f$e;->h:I
+    .line 243
+    iget v1, v0, Lcom/google/gson/internal/f$d;->h:I
 
-    .line 32
-    iput-object v0, p2, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
+    .line 244
+    iput-object v0, p2, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
 
-    .line 33
-    iput-object p2, v0, Lcom/google/gson/internal/f$e;->a:Lcom/google/gson/internal/f$e;
+    .line 245
+    iput-object p2, v0, Lcom/google/gson/internal/f$d;->a:Lcom/google/gson/internal/f$d;
 
-    .line 34
-    iput-object v3, p1, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
+    .line 246
+    iput-object v3, p1, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
 
     goto :goto_1
 
     :cond_2
     const/4 v1, 0x0
 
-    .line 35
+    .line 250
     :goto_1
-    iget-object v0, p1, Lcom/google/gson/internal/f$e;->c:Lcom/google/gson/internal/f$e;
+    iget-object v0, p1, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
 
     if-eqz v0, :cond_3
 
-    .line 36
-    iget v2, v0, Lcom/google/gson/internal/f$e;->h:I
+    .line 252
+    iget v2, v0, Lcom/google/gson/internal/f$d;->h:I
 
-    .line 37
-    iput-object v0, p2, Lcom/google/gson/internal/f$e;->c:Lcom/google/gson/internal/f$e;
+    .line 253
+    iput-object v0, p2, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
 
-    .line 38
-    iput-object p2, v0, Lcom/google/gson/internal/f$e;->a:Lcom/google/gson/internal/f$e;
+    .line 254
+    iput-object p2, v0, Lcom/google/gson/internal/f$d;->a:Lcom/google/gson/internal/f$d;
 
-    .line 39
-    iput-object v3, p1, Lcom/google/gson/internal/f$e;->c:Lcom/google/gson/internal/f$e;
+    .line 255
+    iput-object v3, p1, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
 
-    .line 40
+    .line 258
     :cond_3
     invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
 
@@ -1014,51 +1106,51 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p2, Lcom/google/gson/internal/f$e;->h:I
+    iput v0, p2, Lcom/google/gson/internal/f$d;->h:I
 
-    .line 41
-    invoke-direct {p0, p1, p2}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$e;Lcom/google/gson/internal/f$e;)V
+    .line 259
+    invoke-direct {p0, p1, p2}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$d;Lcom/google/gson/internal/f$d;)V
 
     return-void
 
     :cond_4
     if-eqz p2, :cond_5
 
-    .line 42
-    invoke-direct {p0, p1, p2}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$e;Lcom/google/gson/internal/f$e;)V
+    .line 262
+    invoke-direct {p0, p1, p2}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$d;Lcom/google/gson/internal/f$d;)V
 
-    .line 43
-    iput-object v3, p1, Lcom/google/gson/internal/f$e;->b:Lcom/google/gson/internal/f$e;
+    .line 263
+    iput-object v3, p1, Lcom/google/gson/internal/f$d;->b:Lcom/google/gson/internal/f$d;
 
     goto :goto_2
 
     :cond_5
     if-eqz v0, :cond_6
 
-    .line 44
-    invoke-direct {p0, p1, v0}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$e;Lcom/google/gson/internal/f$e;)V
+    .line 265
+    invoke-direct {p0, p1, v0}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$d;Lcom/google/gson/internal/f$d;)V
 
-    .line 45
-    iput-object v3, p1, Lcom/google/gson/internal/f$e;->c:Lcom/google/gson/internal/f$e;
+    .line 266
+    iput-object v3, p1, Lcom/google/gson/internal/f$d;->c:Lcom/google/gson/internal/f$d;
 
     goto :goto_2
 
-    .line 46
+    .line 268
     :cond_6
-    invoke-direct {p0, p1, v3}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$e;Lcom/google/gson/internal/f$e;)V
+    invoke-direct {p0, p1, v3}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$d;Lcom/google/gson/internal/f$d;)V
 
-    .line 47
+    .line 271
     :goto_2
-    invoke-direct {p0, v1, v2}, Lcom/google/gson/internal/f;->b(Lcom/google/gson/internal/f$e;Z)V
+    invoke-direct {p0, v1, v2}, Lcom/google/gson/internal/f;->b(Lcom/google/gson/internal/f$d;Z)V
 
-    .line 48
+    .line 272
     iget p1, p0, Lcom/google/gson/internal/f;->c:I
 
     add-int/lit8 p1, p1, -0x1
 
     iput p1, p0, Lcom/google/gson/internal/f;->c:I
 
-    .line 49
+    .line 273
     iget p1, p0, Lcom/google/gson/internal/f;->d:I
 
     add-int/lit8 p1, p1, 0x1
@@ -1068,20 +1160,20 @@
     return-void
 .end method
 
-.method b(Ljava/lang/Object;)Lcom/google/gson/internal/f$e;
+.method b(Ljava/lang/Object;)Lcom/google/gson/internal/f$d;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Object;",
             ")",
-            "Lcom/google/gson/internal/f$e<",
+            "Lcom/google/gson/internal/f$d<",
             "TK;TV;>;"
         }
     .end annotation
 
-    .line 1
-    invoke-virtual {p0, p1}, Lcom/google/gson/internal/f;->a(Ljava/lang/Object;)Lcom/google/gson/internal/f$e;
+    .line 277
+    invoke-virtual {p0, p1}, Lcom/google/gson/internal/f;->a(Ljava/lang/Object;)Lcom/google/gson/internal/f$d;
 
     move-result-object p1
 
@@ -1089,8 +1181,8 @@
 
     const/4 v0, 0x1
 
-    .line 2
-    invoke-virtual {p0, p1, v0}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$e;Z)V
+    .line 279
+    invoke-virtual {p0, p1, v0}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$d;Z)V
 
     :cond_0
     return-object p1
@@ -1101,28 +1193,28 @@
 
     const/4 v0, 0x0
 
-    .line 1
-    iput-object v0, p0, Lcom/google/gson/internal/f;->b:Lcom/google/gson/internal/f$e;
+    .line 101
+    iput-object v0, p0, Lcom/google/gson/internal/f;->b:Lcom/google/gson/internal/f$d;
 
     const/4 v0, 0x0
 
-    .line 2
+    .line 102
     iput v0, p0, Lcom/google/gson/internal/f;->c:I
 
-    .line 3
+    .line 103
     iget v0, p0, Lcom/google/gson/internal/f;->d:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/gson/internal/f;->d:I
 
-    .line 4
-    iget-object v0, p0, Lcom/google/gson/internal/f;->e:Lcom/google/gson/internal/f$e;
+    .line 106
+    iget-object v0, p0, Lcom/google/gson/internal/f;->e:Lcom/google/gson/internal/f$d;
 
-    .line 5
-    iput-object v0, v0, Lcom/google/gson/internal/f$e;->e:Lcom/google/gson/internal/f$e;
+    .line 107
+    iput-object v0, v0, Lcom/google/gson/internal/f$d;->e:Lcom/google/gson/internal/f$d;
 
-    iput-object v0, v0, Lcom/google/gson/internal/f$e;->d:Lcom/google/gson/internal/f$e;
+    iput-object v0, v0, Lcom/google/gson/internal/f$d;->d:Lcom/google/gson/internal/f$d;
 
     return-void
 .end method
@@ -1130,8 +1222,8 @@
 .method public containsKey(Ljava/lang/Object;)Z
     .locals 0
 
-    .line 1
-    invoke-virtual {p0, p1}, Lcom/google/gson/internal/f;->a(Ljava/lang/Object;)Lcom/google/gson/internal/f$e;
+    .line 87
+    invoke-virtual {p0, p1}, Lcom/google/gson/internal/f;->a(Ljava/lang/Object;)Lcom/google/gson/internal/f$d;
 
     move-result-object p1
 
@@ -1159,20 +1251,20 @@
         }
     .end annotation
 
-    .line 1
-    iget-object v0, p0, Lcom/google/gson/internal/f;->f:Lcom/google/gson/internal/f$b;
+    .line 430
+    iget-object v0, p0, Lcom/google/gson/internal/f;->h:Lcom/google/gson/internal/f$a;
 
     if-eqz v0, :cond_0
 
     goto :goto_0
 
-    .line 2
+    .line 431
     :cond_0
-    new-instance v0, Lcom/google/gson/internal/f$b;
+    new-instance v0, Lcom/google/gson/internal/f$a;
 
-    invoke-direct {v0, p0}, Lcom/google/gson/internal/f$b;-><init>(Lcom/google/gson/internal/f;)V
+    invoke-direct {v0, p0}, Lcom/google/gson/internal/f$a;-><init>(Lcom/google/gson/internal/f;)V
 
-    iput-object v0, p0, Lcom/google/gson/internal/f;->f:Lcom/google/gson/internal/f$b;
+    iput-object v0, p0, Lcom/google/gson/internal/f;->h:Lcom/google/gson/internal/f$a;
 
     :goto_0
     return-object v0
@@ -1188,15 +1280,15 @@
         }
     .end annotation
 
-    .line 1
-    invoke-virtual {p0, p1}, Lcom/google/gson/internal/f;->a(Ljava/lang/Object;)Lcom/google/gson/internal/f$e;
+    .line 82
+    invoke-virtual {p0, p1}, Lcom/google/gson/internal/f;->a(Ljava/lang/Object;)Lcom/google/gson/internal/f$d;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 2
-    iget-object p1, p1, Lcom/google/gson/internal/f$e;->g:Ljava/lang/Object;
+    .line 83
+    iget-object p1, p1, Lcom/google/gson/internal/f$d;->g:Ljava/lang/Object;
 
     goto :goto_0
 
@@ -1217,20 +1309,20 @@
         }
     .end annotation
 
-    .line 1
-    iget-object v0, p0, Lcom/google/gson/internal/f;->g:Lcom/google/gson/internal/f$c;
+    .line 435
+    iget-object v0, p0, Lcom/google/gson/internal/f;->i:Lcom/google/gson/internal/f$b;
 
     if-eqz v0, :cond_0
 
     goto :goto_0
 
-    .line 2
+    .line 436
     :cond_0
-    new-instance v0, Lcom/google/gson/internal/f$c;
+    new-instance v0, Lcom/google/gson/internal/f$b;
 
-    invoke-direct {v0, p0}, Lcom/google/gson/internal/f$c;-><init>(Lcom/google/gson/internal/f;)V
+    invoke-direct {v0, p0}, Lcom/google/gson/internal/f$b;-><init>(Lcom/google/gson/internal/f;)V
 
-    iput-object v0, p0, Lcom/google/gson/internal/f;->g:Lcom/google/gson/internal/f$c;
+    iput-object v0, p0, Lcom/google/gson/internal/f;->i:Lcom/google/gson/internal/f$b;
 
     :goto_0
     return-object v0
@@ -1248,20 +1340,20 @@
 
     const/4 v0, 0x1
 
-    .line 1
-    invoke-virtual {p0, p1, v0}, Lcom/google/gson/internal/f;->a(Ljava/lang/Object;Z)Lcom/google/gson/internal/f$e;
+    .line 94
+    invoke-virtual {p0, p1, v0}, Lcom/google/gson/internal/f;->a(Ljava/lang/Object;Z)Lcom/google/gson/internal/f$d;
 
     move-result-object p1
 
-    .line 2
-    iget-object v0, p1, Lcom/google/gson/internal/f$e;->g:Ljava/lang/Object;
+    .line 95
+    iget-object v0, p1, Lcom/google/gson/internal/f$d;->g:Ljava/lang/Object;
 
-    .line 3
-    iput-object p2, p1, Lcom/google/gson/internal/f$e;->g:Ljava/lang/Object;
+    .line 96
+    iput-object p2, p1, Lcom/google/gson/internal/f$d;->g:Ljava/lang/Object;
 
     return-object v0
 
-    .line 4
+    .line 92
     :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
@@ -1282,15 +1374,15 @@
         }
     .end annotation
 
-    .line 1
-    invoke-virtual {p0, p1}, Lcom/google/gson/internal/f;->b(Ljava/lang/Object;)Lcom/google/gson/internal/f$e;
+    .line 111
+    invoke-virtual {p0, p1}, Lcom/google/gson/internal/f;->b(Ljava/lang/Object;)Lcom/google/gson/internal/f$d;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 2
-    iget-object p1, p1, Lcom/google/gson/internal/f$e;->g:Ljava/lang/Object;
+    .line 112
+    iget-object p1, p1, Lcom/google/gson/internal/f$d;->g:Ljava/lang/Object;
 
     goto :goto_0
 
@@ -1304,7 +1396,7 @@
 .method public size()I
     .locals 1
 
-    .line 1
+    .line 78
     iget v0, p0, Lcom/google/gson/internal/f;->c:I
 
     return v0

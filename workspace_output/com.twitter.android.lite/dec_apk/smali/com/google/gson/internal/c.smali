@@ -6,7 +6,7 @@
 value = {
 "Ljava/util/Map<",
 "Ljava/lang/reflect/Type;",
-"Lhv<",
+"Lsz<",
 "*>;>;"
 }
 .end annotation
@@ -18,7 +18,7 @@ value = {
 "(",
 "Ljava/util/Map<",
 "Ljava/lang/reflect/Type;",
-"Lhv<",
+"Lsz<",
 "*>;>;)V"
 }
 .end annotation
@@ -50,8 +50,8 @@ if-nez v0, :cond_0
 const/4 v0, 0x1
 invoke-virtual {p1, v0}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
 :cond_0
-new-instance v0, Lcom/google/gson/internal/c$h;
-invoke-direct {v0, p0, p1}, Lcom/google/gson/internal/c$h;-><init>(Lcom/google/gson/internal/c;Ljava/lang/reflect/Constructor;)V
+new-instance v0, Lcom/google/gson/internal/c$8;
+invoke-direct {v0, p0, p1}, Lcom/google/gson/internal/c$8;-><init>(Lcom/google/gson/internal/c;Ljava/lang/reflect/Constructor;)V
 :try_end_0
 .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 return-object v0
@@ -96,35 +96,35 @@ value = {
 "TT;>;"
 }
 .end annotation
-new-instance v0, Lcom/google/gson/internal/c$e;
-invoke-direct {v0, p0, p2, p1}, Lcom/google/gson/internal/c$e;-><init>(Lcom/google/gson/internal/c;Ljava/lang/Class;Ljava/lang/reflect/Type;)V
+new-instance v0, Lcom/google/gson/internal/c$6;
+invoke-direct {v0, p0, p2, p1}, Lcom/google/gson/internal/c$6;-><init>(Lcom/google/gson/internal/c;Ljava/lang/Class;Ljava/lang/reflect/Type;)V
 return-object v0
 .end method
-.method public a(Ldw;)Lcom/google/gson/internal/g;
+.method public a(Ltv;)Lcom/google/gson/internal/g;
 .locals 2
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "<T:",
 "Ljava/lang/Object;",
 ">(",
-"Ldw<",
+"Ltv<",
 "TT;>;)",
 "Lcom/google/gson/internal/g<",
 "TT;>;"
 }
 .end annotation
-invoke-virtual {p1}, Ldw;->b()Ljava/lang/reflect/Type;
+invoke-virtual {p1}, Ltv;->b()Ljava/lang/reflect/Type;
 move-result-object v0
-invoke-virtual {p1}, Ldw;->a()Ljava/lang/Class;
+invoke-virtual {p1}, Ltv;->a()Ljava/lang/Class;
 move-result-object p1
 iget-object v1, p0, Lcom/google/gson/internal/c;->a:Ljava/util/Map;
 invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 move-result-object v1
-check-cast v1, Lhv;
+check-cast v1, Lsz;
 iget-object v1, p0, Lcom/google/gson/internal/c;->a:Ljava/util/Map;
 invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 move-result-object v1
-check-cast v1, Lhv;
+check-cast v1, Lsz;
 invoke-direct {p0, p1}, Lcom/google/gson/internal/c;->a(Ljava/lang/Class;)Lcom/google/gson/internal/g;
 move-result-object v1
 if-eqz v1, :cond_2

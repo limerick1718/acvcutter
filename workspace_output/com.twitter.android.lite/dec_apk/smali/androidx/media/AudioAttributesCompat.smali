@@ -3,6 +3,7 @@
 .source "AudioAttributesCompat.java"
 .implements Landroidx/versionedparcelable/c;
 .field private static final b:Landroid/util/SparseIntArray;
+.field private static final c:[I
 .field  a:Landroidx/media/a;
 .method constructor <init>()V
 .locals 0

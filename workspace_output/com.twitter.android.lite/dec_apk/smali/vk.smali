@@ -1,5 +1,5 @@
 .class public interface abstract Lvk;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.method public abstract a()Z
+.source "AdvertisingInfoStrategy.java"
+.method public abstract a()Lvg;
 .end method

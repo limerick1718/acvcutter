@@ -47,9 +47,9 @@
 
     const/16 v0, 0x9
 
+    .line 51
     new-array v1, v0, [Lokhttp3/CipherSuite;
 
-    .line 1
     sget-object v2, Lokhttp3/CipherSuite;->TLS_AES_128_GCM_SHA256:Lokhttp3/CipherSuite;
 
     const/4 v3, 0x0
@@ -108,9 +108,9 @@
 
     const/16 v1, 0x10
 
+    .line 68
     new-array v1, v1, [Lokhttp3/CipherSuite;
 
-    .line 2
     sget-object v2, Lokhttp3/CipherSuite;->TLS_AES_128_GCM_SHA256:Lokhttp3/CipherSuite;
 
     aput-object v2, v1, v3
@@ -189,14 +189,14 @@
 
     sput-object v1, Lokhttp3/ConnectionSpec;->APPROVED_CIPHER_SUITES:[Lokhttp3/CipherSuite;
 
-    .line 3
+    .line 94
     new-instance v0, Lokhttp3/ConnectionSpec$Builder;
 
     invoke-direct {v0, v4}, Lokhttp3/ConnectionSpec$Builder;-><init>(Z)V
 
     sget-object v1, Lokhttp3/ConnectionSpec;->RESTRICTED_CIPHER_SUITES:[Lokhttp3/CipherSuite;
 
-    .line 4
+    .line 95
     invoke-virtual {v0, v1}, Lokhttp3/ConnectionSpec$Builder;->cipherSuites([Lokhttp3/CipherSuite;)Lokhttp3/ConnectionSpec$Builder;
 
     move-result-object v0
@@ -211,31 +211,31 @@
 
     aput-object v2, v1, v4
 
-    .line 5
+    .line 96
     invoke-virtual {v0, v1}, Lokhttp3/ConnectionSpec$Builder;->tlsVersions([Lokhttp3/TlsVersion;)Lokhttp3/ConnectionSpec$Builder;
 
     move-result-object v0
 
-    .line 6
+    .line 97
     invoke-virtual {v0, v4}, Lokhttp3/ConnectionSpec$Builder;->supportsTlsExtensions(Z)Lokhttp3/ConnectionSpec$Builder;
 
     move-result-object v0
 
-    .line 7
+    .line 98
     invoke-virtual {v0}, Lokhttp3/ConnectionSpec$Builder;->build()Lokhttp3/ConnectionSpec;
 
     move-result-object v0
 
     sput-object v0, Lokhttp3/ConnectionSpec;->RESTRICTED_TLS:Lokhttp3/ConnectionSpec;
 
-    .line 8
+    .line 104
     new-instance v0, Lokhttp3/ConnectionSpec$Builder;
 
     invoke-direct {v0, v4}, Lokhttp3/ConnectionSpec$Builder;-><init>(Z)V
 
     sget-object v1, Lokhttp3/ConnectionSpec;->APPROVED_CIPHER_SUITES:[Lokhttp3/CipherSuite;
 
-    .line 9
+    .line 105
     invoke-virtual {v0, v1}, Lokhttp3/ConnectionSpec$Builder;->cipherSuites([Lokhttp3/CipherSuite;)Lokhttp3/ConnectionSpec$Builder;
 
     move-result-object v0
@@ -250,31 +250,31 @@
 
     aput-object v2, v1, v4
 
-    .line 10
+    .line 106
     invoke-virtual {v0, v1}, Lokhttp3/ConnectionSpec$Builder;->tlsVersions([Lokhttp3/TlsVersion;)Lokhttp3/ConnectionSpec$Builder;
 
     move-result-object v0
 
-    .line 11
+    .line 107
     invoke-virtual {v0, v4}, Lokhttp3/ConnectionSpec$Builder;->supportsTlsExtensions(Z)Lokhttp3/ConnectionSpec$Builder;
 
     move-result-object v0
 
-    .line 12
+    .line 108
     invoke-virtual {v0}, Lokhttp3/ConnectionSpec$Builder;->build()Lokhttp3/ConnectionSpec;
 
     move-result-object v0
 
     sput-object v0, Lokhttp3/ConnectionSpec;->MODERN_TLS:Lokhttp3/ConnectionSpec;
 
-    .line 13
+    .line 115
     new-instance v0, Lokhttp3/ConnectionSpec$Builder;
 
     invoke-direct {v0, v4}, Lokhttp3/ConnectionSpec$Builder;-><init>(Z)V
 
     sget-object v1, Lokhttp3/ConnectionSpec;->APPROVED_CIPHER_SUITES:[Lokhttp3/CipherSuite;
 
-    .line 14
+    .line 116
     invoke-virtual {v0, v1}, Lokhttp3/ConnectionSpec$Builder;->cipherSuites([Lokhttp3/CipherSuite;)Lokhttp3/ConnectionSpec$Builder;
 
     move-result-object v0
@@ -297,24 +297,24 @@
 
     aput-object v2, v1, v6
 
-    .line 15
+    .line 117
     invoke-virtual {v0, v1}, Lokhttp3/ConnectionSpec$Builder;->tlsVersions([Lokhttp3/TlsVersion;)Lokhttp3/ConnectionSpec$Builder;
 
     move-result-object v0
 
-    .line 16
+    .line 118
     invoke-virtual {v0, v4}, Lokhttp3/ConnectionSpec$Builder;->supportsTlsExtensions(Z)Lokhttp3/ConnectionSpec$Builder;
 
     move-result-object v0
 
-    .line 17
+    .line 119
     invoke-virtual {v0}, Lokhttp3/ConnectionSpec$Builder;->build()Lokhttp3/ConnectionSpec;
 
     move-result-object v0
 
     sput-object v0, Lokhttp3/ConnectionSpec;->COMPATIBLE_TLS:Lokhttp3/ConnectionSpec;
 
-    .line 18
+    .line 122
     new-instance v0, Lokhttp3/ConnectionSpec$Builder;
 
     invoke-direct {v0, v3}, Lokhttp3/ConnectionSpec$Builder;-><init>(Z)V
@@ -331,25 +331,25 @@
 .method constructor <init>(Lokhttp3/ConnectionSpec$Builder;)V
     .locals 1
 
-    .line 1
+    .line 129
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 130
     iget-boolean v0, p1, Lokhttp3/ConnectionSpec$Builder;->tls:Z
 
     iput-boolean v0, p0, Lokhttp3/ConnectionSpec;->tls:Z
 
-    .line 3
+    .line 131
     iget-object v0, p1, Lokhttp3/ConnectionSpec$Builder;->cipherSuites:[Ljava/lang/String;
 
     iput-object v0, p0, Lokhttp3/ConnectionSpec;->cipherSuites:[Ljava/lang/String;
 
-    .line 4
+    .line 132
     iget-object v0, p1, Lokhttp3/ConnectionSpec$Builder;->tlsVersions:[Ljava/lang/String;
 
     iput-object v0, p0, Lokhttp3/ConnectionSpec;->tlsVersions:[Ljava/lang/String;
 
-    .line 5
+    .line 133
     iget-boolean p1, p1, Lokhttp3/ConnectionSpec$Builder;->supportsTlsExtensions:Z
 
     iput-boolean p1, p0, Lokhttp3/ConnectionSpec;->supportsTlsExtensions:Z
@@ -360,12 +360,12 @@
 .method private supportedSpec(Ljavax/net/ssl/SSLSocket;Z)Lokhttp3/ConnectionSpec;
     .locals 4
 
-    .line 1
+    .line 177
     iget-object v0, p0, Lokhttp3/ConnectionSpec;->cipherSuites:[Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 2
+    .line 178
     sget-object v0, Lokhttp3/CipherSuite;->ORDER_BY_NAME:Ljava/util/Comparator;
 
     invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledCipherSuites()[Ljava/lang/String;
@@ -380,19 +380,19 @@
 
     goto :goto_0
 
-    .line 3
+    .line 179
     :cond_0
     invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledCipherSuites()[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4
+    .line 180
     :goto_0
     iget-object v1, p0, Lokhttp3/ConnectionSpec;->tlsVersions:[Ljava/lang/String;
 
     if-eqz v1, :cond_1
 
-    .line 5
+    .line 181
     sget-object v1, Lokhttp3/internal/Util;->NATURAL_ORDER:Ljava/util/Comparator;
 
     invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledProtocols()[Ljava/lang/String;
@@ -407,19 +407,19 @@
 
     goto :goto_1
 
-    .line 6
+    .line 182
     :cond_1
     invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledProtocols()[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 7
+    .line 186
     :goto_1
     invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getSupportedCipherSuites()[Ljava/lang/String;
 
     move-result-object p1
 
-    .line 8
+    .line 187
     sget-object v2, Lokhttp3/CipherSuite;->ORDER_BY_NAME:Ljava/util/Comparator;
 
     const-string v3, "TLS_FALLBACK_SCSV"
@@ -434,30 +434,30 @@
 
     if-eq v2, p2, :cond_2
 
-    .line 9
+    .line 190
     aget-object p1, p1, v2
 
     invoke-static {v0, p1}, Lokhttp3/internal/Util;->concat([Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 10
+    .line 194
     :cond_2
     new-instance p1, Lokhttp3/ConnectionSpec$Builder;
 
     invoke-direct {p1, p0}, Lokhttp3/ConnectionSpec$Builder;-><init>(Lokhttp3/ConnectionSpec;)V
 
-    .line 11
+    .line 195
     invoke-virtual {p1, v0}, Lokhttp3/ConnectionSpec$Builder;->cipherSuites([Ljava/lang/String;)Lokhttp3/ConnectionSpec$Builder;
 
     move-result-object p1
 
-    .line 12
+    .line 196
     invoke-virtual {p1, v1}, Lokhttp3/ConnectionSpec$Builder;->tlsVersions([Ljava/lang/String;)Lokhttp3/ConnectionSpec$Builder;
 
     move-result-object p1
 
-    .line 13
+    .line 197
     invoke-virtual {p1}, Lokhttp3/ConnectionSpec$Builder;->build()Lokhttp3/ConnectionSpec;
 
     move-result-object p1
@@ -470,26 +470,26 @@
 .method apply(Ljavax/net/ssl/SSLSocket;Z)V
     .locals 1
 
-    .line 1
+    .line 162
     invoke-direct {p0, p1, p2}, Lokhttp3/ConnectionSpec;->supportedSpec(Ljavax/net/ssl/SSLSocket;Z)Lokhttp3/ConnectionSpec;
 
     move-result-object p2
 
-    .line 2
+    .line 164
     iget-object v0, p2, Lokhttp3/ConnectionSpec;->tlsVersions:[Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 3
+    .line 165
     invoke-virtual {p1, v0}, Ljavax/net/ssl/SSLSocket;->setEnabledProtocols([Ljava/lang/String;)V
 
-    .line 4
+    .line 167
     :cond_0
     iget-object p2, p2, Lokhttp3/ConnectionSpec;->cipherSuites:[Ljava/lang/String;
 
     if-eqz p2, :cond_1
 
-    .line 5
+    .line 168
     invoke-virtual {p1, p2}, Ljavax/net/ssl/SSLSocket;->setEnabledCipherSuites([Ljava/lang/String;)V
 
     :cond_1
@@ -510,7 +510,7 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 1
+    .line 145
     iget-object v0, p0, Lokhttp3/ConnectionSpec;->cipherSuites:[Ljava/lang/String;
 
     if-eqz v0, :cond_0
@@ -535,7 +535,7 @@
         .end annotation
     .end param
 
-    .line 1
+    .line 230
     instance-of v0, p1, Lokhttp3/ConnectionSpec;
 
     const/4 v1, 0x0
@@ -551,11 +551,11 @@
 
     return v0
 
-    .line 2
+    .line 233
     :cond_1
     check-cast p1, Lokhttp3/ConnectionSpec;
 
-    .line 3
+    .line 234
     iget-boolean v2, p0, Lokhttp3/ConnectionSpec;->tls:Z
 
     iget-boolean v3, p1, Lokhttp3/ConnectionSpec;->tls:Z
@@ -567,7 +567,7 @@
     :cond_2
     if-eqz v2, :cond_5
 
-    .line 4
+    .line 237
     iget-object v2, p0, Lokhttp3/ConnectionSpec;->cipherSuites:[Ljava/lang/String;
 
     iget-object v3, p1, Lokhttp3/ConnectionSpec;->cipherSuites:[Ljava/lang/String;
@@ -580,7 +580,7 @@
 
     return v1
 
-    .line 5
+    .line 238
     :cond_3
     iget-object v2, p0, Lokhttp3/ConnectionSpec;->tlsVersions:[Ljava/lang/String;
 
@@ -594,7 +594,7 @@
 
     return v1
 
-    .line 6
+    .line 239
     :cond_4
     iget-boolean v2, p0, Lokhttp3/ConnectionSpec;->supportsTlsExtensions:Z
 
@@ -611,14 +611,14 @@
 .method public hashCode()I
     .locals 2
 
-    .line 1
+    .line 247
     iget-boolean v0, p0, Lokhttp3/ConnectionSpec;->tls:Z
 
     if-eqz v0, :cond_0
 
     const/16 v0, 0x20f
 
-    .line 2
+    .line 248
     iget-object v1, p0, Lokhttp3/ConnectionSpec;->cipherSuites:[Ljava/lang/String;
 
     invoke-static {v1}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
@@ -629,7 +629,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 3
+    .line 249
     iget-object v1, p0, Lokhttp3/ConnectionSpec;->tlsVersions:[Ljava/lang/String;
 
     invoke-static {v1}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
@@ -640,7 +640,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 4
+    .line 250
     iget-boolean v1, p0, Lokhttp3/ConnectionSpec;->supportsTlsExtensions:Z
 
     xor-int/lit8 v1, v1, 0x1
@@ -659,7 +659,7 @@
 .method public isCompatible(Ljavax/net/ssl/SSLSocket;)Z
     .locals 4
 
-    .line 1
+    .line 212
     iget-boolean v0, p0, Lokhttp3/ConnectionSpec;->tls:Z
 
     const/4 v1, 0x0
@@ -668,21 +668,23 @@
 
     return v1
 
-    .line 2
+    .line 216
     :cond_0
     iget-object v0, p0, Lokhttp3/ConnectionSpec;->tlsVersions:[Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    sget-object v2, Lokhttp3/internal/Util;->NATURAL_ORDER:Ljava/util/Comparator;
+    sget-object v0, Lokhttp3/internal/Util;->NATURAL_ORDER:Ljava/util/Comparator;
 
-    .line 3
+    iget-object v2, p0, Lokhttp3/ConnectionSpec;->tlsVersions:[Ljava/lang/String;
+
+    .line 217
     invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledProtocols()[Ljava/lang/String;
 
     move-result-object v3
 
-    .line 4
-    invoke-static {v2, v0, v3}, Lokhttp3/internal/Util;->nonEmptyIntersection(Ljava/util/Comparator;[Ljava/lang/String;[Ljava/lang/String;)Z
+    .line 216
+    invoke-static {v0, v2, v3}, Lokhttp3/internal/Util;->nonEmptyIntersection(Ljava/util/Comparator;[Ljava/lang/String;[Ljava/lang/String;)Z
 
     move-result v0
 
@@ -690,21 +692,23 @@
 
     return v1
 
-    .line 5
+    .line 221
     :cond_1
     iget-object v0, p0, Lokhttp3/ConnectionSpec;->cipherSuites:[Ljava/lang/String;
 
     if-eqz v0, :cond_2
 
-    sget-object v2, Lokhttp3/CipherSuite;->ORDER_BY_NAME:Ljava/util/Comparator;
+    sget-object v0, Lokhttp3/CipherSuite;->ORDER_BY_NAME:Ljava/util/Comparator;
 
-    .line 6
+    iget-object v2, p0, Lokhttp3/ConnectionSpec;->cipherSuites:[Ljava/lang/String;
+
+    .line 222
     invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledCipherSuites()[Ljava/lang/String;
 
     move-result-object p1
 
-    .line 7
-    invoke-static {v2, v0, p1}, Lokhttp3/internal/Util;->nonEmptyIntersection(Ljava/util/Comparator;[Ljava/lang/String;[Ljava/lang/String;)Z
+    .line 221
+    invoke-static {v0, v2, p1}, Lokhttp3/internal/Util;->nonEmptyIntersection(Ljava/util/Comparator;[Ljava/lang/String;[Ljava/lang/String;)Z
 
     move-result p1
 
@@ -721,7 +725,7 @@
 .method public isTls()Z
     .locals 1
 
-    .line 1
+    .line 137
     iget-boolean v0, p0, Lokhttp3/ConnectionSpec;->tls:Z
 
     return v0
@@ -730,7 +734,7 @@
 .method public supportsTlsExtensions()Z
     .locals 1
 
-    .line 1
+    .line 157
     iget-boolean v0, p0, Lokhttp3/ConnectionSpec;->supportsTlsExtensions:Z
 
     return v0
@@ -750,7 +754,7 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 1
+    .line 153
     iget-object v0, p0, Lokhttp3/ConnectionSpec;->tlsVersions:[Ljava/lang/String;
 
     if-eqz v0, :cond_0
@@ -771,7 +775,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 1
+    .line 256
     iget-boolean v0, p0, Lokhttp3/ConnectionSpec;->tls:Z
 
     if-nez v0, :cond_0
@@ -780,7 +784,7 @@
 
     return-object v0
 
-    .line 2
+    .line 260
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -790,7 +794,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3
+    .line 261
     invoke-virtual {p0}, Lokhttp3/ConnectionSpec;->cipherSuites()Ljava/util/List;
 
     move-result-object v1
@@ -807,7 +811,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4
+    .line 262
     invoke-virtual {p0}, Lokhttp3/ConnectionSpec;->tlsVersions()Ljava/util/List;
 
     move-result-object v1

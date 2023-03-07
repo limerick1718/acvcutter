@@ -7,5 +7,5 @@ value = Lcom/google/android/gms/common/internal/b;
 accessFlags = 0x609
 name = "c"
 .end annotation
-.method public abstract a(Lc5;)V
+.method public abstract a(Lcom/google/android/gms/common/b;)V
 .end method

@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> iz.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Liz;
+.super Ljava/lang/Object;
+
+
+.field private static final a:Liz;
+.field private b:I
+.field private c:[I
+.field private d:[Ljava/lang/Object;
+.field private e:I
+.field private f:Z
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 4</span>
+
+<span class="missed">	new-instance v0, Liz;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	new-array v2, v1, [I</span>
+<span class="missed">	new-array v3, v1, [Ljava/lang/Object;</span>
+<span class="missed">	invoke-direct {v0, v1, v2, v3, v1}, Liz;-><init>(I[I[Ljava/lang/Object;Z)V</span>
+<span class="missed">	sput-object v0, Liz;->a:Liz;</span>
+<span class="">	return-void</span>
+.end method
+
+.method private constructor &lt;init&gt;()V
+<span class="">	.locals 4</span>
+
+<span class="missed">	const/16 v0, 0x8</span>
+<span class="missed">	new-array v1, v0, [I</span>
+<span class="missed">	new-array v0, v0, [Ljava/lang/Object;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	invoke-direct {p0, v2, v1, v0, v3}, Liz;-><init>(I[I[Ljava/lang/Object;Z)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method private constructor &lt;init&gt;(I[I[Ljava/lang/Object;Z)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	const/4 v0, -0x1</span>
+<span class="missed">	iput v0, p0, Liz;->e:I</span>
+<span class="missed">	iput p1, p0, Liz;->b:I</span>
+<span class="missed">	iput-object p2, p0, Liz;->c:[I</span>
+<span class="missed">	iput-object p3, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="missed">	iput-boolean p4, p0, Liz;->f:Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method public static a()Liz;
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Liz;->a:Liz;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method static a(Liz;Liz;)Liz;
+<span class="">	.locals 6</span>
+
+<span class="missed">	iget v0, p0, Liz;->b:I</span>
+<span class="missed">	iget v1, p1, Liz;->b:I</span>
+<span class="missed">	add-int/2addr v0, v1</span>
+<span class="missed">	iget-object v1, p0, Liz;->c:[I</span>
+<span class="">	invoke-static {v1, v0}, Ljava/util/Arrays;->copyOf([II)[I</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iget-object v2, p1, Liz;->c:[I</span>
+<span class="missed">	iget v3, p0, Liz;->b:I</span>
+<span class="missed">	iget v4, p1, Liz;->b:I</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="missed">	invoke-static {v2, v5, v1, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
+<span class="missed">	iget-object v2, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="">	invoke-static {v2, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	iget-object v3, p1, Liz;->d:[Ljava/lang/Object;</span>
+<span class="missed">	iget p0, p0, Liz;->b:I</span>
+<span class="missed">	iget p1, p1, Liz;->b:I</span>
+<span class="missed">	invoke-static {v3, v5, v2, p0, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
+<span class="missed">	new-instance p0, Liz;</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="missed">	invoke-direct {p0, v0, v1, v2, p1}, Liz;-><init>(I[I[Ljava/lang/Object;Z)V</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method private static a(ILjava/lang/Object;Ljt;)V
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	ushr-int/lit8 v0, p0, 0x3</span>
+<span class="missed">	and-int/lit8 p0, p0, 0x7</span>
+<span class="missed">	if-eqz p0, :cond_5</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-eq p0, v1, :cond_4</span>
+<span class="missed">	const/4 v1, 0x2</span>
+<span class="missed">	if-eq p0, v1, :cond_3</span>
+<span class="missed">	const/4 v1, 0x3</span>
+<span class="missed">	if-eq p0, v1, :cond_1</span>
+<span class="missed">	const/4 v1, 0x5</span>
+<span class="missed">	if-ne p0, v1, :cond_0</span>
+<span class="missed">	check-cast p1, Ljava/lang/Integer;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	invoke-interface {p2, v0, p0}, Ljt;->d(II)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p0, Ljava/lang/RuntimeException;</span>
+<span class="">	invoke-static {}, Lgo;->e()Lgp;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V</span>
+<span class="">	throw p0</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-interface {p2}, Ljt;->a()I</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	sget v1, Lgh$e;->j:I</span>
+<span class="missed">	if-ne p0, v1, :cond_2</span>
+<span class="missed">	invoke-interface {p2, v0}, Ljt;->a(I)V</span>
+<span class="missed">	check-cast p1, Liz;</span>
+<span class="missed">	invoke-virtual {p1, p2}, Liz;->b(Ljt;)V</span>
+<span class="missed">	invoke-interface {p2, v0}, Ljt;->b(I)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	invoke-interface {p2, v0}, Ljt;->b(I)V</span>
+<span class="missed">	check-cast p1, Liz;</span>
+<span class="missed">	invoke-virtual {p1, p2}, Liz;->b(Ljt;)V</span>
+<span class="missed">	invoke-interface {p2, v0}, Ljt;->a(I)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_3</span>
+<span class="missed">	check-cast p1, Lew;</span>
+<span class="missed">	invoke-interface {p2, v0, p1}, Ljt;->a(ILew;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_4</span>
+<span class="missed">	check-cast p1, Ljava/lang/Long;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Long;->longValue()J</span>
+<span class="missed">	move-result-wide p0</span>
+<span class="missed">	invoke-interface {p2, v0, p0, p1}, Ljt;->d(IJ)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_5</span>
+<span class="missed">	check-cast p1, Ljava/lang/Long;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Long;->longValue()J</span>
+<span class="missed">	move-result-wide p0</span>
+<span class="missed">	invoke-interface {p2, v0, p0, p1}, Ljt;->a(IJ)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method static b()Liz;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Liz;</span>
+<span class="missed">	invoke-direct {v0}, Liz;-><init>()V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method final a(ILjava/lang/Object;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-boolean v0, p0, Liz;->f:Z</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="missed">	iget v0, p0, Liz;->b:I</span>
+<span class="missed">	iget-object v1, p0, Liz;->c:[I</span>
+<span class="missed">	array-length v1, v1</span>
+<span class="missed">	if-ne v0, v1, :cond_1</span>
+<span class="missed">	const/4 v1, 0x4</span>
+<span class="missed">	if-ge v0, v1, :cond_0</span>
+<span class="missed">	const/16 v0, 0x8</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	shr-int/lit8 v0, v0, 0x1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget v1, p0, Liz;->b:I</span>
+<span class="missed">	add-int/2addr v1, v0</span>
+<span class="missed">	iget-object v0, p0, Liz;->c:[I</span>
+<span class="">	invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([II)[I</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Liz;->c:[I</span>
+<span class="missed">	iget-object v0, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="">	invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v0, p0, Liz;->c:[I</span>
+<span class="missed">	iget v1, p0, Liz;->b:I</span>
+<span class="missed">	aput p1, v0, v1</span>
+<span class="missed">	iget-object p1, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aput-object p2, p1, v1</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="missed">	iput v1, p0, Liz;->b:I</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/UnsupportedOperationException;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method final a(Ljava/lang/StringBuilder;I)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget v1, p0, Liz;->b:I</span>
+<span class="missed">	if-ge v0, v1, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Liz;->c:[I</span>
+<span class="missed">	aget v1, v1, v0</span>
+<span class="missed">	ushr-int/lit8 v1, v1, 0x3</span>
+<span class="">	invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iget-object v2, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aget-object v2, v2, v0</span>
+<span class="missed">	invoke-static {p1, p2, v1, v2}, Lhs;->a(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method final a(Ljt;)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-interface {p1}, Ljt;->a()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	sget v1, Lgh$e;->k:I</span>
+<span class="missed">	if-ne v0, v1, :cond_1</span>
+<span class="missed">	iget v0, p0, Liz;->b:I</span>
+<span class="missed">	add-int/lit8 v0, v0, -0x1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ltz v0, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Liz;->c:[I</span>
+<span class="missed">	aget v1, v1, v0</span>
+<span class="missed">	ushr-int/lit8 v1, v1, 0x3</span>
+<span class="missed">	iget-object v2, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aget-object v2, v2, v0</span>
+<span class="missed">	invoke-interface {p1, v1, v2}, Ljt;->a(ILjava/lang/Object;)V</span>
+<span class="missed">	add-int/lit8 v0, v0, -0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	iget v1, p0, Liz;->b:I</span>
+<span class="missed">	if-ge v0, v1, :cond_2</span>
+<span class="missed">	iget-object v1, p0, Liz;->c:[I</span>
+<span class="missed">	aget v1, v1, v0</span>
+<span class="missed">	ushr-int/lit8 v1, v1, 0x3</span>
+<span class="missed">	iget-object v2, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aget-object v2, v2, v0</span>
+<span class="missed">	invoke-interface {p1, v1, v2}, Ljt;->a(ILjava/lang/Object;)V</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final b(Ljt;)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget v0, p0, Liz;->b:I</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-interface {p1}, Ljt;->a()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	sget v1, Lgh$e;->j:I</span>
+<span class="missed">	if-ne v0, v1, :cond_2</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget v1, p0, Liz;->b:I</span>
+<span class="missed">	if-ge v0, v1, :cond_1</span>
+<span class="missed">	iget-object v1, p0, Liz;->c:[I</span>
+<span class="missed">	aget v1, v1, v0</span>
+<span class="missed">	iget-object v2, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aget-object v2, v2, v0</span>
+<span class="missed">	invoke-static {v1, v2, p1}, Liz;->a(ILjava/lang/Object;Ljt;)V</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget v0, p0, Liz;->b:I</span>
+<span class="missed">	add-int/lit8 v0, v0, -0x1</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ltz v0, :cond_3</span>
+<span class="missed">	iget-object v1, p0, Liz;->c:[I</span>
+<span class="missed">	aget v1, v1, v0</span>
+<span class="missed">	iget-object v2, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aget-object v2, v2, v0</span>
+<span class="missed">	invoke-static {v1, v2, p1}, Liz;->a(ILjava/lang/Object;Ljt;)V</span>
+<span class="missed">	add-int/lit8 v0, v0, -0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_3</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final c()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-boolean v0, p0, Liz;->f:Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final d()I
+<span class="">	.locals 4</span>
+
+<span class="missed">	iget v0, p0, Liz;->e:I</span>
+<span class="missed">	const/4 v1, -0x1</span>
+<span class="missed">	if-eq v0, v1, :cond_0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget v2, p0, Liz;->b:I</span>
+<span class="missed">	if-ge v0, v2, :cond_1</span>
+<span class="missed">	iget-object v2, p0, Liz;->c:[I</span>
+<span class="missed">	aget v2, v2, v0</span>
+<span class="missed">	ushr-int/lit8 v2, v2, 0x3</span>
+<span class="missed">	iget-object v3, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aget-object v3, v3, v0</span>
+<span class="missed">	check-cast v3, Lew;</span>
+<span class="">	invoke-static {v2, v3}, Lfn;->d(ILew;)I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	add-int/2addr v1, v2</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iput v1, p0, Liz;->e:I</span>
+<span class="">	return v1</span>
+.end method
+
+.method public final e()I
+<span class="">	.locals 6</span>
+
+<span class="missed">	iget v0, p0, Liz;->e:I</span>
+<span class="missed">	const/4 v1, -0x1</span>
+<span class="missed">	if-eq v0, v1, :cond_0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget v2, p0, Liz;->b:I</span>
+<span class="missed">	if-ge v0, v2, :cond_6</span>
+<span class="missed">	iget-object v2, p0, Liz;->c:[I</span>
+<span class="missed">	aget v2, v2, v0</span>
+<span class="missed">	ushr-int/lit8 v3, v2, 0x3</span>
+<span class="missed">	and-int/lit8 v2, v2, 0x7</span>
+<span class="missed">	if-eqz v2, :cond_5</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	if-eq v2, v4, :cond_4</span>
+<span class="missed">	const/4 v5, 0x2</span>
+<span class="missed">	if-eq v2, v5, :cond_3</span>
+<span class="missed">	const/4 v5, 0x3</span>
+<span class="missed">	if-eq v2, v5, :cond_2</span>
+<span class="missed">	const/4 v4, 0x5</span>
+<span class="missed">	if-ne v2, v4, :cond_1</span>
+<span class="missed">	iget-object v2, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aget-object v2, v2, v0</span>
+<span class="missed">	check-cast v2, Ljava/lang/Integer;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	invoke-static {v3, v2}, Lfn;->i(II)I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="">	invoke-static {}, Lgo;->e()Lgp;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-static {v3}, Lfn;->e(I)I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	shl-int/2addr v2, v4</span>
+<span class="missed">	iget-object v3, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aget-object v3, v3, v0</span>
+<span class="missed">	check-cast v3, Liz;</span>
+<span class="">	invoke-virtual {v3}, Liz;->e()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	add-int/2addr v2, v3</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	iget-object v2, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aget-object v2, v2, v0</span>
+<span class="missed">	check-cast v2, Lew;</span>
+<span class="">	invoke-static {v3, v2}, Lfn;->c(ILew;)I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget-object v2, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aget-object v2, v2, v0</span>
+<span class="missed">	check-cast v2, Ljava/lang/Long;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/Long;->longValue()J</span>
+<span class="missed">	move-result-wide v4</span>
+<span class="">	invoke-static {v3, v4, v5}, Lfn;->g(IJ)I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_5</span>
+<span class="missed">	iget-object v2, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aget-object v2, v2, v0</span>
+<span class="missed">	check-cast v2, Ljava/lang/Long;</span>
+<span class="">	invoke-virtual {v2}, Ljava/lang/Long;->longValue()J</span>
+<span class="missed">	move-result-wide v4</span>
+<span class="">	invoke-static {v3, v4, v5}, Lfn;->e(IJ)I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	:goto_1</span>
+<span class="missed">	add-int/2addr v1, v2</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_6</span>
+<span class="missed">	iput v1, p0, Liz;->e:I</span>
+<span class="">	return v1</span>
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+<span class="">	.locals 8</span>
+
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-ne p0, p1, :cond_0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	if-nez p1, :cond_1</span>
+<span class="">	return v1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	instance-of v2, p1, Liz;</span>
+<span class="missed">	if-nez v2, :cond_2</span>
+<span class="">	return v1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	check-cast p1, Liz;</span>
+<span class="missed">	iget v2, p0, Liz;->b:I</span>
+<span class="missed">	iget v3, p1, Liz;->b:I</span>
+<span class="missed">	if-ne v2, v3, :cond_8</span>
+<span class="missed">	iget-object v3, p0, Liz;->c:[I</span>
+<span class="missed">	iget-object v4, p1, Liz;->c:[I</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v5, v2, :cond_4</span>
+<span class="missed">	aget v6, v3, v5</span>
+<span class="missed">	aget v7, v4, v5</span>
+<span class="missed">	if-eq v6, v7, :cond_3</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	add-int/lit8 v5, v5, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_4</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-eqz v2, :cond_8</span>
+<span class="missed">	iget-object v2, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="missed">	iget-object p1, p1, Liz;->d:[Ljava/lang/Object;</span>
+<span class="missed">	iget v3, p0, Liz;->b:I</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="">	:goto_2</span>
+<span class="missed">	if-ge v4, v3, :cond_6</span>
+<span class="missed">	aget-object v5, v2, v4</span>
+<span class="missed">	aget-object v6, p1, v4</span>
+<span class="">	invoke-virtual {v5, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	if-nez v5, :cond_5</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_5</span>
+<span class="missed">	add-int/lit8 v4, v4, 0x1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_6</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	:goto_3</span>
+<span class="missed">	if-nez p1, :cond_7</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_7</span>
+<span class="">	return v0</span>
+<span class="">	:goto_4</span>
+<span class="">	:cond_8</span>
+<span class="">	return v1</span>
+.end method
+
+.method public final hashCode()I
+<span class="">	.locals 8</span>
+
+<span class="missed">	iget v0, p0, Liz;->b:I</span>
+<span class="missed">	add-int/lit16 v1, v0, 0x20f</span>
+<span class="missed">	mul-int/lit8 v1, v1, 0x1f</span>
+<span class="missed">	iget-object v2, p0, Liz;->c:[I</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/16 v4, 0x11</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="missed">	const/16 v6, 0x11</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v5, v0, :cond_0</span>
+<span class="missed">	mul-int/lit8 v6, v6, 0x1f</span>
+<span class="missed">	aget v7, v2, v5</span>
+<span class="missed">	add-int/2addr v6, v7</span>
+<span class="missed">	add-int/lit8 v5, v5, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/2addr v1, v6</span>
+<span class="missed">	mul-int/lit8 v1, v1, 0x1f</span>
+<span class="missed">	iget-object v0, p0, Liz;->d:[Ljava/lang/Object;</span>
+<span class="missed">	iget v2, p0, Liz;->b:I</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ge v3, v2, :cond_1</span>
+<span class="missed">	mul-int/lit8 v4, v4, 0x1f</span>
+<span class="missed">	aget-object v5, v0, v3</span>
+<span class="">	invoke-virtual {v5}, Ljava/lang/Object;->hashCode()I</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	add-int/2addr v4, v5</span>
+<span class="missed">	add-int/lit8 v3, v3, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	add-int/2addr v1, v4</span>
+<span class="">	return v1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

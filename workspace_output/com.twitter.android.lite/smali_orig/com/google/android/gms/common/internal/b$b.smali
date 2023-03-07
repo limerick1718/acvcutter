@@ -14,5 +14,5 @@
 
 
 # virtual methods
-.method public abstract a(Lc5;)V
+.method public abstract a(Lcom/google/android/gms/common/b;)V
 .end method

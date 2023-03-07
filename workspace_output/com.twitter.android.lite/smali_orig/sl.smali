@@ -1,56 +1,94 @@
-.class public abstract Lsl;
-.super Lha;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-
-# interfaces
-.implements Ltl;
+.class public Lsl;
+.super Ljava/lang/Object;
+.source "com.google.firebase:firebase-common@@16.0.2"
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 1
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
-    const-string v0, "com.google.android.gms.measurement.api.internal.IBundleReceiver"
 
-    .line 1
-    invoke-direct {p0, v0}, Lha;-><init>(Ljava/lang/String;)V
+# instance fields
+.field private final a:Ljava/lang/Class;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/Class<",
+            "TT;>;"
+        }
+    .end annotation
+.end field
 
-    return-void
-.end method
+.field private final b:Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TT;"
+        }
+    .end annotation
+.end field
 
 
 # virtual methods
-.method protected final a(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 0
-    .annotation system Ldalvik/annotation/Throws;
+.method public a()Ljava/lang/Class;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
         value = {
-            Landroid/os/RemoteException;
+            "()",
+            "Ljava/lang/Class<",
+            "TT;>;"
         }
     .end annotation
 
-    const/4 p4, 0x1
+    .line 42
+    iget-object v0, p0, Lsl;->a:Ljava/lang/Class;
 
-    if-ne p1, p4, :cond_0
+    return-object v0
+.end method
 
-    .line 1
-    sget-object p1, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
+.method public b()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
 
-    invoke-static {p2, p1}, Lp8;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    .line 48
+    iget-object v0, p0, Lsl;->b:Ljava/lang/Object;
 
-    move-result-object p1
+    return-object v0
+.end method
 
-    check-cast p1, Landroid/os/Bundle;
+.method public toString()Ljava/lang/String;
+    .locals 3
 
-    .line 2
-    invoke-interface {p0, p1}, Ltl;->a(Landroid/os/Bundle;)V
+    const/4 v0, 0x2
 
-    .line 3
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    .line 53
+    new-array v0, v0, [Ljava/lang/Object;
 
-    return p4
+    iget-object v1, p0, Lsl;->a:Ljava/lang/Class;
 
-    :cond_0
-    const/4 p1, 0x0
+    const/4 v2, 0x0
 
-    return p1
+    aput-object v1, v0, v2
+
+    iget-object v1, p0, Lsl;->b:Ljava/lang/Object;
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    const-string v1, "Event{type: %s, payload: %s}"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

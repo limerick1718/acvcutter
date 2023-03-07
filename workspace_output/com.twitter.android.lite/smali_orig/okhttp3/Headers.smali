@@ -19,19 +19,21 @@
 .method constructor <init>(Lokhttp3/Headers$Builder;)V
     .locals 1
 
-    .line 1
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 56
+    iget-object v0, p1, Lokhttp3/Headers$Builder;->namesAndValues:Ljava/util/List;
+
     iget-object p1, p1, Lokhttp3/Headers$Builder;->namesAndValues:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
-    move-result v0
+    move-result p1
 
-    new-array v0, v0, [Ljava/lang/String;
+    new-array p1, p1, [Ljava/lang/String;
 
-    invoke-interface {p1, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-interface {v0, p1}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p1
 
@@ -45,10 +47,10 @@
 .method private constructor <init>([Ljava/lang/String;)V
     .locals 0
 
-    .line 3
+    .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4
+    .line 60
     iput-object p1, p0, Lokhttp3/Headers;->namesAndValues:[Ljava/lang/String;
 
     return-void
@@ -59,14 +61,14 @@
 
     if-eqz p0, :cond_3
 
-    .line 1
+    .line 269
     invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 2
+    .line 270
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -78,7 +80,7 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 3
+    .line 271
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v3
@@ -95,7 +97,7 @@
 
     goto :goto_0
 
-    .line 4
+    .line 273
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -103,7 +105,7 @@
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    .line 5
+    .line 274
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -124,7 +126,7 @@
 
     const-string p0, "Unexpected char %#04x at %d in header name: %s"
 
-    .line 6
+    .line 273
     invoke-static {p0, v4}, Lokhttp3/internal/Util;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
@@ -136,7 +138,7 @@
     :cond_1
     return-void
 
-    .line 7
+    .line 269
     :cond_2
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -146,7 +148,7 @@
 
     throw p0
 
-    .line 8
+    .line 268
     :cond_3
     new-instance p0, Ljava/lang/NullPointerException;
 
@@ -162,7 +164,7 @@
 
     if-eqz p0, :cond_3
 
-    .line 1
+    .line 281
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -174,7 +176,7 @@
     :goto_0
     if-ge v2, v0, :cond_2
 
-    .line 2
+    .line 282
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v3
@@ -196,7 +198,7 @@
 
     goto :goto_0
 
-    .line 3
+    .line 284
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -204,7 +206,7 @@
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    .line 4
+    .line 285
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -229,7 +231,7 @@
 
     const-string p0, "Unexpected char %#04x at %d in %s value: %s"
 
-    .line 5
+    .line 284
     invoke-static {p0, v4}, Lokhttp3/internal/Util;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
@@ -241,7 +243,7 @@
     :cond_2
     return-void
 
-    .line 6
+    .line 280
     :cond_3
     new-instance p0, Ljava/lang/NullPointerException;
 
@@ -273,7 +275,7 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 2
+    .line 206
     array-length v0, p0
 
     add-int/lit8 v0, v0, -0x2
@@ -281,7 +283,7 @@
     :goto_0
     if-ltz v0, :cond_1
 
-    .line 3
+    .line 207
     aget-object v1, p0, v0
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -292,7 +294,7 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 4
+    .line 208
     aget-object p0, p0, v0
 
     return-object p0
@@ -323,7 +325,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 15
+    .line 249
     invoke-interface {p0}, Ljava/util/Map;->size()I
 
     move-result v0
@@ -334,7 +336,7 @@
 
     const/4 v1, 0x0
 
-    .line 16
+    .line 251
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p0
@@ -356,7 +358,7 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 17
+    .line 252
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -369,7 +371,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 18
+    .line 255
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -380,7 +382,7 @@
 
     move-result-object v3
 
-    .line 19
+    .line 256
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -391,25 +393,25 @@
 
     move-result-object v2
 
-    .line 20
+    .line 257
     invoke-static {v3}, Lokhttp3/Headers;->checkName(Ljava/lang/String;)V
 
-    .line 21
+    .line 258
     invoke-static {v2, v3}, Lokhttp3/Headers;->checkValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 22
+    .line 259
     aput-object v3, v0, v1
 
     add-int/lit8 v3, v1, 0x1
 
-    .line 23
+    .line 260
     aput-object v2, v0, v3
 
     add-int/lit8 v1, v1, 0x2
 
     goto :goto_0
 
-    .line 24
+    .line 253
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -419,7 +421,7 @@
 
     throw p0
 
-    .line 25
+    .line 264
     :cond_1
     new-instance p0, Lokhttp3/Headers;
 
@@ -427,7 +429,7 @@
 
     return-object p0
 
-    .line 26
+    .line 246
     :cond_2
     new-instance p0, Ljava/lang/NullPointerException;
 
@@ -443,14 +445,14 @@
 
     if-eqz p0, :cond_4
 
-    .line 1
+    .line 220
     array-length v0, p0
 
     rem-int/lit8 v0, v0, 0x2
 
     if-nez v0, :cond_3
 
-    .line 2
+    .line 225
     invoke-virtual {p0}, [Ljava/lang/String;->clone()Ljava/lang/Object;
 
     move-result-object p0
@@ -461,18 +463,18 @@
 
     const/4 v1, 0x0
 
-    .line 3
+    .line 226
     :goto_0
     array-length v2, p0
 
     if-ge v1, v2, :cond_1
 
-    .line 4
+    .line 227
     aget-object v2, p0, v1
 
     if-eqz v2, :cond_0
 
-    .line 5
+    .line 228
     aget-object v2, p0, v1
 
     invoke-virtual {v2}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -485,7 +487,7 @@
 
     goto :goto_0
 
-    .line 6
+    .line 227
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -495,32 +497,32 @@
 
     throw p0
 
-    .line 7
+    .line 232
     :cond_1
     :goto_1
     array-length v1, p0
 
     if-ge v0, v1, :cond_2
 
-    .line 8
+    .line 233
     aget-object v1, p0, v0
 
     add-int/lit8 v2, v0, 0x1
 
-    .line 9
+    .line 234
     aget-object v2, p0, v2
 
-    .line 10
+    .line 235
     invoke-static {v1}, Lokhttp3/Headers;->checkName(Ljava/lang/String;)V
 
-    .line 11
+    .line 236
     invoke-static {v2, v1}, Lokhttp3/Headers;->checkValue(Ljava/lang/String;Ljava/lang/String;)V
 
     add-int/lit8 v0, v0, 0x2
 
     goto :goto_1
 
-    .line 12
+    .line 239
     :cond_2
     new-instance v0, Lokhttp3/Headers;
 
@@ -528,7 +530,7 @@
 
     return-object v0
 
-    .line 13
+    .line 221
     :cond_3
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -538,7 +540,7 @@
 
     throw p0
 
-    .line 14
+    .line 219
     :cond_4
     new-instance p0, Ljava/lang/NullPointerException;
 
@@ -554,7 +556,7 @@
 .method public byteCount()J
     .locals 6
 
-    .line 1
+    .line 133
     iget-object v0, p0, Lokhttp3/Headers;->namesAndValues:[Ljava/lang/String;
 
     array-length v1, v0
@@ -563,7 +565,7 @@
 
     int-to-long v1, v1
 
-    .line 2
+    .line 135
     array-length v0, v0
 
     const/4 v3, 0x0
@@ -571,7 +573,7 @@
     :goto_0
     if-ge v3, v0, :cond_0
 
-    .line 3
+    .line 136
     iget-object v4, p0, Lokhttp3/Headers;->namesAndValues:[Ljava/lang/String;
 
     aget-object v4, v4, v3
@@ -599,7 +601,7 @@
         .end annotation
     .end param
 
-    .line 1
+    .line 175
     instance-of v0, p1, Lokhttp3/Headers;
 
     if-eqz v0, :cond_0
@@ -610,7 +612,7 @@
 
     iget-object v0, p0, Lokhttp3/Headers;->namesAndValues:[Ljava/lang/String;
 
-    .line 2
+    .line 176
     invoke-static {p1, v0}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
 
     move-result p1
@@ -633,7 +635,7 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 1
+    .line 65
     iget-object v0, p0, Lokhttp3/Headers;->namesAndValues:[Ljava/lang/String;
 
     invoke-static {v0, p1}, Lokhttp3/Headers;->get([Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -648,14 +650,14 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 1
+    .line 73
     invoke-virtual {p0, p1}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 2
+    .line 74
     invoke-static {p1}, Lokhttp3/internal/http/HttpDate;->parse(Ljava/lang/String;)Ljava/util/Date;
 
     move-result-object p1
@@ -677,14 +679,14 @@
     .annotation build Lorg/codehaus/mojo/animal_sniffer/IgnoreJRERequirement;
     .end annotation
 
-    .line 1
+    .line 83
     invoke-virtual {p0, p1}, Lokhttp3/Headers;->getDate(Ljava/lang/String;)Ljava/util/Date;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 2
+    .line 84
     invoke-virtual {p1}, Ljava/util/Date;->toInstant()Ljava/time/Instant;
 
     move-result-object p1
@@ -701,7 +703,7 @@
 .method public hashCode()I
     .locals 1
 
-    .line 1
+    .line 180
     iget-object v0, p0, Lokhttp3/Headers;->namesAndValues:[Ljava/lang/String;
 
     invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
@@ -714,7 +716,7 @@
 .method public name(I)Ljava/lang/String;
     .locals 1
 
-    .line 1
+    .line 94
     iget-object v0, p0, Lokhttp3/Headers;->namesAndValues:[Ljava/lang/String;
 
     mul-int/lit8 p1, p1, 0x2
@@ -735,14 +737,14 @@
         }
     .end annotation
 
-    .line 1
+    .line 104
     new-instance v0, Ljava/util/TreeSet;
 
     sget-object v1, Ljava/lang/String;->CASE_INSENSITIVE_ORDER:Ljava/util/Comparator;
 
     invoke-direct {v0, v1}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
 
-    .line 2
+    .line 105
     invoke-virtual {p0}, Lokhttp3/Headers;->size()I
 
     move-result v1
@@ -752,7 +754,7 @@
     :goto_0
     if-ge v2, v1, :cond_0
 
-    .line 3
+    .line 106
     invoke-virtual {p0, v2}, Lokhttp3/Headers;->name(I)Ljava/lang/String;
 
     move-result-object v3
@@ -763,7 +765,7 @@
 
     goto :goto_0
 
-    .line 4
+    .line 108
     :cond_0
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
@@ -775,12 +777,12 @@
 .method public newBuilder()Lokhttp3/Headers$Builder;
     .locals 3
 
-    .line 1
+    .line 143
     new-instance v0, Lokhttp3/Headers$Builder;
 
     invoke-direct {v0}, Lokhttp3/Headers$Builder;-><init>()V
 
-    .line 2
+    .line 144
     iget-object v1, v0, Lokhttp3/Headers$Builder;->namesAndValues:Ljava/util/List;
 
     iget-object v2, p0, Lokhttp3/Headers;->namesAndValues:[Ljava/lang/String;
@@ -793,7 +795,7 @@
 .method public size()I
     .locals 1
 
-    .line 1
+    .line 89
     iget-object v0, p0, Lokhttp3/Headers;->namesAndValues:[Ljava/lang/String;
 
     array-length v0, v0
@@ -816,14 +818,14 @@
         }
     .end annotation
 
-    .line 1
+    .line 192
     new-instance v0, Ljava/util/TreeMap;
 
     sget-object v1, Ljava/lang/String;->CASE_INSENSITIVE_ORDER:Ljava/util/Comparator;
 
     invoke-direct {v0, v1}, Ljava/util/TreeMap;-><init>(Ljava/util/Comparator;)V
 
-    .line 2
+    .line 193
     invoke-virtual {p0}, Lokhttp3/Headers;->size()I
 
     move-result v1
@@ -833,7 +835,7 @@
     :goto_0
     if-ge v2, v1, :cond_1
 
-    .line 3
+    .line 194
     invoke-virtual {p0, v2}, Lokhttp3/Headers;->name(I)Ljava/lang/String;
 
     move-result-object v3
@@ -844,7 +846,7 @@
 
     move-result-object v3
 
-    .line 4
+    .line 195
     invoke-interface {v0, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
@@ -853,17 +855,17 @@
 
     if-nez v4, :cond_0
 
-    .line 5
+    .line 197
     new-instance v4, Ljava/util/ArrayList;
 
     const/4 v5, 0x2
 
     invoke-direct {v4, v5}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 6
+    .line 198
     invoke-interface {v0, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 7
+    .line 200
     :cond_0
     invoke-virtual {p0, v2}, Lokhttp3/Headers;->value(I)Ljava/lang/String;
 
@@ -882,12 +884,12 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 1
+    .line 184
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 2
+    .line 185
     invoke-virtual {p0}, Lokhttp3/Headers;->size()I
 
     move-result v1
@@ -897,7 +899,7 @@
     :goto_0
     if-ge v2, v1, :cond_0
 
-    .line 3
+    .line 186
     invoke-virtual {p0, v2}, Lokhttp3/Headers;->name(I)Ljava/lang/String;
 
     move-result-object v3
@@ -922,7 +924,7 @@
 
     goto :goto_0
 
-    .line 4
+    .line 188
     :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -934,7 +936,7 @@
 .method public value(I)Ljava/lang/String;
     .locals 1
 
-    .line 1
+    .line 99
     iget-object v0, p0, Lokhttp3/Headers;->namesAndValues:[Ljava/lang/String;
 
     mul-int/lit8 p1, p1, 0x2
@@ -959,7 +961,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 114
     invoke-virtual {p0}, Lokhttp3/Headers;->size()I
 
     move-result v0
@@ -971,7 +973,7 @@
     :goto_0
     if-ge v2, v0, :cond_2
 
-    .line 2
+    .line 115
     invoke-virtual {p0, v2}, Lokhttp3/Headers;->name(I)Ljava/lang/String;
 
     move-result-object v3
@@ -984,14 +986,14 @@
 
     if-nez v1, :cond_0
 
-    .line 3
+    .line 116
     new-instance v1, Ljava/util/ArrayList;
 
     const/4 v3, 0x2
 
     invoke-direct {v1, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 4
+    .line 117
     :cond_0
     invoke-virtual {p0, v2}, Lokhttp3/Headers;->value(I)Ljava/lang/String;
 
@@ -1007,14 +1009,14 @@
     :cond_2
     if-eqz v1, :cond_3
 
-    .line 5
+    .line 121
     invoke-static {v1}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p1
 
     goto :goto_1
 
-    .line 6
+    .line 122
     :cond_3
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 

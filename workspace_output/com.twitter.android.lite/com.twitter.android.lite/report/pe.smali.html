@@ -16,36 +16,30 @@
 	<pre class="source lang-smali" id='source'>
 		<code>.class final Lpe;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.implements Ljava/lang/Runnable;
 
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"<K:",
-"Ljava/lang/Object;",
-"V:",
-"Ljava/lang/Object;",
-">",
-"Ljava/lang/Object;"
-}
-.end annotation
 
-.field public final a:Lsg;
-.field public final b:Ljava/lang/Object;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"TK;"
-}
-.end annotation
-.end field
-.field public final c:Lsg;
-.field public final d:Ljava/lang/Object;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"TV;"
-}
-.end annotation
-.end field
-</code>
+.field private final synthetic a:J
+.field private final synthetic b:Lpa;
+
+
+<span class="cov">.method constructor &lt;init&gt;(Lpa;J)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iput-object p1, p0, Lpe;->b:Lpa;</span>
+<span class="cov">	iput-wide p2, p0, Lpe;->a:J</span>
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public final run()V</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	iget-object v0, p0, Lpe;->b:Lpa;</span>
+<span class="cov">	iget-wide v1, p0, Lpe;->a:J</span>
+<span class="cov">	invoke-static {v0, v1, v2}, Lpa;->a(Lpa;J)V</span>
+<span class="exec">	return-void</span>
+.end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
 

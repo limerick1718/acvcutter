@@ -1,16 +1,31 @@
-.class public final Lwu;
+.class public Lwu;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-common@@19.3.0"
-.method public static a()Ljava/lang/String;
+.source "RetryState.java"
+.field private final a:I
+.field private final b:Lwq;
+.field private final c:Lwt;
+.method public constructor <init>(ILwq;Lwt;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method public constructor <init>(Lwq;Lwt;)V
 .locals 1
-:try_start_0
-sget-object v0, Lkotlin/KotlinVersion;->CURRENT:Lkotlin/KotlinVersion;
-invoke-virtual {v0}, Lkotlin/KotlinVersion;->toString()Ljava/lang/String;
-move-result-object v0
-:try_end_0
-.catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_0} :catch_0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method public a()J
+.locals 2
+const-wide v0, 0x0
+return-wide v0
+.end method
+.method public b()Lwu;
+.locals 4
+const/4 v0, 0x0
 return-object v0
-:catch_0
+.end method
+.method public c()Lwu;
+.locals 3
 const/4 v0, 0x0
 return-object v0
 .end method

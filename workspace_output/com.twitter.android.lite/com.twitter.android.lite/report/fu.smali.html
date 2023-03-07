@@ -14,281 +14,156 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lfu;
+		<code>.class public Lfu;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-encoders-json@@16.1.0"
-.implements Lbu;
 
 .annotation system Ldalvik/annotation/MemberClasses;
 value = {
-Lfu$b;
-}
-.end annotation
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/Object;",
-"Lbu<",
-"Lfu;",
-">;"
+Lfu$a;
 }
 .end annotation
 
-.field private static final e:Lwt;
+.field static final a:Lfu;
+.field private static volatile b:Z = false
+.field private static final c:Ljava/lang/Class;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lwt<",
-"Ljava/lang/Object;",
-">;"
+"Ljava/lang/Class<",
+"*>;"
 }
 .end annotation
 .end field
-.field private static final f:Lyt;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lyt<",
-"Ljava/lang/String;",
-">;"
-}
-.end annotation
-.end field
-.field private static final g:Lyt;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lyt<",
-"Ljava/lang/Boolean;",
-">;"
-}
-.end annotation
-.end field
-.field private static final h:Lfu$b;
-.field private final a:Ljava/util/Map;
+.field private static volatile d:Lfu;
+.field private final e:Ljava/util/Map;
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "Ljava/util/Map<",
-"Ljava/lang/Class<",
-"*>;",
-"Lwt<",
-"*>;>;"
+"Lfu$a;",
+"Lgh$d<",
+"**>;>;"
 }
 .end annotation
 .end field
-.field private final b:Ljava/util/Map;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/Map<",
-"Ljava/lang/Class<",
-"*>;",
-"Lyt<",
-"*>;>;"
-}
-.end annotation
-.end field
-.field private c:Lwt;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lwt<",
-"Ljava/lang/Object;",
-">;"
-}
-.end annotation
-.end field
-.field private d:Z
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+.method static constructor &lt;clinit&gt;()V
 <span class="">	.locals 2</span>
 
-<span class="exec">	invoke-static {}, Lcu;->a()Lwt;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	sput-object v0, Lfu;->e:Lwt;</span>
-<span class="exec">	invoke-static {}, Ldu;->a()Lyt;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	sput-object v0, Lfu;->f:Lyt;</span>
-<span class="exec">	invoke-static {}, Leu;->a()Lyt;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	sput-object v0, Lfu;->g:Lyt;</span>
-<span class="cov">	new-instance v0, Lfu$b;</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	invoke-direct {v0, v1}, Lfu$b;-><init>(Lfu$a;)V</span>
-<span class="cov">	sput-object v0, Lfu;->h:Lfu$b;</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public constructor &lt;init&gt;()V</span>
-<span class="">	.locals 2</span>
-
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	new-instance v0, Ljava/util/HashMap;</span>
-<span class="cov">	invoke-direct {v0}, Ljava/util/HashMap;-><init>()V</span>
-<span class="cov">	iput-object v0, p0, Lfu;->a:Ljava/util/Map;</span>
-<span class="cov">	new-instance v0, Ljava/util/HashMap;</span>
-<span class="cov">	invoke-direct {v0}, Ljava/util/HashMap;-><init>()V</span>
-<span class="cov">	iput-object v0, p0, Lfu;->b:Ljava/util/Map;</span>
-<span class="cov">	sget-object v0, Lfu;->e:Lwt;</span>
-<span class="cov">	iput-object v0, p0, Lfu;->c:Lwt;</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	iput-boolean v0, p0, Lfu;->d:Z</span>
-<span class="cov">	const-class v0, Ljava/lang/String;</span>
-<span class="cov">	sget-object v1, Lfu;->f:Lyt;</span>
-<span class="cov">	invoke-virtual {p0, v0, v1}, Lfu;->a(Ljava/lang/Class;Lyt;)Lfu;</span>
-<span class="cov">	const-class v0, Ljava/lang/Boolean;</span>
-<span class="cov">	sget-object v1, Lfu;->g:Lyt;</span>
-<span class="cov">	invoke-virtual {p0, v0, v1}, Lfu;->a(Ljava/lang/Class;Lyt;)Lfu;</span>
-<span class="cov">	const-class v0, Ljava/util/Date;</span>
-<span class="cov">	sget-object v1, Lfu;->h:Lfu$b;</span>
-<span class="cov">	invoke-virtual {p0, v0, v1}, Lfu;->a(Ljava/lang/Class;Lyt;)Lfu;</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method static synthetic a(Lfu;)Ljava/util/Map;</span>
-<span class="">	.locals 0</span>
-
-<span class="cov">	iget-object p0, p0, Lfu;->a:Ljava/util/Map;</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-.method static synthetic a(Ljava/lang/Boolean;Lzt;)V
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="">	invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	invoke-interface {p1, p0}, Lzt;->a(Z)Lzt;</span>
+<span class="">	invoke-static {}, Lfu;->d()Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lfu;->c:Ljava/lang/Class;</span>
+<span class="missed">	new-instance v0, Lfu;</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	invoke-direct {v0, v1}, Lfu;-><init>(Z)V</span>
+<span class="missed">	sput-object v0, Lfu;->a:Lfu;</span>
 <span class="">	return-void</span>
 .end method
 
-.method static synthetic a(Ljava/lang/Object;Lxt;)V
+.method constructor &lt;init&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	new-instance v0, Ljava/util/HashMap;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/HashMap;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lfu;->e:Ljava/util/Map;</span>
+<span class="">	return-void</span>
+.end method
+
+.method private constructor &lt;init&gt;(Z)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Lfu;->e:Ljava/util/Map;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public static a()Lfu;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-static {}, Lft;->a()Lfu;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public static b()Lfu;
 <span class="">	.locals 2</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
 
-<span class="missed">	new-instance p1, Lvt;</span>
-<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const-string v1, "Couldn\'t find encoder for type "</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	invoke-direct {p1, p0}, Lvt;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw p1</span>
+<span class="missed">	sget-object v0, Lfu;->d:Lfu;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	const-class v1, Lfu;</span>
+<span class="missed">	monitor-enter v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	sget-object v0, Lfu;->d:Lfu;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	invoke-static {}, Lft;->b()Lfu;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lfu;->d:Lfu;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	monitor-exit v1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	monitor-exit v1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v0</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_1</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method static synthetic a(Ljava/lang/String;Lzt;)V</span>
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
+.method static c()Lfu;
+<span class="">	.locals 1</span>
 
-<span class="cov">	invoke-interface {p1, p0}, Lzt;->a(Ljava/lang/String;)Lzt;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	const-class v0, Lfu;</span>
+<span class="">	invoke-static {v0}, Lgf;->a(Ljava/lang/Class;)Lfu;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method static synthetic b(Lfu;)Ljava/util/Map;</span>
-<span class="">	.locals 0</span>
-
-<span class="cov">	iget-object p0, p0, Lfu;->b:Ljava/util/Map;</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-<span class="cov">.method static synthetic c(Lfu;)Lwt;</span>
-<span class="">	.locals 0</span>
-
-<span class="cov">	iget-object p0, p0, Lfu;->c:Lwt;</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-<span class="cov">.method static synthetic d(Lfu;)Z</span>
-<span class="">	.locals 0</span>
-
-<span class="cov">	iget-boolean p0, p0, Lfu;->d:Z</span>
-<span class="exec">	return p0</span>
-.end method
-
-<span class="cov">.method public bridge synthetic a(Ljava/lang/Class;Lwt;)Lbu;</span>
-<span class="">	.locals 0</span>
-
-<span class="cov">	invoke-virtual {p0, p1, p2}, Lfu;->a(Ljava/lang/Class;Lwt;)Lfu;</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-<span class="cov">.method public a(Lau;)Lfu;</span>
-<span class="">	.locals 0</span>
-
-<span class="cov">	invoke-interface {p1, p0}, Lau;->a(Lbu;)V</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-<span class="cov">.method public a(Ljava/lang/Class;Lwt;)Lfu;</span>
+.method private static d()Ljava/lang/Class;
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	"<T:",</span>
-<span class="">	"Ljava/lang/Object;",</span>
-<span class="">	">(",</span>
+<span class="">	"()",</span>
 <span class="">	"Ljava/lang/Class<",</span>
-<span class="">	"TT;>;",</span>
-<span class="">	"Lwt<",</span>
-<span class="">	"-TT;>;)",</span>
-<span class="">	"Lfu;"</span>
+<span class="">	"*>;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lfu;->a:Ljava/util/Map;</span>
-<span class="cov">	invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	iget-object p2, p0, Lfu;->b:Ljava/util/Map;</span>
-<span class="cov">	invoke-interface {p2, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="exec">	return-object p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v0, "com.google.protobuf.Extension"</span>
+<span class="">	invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object v0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public a(Ljava/lang/Class;Lyt;)Lfu;</span>
-<span class="">	.locals 1</span>
+.method public final a(Lhp;I)Lgh$d;
+<span class="">	.locals 2</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	"<T:",</span>
-<span class="">	"Ljava/lang/Object;",</span>
-<span class="">	">(",</span>
-<span class="">	"Ljava/lang/Class<",</span>
-<span class="">	"TT;>;",</span>
-<span class="">	"Lyt<",</span>
-<span class="">	"-TT;>;)",</span>
-<span class="">	"Lfu;"</span>
+<span class="">	"<ContainingType::",</span>
+<span class="">	"Lhp;",</span>
+<span class="">	">(TContainingType;I)",</span>
+<span class="">	"Lgh$d<",</span>
+<span class="">	"TContainingType;*>;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lfu;->b:Ljava/util/Map;</span>
-<span class="cov">	invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	iget-object p2, p0, Lfu;->a:Ljava/util/Map;</span>
-<span class="cov">	invoke-interface {p2, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-<span class="cov">.method public a(Z)Lfu;</span>
-<span class="">	.locals 0</span>
-
-<span class="cov">	iput-boolean p1, p0, Lfu;->d:Z</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-<span class="cov">.method public a()Lut;</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	new-instance v0, Lfu$a;</span>
-<span class="cov">	invoke-direct {v0, p0}, Lfu$a;-><init>(Lfu;)V</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lfu;->e:Ljava/util/Map;</span>
+<span class="missed">	new-instance v1, Lfu$a;</span>
+<span class="missed">	invoke-direct {v1, p1, p2}, Lfu$a;-><init>(Ljava/lang/Object;I)V</span>
+<span class="">	invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Lgh$d;</span>
+<span class="">	return-object p1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

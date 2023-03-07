@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.crashlytics.android.answers</a></li>
+        <li><i class="ico ico-class"></i> AnswersAttributes.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Lcom/crashlytics/android/answers/AnswersAttributes;
+.super Ljava/lang/Object;
+.source "AnswersAttributes.java"
+
+
+.field final attributes:Ljava/util/Map;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/Map<",
+"Ljava/lang/String;",
+"Ljava/lang/Object;",
+">;"
+}
+.end annotation
+.end field
+.field final validator:Lcom/crashlytics/android/answers/AnswersEventValidator;
+
+
+.method public constructor &lt;init&gt;(Lcom/crashlytics/android/answers/AnswersEventValidator;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lcom/crashlytics/android/answers/AnswersAttributes;->attributes:Ljava/util/Map;</span>
+<span class="missed">	iput-object p1, p0, Lcom/crashlytics/android/answers/AnswersAttributes;->validator:Lcom/crashlytics/android/answers/AnswersEventValidator;</span>
+<span class="">	return-void</span>
+.end method
+
+.method  put(Ljava/lang/String;Ljava/lang/Number;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersAttributes;->validator:Lcom/crashlytics/android/answers/AnswersEventValidator;</span>
+<span class="missed">	const-string v1, "key"</span>
+<span class="">	invoke-virtual {v0, p1, v1}, Lcom/crashlytics/android/answers/AnswersEventValidator;->isNull(Ljava/lang/Object;Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersAttributes;->validator:Lcom/crashlytics/android/answers/AnswersEventValidator;</span>
+<span class="missed">	const-string v1, "value"</span>
+<span class="">	invoke-virtual {v0, p2, v1}, Lcom/crashlytics/android/answers/AnswersEventValidator;->isNull(Ljava/lang/Object;Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersAttributes;->validator:Lcom/crashlytics/android/answers/AnswersEventValidator;</span>
+<span class="">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/AnswersEventValidator;->limitStringLength(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {p0, p1, p2}, Lcom/crashlytics/android/answers/AnswersAttributes;->putAttribute(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method  put(Ljava/lang/String;Ljava/lang/String;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersAttributes;->validator:Lcom/crashlytics/android/answers/AnswersEventValidator;</span>
+<span class="missed">	const-string v1, "key"</span>
+<span class="">	invoke-virtual {v0, p1, v1}, Lcom/crashlytics/android/answers/AnswersEventValidator;->isNull(Ljava/lang/Object;Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersAttributes;->validator:Lcom/crashlytics/android/answers/AnswersEventValidator;</span>
+<span class="missed">	const-string v1, "value"</span>
+<span class="">	invoke-virtual {v0, p2, v1}, Lcom/crashlytics/android/answers/AnswersEventValidator;->isNull(Ljava/lang/Object;Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersAttributes;->validator:Lcom/crashlytics/android/answers/AnswersEventValidator;</span>
+<span class="">	invoke-virtual {v0, p1}, Lcom/crashlytics/android/answers/AnswersEventValidator;->limitStringLength(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersAttributes;->validator:Lcom/crashlytics/android/answers/AnswersEventValidator;</span>
+<span class="">	invoke-virtual {v0, p2}, Lcom/crashlytics/android/answers/AnswersEventValidator;->limitStringLength(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-virtual {p0, p1, p2}, Lcom/crashlytics/android/answers/AnswersAttributes;->putAttribute(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method  putAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersAttributes;->validator:Lcom/crashlytics/android/answers/AnswersEventValidator;</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/answers/AnswersAttributes;->attributes:Ljava/util/Map;</span>
+<span class="">	invoke-virtual {v0, v1, p1}, Lcom/crashlytics/android/answers/AnswersEventValidator;->isFullMap(Ljava/util/Map;Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersAttributes;->attributes:Ljava/util/Map;</span>
+<span class="missed">	invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public toString()Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="missed">	new-instance v0, Lorg/json/JSONObject;</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/answers/AnswersAttributes;->attributes:Ljava/util/Map;</span>
+<span class="missed">	invoke-direct {v0, v1}, Lorg/json/JSONObject;-><init>(Ljava/util/Map;)V</span>
+<span class="">	invoke-virtual {v0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

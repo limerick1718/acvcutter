@@ -1,193 +1,27 @@
-.class  Lof;
-.super Ljava/util/AbstractMap;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"<K::",
-"Ljava/lang/Comparable<",
-"TK;>;V:",
-"Ljava/lang/Object;",
-">",
-"Ljava/util/AbstractMap<",
-"TK;TV;>;"
-}
-.end annotation
-.field private final a:I
-.field private b:Ljava/util/List;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/List<",
-"Lxf;",
-">;"
-}
-.end annotation
-.end field
-.field private c:Ljava/util/Map;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/Map<",
-"TK;TV;>;"
-}
-.end annotation
-.end field
-.field private d:Z
-.field private volatile e:Lzf;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lzf;"
-}
-.end annotation
-.end field
-.field private f:Ljava/util/Map;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/Map<",
-"TK;TV;>;"
-}
-.end annotation
-.end field
-.field private volatile g:Ltf;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ltf;"
-}
-.end annotation
-.end field
-.method private constructor <init>(I)V
+.class final Lof;
+.super Ljava/lang/Object;
+.implements Ljava/lang/Runnable;
+.field private final synthetic a:Lpz;
+.field private final synthetic b:Loc;
+.method constructor <init>(Loc;Lpz;)V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lof;->b:Loc;
+iput-object p2, p0, Lof;->a:Lpz;
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method synthetic constructor <init>(ILrf;)V
-.locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
-.end method
-.method public final a(Ljava/lang/Comparable;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final run()V
 .locals 4
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"(TK;TV;)TV;"
-}
-.end annotation
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public final a(I)Ljava/util/Map$Entry;
-.locals 1
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"(I)",
-"Ljava/util/Map$Entry<",
-"TK;TV;>;"
-}
-.end annotation
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public a()V
-.locals 1
+iget-object v0, p0, Lof;->b:Loc;
+invoke-static {v0}, Loc;->d(Loc;)Lkr;
+move-result-object v0
+iget-object v1, p0, Lof;->a:Lpz;
+invoke-interface {v0, v1}, Lkr;->a(Lpz;)V
+iget-object v1, p0, Lof;->b:Loc;
+const/4 v2, 0x0
+iget-object v3, p0, Lof;->a:Lpz;
+invoke-virtual {v1, v0, v2, v3}, Loc;->a(Lkr;Lba;Lpz;)V
+iget-object v0, p0, Lof;->b:Loc;
+invoke-static {v0}, Loc;->e(Loc;)V
 return-void
-.end method
-.method public final b()Z
-.locals 1
-const/4 v0, 0x0
-return v0
-.end method
-.method public final c()I
-.locals 1
-const/4 v0, 0x0
-return v0
-.end method
-.method public clear()V
-.locals 1
-return-void
-.end method
-.method public containsKey(Ljava/lang/Object;)Z
-.locals 1
-const/4 v0, 0x0
-return v0
-.end method
-.method public final d()Ljava/lang/Iterable;
-.locals 1
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"()",
-"Ljava/lang/Iterable<",
-"Ljava/util/Map$Entry<",
-"TK;TV;>;>;"
-}
-.end annotation
-const/4 v0, 0x0
-return-object v0
-.end method
-.method final e()Ljava/util/Set;
-.locals 2
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"()",
-"Ljava/util/Set<",
-"Ljava/util/Map$Entry<",
-"TK;TV;>;>;"
-}
-.end annotation
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public entrySet()Ljava/util/Set;
-.locals 2
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"()",
-"Ljava/util/Set<",
-"Ljava/util/Map$Entry<",
-"TK;TV;>;>;"
-}
-.end annotation
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public equals(Ljava/lang/Object;)Z
-.locals 7
-const/4 v0, 0x0
-return v0
-.end method
-.method public get(Ljava/lang/Object;)Ljava/lang/Object;
-.locals 1
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"(",
-"Ljava/lang/Object;",
-")TV;"
-}
-.end annotation
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public hashCode()I
-.locals 4
-const/4 v0, 0x0
-return v0
-.end method
-.method public synthetic put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-.locals 0
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public remove(Ljava/lang/Object;)Ljava/lang/Object;
-.locals 1
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"(",
-"Ljava/lang/Object;",
-")TV;"
-}
-.end annotation
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public size()I
-.locals 2
-const/4 v0, 0x0
-return v0
 .end method

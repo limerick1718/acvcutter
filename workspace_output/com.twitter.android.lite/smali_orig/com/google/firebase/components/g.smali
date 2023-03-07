@@ -1,26 +1,14 @@
-.class public interface abstract Lcom/google/firebase/components/g;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-components@@16.0.0"
+.class public Lcom/google/firebase/components/g;
+.super Ljava/lang/RuntimeException;
+.source "com.google.firebase:firebase-common@@16.0.2"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
+# direct methods
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
+    .line 24
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-# virtual methods
-.method public abstract a(Lcom/google/firebase/components/e;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/firebase/components/e;",
-            ")TT;"
-        }
-    .end annotation
+    return-void
 .end method

@@ -14,21 +14,115 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lft;
+		<code>.class final Lft;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
 
 
+.field private static final a:Ljava/lang/Class;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/Class<",
+"*>;"
+}
+.end annotation
+.end field
 
 
-.method public abstract a()Let;
-<span class="">	</span>
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
 
+<span class="">	invoke-static {}, Lft;->c()Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lft;->a:Ljava/lang/Class;</span>
+<span class="">	return-void</span>
 .end method
 
-.method public abstract b()Ldt;
-<span class="">	</span>
+.method public static a()Lfu;
+<span class="">	.locals 1</span>
 
+<span class="missed">	sget-object v0, Lft;->a:Ljava/lang/Class;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v0, "getEmptyRegistry"</span>
+<span class="">	invoke-static {v0}, Lft;->a(Ljava/lang/String;)Lfu;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	sget-object v0, Lfu;->a:Lfu;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method private static final a(Ljava/lang/String;)Lfu;
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/lang/Exception;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	sget-object v0, Lft;->a:Ljava/lang/Class;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	new-array v2, v1, [Ljava/lang/Class;</span>
+<span class="">	invoke-virtual {v0, p0, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	new-array v0, v1, [Ljava/lang/Object;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-virtual {p0, v1, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	check-cast p0, Lfu;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method static b()Lfu;
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lft;->a:Ljava/lang/Class;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v0, "loadGeneratedRegistry"</span>
+<span class="">	invoke-static {v0}, Lft;->a(Ljava/lang/String;)Lfu;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	invoke-static {}, Lfu;->c()Lfu;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	if-nez v0, :cond_2</span>
+<span class="">	invoke-static {}, Lft;->a()Lfu;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:cond_2</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method private static c()Ljava/lang/Class;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v0, "com.google.protobuf.ExtensionRegistry"</span>
+<span class="">	invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object v0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

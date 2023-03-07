@@ -28,18 +28,6 @@
 <span class="exec">	return-void</span>
 .end method
 
-.method public static create(Lokhttp3/MediaType;Lhx;)Lokhttp3/RequestBody;
-<span class="">	.locals 1</span>
-<span class="">	.param p0    # Lokhttp3/MediaType;</span>
-<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
-<span class="">	.end annotation</span>
-<span class="">	.end param</span>
-
-<span class="missed">	new-instance v0, Lokhttp3/RequestBody$1;</span>
-<span class="missed">	invoke-direct {v0, p0, p1}, Lokhttp3/RequestBody$1;-><init>(Lokhttp3/MediaType;Lhx;)V</span>
-<span class="">	return-object v0</span>
-.end method
-
 .method public static create(Lokhttp3/MediaType;Ljava/io/File;)Lokhttp3/RequestBody;
 <span class="">	.locals 1</span>
 <span class="">	.param p0    # Lokhttp3/MediaType;</span>
@@ -86,6 +74,18 @@
 <span class="">	invoke-static {p0, p1}, Lokhttp3/RequestBody;->create(Lokhttp3/MediaType;[B)Lokhttp3/RequestBody;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="">	return-object p0</span>
+.end method
+
+.method public static create(Lokhttp3/MediaType;Lyv;)Lokhttp3/RequestBody;
+<span class="">	.locals 1</span>
+<span class="">	.param p0    # Lokhttp3/MediaType;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+
+<span class="missed">	new-instance v0, Lokhttp3/RequestBody$1;</span>
+<span class="missed">	invoke-direct {v0, p0, p1}, Lokhttp3/RequestBody$1;-><init>(Lokhttp3/MediaType;Lyv;)V</span>
+<span class="">	return-object v0</span>
 .end method
 
 <span class="cov">.method public static create(Lokhttp3/MediaType;[B)Lokhttp3/RequestBody;</span>
@@ -158,7 +158,7 @@
 <span class="">	return v0</span>
 .end method
 
-.method public abstract writeTo(Lfx;)V
+.method public abstract writeTo(Lyt;)V
 <span class="">	</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>

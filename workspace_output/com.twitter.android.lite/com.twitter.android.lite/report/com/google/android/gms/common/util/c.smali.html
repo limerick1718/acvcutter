@@ -14,23 +14,76 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lcom/google/android/gms/common/util/c;
+		<code>.class public Lcom/google/android/gms/common/util/c;
 .super Ljava/lang/Object;
 
 
 
 
-<span class="cov">.method public static a([B)Ljava/lang/String;</span>
+.method public static a(Landroid/content/Context;Ljava/lang/String;)I
 <span class="">	.locals 1</span>
 
-<span class="missed">	if-nez p0, :cond_0</span>
+<span class="">	invoke-static {p0, p1}, Lcom/google/android/gms/common/util/c;->c(Landroid/content/Context;Ljava/lang/String;)Landroid/content/pm/PackageInfo;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	const/4 p1, -0x1</span>
+<span class="missed">	if-eqz p0, :cond_2</span>
+<span class="missed">	iget-object v0, p0, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object p0, p0, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;</span>
+<span class="missed">	iget-object p0, p0, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;</span>
+<span class="missed">	if-nez p0, :cond_1</span>
+<span class="">	return p1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const-string v0, "com.google.android.gms.version"</span>
+<span class="">	invoke-virtual {p0, v0, p1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+<span class="">	:cond_2</span>
+<span class="">	:goto_0</span>
+<span class="">	return p1</span>
+.end method
+
+.method public static b(Landroid/content/Context;Ljava/lang/String;)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	const-string v0, "com.google.android.gms"</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-static {p0}, Lbj;->a(Landroid/content/Context;)Lbi;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-virtual {p0, p1, v0}, Lbi;->a(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	iget p0, p0, Landroid/content/pm/ApplicationInfo;->flags:I</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	const/high16 p1, 0x200000</span>
+<span class="missed">	and-int/2addr p0, p1</span>
+<span class="missed">	if-eqz p0, :cond_0</span>
+<span class="missed">	const/4 p0, 0x1</span>
+<span class="">	return p0</span>
+<span class="">	:cond_0</span>
+<span class="">	:catch_0</span>
+<span class="">	return v0</span>
+.end method
+
+.method private static c(Landroid/content/Context;Ljava/lang/String;)Landroid/content/pm/PackageInfo;
+<span class="">	.locals 1</span>
+
+<span class="">	:try_start_0</span>
+<span class="">	invoke-static {p0}, Lbj;->a(Landroid/content/Context;)Lbi;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	const/16 v0, 0x80</span>
+<span class="">	invoke-virtual {p0, p1, v0}, Lbi;->b(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object p0</span>
+<span class="">	:catch_0</span>
 <span class="missed">	const/4 p0, 0x0</span>
 <span class="">	return-object p0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/16 v0, 0xb</span>
-<span class="exec">	invoke-static {p0, v0}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	return-object p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -8,7 +8,5 @@ value = Landroidx/core/app/a;
 accessFlags = 0x609
 name = "c"
 .end annotation
-.method public abstract a(Landroid/app/Activity;IILandroid/content/Intent;)Z
-.end method
-.method public abstract a(Landroid/app/Activity;[Ljava/lang/String;I)Z
+.method public abstract a(I)V
 .end method

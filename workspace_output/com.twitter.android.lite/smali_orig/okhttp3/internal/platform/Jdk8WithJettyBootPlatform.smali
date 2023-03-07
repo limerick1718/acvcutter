@@ -53,22 +53,22 @@
         }
     .end annotation
 
-    .line 1
+    .line 37
     invoke-direct {p0}, Lokhttp3/internal/platform/Platform;-><init>()V
 
-    .line 2
+    .line 38
     iput-object p1, p0, Lokhttp3/internal/platform/Jdk8WithJettyBootPlatform;->putMethod:Ljava/lang/reflect/Method;
 
-    .line 3
+    .line 39
     iput-object p2, p0, Lokhttp3/internal/platform/Jdk8WithJettyBootPlatform;->getMethod:Ljava/lang/reflect/Method;
 
-    .line 4
+    .line 40
     iput-object p3, p0, Lokhttp3/internal/platform/Jdk8WithJettyBootPlatform;->removeMethod:Ljava/lang/reflect/Method;
 
-    .line 5
+    .line 41
     iput-object p4, p0, Lokhttp3/internal/platform/Jdk8WithJettyBootPlatform;->clientProviderClass:Ljava/lang/Class;
 
-    .line 6
+    .line 42
     iput-object p5, p0, Lokhttp3/internal/platform/Jdk8WithJettyBootPlatform;->serverProviderClass:Ljava/lang/Class;
 
     return-void
@@ -84,12 +84,12 @@
 
     const/4 v2, 0x1
 
-    .line 1
+    .line 85
     invoke-static {v1, v2, v0}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
 
     move-result-object v3
 
-    .line 2
+    .line 86
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -108,7 +108,7 @@
 
     move-result-object v4
 
-    .line 3
+    .line 87
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -127,7 +127,7 @@
 
     move-result-object v10
 
-    .line 4
+    .line 88
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -150,9 +150,9 @@
 
     const/4 v5, 0x2
 
+    .line 89
     new-array v5, v5, [Ljava/lang/Class;
 
-    .line 5
     const-class v6, Ljavax/net/ssl/SSLSocket;
 
     const/4 v7, 0x0
@@ -167,9 +167,9 @@
 
     const-string v4, "get"
 
+    .line 90
     new-array v5, v2, [Ljava/lang/Class;
 
-    .line 6
     const-class v6, Ljavax/net/ssl/SSLSocket;
 
     aput-object v6, v5, v7
@@ -180,9 +180,9 @@
 
     const-string v4, "remove"
 
+    .line 91
     new-array v2, v2, [Ljava/lang/Class;
 
-    .line 7
     const-class v5, Ljavax/net/ssl/SSLSocket;
 
     aput-object v5, v2, v7
@@ -191,7 +191,7 @@
 
     move-result-object v9
 
-    .line 8
+    .line 92
     new-instance v2, Lokhttp3/internal/platform/Jdk8WithJettyBootPlatform;
 
     move-object v6, v2
@@ -214,7 +214,7 @@
 .method public afterHandshake(Ljavax/net/ssl/SSLSocket;)V
     .locals 4
 
-    .line 1
+    .line 60
     :try_start_0
     iget-object v0, p0, Lokhttp3/internal/platform/Jdk8WithJettyBootPlatform;->removeMethod:Ljava/lang/reflect/Method;
 
@@ -243,7 +243,7 @@
     :catch_1
     move-exception p1
 
-    .line 2
+    .line 62
     :goto_0
     new-instance v0, Ljava/lang/AssertionError;
 
@@ -267,12 +267,12 @@
         }
     .end annotation
 
-    .line 1
-    invoke-static {p3}, Lokhttp3/internal/platform/Platform;->alpnProtocolNames(Ljava/util/List;)Ljava/util/List;
+    .line 47
+    invoke-static {p3}, Lokhttp3/internal/platform/Jdk8WithJettyBootPlatform;->alpnProtocolNames(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p2
 
-    .line 2
+    .line 50
     :try_start_0
     const-class p3, Lokhttp3/internal/platform/Platform;
 
@@ -304,7 +304,7 @@
 
     move-result-object p2
 
-    .line 3
+    .line 52
     iget-object p3, p0, Lokhttp3/internal/platform/Jdk8WithJettyBootPlatform;->putMethod:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
@@ -330,7 +330,7 @@
     :catch_1
     move-exception p1
 
-    .line 4
+    .line 54
     :goto_0
     new-instance p2, Ljava/lang/AssertionError;
 
@@ -346,7 +346,7 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 1
+    .line 68
     :try_start_0
     iget-object v0, p0, Lokhttp3/internal/platform/Jdk8WithJettyBootPlatform;->getMethod:Ljava/lang/reflect/Method;
 
@@ -360,7 +360,7 @@
 
     const/4 p1, 0x0
 
-    .line 2
+    .line 69
     invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -371,7 +371,7 @@
 
     check-cast v0, Lokhttp3/internal/platform/Jdk8WithJettyBootPlatform$AlpnProvider;
 
-    .line 3
+    .line 70
     iget-boolean v1, v0, Lokhttp3/internal/platform/Jdk8WithJettyBootPlatform$AlpnProvider;->unsupported:Z
 
     if-nez v1, :cond_0
@@ -380,7 +380,7 @@
 
     if-nez v1, :cond_0
 
-    .line 4
+    .line 71
     invoke-static {}, Lokhttp3/internal/platform/Platform;->get()Lokhttp3/internal/platform/Platform;
 
     move-result-object v0
@@ -393,7 +393,7 @@
 
     return-object p1
 
-    .line 5
+    .line 75
     :cond_0
     iget-boolean v1, v0, Lokhttp3/internal/platform/Jdk8WithJettyBootPlatform$AlpnProvider;->unsupported:Z
 
@@ -418,7 +418,7 @@
     :catch_1
     move-exception p1
 
-    .line 6
+    .line 77
     :goto_1
     new-instance v0, Ljava/lang/AssertionError;
 

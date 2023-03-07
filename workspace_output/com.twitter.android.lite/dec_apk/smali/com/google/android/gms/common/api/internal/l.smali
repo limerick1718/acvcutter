@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/api/internal/l;
 .super Ljava/lang/Object;
+.field private final a:I
 .method public constructor <init>(I)V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

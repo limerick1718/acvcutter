@@ -8,7 +8,7 @@ value = Lokhttp3/Cache;
 accessFlags = 0xa
 name = "CacheResponseBody"
 .end annotation
-.field private final bodySource:Lgx;
+.field private final bodySource:Lyu;
 .field private final contentLength:Ljava/lang/String;
 .annotation runtime Ljavax/annotation/Nullable;
 .end annotation
@@ -33,7 +33,7 @@ return-wide v0
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public source()Lgx;
+.method public source()Lyu;
 .locals 1
 const/4 v0, 0x0
 return-object v0

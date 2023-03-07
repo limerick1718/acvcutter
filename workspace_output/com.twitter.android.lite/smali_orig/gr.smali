@@ -1,52 +1,50 @@
-.class final synthetic Lgr;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-
-# interfaces
-.implements Lir$a;
-
-
-# static fields
-.field private static final a:Lgr;
+.class public final Lgr;
+.super Lgw;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static a()Lhp;
     .locals 1
 
-    new-instance v0, Lgr;
+    .line 1
+    new-instance v0, Ljava/lang/NoSuchMethodError;
 
-    invoke-direct {v0}, Lgr;-><init>()V
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
 
-    sput-object v0, Lgr;->a:Lgr;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static a()Lir$a;
-    .locals 1
-
-    sget-object v0, Lgr;->a:Lgr;
-
-    return-object v0
+    throw v0
 .end method
 
 
 # virtual methods
-.method public a(Landroid/util/JsonReader;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 0
 
-    invoke-static {p1}, Lir;->f(Landroid/util/JsonReader;)Lzq$d$d$a$b$e$b;
+    .line 3
+    new-instance p1, Ljava/lang/NoSuchMethodError;
 
-    move-result-object p1
+    invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V
 
-    return-object p1
+    throw p1
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    .line 2
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    .line 4
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
 .end method

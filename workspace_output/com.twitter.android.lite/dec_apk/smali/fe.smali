@@ -1,39 +1,24 @@
 .class final Lfe;
-.super Lde;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.field private static final c:Ljava/lang/Class;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/Class<",
-"*>;"
-}
-.end annotation
-.end field
-.method private constructor <init>()V
-.locals 1
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
-.end method
-.method synthetic constructor <init>(Lge;)V
+.super Ljava/lang/Object;
+.field private final a:Lfn;
+.field private final b:[B
+.method private constructor <init>(I)V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method final a(Ljava/lang/Object;J)V
-.locals 3
+.method synthetic constructor <init>(ILex;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method final a(Ljava/lang/Object;Ljava/lang/Object;J)V
-.locals 3
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"<E:",
-"Ljava/lang/Object;",
-">(",
-"Ljava/lang/Object;",
-"Ljava/lang/Object;",
-"J)V"
-}
-.end annotation
-return-void
+.method public final a()Lew;
+.locals 2
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final b()Lfn;
+.locals 1
+const/4 v0, 0x0
+return-object v0
 .end method

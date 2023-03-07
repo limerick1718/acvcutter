@@ -16,10 +16,10 @@
 # instance fields
 .field private a:Landroid/accounts/Account;
 
-.field private b:Ll;
+.field private b:Lm;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ll<",
+            "Lm<",
             "Lcom/google/android/gms/common/api/Scope;",
             ">;"
         }
@@ -46,9 +46,7 @@
 
 .field private g:Ljava/lang/String;
 
-.field private h:Lfm;
-
-.field private i:Z
+.field private h:Lqp;
 
 
 # direct methods
@@ -64,9 +62,9 @@
     iput v0, p0, Lcom/google/android/gms/common/internal/c$a;->d:I
 
     .line 3
-    sget-object v0, Lfm;->i:Lfm;
+    sget-object v0, Lqp;->a:Lqp;
 
-    iput-object v0, p0, Lcom/google/android/gms/common/internal/c$a;->h:Lfm;
+    iput-object v0, p0, Lcom/google/android/gms/common/internal/c$a;->h:Lqp;
 
     return-void
 .end method
@@ -76,7 +74,7 @@
 .method public final a(Landroid/accounts/Account;)Lcom/google/android/gms/common/internal/c$a;
     .locals 0
 
-    .line 1
+    .line 4
     iput-object p1, p0, Lcom/google/android/gms/common/internal/c$a;->a:Landroid/accounts/Account;
 
     return-object p0
@@ -85,8 +83,8 @@
 .method public final a(Ljava/lang/String;)Lcom/google/android/gms/common/internal/c$a;
     .locals 0
 
-    .line 5
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/c$a;->g:Ljava/lang/String;
+    .line 20
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/c$a;->f:Ljava/lang/String;
 
     return-object p0
 .end method
@@ -103,36 +101,36 @@
         }
     .end annotation
 
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/c$a;->b:Ll;
+    .line 10
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/c$a;->b:Lm;
 
     if-nez v0, :cond_0
 
-    .line 3
-    new-instance v0, Ll;
+    .line 11
+    new-instance v0, Lm;
 
-    invoke-direct {v0}, Ll;-><init>()V
+    invoke-direct {v0}, Lm;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/internal/c$a;->b:Ll;
+    iput-object v0, p0, Lcom/google/android/gms/common/internal/c$a;->b:Lm;
 
-    .line 4
+    .line 12
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/c$a;->b:Ll;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/c$a;->b:Lm;
 
-    invoke-virtual {v0, p1}, Ll;->addAll(Ljava/util/Collection;)Z
+    invoke-virtual {v0, p1}, Lm;->addAll(Ljava/util/Collection;)Z
 
     return-object p0
 .end method
 
 .method public final a()Lcom/google/android/gms/common/internal/c;
-    .locals 11
+    .locals 10
 
-    .line 6
-    new-instance v10, Lcom/google/android/gms/common/internal/c;
+    .line 26
+    new-instance v9, Lcom/google/android/gms/common/internal/c;
 
     iget-object v1, p0, Lcom/google/android/gms/common/internal/c$a;->a:Landroid/accounts/Account;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/internal/c$a;->b:Ll;
+    iget-object v2, p0, Lcom/google/android/gms/common/internal/c$a;->b:Lm;
 
     iget-object v3, p0, Lcom/google/android/gms/common/internal/c$a;->c:Ljava/util/Map;
 
@@ -144,22 +142,20 @@
 
     iget-object v7, p0, Lcom/google/android/gms/common/internal/c$a;->g:Ljava/lang/String;
 
-    iget-object v8, p0, Lcom/google/android/gms/common/internal/c$a;->h:Lfm;
+    iget-object v8, p0, Lcom/google/android/gms/common/internal/c$a;->h:Lqp;
 
-    iget-boolean v9, p0, Lcom/google/android/gms/common/internal/c$a;->i:Z
+    move-object v0, v9
 
-    move-object v0, v10
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/gms/common/internal/c;-><init>(Landroid/accounts/Account;Ljava/util/Set;Ljava/util/Map;ILandroid/view/View;Ljava/lang/String;Ljava/lang/String;Lqp;)V
 
-    invoke-direct/range {v0 .. v9}, Lcom/google/android/gms/common/internal/c;-><init>(Landroid/accounts/Account;Ljava/util/Set;Ljava/util/Map;ILandroid/view/View;Ljava/lang/String;Ljava/lang/String;Lfm;Z)V
-
-    return-object v10
+    return-object v9
 .end method
 
 .method public final b(Ljava/lang/String;)Lcom/google/android/gms/common/internal/c$a;
     .locals 0
 
-    .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/c$a;->f:Ljava/lang/String;
+    .line 22
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/c$a;->g:Ljava/lang/String;
 
     return-object p0
 .end method

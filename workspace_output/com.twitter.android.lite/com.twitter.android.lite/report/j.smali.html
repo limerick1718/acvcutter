@@ -16,23 +16,36 @@
 	<pre class="source lang-smali" id='source'>
 		<code>.class public final Lj;
 .super Ljava/lang/Object;
-.source "CustomTabsSession.java"
+.source "CustomTabsIntent.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lj$a;
+}
+.end annotation
+
+.field public final a:Landroid/content/Intent;
+.field public final b:Landroid/os/Bundle;
 
 
-
-
-.method  a()Landroid/os/IBinder;
+<span class="cov">.method constructor &lt;init&gt;(Landroid/content/Intent;Landroid/os/Bundle;)V</span>
 <span class="">	.locals 0</span>
 
-<span class="missed">	const p0, 0x0</span>
-<span class="">	throw p0</span>
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	iput-object p1, p0, Lj;->a:Landroid/content/Intent;</span>
+<span class="cov">	iput-object p2, p0, Lj;->b:Landroid/os/Bundle;</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method  b()Landroid/content/ComponentName;
-<span class="">	.locals 0</span>
+<span class="cov">.method public a(Landroid/content/Context;Landroid/net/Uri;)V</span>
+<span class="">	.locals 1</span>
 
-<span class="missed">	const p0, 0x0</span>
-<span class="">	throw p0</span>
+<span class="cov">	iget-object v0, p0, Lj;->a:Landroid/content/Intent;</span>
+<span class="cov">	invoke-virtual {v0, p2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;</span>
+<span class="cov">	iget-object p2, p0, Lj;->a:Landroid/content/Intent;</span>
+<span class="cov">	iget-object v0, p0, Lj;->b:Landroid/os/Bundle;</span>
+<span class="cov">	invoke-static {p1, p2, v0}, Ls;->a(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V</span>
+<span class="exec">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -1,5 +1,7 @@
-.class public interface abstract Ljk;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.method public abstract a()Z
+.class final Ljk;
+.super Ljava/lang/IllegalArgumentException;
+.method constructor <init>(II)V
+.locals 2
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method

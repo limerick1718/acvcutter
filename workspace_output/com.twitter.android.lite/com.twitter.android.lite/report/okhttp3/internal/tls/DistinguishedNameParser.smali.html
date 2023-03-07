@@ -36,6 +36,7 @@
 <span class="">	invoke-virtual {p1, v0}, Ljavax/security/auth/x500/X500Principal;->getName(Ljava/lang/String;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="missed">	iput-object p1, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->dn:Ljava/lang/String;</span>
+<span class="missed">	iget-object p1, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->dn:Ljava/lang/String;</span>
 <span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
 <span class="missed">	move-result p1</span>
 <span class="missed">	iput p1, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->length:I</span>
@@ -232,6 +233,7 @@
 <span class="missed">	iget v0, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->pos:I</span>
 <span class="missed">	add-int/lit8 v0, v0, 0x1</span>
 <span class="missed">	iput v0, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->pos:I</span>
+<span class="missed">	iget v0, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->pos:I</span>
 <span class="missed">	iget v1, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->length:I</span>
 <span class="missed">	if-eq v0, v1, :cond_1</span>
 <span class="missed">	iget-object v1, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->chars:[C</span>
@@ -328,6 +330,7 @@
 <span class="missed">	iget v6, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->pos:I</span>
 <span class="missed">	add-int/2addr v6, v2</span>
 <span class="missed">	iput v6, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->pos:I</span>
+<span class="missed">	iget v6, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->pos:I</span>
 <span class="missed">	iget v7, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->length:I</span>
 <span class="missed">	if-eq v6, v7, :cond_5</span>
 <span class="missed">	iget-object v7, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->chars:[C</span>
@@ -338,6 +341,7 @@
 <span class="">	:cond_3</span>
 <span class="missed">	add-int/lit8 v6, v6, 0x1</span>
 <span class="missed">	iput v6, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->pos:I</span>
+<span class="missed">	iget v6, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->pos:I</span>
 <span class="">	invoke-direct {p0, v6}, Lokhttp3/internal/tls/DistinguishedNameParser;->getByte(I)I</span>
 <span class="missed">	move-result v6</span>
 <span class="missed">	iget v7, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->pos:I</span>
@@ -434,17 +438,18 @@
 <span class="missed">	and-int/lit8 v2, v0, 0x1</span>
 <span class="missed">	if-eqz v2, :cond_6</span>
 <span class="missed">	div-int/lit8 v2, v0, 0x2</span>
-<span class="missed">	new-array v3, v2, [B</span>
-<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	new-array v2, v2, [B</span>
+<span class="missed">	const/4 v3, 0x0</span>
 <span class="missed">	add-int/lit8 v1, v1, 0x1</span>
 <span class="">	:goto_3</span>
-<span class="missed">	if-ge v4, v2, :cond_5</span>
+<span class="missed">	array-length v4, v2</span>
+<span class="missed">	if-ge v3, v4, :cond_5</span>
 <span class="">	invoke-direct {p0, v1}, Lokhttp3/internal/tls/DistinguishedNameParser;->getByte(I)I</span>
-<span class="missed">	move-result v5</span>
-<span class="missed">	int-to-byte v5, v5</span>
-<span class="missed">	aput-byte v5, v3, v4</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	int-to-byte v4, v4</span>
+<span class="missed">	aput-byte v4, v2, v3</span>
 <span class="missed">	add-int/lit8 v1, v1, 0x2</span>
-<span class="missed">	add-int/lit8 v4, v4, 0x1</span>
+<span class="missed">	add-int/lit8 v3, v3, 0x1</span>
 <span class="">	goto :goto_3</span>
 <span class="">	:cond_5</span>
 <span class="missed">	new-instance v1, Ljava/lang/String;</span>
@@ -638,7 +643,9 @@
 <span class="missed">	iget v0, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->pos:I</span>
 <span class="missed">	add-int/lit8 v0, v0, 0x1</span>
 <span class="missed">	iput v0, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->pos:I</span>
+<span class="missed">	iget v0, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->pos:I</span>
 <span class="missed">	iput v0, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->beg:I</span>
+<span class="missed">	iget v0, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->beg:I</span>
 <span class="missed">	iput v0, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->end:I</span>
 <span class="">	:goto_0</span>
 <span class="missed">	iget v0, p0, Lokhttp3/internal/tls/DistinguishedNameParser;->pos:I</span>

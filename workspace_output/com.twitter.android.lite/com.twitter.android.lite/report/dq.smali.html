@@ -14,253 +14,379 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class  Ldq;
+		<code>.class public Ldq;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.implements Laq;
 
-.annotation system Ldalvik/annotation/MemberClasses;
+
+.field public static final a:Landroid/net/Uri;
+.field public static final b:Ljava/util/regex/Pattern;
+.field public static final c:Ljava/util/regex/Pattern;
+.field private static final d:Landroid/net/Uri;
+.field private static final e:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private static f:Ljava/util/HashMap;
+.annotation system Ldalvik/annotation/Signature;
 value = {
-Ldq$b;
+"Ljava/util/HashMap<",
+"Ljava/lang/String;",
+"Ljava/lang/String;",
+">;"
 }
 .end annotation
-
-.field private static final d:Ljava/nio/charset/Charset;
-.field private final a:Ljava/io/File;
-.field private final b:I
-.field private c:Lcq;
+.end field
+.field private static final g:Ljava/util/HashMap;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/HashMap<",
+"Ljava/lang/String;",
+"Ljava/lang/Boolean;",
+">;"
+}
+.end annotation
+.end field
+.field private static final h:Ljava/util/HashMap;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/HashMap<",
+"Ljava/lang/String;",
+"Ljava/lang/Integer;",
+">;"
+}
+.end annotation
+.end field
+.field private static final i:Ljava/util/HashMap;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/HashMap<",
+"Ljava/lang/String;",
+"Ljava/lang/Long;",
+">;"
+}
+.end annotation
+.end field
+.field private static final j:Ljava/util/HashMap;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/HashMap<",
+"Ljava/lang/String;",
+"Ljava/lang/Float;",
+">;"
+}
+.end annotation
+.end field
+.field private static k:Ljava/lang/Object;
+.field private static l:Z
+.field private static m:[Ljava/lang/String;
 
 
 <span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	const-string v0, "UTF-8"</span>
-<span class="exec">	invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	sput-object v0, Ldq;->d:Ljava/nio/charset/Charset;</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method constructor &lt;init&gt;(Ljava/io/File;I)V</span>
-<span class="">	.locals 0</span>
-
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	iput-object p1, p0, Ldq;->a:Ljava/io/File;</span>
-<span class="cov">	iput p2, p0, Ldq;->b:I</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method private b(JLjava/lang/String;)V</span>
-<span class="">	.locals 4</span>
-
-<span class="cov">	const-string v0, " "</span>
-<span class="cov">	iget-object v1, p0, Ldq;->c:Lcq;</span>
-<span class="missed">	if-nez v1, :cond_0</span>
-<span class="">	return-void</span>
-<span class="cov">	:cond_0</span>
-<span class="missed">	if-nez p3, :cond_1</span>
-<span class="missed">	const-string p3, "null"</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	iget v1, p0, Ldq;->b:I</span>
-<span class="cov">	div-int/lit8 v1, v1, 0x4</span>
-<span class="exec">	invoke-virtual {p3}, Ljava/lang/String;->length()I</span>
-<span class="cov">	move-result v2</span>
-<span class="missed">	if-le v2, v1, :cond_2</span>
-<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const-string v3, "..."</span>
-<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {p3}, Ljava/lang/String;->length()I</span>
-<span class="missed">	move-result v3</span>
-<span class="missed">	sub-int/2addr v3, v1</span>
-<span class="">	invoke-virtual {p3, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;</span>
-<span class="missed">	move-result-object p3</span>
-<span class="missed">	invoke-virtual {v2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p3</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	const-string v1, "\r"</span>
-<span class="exec">	invoke-virtual {p3, v1, v0}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object p3</span>
-<span class="cov">	const-string v1, "\n"</span>
-<span class="exec">	invoke-virtual {p3, v1, v0}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object p3</span>
-<span class="cov">	sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;</span>
-<span class="cov">	const-string v1, "%d %s%n"</span>
-<span class="cov">	const/4 v2, 0x2</span>
-<span class="cov">	new-array v2, v2, [Ljava/lang/Object;</span>
-<span class="cov">	const/4 v3, 0x0</span>
-<span class="exec">	invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	aput-object p1, v2, v3</span>
-<span class="cov">	const/4 p1, 0x1</span>
-<span class="cov">	aput-object p3, v2, p1</span>
-<span class="exec">	invoke-static {v0, v1, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	sget-object p2, Ldq;->d:Ljava/nio/charset/Charset;</span>
-<span class="exec">	invoke-virtual {p1, p2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	iget-object p2, p0, Ldq;->c:Lcq;</span>
-<span class="cov">	invoke-virtual {p2, p1}, Lcq;->a([B)V</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	iget-object p1, p0, Ldq;->c:Lcq;</span>
-<span class="exec">	invoke-virtual {p1}, Lcq;->f()Z</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	if-nez p1, :cond_3</span>
-<span class="cov">	iget-object p1, p0, Ldq;->c:Lcq;</span>
-<span class="exec">	invoke-virtual {p1}, Lcq;->q()I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	iget p2, p0, Ldq;->b:I</span>
-<span class="missed">	if-le p1, p2, :cond_3</span>
-<span class="missed">	iget-object p1, p0, Ldq;->c:Lcq;</span>
-<span class="missed">	invoke-virtual {p1}, Lcq;->l()V</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception p1</span>
-<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
-<span class="missed">	move-result-object p2</span>
-<span class="missed">	const-string p3, "There was a problem writing to the Crashlytics log."</span>
-<span class="missed">	invoke-virtual {p2, p3, p1}, Lmo;->b(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
-<span class="cov">	:cond_3</span>
-<span class="exec">	return-void</span>
-.end method
-
-.method private e()Ldq$b;
-<span class="">	.locals 6</span>
-
-<span class="missed">	iget-object v0, p0, Ldq;->a:Ljava/io/File;</span>
-<span class="">	invoke-virtual {v0}, Ljava/io/File;->exists()Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="">	return-object v1</span>
-<span class="">	:cond_0</span>
-<span class="missed">	invoke-direct {p0}, Ldq;->f()V</span>
-<span class="missed">	iget-object v0, p0, Ldq;->c:Lcq;</span>
-<span class="missed">	if-nez v0, :cond_1</span>
-<span class="">	return-object v1</span>
-<span class="">	:cond_1</span>
-<span class="missed">	const/4 v1, 0x1</span>
-<span class="missed">	new-array v1, v1, [I</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="missed">	aput v2, v1, v2</span>
-<span class="">	invoke-virtual {v0}, Lcq;->q()I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	new-array v0, v0, [B</span>
-<span class="">	:try_start_0</span>
-<span class="missed">	iget-object v3, p0, Ldq;->c:Lcq;</span>
-<span class="missed">	new-instance v4, Ldq$a;</span>
-<span class="missed">	invoke-direct {v4, p0, v0, v1}, Ldq$a;-><init>(Ldq;[B[I)V</span>
-<span class="missed">	invoke-virtual {v3, v4}, Lcq;->a(Lcq$d;)V</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception v3</span>
-<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
-<span class="missed">	move-result-object v4</span>
-<span class="missed">	const-string v5, "A problem occurred while reading the Crashlytics log file."</span>
-<span class="missed">	invoke-virtual {v4, v5, v3}, Lmo;->b(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
-<span class="">	:goto_0</span>
-<span class="missed">	new-instance v3, Ldq$b;</span>
-<span class="missed">	aget v1, v1, v2</span>
-<span class="missed">	invoke-direct {v3, p0, v0, v1}, Ldq$b;-><init>(Ldq;[BI)V</span>
-<span class="">	return-object v3</span>
-.end method
-
-<span class="cov">.method private f()V</span>
-<span class="">	.locals 4</span>
-
-<span class="cov">	iget-object v0, p0, Ldq;->c:Lcq;</span>
-<span class="cov">	if-nez v0, :cond_0</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	new-instance v0, Lcq;</span>
-<span class="cov">	iget-object v1, p0, Ldq;->a:Ljava/io/File;</span>
-<span class="cov">	invoke-direct {v0, v1}, Lcq;-><init>(Ljava/io/File;)V</span>
-<span class="cov">	iput-object v0, p0, Ldq;->c:Lcq;</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception v0</span>
-<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const-string v3, "Could not open log file: "</span>
-<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	iget-object v3, p0, Ldq;->a:Ljava/io/File;</span>
-<span class="missed">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v2</span>
-<span class="missed">	invoke-virtual {v1, v2, v0}, Lmo;->b(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-void</span>
-.end method
-
-.method public a()V
 <span class="">	.locals 2</span>
 
-<span class="missed">	iget-object v0, p0, Ldq;->c:Lcq;</span>
-<span class="missed">	const-string v1, "There was a problem closing the Crashlytics log file."</span>
-<span class="missed">	invoke-static {v0, v1}, Lzo;->a(Ljava/io/Closeable;Ljava/lang/String;)V</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	iput-object v0, p0, Ldq;->c:Lcq;</span>
-<span class="">	return-void</span>
-.end method
-
-<span class="cov">.method public a(JLjava/lang/String;)V</span>
-<span class="">	.locals 0</span>
-
-<span class="cov">	invoke-direct {p0}, Ldq;->f()V</span>
-<span class="cov">	invoke-direct {p0, p1, p2, p3}, Ldq;->b(JLjava/lang/String;)V</span>
+<span class="cov">	const-string v0, "content://com.google.android.gsf.gservices"</span>
+<span class="exec">	invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Ldq;->a:Landroid/net/Uri;</span>
+<span class="cov">	const-string v0, "content://com.google.android.gsf.gservices/prefix"</span>
+<span class="exec">	invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Ldq;->d:Landroid/net/Uri;</span>
+<span class="cov">	const/4 v0, 0x2</span>
+<span class="cov">	const-string v1, "^(1|true|t|on|yes|y)$"</span>
+<span class="exec">	invoke-static {v1, v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	sput-object v1, Ldq;->b:Ljava/util/regex/Pattern;</span>
+<span class="cov">	const-string v1, "^(0|false|f|off|no|n)$"</span>
+<span class="exec">	invoke-static {v1, v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Ldq;->c:Ljava/util/regex/Pattern;</span>
+<span class="cov">	new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V</span>
+<span class="cov">	sput-object v0, Ldq;->e:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="cov">	new-instance v0, Ljava/util/HashMap;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/HashMap;-><init>()V</span>
+<span class="cov">	sput-object v0, Ldq;->g:Ljava/util/HashMap;</span>
+<span class="cov">	new-instance v0, Ljava/util/HashMap;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/HashMap;-><init>()V</span>
+<span class="cov">	sput-object v0, Ldq;->h:Ljava/util/HashMap;</span>
+<span class="cov">	new-instance v0, Ljava/util/HashMap;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/HashMap;-><init>()V</span>
+<span class="cov">	sput-object v0, Ldq;->i:Ljava/util/HashMap;</span>
+<span class="cov">	new-instance v0, Ljava/util/HashMap;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/HashMap;-><init>()V</span>
+<span class="cov">	sput-object v0, Ldq;->j:Ljava/util/HashMap;</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	new-array v0, v0, [Ljava/lang/String;</span>
+<span class="cov">	sput-object v0, Ldq;->m:[Ljava/lang/String;</span>
 <span class="exec">	return-void</span>
 .end method
 
-.method public b()V
-<span class="">	.locals 1</span>
+.method public constructor &lt;init&gt;()V
+<span class="">	.locals 0</span>
 
-<span class="missed">	invoke-virtual {p0}, Ldq;->a()V</span>
-<span class="missed">	iget-object v0, p0, Ldq;->a:Ljava/io/File;</span>
-<span class="missed">	invoke-virtual {v0}, Ljava/io/File;->delete()Z</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
 <span class="">	return-void</span>
 .end method
 
-.method public c()Ljava/lang/String;
-<span class="">	.locals 3</span>
+.method public static a(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+<span class="">	.locals 13</span>
 
-<span class="">	invoke-virtual {p0}, Ldq;->d()[B</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	new-instance v1, Ljava/lang/String;</span>
-<span class="missed">	sget-object v2, Ldq;->d:Ljava/nio/charset/Charset;</span>
-<span class="missed">	invoke-direct {v1, v0, v2}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V</span>
+<span class="missed">	const-class p2, Ldq;</span>
+<span class="missed">	monitor-enter p2</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	invoke-static {p0}, Ldq;->a(Landroid/content/ContentResolver;)V</span>
+<span class="missed">	sget-object v0, Ldq;->k:Ljava/lang/Object;</span>
+<span class="missed">	sget-object v1, Ldq;->f:Ljava/util/HashMap;</span>
+<span class="">	invoke-virtual {v1, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="missed">	sget-object p0, Ldq;->f:Ljava/util/HashMap;</span>
+<span class="">	invoke-virtual {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	check-cast p0, Ljava/lang/String;</span>
+<span class="missed">	if-eqz p0, :cond_0</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
-<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	move-object p0, v2</span>
 <span class="">	:goto_0</span>
-<span class="">	return-object v1</span>
+<span class="missed">	monitor-exit p2</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	sget-object v1, Ldq;->m:[Ljava/lang/String;</span>
+<span class="missed">	array-length v3, v1</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	const/4 v6, 0x1</span>
+<span class="missed">	if-ge v5, v3, :cond_6</span>
+<span class="missed">	aget-object v7, v1, v5</span>
+<span class="">	invoke-virtual {p1, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v7</span>
+<span class="missed">	if-eqz v7, :cond_5</span>
+<span class="missed">	sget-boolean v0, Ldq;->l:Z</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="missed">	sget-object v0, Ldq;->f:Ljava/util/HashMap;</span>
+<span class="">	invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_4</span>
+<span class="">	:cond_2</span>
+<span class="missed">	sget-object v0, Ldq;->m:[Ljava/lang/String;</span>
+<span class="missed">	sget-object v1, Ldq;->f:Ljava/util/HashMap;</span>
+<span class="">	invoke-static {p0, v0}, Ldq;->a(Landroid/content/ContentResolver;[Ljava/lang/String;)Ljava/util/Map;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	invoke-virtual {v1, p0}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V</span>
+<span class="missed">	sput-boolean v6, Ldq;->l:Z</span>
+<span class="missed">	sget-object p0, Ldq;->f:Ljava/util/HashMap;</span>
+<span class="">	invoke-virtual {p0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_4</span>
+<span class="missed">	sget-object p0, Ldq;->f:Ljava/util/HashMap;</span>
+<span class="">	invoke-virtual {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	check-cast p0, Ljava/lang/String;</span>
+<span class="missed">	if-eqz p0, :cond_3</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	move-object p0, v2</span>
+<span class="">	:goto_2</span>
+<span class="missed">	monitor-exit p2</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_4</span>
+<span class="missed">	monitor-exit p2</span>
+<span class="">	return-object v2</span>
+<span class="">	:cond_5</span>
+<span class="missed">	add-int/lit8 v5, v5, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_6</span>
+<span class="missed">	monitor-exit p2</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_1</span>
+<span class="missed">	sget-object v8, Ldq;->a:Landroid/net/Uri;</span>
+<span class="missed">	const/4 v9, 0x0</span>
+<span class="missed">	const/4 v10, 0x0</span>
+<span class="missed">	new-array v11, v6, [Ljava/lang/String;</span>
+<span class="missed">	aput-object p1, v11, v4</span>
+<span class="missed">	const/4 v12, 0x0</span>
+<span class="missed">	move-object v7, p0</span>
+<span class="">	invoke-virtual/range {v7 .. v12}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	if-nez p0, :cond_8</span>
+<span class="missed">	if-eqz p0, :cond_7</span>
+<span class="missed">	invoke-interface {p0}, Landroid/database/Cursor;->close()V</span>
+<span class="">	:cond_7</span>
+<span class="">	return-object v2</span>
+<span class="">	:try_start_1</span>
+<span class="">	:cond_8</span>
+<span class="">	invoke-interface {p0}, Landroid/database/Cursor;->moveToFirst()Z</span>
+<span class="missed">	move-result p2</span>
+<span class="missed">	if-nez p2, :cond_a</span>
+<span class="missed">	invoke-static {v0, p1, v2}, Ldq;->a(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="missed">	if-eqz p0, :cond_9</span>
+<span class="missed">	invoke-interface {p0}, Landroid/database/Cursor;->close()V</span>
+<span class="">	:cond_9</span>
+<span class="">	return-object v2</span>
+<span class="">	:try_start_2</span>
+<span class="">	:cond_a</span>
+<span class="">	invoke-interface {p0, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	if-eqz p2, :cond_b</span>
+<span class="">	invoke-virtual {p2, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_b</span>
+<span class="missed">	move-object p2, v2</span>
+<span class="">	:cond_b</span>
+<span class="missed">	invoke-static {v0, p1, p2}, Ldq;->a(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	:try_end_2</span>
+<span class="missed">	.catchall {:try_start_2 .. :try_end_2} :catchall_0</span>
+<span class="missed">	if-eqz p2, :cond_c</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_c</span>
+<span class="missed">	move-object p2, v2</span>
+<span class="">	:goto_3</span>
+<span class="missed">	if-eqz p0, :cond_d</span>
+<span class="missed">	invoke-interface {p0}, Landroid/database/Cursor;->close()V</span>
+<span class="">	:cond_d</span>
+<span class="">	return-object p2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	if-eqz p0, :cond_e</span>
+<span class="missed">	invoke-interface {p0}, Landroid/database/Cursor;->close()V</span>
+<span class="">	:cond_e</span>
+<span class="">	throw p1</span>
+<span class="">	:catchall_1</span>
+<span class="missed">	move-exception p0</span>
+<span class="">	:try_start_3</span>
+<span class="missed">	monitor-exit p2</span>
+<span class="">	:try_end_3</span>
+<span class="missed">	.catchall {:try_start_3 .. :try_end_3} :catchall_1</span>
+<span class="">	throw p0</span>
 .end method
 
-.method public d()[B
+.method private static varargs a(Landroid/content/ContentResolver;[Ljava/lang/String;)Ljava/util/Map;
+<span class="">	.locals 6</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Landroid/content/ContentResolver;",</span>
+<span class="">	"[",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	")",</span>
+<span class="">	"Ljava/util/Map<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	sget-object v1, Ldq;->d:Landroid/net/Uri;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="missed">	move-object v0, p0</span>
+<span class="missed">	move-object v4, p1</span>
+<span class="">	invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	new-instance p1, Ljava/util/TreeMap;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/util/TreeMap;-><init>()V</span>
+<span class="missed">	if-nez p0, :cond_0</span>
+<span class="">	return-object p1</span>
+<span class="">	:goto_0</span>
+<span class="">	:try_start_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-interface {p0}, Landroid/database/Cursor;->moveToNext()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	invoke-interface {p0, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	invoke-interface {p0, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {p1, v0, v1}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	invoke-interface {p0}, Landroid/database/Cursor;->close()V</span>
+<span class="">	return-object p1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-interface {p0}, Landroid/database/Cursor;->close()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method static synthetic a()Ljava/util/concurrent/atomic/AtomicBoolean;
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Ldq;->e:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method private static a(Landroid/content/ContentResolver;)V
 <span class="">	.locals 4</span>
 
-<span class="">	invoke-direct {p0}, Ldq;->e()Ldq$b;</span>
-<span class="missed">	move-result-object v0</span>
+<span class="missed">	sget-object v0, Ldq;->f:Ljava/util/HashMap;</span>
+<span class="missed">	const/4 v1, 0x0</span>
 <span class="missed">	if-nez v0, :cond_0</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="">	return-object v0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	iget v1, v0, Ldq$b;->b:I</span>
-<span class="missed">	new-array v2, v1, [B</span>
-<span class="missed">	iget-object v0, v0, Ldq$b;->a:[B</span>
+<span class="missed">	sget-object v0, Ldq;->e:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V</span>
+<span class="missed">	new-instance v0, Ljava/util/HashMap;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/HashMap;-><init>()V</span>
+<span class="missed">	sput-object v0, Ldq;->f:Ljava/util/HashMap;</span>
+<span class="missed">	new-instance v0, Ljava/lang/Object;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	sput-object v0, Ldq;->k:Ljava/lang/Object;</span>
+<span class="missed">	sput-boolean v1, Ldq;->l:Z</span>
+<span class="missed">	sget-object v0, Ldq;->a:Landroid/net/Uri;</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	new-instance v2, Ldr;</span>
 <span class="missed">	const/4 v3, 0x0</span>
-<span class="missed">	invoke-static {v0, v3, v2, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
-<span class="">	return-object v2</span>
+<span class="missed">	invoke-direct {v2, v3}, Ldr;-><init>(Landroid/os/Handler;)V</span>
+<span class="missed">	invoke-virtual {p0, v0, v1, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sget-object p0, Ldq;->e:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="">	invoke-virtual {p0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_1</span>
+<span class="missed">	sget-object p0, Ldq;->f:Ljava/util/HashMap;</span>
+<span class="missed">	invoke-virtual {p0}, Ljava/util/HashMap;->clear()V</span>
+<span class="missed">	sget-object p0, Ldq;->g:Ljava/util/HashMap;</span>
+<span class="missed">	invoke-virtual {p0}, Ljava/util/HashMap;->clear()V</span>
+<span class="missed">	sget-object p0, Ldq;->h:Ljava/util/HashMap;</span>
+<span class="missed">	invoke-virtual {p0}, Ljava/util/HashMap;->clear()V</span>
+<span class="missed">	sget-object p0, Ldq;->i:Ljava/util/HashMap;</span>
+<span class="missed">	invoke-virtual {p0}, Ljava/util/HashMap;->clear()V</span>
+<span class="missed">	sget-object p0, Ldq;->j:Ljava/util/HashMap;</span>
+<span class="missed">	invoke-virtual {p0}, Ljava/util/HashMap;->clear()V</span>
+<span class="missed">	new-instance p0, Ljava/lang/Object;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	sput-object p0, Ldq;->k:Ljava/lang/Object;</span>
+<span class="missed">	sput-boolean v1, Ldq;->l:Z</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+.end method
+
+.method private static a(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	const-class v0, Ldq;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	sget-object v1, Ldq;->k:Ljava/lang/Object;</span>
+<span class="missed">	if-ne p0, v1, :cond_0</span>
+<span class="missed">	sget-object p0, Ldq;->f:Ljava/util/HashMap;</span>
+<span class="missed">	invoke-virtual {p0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -14,161 +14,73 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lpd;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+		<code>.class final Lpd;
+.super Lqn;
 
 
-.field static final a:Ljava/nio/charset/Charset;
-.field public static final b:[B
+.field private final synthetic a:Lpa;
 
 
-.method static constructor &lt;clinit&gt;()V
-<span class="">	.locals 3</span>
+<span class="cov">.method constructor &lt;init&gt;(Lpa;Lnd;)V</span>
+<span class="">	.locals 0</span>
 
-<span class="missed">	const-string v0, "UTF-8"</span>
-<span class="">	invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;</span>
+<span class="cov">	iput-object p1, p0, Lpd;->a:Lpa;</span>
+<span class="cov">	invoke-direct {p0, p2}, Lqn;-><init>(Lnd;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public final a()V
+<span class="">	.locals 8</span>
+
+<span class="missed">	iget-object v0, p0, Lpd;->a:Lpa;</span>
+<span class="missed">	invoke-virtual {v0}, Lnb;->d()V</span>
+<span class="">	invoke-virtual {v0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1}, Lla;->x()Llc;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Current session is expired, remove the session number and Id"</span>
+<span class="missed">	invoke-virtual {v1, v2}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="">	invoke-virtual {v0}, Lnb;->t()Lqf;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v0}, Loa;->g()Lku;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v2}, Lku;->x()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v1, v2}, Lqf;->p(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="">	invoke-virtual {v0}, Loa;->f()Lnl;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="">	invoke-virtual {v0}, Lnb;->m()Lcom/google/android/gms/common/util/d;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-interface {v1}, Lcom/google/android/gms/common/util/d;->a()J</span>
+<span class="missed">	move-result-wide v6</span>
+<span class="missed">	const-string v3, "auto"</span>
+<span class="missed">	const-string v4, "_sid"</span>
+<span class="missed">	invoke-virtual/range {v2 .. v7}, Lnl;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;J)V</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {v0}, Lnb;->t()Lqf;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v0}, Loa;->g()Lku;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v2}, Lku;->x()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v1, v2}, Lqf;->q(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="">	invoke-virtual {v0}, Loa;->f()Lnl;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="">	invoke-virtual {v0}, Lnb;->m()Lcom/google/android/gms/common/util/d;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	sput-object v0, Lpd;->a:Ljava/nio/charset/Charset;</span>
-<span class="missed">	const-string v0, "ISO-8859-1"</span>
-<span class="missed">	invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	new-array v1, v0, [B</span>
-<span class="missed">	sput-object v1, Lpd;->b:[B</span>
-<span class="missed">	invoke-static {v1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;</span>
-<span class="missed">	sget-object v1, Lpd;->b:[B</span>
-<span class="missed">	array-length v2, v1</span>
-<span class="missed">	invoke-static {v1, v0, v2, v0}, Lrc;->a([BIIZ)Lrc;</span>
+<span class="">	invoke-interface {v0}, Lcom/google/android/gms/common/util/d;->a()J</span>
+<span class="missed">	move-result-wide v6</span>
+<span class="missed">	const-string v3, "auto"</span>
+<span class="missed">	const-string v4, "_sno"</span>
+<span class="missed">	invoke-virtual/range {v2 .. v7}, Lnl;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;J)V</span>
+<span class="">	:cond_1</span>
 <span class="">	return-void</span>
-.end method
-
-.method static a(I[BII)I
-<span class="">	.locals 2</span>
-
-<span class="missed">	move v0, p2</span>
-<span class="">	:goto_0</span>
-<span class="missed">	add-int v1, p2, p3</span>
-<span class="missed">	if-ge v0, v1, :cond_0</span>
-<span class="missed">	mul-int/lit8 p0, p0, 0x1f</span>
-<span class="missed">	aget-byte v1, p1, v0</span>
-<span class="missed">	add-int/2addr p0, v1</span>
-<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="">	return p0</span>
-.end method
-
-.method public static a(J)I
-<span class="">	.locals 2</span>
-
-<span class="missed">	const/16 v0, 0x20</span>
-<span class="missed">	ushr-long v0, p0, v0</span>
-<span class="missed">	xor-long/2addr p0, v0</span>
-<span class="missed">	long-to-int p1, p0</span>
-<span class="">	return p1</span>
-.end method
-
-.method public static a(Z)I
-<span class="">	.locals 0</span>
-
-<span class="missed">	if-eqz p0, :cond_0</span>
-<span class="missed">	const/16 p0, 0x4cf</span>
-<span class="">	return p0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/16 p0, 0x4d5</span>
-<span class="">	return p0</span>
-.end method
-
-.method static a(Ljava/lang/Object;)Ljava/lang/Object;
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"<T:",</span>
-<span class="">	"Ljava/lang/Object;",</span>
-<span class="">	">(TT;)TT;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	if-eqz p0, :cond_0</span>
-<span class="">	return-object p0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 p0, 0x0</span>
-<span class="">	throw p0</span>
-.end method
-
-.method static a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-<span class="">	.locals 0</span>
-
-<span class="missed">	check-cast p0, Lue;</span>
-<span class="">	invoke-interface {p0}, Lue;->d()Lxe;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	check-cast p1, Lue;</span>
-<span class="">	invoke-interface {p0, p1}, Lxe;->a(Lue;)Lxe;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	invoke-interface {p0}, Lxe;->f()Lue;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	return-object p0</span>
-.end method
-
-.method static a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"<T:",</span>
-<span class="">	"Ljava/lang/Object;",</span>
-<span class="">	">(TT;",</span>
-<span class="">	"Ljava/lang/String;",</span>
-<span class="">	")TT;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	if-eqz p0, :cond_0</span>
-<span class="">	return-object p0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-instance p0, Ljava/lang/NullPointerException;</span>
-<span class="missed">	invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw p0</span>
-.end method
-
-.method static a(Lue;)Z
-<span class="">	.locals 1</span>
-
-<span class="missed">	instance-of v0, p0, Lxb;</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	check-cast p0, Lxb;</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 p0, 0x0</span>
-<span class="">	return p0</span>
-.end method
-
-.method public static a([B)Z
-<span class="">	.locals 0</span>
-
-<span class="">	invoke-static {p0}, Lng;->a([B)Z</span>
-<span class="missed">	move-result p0</span>
-<span class="">	return p0</span>
-.end method
-
-.method public static b([B)Ljava/lang/String;
-<span class="">	.locals 2</span>
-
-<span class="missed">	new-instance v0, Ljava/lang/String;</span>
-<span class="missed">	sget-object v1, Lpd;->a:Ljava/nio/charset/Charset;</span>
-<span class="missed">	invoke-direct {v0, p0, v1}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public static c([B)I
-<span class="">	.locals 2</span>
-
-<span class="missed">	array-length v0, p0</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="">	invoke-static {v0, p0, v1, v0}, Lpd;->a(I[BII)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	if-nez p0, :cond_0</span>
-<span class="missed">	const/4 p0, 0x1</span>
-<span class="">	:cond_0</span>
-<span class="">	return p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

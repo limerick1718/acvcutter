@@ -14,46 +14,240 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lyh;
+		<code>.class public Lyh;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
+.source "Settings.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lyh$a;
+}
+.end annotation
+
+.field private final a:Ljava/util/concurrent/atomic/AtomicReference;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/concurrent/atomic/AtomicReference<",
+"Lyk;",
+">;"
+}
+.end annotation
+.end field
+.field private final b:Ljava/util/concurrent/CountDownLatch;
+.field private c:Lyj;
+.field private d:Z
 
 
+<span class="cov">.method private constructor &lt;init&gt;()V</span>
+<span class="">	.locals 2</span>
 
-
-.method public abstract a()Z
-<span class="">	</span>
-
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Lyh;->a:Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="cov">	new-instance v0, Ljava/util/concurrent/CountDownLatch;</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V</span>
+<span class="cov">	iput-object v0, p0, Lyh;->b:Ljava/util/concurrent/CountDownLatch;</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	iput-boolean v0, p0, Lyh;->d:Z</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method public abstract b()Z
-<span class="">	</span>
+<span class="cov">.method synthetic constructor &lt;init&gt;(Lyh$1;)V</span>
+<span class="">	.locals 0</span>
 
+<span class="cov">	invoke-direct {p0}, Lyh;-><init>()V</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method public abstract c()Z
-<span class="">	</span>
+<span class="cov">.method public static a()Lyh;</span>
+<span class="">	.locals 1</span>
 
+<span class="exec">	invoke-static {}, Lyh$a;->a()Lyh;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
 .end method
 
-.method public abstract d()Z
-<span class="">	</span>
+<span class="cov">.method private a(Lyk;)V</span>
+<span class="">	.locals 1</span>
 
+<span class="cov">	iget-object v0, p0, Lyh;->a:Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="cov">	invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V</span>
+<span class="cov">	iget-object p1, p0, Lyh;->b:Ljava/util/concurrent/CountDownLatch;</span>
+<span class="cov">	invoke-virtual {p1}, Ljava/util/concurrent/CountDownLatch;->countDown()V</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method public abstract e()Z
-<span class="">	</span>
+<span class="cov">.method public declared-synchronized a(Luw;Lvx;Lxi;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lvq;)Lyh;</span>
+<span class="">	.locals 22</span>
 
+<span class="cov">	move-object/from16 v1, p0</span>
+<span class="cov">	move-object/from16 v0, p1</span>
+<span class="cov">	monitor-enter p0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-boolean v2, v1, Lyh;->d:Z</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return-object v1</span>
+<span class="cov">	:try_start_1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v2, v1, Lyh;->c:Lyj;</span>
+<span class="cov">	const/4 v10, 0x1</span>
+<span class="cov">	if-nez v2, :cond_1</span>
+<span class="exec">	invoke-virtual/range {p1 .. p1}, Luw;->getContext()Landroid/content/Context;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="exec">	invoke-virtual/range {p2 .. p2}, Lvx;->c()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	new-instance v4, Lvl;</span>
+<span class="cov">	invoke-direct {v4}, Lvl;-><init>()V</span>
+<span class="exec">	invoke-virtual {v4, v2}, Lvl;->a(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v12</span>
+<span class="exec">	invoke-virtual/range {p2 .. p2}, Lvx;->i()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	new-instance v5, Lwb;</span>
+<span class="cov">	invoke-direct {v5}, Lwb;-><init>()V</span>
+<span class="cov">	new-instance v6, Lyb;</span>
+<span class="cov">	invoke-direct {v6}, Lyb;-><init>()V</span>
+<span class="cov">	new-instance v7, Lxz;</span>
+<span class="cov">	invoke-direct {v7, v0}, Lxz;-><init>(Luw;)V</span>
+<span class="exec">	invoke-static {v2}, Lvn;->k(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v21</span>
+<span class="cov">	sget-object v8, Ljava/util/Locale;->US:Ljava/util/Locale;</span>
+<span class="cov">	const-string v9, "https://settings.crashlytics.com/spi/v2/platforms/android/apps/%s/settings"</span>
+<span class="cov">	new-array v11, v10, [Ljava/lang/Object;</span>
+<span class="cov">	const/4 v13, 0x0</span>
+<span class="cov">	aput-object v3, v11, v13</span>
+<span class="exec">	invoke-static {v8, v9, v11}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	new-instance v8, Lyc;</span>
+<span class="cov">	move-object/from16 v9, p3</span>
+<span class="cov">	move-object/from16 v11, p6</span>
+<span class="cov">	invoke-direct {v8, v0, v11, v3, v9}, Lyc;-><init>(Luw;Ljava/lang/String;Ljava/lang/String;Lxi;)V</span>
+<span class="exec">	invoke-virtual/range {p2 .. p2}, Lvx;->g()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="exec">	invoke-virtual/range {p2 .. p2}, Lvx;->f()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v14</span>
+<span class="exec">	invoke-virtual/range {p2 .. p2}, Lvx;->e()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v15</span>
+<span class="exec">	invoke-virtual/range {p2 .. p2}, Lvx;->b()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v16</span>
+<span class="cov">	new-array v9, v10, [Ljava/lang/String;</span>
+<span class="exec">	invoke-static {v2}, Lvn;->m(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	aput-object v2, v9, v13</span>
+<span class="exec">	invoke-static {v9}, Lvn;->a([Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v17</span>
+<span class="exec">	invoke-static {v4}, Lvr;->a(Ljava/lang/String;)Lvr;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="exec">	invoke-virtual {v2}, Lvr;->a()I</span>
+<span class="cov">	move-result v20</span>
+<span class="cov">	new-instance v4, Lyn;</span>
+<span class="cov">	move-object v11, v4</span>
+<span class="cov">	move-object v13, v3</span>
+<span class="cov">	move-object/from16 v18, p5</span>
+<span class="cov">	move-object/from16 v19, p4</span>
+<span class="cov">	invoke-direct/range {v11 .. v21}, Lyn;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V</span>
+<span class="cov">	new-instance v11, Lya;</span>
+<span class="cov">	move-object v2, v11</span>
+<span class="cov">	move-object/from16 v3, p1</span>
+<span class="cov">	move-object/from16 v9, p7</span>
+<span class="cov">	invoke-direct/range {v2 .. v9}, Lya;-><init>(Luw;Lyn;Lvp;Lym;Lxx;Lyo;Lvq;)V</span>
+<span class="cov">	iput-object v11, v1, Lyh;->c:Lyj;</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	iput-boolean v10, v1, Lyh;->d:Z</span>
+<span class="cov">	:try_end_1</span>
+<span class="cov">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="cov">	monitor-exit p0</span>
+<span class="exec">	return-object v1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw v0</span>
 .end method
 
-.method public abstract h()Z
-<span class="">	</span>
+<span class="cov">.method public b()Lyk;</span>
+<span class="">	.locals 3</span>
 
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v0, p0, Lyh;->b:Ljava/util/concurrent/CountDownLatch;</span>
+<span class="cov">	invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->await()V</span>
+<span class="cov">	iget-object v0, p0, Lyh;->a:Ljava/util/concurrent/atomic/AtomicReference;</span>
+<span class="exec">	invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	check-cast v0, Lyk;</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="exec">	return-object v0</span>
+<span class="">	:catch_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "Fabric"</span>
+<span class="missed">	const-string v2, "Interrupted while waiting for settings data."</span>
+<span class="missed">	invoke-interface {v0, v1, v2}, Luz;->e(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return-object v0</span>
 .end method
 
-.method public abstract k()Z
-<span class="">	</span>
+<span class="cov">.method public declared-synchronized c()Z</span>
+<span class="">	.locals 1</span>
 
+<span class="cov">	monitor-enter p0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v0, p0, Lyh;->c:Lyj;</span>
+<span class="exec">	invoke-interface {v0}, Lyj;->a()Lyk;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	invoke-direct {p0, v0}, Lyh;->a(Lyk;)V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	monitor-exit p0</span>
+<span class="exec">	return v0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public declared-synchronized d()Z
+<span class="">	.locals 5</span>
+
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lyh;->c:Lyj;</span>
+<span class="missed">	sget-object v1, Lyi;->b:Lyi;</span>
+<span class="">	invoke-interface {v0, v1}, Lyj;->a(Lyi;)Lyk;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-direct {p0, v0}, Lyh;->a(Lyk;)V</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Fabric"</span>
+<span class="missed">	const-string v3, "Failed to force reload of settings from Crashlytics."</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v1, v2, v3, v4}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return v0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

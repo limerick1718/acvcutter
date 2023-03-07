@@ -1,69 +1,33 @@
-.class public final Leg;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.field private static final f:Leg;
-.field private a:I
-.field private b:[I
-.field private c:[Ljava/lang/Object;
-.field private d:I
-.field private e:Z
-.method private constructor <init>()V
-.locals 4
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
-.end method
-.method private constructor <init>(I[I[Ljava/lang/Object;Z)V
-.locals 1
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
-.end method
-.method public final a()V
-.locals 1
-return-void
-.end method
-.method final a(ILjava/lang/Object;)V
-.locals 2
-return-void
-.end method
-.method final a(Ljava/lang/StringBuilder;I)V
-.locals 3
-return-void
-.end method
-.method final a(Lyg;)V
-.locals 3
-.annotation system Ldalvik/annotation/Throws;
+.class final Leg;
+.super Lef;
+.annotation system Ldalvik/annotation/Signature;
 value = {
-Ljava/io/IOException;
+"Lef<",
+"Ljava/lang/Long;",
+">;"
 }
 .end annotation
+.method constructor <init>(Lel;Ljava/lang/String;Ljava/lang/Long;)V
+.locals 1
+const/4 v0, 0x0
+invoke-direct {p0, p1, p2, p3, v0}, Lef;-><init>(Lel;Ljava/lang/String;Ljava/lang/Object;Leg;)V
 return-void
 .end method
-.method public final b()I
-.locals 4
-const/4 v0, 0x0
-return v0
-.end method
-.method public final b(Lyg;)V
+.method private final b(Ljava/lang/Object;)Ljava/lang/Long;
 .locals 3
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-return-void
+instance-of v0, p1, Ljava/lang/Long;
+instance-of v0, p1, Ljava/lang/String;
+move-object v0, p1
+check-cast v0, Ljava/lang/String;
+invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+move-result-wide v0
+invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+move-result-object p1
+return-object p1
 .end method
-.method public final c()I
-.locals 6
-const/4 v0, 0x0
-return v0
-.end method
-.method public final equals(Ljava/lang/Object;)Z
-.locals 8
-const/4 v0, 0x0
-return v0
-.end method
-.method public final hashCode()I
-.locals 8
-const/4 v0, 0x0
-return v0
+.method final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+.locals 0
+invoke-direct {p0, p1}, Leg;->b(Ljava/lang/Object;)Ljava/lang/Long;
+move-result-object p1
+return-object p1
 .end method

@@ -1,11 +1,25 @@
-.class public interface abstract Lqj;
+.class public final Lqj;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
 
 
-# virtual methods
-.method public abstract a()Z
-.end method
+# instance fields
+.field a:J
 
-.method public abstract b()Z
+.field b:J
+
+.field c:J
+
+.field d:J
+
+.field e:J
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method

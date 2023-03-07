@@ -10,7 +10,7 @@
     value = {
         "Ljava/lang/Object;",
         "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/common/internal/r;",
+        "Lcom/google/android/gms/common/internal/p;",
         ">;"
     }
 .end annotation
@@ -31,8 +31,8 @@
 .method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 8
 
-    .line 1
-    invoke-static {p1}, Lq5;->b(Landroid/os/Parcel;)I
+    .line 7
+    invoke-static {p1}, Lbb;->b(Landroid/os/Parcel;)I
 
     move-result v0
 
@@ -40,13 +40,11 @@
 
     const/4 v2, 0x0
 
-    move-object v2, v1
+    move-object v4, v1
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
-
-    .line 2
+    .line 12
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
@@ -54,13 +52,13 @@
 
     if-ge v5, v0, :cond_4
 
-    .line 3
-    invoke-static {p1}, Lq5;->a(Landroid/os/Parcel;)I
+    .line 13
+    invoke-static {p1}, Lbb;->a(Landroid/os/Parcel;)I
 
     move-result v5
 
-    .line 4
-    invoke-static {v5}, Lq5;->a(I)I
+    .line 14
+    invoke-static {v5}, Lbb;->a(I)I
 
     move-result v6
 
@@ -80,38 +78,38 @@
 
     if-eq v6, v7, :cond_0
 
-    .line 5
-    invoke-static {p1, v5}, Lq5;->o(Landroid/os/Parcel;I)V
+    .line 27
+    invoke-static {p1, v5}, Lbb;->b(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
-    .line 6
+    .line 24
     :cond_0
-    sget-object v2, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object v4, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 7
-    invoke-static {p1, v5, v2}, Lq5;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    .line 25
+    invoke-static {p1, v5, v4}, Lbb;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
-    move-result-object v2
+    move-result-object v4
 
-    check-cast v2, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+    check-cast v4, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
     goto :goto_0
 
-    .line 8
+    .line 22
     :cond_1
-    invoke-static {p1, v5}, Lq5;->k(Landroid/os/Parcel;I)I
+    invoke-static {p1, v5}, Lbb;->d(Landroid/os/Parcel;I)I
 
-    move-result v4
+    move-result v3
 
     goto :goto_0
 
-    .line 9
+    .line 18
     :cond_2
     sget-object v1, Landroid/accounts/Account;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 10
-    invoke-static {p1, v5, v1}, Lq5;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    .line 19
+    invoke-static {p1, v5, v1}, Lbb;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v1
 
@@ -119,22 +117,22 @@
 
     goto :goto_0
 
-    .line 11
+    .line 16
     :cond_3
-    invoke-static {p1, v5}, Lq5;->k(Landroid/os/Parcel;I)I
+    invoke-static {p1, v5}, Lbb;->d(Landroid/os/Parcel;I)I
 
-    move-result v3
+    move-result v2
 
     goto :goto_0
 
-    .line 12
+    .line 29
     :cond_4
-    invoke-static {p1, v0}, Lq5;->d(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lbb;->l(Landroid/os/Parcel;I)V
 
-    .line 13
-    new-instance p1, Lcom/google/android/gms/common/internal/r;
+    .line 30
+    new-instance p1, Lcom/google/android/gms/common/internal/p;
 
-    invoke-direct {p1, v3, v1, v4, v2}, Lcom/google/android/gms/common/internal/r;-><init>(ILandroid/accounts/Account;ILcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)V
+    invoke-direct {p1, v2, v1, v3, v4}, Lcom/google/android/gms/common/internal/p;-><init>(ILandroid/accounts/Account;ILcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)V
 
     return-object p1
 .end method
@@ -142,8 +140,8 @@
 .method public final synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 1
-    new-array p1, p1, [Lcom/google/android/gms/common/internal/r;
+    .line 4
+    new-array p1, p1, [Lcom/google/android/gms/common/internal/p;
 
     return-object p1
 .end method

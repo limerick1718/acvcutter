@@ -1,30 +1,14 @@
-.class public Lxp;
+.class public interface abstract Lxp;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-
-# interfaces
-.implements Lhp;
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.source "PreferenceStore.java"
 
 
 # virtual methods
-.method public a()J
-    .locals 2
+.method public abstract a()Landroid/content/SharedPreferences;
+.end method
 
-    .line 1
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+.method public abstract a(Landroid/content/SharedPreferences$Editor;)Z
+.end method
 
-    move-result-wide v0
-
-    return-wide v0
+.method public abstract b()Landroid/content/SharedPreferences$Editor;
 .end method

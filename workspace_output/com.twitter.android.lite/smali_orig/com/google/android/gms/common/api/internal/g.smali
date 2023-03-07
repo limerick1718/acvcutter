@@ -14,15 +14,40 @@
 .end annotation
 
 
+# instance fields
+.field private final a:Lcom/google/android/gms/common/api/internal/f;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/common/api/internal/f<",
+            "T",
+            "L;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final b:[Lcom/google/android/gms/common/d;
+
+.field private final c:Z
+
+
 # virtual methods
-.method public abstract a()V
+.method public a()V
+    .locals 1
+
+    .line 12
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/g;->a:Lcom/google/android/gms/common/api/internal/f;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/f;->a()V
+
+    return-void
 .end method
 
-.method protected abstract a(Lcom/google/android/gms/common/api/a$b;Lhn;)V
+.method protected abstract a(Lcom/google/android/gms/common/api/a$b;Lrn;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TA;",
-            "Lhn<",
+            "Lrn<",
             "Ljava/lang/Void;",
             ">;)V"
         }
@@ -35,13 +60,20 @@
     .end annotation
 .end method
 
-.method public abstract b()[Le5;
+.method public b()[Lcom/google/android/gms/common/d;
+    .locals 1
+
+    .line 14
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/g;->b:[Lcom/google/android/gms/common/d;
+
+    return-object v0
 .end method
 
 .method public final c()Z
-    .locals 0
+    .locals 1
 
-    const p0, 0x0
+    .line 15
+    iget-boolean v0, p0, Lcom/google/android/gms/common/api/internal/g;->c:Z
 
-    throw p0
+    return v0
 .end method

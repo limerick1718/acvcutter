@@ -1,20 +1,44 @@
-.class public final Lcom/google/android/gms/common/internal/p;
-.super Ljava/lang/Object;
-.annotation system Ldalvik/annotation/MemberClasses;
+.class public Lcom/google/android/gms/common/internal/p;
+.super Lba;
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.annotation system Ldalvik/annotation/Signature;
 value = {
-Lcom/google/android/gms/common/internal/p$a;
+"Landroid/os/Parcelable$Creator<",
+"Lcom/google/android/gms/common/internal/p;",
+">;"
 }
 .end annotation
-.method public static varargs a([Ljava/lang/Object;)I
+.end field
+.field private final a:I
+.field private final b:Landroid/accounts/Account;
+.field private final c:I
+.field private final d:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+.method constructor <init>(ILandroid/accounts/Account;ILcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)V
 .locals 0
-invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
-move-result p0
-return p0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method
-.method public static a(Ljava/lang/Object;Ljava/lang/Object;)Z
-.locals 0
-:cond_1
-:goto_0
-const/4 p0, 0x1
-return p0
+.method public constructor <init>(Landroid/accounts/Account;ILcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)V
+.locals 1
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method public a()Landroid/accounts/Account;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public b()I
+.locals 1
+const/4 v0, 0x0
+return v0
+.end method
+.method public c()Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public writeToParcel(Landroid/os/Parcel;I)V
+.locals 4
+return-void
 .end method

@@ -1,5 +1,5 @@
 .class Lokhttp3/internal/connection/Transmitter$1;
-.super Lcx;
+.super Lyq;
 .source "Transmitter.java"
 
 
@@ -22,10 +22,10 @@
 .method constructor <init>(Lokhttp3/internal/connection/Transmitter;)V
     .locals 0
 
-    .line 1
+    .line 59
     iput-object p1, p0, Lokhttp3/internal/connection/Transmitter$1;->this$0:Lokhttp3/internal/connection/Transmitter;
 
-    invoke-direct {p0}, Lcx;-><init>()V
+    invoke-direct {p0}, Lyq;-><init>()V
 
     return-void
 .end method
@@ -35,7 +35,7 @@
 .method protected timedOut()V
     .locals 1
 
-    .line 1
+    .line 61
     iget-object v0, p0, Lokhttp3/internal/connection/Transmitter$1;->this$0:Lokhttp3/internal/connection/Transmitter;
 
     invoke-virtual {v0}, Lokhttp3/internal/connection/Transmitter;->cancel()V

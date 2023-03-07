@@ -1,141 +1,41 @@
-.class public final Lok;
+.class final Lok;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
 
 # interfaces
-.implements Lpk;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field private static final a:Lva;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lva<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
+# instance fields
+.field private final synthetic a:Z
 
-.field private static final b:Lva;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lva<",
-            "Ljava/lang/Double;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final synthetic b:Z
 
-.field private static final c:Lva;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lva<",
-            "Ljava/lang/Long;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final synthetic c:Lqd;
 
-.field private static final d:Lva;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lva<",
-            "Ljava/lang/Long;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final synthetic d:Lpz;
 
-.field private static final e:Lva;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lva<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final synthetic e:Lqd;
+
+.field private final synthetic f:Loc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
-
-    .line 1
-    new-instance v0, Lbb;
-
-    const-string v1, "com.google.android.gms.measurement"
-
-    .line 2
-    invoke-static {v1}, Lsa;->a(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lbb;-><init>(Landroid/net/Uri;)V
-
-    const-string v1, "measurement.test.boolean_flag"
-
-    const/4 v2, 0x0
-
-    .line 3
-    invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;
-
-    move-result-object v1
-
-    sput-object v1, Lok;->a:Lva;
-
-    const-string v1, "measurement.test.double_flag"
-
-    const-wide/high16 v2, -0x3ff8000000000000L    # -3.0
-
-    .line 4
-    invoke-virtual {v0, v1, v2, v3}, Lbb;->a(Ljava/lang/String;D)Lva;
-
-    move-result-object v1
-
-    sput-object v1, Lok;->b:Lva;
-
-    const-string v1, "measurement.test.int_flag"
-
-    const-wide/16 v2, -0x2
-
-    .line 5
-    invoke-virtual {v0, v1, v2, v3}, Lbb;->a(Ljava/lang/String;J)Lva;
-
-    move-result-object v1
-
-    sput-object v1, Lok;->c:Lva;
-
-    const-string v1, "measurement.test.long_flag"
-
-    const-wide/16 v2, -0x1
-
-    .line 6
-    invoke-virtual {v0, v1, v2, v3}, Lbb;->a(Ljava/lang/String;J)Lva;
-
-    move-result-object v1
-
-    sput-object v1, Lok;->d:Lva;
-
-    const-string v1, "measurement.test.string_flag"
-
-    const-string v2, "---"
-
-    .line 7
-    invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Ljava/lang/String;)Lva;
-
-    move-result-object v0
-
-    sput-object v0, Lok;->e:Lva;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Loc;ZZLqd;Lpz;Lqd;)V
     .locals 0
 
     .line 1
+    iput-object p1, p0, Lok;->f:Loc;
+
+    iput-boolean p2, p0, Lok;->a:Z
+
+    iput-boolean p3, p0, Lok;->b:Z
+
+    iput-object p4, p0, Lok;->c:Lqd;
+
+    iput-object p5, p0, Lok;->d:Lpz;
+
+    iput-object p6, p0, Lok;->e:Lqd;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -143,93 +43,121 @@
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method public final run()V
+    .locals 4
 
-    .line 1
-    sget-object v0, Lok;->a:Lva;
+    .line 2
+    iget-object v0, p0, Lok;->f:Loc;
 
-    invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final b()D
-    .locals 2
-
-    .line 1
-    sget-object v0, Lok;->b:Lva;
-
-    invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
+    invoke-static {v0}, Loc;->d(Loc;)Lkr;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Double;
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
+    .line 4
+    iget-object v0, p0, Lok;->f:Loc;
 
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final c()J
-    .locals 2
-
-    .line 1
-    sget-object v0, Lok;->c:Lva;
-
-    invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
+    invoke-virtual {v0}, Lnb;->r()Lla;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final d()J
-    .locals 2
-
-    .line 1
-    sget-object v0, Lok;->d:Lva;
-
-    invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
+    .line 5
+    invoke-virtual {v0}, Lla;->c_()Llc;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Long;
+    const-string v1, "Discarding data. Failed to send conditional user property to service"
 
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    .line 6
+    invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V
 
-    move-result-wide v0
+    return-void
 
-    return-wide v0
-.end method
+    .line 8
+    :cond_0
+    iget-boolean v1, p0, Lok;->a:Z
 
-.method public final e()Ljava/lang/String;
-    .locals 1
+    if-eqz v1, :cond_2
 
-    .line 1
-    sget-object v0, Lok;->e:Lva;
+    .line 9
+    iget-object v1, p0, Lok;->f:Loc;
 
-    invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
+    iget-boolean v2, p0, Lok;->b:Z
 
-    move-result-object v0
+    if-eqz v2, :cond_1
 
-    check-cast v0, Ljava/lang/String;
+    const/4 v2, 0x0
 
-    return-object v0
+    goto :goto_0
+
+    :cond_1
+    iget-object v2, p0, Lok;->c:Lqd;
+
+    :goto_0
+    iget-object v3, p0, Lok;->d:Lpz;
+
+    invoke-virtual {v1, v0, v2, v3}, Loc;->a(Lkr;Lba;Lpz;)V
+
+    goto :goto_1
+
+    .line 10
+    :cond_2
+    :try_start_0
+    iget-object v1, p0, Lok;->e:Lqd;
+
+    iget-object v1, v1, Lqd;->a:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    .line 11
+    iget-object v1, p0, Lok;->c:Lqd;
+
+    iget-object v2, p0, Lok;->d:Lpz;
+
+    invoke-interface {v0, v1, v2}, Lkr;->a(Lqd;Lpz;)V
+
+    goto :goto_1
+
+    .line 12
+    :cond_3
+    iget-object v1, p0, Lok;->c:Lqd;
+
+    invoke-interface {v0, v1}, Lkr;->a(Lqd;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v0
+
+    .line 15
+    iget-object v1, p0, Lok;->f:Loc;
+
+    invoke-virtual {v1}, Lnb;->r()Lla;
+
+    move-result-object v1
+
+    .line 16
+    invoke-virtual {v1}, Lla;->c_()Llc;
+
+    move-result-object v1
+
+    const-string v2, "Failed to send conditional user property to the service"
+
+    .line 17
+    invoke-virtual {v1, v2, v0}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V
+
+    .line 18
+    :goto_1
+    iget-object v0, p0, Lok;->f:Loc;
+
+    invoke-static {v0}, Loc;->e(Loc;)V
+
+    return-void
 .end method

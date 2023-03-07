@@ -1,144 +1,214 @@
 .class public final Lel;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-
-# interfaces
-.implements Lkb;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lkb<",
-        "Lhl;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field private static b:Lel;
 
 
 # instance fields
-.field private final a:Lkb;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkb<",
-            "Lhl;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final a:Ljava/lang/String;
+
+.field private final b:Landroid/net/Uri;
+
+.field private final c:Ljava/lang/String;
+
+.field private final d:Ljava/lang/String;
+
+.field private final e:Z
+
+.field private final f:Z
+
+.field private final g:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Landroid/net/Uri;)V
+    .locals 8
+
+    const/4 v1, 0x0
+
+    const-string v3, ""
+
+    const-string v4, ""
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    move-object v0, p0
+
+    move-object v2, p1
 
     .line 1
-    new-instance v0, Lel;
-
-    invoke-direct {v0}, Lel;-><init>()V
-
-    sput-object v0, Lel;->b:Lel;
+    invoke-direct/range {v0 .. v7}, Lel;-><init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;ZZZ)V
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 1
+.method private constructor <init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;ZZZ)V
+    .locals 0
 
     .line 3
-    new-instance v0, Lgl;
-
-    invoke-direct {v0}, Lgl;-><init>()V
-
-    invoke-static {v0}, Ljb;->a(Ljava/lang/Object;)Lkb;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lel;-><init>(Lkb;)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lkb;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkb<",
-            "Lhl;",
-            ">;)V"
-        }
-    .end annotation
-
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    invoke-static {p1}, Ljb;->a(Lkb;)Lkb;
+    const/4 p1, 0x0
 
-    move-result-object p1
+    .line 4
+    iput-object p1, p0, Lel;->a:Ljava/lang/String;
 
-    iput-object p1, p0, Lel;->a:Lkb;
+    .line 5
+    iput-object p2, p0, Lel;->b:Landroid/net/Uri;
+
+    .line 6
+    iput-object p3, p0, Lel;->c:Ljava/lang/String;
+
+    .line 7
+    iput-object p4, p0, Lel;->d:Ljava/lang/String;
+
+    const/4 p1, 0x0
+
+    .line 8
+    iput-boolean p1, p0, Lel;->e:Z
+
+    .line 9
+    iput-boolean p1, p0, Lel;->f:Z
+
+    .line 10
+    iput-boolean p1, p0, Lel;->g:Z
 
     return-void
 .end method
 
-.method public static b()Z
-    .locals 1
+.method static synthetic a(Lel;)Landroid/net/Uri;
+    .locals 0
 
-    .line 1
-    sget-object v0, Lel;->b:Lel;
+    .line 17
+    iget-object p0, p0, Lel;->b:Landroid/net/Uri;
 
-    invoke-virtual {v0}, Lel;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhl;
-
-    invoke-interface {v0}, Lhl;->a()Z
-
-    move-result v0
-
-    return v0
+    return-object p0
 .end method
 
-.method public static c()Z
-    .locals 1
+.method static synthetic b(Lel;)Ljava/lang/String;
+    .locals 0
 
-    .line 1
-    sget-object v0, Lel;->b:Lel;
+    .line 18
+    iget-object p0, p0, Lel;->d:Ljava/lang/String;
 
-    invoke-virtual {v0}, Lel;->a()Ljava/lang/Object;
+    return-object p0
+.end method
 
-    move-result-object v0
+.method static synthetic c(Lel;)Ljava/lang/String;
+    .locals 0
 
-    check-cast v0, Lhl;
+    .line 19
+    iget-object p0, p0, Lel;->c:Ljava/lang/String;
 
-    invoke-interface {v0}, Lhl;->b()Z
-
-    move-result v0
-
-    return v0
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final a(Ljava/lang/String;D)Lef;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "D)",
+            "Lef<",
+            "Ljava/lang/Double;",
+            ">;"
+        }
+    .end annotation
 
-    .line 1
-    iget-object v0, p0, Lel;->a:Lkb;
+    .line 15
+    invoke-static {p0, p1, p2, p3}, Lef;->a(Lel;Ljava/lang/String;D)Lef;
 
-    invoke-interface {v0}, Lkb;->a()Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object v0
+    return-object p1
+.end method
 
-    check-cast v0, Lhl;
+.method public final a(Ljava/lang/String;I)Lef;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "I)",
+            "Lef<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
 
-    return-object v0
+    .line 14
+    invoke-static {p0, p1, p2}, Lef;->a(Lel;Ljava/lang/String;I)Lef;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final a(Ljava/lang/String;J)Lef;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "J)",
+            "Lef<",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+
+    .line 12
+    invoke-static {p0, p1, p2, p3}, Lef;->a(Lel;Ljava/lang/String;J)Lef;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final a(Ljava/lang/String;Ljava/lang/String;)Lef;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ")",
+            "Lef<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .line 16
+    invoke-static {p0, p1, p2}, Lef;->a(Lel;Ljava/lang/String;Ljava/lang/String;)Lef;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final a(Ljava/lang/String;Z)Lef;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Z)",
+            "Lef<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+
+    .line 13
+    invoke-static {p0, p1, p2}, Lef;->a(Lel;Ljava/lang/String;Z)Lef;
+
+    move-result-object p1
+
+    return-object p1
 .end method

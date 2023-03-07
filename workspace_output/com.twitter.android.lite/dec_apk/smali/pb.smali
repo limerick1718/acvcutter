@@ -1,43 +1,15 @@
 .class final Lpb;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.field private final a:Ljava/util/concurrent/ConcurrentHashMap;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/concurrent/ConcurrentHashMap<",
-"Lsb;",
-"Ljava/util/List<",
-"Ljava/lang/Throwable;",
-">;>;"
-}
-.end annotation
-.end field
-.field private final b:Ljava/lang/ref/ReferenceQueue;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/ref/ReferenceQueue<",
-"Ljava/lang/Throwable;",
-">;"
-}
-.end annotation
-.end field
-.method constructor <init>()V
-.locals 4
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+.super Lqn;
+.field private final synthetic a:Lpa;
+.method constructor <init>(Lpa;Lnd;)V
+.locals 0
+iput-object p1, p0, Lpb;->a:Lpa;
+invoke-direct {p0, p2}, Lqn;-><init>(Lnd;)V
 return-void
 .end method
-.method public final a(Ljava/lang/Throwable;Z)Ljava/util/List;
-.locals 3
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"(",
-"Ljava/lang/Throwable;",
-"Z)",
-"Ljava/util/List<",
-"Ljava/lang/Throwable;",
-">;"
-}
-.end annotation
-const/4 v0, 0x0
-return-object v0
+.method public final a()V
+.locals 1
+iget-object v0, p0, Lpb;->a:Lpa;
+invoke-virtual {v0}, Lpa;->x()V
+return-void
 .end method

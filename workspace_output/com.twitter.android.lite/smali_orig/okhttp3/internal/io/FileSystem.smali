@@ -11,7 +11,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1
+    .line 42
     new-instance v0, Lokhttp3/internal/io/FileSystem$1;
 
     invoke-direct {v0}, Lokhttp3/internal/io/FileSystem$1;-><init>()V
@@ -23,7 +23,7 @@
 
 
 # virtual methods
-.method public abstract appendingSink(Ljava/io/File;)Lvx;
+.method public abstract appendingSink(Ljava/io/File;)Lzj;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/FileNotFoundException;
@@ -58,7 +58,7 @@
     .end annotation
 .end method
 
-.method public abstract sink(Ljava/io/File;)Lvx;
+.method public abstract sink(Ljava/io/File;)Lzj;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/FileNotFoundException;
@@ -69,7 +69,7 @@
 .method public abstract size(Ljava/io/File;)J
 .end method
 
-.method public abstract source(Ljava/io/File;)Lwx;
+.method public abstract source(Ljava/io/File;)Lzk;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/FileNotFoundException;

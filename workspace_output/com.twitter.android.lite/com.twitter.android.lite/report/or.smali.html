@@ -14,91 +14,59 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final enum Lor;
-.super Ljava/lang/Enum;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/Enum<",
-"Lor;",
-">;"
-}
-.end annotation
-
-.field public static final enum a:Lor;
-.field public static final enum b:Lor;
-.field public static final enum c:Lor;
-.field public static final enum d:Lor;
-.field private static final synthetic e:[Lor;
+		<code>.class final Lor;
+.super Ljava/lang/Object;
+.implements Ljava/lang/Runnable;
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 7</span>
+.field private final synthetic a:Lkr;
+.field private final synthetic b:Loo;
 
-<span class="cov">	new-instance v0, Lor;</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	const-string v2, "GET"</span>
-<span class="cov">	invoke-direct {v0, v2, v1}, Lor;-><init>(Ljava/lang/String;I)V</span>
-<span class="cov">	sput-object v0, Lor;->a:Lor;</span>
-<span class="cov">	new-instance v0, Lor;</span>
-<span class="cov">	const/4 v2, 0x1</span>
-<span class="cov">	const-string v3, "POST"</span>
-<span class="cov">	invoke-direct {v0, v3, v2}, Lor;-><init>(Ljava/lang/String;I)V</span>
-<span class="cov">	sput-object v0, Lor;->b:Lor;</span>
-<span class="cov">	new-instance v0, Lor;</span>
-<span class="cov">	const/4 v3, 0x2</span>
-<span class="cov">	const-string v4, "PUT"</span>
-<span class="cov">	invoke-direct {v0, v4, v3}, Lor;-><init>(Ljava/lang/String;I)V</span>
-<span class="cov">	sput-object v0, Lor;->c:Lor;</span>
-<span class="cov">	new-instance v0, Lor;</span>
-<span class="cov">	const/4 v4, 0x3</span>
-<span class="cov">	const-string v5, "DELETE"</span>
-<span class="cov">	invoke-direct {v0, v5, v4}, Lor;-><init>(Ljava/lang/String;I)V</span>
-<span class="cov">	sput-object v0, Lor;->d:Lor;</span>
-<span class="cov">	const/4 v5, 0x4</span>
-<span class="cov">	new-array v5, v5, [Lor;</span>
-<span class="cov">	sget-object v6, Lor;->a:Lor;</span>
-<span class="cov">	aput-object v6, v5, v1</span>
-<span class="cov">	sget-object v1, Lor;->b:Lor;</span>
-<span class="cov">	aput-object v1, v5, v2</span>
-<span class="cov">	sget-object v1, Lor;->c:Lor;</span>
-<span class="cov">	aput-object v1, v5, v3</span>
-<span class="cov">	aput-object v0, v5, v4</span>
-<span class="cov">	sput-object v5, Lor;->e:[Lor;</span>
-<span class="exec">	return-void</span>
-.end method
 
-<span class="cov">.method private constructor &lt;init&gt;(Ljava/lang/String;I)V</span>
+<span class="cov">.method constructor &lt;init&gt;(Loo;Lkr;)V</span>
 <span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"()V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
 
-<span class="cov">	invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V</span>
+<span class="cov">	iput-object p1, p0, Lor;->b:Loo;</span>
+<span class="cov">	iput-object p2, p0, Lor;->a:Lkr;</span>
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
 <span class="exec">	return-void</span>
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lor;
-<span class="">	.locals 1</span>
+<span class="cov">.method public final run()V</span>
+<span class="">	.locals 3</span>
 
-<span class="missed">	const-class v0, Lor;</span>
-<span class="">	invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	check-cast p0, Lor;</span>
-<span class="">	return-object p0</span>
-.end method
-
-.method public static values()[Lor;
-<span class="">	.locals 1</span>
-
-<span class="missed">	sget-object v0, Lor;->e:[Lor;</span>
-<span class="">	invoke-virtual {v0}, [Lor;->clone()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, [Lor;</span>
-<span class="">	return-object v0</span>
+<span class="cov">	iget-object v0, p0, Lor;->b:Loo;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v1, p0, Lor;->b:Loo;</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	invoke-static {v1, v2}, Loo;->a(Loo;Z)Z</span>
+<span class="cov">	iget-object v1, p0, Lor;->b:Loo;</span>
+<span class="cov">	iget-object v1, v1, Loo;->a:Loc;</span>
+<span class="exec">	invoke-virtual {v1}, Loc;->x()Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	if-nez v1, :cond_0</span>
+<span class="cov">	iget-object v1, p0, Lor;->b:Loo;</span>
+<span class="cov">	iget-object v1, v1, Loo;->a:Loc;</span>
+<span class="exec">	invoke-virtual {v1}, Lnb;->r()Lla;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-virtual {v1}, Lla;->w()Llc;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const-string v2, "Connected to remote service"</span>
+<span class="cov">	invoke-virtual {v1, v2}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="cov">	iget-object v1, p0, Lor;->b:Loo;</span>
+<span class="cov">	iget-object v1, v1, Loo;->a:Loc;</span>
+<span class="cov">	iget-object v2, p0, Lor;->a:Lkr;</span>
+<span class="cov">	invoke-virtual {v1, v2}, Loc;->a(Lkr;)V</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="exec">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

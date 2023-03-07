@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.google.gson.internal.bind</a></li>
+        <li><i class="ico ico-class"></i> i$14.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class final Lcom/google/gson/internal/bind/i$14;
+.super Ltn;
+.source "TypeAdapters.java"
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Lcom/google/gson/internal/bind/i;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x8
+name = null
+.end annotation
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ltn<",
+"Ljava/net/URL;",
+">;"
+}
+.end annotation
+
+
+
+<span class="cov">.method constructor &lt;init&gt;()V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Ltn;-><init>()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public a(Ltw;)Ljava/net/URL;
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p1}, Ltw;->f()Ltx;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sget-object v1, Ltx;->i:Ltx;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-ne v0, v1, :cond_0</span>
+<span class="missed">	invoke-virtual {p1}, Ltw;->j()V</span>
+<span class="">	return-object v2</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p1}, Ltw;->h()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v0, "null"</span>
+<span class="">	invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v2, Ljava/net/URL;</span>
+<span class="missed">	invoke-direct {v2, p1}, Ljava/net/URL;-><init>(Ljava/lang/String;)V</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object v2</span>
+.end method
+
+.method public bridge synthetic a(Lty;Ljava/lang/Object;)V
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	check-cast p2, Ljava/net/URL;</span>
+<span class="missed">	invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/i$14;->a(Lty;Ljava/net/URL;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public a(Lty;Ljava/net/URL;)V
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-nez p2, :cond_0</span>
+<span class="missed">	const/4 p2, 0x0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p2}, Ljava/net/URL;->toExternalForm()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {p1, p2}, Lty;->b(Ljava/lang/String;)Lty;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public synthetic b(Ltw;)Ljava/lang/Object;
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/i$14;->a(Ltw;)Ljava/net/URL;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../../.resources/report.js"></script>
+</body>
+</html>

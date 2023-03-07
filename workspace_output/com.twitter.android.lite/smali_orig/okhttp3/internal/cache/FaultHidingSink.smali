@@ -1,5 +1,5 @@
 .class Lokhttp3/internal/cache/FaultHidingSink;
-.super Lix;
+.super Lyw;
 .source "FaultHidingSink.java"
 
 
@@ -8,11 +8,11 @@
 
 
 # direct methods
-.method constructor <init>(Lvx;)V
+.method constructor <init>(Lzj;)V
     .locals 0
 
-    .line 1
-    invoke-direct {p0, p1}, Lix;-><init>(Lvx;)V
+    .line 28
+    invoke-direct {p0, p1}, Lyw;-><init>(Lzj;)V
 
     return-void
 .end method
@@ -27,17 +27,17 @@
         }
     .end annotation
 
-    .line 1
+    .line 55
     iget-boolean v0, p0, Lokhttp3/internal/cache/FaultHidingSink;->hasErrors:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 2
+    .line 57
     :cond_0
     :try_start_0
-    invoke-super {p0}, Lix;->close()V
+    invoke-super {p0}, Lyw;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -48,10 +48,10 @@
 
     const/4 v1, 0x1
 
-    .line 3
+    .line 59
     iput-boolean v1, p0, Lokhttp3/internal/cache/FaultHidingSink;->hasErrors:Z
 
-    .line 4
+    .line 60
     invoke-virtual {p0, v0}, Lokhttp3/internal/cache/FaultHidingSink;->onException(Ljava/io/IOException;)V
 
     :goto_0
@@ -66,17 +66,17 @@
         }
     .end annotation
 
-    .line 1
+    .line 45
     iget-boolean v0, p0, Lokhttp3/internal/cache/FaultHidingSink;->hasErrors:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 2
+    .line 47
     :cond_0
     :try_start_0
-    invoke-super {p0}, Lix;->flush()V
+    invoke-super {p0}, Lyw;->flush()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -87,10 +87,10 @@
 
     const/4 v1, 0x1
 
-    .line 3
+    .line 49
     iput-boolean v1, p0, Lokhttp3/internal/cache/FaultHidingSink;->hasErrors:Z
 
-    .line 4
+    .line 50
     invoke-virtual {p0, v0}, Lokhttp3/internal/cache/FaultHidingSink;->onException(Ljava/io/IOException;)V
 
     :goto_0
@@ -103,7 +103,7 @@
     return-void
 .end method
 
-.method public write(Lex;J)V
+.method public write(Lys;J)V
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -111,20 +111,20 @@
         }
     .end annotation
 
-    .line 1
+    .line 32
     iget-boolean v0, p0, Lokhttp3/internal/cache/FaultHidingSink;->hasErrors:Z
 
     if-eqz v0, :cond_0
 
-    .line 2
-    invoke-virtual {p1, p2, p3}, Lex;->skip(J)V
+    .line 33
+    invoke-virtual {p1, p2, p3}, Lys;->i(J)V
 
     return-void
 
-    .line 3
+    .line 37
     :cond_0
     :try_start_0
-    invoke-super {p0, p1, p2, p3}, Lix;->write(Lex;J)V
+    invoke-super {p0, p1, p2, p3}, Lyw;->write(Lys;J)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -135,10 +135,10 @@
 
     const/4 p2, 0x1
 
-    .line 4
+    .line 39
     iput-boolean p2, p0, Lokhttp3/internal/cache/FaultHidingSink;->hasErrors:Z
 
-    .line 5
+    .line 40
     invoke-virtual {p0, p1}, Lokhttp3/internal/cache/FaultHidingSink;->onException(Ljava/io/IOException;)V
 
     :goto_0

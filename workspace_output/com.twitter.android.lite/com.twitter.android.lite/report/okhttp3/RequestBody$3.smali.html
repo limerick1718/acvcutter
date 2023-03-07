@@ -57,7 +57,7 @@ name = null
 <span class="">	return-object v0</span>
 .end method
 
-.method public writeTo(Lfx;)V
+.method public writeTo(Lyt;)V
 <span class="">	.locals 2</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -66,36 +66,46 @@ name = null
 <span class="">	.end annotation</span>
 
 <span class="missed">	iget-object v0, p0, Lokhttp3/RequestBody$3;->val$file:Ljava/io/File;</span>
-<span class="">	invoke-static {v0}, Lnx;->c(Ljava/io/File;)Lwx;</span>
+<span class="">	invoke-static {v0}, Lzb;->a(Ljava/io/File;)Lzk;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="">	:try_start_0</span>
-<span class="missed">	invoke-interface {p1, v0}, Lfx;->a(Lwx;)J</span>
+<span class="missed">	invoke-interface {p1, v0}, Lyt;->a(Lzk;)J</span>
 <span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0</span>
 <span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	invoke-interface {v0}, Lwx;->close()V</span>
+<span class="missed">	invoke-interface {v0}, Lzk;->close()V</span>
 <span class="">	:cond_0</span>
 <span class="">	return-void</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception p1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v1</span>
 <span class="">	:try_start_1</span>
-<span class="">	throw p1</span>
+<span class="">	throw v1</span>
 <span class="">	:try_end_1</span>
 <span class="">	.catchall {:try_start_1 .. :try_end_1} :catchall_1</span>
 <span class="">	:catchall_1</span>
-<span class="missed">	move-exception v1</span>
-<span class="missed">	if-eqz v0, :cond_1</span>
-<span class="">	:try_start_2</span>
-<span class="missed">	invoke-interface {v0}, Lwx;->close()V</span>
-<span class="">	:try_end_2</span>
-<span class="missed">	.catchall {:try_start_2 .. :try_end_2} :catchall_2</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:catchall_2</span>
-<span class="missed">	move-exception v0</span>
-<span class="missed">	invoke-virtual {p1, v0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V</span>
+<span class="missed">	move-exception p1</span>
 <span class="">	:goto_0</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="">	:try_start_2</span>
+<span class="missed">	invoke-interface {v0}, Lzk;->close()V</span>
+<span class="">	:try_end_2</span>
+<span class="missed">	.catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	invoke-virtual {v1, v0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V</span>
+<span class="">	goto :goto_1</span>
 <span class="">	:cond_1</span>
-<span class="">	throw v1</span>
+<span class="missed">	invoke-interface {v0}, Lzk;->close()V</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_2</span>
+<span class="">	throw p1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

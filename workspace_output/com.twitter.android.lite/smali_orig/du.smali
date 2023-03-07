@@ -1,54 +1,35 @@
 .class final synthetic Ldu;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-encoders-json@@16.1.0"
 
 # interfaces
-.implements Lyt;
+.implements Lea;
 
 
-# static fields
-.field private static final a:Ldu;
+# instance fields
+.field private final a:Ldt;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ldu;
-
-    invoke-direct {v0}, Ldu;-><init>()V
-
-    sput-object v0, Ldu;->a:Ldu;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method constructor <init>(Ldt;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Ldu;->a:Ldt;
+
     return-void
-.end method
-
-.method public static a()Lyt;
-    .locals 1
-
-    sget-object v0, Ldu;->a:Ldu;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
+.method public final a()Ljava/lang/Object;
+    .locals 1
 
-    check-cast p1, Ljava/lang/String;
+    iget-object v0, p0, Ldu;->a:Ldt;
 
-    check-cast p2, Lzt;
+    invoke-virtual {v0}, Ldt;->c()Ljava/util/Map;
 
-    invoke-static {p1, p2}, Lfu;->a(Ljava/lang/String;Lzt;)V
+    move-result-object v0
 
-    return-void
+    return-object v0
 .end method

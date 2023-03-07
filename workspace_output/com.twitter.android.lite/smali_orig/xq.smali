@@ -1,268 +1,130 @@
-.class final Lxq;
-.super Lzq$d$e;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.class public Lxq;
+.super Ljava/lang/Object;
+.source "PreferenceStoreImpl.java"
 
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lxq$b;
-    }
-.end annotation
+# interfaces
+.implements Lxp;
 
 
 # instance fields
-.field private final a:I
+.field private final a:Landroid/content/SharedPreferences;
 
 .field private final b:Ljava/lang/String;
 
-.field private final c:Ljava/lang/String;
-
-.field private final d:Z
+.field private final c:Landroid/content/Context;
 
 
 # direct methods
-.method private constructor <init>(ILjava/lang/String;Ljava/lang/String;Z)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
+    .locals 1
 
-    .line 2
-    invoke-direct {p0}, Lzq$d$e;-><init>()V
+    .line 32
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3
-    iput p1, p0, Lxq;->a:I
+    if-eqz p1, :cond_0
 
-    .line 4
+    .line 37
+    iput-object p1, p0, Lxq;->c:Landroid/content/Context;
+
+    .line 38
     iput-object p2, p0, Lxq;->b:Ljava/lang/String;
 
-    .line 5
-    iput-object p3, p0, Lxq;->c:Ljava/lang/String;
+    .line 39
+    iget-object p1, p0, Lxq;->c:Landroid/content/Context;
 
-    .line 6
-    iput-boolean p4, p0, Lxq;->d:Z
+    iget-object p2, p0, Lxq;->b:Ljava/lang/String;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lxq;->a:Landroid/content/SharedPreferences;
 
     return-void
+
+    .line 34
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "Cannot get directory before context has been set. Call Fabric.with() first"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
-.method synthetic constructor <init>(ILjava/lang/String;Ljava/lang/String;ZLxq$a;)V
-    .locals 0
+.method public constructor <init>(Luw;)V
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    .line 1
-    invoke-direct {p0, p1, p2, p3, p4}, Lxq;-><init>(ILjava/lang/String;Ljava/lang/String;Z)V
+    .line 48
+    invoke-virtual {p1}, Luw;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, v0, p1}, Lxq;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Ljava/lang/String;
+.method public a()Landroid/content/SharedPreferences;
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Lxq;->c:Ljava/lang/String;
+    .line 56
+    iget-object v0, p0, Lxq;->a:Landroid/content/SharedPreferences;
 
     return-object v0
 .end method
 
-.method public b()I
-    .locals 1
+.method public a(Landroid/content/SharedPreferences$Editor;)Z
+    .locals 2
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x9
+    .end annotation
 
-    .line 1
-    iget v0, p0, Lxq;->a:I
+    .line 75
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    return v0
-.end method
+    const/16 v1, 0x9
 
-.method public c()Ljava/lang/String;
-    .locals 1
+    if-lt v0, v1, :cond_0
 
-    .line 1
-    iget-object v0, p0, Lxq;->b:Ljava/lang/String;
+    .line 76
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    return-object v0
-.end method
+    const/4 p1, 0x1
 
-.method public d()Z
-    .locals 1
+    return p1
 
-    .line 1
-    iget-boolean v0, p0, Lxq;->d:Z
-
-    return v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    .line 1
+    .line 79
     :cond_0
-    instance-of v1, p1, Lzq$d$e;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_2
-
-    .line 2
-    check-cast p1, Lzq$d$e;
-
-    .line 3
-    iget v1, p0, Lxq;->a:I
-
-    invoke-virtual {p1}, Lzq$d$e;->b()I
-
-    move-result v3
-
-    if-ne v1, v3, :cond_1
-
-    iget-object v1, p0, Lxq;->b:Ljava/lang/String;
-
-    .line 4
-    invoke-virtual {p1}, Lzq$d$e;->c()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lxq;->c:Ljava/lang/String;
-
-    .line 5
-    invoke-virtual {p1}, Lzq$d$e;->a()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-boolean v1, p0, Lxq;->d:Z
-
-    .line 6
-    invoke-virtual {p1}, Lzq$d$e;->d()Z
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result p1
 
-    if-ne v1, p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    :cond_2
-    return v2
+    return p1
 .end method
 
-.method public hashCode()I
-    .locals 3
+.method public b()Landroid/content/SharedPreferences$Editor;
+    .locals 1
 
-    .line 1
-    iget v0, p0, Lxq;->a:I
+    .line 64
+    iget-object v0, p0, Lxq;->a:Landroid/content/SharedPreferences;
 
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    mul-int v0, v0, v1
-
-    .line 2
-    iget-object v2, p0, Lxq;->b:Ljava/lang/String;
-
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
-
-    move-result v2
-
-    xor-int/2addr v0, v2
-
-    mul-int v0, v0, v1
-
-    .line 3
-    iget-object v2, p0, Lxq;->c:Ljava/lang/String;
-
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
-
-    move-result v2
-
-    xor-int/2addr v0, v2
-
-    mul-int v0, v0, v1
-
-    .line 4
-    iget-boolean v1, p0, Lxq;->d:Z
-
-    if-eqz v1, :cond_0
-
-    const/16 v1, 0x4cf
-
-    goto :goto_0
-
-    :cond_0
-    const/16 v1, 0x4d5
-
-    :goto_0
-    xor-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "OperatingSystem{platform="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lxq;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", version="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lxq;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", buildVersion="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lxq;->c:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", jailbroken="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lxq;->d:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, "}"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 

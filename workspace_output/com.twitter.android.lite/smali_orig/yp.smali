@@ -1,117 +1,39 @@
 .class public Lyp;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-
-
-# instance fields
-.field private a:Ljava/lang/String;
-
-.field private final b:Ljava/util/concurrent/ConcurrentHashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/concurrent/ConcurrentHashMap<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
+.super Lxr;
+.source "UpdateAppSpiCall.java"
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Luw;Ljava/lang/String;Ljava/lang/String;Lxi;)V
+    .locals 6
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 32
+    sget-object v5, Lxg;->c:Lxg;
 
-    const/4 v0, 0x0
+    move-object v0, p0
 
-    .line 2
-    iput-object v0, p0, Lyp;->a:Ljava/lang/String;
+    move-object v1, p1
 
-    .line 3
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+    move-object v2, p2
 
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+    move-object v3, p3
 
-    iput-object v0, p0, Lyp;->b:Ljava/util/concurrent/ConcurrentHashMap;
+    move-object v4, p4
+
+    invoke-direct/range {v0 .. v5}, Lxr;-><init>(Luw;Ljava/lang/String;Ljava/lang/String;Lxi;Lxg;)V
 
     return-void
-.end method
-
-.method private static b(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
-
-    if-eqz p0, :cond_0
-
-    .line 2
-    invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    const/16 v1, 0x400
-
-    if-le v0, v1, :cond_0
-
-    const/4 v0, 0x0
-
-    .line 4
-    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object p0
-
-    :cond_0
-    return-object p0
 .end method
 
 
 # virtual methods
-.method public a()Ljava/util/Map;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Map<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    .line 2
-    iget-object v0, p0, Lyp;->b:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public a(Ljava/lang/String;)V
+.method public bridge synthetic a(Lxu;)Z
     .locals 0
 
-    .line 1
-    invoke-static {p1}, Lyp;->b(Ljava/lang/String;)Ljava/lang/String;
+    .line 29
+    invoke-super {p0, p1}, Lxr;->a(Lxu;)Z
 
-    move-result-object p1
+    move-result p1
 
-    iput-object p1, p0, Lyp;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public b()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lyp;->a:Ljava/lang/String;
-
-    return-object v0
+    return p1
 .end method

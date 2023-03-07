@@ -16,7 +16,6 @@
 	<pre class="source lang-smali" id='source'>
 		<code>.class public Lcom/google/firebase/iid/FirebaseInstanceId;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-iid@@20.0.0"
 
 .annotation system Ldalvik/annotation/MemberClasses;
 value = {
@@ -24,25 +23,25 @@ Lcom/google/firebase/iid/FirebaseInstanceId$a;
 }
 .end annotation
 
-.field private static final i:J
-.field private static j:Lcom/google/firebase/iid/v;
-.field private static k:Ljava/util/concurrent/ScheduledExecutorService;
+.field private static final a:J
+.field private static b:Lcom/google/firebase/iid/z;
+.field private static c:Ljava/util/concurrent/ScheduledThreadPoolExecutor;
 .annotation build Ljavax/annotation/concurrent/GuardedBy;
 value = "FirebaseInstanceId.class"
 .end annotation
 .end field
-.field private final a:Ljava/util/concurrent/Executor;
-.field private final b:Lfo;
-.field private final c:Lcom/google/firebase/iid/k;
-.field private final d:Lcom/google/firebase/iid/q0;
-.field private final e:Lcom/google/firebase/iid/p;
-.field private final f:Lcom/google/firebase/iid/z;
-.field private g:Z
+.field private final d:Ljava/util/concurrent/Executor;
+.field private final e:Lcom/google/firebase/FirebaseApp;
+.field private final f:Lcom/google/firebase/iid/q;
+.field private g:Lcom/google/firebase/iid/b;
+.field private final h:Lcom/google/firebase/iid/t;
+.field private final i:Lcom/google/firebase/iid/ae;
+.field private j:Z
 .annotation build Ljavax/annotation/concurrent/GuardedBy;
 value = "this"
 .end annotation
 .end field
-.field private final h:Lcom/google/firebase/iid/FirebaseInstanceId$a;
+.field private final k:Lcom/google/firebase/iid/FirebaseInstanceId$a;
 
 
 <span class="cov">.method static constructor &lt;clinit&gt;()V</span>
@@ -52,52 +51,72 @@ value = "this"
 <span class="cov">	const-wide/16 v1, 0x8</span>
 <span class="exec">	invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J</span>
 <span class="cov">	move-result-wide v0</span>
-<span class="cov">	sput-wide v0, Lcom/google/firebase/iid/FirebaseInstanceId;->i:J</span>
+<span class="cov">	sput-wide v0, Lcom/google/firebase/iid/FirebaseInstanceId;->a:J</span>
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method private constructor &lt;init&gt;(Lfo;Lcom/google/firebase/iid/k;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Lku;Lzu;)V</span>
+<span class="cov">.method private constructor &lt;init&gt;(Lcom/google/firebase/FirebaseApp;Lcom/google/firebase/iid/q;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Lso;)V</span>
 <span class="">	.locals 3</span>
 
 <span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
 <span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	iput-boolean v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Z</span>
-<span class="exec">	invoke-static {p1}, Lcom/google/firebase/iid/k;->a(Lfo;)Ljava/lang/String;</span>
+<span class="cov">	iput-boolean v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->j:Z</span>
+<span class="exec">	invoke-static {p1}, Lcom/google/firebase/iid/q;->a(Lcom/google/firebase/FirebaseApp;)Ljava/lang/String;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="cov">	if-eqz v0, :cond_1</span>
+<span class="cov">	if-eqz v0, :cond_4</span>
 <span class="cov">	const-class v0, Lcom/google/firebase/iid/FirebaseInstanceId;</span>
 <span class="cov">	monitor-enter v0</span>
 <span class="cov">	:try_start_0</span>
-<span class="cov">	sget-object v1, Lcom/google/firebase/iid/FirebaseInstanceId;->j:Lcom/google/firebase/iid/v;</span>
+<span class="cov">	sget-object v1, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lcom/google/firebase/iid/z;</span>
 <span class="cov">	if-nez v1, :cond_0</span>
-<span class="cov">	new-instance v1, Lcom/google/firebase/iid/v;</span>
-<span class="exec">	invoke-virtual {p1}, Lfo;->a()Landroid/content/Context;</span>
+<span class="cov">	new-instance v1, Lcom/google/firebase/iid/z;</span>
+<span class="exec">	invoke-virtual {p1}, Lcom/google/firebase/FirebaseApp;->a()Landroid/content/Context;</span>
 <span class="cov">	move-result-object v2</span>
-<span class="cov">	invoke-direct {v1, v2}, Lcom/google/firebase/iid/v;-><init>(Landroid/content/Context;)V</span>
-<span class="cov">	sput-object v1, Lcom/google/firebase/iid/FirebaseInstanceId;->j:Lcom/google/firebase/iid/v;</span>
+<span class="cov">	invoke-direct {v1, v2}, Lcom/google/firebase/iid/z;-><init>(Landroid/content/Context;)V</span>
+<span class="cov">	sput-object v1, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lcom/google/firebase/iid/z;</span>
 <span class="cov">	:cond_0</span>
 <span class="cov">	monitor-exit v0</span>
 <span class="cov">	:try_end_0</span>
 <span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="cov">	iput-object p1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lfo;</span>
-<span class="cov">	iput-object p2, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->c:Lcom/google/firebase/iid/k;</span>
-<span class="cov">	new-instance v0, Lcom/google/firebase/iid/q0;</span>
-<span class="cov">	invoke-direct {v0, p1, p2, p3, p6}, Lcom/google/firebase/iid/q0;-><init>(Lfo;Lcom/google/firebase/iid/k;Ljava/util/concurrent/Executor;Lzu;)V</span>
-<span class="cov">	iput-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->d:Lcom/google/firebase/iid/q0;</span>
-<span class="cov">	iput-object p4, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->a:Ljava/util/concurrent/Executor;</span>
-<span class="cov">	new-instance p1, Lcom/google/firebase/iid/z;</span>
-<span class="cov">	sget-object p2, Lcom/google/firebase/iid/FirebaseInstanceId;->j:Lcom/google/firebase/iid/v;</span>
-<span class="cov">	invoke-direct {p1, p2}, Lcom/google/firebase/iid/z;-><init>(Lcom/google/firebase/iid/v;)V</span>
-<span class="cov">	iput-object p1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->f:Lcom/google/firebase/iid/z;</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->e:Lcom/google/firebase/FirebaseApp;</span>
+<span class="cov">	iput-object p2, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->f:Lcom/google/firebase/iid/q;</span>
+<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Lcom/google/firebase/iid/b;</span>
+<span class="cov">	if-nez v0, :cond_2</span>
+<span class="cov">	const-class v0, Lcom/google/firebase/iid/b;</span>
+<span class="exec">	invoke-virtual {p1, v0}, Lcom/google/firebase/FirebaseApp;->a(Ljava/lang/Class;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	check-cast v0, Lcom/google/firebase/iid/b;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-interface {v0}, Lcom/google/firebase/iid/b;->b()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="missed">	iput-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Lcom/google/firebase/iid/b;</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	new-instance v0, Lcom/google/firebase/iid/au;</span>
+<span class="cov">	invoke-direct {v0, p1, p2, p3}, Lcom/google/firebase/iid/au;-><init>(Lcom/google/firebase/FirebaseApp;Lcom/google/firebase/iid/q;Ljava/util/concurrent/Executor;)V</span>
+<span class="cov">	iput-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Lcom/google/firebase/iid/b;</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	iget-object p1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Lcom/google/firebase/iid/b;</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Lcom/google/firebase/iid/b;</span>
+<span class="cov">	iput-object p4, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->d:Ljava/util/concurrent/Executor;</span>
+<span class="cov">	new-instance p1, Lcom/google/firebase/iid/ae;</span>
+<span class="cov">	sget-object p2, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lcom/google/firebase/iid/z;</span>
+<span class="cov">	invoke-direct {p1, p2}, Lcom/google/firebase/iid/ae;-><init>(Lcom/google/firebase/iid/z;)V</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->i:Lcom/google/firebase/iid/ae;</span>
 <span class="cov">	new-instance p1, Lcom/google/firebase/iid/FirebaseInstanceId$a;</span>
-<span class="cov">	invoke-direct {p1, p0, p5}, Lcom/google/firebase/iid/FirebaseInstanceId$a;-><init>(Lcom/google/firebase/iid/FirebaseInstanceId;Lku;)V</span>
-<span class="cov">	iput-object p1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->h:Lcom/google/firebase/iid/FirebaseInstanceId$a;</span>
-<span class="cov">	new-instance p1, Lcom/google/firebase/iid/p;</span>
-<span class="cov">	invoke-direct {p1, p3}, Lcom/google/firebase/iid/p;-><init>(Ljava/util/concurrent/Executor;)V</span>
-<span class="cov">	iput-object p1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->e:Lcom/google/firebase/iid/p;</span>
-<span class="cov">	new-instance p1, Lcom/google/firebase/iid/m0;</span>
-<span class="cov">	invoke-direct {p1, p0}, Lcom/google/firebase/iid/m0;-><init>(Lcom/google/firebase/iid/FirebaseInstanceId;)V</span>
-<span class="cov">	invoke-interface {p4, p1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V</span>
+<span class="cov">	invoke-direct {p1, p0, p5}, Lcom/google/firebase/iid/FirebaseInstanceId$a;-><init>(Lcom/google/firebase/iid/FirebaseInstanceId;Lso;)V</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->k:Lcom/google/firebase/iid/FirebaseInstanceId$a;</span>
+<span class="cov">	new-instance p1, Lcom/google/firebase/iid/t;</span>
+<span class="cov">	invoke-direct {p1, p3}, Lcom/google/firebase/iid/t;-><init>(Ljava/util/concurrent/Executor;)V</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->h:Lcom/google/firebase/iid/t;</span>
+<span class="cov">	iget-object p1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->k:Lcom/google/firebase/iid/FirebaseInstanceId$a;</span>
+<span class="exec">	invoke-virtual {p1}, Lcom/google/firebase/iid/FirebaseInstanceId$a;->a()Z</span>
+<span class="cov">	move-result p1</span>
+<span class="cov">	if-eqz p1, :cond_3</span>
+<span class="cov">	invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->m()V</span>
+<span class="cov">	:cond_3</span>
 <span class="exec">	return-void</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception p1</span>
@@ -106,40 +125,49 @@ value = "this"
 <span class="">	:try_end_1</span>
 <span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
 <span class="">	throw p1</span>
-<span class="">	:cond_1</span>
+<span class="">	:cond_4</span>
 <span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
 <span class="missed">	const-string p2, "FirebaseInstanceId failed to initialize, FirebaseApp is missing project ID"</span>
 <span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
 <span class="">	throw p1</span>
 .end method
 
-<span class="cov">.method constructor &lt;init&gt;(Lfo;Lku;Lzu;)V</span>
-<span class="">	.locals 7</span>
+<span class="cov">.method constructor &lt;init&gt;(Lcom/google/firebase/FirebaseApp;Lso;)V</span>
+<span class="">	.locals 6</span>
 
-<span class="cov">	new-instance v2, Lcom/google/firebase/iid/k;</span>
-<span class="exec">	invoke-virtual {p1}, Lfo;->a()Landroid/content/Context;</span>
+<span class="cov">	new-instance v2, Lcom/google/firebase/iid/q;</span>
+<span class="exec">	invoke-virtual {p1}, Lcom/google/firebase/FirebaseApp;->a()Landroid/content/Context;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="cov">	invoke-direct {v2, v0}, Lcom/google/firebase/iid/k;-><init>(Landroid/content/Context;)V</span>
-<span class="exec">	invoke-static {}, Lcom/google/firebase/iid/b;->b()Ljava/util/concurrent/Executor;</span>
+<span class="cov">	invoke-direct {v2, v0}, Lcom/google/firebase/iid/q;-><init>(Landroid/content/Context;)V</span>
+<span class="exec">	invoke-static {}, Lcom/google/firebase/iid/al;->b()Ljava/util/concurrent/Executor;</span>
 <span class="cov">	move-result-object v3</span>
-<span class="exec">	invoke-static {}, Lcom/google/firebase/iid/b;->b()Ljava/util/concurrent/Executor;</span>
+<span class="exec">	invoke-static {}, Lcom/google/firebase/iid/al;->b()Ljava/util/concurrent/Executor;</span>
 <span class="cov">	move-result-object v4</span>
 <span class="cov">	move-object v0, p0</span>
 <span class="cov">	move-object v1, p1</span>
 <span class="cov">	move-object v5, p2</span>
-<span class="cov">	move-object v6, p3</span>
-<span class="cov">	invoke-direct/range {v0 .. v6}, Lcom/google/firebase/iid/FirebaseInstanceId;-><init>(Lfo;Lcom/google/firebase/iid/k;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Lku;Lzu;)V</span>
+<span class="cov">	invoke-direct/range {v0 .. v5}, Lcom/google/firebase/iid/FirebaseInstanceId;-><init>(Lcom/google/firebase/FirebaseApp;Lcom/google/firebase/iid/q;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Lso;)V</span>
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method static synthetic a(Lcom/google/firebase/iid/FirebaseInstanceId;)Lfo;</span>
+<span class="cov">.method static synthetic a(Lcom/google/firebase/iid/FirebaseInstanceId;)Lcom/google/firebase/FirebaseApp;</span>
 <span class="">	.locals 0</span>
 
-<span class="cov">	iget-object p0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lfo;</span>
+<span class="cov">	iget-object p0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->e:Lcom/google/firebase/FirebaseApp;</span>
 <span class="exec">	return-object p0</span>
 .end method
 
-<span class="cov">.method private final a(Lgn;)Ljava/lang/Object;</span>
+<span class="cov">.method public static a()Lcom/google/firebase/iid/FirebaseInstanceId;</span>
+<span class="">	.locals 1</span>
+
+<span class="exec">	invoke-static {}, Lcom/google/firebase/FirebaseApp;->getInstance()Lcom/google/firebase/FirebaseApp;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-static {v0}, Lcom/google/firebase/iid/FirebaseInstanceId;->getInstance(Lcom/google/firebase/FirebaseApp;)Lcom/google/firebase/iid/FirebaseInstanceId;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method private final a(Lrm;)Ljava/lang/Object;</span>
 <span class="">	.locals 3</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -151,7 +179,7 @@ value = "this"
 <span class="">	"<T:",</span>
 <span class="">	"Ljava/lang/Object;",</span>
 <span class="">	">(",</span>
-<span class="">	"Lgn<",</span>
+<span class="">	"Lrm<",</span>
 <span class="">	"TT;>;)TT;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
@@ -159,7 +187,7 @@ value = "this"
 <span class="cov">	const-wide/16 v0, 0x7530</span>
 <span class="cov">	:try_start_0</span>
 <span class="cov">	sget-object v2, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;</span>
-<span class="exec">	invoke-static {p1, v0, v1, v2}, Ljn;->a(Lgn;JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;</span>
+<span class="exec">	invoke-static {p1, v0, v1, v2}, Lrp;->a(Lrm;JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;</span>
 <span class="cov">	move-result-object p1</span>
 <span class="cov">	:try_end_0</span>
 <span class="cov">	.catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1</span>
@@ -183,7 +211,7 @@ value = "this"
 <span class="">	invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
 <span class="missed">	move-result p1</span>
 <span class="missed">	if-eqz p1, :cond_0</span>
-<span class="missed">	invoke-virtual {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->e()V</span>
+<span class="missed">	invoke-virtual {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->h()V</span>
 <span class="">	:cond_0</span>
 <span class="missed">	check-cast v0, Ljava/io/IOException;</span>
 <span class="">	throw v0</span>
@@ -204,19 +232,19 @@ value = "this"
 <span class="cov">	const-class v0, Lcom/google/firebase/iid/FirebaseInstanceId;</span>
 <span class="cov">	monitor-enter v0</span>
 <span class="cov">	:try_start_0</span>
-<span class="cov">	sget-object v1, Lcom/google/firebase/iid/FirebaseInstanceId;->k:Ljava/util/concurrent/ScheduledExecutorService;</span>
+<span class="cov">	sget-object v1, Lcom/google/firebase/iid/FirebaseInstanceId;->c:Ljava/util/concurrent/ScheduledThreadPoolExecutor;</span>
 <span class="cov">	if-nez v1, :cond_0</span>
 <span class="cov">	new-instance v1, Ljava/util/concurrent/ScheduledThreadPoolExecutor;</span>
 <span class="cov">	const/4 v2, 0x1</span>
-<span class="cov">	new-instance v3, Lv5;</span>
+<span class="cov">	new-instance v3, Lbf;</span>
 <span class="cov">	const-string v4, "FirebaseInstanceId"</span>
-<span class="cov">	invoke-direct {v3, v4}, Lv5;-><init>(Ljava/lang/String;)V</span>
+<span class="cov">	invoke-direct {v3, v4}, Lbf;-><init>(Ljava/lang/String;)V</span>
 <span class="cov">	invoke-direct {v1, v2, v3}, Ljava/util/concurrent/ScheduledThreadPoolExecutor;-><init>(ILjava/util/concurrent/ThreadFactory;)V</span>
-<span class="cov">	sput-object v1, Lcom/google/firebase/iid/FirebaseInstanceId;->k:Ljava/util/concurrent/ScheduledExecutorService;</span>
+<span class="cov">	sput-object v1, Lcom/google/firebase/iid/FirebaseInstanceId;->c:Ljava/util/concurrent/ScheduledThreadPoolExecutor;</span>
 <span class="cov">	:cond_0</span>
-<span class="cov">	sget-object v1, Lcom/google/firebase/iid/FirebaseInstanceId;->k:Ljava/util/concurrent/ScheduledExecutorService;</span>
+<span class="cov">	sget-object v1, Lcom/google/firebase/iid/FirebaseInstanceId;->c:Ljava/util/concurrent/ScheduledThreadPoolExecutor;</span>
 <span class="cov">	sget-object v2, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;</span>
-<span class="cov">	invoke-interface {v1, p0, p1, p2, v2}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;</span>
+<span class="cov">	invoke-virtual {v1, p0, p1, p2, v2}, Ljava/util/concurrent/ScheduledThreadPoolExecutor;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;</span>
 <span class="cov">	monitor-exit v0</span>
 <span class="exec">	return-void</span>
 <span class="">	:catchall_0</span>
@@ -227,29 +255,34 @@ value = "this"
 <span class="">	throw p0</span>
 .end method
 
-<span class="cov">.method private final b(Ljava/lang/String;Ljava/lang/String;)Lgn;</span>
-<span class="">	.locals 3</span>
+<span class="cov">.method private final b(Ljava/lang/String;Ljava/lang/String;)Lrm;</span>
+<span class="">	.locals 9</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
 <span class="">	"(",</span>
 <span class="">	"Ljava/lang/String;",</span>
 <span class="">	"Ljava/lang/String;",</span>
 <span class="">	")",</span>
-<span class="">	"Lgn<",</span>
+<span class="">	"Lrm<",</span>
 <span class="">	"Lcom/google/firebase/iid/a;",</span>
 <span class="">	">;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
 <span class="exec">	invoke-static {p2}, Lcom/google/firebase/iid/FirebaseInstanceId;->c(Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object p2</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="exec">	invoke-static {v0}, Ljn;->a(Ljava/lang/Object;)Lgn;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	iget-object v1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->a:Ljava/util/concurrent/Executor;</span>
-<span class="cov">	new-instance v2, Lcom/google/firebase/iid/l0;</span>
-<span class="cov">	invoke-direct {v2, p0, p1, p2}, Lcom/google/firebase/iid/l0;-><init>(Lcom/google/firebase/iid/FirebaseInstanceId;Ljava/lang/String;Ljava/lang/String;)V</span>
-<span class="exec">	invoke-virtual {v0, v1, v2}, Lgn;->b(Ljava/util/concurrent/Executor;Lzm;)Lgn;</span>
+<span class="cov">	move-result-object v5</span>
+<span class="cov">	new-instance v6, Lrn;</span>
+<span class="cov">	invoke-direct {v6}, Lrn;-><init>()V</span>
+<span class="cov">	iget-object v7, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->d:Ljava/util/concurrent/Executor;</span>
+<span class="cov">	new-instance v8, Lcom/google/firebase/iid/aq;</span>
+<span class="cov">	move-object v0, v8</span>
+<span class="cov">	move-object v1, p0</span>
+<span class="cov">	move-object v2, p1</span>
+<span class="cov">	move-object v3, p2</span>
+<span class="cov">	move-object v4, v6</span>
+<span class="cov">	invoke-direct/range {v0 .. v5}, Lcom/google/firebase/iid/aq;-><init>(Lcom/google/firebase/iid/FirebaseInstanceId;Ljava/lang/String;Ljava/lang/String;Lrn;Ljava/lang/String;)V</span>
+<span class="cov">	invoke-interface {v7, v8}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V</span>
+<span class="exec">	invoke-virtual {v6}, Lrn;->a()Lrm;</span>
 <span class="cov">	move-result-object p1</span>
 <span class="exec">	return-object p1</span>
 .end method
@@ -257,16 +290,16 @@ value = "this"
 .method static synthetic b(Lcom/google/firebase/iid/FirebaseInstanceId;)V
 <span class="">	.locals 0</span>
 
-<span class="missed">	invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->k()V</span>
+<span class="missed">	invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->m()V</span>
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method private static c(Ljava/lang/String;Ljava/lang/String;)Lcom/google/firebase/iid/u;</span>
+<span class="cov">.method private static c(Ljava/lang/String;Ljava/lang/String;)Lcom/google/firebase/iid/aa;</span>
 <span class="">	.locals 2</span>
 
-<span class="cov">	sget-object v0, Lcom/google/firebase/iid/FirebaseInstanceId;->j:Lcom/google/firebase/iid/v;</span>
+<span class="cov">	sget-object v0, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lcom/google/firebase/iid/z;</span>
 <span class="cov">	const-string v1, ""</span>
-<span class="exec">	invoke-virtual {v0, v1, p0, p1}, Lcom/google/firebase/iid/v;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/firebase/iid/u;</span>
+<span class="exec">	invoke-virtual {v0, v1, p0, p1}, Lcom/google/firebase/iid/z;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/firebase/iid/aa;</span>
 <span class="cov">	move-result-object p0</span>
 <span class="exec">	return-object p0</span>
 .end method
@@ -294,29 +327,7 @@ value = "this"
 <span class="">	return-object p0</span>
 .end method
 
-<span class="cov">.method public static getInstance(Lfo;)Lcom/google/firebase/iid/FirebaseInstanceId;</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation build Landroidx/annotation/Keep;</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	const-class v0, Lcom/google/firebase/iid/FirebaseInstanceId;</span>
-<span class="exec">	invoke-virtual {p0, v0}, Lfo;->a(Ljava/lang/Class;)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="cov">	check-cast p0, Lcom/google/firebase/iid/FirebaseInstanceId;</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-<span class="cov">.method public static i()Lcom/google/firebase/iid/FirebaseInstanceId;</span>
-<span class="">	.locals 1</span>
-
-<span class="exec">	invoke-static {}, Lfo;->i()Lfo;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-static {v0}, Lcom/google/firebase/iid/FirebaseInstanceId;->getInstance(Lfo;)Lcom/google/firebase/iid/FirebaseInstanceId;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	return-object v0</span>
-.end method
-
-<span class="cov">.method static j()Z</span>
+<span class="cov">.method static g()Z</span>
 <span class="">	.locals 4</span>
 
 <span class="cov">	const/4 v0, 0x3</span>
@@ -340,30 +351,49 @@ value = "this"
 <span class="">	return v0</span>
 .end method
 
-<span class="cov">.method private final k()V</span>
+<span class="cov">.method public static getInstance(Lcom/google/firebase/FirebaseApp;)Lcom/google/firebase/iid/FirebaseInstanceId;</span>
 <span class="">	.locals 1</span>
+<span class="">	.annotation build Landroidx/annotation/Keep;</span>
+<span class="">	.end annotation</span>
 
-<span class="exec">	invoke-virtual {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->c()Lcom/google/firebase/iid/u;</span>
+<span class="cov">	const-class v0, Lcom/google/firebase/iid/FirebaseInstanceId;</span>
+<span class="exec">	invoke-virtual {p0, v0}, Lcom/google/firebase/FirebaseApp;->a(Ljava/lang/Class;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	check-cast p0, Lcom/google/firebase/iid/FirebaseInstanceId;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method private final m()V</span>
+<span class="">	.locals 2</span>
+
+<span class="exec">	invoke-virtual {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->e()Lcom/google/firebase/iid/aa;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-virtual {p0, v0}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Lcom/google/firebase/iid/u;)Z</span>
+<span class="exec">	invoke-virtual {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->j()Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	if-eqz v1, :cond_0</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->f:Lcom/google/firebase/iid/q;</span>
+<span class="exec">	invoke-virtual {v1}, Lcom/google/firebase/iid/q;->b()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-virtual {v0, v1}, Lcom/google/firebase/iid/aa;->b(Ljava/lang/String;)Z</span>
 <span class="cov">	move-result v0</span>
 <span class="cov">	if-nez v0, :cond_0</span>
-<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->f:Lcom/google/firebase/iid/z;</span>
-<span class="exec">	invoke-virtual {v0}, Lcom/google/firebase/iid/z;->a()Z</span>
+<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->i:Lcom/google/firebase/iid/ae;</span>
+<span class="exec">	invoke-virtual {v0}, Lcom/google/firebase/iid/ae;->a()Z</span>
 <span class="cov">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_1</span>
 <span class="cov">	:cond_0</span>
-<span class="cov">	invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->l()V</span>
+<span class="cov">	invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->n()V</span>
 <span class="cov">	:cond_1</span>
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method private final declared-synchronized l()V</span>
+<span class="cov">.method private final declared-synchronized n()V</span>
 <span class="">	.locals 2</span>
 
 <span class="cov">	monitor-enter p0</span>
 <span class="cov">	:try_start_0</span>
-<span class="cov">	iget-boolean v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Z</span>
+<span class="cov">	iget-boolean v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->j:Z</span>
 <span class="cov">	if-nez v0, :cond_0</span>
 <span class="cov">	const-wide/16 v0, 0x0</span>
 <span class="cov">	invoke-virtual {p0, v0, v1}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(J)V</span>
@@ -378,91 +408,16 @@ value = "this"
 <span class="">	throw v0</span>
 .end method
 
-<span class="cov">.method private static m()Ljava/lang/String;</span>
+<span class="cov">.method private static o()Ljava/lang/String;</span>
 <span class="">	.locals 2</span>
 
-<span class="cov">	sget-object v0, Lcom/google/firebase/iid/FirebaseInstanceId;->j:Lcom/google/firebase/iid/v;</span>
+<span class="cov">	sget-object v0, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lcom/google/firebase/iid/z;</span>
 <span class="cov">	const-string v1, ""</span>
-<span class="exec">	invoke-virtual {v0, v1}, Lcom/google/firebase/iid/v;->b(Ljava/lang/String;)Lcom/google/firebase/iid/x0;</span>
+<span class="exec">	invoke-virtual {v0, v1}, Lcom/google/firebase/iid/z;->b(Ljava/lang/String;)Lcom/google/firebase/iid/bc;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-virtual {v0}, Lcom/google/firebase/iid/x0;->a()Ljava/lang/String;</span>
+<span class="exec">	invoke-virtual {v0}, Lcom/google/firebase/iid/bc;->a()Ljava/security/KeyPair;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="exec">	return-object v0</span>
-.end method
-
-<span class="cov">.method final synthetic a(Ljava/lang/String;Ljava/lang/String;Lgn;)Lgn;</span>
-<span class="">	.locals 2</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="exec">	invoke-static {}, Lcom/google/firebase/iid/FirebaseInstanceId;->m()Ljava/lang/String;</span>
-<span class="cov">	move-result-object p3</span>
-<span class="exec">	invoke-static {p1, p2}, Lcom/google/firebase/iid/FirebaseInstanceId;->c(Ljava/lang/String;Ljava/lang/String;)Lcom/google/firebase/iid/u;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-virtual {p0, v0}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Lcom/google/firebase/iid/u;)Z</span>
-<span class="cov">	move-result v1</span>
-<span class="missed">	if-nez v1, :cond_0</span>
-<span class="missed">	new-instance p1, Lcom/google/firebase/iid/z0;</span>
-<span class="missed">	iget-object p2, v0, Lcom/google/firebase/iid/u;->a:Ljava/lang/String;</span>
-<span class="missed">	invoke-direct {p1, p3, p2}, Lcom/google/firebase/iid/z0;-><init>(Ljava/lang/String;Ljava/lang/String;)V</span>
-<span class="">	invoke-static {p1}, Ljn;->a(Ljava/lang/Object;)Lgn;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	return-object p1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->e:Lcom/google/firebase/iid/p;</span>
-<span class="cov">	new-instance v1, Lcom/google/firebase/iid/o0;</span>
-<span class="cov">	invoke-direct {v1, p0, p3, p1, p2}, Lcom/google/firebase/iid/o0;-><init>(Lcom/google/firebase/iid/FirebaseInstanceId;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V</span>
-<span class="exec">	invoke-virtual {v0, p1, p2, v1}, Lcom/google/firebase/iid/p;->a(Ljava/lang/String;Ljava/lang/String;Lcom/google/firebase/iid/r;)Lgn;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	return-object p1</span>
-.end method
-
-<span class="cov">.method final synthetic a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lgn;</span>
-<span class="">	.locals 3</span>
-
-<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->d:Lcom/google/firebase/iid/q0;</span>
-<span class="exec">	invoke-virtual {v0, p1, p2, p3}, Lcom/google/firebase/iid/q0;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lgn;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	iget-object v1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->a:Ljava/util/concurrent/Executor;</span>
-<span class="cov">	new-instance v2, Lcom/google/firebase/iid/n0;</span>
-<span class="cov">	invoke-direct {v2, p0, p2, p3, p1}, Lcom/google/firebase/iid/n0;-><init>(Lcom/google/firebase/iid/FirebaseInstanceId;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V</span>
-<span class="exec">	invoke-virtual {v0, v1, v2}, Lgn;->a(Ljava/util/concurrent/Executor;Lfn;)Lgn;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	return-object p1</span>
-.end method
-
-<span class="cov">.method final synthetic a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lgn;</span>
-<span class="">	.locals 6</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	sget-object v0, Lcom/google/firebase/iid/FirebaseInstanceId;->j:Lcom/google/firebase/iid/v;</span>
-<span class="cov">	iget-object v1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->c:Lcom/google/firebase/iid/k;</span>
-<span class="exec">	invoke-virtual {v1}, Lcom/google/firebase/iid/k;->b()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v5</span>
-<span class="cov">	const-string v1, ""</span>
-<span class="cov">	move-object v2, p1</span>
-<span class="cov">	move-object v3, p2</span>
-<span class="cov">	move-object v4, p4</span>
-<span class="cov">	invoke-virtual/range {v0 .. v5}, Lcom/google/firebase/iid/v;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V</span>
-<span class="cov">	new-instance p1, Lcom/google/firebase/iid/z0;</span>
-<span class="cov">	invoke-direct {p1, p3, p4}, Lcom/google/firebase/iid/z0;-><init>(Ljava/lang/String;Ljava/lang/String;)V</span>
-<span class="exec">	invoke-static {p1}, Ljn;->a(Ljava/lang/Object;)Lgn;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	return-object p1</span>
-.end method
-
-<span class="cov">.method public a()Ljava/lang/String;</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->k()V</span>
-<span class="exec">	invoke-static {}, Lcom/google/firebase/iid/FirebaseInstanceId;->m()Ljava/lang/String;</span>
+<span class="exec">	invoke-static {v0}, Lcom/google/firebase/iid/q;->a(Ljava/security/KeyPair;)Ljava/lang/String;</span>
 <span class="cov">	move-result-object v0</span>
 <span class="exec">	return-object v0</span>
 .end method
@@ -480,9 +435,9 @@ value = "this"
 <span class="exec">	invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;</span>
 <span class="cov">	move-result-object v1</span>
 <span class="cov">	if-eq v0, v1, :cond_0</span>
-<span class="exec">	invoke-direct {p0, p1, p2}, Lcom/google/firebase/iid/FirebaseInstanceId;->b(Ljava/lang/String;Ljava/lang/String;)Lgn;</span>
+<span class="exec">	invoke-direct {p0, p1, p2}, Lcom/google/firebase/iid/FirebaseInstanceId;->b(Ljava/lang/String;Ljava/lang/String;)Lrm;</span>
 <span class="cov">	move-result-object p1</span>
-<span class="exec">	invoke-direct {p0, p1}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Lgn;)Ljava/lang/Object;</span>
+<span class="exec">	invoke-direct {p0, p1}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Lrm;)Ljava/lang/Object;</span>
 <span class="cov">	move-result-object p1</span>
 <span class="cov">	check-cast p1, Lcom/google/firebase/iid/a;</span>
 <span class="exec">	invoke-interface {p1}, Lcom/google/firebase/iid/a;->a()Ljava/lang/String;</span>
@@ -495,6 +450,15 @@ value = "this"
 <span class="">	throw p1</span>
 .end method
 
+<span class="cov">.method final synthetic a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrm;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Lcom/google/firebase/iid/b;</span>
+<span class="exec">	invoke-interface {v0, p1, p2, p3, p4}, Lcom/google/firebase/iid/b;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrm;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	return-object p1</span>
+.end method
+
 <span class="cov">.method final declared-synchronized a(J)V</span>
 <span class="">	.locals 11</span>
 
@@ -505,17 +469,17 @@ value = "this"
 <span class="cov">	:try_start_0</span>
 <span class="exec">	invoke-static {v0, v1, v3, v4}, Ljava/lang/Math;->max(JJ)J</span>
 <span class="cov">	move-result-wide v0</span>
-<span class="cov">	sget-wide v3, Lcom/google/firebase/iid/FirebaseInstanceId;->i:J</span>
+<span class="cov">	sget-wide v3, Lcom/google/firebase/iid/FirebaseInstanceId;->a:J</span>
 <span class="exec">	invoke-static {v0, v1, v3, v4}, Ljava/lang/Math;->min(JJ)J</span>
 <span class="cov">	move-result-wide v9</span>
-<span class="cov">	new-instance v0, Lcom/google/firebase/iid/x;</span>
-<span class="cov">	iget-object v7, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->c:Lcom/google/firebase/iid/k;</span>
-<span class="cov">	iget-object v8, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->f:Lcom/google/firebase/iid/z;</span>
+<span class="cov">	new-instance v0, Lcom/google/firebase/iid/ab;</span>
+<span class="cov">	iget-object v7, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->f:Lcom/google/firebase/iid/q;</span>
+<span class="cov">	iget-object v8, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->i:Lcom/google/firebase/iid/ae;</span>
 <span class="cov">	move-object v5, v0</span>
 <span class="cov">	move-object v6, p0</span>
-<span class="cov">	invoke-direct/range {v5 .. v10}, Lcom/google/firebase/iid/x;-><init>(Lcom/google/firebase/iid/FirebaseInstanceId;Lcom/google/firebase/iid/k;Lcom/google/firebase/iid/z;J)V</span>
+<span class="cov">	invoke-direct/range {v5 .. v10}, Lcom/google/firebase/iid/ab;-><init>(Lcom/google/firebase/iid/FirebaseInstanceId;Lcom/google/firebase/iid/q;Lcom/google/firebase/iid/ae;J)V</span>
 <span class="cov">	invoke-static {v0, p1, p2}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Ljava/lang/Runnable;J)V</span>
-<span class="cov">	iput-boolean v2, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Z</span>
+<span class="cov">	iput-boolean v2, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->j:Z</span>
 <span class="cov">	:try_end_0</span>
 <span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
 <span class="cov">	monitor-exit p0</span>
@@ -534,18 +498,22 @@ value = "this"
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="">	invoke-virtual {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->c()Lcom/google/firebase/iid/u;</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->e()Lcom/google/firebase/iid/aa;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	invoke-virtual {p0, v0}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Lcom/google/firebase/iid/u;)Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->f:Lcom/google/firebase/iid/q;</span>
+<span class="">	invoke-virtual {v1}, Lcom/google/firebase/iid/q;->b()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v0, v1}, Lcom/google/firebase/iid/aa;->b(Ljava/lang/String;)Z</span>
 <span class="missed">	move-result v1</span>
 <span class="missed">	if-nez v1, :cond_0</span>
-<span class="">	invoke-static {}, Lcom/google/firebase/iid/FirebaseInstanceId;->m()Ljava/lang/String;</span>
+<span class="">	invoke-static {}, Lcom/google/firebase/iid/FirebaseInstanceId;->o()Ljava/lang/String;</span>
 <span class="missed">	move-result-object v1</span>
-<span class="missed">	iget-object v0, v0, Lcom/google/firebase/iid/u;->a:Ljava/lang/String;</span>
-<span class="missed">	iget-object v2, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->d:Lcom/google/firebase/iid/q0;</span>
-<span class="">	invoke-virtual {v2, v1, v0, p1}, Lcom/google/firebase/iid/q0;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lgn;</span>
+<span class="missed">	iget-object v0, v0, Lcom/google/firebase/iid/aa;->a:Ljava/lang/String;</span>
+<span class="missed">	iget-object v2, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Lcom/google/firebase/iid/b;</span>
+<span class="">	invoke-interface {v2, v1, v0, p1}, Lcom/google/firebase/iid/b;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrm;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="missed">	invoke-direct {p0, p1}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Lgn;)Ljava/lang/Object;</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Lrm;)Ljava/lang/Object;</span>
 <span class="">	return-void</span>
 <span class="">	:cond_0</span>
 <span class="missed">	new-instance p1, Ljava/io/IOException;</span>
@@ -554,12 +522,85 @@ value = "this"
 <span class="">	throw p1</span>
 .end method
 
+<span class="cov">.method final synthetic a(Ljava/lang/String;Ljava/lang/String;Lrn;Ljava/lang/String;)V</span>
+<span class="">	.locals 9</span>
+
+<span class="exec">	invoke-static {}, Lcom/google/firebase/iid/FirebaseInstanceId;->o()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v6</span>
+<span class="exec">	invoke-static {p1, p2}, Lcom/google/firebase/iid/FirebaseInstanceId;->c(Ljava/lang/String;Ljava/lang/String;)Lcom/google/firebase/iid/aa;</span>
+<span class="cov">	move-result-object p2</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->f:Lcom/google/firebase/iid/q;</span>
+<span class="">	invoke-virtual {v0}, Lcom/google/firebase/iid/q;->b()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p2, v0}, Lcom/google/firebase/iid/aa;->b(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	new-instance p1, Lcom/google/firebase/iid/ba;</span>
+<span class="missed">	iget-object p2, p2, Lcom/google/firebase/iid/aa;->a:Ljava/lang/String;</span>
+<span class="missed">	invoke-direct {p1, v6, p2}, Lcom/google/firebase/iid/ba;-><init>(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {p3, p1}, Lrn;->a(Ljava/lang/Object;)V</span>
+<span class="">	return-void</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-static {p2}, Lcom/google/firebase/iid/aa;->a(Lcom/google/firebase/iid/aa;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	iget-object p2, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->h:Lcom/google/firebase/iid/t;</span>
+<span class="cov">	new-instance v7, Lcom/google/firebase/iid/ar;</span>
+<span class="cov">	move-object v0, v7</span>
+<span class="cov">	move-object v1, p0</span>
+<span class="cov">	move-object v2, v6</span>
+<span class="cov">	move-object v4, p1</span>
+<span class="cov">	move-object v5, p4</span>
+<span class="cov">	invoke-direct/range {v0 .. v5}, Lcom/google/firebase/iid/ar;-><init>(Lcom/google/firebase/iid/FirebaseInstanceId;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="exec">	invoke-virtual {p2, p1, p4, v7}, Lcom/google/firebase/iid/t;->a(Ljava/lang/String;Ljava/lang/String;Lcom/google/firebase/iid/v;)Lrm;</span>
+<span class="cov">	move-result-object p2</span>
+<span class="cov">	iget-object v7, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->d:Ljava/util/concurrent/Executor;</span>
+<span class="cov">	new-instance v8, Lcom/google/firebase/iid/as;</span>
+<span class="cov">	move-object v0, v8</span>
+<span class="cov">	move-object v2, p1</span>
+<span class="cov">	move-object v3, p4</span>
+<span class="cov">	move-object v4, p3</span>
+<span class="cov">	move-object v5, v6</span>
+<span class="cov">	invoke-direct/range {v0 .. v5}, Lcom/google/firebase/iid/as;-><init>(Lcom/google/firebase/iid/FirebaseInstanceId;Ljava/lang/String;Ljava/lang/String;Lrn;Ljava/lang/String;)V</span>
+<span class="cov">	invoke-virtual {p2, v7, v8}, Lrm;->a(Ljava/util/concurrent/Executor;Lri;)Lrm;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method final synthetic a(Ljava/lang/String;Ljava/lang/String;Lrn;Ljava/lang/String;Lrm;)V</span>
+<span class="">	.locals 6</span>
+
+<span class="exec">	invoke-virtual {p5}, Lrm;->b()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="exec">	invoke-virtual {p5}, Lrm;->d()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object p5</span>
+<span class="cov">	check-cast p5, Ljava/lang/String;</span>
+<span class="cov">	sget-object v0, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lcom/google/firebase/iid/z;</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->f:Lcom/google/firebase/iid/q;</span>
+<span class="exec">	invoke-virtual {v1}, Lcom/google/firebase/iid/q;->b()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v5</span>
+<span class="cov">	const-string v1, ""</span>
+<span class="cov">	move-object v2, p1</span>
+<span class="cov">	move-object v3, p2</span>
+<span class="cov">	move-object v4, p5</span>
+<span class="cov">	invoke-virtual/range {v0 .. v5}, Lcom/google/firebase/iid/z;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	new-instance p1, Lcom/google/firebase/iid/ba;</span>
+<span class="cov">	invoke-direct {p1, p4, p5}, Lcom/google/firebase/iid/ba;-><init>(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	invoke-virtual {p3, p1}, Lrn;->a(Ljava/lang/Object;)V</span>
+<span class="exec">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p5}, Lrm;->e()Ljava/lang/Exception;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {p3, p1}, Lrn;->a(Ljava/lang/Exception;)V</span>
+<span class="">	return-void</span>
+.end method
+
 <span class="cov">.method final declared-synchronized a(Z)V</span>
 <span class="">	.locals 0</span>
 
 <span class="cov">	monitor-enter p0</span>
 <span class="cov">	:try_start_0</span>
-<span class="cov">	iput-boolean p1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Z</span>
+<span class="cov">	iput-boolean p1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->j:Z</span>
 <span class="cov">	:try_end_0</span>
 <span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
 <span class="cov">	monitor-exit p0</span>
@@ -570,30 +611,10 @@ value = "this"
 <span class="">	throw p1</span>
 .end method
 
-<span class="cov">.method final a(Lcom/google/firebase/iid/u;)Z</span>
+<span class="cov">.method final b()Lcom/google/firebase/FirebaseApp;</span>
 <span class="">	.locals 1</span>
 
-<span class="cov">	if-eqz p1, :cond_1</span>
-<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->c:Lcom/google/firebase/iid/k;</span>
-<span class="exec">	invoke-virtual {v0}, Lcom/google/firebase/iid/k;->b()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-virtual {p1, v0}, Lcom/google/firebase/iid/u;->a(Ljava/lang/String;)Z</span>
-<span class="cov">	move-result p1</span>
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 p1, 0x0</span>
-<span class="exec">	return p1</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	const/4 p1, 0x1</span>
-<span class="exec">	return p1</span>
-.end method
-
-<span class="cov">.method final b()Lfo;</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lfo;</span>
+<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->e:Lcom/google/firebase/FirebaseApp;</span>
 <span class="exec">	return-object v0</span>
 .end method
 
@@ -605,18 +626,22 @@ value = "this"
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="">	invoke-virtual {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->c()Lcom/google/firebase/iid/u;</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->e()Lcom/google/firebase/iid/aa;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	invoke-virtual {p0, v0}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Lcom/google/firebase/iid/u;)Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->f:Lcom/google/firebase/iid/q;</span>
+<span class="">	invoke-virtual {v1}, Lcom/google/firebase/iid/q;->b()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v0, v1}, Lcom/google/firebase/iid/aa;->b(Ljava/lang/String;)Z</span>
 <span class="missed">	move-result v1</span>
 <span class="missed">	if-nez v1, :cond_0</span>
-<span class="">	invoke-static {}, Lcom/google/firebase/iid/FirebaseInstanceId;->m()Ljava/lang/String;</span>
+<span class="">	invoke-static {}, Lcom/google/firebase/iid/FirebaseInstanceId;->o()Ljava/lang/String;</span>
 <span class="missed">	move-result-object v1</span>
-<span class="missed">	iget-object v2, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->d:Lcom/google/firebase/iid/q0;</span>
-<span class="missed">	iget-object v0, v0, Lcom/google/firebase/iid/u;->a:Ljava/lang/String;</span>
-<span class="">	invoke-virtual {v2, v1, v0, p1}, Lcom/google/firebase/iid/q0;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lgn;</span>
+<span class="missed">	iget-object v2, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Lcom/google/firebase/iid/b;</span>
+<span class="missed">	iget-object v0, v0, Lcom/google/firebase/iid/aa;->a:Ljava/lang/String;</span>
+<span class="">	invoke-interface {v2, v1, v0, p1}, Lcom/google/firebase/iid/b;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrm;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="missed">	invoke-direct {p0, p1}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Lgn;)Ljava/lang/Object;</span>
+<span class="missed">	invoke-direct {p0, p1}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Lrm;)Ljava/lang/Object;</span>
 <span class="">	return-void</span>
 <span class="">	:cond_0</span>
 <span class="missed">	new-instance p1, Ljava/io/IOException;</span>
@@ -625,19 +650,53 @@ value = "this"
 <span class="">	throw p1</span>
 .end method
 
-<span class="cov">.method final c()Lcom/google/firebase/iid/u;</span>
-<span class="">	.locals 2</span>
+<span class="cov">.method public c()Ljava/lang/String;</span>
+<span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lfo;</span>
-<span class="exec">	invoke-static {v0}, Lcom/google/firebase/iid/k;->a(Lfo;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	const-string v1, "*"</span>
-<span class="exec">	invoke-static {v0, v1}, Lcom/google/firebase/iid/FirebaseInstanceId;->c(Ljava/lang/String;Ljava/lang/String;)Lcom/google/firebase/iid/u;</span>
+<span class="cov">	invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->m()V</span>
+<span class="exec">	invoke-static {}, Lcom/google/firebase/iid/FirebaseInstanceId;->o()Ljava/lang/String;</span>
 <span class="cov">	move-result-object v0</span>
 <span class="exec">	return-object v0</span>
 .end method
 
-<span class="cov">.method final d()Ljava/lang/String;</span>
+<span class="cov">.method public d()Ljava/lang/String;</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation runtime Ljava/lang/Deprecated;</span>
+<span class="">	.end annotation</span>
+
+<span class="exec">	invoke-virtual {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->e()Lcom/google/firebase/iid/aa;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->f:Lcom/google/firebase/iid/q;</span>
+<span class="exec">	invoke-virtual {v1}, Lcom/google/firebase/iid/q;->b()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-virtual {v0, v1}, Lcom/google/firebase/iid/aa;->b(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->n()V</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	if-eqz v0, :cond_2</span>
+<span class="cov">	iget-object v0, v0, Lcom/google/firebase/iid/aa;->a:Ljava/lang/String;</span>
+<span class="exec">	return-object v0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method final e()Lcom/google/firebase/iid/aa;</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->e:Lcom/google/firebase/FirebaseApp;</span>
+<span class="exec">	invoke-static {v0}, Lcom/google/firebase/iid/q;->a(Lcom/google/firebase/FirebaseApp;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "*"</span>
+<span class="exec">	invoke-static {v0, v1}, Lcom/google/firebase/iid/FirebaseInstanceId;->c(Ljava/lang/String;Ljava/lang/String;)Lcom/google/firebase/iid/aa;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method final f()Ljava/lang/String;</span>
 <span class="">	.locals 2</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -645,8 +704,8 @@ value = "this"
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lfo;</span>
-<span class="exec">	invoke-static {v0}, Lcom/google/firebase/iid/k;->a(Lfo;)Ljava/lang/String;</span>
+<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->e:Lcom/google/firebase/FirebaseApp;</span>
+<span class="exec">	invoke-static {v0}, Lcom/google/firebase/iid/q;->a(Lcom/google/firebase/FirebaseApp;)Ljava/lang/String;</span>
 <span class="cov">	move-result-object v0</span>
 <span class="cov">	const-string v1, "*"</span>
 <span class="exec">	invoke-virtual {p0, v0, v1}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
@@ -654,18 +713,18 @@ value = "this"
 <span class="exec">	return-object v0</span>
 .end method
 
-.method final declared-synchronized e()V
+.method final declared-synchronized h()V
 <span class="">	.locals 1</span>
 
 <span class="missed">	monitor-enter p0</span>
 <span class="">	:try_start_0</span>
-<span class="missed">	sget-object v0, Lcom/google/firebase/iid/FirebaseInstanceId;->j:Lcom/google/firebase/iid/v;</span>
-<span class="missed">	invoke-virtual {v0}, Lcom/google/firebase/iid/v;->b()V</span>
-<span class="missed">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->h:Lcom/google/firebase/iid/FirebaseInstanceId$a;</span>
+<span class="missed">	sget-object v0, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lcom/google/firebase/iid/z;</span>
+<span class="missed">	invoke-virtual {v0}, Lcom/google/firebase/iid/z;->b()V</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->k:Lcom/google/firebase/iid/FirebaseInstanceId$a;</span>
 <span class="">	invoke-virtual {v0}, Lcom/google/firebase/iid/FirebaseInstanceId$a;->a()Z</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->l()V</span>
+<span class="missed">	invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->n()V</span>
 <span class="">	:try_end_0</span>
 <span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
 <span class="">	:cond_0</span>
@@ -677,40 +736,53 @@ value = "this"
 <span class="">	throw v0</span>
 .end method
 
-<span class="cov">.method final f()Z</span>
+<span class="cov">.method final i()Z</span>
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->c:Lcom/google/firebase/iid/k;</span>
-<span class="exec">	invoke-virtual {v0}, Lcom/google/firebase/iid/k;->a()I</span>
+<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Lcom/google/firebase/iid/b;</span>
+<span class="exec">	invoke-interface {v0}, Lcom/google/firebase/iid/b;->b()Z</span>
 <span class="cov">	move-result v0</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	const/4 v0, 0x1</span>
 <span class="exec">	return v0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="">	return v0</span>
 .end method
 
-.method final g()V
-<span class="">	.locals 2</span>
+<span class="cov">.method final j()Z</span>
+<span class="">	.locals 1</span>
 
-<span class="missed">	sget-object v0, Lcom/google/firebase/iid/FirebaseInstanceId;->j:Lcom/google/firebase/iid/v;</span>
-<span class="missed">	const-string v1, ""</span>
-<span class="missed">	invoke-virtual {v0, v1}, Lcom/google/firebase/iid/v;->c(Ljava/lang/String;)V</span>
-<span class="missed">	invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->l()V</span>
+<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Lcom/google/firebase/iid/b;</span>
+<span class="exec">	invoke-interface {v0}, Lcom/google/firebase/iid/b;->a()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="exec">	return v0</span>
+.end method
+
+.method final k()V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Lcom/google/firebase/iid/FirebaseInstanceId;->o()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->e()Lcom/google/firebase/iid/aa;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-static {v1}, Lcom/google/firebase/iid/aa;->a(Lcom/google/firebase/iid/aa;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iget-object v2, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->g:Lcom/google/firebase/iid/b;</span>
+<span class="">	invoke-interface {v2, v0, v1}, Lcom/google/firebase/iid/b;->a(Ljava/lang/String;Ljava/lang/String;)Lrm;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-direct {p0, v0}, Lcom/google/firebase/iid/FirebaseInstanceId;->a(Lrm;)Ljava/lang/Object;</span>
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method final synthetic h()V</span>
-<span class="">	.locals 1</span>
+.method final l()V
+<span class="">	.locals 2</span>
 
-<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/FirebaseInstanceId;->h:Lcom/google/firebase/iid/FirebaseInstanceId$a;</span>
-<span class="exec">	invoke-virtual {v0}, Lcom/google/firebase/iid/FirebaseInstanceId$a;->a()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->k()V</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-void</span>
+<span class="missed">	sget-object v0, Lcom/google/firebase/iid/FirebaseInstanceId;->b:Lcom/google/firebase/iid/z;</span>
+<span class="missed">	const-string v1, ""</span>
+<span class="missed">	invoke-virtual {v0, v1}, Lcom/google/firebase/iid/z;->c(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-direct {p0}, Lcom/google/firebase/iid/FirebaseInstanceId;->n()V</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -2,7 +2,7 @@
 .super Lokhttp3/internal/cache/FaultHidingSink;
 .source "DiskLruCache.java"
 .annotation system Ldalvik/annotation/EnclosingMethod;
-value = Lokhttp3/internal/cache/DiskLruCache;->newJournalWriter()Lfx;
+value = Lokhttp3/internal/cache/DiskLruCache;->newJournalWriter()Lyt;
 .end annotation
 .annotation system Ldalvik/annotation/InnerClass;
 accessFlags = 0x0
@@ -10,7 +10,7 @@ name = null
 .end annotation
 .field static final synthetic $assertionsDisabled:Z
 .field final synthetic this$0:Lokhttp3/internal/cache/DiskLruCache;
-.method constructor <init>(Lokhttp3/internal/cache/DiskLruCache;Lvx;)V
+.method constructor <init>(Lokhttp3/internal/cache/DiskLruCache;Lzj;)V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void

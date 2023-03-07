@@ -1,94 +1,58 @@
-.class public Lhu;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-components@@16.0.0"
+.class public final Lhu;
+.super Ldo;
+
+# interfaces
+.implements Lfs;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
+# direct methods
+.method constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
 
+    const-string v0, "com.google.android.finsky.externalreferrer.IGetInstallReferrerService"
 
-# instance fields
-.field private final a:Ljava/lang/Class;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/Class<",
-            "TT;>;"
-        }
-    .end annotation
-.end field
+    .line 1
+    invoke-direct {p0, p1, v0}, Ldo;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
-.field private final b:Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TT;"
-        }
-    .end annotation
-.end field
+    return-void
+.end method
 
 
 # virtual methods
-.method public a()Ljava/lang/Object;
+.method public final a(Landroid/os/Bundle;)Landroid/os/Bundle;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
+    .annotation system Ldalvik/annotation/Throws;
         value = {
-            "()TT;"
+            Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 1
-    iget-object v0, p0, Lhu;->b:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public b()Ljava/lang/Class;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/lang/Class<",
-            "TT;>;"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lhu;->a:Ljava/lang/Class;
-
-    return-object v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 3
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    .line 1
-    iget-object v1, p0, Lhu;->a:Ljava/lang/Class;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Lhu;->b:Ljava/lang/Object;
-
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    const-string v1, "Event{type: %s, payload: %s}"
-
-    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    .line 3
+    invoke-virtual {p0}, Ldo;->a()Landroid/os/Parcel;
 
     move-result-object v0
+
+    .line 4
+    invoke-static {v0, p1}, Ldw;->a(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+
+    const/4 p1, 0x1
+
+    .line 5
+    invoke-virtual {p0, p1, v0}, Ldo;->a(ILandroid/os/Parcel;)Landroid/os/Parcel;
+
+    move-result-object p1
+
+    .line 6
+    sget-object v0, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p1, v0}, Ldw;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/Bundle;
+
+    .line 7
+    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
 
     return-object v0
 .end method

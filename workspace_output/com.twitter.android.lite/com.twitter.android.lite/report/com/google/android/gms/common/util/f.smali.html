@@ -18,79 +18,69 @@
 .super Ljava/lang/Object;
 
 
+.field private static final a:[Ljava/lang/String;
+.field private static b:Landroid/os/DropBoxManager;
+.field private static c:Z
+.field private static d:I
+.field private static e:I
+.annotation build Ljavax/annotation/concurrent/GuardedBy;
+value = "CrashUtils.class"
+.end annotation
+.end field
+.field private static f:I
+.annotation build Ljavax/annotation/concurrent/GuardedBy;
+value = "CrashUtils.class"
+.end annotation
+.end field
 
 
-.method public static a()Ljava/util/List;
-<span class="">	.locals 1</span>
-<span class="">	.annotation runtime Ljava/lang/Deprecated;</span>
-<span class="">	.end annotation</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"<T:",</span>
-<span class="">	"Ljava/lang/Object;",</span>
-<span class="">	">()",</span>
-<span class="">	"Ljava/util/List<",</span>
-<span class="">	"TT;>;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 5</span>
 
-<span class="">	invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;</span>
+<span class="missed">	const-string v0, "android."</span>
+<span class="missed">	const-string v1, "com.android."</span>
+<span class="missed">	const-string v2, "dalvik."</span>
+<span class="missed">	const-string v3, "java."</span>
+<span class="missed">	const-string v4, "javax."</span>
+<span class="">	filled-new-array {v0, v1, v2, v3, v4}, [Ljava/lang/String;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public static a(Ljava/lang/Object;)Ljava/util/List;
-<span class="">	.locals 0</span>
-<span class="">	.annotation runtime Ljava/lang/Deprecated;</span>
-<span class="">	.end annotation</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"<T:",</span>
-<span class="">	"Ljava/lang/Object;",</span>
-<span class="">	">(TT;)",</span>
-<span class="">	"Ljava/util/List<",</span>
-<span class="">	"TT;>;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="">	invoke-static {p0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	return-object p0</span>
-.end method
-
-<span class="cov">.method public static varargs a([Ljava/lang/Object;)Ljava/util/List;</span>
-<span class="">	.locals 2</span>
-<span class="">	.annotation runtime Ljava/lang/Deprecated;</span>
-<span class="">	.end annotation</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"<T:",</span>
-<span class="">	"Ljava/lang/Object;",</span>
-<span class="">	">([TT;)",</span>
-<span class="">	"Ljava/util/List<",</span>
-<span class="">	"TT;>;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	array-length v0, p0</span>
-<span class="cov">	if-eqz v0, :cond_1</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="cov">	if-eq v0, v1, :cond_0</span>
-<span class="exec">	invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	invoke-static {p0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	return-object p0</span>
-<span class="">	:cond_0</span>
+<span class="missed">	sput-object v0, Lcom/google/android/gms/common/util/f;->a:[Ljava/lang/String;</span>
 <span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	aget-object p0, p0, v0</span>
-<span class="">	invoke-static {p0}, Lcom/google/android/gms/common/util/f;->a(Ljava/lang/Object;)Ljava/util/List;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	return-object p0</span>
-<span class="">	:cond_1</span>
-<span class="">	invoke-static {}, Lcom/google/android/gms/common/util/f;->a()Ljava/util/List;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	return-object p0</span>
+<span class="missed">	sput-object v0, Lcom/google/android/gms/common/util/f;->b:Landroid/os/DropBoxManager;</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	sput-boolean v0, Lcom/google/android/gms/common/util/f;->c:Z</span>
+<span class="missed">	const/4 v1, -0x1</span>
+<span class="missed">	sput v1, Lcom/google/android/gms/common/util/f;->d:I</span>
+<span class="missed">	sput v0, Lcom/google/android/gms/common/util/f;->e:I</span>
+<span class="missed">	sput v0, Lcom/google/android/gms/common/util/f;->f:I</span>
+<span class="">	return-void</span>
+.end method
+
+.method public static a(Landroid/content/Context;Ljava/lang/Throwable;)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/high16 v0, 0x20000000</span>
+<span class="">	invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/util/f;->a(Landroid/content/Context;Ljava/lang/Throwable;I)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method private static a(Landroid/content/Context;Ljava/lang/Throwable;I)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 p2, 0x0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	invoke-static {p0}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	invoke-static {p1}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return p2</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p0</span>
+<span class="missed">	const-string p1, "CrashUtils"</span>
+<span class="missed">	const-string v0, "Error adding exception to DropBox!"</span>
+<span class="missed">	invoke-static {p1, v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="">	return p2</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

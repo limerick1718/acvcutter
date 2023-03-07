@@ -11,28 +11,28 @@
     .end annotation
 .end field
 
-.field private final source:Lgx;
+.field private final source:Lyu;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;JLgx;)V
+.method public constructor <init>(Ljava/lang/String;JLyu;)V
     .locals 0
     .param p1    # Ljava/lang/String;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 1
+    .line 33
     invoke-direct {p0}, Lokhttp3/ResponseBody;-><init>()V
 
-    .line 2
+    .line 34
     iput-object p1, p0, Lokhttp3/internal/http/RealResponseBody;->contentTypeString:Ljava/lang/String;
 
-    .line 3
+    .line 35
     iput-wide p2, p0, Lokhttp3/internal/http/RealResponseBody;->contentLength:J
 
-    .line 4
-    iput-object p4, p0, Lokhttp3/internal/http/RealResponseBody;->source:Lgx;
+    .line 36
+    iput-object p4, p0, Lokhttp3/internal/http/RealResponseBody;->source:Lyu;
 
     return-void
 .end method
@@ -42,7 +42,7 @@
 .method public contentLength()J
     .locals 2
 
-    .line 1
+    .line 44
     iget-wide v0, p0, Lokhttp3/internal/http/RealResponseBody;->contentLength:J
 
     return-wide v0
@@ -51,7 +51,7 @@
 .method public contentType()Lokhttp3/MediaType;
     .locals 1
 
-    .line 1
+    .line 40
     iget-object v0, p0, Lokhttp3/internal/http/RealResponseBody;->contentTypeString:Ljava/lang/String;
 
     if-eqz v0, :cond_0
@@ -69,11 +69,11 @@
     return-object v0
 .end method
 
-.method public source()Lgx;
+.method public source()Lyu;
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Lokhttp3/internal/http/RealResponseBody;->source:Lgx;
+    .line 48
+    iget-object v0, p0, Lokhttp3/internal/http/RealResponseBody;->source:Lyu;
 
     return-object v0
 .end method

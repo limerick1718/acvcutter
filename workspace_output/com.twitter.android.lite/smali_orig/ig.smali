@@ -1,98 +1,104 @@
-.class final Lig;
+.class interface abstract Lig;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-
-# interfaces
-.implements Ljava/util/Iterator;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
+        "<T:",
         "Ljava/lang/Object;",
-        "Ljava/util/Iterator<",
-        "Ljava/lang/String;",
-        ">;"
+        ">",
+        "Ljava/lang/Object;"
     }
 .end annotation
 
 
-# instance fields
-.field private a:Ljava/util/Iterator;
+# virtual methods
+.method public abstract a(Ljava/lang/Object;)I
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/Iterator<",
-            "Ljava/lang/String;",
-            ">;"
+            "(TT;)I"
         }
     .end annotation
-.end field
-
-.field private final synthetic b:Lgg;
-
-
-# direct methods
-.method constructor <init>(Lgg;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lig;->b:Lgg;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    iget-object p1, p0, Lig;->b:Lgg;
-
-    invoke-static {p1}, Lgg;->a(Lgg;)Lee;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lig;->a:Ljava/util/Iterator;
-
-    return-void
 .end method
 
-
-# virtual methods
-.method public final hasNext()Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lig;->a:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    return v0
+.method public abstract a()Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
 .end method
 
-.method public final synthetic next()Ljava/lang/Object;
-    .locals 1
+.method public abstract a(Ljava/lang/Object;Lif;Lfu;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;",
+            "Lif;",
+            "Lfu;",
+            ")V"
+        }
+    .end annotation
 
-    .line 1
-    iget-object v0, p0, Lig;->a:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    return-object v0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 .end method
 
-.method public final remove()V
-    .locals 1
+.method public abstract a(Ljava/lang/Object;Ljt;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;",
+            "Ljt;",
+            ")V"
+        }
+    .end annotation
 
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+.method public abstract a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;TT;)Z"
+        }
+    .end annotation
+.end method
 
-    throw v0
+.method public abstract b(Ljava/lang/Object;)I
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)I"
+        }
+    .end annotation
+.end method
+
+.method public abstract b(Ljava/lang/Object;Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;TT;)V"
+        }
+    .end annotation
+.end method
+
+.method public abstract c(Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)V"
+        }
+    .end annotation
+.end method
+
+.method public abstract d(Ljava/lang/Object;)Z
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)Z"
+        }
+    .end annotation
 .end method

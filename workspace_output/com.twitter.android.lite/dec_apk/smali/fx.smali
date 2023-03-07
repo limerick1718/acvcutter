@@ -1,98 +1,18 @@
-.class public interface abstract Lfx;
+.class final Lfx;
 .super Ljava/lang/Object;
-.source "BufferedSink.java"
-.implements Lvx;
-.implements Ljava/nio/channels/WritableByteChannel;
-.method public abstract a(Lwx;)J
-.annotation system Ldalvik/annotation/Throws;
+.field private static final a:Lfv;
+.annotation system Ldalvik/annotation/Signature;
 value = {
-Ljava/io/IOException;
+"Lfv<",
+"*>;"
 }
 .end annotation
-.end method
-.method public abstract a(J)Lfx;
-.annotation system Ldalvik/annotation/Throws;
+.end field
+.field private static final b:Lfv;
+.annotation system Ldalvik/annotation/Signature;
 value = {
-Ljava/io/IOException;
+"Lfv<",
+"*>;"
 }
 .end annotation
-.end method
-.method public abstract a(Lhx;)Lfx;
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-.end method
-.method public abstract a(Ljava/lang/String;)Lfx;
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-.end method
-.method public abstract b()Lex;
-.end method
-.method public abstract e()Lfx;
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-.end method
-.method public abstract f(J)Lfx;
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-.end method
-.method public abstract flush()V
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-.end method
-.method public abstract h()Lfx;
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-.end method
-.method public abstract write([B)Lfx;
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-.end method
-.method public abstract write([BII)Lfx;
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-.end method
-.method public abstract writeByte(I)Lfx;
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-.end method
-.method public abstract writeInt(I)Lfx;
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-.end method
-.method public abstract writeShort(I)Lfx;
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-.end method
+.end field

@@ -1,10 +1,14 @@
-.class public interface abstract Lmm;
+.class final Lmm;
 .super Ljava/lang/Object;
-.implements Landroid/os/IInterface;
-.method public abstract a(Lom;Lkm;)V
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Landroid/os/RemoteException;
-}
-.end annotation
+.implements Ljava/lang/Runnable;
+.field private final synthetic a:Lqd;
+.field private final synthetic b:Lmh;
+.method constructor <init>(Lmh;Lqd;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method public final run()V
+.locals 2
+return-void
 .end method

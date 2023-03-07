@@ -54,20 +54,21 @@ const-string v7, "QUIC"
 const-string v8, "quic"
 invoke-direct {v0, v7, v6, v8}, Lokhttp3/Protocol;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 sput-object v0, Lokhttp3/Protocol;->QUIC:Lokhttp3/Protocol;
-const/4 v7, 0x6
-new-array v7, v7, [Lokhttp3/Protocol;
-sget-object v8, Lokhttp3/Protocol;->HTTP_1_0:Lokhttp3/Protocol;
-aput-object v8, v7, v1
+const/4 v0, 0x6
+new-array v0, v0, [Lokhttp3/Protocol;
+sget-object v7, Lokhttp3/Protocol;->HTTP_1_0:Lokhttp3/Protocol;
+aput-object v7, v0, v1
 sget-object v1, Lokhttp3/Protocol;->HTTP_1_1:Lokhttp3/Protocol;
-aput-object v1, v7, v2
+aput-object v1, v0, v2
 sget-object v1, Lokhttp3/Protocol;->SPDY_3:Lokhttp3/Protocol;
-aput-object v1, v7, v3
+aput-object v1, v0, v3
 sget-object v1, Lokhttp3/Protocol;->HTTP_2:Lokhttp3/Protocol;
-aput-object v1, v7, v4
+aput-object v1, v0, v4
 sget-object v1, Lokhttp3/Protocol;->H2_PRIOR_KNOWLEDGE:Lokhttp3/Protocol;
-aput-object v1, v7, v5
-aput-object v0, v7, v6
-sput-object v7, Lokhttp3/Protocol;->$VALUES:[Lokhttp3/Protocol;
+aput-object v1, v0, v5
+sget-object v1, Lokhttp3/Protocol;->QUIC:Lokhttp3/Protocol;
+aput-object v1, v0, v6
+sput-object v0, Lokhttp3/Protocol;->$VALUES:[Lokhttp3/Protocol;
 return-void
 .end method
 .method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
@@ -83,34 +84,8 @@ invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 iput-object p3, p0, Lokhttp3/Protocol;->protocol:Ljava/lang/String;
 return-void
 .end method
-.method public static get(Ljava/lang/String;)Lokhttp3/Protocol;
-.locals 3
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-sget-object v0, Lokhttp3/Protocol;->HTTP_1_0:Lokhttp3/Protocol;
-iget-object v0, v0, Lokhttp3/Protocol;->protocol:Ljava/lang/String;
-invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-move-result v0
-sget-object v0, Lokhttp3/Protocol;->HTTP_1_1:Lokhttp3/Protocol;
-iget-object v0, v0, Lokhttp3/Protocol;->protocol:Ljava/lang/String;
-invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-move-result v0
-sget-object v0, Lokhttp3/Protocol;->H2_PRIOR_KNOWLEDGE:Lokhttp3/Protocol;
-iget-object v0, v0, Lokhttp3/Protocol;->protocol:Ljava/lang/String;
-invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-move-result v0
-sget-object v0, Lokhttp3/Protocol;->HTTP_2:Lokhttp3/Protocol;
-iget-object v0, v0, Lokhttp3/Protocol;->protocol:Ljava/lang/String;
-invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-move-result v0
-sget-object p0, Lokhttp3/Protocol;->HTTP_2:Lokhttp3/Protocol;
-return-object p0
-.end method
 .method public toString()Ljava/lang/String;
 .locals 1
-iget-object v0, p0, Lokhttp3/Protocol;->protocol:Ljava/lang/String;
+const/4 v0, 0x0
 return-object v0
 .end method

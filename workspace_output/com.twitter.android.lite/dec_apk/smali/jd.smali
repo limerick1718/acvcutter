@@ -1,25 +1,40 @@
-.class final enum Ljd;
-.super Ljava/lang/Enum;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.class final Ljd;
+.super Ljava/lang/Object;
+.implements Ljava/util/Iterator;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ljava/lang/Enum<",
-"Ljd;",
+"Ljava/lang/Object;",
+"Ljava/util/Iterator<",
+"Ljava/lang/String;",
 ">;"
 }
 .end annotation
-.field public static final enum a:Ljd;
-.field public static final enum b:Ljd;
-.field public static final enum c:Ljd;
-.field public static final enum d:Ljd;
-.field private static final synthetic e:[Ljd;
-.method private constructor <init>(Ljava/lang/String;IZ)V
-.locals 0
+.field private a:Ljava/util/Iterator;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"(Z)V"
+"Ljava/util/Iterator<",
+"Ljava/lang/String;",
+">;"
 }
 .end annotation
+.end field
+.field private final synthetic b:Ljb;
+.method constructor <init>(Ljb;)V
+.locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method public final hasNext()Z
+.locals 1
+const/4 v0, 0x0
+return v0
+.end method
+.method public final synthetic next()Ljava/lang/Object;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final remove()V
+.locals 1
 return-void
 .end method

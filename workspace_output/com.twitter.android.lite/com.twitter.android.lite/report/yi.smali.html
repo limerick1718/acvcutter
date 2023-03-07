@@ -14,21 +14,84 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lyi;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
+		<code>.class public final enum Lyi;
+.super Ljava/lang/Enum;
+.source "SettingsCacheBehavior.java"
+
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/Enum<",
+"Lyi;",
+">;"
+}
+.end annotation
+
+.field public static final enum a:Lyi;
+.field public static final enum b:Lyi;
+.field public static final enum c:Lyi;
+.field private static final synthetic d:[Lyi;
 
 
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 5</span>
 
-
-.method public abstract a()Z
-<span class="">	</span>
-
+<span class="cov">	new-instance v0, Lyi;</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	const-string v2, "USE_CACHE"</span>
+<span class="cov">	invoke-direct {v0, v2, v1}, Lyi;-><init>(Ljava/lang/String;I)V</span>
+<span class="cov">	sput-object v0, Lyi;->a:Lyi;</span>
+<span class="cov">	new-instance v0, Lyi;</span>
+<span class="cov">	const/4 v2, 0x1</span>
+<span class="cov">	const-string v3, "SKIP_CACHE_LOOKUP"</span>
+<span class="cov">	invoke-direct {v0, v3, v2}, Lyi;-><init>(Ljava/lang/String;I)V</span>
+<span class="cov">	sput-object v0, Lyi;->b:Lyi;</span>
+<span class="cov">	new-instance v0, Lyi;</span>
+<span class="cov">	const/4 v3, 0x2</span>
+<span class="cov">	const-string v4, "IGNORE_CACHE_EXPIRATION"</span>
+<span class="cov">	invoke-direct {v0, v4, v3}, Lyi;-><init>(Ljava/lang/String;I)V</span>
+<span class="cov">	sput-object v0, Lyi;->c:Lyi;</span>
+<span class="cov">	const/4 v0, 0x3</span>
+<span class="cov">	new-array v0, v0, [Lyi;</span>
+<span class="cov">	sget-object v4, Lyi;->a:Lyi;</span>
+<span class="cov">	aput-object v4, v0, v1</span>
+<span class="cov">	sget-object v1, Lyi;->b:Lyi;</span>
+<span class="cov">	aput-object v1, v0, v2</span>
+<span class="cov">	sget-object v1, Lyi;->c:Lyi;</span>
+<span class="cov">	aput-object v1, v0, v3</span>
+<span class="cov">	sput-object v0, Lyi;->d:[Lyi;</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method public abstract b()Z
-<span class="">	</span>
+<span class="cov">.method private constructor &lt;init&gt;(Ljava/lang/String;I)V</span>
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
+<span class="cov">	invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lyi;
+<span class="">	.locals 1</span>
+
+<span class="missed">	const-class v0, Lyi;</span>
+<span class="">	invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	check-cast p0, Lyi;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static values()[Lyi;
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lyi;->d:[Lyi;</span>
+<span class="">	invoke-virtual {v0}, [Lyi;->clone()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, [Lyi;</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

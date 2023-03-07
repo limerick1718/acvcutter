@@ -1,274 +1,120 @@
 .class public Ldw;
 .super Ljava/lang/Object;
-.source "TypeToken.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
-
-
-# instance fields
-.field final a:Ljava/lang/Class;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/Class<",
-            "-TT;>;"
-        }
-    .end annotation
-.end field
-
-.field final b:Ljava/lang/reflect/Type;
-
-.field final c:I
+# static fields
+.field private static final a:Ljava/lang/ClassLoader;
 
 
 # direct methods
-.method protected constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
+
+    .line 18
+    const-class v0, Ldw;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v0
+
+    sput-object v0, Ldw;->a:Ljava/lang/ClassLoader;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    const-class v0, Ldw;
+    return-void
+.end method
 
-    invoke-static {v0}, Ldw;->b(Ljava/lang/Class;)Ljava/lang/reflect/Type;
+.method public static a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Landroid/os/Parcelable;",
+            ">(",
+            "Landroid/os/Parcel;",
+            "Landroid/os/Parcelable$Creator<",
+            "TT;>;)TT;"
+        }
+    .end annotation
 
-    move-result-object v0
-
-    iput-object v0, p0, Ldw;->b:Ljava/lang/reflect/Type;
-
-    .line 3
-    invoke-static {v0}, Lcom/google/gson/internal/b;->e(Ljava/lang/reflect/Type;)Ljava/lang/Class;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ldw;->a:Ljava/lang/Class;
-
-    .line 4
-    iget-object v0, p0, Ldw;->b:Ljava/lang/reflect/Type;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    .line 5
+    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Ldw;->c:I
-
-    return-void
-.end method
-
-.method constructor <init>(Ljava/lang/reflect/Type;)V
-    .locals 0
-
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 6
-    invoke-static {p1}, Lcom/google/gson/internal/a;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/reflect/Type;
-
-    invoke-static {p1}, Lcom/google/gson/internal/b;->b(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
-
-    move-result-object p1
-
-    iput-object p1, p0, Ldw;->b:Ljava/lang/reflect/Type;
-
-    .line 7
-    invoke-static {p1}, Lcom/google/gson/internal/b;->e(Ljava/lang/reflect/Type;)Ljava/lang/Class;
-
-    move-result-object p1
-
-    iput-object p1, p0, Ldw;->a:Ljava/lang/Class;
-
-    .line 8
-    iget-object p1, p0, Ldw;->b:Ljava/lang/reflect/Type;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
-
-    move-result p1
-
-    iput p1, p0, Ldw;->c:I
-
-    return-void
-.end method
-
-.method public static a(Ljava/lang/Class;)Ldw;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/lang/Class<",
-            "TT;>;)",
-            "Ldw<",
-            "TT;>;"
-        }
-    .end annotation
-
-    .line 3
-    new-instance v0, Ldw;
-
-    invoke-direct {v0, p0}, Ldw;-><init>(Ljava/lang/reflect/Type;)V
-
-    return-object v0
-.end method
-
-.method public static a(Ljava/lang/reflect/Type;)Ldw;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/reflect/Type;",
-            ")",
-            "Ldw<",
-            "*>;"
-        }
-    .end annotation
-
-    .line 2
-    new-instance v0, Ldw;
-
-    invoke-direct {v0, p0}, Ldw;-><init>(Ljava/lang/reflect/Type;)V
-
-    return-object v0
-.end method
-
-.method static b(Ljava/lang/Class;)Ljava/lang/reflect/Type;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Class<",
-            "*>;)",
-            "Ljava/lang/reflect/Type;"
-        }
-    .end annotation
-
-    .line 1
-    invoke-virtual {p0}, Ljava/lang/Class;->getGenericSuperclass()Ljava/lang/reflect/Type;
-
-    move-result-object p0
-
-    .line 2
-    instance-of v0, p0, Ljava/lang/Class;
-
     if-nez v0, :cond_0
 
-    .line 3
-    check-cast p0, Ljava/lang/reflect/ParameterizedType;
-
-    .line 4
-    invoke-interface {p0}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
-
-    move-result-object p0
-
-    const/4 v0, 0x0
-
-    aget-object p0, p0, v0
-
-    invoke-static {p0}, Lcom/google/gson/internal/b;->b(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
-
-    move-result-object p0
+    const/4 p0, 0x0
 
     return-object p0
 
-    .line 5
+    .line 7
     :cond_0
-    new-instance p0, Ljava/lang/RuntimeException;
+    invoke-interface {p1, p0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
-    const-string v0, "Missing type parameter."
+    move-result-object p0
 
-    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    check-cast p0, Landroid/os/Parcelable;
 
-    throw p0
+    return-object p0
 .end method
 
+.method public static a(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+    .locals 2
 
-# virtual methods
-.method public final a()Ljava/lang/Class;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/lang/Class<",
-            "-TT;>;"
-        }
-    .end annotation
+    const/4 v0, 0x0
 
-    .line 1
-    iget-object v0, p0, Ldw;->a:Ljava/lang/Class;
+    if-nez p1, :cond_0
 
-    return-object v0
+    .line 9
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    return-void
+
+    :cond_0
+    const/4 v1, 0x1
+
+    .line 10
+    invoke-virtual {p0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 11
+    invoke-interface {p1, p0, v0}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
+
+    return-void
 .end method
 
-.method public final b()Ljava/lang/reflect/Type;
-    .locals 1
+.method public static a(Landroid/os/Parcel;Z)V
+    .locals 0
 
-    .line 6
-    iget-object v0, p0, Ldw;->b:Ljava/lang/reflect/Type;
+    .line 3
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    return-object v0
+    return-void
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    instance-of v0, p1, Ldw;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Ldw;->b:Ljava/lang/reflect/Type;
-
-    check-cast p1, Ldw;
-
-    iget-object p1, p1, Ldw;->b:Ljava/lang/reflect/Type;
+.method public static a(Landroid/os/Parcel;)Z
+    .locals 0
 
     .line 2
-    invoke-static {v0, p1}, Lcom/google/gson/internal/b;->a(Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;)Z
+    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
-    move-result p1
+    move-result p0
 
-    if-eqz p1, :cond_0
+    if-eqz p0, :cond_0
 
-    const/4 p1, 0x1
+    const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
-    const/4 p1, 0x0
+    const/4 p0, 0x0
 
-    :goto_0
-    return p1
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Ldw;->c:I
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Ldw;->b:Ljava/lang/reflect/Type;
-
-    invoke-static {v0}, Lcom/google/gson/internal/b;->h(Ljava/lang/reflect/Type;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return p0
 .end method

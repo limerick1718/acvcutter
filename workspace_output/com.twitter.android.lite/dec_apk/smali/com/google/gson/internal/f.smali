@@ -4,10 +4,10 @@
 .implements Ljava/io/Serializable;
 .annotation system Ldalvik/annotation/MemberClasses;
 value = {
-Lcom/google/gson/internal/f$c;,
 Lcom/google/gson/internal/f$b;,
-Lcom/google/gson/internal/f$d;,
-Lcom/google/gson/internal/f$e;
+Lcom/google/gson/internal/f$a;,
+Lcom/google/gson/internal/f$c;,
+Lcom/google/gson/internal/f$d;
 }
 .end annotation
 .annotation system Ldalvik/annotation/Signature;
@@ -22,7 +22,8 @@ value = {
 "Ljava/io/Serializable;"
 }
 .end annotation
-.field private static final h:Ljava/util/Comparator;
+.field static final synthetic f:Z
+.field private static final g:Ljava/util/Comparator;
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "Ljava/util/Comparator<",
@@ -39,37 +40,37 @@ value = {
 }
 .end annotation
 .end field
-.field  b:Lcom/google/gson/internal/f$e;
+.field  b:Lcom/google/gson/internal/f$d;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lcom/google/gson/internal/f$e<",
+"Lcom/google/gson/internal/f$d<",
 "TK;TV;>;"
 }
 .end annotation
 .end field
 .field  c:I
 .field  d:I
-.field final e:Lcom/google/gson/internal/f$e;
+.field final e:Lcom/google/gson/internal/f$d;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lcom/google/gson/internal/f$e<",
+"Lcom/google/gson/internal/f$d<",
 "TK;TV;>;"
 }
 .end annotation
 .end field
-.field private f:Lcom/google/gson/internal/f$b;
+.field private h:Lcom/google/gson/internal/f$a;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/gson/internal/f<",
+"TK;TV;>.a;"
+}
+.end annotation
+.end field
+.field private i:Lcom/google/gson/internal/f$b;
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "Lcom/google/gson/internal/f<",
 "TK;TV;>.b;"
-}
-.end annotation
-.end field
-.field private g:Lcom/google/gson/internal/f$c;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lcom/google/gson/internal/f<",
-"TK;TV;>.c;"
 }
 .end annotation
 .end field
@@ -90,65 +91,65 @@ value = {
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method  a(Ljava/lang/Object;)Lcom/google/gson/internal/f$e;
+.method  a(Ljava/lang/Object;)Lcom/google/gson/internal/f$d;
 .locals 2
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "(",
 "Ljava/lang/Object;",
 ")",
-"Lcom/google/gson/internal/f$e<",
+"Lcom/google/gson/internal/f$d<",
 "TK;TV;>;"
 }
 .end annotation
 const/4 v0, 0x0
 return-object v0
 .end method
-.method  a(Ljava/lang/Object;Z)Lcom/google/gson/internal/f$e;
+.method  a(Ljava/lang/Object;Z)Lcom/google/gson/internal/f$d;
 .locals 6
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "(TK;Z)",
-"Lcom/google/gson/internal/f$e<",
+"Lcom/google/gson/internal/f$d<",
 "TK;TV;>;"
 }
 .end annotation
 const/4 v0, 0x0
 return-object v0
 .end method
-.method  a(Ljava/util/Map$Entry;)Lcom/google/gson/internal/f$e;
+.method  a(Ljava/util/Map$Entry;)Lcom/google/gson/internal/f$d;
 .locals 2
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "(",
 "Ljava/util/Map$Entry<",
 "**>;)",
-"Lcom/google/gson/internal/f$e<",
+"Lcom/google/gson/internal/f$d<",
 "TK;TV;>;"
 }
 .end annotation
 const/4 v0, 0x0
 return-object v0
 .end method
-.method  a(Lcom/google/gson/internal/f$e;Z)V
+.method  a(Lcom/google/gson/internal/f$d;Z)V
 .locals 5
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "(",
-"Lcom/google/gson/internal/f$e<",
+"Lcom/google/gson/internal/f$d<",
 "TK;TV;>;Z)V"
 }
 .end annotation
 return-void
 .end method
-.method  b(Ljava/lang/Object;)Lcom/google/gson/internal/f$e;
+.method  b(Ljava/lang/Object;)Lcom/google/gson/internal/f$d;
 .locals 1
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "(",
 "Ljava/lang/Object;",
 ")",
-"Lcom/google/gson/internal/f$e<",
+"Lcom/google/gson/internal/f$d<",
 "TK;TV;>;"
 }
 .end annotation

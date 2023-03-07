@@ -24,10 +24,10 @@ value = {
 }
 .end annotation
 .end field
-.field private final d:Lcom/google/android/gms/common/api/internal/d0;
+.field private final d:Lcom/google/android/gms/common/api/internal/af;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lcom/google/android/gms/common/api/internal/d0<",
+"Lcom/google/android/gms/common/api/internal/af<",
 "TO;>;"
 }
 .end annotation
@@ -47,13 +47,20 @@ value = {
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public a(Landroid/content/Context;Landroid/os/Handler;)Lcom/google/android/gms/common/api/internal/v;
-.locals 2
+.method public final a()Lcom/google/android/gms/common/api/internal/af;
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"()",
+"Lcom/google/android/gms/common/api/internal/af<",
+"TO;>;"
+}
+.end annotation
 const/4 v0, 0x0
 return-object v0
 .end method
-.method protected a()Lcom/google/android/gms/common/internal/c$a;
-.locals 3
+.method public a(Landroid/content/Context;Landroid/os/Handler;)Lcom/google/android/gms/common/api/internal/x;
+.locals 2
 const/4 v0, 0x0
 return-object v0
 .end method
@@ -62,15 +69,8 @@ return-object v0
 const/4 v0, 0x0
 return v0
 .end method
-.method public final c()Lcom/google/android/gms/common/api/internal/d0;
-.locals 1
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"()",
-"Lcom/google/android/gms/common/api/internal/d0<",
-"TO;>;"
-}
-.end annotation
+.method protected c()Lcom/google/android/gms/common/internal/c$a;
+.locals 3
 const/4 v0, 0x0
 return-object v0
 .end method

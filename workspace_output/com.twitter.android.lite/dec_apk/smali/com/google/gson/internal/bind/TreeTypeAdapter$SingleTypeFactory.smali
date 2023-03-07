@@ -1,7 +1,7 @@
 .class final Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;
 .super Ljava/lang/Object;
 .source "TreeTypeAdapter.java"
-.implements Lwv;
+.implements Lto;
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lcom/google/gson/internal/bind/TreeTypeAdapter;
 .end annotation
@@ -9,10 +9,10 @@ value = Lcom/google/gson/internal/bind/TreeTypeAdapter;
 accessFlags = 0x1a
 name = "SingleTypeFactory"
 .end annotation
-.field private final a:Ldw;
+.field private final a:Ltv;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ldw<",
+"Ltv<",
 "*>;"
 }
 .end annotation
@@ -26,33 +26,33 @@ value = {
 }
 .end annotation
 .end field
-.field private final d:Lsv;
+.field private final d:Ltk;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lsv<",
+"Ltk<",
 "*>;"
 }
 .end annotation
 .end field
-.field private final e:Lkv;
+.field private final e:Ltc;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lkv<",
+"Ltc<",
 "*>;"
 }
 .end annotation
 .end field
-.method public a(Lfv;Ldw;)Lvv;
+.method public a(Lsx;Ltv;)Ltn;
 .locals 7
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "<T:",
 "Ljava/lang/Object;",
 ">(",
-"Lfv;",
-"Ldw<",
+"Lsx;",
+"Ltv<",
 "TT;>;)",
-"Lvv<",
+"Ltn<",
 "TT;>;"
 }
 .end annotation

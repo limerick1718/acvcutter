@@ -1,119 +1,108 @@
-.class public final Llh;
+.class final Llh;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
 
 # interfaces
-.implements Lmh;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field private static final a:Lva;
+# instance fields
+.field private final a:Llg;
+
+.field private final b:I
+
+.field private final c:Ljava/lang/Throwable;
+
+.field private final d:[B
+
+.field private final e:Ljava/lang/String;
+
+.field private final f:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lva<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private static final b:Lva;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lva<",
-            "Ljava/lang/Long;",
-            ">;"
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;>;"
         }
     .end annotation
 .end field
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method private constructor <init>(Ljava/lang/String;Llg;ILjava/lang/Throwable;[BLjava/util/Map;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Llg;",
+            "I",
+            "Ljava/lang/Throwable;",
+            "[B",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;>;)V"
+        }
+    .end annotation
 
     .line 1
-    new-instance v0, Lbb;
-
-    const-string v1, "com.google.android.gms.measurement"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    invoke-static {v1}, Lsa;->a(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lbb;-><init>(Landroid/net/Uri;)V
-
-    const-string v1, "measurement.sdk.attribution.cache"
-
-    const/4 v2, 0x1
+    invoke-static {p2}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 3
-    invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;
-
-    move-result-object v1
-
-    sput-object v1, Llh;->a:Lva;
-
-    const-string v1, "measurement.sdk.attribution.cache.ttl"
-
-    const-wide/32 v2, 0x240c8400
+    iput-object p2, p0, Llh;->a:Llg;
 
     .line 4
-    invoke-virtual {v0, v1, v2, v3}, Lbb;->a(Ljava/lang/String;J)Lva;
+    iput p3, p0, Llh;->b:I
 
-    move-result-object v0
+    .line 5
+    iput-object p4, p0, Llh;->c:Ljava/lang/Throwable;
 
-    sput-object v0, Llh;->b:Lva;
+    .line 6
+    iput-object p5, p0, Llh;->d:[B
+
+    .line 7
+    iput-object p1, p0, Llh;->e:Ljava/lang/String;
+
+    .line 8
+    iput-object p6, p0, Llh;->f:Ljava/util/Map;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method synthetic constructor <init>(Ljava/lang/String;Llg;ILjava/lang/Throwable;[BLjava/util/Map;Llf;)V
     .locals 0
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 12
+    invoke-direct/range {p0 .. p6}, Llh;-><init>(Ljava/lang/String;Llg;ILjava/lang/Throwable;[BLjava/util/Map;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method public final run()V
+    .locals 6
 
-    .line 1
-    sget-object v0, Llh;->a:Lva;
+    .line 10
+    iget-object v0, p0, Llh;->a:Llg;
 
-    invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
+    iget-object v1, p0, Llh;->e:Ljava/lang/String;
 
-    move-result-object v0
+    iget v2, p0, Llh;->b:I
 
-    check-cast v0, Ljava/lang/Boolean;
+    iget-object v3, p0, Llh;->c:Ljava/lang/Throwable;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    iget-object v4, p0, Llh;->d:[B
 
-    move-result v0
+    iget-object v5, p0, Llh;->f:Ljava/util/Map;
 
-    return v0
-.end method
+    invoke-interface/range {v0 .. v5}, Llg;->a(Ljava/lang/String;ILjava/lang/Throwable;[BLjava/util/Map;)V
 
-.method public final b()J
-    .locals 2
-
-    .line 1
-    sget-object v0, Llh;->b:Lva;
-
-    invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    return-wide v0
+    return-void
 .end method

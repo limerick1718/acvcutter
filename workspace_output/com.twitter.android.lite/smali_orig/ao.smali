@@ -1,15 +1,13 @@
-.class final Lao;
+.class public abstract Lao;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/concurrent/Executor;
+.source "FragmentTransaction.java"
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -17,11 +15,14 @@
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 0
+.method public abstract a(Lae;)Lao;
+.end method
 
-    .line 1
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+.method public abstract a(Lae;Ljava/lang/String;)Lao;
+.end method
 
-    return-void
+.method public abstract b()I
+.end method
+
+.method public abstract c()I
 .end method

@@ -1,15 +1,9 @@
-.class final synthetic Lsr;
+.class public final Lsr;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.implements Ljava/io/FilenameFilter;
-.field private final a:Ljava/lang/String;
-.method private constructor <init>(Ljava/lang/String;)V
+.source "com.google.firebase:firebase-common@@16.0.2"
+.implements Lcom/google/firebase/FirebaseApp$b;
+.method public constructor <init>()V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
-.end method
-.method public accept(Ljava/io/File;Ljava/lang/String;)Z
-.locals 1
-const/4 v0, 0x0
-return v0
 .end method

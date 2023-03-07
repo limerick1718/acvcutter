@@ -14,42 +14,127 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lue;
+		<code>.class public Lue;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Lwe;
+.source "LiteServiceProvider.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lue$c;,
+Lue$b;,
+Lue$a;,
+Lue$d;
+}
+.end annotation
 
 
 
-
-.method public abstract a(Ltc;)V
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="cov">.method private static a(Ljava/lang/Class;Lokhttp3/OkHttpClient;)Ljava/lang/Object;</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
+<span class="">	"<T:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"TT;>;",</span>
+<span class="">	"Lokhttp3/OkHttpClient;",</span>
+<span class="">	")TT;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
+<span class="cov">	new-instance v0, Lretrofit2/Retrofit$Builder;</span>
+<span class="cov">	invoke-direct {v0}, Lretrofit2/Retrofit$Builder;-><init>()V</span>
+<span class="cov">	const-string v1, "https://api.twitter.com"</span>
+<span class="exec">	invoke-virtual {v0, v1}, Lretrofit2/Retrofit$Builder;->baseUrl(Ljava/lang/String;)Lretrofit2/Retrofit$Builder;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v0, p1}, Lretrofit2/Retrofit$Builder;->client(Lokhttp3/OkHttpClient;)Lretrofit2/Retrofit$Builder;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	invoke-static {}, Lretrofit2/converter/gson/GsonConverterFactory;->create()Lretrofit2/converter/gson/GsonConverterFactory;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {p1, v0}, Lretrofit2/Retrofit$Builder;->addConverterFactory(Lretrofit2/Converter$Factory;)Lretrofit2/Retrofit$Builder;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	invoke-virtual {p1}, Lretrofit2/Retrofit$Builder;->build()Lretrofit2/Retrofit;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	invoke-virtual {p1, p0}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	return-object p0</span>
 .end method
 
-.method public abstract c()I
-<span class="">	</span>
+.method public static a(Landroid/content/Context;)Lub;
+<span class="">	.locals 1</span>
 
+<span class="missed">	const-class v0, Lub;</span>
+<span class="">	invoke-static {p0}, Lue;->c(Landroid/content/Context;)Lokhttp3/OkHttpClient$Builder;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/OkHttpClient$Builder;->build()Lokhttp3/OkHttpClient;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-static {v0, p0}, Lue;->a(Ljava/lang/Class;Lokhttp3/OkHttpClient;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	check-cast p0, Lub;</span>
+<span class="">	return-object p0</span>
 .end method
 
-.method public abstract d()Lxe;
-<span class="">	</span>
+<span class="cov">.method public static b(Landroid/content/Context;)Luf;</span>
+<span class="">	.locals 5</span>
 
+<span class="cov">	const-class v0, Luf;</span>
+<span class="exec">	invoke-static {p0}, Lue;->c(Landroid/content/Context;)Lokhttp3/OkHttpClient$Builder;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	new-instance v2, Lue$d;</span>
+<span class="cov">	new-instance v3, Luc;</span>
+<span class="exec">	invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	invoke-direct {v3, v4}, Luc;-><init>(Landroid/webkit/CookieManager;)V</span>
+<span class="exec">	invoke-static {p0}, Lud;->a(Landroid/content/Context;)Lud;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	invoke-direct {v2, v3, v4}, Lue$d;-><init>(Luc;Lud;)V</span>
+<span class="exec">	invoke-virtual {v1, v2}, Lokhttp3/OkHttpClient$Builder;->addInterceptor(Lokhttp3/Interceptor;)Lokhttp3/OkHttpClient$Builder;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	new-instance v2, Lue$c;</span>
+<span class="cov">	const/4 v3, 0x0</span>
+<span class="cov">	invoke-direct {v2, p0, v3}, Lue$c;-><init>(Landroid/content/Context;Lue$1;)V</span>
+<span class="exec">	invoke-virtual {v1, v2}, Lokhttp3/OkHttpClient$Builder;->addInterceptor(Lokhttp3/Interceptor;)Lokhttp3/OkHttpClient$Builder;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	invoke-virtual {p0}, Lokhttp3/OkHttpClient$Builder;->build()Lokhttp3/OkHttpClient;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	invoke-static {v0, p0}, Lue;->a(Ljava/lang/Class;Lokhttp3/OkHttpClient;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	check-cast p0, Luf;</span>
+<span class="exec">	return-object p0</span>
 .end method
 
-.method public abstract e()Lfc;
-<span class="">	</span>
+<span class="cov">.method private static c(Landroid/content/Context;)Lokhttp3/OkHttpClient$Builder;</span>
+<span class="">	.locals 4</span>
 
-.end method
-
-.method public abstract h()Lxe;
-<span class="">	</span>
-
+<span class="cov">	new-instance v0, Lokhttp3/OkHttpClient$Builder;</span>
+<span class="cov">	invoke-direct {v0}, Lokhttp3/OkHttpClient$Builder;-><init>()V</span>
+<span class="cov">	new-instance v1, Lokhttp3/CertificatePinner$Builder;</span>
+<span class="cov">	invoke-direct {v1}, Lokhttp3/CertificatePinner$Builder;-><init>()V</span>
+<span class="cov">	const-string v2, "sha256/k2v657xBsOVe1PQRwOsHsw3bsGT2VzIqz5K+59sNQws="</span>
+<span class="exec">	filled-new-array {v2}, [Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	const-string v3, "api.twitter.com"</span>
+<span class="exec">	invoke-virtual {v1, v3, v2}, Lokhttp3/CertificatePinner$Builder;->add(Ljava/lang/String;[Ljava/lang/String;)Lokhttp3/CertificatePinner$Builder;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-virtual {v1}, Lokhttp3/CertificatePinner$Builder;->build()Lokhttp3/CertificatePinner;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-virtual {v0, v1}, Lokhttp3/OkHttpClient$Builder;->certificatePinner(Lokhttp3/CertificatePinner;)Lokhttp3/OkHttpClient$Builder;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	new-instance v1, Lue$b;</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	invoke-direct {v1, v2}, Lue$b;-><init>(Lue$1;)V</span>
+<span class="exec">	invoke-virtual {v0, v1}, Lokhttp3/OkHttpClient$Builder;->addInterceptor(Lokhttp3/Interceptor;)Lokhttp3/OkHttpClient$Builder;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	new-instance v1, Lue$a;</span>
+<span class="exec">	invoke-static {p0}, Lcom/twitter/android/lite/a;->a(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	invoke-direct {v1, p0}, Lue$a;-><init>(Ljava/lang/String;)V</span>
+<span class="exec">	invoke-virtual {v0, v1}, Lokhttp3/OkHttpClient$Builder;->addInterceptor(Lokhttp3/Interceptor;)Lokhttp3/OkHttpClient$Builder;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	invoke-static {p0}, Lcom/twitter/android/lite/c;->a(Lokhttp3/OkHttpClient$Builder;)Lokhttp3/OkHttpClient$Builder;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	return-object p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

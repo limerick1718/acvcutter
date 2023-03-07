@@ -1,24 +1,29 @@
-.class final Lco;
+.class final synthetic Lco;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcp;
 
 
-# instance fields
-.field private final synthetic a:Lbo;
-
-.field private final synthetic b:Ljava/util/concurrent/Callable;
+# static fields
+.field static final a:Lcp;
 
 
 # direct methods
-.method constructor <init>(Lbo;Ljava/util/concurrent/Callable;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lco;
+
+    invoke-direct {v0}, Lco;-><init>()V
+
+    sput-object v0, Lco;->a:Lcp;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
     .locals 0
-
-    .line 1
-    iput-object p1, p0, Lco;->a:Lbo;
-
-    iput-object p2, p0, Lco;->b:Ljava/util/concurrent/Callable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,32 +32,12 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final a()Z
+    .locals 1
 
-    .line 1
-    :try_start_0
-    iget-object v0, p0, Lco;->a:Lbo;
+    invoke-static {}, Lcn;->a()Z
 
-    iget-object v1, p0, Lco;->b:Ljava/util/concurrent/Callable;
+    move-result v0
 
-    invoke-interface {v1}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lbo;->a(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    .line 2
-    iget-object v1, p0, Lco;->a:Lbo;
-
-    invoke-virtual {v1, v0}, Lbo;->a(Ljava/lang/Exception;)V
-
-    return-void
+    return v0
 .end method

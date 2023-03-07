@@ -28,7 +28,7 @@ name = "Entry"
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method constructor <init>(Lwx;)V
+.method constructor <init>(Lzk;)V
 .locals 8
 .annotation system Ldalvik/annotation/Throws;
 value = {

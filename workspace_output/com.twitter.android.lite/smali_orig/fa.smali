@@ -1,36 +1,40 @@
-.class final synthetic Lfa;
+.class final Lfa;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
 
 # interfaces
-.implements Lna;
-
-
-# instance fields
-.field private final a:Lga;
+.implements Lfc;
 
 
 # direct methods
-.method constructor <init>(Lga;)V
+.method private constructor <init>()V
     .locals 0
 
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfa;->a:Lga;
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lex;)V
+    .locals 0
+
+    .line 3
+    invoke-direct {p0}, Lfa;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 1
+.method public final a([BII)[B
+    .locals 0
 
-    iget-object v0, p0, Lfa;->a:Lga;
+    add-int/2addr p3, p2
 
-    invoke-virtual {v0}, Lga;->c()Ljava/util/Map;
+    .line 2
+    invoke-static {p1, p2, p3}, Ljava/util/Arrays;->copyOfRange([BII)[B
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method

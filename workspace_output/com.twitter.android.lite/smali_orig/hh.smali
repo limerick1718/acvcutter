@@ -1,125 +1,92 @@
 .class public final Lhh;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-
-# interfaces
-.implements Lkb;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
+        "<K:",
         "Ljava/lang/Object;",
-        "Lkb<",
-        "Lgh;",
-        ">;"
+        "V:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
     }
 .end annotation
 
 
-# static fields
-.field private static b:Lhh;
-
-
-# instance fields
-.field private final a:Lkb;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkb<",
-            "Lgh;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Lhh;
-
-    invoke-direct {v0}, Lhh;-><init>()V
-
-    sput-object v0, Lhh;->b:Lhh;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    .line 3
-    new-instance v0, Lkh;
-
-    invoke-direct {v0}, Lkh;-><init>()V
-
-    invoke-static {v0}, Ljb;->a(Ljava/lang/Object;)Lkb;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lhh;-><init>(Lkb;)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lkb;)V
-    .locals 0
+.method static a(Lhi;Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Lkb<",
-            "Lgh;",
-            ">;)V"
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lhi<",
+            "TK;TV;>;TK;TV;)I"
+        }
+    .end annotation
+
+    .line 4
+    iget-object v0, p0, Lhi;->a:Ljn;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1, p1}, Lfy;->a(Ljn;ILjava/lang/Object;)I
+
+    move-result p1
+
+    iget-object p0, p0, Lhi;->c:Ljn;
+
+    const/4 v0, 0x2
+
+    .line 5
+    invoke-static {p0, v0, p2}, Lfy;->a(Ljn;ILjava/lang/Object;)I
+
+    move-result p0
+
+    add-int/2addr p1, p0
+
+    return p1
+.end method
+
+.method static a(Lfn;Lhi;Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lfn;",
+            "Lhi<",
+            "TK;TV;>;TK;TV;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
         }
     .end annotation
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object v0, p1, Lhi;->a:Ljn;
+
+    const/4 v1, 0x1
+
+    invoke-static {p0, v0, v1, p2}, Lfy;->a(Lfn;Ljn;ILjava/lang/Object;)V
 
     .line 2
-    invoke-static {p1}, Ljb;->a(Lkb;)Lkb;
+    iget-object p1, p1, Lhi;->c:Ljn;
 
-    move-result-object p1
+    const/4 p2, 0x2
 
-    iput-object p1, p0, Lhh;->a:Lkb;
+    invoke-static {p0, p1, p2, p3}, Lfy;->a(Lfn;Ljn;ILjava/lang/Object;)V
 
     return-void
-.end method
-
-.method public static b()Z
-    .locals 1
-
-    .line 1
-    sget-object v0, Lhh;->b:Lhh;
-
-    invoke-virtual {v0}, Lhh;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgh;
-
-    invoke-interface {v0}, Lgh;->a()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lhh;->a:Lkb;
-
-    invoke-interface {v0}, Lkb;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgh;
-
-    return-object v0
 .end method

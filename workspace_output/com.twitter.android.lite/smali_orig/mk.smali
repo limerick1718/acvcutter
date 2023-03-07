@@ -1,201 +1,60 @@
-.class public final Lmk;
+.class final Lmk;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
 
 # interfaces
-.implements Lkb;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lkb<",
-        "Lpk;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field private static b:Lmk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Lkb;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkb<",
-            "Lpk;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final synthetic a:Lqd;
+
+.field private final synthetic b:Lpz;
+
+.field private final synthetic c:Lmh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Lmk;
-
-    invoke-direct {v0}, Lmk;-><init>()V
-
-    sput-object v0, Lmk;->b:Lmk;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    .line 3
-    new-instance v0, Lok;
-
-    invoke-direct {v0}, Lok;-><init>()V
-
-    invoke-static {v0}, Ljb;->a(Ljava/lang/Object;)Lkb;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lmk;-><init>(Lkb;)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lkb;)V
+.method constructor <init>(Lmh;Lqd;Lpz;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkb<",
-            "Lpk;",
-            ">;)V"
-        }
-    .end annotation
 
     .line 1
+    iput-object p1, p0, Lmk;->c:Lmh;
+
+    iput-object p2, p0, Lmk;->a:Lqd;
+
+    iput-object p3, p0, Lmk;->b:Lpz;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    invoke-static {p1}, Ljb;->a(Lkb;)Lkb;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lmk;->a:Lkb;
-
     return-void
-.end method
-
-.method public static b()Z
-    .locals 1
-
-    .line 1
-    sget-object v0, Lmk;->b:Lmk;
-
-    invoke-virtual {v0}, Lmk;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lpk;
-
-    invoke-interface {v0}, Lpk;->a()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static c()D
-    .locals 2
-
-    .line 1
-    sget-object v0, Lmk;->b:Lmk;
-
-    invoke-virtual {v0}, Lmk;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lpk;
-
-    invoke-interface {v0}, Lpk;->b()D
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public static d()J
-    .locals 2
-
-    .line 1
-    sget-object v0, Lmk;->b:Lmk;
-
-    invoke-virtual {v0}, Lmk;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lpk;
-
-    invoke-interface {v0}, Lpk;->c()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public static e()J
-    .locals 2
-
-    .line 1
-    sget-object v0, Lmk;->b:Lmk;
-
-    invoke-virtual {v0}, Lmk;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lpk;
-
-    invoke-interface {v0}, Lpk;->d()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public static f()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lmk;->b:Lmk;
-
-    invoke-virtual {v0}, Lmk;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lpk;
-
-    invoke-interface {v0}, Lpk;->e()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    .line 1
-    iget-object v0, p0, Lmk;->a:Lkb;
+    .line 2
+    iget-object v0, p0, Lmk;->c:Lmh;
 
-    invoke-interface {v0}, Lkb;->a()Ljava/lang/Object;
+    invoke-static {v0}, Lmh;->a(Lmh;)Lpl;
 
     move-result-object v0
 
-    check-cast v0, Lpk;
+    invoke-virtual {v0}, Lpl;->l()V
 
-    return-object v0
+    .line 3
+    iget-object v0, p0, Lmk;->c:Lmh;
+
+    invoke-static {v0}, Lmh;->a(Lmh;)Lpl;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lmk;->a:Lqd;
+
+    iget-object v2, p0, Lmk;->b:Lpz;
+
+    invoke-virtual {v0, v1, v2}, Lpl;->b(Lqd;Lpz;)V
+
+    return-void
 .end method

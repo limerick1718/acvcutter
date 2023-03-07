@@ -1,32 +1,33 @@
-.class public final Lcom/google/firebase/iid/i;
-.super Ljava/lang/Exception;
-.source "com.google.firebase:firebase-iid@@20.0.0"
+.class final synthetic Lcom/google/firebase/iid/i;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:I
+.field private final a:Lcom/google/firebase/iid/g;
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;)V
+.method constructor <init>(Lcom/google/firebase/iid/g;)V
     .locals 0
 
-    .line 1
-    invoke-direct {p0, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput p1, p0, Lcom/google/firebase/iid/i;->a:I
+    iput-object p1, p0, Lcom/google/firebase/iid/i;->a:Lcom/google/firebase/iid/g;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
+.method public final run()V
     .locals 1
 
-    .line 1
-    iget v0, p0, Lcom/google/firebase/iid/i;->a:I
+    iget-object v0, p0, Lcom/google/firebase/iid/i;->a:Lcom/google/firebase/iid/g;
 
-    return v0
+    invoke-virtual {v0}, Lcom/google/firebase/iid/g;->b()V
+
+    return-void
 .end method

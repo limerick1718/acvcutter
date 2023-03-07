@@ -1,2046 +1,708 @@
-.class public Lyr;
+.class final Lyr;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.source "Base64.java"
 
 
 # static fields
-.field private static final g:Ljava/nio/charset/Charset;
+.field private static final a:[B
 
-.field private static final h:I
-
-.field private static final i:Lir;
-
-.field private static final j:Ljava/util/Comparator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Comparator<",
-            "-",
-            "Ljava/io/File;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private static final k:Ljava/io/FilenameFilter;
-
-
-# instance fields
-.field private final a:Ljava/util/concurrent/atomic/AtomicInteger;
-
-.field private final b:Ljava/io/File;
-
-.field private final c:Ljava/io/File;
-
-.field private final d:Ljava/io/File;
-
-.field private final e:Ljava/io/File;
-
-.field private final f:Lxs;
+.field private static final b:[B
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "UTF-8"
-
-    .line 1
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
-
-    sput-object v0, Lyr;->g:Ljava/nio/charset/Charset;
-
-    const/16 v0, 0xf
-
-    .line 2
-    sput v0, Lyr;->h:I
-
-    .line 3
-    new-instance v0, Lir;
-
-    invoke-direct {v0}, Lir;-><init>()V
-
-    sput-object v0, Lyr;->i:Lir;
-
-    .line 4
-    invoke-static {}, Lwr;->a()Ljava/util/Comparator;
-
-    move-result-object v0
-
-    sput-object v0, Lyr;->j:Ljava/util/Comparator;
-
-    .line 5
-    invoke-static {}, Lxr;->a()Ljava/io/FilenameFilter;
-
-    move-result-object v0
-
-    sput-object v0, Lyr;->k:Ljava/io/FilenameFilter;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/io/File;Lxs;)V
     .locals 2
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/16 v0, 0x40
 
-    .line 2
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+    .line 110
+    new-array v1, v0, [B
 
-    const/4 v1, 0x0
+    fill-array-data v1, :array_0
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+    sput-object v1, Lyr;->a:[B
 
-    iput-object v0, p0, Lyr;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+    .line 117
+    new-array v0, v0, [B
 
-    .line 3
-    new-instance v0, Ljava/io/File;
+    fill-array-data v0, :array_1
 
-    const-string v1, "report-persistence"
-
-    invoke-direct {v0, p1, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    .line 4
-    new-instance p1, Ljava/io/File;
-
-    const-string v1, "sessions"
-
-    invoke-direct {p1, v0, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    iput-object p1, p0, Lyr;->b:Ljava/io/File;
-
-    .line 5
-    new-instance p1, Ljava/io/File;
-
-    const-string v1, "priority-reports"
-
-    invoke-direct {p1, v0, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    iput-object p1, p0, Lyr;->c:Ljava/io/File;
-
-    .line 6
-    new-instance p1, Ljava/io/File;
-
-    const-string v1, "reports"
-
-    invoke-direct {p1, v0, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    iput-object p1, p0, Lyr;->d:Ljava/io/File;
-
-    .line 7
-    new-instance p1, Ljava/io/File;
-
-    const-string v1, "native-reports"
-
-    invoke-direct {p1, v0, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    iput-object p1, p0, Lyr;->e:Ljava/io/File;
-
-    .line 8
-    iput-object p2, p0, Lyr;->f:Lxs;
+    sput-object v0, Lyr;->b:[B
 
     return-void
+
+    nop
+
+    :array_0
+    .array-data 1
+        0x41t
+        0x42t
+        0x43t
+        0x44t
+        0x45t
+        0x46t
+        0x47t
+        0x48t
+        0x49t
+        0x4at
+        0x4bt
+        0x4ct
+        0x4dt
+        0x4et
+        0x4ft
+        0x50t
+        0x51t
+        0x52t
+        0x53t
+        0x54t
+        0x55t
+        0x56t
+        0x57t
+        0x58t
+        0x59t
+        0x5at
+        0x61t
+        0x62t
+        0x63t
+        0x64t
+        0x65t
+        0x66t
+        0x67t
+        0x68t
+        0x69t
+        0x6at
+        0x6bt
+        0x6ct
+        0x6dt
+        0x6et
+        0x6ft
+        0x70t
+        0x71t
+        0x72t
+        0x73t
+        0x74t
+        0x75t
+        0x76t
+        0x77t
+        0x78t
+        0x79t
+        0x7at
+        0x30t
+        0x31t
+        0x32t
+        0x33t
+        0x34t
+        0x35t
+        0x36t
+        0x37t
+        0x38t
+        0x39t
+        0x2bt
+        0x2ft
+    .end array-data
+
+    :array_1
+    .array-data 1
+        0x41t
+        0x42t
+        0x43t
+        0x44t
+        0x45t
+        0x46t
+        0x47t
+        0x48t
+        0x49t
+        0x4at
+        0x4bt
+        0x4ct
+        0x4dt
+        0x4et
+        0x4ft
+        0x50t
+        0x51t
+        0x52t
+        0x53t
+        0x54t
+        0x55t
+        0x56t
+        0x57t
+        0x58t
+        0x59t
+        0x5at
+        0x61t
+        0x62t
+        0x63t
+        0x64t
+        0x65t
+        0x66t
+        0x67t
+        0x68t
+        0x69t
+        0x6at
+        0x6bt
+        0x6ct
+        0x6dt
+        0x6et
+        0x6ft
+        0x70t
+        0x71t
+        0x72t
+        0x73t
+        0x74t
+        0x75t
+        0x76t
+        0x77t
+        0x78t
+        0x79t
+        0x7at
+        0x30t
+        0x31t
+        0x32t
+        0x33t
+        0x34t
+        0x35t
+        0x36t
+        0x37t
+        0x38t
+        0x39t
+        0x2dt
+        0x5ft
+    .end array-data
 .end method
 
-.method private static a(Ljava/io/File;I)I
+.method public static a([B)Ljava/lang/String;
     .locals 1
 
-    .line 73
-    invoke-static {}, Lur;->a()Ljava/io/FilenameFilter;
+    .line 125
+    sget-object v0, Lyr;->a:[B
 
-    move-result-object v0
-
-    .line 74
-    invoke-static {p0, v0}, Lyr;->a(Ljava/io/File;Ljava/io/FilenameFilter;)Ljava/util/List;
-
-    move-result-object p0
-
-    .line 75
-    invoke-static {}, Lvr;->a()Ljava/util/Comparator;
-
-    move-result-object v0
-
-    invoke-static {p0, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
-
-    .line 76
-    invoke-static {p0, p1}, Lyr;->a(Ljava/util/List;I)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method static synthetic a(Ljava/io/File;Ljava/io/File;)I
-    .locals 0
-
-    invoke-static {p0, p1}, Lyr;->c(Ljava/io/File;Ljava/io/File;)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method private static a(Ljava/util/List;I)I
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "Ljava/io/File;",
-            ">;I)I"
-        }
-    .end annotation
-
-    .line 87
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    .line 88
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/io/File;
-
-    if-gt v0, p1, :cond_0
-
-    return v0
-
-    .line 89
-    :cond_0
-    invoke-static {v1}, Lyr;->e(Ljava/io/File;)V
-
-    add-int/lit8 v0, v0, -0x1
-
-    goto :goto_0
-
-    :cond_1
-    return v0
-.end method
-
-.method private static a(IZ)Ljava/lang/String;
-    .locals 3
-
-    .line 71
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
-
-    const/4 v2, 0x0
-
-    aput-object p0, v1, v2
-
-    const-string p0, "%010d"
-
-    invoke-static {v0, p0, v1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    if-eqz p1, :cond_0
-
-    const-string p1, "_"
-
-    goto :goto_0
-
-    :cond_0
-    const-string p1, ""
-
-    .line 72
-    :goto_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "event"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, v0}, Lyr;->a([B[B)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method private static a(Ljava/io/File;)Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/io/File;",
-            ")",
-            "Ljava/util/List<",
-            "Ljava/io/File;",
-            ">;"
-        }
-    .end annotation
+.method private static a([B[B)Ljava/lang/String;
+    .locals 9
 
-    const/4 v0, 0x0
+    .line 133
+    array-length v0, p0
 
-    .line 77
-    invoke-static {p0, v0}, Lyr;->a(Ljava/io/File;Ljava/io/FileFilter;)Ljava/util/List;
+    const/4 v1, 0x2
 
-    move-result-object p0
+    add-int/2addr v0, v1
 
-    return-object p0
-.end method
+    div-int/lit8 v0, v0, 0x3
 
-.method private static a(Ljava/io/File;Ljava/io/FileFilter;)Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/io/File;",
-            "Ljava/io/FileFilter;",
-            ")",
-            "Ljava/util/List<",
-            "Ljava/io/File;",
-            ">;"
-        }
-    .end annotation
+    mul-int/lit8 v0, v0, 0x4
 
-    .line 82
-    invoke-virtual {p0}, Ljava/io/File;->isDirectory()Z
+    .line 134
+    new-array v0, v0, [B
 
-    move-result v0
+    .line 135
+    array-length v2, p0
 
-    if-nez v0, :cond_0
+    array-length v3, p0
 
-    .line 83
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    rem-int/lit8 v3, v3, 0x3
 
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
-    if-nez p1, :cond_1
-
-    .line 84
-    invoke-virtual {p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p0, p1}, Ljava/io/File;->listFiles(Ljava/io/FileFilter;)[Ljava/io/File;
-
-    move-result-object p0
-
-    :goto_0
-    if-eqz p0, :cond_2
-
-    .line 85
-    invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object p0
-
-    goto :goto_1
-
-    :cond_2
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p0
-
-    :goto_1
-    return-object p0
-.end method
-
-.method private static a(Ljava/io/File;Ljava/io/FilenameFilter;)Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/io/File;",
-            "Ljava/io/FilenameFilter;",
-            ")",
-            "Ljava/util/List<",
-            "Ljava/io/File;",
-            ">;"
-        }
-    .end annotation
-
-    .line 78
-    invoke-virtual {p0}, Ljava/io/File;->isDirectory()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 79
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
-    if-nez p1, :cond_1
-
-    .line 80
-    invoke-virtual {p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p0, p1}, Ljava/io/File;->listFiles(Ljava/io/FilenameFilter;)[Ljava/io/File;
-
-    move-result-object p0
-
-    :goto_0
-    if-eqz p0, :cond_2
-
-    .line 81
-    invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object p0
-
-    goto :goto_1
-
-    :cond_2
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p0
-
-    :goto_1
-    return-object p0
-.end method
-
-.method private static varargs a([Ljava/util/List;)Ljava/util/List;
-    .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "([",
-            "Ljava/util/List<",
-            "Ljava/io/File;",
-            ">;)",
-            "Ljava/util/List<",
-            "Ljava/io/File;",
-            ">;"
-        }
-    .end annotation
-
-    .line 65
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    .line 66
-    array-length v1, p0
-
-    const/4 v2, 0x0
+    sub-int/2addr v2, v3
 
     const/4 v3, 0x0
 
     const/4 v4, 0x0
 
     :goto_0
-    if-ge v3, v1, :cond_0
+    if-ge v3, v2, :cond_0
 
-    aget-object v5, p0, v3
+    add-int/lit8 v5, v4, 0x1
 
-    .line 67
-    invoke-interface {v5}, Ljava/util/List;->size()I
+    .line 137
+    aget-byte v6, p0, v3
 
-    move-result v5
+    and-int/lit16 v6, v6, 0xff
 
-    add-int/2addr v4, v5
+    shr-int/2addr v6, v1
 
-    add-int/lit8 v3, v3, 0x1
+    aget-byte v6, p1, v6
+
+    aput-byte v6, v0, v4
+
+    add-int/lit8 v4, v5, 0x1
+
+    .line 138
+    aget-byte v6, p0, v3
+
+    and-int/lit8 v6, v6, 0x3
+
+    shl-int/lit8 v6, v6, 0x4
+
+    add-int/lit8 v7, v3, 0x1
+
+    aget-byte v8, p0, v7
+
+    and-int/lit16 v8, v8, 0xff
+
+    shr-int/lit8 v8, v8, 0x4
+
+    or-int/2addr v6, v8
+
+    aget-byte v6, p1, v6
+
+    aput-byte v6, v0, v5
+
+    add-int/lit8 v5, v4, 0x1
+
+    .line 139
+    aget-byte v6, p0, v7
+
+    and-int/lit8 v6, v6, 0xf
+
+    shl-int/2addr v6, v1
+
+    add-int/lit8 v7, v3, 0x2
+
+    aget-byte v8, p0, v7
+
+    and-int/lit16 v8, v8, 0xff
+
+    shr-int/lit8 v8, v8, 0x6
+
+    or-int/2addr v6, v8
+
+    aget-byte v6, p1, v6
+
+    aput-byte v6, v0, v4
+
+    add-int/lit8 v4, v5, 0x1
+
+    .line 140
+    aget-byte v6, p0, v7
+
+    and-int/lit8 v6, v6, 0x3f
+
+    aget-byte v6, p1, v6
+
+    aput-byte v6, v0, v5
+
+    add-int/lit8 v3, v3, 0x3
 
     goto :goto_0
 
-    .line 68
+    .line 142
     :cond_0
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->ensureCapacity(I)V
+    array-length v3, p0
 
-    .line 69
-    array-length v1, p0
+    rem-int/lit8 v3, v3, 0x3
 
-    :goto_1
-    if-ge v2, v1, :cond_1
+    const/16 v5, 0x3d
 
-    aget-object v3, p0, v2
+    const/4 v6, 0x1
 
-    .line 70
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+    if-eq v3, v6, :cond_2
 
-    add-int/lit8 v2, v2, 0x1
+    if-eq v3, v1, :cond_1
 
     goto :goto_1
 
     :cond_1
-    return-object v0
-.end method
+    add-int/lit8 v3, v4, 0x1
 
-.method private a(Ljava/io/File;J)V
-    .locals 9
+    .line 150
+    aget-byte v7, p0, v2
 
-    .line 35
-    sget-object v0, Lyr;->k:Ljava/io/FilenameFilter;
+    and-int/lit16 v7, v7, 0xff
 
-    invoke-static {p1, v0}, Lyr;->a(Ljava/io/File;Ljava/io/FilenameFilter;)Ljava/util/List;
+    shr-int/2addr v7, v1
 
-    move-result-object v0
+    aget-byte v7, p1, v7
 
-    .line 36
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+    aput-byte v7, v0, v4
 
-    move-result v1
+    add-int/lit8 v4, v3, 0x1
 
-    if-eqz v1, :cond_0
+    .line 151
+    aget-byte v7, p0, v2
 
-    return-void
+    and-int/lit8 v7, v7, 0x3
 
-    .line 37
-    :cond_0
-    invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
+    shl-int/lit8 v7, v7, 0x4
 
-    .line 38
-    new-instance v4, Ljava/util/ArrayList;
+    add-int/2addr v2, v6
 
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+    aget-byte v6, p0, v2
 
-    .line 39
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    and-int/lit16 v6, v6, 0xff
 
-    move-result-object v0
+    shr-int/lit8 v6, v6, 0x4
 
-    const/4 v1, 0x0
+    or-int/2addr v6, v7
 
-    :cond_1
-    const/4 v7, 0x0
+    aget-byte v6, p1, v6
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    aput-byte v6, v0, v3
 
-    move-result v2
+    add-int/lit8 v3, v4, 0x1
 
-    if-eqz v2, :cond_3
+    .line 152
+    aget-byte p0, p0, v2
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    and-int/lit8 p0, p0, 0xf
 
-    move-result-object v2
+    shl-int/2addr p0, v1
 
-    check-cast v2, Ljava/io/File;
+    aget-byte p0, p1, p0
 
-    .line 40
-    :try_start_0
-    sget-object v3, Lyr;->i:Lir;
+    aput-byte p0, v0, v4
 
-    invoke-static {v2}, Lyr;->d(Ljava/io/File;)Ljava/lang/String;
+    .line 153
+    aput-byte v5, v0, v3
 
-    move-result-object v5
-
-    invoke-virtual {v3, v5}, Lir;->a(Ljava/lang/String;)Lzq$d$d;
-
-    move-result-object v3
-
-    invoke-interface {v4, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    if-nez v7, :cond_2
-
-    .line 41
-    invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lyr;->e(Ljava/lang/String;)Z
-
-    move-result v2
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    if-eqz v2, :cond_1
+    goto :goto_1
 
     :cond_2
-    const/4 v2, 0x1
+    add-int/lit8 v3, v4, 0x1
 
-    const/4 v7, 0x1
+    .line 144
+    aget-byte v6, p0, v2
 
-    goto :goto_0
+    and-int/lit16 v6, v6, 0xff
 
-    :catch_0
-    move-exception v3
+    shr-int/lit8 v1, v6, 0x2
 
-    .line 42
-    invoke-static {}, Lmo;->a()Lmo;
+    aget-byte v1, p1, v1
 
-    move-result-object v5
+    aput-byte v1, v0, v4
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    add-int/lit8 v1, v3, 0x1
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    .line 145
+    aget-byte p0, p0, v2
 
-    const-string v8, "Could not add event to report for "
+    and-int/lit8 p0, p0, 0x3
 
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    shl-int/lit8 p0, p0, 0x4
 
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    aget-byte p0, p1, p0
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    aput-byte p0, v0, v3
 
-    move-result-object v2
+    add-int/lit8 p0, v1, 0x1
 
-    invoke-virtual {v5, v2, v3}, Lmo;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .line 146
+    aput-byte v5, v0, v1
 
-    goto :goto_0
+    .line 147
+    aput-byte v5, v0, p0
 
-    :cond_3
-    const/4 v0, 0x0
-
-    .line 43
-    :try_start_1
-    new-instance v1, Ljava/io/File;
-
-    const-string v2, "user"
-
-    invoke-direct {v1, p1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-static {v1}, Lyr;->d(Ljava/io/File;)Ljava/lang/String;
-
-    move-result-object v0
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto :goto_1
-
-    :catch_1
-    move-exception v1
-
-    .line 44
-    invoke-static {}, Lmo;->a()Lmo;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Could not read user ID file in "
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3, v1}, Lmo;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
+    .line 157
     :goto_1
-    move-object v8, v0
-
-    .line 45
-    new-instance v2, Ljava/io/File;
-
-    const-string v0, "report"
-
-    invoke-direct {v2, p1, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    if-eqz v7, :cond_4
-
-    .line 46
-    iget-object p1, p0, Lyr;->c:Ljava/io/File;
-
-    goto :goto_2
-
-    :cond_4
-    iget-object p1, p0, Lyr;->d:Ljava/io/File;
-
-    :goto_2
-    move-object v3, p1
-
-    move-wide v5, p2
-
-    .line 47
-    invoke-static/range {v2 .. v8}, Lyr;->a(Ljava/io/File;Ljava/io/File;Ljava/util/List;JZLjava/lang/String;)V
-
-    return-void
-.end method
-
-.method private static a(Ljava/io/File;Ljava/io/File;Ljava/util/List;JZLjava/lang/String;)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/io/File;",
-            "Ljava/io/File;",
-            "Ljava/util/List<",
-            "Lzq$d$d;",
-            ">;JZ",
-            "Ljava/lang/String;",
-            ")V"
-        }
-    .end annotation
-
-    .line 55
     :try_start_0
-    sget-object v0, Lyr;->i:Lir;
-
-    .line 56
-    invoke-static {p0}, Lyr;->d(Ljava/io/File;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lir;->b(Ljava/lang/String;)Lzq;
-
-    move-result-object v0
-
-    .line 57
-    invoke-virtual {v0, p3, p4, p5, p6}, Lzq;->a(JZLjava/lang/String;)Lzq;
-
-    move-result-object p3
-
-    .line 58
-    invoke-static {p2}, Lar;->a(Ljava/util/List;)Lar;
-
-    move-result-object p2
-
-    invoke-virtual {p3, p2}, Lzq;->a(Lar;)Lzq;
-
-    move-result-object p2
-
-    .line 59
-    invoke-virtual {p2}, Lzq;->h()Lzq$d;
-
-    move-result-object p3
-
-    if-nez p3, :cond_0
-
-    return-void
-
-    .line 60
-    :cond_0
-    new-instance p4, Ljava/io/File;
-
-    .line 61
-    invoke-static {p1}, Lyr;->c(Ljava/io/File;)Ljava/io/File;
-
-    invoke-virtual {p3}, Lzq$d;->g()Ljava/lang/String;
-
-    move-result-object p3
-
-    invoke-direct {p4, p1, p3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    sget-object p1, Lyr;->i:Lir;
-
-    .line 62
-    invoke-virtual {p1, p2}, Lir;->a(Lzq;)Ljava/lang/String;
-
-    move-result-object p1
-
-    .line 63
-    invoke-static {p4, p1}, Lyr;->d(Ljava/io/File;Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p1
-
-    .line 64
-    invoke-static {}, Lmo;->a()Lmo;
-
-    move-result-object p2
-
-    new-instance p3, Ljava/lang/StringBuilder;
-
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string p4, "Could not synthesize final report file for "
-
-    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p2, p0, p1}, Lmo;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :goto_0
-    return-void
-.end method
-
-.method private static a(Ljava/io/File;Ljava/io/File;Lzq$c;Ljava/lang/String;)V
-    .locals 2
-
-    .line 48
-    :try_start_0
-    sget-object v0, Lyr;->i:Lir;
-
-    .line 49
-    invoke-static {p0}, Lyr;->d(Ljava/io/File;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lir;->b(Ljava/lang/String;)Lzq;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Lzq;->a(Lzq$c;)Lzq;
-
-    move-result-object p2
-
-    .line 50
-    new-instance v0, Ljava/io/File;
-
-    .line 51
-    invoke-static {p1}, Lyr;->c(Ljava/io/File;)Ljava/io/File;
-
-    invoke-direct {v0, p1, p3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    sget-object p1, Lyr;->i:Lir;
-
-    .line 52
-    invoke-virtual {p1, p2}, Lir;->a(Lzq;)Ljava/lang/String;
-
-    move-result-object p1
-
-    .line 53
-    invoke-static {v0, p1}, Lyr;->d(Ljava/io/File;Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p1
-
-    .line 54
-    invoke-static {}, Lmo;->a()Lmo;
-
-    move-result-object p2
-
-    new-instance p3, Ljava/lang/StringBuilder;
-
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v0, "Could not synthesize final native report file for "
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p2, p0, p1}, Lmo;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :goto_0
-    return-void
-.end method
-
-.method private static synthetic a(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
-    .locals 0
-
-    if-eqz p0, :cond_0
-
-    .line 86
-    :try_start_0
-    invoke-interface {p1}, Ljava/lang/AutoCloseable;->close()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-interface {p1}, Ljava/lang/AutoCloseable;->close()V
-
-    :catchall_0
-    :goto_0
-    return-void
-.end method
-
-.method static synthetic a(Ljava/io/File;Ljava/lang/String;)Z
-    .locals 0
-
-    invoke-static {p0, p1}, Lyr;->b(Ljava/io/File;Ljava/lang/String;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method static synthetic a(Ljava/lang/String;Ljava/io/File;)Z
-    .locals 1
-
-    .line 34
-    invoke-virtual {p1}, Ljava/io/File;->isDirectory()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
-.method static synthetic a(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;)Z
-    .locals 0
-
-    .line 26
-    invoke-virtual {p2, p0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method static synthetic b(Ljava/io/File;Ljava/io/File;)I
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p0}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p1, p0}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method private b(Ljava/lang/String;)Ljava/util/List;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            ")",
-            "Ljava/util/List<",
-            "Ljava/io/File;",
-            ">;"
-        }
-    .end annotation
-
-    .line 10
-    invoke-static {p1}, Ltr;->a(Ljava/lang/String;)Ljava/io/FileFilter;
-
-    move-result-object p1
-
-    .line 11
-    iget-object v0, p0, Lyr;->b:Ljava/io/File;
-
-    .line 12
-    invoke-static {v0, p1}, Lyr;->a(Ljava/io/File;Ljava/io/FileFilter;)Ljava/util/List;
-
-    move-result-object p1
-
-    .line 13
-    sget-object v0, Lyr;->j:Ljava/util/Comparator;
-
-    invoke-static {p1, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
-
-    .line 14
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    const/16 v1, 0x8
-
-    if-gt v0, v1, :cond_0
-
-    return-object p1
-
-    .line 15
-    :cond_0
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    invoke-interface {p1, v1, v0}, Ljava/util/List;->subList(II)Ljava/util/List;
-
-    move-result-object v0
-
-    .line 16
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/io/File;
-
-    .line 17
-    invoke-static {v2}, Lyr;->e(Ljava/io/File;)V
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    .line 18
-    invoke-interface {p1, v0, v1}, Ljava/util/List;->subList(II)Ljava/util/List;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method private static varargs b([Ljava/util/List;)Ljava/util/List;
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "([",
-            "Ljava/util/List<",
-            "Ljava/io/File;",
-            ">;)",
-            "Ljava/util/List<",
-            "Ljava/io/File;",
-            ">;"
-        }
-    .end annotation
-
-    .line 19
-    array-length v0, p0
-
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, v0, :cond_0
-
-    aget-object v2, p0, v1
-
-    .line 20
-    sget-object v3, Lyr;->j:Ljava/util/Comparator;
-
-    invoke-static {v2, v3}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    .line 21
-    :cond_0
-    invoke-static {p0}, Lyr;->a([Ljava/util/List;)Ljava/util/List;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method private static b(Ljava/io/File;)Z
-    .locals 1
-
-    .line 23
-    invoke-virtual {p0}, Ljava/io/File;->exists()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p0}, Ljava/io/File;->mkdirs()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    :goto_1
-    return p0
-.end method
-
-.method private static b(Ljava/io/File;Ljava/lang/String;)Z
-    .locals 0
-
-    const-string p0, "event"
-
-    .line 22
-    invoke-virtual {p1, p0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const-string p0, "_"
-
-    invoke-virtual {p1, p0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
-.method private static c(Ljava/io/File;Ljava/io/File;)I
-    .locals 0
-
-    .line 10
-    invoke-virtual {p0}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lyr;->c(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 11
-    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lyr;->c(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    .line 12
-    invoke-virtual {p0, p1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method private static c(Ljava/io/File;)Ljava/io/File;
-    .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .line 13
-    invoke-static {p0}, Lyr;->b(Ljava/io/File;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    return-object p0
-
-    .line 14
-    :cond_0
-    new-instance v0, Ljava/io/IOException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Could not create directory "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method private static c(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
-
-    .line 9
-    sget v0, Lyr;->h:I
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method private c()V
-    .locals 3
-
-    .line 2
-    iget-object v0, p0, Lyr;->f:Lxs;
-
-    .line 3
-    invoke-interface {v0}, Lxs;->b()Lft;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lft;->a()Let;
-
-    move-result-object v0
-
-    iget v0, v0, Let;->b:I
-
-    .line 4
-    invoke-direct {p0}, Lyr;->d()Ljava/util/List;
-
-    move-result-object v1
-
-    .line 5
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v2
-
-    if-gt v2, v0, :cond_0
-
-    return-void
-
-    .line 6
-    :cond_0
-    invoke-interface {v1, v0, v2}, Ljava/util/List;->subList(II)Ljava/util/List;
-
-    move-result-object v0
-
-    .line 7
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/io/File;
-
-    .line 8
-    invoke-virtual {v1}, Ljava/io/File;->delete()Z
-
-    goto :goto_0
-
-    :cond_1
-    return-void
-.end method
-
-.method static synthetic c(Ljava/io/File;Ljava/lang/String;)Z
-    .locals 0
-
-    const-string p0, "event"
-
-    .line 1
-    invoke-virtual {p1, p0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method private d(Ljava/lang/String;)Ljava/io/File;
-    .locals 2
-
-    .line 7
-    new-instance v0, Ljava/io/File;
-
-    iget-object v1, p0, Lyr;->b:Ljava/io/File;
-
-    invoke-direct {v0, v1, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method private static d(Ljava/io/File;)Ljava/lang/String;
-    .locals 4
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    const/16 v0, 0x2000
-
-    new-array v0, v0, [B
-
-    .line 13
-    new-instance v1, Ljava/io/ByteArrayOutputStream;
-
-    invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
-
-    .line 14
-    new-instance v2, Ljava/io/FileInputStream;
-
-    invoke-direct {v2, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-
-    .line 15
-    :goto_0
-    :try_start_0
-    invoke-virtual {v2, v0}, Ljava/io/FileInputStream;->read([B)I
-
-    move-result p0
-
-    if-lez p0, :cond_0
-
-    const/4 v3, 0x0
-
-    .line 16
-    invoke-virtual {v1, v0, v3, p0}, Ljava/io/ByteArrayOutputStream;->write([BII)V
-
-    goto :goto_0
-
-    .line 17
-    :cond_0
     new-instance p0, Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+    const-string p1, "US-ASCII"
 
-    move-result-object v0
-
-    sget-object v1, Lyr;->g:Ljava/nio/charset/Charset;
-
-    invoke-direct {p0, v0, v1}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
+    invoke-direct {p0, v0, p1}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const/4 v0, 0x0
-
-    .line 18
-    invoke-static {v0, v2}, Lyr;->a(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catchall_0
+    :catch_0
     move-exception p0
 
-    .line 19
-    :try_start_1
-    throw p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    .line 159
+    new-instance p1, Ljava/lang/AssertionError;
 
-    :catchall_1
-    move-exception v0
-
-    .line 20
-    invoke-static {p0, v2}, Lyr;->a(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
-
-    throw v0
-.end method
-
-.method private d()Ljava/util/List;
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "Ljava/io/File;",
-            ">;"
-        }
-    .end annotation
-
-    const/4 v0, 0x2
-
-    new-array v1, v0, [Ljava/util/List;
-
-    new-array v0, v0, [Ljava/util/List;
-
-    .line 1
-    iget-object v2, p0, Lyr;->c:Ljava/io/File;
-
-    .line 2
-    invoke-static {v2}, Lyr;->a(Ljava/io/File;)Ljava/util/List;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    aput-object v2, v0, v3
-
-    iget-object v2, p0, Lyr;->e:Ljava/io/File;
-
-    .line 3
-    invoke-static {v2}, Lyr;->a(Ljava/io/File;)Ljava/util/List;
-
-    move-result-object v2
-
-    const/4 v4, 0x1
-
-    aput-object v2, v0, v4
-
-    .line 4
-    invoke-static {v0}, Lyr;->a([Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    aput-object v0, v1, v3
-
-    iget-object v0, p0, Lyr;->d:Ljava/io/File;
-
-    .line 5
-    invoke-static {v0}, Lyr;->a(Ljava/io/File;)Ljava/util/List;
-
-    move-result-object v0
-
-    aput-object v0, v1, v4
-
-    .line 6
-    invoke-static {v1}, Lyr;->b([Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private static d(Ljava/io/File;Ljava/lang/String;)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .line 8
-    new-instance v0, Ljava/io/OutputStreamWriter;
-
-    new-instance v1, Ljava/io/FileOutputStream;
-
-    invoke-direct {v1, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
-
-    sget-object p0, Lyr;->g:Ljava/nio/charset/Charset;
-
-    invoke-direct {v0, v1, p0}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
-
-    .line 9
-    :try_start_0
-    invoke-virtual {v0, p1}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const/4 p0, 0x0
-
-    .line 10
-    invoke-static {p0, v0}, Lyr;->a(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    .line 11
-    :try_start_1
-    throw p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    :catchall_1
-    move-exception p1
-
-    .line 12
-    invoke-static {p0, v0}, Lyr;->a(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
+    invoke-direct {p1, p0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
     throw p1
 .end method
 
-.method private static e(Ljava/io/File;)V
-    .locals 4
+.method public static a(Ljava/lang/String;)[B
+    .locals 14
 
-    if-nez p0, :cond_0
-
-    return-void
-
-    .line 2
-    :cond_0
-    invoke-virtual {p0}, Ljava/io/File;->isDirectory()Z
+    .line 31
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    if-eqz v0, :cond_1
-
-    .line 3
-    invoke-virtual {p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
-
-    move-result-object v0
-
-    array-length v1, v0
-
-    const/4 v2, 0x0
-
     :goto_0
-    if-ge v2, v1, :cond_1
+    const/16 v1, 0x9
 
-    aget-object v3, v0, v2
+    const/16 v2, 0x20
 
-    .line 4
-    invoke-static {v3}, Lyr;->e(Ljava/io/File;)V
+    const/16 v3, 0xd
 
-    add-int/lit8 v2, v2, 0x1
+    const/16 v4, 0xa
+
+    if-lez v0, :cond_1
+
+    add-int/lit8 v5, v0, -0x1
+
+    .line 33
+    invoke-virtual {p0, v5}, Ljava/lang/String;->charAt(I)C
+
+    move-result v5
+
+    const/16 v6, 0x3d
+
+    if-eq v5, v6, :cond_0
+
+    if-eq v5, v4, :cond_0
+
+    if-eq v5, v3, :cond_0
+
+    if-eq v5, v2, :cond_0
+
+    if-eq v5, v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 5
     :cond_1
-    invoke-virtual {p0}, Ljava/io/File;->delete()Z
+    :goto_1
+    int-to-long v5, v0
 
-    return-void
-.end method
+    const-wide/16 v7, 0x6
 
-.method private static e(Ljava/lang/String;)Z
-    .locals 1
+    mul-long v5, v5, v7
 
-    const-string v0, "event"
+    const-wide/16 v7, 0x8
 
-    .line 1
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 40
+    div-long/2addr v5, v7
 
-    move-result v0
+    long-to-int v6, v5
 
-    if-eqz v0, :cond_0
+    new-array v5, v6, [B
 
-    const-string v0, "_"
+    const/4 v6, 0x0
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    const/4 v7, 0x0
 
-    move-result p0
+    const/4 v8, 0x0
 
-    if-eqz p0, :cond_0
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    :goto_2
+    const/4 v11, 0x0
+
+    if-ge v7, v0, :cond_b
+
+    .line 46
+    invoke-virtual {p0, v7}, Ljava/lang/String;->charAt(I)C
+
+    move-result v12
+
+    const/16 v13, 0x41
+
+    if-lt v12, v13, :cond_2
+
+    const/16 v13, 0x5a
+
+    if-gt v12, v13, :cond_2
+
+    add-int/lit8 v12, v12, -0x41
+
+    goto :goto_5
+
+    :cond_2
+    const/16 v13, 0x61
+
+    if-lt v12, v13, :cond_3
+
+    const/16 v13, 0x7a
+
+    if-gt v12, v13, :cond_3
+
+    add-int/lit8 v12, v12, -0x47
+
+    goto :goto_5
+
+    :cond_3
+    const/16 v13, 0x30
+
+    if-lt v12, v13, :cond_4
+
+    const/16 v13, 0x39
+
+    if-gt v12, v13, :cond_4
+
+    add-int/lit8 v12, v12, 0x4
+
+    goto :goto_5
+
+    :cond_4
+    const/16 v13, 0x2b
+
+    if-eq v12, v13, :cond_9
+
+    const/16 v13, 0x2d
+
+    if-ne v12, v13, :cond_5
+
+    goto :goto_4
+
+    :cond_5
+    const/16 v13, 0x2f
+
+    if-eq v12, v13, :cond_8
+
+    const/16 v13, 0x5f
+
+    if-ne v12, v13, :cond_6
+
+    goto :goto_3
+
+    :cond_6
+    if-eq v12, v4, :cond_a
+
+    if-eq v12, v3, :cond_a
+
+    if-eq v12, v2, :cond_a
+
+    if-ne v12, v1, :cond_7
+
+    goto :goto_6
+
+    :cond_7
+    return-object v11
+
+    :cond_8
+    :goto_3
+    const/16 v12, 0x3f
+
+    goto :goto_5
+
+    :cond_9
+    :goto_4
+    const/16 v12, 0x3e
+
+    :goto_5
+    shl-int/lit8 v9, v9, 0x6
+
+    int-to-byte v11, v12
+
+    or-int/2addr v9, v11
+
+    add-int/lit8 v8, v8, 0x1
+
+    .line 79
+    rem-int/lit8 v11, v8, 0x4
+
+    if-nez v11, :cond_a
+
+    add-int/lit8 v11, v10, 0x1
+
+    shr-int/lit8 v12, v9, 0x10
+
+    int-to-byte v12, v12
+
+    .line 80
+    aput-byte v12, v5, v10
+
+    add-int/lit8 v10, v11, 0x1
+
+    shr-int/lit8 v12, v9, 0x8
+
+    int-to-byte v12, v12
+
+    .line 81
+    aput-byte v12, v5, v11
+
+    add-int/lit8 v11, v10, 0x1
+
+    int-to-byte v12, v9
+
+    .line 82
+    aput-byte v12, v5, v10
+
+    move v10, v11
+
+    :cond_a
+    :goto_6
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_2
+
+    .line 86
+    :cond_b
+    rem-int/lit8 v8, v8, 0x4
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    if-ne v8, p0, :cond_c
 
-    :cond_0
-    const/4 p0, 0x0
+    return-object v11
 
-    :goto_0
-    return p0
-.end method
+    :cond_c
+    const/4 p0, 0x2
 
+    if-ne v8, p0, :cond_d
 
-# virtual methods
-.method public a()V
-    .locals 2
+    shl-int/lit8 p0, v9, 0xc
 
-    .line 16
-    invoke-direct {p0}, Lyr;->d()Ljava/util/List;
+    add-int/lit8 v0, v10, 0x1
 
-    move-result-object v0
+    shr-int/lit8 p0, p0, 0x10
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    int-to-byte p0, p0
 
-    move-result-object v0
+    .line 93
+    aput-byte p0, v5, v10
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    move v10, v0
 
-    move-result v1
+    goto :goto_7
 
-    if-eqz v1, :cond_0
+    :cond_d
+    const/4 p0, 0x3
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    if-ne v8, p0, :cond_e
 
-    move-result-object v1
+    shl-int/lit8 p0, v9, 0x6
 
-    check-cast v1, Ljava/io/File;
+    add-int/lit8 v0, v10, 0x1
 
-    .line 17
-    invoke-virtual {v1}, Ljava/io/File;->delete()Z
+    shr-int/lit8 v1, p0, 0x10
 
-    goto :goto_0
+    int-to-byte v1, v1
 
-    :cond_0
-    return-void
-.end method
+    .line 97
+    aput-byte v1, v5, v10
 
-.method public a(Ljava/lang/String;)V
-    .locals 3
+    add-int/lit8 v10, v0, 0x1
 
-    .line 18
-    invoke-static {p1}, Lsr;->a(Ljava/lang/String;)Ljava/io/FilenameFilter;
+    shr-int/lit8 p0, p0, 0x8
 
-    move-result-object p1
+    int-to-byte p0, p0
 
-    const/4 v0, 0x3
+    .line 98
+    aput-byte p0, v5, v0
 
-    new-array v0, v0, [Ljava/util/List;
+    .line 102
+    :cond_e
+    :goto_7
+    array-length p0, v5
 
-    .line 19
-    iget-object v1, p0, Lyr;->c:Ljava/io/File;
+    if-ne v10, p0, :cond_f
 
-    .line 20
-    invoke-static {v1, p1}, Lyr;->a(Ljava/io/File;Ljava/io/FilenameFilter;)Ljava/util/List;
+    return-object v5
 
-    move-result-object v1
+    .line 105
+    :cond_f
+    new-array p0, v10, [B
 
-    const/4 v2, 0x0
+    .line 106
+    invoke-static {v5, v6, p0, v6, v10}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Lyr;->e:Ljava/io/File;
-
-    .line 21
-    invoke-static {v1, p1}, Lyr;->a(Ljava/io/File;Ljava/io/FilenameFilter;)Ljava/util/List;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Lyr;->d:Ljava/io/File;
-
-    .line 22
-    invoke-static {v1, p1}, Lyr;->a(Ljava/io/File;Ljava/io/FilenameFilter;)Ljava/util/List;
-
-    move-result-object p1
-
-    const/4 v1, 0x2
-
-    aput-object p1, v0, v1
-
-    .line 23
-    invoke-static {v0}, Lyr;->a([Ljava/util/List;)Ljava/util/List;
-
-    move-result-object p1
-
-    .line 24
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/io/File;
-
-    .line 25
-    invoke-virtual {v0}, Ljava/io/File;->delete()Z
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public a(Ljava/lang/String;J)V
-    .locals 1
-
-    .line 27
-    invoke-direct {p0, p1}, Lyr;->b(Ljava/lang/String;)Ljava/util/List;
-
-    move-result-object p1
-
-    .line 28
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/io/File;
-
-    .line 29
-    invoke-direct {p0, v0, p2, p3}, Lyr;->a(Ljava/io/File;J)V
-
-    .line 30
-    invoke-static {v0}, Lyr;->e(Ljava/io/File;)V
-
-    goto :goto_0
-
-    .line 31
-    :cond_0
-    invoke-direct {p0}, Lyr;->c()V
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/String;Lzq$c;)V
-    .locals 3
-
-    .line 32
-    new-instance v0, Ljava/io/File;
-
-    invoke-direct {p0, p1}, Lyr;->d(Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v1
-
-    const-string v2, "report"
-
-    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    .line 33
-    iget-object v1, p0, Lyr;->e:Ljava/io/File;
-
-    invoke-static {v0, v1, p2, p1}, Lyr;->a(Ljava/io/File;Ljava/io/File;Lzq$c;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public a(Lzq$d$d;Ljava/lang/String;Z)V
-    .locals 4
-
-    .line 8
-    iget-object v0, p0, Lyr;->f:Lxs;
-
-    .line 9
-    invoke-interface {v0}, Lxs;->b()Lft;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lft;->a()Let;
-
-    move-result-object v0
-
-    iget v0, v0, Let;->a:I
-
-    .line 10
-    invoke-direct {p0, p2}, Lyr;->d(Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v1
-
-    .line 11
-    sget-object v2, Lyr;->i:Lir;
-
-    invoke-virtual {v2, p1}, Lir;->a(Lzq$d$d;)Ljava/lang/String;
-
-    move-result-object p1
-
-    .line 12
-    iget-object v2, p0, Lyr;->a:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
-
-    move-result v2
-
-    invoke-static {v2, p3}, Lyr;->a(IZ)Ljava/lang/String;
-
-    move-result-object p3
-
-    .line 13
-    :try_start_0
-    new-instance v2, Ljava/io/File;
-
-    invoke-direct {v2, v1, p3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-static {v2, p1}, Lyr;->d(Ljava/io/File;Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p1
-
-    .line 14
-    invoke-static {}, Lmo;->a()Lmo;
-
-    move-result-object p3
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Could not persist event for session "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p3, p2, p1}, Lmo;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 15
-    :goto_0
-    invoke-static {v1, v0}, Lyr;->a(Ljava/io/File;I)I
-
-    return-void
-.end method
-
-.method public a(Lzq;)V
-    .locals 4
-
-    .line 1
-    invoke-virtual {p1}, Lzq;->h()Lzq$d;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    .line 2
-    invoke-static {}, Lmo;->a()Lmo;
-
-    move-result-object p1
-
-    const-string v0, "Could not get session for report"
-
-    invoke-virtual {p1, v0}, Lmo;->a(Ljava/lang/String;)V
-
-    return-void
-
-    .line 3
-    :cond_0
-    invoke-virtual {v0}, Lzq$d;->g()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 4
-    :try_start_0
-    invoke-direct {p0, v0}, Lyr;->d(Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lyr;->c(Ljava/io/File;)Ljava/io/File;
-
-    .line 5
-    sget-object v2, Lyr;->i:Lir;
-
-    invoke-virtual {v2, p1}, Lir;->a(Lzq;)Ljava/lang/String;
-
-    move-result-object p1
-
-    .line 6
-    new-instance v2, Ljava/io/File;
-
-    const-string v3, "report"
-
-    invoke-direct {v2, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-static {v2, p1}, Lyr;->d(Ljava/io/File;Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p1
-
-    .line 7
-    invoke-static {}, Lmo;->a()Lmo;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Could not persist report for session "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0, p1}, Lmo;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :goto_0
-    return-void
-.end method
-
-.method public b()Ljava/util/List;
-    .locals 7
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "Lfp;",
-            ">;"
-        }
-    .end annotation
-
-    .line 2
-    invoke-direct {p0}, Lyr;->d()Ljava/util/List;
-
-    move-result-object v0
-
-    .line 3
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    .line 4
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->ensureCapacity(I)V
-
-    .line 5
-    invoke-direct {p0}, Lyr;->d()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/io/File;
-
-    .line 6
-    :try_start_0
-    sget-object v3, Lyr;->i:Lir;
-
-    invoke-static {v2}, Lyr;->d(Ljava/io/File;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Lir;->b(Ljava/lang/String;)Lzq;
-
-    move-result-object v3
-
-    .line 7
-    invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lfp;->a(Lzq;Ljava/lang/String;)Lfp;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v3
-
-    .line 8
-    invoke-static {}, Lmo;->a()Lmo;
-
-    move-result-object v4
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "Could not load report file "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v6, "; deleting"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5, v3}, Lmo;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 9
-    invoke-virtual {v2}, Ljava/io/File;->delete()Z
-
-    goto :goto_0
-
-    :cond_0
-    return-object v1
+    return-object p0
 .end method

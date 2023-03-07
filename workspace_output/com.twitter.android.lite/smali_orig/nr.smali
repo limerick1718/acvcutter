@@ -1,90 +1,67 @@
-.class Lnr;
+.class final Lnr;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
 
 # interfaces
-.implements Ljr$a;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic a:Ljava/util/concurrent/atomic/AtomicReference;
+
+.field private final synthetic b:Ljava/lang/String;
+
+.field private final synthetic c:Ljava/lang/String;
+
+.field private final synthetic d:Ljava/lang/String;
+
+.field private final synthetic e:Lnl;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lnl;Ljava/util/concurrent/atomic/AtomicReference;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     .line 1
+    iput-object p1, p0, Lnr;->e:Lnl;
+
+    iput-object p2, p0, Lnr;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    iput-object p3, p0, Lnr;->b:Ljava/lang/String;
+
+    iput-object p4, p0, Lnr;->c:Ljava/lang/String;
+
+    iput-object p5, p0, Lnr;->d:Ljava/lang/String;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private static a(Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    const/4 v0, 0x0
-
-    .line 2
-    :try_start_0
-    new-instance v1, Ljava/io/BufferedInputStream;
-
-    new-instance v2, Ljava/io/FileInputStream;
-
-    invoke-direct {v2, p0}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
-
-    invoke-direct {v1, v2}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    .line 3
-    :try_start_1
-    invoke-static {v1}, Lzo;->a(Ljava/io/InputStream;)Ljava/lang/String;
-
-    move-result-object p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 4
-    invoke-static {v1}, Lzo;->a(Ljava/io/Closeable;)V
-
-    return-object p0
-
-    :catchall_0
-    move-exception p0
-
-    move-object v0, v1
-
-    goto :goto_0
-
-    :catchall_1
-    move-exception p0
-
-    :goto_0
-    invoke-static {v0}, Lzo;->a(Ljava/io/Closeable;)V
-
-    throw p0
-.end method
-
 
 # virtual methods
-.method public a(Ljava/io/File;)Ljava/lang/String;
-    .locals 0
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+.method public final run()V
+    .locals 5
 
-    .line 1
-    invoke-virtual {p1}, Ljava/io/File;->getPath()Ljava/lang/String;
+    .line 2
+    iget-object v0, p0, Lnr;->e:Lnl;
 
-    move-result-object p1
+    iget-object v0, v0, Lnl;->q:Lmf;
 
-    invoke-static {p1}, Lnr;->a(Ljava/lang/String;)Ljava/lang/String;
+    .line 3
+    invoke-virtual {v0}, Lmf;->x()Loc;
 
-    move-result-object p1
+    move-result-object v0
 
-    return-object p1
+    iget-object v1, p0, Lnr;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    iget-object v2, p0, Lnr;->b:Ljava/lang/String;
+
+    iget-object v3, p0, Lnr;->c:Ljava/lang/String;
+
+    iget-object v4, p0, Lnr;->d:Ljava/lang/String;
+
+    .line 4
+    invoke-virtual {v0, v1, v2, v3, v4}, Loc;->a(Ljava/util/concurrent/atomic/AtomicReference;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
 .end method

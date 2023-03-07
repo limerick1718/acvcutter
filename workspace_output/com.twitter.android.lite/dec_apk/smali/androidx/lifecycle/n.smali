@@ -10,5 +10,5 @@ value = {
 .enum Ljava/lang/annotation/ElementType;->METHOD:Ljava/lang/annotation/ElementType;
 }
 .end annotation
-.method public abstract value()Landroidx/lifecycle/e$a;
+.method public abstract a()Landroidx/lifecycle/e$a;
 .end method

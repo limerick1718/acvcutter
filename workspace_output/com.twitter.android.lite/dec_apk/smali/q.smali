@@ -1,24 +1,121 @@
-.class public final Lq;
+.class public Lq;
 .super Ljava/lang/Object;
-.field public static final compat_button_inset_horizontal_material:I = 0x7f030002
-.field public static final compat_button_inset_vertical_material:I = 0x7f030003
-.field public static final compat_button_padding_horizontal_material:I = 0x7f030004
-.field public static final compat_button_padding_vertical_material:I = 0x7f030005
-.field public static final compat_control_corner_material:I = 0x7f030006
-.field public static final compat_notification_large_icon_max_height:I = 0x7f030007
-.field public static final compat_notification_large_icon_max_width:I = 0x7f030008
-.field public static final notification_action_icon_size:I = 0x7f030009
-.field public static final notification_action_text_size:I = 0x7f03000a
-.field public static final notification_big_circle_margin:I = 0x7f03000b
-.field public static final notification_content_margin_start:I = 0x7f03000c
-.field public static final notification_large_icon_height:I = 0x7f03000d
-.field public static final notification_large_icon_width:I = 0x7f03000e
-.field public static final notification_main_column_padding_top:I = 0x7f03000f
-.field public static final notification_media_narrow_margin:I = 0x7f030010
-.field public static final notification_right_icon_size:I = 0x7f030011
-.field public static final notification_right_side_padding_top:I = 0x7f030012
-.field public static final notification_small_icon_background_padding:I = 0x7f030013
-.field public static final notification_small_icon_size_as_large:I = 0x7f030014
-.field public static final notification_subtext_size:I = 0x7f030015
-.field public static final notification_top_pad:I = 0x7f030016
-.field public static final notification_top_pad_large_text:I = 0x7f030017
+.source "SparseArrayCompat.java"
+.implements Ljava/lang/Cloneable;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<E:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;",
+"Ljava/lang/Cloneable;"
+}
+.end annotation
+.field private static final a:Ljava/lang/Object;
+.field private b:Z
+.field private c:[I
+.field private d:[Ljava/lang/Object;
+.field private e:I
+.method public constructor <init>()V
+.locals 1
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method public constructor <init>(I)V
+.locals 2
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method public a(I)Ljava/lang/Object;
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(I)TE;"
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public a(ILjava/lang/Object;)Ljava/lang/Object;
+.locals 3
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(ITE;)TE;"
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public a()Lq;
+.locals 2
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"()",
+"Lq<",
+"TE;>;"
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public b()I
+.locals 1
+const/4 v0, 0x0
+return v0
+.end method
+.method public b(I)V
+.locals 3
+return-void
+.end method
+.method public b(ILjava/lang/Object;)V
+.locals 6
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(ITE;)V"
+}
+.end annotation
+return-void
+.end method
+.method public c()V
+.locals 5
+return-void
+.end method
+.method public c(I)V
+.locals 0
+return-void
+.end method
+.method public synthetic clone()Ljava/lang/Object;
+.locals 1
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Ljava/lang/CloneNotSupportedException;
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public d(I)I
+.locals 1
+const/4 v0, 0x0
+return v0
+.end method
+.method public e(I)Ljava/lang/Object;
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(I)TE;"
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public f(I)I
+.locals 2
+const/4 v0, 0x0
+return v0
+.end method
+.method public toString()Ljava/lang/String;
+.locals 3
+const/4 v0, 0x0
+return-object v0
+.end method

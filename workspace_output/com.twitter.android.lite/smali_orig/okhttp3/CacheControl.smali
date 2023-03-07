@@ -52,7 +52,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 1
+    .line 33
     new-instance v0, Lokhttp3/CacheControl$Builder;
 
     invoke-direct {v0}, Lokhttp3/CacheControl$Builder;-><init>()V
@@ -67,12 +67,12 @@
 
     sput-object v0, Lokhttp3/CacheControl;->FORCE_NETWORK:Lokhttp3/CacheControl;
 
-    .line 2
+    .line 40
     new-instance v0, Lokhttp3/CacheControl$Builder;
 
     invoke-direct {v0}, Lokhttp3/CacheControl$Builder;-><init>()V
 
-    .line 3
+    .line 41
     invoke-virtual {v0}, Lokhttp3/CacheControl$Builder;->onlyIfCached()Lokhttp3/CacheControl$Builder;
 
     move-result-object v0
@@ -81,12 +81,12 @@
 
     const v2, 0x7fffffff
 
-    .line 4
+    .line 42
     invoke-virtual {v0, v2, v1}, Lokhttp3/CacheControl$Builder;->maxStale(ILjava/util/concurrent/TimeUnit;)Lokhttp3/CacheControl$Builder;
 
     move-result-object v0
 
-    .line 5
+    .line 43
     invoke-virtual {v0}, Lokhttp3/CacheControl$Builder;->build()Lokhttp3/CacheControl;
 
     move-result-object v0
@@ -99,61 +99,61 @@
 .method constructor <init>(Lokhttp3/CacheControl$Builder;)V
     .locals 1
 
-    .line 15
+    .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 16
+    .line 80
     iget-boolean v0, p1, Lokhttp3/CacheControl$Builder;->noCache:Z
 
     iput-boolean v0, p0, Lokhttp3/CacheControl;->noCache:Z
 
-    .line 17
+    .line 81
     iget-boolean v0, p1, Lokhttp3/CacheControl$Builder;->noStore:Z
 
     iput-boolean v0, p0, Lokhttp3/CacheControl;->noStore:Z
 
-    .line 18
+    .line 82
     iget v0, p1, Lokhttp3/CacheControl$Builder;->maxAgeSeconds:I
 
     iput v0, p0, Lokhttp3/CacheControl;->maxAgeSeconds:I
 
     const/4 v0, -0x1
 
-    .line 19
+    .line 83
     iput v0, p0, Lokhttp3/CacheControl;->sMaxAgeSeconds:I
 
     const/4 v0, 0x0
 
-    .line 20
+    .line 84
     iput-boolean v0, p0, Lokhttp3/CacheControl;->isPrivate:Z
 
-    .line 21
+    .line 85
     iput-boolean v0, p0, Lokhttp3/CacheControl;->isPublic:Z
 
-    .line 22
+    .line 86
     iput-boolean v0, p0, Lokhttp3/CacheControl;->mustRevalidate:Z
 
-    .line 23
+    .line 87
     iget v0, p1, Lokhttp3/CacheControl$Builder;->maxStaleSeconds:I
 
     iput v0, p0, Lokhttp3/CacheControl;->maxStaleSeconds:I
 
-    .line 24
+    .line 88
     iget v0, p1, Lokhttp3/CacheControl$Builder;->minFreshSeconds:I
 
     iput v0, p0, Lokhttp3/CacheControl;->minFreshSeconds:I
 
-    .line 25
+    .line 89
     iget-boolean v0, p1, Lokhttp3/CacheControl$Builder;->onlyIfCached:Z
 
     iput-boolean v0, p0, Lokhttp3/CacheControl;->onlyIfCached:Z
 
-    .line 26
+    .line 90
     iget-boolean v0, p1, Lokhttp3/CacheControl$Builder;->noTransform:Z
 
     iput-boolean v0, p0, Lokhttp3/CacheControl;->noTransform:Z
 
-    .line 27
+    .line 91
     iget-boolean p1, p1, Lokhttp3/CacheControl$Builder;->immutable:Z
 
     iput-boolean p1, p0, Lokhttp3/CacheControl;->immutable:Z
@@ -168,46 +168,46 @@
         .end annotation
     .end param
 
-    .line 1
+    .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 64
     iput-boolean p1, p0, Lokhttp3/CacheControl;->noCache:Z
 
-    .line 3
+    .line 65
     iput-boolean p2, p0, Lokhttp3/CacheControl;->noStore:Z
 
-    .line 4
+    .line 66
     iput p3, p0, Lokhttp3/CacheControl;->maxAgeSeconds:I
 
-    .line 5
+    .line 67
     iput p4, p0, Lokhttp3/CacheControl;->sMaxAgeSeconds:I
 
-    .line 6
+    .line 68
     iput-boolean p5, p0, Lokhttp3/CacheControl;->isPrivate:Z
 
-    .line 7
+    .line 69
     iput-boolean p6, p0, Lokhttp3/CacheControl;->isPublic:Z
 
-    .line 8
+    .line 70
     iput-boolean p7, p0, Lokhttp3/CacheControl;->mustRevalidate:Z
 
-    .line 9
+    .line 71
     iput p8, p0, Lokhttp3/CacheControl;->maxStaleSeconds:I
 
-    .line 10
+    .line 72
     iput p9, p0, Lokhttp3/CacheControl;->minFreshSeconds:I
 
-    .line 11
+    .line 73
     iput-boolean p10, p0, Lokhttp3/CacheControl;->onlyIfCached:Z
 
-    .line 12
+    .line 74
     iput-boolean p11, p0, Lokhttp3/CacheControl;->noTransform:Z
 
-    .line 13
+    .line 75
     iput-boolean p12, p0, Lokhttp3/CacheControl;->immutable:Z
 
-    .line 14
+    .line 76
     iput-object p13, p0, Lokhttp3/CacheControl;->headerValue:Ljava/lang/String;
 
     return-void
@@ -216,12 +216,12 @@
 .method private headerValue()Ljava/lang/String;
     .locals 4
 
-    .line 1
+    .line 274
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 2
+    .line 275
     iget-boolean v1, p0, Lokhttp3/CacheControl;->noCache:Z
 
     if-eqz v1, :cond_0
@@ -230,7 +230,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3
+    .line 276
     :cond_0
     iget-boolean v1, p0, Lokhttp3/CacheControl;->noStore:Z
 
@@ -240,7 +240,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4
+    .line 277
     :cond_1
     iget v1, p0, Lokhttp3/CacheControl;->maxAgeSeconds:I
 
@@ -260,7 +260,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 5
+    .line 278
     :cond_2
     iget v1, p0, Lokhttp3/CacheControl;->sMaxAgeSeconds:I
 
@@ -276,7 +276,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 6
+    .line 279
     :cond_3
     iget-boolean v1, p0, Lokhttp3/CacheControl;->isPrivate:Z
 
@@ -286,7 +286,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 7
+    .line 280
     :cond_4
     iget-boolean v1, p0, Lokhttp3/CacheControl;->isPublic:Z
 
@@ -296,7 +296,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 8
+    .line 281
     :cond_5
     iget-boolean v1, p0, Lokhttp3/CacheControl;->mustRevalidate:Z
 
@@ -306,7 +306,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 9
+    .line 282
     :cond_6
     iget v1, p0, Lokhttp3/CacheControl;->maxStaleSeconds:I
 
@@ -322,7 +322,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 10
+    .line 283
     :cond_7
     iget v1, p0, Lokhttp3/CacheControl;->minFreshSeconds:I
 
@@ -338,7 +338,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 11
+    .line 284
     :cond_8
     iget-boolean v1, p0, Lokhttp3/CacheControl;->onlyIfCached:Z
 
@@ -348,7 +348,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 12
+    .line 285
     :cond_9
     iget-boolean v1, p0, Lokhttp3/CacheControl;->noTransform:Z
 
@@ -358,7 +358,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 13
+    .line 286
     :cond_a
     iget-boolean v1, p0, Lokhttp3/CacheControl;->immutable:Z
 
@@ -368,7 +368,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 14
+    .line 287
     :cond_b
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
@@ -380,7 +380,7 @@
 
     return-object v0
 
-    .line 15
+    .line 288
     :cond_c
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
@@ -394,7 +394,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
-    .line 16
+    .line 289
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -407,7 +407,7 @@
 
     move-object/from16 v0, p0
 
-    .line 1
+    .line 184
     invoke-virtual/range {p0 .. p0}, Lokhttp3/Headers;->size()I
 
     move-result v1
@@ -445,19 +445,19 @@
     :goto_0
     if-ge v6, v1, :cond_12
 
-    .line 2
+    .line 185
     invoke-virtual {v0, v6}, Lokhttp3/Headers;->name(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 3
+    .line 186
     invoke-virtual {v0, v6}, Lokhttp3/Headers;->value(I)Ljava/lang/String;
 
     move-result-object v4
 
     const-string v3, "Cache-Control"
 
-    .line 4
+    .line 188
     invoke-virtual {v2, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v3
@@ -476,7 +476,7 @@
     :cond_1
     const-string v3, "Pragma"
 
-    .line 5
+    .line 195
     invoke-virtual {v2, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v2
@@ -489,7 +489,7 @@
     :goto_2
     const/4 v2, 0x0
 
-    .line 6
+    .line 203
     :goto_3
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
@@ -499,12 +499,12 @@
 
     const-string v3, "=,;"
 
-    .line 7
+    .line 205
     invoke-static {v4, v2, v3}, Lokhttp3/internal/http/HttpHeaders;->skipUntil(Ljava/lang/String;ILjava/lang/String;)I
 
     move-result v3
 
-    .line 8
+    .line 206
     invoke-virtual {v4, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
@@ -513,7 +513,7 @@
 
     move-result-object v2
 
-    .line 9
+    .line 209
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
     move-result v5
@@ -541,12 +541,12 @@
     :cond_2
     add-int/lit8 v3, v3, 0x1
 
-    .line 10
+    .line 214
     invoke-static {v4, v3}, Lokhttp3/internal/http/HttpHeaders;->skipWhitespace(Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 11
+    .line 217
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
     move-result v3
@@ -565,12 +565,12 @@
 
     const-string v3, "\""
 
-    .line 12
+    .line 220
     invoke-static {v4, v0, v3}, Lokhttp3/internal/http/HttpHeaders;->skipUntil(Ljava/lang/String;ILjava/lang/String;)I
 
     move-result v3
 
-    .line 13
+    .line 221
     invoke-virtual {v4, v0, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
@@ -586,12 +586,12 @@
 
     const-string v3, ",;"
 
-    .line 14
+    .line 227
     invoke-static {v4, v0, v3}, Lokhttp3/internal/http/HttpHeaders;->skipUntil(Ljava/lang/String;ILjava/lang/String;)I
 
     move-result v3
 
-    .line 15
+    .line 228
     invoke-virtual {v4, v0, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
@@ -613,7 +613,7 @@
     :goto_5
     const-string v5, "no-cache"
 
-    .line 16
+    .line 232
     invoke-virtual {v5, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v5
@@ -629,7 +629,7 @@
     :cond_5
     const-string v5, "no-store"
 
-    .line 17
+    .line 234
     invoke-virtual {v5, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v5
@@ -645,7 +645,7 @@
     :cond_6
     const-string v5, "max-age"
 
-    .line 18
+    .line 236
     invoke-virtual {v5, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v5
@@ -654,17 +654,19 @@
 
     const/4 v5, -0x1
 
-    .line 19
+    .line 237
     invoke-static {v0, v5}, Lokhttp3/internal/http/HttpHeaders;->parseSeconds(Ljava/lang/String;I)I
 
-    move-result v11
+    move-result v0
+
+    move v11, v0
 
     goto/16 :goto_6
 
     :cond_7
     const-string v5, "s-maxage"
 
-    .line 20
+    .line 238
     invoke-virtual {v5, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v5
@@ -673,17 +675,19 @@
 
     const/4 v5, -0x1
 
-    .line 21
+    .line 239
     invoke-static {v0, v5}, Lokhttp3/internal/http/HttpHeaders;->parseSeconds(Ljava/lang/String;I)I
 
-    move-result v12
+    move-result v0
 
-    goto :goto_6
+    move v12, v0
+
+    goto/16 :goto_6
 
     :cond_8
     const-string v5, "private"
 
-    .line 22
+    .line 240
     invoke-virtual {v5, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v5
@@ -699,7 +703,7 @@
     :cond_9
     const-string v5, "public"
 
-    .line 23
+    .line 242
     invoke-virtual {v5, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v5
@@ -715,7 +719,7 @@
     :cond_a
     const-string v5, "must-revalidate"
 
-    .line 24
+    .line 244
     invoke-virtual {v5, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v5
@@ -731,7 +735,7 @@
     :cond_b
     const-string v5, "max-stale"
 
-    .line 25
+    .line 246
     invoke-virtual {v5, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v5
@@ -740,10 +744,12 @@
 
     const v2, 0x7fffffff
 
-    .line 26
+    .line 247
     invoke-static {v0, v2}, Lokhttp3/internal/http/HttpHeaders;->parseSeconds(Ljava/lang/String;I)I
 
-    move-result v16
+    move-result v0
+
+    move/from16 v16, v0
 
     const/4 v5, -0x1
 
@@ -752,7 +758,7 @@
     :cond_c
     const-string v5, "min-fresh"
 
-    .line 27
+    .line 248
     invoke-virtual {v5, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v5
@@ -761,10 +767,12 @@
 
     const/4 v5, -0x1
 
-    .line 28
+    .line 249
     invoke-static {v0, v5}, Lokhttp3/internal/http/HttpHeaders;->parseSeconds(Ljava/lang/String;I)I
 
-    move-result v17
+    move-result v0
+
+    move/from16 v17, v0
 
     goto :goto_6
 
@@ -773,7 +781,7 @@
 
     const-string v0, "only-if-cached"
 
-    .line 29
+    .line 250
     invoke-virtual {v0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -787,7 +795,7 @@
     :cond_e
     const-string v0, "no-transform"
 
-    .line 30
+    .line 252
     invoke-virtual {v0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -801,7 +809,7 @@
     :cond_f
     const-string v0, "immutable"
 
-    .line 31
+    .line 254
     invoke-virtual {v0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -837,7 +845,7 @@
     :cond_13
     move-object/from16 v21, v8
 
-    .line 32
+    .line 263
     :goto_7
     new-instance v0, Lokhttp3/CacheControl;
 
@@ -853,7 +861,7 @@
 .method public immutable()Z
     .locals 1
 
-    .line 1
+    .line 160
     iget-boolean v0, p0, Lokhttp3/CacheControl;->immutable:Z
 
     return v0
@@ -862,7 +870,7 @@
 .method public isPrivate()Z
     .locals 1
 
-    .line 1
+    .line 126
     iget-boolean v0, p0, Lokhttp3/CacheControl;->isPrivate:Z
 
     return v0
@@ -871,7 +879,7 @@
 .method public isPublic()Z
     .locals 1
 
-    .line 1
+    .line 130
     iget-boolean v0, p0, Lokhttp3/CacheControl;->isPublic:Z
 
     return v0
@@ -880,7 +888,7 @@
 .method public maxAgeSeconds()I
     .locals 1
 
-    .line 1
+    .line 114
     iget v0, p0, Lokhttp3/CacheControl;->maxAgeSeconds:I
 
     return v0
@@ -889,7 +897,7 @@
 .method public maxStaleSeconds()I
     .locals 1
 
-    .line 1
+    .line 138
     iget v0, p0, Lokhttp3/CacheControl;->maxStaleSeconds:I
 
     return v0
@@ -898,7 +906,7 @@
 .method public minFreshSeconds()I
     .locals 1
 
-    .line 1
+    .line 142
     iget v0, p0, Lokhttp3/CacheControl;->minFreshSeconds:I
 
     return v0
@@ -907,7 +915,7 @@
 .method public mustRevalidate()Z
     .locals 1
 
-    .line 1
+    .line 134
     iget-boolean v0, p0, Lokhttp3/CacheControl;->mustRevalidate:Z
 
     return v0
@@ -916,7 +924,7 @@
 .method public noCache()Z
     .locals 1
 
-    .line 1
+    .line 102
     iget-boolean v0, p0, Lokhttp3/CacheControl;->noCache:Z
 
     return v0
@@ -925,7 +933,7 @@
 .method public noStore()Z
     .locals 1
 
-    .line 1
+    .line 107
     iget-boolean v0, p0, Lokhttp3/CacheControl;->noStore:Z
 
     return v0
@@ -934,7 +942,7 @@
 .method public noTransform()Z
     .locals 1
 
-    .line 1
+    .line 156
     iget-boolean v0, p0, Lokhttp3/CacheControl;->noTransform:Z
 
     return v0
@@ -943,7 +951,7 @@
 .method public onlyIfCached()Z
     .locals 1
 
-    .line 1
+    .line 152
     iget-boolean v0, p0, Lokhttp3/CacheControl;->onlyIfCached:Z
 
     return v0
@@ -952,7 +960,7 @@
 .method public sMaxAgeSeconds()I
     .locals 1
 
-    .line 1
+    .line 122
     iget v0, p0, Lokhttp3/CacheControl;->sMaxAgeSeconds:I
 
     return v0
@@ -961,14 +969,14 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 1
+    .line 269
     iget-object v0, p0, Lokhttp3/CacheControl;->headerValue:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
     goto :goto_0
 
-    .line 2
+    .line 270
     :cond_0
     invoke-direct {p0}, Lokhttp3/CacheControl;->headerValue()Ljava/lang/String;
 

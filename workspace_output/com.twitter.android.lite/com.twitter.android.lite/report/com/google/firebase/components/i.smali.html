@@ -14,41 +14,42 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final synthetic Lcom/google/firebase/components/i;
+		<code>.class abstract Lcom/google/firebase/components/i;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-components@@16.0.0"
-.implements Lqu;
+.source "com.google.firebase:firebase-common@@16.0.2"
+.implements Lcom/google/firebase/components/b;
 
 
-.field private final a:Lcom/google/firebase/components/l;
-.field private final b:Lcom/google/firebase/components/d;
 
 
-<span class="cov">.method private constructor &lt;init&gt;(Lcom/google/firebase/components/l;Lcom/google/firebase/components/d;)V</span>
+<span class="cov">.method constructor &lt;init&gt;()V</span>
 <span class="">	.locals 0</span>
 
 <span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	iput-object p1, p0, Lcom/google/firebase/components/i;->a:Lcom/google/firebase/components/l;</span>
-<span class="cov">	iput-object p2, p0, Lcom/google/firebase/components/i;->b:Lcom/google/firebase/components/d;</span>
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public static a(Lcom/google/firebase/components/l;Lcom/google/firebase/components/d;)Lqu;</span>
-<span class="">	.locals 1</span>
+<span class="cov">.method public a(Ljava/lang/Class;)Ljava/lang/Object;</span>
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<T:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"TT;>;)TT;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="cov">	new-instance v0, Lcom/google/firebase/components/i;</span>
-<span class="cov">	invoke-direct {v0, p0, p1}, Lcom/google/firebase/components/i;-><init>(Lcom/google/firebase/components/l;Lcom/google/firebase/components/d;)V</span>
-<span class="exec">	return-object v0</span>
-.end method
-
-<span class="cov">.method public get()Ljava/lang/Object;</span>
-<span class="">	.locals 2</span>
-
-<span class="cov">	iget-object v0, p0, Lcom/google/firebase/components/i;->a:Lcom/google/firebase/components/l;</span>
-<span class="cov">	iget-object v1, p0, Lcom/google/firebase/components/i;->b:Lcom/google/firebase/components/d;</span>
-<span class="exec">	invoke-static {v0, v1}, Lcom/google/firebase/components/l;->a(Lcom/google/firebase/components/l;Lcom/google/firebase/components/d;)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	return-object v0</span>
+<span class="exec">	invoke-virtual {p0, p1}, Lcom/google/firebase/components/i;->b(Ljava/lang/Class;)Lsq;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	if-nez p1, :cond_0</span>
+<span class="cov">	const/4 p1, 0x0</span>
+<span class="exec">	return-object p1</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-interface {p1}, Lsq;->a()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	return-object p1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

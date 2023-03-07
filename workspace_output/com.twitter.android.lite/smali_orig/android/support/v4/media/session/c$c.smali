@@ -1,6 +1,6 @@
-.class Landroid/support/v4/media/session/c$c;
-.super Landroid/support/v4/media/session/a$a;
-.source "MediaControllerCompat.java"
+.class public Landroid/support/v4/media/session/c$c;
+.super Ljava/lang/Object;
+.source "MediaControllerCompatApi21.java"
 
 
 # annotations
@@ -9,455 +9,133 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x9
     name = "c"
 .end annotation
 
 
-# instance fields
-.field private final a:Ljava/lang/ref/WeakReference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/ref/WeakReference<",
-            "Landroid/support/v4/media/session/c;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
 # direct methods
-.method constructor <init>(Landroid/support/v4/media/session/c;)V
-    .locals 1
-
-    .line 1
-    invoke-direct {p0}, Landroid/support/v4/media/session/a$a;-><init>()V
-
-    .line 2
-    new-instance v0, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Landroid/support/v4/media/session/c$c;->a:Ljava/lang/ref/WeakReference;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public a(Landroid/support/v4/media/MediaMetadataCompat;)V
+.method private static a(Landroid/media/AudioAttributes;)I
     .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
-    .line 5
-    iget-object v0, p0, Landroid/support/v4/media/session/c$c;->a:Ljava/lang/ref/WeakReference;
+    .line 228
+    invoke-virtual {p0}, Landroid/media/AudioAttributes;->getFlags()I
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x3
-
-    const/4 v2, 0x0
-
-    .line 6
-    invoke-virtual {v0, v1, p1, v2}, Landroid/support/v4/media/session/c;->a(ILjava/lang/Object;Landroid/os/Bundle;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public a(Landroid/support/v4/media/session/ParcelableVolumeInfo;)V
-    .locals 9
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .line 11
-    iget-object v0, p0, Landroid/support/v4/media/session/c$c;->a:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_1
-
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_0
-
-    .line 12
-    new-instance v8, Landroid/support/v4/media/session/d;
-
-    iget v3, p1, Landroid/support/v4/media/session/ParcelableVolumeInfo;->a:I
-
-    iget v4, p1, Landroid/support/v4/media/session/ParcelableVolumeInfo;->b:I
-
-    iget v5, p1, Landroid/support/v4/media/session/ParcelableVolumeInfo;->c:I
-
-    iget v6, p1, Landroid/support/v4/media/session/ParcelableVolumeInfo;->d:I
-
-    iget v7, p1, Landroid/support/v4/media/session/ParcelableVolumeInfo;->e:I
-
-    move-object v2, v8
-
-    invoke-direct/range {v2 .. v7}, Landroid/support/v4/media/session/d;-><init>(IIIII)V
-
-    goto :goto_0
-
-    :cond_0
-    move-object v8, v1
-
-    :goto_0
-    const/4 p1, 0x4
-
-    .line 13
-    invoke-virtual {v0, p1, v8, v1}, Landroid/support/v4/media/session/c;->a(ILjava/lang/Object;Landroid/os/Bundle;)V
-
-    :cond_1
-    return-void
-.end method
-
-.method public a(Landroid/support/v4/media/session/PlaybackStateCompat;)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .line 3
-    iget-object v0, p0, Landroid/support/v4/media/session/c$c;->a:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x2
-
-    const/4 v2, 0x0
-
-    .line 4
-    invoke-virtual {v0, v1, p1, v2}, Landroid/support/v4/media/session/c;->a(ILjava/lang/Object;Landroid/os/Bundle;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public a(Ljava/lang/CharSequence;)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .line 9
-    iget-object v0, p0, Landroid/support/v4/media/session/c$c;->a:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x6
-
-    const/4 v2, 0x0
-
-    .line 10
-    invoke-virtual {v0, v1, p1, v2}, Landroid/support/v4/media/session/c;->a(ILjava/lang/Object;Landroid/os/Bundle;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public a(Ljava/lang/String;Landroid/os/Bundle;)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Landroid/support/v4/media/session/c$c;->a:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_0
+    move-result v0
 
     const/4 v1, 0x1
 
-    .line 2
-    invoke-virtual {v0, v1, p1, p2}, Landroid/support/v4/media/session/c;->a(ILjava/lang/Object;Landroid/os/Bundle;)V
+    and-int/2addr v0, v1
 
+    if-ne v0, v1, :cond_0
+
+    const/4 p0, 0x7
+
+    return p0
+
+    .line 232
     :cond_0
-    return-void
+    invoke-virtual {p0}, Landroid/media/AudioAttributes;->getFlags()I
+
+    move-result v0
+
+    const/4 v2, 0x4
+
+    and-int/2addr v0, v2
+
+    if-ne v0, v2, :cond_1
+
+    const/4 p0, 0x6
+
+    return p0
+
+    .line 237
+    :cond_1
+    invoke-virtual {p0}, Landroid/media/AudioAttributes;->getUsage()I
+
+    move-result p0
+
+    const/4 v0, 0x3
+
+    packed-switch p0, :pswitch_data_0
+
+    return v0
+
+    :pswitch_0
+    return v1
+
+    :pswitch_1
+    const/4 p0, 0x2
+
+    return p0
+
+    :pswitch_2
+    const/4 p0, 0x5
+
+    return p0
+
+    :pswitch_3
+    return v2
+
+    :pswitch_4
+    const/16 p0, 0x8
+
+    return p0
+
+    :pswitch_5
+    const/4 p0, 0x0
+
+    return p0
+
+    :pswitch_6
+    return v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_6
+        :pswitch_6
+        :pswitch_0
+        :pswitch_6
+    .end packed-switch
 .end method
 
-.method public a(Ljava/util/List;)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;",
-            ">;)V"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .line 7
-    iget-object v0, p0, Landroid/support/v4/media/session/c$c;->a:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x5
-
-    const/4 v2, 0x0
-
-    .line 8
-    invoke-virtual {v0, v1, p1, v2}, Landroid/support/v4/media/session/c;->a(ILjava/lang/Object;Landroid/os/Bundle;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public b(I)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Landroid/support/v4/media/session/c$c;->a:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_0
-
-    const/16 v1, 0x9
-
-    .line 2
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, p1, v2}, Landroid/support/v4/media/session/c;->a(ILjava/lang/Object;Landroid/os/Bundle;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public b(Landroid/os/Bundle;)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .line 3
-    iget-object v0, p0, Landroid/support/v4/media/session/c$c;->a:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x7
-
-    const/4 v2, 0x0
-
-    .line 4
-    invoke-virtual {v0, v1, p1, v2}, Landroid/support/v4/media/session/c;->a(ILjava/lang/Object;Landroid/os/Bundle;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public b(Z)V
+.method public static a(Ljava/lang/Object;)Landroid/media/AudioAttributes;
     .locals 0
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
-    return-void
+    .line 200
+    check-cast p0, Landroid/media/session/MediaController$PlaybackInfo;
+
+    invoke-virtual {p0}, Landroid/media/session/MediaController$PlaybackInfo;->getAudioAttributes()Landroid/media/AudioAttributes;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public c(I)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
+.method public static b(Ljava/lang/Object;)I
+    .locals 0
 
-    .line 4
-    iget-object v0, p0, Landroid/support/v4/media/session/c$c;->a:Ljava/lang/ref/WeakReference;
+    .line 204
+    invoke-static {p0}, Landroid/support/v4/media/session/c$c;->a(Ljava/lang/Object;)Landroid/media/AudioAttributes;
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    move-result-object p0
 
-    move-result-object v0
+    .line 205
+    invoke-static {p0}, Landroid/support/v4/media/session/c$c;->a(Landroid/media/AudioAttributes;)I
 
-    check-cast v0, Landroid/support/v4/media/session/c;
+    move-result p0
 
-    if-eqz v0, :cond_0
-
-    const/16 v1, 0xc
-
-    .line 5
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    const/4 v2, 0x0
-
-    .line 6
-    invoke-virtual {v0, v1, p1, v2}, Landroid/support/v4/media/session/c;->a(ILjava/lang/Object;Landroid/os/Bundle;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public c(Z)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Landroid/support/v4/media/session/c$c;->a:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_0
-
-    const/16 v1, 0xb
-
-    .line 2
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    const/4 v2, 0x0
-
-    .line 3
-    invoke-virtual {v0, v1, p1, v2}, Landroid/support/v4/media/session/c;->a(ILjava/lang/Object;Landroid/os/Bundle;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public e()V
-    .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Landroid/support/v4/media/session/c$c;->a:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_0
-
-    const/16 v1, 0x8
-
-    const/4 v2, 0x0
-
-    .line 2
-    invoke-virtual {v0, v1, v2, v2}, Landroid/support/v4/media/session/c;->a(ILjava/lang/Object;Landroid/os/Bundle;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public h()V
-    .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Landroid/support/v4/media/session/c$c;->a:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_0
-
-    const/16 v1, 0xd
-
-    const/4 v2, 0x0
-
-    .line 2
-    invoke-virtual {v0, v1, v2, v2}, Landroid/support/v4/media/session/c;->a(ILjava/lang/Object;Landroid/os/Bundle;)V
-
-    :cond_0
-    return-void
+    return p0
 .end method

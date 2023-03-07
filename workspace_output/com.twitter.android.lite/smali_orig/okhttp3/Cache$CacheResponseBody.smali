@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field private final bodySource:Lgx;
+.field private final bodySource:Lyu;
 
 .field private final contentLength:Ljava/lang/String;
     .annotation runtime Ljavax/annotation/Nullable;
@@ -34,35 +34,35 @@
 .method constructor <init>(Lokhttp3/internal/cache/DiskLruCache$Snapshot;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 1
+    .line 741
     invoke-direct {p0}, Lokhttp3/ResponseBody;-><init>()V
 
-    .line 2
+    .line 742
     iput-object p1, p0, Lokhttp3/Cache$CacheResponseBody;->snapshot:Lokhttp3/internal/cache/DiskLruCache$Snapshot;
 
-    .line 3
+    .line 743
     iput-object p2, p0, Lokhttp3/Cache$CacheResponseBody;->contentType:Ljava/lang/String;
 
-    .line 4
+    .line 744
     iput-object p3, p0, Lokhttp3/Cache$CacheResponseBody;->contentLength:Ljava/lang/String;
 
     const/4 p2, 0x1
 
-    .line 5
-    invoke-virtual {p1, p2}, Lokhttp3/internal/cache/DiskLruCache$Snapshot;->getSource(I)Lwx;
+    .line 746
+    invoke-virtual {p1, p2}, Lokhttp3/internal/cache/DiskLruCache$Snapshot;->getSource(I)Lzk;
 
     move-result-object p2
 
-    .line 6
+    .line 747
     new-instance p3, Lokhttp3/Cache$CacheResponseBody$1;
 
-    invoke-direct {p3, p0, p2, p1}, Lokhttp3/Cache$CacheResponseBody$1;-><init>(Lokhttp3/Cache$CacheResponseBody;Lwx;Lokhttp3/internal/cache/DiskLruCache$Snapshot;)V
+    invoke-direct {p3, p0, p2, p1}, Lokhttp3/Cache$CacheResponseBody$1;-><init>(Lokhttp3/Cache$CacheResponseBody;Lzk;Lokhttp3/internal/cache/DiskLruCache$Snapshot;)V
 
-    invoke-static {p3}, Lnx;->a(Lwx;)Lgx;
+    invoke-static {p3}, Lzb;->a(Lzk;)Lyu;
 
     move-result-object p1
 
-    iput-object p1, p0, Lokhttp3/Cache$CacheResponseBody;->bodySource:Lgx;
+    iput-object p1, p0, Lokhttp3/Cache$CacheResponseBody;->bodySource:Lyu;
 
     return-void
 .end method
@@ -74,7 +74,7 @@
 
     const-wide/16 v0, -0x1
 
-    .line 1
+    .line 761
     :try_start_0
     iget-object v2, p0, Lokhttp3/Cache$CacheResponseBody;->contentLength:Ljava/lang/String;
 
@@ -96,7 +96,7 @@
 .method public contentType()Lokhttp3/MediaType;
     .locals 1
 
-    .line 1
+    .line 756
     iget-object v0, p0, Lokhttp3/Cache$CacheResponseBody;->contentType:Ljava/lang/String;
 
     if-eqz v0, :cond_0
@@ -114,11 +114,11 @@
     return-object v0
 .end method
 
-.method public source()Lgx;
+.method public source()Lyu;
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Lokhttp3/Cache$CacheResponseBody;->bodySource:Lgx;
+    .line 768
+    iget-object v0, p0, Lokhttp3/Cache$CacheResponseBody;->bodySource:Lyu;
 
     return-object v0
 .end method

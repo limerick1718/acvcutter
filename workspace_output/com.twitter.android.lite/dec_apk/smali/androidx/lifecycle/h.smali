@@ -3,15 +3,15 @@
 .source "LifecycleRegistry.java"
 .annotation system Ldalvik/annotation/MemberClasses;
 value = {
-Landroidx/lifecycle/h$b;
+Landroidx/lifecycle/h$a;
 }
 .end annotation
-.field private a:Lf;
+.field private a:Lg;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lf<",
+"Lg<",
 "Landroidx/lifecycle/f;",
-"Landroidx/lifecycle/h$b;",
+"Landroidx/lifecycle/h$a;",
 ">;"
 }
 .end annotation

@@ -11,7 +11,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1
+    .line 39
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
@@ -34,21 +34,21 @@
         }
     .end annotation
 
-    .line 30
+    .line 104
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     const-string v1, "uri"
 
-    .line 31
+    .line 105
     invoke-interface {p0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 32
+    .line 106
     invoke-interface {p0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
@@ -58,14 +58,14 @@
     :cond_0
     const-string v1, "impression_id"
 
-    .line 33
+    .line 108
     invoke-interface {p0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 34
+    .line 109
     invoke-interface {p0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
@@ -75,33 +75,35 @@
     :cond_1
     const-string v1, "scribe_target"
 
-    .line 35
+    .line 111
     invoke-interface {p0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 36
+    .line 112
     invoke-interface {p0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
     invoke-interface {v0, v1, p0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 37
+    .line 114
     :cond_2
-    new-instance p0, Lgv;
+    new-instance p0, Lsy;
 
-    invoke-direct {p0}, Lgv;-><init>()V
+    invoke-direct {p0}, Lsy;-><init>()V
 
-    invoke-virtual {p0}, Lgv;->b()Lgv;
-
-    invoke-virtual {p0}, Lgv;->a()Lfv;
+    invoke-virtual {p0}, Lsy;->a()Lsy;
 
     move-result-object p0
 
-    invoke-virtual {p0, v0}, Lfv;->a(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p0}, Lsy;->b()Lsx;
+
+    move-result-object p0
+
+    invoke-virtual {p0, v0}, Lsx;->a(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -126,14 +128,14 @@
 
     const-string v0, "tag"
 
-    .line 26
+    .line 89
     invoke-interface {p1, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 27
+    .line 90
     invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -148,7 +150,7 @@
     :goto_0
     if-eqz p1, :cond_1
 
-    .line 28
+    .line 93
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     move-result p2
@@ -157,7 +159,7 @@
 
     goto :goto_1
 
-    .line 29
+    .line 98
     :cond_1
     invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
 
@@ -183,14 +185,14 @@
         }
     .end annotation
 
-    .line 7
+    .line 60
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/twitter/android/lite/TwitterLiteActivity;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 8
+    .line 61
     invoke-static {p2}, Lcom/twitter/android/lite/notification/b;->a(Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object v1
@@ -199,7 +201,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 9
+    .line 62
     sget-object v1, Lcom/twitter/android/lite/notification/b;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
@@ -216,21 +218,21 @@
 
     const/high16 v2, 0x8000000
 
-    .line 10
+    .line 63
     invoke-static {p0, v1, v0, v2}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
 
     const-string v1, "body"
 
-    .line 11
+    .line 66
     invoke-interface {p2, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 12
+    .line 67
     invoke-interface {p2, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -239,7 +241,7 @@
 
     goto :goto_0
 
-    .line 13
+    .line 68
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -258,14 +260,14 @@
     :goto_0
     const-string v2, "title"
 
-    .line 14
+    .line 69
     invoke-interface {p2, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 15
+    .line 70
     invoke-interface {p2, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
@@ -277,61 +279,73 @@
     :cond_1
     const/4 v2, 0x0
 
-    .line 16
+    .line 72
     :goto_1
-    new-instance v3, Landroidx/core/app/f$d;
+    new-instance v3, Landroidx/core/app/f$c;
 
-    invoke-direct {v3, p0}, Landroidx/core/app/f$d;-><init>(Landroid/content/Context;)V
+    invoke-direct {v3, p0}, Landroidx/core/app/f$c;-><init>(Landroid/content/Context;)V
 
-    .line 17
-    invoke-virtual {v3, v1}, Landroidx/core/app/f$d;->a(Ljava/lang/CharSequence;)Landroidx/core/app/f$d;
+    .line 73
+    invoke-virtual {v3, v1}, Landroidx/core/app/f$c;->b(Ljava/lang/CharSequence;)Landroidx/core/app/f$c;
 
-    .line 18
-    invoke-virtual {v3, v2}, Landroidx/core/app/f$d;->b(Ljava/lang/CharSequence;)Landroidx/core/app/f$d;
+    move-result-object v3
 
-    .line 19
+    .line 74
+    invoke-virtual {v3, v2}, Landroidx/core/app/f$c;->a(Ljava/lang/CharSequence;)Landroidx/core/app/f$c;
+
+    move-result-object v2
+
+    .line 75
     invoke-static {p2}, Lcom/twitter/android/lite/notification/b;->b(Ljava/util/Map;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v3, v2}, Landroidx/core/app/f$d;->e(I)Landroidx/core/app/f$d;
+    invoke-virtual {v2, v3}, Landroidx/core/app/f$c;->a(I)Landroidx/core/app/f$c;
 
-    .line 20
+    move-result-object v2
+
+    .line 76
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
 
-    const v2, 0x7f020017
+    const v3, 0x7f020017
 
-    invoke-virtual {p0, v2}, Landroid/content/res/Resources;->getColor(I)I
+    invoke-virtual {p0, v3}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result p0
 
-    invoke-virtual {v3, p0}, Landroidx/core/app/f$d;->a(I)Landroidx/core/app/f$d;
+    invoke-virtual {v2, p0}, Landroidx/core/app/f$c;->c(I)Landroidx/core/app/f$c;
 
-    .line 21
-    invoke-virtual {v3, v0}, Landroidx/core/app/f$d;->a(Landroid/app/PendingIntent;)Landroidx/core/app/f$d;
+    move-result-object p0
 
-    const/4 p0, 0x1
+    .line 77
+    invoke-virtual {p0, v0}, Landroidx/core/app/f$c;->a(Landroid/app/PendingIntent;)Landroidx/core/app/f$c;
 
-    .line 22
-    invoke-virtual {v3, p0}, Landroidx/core/app/f$d;->a(Z)Landroidx/core/app/f$d;
+    move-result-object p0
 
-    .line 23
-    sget p0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/4 v0, 0x1
 
-    const/16 v0, 0x1a
+    .line 78
+    invoke-virtual {p0, v0}, Landroidx/core/app/f$c;->a(Z)Landroidx/core/app/f$c;
 
-    if-lt p0, v0, :cond_2
+    move-result-object p0
 
-    const-string p0, "default"
+    .line 80
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 24
-    invoke-virtual {v3, p0}, Landroidx/core/app/f$d;->a(Ljava/lang/String;)Landroidx/core/app/f$d;
+    const/16 v2, 0x1a
 
-    .line 25
+    if-lt v0, v2, :cond_2
+
+    const-string v0, "default"
+
+    .line 81
+    invoke-virtual {p0, v0}, Landroidx/core/app/f$c;->a(Ljava/lang/String;)Landroidx/core/app/f$c;
+
+    .line 84
     :cond_2
-    invoke-virtual {v3}, Landroidx/core/app/f$d;->a()Landroid/app/Notification;
+    invoke-virtual {p0}, Landroidx/core/app/f$c;->b()Landroid/app/Notification;
 
     move-result-object p0
 
@@ -340,17 +354,17 @@
     return-void
 .end method
 
-.method static a(Landroid/content/Context;Lcom/google/firebase/messaging/c;)V
+.method static a(Landroid/content/Context;Lcom/google/firebase/messaging/d;)V
     .locals 3
 
-    .line 1
-    invoke-virtual {p1}, Lcom/google/firebase/messaging/c;->f()Ljava/util/Map;
+    .line 42
+    invoke-virtual {p1}, Lcom/google/firebase/messaging/d;->a()Ljava/util/Map;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    invoke-virtual {p1}, Lcom/google/firebase/messaging/c;->f()Ljava/util/Map;
+    invoke-virtual {p1}, Lcom/google/firebase/messaging/d;->a()Ljava/util/Map;
 
     move-result-object v0
 
@@ -362,22 +376,22 @@
 
     goto :goto_0
 
-    .line 2
+    .line 45
     :cond_0
-    invoke-virtual {p1}, Lcom/google/firebase/messaging/c;->f()Ljava/util/Map;
+    invoke-virtual {p1}, Lcom/google/firebase/messaging/d;->a()Ljava/util/Map;
 
     move-result-object p1
 
     const-string v0, "notification"
 
-    .line 3
+    .line 47
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/app/NotificationManager;
 
-    .line 4
+    .line 49
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x1a
@@ -386,13 +400,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 5
+    .line 50
     invoke-static {v0, p0}, Lcom/twitter/android/lite/notification/a;->a(Landroid/app/NotificationManager;Landroid/content/Context;)V
 
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 6
+    .line 53
     invoke-static {p0, v0, p1}, Lcom/twitter/android/lite/notification/b;->a(Landroid/content/Context;Landroid/app/NotificationManager;Ljava/util/Map;)V
 
     :cond_2
@@ -414,7 +428,7 @@
 
     const-string v0, "type"
 
-    .line 1
+    .line 118
     invoke-interface {p0, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v1
@@ -425,7 +439,7 @@
 
     return v2
 
-    .line 2
+    .line 121
     :cond_0
     invoke-interface {p0, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -435,7 +449,7 @@
 
     const/4 v0, -0x1
 
-    .line 3
+    .line 123
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     move-result v1

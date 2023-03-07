@@ -62,48 +62,48 @@ Lokhttp3/Response$Builder;
 .field final sentRequestAtMillis:J
 
 
-<span class="cov">.method constructor &lt;init&gt;(Lokhttp3/Response$Builder;)V</span>
+.method constructor &lt;init&gt;(Lokhttp3/Response$Builder;)V
 <span class="">	.locals 2</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/Response$Builder;->request:Lokhttp3/Request;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/Response;->request:Lokhttp3/Request;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/Response$Builder;->protocol:Lokhttp3/Protocol;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/Response;->protocol:Lokhttp3/Protocol;</span>
-<span class="cov">	iget v0, p1, Lokhttp3/Response$Builder;->code:I</span>
-<span class="cov">	iput v0, p0, Lokhttp3/Response;->code:I</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/Response$Builder;->message:Ljava/lang/String;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/Response;->message:Ljava/lang/String;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/Response$Builder;->handshake:Lokhttp3/Handshake;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/Response;->handshake:Lokhttp3/Handshake;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/Response$Builder;->headers:Lokhttp3/Headers$Builder;</span>
-<span class="exec">	invoke-virtual {v0}, Lokhttp3/Headers$Builder;->build()Lokhttp3/Headers;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/Response;->headers:Lokhttp3/Headers;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/Response$Builder;->body:Lokhttp3/ResponseBody;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/Response;->body:Lokhttp3/ResponseBody;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/Response$Builder;->networkResponse:Lokhttp3/Response;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/Response;->networkResponse:Lokhttp3/Response;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/Response$Builder;->cacheResponse:Lokhttp3/Response;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/Response;->cacheResponse:Lokhttp3/Response;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/Response$Builder;->priorResponse:Lokhttp3/Response;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/Response;->priorResponse:Lokhttp3/Response;</span>
-<span class="cov">	iget-wide v0, p1, Lokhttp3/Response$Builder;->sentRequestAtMillis:J</span>
-<span class="cov">	iput-wide v0, p0, Lokhttp3/Response;->sentRequestAtMillis:J</span>
-<span class="cov">	iget-wide v0, p1, Lokhttp3/Response$Builder;->receivedResponseAtMillis:J</span>
-<span class="cov">	iput-wide v0, p0, Lokhttp3/Response;->receivedResponseAtMillis:J</span>
-<span class="cov">	iget-object p1, p1, Lokhttp3/Response$Builder;->exchange:Lokhttp3/internal/connection/Exchange;</span>
-<span class="cov">	iput-object p1, p0, Lokhttp3/Response;->exchange:Lokhttp3/internal/connection/Exchange;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/Response$Builder;->request:Lokhttp3/Request;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/Response;->request:Lokhttp3/Request;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/Response$Builder;->protocol:Lokhttp3/Protocol;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/Response;->protocol:Lokhttp3/Protocol;</span>
+<span class="missed">	iget v0, p1, Lokhttp3/Response$Builder;->code:I</span>
+<span class="missed">	iput v0, p0, Lokhttp3/Response;->code:I</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/Response$Builder;->message:Ljava/lang/String;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/Response;->message:Ljava/lang/String;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/Response$Builder;->handshake:Lokhttp3/Handshake;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/Response;->handshake:Lokhttp3/Handshake;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/Response$Builder;->headers:Lokhttp3/Headers$Builder;</span>
+<span class="">	invoke-virtual {v0}, Lokhttp3/Headers$Builder;->build()Lokhttp3/Headers;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/Response;->headers:Lokhttp3/Headers;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/Response$Builder;->body:Lokhttp3/ResponseBody;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/Response;->body:Lokhttp3/ResponseBody;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/Response$Builder;->networkResponse:Lokhttp3/Response;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/Response;->networkResponse:Lokhttp3/Response;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/Response$Builder;->cacheResponse:Lokhttp3/Response;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/Response;->cacheResponse:Lokhttp3/Response;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/Response$Builder;->priorResponse:Lokhttp3/Response;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/Response;->priorResponse:Lokhttp3/Response;</span>
+<span class="missed">	iget-wide v0, p1, Lokhttp3/Response$Builder;->sentRequestAtMillis:J</span>
+<span class="missed">	iput-wide v0, p0, Lokhttp3/Response;->sentRequestAtMillis:J</span>
+<span class="missed">	iget-wide v0, p1, Lokhttp3/Response$Builder;->receivedResponseAtMillis:J</span>
+<span class="missed">	iput-wide v0, p0, Lokhttp3/Response;->receivedResponseAtMillis:J</span>
+<span class="missed">	iget-object p1, p1, Lokhttp3/Response$Builder;->exchange:Lokhttp3/internal/connection/Exchange;</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/Response;->exchange:Lokhttp3/internal/connection/Exchange;</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public body()Lokhttp3/ResponseBody;</span>
+.method public body()Lokhttp3/ResponseBody;
 <span class="">	.locals 1</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/Response;->body:Lokhttp3/ResponseBody;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Response;->body:Lokhttp3/ResponseBody;</span>
+<span class="">	return-object v0</span>
 .end method
 
 .method public cacheControl()Lokhttp3/CacheControl;
@@ -176,11 +176,11 @@ Lokhttp3/Response$Builder;
 <span class="">	throw v0</span>
 .end method
 
-<span class="cov">.method public code()I</span>
+.method public code()I
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget v0, p0, Lokhttp3/Response;->code:I</span>
-<span class="exec">	return v0</span>
+<span class="missed">	iget v0, p0, Lokhttp3/Response;->code:I</span>
+<span class="">	return v0</span>
 .end method
 
 .method public handshake()Lokhttp3/Handshake;
@@ -192,18 +192,18 @@ Lokhttp3/Response$Builder;
 <span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public header(Ljava/lang/String;)Ljava/lang/String;</span>
+.method public header(Ljava/lang/String;)Ljava/lang/String;
 <span class="">	.locals 1</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="exec">	invoke-virtual {p0, p1, v0}, Lokhttp3/Response;->header(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	return-object p1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	invoke-virtual {p0, p1, v0}, Lokhttp3/Response;->header(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
 .end method
 
-<span class="cov">.method public header(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+.method public header(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 <span class="">	.locals 1</span>
 <span class="">	.param p2    # Ljava/lang/String;</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
@@ -212,13 +212,15 @@ Lokhttp3/Response$Builder;
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/Response;->headers:Lokhttp3/Headers;</span>
-<span class="exec">	invoke-virtual {v0, p1}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	if-eqz p1, :cond_0</span>
-<span class="cov">	move-object p2, p1</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-object p2</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Response;->headers:Lokhttp3/Headers;</span>
+<span class="">	invoke-virtual {v0, p1}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	move-object p1, p2</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object p1</span>
 .end method
 
 .method public headers(Ljava/lang/String;)Ljava/util/List;
@@ -240,11 +242,11 @@ Lokhttp3/Response$Builder;
 <span class="">	return-object p1</span>
 .end method
 
-<span class="cov">.method public headers()Lokhttp3/Headers;</span>
+.method public headers()Lokhttp3/Headers;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/Response;->headers:Lokhttp3/Headers;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Response;->headers:Lokhttp3/Headers;</span>
+<span class="">	return-object v0</span>
 .end method
 
 .method public isRedirect()Z
@@ -304,12 +306,12 @@ Lokhttp3/Response$Builder;
 <span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public newBuilder()Lokhttp3/Response$Builder;</span>
+.method public newBuilder()Lokhttp3/Response$Builder;
 <span class="">	.locals 1</span>
 
-<span class="cov">	new-instance v0, Lokhttp3/Response$Builder;</span>
-<span class="cov">	invoke-direct {v0, p0}, Lokhttp3/Response$Builder;-><init>(Lokhttp3/Response;)V</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	new-instance v0, Lokhttp3/Response$Builder;</span>
+<span class="missed">	invoke-direct {v0, p0}, Lokhttp3/Response$Builder;-><init>(Lokhttp3/Response;)V</span>
+<span class="">	return-object v0</span>
 .end method
 
 .method public peekBody(J)Lokhttp3/ResponseBody;
@@ -321,26 +323,26 @@ Lokhttp3/Response$Builder;
 <span class="">	.end annotation</span>
 
 <span class="missed">	iget-object v0, p0, Lokhttp3/Response;->body:Lokhttp3/ResponseBody;</span>
-<span class="">	invoke-virtual {v0}, Lokhttp3/ResponseBody;->source()Lgx;</span>
+<span class="">	invoke-virtual {v0}, Lokhttp3/ResponseBody;->source()Lyu;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	invoke-interface {v0}, Lgx;->peek()Lgx;</span>
+<span class="">	invoke-interface {v0}, Lyu;->h()Lyu;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	new-instance v1, Lex;</span>
-<span class="missed">	invoke-direct {v1}, Lex;-><init>()V</span>
-<span class="missed">	invoke-interface {v0, p1, p2}, Lgx;->d(J)Z</span>
-<span class="">	invoke-interface {v0}, Lgx;->getBuffer()Lex;</span>
+<span class="missed">	new-instance v1, Lys;</span>
+<span class="missed">	invoke-direct {v1}, Lys;-><init>()V</span>
+<span class="missed">	invoke-interface {v0, p1, p2}, Lyu;->b(J)Z</span>
+<span class="">	invoke-interface {v0}, Lyu;->c()Lys;</span>
 <span class="missed">	move-result-object v2</span>
-<span class="">	invoke-virtual {v2}, Lex;->v()J</span>
+<span class="">	invoke-virtual {v2}, Lys;->a()J</span>
 <span class="missed">	move-result-wide v2</span>
 <span class="">	invoke-static {p1, p2, v2, v3}, Ljava/lang/Math;->min(JJ)J</span>
 <span class="missed">	move-result-wide p1</span>
-<span class="missed">	invoke-virtual {v1, v0, p1, p2}, Lex;->a(Lwx;J)Lfx;</span>
+<span class="missed">	invoke-virtual {v1, v0, p1, p2}, Lys;->a(Lzk;J)Lyt;</span>
 <span class="missed">	iget-object p1, p0, Lokhttp3/Response;->body:Lokhttp3/ResponseBody;</span>
 <span class="">	invoke-virtual {p1}, Lokhttp3/ResponseBody;->contentType()Lokhttp3/MediaType;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="">	invoke-virtual {v1}, Lex;->v()J</span>
+<span class="">	invoke-virtual {v1}, Lys;->a()J</span>
 <span class="missed">	move-result-wide v2</span>
-<span class="">	invoke-static {p1, v2, v3, v1}, Lokhttp3/ResponseBody;->create(Lokhttp3/MediaType;JLgx;)Lokhttp3/ResponseBody;</span>
+<span class="">	invoke-static {p1, v2, v3, v1}, Lokhttp3/ResponseBody;->create(Lokhttp3/MediaType;JLyu;)Lokhttp3/ResponseBody;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	return-object p1</span>
 .end method
@@ -368,11 +370,11 @@ Lokhttp3/Response$Builder;
 <span class="">	return-wide v0</span>
 .end method
 
-<span class="cov">.method public request()Lokhttp3/Request;</span>
+.method public request()Lokhttp3/Request;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/Response;->request:Lokhttp3/Request;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Response;->request:Lokhttp3/Request;</span>
+<span class="">	return-object v0</span>
 .end method
 
 .method public sentRequestAtMillis()J

@@ -1,5 +1,5 @@
 .class Lokhttp3/Cache$CacheResponseBody$1;
-.super Ljx;
+.super Lyx;
 .source "Cache.java"
 
 
@@ -21,15 +21,15 @@
 
 
 # direct methods
-.method constructor <init>(Lokhttp3/Cache$CacheResponseBody;Lwx;Lokhttp3/internal/cache/DiskLruCache$Snapshot;)V
+.method constructor <init>(Lokhttp3/Cache$CacheResponseBody;Lzk;Lokhttp3/internal/cache/DiskLruCache$Snapshot;)V
     .locals 0
 
-    .line 1
+    .line 747
     iput-object p1, p0, Lokhttp3/Cache$CacheResponseBody$1;->this$0:Lokhttp3/Cache$CacheResponseBody;
 
     iput-object p3, p0, Lokhttp3/Cache$CacheResponseBody$1;->val$snapshot:Lokhttp3/internal/cache/DiskLruCache$Snapshot;
 
-    invoke-direct {p0, p2}, Ljx;-><init>(Lwx;)V
+    invoke-direct {p0, p2}, Lyx;-><init>(Lzk;)V
 
     return-void
 .end method
@@ -44,13 +44,13 @@
         }
     .end annotation
 
-    .line 1
+    .line 749
     iget-object v0, p0, Lokhttp3/Cache$CacheResponseBody$1;->val$snapshot:Lokhttp3/internal/cache/DiskLruCache$Snapshot;
 
     invoke-virtual {v0}, Lokhttp3/internal/cache/DiskLruCache$Snapshot;->close()V
 
-    .line 2
-    invoke-super {p0}, Ljx;->close()V
+    .line 750
+    invoke-super {p0}, Lyx;->close()V
 
     return-void
 .end method

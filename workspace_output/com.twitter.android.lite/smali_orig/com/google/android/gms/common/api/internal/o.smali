@@ -26,7 +26,7 @@
 .method public final run()V
     .locals 1
 
-    .line 1
+    .line 2
     iget-object v0, p0, Lcom/google/android/gms/common/api/internal/o;->a:Lcom/google/android/gms/common/api/internal/b$a;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b$a;->b(Lcom/google/android/gms/common/api/internal/b$a;)V

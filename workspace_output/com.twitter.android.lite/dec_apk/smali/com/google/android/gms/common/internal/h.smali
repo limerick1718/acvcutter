@@ -25,10 +25,10 @@ sget-object v0, Lcom/google/android/gms/common/internal/h;->a:Ljava/lang/Object;
 monitor-enter v0
 sget-object v1, Lcom/google/android/gms/common/internal/h;->b:Lcom/google/android/gms/common/internal/h;
 if-nez v1, :cond_0
-new-instance v1, Lcom/google/android/gms/common/internal/d0;
+new-instance v1, Lcom/google/android/gms/common/internal/ad;
 invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 move-result-object p0
-invoke-direct {v1, p0}, Lcom/google/android/gms/common/internal/d0;-><init>(Landroid/content/Context;)V
+invoke-direct {v1, p0}, Lcom/google/android/gms/common/internal/ad;-><init>(Landroid/content/Context;)V
 sput-object v1, Lcom/google/android/gms/common/internal/h;->b:Lcom/google/android/gms/common/internal/h;
 :cond_0
 monitor-exit v0

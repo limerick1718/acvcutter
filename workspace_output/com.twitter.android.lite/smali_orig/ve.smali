@@ -1,26 +1,32 @@
-.class interface abstract Lve;
+.class public interface abstract Lve;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.source "ValueLoader.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/Class;)Z
+.method public abstract load(Landroid/content/Context;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljava/lang/Class<",
-            "*>;)Z"
+            "Landroid/content/Context;",
+            ")TT;"
         }
     .end annotation
-.end method
 
-.method public abstract b(Ljava/lang/Class;)Lse;
-    .annotation system Ldalvik/annotation/Signature;
+    .annotation system Ldalvik/annotation/Throws;
         value = {
-            "(",
-            "Ljava/lang/Class<",
-            "*>;)",
-            "Lse;"
+            Ljava/lang/Exception;
         }
     .end annotation
 .end method

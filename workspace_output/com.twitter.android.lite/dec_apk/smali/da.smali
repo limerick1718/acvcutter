@@ -1,25 +1,54 @@
-.class public Lda;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.field private static a:Landroid/os/UserManager;
-.field private static volatile b:Z
-.method static constructor <clinit>()V
+.class public final Lda;
+.super Ljx;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljx<",
+"Lda;",
+">;"
+}
+.end annotation
+.field private static volatile f:[Lda;
+.field public a:Ljava/lang/Integer;
+.field public b:Ljava/lang/String;
+.field public c:Lcy;
+.field public d:Ljava/lang/Boolean;
+.field public e:Ljava/lang/Boolean;
+.method public constructor <init>()V
 .locals 1
-invoke-static {}, Lda;->a()Z
-move-result v0
-xor-int/lit8 v0, v0, 0x1
-sput-boolean v0, Lda;->b:Z
-return-void
-.end method
-.method private constructor <init>()V
-.locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public static a()Z
+.method public final synthetic a(Lju;)Lkd;
 .locals 2
-sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-const/16 v1, 0x18
-const/4 v0, 0x1
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Ljava/io/IOException;
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final a(Ljv;)V
+.locals 2
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Ljava/io/IOException;
+}
+.end annotation
+return-void
+.end method
+.method protected final b()I
+.locals 4
+const/4 v0, 0x0
+return v0
+.end method
+.method public final equals(Ljava/lang/Object;)Z
+.locals 4
+const/4 v0, 0x0
+return v0
+.end method
+.method public final hashCode()I
+.locals 3
+const/4 v0, 0x0
 return v0
 .end method

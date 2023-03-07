@@ -14,145 +14,61 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public Lmo;
+		<code>.class final Lmo;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.implements Ljava/util/concurrent/Callable;
+
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/Object;",
+"Ljava/util/concurrent/Callable<",
+"Ljava/util/List<",
+"Lpu;",
+">;>;"
+}
+.end annotation
+
+.field private final synthetic a:Lpz;
+.field private final synthetic b:Ljava/lang/String;
+.field private final synthetic c:Ljava/lang/String;
+.field private final synthetic d:Lmh;
 
 
-.field static final c:Lmo;
-.field private final a:Ljava/lang/String;
-.field private b:I
-
-
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 2</span>
-
-<span class="cov">	new-instance v0, Lmo;</span>
-<span class="cov">	const-string v1, "FirebaseCrashlytics"</span>
-<span class="cov">	invoke-direct {v0, v1}, Lmo;-><init>(Ljava/lang/String;)V</span>
-<span class="cov">	sput-object v0, Lmo;->c:Lmo;</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public constructor &lt;init&gt;(Ljava/lang/String;)V</span>
+.method constructor &lt;init&gt;(Lmh;Lpz;Ljava/lang/String;Ljava/lang/String;)V
 <span class="">	.locals 0</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	iput-object p1, p0, Lmo;->a:Ljava/lang/String;</span>
-<span class="cov">	const/4 p1, 0x4</span>
-<span class="cov">	iput p1, p0, Lmo;->b:I</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public static a()Lmo;</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	sget-object v0, Lmo;->c:Lmo;</span>
-<span class="exec">	return-object v0</span>
-.end method
-
-<span class="cov">.method private a(I)Z</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	iget v0, p0, Lmo;->b:I</span>
-<span class="cov">	if-le v0, p1, :cond_1</span>
-<span class="cov">	iget-object v0, p0, Lmo;->a:Ljava/lang/String;</span>
-<span class="exec">	invoke-static {v0, p1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z</span>
-<span class="cov">	move-result p1</span>
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 p1, 0x0</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	const/4 p1, 0x1</span>
-<span class="cov">	:goto_1</span>
-<span class="exec">	return p1</span>
-.end method
-
-<span class="cov">.method public a(Ljava/lang/String;)V</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	invoke-virtual {p0, p1, v0}, Lmo;->a(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public a(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	const/4 v0, 0x3</span>
-<span class="exec">	invoke-direct {p0, v0}, Lmo;->a(I)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	iget-object v0, p0, Lmo;->a:Ljava/lang/String;</span>
-<span class="missed">	invoke-static {v0, p1, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-void</span>
-.end method
-
-.method public b(Ljava/lang/String;)V
-<span class="">	.locals 1</span>
-
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	invoke-virtual {p0, p1, v0}, Lmo;->b(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="missed">	iput-object p1, p0, Lmo;->d:Lmh;</span>
+<span class="missed">	iput-object p2, p0, Lmo;->a:Lpz;</span>
+<span class="missed">	iput-object p3, p0, Lmo;->b:Ljava/lang/String;</span>
+<span class="missed">	iput-object p4, p0, Lmo;->c:Ljava/lang/String;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
 <span class="">	return-void</span>
 .end method
 
-.method public b(Ljava/lang/String;Ljava/lang/Throwable;)V
-<span class="">	.locals 1</span>
+.method public final synthetic call()Ljava/lang/Object;
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/lang/Exception;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="missed">	const/4 v0, 0x6</span>
-<span class="">	invoke-direct {p0, v0}, Lmo;->a(I)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	iget-object v0, p0, Lmo;->a:Ljava/lang/String;</span>
-<span class="missed">	invoke-static {v0, p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
-<span class="">	:cond_0</span>
-<span class="">	return-void</span>
-.end method
-
-<span class="cov">.method public c(Ljava/lang/String;)V</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	invoke-virtual {p0, p1, v0}, Lmo;->c(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public c(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	const/4 v0, 0x4</span>
-<span class="exec">	invoke-direct {p0, v0}, Lmo;->a(I)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	iget-object v0, p0, Lmo;->a:Ljava/lang/String;</span>
-<span class="cov">	invoke-static {v0, p1, p2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-void</span>
-.end method
-
-.method public d(Ljava/lang/String;)V
-<span class="">	.locals 1</span>
-
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	invoke-virtual {p0, p1, v0}, Lmo;->d(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public d(Ljava/lang/String;Ljava/lang/Throwable;)V
-<span class="">	.locals 1</span>
-
-<span class="missed">	const/4 v0, 0x5</span>
-<span class="">	invoke-direct {p0, v0}, Lmo;->a(I)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	iget-object v0, p0, Lmo;->a:Ljava/lang/String;</span>
-<span class="missed">	invoke-static {v0, p1, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
-<span class="">	:cond_0</span>
-<span class="">	return-void</span>
+<span class="missed">	iget-object v0, p0, Lmo;->d:Lmh;</span>
+<span class="">	invoke-static {v0}, Lmh;->a(Lmh;)Lpl;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {v0}, Lpl;->l()V</span>
+<span class="missed">	iget-object v0, p0, Lmo;->d:Lmh;</span>
+<span class="">	invoke-static {v0}, Lmh;->a(Lmh;)Lpl;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lpl;->d()Lqi;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lmo;->a:Lpz;</span>
+<span class="missed">	iget-object v1, v1, Lpz;->a:Ljava/lang/String;</span>
+<span class="missed">	iget-object v2, p0, Lmo;->b:Ljava/lang/String;</span>
+<span class="missed">	iget-object v3, p0, Lmo;->c:Ljava/lang/String;</span>
+<span class="">	invoke-virtual {v0, v1, v2, v3}, Lqi;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

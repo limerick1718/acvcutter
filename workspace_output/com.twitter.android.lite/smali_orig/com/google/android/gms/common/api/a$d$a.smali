@@ -18,5 +18,5 @@
 
 
 # virtual methods
-.method public abstract f()Landroid/accounts/Account;
+.method public abstract a()Landroid/accounts/Account;
 .end method

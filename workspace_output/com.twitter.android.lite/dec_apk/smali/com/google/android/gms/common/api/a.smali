@@ -5,9 +5,11 @@ value = {
 Lcom/google/android/gms/common/api/a$h;,
 Lcom/google/android/gms/common/api/a$f;,
 Lcom/google/android/gms/common/api/a$b;,
+Lcom/google/android/gms/common/api/a$j;,
 Lcom/google/android/gms/common/api/a$g;,
 Lcom/google/android/gms/common/api/a$c;,
 Lcom/google/android/gms/common/api/a$d;,
+Lcom/google/android/gms/common/api/a$i;,
 Lcom/google/android/gms/common/api/a$a;,
 Lcom/google/android/gms/common/api/a$e;
 }
@@ -28,7 +30,31 @@ value = {
 }
 .end annotation
 .end field
-.field private final b:Ljava/lang/String;
+.field private final b:Lcom/google/android/gms/common/api/a$i;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/android/gms/common/api/a$i<",
+"*TO;>;"
+}
+.end annotation
+.end field
+.field private final c:Lcom/google/android/gms/common/api/a$g;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/android/gms/common/api/a$g<",
+"*>;"
+}
+.end annotation
+.end field
+.field private final d:Lcom/google/android/gms/common/api/a$j;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/android/gms/common/api/a$j<",
+"*>;"
+}
+.end annotation
+.end field
+.field private final e:Ljava/lang/String;
 .method public constructor <init>(Ljava/lang/String;Lcom/google/android/gms/common/api/a$a;Lcom/google/android/gms/common/api/a$g;)V
 .locals 1
 .annotation system Ldalvik/annotation/Signature;
@@ -46,12 +72,7 @@ value = {
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public final a()Ljava/lang/String;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public final b()Lcom/google/android/gms/common/api/a$a;
+.method public final a()Lcom/google/android/gms/common/api/a$a;
 .locals 2
 .annotation system Ldalvik/annotation/Signature;
 value = {
@@ -60,6 +81,11 @@ value = {
 "*TO;>;"
 }
 .end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final b()Ljava/lang/String;
+.locals 1
 const/4 v0, 0x0
 return-object v0
 .end method

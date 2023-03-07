@@ -1,45 +1,65 @@
-.class final Lgq;
-.super Lzq$b;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.annotation system Ldalvik/annotation/MemberClasses;
+.class public final enum Lgq;
+.super Ljava/lang/Enum;
+.annotation system Ldalvik/annotation/Signature;
 value = {
-Lgq$b;
+"Ljava/lang/Enum<",
+"Lgq;",
+">;"
 }
 .end annotation
-.field private final a:Ljava/lang/String;
-.field private final b:Ljava/lang/String;
-.method private constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+.field public static final enum a:Lgq;
+.field public static final enum b:Lgq;
+.field public static final enum c:Lgq;
+.field public static final enum d:Lgq;
+.field public static final enum e:Lgq;
+.field public static final enum f:Lgq;
+.field public static final enum g:Lgq;
+.field public static final enum h:Lgq;
+.field public static final enum i:Lgq;
+.field public static final enum j:Lgq;
+.field private static final synthetic n:[Lgq;
+.field private final k:Ljava/lang/Class;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/Class<",
+"*>;"
+}
+.end annotation
+.end field
+.field private final l:Ljava/lang/Class;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/Class<",
+"*>;"
+}
+.end annotation
+.end field
+.field private final m:Ljava/lang/Object;
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
 .locals 0
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(",
+"Ljava/lang/Class<",
+"*>;",
+"Ljava/lang/Class<",
+"*>;",
+"Ljava/lang/Object;",
+")V"
+}
+.end annotation
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Lgq$a;)V
-.locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
-.end method
-.method public a()Ljava/lang/String;
+.method public final a()Ljava/lang/Class;
 .locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public b()Ljava/lang/String;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public equals(Ljava/lang/Object;)Z
-.locals 4
-const/4 v0, 0x0
-return v0
-.end method
-.method public hashCode()I
-.locals 2
-const/4 v0, 0x0
-return v0
-.end method
-.method public toString()Ljava/lang/String;
-.locals 2
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"()",
+"Ljava/lang/Class<",
+"*>;"
+}
+.end annotation
 const/4 v0, 0x0
 return-object v0
 .end method

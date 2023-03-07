@@ -3,12 +3,12 @@
 .source "TypeAdapters.java"
 
 # interfaces
-.implements Lwv;
+.implements Lto;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/gson/internal/bind/TypeAdapters;->b(Ljava/lang/Class;Ljava/lang/Class;Lvv;)Lwv;
+    value = Lcom/google/gson/internal/bind/i;->b(Ljava/lang/Class;Ljava/lang/Class;Ltn;)Lto;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,19 +22,19 @@
 
 .field final synthetic b:Ljava/lang/Class;
 
-.field final synthetic c:Lvv;
+.field final synthetic c:Ltn;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Class;Ljava/lang/Class;Lvv;)V
+.method constructor <init>(Ljava/lang/Class;Ljava/lang/Class;Ltn;)V
     .locals 0
 
-    .line 1
+    .line 861
     iput-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->a:Ljava/lang/Class;
 
     iput-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->b:Ljava/lang/Class;
 
-    iput-object p3, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->c:Lvv;
+    iput-object p3, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->c:Ltn;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,27 +43,27 @@
 
 
 # virtual methods
-.method public a(Lfv;Ldw;)Lvv;
+.method public a(Lsx;Ltv;)Ltn;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Lfv;",
-            "Ldw<",
+            "Lsx;",
+            "Ltv<",
             "TT;>;)",
-            "Lvv<",
+            "Ltn<",
             "TT;>;"
         }
     .end annotation
 
-    .line 1
-    invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;
+    .line 864
+    invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;
 
     move-result-object p1
 
-    .line 2
+    .line 865
     iget-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->a:Ljava/lang/Class;
 
     if-eq p1, p2, :cond_1
@@ -81,7 +81,7 @@
 
     :cond_1
     :goto_0
-    iget-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->c:Lvv;
+    iget-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->c:Ltn;
 
     :goto_1
     return-object p1
@@ -90,7 +90,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 1
+    .line 868
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -113,7 +113,7 @@
 
     iget-object v1, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->b:Ljava/lang/Class;
 
-    .line 2
+    .line 869
     invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -124,7 +124,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->c:Lvv;
+    iget-object v1, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->c:Ltn;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

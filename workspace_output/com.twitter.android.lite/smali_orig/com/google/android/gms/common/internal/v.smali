@@ -5,19 +5,19 @@
 # instance fields
 .field private final synthetic a:Landroid/content/Intent;
 
-.field private final synthetic b:Landroid/app/Activity;
+.field private final synthetic b:Lcom/google/android/gms/common/api/internal/e;
 
 .field private final synthetic c:I
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Intent;Landroid/app/Activity;I)V
+.method constructor <init>(Landroid/content/Intent;Lcom/google/android/gms/common/api/internal/e;I)V
     .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/google/android/gms/common/internal/v;->a:Landroid/content/Intent;
 
-    iput-object p2, p0, Lcom/google/android/gms/common/internal/v;->b:Landroid/app/Activity;
+    iput-object p2, p0, Lcom/google/android/gms/common/internal/v;->b:Lcom/google/android/gms/common/api/internal/e;
 
     iput p3, p0, Lcom/google/android/gms/common/internal/v;->c:I
 
@@ -31,17 +31,17 @@
 .method public final a()V
     .locals 3
 
-    .line 1
+    .line 2
     iget-object v0, p0, Lcom/google/android/gms/common/internal/v;->a:Landroid/content/Intent;
 
     if-eqz v0, :cond_0
 
-    .line 2
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/v;->b:Landroid/app/Activity;
+    .line 3
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/v;->b:Lcom/google/android/gms/common/api/internal/e;
 
     iget v2, p0, Lcom/google/android/gms/common/internal/v;->c:I
 
-    invoke-virtual {v1, v0, v2}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
+    invoke-interface {v1, v0, v2}, Lcom/google/android/gms/common/api/internal/e;->a(Landroid/content/Intent;I)V
 
     :cond_0
     return-void

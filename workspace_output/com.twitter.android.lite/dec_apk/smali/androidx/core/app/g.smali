@@ -3,7 +3,7 @@
 .source "NotificationCompatBuilder.java"
 .implements Landroidx/core/app/e;
 .field private final a:Landroid/app/Notification$Builder;
-.field private final b:Landroidx/core/app/f$d;
+.field private final b:Landroidx/core/app/f$c;
 .field private c:Landroid/widget/RemoteViews;
 .field private d:Landroid/widget/RemoteViews;
 .field private final e:Ljava/util/List;
@@ -18,7 +18,7 @@ value = {
 .field private final f:Landroid/os/Bundle;
 .field private g:I
 .field private h:Landroid/widget/RemoteViews;
-.method constructor <init>(Landroidx/core/app/f$d;)V
+.method constructor <init>(Landroidx/core/app/f$c;)V
 .locals 9
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void

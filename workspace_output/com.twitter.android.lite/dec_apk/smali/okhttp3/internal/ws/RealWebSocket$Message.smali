@@ -8,9 +8,9 @@ value = Lokhttp3/internal/ws/RealWebSocket;
 accessFlags = 0x18
 name = "Message"
 .end annotation
-.field final data:Lhx;
+.field final data:Lyv;
 .field final formatOpcode:I
-.method constructor <init>(ILhx;)V
+.method constructor <init>(ILyv;)V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void

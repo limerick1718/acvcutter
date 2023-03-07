@@ -14,81 +14,70 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final enum Ljd;
-.super Ljava/lang/Enum;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+		<code>.class final Ljd;
+.super Ljava/lang/Object;
+.implements Ljava/util/Iterator;
 
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ljava/lang/Enum<",
-"Ljd;",
+"Ljava/lang/Object;",
+"Ljava/util/Iterator<",
+"Ljava/lang/String;",
 ">;"
 }
 .end annotation
 
-.field public static final enum a:Ljd;
-.field public static final enum b:Ljd;
-.field public static final enum c:Ljd;
-.field public static final enum d:Ljd;
-.field private static final synthetic e:[Ljd;
+.field private a:Ljava/util/Iterator;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/Iterator<",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.end field
+.field private final synthetic b:Ljb;
 
 
-.method static constructor &lt;clinit&gt;()V
-<span class="">	.locals 7</span>
-
-<span class="missed">	new-instance v0, Ljd;</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="missed">	const-string v2, "SCALAR"</span>
-<span class="missed">	invoke-direct {v0, v2, v1, v1}, Ljd;-><init>(Ljava/lang/String;IZ)V</span>
-<span class="missed">	sput-object v0, Ljd;->a:Ljd;</span>
-<span class="missed">	new-instance v0, Ljd;</span>
-<span class="missed">	const/4 v2, 0x1</span>
-<span class="missed">	const-string v3, "VECTOR"</span>
-<span class="missed">	invoke-direct {v0, v3, v2, v2}, Ljd;-><init>(Ljava/lang/String;IZ)V</span>
-<span class="missed">	sput-object v0, Ljd;->b:Ljd;</span>
-<span class="missed">	new-instance v0, Ljd;</span>
-<span class="missed">	const/4 v3, 0x2</span>
-<span class="missed">	const-string v4, "PACKED_VECTOR"</span>
-<span class="missed">	invoke-direct {v0, v4, v3, v2}, Ljd;-><init>(Ljava/lang/String;IZ)V</span>
-<span class="missed">	sput-object v0, Ljd;->c:Ljd;</span>
-<span class="missed">	new-instance v0, Ljd;</span>
-<span class="missed">	const/4 v4, 0x3</span>
-<span class="missed">	const-string v5, "MAP"</span>
-<span class="missed">	invoke-direct {v0, v5, v4, v1}, Ljd;-><init>(Ljava/lang/String;IZ)V</span>
-<span class="missed">	sput-object v0, Ljd;->d:Ljd;</span>
-<span class="missed">	const/4 v5, 0x4</span>
-<span class="missed">	new-array v5, v5, [Ljd;</span>
-<span class="missed">	sget-object v6, Ljd;->a:Ljd;</span>
-<span class="missed">	aput-object v6, v5, v1</span>
-<span class="missed">	sget-object v1, Ljd;->b:Ljd;</span>
-<span class="missed">	aput-object v1, v5, v2</span>
-<span class="missed">	sget-object v1, Ljd;->c:Ljd;</span>
-<span class="missed">	aput-object v1, v5, v3</span>
-<span class="missed">	aput-object v0, v5, v4</span>
-<span class="missed">	sput-object v5, Ljd;->e:[Ljd;</span>
-<span class="">	return-void</span>
-.end method
-
-.method private constructor &lt;init&gt;(Ljava/lang/String;IZ)V
+.method constructor &lt;init&gt;(Ljb;)V
 <span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(Z)V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
 
-<span class="missed">	invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V</span>
+<span class="missed">	iput-object p1, p0, Ljd;->b:Ljb;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iget-object p1, p0, Ljd;->b:Ljb;</span>
+<span class="">	invoke-static {p1}, Ljb;->a(Ljb;)Lgy;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-interface {p1}, Lgy;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Ljd;->a:Ljava/util/Iterator;</span>
 <span class="">	return-void</span>
 .end method
 
-.method public static values()[Ljd;
+.method public final hasNext()Z
 <span class="">	.locals 1</span>
 
-<span class="missed">	sget-object v0, Ljd;->e:[Ljd;</span>
-<span class="">	invoke-virtual {v0}, [Ljd;->clone()Ljava/lang/Object;</span>
+<span class="missed">	iget-object v0, p0, Ljd;->a:Ljava/util/Iterator;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final synthetic next()Ljava/lang/Object;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Ljd;->a:Ljava/util/Iterator;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, [Ljd;</span>
+<span class="missed">	check-cast v0, Ljava/lang/String;</span>
 <span class="">	return-object v0</span>
+.end method
+
+.method public final remove()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Ljava/lang/UnsupportedOperationException;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V</span>
+<span class="">	throw v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -28,7 +28,7 @@ name = "Pin"
 
 .field private static final WILDCARD:Ljava/lang/String; = "*."
 .field final canonicalHostname:Ljava/lang/String;
-.field final hash:Lhx;
+.field final hash:Lyv;
 .field final hashAlgorithm:Ljava/lang/String;
 .field final pattern:Ljava/lang/String;
 
@@ -78,9 +78,9 @@ name = "Pin"
 <span class="missed">	const/4 p1, 0x5</span>
 <span class="">	invoke-virtual {p2, p1}, Ljava/lang/String;->substring(I)Ljava/lang/String;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="">	invoke-static {p1}, Lhx;->a(Ljava/lang/String;)Lhx;</span>
+<span class="">	invoke-static {p1}, Lyv;->b(Ljava/lang/String;)Lyv;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="missed">	iput-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lhx;</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lyv;</span>
 <span class="exec">	goto :goto_1</span>
 <span class="cov">	:cond_1</span>
 <span class="cov">	const-string p1, "sha256/"</span>
@@ -91,11 +91,11 @@ name = "Pin"
 <span class="cov">	const/4 p1, 0x7</span>
 <span class="exec">	invoke-virtual {p2, p1}, Ljava/lang/String;->substring(I)Ljava/lang/String;</span>
 <span class="cov">	move-result-object p1</span>
-<span class="exec">	invoke-static {p1}, Lhx;->a(Ljava/lang/String;)Lhx;</span>
+<span class="exec">	invoke-static {p1}, Lyv;->b(Ljava/lang/String;)Lyv;</span>
 <span class="cov">	move-result-object p1</span>
-<span class="cov">	iput-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lhx;</span>
+<span class="cov">	iput-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lyv;</span>
 <span class="cov">	:goto_1</span>
-<span class="cov">	iget-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lhx;</span>
+<span class="cov">	iget-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lyv;</span>
 <span class="cov">	if-eqz p1, :cond_2</span>
 <span class="exec">	return-void</span>
 <span class="">	:cond_2</span>
@@ -138,9 +138,9 @@ name = "Pin"
 <span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	iget-object v0, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lhx;</span>
-<span class="missed">	iget-object p1, p1, Lokhttp3/CertificatePinner$Pin;->hash:Lhx;</span>
-<span class="">	invoke-virtual {v0, p1}, Lhx;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lyv;</span>
+<span class="missed">	iget-object p1, p1, Lokhttp3/CertificatePinner$Pin;->hash:Lyv;</span>
+<span class="">	invoke-virtual {v0, p1}, Lyv;->equals(Ljava/lang/Object;)Z</span>
 <span class="missed">	move-result p1</span>
 <span class="missed">	if-eqz p1, :cond_0</span>
 <span class="missed">	const/4 p1, 0x1</span>
@@ -165,8 +165,8 @@ name = "Pin"
 <span class="cov">	move-result v0</span>
 <span class="cov">	add-int/2addr v1, v0</span>
 <span class="cov">	mul-int/lit8 v1, v1, 0x1f</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lhx;</span>
-<span class="exec">	invoke-virtual {v0}, Lhx;->hashCode()I</span>
+<span class="cov">	iget-object v0, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lyv;</span>
+<span class="exec">	invoke-virtual {v0}, Lyv;->hashCode()I</span>
 <span class="cov">	move-result v0</span>
 <span class="cov">	add-int/2addr v1, v0</span>
 <span class="exec">	return v1</span>
@@ -221,8 +221,8 @@ name = "Pin"
 <span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
 <span class="missed">	iget-object v1, p0, Lokhttp3/CertificatePinner$Pin;->hashAlgorithm:Ljava/lang/String;</span>
 <span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	iget-object v1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lhx;</span>
-<span class="">	invoke-virtual {v1}, Lhx;->f()Ljava/lang/String;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lyv;</span>
+<span class="">	invoke-virtual {v1}, Lyv;->b()Ljava/lang/String;</span>
 <span class="missed">	move-result-object v1</span>
 <span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
 <span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>

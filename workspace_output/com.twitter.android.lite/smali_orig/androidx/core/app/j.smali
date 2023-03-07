@@ -3,59 +3,185 @@
 .source "RemoteInput.java"
 
 
+# instance fields
+.field private final a:Ljava/lang/String;
+
+.field private final b:Ljava/lang/CharSequence;
+
+.field private final c:[Ljava/lang/CharSequence;
+
+.field private final d:Z
+
+.field private final e:Landroid/os/Bundle;
+
+.field private final f:Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
 # direct methods
 .method static a(Landroidx/core/app/j;)Landroid/app/RemoteInput;
-    .locals 1
+    .locals 2
 
-    .line 4
+    .line 442
     new-instance v0, Landroid/app/RemoteInput$Builder;
 
     invoke-virtual {p0}, Landroidx/core/app/j;->a()Ljava/lang/String;
 
-    const/4 p0, 0x0
+    move-result-object v1
 
-    throw p0
+    invoke-direct {v0, v1}, Landroid/app/RemoteInput$Builder;-><init>(Ljava/lang/String;)V
+
+    .line 443
+    invoke-virtual {p0}, Landroidx/core/app/j;->b()Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/app/RemoteInput$Builder;->setLabel(Ljava/lang/CharSequence;)Landroid/app/RemoteInput$Builder;
+
+    move-result-object v0
+
+    .line 444
+    invoke-virtual {p0}, Landroidx/core/app/j;->c()[Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/app/RemoteInput$Builder;->setChoices([Ljava/lang/CharSequence;)Landroid/app/RemoteInput$Builder;
+
+    move-result-object v0
+
+    .line 445
+    invoke-virtual {p0}, Landroidx/core/app/j;->e()Z
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/app/RemoteInput$Builder;->setAllowFreeFormInput(Z)Landroid/app/RemoteInput$Builder;
+
+    move-result-object v0
+
+    .line 446
+    invoke-virtual {p0}, Landroidx/core/app/j;->f()Landroid/os/Bundle;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Landroid/app/RemoteInput$Builder;->addExtras(Landroid/os/Bundle;)Landroid/app/RemoteInput$Builder;
+
+    move-result-object p0
+
+    .line 447
+    invoke-virtual {p0}, Landroid/app/RemoteInput$Builder;->build()Landroid/app/RemoteInput;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method static a([Landroidx/core/app/j;)[Landroid/app/RemoteInput;
-    .locals 4
-
-    const/4 v0, 0x0
+    .locals 3
 
     if-nez p0, :cond_0
 
-    return-object v0
+    const/4 p0, 0x0
 
-    .line 1
+    return-object p0
+
+    .line 433
     :cond_0
-    array-length v1, p0
+    array-length v0, p0
 
-    new-array v1, v1, [Landroid/app/RemoteInput;
+    new-array v0, v0, [Landroid/app/RemoteInput;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    .line 2
-    array-length v3, p0
+    .line 434
+    :goto_0
+    array-length v2, p0
 
-    if-gtz v3, :cond_1
+    if-ge v1, v2, :cond_1
 
-    return-object v1
+    .line 435
+    aget-object v2, p0, v1
 
-    .line 3
+    invoke-static {v2}, Landroidx/core/app/j;->a(Landroidx/core/app/j;)Landroid/app/RemoteInput;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
     :cond_1
-    aget-object p0, p0, v2
-
-    invoke-static {p0}, Landroidx/core/app/j;->a(Landroidx/core/app/j;)Landroid/app/RemoteInput;
-
-    throw v0
+    return-object v0
 .end method
 
 
 # virtual methods
 .method public a()Ljava/lang/String;
-    .locals 0
+    .locals 1
 
-    const p0, 0x0
+    .line 74
+    iget-object v0, p0, Landroidx/core/app/j;->a:Ljava/lang/String;
 
-    throw p0
+    return-object v0
+.end method
+
+.method public b()Ljava/lang/CharSequence;
+    .locals 1
+
+    .line 81
+    iget-object v0, p0, Landroidx/core/app/j;->b:Ljava/lang/CharSequence;
+
+    return-object v0
+.end method
+
+.method public c()[Ljava/lang/CharSequence;
+    .locals 1
+
+    .line 88
+    iget-object v0, p0, Landroidx/core/app/j;->c:[Ljava/lang/CharSequence;
+
+    return-object v0
+.end method
+
+.method public d()Ljava/util/Set;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .line 92
+    iget-object v0, p0, Landroidx/core/app/j;->f:Ljava/util/Set;
+
+    return-object v0
+.end method
+
+.method public e()Z
+    .locals 1
+
+    .line 114
+    iget-boolean v0, p0, Landroidx/core/app/j;->d:Z
+
+    return v0
+.end method
+
+.method public f()Landroid/os/Bundle;
+    .locals 1
+
+    .line 121
+    iget-object v0, p0, Landroidx/core/app/j;->e:Landroid/os/Bundle;
+
+    return-object v0
 .end method

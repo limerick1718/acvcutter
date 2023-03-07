@@ -1,77 +1,118 @@
-.class final Lrn;
+.class public Lrn;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<TResult:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
 
 # instance fields
-.field private final synthetic a:Lgn;
-
-.field private final synthetic b:Lqn;
+.field private final a:Lsf;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lsf<",
+            "TTResult;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method constructor <init>(Lqn;Lgn;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lrn;->b:Lqn;
-
-    iput-object p2, p0, Lrn;->a:Lgn;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    new-instance v0, Lsf;
+
+    invoke-direct {v0}, Lsf;-><init>()V
+
+    iput-object v0, p0, Lrn;->a:Lsf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public a()Lrm;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lrm<",
+            "TTResult;>;"
+        }
+    .end annotation
 
-    .line 1
-    iget-object v0, p0, Lrn;->b:Lqn;
+    .line 14
+    iget-object v0, p0, Lrn;->a:Lsf;
 
-    invoke-static {v0}, Lqn;->a(Lqn;)Ljava/lang/Object;
+    return-object v0
+.end method
 
-    move-result-object v0
+.method public a(Ljava/lang/Exception;)V
+    .locals 1
 
-    monitor-enter v0
+    .line 11
+    iget-object v0, p0, Lrn;->a:Lsf;
 
-    .line 2
-    :try_start_0
-    iget-object v1, p0, Lrn;->b:Lqn;
-
-    invoke-static {v1}, Lqn;->b(Lqn;)Lbn;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    .line 3
-    iget-object v1, p0, Lrn;->b:Lqn;
-
-    invoke-static {v1}, Lqn;->b(Lqn;)Lbn;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lrn;->a:Lgn;
-
-    invoke-interface {v1, v2}, Lbn;->a(Lgn;)V
-
-    .line 4
-    :cond_0
-    monitor-exit v0
+    invoke-virtual {v0, p1}, Lsf;->a(Ljava/lang/Exception;)V
 
     return-void
+.end method
 
-    :catchall_0
-    move-exception v1
+.method public a(Ljava/lang/Object;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TTResult;)V"
+        }
+    .end annotation
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .line 8
+    iget-object v0, p0, Lrn;->a:Lsf;
 
-    throw v1
+    invoke-virtual {v0, p1}, Lsf;->a(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public b(Ljava/lang/Exception;)Z
+    .locals 1
+
+    .line 13
+    iget-object v0, p0, Lrn;->a:Lsf;
+
+    invoke-virtual {v0, p1}, Lsf;->b(Ljava/lang/Exception;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public b(Ljava/lang/Object;)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TTResult;)Z"
+        }
+    .end annotation
+
+    .line 10
+    iget-object v0, p0, Lrn;->a:Lsf;
+
+    invoke-virtual {v0, p1}, Lsf;->b(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
 .end method

@@ -1,17 +1,30 @@
-.class public interface abstract Lwj;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
+.class public abstract Lwj;
+.super Lwm;
+.source "PriorityCallable.java"
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
 
 
-# virtual methods
-.method public abstract a()Z
-.end method
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<V:",
+        "Ljava/lang/Object;",
+        ">",
+        "Lwm;",
+        "Ljava/util/concurrent/Callable<",
+        "TV;>;"
+    }
+.end annotation
 
-.method public abstract b()Z
-.end method
 
-.method public abstract c()Z
-.end method
+# direct methods
+.method public constructor <init>()V
+    .locals 0
 
-.method public abstract d()Z
+    .line 25
+    invoke-direct {p0}, Lwm;-><init>()V
+
+    return-void
 .end method

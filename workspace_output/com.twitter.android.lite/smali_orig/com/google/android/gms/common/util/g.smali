@@ -1,52 +1,77 @@
-.class public final Lcom/google/android/gms/common/util/g;
+.class public Lcom/google/android/gms/common/util/g;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/google/android/gms/common/util/d;
+
+
+# static fields
+.field private static final a:Lcom/google/android/gms/common/util/g;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 0
+    .locals 1
+
+    .line 7
+    new-instance v0, Lcom/google/android/gms/common/util/g;
+
+    invoke-direct {v0}, Lcom/google/android/gms/common/util/g;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/common/util/g;->a:Lcom/google/android/gms/common/util/g;
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;Ljava/lang/Throwable;)Z
-    .locals 1
+.method private constructor <init>()V
+    .locals 0
 
-    const/high16 v0, 0x20000000
+    .line 6
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/util/g;->a(Landroid/content/Context;Ljava/lang/Throwable;I)Z
-
-    move-result p0
-
-    return p0
+    return-void
 .end method
 
-.method private static a(Landroid/content/Context;Ljava/lang/Throwable;I)Z
+.method public static d()Lcom/google/android/gms/common/util/d;
     .locals 1
 
-    const/4 p2, 0x0
+    .line 1
+    sget-object v0, Lcom/google/android/gms/common/util/g;->a:Lcom/google/android/gms/common/util/g;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public a()J
+    .locals 2
 
     .line 2
-    :try_start_0
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public b()J
+    .locals 2
 
     .line 3
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    return p2
+    move-result-wide v0
 
-    :catch_0
-    move-exception p0
+    return-wide v0
+.end method
 
-    const-string p1, "CrashUtils"
-
-    const-string v0, "Error adding exception to DropBox!"
+.method public c()J
+    .locals 2
 
     .line 4
-    invoke-static {p1, v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-    return p2
+    move-result-wide v0
+
+    return-wide v0
 .end method

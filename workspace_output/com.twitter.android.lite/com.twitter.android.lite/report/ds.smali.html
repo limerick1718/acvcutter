@@ -14,825 +14,153 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lds;
+		<code>.class public Lds;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.implements Ljava/io/Flushable;
-
-.annotation system Ldalvik/annotation/MemberClasses;
-value = {
-Lds$a;
-}
-.end annotation
-
-.field private final a:[B
-.field private final b:I
-.field private c:I
-.field private final d:Ljava/io/OutputStream;
 
 
-<span class="cov">.method private constructor &lt;init&gt;(Ljava/io/OutputStream;[B)V</span>
+.field private static volatile a:Landroid/os/UserManager;
+.field private static volatile b:Z
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-static {}, Lds;->a()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	xor-int/lit8 v0, v0, 0x1</span>
+<span class="missed">	sput-boolean v0, Lds;->b:Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method private constructor &lt;init&gt;()V
 <span class="">	.locals 0</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	iput-object p1, p0, Lds;->d:Ljava/io/OutputStream;</span>
-<span class="cov">	iput-object p2, p0, Lds;->a:[B</span>
-<span class="cov">	const/4 p1, 0x0</span>
-<span class="cov">	iput p1, p0, Lds;->c:I</span>
-<span class="cov">	array-length p1, p2</span>
-<span class="cov">	iput p1, p0, Lds;->b:I</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public static a(Ljava/io/OutputStream;)Lds;</span>
-<span class="">	.locals 1</span>
+.method public static a()Z
+<span class="">	.locals 2</span>
 
-<span class="cov">	const/16 v0, 0x1000</span>
-<span class="exec">	invoke-static {p0, v0}, Lds;->a(Ljava/io/OutputStream;I)Lds;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-<span class="cov">.method public static a(Ljava/io/OutputStream;I)Lds;</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	new-instance v0, Lds;</span>
-<span class="cov">	new-array p1, p1, [B</span>
-<span class="cov">	invoke-direct {v0, p0, p1}, Lds;-><init>(Ljava/io/OutputStream;[B)V</span>
-<span class="exec">	return-object v0</span>
-.end method
-
-<span class="cov">.method private a()V</span>
-<span class="">	.locals 4</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	iget-object v0, p0, Lds;->d:Ljava/io/OutputStream;</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	iget-object v1, p0, Lds;->a:[B</span>
-<span class="cov">	iget v2, p0, Lds;->c:I</span>
-<span class="cov">	const/4 v3, 0x0</span>
-<span class="cov">	invoke-virtual {v0, v1, v3, v2}, Ljava/io/OutputStream;->write([BII)V</span>
-<span class="cov">	iput v3, p0, Lds;->c:I</span>
-<span class="exec">	return-void</span>
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x18</span>
+<span class="missed">	if-lt v0, v1, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	return v0</span>
 <span class="">	:cond_0</span>
-<span class="missed">	new-instance v0, Lds$a;</span>
-<span class="missed">	invoke-direct {v0}, Lds$a;-><init>()V</span>
-<span class="">	throw v0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
 .end method
 
-.method public static b(F)I
-<span class="">	.locals 0</span>
-
-<span class="missed">	const/4 p0, 0x4</span>
-<span class="">	return p0</span>
-.end method
-
-.method public static b(IF)I
-<span class="">	.locals 0</span>
-
-<span class="">	invoke-static {p0}, Lds;->l(I)I</span>
-<span class="missed">	move-result p0</span>
-<span class="">	invoke-static {p1}, Lds;->b(F)I</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	add-int/2addr p0, p1</span>
-<span class="">	return p0</span>
-.end method
-
-<span class="cov">.method public static b(IJ)I</span>
-<span class="">	.locals 0</span>
-
-<span class="exec">	invoke-static {p0}, Lds;->l(I)I</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	invoke-static {p1, p2}, Lds;->e(J)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	add-int/2addr p0, p1</span>
-<span class="exec">	return p0</span>
-.end method
-
-<span class="cov">.method public static b(ILbs;)I</span>
-<span class="">	.locals 0</span>
-
-<span class="exec">	invoke-static {p0}, Lds;->l(I)I</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	invoke-static {p1}, Lds;->c(Lbs;)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	add-int/2addr p0, p1</span>
-<span class="exec">	return p0</span>
-.end method
-
-<span class="cov">.method public static b(IZ)I</span>
-<span class="">	.locals 0</span>
-
-<span class="exec">	invoke-static {p0}, Lds;->l(I)I</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	invoke-static {p1}, Lds;->b(Z)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	add-int/2addr p0, p1</span>
-<span class="exec">	return p0</span>
-.end method
-
-<span class="cov">.method public static b(Z)I</span>
-<span class="">	.locals 0</span>
-
-<span class="cov">	const/4 p0, 0x1</span>
-<span class="exec">	return p0</span>
-.end method
-
-<span class="cov">.method public static c(Lbs;)I</span>
+.method public static a(Landroid/content/Context;)Z
 <span class="">	.locals 1</span>
 
-<span class="exec">	invoke-virtual {p0}, Lbs;->b()I</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	invoke-static {v0}, Lds;->j(I)I</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	invoke-virtual {p0}, Lbs;->b()I</span>
-<span class="cov">	move-result p0</span>
-<span class="cov">	add-int/2addr v0, p0</span>
-<span class="exec">	return v0</span>
-.end method
-
-<span class="cov">.method public static d(J)I</span>
-<span class="">	.locals 5</span>
-
-<span class="cov">	const-wide/16 v0, -0x80</span>
-<span class="cov">	and-long/2addr v0, p0</span>
-<span class="cov">	const-wide/16 v2, 0x0</span>
-<span class="cov">	cmp-long v4, v0, v2</span>
-<span class="missed">	if-nez v4, :cond_0</span>
+<span class="">	invoke-static {}, Lds;->a()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-static {p0}, Lds;->b(Landroid/content/Context;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	return p0</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
 <span class="missed">	const/4 p0, 0x1</span>
 <span class="">	return p0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const-wide/16 v0, -0x4000</span>
-<span class="cov">	and-long/2addr v0, p0</span>
-<span class="cov">	cmp-long v4, v0, v2</span>
-<span class="missed">	if-nez v4, :cond_1</span>
-<span class="missed">	const/4 p0, 0x2</span>
-<span class="">	return p0</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	const-wide/32 v0, -0x200000</span>
-<span class="cov">	and-long/2addr v0, p0</span>
-<span class="cov">	cmp-long v4, v0, v2</span>
-<span class="missed">	if-nez v4, :cond_2</span>
-<span class="missed">	const/4 p0, 0x3</span>
-<span class="">	return p0</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	const-wide/32 v0, -0x10000000</span>
-<span class="cov">	and-long/2addr v0, p0</span>
-<span class="cov">	cmp-long v4, v0, v2</span>
-<span class="missed">	if-nez v4, :cond_3</span>
-<span class="missed">	const/4 p0, 0x4</span>
-<span class="">	return p0</span>
-<span class="cov">	:cond_3</span>
-<span class="cov">	const-wide v0, -0x800000000L</span>
-<span class="cov">	and-long/2addr v0, p0</span>
-<span class="cov">	cmp-long v4, v0, v2</span>
-<span class="cov">	if-nez v4, :cond_4</span>
-<span class="cov">	const/4 p0, 0x5</span>
-<span class="exec">	return p0</span>
-<span class="">	:cond_4</span>
-<span class="missed">	const-wide v0, -0x40000000000L</span>
-<span class="missed">	and-long/2addr v0, p0</span>
-<span class="missed">	cmp-long v4, v0, v2</span>
-<span class="missed">	if-nez v4, :cond_5</span>
-<span class="missed">	const/4 p0, 0x6</span>
-<span class="">	return p0</span>
-<span class="">	:cond_5</span>
-<span class="missed">	const-wide/high16 v0, -0x2000000000000L</span>
-<span class="missed">	and-long/2addr v0, p0</span>
-<span class="missed">	cmp-long v4, v0, v2</span>
-<span class="missed">	if-nez v4, :cond_6</span>
-<span class="missed">	const/4 p0, 0x7</span>
-<span class="">	return p0</span>
-<span class="">	:cond_6</span>
-<span class="missed">	const-wide/high16 v0, -0x100000000000000L</span>
-<span class="missed">	and-long/2addr v0, p0</span>
-<span class="missed">	cmp-long v4, v0, v2</span>
-<span class="missed">	if-nez v4, :cond_7</span>
-<span class="missed">	const/16 p0, 0x8</span>
-<span class="">	return p0</span>
-<span class="">	:cond_7</span>
-<span class="missed">	const-wide/high16 v0, -0x8000000000000000L</span>
-<span class="missed">	and-long/2addr p0, v0</span>
-<span class="missed">	cmp-long v0, p0, v2</span>
-<span class="missed">	if-nez v0, :cond_8</span>
-<span class="missed">	const/16 p0, 0x9</span>
-<span class="">	return p0</span>
-<span class="">	:cond_8</span>
-<span class="missed">	const/16 p0, 0xa</span>
-<span class="">	return p0</span>
 .end method
 
-<span class="cov">.method public static e(II)I</span>
-<span class="">	.locals 0</span>
+.method private static b(Landroid/content/Context;)Z
+<span class="">	.locals 7</span>
+<span class="">	.annotation build Landroid/annotation/TargetApi;</span>
+<span class="">	value = 0x18</span>
+<span class="">	.end annotation</span>
 
-<span class="exec">	invoke-static {p0}, Lds;->l(I)I</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	invoke-static {p1}, Lds;->h(I)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	add-int/2addr p0, p1</span>
-<span class="exec">	return p0</span>
-.end method
-
-<span class="cov">.method public static e(J)I</span>
-<span class="">	.locals 0</span>
-
-<span class="exec">	invoke-static {p0, p1}, Lds;->d(J)I</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	return p0</span>
-.end method
-
-.method public static f(II)I
-<span class="">	.locals 0</span>
-
-<span class="">	invoke-static {p0}, Lds;->l(I)I</span>
-<span class="missed">	move-result p0</span>
-<span class="">	invoke-static {p1}, Lds;->k(I)I</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	add-int/2addr p0, p1</span>
-<span class="">	return p0</span>
-.end method
-
-<span class="cov">.method public static g(II)I</span>
-<span class="">	.locals 0</span>
-
-<span class="exec">	invoke-static {p0}, Lds;->l(I)I</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	invoke-static {p1}, Lds;->m(I)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	add-int/2addr p0, p1</span>
-<span class="exec">	return p0</span>
-.end method
-
-<span class="cov">.method public static h(I)I</span>
-<span class="">	.locals 0</span>
-
-<span class="exec">	invoke-static {p0}, Lds;->i(I)I</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	return p0</span>
-.end method
-
-<span class="cov">.method public static i(I)I</span>
-<span class="">	.locals 0</span>
-
-<span class="cov">	if-ltz p0, :cond_0</span>
-<span class="exec">	invoke-static {p0}, Lds;->j(I)I</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	return p0</span>
+<span class="missed">	sget-boolean v0, Lds;->b:Z</span>
+<span class="missed">	if-nez v0, :cond_4</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	move v2, v0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 v3, 0x2</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	if-gt v0, v3, :cond_3</span>
+<span class="">	invoke-static {p0}, Lds;->c(Landroid/content/Context;)Landroid/os/UserManager;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	if-nez v3, :cond_0</span>
+<span class="missed">	sput-boolean v1, Lds;->b:Z</span>
+<span class="">	return v1</span>
+<span class="">	:try_start_0</span>
 <span class="">	:cond_0</span>
-<span class="missed">	const/16 p0, 0xa</span>
-<span class="">	return p0</span>
-.end method
-
-<span class="cov">.method public static j(I)I</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	and-int/lit8 v0, p0, -0x80</span>
-<span class="cov">	if-nez v0, :cond_0</span>
-<span class="cov">	const/4 p0, 0x1</span>
-<span class="exec">	return p0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	and-int/lit16 v0, p0, -0x4000</span>
-<span class="missed">	if-nez v0, :cond_1</span>
-<span class="missed">	const/4 p0, 0x2</span>
-<span class="">	return p0</span>
+<span class="">	invoke-virtual {v3}, Landroid/os/UserManager;->isUserUnlocked()Z</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	if-nez v5, :cond_2</span>
+<span class="">	invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="">	invoke-virtual {v3, v5}, Landroid/os/UserManager;->isUserRunning(Landroid/os/UserHandle;)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-nez v2, :cond_1</span>
+<span class="">	goto :goto_1</span>
 <span class="">	:cond_1</span>
-<span class="missed">	const/high16 v0, -0x200000</span>
-<span class="missed">	and-int/2addr v0, p0</span>
-<span class="missed">	if-nez v0, :cond_2</span>
-<span class="missed">	const/4 p0, 0x3</span>
-<span class="">	return p0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:goto_1</span>
 <span class="">	:cond_2</span>
-<span class="missed">	const/high16 v0, -0x10000000</span>
-<span class="missed">	and-int/2addr p0, v0</span>
-<span class="missed">	if-nez p0, :cond_3</span>
-<span class="missed">	const/4 p0, 0x4</span>
-<span class="">	return p0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="">	:goto_2</span>
+<span class="missed">	sput-boolean v2, Lds;->b:Z</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v3</span>
+<span class="missed">	const-string v5, "DirectBootUtils"</span>
+<span class="missed">	const-string v6, "Failed to check if user is unlocked"</span>
+<span class="missed">	invoke-static {v5, v6, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="missed">	sput-object v4, Lds;->a:Landroid/os/UserManager;</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:goto_3</span>
 <span class="">	:cond_3</span>
-<span class="missed">	const/4 p0, 0x5</span>
-<span class="">	return p0</span>
-.end method
-
-.method public static k(I)I
-<span class="">	.locals 0</span>
-
-<span class="">	invoke-static {p0}, Lds;->n(I)I</span>
-<span class="missed">	move-result p0</span>
-<span class="">	invoke-static {p0}, Lds;->j(I)I</span>
-<span class="missed">	move-result p0</span>
-<span class="">	return p0</span>
-.end method
-
-<span class="cov">.method public static l(I)I</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="exec">	invoke-static {p0, v0}, Lfs;->a(II)I</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	invoke-static {p0}, Lds;->j(I)I</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	return p0</span>
-.end method
-
-<span class="cov">.method public static m(I)I</span>
-<span class="">	.locals 0</span>
-
-<span class="exec">	invoke-static {p0}, Lds;->j(I)I</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	return p0</span>
-.end method
-
-.method public static n(I)I
-<span class="">	.locals 1</span>
-
-<span class="missed">	shl-int/lit8 v0, p0, 0x1</span>
-<span class="missed">	shr-int/lit8 p0, p0, 0x1f</span>
-<span class="missed">	xor-int/2addr p0, v0</span>
-<span class="">	return p0</span>
-.end method
-
-<span class="cov">.method public a(B)V</span>
-<span class="">	.locals 3</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	iget v0, p0, Lds;->c:I</span>
-<span class="cov">	iget v1, p0, Lds;->b:I</span>
-<span class="missed">	if-ne v0, v1, :cond_0</span>
-<span class="missed">	invoke-direct {p0}, Lds;->a()V</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	iget-object v0, p0, Lds;->a:[B</span>
-<span class="cov">	iget v1, p0, Lds;->c:I</span>
-<span class="cov">	add-int/lit8 v2, v1, 0x1</span>
-<span class="cov">	iput v2, p0, Lds;->c:I</span>
-<span class="cov">	aput-byte p1, v0, v1</span>
-<span class="exec">	return-void</span>
-.end method
-
-.method public a(F)V
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="">	invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	invoke-virtual {p0, p1}, Lds;->d(I)V</span>
-<span class="">	return-void</span>
-.end method
-
-<span class="cov">.method public a(I)V</span>
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	invoke-virtual {p0, p1}, Lds;->b(I)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-.method public a(IF)V
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	const/4 v0, 0x5</span>
-<span class="missed">	invoke-virtual {p0, p1, v0}, Lds;->c(II)V</span>
-<span class="missed">	invoke-virtual {p0, p2}, Lds;->a(F)V</span>
-<span class="">	return-void</span>
-.end method
-
-<span class="cov">.method public a(II)V</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	invoke-virtual {p0, p1, v0}, Lds;->c(II)V</span>
-<span class="cov">	invoke-virtual {p0, p2}, Lds;->a(I)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public a(IJ)V</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	invoke-virtual {p0, p1, v0}, Lds;->c(II)V</span>
-<span class="cov">	invoke-virtual {p0, p2, p3}, Lds;->c(J)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public a(ILbs;)V</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	const/4 v0, 0x2</span>
-<span class="cov">	invoke-virtual {p0, p1, v0}, Lds;->c(II)V</span>
-<span class="cov">	invoke-virtual {p0, p2}, Lds;->a(Lbs;)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public a(IZ)V</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	invoke-virtual {p0, p1, v0}, Lds;->c(II)V</span>
-<span class="cov">	invoke-virtual {p0, p2}, Lds;->a(Z)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public a(Lbs;)V</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="exec">	invoke-virtual {p1}, Lbs;->b()I</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	invoke-virtual {p0, v0}, Lds;->e(I)V</span>
-<span class="cov">	invoke-virtual {p0, p1}, Lds;->b(Lbs;)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public a(Lbs;II)V</span>
-<span class="">	.locals 6</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	iget v0, p0, Lds;->b:I</span>
-<span class="cov">	iget v1, p0, Lds;->c:I</span>
-<span class="cov">	sub-int v2, v0, v1</span>
-<span class="cov">	if-lt v2, p3, :cond_0</span>
-<span class="cov">	iget-object v0, p0, Lds;->a:[B</span>
-<span class="cov">	invoke-virtual {p1, v0, p2, v1, p3}, Lbs;->a([BIII)V</span>
-<span class="cov">	iget p1, p0, Lds;->c:I</span>
-<span class="cov">	add-int/2addr p1, p3</span>
-<span class="cov">	iput p1, p0, Lds;->c:I</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:cond_0</span>
-<span class="missed">	sub-int/2addr v0, v1</span>
-<span class="missed">	iget-object v2, p0, Lds;->a:[B</span>
-<span class="missed">	invoke-virtual {p1, v2, p2, v1, v0}, Lbs;->a([BIII)V</span>
-<span class="missed">	add-int/2addr p2, v0</span>
-<span class="missed">	sub-int/2addr p3, v0</span>
-<span class="missed">	iget v0, p0, Lds;->b:I</span>
-<span class="missed">	iput v0, p0, Lds;->c:I</span>
-<span class="missed">	invoke-direct {p0}, Lds;->a()V</span>
-<span class="missed">	iget v0, p0, Lds;->b:I</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="missed">	if-gt p3, v0, :cond_1</span>
-<span class="missed">	iget-object v0, p0, Lds;->a:[B</span>
-<span class="missed">	invoke-virtual {p1, v0, p2, v1, p3}, Lbs;->a([BIII)V</span>
-<span class="missed">	iput p3, p0, Lds;->c:I</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:cond_1</span>
-<span class="">	invoke-virtual {p1}, Lbs;->a()Ljava/io/InputStream;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	int-to-long v2, p2</span>
-<span class="">	invoke-virtual {p1, v2, v3}, Ljava/io/InputStream;->skip(J)J</span>
-<span class="missed">	move-result-wide v4</span>
-<span class="missed">	cmp-long p2, v2, v4</span>
-<span class="missed">	if-nez p2, :cond_4</span>
-<span class="">	:goto_0</span>
-<span class="missed">	if-lez p3, :cond_3</span>
-<span class="missed">	iget p2, p0, Lds;->b:I</span>
-<span class="">	invoke-static {p3, p2}, Ljava/lang/Math;->min(II)I</span>
-<span class="missed">	move-result p2</span>
-<span class="missed">	iget-object v0, p0, Lds;->a:[B</span>
-<span class="">	invoke-virtual {p1, v0, v1, p2}, Ljava/io/InputStream;->read([BII)I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-ne v0, p2, :cond_2</span>
-<span class="missed">	iget-object p2, p0, Lds;->d:Ljava/io/OutputStream;</span>
-<span class="missed">	iget-object v2, p0, Lds;->a:[B</span>
-<span class="missed">	invoke-virtual {p2, v2, v1, v0}, Ljava/io/OutputStream;->write([BII)V</span>
-<span class="missed">	sub-int/2addr p3, v0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_2</span>
-<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
-<span class="missed">	const-string p2, "Read failed."</span>
-<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw p1</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	:cond_3</span>
-<span class="exec">	return-void</span>
+<span class="missed">	move v0, v2</span>
+<span class="missed">	if-eqz v0, :cond_4</span>
+<span class="missed">	sput-object v4, Lds;->a:Landroid/os/UserManager;</span>
 <span class="">	:cond_4</span>
-<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
-<span class="missed">	const-string p2, "Skip failed."</span>
-<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw p1</span>
+<span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public a(Z)V</span>
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	invoke-virtual {p0, p1}, Lds;->c(I)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-.method public a([B)V
+.method private static c(Landroid/content/Context;)Landroid/os/UserManager;
 <span class="">	.locals 2</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
+<span class="">	.annotation build Landroid/annotation/TargetApi;</span>
+<span class="">	value = 0x18</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	array-length v0, p1</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="missed">	invoke-virtual {p0, p1, v1, v0}, Lds;->a([BII)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public a([BII)V
-<span class="">	.locals 3</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	iget v0, p0, Lds;->b:I</span>
-<span class="missed">	iget v1, p0, Lds;->c:I</span>
-<span class="missed">	sub-int v2, v0, v1</span>
-<span class="missed">	if-lt v2, p3, :cond_0</span>
-<span class="missed">	iget-object v0, p0, Lds;->a:[B</span>
-<span class="missed">	invoke-static {p1, p2, v0, v1, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
-<span class="missed">	iget p1, p0, Lds;->c:I</span>
-<span class="missed">	add-int/2addr p1, p3</span>
-<span class="missed">	iput p1, p0, Lds;->c:I</span>
-<span class="">	goto :goto_0</span>
+<span class="missed">	sget-object v0, Lds;->a:Landroid/os/UserManager;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	const-class v1, Lds;</span>
+<span class="missed">	monitor-enter v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	sget-object v0, Lds;->a:Landroid/os/UserManager;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	const-class v0, Landroid/os/UserManager;</span>
+<span class="">	invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	check-cast p0, Landroid/os/UserManager;</span>
+<span class="missed">	sput-object p0, Lds;->a:Landroid/os/UserManager;</span>
+<span class="missed">	move-object v0, p0</span>
 <span class="">	:cond_0</span>
-<span class="missed">	sub-int/2addr v0, v1</span>
-<span class="missed">	iget-object v2, p0, Lds;->a:[B</span>
-<span class="missed">	invoke-static {p1, p2, v2, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
-<span class="missed">	add-int/2addr p2, v0</span>
-<span class="missed">	sub-int/2addr p3, v0</span>
-<span class="missed">	iget v0, p0, Lds;->b:I</span>
-<span class="missed">	iput v0, p0, Lds;->c:I</span>
-<span class="missed">	invoke-direct {p0}, Lds;->a()V</span>
-<span class="missed">	iget v0, p0, Lds;->b:I</span>
-<span class="missed">	if-gt p3, v0, :cond_1</span>
-<span class="missed">	iget-object v0, p0, Lds;->a:[B</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="missed">	invoke-static {p1, p2, v0, v1, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
-<span class="missed">	iput p3, p0, Lds;->c:I</span>
+<span class="missed">	monitor-exit v1</span>
 <span class="">	goto :goto_0</span>
-<span class="">	:cond_1</span>
-<span class="missed">	iget-object v0, p0, Lds;->d:Ljava/io/OutputStream;</span>
-<span class="missed">	invoke-virtual {v0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p0</span>
+<span class="missed">	monitor-exit v1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw p0</span>
 <span class="">	:goto_0</span>
-<span class="">	return-void</span>
-.end method
-
-<span class="cov">.method public b(I)V</span>
-<span class="">	.locals 2</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	if-ltz p1, :cond_0</span>
-<span class="cov">	invoke-virtual {p0, p1}, Lds;->e(I)V</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	int-to-long v0, p1</span>
-<span class="missed">	invoke-virtual {p0, v0, v1}, Lds;->b(J)V</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return-void</span>
-.end method
-
-.method public b(II)V
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	invoke-virtual {p0, p1, v0}, Lds;->c(II)V</span>
-<span class="missed">	invoke-virtual {p0, p2}, Lds;->f(I)V</span>
-<span class="">	return-void</span>
-.end method
-
-<span class="cov">.method public b(J)V</span>
-<span class="">	.locals 5</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	:goto_0</span>
-<span class="cov">	const-wide/16 v0, -0x80</span>
-<span class="cov">	and-long/2addr v0, p1</span>
-<span class="cov">	const-wide/16 v2, 0x0</span>
-<span class="cov">	cmp-long v4, v0, v2</span>
-<span class="cov">	if-nez v4, :cond_0</span>
-<span class="cov">	long-to-int p2, p1</span>
-<span class="cov">	invoke-virtual {p0, p2}, Lds;->c(I)V</span>
-<span class="exec">	return-void</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	long-to-int v0, p1</span>
-<span class="cov">	and-int/lit8 v0, v0, 0x7f</span>
-<span class="cov">	or-int/lit16 v0, v0, 0x80</span>
-<span class="cov">	invoke-virtual {p0, v0}, Lds;->c(I)V</span>
-<span class="cov">	const/4 v0, 0x7</span>
-<span class="cov">	ushr-long/2addr p1, v0</span>
-<span class="">	goto :goto_0</span>
-.end method
-
-<span class="cov">.method public b(Lbs;)V</span>
-<span class="">	.locals 2</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="exec">	invoke-virtual {p1}, Lbs;->b()I</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	invoke-virtual {p0, p1, v1, v0}, Lds;->a(Lbs;II)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public c(I)V</span>
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	int-to-byte p1, p1</span>
-<span class="cov">	invoke-virtual {p0, p1}, Lds;->a(B)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public c(II)V</span>
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="exec">	invoke-static {p1, p2}, Lfs;->a(II)I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	invoke-virtual {p0, p1}, Lds;->e(I)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public c(J)V</span>
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	invoke-virtual {p0, p1, p2}, Lds;->b(J)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-.method public d(I)V
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	and-int/lit16 v0, p1, 0xff</span>
-<span class="missed">	invoke-virtual {p0, v0}, Lds;->c(I)V</span>
-<span class="missed">	shr-int/lit8 v0, p1, 0x8</span>
-<span class="missed">	and-int/lit16 v0, v0, 0xff</span>
-<span class="missed">	invoke-virtual {p0, v0}, Lds;->c(I)V</span>
-<span class="missed">	shr-int/lit8 v0, p1, 0x10</span>
-<span class="missed">	and-int/lit16 v0, v0, 0xff</span>
-<span class="missed">	invoke-virtual {p0, v0}, Lds;->c(I)V</span>
-<span class="missed">	shr-int/lit8 p1, p1, 0x18</span>
-<span class="missed">	and-int/lit16 p1, p1, 0xff</span>
-<span class="missed">	invoke-virtual {p0, p1}, Lds;->c(I)V</span>
-<span class="">	return-void</span>
-.end method
-
-<span class="cov">.method public d(II)V</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	invoke-virtual {p0, p1, v0}, Lds;->c(II)V</span>
-<span class="cov">	invoke-virtual {p0, p2}, Lds;->g(I)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public e(I)V</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	:goto_0</span>
-<span class="cov">	and-int/lit8 v0, p1, -0x80</span>
-<span class="cov">	if-nez v0, :cond_0</span>
-<span class="cov">	invoke-virtual {p0, p1}, Lds;->c(I)V</span>
-<span class="exec">	return-void</span>
-<span class="">	:cond_0</span>
-<span class="missed">	and-int/lit8 v0, p1, 0x7f</span>
-<span class="missed">	or-int/lit16 v0, v0, 0x80</span>
-<span class="missed">	invoke-virtual {p0, v0}, Lds;->c(I)V</span>
-<span class="missed">	ushr-int/lit8 p1, p1, 0x7</span>
-<span class="">	goto :goto_0</span>
-.end method
-
-.method public f(I)V
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="">	invoke-static {p1}, Lds;->n(I)I</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	invoke-virtual {p0, p1}, Lds;->e(I)V</span>
-<span class="">	return-void</span>
-.end method
-
-<span class="cov">.method public flush()V</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	iget-object v0, p0, Lds;->d:Ljava/io/OutputStream;</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	invoke-direct {p0}, Lds;->a()V</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public g(I)V</span>
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	invoke-virtual {p0, p1}, Lds;->e(I)V</span>
-<span class="exec">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -1,26 +1,25 @@
-.class public final Lpm;
+.class final Lpm;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
+.implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator<",
-        "Lom;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private final synthetic a:Lpq;
+
+.field private final synthetic b:Lpl;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Lpl;Lpq;)V
     .locals 0
 
     .line 1
+    iput-object p1, p0, Lpm;->b:Lpl;
+
+    iput-object p2, p0, Lpm;->a:Lpq;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,87 +27,20 @@
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 6
-
-    .line 1
-    invoke-static {p1}, Lq5;->b(Landroid/os/Parcel;)I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
+.method public final run()V
+    .locals 2
 
     .line 2
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    iget-object v0, p0, Lpm;->b:Lpl;
 
-    move-result v3
+    iget-object v1, p0, Lpm;->a:Lpq;
 
-    if-ge v3, v0, :cond_2
+    invoke-static {v0, v1}, Lpl;->a(Lpl;Lpq;)V
 
     .line 3
-    invoke-static {p1}, Lq5;->a(Landroid/os/Parcel;)I
+    iget-object v0, p0, Lpm;->b:Lpl;
 
-    move-result v3
+    invoke-virtual {v0}, Lpl;->a()V
 
-    .line 4
-    invoke-static {v3}, Lq5;->a(I)I
-
-    move-result v4
-
-    const/4 v5, 0x1
-
-    if-eq v4, v5, :cond_1
-
-    const/4 v5, 0x2
-
-    if-eq v4, v5, :cond_0
-
-    .line 5
-    invoke-static {p1, v3}, Lq5;->o(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    .line 6
-    :cond_0
-    sget-object v2, Lcom/google/android/gms/common/internal/r;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    .line 7
-    invoke-static {p1, v3, v2}, Lq5;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/google/android/gms/common/internal/r;
-
-    goto :goto_0
-
-    .line 8
-    :cond_1
-    invoke-static {p1, v3}, Lq5;->k(Landroid/os/Parcel;I)I
-
-    move-result v1
-
-    goto :goto_0
-
-    .line 9
-    :cond_2
-    invoke-static {p1, v0}, Lq5;->d(Landroid/os/Parcel;I)V
-
-    .line 10
-    new-instance p1, Lom;
-
-    invoke-direct {p1, v1, v2}, Lom;-><init>(ILcom/google/android/gms/common/internal/r;)V
-
-    return-object p1
-.end method
-
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    new-array p1, p1, [Lom;
-
-    return-object p1
+    return-void
 .end method

@@ -20,15 +20,7 @@ name = "Builder"
 .end field
 .method public constructor <init>(Lokhttp3/ConnectionSpec;)V
 .locals 1
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iget-boolean v0, p1, Lokhttp3/ConnectionSpec;->tls:Z
-iput-boolean v0, p0, Lokhttp3/ConnectionSpec$Builder;->tls:Z
-iget-object v0, p1, Lokhttp3/ConnectionSpec;->cipherSuites:[Ljava/lang/String;
-iput-object v0, p0, Lokhttp3/ConnectionSpec$Builder;->cipherSuites:[Ljava/lang/String;
-iget-object v0, p1, Lokhttp3/ConnectionSpec;->tlsVersions:[Ljava/lang/String;
-iput-object v0, p0, Lokhttp3/ConnectionSpec$Builder;->tlsVersions:[Ljava/lang/String;
-iget-boolean p1, p1, Lokhttp3/ConnectionSpec;->supportsTlsExtensions:Z
-iput-boolean p1, p0, Lokhttp3/ConnectionSpec$Builder;->supportsTlsExtensions:Z
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method constructor <init>(Z)V

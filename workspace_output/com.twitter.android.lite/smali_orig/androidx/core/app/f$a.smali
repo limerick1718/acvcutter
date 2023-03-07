@@ -17,28 +17,28 @@
 # instance fields
 .field final a:Landroid/os/Bundle;
 
-.field private final b:[Landroidx/core/app/j;
+.field b:Z
 
-.field private final c:[Landroidx/core/app/j;
+.field public c:I
 
-.field private d:Z
+.field public d:Ljava/lang/CharSequence;
 
-.field e:Z
+.field public e:Landroid/app/PendingIntent;
 
-.field private final f:I
+.field private final f:[Landroidx/core/app/j;
 
-.field public g:I
+.field private final g:[Landroidx/core/app/j;
 
-.field public h:Ljava/lang/CharSequence;
+.field private h:Z
 
-.field public i:Landroid/app/PendingIntent;
+.field private final i:I
 
 
 # direct methods
 .method public constructor <init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
     .locals 10
 
-    .line 1
+    .line 3157
     new-instance v4, Landroid/os/Bundle;
 
     invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
@@ -69,32 +69,32 @@
 .method constructor <init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;[Landroidx/core/app/j;[Landroidx/core/app/j;ZIZ)V
     .locals 1
 
-    .line 2
+    .line 3163
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x1
 
-    .line 3
-    iput-boolean v0, p0, Landroidx/core/app/f$a;->e:Z
+    .line 3138
+    iput-boolean v0, p0, Landroidx/core/app/f$a;->b:Z
 
-    .line 4
-    iput p1, p0, Landroidx/core/app/f$a;->g:I
+    .line 3164
+    iput p1, p0, Landroidx/core/app/f$a;->c:I
 
-    .line 5
-    invoke-static {p2}, Landroidx/core/app/f$d;->d(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    .line 3165
+    invoke-static {p2}, Landroidx/core/app/f$c;->d(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object p1
 
-    iput-object p1, p0, Landroidx/core/app/f$a;->h:Ljava/lang/CharSequence;
+    iput-object p1, p0, Landroidx/core/app/f$a;->d:Ljava/lang/CharSequence;
 
-    .line 6
-    iput-object p3, p0, Landroidx/core/app/f$a;->i:Landroid/app/PendingIntent;
+    .line 3166
+    iput-object p3, p0, Landroidx/core/app/f$a;->e:Landroid/app/PendingIntent;
 
     if-eqz p4, :cond_0
 
     goto :goto_0
 
-    .line 7
+    .line 3167
     :cond_0
     new-instance p4, Landroid/os/Bundle;
 
@@ -103,49 +103,49 @@
     :goto_0
     iput-object p4, p0, Landroidx/core/app/f$a;->a:Landroid/os/Bundle;
 
-    .line 8
-    iput-object p5, p0, Landroidx/core/app/f$a;->b:[Landroidx/core/app/j;
+    .line 3168
+    iput-object p5, p0, Landroidx/core/app/f$a;->f:[Landroidx/core/app/j;
 
-    .line 9
-    iput-object p6, p0, Landroidx/core/app/f$a;->c:[Landroidx/core/app/j;
+    .line 3169
+    iput-object p6, p0, Landroidx/core/app/f$a;->g:[Landroidx/core/app/j;
 
-    .line 10
-    iput-boolean p7, p0, Landroidx/core/app/f$a;->d:Z
+    .line 3170
+    iput-boolean p7, p0, Landroidx/core/app/f$a;->h:Z
 
-    .line 11
-    iput p8, p0, Landroidx/core/app/f$a;->f:I
+    .line 3171
+    iput p8, p0, Landroidx/core/app/f$a;->i:I
 
-    .line 12
-    iput-boolean p9, p0, Landroidx/core/app/f$a;->e:Z
+    .line 3172
+    iput-boolean p9, p0, Landroidx/core/app/f$a;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Landroid/app/PendingIntent;
+.method public a()I
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Landroidx/core/app/f$a;->i:Landroid/app/PendingIntent;
-
-    return-object v0
-.end method
-
-.method public b()Z
-    .locals 1
-
-    .line 1
-    iget-boolean v0, p0, Landroidx/core/app/f$a;->d:Z
+    .line 3176
+    iget v0, p0, Landroidx/core/app/f$a;->c:I
 
     return v0
 .end method
 
-.method public c()[Landroidx/core/app/j;
+.method public b()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Landroidx/core/app/f$a;->c:[Landroidx/core/app/j;
+    .line 3180
+    iget-object v0, p0, Landroidx/core/app/f$a;->d:Ljava/lang/CharSequence;
+
+    return-object v0
+.end method
+
+.method public c()Landroid/app/PendingIntent;
+    .locals 1
+
+    .line 3184
+    iget-object v0, p0, Landroidx/core/app/f$a;->e:Landroid/app/PendingIntent;
 
     return-object v0
 .end method
@@ -153,17 +153,17 @@
 .method public d()Landroid/os/Bundle;
     .locals 1
 
-    .line 1
+    .line 3191
     iget-object v0, p0, Landroidx/core/app/f$a;->a:Landroid/os/Bundle;
 
     return-object v0
 .end method
 
-.method public e()I
+.method public e()Z
     .locals 1
 
-    .line 1
-    iget v0, p0, Landroidx/core/app/f$a;->g:I
+    .line 3199
+    iget-boolean v0, p0, Landroidx/core/app/f$a;->h:Z
 
     return v0
 .end method
@@ -171,8 +171,8 @@
 .method public f()[Landroidx/core/app/j;
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Landroidx/core/app/f$a;->b:[Landroidx/core/app/j;
+    .line 3208
+    iget-object v0, p0, Landroidx/core/app/f$a;->f:[Landroidx/core/app/j;
 
     return-object v0
 .end method
@@ -180,26 +180,26 @@
 .method public g()I
     .locals 1
 
-    .line 1
-    iget v0, p0, Landroidx/core/app/f$a;->f:I
+    .line 3219
+    iget v0, p0, Landroidx/core/app/f$a;->i:I
 
     return v0
 .end method
 
-.method public h()Z
+.method public h()[Landroidx/core/app/j;
     .locals 1
 
-    .line 1
-    iget-boolean v0, p0, Landroidx/core/app/f$a;->e:Z
-
-    return v0
-.end method
-
-.method public i()Ljava/lang/CharSequence;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Landroidx/core/app/f$a;->h:Ljava/lang/CharSequence;
+    .line 3233
+    iget-object v0, p0, Landroidx/core/app/f$a;->g:[Landroidx/core/app/j;
 
     return-object v0
+.end method
+
+.method public i()Z
+    .locals 1
+
+    .line 3241
+    iget-boolean v0, p0, Landroidx/core/app/f$a;->b:Z
+
+    return v0
 .end method

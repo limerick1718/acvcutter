@@ -1,69 +1,26 @@
 .class final Lob;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.implements Lkb;
-.implements Ljava/io/Serializable;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"<T:",
-"Ljava/lang/Object;",
-">",
-"Ljava/lang/Object;",
-"Lkb<",
-"TT;>;",
-"Ljava/io/Serializable;"
-}
-.end annotation
-.field private final a:Ljava/lang/Object;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"TT;"
-}
-.end annotation
-.annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
-.end annotation
-.end field
-.method constructor <init>(Ljava/lang/Object;)V
+.implements Ljava/lang/Runnable;
+.field private final synthetic a:Lnx;
+.field private final synthetic b:Lny;
+.method constructor <init>(Lny;Lnx;)V
 .locals 0
-.param p1    # Ljava/lang/Object;
-.annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
-.end annotation
-.end param
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"(TT;)V"
-}
-.end annotation
+iput-object p1, p0, Lob;->b:Lny;
+iput-object p2, p0, Lob;->a:Lnx;
 invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Lob;->a:Ljava/lang/Object;
 return-void
 .end method
-.method public final a()Ljava/lang/Object;
-.locals 1
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"()TT;"
-}
-.end annotation
-iget-object v0, p0, Lob;->a:Ljava/lang/Object;
-return-object v0
-.end method
-.method public final equals(Ljava/lang/Object;)Z
-.locals 2
-.param p1    # Ljava/lang/Object;
-.annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
-.end annotation
-.end param
-const/4 v0, 0x0
-return v0
-.end method
-.method public final hashCode()I
+.method public final run()V
 .locals 3
-const/4 v0, 0x0
-return v0
-.end method
-.method public final toString()Ljava/lang/String;
-.locals 3
-const/4 v0, 0x0
-return-object v0
+iget-object v0, p0, Lob;->b:Lny;
+iget-object v1, p0, Lob;->a:Lnx;
+const/4 v2, 0x0
+invoke-static {v0, v1, v2}, Lny;->a(Lny;Lnx;Z)V
+iget-object v0, p0, Lob;->b:Lny;
+const/4 v1, 0x0
+iput-object v1, v0, Lny;->a:Lnx;
+invoke-virtual {v0}, Loa;->h()Loc;
+move-result-object v0
+invoke-virtual {v0, v1}, Loc;->a(Lnx;)V
+return-void
 .end method

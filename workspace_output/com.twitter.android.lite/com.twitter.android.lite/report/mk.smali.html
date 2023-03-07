@@ -14,138 +14,40 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lmk;
+		<code>.class final Lmk;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.implements Lkb;
-
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/Object;",
-"Lkb<",
-"Lpk;",
-">;"
-}
-.end annotation
-
-.field private static b:Lmk;
-.field private final a:Lkb;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lkb<",
-"Lpk;",
-">;"
-}
-.end annotation
-.end field
+.implements Ljava/lang/Runnable;
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 1</span>
+.field private final synthetic a:Lqd;
+.field private final synthetic b:Lpz;
+.field private final synthetic c:Lmh;
 
-<span class="cov">	new-instance v0, Lmk;</span>
-<span class="cov">	invoke-direct {v0}, Lmk;-><init>()V</span>
-<span class="cov">	sput-object v0, Lmk;->b:Lmk;</span>
-<span class="exec">	return-void</span>
-.end method
 
-<span class="cov">.method public constructor &lt;init&gt;()V</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	new-instance v0, Lok;</span>
-<span class="cov">	invoke-direct {v0}, Lok;-><init>()V</span>
-<span class="exec">	invoke-static {v0}, Ljb;->a(Ljava/lang/Object;)Lkb;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	invoke-direct {p0, v0}, Lmk;-><init>(Lkb;)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method private constructor &lt;init&gt;(Lkb;)V</span>
+.method constructor &lt;init&gt;(Lmh;Lqd;Lpz;)V
 <span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Lkb<",</span>
-<span class="">	"Lpk;",</span>
-<span class="">	">;)V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="exec">	invoke-static {p1}, Ljb;->a(Lkb;)Lkb;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	iput-object p1, p0, Lmk;->a:Lkb;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iput-object p1, p0, Lmk;->c:Lmh;</span>
+<span class="missed">	iput-object p2, p0, Lmk;->a:Lqd;</span>
+<span class="missed">	iput-object p3, p0, Lmk;->b:Lpz;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public static b()Z</span>
-<span class="">	.locals 1</span>
+.method public final run()V
+<span class="">	.locals 3</span>
 
-<span class="cov">	sget-object v0, Lmk;->b:Lmk;</span>
-<span class="exec">	invoke-virtual {v0}, Lmk;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lpk;</span>
-<span class="exec">	invoke-interface {v0}, Lpk;->a()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
-.end method
-
-<span class="cov">.method public static c()D</span>
-<span class="">	.locals 2</span>
-
-<span class="cov">	sget-object v0, Lmk;->b:Lmk;</span>
-<span class="exec">	invoke-virtual {v0}, Lmk;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lpk;</span>
-<span class="exec">	invoke-interface {v0}, Lpk;->b()D</span>
-<span class="cov">	move-result-wide v0</span>
-<span class="exec">	return-wide v0</span>
-.end method
-
-<span class="cov">.method public static d()J</span>
-<span class="">	.locals 2</span>
-
-<span class="cov">	sget-object v0, Lmk;->b:Lmk;</span>
-<span class="exec">	invoke-virtual {v0}, Lmk;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lpk;</span>
-<span class="exec">	invoke-interface {v0}, Lpk;->c()J</span>
-<span class="cov">	move-result-wide v0</span>
-<span class="exec">	return-wide v0</span>
-.end method
-
-<span class="cov">.method public static e()J</span>
-<span class="">	.locals 2</span>
-
-<span class="cov">	sget-object v0, Lmk;->b:Lmk;</span>
-<span class="exec">	invoke-virtual {v0}, Lmk;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lpk;</span>
-<span class="exec">	invoke-interface {v0}, Lpk;->d()J</span>
-<span class="cov">	move-result-wide v0</span>
-<span class="exec">	return-wide v0</span>
-.end method
-
-<span class="cov">.method public static f()Ljava/lang/String;</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	sget-object v0, Lmk;->b:Lmk;</span>
-<span class="exec">	invoke-virtual {v0}, Lmk;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lpk;</span>
-<span class="exec">	invoke-interface {v0}, Lpk;->e()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	return-object v0</span>
-.end method
-
-<span class="cov">.method public final synthetic a()Ljava/lang/Object;</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	iget-object v0, p0, Lmk;->a:Lkb;</span>
-<span class="exec">	invoke-interface {v0}, Lkb;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lpk;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lmk;->c:Lmh;</span>
+<span class="">	invoke-static {v0}, Lmh;->a(Lmh;)Lpl;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {v0}, Lpl;->l()V</span>
+<span class="missed">	iget-object v0, p0, Lmk;->c:Lmh;</span>
+<span class="">	invoke-static {v0}, Lmh;->a(Lmh;)Lpl;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lmk;->a:Lqd;</span>
+<span class="missed">	iget-object v2, p0, Lmk;->b:Lpz;</span>
+<span class="missed">	invoke-virtual {v0, v1, v2}, Lpl;->b(Lqd;Lpz;)V</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

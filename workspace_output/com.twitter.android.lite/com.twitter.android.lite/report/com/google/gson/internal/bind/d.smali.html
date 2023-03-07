@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.google.gson.internal.bind</a></li>
+        <li><i class="ico ico-class"></i> d.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Lcom/google/gson/internal/bind/d;
+.super Lty;
+.source "JsonTreeWriter.java"
+
+
+.field private static final a:Ljava/io/Writer;
+.field private static final b:Lti;
+.field private final c:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Ltd;",
+">;"
+}
+.end annotation
+.end field
+.field private d:Ljava/lang/String;
+.field private e:Ltd;
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 2</span>
+
+<span class="missed">	new-instance v0, Lcom/google/gson/internal/bind/d$1;</span>
+<span class="missed">	invoke-direct {v0}, Lcom/google/gson/internal/bind/d$1;-><init>()V</span>
+<span class="missed">	sput-object v0, Lcom/google/gson/internal/bind/d;->a:Ljava/io/Writer;</span>
+<span class="missed">	new-instance v0, Lti;</span>
+<span class="missed">	const-string v1, "closed"</span>
+<span class="missed">	invoke-direct {v0, v1}, Lti;-><init>(Ljava/lang/String;)V</span>
+<span class="missed">	sput-object v0, Lcom/google/gson/internal/bind/d;->b:Lti;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public constructor &lt;init&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lcom/google/gson/internal/bind/d;->a:Ljava/io/Writer;</span>
+<span class="missed">	invoke-direct {p0, v0}, Lty;-><init>(Ljava/io/Writer;)V</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lcom/google/gson/internal/bind/d;->c:Ljava/util/List;</span>
+<span class="missed">	sget-object v0, Ltf;->a:Ltf;</span>
+<span class="missed">	iput-object v0, p0, Lcom/google/gson/internal/bind/d;->e:Ltd;</span>
+<span class="">	return-void</span>
+.end method
+
+.method private a(Ltd;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/d;->d:Ljava/lang/String;</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="">	invoke-virtual {p1}, Ltd;->j()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/gson/internal/bind/d;->i()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-direct {p0}, Lcom/google/gson/internal/bind/d;->j()Ltd;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ltg;</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/gson/internal/bind/d;->d:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {v0, v1, p1}, Ltg;->a(Ljava/lang/String;Ltd;)V</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	iput-object p1, p0, Lcom/google/gson/internal/bind/d;->d:Ljava/lang/String;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/d;->c:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_3</span>
+<span class="missed">	iput-object p1, p0, Lcom/google/gson/internal/bind/d;->e:Ltd;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-direct {p0}, Lcom/google/gson/internal/bind/d;->j()Ltd;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	instance-of v1, v0, Lta;</span>
+<span class="missed">	if-eqz v1, :cond_4</span>
+<span class="missed">	check-cast v0, Lta;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lta;->a(Ltd;)V</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_4</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method private j()Ltd;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/d;->c:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	add-int/lit8 v1, v1, -0x1</span>
+<span class="">	invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ltd;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public a()Ltd;
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/d;->c:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/d;->e:Ltd;</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "Expected one JSON element but was "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v2, p0, Lcom/google/gson/internal/bind/d;->c:Ljava/util/List;</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public a(J)Lty;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance v0, Lti;</span>
+<span class="">	invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {v0, p1}, Lti;-><init>(Ljava/lang/Number;)V</span>
+<span class="missed">	invoke-direct {p0, v0}, Lcom/google/gson/internal/bind/d;->a(Ltd;)V</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a(Ljava/lang/Boolean;)Lty;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/gson/internal/bind/d;->f()Lty;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Lti;</span>
+<span class="missed">	invoke-direct {v0, p1}, Lti;-><init>(Ljava/lang/Boolean;)V</span>
+<span class="missed">	invoke-direct {p0, v0}, Lcom/google/gson/internal/bind/d;->a(Ltd;)V</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a(Ljava/lang/Number;)Lty;
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/gson/internal/bind/d;->f()Lty;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/gson/internal/bind/d;->g()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_2</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Number;->doubleValue()D</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	invoke-static {v0, v1}, Ljava/lang/Double;->isNaN(D)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-nez v2, :cond_1</span>
+<span class="">	invoke-static {v0, v1}, Ljava/lang/Double;->isInfinite(D)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "JSON forbids NaN and infinities: "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_2</span>
+<span class="">	:goto_0</span>
+<span class="missed">	new-instance v0, Lti;</span>
+<span class="missed">	invoke-direct {v0, p1}, Lti;-><init>(Ljava/lang/Number;)V</span>
+<span class="missed">	invoke-direct {p0, v0}, Lcom/google/gson/internal/bind/d;->a(Ltd;)V</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public a(Ljava/lang/String;)Lty;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/d;->c:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/d;->d:Ljava/lang/String;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	invoke-direct {p0}, Lcom/google/gson/internal/bind/d;->j()Ltd;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	instance-of v0, v0, Ltg;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iput-object p1, p0, Lcom/google/gson/internal/bind/d;->d:Ljava/lang/String;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(Z)Lty;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance v0, Lti;</span>
+<span class="">	invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {v0, p1}, Lti;-><init>(Ljava/lang/Boolean;)V</span>
+<span class="missed">	invoke-direct {p0, v0}, Lcom/google/gson/internal/bind/d;->a(Ltd;)V</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public b()Lty;
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance v0, Lta;</span>
+<span class="missed">	invoke-direct {v0}, Lta;-><init>()V</span>
+<span class="missed">	invoke-direct {p0, v0}, Lcom/google/gson/internal/bind/d;->a(Ltd;)V</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/gson/internal/bind/d;->c:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public b(Ljava/lang/String;)Lty;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/gson/internal/bind/d;->f()Lty;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Lti;</span>
+<span class="missed">	invoke-direct {v0, p1}, Lti;-><init>(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-direct {p0, v0}, Lcom/google/gson/internal/bind/d;->a(Ltd;)V</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public c()Lty;
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/d;->c:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/d;->d:Ljava/lang/String;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	invoke-direct {p0}, Lcom/google/gson/internal/bind/d;->j()Ltd;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	instance-of v0, v0, Lta;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/d;->c:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	add-int/lit8 v1, v1, -0x1</span>
+<span class="missed">	invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public close()V
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/d;->c:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/d;->c:Ljava/util/List;</span>
+<span class="missed">	sget-object v1, Lcom/google/gson/internal/bind/d;->b:Lti;</span>
+<span class="missed">	invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/io/IOException;</span>
+<span class="missed">	const-string v1, "Incomplete document"</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public d()Lty;
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	new-instance v0, Ltg;</span>
+<span class="missed">	invoke-direct {v0}, Ltg;-><init>()V</span>
+<span class="missed">	invoke-direct {p0, v0}, Lcom/google/gson/internal/bind/d;->a(Ltd;)V</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/gson/internal/bind/d;->c:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public e()Lty;
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/d;->c:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/d;->d:Ljava/lang/String;</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	invoke-direct {p0}, Lcom/google/gson/internal/bind/d;->j()Ltd;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	instance-of v0, v0, Ltg;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/d;->c:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	add-int/lit8 v1, v1, -0x1</span>
+<span class="missed">	invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V</span>
+<span class="">	throw v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public f()Lty;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	sget-object v0, Ltf;->a:Ltf;</span>
+<span class="missed">	invoke-direct {p0, v0}, Lcom/google/gson/internal/bind/d;->a(Ltd;)V</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public flush()V
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	return-void</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../../.resources/report.js"></script>
+</body>
+</html>

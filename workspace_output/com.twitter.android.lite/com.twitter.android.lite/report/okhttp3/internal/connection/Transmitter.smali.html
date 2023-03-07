@@ -44,103 +44,103 @@ Lokhttp3/internal/connection/Transmitter$TransmitterReference;
 .field private exchangeResponseDone:Z
 .field private noMoreExchanges:Z
 .field private request:Lokhttp3/Request;
-.field private final timeout:Lcx;
+.field private final timeout:Lyq;
 .field private timeoutEarlyExit:Z
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+.method static constructor &lt;clinit&gt;()V
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public constructor &lt;init&gt;(Lokhttp3/OkHttpClient;Lokhttp3/Call;)V</span>
+.method public constructor &lt;init&gt;(Lokhttp3/OkHttpClient;Lokhttp3/Call;)V
 <span class="">	.locals 2</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	new-instance v0, Lokhttp3/internal/connection/Transmitter$1;</span>
-<span class="cov">	invoke-direct {v0, p0}, Lokhttp3/internal/connection/Transmitter$1;-><init>(Lokhttp3/internal/connection/Transmitter;)V</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/internal/connection/Transmitter;->timeout:Lcx;</span>
-<span class="cov">	iput-object p1, p0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
-<span class="cov">	sget-object v0, Lokhttp3/internal/Internal;->instance:Lokhttp3/internal/Internal;</span>
-<span class="exec">	invoke-virtual {p1}, Lokhttp3/OkHttpClient;->connectionPool()Lokhttp3/ConnectionPool;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="exec">	invoke-virtual {v0, v1}, Lokhttp3/internal/Internal;->realConnectionPool(Lokhttp3/ConnectionPool;)Lokhttp3/internal/connection/RealConnectionPool;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
-<span class="cov">	iput-object p2, p0, Lokhttp3/internal/connection/Transmitter;->call:Lokhttp3/Call;</span>
-<span class="exec">	invoke-virtual {p1}, Lokhttp3/OkHttpClient;->eventListenerFactory()Lokhttp3/EventListener$Factory;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-interface {v0, p2}, Lokhttp3/EventListener$Factory;->create(Lokhttp3/Call;)Lokhttp3/EventListener;</span>
-<span class="cov">	move-result-object p2</span>
-<span class="cov">	iput-object p2, p0, Lokhttp3/internal/connection/Transmitter;->eventListener:Lokhttp3/EventListener;</span>
-<span class="cov">	iget-object p2, p0, Lokhttp3/internal/connection/Transmitter;->timeout:Lcx;</span>
-<span class="exec">	invoke-virtual {p1}, Lokhttp3/OkHttpClient;->callTimeoutMillis()I</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	int-to-long v0, p1</span>
-<span class="cov">	sget-object p1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;</span>
-<span class="cov">	invoke-virtual {p2, v0, v1, p1}, Lxx;->timeout(JLjava/util/concurrent/TimeUnit;)Lxx;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	new-instance v0, Lokhttp3/internal/connection/Transmitter$1;</span>
+<span class="missed">	invoke-direct {v0, p0}, Lokhttp3/internal/connection/Transmitter$1;-><init>(Lokhttp3/internal/connection/Transmitter;)V</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/internal/connection/Transmitter;->timeout:Lyq;</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
+<span class="missed">	sget-object v0, Lokhttp3/internal/Internal;->instance:Lokhttp3/internal/Internal;</span>
+<span class="">	invoke-virtual {p1}, Lokhttp3/OkHttpClient;->connectionPool()Lokhttp3/ConnectionPool;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v0, v1}, Lokhttp3/internal/Internal;->realConnectionPool(Lokhttp3/ConnectionPool;)Lokhttp3/internal/connection/RealConnectionPool;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
+<span class="missed">	iput-object p2, p0, Lokhttp3/internal/connection/Transmitter;->call:Lokhttp3/Call;</span>
+<span class="">	invoke-virtual {p1}, Lokhttp3/OkHttpClient;->eventListenerFactory()Lokhttp3/EventListener$Factory;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-interface {v0, p2}, Lokhttp3/EventListener$Factory;->create(Lokhttp3/Call;)Lokhttp3/EventListener;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	iput-object p2, p0, Lokhttp3/internal/connection/Transmitter;->eventListener:Lokhttp3/EventListener;</span>
+<span class="missed">	iget-object p2, p0, Lokhttp3/internal/connection/Transmitter;->timeout:Lyq;</span>
+<span class="">	invoke-virtual {p1}, Lokhttp3/OkHttpClient;->callTimeoutMillis()I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	int-to-long v0, p1</span>
+<span class="missed">	sget-object p1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;</span>
+<span class="missed">	invoke-virtual {p2, v0, v1, p1}, Lyq;->timeout(JLjava/util/concurrent/TimeUnit;)Lzl;</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method private createAddress(Lokhttp3/HttpUrl;)Lokhttp3/Address;</span>
+.method private createAddress(Lokhttp3/HttpUrl;)Lokhttp3/Address;
 <span class="">	.locals 17</span>
 
-<span class="cov">	move-object/from16 v0, p0</span>
-<span class="exec">	invoke-virtual/range {p1 .. p1}, Lokhttp3/HttpUrl;->isHttps()Z</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	const/4 v2, 0x0</span>
-<span class="cov">	if-eqz v1, :cond_0</span>
-<span class="cov">	iget-object v1, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
-<span class="exec">	invoke-virtual {v1}, Lokhttp3/OkHttpClient;->sslSocketFactory()Ljavax/net/ssl/SSLSocketFactory;</span>
-<span class="cov">	move-result-object v2</span>
-<span class="cov">	iget-object v1, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
-<span class="exec">	invoke-virtual {v1}, Lokhttp3/OkHttpClient;->hostnameVerifier()Ljavax/net/ssl/HostnameVerifier;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	iget-object v3, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
-<span class="exec">	invoke-virtual {v3}, Lokhttp3/OkHttpClient;->certificatePinner()Lokhttp3/CertificatePinner;</span>
-<span class="cov">	move-result-object v3</span>
-<span class="cov">	move-object v10, v1</span>
-<span class="cov">	move-object v9, v2</span>
-<span class="cov">	move-object v11, v3</span>
+<span class="missed">	move-object/from16 v0, p0</span>
+<span class="">	invoke-virtual/range {p1 .. p1}, Lokhttp3/HttpUrl;->isHttps()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	iget-object v1, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
+<span class="">	invoke-virtual {v1}, Lokhttp3/OkHttpClient;->sslSocketFactory()Ljavax/net/ssl/SSLSocketFactory;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	iget-object v1, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
+<span class="">	invoke-virtual {v1}, Lokhttp3/OkHttpClient;->hostnameVerifier()Ljavax/net/ssl/HostnameVerifier;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iget-object v3, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
+<span class="">	invoke-virtual {v3}, Lokhttp3/OkHttpClient;->certificatePinner()Lokhttp3/CertificatePinner;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	move-object v10, v1</span>
+<span class="missed">	move-object v9, v2</span>
+<span class="missed">	move-object v11, v3</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	move-object v9, v2</span>
 <span class="missed">	move-object v10, v9</span>
 <span class="missed">	move-object v11, v10</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	new-instance v1, Lokhttp3/Address;</span>
-<span class="exec">	invoke-virtual/range {p1 .. p1}, Lokhttp3/HttpUrl;->host()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v5</span>
-<span class="exec">	invoke-virtual/range {p1 .. p1}, Lokhttp3/HttpUrl;->port()I</span>
-<span class="cov">	move-result v6</span>
-<span class="cov">	iget-object v2, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
-<span class="exec">	invoke-virtual {v2}, Lokhttp3/OkHttpClient;->dns()Lokhttp3/Dns;</span>
-<span class="cov">	move-result-object v7</span>
-<span class="cov">	iget-object v2, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
-<span class="exec">	invoke-virtual {v2}, Lokhttp3/OkHttpClient;->socketFactory()Ljavax/net/SocketFactory;</span>
-<span class="cov">	move-result-object v8</span>
-<span class="cov">	iget-object v2, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
-<span class="exec">	invoke-virtual {v2}, Lokhttp3/OkHttpClient;->proxyAuthenticator()Lokhttp3/Authenticator;</span>
-<span class="cov">	move-result-object v12</span>
-<span class="cov">	iget-object v2, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
-<span class="exec">	invoke-virtual {v2}, Lokhttp3/OkHttpClient;->proxy()Ljava/net/Proxy;</span>
-<span class="cov">	move-result-object v13</span>
-<span class="cov">	iget-object v2, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
-<span class="exec">	invoke-virtual {v2}, Lokhttp3/OkHttpClient;->protocols()Ljava/util/List;</span>
-<span class="cov">	move-result-object v14</span>
-<span class="cov">	iget-object v2, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
-<span class="exec">	invoke-virtual {v2}, Lokhttp3/OkHttpClient;->connectionSpecs()Ljava/util/List;</span>
-<span class="cov">	move-result-object v15</span>
-<span class="cov">	iget-object v2, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
-<span class="exec">	invoke-virtual {v2}, Lokhttp3/OkHttpClient;->proxySelector()Ljava/net/ProxySelector;</span>
-<span class="cov">	move-result-object v16</span>
-<span class="cov">	move-object v4, v1</span>
-<span class="cov">	invoke-direct/range {v4 .. v16}, Lokhttp3/Address;-><init>(Ljava/lang/String;ILokhttp3/Dns;Ljavax/net/SocketFactory;Ljavax/net/ssl/SSLSocketFactory;Ljavax/net/ssl/HostnameVerifier;Lokhttp3/CertificatePinner;Lokhttp3/Authenticator;Ljava/net/Proxy;Ljava/util/List;Ljava/util/List;Ljava/net/ProxySelector;)V</span>
-<span class="exec">	return-object v1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	new-instance v1, Lokhttp3/Address;</span>
+<span class="">	invoke-virtual/range {p1 .. p1}, Lokhttp3/HttpUrl;->host()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="">	invoke-virtual/range {p1 .. p1}, Lokhttp3/HttpUrl;->port()I</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	iget-object v2, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
+<span class="">	invoke-virtual {v2}, Lokhttp3/OkHttpClient;->dns()Lokhttp3/Dns;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="missed">	iget-object v2, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
+<span class="">	invoke-virtual {v2}, Lokhttp3/OkHttpClient;->socketFactory()Ljavax/net/SocketFactory;</span>
+<span class="missed">	move-result-object v8</span>
+<span class="missed">	iget-object v2, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
+<span class="">	invoke-virtual {v2}, Lokhttp3/OkHttpClient;->proxyAuthenticator()Lokhttp3/Authenticator;</span>
+<span class="missed">	move-result-object v12</span>
+<span class="missed">	iget-object v2, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
+<span class="">	invoke-virtual {v2}, Lokhttp3/OkHttpClient;->proxy()Ljava/net/Proxy;</span>
+<span class="missed">	move-result-object v13</span>
+<span class="missed">	iget-object v2, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
+<span class="">	invoke-virtual {v2}, Lokhttp3/OkHttpClient;->protocols()Ljava/util/List;</span>
+<span class="missed">	move-result-object v14</span>
+<span class="missed">	iget-object v2, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
+<span class="">	invoke-virtual {v2}, Lokhttp3/OkHttpClient;->connectionSpecs()Ljava/util/List;</span>
+<span class="missed">	move-result-object v15</span>
+<span class="missed">	iget-object v2, v0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
+<span class="">	invoke-virtual {v2}, Lokhttp3/OkHttpClient;->proxySelector()Ljava/net/ProxySelector;</span>
+<span class="missed">	move-result-object v16</span>
+<span class="missed">	move-object v4, v1</span>
+<span class="missed">	invoke-direct/range {v4 .. v16}, Lokhttp3/Address;-><init>(Ljava/lang/String;ILokhttp3/Dns;Ljavax/net/SocketFactory;Ljavax/net/ssl/SSLSocketFactory;Ljavax/net/ssl/HostnameVerifier;Lokhttp3/CertificatePinner;Lokhttp3/Authenticator;Ljava/net/Proxy;Ljava/util/List;Ljava/util/List;Ljava/net/ProxySelector;)V</span>
+<span class="">	return-object v1</span>
 .end method
 
-<span class="cov">.method private maybeReleaseConnection(Ljava/io/IOException;Z)Ljava/io/IOException;</span>
+.method private maybeReleaseConnection(Ljava/io/IOException;Z)Ljava/io/IOException;
 <span class="">	.locals 5</span>
 <span class="">	.param p1    # Ljava/io/IOException;</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
@@ -149,8 +149,8 @@ Lokhttp3/internal/connection/Transmitter$TransmitterReference;
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
-<span class="cov">	monitor-enter v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
+<span class="missed">	monitor-enter v0</span>
 <span class="missed">	if-eqz p2, :cond_1</span>
 <span class="">	:try_start_0</span>
 <span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/Transmitter;->exchange:Lokhttp3/internal/connection/Exchange;</span>
@@ -161,68 +161,68 @@ Lokhttp3/internal/connection/Transmitter$TransmitterReference;
 <span class="missed">	const-string p2, "cannot release connection while it is in use"</span>
 <span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
 <span class="">	throw p1</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	iget-object v1, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
-<span class="cov">	iget-object v2, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
-<span class="cov">	const/4 v3, 0x0</span>
-<span class="cov">	if-eqz v2, :cond_3</span>
-<span class="cov">	iget-object v2, p0, Lokhttp3/internal/connection/Transmitter;->exchange:Lokhttp3/internal/connection/Exchange;</span>
-<span class="cov">	if-nez v2, :cond_3</span>
-<span class="cov">	if-nez p2, :cond_2</span>
-<span class="cov">	iget-boolean p2, p0, Lokhttp3/internal/connection/Transmitter;->noMoreExchanges:Z</span>
-<span class="cov">	if-eqz p2, :cond_3</span>
-<span class="cov">	:cond_2</span>
-<span class="exec">	invoke-virtual {p0}, Lokhttp3/internal/connection/Transmitter;->releaseConnectionNoEvents()Ljava/net/Socket;</span>
-<span class="cov">	move-result-object p2</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:cond_3</span>
-<span class="cov">	move-object p2, v3</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	iget-object v2, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
-<span class="cov">	if-eqz v2, :cond_4</span>
-<span class="cov">	move-object v1, v3</span>
-<span class="cov">	:cond_4</span>
-<span class="cov">	iget-boolean v2, p0, Lokhttp3/internal/connection/Transmitter;->noMoreExchanges:Z</span>
-<span class="cov">	const/4 v3, 0x1</span>
-<span class="cov">	const/4 v4, 0x0</span>
-<span class="cov">	if-eqz v2, :cond_5</span>
-<span class="cov">	iget-object v2, p0, Lokhttp3/internal/connection/Transmitter;->exchange:Lokhttp3/internal/connection/Exchange;</span>
-<span class="cov">	if-nez v2, :cond_5</span>
-<span class="cov">	const/4 v2, 0x1</span>
-<span class="exec">	goto :goto_2</span>
-<span class="cov">	:cond_5</span>
-<span class="cov">	const/4 v2, 0x0</span>
-<span class="cov">	:goto_2</span>
-<span class="cov">	monitor-exit v0</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="cov">	invoke-static {p2}, Lokhttp3/internal/Util;->closeQuietly(Ljava/net/Socket;)V</span>
-<span class="cov">	if-eqz v1, :cond_6</span>
-<span class="cov">	iget-object p2, p0, Lokhttp3/internal/connection/Transmitter;->eventListener:Lokhttp3/EventListener;</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->call:Lokhttp3/Call;</span>
-<span class="cov">	invoke-virtual {p2, v0, v1}, Lokhttp3/EventListener;->connectionReleased(Lokhttp3/Call;Lokhttp3/Connection;)V</span>
-<span class="cov">	:cond_6</span>
-<span class="cov">	if-eqz v2, :cond_9</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	if-eqz v2, :cond_3</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/internal/connection/Transmitter;->exchange:Lokhttp3/internal/connection/Exchange;</span>
+<span class="missed">	if-nez v2, :cond_3</span>
+<span class="missed">	if-nez p2, :cond_2</span>
+<span class="missed">	iget-boolean p2, p0, Lokhttp3/internal/connection/Transmitter;->noMoreExchanges:Z</span>
+<span class="missed">	if-eqz p2, :cond_3</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/internal/connection/Transmitter;->releaseConnectionNoEvents()Ljava/net/Socket;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	move-object p2, v3</span>
+<span class="">	:goto_1</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
+<span class="missed">	if-eqz v2, :cond_4</span>
+<span class="missed">	move-object v1, v3</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget-boolean v2, p0, Lokhttp3/internal/connection/Transmitter;->noMoreExchanges:Z</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	if-eqz v2, :cond_5</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/internal/connection/Transmitter;->exchange:Lokhttp3/internal/connection/Exchange;</span>
+<span class="missed">	if-nez v2, :cond_5</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_5</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_2</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-static {p2}, Lokhttp3/internal/Util;->closeQuietly(Ljava/net/Socket;)V</span>
+<span class="missed">	if-eqz v1, :cond_6</span>
+<span class="missed">	iget-object p2, p0, Lokhttp3/internal/connection/Transmitter;->eventListener:Lokhttp3/EventListener;</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->call:Lokhttp3/Call;</span>
+<span class="missed">	invoke-virtual {p2, v0, v1}, Lokhttp3/EventListener;->connectionReleased(Lokhttp3/Call;Lokhttp3/Connection;)V</span>
+<span class="">	:cond_6</span>
+<span class="missed">	if-eqz v2, :cond_9</span>
 <span class="missed">	if-eqz p1, :cond_7</span>
-<span class="exec">	goto :goto_3</span>
-<span class="cov">	:cond_7</span>
-<span class="cov">	const/4 v3, 0x0</span>
-<span class="cov">	:goto_3</span>
-<span class="exec">	invoke-direct {p0, p1}, Lokhttp3/internal/connection/Transmitter;->timeoutExit(Ljava/io/IOException;)Ljava/io/IOException;</span>
-<span class="cov">	move-result-object p1</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_7</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	:goto_3</span>
+<span class="">	invoke-direct {p0, p1}, Lokhttp3/internal/connection/Transmitter;->timeoutExit(Ljava/io/IOException;)Ljava/io/IOException;</span>
+<span class="missed">	move-result-object p1</span>
 <span class="missed">	if-eqz v3, :cond_8</span>
 <span class="missed">	iget-object p2, p0, Lokhttp3/internal/connection/Transmitter;->eventListener:Lokhttp3/EventListener;</span>
 <span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->call:Lokhttp3/Call;</span>
 <span class="missed">	invoke-virtual {p2, v0, p1}, Lokhttp3/EventListener;->callFailed(Lokhttp3/Call;Ljava/io/IOException;)V</span>
-<span class="exec">	goto :goto_4</span>
-<span class="cov">	:cond_8</span>
-<span class="cov">	iget-object p2, p0, Lokhttp3/internal/connection/Transmitter;->eventListener:Lokhttp3/EventListener;</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->call:Lokhttp3/Call;</span>
-<span class="cov">	invoke-virtual {p2, v0}, Lokhttp3/EventListener;->callEnd(Lokhttp3/Call;)V</span>
-<span class="cov">	:goto_4</span>
-<span class="cov">	:cond_9</span>
-<span class="exec">	return-object p1</span>
+<span class="">	goto :goto_4</span>
+<span class="">	:cond_8</span>
+<span class="missed">	iget-object p2, p0, Lokhttp3/internal/connection/Transmitter;->eventListener:Lokhttp3/EventListener;</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->call:Lokhttp3/Call;</span>
+<span class="missed">	invoke-virtual {p2, v0}, Lokhttp3/EventListener;->callEnd(Lokhttp3/Call;)V</span>
+<span class="">	:goto_4</span>
+<span class="">	:cond_9</span>
+<span class="">	return-object p1</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception p1</span>
 <span class="">	:try_start_1</span>
@@ -232,7 +232,7 @@ Lokhttp3/internal/connection/Transmitter$TransmitterReference;
 <span class="">	throw p1</span>
 .end method
 
-<span class="cov">.method private timeoutExit(Ljava/io/IOException;)Ljava/io/IOException;</span>
+.method private timeoutExit(Ljava/io/IOException;)Ljava/io/IOException;
 <span class="">	.locals 2</span>
 <span class="">	.param p1    # Ljava/io/IOException;</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
@@ -241,15 +241,15 @@ Lokhttp3/internal/connection/Transmitter$TransmitterReference;
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-boolean v0, p0, Lokhttp3/internal/connection/Transmitter;->timeoutEarlyExit:Z</span>
+<span class="missed">	iget-boolean v0, p0, Lokhttp3/internal/connection/Transmitter;->timeoutEarlyExit:Z</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="">	return-object p1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->timeout:Lcx;</span>
-<span class="exec">	invoke-virtual {v0}, Lcx;->exit()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-nez v0, :cond_1</span>
-<span class="exec">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->timeout:Lyq;</span>
+<span class="">	invoke-virtual {v0}, Lyq;->exit()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	return-object p1</span>
 <span class="">	:cond_1</span>
 <span class="missed">	new-instance v0, Ljava/io/InterruptedIOException;</span>
 <span class="missed">	const-string v1, "timeout"</span>
@@ -260,37 +260,37 @@ Lokhttp3/internal/connection/Transmitter$TransmitterReference;
 <span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method  acquireConnectionNoEvents(Lokhttp3/internal/connection/RealConnection;)V</span>
+.method  acquireConnectionNoEvents(Lokhttp3/internal/connection/RealConnection;)V
 <span class="">	.locals 2</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
-<span class="cov">	if-nez v0, :cond_0</span>
-<span class="cov">	iput-object p1, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
-<span class="cov">	iget-object p1, p1, Lokhttp3/internal/connection/RealConnection;->transmitters:Ljava/util/List;</span>
-<span class="cov">	new-instance v0, Lokhttp3/internal/connection/Transmitter$TransmitterReference;</span>
-<span class="cov">	iget-object v1, p0, Lokhttp3/internal/connection/Transmitter;->callStackTrace:Ljava/lang/Object;</span>
-<span class="cov">	invoke-direct {v0, p0, v1}, Lokhttp3/internal/connection/Transmitter$TransmitterReference;-><init>(Lokhttp3/internal/connection/Transmitter;Ljava/lang/Object;)V</span>
-<span class="cov">	invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
+<span class="missed">	iget-object p1, p1, Lokhttp3/internal/connection/RealConnection;->transmitters:Ljava/util/List;</span>
+<span class="missed">	new-instance v0, Lokhttp3/internal/connection/Transmitter$TransmitterReference;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/Transmitter;->callStackTrace:Ljava/lang/Object;</span>
+<span class="missed">	invoke-direct {v0, p0, v1}, Lokhttp3/internal/connection/Transmitter$TransmitterReference;-><init>(Lokhttp3/internal/connection/Transmitter;Ljava/lang/Object;)V</span>
+<span class="missed">	invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="">	return-void</span>
 <span class="">	:cond_0</span>
 <span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
 <span class="missed">	invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V</span>
 <span class="">	throw p1</span>
 .end method
 
-<span class="cov">.method public callStart()V</span>
+.method public callStart()V
 <span class="">	.locals 2</span>
 
-<span class="exec">	invoke-static {}, Lokhttp3/internal/platform/Platform;->get()Lokhttp3/internal/platform/Platform;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	const-string v1, "response.body().close()"</span>
-<span class="exec">	invoke-virtual {v0, v1}, Lokhttp3/internal/platform/Platform;->getStackTraceForCloseable(Ljava/lang/String;)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/internal/connection/Transmitter;->callStackTrace:Ljava/lang/Object;</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->eventListener:Lokhttp3/EventListener;</span>
-<span class="cov">	iget-object v1, p0, Lokhttp3/internal/connection/Transmitter;->call:Lokhttp3/Call;</span>
-<span class="cov">	invoke-virtual {v0, v1}, Lokhttp3/EventListener;->callStart(Lokhttp3/Call;)V</span>
-<span class="exec">	return-void</span>
+<span class="">	invoke-static {}, Lokhttp3/internal/platform/Platform;->get()Lokhttp3/internal/platform/Platform;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "response.body().close()"</span>
+<span class="">	invoke-virtual {v0, v1}, Lokhttp3/internal/platform/Platform;->getStackTraceForCloseable(Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/internal/connection/Transmitter;->callStackTrace:Ljava/lang/Object;</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->eventListener:Lokhttp3/EventListener;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/Transmitter;->call:Lokhttp3/Call;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Lokhttp3/EventListener;->callStart(Lokhttp3/Call;)V</span>
+<span class="">	return-void</span>
 .end method
 
 .method public canRetry()Z
@@ -379,7 +379,7 @@ Lokhttp3/internal/connection/Transmitter$TransmitterReference;
 <span class="">	throw v1</span>
 .end method
 
-<span class="cov">.method  exchangeMessageDone(Lokhttp3/internal/connection/Exchange;ZZLjava/io/IOException;)Ljava/io/IOException;</span>
+.method  exchangeMessageDone(Lokhttp3/internal/connection/Exchange;ZZLjava/io/IOException;)Ljava/io/IOException;
 <span class="">	.locals 2</span>
 <span class="">	.param p4    # Ljava/io/IOException;</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
@@ -388,56 +388,56 @@ Lokhttp3/internal/connection/Transmitter$TransmitterReference;
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
-<span class="cov">	monitor-enter v0</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	iget-object v1, p0, Lokhttp3/internal/connection/Transmitter;->exchange:Lokhttp3/internal/connection/Exchange;</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/Transmitter;->exchange:Lokhttp3/internal/connection/Exchange;</span>
 <span class="missed">	if-eq p1, v1, :cond_0</span>
 <span class="missed">	monitor-exit v0</span>
 <span class="">	return-object p4</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 p1, 0x0</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="cov">	if-eqz p2, :cond_1</span>
-<span class="cov">	iget-boolean p2, p0, Lokhttp3/internal/connection/Transmitter;->exchangeRequestDone:Z</span>
-<span class="cov">	xor-int/2addr p2, v1</span>
-<span class="cov">	iput-boolean v1, p0, Lokhttp3/internal/connection/Transmitter;->exchangeRequestDone:Z</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	const/4 p2, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	if-eqz p3, :cond_3</span>
-<span class="cov">	iget-boolean p3, p0, Lokhttp3/internal/connection/Transmitter;->exchangeResponseDone:Z</span>
-<span class="cov">	if-nez p3, :cond_2</span>
-<span class="cov">	const/4 p2, 0x1</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	iput-boolean v1, p0, Lokhttp3/internal/connection/Transmitter;->exchangeResponseDone:Z</span>
-<span class="cov">	:cond_3</span>
-<span class="cov">	iget-boolean p3, p0, Lokhttp3/internal/connection/Transmitter;->exchangeRequestDone:Z</span>
-<span class="cov">	if-eqz p3, :cond_4</span>
-<span class="cov">	iget-boolean p3, p0, Lokhttp3/internal/connection/Transmitter;->exchangeResponseDone:Z</span>
-<span class="cov">	if-eqz p3, :cond_4</span>
-<span class="cov">	if-eqz p2, :cond_4</span>
-<span class="cov">	iget-object p2, p0, Lokhttp3/internal/connection/Transmitter;->exchange:Lokhttp3/internal/connection/Exchange;</span>
-<span class="exec">	invoke-virtual {p2}, Lokhttp3/internal/connection/Exchange;->connection()Lokhttp3/internal/connection/RealConnection;</span>
-<span class="cov">	move-result-object p2</span>
-<span class="cov">	iget p3, p2, Lokhttp3/internal/connection/RealConnection;->successCount:I</span>
-<span class="cov">	add-int/2addr p3, v1</span>
-<span class="cov">	iput p3, p2, Lokhttp3/internal/connection/RealConnection;->successCount:I</span>
-<span class="cov">	const/4 p2, 0x0</span>
-<span class="cov">	iput-object p2, p0, Lokhttp3/internal/connection/Transmitter;->exchange:Lokhttp3/internal/connection/Exchange;</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:cond_4</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	monitor-exit v0</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="cov">	if-eqz v1, :cond_5</span>
-<span class="exec">	invoke-direct {p0, p4, p1}, Lokhttp3/internal/connection/Transmitter;->maybeReleaseConnection(Ljava/io/IOException;Z)Ljava/io/IOException;</span>
-<span class="cov">	move-result-object p4</span>
-<span class="cov">	:cond_5</span>
-<span class="exec">	return-object p4</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-eqz p2, :cond_1</span>
+<span class="missed">	iget-boolean p2, p0, Lokhttp3/internal/connection/Transmitter;->exchangeRequestDone:Z</span>
+<span class="missed">	xor-int/2addr p2, v1</span>
+<span class="missed">	iput-boolean v1, p0, Lokhttp3/internal/connection/Transmitter;->exchangeRequestDone:Z</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 p2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-eqz p3, :cond_3</span>
+<span class="missed">	iget-boolean p3, p0, Lokhttp3/internal/connection/Transmitter;->exchangeResponseDone:Z</span>
+<span class="missed">	if-nez p3, :cond_2</span>
+<span class="missed">	const/4 p2, 0x1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iput-boolean v1, p0, Lokhttp3/internal/connection/Transmitter;->exchangeResponseDone:Z</span>
+<span class="">	:cond_3</span>
+<span class="missed">	iget-boolean p3, p0, Lokhttp3/internal/connection/Transmitter;->exchangeRequestDone:Z</span>
+<span class="missed">	if-eqz p3, :cond_4</span>
+<span class="missed">	iget-boolean p3, p0, Lokhttp3/internal/connection/Transmitter;->exchangeResponseDone:Z</span>
+<span class="missed">	if-eqz p3, :cond_4</span>
+<span class="missed">	if-eqz p2, :cond_4</span>
+<span class="missed">	iget-object p2, p0, Lokhttp3/internal/connection/Transmitter;->exchange:Lokhttp3/internal/connection/Exchange;</span>
+<span class="">	invoke-virtual {p2}, Lokhttp3/internal/connection/Exchange;->connection()Lokhttp3/internal/connection/RealConnection;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	iget p3, p2, Lokhttp3/internal/connection/RealConnection;->successCount:I</span>
+<span class="missed">	add-int/2addr p3, v1</span>
+<span class="missed">	iput p3, p2, Lokhttp3/internal/connection/RealConnection;->successCount:I</span>
+<span class="missed">	const/4 p2, 0x0</span>
+<span class="missed">	iput-object p2, p0, Lokhttp3/internal/connection/Transmitter;->exchange:Lokhttp3/internal/connection/Exchange;</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_4</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	if-eqz v1, :cond_5</span>
+<span class="">	invoke-direct {p0, p4, p1}, Lokhttp3/internal/connection/Transmitter;->maybeReleaseConnection(Ljava/io/IOException;Z)Ljava/io/IOException;</span>
+<span class="missed">	move-result-object p4</span>
+<span class="">	:cond_5</span>
+<span class="">	return-object p4</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception p1</span>
 <span class="">	:try_start_1</span>
@@ -470,15 +470,15 @@ Lokhttp3/internal/connection/Transmitter$TransmitterReference;
 <span class="">	throw v1</span>
 .end method
 
-<span class="cov">.method public isCanceled()Z</span>
+.method public isCanceled()Z
 <span class="">	.locals 2</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
-<span class="cov">	monitor-enter v0</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	iget-boolean v1, p0, Lokhttp3/internal/connection/Transmitter;->canceled:Z</span>
-<span class="cov">	monitor-exit v0</span>
-<span class="exec">	return v1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-boolean v1, p0, Lokhttp3/internal/connection/Transmitter;->canceled:Z</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return v1</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception v1</span>
 <span class="missed">	monitor-exit v0</span>
@@ -487,39 +487,39 @@ Lokhttp3/internal/connection/Transmitter$TransmitterReference;
 <span class="">	throw v1</span>
 .end method
 
-<span class="cov">.method  newExchange(Lokhttp3/Interceptor$Chain;Z)Lokhttp3/internal/connection/Exchange;</span>
+.method  newExchange(Lokhttp3/Interceptor$Chain;Z)Lokhttp3/internal/connection/Exchange;
 <span class="">	.locals 8</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
-<span class="cov">	monitor-enter v0</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	iget-boolean v1, p0, Lokhttp3/internal/connection/Transmitter;->noMoreExchanges:Z</span>
-<span class="cov">	if-nez v1, :cond_1</span>
-<span class="cov">	iget-object v1, p0, Lokhttp3/internal/connection/Transmitter;->exchange:Lokhttp3/internal/connection/Exchange;</span>
-<span class="cov">	if-nez v1, :cond_0</span>
-<span class="cov">	monitor-exit v0</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_1</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->exchangeFinder:Lokhttp3/internal/connection/ExchangeFinder;</span>
-<span class="cov">	iget-object v1, p0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
-<span class="exec">	invoke-virtual {v0, v1, p1, p2}, Lokhttp3/internal/connection/ExchangeFinder;->find(Lokhttp3/OkHttpClient;Lokhttp3/Interceptor$Chain;Z)Lokhttp3/internal/http/ExchangeCodec;</span>
-<span class="cov">	move-result-object v7</span>
-<span class="cov">	new-instance p1, Lokhttp3/internal/connection/Exchange;</span>
-<span class="cov">	iget-object v4, p0, Lokhttp3/internal/connection/Transmitter;->call:Lokhttp3/Call;</span>
-<span class="cov">	iget-object v5, p0, Lokhttp3/internal/connection/Transmitter;->eventListener:Lokhttp3/EventListener;</span>
-<span class="cov">	iget-object v6, p0, Lokhttp3/internal/connection/Transmitter;->exchangeFinder:Lokhttp3/internal/connection/ExchangeFinder;</span>
-<span class="cov">	move-object v2, p1</span>
-<span class="cov">	move-object v3, p0</span>
-<span class="cov">	invoke-direct/range {v2 .. v7}, Lokhttp3/internal/connection/Exchange;-><init>(Lokhttp3/internal/connection/Transmitter;Lokhttp3/Call;Lokhttp3/EventListener;Lokhttp3/internal/connection/ExchangeFinder;Lokhttp3/internal/http/ExchangeCodec;)V</span>
-<span class="cov">	iget-object p2, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
-<span class="cov">	monitor-enter p2</span>
-<span class="cov">	:try_start_1</span>
-<span class="cov">	iput-object p1, p0, Lokhttp3/internal/connection/Transmitter;->exchange:Lokhttp3/internal/connection/Exchange;</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	iput-boolean v0, p0, Lokhttp3/internal/connection/Transmitter;->exchangeRequestDone:Z</span>
-<span class="cov">	iput-boolean v0, p0, Lokhttp3/internal/connection/Transmitter;->exchangeResponseDone:Z</span>
-<span class="cov">	monitor-exit p2</span>
-<span class="exec">	return-object p1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-boolean v1, p0, Lokhttp3/internal/connection/Transmitter;->noMoreExchanges:Z</span>
+<span class="missed">	if-nez v1, :cond_1</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/Transmitter;->exchange:Lokhttp3/internal/connection/Exchange;</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->exchangeFinder:Lokhttp3/internal/connection/ExchangeFinder;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/Transmitter;->client:Lokhttp3/OkHttpClient;</span>
+<span class="">	invoke-virtual {v0, v1, p1, p2}, Lokhttp3/internal/connection/ExchangeFinder;->find(Lokhttp3/OkHttpClient;Lokhttp3/Interceptor$Chain;Z)Lokhttp3/internal/http/ExchangeCodec;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="missed">	new-instance p1, Lokhttp3/internal/connection/Exchange;</span>
+<span class="missed">	iget-object v4, p0, Lokhttp3/internal/connection/Transmitter;->call:Lokhttp3/Call;</span>
+<span class="missed">	iget-object v5, p0, Lokhttp3/internal/connection/Transmitter;->eventListener:Lokhttp3/EventListener;</span>
+<span class="missed">	iget-object v6, p0, Lokhttp3/internal/connection/Transmitter;->exchangeFinder:Lokhttp3/internal/connection/ExchangeFinder;</span>
+<span class="missed">	move-object v2, p1</span>
+<span class="missed">	move-object v3, p0</span>
+<span class="missed">	invoke-direct/range {v2 .. v7}, Lokhttp3/internal/connection/Exchange;-><init>(Lokhttp3/internal/connection/Transmitter;Lokhttp3/Call;Lokhttp3/EventListener;Lokhttp3/internal/connection/ExchangeFinder;Lokhttp3/internal/http/ExchangeCodec;)V</span>
+<span class="missed">	iget-object p2, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
+<span class="missed">	monitor-enter p2</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/internal/connection/Transmitter;->exchange:Lokhttp3/internal/connection/Exchange;</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-boolean v0, p0, Lokhttp3/internal/connection/Transmitter;->exchangeRequestDone:Z</span>
+<span class="missed">	iput-boolean v0, p0, Lokhttp3/internal/connection/Transmitter;->exchangeResponseDone:Z</span>
+<span class="missed">	monitor-exit p2</span>
+<span class="">	return-object p1</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception p1</span>
 <span class="missed">	monitor-exit p2</span>
@@ -545,7 +545,7 @@ Lokhttp3/internal/connection/Transmitter$TransmitterReference;
 <span class="">	throw p1</span>
 .end method
 
-<span class="cov">.method public noMoreExchanges(Ljava/io/IOException;)Ljava/io/IOException;</span>
+.method public noMoreExchanges(Ljava/io/IOException;)Ljava/io/IOException;
 <span class="">	.locals 2</span>
 <span class="">	.param p1    # Ljava/io/IOException;</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
@@ -554,18 +554,18 @@ Lokhttp3/internal/connection/Transmitter$TransmitterReference;
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
-<span class="cov">	monitor-enter v0</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	iput-boolean v1, p0, Lokhttp3/internal/connection/Transmitter;->noMoreExchanges:Z</span>
-<span class="cov">	monitor-exit v0</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="exec">	invoke-direct {p0, p1, v0}, Lokhttp3/internal/connection/Transmitter;->maybeReleaseConnection(Ljava/io/IOException;Z)Ljava/io/IOException;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	return-object p1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iput-boolean v1, p0, Lokhttp3/internal/connection/Transmitter;->noMoreExchanges:Z</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	invoke-direct {p0, p1, v0}, Lokhttp3/internal/connection/Transmitter;->maybeReleaseConnection(Ljava/io/IOException;Z)Ljava/io/IOException;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception p1</span>
 <span class="">	:try_start_1</span>
@@ -575,10 +575,10 @@ Lokhttp3/internal/connection/Transmitter$TransmitterReference;
 <span class="">	throw p1</span>
 .end method
 
-<span class="cov">.method public prepareToConnect(Lokhttp3/Request;)V</span>
+.method public prepareToConnect(Lokhttp3/Request;)V
 <span class="">	.locals 7</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->request:Lokhttp3/Request;</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->request:Lokhttp3/Request;</span>
 <span class="missed">	if-eqz v0, :cond_2</span>
 <span class="">	invoke-virtual {v0}, Lokhttp3/Request;->url()Lokhttp3/HttpUrl;</span>
 <span class="missed">	move-result-object v0</span>
@@ -606,83 +606,83 @@ Lokhttp3/internal/connection/Transmitter$TransmitterReference;
 <span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
 <span class="missed">	invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V</span>
 <span class="">	throw p1</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	iput-object p1, p0, Lokhttp3/internal/connection/Transmitter;->request:Lokhttp3/Request;</span>
-<span class="cov">	new-instance v6, Lokhttp3/internal/connection/ExchangeFinder;</span>
-<span class="cov">	iget-object v2, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
-<span class="exec">	invoke-virtual {p1}, Lokhttp3/Request;->url()Lokhttp3/HttpUrl;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	invoke-direct {p0, p1}, Lokhttp3/internal/connection/Transmitter;->createAddress(Lokhttp3/HttpUrl;)Lokhttp3/Address;</span>
-<span class="cov">	move-result-object v3</span>
-<span class="cov">	iget-object v4, p0, Lokhttp3/internal/connection/Transmitter;->call:Lokhttp3/Call;</span>
-<span class="cov">	iget-object v5, p0, Lokhttp3/internal/connection/Transmitter;->eventListener:Lokhttp3/EventListener;</span>
-<span class="cov">	move-object v0, v6</span>
-<span class="cov">	move-object v1, p0</span>
-<span class="cov">	invoke-direct/range {v0 .. v5}, Lokhttp3/internal/connection/ExchangeFinder;-><init>(Lokhttp3/internal/connection/Transmitter;Lokhttp3/internal/connection/RealConnectionPool;Lokhttp3/Address;Lokhttp3/Call;Lokhttp3/EventListener;)V</span>
-<span class="cov">	iput-object v6, p0, Lokhttp3/internal/connection/Transmitter;->exchangeFinder:Lokhttp3/internal/connection/ExchangeFinder;</span>
-<span class="exec">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/internal/connection/Transmitter;->request:Lokhttp3/Request;</span>
+<span class="missed">	new-instance v6, Lokhttp3/internal/connection/ExchangeFinder;</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
+<span class="">	invoke-virtual {p1}, Lokhttp3/Request;->url()Lokhttp3/HttpUrl;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-direct {p0, p1}, Lokhttp3/internal/connection/Transmitter;->createAddress(Lokhttp3/HttpUrl;)Lokhttp3/Address;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	iget-object v4, p0, Lokhttp3/internal/connection/Transmitter;->call:Lokhttp3/Call;</span>
+<span class="missed">	iget-object v5, p0, Lokhttp3/internal/connection/Transmitter;->eventListener:Lokhttp3/EventListener;</span>
+<span class="missed">	move-object v0, v6</span>
+<span class="missed">	move-object v1, p0</span>
+<span class="missed">	invoke-direct/range {v0 .. v5}, Lokhttp3/internal/connection/ExchangeFinder;-><init>(Lokhttp3/internal/connection/Transmitter;Lokhttp3/internal/connection/RealConnectionPool;Lokhttp3/Address;Lokhttp3/Call;Lokhttp3/EventListener;)V</span>
+<span class="missed">	iput-object v6, p0, Lokhttp3/internal/connection/Transmitter;->exchangeFinder:Lokhttp3/internal/connection/ExchangeFinder;</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method  releaseConnectionNoEvents()Ljava/net/Socket;</span>
+.method  releaseConnectionNoEvents()Ljava/net/Socket;
 <span class="">	.locals 4</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	iget-object v1, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
-<span class="cov">	iget-object v1, v1, Lokhttp3/internal/connection/RealConnection;->transmitters:Ljava/util/List;</span>
-<span class="exec">	invoke-interface {v1}, Ljava/util/List;->size()I</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	const/4 v2, -0x1</span>
-<span class="cov">	if-ge v0, v1, :cond_1</span>
-<span class="cov">	iget-object v3, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
-<span class="cov">	iget-object v3, v3, Lokhttp3/internal/connection/RealConnection;->transmitters:Ljava/util/List;</span>
-<span class="exec">	invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v3</span>
-<span class="cov">	check-cast v3, Ljava/lang/ref/Reference;</span>
-<span class="exec">	invoke-virtual {v3}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v3</span>
-<span class="cov">	if-ne v3, p0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
+<span class="missed">	iget-object v1, v1, Lokhttp3/internal/connection/RealConnection;->transmitters:Ljava/util/List;</span>
+<span class="">	invoke-interface {v1}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 v2, -0x1</span>
+<span class="missed">	if-ge v0, v1, :cond_1</span>
+<span class="missed">	iget-object v3, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
+<span class="missed">	iget-object v3, v3, Lokhttp3/internal/connection/RealConnection;->transmitters:Ljava/util/List;</span>
+<span class="">	invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	check-cast v3, Ljava/lang/ref/Reference;</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	if-ne v3, p0, :cond_0</span>
 <span class="">	goto :goto_1</span>
 <span class="">	:cond_0</span>
 <span class="missed">	add-int/lit8 v0, v0, 0x1</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_1</span>
 <span class="missed">	const/4 v0, -0x1</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	if-eq v0, v2, :cond_3</span>
-<span class="cov">	iget-object v1, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
-<span class="cov">	iget-object v2, v1, Lokhttp3/internal/connection/RealConnection;->transmitters:Ljava/util/List;</span>
-<span class="cov">	invoke-interface {v2, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
-<span class="cov">	iget-object v2, v1, Lokhttp3/internal/connection/RealConnection;->transmitters:Ljava/util/List;</span>
-<span class="exec">	invoke-interface {v2}, Ljava/util/List;->isEmpty()Z</span>
-<span class="cov">	move-result v2</span>
-<span class="cov">	if-eqz v2, :cond_2</span>
-<span class="exec">	invoke-static {}, Ljava/lang/System;->nanoTime()J</span>
-<span class="cov">	move-result-wide v2</span>
-<span class="cov">	iput-wide v2, v1, Lokhttp3/internal/connection/RealConnection;->idleAtNanos:J</span>
-<span class="cov">	iget-object v2, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
-<span class="exec">	invoke-virtual {v2, v1}, Lokhttp3/internal/connection/RealConnectionPool;->connectionBecameIdle(Lokhttp3/internal/connection/RealConnection;)Z</span>
-<span class="cov">	move-result v2</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-eq v0, v2, :cond_3</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
+<span class="missed">	iget-object v2, v1, Lokhttp3/internal/connection/RealConnection;->transmitters:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {v2, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/internal/connection/Transmitter;->connection:Lokhttp3/internal/connection/RealConnection;</span>
+<span class="missed">	iget-object v2, v1, Lokhttp3/internal/connection/RealConnection;->transmitters:Ljava/util/List;</span>
+<span class="">	invoke-interface {v2}, Ljava/util/List;->isEmpty()Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_2</span>
+<span class="">	invoke-static {}, Ljava/lang/System;->nanoTime()J</span>
+<span class="missed">	move-result-wide v2</span>
+<span class="missed">	iput-wide v2, v1, Lokhttp3/internal/connection/RealConnection;->idleAtNanos:J</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/internal/connection/Transmitter;->connectionPool:Lokhttp3/internal/connection/RealConnectionPool;</span>
+<span class="">	invoke-virtual {v2, v1}, Lokhttp3/internal/connection/RealConnectionPool;->connectionBecameIdle(Lokhttp3/internal/connection/RealConnection;)Z</span>
+<span class="missed">	move-result v2</span>
 <span class="missed">	if-eqz v2, :cond_2</span>
 <span class="">	invoke-virtual {v1}, Lokhttp3/internal/connection/RealConnection;->socket()Ljava/net/Socket;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="cov">	:cond_2</span>
-<span class="exec">	return-object v0</span>
+<span class="">	:cond_2</span>
+<span class="">	return-object v0</span>
 <span class="">	:cond_3</span>
 <span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
 <span class="missed">	invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V</span>
 <span class="">	throw v0</span>
 .end method
 
-.method public timeout()Lxx;
+.method public timeout()Lzl;
 <span class="">	.locals 1</span>
 
-<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->timeout:Lcx;</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->timeout:Lyq;</span>
 <span class="">	return-object v0</span>
 .end method
 
@@ -693,8 +693,8 @@ Lokhttp3/internal/connection/Transmitter$TransmitterReference;
 <span class="missed">	if-nez v0, :cond_0</span>
 <span class="missed">	const/4 v0, 0x1</span>
 <span class="missed">	iput-boolean v0, p0, Lokhttp3/internal/connection/Transmitter;->timeoutEarlyExit:Z</span>
-<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->timeout:Lcx;</span>
-<span class="missed">	invoke-virtual {v0}, Lcx;->exit()Z</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->timeout:Lyq;</span>
+<span class="missed">	invoke-virtual {v0}, Lyq;->exit()Z</span>
 <span class="">	return-void</span>
 <span class="">	:cond_0</span>
 <span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
@@ -702,12 +702,12 @@ Lokhttp3/internal/connection/Transmitter$TransmitterReference;
 <span class="">	throw v0</span>
 .end method
 
-<span class="cov">.method public timeoutEnter()V</span>
+.method public timeoutEnter()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->timeout:Lcx;</span>
-<span class="cov">	invoke-virtual {v0}, Lcx;->enter()V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/Transmitter;->timeout:Lyq;</span>
+<span class="missed">	invoke-virtual {v0}, Lyq;->enter()V</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

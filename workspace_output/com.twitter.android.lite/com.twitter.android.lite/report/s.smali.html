@@ -19,12 +19,16 @@
 .source "ContextCompat.java"
 
 
+.field private static final a:Ljava/lang/Object;
 
 
 <span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 0</span>
+<span class="">	.locals 1</span>
 
-<span class="">	return-void</span>
+<span class="cov">	new-instance v0, Ljava/lang/Object;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	sput-object v0, Ls;->a:Ljava/lang/Object;</span>
+<span class="exec">	return-void</span>
 .end method
 
 .method public static a(Landroid/content/Context;I)I
@@ -62,17 +66,24 @@
 <span class="">	throw p0</span>
 .end method
 
-<span class="cov">.method public static a(Landroid/content/Context;)Landroid/content/Context;</span>
+<span class="cov">.method public static a(Landroid/content/Context;)Ljava/io/File;</span>
 <span class="">	.locals 2</span>
 
 <span class="cov">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="cov">	const/16 v1, 0x18</span>
+<span class="cov">	const/16 v1, 0x15</span>
 <span class="cov">	if-lt v0, v1, :cond_0</span>
-<span class="exec">	invoke-virtual {p0}, Landroid/content/Context;->createDeviceProtectedStorageContext()Landroid/content/Context;</span>
+<span class="exec">	invoke-virtual {p0}, Landroid/content/Context;->getNoBackupFilesDir()Ljava/io/File;</span>
 <span class="cov">	move-result-object p0</span>
 <span class="exec">	return-object p0</span>
 <span class="">	:cond_0</span>
-<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	invoke-virtual {p0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	new-instance v0, Ljava/io/File;</span>
+<span class="missed">	iget-object p0, p0, Landroid/content/pm/ApplicationInfo;->dataDir:Ljava/lang/String;</span>
+<span class="missed">	const-string v1, "no_backup"</span>
+<span class="missed">	invoke-direct {v0, p0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	invoke-static {v0}, Ls;->a(Ljava/io/File;)Ljava/io/File;</span>
+<span class="missed">	move-result-object p0</span>
 <span class="">	return-object p0</span>
 .end method
 
@@ -122,42 +133,21 @@
 <span class="">	throw p0</span>
 .end method
 
-.method public static a(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V
-<span class="">	.locals 2</span>
-
-<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="missed">	const/16 v1, 0x10</span>
-<span class="missed">	if-lt v0, v1, :cond_0</span>
-<span class="missed">	invoke-virtual {p0, p1, p2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	invoke-virtual {p0, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V</span>
-<span class="">	:goto_0</span>
-<span class="">	return-void</span>
-.end method
-
-<span class="cov">.method public static b(Landroid/content/Context;)Ljava/io/File;</span>
+<span class="cov">.method public static a(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V</span>
 <span class="">	.locals 2</span>
 
 <span class="cov">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="cov">	const/16 v1, 0x15</span>
+<span class="cov">	const/16 v1, 0x10</span>
 <span class="cov">	if-lt v0, v1, :cond_0</span>
-<span class="exec">	invoke-virtual {p0}, Landroid/content/Context;->getNoBackupFilesDir()Ljava/io/File;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	return-object p0</span>
+<span class="cov">	invoke-virtual {p0, p1, p2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V</span>
+<span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
-<span class="">	invoke-virtual {p0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	new-instance v0, Ljava/io/File;</span>
-<span class="missed">	iget-object p0, p0, Landroid/content/pm/ApplicationInfo;->dataDir:Ljava/lang/String;</span>
-<span class="missed">	const-string v1, "no_backup"</span>
-<span class="missed">	invoke-direct {v0, p0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V</span>
-<span class="">	invoke-static {v0}, Ls;->a(Ljava/io/File;)Ljava/io/File;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	return-object p0</span>
+<span class="missed">	invoke-virtual {p0, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public static c(Landroid/content/Context;)Z</span>
+<span class="cov">.method public static b(Landroid/content/Context;)Z</span>
 <span class="">	.locals 2</span>
 
 <span class="cov">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>

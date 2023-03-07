@@ -1,8 +1,8 @@
 .class  Lokhttp3/internal/cache/FaultHidingSink;
-.super Lix;
+.super Lyw;
 .source "FaultHidingSink.java"
 .field private hasErrors:Z
-.method constructor <init>(Lvx;)V
+.method constructor <init>(Lzj;)V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
@@ -29,7 +29,7 @@ return-void
 .locals 0
 return-void
 .end method
-.method public write(Lex;J)V
+.method public write(Lys;J)V
 .locals 1
 .annotation system Ldalvik/annotation/Throws;
 value = {

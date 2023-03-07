@@ -1,41 +1,88 @@
-.class final Lig;
+.class interface abstract Lig;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Ljava/util/Iterator;
 .annotation system Ldalvik/annotation/Signature;
 value = {
+"<T:",
 "Ljava/lang/Object;",
-"Ljava/util/Iterator<",
-"Ljava/lang/String;",
-">;"
+">",
+"Ljava/lang/Object;"
 }
 .end annotation
-.field private a:Ljava/util/Iterator;
+.method public abstract a(Ljava/lang/Object;)I
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ljava/util/Iterator<",
-"Ljava/lang/String;",
-">;"
+"(TT;)I"
 }
 .end annotation
-.end field
-.field private final synthetic b:Lgg;
-.method constructor <init>(Lgg;)V
-.locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
 .end method
-.method public final hasNext()Z
-.locals 1
-const/4 v0, 0x0
-return v0
+.method public abstract a()Ljava/lang/Object;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"()TT;"
+}
+.end annotation
 .end method
-.method public final synthetic next()Ljava/lang/Object;
-.locals 1
-const/4 v0, 0x0
-return-object v0
+.method public abstract a(Ljava/lang/Object;Lif;Lfu;)V
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(TT;",
+"Lif;",
+"Lfu;",
+")V"
+}
+.end annotation
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Ljava/io/IOException;
+}
+.end annotation
 .end method
-.method public final remove()V
-.locals 1
-return-void
+.method public abstract a(Ljava/lang/Object;Ljt;)V
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(TT;",
+"Ljt;",
+")V"
+}
+.end annotation
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Ljava/io/IOException;
+}
+.end annotation
+.end method
+.method public abstract a(Ljava/lang/Object;Ljava/lang/Object;)Z
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(TT;TT;)Z"
+}
+.end annotation
+.end method
+.method public abstract b(Ljava/lang/Object;)I
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(TT;)I"
+}
+.end annotation
+.end method
+.method public abstract b(Ljava/lang/Object;Ljava/lang/Object;)V
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(TT;TT;)V"
+}
+.end annotation
+.end method
+.method public abstract c(Ljava/lang/Object;)V
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(TT;)V"
+}
+.end annotation
+.end method
+.method public abstract d(Ljava/lang/Object;)Z
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(TT;)Z"
+}
+.end annotation
 .end method

@@ -2,19 +2,23 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Llg;
 
 
 # instance fields
-.field private final synthetic a:Lon;
+.field private final synthetic a:Ljava/lang/String;
+
+.field private final synthetic b:Lpl;
 
 
 # direct methods
-.method constructor <init>(Lon;)V
+.method constructor <init>(Lpl;Ljava/lang/String;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lpn;->a:Lon;
+    iput-object p1, p0, Lpn;->b:Lpl;
+
+    iput-object p2, p0, Lpn;->a:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,49 +27,29 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lpn;->a:Lon;
-
-    invoke-static {v0}, Lon;->a(Lon;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    monitor-enter v0
+.method public final a(Ljava/lang/String;ILjava/lang/Throwable;[BLjava/util/Map;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "I",
+            "Ljava/lang/Throwable;",
+            "[B",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;>;)V"
+        }
+    .end annotation
 
     .line 2
-    :try_start_0
-    iget-object v1, p0, Lpn;->a:Lon;
+    iget-object p1, p0, Lpn;->b:Lpl;
 
-    invoke-static {v1}, Lon;->b(Lon;)Lan;
+    iget-object p5, p0, Lpn;->a:Ljava/lang/String;
 
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    .line 3
-    iget-object v1, p0, Lpn;->a:Lon;
-
-    invoke-static {v1}, Lon;->b(Lon;)Lan;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lan;->a()V
-
-    .line 4
-    :cond_0
-    monitor-exit v0
+    invoke-virtual {p1, p2, p3, p4, p5}, Lpl;->a(ILjava/lang/Throwable;[BLjava/lang/String;)V
 
     return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
 .end method

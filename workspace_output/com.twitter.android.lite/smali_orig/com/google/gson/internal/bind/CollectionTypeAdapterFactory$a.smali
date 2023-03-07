@@ -1,5 +1,5 @@
 .class final Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;
-.super Lvv;
+.super Ltn;
 .source "CollectionTypeAdapterFactory.java"
 
 
@@ -18,7 +18,7 @@
         "<E:",
         "Ljava/lang/Object;",
         ">",
-        "Lvv<",
+        "Ltn<",
         "Ljava/util/Collection<",
         "TE;>;>;"
     }
@@ -26,10 +26,10 @@
 
 
 # instance fields
-.field private final a:Lvv;
+.field private final a:Ltn;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lvv<",
+            "Ltn<",
             "TE;>;"
         }
     .end annotation
@@ -48,14 +48,14 @@
 
 
 # direct methods
-.method public constructor <init>(Lfv;Ljava/lang/reflect/Type;Lvv;Lcom/google/gson/internal/g;)V
+.method public constructor <init>(Lsx;Ljava/lang/reflect/Type;Ltn;Lcom/google/gson/internal/g;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lfv;",
+            "Lsx;",
             "Ljava/lang/reflect/Type;",
-            "Lvv<",
+            "Ltn<",
             "TE;>;",
             "Lcom/google/gson/internal/g<",
             "+",
@@ -64,17 +64,17 @@
         }
     .end annotation
 
-    .line 1
-    invoke-direct {p0}, Lvv;-><init>()V
+    .line 67
+    invoke-direct {p0}, Ltn;-><init>()V
 
-    .line 2
-    new-instance v0, Lcom/google/gson/internal/bind/c;
+    .line 68
+    new-instance v0, Lcom/google/gson/internal/bind/h;
 
-    invoke-direct {v0, p1, p3, p2}, Lcom/google/gson/internal/bind/c;-><init>(Lfv;Lvv;Ljava/lang/reflect/Type;)V
+    invoke-direct {v0, p1, p3, p2}, Lcom/google/gson/internal/bind/h;-><init>(Lsx;Ltn;Ljava/lang/reflect/Type;)V
 
-    iput-object v0, p0, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;->a:Lvv;
+    iput-object v0, p0, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;->a:Ltn;
 
-    .line 3
+    .line 70
     iput-object p4, p0, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;->b:Lcom/google/gson/internal/g;
 
     return-void
@@ -82,28 +82,12 @@
 
 
 # virtual methods
-.method public bridge synthetic a(Lew;)Ljava/lang/Object;
-    .locals 0
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .line 1
-    invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;->a(Lew;)Ljava/util/Collection;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public a(Lew;)Ljava/util/Collection;
+.method public a(Ltw;)Ljava/util/Collection;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lew;",
+            "Ltw;",
             ")",
             "Ljava/util/Collection<",
             "TE;>;"
@@ -116,23 +100,23 @@
         }
     .end annotation
 
-    .line 3
-    invoke-virtual {p1}, Lew;->peek()Lfw;
+    .line 74
+    invoke-virtual {p1}, Ltw;->f()Ltx;
 
     move-result-object v0
 
-    sget-object v1, Lfw;->i:Lfw;
+    sget-object v1, Ltx;->i:Ltx;
 
     if-ne v0, v1, :cond_0
 
-    .line 4
-    invoke-virtual {p1}, Lew;->B()V
+    .line 75
+    invoke-virtual {p1}, Ltw;->j()V
 
     const/4 p1, 0x0
 
     return-object p1
 
-    .line 5
+    .line 79
     :cond_0
     iget-object v0, p0, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;->b:Lcom/google/gson/internal/g;
 
@@ -142,37 +126,37 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 6
-    invoke-virtual {p1}, Lew;->a()V
+    .line 80
+    invoke-virtual {p1}, Ltw;->a()V
 
-    .line 7
+    .line 81
     :goto_0
-    invoke-virtual {p1}, Lew;->t()Z
+    invoke-virtual {p1}, Ltw;->e()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 8
-    iget-object v1, p0, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;->a:Lvv;
+    .line 82
+    iget-object v1, p0, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;->a:Ltn;
 
-    invoke-virtual {v1, p1}, Lvv;->a(Lew;)Ljava/lang/Object;
+    invoke-virtual {v1, p1}, Ltn;->b(Ltw;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 9
+    .line 83
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 10
+    .line 85
     :cond_1
-    invoke-virtual {p1}, Lew;->q()V
+    invoke-virtual {p1}, Ltw;->b()V
 
     return-object v0
 .end method
 
-.method public bridge synthetic a(Lgw;Ljava/lang/Object;)V
+.method public bridge synthetic a(Lty;Ljava/lang/Object;)V
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -180,20 +164,20 @@
         }
     .end annotation
 
-    .line 2
+    .line 61
     check-cast p2, Ljava/util/Collection;
 
-    invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;->a(Lgw;Ljava/util/Collection;)V
+    invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;->a(Lty;Ljava/util/Collection;)V
 
     return-void
 .end method
 
-.method public a(Lgw;Ljava/util/Collection;)V
+.method public a(Lty;Ljava/util/Collection;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lgw;",
+            "Lty;",
             "Ljava/util/Collection<",
             "TE;>;)V"
         }
@@ -207,16 +191,16 @@
 
     if-nez p2, :cond_0
 
-    .line 11
-    invoke-virtual {p1}, Lgw;->u()Lgw;
+    .line 91
+    invoke-virtual {p1}, Lty;->f()Lty;
 
     return-void
 
-    .line 12
+    .line 95
     :cond_0
-    invoke-virtual {p1}, Lgw;->a()Lgw;
+    invoke-virtual {p1}, Lty;->b()Lty;
 
-    .line 13
+    .line 96
     invoke-interface {p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
@@ -232,16 +216,32 @@
 
     move-result-object v0
 
-    .line 14
-    iget-object v1, p0, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;->a:Lvv;
+    .line 97
+    iget-object v1, p0, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;->a:Ltn;
 
-    invoke-virtual {v1, p1, v0}, Lvv;->a(Lgw;Ljava/lang/Object;)V
+    invoke-virtual {v1, p1, v0}, Ltn;->a(Lty;Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 15
+    .line 99
     :cond_1
-    invoke-virtual {p1}, Lgw;->l()Lgw;
+    invoke-virtual {p1}, Lty;->c()Lty;
 
     return-void
+.end method
+
+.method public synthetic b(Ltw;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 61
+    invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;->a(Ltw;)Ljava/util/Collection;
+
+    move-result-object p1
+
+    return-object p1
 .end method

@@ -1,24 +1,24 @@
 .class final synthetic Lcom/google/firebase/components/j;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-components@@16.0.0"
-.implements Lqu;
-.field private final a:Ljava/util/Set;
-.method private constructor <init>(Ljava/util/Set;)V
+.source "com.google.firebase:firebase-common@@16.0.2"
+.implements Lcom/google/firebase/components/c;
+.field private final a:Ljava/lang/Object;
+.method private constructor <init>(Ljava/lang/Object;)V
 .locals 0
 invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Lcom/google/firebase/components/j;->a:Ljava/util/Set;
+iput-object p1, p0, Lcom/google/firebase/components/j;->a:Ljava/lang/Object;
 return-void
 .end method
-.method public static a(Ljava/util/Set;)Lqu;
+.method public static a(Ljava/lang/Object;)Lcom/google/firebase/components/c;
 .locals 1
 new-instance v0, Lcom/google/firebase/components/j;
-invoke-direct {v0, p0}, Lcom/google/firebase/components/j;-><init>(Ljava/util/Set;)V
+invoke-direct {v0, p0}, Lcom/google/firebase/components/j;-><init>(Ljava/lang/Object;)V
 return-object v0
 .end method
-.method public get()Ljava/lang/Object;
-.locals 1
-iget-object v0, p0, Lcom/google/firebase/components/j;->a:Ljava/util/Set;
-invoke-static {v0}, Lcom/google/firebase/components/l;->a(Ljava/util/Set;)Ljava/util/Set;
-move-result-object v0
-return-object v0
+.method public final a(Lcom/google/firebase/components/b;)Ljava/lang/Object;
+.locals 0
+iget-object p1, p0, Lcom/google/firebase/components/j;->a:Ljava/lang/Object;
+invoke-static {p1}, Lcom/google/firebase/components/a;->a(Ljava/lang/Object;)Ljava/lang/Object;
+move-result-object p1
+return-object p1
 .end method

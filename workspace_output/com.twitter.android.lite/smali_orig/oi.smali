@@ -1,144 +1,94 @@
-.class public final Loi;
+.class final Loi;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
 
 # interfaces
-.implements Lkb;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lkb<",
-        "Lri;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field private static b:Loi;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Lkb;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkb<",
-            "Lri;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final synthetic a:Lpz;
+
+.field private final synthetic b:Loc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Loi;
-
-    invoke-direct {v0}, Loi;-><init>()V
-
-    sput-object v0, Loi;->b:Loi;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    .line 3
-    new-instance v0, Lqi;
-
-    invoke-direct {v0}, Lqi;-><init>()V
-
-    invoke-static {v0}, Ljb;->a(Ljava/lang/Object;)Lkb;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Loi;-><init>(Lkb;)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lkb;)V
+.method constructor <init>(Loc;Lpz;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkb<",
-            "Lri;",
-            ">;)V"
-        }
-    .end annotation
 
     .line 1
+    iput-object p1, p0, Loi;->b:Loc;
+
+    iput-object p2, p0, Loi;->a:Lpz;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    invoke-static {p1}, Ljb;->a(Lkb;)Lkb;
-
-    move-result-object p1
-
-    iput-object p1, p0, Loi;->a:Lkb;
-
     return-void
-.end method
-
-.method public static b()Z
-    .locals 1
-
-    .line 1
-    sget-object v0, Loi;->b:Loi;
-
-    invoke-virtual {v0}, Loi;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lri;
-
-    invoke-interface {v0}, Lri;->a()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static c()Z
-    .locals 1
-
-    .line 1
-    sget-object v0, Loi;->b:Loi;
-
-    invoke-virtual {v0}, Loi;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lri;
-
-    invoke-interface {v0}, Lri;->b()Z
-
-    move-result v0
-
-    return v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    .line 1
-    iget-object v0, p0, Loi;->a:Lkb;
+    .line 2
+    iget-object v0, p0, Loi;->b:Loc;
 
-    invoke-interface {v0}, Lkb;->a()Ljava/lang/Object;
+    invoke-static {v0}, Loc;->d(Loc;)Lkr;
 
     move-result-object v0
 
-    check-cast v0, Lri;
+    if-nez v0, :cond_0
 
-    return-object v0
+    .line 4
+    iget-object v0, p0, Loi;->b:Loc;
+
+    invoke-virtual {v0}, Lnb;->r()Lla;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lla;->c_()Llc;
+
+    move-result-object v0
+
+    const-string v1, "Failed to send measurementEnabled to service"
+
+    invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V
+
+    return-void
+
+    .line 6
+    :cond_0
+    :try_start_0
+    iget-object v1, p0, Loi;->a:Lpz;
+
+    invoke-interface {v0, v1}, Lkr;->b(Lpz;)V
+
+    .line 7
+    iget-object v0, p0, Loi;->b:Loc;
+
+    invoke-static {v0}, Loc;->e(Loc;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    .line 10
+    iget-object v1, p0, Loi;->b:Loc;
+
+    invoke-virtual {v1}, Lnb;->r()Lla;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lla;->c_()Llc;
+
+    move-result-object v1
+
+    const-string v2, "Failed to send measurementEnabled to the service"
+
+    invoke-virtual {v1, v2, v0}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V
+
+    return-void
 .end method

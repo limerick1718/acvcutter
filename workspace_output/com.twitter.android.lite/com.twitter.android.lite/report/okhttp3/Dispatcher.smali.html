@@ -149,7 +149,7 @@ value = {
 <span class="">	return-object p1</span>
 .end method
 
-<span class="cov">.method private finished(Ljava/util/Deque;Ljava/lang/Object;)V</span>
+.method private finished(Ljava/util/Deque;Ljava/lang/Object;)V
 <span class="">	.locals 0</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -161,22 +161,22 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	monitor-enter p0</span>
-<span class="cov">	:try_start_0</span>
-<span class="exec">	invoke-interface {p1, p2}, Ljava/util/Deque;->remove(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	if-eqz p1, :cond_1</span>
-<span class="cov">	iget-object p1, p0, Lokhttp3/Dispatcher;->idleCallback:Ljava/lang/Runnable;</span>
-<span class="cov">	monitor-exit p0</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="exec">	invoke-direct {p0}, Lokhttp3/Dispatcher;->promoteAndExecute()Z</span>
-<span class="cov">	move-result p2</span>
-<span class="cov">	if-nez p2, :cond_0</span>
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-interface {p1, p2}, Ljava/util/Deque;->remove(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="missed">	iget-object p1, p0, Lokhttp3/Dispatcher;->idleCallback:Ljava/lang/Runnable;</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	invoke-direct {p0}, Lokhttp3/Dispatcher;->promoteAndExecute()Z</span>
+<span class="missed">	move-result p2</span>
+<span class="missed">	if-nez p2, :cond_0</span>
 <span class="missed">	if-eqz p1, :cond_0</span>
 <span class="missed">	invoke-interface {p1}, Ljava/lang/Runnable;->run()V</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
 <span class="">	:try_start_1</span>
 <span class="">	:cond_1</span>
 <span class="missed">	new-instance p1, Ljava/lang/AssertionError;</span>
@@ -191,19 +191,19 @@ value = {
 <span class="">	throw p1</span>
 .end method
 
-<span class="cov">.method private promoteAndExecute()Z</span>
+.method private promoteAndExecute()Z
 <span class="">	.locals 6</span>
 
-<span class="cov">	new-instance v0, Ljava/util/ArrayList;</span>
-<span class="cov">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
-<span class="cov">	monitor-enter p0</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	iget-object v1, p0, Lokhttp3/Dispatcher;->readyAsyncCalls:Ljava/util/Deque;</span>
-<span class="exec">	invoke-interface {v1}, Ljava/util/Deque;->iterator()Ljava/util/Iterator;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z</span>
-<span class="cov">	move-result v2</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/Dispatcher;->readyAsyncCalls:Ljava/util/Deque;</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Deque;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v2</span>
 <span class="missed">	if-eqz v2, :cond_2</span>
 <span class="">	invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v2</span>
@@ -231,23 +231,23 @@ value = {
 <span class="missed">	iget-object v3, p0, Lokhttp3/Dispatcher;->runningAsyncCalls:Ljava/util/Deque;</span>
 <span class="missed">	invoke-interface {v3, v2}, Ljava/util/Deque;->add(Ljava/lang/Object;)Z</span>
 <span class="">	goto :goto_0</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	:cond_2</span>
-<span class="exec">	invoke-virtual {p0}, Lokhttp3/Dispatcher;->runningCallsCount()I</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	const/4 v2, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/Dispatcher;->runningCallsCount()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x0</span>
 <span class="missed">	if-lez v1, :cond_3</span>
 <span class="missed">	const/4 v1, 0x1</span>
-<span class="exec">	goto :goto_2</span>
-<span class="cov">	:cond_3</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	:goto_2</span>
-<span class="cov">	monitor-exit p0</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="exec">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
-<span class="cov">	move-result v3</span>
-<span class="cov">	:goto_3</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_2</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v3</span>
+<span class="">	:goto_3</span>
 <span class="missed">	if-ge v2, v3, :cond_4</span>
 <span class="">	invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v4</span>
@@ -257,8 +257,8 @@ value = {
 <span class="missed">	invoke-virtual {v4, v5}, Lokhttp3/RealCall$AsyncCall;->executeOn(Ljava/util/concurrent/ExecutorService;)V</span>
 <span class="missed">	add-int/lit8 v2, v2, 0x1</span>
 <span class="">	goto :goto_3</span>
-<span class="cov">	:cond_4</span>
-<span class="exec">	return v1</span>
+<span class="">	:cond_4</span>
+<span class="">	return v1</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception v0</span>
 <span class="">	:try_start_1</span>
@@ -358,17 +358,17 @@ value = {
 <span class="">	throw p1</span>
 .end method
 
-<span class="cov">.method declared-synchronized executed(Lokhttp3/RealCall;)V</span>
+.method declared-synchronized executed(Lokhttp3/RealCall;)V
 <span class="">	.locals 1</span>
 
-<span class="cov">	monitor-enter p0</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/Dispatcher;->runningSyncCalls:Ljava/util/Deque;</span>
-<span class="cov">	invoke-interface {v0, p1}, Ljava/util/Deque;->add(Ljava/lang/Object;)Z</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="cov">	monitor-exit p0</span>
-<span class="exec">	return-void</span>
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Dispatcher;->runningSyncCalls:Ljava/util/Deque;</span>
+<span class="missed">	invoke-interface {v0, p1}, Ljava/util/Deque;->add(Ljava/lang/Object;)Z</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return-void</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception p1</span>
 <span class="missed">	monitor-exit p0</span>
@@ -419,12 +419,12 @@ value = {
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method  finished(Lokhttp3/RealCall;)V</span>
+.method  finished(Lokhttp3/RealCall;)V
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/Dispatcher;->runningSyncCalls:Ljava/util/Deque;</span>
-<span class="cov">	invoke-direct {p0, v0, p1}, Lokhttp3/Dispatcher;->finished(Ljava/util/Deque;Ljava/lang/Object;)V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Dispatcher;->runningSyncCalls:Ljava/util/Deque;</span>
+<span class="missed">	invoke-direct {p0, v0, p1}, Lokhttp3/Dispatcher;->finished(Ljava/util/Deque;Ljava/lang/Object;)V</span>
+<span class="">	return-void</span>
 .end method
 
 .method public declared-synchronized getMaxRequests()I
@@ -563,22 +563,22 @@ value = {
 <span class="">	throw v0</span>
 .end method
 
-<span class="cov">.method public declared-synchronized runningCallsCount()I</span>
+.method public declared-synchronized runningCallsCount()I
 <span class="">	.locals 2</span>
 
-<span class="cov">	monitor-enter p0</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/Dispatcher;->runningAsyncCalls:Ljava/util/Deque;</span>
-<span class="exec">	invoke-interface {v0}, Ljava/util/Deque;->size()I</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	iget-object v1, p0, Lokhttp3/Dispatcher;->runningSyncCalls:Ljava/util/Deque;</span>
-<span class="exec">	invoke-interface {v1}, Ljava/util/Deque;->size()I</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="cov">	add-int/2addr v0, v1</span>
-<span class="cov">	monitor-exit p0</span>
-<span class="exec">	return v0</span>
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Dispatcher;->runningAsyncCalls:Ljava/util/Deque;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/Deque;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/Dispatcher;->runningSyncCalls:Ljava/util/Deque;</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Deque;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	add-int/2addr v0, v1</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return v0</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception v0</span>
 <span class="missed">	monitor-exit p0</span>

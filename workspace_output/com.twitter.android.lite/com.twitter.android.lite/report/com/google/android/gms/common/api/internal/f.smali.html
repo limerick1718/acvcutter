@@ -17,6 +17,11 @@
 		<code>.class public final Lcom/google/android/gms/common/api/internal/f;
 .super Ljava/lang/Object;
 
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lcom/google/android/gms/common/api/internal/f$a;
+}
+.end annotation
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "<",
@@ -26,7 +31,7 @@ value = {
 }
 .end annotation
 
-.field private final a:Ljava/lang/Object;
+.field private volatile a:Ljava/lang/Object;
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "T",
@@ -34,47 +39,14 @@ value = {
 }
 .end annotation
 .end field
-.field private final b:Ljava/lang/String;
 
 
-.method public final equals(Ljava/lang/Object;)Z
-<span class="">	.locals 4</span>
+.method public final a()V
+<span class="">	.locals 1</span>
 
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	if-ne p0, p1, :cond_0</span>
-<span class="">	return v0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	instance-of v1, p1, Lcom/google/android/gms/common/api/internal/f;</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="missed">	if-nez v1, :cond_1</span>
-<span class="">	return v2</span>
-<span class="">	:cond_1</span>
-<span class="missed">	check-cast p1, Lcom/google/android/gms/common/api/internal/f;</span>
-<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/f;->a:Ljava/lang/Object;</span>
-<span class="missed">	iget-object v3, p1, Lcom/google/android/gms/common/api/internal/f;->a:Ljava/lang/Object;</span>
-<span class="missed">	if-ne v1, v3, :cond_2</span>
-<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/f;->b:Ljava/lang/String;</span>
-<span class="missed">	iget-object p1, p1, Lcom/google/android/gms/common/api/internal/f;->b:Ljava/lang/String;</span>
-<span class="">	invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	if-eqz p1, :cond_2</span>
-<span class="">	return v0</span>
-<span class="">	:cond_2</span>
-<span class="">	return v2</span>
-.end method
-
-.method public final hashCode()I
-<span class="">	.locals 2</span>
-
-<span class="missed">	iget-object v0, p0, Lcom/google/android/gms/common/api/internal/f;->a:Ljava/lang/Object;</span>
-<span class="">	invoke-static {v0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	mul-int/lit8 v0, v0, 0x1f</span>
-<span class="missed">	iget-object v1, p0, Lcom/google/android/gms/common/api/internal/f;->b:Ljava/lang/String;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/String;->hashCode()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	add-int/2addr v0, v1</span>
-<span class="">	return v0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-object v0, p0, Lcom/google/android/gms/common/api/internal/f;->a:Ljava/lang/Object;</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

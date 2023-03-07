@@ -1,7 +1,29 @@
 .class public interface abstract Lwe;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.method public abstract b()Z
+.source "Dependency.java"
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<T:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;"
+}
+.end annotation
+.method public abstract addDependency(Ljava/lang/Object;)V
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(TT;)V"
+}
+.end annotation
 .end method
-.method public abstract g()Lue;
+.method public abstract areDependenciesMet()Z
+.end method
+.method public abstract getDependencies()Ljava/util/Collection;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"()",
+"Ljava/util/Collection<",
+"TT;>;"
+}
+.end annotation
 .end method

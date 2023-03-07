@@ -1,268 +1,519 @@
 .class Lus;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.source "FabricKitsFinder.java"
 
 # interfaces
-.implements Lzs;
+.implements Ljava/util/concurrent/Callable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/concurrent/Callable<",
+        "Ljava/util/Map<",
+        "Ljava/lang/String;",
+        "Luy;",
+        ">;>;"
+    }
+.end annotation
+
+
+# instance fields
+.field final a:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    .line 1
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 44
+    iput-object p1, p0, Lus;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method private static a(Lhp;JLorg/json/JSONObject;)J
-    .locals 4
+.method private a(Ljava/util/zip/ZipEntry;Ljava/util/zip/ZipFile;)Luy;
+    .locals 6
 
-    const-string v0, "expires_at"
+    const/4 v0, 0x0
 
-    .line 19
-    invoke-virtual {p3, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    .line 113
+    :try_start_0
+    invoke-virtual {p2, p1}, Ljava/util/zip/ZipFile;->getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
 
-    move-result v1
+    move-result-object p2
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    if-eqz v1, :cond_0
+    .line 114
+    :try_start_1
+    new-instance v1, Ljava/util/Properties;
 
-    .line 20
-    invoke-virtual {p3, v0}, Lorg/json/JSONObject;->optLong(Ljava/lang/String;)J
+    invoke-direct {v1}, Ljava/util/Properties;-><init>()V
 
-    move-result-wide p0
+    .line 115
+    invoke-virtual {v1, p2}, Ljava/util/Properties;->load(Ljava/io/InputStream;)V
 
-    goto :goto_0
+    const-string v2, "fabric-identifier"
 
-    .line 21
-    :cond_0
-    invoke-interface {p0}, Lhp;->a()J
-
-    move-result-wide v0
-
-    const-wide/16 v2, 0x3e8
-
-    mul-long p1, p1, v2
-
-    add-long p0, v0, p1
-
-    :goto_0
-    return-wide p0
-.end method
-
-.method private static a(Lorg/json/JSONObject;)Lct;
-    .locals 7
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lorg/json/JSONException;
-        }
-    .end annotation
-
-    const-string v0, "status"
-
-    .line 13
-    invoke-virtual {p0, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 116
+    invoke-virtual {v1, v2}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v0, "url"
+    const-string v3, "fabric-version"
 
-    .line 14
-    invoke-virtual {p0, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 117
+    invoke-virtual {v1, v3}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    const-string v0, "reports_url"
+    const-string v4, "fabric-build-type"
 
-    .line 15
-    invoke-virtual {p0, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 118
+    invoke-virtual {v1, v4}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    const-string v0, "ndk_reports_url"
+    .line 119
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    .line 16
-    invoke-virtual {p0, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    move-result v4
 
-    move-result-object v5
+    if-nez v4, :cond_0
 
-    const-string v0, "update_required"
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    const/4 v1, 0x0
+    move-result v4
 
-    .line 17
-    invoke-virtual {p0, v0, v1}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
+    if-nez v4, :cond_0
 
-    move-result v6
+    .line 123
+    new-instance v4, Luy;
 
-    .line 18
-    new-instance p0, Lct;
+    invoke-direct {v4, v2, v3, v1}, Luy;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-object v1, p0
+    .line 128
+    invoke-static {p2}, Lvn;->a(Ljava/io/Closeable;)V
 
-    invoke-direct/range {v1 .. v6}, Lct;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    return-object v4
 
-    return-object p0
+    .line 120
+    :cond_0
+    :try_start_2
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Invalid format of fabric file,"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 121
+    invoke-virtual {p1}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v1
+
+    goto :goto_0
+
+    :catchall_1
+    move-exception p1
+
+    move-object p2, v0
+
+    goto :goto_1
+
+    :catch_1
+    move-exception v1
+
+    move-object p2, v0
+
+    .line 125
+    :goto_0
+    :try_start_3
+    invoke-static {}, Luq;->g()Luz;
+
+    move-result-object v2
+
+    const-string v3, "Fabric"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "Error when parsing fabric properties "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 126
+    invoke-virtual {p1}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 125
+    invoke-interface {v2, v3, p1, v1}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    .line 128
+    invoke-static {p2}, Lvn;->a(Ljava/io/Closeable;)V
+
+    return-object v0
+
+    :goto_1
+    invoke-static {p2}, Lvn;->a(Ljava/io/Closeable;)V
+
+    .line 129
+    throw p1
 .end method
 
-.method static a(Lhp;)Lft;
-    .locals 9
+.method private c()Ljava/util/Map;
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Luy;",
+            ">;"
+        }
+    .end annotation
 
-    .line 8
-    new-instance v0, Lorg/json/JSONObject;
+    .line 65
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 9
-    invoke-static {v0}, Lus;->c(Lorg/json/JSONObject;)Let;
+    :try_start_0
+    const-string v1, "com.google.android.gms.ads.AdView"
 
-    move-result-object v5
+    .line 67
+    invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    .line 10
-    invoke-static {v0}, Lus;->b(Lorg/json/JSONObject;)Ldt;
+    .line 68
+    new-instance v1, Luy;
 
-    move-result-object v6
+    const-string v2, "com.google.firebase.firebase-ads"
 
-    const-wide/16 v1, 0xe10
+    const-string v3, "0.0.0"
 
-    .line 11
-    invoke-static {p0, v1, v2, v0}, Lus;->a(Lhp;JLorg/json/JSONObject;)J
+    const-string v4, "binary"
 
-    move-result-wide v2
+    invoke-direct {v1, v2, v3, v4}, Luy;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 12
-    new-instance p0, Lgt;
+    .line 70
+    invoke-virtual {v1}, Luy;->a()Ljava/lang/String;
 
-    const/4 v4, 0x0
+    move-result-object v2
 
-    const/4 v7, 0x0
+    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/16 v8, 0xe10
+    .line 71
+    invoke-static {}, Luq;->g()Luz;
 
-    move-object v1, p0
+    move-result-object v1
 
-    invoke-direct/range {v1 .. v8}, Lgt;-><init>(JLct;Let;Ldt;II)V
+    const-string v2, "Fabric"
 
-    return-object p0
-.end method
+    const-string v3, "Found kit: com.google.firebase.firebase-ads"
 
-.method private static b(Lorg/json/JSONObject;)Ldt;
-    .locals 2
+    invoke-interface {v1, v2, v3}, Luz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    const-string v0, "collect_reports"
-
-    const/4 v1, 0x1
-
-    .line 1
-    invoke-virtual {p0, v0, v1}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
-
-    move-result p0
-
-    .line 2
-    new-instance v0, Ldt;
-
-    invoke-direct {v0, p0}, Ldt;-><init>(Z)V
-
+    :catch_0
     return-object v0
 .end method
 
-.method private static c(Lorg/json/JSONObject;)Let;
-    .locals 2
+.method private d()Ljava/util/Map;
+    .locals 8
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Luy;",
+            ">;"
+        }
+    .end annotation
 
-    const-string v0, "max_custom_exception_events"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
-    const/16 v1, 0x8
+    .line 82
+    new-instance v0, Ljava/util/HashMap;
 
-    .line 1
-    invoke-virtual {p0, v0, v1}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    move-result p0
+    .line 83
+    invoke-virtual {p0}, Lus;->b()Ljava/util/zip/ZipFile;
 
-    .line 2
-    new-instance v0, Let;
+    move-result-object v1
 
-    const/4 v1, 0x4
+    .line 84
+    invoke-virtual {v1}, Ljava/util/zip/ZipFile;->entries()Ljava/util/Enumeration;
 
-    invoke-direct {v0, p0, v1}, Let;-><init>(II)V
+    move-result-object v2
 
+    .line 85
+    :cond_0
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Enumeration;->hasMoreElements()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    .line 86
+    invoke-interface {v2}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/zip/ZipEntry;
+
+    .line 88
+    invoke-virtual {v3}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "fabric/"
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    .line 89
+    invoke-virtual {v3}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    const/4 v5, 0x7
+
+    if-le v4, v5, :cond_0
+
+    .line 90
+    invoke-direct {p0, v3, v1}, Lus;->a(Ljava/util/zip/ZipEntry;Ljava/util/zip/ZipFile;)Luy;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_0
+
+    .line 92
+    invoke-virtual {v3}, Luy;->a()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-interface {v0, v4, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 93
+    invoke-static {}, Luq;->g()Luz;
+
+    move-result-object v4
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v6, 0x0
+
+    .line 94
+    invoke-virtual {v3}, Luy;->a()Ljava/lang/String;
+
+    move-result-object v7
+
+    aput-object v7, v5, v6
+
+    const/4 v6, 0x1
+
+    .line 95
+    invoke-virtual {v3}, Luy;->b()Ljava/lang/String;
+
+    move-result-object v3
+
+    aput-object v3, v5, v6
+
+    const-string v3, "Found kit:[%s] version:[%s]"
+
+    .line 94
+    invoke-static {v3, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v5, "Fabric"
+
+    .line 93
+    invoke-interface {v4, v5, v3}, Luz;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_1
+    if-eqz v1, :cond_2
+
+    .line 103
+    :try_start_0
+    invoke-virtual {v1}, Ljava/util/zip/ZipFile;->close()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    :cond_2
     return-object v0
 .end method
 
 
 # virtual methods
-.method public a(Lhp;Lorg/json/JSONObject;)Lgt;
-    .locals 10
-    .annotation system Ldalvik/annotation/Throws;
+.method public a()Ljava/util/Map;
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
         value = {
-            Lorg/json/JSONException;
+            "()",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Luy;",
+            ">;"
         }
     .end annotation
 
-    const-string v0, "settings_version"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
-    const/4 v1, 0x0
+    .line 49
+    new-instance v0, Ljava/util/HashMap;
 
-    .line 1
-    invoke-virtual {p2, v0, v1}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    move-result v8
+    .line 50
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    const-string v0, "cache_duration"
+    move-result-wide v1
 
-    const/16 v1, 0xe10
+    .line 52
+    invoke-direct {p0}, Lus;->c()Ljava/util/Map;
 
-    .line 2
-    invoke-virtual {p2, v0, v1}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
+    move-result-object v3
 
-    move-result v9
+    invoke-interface {v0, v3}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
-    const-string v0, "app"
+    .line 54
+    invoke-direct {p0}, Lus;->d()Ljava/util/Map;
 
-    .line 3
-    invoke-virtual {p2, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+    move-result-object v3
+
+    invoke-interface {v0, v3}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
+
+    .line 56
+    invoke-static {}, Luq;->g()Luz;
+
+    move-result-object v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "finish scanning in "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 57
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v5
+
+    sub-long/2addr v5, v1
+
+    invoke-virtual {v4, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "Fabric"
+
+    .line 56
+    invoke-interface {v3, v2, v1}, Luz;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method protected b()Ljava/util/zip/ZipFile;
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 134
+    new-instance v0, Ljava/util/zip/ZipFile;
+
+    iget-object v1, p0, Lus;->a:Ljava/lang/String;
+
+    invoke-direct {v0, v1}, Ljava/util/zip/ZipFile;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public synthetic call()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .line 35
+    invoke-virtual {p0}, Lus;->a()Ljava/util/Map;
 
     move-result-object v0
 
-    invoke-static {v0}, Lus;->a(Lorg/json/JSONObject;)Lct;
-
-    move-result-object v5
-
-    const-string v0, "session"
-
-    .line 4
-    invoke-virtual {p2, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lus;->c(Lorg/json/JSONObject;)Let;
-
-    move-result-object v6
-
-    const-string v0, "features"
-
-    .line 5
-    invoke-virtual {p2, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lus;->b(Lorg/json/JSONObject;)Ldt;
-
-    move-result-object v7
-
-    int-to-long v0, v9
-
-    .line 6
-    invoke-static {p1, v0, v1, p2}, Lus;->a(Lhp;JLorg/json/JSONObject;)J
-
-    move-result-wide v3
-
-    .line 7
-    new-instance p1, Lgt;
-
-    move-object v2, p1
-
-    invoke-direct/range {v2 .. v9}, Lgt;-><init>(JLct;Let;Ldt;II)V
-
-    return-object p1
+    return-object v0
 .end method

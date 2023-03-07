@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 12
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -20,12 +20,12 @@
 
     const/4 p1, 0x1
 
-    .line 1
+    .line 15
     invoke-static {p1}, Lcom/twitter/android/lite/webinterface/ApkRwebInterface;->setIsInstall(Z)V
 
     const-string p1, "referrer"
 
-    .line 2
+    .line 16
     invoke-virtual {p2, p1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1

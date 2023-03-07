@@ -14,17 +14,39 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public Lcom/google/firebase/components/p;
-.super Ljava/lang/RuntimeException;
-.source "com.google.firebase:firebase-components@@16.0.0"
+		<code>.class final synthetic Lcom/google/firebase/components/p;
+.super Ljava/lang/Object;
+.source "com.google.firebase:firebase-common@@16.0.2"
+.implements Ljava/lang/Runnable;
 
 
+.field private final a:Ljava/util/Map$Entry;
+.field private final b:Lsl;
 
 
-.method public constructor &lt;init&gt;(Ljava/lang/String;)V
+.method private constructor &lt;init&gt;(Ljava/util/Map$Entry;Lsl;)V
 <span class="">	.locals 0</span>
 
-<span class="missed">	invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Lcom/google/firebase/components/p;->a:Ljava/util/Map$Entry;</span>
+<span class="missed">	iput-object p2, p0, Lcom/google/firebase/components/p;->b:Lsl;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public static a(Ljava/util/Map$Entry;Lsl;)Ljava/lang/Runnable;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lcom/google/firebase/components/p;</span>
+<span class="missed">	invoke-direct {v0, p0, p1}, Lcom/google/firebase/components/p;-><init>(Ljava/util/Map$Entry;Lsl;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final run()V
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/google/firebase/components/p;->a:Ljava/util/Map$Entry;</span>
+<span class="missed">	iget-object v1, p0, Lcom/google/firebase/components/p;->b:Lsl;</span>
+<span class="missed">	invoke-static {v0, v1}, Lcom/google/firebase/components/o;->a(Ljava/util/Map$Entry;Lsl;)V</span>
 <span class="">	return-void</span>
 .end method</code>
 	</pre>

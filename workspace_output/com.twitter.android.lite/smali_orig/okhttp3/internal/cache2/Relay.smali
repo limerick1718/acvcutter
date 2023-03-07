@@ -14,9 +14,9 @@
 # static fields
 .field private static final FILE_HEADER_SIZE:J = 0x20L
 
-.field static final PREFIX_CLEAN:Lhx;
+.field static final PREFIX_CLEAN:Lyv;
 
-.field static final PREFIX_DIRTY:Lhx;
+.field static final PREFIX_DIRTY:Lyv;
 
 .field private static final SOURCE_FILE:I = 0x2
 
@@ -24,7 +24,7 @@
 
 
 # instance fields
-.field final buffer:Lex;
+.field final buffer:Lys;
 
 .field final bufferMaxSize:J
 
@@ -32,13 +32,13 @@
 
 .field file:Ljava/io/RandomAccessFile;
 
-.field private final metadata:Lhx;
+.field private final metadata:Lyv;
 
 .field sourceCount:I
 
-.field upstream:Lwx;
+.field upstream:Lzk;
 
-.field final upstreamBuffer:Lex;
+.field final upstreamBuffer:Lys;
 
 .field upstreamPos:J
 
@@ -51,50 +51,50 @@
 
     const-string v0, "OkHttp cache v1\n"
 
-    .line 1
-    invoke-static {v0}, Lhx;->d(Ljava/lang/String;)Lhx;
+    .line 45
+    invoke-static {v0}, Lyv;->a(Ljava/lang/String;)Lyv;
 
     move-result-object v0
 
-    sput-object v0, Lokhttp3/internal/cache2/Relay;->PREFIX_CLEAN:Lhx;
+    sput-object v0, Lokhttp3/internal/cache2/Relay;->PREFIX_CLEAN:Lyv;
 
     const-string v0, "OkHttp DIRTY :(\n"
 
-    .line 2
-    invoke-static {v0}, Lhx;->d(Ljava/lang/String;)Lhx;
+    .line 46
+    invoke-static {v0}, Lyv;->a(Ljava/lang/String;)Lyv;
 
     move-result-object v0
 
-    sput-object v0, Lokhttp3/internal/cache2/Relay;->PREFIX_DIRTY:Lhx;
+    sput-object v0, Lokhttp3/internal/cache2/Relay;->PREFIX_DIRTY:Lyv;
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/io/RandomAccessFile;Lwx;JLhx;J)V
+.method private constructor <init>(Ljava/io/RandomAccessFile;Lzk;JLyv;J)V
     .locals 1
 
-    .line 1
+    .line 107
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    new-instance v0, Lex;
+    .line 79
+    new-instance v0, Lys;
 
-    invoke-direct {v0}, Lex;-><init>()V
+    invoke-direct {v0}, Lys;-><init>()V
 
-    iput-object v0, p0, Lokhttp3/internal/cache2/Relay;->upstreamBuffer:Lex;
+    iput-object v0, p0, Lokhttp3/internal/cache2/Relay;->upstreamBuffer:Lys;
 
-    .line 3
-    new-instance v0, Lex;
+    .line 94
+    new-instance v0, Lys;
 
-    invoke-direct {v0}, Lex;-><init>()V
+    invoke-direct {v0}, Lys;-><init>()V
 
-    iput-object v0, p0, Lokhttp3/internal/cache2/Relay;->buffer:Lex;
+    iput-object v0, p0, Lokhttp3/internal/cache2/Relay;->buffer:Lys;
 
-    .line 4
+    .line 108
     iput-object p1, p0, Lokhttp3/internal/cache2/Relay;->file:Ljava/io/RandomAccessFile;
 
-    .line 5
-    iput-object p2, p0, Lokhttp3/internal/cache2/Relay;->upstream:Lwx;
+    .line 109
+    iput-object p2, p0, Lokhttp3/internal/cache2/Relay;->upstream:Lzk;
 
     if-nez p2, :cond_0
 
@@ -105,23 +105,23 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 6
+    .line 110
     :goto_0
     iput-boolean p1, p0, Lokhttp3/internal/cache2/Relay;->complete:Z
 
-    .line 7
+    .line 111
     iput-wide p3, p0, Lokhttp3/internal/cache2/Relay;->upstreamPos:J
 
-    .line 8
-    iput-object p5, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lhx;
+    .line 112
+    iput-object p5, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lyv;
 
-    .line 9
+    .line 113
     iput-wide p6, p0, Lokhttp3/internal/cache2/Relay;->bufferMaxSize:J
 
     return-void
 .end method
 
-.method public static edit(Ljava/io/File;Lwx;Lhx;J)Lokhttp3/internal/cache2/Relay;
+.method public static edit(Ljava/io/File;Lzk;Lyv;J)Lokhttp3/internal/cache2/Relay;
     .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -129,14 +129,14 @@
         }
     .end annotation
 
-    .line 1
+    .line 126
     new-instance v8, Ljava/io/RandomAccessFile;
 
     const-string v0, "rw"
 
     invoke-direct {v8, p0, v0}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 2
+    .line 127
     new-instance p0, Lokhttp3/internal/cache2/Relay;
 
     const-wide/16 v3, 0x0
@@ -151,15 +151,15 @@
 
     move-wide v6, p3
 
-    invoke-direct/range {v0 .. v7}, Lokhttp3/internal/cache2/Relay;-><init>(Ljava/io/RandomAccessFile;Lwx;JLhx;J)V
+    invoke-direct/range {v0 .. v7}, Lokhttp3/internal/cache2/Relay;-><init>(Ljava/io/RandomAccessFile;Lzk;JLyv;J)V
 
     const-wide/16 p1, 0x0
 
-    .line 3
+    .line 130
     invoke-virtual {v8, p1, p2}, Ljava/io/RandomAccessFile;->setLength(J)V
 
-    .line 4
-    sget-object v2, Lokhttp3/internal/cache2/Relay;->PREFIX_DIRTY:Lhx;
+    .line 131
+    sget-object v2, Lokhttp3/internal/cache2/Relay;->PREFIX_DIRTY:Lyv;
 
     const-wide/16 v3, -0x1
 
@@ -167,7 +167,7 @@
 
     move-object v1, p0
 
-    invoke-direct/range {v1 .. v6}, Lokhttp3/internal/cache2/Relay;->writeHeader(Lhx;JJ)V
+    invoke-direct/range {v1 .. v6}, Lokhttp3/internal/cache2/Relay;->writeHeader(Lyv;JJ)V
 
     return-object p0
 .end method
@@ -180,14 +180,14 @@
         }
     .end annotation
 
-    .line 1
+    .line 144
     new-instance v1, Ljava/io/RandomAccessFile;
 
     const-string v0, "rw"
 
     invoke-direct {v1, p0, v0}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 2
+    .line 145
     new-instance p0, Lokhttp3/internal/cache2/FileOperator;
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
@@ -196,10 +196,10 @@
 
     invoke-direct {p0, v0}, Lokhttp3/internal/cache2/FileOperator;-><init>(Ljava/nio/channels/FileChannel;)V
 
-    .line 3
-    new-instance v0, Lex;
+    .line 148
+    new-instance v0, Lys;
 
-    invoke-direct {v0}, Lex;-><init>()V
+    invoke-direct {v0}, Lys;-><init>()V
 
     const-wide/16 v3, 0x0
 
@@ -209,45 +209,45 @@
 
     move-object v5, v0
 
-    .line 4
-    invoke-virtual/range {v2 .. v7}, Lokhttp3/internal/cache2/FileOperator;->read(JLex;J)V
+    .line 149
+    invoke-virtual/range {v2 .. v7}, Lokhttp3/internal/cache2/FileOperator;->read(JLys;J)V
 
-    .line 5
-    sget-object v2, Lokhttp3/internal/cache2/Relay;->PREFIX_CLEAN:Lhx;
+    .line 150
+    sget-object v2, Lokhttp3/internal/cache2/Relay;->PREFIX_CLEAN:Lyv;
 
-    invoke-virtual {v2}, Lhx;->l()I
+    invoke-virtual {v2}, Lyv;->h()I
 
     move-result v2
 
     int-to-long v2, v2
 
-    invoke-virtual {v0, v2, v3}, Lex;->b(J)Lhx;
+    invoke-virtual {v0, v2, v3}, Lys;->d(J)Lyv;
 
     move-result-object v2
 
-    .line 6
-    sget-object v3, Lokhttp3/internal/cache2/Relay;->PREFIX_CLEAN:Lhx;
+    .line 151
+    sget-object v3, Lokhttp3/internal/cache2/Relay;->PREFIX_CLEAN:Lyv;
 
-    invoke-virtual {v2, v3}, Lhx;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Lyv;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 7
-    invoke-virtual {v0}, Lex;->readLong()J
+    .line 152
+    invoke-virtual {v0}, Lys;->n()J
 
     move-result-wide v8
 
-    .line 8
-    invoke-virtual {v0}, Lex;->readLong()J
+    .line 153
+    invoke-virtual {v0}, Lys;->n()J
 
     move-result-wide v6
 
-    .line 9
-    new-instance v0, Lex;
+    .line 156
+    new-instance v0, Lys;
 
-    invoke-direct {v0}, Lex;-><init>()V
+    invoke-direct {v0}, Lys;-><init>()V
 
     const-wide/16 v2, 0x20
 
@@ -257,15 +257,15 @@
 
     move-object v5, v0
 
-    .line 10
-    invoke-virtual/range {v2 .. v7}, Lokhttp3/internal/cache2/FileOperator;->read(JLex;J)V
+    .line 157
+    invoke-virtual/range {v2 .. v7}, Lokhttp3/internal/cache2/FileOperator;->read(JLys;J)V
 
-    .line 11
-    invoke-virtual {v0}, Lex;->t()Lhx;
+    .line 158
+    invoke-virtual {v0}, Lys;->s()Lyv;
 
     move-result-object v5
 
-    .line 12
+    .line 161
     new-instance p0, Lokhttp3/internal/cache2/Relay;
 
     const/4 v2, 0x0
@@ -276,11 +276,11 @@
 
     move-wide v3, v8
 
-    invoke-direct/range {v0 .. v7}, Lokhttp3/internal/cache2/Relay;-><init>(Ljava/io/RandomAccessFile;Lwx;JLhx;J)V
+    invoke-direct/range {v0 .. v7}, Lokhttp3/internal/cache2/Relay;-><init>(Ljava/io/RandomAccessFile;Lzk;JLyv;J)V
 
     return-object p0
 
-    .line 13
+    .line 151
     :cond_0
     new-instance p0, Ljava/io/IOException;
 
@@ -291,7 +291,7 @@
     throw p0
 .end method
 
-.method private writeHeader(Lhx;JJ)V
+.method private writeHeader(Lyv;JJ)V
     .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -299,22 +299,22 @@
         }
     .end annotation
 
-    .line 1
-    new-instance v3, Lex;
+    .line 166
+    new-instance v3, Lys;
 
-    invoke-direct {v3}, Lex;-><init>()V
+    invoke-direct {v3}, Lys;-><init>()V
 
-    .line 2
-    invoke-virtual {v3, p1}, Lex;->a(Lhx;)Lex;
+    .line 167
+    invoke-virtual {v3, p1}, Lys;->a(Lyv;)Lys;
 
-    .line 3
-    invoke-virtual {v3, p2, p3}, Lex;->k(J)Lex;
+    .line 168
+    invoke-virtual {v3, p2, p3}, Lys;->j(J)Lys;
 
-    .line 4
-    invoke-virtual {v3, p4, p5}, Lex;->k(J)Lex;
+    .line 169
+    invoke-virtual {v3, p4, p5}, Lys;->j(J)Lys;
 
-    .line 5
-    invoke-virtual {v3}, Lex;->v()J
+    .line 170
+    invoke-virtual {v3}, Lys;->a()J
 
     move-result-wide p1
 
@@ -324,7 +324,7 @@
 
     if-nez p5, :cond_0
 
-    .line 6
+    .line 172
     new-instance v0, Lokhttp3/internal/cache2/FileOperator;
 
     iget-object p1, p0, Lokhttp3/internal/cache2/Relay;->file:Ljava/io/RandomAccessFile;
@@ -339,12 +339,12 @@
 
     const-wide/16 v4, 0x20
 
-    .line 7
-    invoke-virtual/range {v0 .. v5}, Lokhttp3/internal/cache2/FileOperator;->write(JLex;J)V
+    .line 173
+    invoke-virtual/range {v0 .. v5}, Lokhttp3/internal/cache2/FileOperator;->write(JLys;J)V
 
     return-void
 
-    .line 8
+    .line 170
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -361,17 +361,17 @@
         }
     .end annotation
 
-    .line 1
-    new-instance v3, Lex;
+    .line 177
+    new-instance v3, Lys;
 
-    invoke-direct {v3}, Lex;-><init>()V
+    invoke-direct {v3}, Lys;-><init>()V
 
-    .line 2
-    iget-object v0, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lhx;
+    .line 178
+    iget-object v0, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lyv;
 
-    invoke-virtual {v3, v0}, Lex;->a(Lhx;)Lex;
+    invoke-virtual {v3, v0}, Lys;->a(Lyv;)Lys;
 
-    .line 3
+    .line 180
     new-instance v0, Lokhttp3/internal/cache2/FileOperator;
 
     iget-object v1, p0, Lokhttp3/internal/cache2/Relay;->file:Ljava/io/RandomAccessFile;
@@ -386,16 +386,16 @@
 
     add-long/2addr v1, p1
 
-    .line 4
-    iget-object p1, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lhx;
+    .line 181
+    iget-object p1, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lyv;
 
-    invoke-virtual {p1}, Lhx;->l()I
+    invoke-virtual {p1}, Lyv;->h()I
 
     move-result p1
 
     int-to-long v4, p1
 
-    invoke-virtual/range {v0 .. v5}, Lokhttp3/internal/cache2/FileOperator;->write(JLex;J)V
+    invoke-virtual/range {v0 .. v5}, Lokhttp3/internal/cache2/FileOperator;->write(JLys;J)V
 
     return-void
 .end method
@@ -410,10 +410,10 @@
         }
     .end annotation
 
-    .line 1
+    .line 186
     invoke-direct {p0, p1, p2}, Lokhttp3/internal/cache2/Relay;->writeMetadata(J)V
 
-    .line 2
+    .line 187
     iget-object v0, p0, Lokhttp3/internal/cache2/Relay;->file:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v0}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
@@ -424,12 +424,12 @@
 
     invoke-virtual {v0, v1}, Ljava/nio/channels/FileChannel;->force(Z)V
 
-    .line 3
-    sget-object v3, Lokhttp3/internal/cache2/Relay;->PREFIX_CLEAN:Lhx;
+    .line 190
+    sget-object v3, Lokhttp3/internal/cache2/Relay;->PREFIX_CLEAN:Lyv;
 
-    iget-object v0, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lhx;
+    iget-object v0, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lyv;
 
-    invoke-virtual {v0}, Lhx;->l()I
+    invoke-virtual {v0}, Lyv;->h()I
 
     move-result v0
 
@@ -439,9 +439,9 @@
 
     move-wide v4, p1
 
-    invoke-direct/range {v2 .. v7}, Lokhttp3/internal/cache2/Relay;->writeHeader(Lhx;JJ)V
+    invoke-direct/range {v2 .. v7}, Lokhttp3/internal/cache2/Relay;->writeHeader(Lyv;JJ)V
 
-    .line 4
+    .line 191
     iget-object p1, p0, Lokhttp3/internal/cache2/Relay;->file:Ljava/io/RandomAccessFile;
 
     invoke-virtual {p1}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
@@ -450,36 +450,36 @@
 
     invoke-virtual {p1, v1}, Ljava/nio/channels/FileChannel;->force(Z)V
 
-    .line 5
+    .line 194
     monitor-enter p0
 
     const/4 p1, 0x1
 
-    .line 6
+    .line 195
     :try_start_0
     iput-boolean p1, p0, Lokhttp3/internal/cache2/Relay;->complete:Z
 
-    .line 7
+    .line 196
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 8
-    iget-object p1, p0, Lokhttp3/internal/cache2/Relay;->upstream:Lwx;
+    .line 198
+    iget-object p1, p0, Lokhttp3/internal/cache2/Relay;->upstream:Lzk;
 
     invoke-static {p1}, Lokhttp3/internal/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     const/4 p1, 0x0
 
-    .line 9
-    iput-object p1, p0, Lokhttp3/internal/cache2/Relay;->upstream:Lwx;
+    .line 199
+    iput-object p1, p0, Lokhttp3/internal/cache2/Relay;->upstream:Lzk;
 
     return-void
 
     :catchall_0
     move-exception p1
 
-    .line 10
+    .line 196
     :try_start_1
     monitor-exit p0
     :try_end_1
@@ -491,7 +491,7 @@
 .method isClosed()Z
     .locals 1
 
-    .line 1
+    .line 203
     iget-object v0, p0, Lokhttp3/internal/cache2/Relay;->file:Ljava/io/RandomAccessFile;
 
     if-nez v0, :cond_0
@@ -507,22 +507,22 @@
     return v0
 .end method
 
-.method public metadata()Lhx;
+.method public metadata()Lyv;
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lhx;
+    .line 207
+    iget-object v0, p0, Lokhttp3/internal/cache2/Relay;->metadata:Lyv;
 
     return-object v0
 .end method
 
-.method public newSource()Lwx;
+.method public newSource()Lzk;
     .locals 1
 
-    .line 1
+    .line 216
     monitor-enter p0
 
-    .line 2
+    .line 217
     :try_start_0
     iget-object v0, p0, Lokhttp3/internal/cache2/Relay;->file:Ljava/io/RandomAccessFile;
 
@@ -534,7 +534,7 @@
 
     return-object v0
 
-    .line 3
+    .line 218
     :cond_0
     iget v0, p0, Lokhttp3/internal/cache2/Relay;->sourceCount:I
 
@@ -542,12 +542,12 @@
 
     iput v0, p0, Lokhttp3/internal/cache2/Relay;->sourceCount:I
 
-    .line 4
+    .line 219
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 5
+    .line 221
     new-instance v0, Lokhttp3/internal/cache2/Relay$RelaySource;
 
     invoke-direct {v0, p0}, Lokhttp3/internal/cache2/Relay$RelaySource;-><init>(Lokhttp3/internal/cache2/Relay;)V
@@ -557,7 +557,7 @@
     :catchall_0
     move-exception v0
 
-    .line 6
+    .line 219
     :try_start_1
     monitor-exit p0
     :try_end_1

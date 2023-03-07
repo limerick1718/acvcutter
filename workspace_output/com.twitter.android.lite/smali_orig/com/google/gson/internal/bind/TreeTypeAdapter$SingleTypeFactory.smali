@@ -3,7 +3,7 @@
 .source "TreeTypeAdapter.java"
 
 # interfaces
-.implements Lwv;
+.implements Lto;
 
 
 # annotations
@@ -18,10 +18,10 @@
 
 
 # instance fields
-.field private final a:Ldw;
+.field private final a:Ltv;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ldw<",
+            "Ltv<",
             "*>;"
         }
     .end annotation
@@ -38,19 +38,19 @@
     .end annotation
 .end field
 
-.field private final d:Lsv;
+.field private final d:Ltk;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lsv<",
+            "Ltk<",
             "*>;"
         }
     .end annotation
 .end field
 
-.field private final e:Lkv;
+.field private final e:Ltc;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lkv<",
+            "Ltc<",
             "*>;"
         }
     .end annotation
@@ -58,28 +58,28 @@
 
 
 # virtual methods
-.method public a(Lfv;Ldw;)Lvv;
+.method public a(Lsx;Ltv;)Ltn;
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Lfv;",
-            "Ldw<",
+            "Lsx;",
+            "Ltv<",
             "TT;>;)",
-            "Lvv<",
+            "Ltn<",
             "TT;>;"
         }
     .end annotation
 
-    .line 1
-    iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->a:Ldw;
+    .line 143
+    iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->a:Ltv;
 
     if-eqz v0, :cond_2
 
-    .line 2
-    invoke-virtual {v0, p2}, Ldw;->equals(Ljava/lang/Object;)Z
+    .line 144
+    invoke-virtual {v0, p2}, Ltv;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -89,13 +89,13 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->a:Ldw;
+    iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->a:Ltv;
 
-    invoke-virtual {v0}, Ldw;->b()Ljava/lang/reflect/Type;
+    invoke-virtual {v0}, Ltv;->b()Ljava/lang/reflect/Type;
 
     move-result-object v0
 
-    invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;
+    invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;
 
     move-result-object v1
 
@@ -117,8 +117,8 @@
     :cond_2
     iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->c:Ljava/lang/Class;
 
-    .line 3
-    invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;
+    .line 145
+    invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;
 
     move-result-object v1
 
@@ -129,12 +129,12 @@
     :goto_1
     if-eqz v0, :cond_3
 
-    .line 4
+    .line 146
     new-instance v0, Lcom/google/gson/internal/bind/TreeTypeAdapter;
 
-    iget-object v2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->d:Lsv;
+    iget-object v2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->d:Ltk;
 
-    iget-object v3, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->e:Lkv;
+    iget-object v3, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->e:Ltc;
 
     move-object v1, v0
 
@@ -144,7 +144,7 @@
 
     move-object v6, p0
 
-    invoke-direct/range {v1 .. v6}, Lcom/google/gson/internal/bind/TreeTypeAdapter;-><init>(Lsv;Lkv;Lfv;Ldw;Lwv;)V
+    invoke-direct/range {v1 .. v6}, Lcom/google/gson/internal/bind/TreeTypeAdapter;-><init>(Ltk;Ltc;Lsx;Ltv;Lto;)V
 
     goto :goto_2
 

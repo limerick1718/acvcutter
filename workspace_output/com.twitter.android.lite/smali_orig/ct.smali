@@ -1,85 +1,123 @@
-.class public Lct;
+.class final synthetic Lct;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
 
 
-# instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:Ljava/lang/String;
-
-.field public final d:Ljava/lang/String;
-
-.field public final e:Ljava/lang/String;
-
-.field public final f:Z
-
-.field public final g:I
-
-.field public final h:I
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZII)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Lgh$e;->a()[I
 
-    .line 2
-    iput-object p1, p0, Lct;->a:Ljava/lang/String;
+    move-result-object v0
 
-    .line 3
-    iput-object p2, p0, Lct;->b:Ljava/lang/String;
+    array-length v0, v0
 
-    .line 4
-    iput-object p3, p0, Lct;->c:Ljava/lang/String;
+    new-array v0, v0, [I
 
-    .line 5
-    iput-object p4, p0, Lct;->d:Ljava/lang/String;
+    sput-object v0, Lct;->a:[I
 
-    .line 6
-    iput-object p6, p0, Lct;->e:Ljava/lang/String;
+    const/4 v0, 0x1
 
-    .line 7
-    iput-boolean p7, p0, Lct;->f:Z
+    :try_start_0
+    sget-object v1, Lct;->a:[I
 
-    .line 8
-    iput p8, p0, Lct;->g:I
+    sget v2, Lgh$e;->d:I
 
-    .line 9
-    iput p9, p0, Lct;->h:I
+    sub-int/2addr v2, v0
 
-    return-void
-.end method
+    aput v0, v1, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
-    .locals 10
+    :catch_0
+    :try_start_1
+    sget-object v1, Lct;->a:[I
 
-    const/4 v5, 0x0
+    sget v2, Lgh$e;->e:I
 
-    const/4 v6, 0x0
+    sub-int/2addr v2, v0
 
-    const/4 v8, 0x0
+    const/4 v3, 0x2
 
-    const/4 v9, 0x0
+    aput v3, v1, v2
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    move-object v0, p0
+    :catch_1
+    :try_start_2
+    sget-object v1, Lct;->a:[I
 
-    move-object v1, p1
+    sget v2, Lgh$e;->c:I
 
-    move-object v2, p2
+    sub-int/2addr v2, v0
 
-    move-object v3, p3
+    const/4 v3, 0x3
 
-    move-object v4, p4
+    aput v3, v1, v2
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    move v7, p5
+    :catch_2
+    :try_start_3
+    sget-object v1, Lct;->a:[I
 
-    .line 10
-    invoke-direct/range {v0 .. v9}, Lct;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZII)V
+    sget v2, Lgh$e;->f:I
 
+    sub-int/2addr v2, v0
+
+    const/4 v3, 0x4
+
+    aput v3, v1, v2
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    :catch_3
+    :try_start_4
+    sget-object v1, Lct;->a:[I
+
+    sget v2, Lgh$e;->g:I
+
+    sub-int/2addr v2, v0
+
+    const/4 v3, 0x5
+
+    aput v3, v1, v2
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+
+    :catch_4
+    :try_start_5
+    sget-object v1, Lct;->a:[I
+
+    sget v2, Lgh$e;->a:I
+
+    sub-int/2addr v2, v0
+
+    const/4 v3, 0x6
+
+    aput v3, v1, v2
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
+    :catch_5
+    :try_start_6
+    sget-object v1, Lct;->a:[I
+
+    sget v2, Lgh$e;->b:I
+
+    sub-int/2addr v2, v0
+
+    const/4 v0, 0x7
+
+    aput v0, v1, v2
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+
+    :catch_6
     return-void
 .end method

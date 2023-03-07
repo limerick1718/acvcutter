@@ -29,19 +29,27 @@
 .end method
 
 <span class="cov">.method public onCreate()V</span>
-<span class="">	.locals 2</span>
+<span class="">	.locals 3</span>
 
 <span class="cov">	invoke-super {p0}, Landroid/app/Application;->onCreate()V</span>
-<span class="exec">	invoke-virtual {p0}, Landroid/app/Application;->getApplicationContext()Landroid/content/Context;</span>
+<span class="cov">	new-instance v0, Lcom/crashlytics/android/Crashlytics$Builder;</span>
+<span class="cov">	invoke-direct {v0}, Lcom/crashlytics/android/Crashlytics$Builder;-><init>()V</span>
+<span class="cov">	new-instance v1, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;</span>
+<span class="cov">	invoke-direct {v1}, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;-><init>()V</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="exec">	invoke-virtual {v1, v2}, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->disabled(Z)Lcom/crashlytics/android/core/CrashlyticsCore$Builder;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-virtual {v1}, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->build()Lcom/crashlytics/android/core/CrashlyticsCore;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-virtual {v0, v1}, Lcom/crashlytics/android/Crashlytics$Builder;->core(Lcom/crashlytics/android/core/CrashlyticsCore;)Lcom/crashlytics/android/Crashlytics$Builder;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-static {v0}, Lcom/google/firebase/analytics/FirebaseAnalytics;->getInstance(Landroid/content/Context;)Lcom/google/firebase/analytics/FirebaseAnalytics;</span>
+<span class="exec">	invoke-virtual {v0}, Lcom/crashlytics/android/Crashlytics$Builder;->build()Lcom/crashlytics/android/Crashlytics;</span>
 <span class="cov">	move-result-object v0</span>
 <span class="cov">	const/4 v1, 0x1</span>
-<span class="cov">	invoke-virtual {v0, v1}, Lcom/google/firebase/analytics/FirebaseAnalytics;->a(Z)V</span>
-<span class="exec">	invoke-static {}, Lcom/google/firebase/crashlytics/b;->a()Lcom/google/firebase/crashlytics/b;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	invoke-virtual {v0, v1}, Lcom/google/firebase/crashlytics/b;->a(Z)V</span>
-<span class="cov">	invoke-static {p0}, Lcom/twitter/android/lite/d;->a(Landroid/app/Application;)V</span>
+<span class="cov">	new-array v1, v1, [Luw;</span>
+<span class="cov">	aput-object v0, v1, v2</span>
+<span class="cov">	invoke-static {p0, v1}, Luq;->a(Landroid/content/Context;[Luw;)Luq;</span>
+<span class="cov">	invoke-static {p0}, Lcom/twitter/android/lite/c;->a(Landroid/app/Application;)V</span>
 <span class="exec">	return-void</span>
 .end method</code>
 	</pre>

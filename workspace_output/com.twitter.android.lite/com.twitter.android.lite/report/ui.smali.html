@@ -14,102 +14,98 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lui;
+		<code>.class public Lui;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.implements Lkb;
-
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/Object;",
-"Lkb<",
-"Lxi;",
-">;"
-}
-.end annotation
-
-.field private static b:Lui;
-.field private final a:Lkb;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lkb<",
-"Lxi;",
-">;"
-}
-.end annotation
-.end field
+.source "DownloadUtils.java"
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 1</span>
 
-<span class="cov">	new-instance v0, Lui;</span>
-<span class="cov">	invoke-direct {v0}, Lui;-><init>()V</span>
-<span class="cov">	sput-object v0, Lui;->b:Lui;</span>
-<span class="exec">	return-void</span>
-.end method
 
-<span class="cov">.method public constructor &lt;init&gt;()V</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	new-instance v0, Lwi;</span>
-<span class="cov">	invoke-direct {v0}, Lwi;-><init>()V</span>
-<span class="exec">	invoke-static {v0}, Ljb;->a(Ljava/lang/Object;)Lkb;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	invoke-direct {p0, v0}, Lui;-><init>(Lkb;)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method private constructor &lt;init&gt;(Lkb;)V</span>
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Lkb<",</span>
-<span class="">	"Lxi;",</span>
-<span class="">	">;)V"</span>
-<span class="">	}</span>
+.method public static a(Landroid/app/Activity;Ljava/lang/String;)Z
+<span class="">	.locals 7</span>
+<span class="">	.annotation build Landroid/annotation/TargetApi;</span>
+<span class="">	value = 0x17</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="exec">	invoke-static {p1}, Ljb;->a(Lkb;)Lkb;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	iput-object p1, p0, Lui;->a:Lkb;</span>
-<span class="exec">	return-void</span>
-.end method
-
-.method public static b()Z
-<span class="">	.locals 1</span>
-
-<span class="missed">	sget-object v0, Lui;->b:Lui;</span>
-<span class="">	invoke-virtual {v0}, Lui;->a()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Lxi;</span>
-<span class="">	invoke-interface {v0}, Lxi;->a()Z</span>
-<span class="missed">	move-result v0</span>
-<span class="">	return v0</span>
-.end method
-
-<span class="cov">.method public static c()Z</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	sget-object v0, Lui;->b:Lui;</span>
-<span class="exec">	invoke-virtual {v0}, Lui;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lxi;</span>
-<span class="exec">	invoke-interface {v0}, Lxi;->b()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
-.end method
-
-<span class="cov">.method public final synthetic a()Ljava/lang/Object;</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	iget-object v0, p0, Lui;->a:Lkb;</span>
-<span class="exec">	invoke-interface {v0}, Lkb;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lxi;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	const-string v0, "android.permission.WRITE_EXTERNAL_STORAGE"</span>
+<span class="">	invoke-static {p0, v0}, Ls;->a(Landroid/content/Context;Ljava/lang/String;)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="">	filled-new-array {v0}, [Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-static {p0, p1, v2}, Landroidx/core/app/a;->a(Landroid/app/Activity;[Ljava/lang/String;I)V</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	return p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const v0, 0x7f0b002a</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v1, "download"</span>
+<span class="">	invoke-virtual {p0, v1}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, Landroid/app/DownloadManager;</span>
+<span class="missed">	if-eqz v1, :cond_2</span>
+<span class="">	invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	invoke-virtual {v3}, Landroid/net/Uri;->isHierarchical()Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-eqz v4, :cond_1</span>
+<span class="missed">	const-string v4, "format"</span>
+<span class="">	invoke-virtual {v3, v4}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	invoke-static {}, Landroid/webkit/MimeTypeMap;->getSingleton()Landroid/webkit/MimeTypeMap;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="">	invoke-virtual {v4, v3}, Landroid/webkit/MimeTypeMap;->getMimeTypeFromExtension(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	new-instance v4, Landroid/app/DownloadManager$Request;</span>
+<span class="">	invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="missed">	invoke-direct {v4, v5}, Landroid/app/DownloadManager$Request;-><init>(Landroid/net/Uri;)V</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="">	invoke-static {p1, v5, v3}, Landroid/webkit/URLUtil;->guessFileName(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	sget-object v5, Landroid/os/Environment;->DIRECTORY_PICTURES:Ljava/lang/String;</span>
+<span class="">	invoke-virtual {v4, v5, p1}, Landroid/app/DownloadManager$Request;->setDestinationInExternalPublicDir(Ljava/lang/String;Ljava/lang/String;)Landroid/app/DownloadManager$Request;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="missed">	const v6, 0x7f0b0028</span>
+<span class="">	invoke-virtual {p0, v6}, Landroid/app/Activity;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="">	invoke-virtual {v5, v6}, Landroid/app/DownloadManager$Request;->setTitle(Ljava/lang/CharSequence;)Landroid/app/DownloadManager$Request;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="">	invoke-virtual {v5, p1}, Landroid/app/DownloadManager$Request;->setDescription(Ljava/lang/CharSequence;)Landroid/app/DownloadManager$Request;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1, v3}, Landroid/app/DownloadManager$Request;->setMimeType(Ljava/lang/String;)Landroid/app/DownloadManager$Request;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {p1, v2}, Landroid/app/DownloadManager$Request;->setNotificationVisibility(I)Landroid/app/DownloadManager$Request;</span>
+<span class="missed">	invoke-virtual {v4}, Landroid/app/DownloadManager$Request;->allowScanningByMediaScanner()V</span>
+<span class="missed">	invoke-virtual {v1, v4}, Landroid/app/DownloadManager;->enqueue(Landroid/app/DownloadManager$Request;)J</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance v1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v3, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "Trying to download a non-hierarchical URI: "</span>
+<span class="missed">	invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-direct {v1, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-static {v1}, Lcom/crashlytics/android/Crashlytics;->logException(Ljava/lang/Throwable;)V</span>
+<span class="">	invoke-static {p0, v0, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {p1}, Landroid/widget/Toast;->show()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-static {p1}, Lcom/crashlytics/android/Crashlytics;->logException(Ljava/lang/Throwable;)V</span>
+<span class="">	invoke-static {p0, v0, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	invoke-virtual {p0}, Landroid/widget/Toast;->show()V</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_2</span>
+<span class="">	return v2</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -1,8 +1,26 @@
-.class final Lrg;
-.super Ljava/lang/IllegalArgumentException;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.method constructor <init>(II)V
-.locals 2
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
+.class public interface abstract Lrg;
+.super Ljava/lang/Object;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<TResult:",
+"Ljava/lang/Object;",
+"TContinuationResult:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;"
+}
+.end annotation
+.method public abstract a(Lrm;)Ljava/lang/Object;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(",
+"Lrm<",
+"TTResult;>;)TTContinuationResult;"
+}
+.end annotation
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Ljava/lang/Exception;
+}
+.end annotation
 .end method

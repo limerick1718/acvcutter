@@ -3,12 +3,12 @@
 .source "TypeAdapters.java"
 
 # interfaces
-.implements Lwv;
+.implements Lto;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/gson/internal/bind/TypeAdapters;
+    value = Lcom/google/gson/internal/bind/i;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 807
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,27 +29,27 @@
 
 
 # virtual methods
-.method public a(Lfv;Ldw;)Lvv;
+.method public a(Lsx;Ltv;)Ltn;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Lfv;",
-            "Ldw<",
+            "Lsx;",
+            "Ltv<",
             "TT;>;)",
-            "Lvv<",
+            "Ltn<",
             "TT;>;"
         }
     .end annotation
 
-    .line 1
-    invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;
+    .line 810
+    invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;
 
     move-result-object p1
 
-    .line 2
+    .line 811
     const-class p2, Ljava/lang/Enum;
 
     invoke-virtual {p2, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -64,7 +64,7 @@
 
     goto :goto_0
 
-    .line 3
+    .line 814
     :cond_0
     invoke-virtual {p1}, Ljava/lang/Class;->isEnum()Z
 
@@ -72,16 +72,16 @@
 
     if-nez p2, :cond_1
 
-    .line 4
+    .line 815
     invoke-virtual {p1}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
     move-result-object p1
 
-    .line 5
+    .line 817
     :cond_1
-    new-instance p2, Lcom/google/gson/internal/bind/TypeAdapters$d0;
+    new-instance p2, Lcom/google/gson/internal/bind/i$a;
 
-    invoke-direct {p2, p1}, Lcom/google/gson/internal/bind/TypeAdapters$d0;-><init>(Ljava/lang/Class;)V
+    invoke-direct {p2, p1}, Lcom/google/gson/internal/bind/i$a;-><init>(Ljava/lang/Class;)V
 
     return-object p2
 

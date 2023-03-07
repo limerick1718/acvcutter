@@ -14,59 +14,96 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final Lcom/google/firebase/iid/b;
+		<code>.class public interface abstract Lcom/google/firebase/iid/b;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-iid@@20.0.0"
 
 
-.field private static final a:Ljava/util/concurrent/Executor;
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 1</span>
+.method public abstract a(Ljava/lang/String;Ljava/lang/String;)Lrm;
+<span class="">	</span>
+<span class="">	.param p2    # Ljava/lang/String;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	")",</span>
+<span class="">	"Lrm<",</span>
+<span class="">	"Ljava/lang/Void;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="cov">	sget-object v0, Lcom/google/firebase/iid/h0;->a:Ljava/util/concurrent/Executor;</span>
-<span class="cov">	sput-object v0, Lcom/google/firebase/iid/b;->a:Ljava/util/concurrent/Executor;</span>
-<span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method static final synthetic a(Ljava/lang/Runnable;)Ljava/lang/Thread;</span>
-<span class="">	.locals 2</span>
+.method public abstract a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrm;
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	")",</span>
+<span class="">	"Lrm<",</span>
+<span class="">	"Ljava/lang/Void;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="cov">	new-instance v0, Ljava/lang/Thread;</span>
-<span class="cov">	const-string v1, "firebase-iid-executor"</span>
-<span class="cov">	invoke-direct {v0, p0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V</span>
-<span class="exec">	return-object v0</span>
 .end method
 
-<span class="cov">.method static a()Ljava/util/concurrent/Executor;</span>
-<span class="">	.locals 1</span>
+.method public abstract a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrm;
+<span class="">	</span>
+<span class="">	.param p2    # Ljava/lang/String;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	")",</span>
+<span class="">	"Lrm<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="cov">	sget-object v0, Lcom/google/firebase/iid/b;->a:Ljava/util/concurrent/Executor;</span>
-<span class="exec">	return-object v0</span>
 .end method
 
-<span class="cov">.method static b()Ljava/util/concurrent/Executor;</span>
-<span class="">	.locals 9</span>
+.method public abstract a()Z
+<span class="">	</span>
 
-<span class="cov">	new-instance v8, Ljava/util/concurrent/ThreadPoolExecutor;</span>
-<span class="cov">	sget-object v5, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;</span>
-<span class="cov">	new-instance v6, Ljava/util/concurrent/LinkedBlockingQueue;</span>
-<span class="cov">	invoke-direct {v6}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V</span>
-<span class="cov">	sget-object v7, Lcom/google/firebase/iid/i0;->a:Ljava/util/concurrent/ThreadFactory;</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	const/4 v2, 0x1</span>
-<span class="cov">	const-wide/16 v3, 0x1e</span>
-<span class="cov">	move-object v0, v8</span>
-<span class="cov">	invoke-direct/range {v0 .. v7}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V</span>
-<span class="exec">	return-object v8</span>
 .end method
 
-<span class="cov">.method static final synthetic b(Ljava/lang/Runnable;)V</span>
-<span class="">	.locals 0</span>
+.method public abstract b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrm;
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	")",</span>
+<span class="">	"Lrm<",</span>
+<span class="">	"Ljava/lang/Void;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="cov">	invoke-interface {p0}, Ljava/lang/Runnable;->run()V</span>
-<span class="exec">	return-void</span>
+.end method
+
+.method public abstract b()Z
+<span class="">	</span>
+
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

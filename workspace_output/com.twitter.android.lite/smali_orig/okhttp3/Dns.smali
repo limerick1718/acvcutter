@@ -11,8 +11,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1
-    sget-object v0, Lokhttp3/c;->a:Lokhttp3/c;
+    .line 36
+    sget-object v0, Lokhttp3/-$$Lambda$Dns$mTkNcZf2K4euny3_jks6Cac6Az0;->INSTANCE:Lokhttp3/-$$Lambda$Dns$mTkNcZf2K4euny3_jks6Cac6Az0;
 
     sput-object v0, Lokhttp3/Dns;->SYSTEM:Lokhttp3/Dns;
 

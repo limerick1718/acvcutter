@@ -12,22 +12,22 @@ invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public a()I
-.locals 1
+.locals 3
 const/4 v0, 0x0
 return v0
 .end method
 .method public b()I
-.locals 3
+.locals 1
 const/4 v0, 0x0
 return v0
 .end method
 .method public c()I
-.locals 3
+.locals 1
 const/4 v0, 0x0
 return v0
 .end method
 .method public d()I
-.locals 1
+.locals 3
 const/4 v0, 0x0
 return v0
 .end method

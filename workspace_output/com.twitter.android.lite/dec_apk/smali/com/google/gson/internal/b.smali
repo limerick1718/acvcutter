@@ -144,20 +144,6 @@ return-object p2
 const/4 v0, 0x1
 return v0
 .end method
-.method public static b(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
-.locals 3
-instance-of v0, p0, Ljava/lang/Class;
-if-eqz v0, :cond_1
-check-cast p0, Ljava/lang/Class;
-invoke-virtual {p0}, Ljava/lang/Class;->isArray()Z
-move-result v0
-return-object p0
-:cond_1
-instance-of v0, p0, Ljava/lang/reflect/ParameterizedType;
-instance-of v0, p0, Ljava/lang/reflect/GenericArrayType;
-instance-of v0, p0, Ljava/lang/reflect/WildcardType;
-return-object p0
-.end method
 .method static b(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Type;
 .locals 1
 .annotation system Ldalvik/annotation/Signature;
@@ -181,7 +167,7 @@ move-result-object p0
 return-object p0
 .end method
 .method public static b(Ljava/lang/reflect/Type;Ljava/lang/Class;)[Ljava/lang/reflect/Type;
-.locals 6
+.locals 4
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "(",
@@ -191,19 +177,32 @@ value = {
 "Ljava/lang/reflect/Type;"
 }
 .end annotation
-const-class v0, Ljava/lang/Object;
-const-class v1, Ljava/lang/String;
-const-class v2, Ljava/util/Properties;
-const/4 v3, 0x1
-const/4 v4, 0x0
-const/4 v5, 0x2
-const-class v1, Ljava/util/Map;
-invoke-static {p0, p1, v1}, Lcom/google/gson/internal/b;->b(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Type;
+const-class v0, Ljava/util/Properties;
+const/4 v1, 0x1
+const/4 v2, 0x0
+const/4 v3, 0x2
+const-class v0, Ljava/util/Map;
+invoke-static {p0, p1, v0}, Lcom/google/gson/internal/b;->b(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Type;
 move-result-object p0
 instance-of p1, p0, Ljava/lang/reflect/ParameterizedType;
 check-cast p0, Ljava/lang/reflect/ParameterizedType;
 invoke-interface {p0}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
 move-result-object p0
+return-object p0
+.end method
+.method public static d(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
+.locals 3
+instance-of v0, p0, Ljava/lang/Class;
+if-eqz v0, :cond_1
+check-cast p0, Ljava/lang/Class;
+invoke-virtual {p0}, Ljava/lang/Class;->isArray()Z
+move-result v0
+check-cast p0, Ljava/lang/reflect/Type;
+return-object p0
+:cond_1
+instance-of v0, p0, Ljava/lang/reflect/ParameterizedType;
+instance-of v0, p0, Ljava/lang/reflect/GenericArrayType;
+instance-of v0, p0, Ljava/lang/reflect/WildcardType;
 return-object p0
 .end method
 .method public static e(Ljava/lang/reflect/Type;)Ljava/lang/Class;

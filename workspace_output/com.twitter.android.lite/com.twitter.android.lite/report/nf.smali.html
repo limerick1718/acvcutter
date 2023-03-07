@@ -14,123 +14,130 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class interface abstract Lnf;
+		<code>.class public Lnf;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"<T:",
-"Ljava/lang/Object;",
-">",
-"Ljava/lang/Object;"
-}
-.end annotation
 
 
+.field public static final a:[Ljava/lang/String;
+.field public static final b:[Ljava/lang/String;
 
-.method public abstract a(Ljava/lang/Object;)I
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(TT;)I"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
 
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 49</span>
+
+<span class="missed">	const-string v0, "firebase_conversion"</span>
+<span class="missed">	const-string v1, "ga_conversion"</span>
+<span class="missed">	const-string v2, "engagement_time_msec"</span>
+<span class="missed">	const-string v3, "exposure_time"</span>
+<span class="missed">	const-string v4, "ad_event_id"</span>
+<span class="missed">	const-string v5, "ad_unit_id"</span>
+<span class="missed">	const-string v6, "firebase_error"</span>
+<span class="missed">	const-string v7, "ga_error"</span>
+<span class="missed">	const-string v8, "firebase_error_value"</span>
+<span class="missed">	const-string v9, "ga_error_value"</span>
+<span class="missed">	const-string v10, "firebase_error_length"</span>
+<span class="missed">	const-string v11, "ga_error_length"</span>
+<span class="missed">	const-string v12, "firebase_event_origin"</span>
+<span class="missed">	const-string v13, "ga_event_origin"</span>
+<span class="missed">	const-string v14, "firebase_screen"</span>
+<span class="missed">	const-string v15, "ga_screen"</span>
+<span class="missed">	const-string v16, "firebase_screen_class"</span>
+<span class="missed">	const-string v17, "ga_screen_class"</span>
+<span class="missed">	const-string v18, "firebase_screen_id"</span>
+<span class="missed">	const-string v19, "ga_screen_id"</span>
+<span class="missed">	const-string v20, "firebase_previous_screen"</span>
+<span class="missed">	const-string v21, "ga_previous_screen"</span>
+<span class="missed">	const-string v22, "firebase_previous_class"</span>
+<span class="missed">	const-string v23, "ga_previous_class"</span>
+<span class="missed">	const-string v24, "firebase_previous_id"</span>
+<span class="missed">	const-string v25, "ga_previous_id"</span>
+<span class="missed">	const-string v26, "message_device_time"</span>
+<span class="missed">	const-string v27, "message_id"</span>
+<span class="missed">	const-string v28, "message_name"</span>
+<span class="missed">	const-string v29, "message_time"</span>
+<span class="missed">	const-string v30, "previous_app_version"</span>
+<span class="missed">	const-string v31, "previous_os_version"</span>
+<span class="missed">	const-string v32, "topic"</span>
+<span class="missed">	const-string v33, "update_with_analytics"</span>
+<span class="missed">	const-string v34, "previous_first_open_count"</span>
+<span class="missed">	const-string v35, "system_app"</span>
+<span class="missed">	const-string v36, "system_app_update"</span>
+<span class="missed">	const-string v37, "previous_install_count"</span>
+<span class="missed">	const-string v38, "ga_event_id"</span>
+<span class="missed">	const-string v39, "ga_extra_params_ct"</span>
+<span class="missed">	const-string v40, "ga_group_name"</span>
+<span class="missed">	const-string v41, "ga_list_length"</span>
+<span class="missed">	const-string v42, "ga_index"</span>
+<span class="missed">	const-string v43, "ga_event_name"</span>
+<span class="missed">	const-string v44, "campaign_info_source"</span>
+<span class="missed">	const-string v45, "deferred_analytics_collection"</span>
+<span class="missed">	const-string v46, "session_number"</span>
+<span class="missed">	const-string v47, "session_id"</span>
+<span class="">	filled-new-array/range {v0 .. v47}, [Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lnf;->a:[Ljava/lang/String;</span>
+<span class="missed">	const-string v1, "_c"</span>
+<span class="missed">	const-string v2, "_c"</span>
+<span class="missed">	const-string v3, "_et"</span>
+<span class="missed">	const-string v4, "_xt"</span>
+<span class="missed">	const-string v5, "_aeid"</span>
+<span class="missed">	const-string v6, "_ai"</span>
+<span class="missed">	const-string v7, "_err"</span>
+<span class="missed">	const-string v8, "_err"</span>
+<span class="missed">	const-string v9, "_ev"</span>
+<span class="missed">	const-string v10, "_ev"</span>
+<span class="missed">	const-string v11, "_el"</span>
+<span class="missed">	const-string v12, "_el"</span>
+<span class="missed">	const-string v13, "_o"</span>
+<span class="missed">	const-string v14, "_o"</span>
+<span class="missed">	const-string v15, "_sn"</span>
+<span class="missed">	const-string v16, "_sn"</span>
+<span class="missed">	const-string v17, "_sc"</span>
+<span class="missed">	const-string v18, "_sc"</span>
+<span class="missed">	const-string v19, "_si"</span>
+<span class="missed">	const-string v20, "_si"</span>
+<span class="missed">	const-string v21, "_pn"</span>
+<span class="missed">	const-string v22, "_pn"</span>
+<span class="missed">	const-string v23, "_pc"</span>
+<span class="missed">	const-string v24, "_pc"</span>
+<span class="missed">	const-string v25, "_pi"</span>
+<span class="missed">	const-string v26, "_pi"</span>
+<span class="missed">	const-string v27, "_ndt"</span>
+<span class="missed">	const-string v28, "_nmid"</span>
+<span class="missed">	const-string v29, "_nmn"</span>
+<span class="missed">	const-string v30, "_nmt"</span>
+<span class="missed">	const-string v31, "_pv"</span>
+<span class="missed">	const-string v32, "_po"</span>
+<span class="missed">	const-string v33, "_nt"</span>
+<span class="missed">	const-string v34, "_uwa"</span>
+<span class="missed">	const-string v35, "_pfo"</span>
+<span class="missed">	const-string v36, "_sys"</span>
+<span class="missed">	const-string v37, "_sysu"</span>
+<span class="missed">	const-string v38, "_pin"</span>
+<span class="missed">	const-string v39, "_eid"</span>
+<span class="missed">	const-string v40, "_epc"</span>
+<span class="missed">	const-string v41, "_gn"</span>
+<span class="missed">	const-string v42, "_ll"</span>
+<span class="missed">	const-string v43, "_i"</span>
+<span class="missed">	const-string v44, "_en"</span>
+<span class="missed">	const-string v45, "_cis"</span>
+<span class="missed">	const-string v46, "_dac"</span>
+<span class="missed">	const-string v47, "_sno"</span>
+<span class="missed">	const-string v48, "_sid"</span>
+<span class="">	filled-new-array/range {v1 .. v48}, [Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lnf;->b:[Ljava/lang/String;</span>
+<span class="">	return-void</span>
 .end method
 
-.method public abstract a()Ljava/lang/Object;
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"()TT;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
+.method public static a(Ljava/lang/String;)Ljava/lang/String;
+<span class="">	.locals 2</span>
 
-.end method
-
-.method public abstract a(Ljava/lang/Object;Lyg;)V
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(TT;",</span>
-<span class="">	"Lyg;",</span>
-<span class="">	")V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract a(Ljava/lang/Object;[BIILac;)V
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(TT;[BII",</span>
-<span class="">	"Lac;",</span>
-<span class="">	")V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract a(Ljava/lang/Object;Ljava/lang/Object;)Z
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(TT;TT;)Z"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract b(Ljava/lang/Object;)V
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(TT;)V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract b(Ljava/lang/Object;Ljava/lang/Object;)V
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(TT;TT;)V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract c(Ljava/lang/Object;)I
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(TT;)I"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract d(Ljava/lang/Object;)Z
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(TT;)Z"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
+<span class="missed">	sget-object v0, Lnf;->a:[Ljava/lang/String;</span>
+<span class="missed">	sget-object v1, Lnf;->b:[Ljava/lang/String;</span>
+<span class="">	invoke-static {p0, v0, v1}, Lnw;->a(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

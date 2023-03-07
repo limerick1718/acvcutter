@@ -27,7 +27,7 @@
 .method constructor <init>(Lretrofit2/OkHttpCall;Lretrofit2/Callback;)V
     .locals 0
 
-    .line 1
+    .line 107
     iput-object p1, p0, Lretrofit2/OkHttpCall$1;->this$0:Lretrofit2/OkHttpCall;
 
     iput-object p2, p0, Lretrofit2/OkHttpCall$1;->val$callback:Lretrofit2/Callback;
@@ -40,7 +40,7 @@
 .method private callFailure(Ljava/lang/Throwable;)V
     .locals 2
 
-    .line 1
+    .line 130
     :try_start_0
     iget-object v0, p0, Lretrofit2/OkHttpCall$1;->val$callback:Lretrofit2/Callback;
 
@@ -48,14 +48,14 @@
 
     invoke-interface {v0, v1, p1}, Lretrofit2/Callback;->onFailure(Lretrofit2/Call;Ljava/lang/Throwable;)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    :catchall_0
+    :catch_0
     move-exception p1
 
-    .line 2
+    .line 132
     invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
 
     :goto_0
@@ -72,7 +72,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 138
     :try_start_0
     iget-object v0, p0, Lretrofit2/OkHttpCall$1;->val$callback:Lretrofit2/Callback;
 
@@ -80,14 +80,14 @@
 
     invoke-interface {v0, v1, p1}, Lretrofit2/Callback;->onResponse(Lretrofit2/Call;Lretrofit2/Response;)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    :catchall_0
+    :catch_0
     move-exception p1
 
-    .line 2
+    .line 140
     invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
 
     :goto_0
@@ -99,7 +99,7 @@
 .method public onFailure(Lokhttp3/Call;Ljava/io/IOException;)V
     .locals 1
 
-    .line 1
+    .line 122
     :try_start_0
     iget-object p1, p0, Lretrofit2/OkHttpCall$1;->val$callback:Lretrofit2/Callback;
 
@@ -107,14 +107,14 @@
 
     invoke-interface {p1, v0, p2}, Lretrofit2/Callback;->onFailure(Lretrofit2/Call;Ljava/lang/Throwable;)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    :catchall_0
+    :catch_0
     move-exception p1
 
-    .line 2
+    .line 124
     invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
 
     :goto_0
@@ -129,7 +129,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 112
     :try_start_0
     iget-object p1, p0, Lretrofit2/OkHttpCall$1;->this$0:Lretrofit2/OkHttpCall;
 
@@ -137,17 +137,17 @@
 
     move-result-object p1
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2
+    .line 117
     invoke-direct {p0, p1}, Lretrofit2/OkHttpCall$1;->callSuccess(Lretrofit2/Response;)V
 
     return-void
 
-    :catchall_0
+    :catch_0
     move-exception p1
 
-    .line 3
+    .line 114
     invoke-direct {p0, p1}, Lretrofit2/OkHttpCall$1;->callFailure(Ljava/lang/Throwable;)V
 
     return-void

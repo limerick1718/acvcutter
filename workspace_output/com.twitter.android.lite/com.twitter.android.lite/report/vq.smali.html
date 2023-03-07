@@ -14,219 +14,175 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final Lvq;
-.super Lzq$d$d$c;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-
-.annotation system Ldalvik/annotation/MemberClasses;
-value = {
-Lvq$b;
-}
-.end annotation
-
-.field private final a:Ljava/lang/Double;
-.field private final b:I
-.field private final c:Z
-.field private final d:I
-.field private final e:J
-.field private final f:J
+		<code>.class public Lvq;
+.super Ljava/lang/Object;
+.source "DataCollectionArbiter.java"
 
 
-.method private constructor &lt;init&gt;(Ljava/lang/Double;IZIJJ)V
-<span class="">	.locals 0</span>
+.field private static a:Lvq;
+.field private static b:Ljava/lang/Object;
+.field private final c:Landroid/content/SharedPreferences;
+.field private volatile d:Z
+.field private volatile e:Z
+.field private final f:Lvu;
+.field private g:Z
 
-<span class="missed">	invoke-direct {p0}, Lzq$d$d$c;-><init>()V</span>
-<span class="missed">	iput-object p1, p0, Lvq;->a:Ljava/lang/Double;</span>
-<span class="missed">	iput p2, p0, Lvq;->b:I</span>
-<span class="missed">	iput-boolean p3, p0, Lvq;->c:Z</span>
-<span class="missed">	iput p4, p0, Lvq;->d:I</span>
-<span class="missed">	iput-wide p5, p0, Lvq;->e:J</span>
-<span class="missed">	iput-wide p7, p0, Lvq;->f:J</span>
-<span class="">	return-void</span>
-.end method
 
-.method synthetic constructor &lt;init&gt;(Ljava/lang/Double;IZIJJLvq$a;)V
-<span class="">	.locals 0</span>
-
-<span class="missed">	invoke-direct/range {p0 .. p8}, Lvq;-><init>(Ljava/lang/Double;IZIJJ)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public a()Ljava/lang/Double;
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
 <span class="">	.locals 1</span>
 
-<span class="missed">	iget-object v0, p0, Lvq;->a:Ljava/lang/Double;</span>
-<span class="">	return-object v0</span>
+<span class="cov">	new-instance v0, Ljava/lang/Object;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	sput-object v0, Lvq;->b:Ljava/lang/Object;</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method public b()I
-<span class="">	.locals 1</span>
+<span class="cov">.method private constructor &lt;init&gt;(Landroid/content/Context;)V</span>
+<span class="">	.locals 6</span>
 
-<span class="missed">	iget v0, p0, Lvq;->b:I</span>
-<span class="">	return v0</span>
-.end method
-
-.method public c()J
-<span class="">	.locals 2</span>
-
-<span class="missed">	iget-wide v0, p0, Lvq;->f:J</span>
-<span class="">	return-wide v0</span>
-.end method
-
-.method public d()I
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget v0, p0, Lvq;->d:I</span>
-<span class="">	return v0</span>
-.end method
-
-.method public e()J
-<span class="">	.locals 2</span>
-
-<span class="missed">	iget-wide v0, p0, Lvq;->e:J</span>
-<span class="">	return-wide v0</span>
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-<span class="">	.locals 7</span>
-
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	if-ne p1, p0, :cond_0</span>
-<span class="">	return v0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	instance-of v1, p1, Lzq$d$d$c;</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="missed">	if-eqz v1, :cond_3</span>
-<span class="missed">	check-cast p1, Lzq$d$d$c;</span>
-<span class="missed">	iget-object v1, p0, Lvq;->a:Ljava/lang/Double;</span>
-<span class="missed">	if-nez v1, :cond_1</span>
-<span class="">	invoke-virtual {p1}, Lzq$d$d$c;->a()Ljava/lang/Double;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	if-nez v1, :cond_2</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_1</span>
-<span class="">	invoke-virtual {p1}, Lzq$d$d$c;->a()Ljava/lang/Double;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="">	invoke-virtual {v1, v3}, Ljava/lang/Double;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	iput-boolean v0, p0, Lvq;->g:Z</span>
+<span class="cov">	if-eqz p1, :cond_3</span>
+<span class="cov">	const-string v1, "com.google.firebase.crashlytics.prefs"</span>
+<span class="exec">	invoke-virtual {p1, v1, v0}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	iput-object v1, p0, Lvq;->c:Landroid/content/SharedPreferences;</span>
+<span class="exec">	invoke-static {p1}, Lvv;->a(Landroid/content/Context;)Lvu;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	iput-object v1, p0, Lvq;->f:Lvu;</span>
+<span class="cov">	iget-object v1, p0, Lvq;->c:Landroid/content/SharedPreferences;</span>
+<span class="cov">	const-string v2, "firebase_crashlytics_collection_enabled"</span>
+<span class="exec">	invoke-interface {v1, v2}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	const/4 v3, 0x1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	iget-object v1, p0, Lvq;->c:Landroid/content/SharedPreferences;</span>
+<span class="">	invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z</span>
 <span class="missed">	move-result v1</span>
-<span class="missed">	if-eqz v1, :cond_2</span>
 <span class="">	:goto_0</span>
-<span class="missed">	iget v1, p0, Lvq;->b:I</span>
-<span class="">	invoke-virtual {p1}, Lzq$d$d$c;->b()I</span>
-<span class="missed">	move-result v3</span>
-<span class="missed">	if-ne v1, v3, :cond_2</span>
-<span class="missed">	iget-boolean v1, p0, Lvq;->c:Z</span>
-<span class="">	invoke-virtual {p1}, Lzq$d$d$c;->f()Z</span>
-<span class="missed">	move-result v3</span>
-<span class="missed">	if-ne v1, v3, :cond_2</span>
-<span class="missed">	iget v1, p0, Lvq;->d:I</span>
-<span class="">	invoke-virtual {p1}, Lzq$d$d$c;->d()I</span>
-<span class="missed">	move-result v3</span>
-<span class="missed">	if-ne v1, v3, :cond_2</span>
-<span class="missed">	iget-wide v3, p0, Lvq;->e:J</span>
-<span class="">	invoke-virtual {p1}, Lzq$d$d$c;->e()J</span>
-<span class="missed">	move-result-wide v5</span>
-<span class="missed">	cmp-long v1, v3, v5</span>
-<span class="missed">	if-nez v1, :cond_2</span>
-<span class="missed">	iget-wide v3, p0, Lvq;->f:J</span>
-<span class="">	invoke-virtual {p1}, Lzq$d$d$c;->c()J</span>
-<span class="missed">	move-result-wide v5</span>
-<span class="missed">	cmp-long p1, v3, v5</span>
-<span class="missed">	if-nez p1, :cond_2</span>
+<span class="missed">	const/4 v2, 0x1</span>
 <span class="">	goto :goto_1</span>
-<span class="">	:cond_2</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="">	:goto_1</span>
-<span class="">	return v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	if-eqz v1, :cond_1</span>
+<span class="exec">	invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	const/16 v5, 0x80</span>
+<span class="exec">	invoke-virtual {v1, v4, v5}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	if-eqz v1, :cond_1</span>
+<span class="cov">	iget-object v4, v1, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;</span>
+<span class="cov">	if-eqz v4, :cond_1</span>
+<span class="cov">	iget-object v4, v1, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;</span>
+<span class="exec">	invoke-virtual {v4, v2}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result v4</span>
+<span class="missed">	if-eqz v4, :cond_1</span>
+<span class="missed">	iget-object v1, v1, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;</span>
+<span class="">	invoke-virtual {v1, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v4, "Fabric"</span>
+<span class="missed">	const-string v5, "Unable to get PackageManager. Falling through"</span>
+<span class="missed">	invoke-interface {v2, v4, v5, v1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	:goto_1</span>
+<span class="cov">	iput-boolean v1, p0, Lvq;->e:Z</span>
+<span class="cov">	iput-boolean v2, p0, Lvq;->d:Z</span>
+<span class="exec">	invoke-static {p1}, Lvn;->n(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	iput-boolean v0, p0, Lvq;->g:Z</span>
+<span class="exec">	return-void</span>
 <span class="">	:cond_3</span>
-<span class="">	return v2</span>
+<span class="missed">	new-instance p1, Ljava/lang/RuntimeException;</span>
+<span class="missed">	const-string v0, "null context"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
 .end method
 
-.method public f()Z
+<span class="cov">.method public static a(Landroid/content/Context;)Lvq;</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	sget-object v0, Lvq;->b:Ljava/lang/Object;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	sget-object v1, Lvq;->a:Lvq;</span>
+<span class="cov">	if-nez v1, :cond_0</span>
+<span class="cov">	new-instance v1, Lvq;</span>
+<span class="cov">	invoke-direct {v1, p0}, Lvq;-><init>(Landroid/content/Context;)V</span>
+<span class="cov">	sput-object v1, Lvq;->a:Lvq;</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	sget-object p0, Lvq;->a:Lvq;</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="exec">	return-object p0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw p0</span>
+.end method
+
+.method public a(Z)V
+<span class="">	.locals 2</span>
+<span class="">	.annotation build Landroid/annotation/SuppressLint;</span>
+<span class="">	value = {</span>
+<span class="">	"CommitPrefEdits",</span>
+<span class="">	"ApplySharedPref"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iput-boolean p1, p0, Lvq;->e:Z</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	iput-boolean v0, p0, Lvq;->d:Z</span>
+<span class="missed">	iget-object v0, p0, Lvq;->c:Landroid/content/SharedPreferences;</span>
+<span class="">	invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "firebase_crashlytics_collection_enabled"</span>
+<span class="">	invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->commit()Z</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public a()Z</span>
 <span class="">	.locals 1</span>
 
-<span class="missed">	iget-boolean v0, p0, Lvq;->c:Z</span>
+<span class="cov">	iget-boolean v0, p0, Lvq;->g:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-boolean v0, p0, Lvq;->d:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-boolean v0, p0, Lvq;->e:Z</span>
 <span class="">	return v0</span>
-.end method
-
-.method public hashCode()I
-<span class="">	.locals 7</span>
-
-<span class="missed">	iget-object v0, p0, Lvq;->a:Ljava/lang/Double;</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="">	invoke-virtual {v0}, Ljava/lang/Double;->hashCode()I</span>
-<span class="missed">	move-result v0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	const v1, 0xf4243</span>
-<span class="missed">	xor-int/2addr v0, v1</span>
-<span class="missed">	mul-int v0, v0, v1</span>
-<span class="missed">	iget v2, p0, Lvq;->b:I</span>
-<span class="missed">	xor-int/2addr v0, v2</span>
-<span class="missed">	mul-int v0, v0, v1</span>
-<span class="missed">	iget-boolean v2, p0, Lvq;->c:Z</span>
-<span class="missed">	if-eqz v2, :cond_1</span>
-<span class="missed">	const/16 v2, 0x4cf</span>
-<span class="">	goto :goto_1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v0, p0, Lvq;->f:Lvu;</span>
+<span class="cov">	if-eqz v0, :cond_1</span>
+<span class="exec">	invoke-interface {v0}, Lvu;->a()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="exec">	return v0</span>
 <span class="">	:cond_1</span>
-<span class="missed">	const/16 v2, 0x4d5</span>
-<span class="">	:goto_1</span>
-<span class="missed">	xor-int/2addr v0, v2</span>
-<span class="missed">	mul-int v0, v0, v1</span>
-<span class="missed">	iget v2, p0, Lvq;->d:I</span>
-<span class="missed">	xor-int/2addr v0, v2</span>
-<span class="missed">	mul-int v0, v0, v1</span>
-<span class="missed">	iget-wide v2, p0, Lvq;->e:J</span>
-<span class="missed">	const/16 v4, 0x20</span>
-<span class="missed">	ushr-long v5, v2, v4</span>
-<span class="missed">	xor-long/2addr v2, v5</span>
-<span class="missed">	long-to-int v3, v2</span>
-<span class="missed">	xor-int/2addr v0, v3</span>
-<span class="missed">	mul-int v0, v0, v1</span>
-<span class="missed">	iget-wide v1, p0, Lvq;->f:J</span>
-<span class="missed">	ushr-long v3, v1, v4</span>
-<span class="missed">	xor-long/2addr v1, v3</span>
-<span class="missed">	long-to-int v2, v1</span>
-<span class="missed">	xor-int/2addr v0, v2</span>
+<span class="missed">	const/4 v0, 0x1</span>
 <span class="">	return v0</span>
 .end method
 
-.method public toString()Ljava/lang/String;
-<span class="">	.locals 3</span>
+.method public b()Z
+<span class="">	.locals 1</span>
 
-<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const-string v1, "Device{batteryLevel="</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	iget-object v1, p0, Lvq;->a:Ljava/lang/Double;</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string v1, ", batteryVelocity="</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	iget v1, p0, Lvq;->b:I</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string v1, ", proximityOn="</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	iget-boolean v1, p0, Lvq;->c:Z</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string v1, ", orientation="</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	iget v1, p0, Lvq;->d:I</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string v1, ", ramUsed="</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	iget-wide v1, p0, Lvq;->e:J</span>
-<span class="missed">	invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string v1, ", diskUsed="</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	iget-wide v1, p0, Lvq;->f:J</span>
-<span class="missed">	invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string v1, "}"</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	return-object v0</span>
+<span class="missed">	iget-boolean v0, p0, Lvq;->e:Z</span>
+<span class="">	return v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

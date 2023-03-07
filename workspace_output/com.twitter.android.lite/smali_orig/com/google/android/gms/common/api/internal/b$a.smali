@@ -2,9 +2,9 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/gms/common/api/f;
-.implements Lcom/google/android/gms/common/api/g;
-.implements Lcom/google/android/gms/common/api/internal/h0;
+.implements Lcom/google/android/gms/common/api/f$a;
+.implements Lcom/google/android/gms/common/api/f$b;
+.implements Lcom/google/android/gms/common/api/internal/am;
 
 
 # annotations
@@ -23,15 +23,17 @@
         "Lcom/google/android/gms/common/api/a$d;",
         ">",
         "Ljava/lang/Object;",
-        "Lcom/google/android/gms/common/api/f;",
-        "Lcom/google/android/gms/common/api/g;",
-        "Lcom/google/android/gms/common/api/internal/h0;"
+        "Lcom/google/android/gms/common/api/f$a;",
+        "Lcom/google/android/gms/common/api/f$b;",
+        "Lcom/google/android/gms/common/api/internal/am;"
     }
 .end annotation
 
 
 # instance fields
-.field private final a:Ljava/util/Queue;
+.field final synthetic a:Lcom/google/android/gms/common/api/internal/b;
+
+.field private final b:Ljava/util/Queue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Queue<",
@@ -41,50 +43,50 @@
     .end annotation
 .end field
 
-.field private final b:Lcom/google/android/gms/common/api/a$f;
+.field private final c:Lcom/google/android/gms/common/api/a$f;
 
-.field private final c:Lcom/google/android/gms/common/api/a$b;
+.field private final d:Lcom/google/android/gms/common/api/a$b;
 
-.field private final d:Lcom/google/android/gms/common/api/internal/d0;
+.field private final e:Lcom/google/android/gms/common/api/internal/af;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/google/android/gms/common/api/internal/d0<",
+            "Lcom/google/android/gms/common/api/internal/af<",
             "TO;>;"
         }
     .end annotation
 .end field
 
-.field private final e:Lcom/google/android/gms/common/api/internal/i;
+.field private final f:Lcom/google/android/gms/common/api/internal/i;
 
-.field private final f:Ljava/util/Set;
+.field private final g:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
-            "Lcom/google/android/gms/common/api/internal/e0;",
+            "Lcom/google/android/gms/common/api/internal/ag;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private final g:Ljava/util/Map;
+.field private final h:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
-            "Lcom/google/android/gms/common/api/internal/f<",
+            "Lcom/google/android/gms/common/api/internal/f$a<",
             "*>;",
-            "Lcom/google/android/gms/common/api/internal/t;",
+            "Lcom/google/android/gms/common/api/internal/v;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private final h:I
+.field private final i:I
 
-.field private final i:Lcom/google/android/gms/common/api/internal/v;
+.field private final j:Lcom/google/android/gms/common/api/internal/x;
 
-.field private j:Z
+.field private k:Z
 
-.field private final k:Ljava/util/List;
+.field private final l:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -94,9 +96,7 @@
     .end annotation
 .end field
 
-.field private l:Lc5;
-
-.field final synthetic m:Lcom/google/android/gms/common/api/internal/b;
+.field private m:Lcom/google/android/gms/common/b;
 
 
 # direct methods
@@ -111,7 +111,7 @@
     .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -120,33 +120,33 @@
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Ljava/util/Queue;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Ljava/util/Queue;
 
     .line 3
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->f:Ljava/util/Set;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->g:Ljava/util/Set;
 
     .line 4
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->g:Ljava/util/Map;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->h:Ljava/util/Map;
 
     .line 5
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->k:Ljava/util/List;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->l:Ljava/util/List;
 
     const/4 v0, 0x0
 
     .line 6
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->l:Lc5;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/b;
 
     .line 7
     invoke-static {p1}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
@@ -161,54 +161,56 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    iput-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
 
     .line 8
-    instance-of v2, v1, Lcom/google/android/gms/common/internal/t;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
+
+    instance-of v2, v1, Lcom/google/android/gms/common/internal/r;
 
     if-eqz v2, :cond_0
 
     .line 9
-    check-cast v1, Lcom/google/android/gms/common/internal/t;
+    check-cast v1, Lcom/google/android/gms/common/internal/r;
 
-    invoke-virtual {v1}, Lcom/google/android/gms/common/internal/t;->y()Lcom/google/android/gms/common/api/a$h;
+    invoke-virtual {v1}, Lcom/google/android/gms/common/internal/r;->w()Lcom/google/android/gms/common/api/a$h;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$b;
+    iput-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->d:Lcom/google/android/gms/common/api/a$b;
 
     goto :goto_0
 
     .line 10
     :cond_0
-    iput-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$b;
+    iput-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->d:Lcom/google/android/gms/common/api/a$b;
 
     .line 11
     :goto_0
-    invoke-virtual {p2}, Lcom/google/android/gms/common/api/e;->c()Lcom/google/android/gms/common/api/internal/d0;
+    invoke-virtual {p2}, Lcom/google/android/gms/common/api/e;->a()Lcom/google/android/gms/common/api/internal/af;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->d:Lcom/google/android/gms/common/api/internal/d0;
+    iput-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/af;
 
     .line 12
     new-instance v1, Lcom/google/android/gms/common/api/internal/i;
 
     invoke-direct {v1}, Lcom/google/android/gms/common/api/internal/i;-><init>()V
 
-    iput-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/i;
+    iput-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->f:Lcom/google/android/gms/common/api/internal/i;
 
     .line 13
     invoke-virtual {p2}, Lcom/google/android/gms/common/api/e;->b()I
 
     move-result v1
 
-    iput v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->h:I
+    iput v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->i:I
 
     .line 14
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
 
-    invoke-interface {v1}, Lcom/google/android/gms/common/api/a$f;->h()Z
+    invoke-interface {v1}, Lcom/google/android/gms/common/api/a$f;->d()Z
 
     move-result v1
 
@@ -223,41 +225,41 @@
 
     move-result-object p1
 
-    invoke-virtual {p2, v0, p1}, Lcom/google/android/gms/common/api/e;->a(Landroid/content/Context;Landroid/os/Handler;)Lcom/google/android/gms/common/api/internal/v;
+    invoke-virtual {p2, v0, p1}, Lcom/google/android/gms/common/api/e;->a(Landroid/content/Context;Landroid/os/Handler;)Lcom/google/android/gms/common/api/internal/x;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->i:Lcom/google/android/gms/common/api/internal/v;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->j:Lcom/google/android/gms/common/api/internal/x;
 
     return-void
 
     .line 16
     :cond_1
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->i:Lcom/google/android/gms/common/api/internal/v;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->j:Lcom/google/android/gms/common/api/internal/x;
 
     return-void
 .end method
 
-.method private final a([Le5;)Le5;
+.method private final a([Lcom/google/android/gms/common/d;)Lcom/google/android/gms/common/d;
     .locals 10
 
     const/4 v0, 0x0
 
     if-eqz p1, :cond_5
 
-    .line 55
+    .line 241
     array-length v1, p1
 
     if-nez v1, :cond_0
 
     goto :goto_3
 
-    .line 56
+    .line 244
     :cond_0
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
 
-    .line 57
-    invoke-interface {v1}, Lcom/google/android/gms/common/api/a$f;->b()[Le5;
+    .line 245
+    invoke-interface {v1}, Lcom/google/android/gms/common/api/a$f;->h()[Lcom/google/android/gms/common/d;
 
     move-result-object v1
 
@@ -265,17 +267,18 @@
 
     if-nez v1, :cond_1
 
-    new-array v1, v2, [Le5;
+    .line 247
+    new-array v1, v2, [Lcom/google/android/gms/common/d;
 
-    .line 58
+    .line 248
     :cond_1
-    new-instance v3, Lk;
+    new-instance v3, Ll;
 
     array-length v4, v1
 
-    invoke-direct {v3, v4}, Lk;-><init>(I)V
+    invoke-direct {v3, v4}, Ll;-><init>(I)V
 
-    .line 59
+    .line 249
     array-length v4, v1
 
     const/4 v5, 0x0
@@ -285,12 +288,12 @@
 
     aget-object v6, v1, v5
 
-    .line 60
-    invoke-virtual {v6}, Le5;->f()Ljava/lang/String;
+    .line 250
+    invoke-virtual {v6}, Lcom/google/android/gms/common/d;->a()Ljava/lang/String;
 
     move-result-object v7
 
-    invoke-virtual {v6}, Le5;->g()J
+    invoke-virtual {v6}, Lcom/google/android/gms/common/d;->b()J
 
     move-result-wide v8
 
@@ -304,7 +307,7 @@
 
     goto :goto_0
 
-    .line 61
+    .line 252
     :cond_2
     array-length v1, p1
 
@@ -313,8 +316,8 @@
 
     aget-object v4, p1, v2
 
-    .line 62
-    invoke-virtual {v4}, Le5;->f()Ljava/lang/String;
+    .line 253
+    invoke-virtual {v4}, Lcom/google/android/gms/common/d;->a()Ljava/lang/String;
 
     move-result-object v5
 
@@ -324,8 +327,8 @@
 
     if-eqz v5, :cond_4
 
-    .line 63
-    invoke-virtual {v4}, Le5;->f()Ljava/lang/String;
+    .line 254
+    invoke-virtual {v4}, Lcom/google/android/gms/common/d;->a()Ljava/lang/String;
 
     move-result-object v5
 
@@ -339,7 +342,7 @@
 
     move-result-wide v5
 
-    invoke-virtual {v4}, Le5;->g()J
+    invoke-virtual {v4}, Lcom/google/android/gms/common/d;->b()J
 
     move-result-wide v7
 
@@ -366,7 +369,7 @@
 .method static synthetic a(Lcom/google/android/gms/common/api/internal/b$a;)V
     .locals 0
 
-    .line 71
+    .line 284
     invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/b$a;->m()V
 
     return-void
@@ -375,7 +378,7 @@
 .method static synthetic a(Lcom/google/android/gms/common/api/internal/b$a;Lcom/google/android/gms/common/api/internal/b$b;)V
     .locals 0
 
-    .line 70
+    .line 282
     invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->a(Lcom/google/android/gms/common/api/internal/b$b;)V
 
     return-void
@@ -384,8 +387,8 @@
 .method private final a(Lcom/google/android/gms/common/api/internal/b$b;)V
     .locals 1
 
-    .line 64
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->k:Ljava/util/List;
+    .line 258
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->l:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
@@ -395,27 +398,27 @@
 
     return-void
 
-    .line 65
+    .line 260
     :cond_0
-    iget-boolean p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->j:Z
+    iget-boolean p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->k:Z
 
     if-nez p1, :cond_2
 
-    .line 66
-    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    .line 261
+    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
 
-    invoke-interface {p1}, Lcom/google/android/gms/common/api/a$f;->c()Z
+    invoke-interface {p1}, Lcom/google/android/gms/common/api/a$f;->b()Z
 
     move-result p1
 
     if-nez p1, :cond_1
 
-    .line 67
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/b$a;->a()V
+    .line 262
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/b$a;->i()V
 
     return-void
 
-    .line 68
+    .line 263
     :cond_1
     invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/b$a;->o()V
 
@@ -428,7 +431,7 @@
 
     const/4 p1, 0x0
 
-    .line 69
+    .line 281
     invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->a(Z)Z
 
     move-result p0
@@ -439,19 +442,19 @@
 .method private final a(Z)Z
     .locals 2
 
-    .line 39
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 204
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/q;->a(Landroid/os/Handler;)V
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/o;->a(Landroid/os/Handler;)V
 
-    .line 40
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    .line 205
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
 
-    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->c()Z
+    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->b()Z
 
     move-result v0
 
@@ -459,7 +462,7 @@
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->g:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->h:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->size()I
 
@@ -467,8 +470,8 @@
 
     if-nez v0, :cond_2
 
-    .line 41
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/i;
+    .line 206
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->f:Lcom/google/android/gms/common/api/internal/i;
 
     invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/i;->a()Z
 
@@ -478,17 +481,17 @@
 
     if-eqz p1, :cond_0
 
-    .line 42
+    .line 208
     invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/b$a;->q()V
 
     :cond_0
     return v1
 
-    .line 43
+    .line 210
     :cond_1
-    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
 
-    invoke-interface {p1}, Lcom/google/android/gms/common/api/a$f;->f()V
+    invoke-interface {p1}, Lcom/google/android/gms/common/api/a$f;->a()V
 
     const/4 p1, 0x1
 
@@ -501,7 +504,7 @@
 .method static synthetic b(Lcom/google/android/gms/common/api/internal/b$a;)V
     .locals 0
 
-    .line 44
+    .line 285
     invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/b$a;->n()V
 
     return-void
@@ -510,7 +513,7 @@
 .method static synthetic b(Lcom/google/android/gms/common/api/internal/b$a;Lcom/google/android/gms/common/api/internal/b$b;)V
     .locals 0
 
-    .line 43
+    .line 283
     invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->b(Lcom/google/android/gms/common/api/internal/b$b;)V
 
     return-void
@@ -519,8 +522,8 @@
 .method private final b(Lcom/google/android/gms/common/api/internal/b$b;)V
     .locals 5
 
-    .line 30
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->k:Ljava/util/List;
+    .line 265
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->l:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
@@ -528,8 +531,8 @@
 
     if-eqz v0, :cond_2
 
-    .line 31
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 266
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
@@ -539,8 +542,8 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
-    .line 32
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 267
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
@@ -550,15 +553,15 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
-    .line 33
-    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/b$b;->b(Lcom/google/android/gms/common/api/internal/b$b;)Le5;
+    .line 268
+    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/b$b;->b(Lcom/google/android/gms/common/api/internal/b$b;)Lcom/google/android/gms/common/d;
 
     move-result-object p1
 
-    .line 34
+    .line 269
     new-instance v0, Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Ljava/util/Queue;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Ljava/util/Queue;
 
     invoke-interface {v1}, Ljava/util/Queue;->size()I
 
@@ -566,8 +569,8 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 35
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Ljava/util/Queue;
+    .line 270
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Ljava/util/Queue;
 
     invoke-interface {v1}, Ljava/util/Queue;->iterator()Ljava/util/Iterator;
 
@@ -587,36 +590,38 @@
 
     check-cast v2, Lcom/google/android/gms/common/api/internal/l;
 
-    .line 36
-    instance-of v3, v2, Lcom/google/android/gms/common/api/internal/u;
+    .line 271
+    instance-of v3, v2, Lcom/google/android/gms/common/api/internal/w;
 
     if-eqz v3, :cond_0
 
-    .line 37
+    .line 272
     move-object v3, v2
 
-    check-cast v3, Lcom/google/android/gms/common/api/internal/u;
+    check-cast v3, Lcom/google/android/gms/common/api/internal/w;
 
-    invoke-virtual {v3, p0}, Lcom/google/android/gms/common/api/internal/u;->b(Lcom/google/android/gms/common/api/internal/b$a;)[Le5;
+    invoke-virtual {v3, p0}, Lcom/google/android/gms/common/api/internal/w;->b(Lcom/google/android/gms/common/api/internal/b$a;)[Lcom/google/android/gms/common/d;
 
     move-result-object v3
 
     if-eqz v3, :cond_0
 
-    .line 38
+    .line 273
     invoke-static {v3, p1}, Lcom/google/android/gms/common/util/b;->a([Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 39
+    .line 274
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 40
+    .line 276
     :cond_1
+    check-cast v0, Ljava/util/ArrayList;
+
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -634,15 +639,15 @@
 
     check-cast v3, Lcom/google/android/gms/common/api/internal/l;
 
-    .line 41
-    iget-object v4, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Ljava/util/Queue;
+    .line 277
+    iget-object v4, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Ljava/util/Queue;
 
     invoke-interface {v4, v3}, Ljava/util/Queue;->remove(Ljava/lang/Object;)Z
 
-    .line 42
-    new-instance v4, Lcom/google/android/gms/common/api/l;
+    .line 278
+    new-instance v4, Lcom/google/android/gms/common/api/k;
 
-    invoke-direct {v4, p1}, Lcom/google/android/gms/common/api/l;-><init>(Le5;)V
+    invoke-direct {v4, p1}, Lcom/google/android/gms/common/api/k;-><init>(Lcom/google/android/gms/common/d;)V
 
     invoke-virtual {v3, v4}, Lcom/google/android/gms/common/api/internal/l;->a(Ljava/lang/RuntimeException;)V
 
@@ -655,59 +660,59 @@
 .method private final b(Lcom/google/android/gms/common/api/internal/l;)Z
     .locals 5
 
-    .line 4
-    instance-of v0, p1, Lcom/google/android/gms/common/api/internal/u;
+    .line 133
+    instance-of v0, p1, Lcom/google/android/gms/common/api/internal/w;
 
     const/4 v1, 0x1
 
     if-nez v0, :cond_0
 
-    .line 5
+    .line 134
     invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->c(Lcom/google/android/gms/common/api/internal/l;)V
 
     return v1
 
-    .line 6
+    .line 136
     :cond_0
     move-object v0, p1
 
-    check-cast v0, Lcom/google/android/gms/common/api/internal/u;
+    check-cast v0, Lcom/google/android/gms/common/api/internal/w;
 
-    .line 7
-    invoke-virtual {v0, p0}, Lcom/google/android/gms/common/api/internal/u;->b(Lcom/google/android/gms/common/api/internal/b$a;)[Le5;
+    .line 137
+    invoke-virtual {v0, p0}, Lcom/google/android/gms/common/api/internal/w;->b(Lcom/google/android/gms/common/api/internal/b$a;)[Lcom/google/android/gms/common/d;
 
     move-result-object v2
 
-    invoke-direct {p0, v2}, Lcom/google/android/gms/common/api/internal/b$a;->a([Le5;)Le5;
+    invoke-direct {p0, v2}, Lcom/google/android/gms/common/api/internal/b$a;->a([Lcom/google/android/gms/common/d;)Lcom/google/android/gms/common/d;
 
     move-result-object v2
 
     if-nez v2, :cond_1
 
-    .line 8
+    .line 139
     invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->c(Lcom/google/android/gms/common/api/internal/l;)V
 
     return v1
 
-    .line 9
+    .line 141
     :cond_1
-    invoke-virtual {v0, p0}, Lcom/google/android/gms/common/api/internal/u;->c(Lcom/google/android/gms/common/api/internal/b$a;)Z
+    invoke-virtual {v0, p0}, Lcom/google/android/gms/common/api/internal/w;->c(Lcom/google/android/gms/common/api/internal/b$a;)Z
 
     move-result p1
 
     if-eqz p1, :cond_3
 
-    .line 10
+    .line 143
     new-instance p1, Lcom/google/android/gms/common/api/internal/b$b;
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->d:Lcom/google/android/gms/common/api/internal/d0;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/af;
 
     const/4 v1, 0x0
 
-    invoke-direct {p1, v0, v2, v1}, Lcom/google/android/gms/common/api/internal/b$b;-><init>(Lcom/google/android/gms/common/api/internal/d0;Le5;Lcom/google/android/gms/common/api/internal/m;)V
+    invoke-direct {p1, v0, v2, v1}, Lcom/google/android/gms/common/api/internal/b$b;-><init>(Lcom/google/android/gms/common/api/internal/af;Lcom/google/android/gms/common/d;Lcom/google/android/gms/common/api/internal/m;)V
 
-    .line 11
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->k:Ljava/util/List;
+    .line 144
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->l:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
 
@@ -717,8 +722,8 @@
 
     if-ltz v0, :cond_2
 
-    .line 12
-    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->k:Ljava/util/List;
+    .line 146
+    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->l:Ljava/util/List;
 
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -726,8 +731,8 @@
 
     check-cast p1, Lcom/google/android/gms/common/api/internal/b$b;
 
-    .line 13
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 147
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
@@ -735,16 +740,16 @@
 
     invoke-virtual {v0, v2, p1}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
-    .line 14
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 148
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
-    .line 15
+    .line 149
     invoke-static {v1}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v1
@@ -753,33 +758,33 @@
 
     move-result-object p1
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v1}, Lcom/google/android/gms/common/api/internal/b;->c(Lcom/google/android/gms/common/api/internal/b;)J
 
     move-result-wide v1
 
-    .line 16
+    .line 150
     invoke-virtual {v0, p1, v1, v2}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     goto :goto_0
 
-    .line 17
+    .line 152
     :cond_2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->k:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->l:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 18
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 153
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v0
 
-    iget-object v3, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v3, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
-    .line 19
+    .line 154
     invoke-static {v3}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v3
@@ -788,25 +793,25 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v3, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v3}, Lcom/google/android/gms/common/api/internal/b;->c(Lcom/google/android/gms/common/api/internal/b;)J
 
     move-result-wide v3
 
-    .line 20
+    .line 155
     invoke-virtual {v0, v2, v3, v4}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 21
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 156
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
-    .line 22
+    .line 157
     invoke-static {v2}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v2
@@ -817,44 +822,44 @@
 
     move-result-object p1
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
-    .line 23
+    .line 158
     invoke-static {v2}, Lcom/google/android/gms/common/api/internal/b;->d(Lcom/google/android/gms/common/api/internal/b;)J
 
     move-result-wide v2
 
-    .line 24
+    .line 159
     invoke-virtual {v0, p1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 25
-    new-instance p1, Lc5;
+    .line 160
+    new-instance p1, Lcom/google/android/gms/common/b;
 
     const/4 v0, 0x2
 
-    invoke-direct {p1, v0, v1}, Lc5;-><init>(ILandroid/app/PendingIntent;)V
+    invoke-direct {p1, v0, v1}, Lcom/google/android/gms/common/b;-><init>(ILandroid/app/PendingIntent;)V
 
-    .line 26
-    invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->c(Lc5;)Z
+    .line 161
+    invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->c(Lcom/google/android/gms/common/b;)Z
 
     move-result v0
 
     if-nez v0, :cond_4
 
-    .line 27
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 162
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
-    iget v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->h:I
+    iget v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->i:I
 
-    invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/common/api/internal/b;->b(Lc5;I)Z
+    invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/b;I)Z
 
     goto :goto_0
 
-    .line 28
+    .line 164
     :cond_3
-    new-instance p1, Lcom/google/android/gms/common/api/l;
+    new-instance p1, Lcom/google/android/gms/common/api/k;
 
-    invoke-direct {p1, v2}, Lcom/google/android/gms/common/api/l;-><init>(Le5;)V
+    invoke-direct {p1, v2}, Lcom/google/android/gms/common/api/k;-><init>(Lcom/google/android/gms/common/d;)V
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/common/api/internal/l;->a(Ljava/lang/RuntimeException;)V
 
@@ -868,8 +873,8 @@
 .method static synthetic c(Lcom/google/android/gms/common/api/internal/b$a;)Lcom/google/android/gms/common/api/a$f;
     .locals 0
 
-    .line 14
-    iget-object p0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    .line 286
+    iget-object p0, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
 
     return-object p0
 .end method
@@ -877,16 +882,16 @@
 .method private final c(Lcom/google/android/gms/common/api/internal/l;)V
     .locals 2
 
-    .line 9
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/i;
+    .line 166
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->f:Lcom/google/android/gms/common/api/internal/i;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/b$a;->d()Z
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/b$a;->k()Z
 
     move-result v1
 
     invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/common/api/internal/l;->a(Lcom/google/android/gms/common/api/internal/i;Z)V
 
-    .line 10
+    .line 167
     :try_start_0
     invoke-virtual {p1, p0}, Lcom/google/android/gms/common/api/internal/l;->a(Lcom/google/android/gms/common/api/internal/b$a;)V
     :try_end_0
@@ -897,77 +902,73 @@
     :catch_0
     const/4 p1, 0x1
 
-    .line 11
+    .line 170
     invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->a(I)V
 
-    .line 12
-    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    .line 171
+    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
 
-    invoke-interface {p1}, Lcom/google/android/gms/common/api/a$f;->f()V
+    invoke-interface {p1}, Lcom/google/android/gms/common/api/a$f;->a()V
 
     return-void
 .end method
 
-.method private final c(Lc5;)Z
+.method private final c(Lcom/google/android/gms/common/b;)Z
     .locals 3
 
-    .line 4
+    .line 62
     invoke-static {}, Lcom/google/android/gms/common/api/internal/b;->b()Ljava/lang/Object;
 
     move-result-object v0
 
     monitor-enter v0
 
-    .line 5
+    .line 63
     :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v1}, Lcom/google/android/gms/common/api/internal/b;->f(Lcom/google/android/gms/common/api/internal/b;)Lcom/google/android/gms/common/api/internal/j;
 
     move-result-object v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v1}, Lcom/google/android/gms/common/api/internal/b;->g(Lcom/google/android/gms/common/api/internal/b;)Ljava/util/Set;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->d:Lcom/google/android/gms/common/api/internal/d0;
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/af;
 
     invoke-interface {v1, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    goto :goto_0
-
-    .line 6
-    :cond_0
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 64
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v1}, Lcom/google/android/gms/common/api/internal/b;->f(Lcom/google/android/gms/common/api/internal/b;)Lcom/google/android/gms/common/api/internal/j;
 
     move-result-object v1
 
-    iget v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->h:I
+    iget v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->i:I
 
-    invoke-virtual {v1, p1, v2}, Lcom/google/android/gms/common/api/internal/f0;->a(Lc5;I)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v1, p1, v2}, Lcom/google/android/gms/common/api/internal/ah;->b(Lcom/google/android/gms/common/b;I)V
 
+    const/4 p1, 0x1
+
+    .line 65
+    monitor-exit v0
+
+    return p1
+
+    :cond_0
     const/4 p1, 0x0
 
-    throw p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x0
-
-    .line 7
-    :try_start_1
+    .line 66
     monitor-exit v0
 
     return p1
@@ -975,19 +976,19 @@
     :catchall_0
     move-exception p1
 
-    .line 8
+    .line 67
     monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
-.method private final d(Lc5;)V
+.method private final d(Lcom/google/android/gms/common/b;)V
     .locals 4
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->f:Ljava/util/Set;
+    .line 229
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->g:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
@@ -1004,37 +1005,37 @@
 
     move-result-object v1
 
-    check-cast v1, Lcom/google/android/gms/common/api/internal/e0;
+    check-cast v1, Lcom/google/android/gms/common/api/internal/ag;
 
     const/4 v2, 0x0
 
-    .line 2
-    sget-object v3, Lc5;->e:Lc5;
+    .line 231
+    sget-object v3, Lcom/google/android/gms/common/b;->a:Lcom/google/android/gms/common/b;
 
-    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 3
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    .line 232
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
 
-    invoke-interface {v2}, Lcom/google/android/gms/common/api/a$f;->d()Ljava/lang/String;
+    invoke-interface {v2}, Lcom/google/android/gms/common/api/a$f;->f()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4
+    .line 233
     :cond_0
-    iget-object v3, p0, Lcom/google/android/gms/common/api/internal/b$a;->d:Lcom/google/android/gms/common/api/internal/d0;
+    iget-object v3, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/af;
 
-    invoke-virtual {v1, v3, p1, v2}, Lcom/google/android/gms/common/api/internal/e0;->a(Lcom/google/android/gms/common/api/internal/d0;Lc5;Ljava/lang/String;)V
+    invoke-virtual {v1, v3, p1, v2}, Lcom/google/android/gms/common/api/internal/ag;->a(Lcom/google/android/gms/common/api/internal/af;Lcom/google/android/gms/common/b;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 5
+    .line 235
     :cond_1
-    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->f:Ljava/util/Set;
+    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->g:Ljava/util/Set;
 
     invoke-interface {p1}, Ljava/util/Set;->clear()V
 
@@ -1044,19 +1045,19 @@
 .method private final m()V
     .locals 4
 
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/b$a;->j()V
+    .line 22
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/b$a;->d()V
 
-    .line 2
-    sget-object v0, Lc5;->e:Lc5;
+    .line 23
+    sget-object v0, Lcom/google/android/gms/common/b;->a:Lcom/google/android/gms/common/b;
 
-    invoke-direct {p0, v0}, Lcom/google/android/gms/common/api/internal/b$a;->d(Lc5;)V
+    invoke-direct {p0, v0}, Lcom/google/android/gms/common/api/internal/b$a;->d(Lcom/google/android/gms/common/b;)V
 
-    .line 3
+    .line 24
     invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/b$a;->p()V
 
-    .line 4
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->g:Ljava/util/Map;
+    .line 25
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->h:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
@@ -1066,7 +1067,7 @@
 
     move-result-object v0
 
-    .line 5
+    .line 26
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -1074,50 +1075,50 @@
 
     if-eqz v1, :cond_1
 
-    .line 6
+    .line 27
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lcom/google/android/gms/common/api/internal/t;
+    check-cast v1, Lcom/google/android/gms/common/api/internal/v;
 
-    .line 7
-    iget-object v2, v1, Lcom/google/android/gms/common/api/internal/t;->a:Lcom/google/android/gms/common/api/internal/g;
+    .line 28
+    iget-object v2, v1, Lcom/google/android/gms/common/api/internal/v;->a:Lcom/google/android/gms/common/api/internal/g;
 
-    invoke-virtual {v2}, Lcom/google/android/gms/common/api/internal/g;->b()[Le5;
+    invoke-virtual {v2}, Lcom/google/android/gms/common/api/internal/g;->b()[Lcom/google/android/gms/common/d;
 
     move-result-object v2
 
-    invoke-direct {p0, v2}, Lcom/google/android/gms/common/api/internal/b$a;->a([Le5;)Le5;
+    invoke-direct {p0, v2}, Lcom/google/android/gms/common/api/internal/b$a;->a([Lcom/google/android/gms/common/d;)Lcom/google/android/gms/common/d;
 
     move-result-object v2
 
     if-eqz v2, :cond_0
 
-    .line 8
+    .line 29
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
     goto :goto_0
 
-    .line 9
+    .line 31
     :cond_0
     :try_start_0
-    iget-object v1, v1, Lcom/google/android/gms/common/api/internal/t;->a:Lcom/google/android/gms/common/api/internal/g;
+    iget-object v1, v1, Lcom/google/android/gms/common/api/internal/v;->a:Lcom/google/android/gms/common/api/internal/g;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$b;
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->d:Lcom/google/android/gms/common/api/a$b;
 
-    new-instance v3, Lhn;
+    new-instance v3, Lrn;
 
-    invoke-direct {v3}, Lhn;-><init>()V
+    invoke-direct {v3}, Lrn;-><init>()V
 
-    invoke-virtual {v1, v2, v3}, Lcom/google/android/gms/common/api/internal/g;->a(Lcom/google/android/gms/common/api/a$b;Lhn;)V
+    invoke-virtual {v1, v2, v3}, Lcom/google/android/gms/common/api/internal/g;->a(Lcom/google/android/gms/common/api/a$b;Lrn;)V
     :try_end_0
     .catch Landroid/os/DeadObjectException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 10
+    .line 38
     :catch_0
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
@@ -1126,19 +1127,19 @@
     :catch_1
     const/4 v0, 0x1
 
-    .line 11
+    .line 34
     invoke-virtual {p0, v0}, Lcom/google/android/gms/common/api/internal/b$a;->a(I)V
 
-    .line 12
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    .line 35
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
 
-    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->f()V
+    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->a()V
 
-    .line 13
+    .line 40
     :cond_1
     invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/b$a;->o()V
 
-    .line 14
+    .line 41
     invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/b$a;->q()V
 
     return-void
@@ -1147,34 +1148,34 @@
 .method private final n()V
     .locals 4
 
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/b$a;->j()V
+    .line 47
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/b$a;->d()V
 
     const/4 v0, 0x1
 
-    .line 2
-    iput-boolean v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->j:Z
+    .line 48
+    iput-boolean v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->k:Z
 
-    .line 3
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/i;
+    .line 49
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->f:Lcom/google/android/gms/common/api/internal/i;
 
     invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/i;->c()V
 
-    .line 4
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 50
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
-    .line 5
+    .line 51
     invoke-static {v1}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->d:Lcom/google/android/gms/common/api/internal/d0;
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/af;
 
     const/16 v3, 0x9
 
@@ -1182,30 +1183,30 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v2}, Lcom/google/android/gms/common/api/internal/b;->c(Lcom/google/android/gms/common/api/internal/b;)J
 
     move-result-wide v2
 
-    .line 6
+    .line 52
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 7
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 53
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
-    .line 8
+    .line 54
     invoke-static {v1}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->d:Lcom/google/android/gms/common/api/internal/d0;
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/af;
 
     const/16 v3, 0xb
 
@@ -1213,23 +1214,23 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v2}, Lcom/google/android/gms/common/api/internal/b;->d(Lcom/google/android/gms/common/api/internal/b;)J
 
     move-result-wide v2
 
-    .line 9
+    .line 55
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 10
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 56
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->e(Lcom/google/android/gms/common/api/internal/b;)Lcom/google/android/gms/common/internal/j;
+    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->e(Lcom/google/android/gms/common/api/internal/b;)Lcom/google/android/gms/common/internal/i;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/internal/j;->a()V
+    invoke-virtual {v0}, Lcom/google/android/gms/common/internal/i;->a()V
 
     return-void
 .end method
@@ -1237,12 +1238,14 @@
 .method private final o()V
     .locals 5
 
-    .line 1
+    .line 97
     new-instance v0, Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Ljava/util/Queue;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Ljava/util/Queue;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    check-cast v0, Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -1262,24 +1265,24 @@
 
     check-cast v3, Lcom/google/android/gms/common/api/internal/l;
 
-    .line 2
-    iget-object v4, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    .line 98
+    iget-object v4, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
 
-    invoke-interface {v4}, Lcom/google/android/gms/common/api/a$f;->c()Z
+    invoke-interface {v4}, Lcom/google/android/gms/common/api/a$f;->b()Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 3
+    .line 99
     invoke-direct {p0, v3}, Lcom/google/android/gms/common/api/internal/b$a;->b(Lcom/google/android/gms/common/api/internal/l;)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 4
-    iget-object v4, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Ljava/util/Queue;
+    .line 100
+    iget-object v4, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Ljava/util/Queue;
 
     invoke-interface {v4, v3}, Ljava/util/Queue;->remove(Ljava/lang/Object;)Z
 
@@ -1292,13 +1295,13 @@
 .method private final p()V
     .locals 3
 
-    .line 1
-    iget-boolean v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->j:Z
+    .line 183
+    iget-boolean v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->k:Z
 
     if-eqz v0, :cond_0
 
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 184
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
@@ -1306,12 +1309,12 @@
 
     const/16 v1, 0xb
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->d:Lcom/google/android/gms/common/api/internal/d0;
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/af;
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
-    .line 3
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 185
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
@@ -1319,14 +1322,14 @@
 
     const/16 v1, 0x9
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->d:Lcom/google/android/gms/common/api/internal/d0;
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/af;
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
     const/4 v0, 0x0
 
-    .line 4
-    iput-boolean v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->j:Z
+    .line 186
+    iput-boolean v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->k:Z
 
     :cond_0
     return-void
@@ -1335,46 +1338,46 @@
 .method private final q()V
     .locals 4
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 198
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->d:Lcom/google/android/gms/common/api/internal/d0;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/af;
 
     const/16 v2, 0xc
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 199
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
-    .line 3
+    .line 200
     invoke-static {v1}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v1
 
-    iget-object v3, p0, Lcom/google/android/gms/common/api/internal/b$a;->d:Lcom/google/android/gms/common/api/internal/d0;
+    iget-object v3, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/af;
 
     invoke-virtual {v1, v2, v3}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v2}, Lcom/google/android/gms/common/api/internal/b;->i(Lcom/google/android/gms/common/api/internal/b;)J
 
     move-result-wide v2
 
-    .line 4
+    .line 201
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     return-void
@@ -1383,116 +1386,115 @@
 
 # virtual methods
 .method public final a()V
-    .locals 4
+    .locals 6
 
-    .line 44
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 114
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/q;->a(Landroid/os/Handler;)V
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/o;->a(Landroid/os/Handler;)V
 
-    .line 45
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    .line 115
+    sget-object v0, Lcom/google/android/gms/common/api/internal/b;->a:Lcom/google/android/gms/common/api/Status;
 
-    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->c()Z
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/api/internal/b$a;->a(Lcom/google/android/gms/common/api/Status;)V
 
-    move-result v0
+    .line 116
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->f:Lcom/google/android/gms/common/api/internal/i;
 
-    if-nez v0, :cond_3
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/i;->b()V
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    .line 117
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->h:Ljava/util/Map;
 
-    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    .line 46
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->e(Lcom/google/android/gms/common/api/internal/b;)Lcom/google/android/gms/common/internal/j;
+    .line 118
+    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->h:Ljava/util/Map;
 
-    invoke-static {v1}, Lcom/google/android/gms/common/api/internal/b;->b(Lcom/google/android/gms/common/api/internal/b;)Landroid/content/Context;
+    invoke-interface {v1}, Ljava/util/Map;->size()I
 
-    move-result-object v1
+    move-result v1
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    new-array v1, v1, [Lcom/google/android/gms/common/api/internal/f$a;
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/common/internal/j;->a(Landroid/content/Context;Lcom/google/android/gms/common/api/a$f;)I
+    invoke-interface {v0, v1}, Ljava/util/Set;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lcom/google/android/gms/common/api/internal/f$a;
+
+    .line 119
+    array-length v1, v0
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v1, :cond_0
+
+    aget-object v3, v0, v2
+
+    .line 120
+    new-instance v4, Lcom/google/android/gms/common/api/internal/ae;
+
+    new-instance v5, Lrn;
+
+    invoke-direct {v5}, Lrn;-><init>()V
+
+    invoke-direct {v4, v3, v5}, Lcom/google/android/gms/common/api/internal/ae;-><init>(Lcom/google/android/gms/common/api/internal/f$a;Lrn;)V
+
+    invoke-virtual {p0, v4}, Lcom/google/android/gms/common/api/internal/b$a;->a(Lcom/google/android/gms/common/api/internal/l;)V
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    .line 122
+    :cond_0
+    new-instance v0, Lcom/google/android/gms/common/b;
+
+    const/4 v1, 0x4
+
+    invoke-direct {v0, v1}, Lcom/google/android/gms/common/b;-><init>(I)V
+
+    invoke-direct {p0, v0}, Lcom/google/android/gms/common/api/internal/b$a;->d(Lcom/google/android/gms/common/b;)V
+
+    .line 123
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
+
+    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->b()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 47
-    new-instance v1, Lc5;
+    .line 124
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
 
-    const/4 v2, 0x0
+    new-instance v1, Lcom/google/android/gms/common/api/internal/p;
 
-    invoke-direct {v1, v0, v2}, Lc5;-><init>(ILandroid/app/PendingIntent;)V
+    invoke-direct {v1, p0}, Lcom/google/android/gms/common/api/internal/p;-><init>(Lcom/google/android/gms/common/api/internal/b$a;)V
 
-    .line 48
-    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/api/internal/b$a;->a(Lc5;)V
+    invoke-interface {v0, v1}, Lcom/google/android/gms/common/api/a$f;->a(Lcom/google/android/gms/common/internal/b$e;)V
 
-    return-void
-
-    .line 49
     :cond_1
-    new-instance v0, Lcom/google/android/gms/common/api/internal/b$c;
-
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
-
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
-
-    iget-object v3, p0, Lcom/google/android/gms/common/api/internal/b$a;->d:Lcom/google/android/gms/common/api/internal/d0;
-
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/gms/common/api/internal/b$c;-><init>(Lcom/google/android/gms/common/api/internal/b;Lcom/google/android/gms/common/api/a$f;Lcom/google/android/gms/common/api/internal/d0;)V
-
-    .line 50
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
-
-    invoke-interface {v1}, Lcom/google/android/gms/common/api/a$f;->h()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    .line 51
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->i:Lcom/google/android/gms/common/api/internal/v;
-
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/common/api/internal/v;->a(Lcom/google/android/gms/common/api/internal/y;)V
-
-    .line 52
-    :cond_2
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
-
-    invoke-interface {v1, v0}, Lcom/google/android/gms/common/api/a$f;->a(Lcom/google/android/gms/common/internal/b$c;)V
-
-    :cond_3
-    :goto_0
     return-void
 .end method
 
 .method public final a(I)V
     .locals 1
 
-    .line 1
+    .line 43
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object p1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
@@ -1504,14 +1506,14 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 2
+    .line 44
     invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/b$a;->n()V
 
     return-void
 
-    .line 3
+    .line 45
     :cond_0
-    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {p1}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
@@ -1526,44 +1528,225 @@
     return-void
 .end method
 
-.method public final a(Lc5;)V
-    .locals 4
+.method public final a(Landroid/os/Bundle;)V
+    .locals 1
 
-    .line 4
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 18
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/q;->a(Landroid/os/Handler;)V
-
-    .line 5
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->i:Lcom/google/android/gms/common/api/internal/v;
-
-    if-eqz v0, :cond_0
-
-    .line 6
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/v;->i()V
-
-    .line 7
-    :cond_0
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/b$a;->j()V
-
-    .line 8
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->e(Lcom/google/android/gms/common/api/internal/b;)Lcom/google/android/gms/common/internal/j;
+    invoke-virtual {v0}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/internal/j;->a()V
+    if-ne p1, v0, :cond_0
 
-    .line 9
-    invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->d(Lc5;)V
+    .line 19
+    invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/b$a;->m()V
 
-    .line 10
-    invoke-virtual {p1}, Lc5;->f()I
+    return-void
+
+    .line 20
+    :cond_0
+    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
+
+    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
+
+    move-result-object p1
+
+    new-instance v0, Lcom/google/android/gms/common/api/internal/n;
+
+    invoke-direct {v0, p0}, Lcom/google/android/gms/common/api/internal/n;-><init>(Lcom/google/android/gms/common/api/internal/b$a;)V
+
+    invoke-virtual {p1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
+.end method
+
+.method public final a(Lcom/google/android/gms/common/api/Status;)V
+    .locals 2
+
+    .line 173
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
+
+    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/o;->a(Landroid/os/Handler;)V
+
+    .line 174
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Ljava/util/Queue;
+
+    invoke-interface {v0}, Ljava/util/Queue;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/gms/common/api/internal/l;
+
+    .line 175
+    invoke-virtual {v1, p1}, Lcom/google/android/gms/common/api/internal/l;->a(Lcom/google/android/gms/common/api/Status;)V
+
+    goto :goto_0
+
+    .line 177
+    :cond_0
+    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Ljava/util/Queue;
+
+    invoke-interface {p1}, Ljava/util/Queue;->clear()V
+
+    return-void
+.end method
+
+.method public final a(Lcom/google/android/gms/common/api/internal/ag;)V
+    .locals 1
+
+    .line 226
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
+
+    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/o;->a(Landroid/os/Handler;)V
+
+    .line 227
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->g:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public final a(Lcom/google/android/gms/common/api/internal/l;)V
+    .locals 1
+
+    .line 103
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
+
+    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/o;->a(Landroid/os/Handler;)V
+
+    .line 104
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
+
+    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 105
+    invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->b(Lcom/google/android/gms/common/api/internal/l;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 106
+    invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/b$a;->q()V
+
+    return-void
+
+    .line 107
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Ljava/util/Queue;
+
+    invoke-interface {v0, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
+
+    return-void
+
+    .line 108
+    :cond_1
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Ljava/util/Queue;
+
+    invoke-interface {v0, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
+
+    .line 109
+    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/b;
+
+    if-eqz p1, :cond_2
+
+    .line 110
+    invoke-virtual {p1}, Lcom/google/android/gms/common/b;->a()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    .line 111
+    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/b;
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->a(Lcom/google/android/gms/common/b;)V
+
+    return-void
+
+    .line 112
+    :cond_2
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/b$a;->i()V
+
+    return-void
+.end method
+
+.method public final a(Lcom/google/android/gms/common/b;)V
+    .locals 4
+
+    .line 72
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
+
+    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/o;->a(Landroid/os/Handler;)V
+
+    .line 73
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->j:Lcom/google/android/gms/common/api/internal/x;
+
+    if-eqz v0, :cond_0
+
+    .line 74
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/x;->a()V
+
+    .line 75
+    :cond_0
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/b$a;->d()V
+
+    .line 76
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
+
+    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->e(Lcom/google/android/gms/common/api/internal/b;)Lcom/google/android/gms/common/internal/i;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/common/internal/i;->a()V
+
+    .line 77
+    invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->d(Lcom/google/android/gms/common/b;)V
+
+    .line 78
+    invoke-virtual {p1}, Lcom/google/android/gms/common/b;->c()I
 
     move-result v0
 
@@ -1571,7 +1754,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 11
+    .line 79
     invoke-static {}, Lcom/google/android/gms/common/api/internal/b;->c()Lcom/google/android/gms/common/api/Status;
 
     move-result-object p1
@@ -1580,9 +1763,9 @@
 
     return-void
 
-    .line 12
+    .line 81
     :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Ljava/util/Queue;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Ljava/util/Queue;
 
     invoke-interface {v0}, Ljava/util/Queue;->isEmpty()Z
 
@@ -1590,14 +1773,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 13
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->l:Lc5;
+    .line 82
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/b;
 
     return-void
 
-    .line 14
+    .line 84
     :cond_2
-    invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->c(Lc5;)Z
+    invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->c(Lcom/google/android/gms/common/b;)Z
 
     move-result v0
 
@@ -1605,20 +1788,20 @@
 
     return-void
 
-    .line 15
+    .line 86
     :cond_3
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
-    iget v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->h:I
+    iget v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->i:I
 
-    invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/common/api/internal/b;->b(Lc5;I)Z
+    invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/b;I)Z
 
     move-result v0
 
     if-nez v0, :cond_6
 
-    .line 16
-    invoke-virtual {p1}, Lc5;->f()I
+    .line 87
+    invoke-virtual {p1}, Lcom/google/android/gms/common/b;->c()I
 
     move-result p1
 
@@ -1628,58 +1811,58 @@
 
     const/4 p1, 0x1
 
-    .line 17
-    iput-boolean p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->j:Z
+    .line 88
+    iput-boolean p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->k:Z
 
-    .line 18
+    .line 89
     :cond_4
-    iget-boolean p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->j:Z
+    iget-boolean p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->k:Z
 
     if-eqz p1, :cond_5
 
-    .line 19
-    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 90
+    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {p1}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object p1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
-    .line 20
+    .line 91
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v0
 
     const/16 v1, 0x9
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->d:Lcom/google/android/gms/common/api/internal/d0;
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/af;
 
     invoke-static {v0, v1, v2}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v1}, Lcom/google/android/gms/common/api/internal/b;->c(Lcom/google/android/gms/common/api/internal/b;)J
 
     move-result-wide v1
 
-    .line 21
+    .line 92
     invoke-virtual {p1, v0, v1, v2}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     return-void
 
-    .line 22
+    .line 93
     :cond_5
     new-instance p1, Lcom/google/android/gms/common/api/Status;
 
     const/16 v0, 0x11
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->d:Lcom/google/android/gms/common/api/internal/d0;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/af;
 
-    .line 23
-    invoke-virtual {v1}, Lcom/google/android/gms/common/api/internal/d0;->a()Ljava/lang/String;
+    .line 94
+    invoke-virtual {v1}, Lcom/google/android/gms/common/api/internal/af;->a()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1713,319 +1896,160 @@
 
     invoke-direct {p1, v0, v1}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
 
-    .line 24
+    .line 95
     invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->a(Lcom/google/android/gms/common/api/Status;)V
 
     :cond_6
     return-void
 .end method
 
-.method public final a(Lcom/google/android/gms/common/api/Status;)V
-    .locals 2
-
-    .line 35
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/q;->a(Landroid/os/Handler;)V
-
-    .line 36
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Ljava/util/Queue;
-
-    invoke-interface {v0}, Ljava/util/Queue;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/gms/common/api/internal/l;
-
-    .line 37
-    invoke-virtual {v1, p1}, Lcom/google/android/gms/common/api/internal/l;->a(Lcom/google/android/gms/common/api/Status;)V
-
-    goto :goto_0
-
-    .line 38
-    :cond_0
-    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Ljava/util/Queue;
-
-    invoke-interface {p1}, Ljava/util/Queue;->clear()V
-
-    return-void
-.end method
-
-.method public final a(Lcom/google/android/gms/common/api/internal/e0;)V
+.method public final b()Lcom/google/android/gms/common/api/a$f;
     .locals 1
 
-    .line 53
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/q;->a(Landroid/os/Handler;)V
-
-    .line 54
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->f:Ljava/util/Set;
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public final a(Lcom/google/android/gms/common/api/internal/l;)V
-    .locals 1
-
-    .line 25
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/q;->a(Landroid/os/Handler;)V
-
-    .line 26
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
-
-    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->c()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 27
-    invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->b(Lcom/google/android/gms/common/api/internal/l;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 28
-    invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/b$a;->q()V
-
-    return-void
-
-    .line 29
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Ljava/util/Queue;
-
-    invoke-interface {v0, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
-
-    return-void
-
-    .line 30
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Ljava/util/Queue;
-
-    invoke-interface {v0, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
-
-    .line 31
-    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->l:Lc5;
-
-    if-eqz p1, :cond_2
-
-    .line 32
-    invoke-virtual {p1}, Lc5;->i()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    .line 33
-    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->l:Lc5;
-
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->a(Lc5;)V
-
-    return-void
-
-    .line 34
-    :cond_2
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/b$a;->a()V
-
-    return-void
-.end method
-
-.method public final b()I
-    .locals 1
-
-    .line 29
-    iget v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->h:I
-
-    return v0
-.end method
-
-.method public final b(Lc5;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/q;->a(Landroid/os/Handler;)V
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
-
-    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->f()V
-
-    .line 3
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->a(Lc5;)V
-
-    return-void
-.end method
-
-.method public final c(Landroid/os/Bundle;)V
-    .locals 1
-
-    .line 1
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    if-ne p1, v0, :cond_0
-
-    .line 2
-    invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/b$a;->m()V
-
-    return-void
-
-    .line 3
-    :cond_0
-    iget-object p1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
-
-    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
-
-    move-result-object p1
-
-    new-instance v0, Lcom/google/android/gms/common/api/internal/n;
-
-    invoke-direct {v0, p0}, Lcom/google/android/gms/common/api/internal/n;-><init>(Lcom/google/android/gms/common/api/internal/b$a;)V
-
-    invoke-virtual {p1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
-.end method
-
-.method final c()Z
-    .locals 1
-
-    .line 13
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
-
-    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->c()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final d()Z
-    .locals 1
-
-    .line 6
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
-
-    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->h()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final e()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/q;->a(Landroid/os/Handler;)V
-
-    .line 2
-    iget-boolean v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->j:Z
-
-    if-eqz v0, :cond_0
-
-    .line 3
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/b$a;->a()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final f()Lcom/google/android/gms/common/api/a$f;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    .line 126
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
 
     return-object v0
+.end method
+
+.method public final b(Lcom/google/android/gms/common/b;)V
+    .locals 1
+
+    .line 58
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
+
+    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/o;->a(Landroid/os/Handler;)V
+
+    .line 59
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
+
+    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->a()V
+
+    .line 60
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/b$a;->a(Lcom/google/android/gms/common/b;)V
+
+    return-void
+.end method
+
+.method public final c()Ljava/util/Map;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map<",
+            "Lcom/google/android/gms/common/api/internal/f$a<",
+            "*>;",
+            "Lcom/google/android/gms/common/api/internal/v;",
+            ">;"
+        }
+    .end annotation
+
+    .line 127
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->h:Ljava/util/Map;
+
+    return-object v0
+.end method
+
+.method public final d()V
+    .locals 1
+
+    .line 128
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
+
+    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/o;->a(Landroid/os/Handler;)V
+
+    const/4 v0, 0x0
+
+    .line 129
+    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/b;
+
+    return-void
+.end method
+
+.method public final e()Lcom/google/android/gms/common/b;
+    .locals 1
+
+    .line 131
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
+
+    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/o;->a(Landroid/os/Handler;)V
+
+    .line 132
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/b;
+
+    return-object v0
+.end method
+
+.method public final f()V
+    .locals 1
+
+    .line 179
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
+
+    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/o;->a(Landroid/os/Handler;)V
+
+    .line 180
+    iget-boolean v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->k:Z
+
+    if-eqz v0, :cond_0
+
+    .line 181
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/b$a;->i()V
+
+    :cond_0
+    return-void
 .end method
 
 .method public final g()V
     .locals 3
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 188
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/q;->a(Landroid/os/Handler;)V
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/o;->a(Landroid/os/Handler;)V
 
-    .line 2
-    iget-boolean v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->j:Z
+    .line 189
+    iget-boolean v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->k:Z
 
     if-eqz v0, :cond_1
 
-    .line 3
+    .line 190
     invoke-direct {p0}, Lcom/google/android/gms/common/api/internal/b$a;->p()V
 
-    .line 4
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    .line 191
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->h(Lcom/google/android/gms/common/api/internal/b;)Lf5;
+    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->h(Lcom/google/android/gms/common/api/internal/b;)Lcom/google/android/gms/common/e;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v1}, Lcom/google/android/gms/common/api/internal/b;->b(Lcom/google/android/gms/common/api/internal/b;)Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lf5;->b(Landroid/content/Context;)I
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/e;->a(Landroid/content/Context;)I
 
     move-result v0
 
@@ -2035,7 +2059,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 5
+    .line 193
     new-instance v0, Lcom/google/android/gms/common/api/Status;
 
     const-string v1, "Connection timed out while waiting for Google Play services update to complete."
@@ -2044,7 +2068,7 @@
 
     goto :goto_0
 
-    .line 6
+    .line 194
     :cond_0
     new-instance v0, Lcom/google/android/gms/common/api/Status;
 
@@ -2052,186 +2076,165 @@
 
     invoke-direct {v0, v2, v1}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
 
-    .line 7
+    .line 195
     :goto_0
     invoke-virtual {p0, v0}, Lcom/google/android/gms/common/api/internal/b$a;->a(Lcom/google/android/gms/common/api/Status;)V
 
-    .line 8
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    .line 196
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
 
-    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->f()V
+    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->a()V
 
     :cond_1
     return-void
 .end method
 
-.method public final h()V
-    .locals 6
+.method public final h()Z
+    .locals 1
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
+    const/4 v0, 0x1
+
+    .line 203
+    invoke-direct {p0, v0}, Lcom/google/android/gms/common/api/internal/b$a;->a(Z)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final i()V
+    .locals 4
+
+    .line 213
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
     invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/q;->a(Landroid/os/Handler;)V
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/o;->a(Landroid/os/Handler;)V
 
-    .line 2
-    sget-object v0, Lcom/google/android/gms/common/api/internal/b;->m:Lcom/google/android/gms/common/api/Status;
+    .line 214
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/api/internal/b$a;->a(Lcom/google/android/gms/common/api/Status;)V
+    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->b()Z
 
-    .line 3
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/i;
+    move-result v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/internal/i;->b()V
+    if-nez v0, :cond_3
 
-    .line 4
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->g:Ljava/util/Map;
-
-    .line 5
-    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->g:Ljava/util/Map;
-
-    invoke-interface {v1}, Ljava/util/Map;->size()I
-
-    move-result v1
-
-    new-array v1, v1, [Lcom/google/android/gms/common/api/internal/f;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lcom/google/android/gms/common/api/internal/f;
-
-    .line 6
-    array-length v1, v0
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v1, :cond_0
-
-    aget-object v3, v0, v2
-
-    .line 7
-    new-instance v4, Lcom/google/android/gms/common/api/internal/c0;
-
-    new-instance v5, Lhn;
-
-    invoke-direct {v5}, Lhn;-><init>()V
-
-    invoke-direct {v4, v3, v5}, Lcom/google/android/gms/common/api/internal/c0;-><init>(Lcom/google/android/gms/common/api/internal/f;Lhn;)V
-
-    invoke-virtual {p0, v4}, Lcom/google/android/gms/common/api/internal/b$a;->a(Lcom/google/android/gms/common/api/internal/l;)V
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    .line 8
-    :cond_0
-    new-instance v0, Lc5;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, v1}, Lc5;-><init>(I)V
-
-    invoke-direct {p0, v0}, Lcom/google/android/gms/common/api/internal/b$a;->d(Lc5;)V
-
-    .line 9
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
 
     invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->c()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    .line 10
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->b:Lcom/google/android/gms/common/api/a$f;
+    goto :goto_0
 
-    new-instance v1, Lcom/google/android/gms/common/api/internal/p;
+    .line 216
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
-    invoke-direct {v1, p0}, Lcom/google/android/gms/common/api/internal/p;-><init>(Lcom/google/android/gms/common/api/internal/b$a;)V
-
-    invoke-interface {v0, v1}, Lcom/google/android/gms/common/api/a$f;->a(Lcom/google/android/gms/common/internal/b$e;)V
-
-    :cond_1
-    return-void
-.end method
-
-.method public final i()Ljava/util/Map;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Map<",
-            "Lcom/google/android/gms/common/api/internal/f<",
-            "*>;",
-            "Lcom/google/android/gms/common/api/internal/t;",
-            ">;"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->g:Ljava/util/Map;
-
-    return-object v0
-.end method
-
-.method public final j()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->e(Lcom/google/android/gms/common/api/internal/b;)Lcom/google/android/gms/common/internal/i;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/q;->a(Landroid/os/Handler;)V
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
 
-    const/4 v0, 0x0
+    invoke-static {v1}, Lcom/google/android/gms/common/api/internal/b;->b(Lcom/google/android/gms/common/api/internal/b;)Landroid/content/Context;
 
-    .line 2
-    iput-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->l:Lc5;
+    move-result-object v1
 
-    return-void
-.end method
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
 
-.method public final k()Lc5;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->m:Lcom/google/android/gms/common/api/internal/b;
-
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/b;->a(Lcom/google/android/gms/common/api/internal/b;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/q;->a(Landroid/os/Handler;)V
-
-    .line 2
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->l:Lc5;
-
-    return-object v0
-.end method
-
-.method public final l()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    .line 1
-    invoke-direct {p0, v0}, Lcom/google/android/gms/common/api/internal/b$a;->a(Z)Z
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/common/internal/i;->a(Landroid/content/Context;Lcom/google/android/gms/common/api/a$f;)I
 
     move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 218
+    new-instance v1, Lcom/google/android/gms/common/b;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v0, v2}, Lcom/google/android/gms/common/b;-><init>(ILandroid/app/PendingIntent;)V
+
+    .line 219
+    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/api/internal/b$a;->a(Lcom/google/android/gms/common/b;)V
+
+    return-void
+
+    .line 221
+    :cond_1
+    new-instance v0, Lcom/google/android/gms/common/api/internal/b$c;
+
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->a:Lcom/google/android/gms/common/api/internal/b;
+
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
+
+    iget-object v3, p0, Lcom/google/android/gms/common/api/internal/b$a;->e:Lcom/google/android/gms/common/api/internal/af;
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/gms/common/api/internal/b$c;-><init>(Lcom/google/android/gms/common/api/internal/b;Lcom/google/android/gms/common/api/a$f;Lcom/google/android/gms/common/api/internal/af;)V
+
+    .line 222
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
+
+    invoke-interface {v1}, Lcom/google/android/gms/common/api/a$f;->d()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 223
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->j:Lcom/google/android/gms/common/api/internal/x;
+
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/common/api/internal/x;->a(Lcom/google/android/gms/common/api/internal/aa;)V
+
+    .line 224
+    :cond_2
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
+
+    invoke-interface {v1, v0}, Lcom/google/android/gms/common/api/a$f;->a(Lcom/google/android/gms/common/internal/b$c;)V
+
+    :cond_3
+    :goto_0
+    return-void
+.end method
+
+.method final j()Z
+    .locals 1
+
+    .line 237
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
+
+    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->b()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final k()Z
+    .locals 1
+
+    .line 238
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->c:Lcom/google/android/gms/common/api/a$f;
+
+    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->d()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final l()I
+    .locals 1
+
+    .line 239
+    iget v0, p0, Lcom/google/android/gms/common/api/internal/b$a;->i:I
 
     return v0
 .end method

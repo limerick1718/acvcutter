@@ -3,8 +3,8 @@
 .source "$Gson$Types.java"
 
 # interfaces
-.implements Ljava/lang/reflect/GenericArrayType;
 .implements Ljava/io/Serializable;
+.implements Ljava/lang/reflect/GenericArrayType;
 
 
 # annotations
@@ -26,11 +26,11 @@
 .method public constructor <init>(Ljava/lang/reflect/Type;)V
     .locals 0
 
-    .line 1
+    .line 516
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    invoke-static {p1}, Lcom/google/gson/internal/b;->b(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
+    .line 517
+    invoke-static {p1}, Lcom/google/gson/internal/b;->d(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
 
     move-result-object p1
 
@@ -44,14 +44,14 @@
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
 
-    .line 1
+    .line 525
     instance-of v0, p1, Ljava/lang/reflect/GenericArrayType;
 
     if-eqz v0, :cond_0
 
     check-cast p1, Ljava/lang/reflect/GenericArrayType;
 
-    .line 2
+    .line 526
     invoke-static {p0, p1}, Lcom/google/gson/internal/b;->a(Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;)Z
 
     move-result p1
@@ -72,7 +72,7 @@
 .method public getGenericComponentType()Ljava/lang/reflect/Type;
     .locals 1
 
-    .line 1
+    .line 521
     iget-object v0, p0, Lcom/google/gson/internal/b$a;->a:Ljava/lang/reflect/Type;
 
     return-object v0
@@ -81,7 +81,7 @@
 .method public hashCode()I
     .locals 1
 
-    .line 1
+    .line 530
     iget-object v0, p0, Lcom/google/gson/internal/b$a;->a:Ljava/lang/reflect/Type;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -94,14 +94,14 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 1
+    .line 534
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     iget-object v1, p0, Lcom/google/gson/internal/b$a;->a:Ljava/lang/reflect/Type;
 
-    invoke-static {v1}, Lcom/google/gson/internal/b;->h(Ljava/lang/reflect/Type;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/gson/internal/b;->f(Ljava/lang/reflect/Type;)Ljava/lang/String;
 
     move-result-object v1
 

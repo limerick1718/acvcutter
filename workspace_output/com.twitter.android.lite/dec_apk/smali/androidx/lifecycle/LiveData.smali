@@ -3,7 +3,7 @@
 .source "LiveData.java"
 .annotation system Ldalvik/annotation/MemberClasses;
 value = {
-Landroidx/lifecycle/LiveData$b;,
+Landroidx/lifecycle/LiveData$a;,
 Landroidx/lifecycle/LiveData$LifecycleBoundObserver;
 }
 .end annotation
@@ -15,41 +15,48 @@ value = {
 "Ljava/lang/Object;"
 }
 .end annotation
-.field static final i:Ljava/lang/Object;
+.field static final b:Ljava/lang/Object;
 .field final a:Ljava/lang/Object;
-.field private b:Lg;
+.field  c:I
+.field volatile d:Ljava/lang/Object;
+.field private e:Lh;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lg<",
+"Lh<",
 "Landroidx/lifecycle/m<",
 "-TT;>;",
 "Landroidx/lifecycle/LiveData<",
-"TT;>.b;>;"
+"TT;>.a;>;"
 }
 .end annotation
 .end field
-.field  c:I
-.field private volatile d:Ljava/lang/Object;
-.field volatile e:Ljava/lang/Object;
-.field private f:I
-.field private g:Z
+.field private volatile f:Ljava/lang/Object;
+.field private g:I
 .field private h:Z
+.field private i:Z
+.field private final j:Ljava/lang/Runnable;
 .method public constructor <init>()V
 .locals 1
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method protected a()V
-.locals 0
-return-void
+.method public a()Ljava/lang/Object;
+.locals 2
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"()TT;"
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
 .end method
-.method  a(Landroidx/lifecycle/LiveData$b;)V
+.method  a(Landroidx/lifecycle/LiveData$a;)V
 .locals 3
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "(",
 "Landroidx/lifecycle/LiveData<",
-"TT;>.b;)V"
+"TT;>.a;)V"
 }
 .end annotation
 return-void
@@ -89,4 +96,13 @@ return-void
 .method protected b()V
 .locals 0
 return-void
+.end method
+.method protected c()V
+.locals 0
+return-void
+.end method
+.method public d()Z
+.locals 1
+const/4 v0, 0x0
+return v0
 .end method

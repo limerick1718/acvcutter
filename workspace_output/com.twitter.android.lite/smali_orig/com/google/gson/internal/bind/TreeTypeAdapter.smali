@@ -1,12 +1,12 @@
 .class public final Lcom/google/gson/internal/bind/TreeTypeAdapter;
-.super Lvv;
+.super Ltn;
 .source "TreeTypeAdapter.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/gson/internal/bind/TreeTypeAdapter$b;,
+        Lcom/google/gson/internal/bind/TreeTypeAdapter$a;,
         Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;
     }
 .end annotation
@@ -16,57 +16,57 @@
         "<T:",
         "Ljava/lang/Object;",
         ">",
-        "Lvv<",
+        "Ltn<",
         "TT;>;"
     }
 .end annotation
 
 
 # instance fields
-.field private final a:Lsv;
+.field final a:Lsx;
+
+.field private final b:Ltk;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lsv<",
+            "Ltk<",
             "TT;>;"
         }
     .end annotation
 .end field
 
-.field private final b:Lkv;
+.field private final c:Ltc;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lkv<",
+            "Ltc<",
             "TT;>;"
         }
     .end annotation
 .end field
 
-.field final c:Lfv;
-
-.field private final d:Ldw;
+.field private final d:Ltv;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ldw<",
+            "Ltv<",
             "TT;>;"
         }
     .end annotation
 .end field
 
-.field private final e:Lwv;
+.field private final e:Lto;
 
-.field private final f:Lcom/google/gson/internal/bind/TreeTypeAdapter$b;
+.field private final f:Lcom/google/gson/internal/bind/TreeTypeAdapter$a;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/gson/internal/bind/TreeTypeAdapter<",
-            "TT;>.b;"
+            "TT;>.a;"
         }
     .end annotation
 .end field
 
-.field private g:Lvv;
+.field private g:Ltn;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lvv<",
+            "Ltn<",
             "TT;>;"
         }
     .end annotation
@@ -74,84 +74,84 @@
 
 
 # direct methods
-.method public constructor <init>(Lsv;Lkv;Lfv;Ldw;Lwv;)V
+.method public constructor <init>(Ltk;Ltc;Lsx;Ltv;Lto;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lsv<",
+            "Ltk<",
             "TT;>;",
-            "Lkv<",
+            "Ltc<",
             "TT;>;",
-            "Lfv;",
-            "Ldw<",
+            "Lsx;",
+            "Ltv<",
             "TT;>;",
-            "Lwv;",
+            "Lto;",
             ")V"
         }
     .end annotation
 
-    .line 1
-    invoke-direct {p0}, Lvv;-><init>()V
+    .line 53
+    invoke-direct {p0}, Ltn;-><init>()V
 
-    .line 2
-    new-instance v0, Lcom/google/gson/internal/bind/TreeTypeAdapter$b;
+    .line 47
+    new-instance v0, Lcom/google/gson/internal/bind/TreeTypeAdapter$a;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lcom/google/gson/internal/bind/TreeTypeAdapter$b;-><init>(Lcom/google/gson/internal/bind/TreeTypeAdapter;Lcom/google/gson/internal/bind/TreeTypeAdapter$a;)V
+    invoke-direct {v0, p0, v1}, Lcom/google/gson/internal/bind/TreeTypeAdapter$a;-><init>(Lcom/google/gson/internal/bind/TreeTypeAdapter;Lcom/google/gson/internal/bind/TreeTypeAdapter$1;)V
 
-    iput-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->f:Lcom/google/gson/internal/bind/TreeTypeAdapter$b;
+    iput-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->f:Lcom/google/gson/internal/bind/TreeTypeAdapter$a;
 
-    .line 3
-    iput-object p1, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->a:Lsv;
+    .line 54
+    iput-object p1, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->b:Ltk;
 
-    .line 4
-    iput-object p2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->b:Lkv;
+    .line 55
+    iput-object p2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->c:Ltc;
 
-    .line 5
-    iput-object p3, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->c:Lfv;
+    .line 56
+    iput-object p3, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->a:Lsx;
 
-    .line 6
-    iput-object p4, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->d:Ldw;
+    .line 57
+    iput-object p4, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->d:Ltv;
 
-    .line 7
-    iput-object p5, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->e:Lwv;
+    .line 58
+    iput-object p5, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->e:Lto;
 
     return-void
 .end method
 
-.method private b()Lvv;
+.method private b()Ltn;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lvv<",
+            "Ltn<",
             "TT;>;"
         }
     .end annotation
 
-    .line 1
-    iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->g:Lvv;
+    .line 86
+    iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->g:Ltn;
 
     if-eqz v0, :cond_0
 
     goto :goto_0
 
-    .line 2
+    .line 87
     :cond_0
-    iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->c:Lfv;
+    iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->a:Lsx;
 
-    iget-object v1, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->e:Lwv;
+    iget-object v1, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->e:Lto;
 
-    iget-object v2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->d:Ldw;
+    iget-object v2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->d:Ltv;
 
-    .line 3
-    invoke-virtual {v0, v1, v2}, Lfv;->a(Lwv;Ldw;)Lvv;
+    .line 89
+    invoke-virtual {v0, v1, v2}, Lsx;->a(Lto;Ltv;)Ltn;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->g:Lvv;
+    iput-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->g:Ltn;
 
     :goto_0
     return-object v0
@@ -159,80 +159,12 @@
 
 
 # virtual methods
-.method public a(Lew;)Ljava/lang/Object;
+.method public a(Lty;Ljava/lang/Object;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lew;",
-            ")TT;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->b:Lkv;
-
-    if-nez v0, :cond_0
-
-    .line 2
-    invoke-direct {p0}, Lcom/google/gson/internal/bind/TreeTypeAdapter;->b()Lvv;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lvv;->a(Lew;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    .line 3
-    :cond_0
-    invoke-static {p1}, Lcom/google/gson/internal/i;->a(Lew;)Llv;
-
-    move-result-object p1
-
-    .line 4
-    invoke-virtual {p1}, Llv;->i()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    .line 5
-    :cond_1
-    iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->b:Lkv;
-
-    iget-object v1, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->d:Ldw;
-
-    invoke-virtual {v1}, Ldw;->b()Ljava/lang/reflect/Type;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->f:Lcom/google/gson/internal/bind/TreeTypeAdapter$b;
-
-    invoke-interface {v0, p1, v1, v2}, Lkv;->a(Llv;Ljava/lang/reflect/Type;Ljv;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public a(Lgw;Ljava/lang/Object;)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lgw;",
+            "Lty;",
             "TT;)V"
         }
     .end annotation
@@ -243,44 +175,112 @@
         }
     .end annotation
 
-    .line 6
-    iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->a:Lsv;
+    .line 73
+    iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->b:Ltk;
 
     if-nez v0, :cond_0
 
-    .line 7
-    invoke-direct {p0}, Lcom/google/gson/internal/bind/TreeTypeAdapter;->b()Lvv;
+    .line 74
+    invoke-direct {p0}, Lcom/google/gson/internal/bind/TreeTypeAdapter;->b()Ltn;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1, p2}, Lvv;->a(Lgw;Ljava/lang/Object;)V
+    invoke-virtual {v0, p1, p2}, Ltn;->a(Lty;Ljava/lang/Object;)V
 
     return-void
 
     :cond_0
     if-nez p2, :cond_1
 
-    .line 8
-    invoke-virtual {p1}, Lgw;->u()Lgw;
+    .line 78
+    invoke-virtual {p1}, Lty;->f()Lty;
 
     return-void
 
-    .line 9
+    .line 81
     :cond_1
-    iget-object v1, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->d:Ldw;
+    iget-object v1, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->d:Ltv;
 
-    invoke-virtual {v1}, Ldw;->b()Ljava/lang/reflect/Type;
+    invoke-virtual {v1}, Ltv;->b()Ljava/lang/reflect/Type;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->f:Lcom/google/gson/internal/bind/TreeTypeAdapter$b;
+    iget-object v2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->f:Lcom/google/gson/internal/bind/TreeTypeAdapter$a;
 
-    invoke-interface {v0, p2, v1, v2}, Lsv;->a(Ljava/lang/Object;Ljava/lang/reflect/Type;Lrv;)Llv;
+    invoke-interface {v0, p2, v1, v2}, Ltk;->a(Ljava/lang/Object;Ljava/lang/reflect/Type;Ltj;)Ltd;
 
     move-result-object p2
 
-    .line 10
-    invoke-static {p2, p1}, Lcom/google/gson/internal/i;->a(Llv;Lgw;)V
+    .line 82
+    invoke-static {p2, p1}, Lcom/google/gson/internal/i;->a(Ltd;Lty;)V
 
     return-void
+.end method
+
+.method public b(Ltw;)Ljava/lang/Object;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ltw;",
+            ")TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 62
+    iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->c:Ltc;
+
+    if-nez v0, :cond_0
+
+    .line 63
+    invoke-direct {p0}, Lcom/google/gson/internal/bind/TreeTypeAdapter;->b()Ltn;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ltn;->b(Ltw;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+
+    .line 65
+    :cond_0
+    invoke-static {p1}, Lcom/google/gson/internal/i;->a(Ltw;)Ltd;
+
+    move-result-object p1
+
+    .line 66
+    invoke-virtual {p1}, Ltd;->j()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const/4 p1, 0x0
+
+    return-object p1
+
+    .line 69
+    :cond_1
+    iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->c:Ltc;
+
+    iget-object v1, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->d:Ltv;
+
+    invoke-virtual {v1}, Ltv;->b()Ljava/lang/reflect/Type;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->f:Lcom/google/gson/internal/bind/TreeTypeAdapter$a;
+
+    invoke-interface {v0, p1, v1, v2}, Ltc;->a(Ltd;Ljava/lang/reflect/Type;Ltb;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
 .end method

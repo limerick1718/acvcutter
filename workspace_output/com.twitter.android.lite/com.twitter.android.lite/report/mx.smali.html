@@ -14,237 +14,40 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lmx;
+		<code>.class final Lmx;
 .super Ljava/lang/Object;
-.source "InflaterSource.java"
-.implements Lwx;
+.implements Ljava/lang/Runnable;
 
 
-.field private final a:Lgx;
-.field private final b:Ljava/util/zip/Inflater;
-.field private c:I
-.field private d:Z
+.field private final synthetic a:Lps;
+.field private final synthetic b:Lpz;
+.field private final synthetic c:Lmh;
 
 
-<span class="cov">.method constructor &lt;init&gt;(Lgx;Ljava/util/zip/Inflater;)V</span>
+.method constructor &lt;init&gt;(Lmh;Lps;Lpz;)V
 <span class="">	.locals 0</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	if-eqz p1, :cond_1</span>
-<span class="cov">	if-eqz p2, :cond_0</span>
-<span class="cov">	iput-object p1, p0, Lmx;->a:Lgx;</span>
-<span class="cov">	iput-object p2, p0, Lmx;->b:Ljava/util/zip/Inflater;</span>
-<span class="exec">	return-void</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
-<span class="missed">	const-string p2, "inflater == null"</span>
-<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw p1</span>
-<span class="">	:cond_1</span>
-<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
-<span class="missed">	const-string p2, "source == null"</span>
-<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw p1</span>
-.end method
-
-<span class="cov">.method private f()V</span>
-<span class="">	.locals 4</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	iget v0, p0, Lmx;->c:I</span>
-<span class="cov">	if-nez v0, :cond_0</span>
-<span class="exec">	return-void</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	iget-object v1, p0, Lmx;->b:Ljava/util/zip/Inflater;</span>
-<span class="exec">	invoke-virtual {v1}, Ljava/util/zip/Inflater;->getRemaining()I</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	sub-int/2addr v0, v1</span>
-<span class="cov">	iget v1, p0, Lmx;->c:I</span>
-<span class="cov">	sub-int/2addr v1, v0</span>
-<span class="cov">	iput v1, p0, Lmx;->c:I</span>
-<span class="cov">	iget-object v1, p0, Lmx;->a:Lgx;</span>
-<span class="cov">	int-to-long v2, v0</span>
-<span class="cov">	invoke-interface {v1, v2, v3}, Lgx;->skip(J)V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public final a()Z</span>
-<span class="">	.locals 5</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	iget-object v0, p0, Lmx;->b:Ljava/util/zip/Inflater;</span>
-<span class="exec">	invoke-virtual {v0}, Ljava/util/zip/Inflater;->needsInput()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="">	return v1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	invoke-direct {p0}, Lmx;->f()V</span>
-<span class="cov">	iget-object v0, p0, Lmx;->b:Ljava/util/zip/Inflater;</span>
-<span class="exec">	invoke-virtual {v0}, Ljava/util/zip/Inflater;->getRemaining()I</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-nez v0, :cond_2</span>
-<span class="cov">	iget-object v0, p0, Lmx;->a:Lgx;</span>
-<span class="exec">	invoke-interface {v0}, Lgx;->m()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_1</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="">	return v0</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	iget-object v0, p0, Lmx;->a:Lgx;</span>
-<span class="exec">	invoke-interface {v0}, Lgx;->b()Lex;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	iget-object v0, v0, Lex;->a:Lsx;</span>
-<span class="cov">	iget v2, v0, Lsx;->c:I</span>
-<span class="cov">	iget v3, v0, Lsx;->b:I</span>
-<span class="cov">	sub-int/2addr v2, v3</span>
-<span class="cov">	iput v2, p0, Lmx;->c:I</span>
-<span class="cov">	iget-object v4, p0, Lmx;->b:Ljava/util/zip/Inflater;</span>
-<span class="cov">	iget-object v0, v0, Lsx;->a:[B</span>
-<span class="cov">	invoke-virtual {v4, v0, v3, v2}, Ljava/util/zip/Inflater;->setInput([BII)V</span>
-<span class="exec">	return v1</span>
-<span class="">	:cond_2</span>
-<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
-<span class="missed">	const-string v1, "?"</span>
-<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw v0</span>
-.end method
-
-<span class="cov">.method public close()V</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	iget-boolean v0, p0, Lmx;->d:Z</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iput-object p1, p0, Lmx;->c:Lmh;</span>
+<span class="missed">	iput-object p2, p0, Lmx;->a:Lps;</span>
+<span class="missed">	iput-object p3, p0, Lmx;->b:Lpz;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
 <span class="">	return-void</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	iget-object v0, p0, Lmx;->b:Ljava/util/zip/Inflater;</span>
-<span class="cov">	invoke-virtual {v0}, Ljava/util/zip/Inflater;->end()V</span>
-<span class="cov">	const/4 v0, 0x1</span>
-<span class="cov">	iput-boolean v0, p0, Lmx;->d:Z</span>
-<span class="cov">	iget-object v0, p0, Lmx;->a:Lgx;</span>
-<span class="cov">	invoke-interface {v0}, Lwx;->close()V</span>
-<span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public read(Lex;J)J</span>
-<span class="">	.locals 6</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
+.method public final run()V
+<span class="">	.locals 3</span>
 
-<span class="cov">	const-wide/16 v0, 0x0</span>
-<span class="cov">	cmp-long v2, p2, v0</span>
-<span class="cov">	if-ltz v2, :cond_7</span>
-<span class="cov">	iget-boolean v3, p0, Lmx;->d:Z</span>
-<span class="cov">	if-nez v3, :cond_6</span>
-<span class="missed">	if-nez v2, :cond_0</span>
-<span class="">	return-wide v0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-virtual {p0}, Lmx;->a()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="cov">	:try_start_0</span>
-<span class="exec">	invoke-virtual {p1, v1}, Lex;->b(I)Lsx;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	iget v2, v1, Lsx;->c:I</span>
-<span class="cov">	rsub-int v2, v2, 0x2000</span>
-<span class="cov">	int-to-long v2, v2</span>
-<span class="exec">	invoke-static {p2, p3, v2, v3}, Ljava/lang/Math;->min(JJ)J</span>
-<span class="cov">	move-result-wide v2</span>
-<span class="cov">	long-to-int v3, v2</span>
-<span class="cov">	iget-object v2, p0, Lmx;->b:Ljava/util/zip/Inflater;</span>
-<span class="cov">	iget-object v4, v1, Lsx;->a:[B</span>
-<span class="cov">	iget v5, v1, Lsx;->c:I</span>
-<span class="exec">	invoke-virtual {v2, v4, v5, v3}, Ljava/util/zip/Inflater;->inflate([BII)I</span>
-<span class="cov">	move-result v2</span>
-<span class="cov">	if-lez v2, :cond_1</span>
-<span class="cov">	iget p2, v1, Lsx;->c:I</span>
-<span class="cov">	add-int/2addr p2, v2</span>
-<span class="cov">	iput p2, v1, Lsx;->c:I</span>
-<span class="cov">	iget-wide p2, p1, Lex;->b:J</span>
-<span class="cov">	int-to-long v0, v2</span>
-<span class="cov">	add-long/2addr p2, v0</span>
-<span class="cov">	iput-wide p2, p1, Lex;->b:J</span>
-<span class="exec">	return-wide v0</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	iget-object v2, p0, Lmx;->b:Ljava/util/zip/Inflater;</span>
-<span class="exec">	invoke-virtual {v2}, Ljava/util/zip/Inflater;->finished()Z</span>
-<span class="cov">	move-result v2</span>
-<span class="missed">	if-nez v2, :cond_4</span>
-<span class="missed">	iget-object v2, p0, Lmx;->b:Ljava/util/zip/Inflater;</span>
-<span class="">	invoke-virtual {v2}, Ljava/util/zip/Inflater;->needsDictionary()Z</span>
-<span class="missed">	move-result v2</span>
-<span class="missed">	if-eqz v2, :cond_2</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:cond_2</span>
-<span class="missed">	if-nez v0, :cond_3</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_3</span>
-<span class="missed">	new-instance p1, Ljava/io/EOFException;</span>
-<span class="missed">	const-string p2, "source exhausted prematurely"</span>
-<span class="missed">	invoke-direct {p1, p2}, Ljava/io/EOFException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw p1</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	:cond_4</span>
-<span class="cov">	invoke-direct {p0}, Lmx;->f()V</span>
-<span class="cov">	iget p2, v1, Lsx;->b:I</span>
-<span class="cov">	iget p3, v1, Lsx;->c:I</span>
-<span class="missed">	if-ne p2, p3, :cond_5</span>
-<span class="">	invoke-virtual {v1}, Lsx;->b()Lsx;</span>
-<span class="missed">	move-result-object p2</span>
-<span class="missed">	iput-object p2, p1, Lex;->a:Lsx;</span>
-<span class="missed">	invoke-static {v1}, Ltx;->a(Lsx;)V</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Ljava/util/zip/DataFormatException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="cov">	:cond_5</span>
-<span class="cov">	const-wide/16 p1, -0x1</span>
-<span class="exec">	return-wide p1</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception p1</span>
-<span class="missed">	new-instance p2, Ljava/io/IOException;</span>
-<span class="missed">	invoke-direct {p2, p1}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V</span>
-<span class="">	throw p2</span>
-<span class="">	:cond_6</span>
-<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
-<span class="missed">	const-string p2, "closed"</span>
-<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw p1</span>
-<span class="">	:cond_7</span>
-<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
-<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const-string v1, "byteCount < 0: "</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-virtual {v0, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p2</span>
-<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw p1</span>
-.end method
-
-.method public timeout()Lxx;
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Lmx;->a:Lgx;</span>
-<span class="">	invoke-interface {v0}, Lwx;->timeout()Lxx;</span>
+<span class="missed">	iget-object v0, p0, Lmx;->c:Lmh;</span>
+<span class="">	invoke-static {v0}, Lmh;->a(Lmh;)Lpl;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	return-object v0</span>
+<span class="missed">	invoke-virtual {v0}, Lpl;->l()V</span>
+<span class="missed">	iget-object v0, p0, Lmx;->c:Lmh;</span>
+<span class="">	invoke-static {v0}, Lmh;->a(Lmh;)Lpl;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lmx;->a:Lps;</span>
+<span class="missed">	iget-object v2, p0, Lmx;->b:Lpz;</span>
+<span class="missed">	invoke-virtual {v0, v1, v2}, Lpl;->a(Lps;Lpz;)V</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

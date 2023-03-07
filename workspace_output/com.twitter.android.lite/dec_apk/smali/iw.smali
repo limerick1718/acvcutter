@@ -1,7 +1,6 @@
-.class public Liw;
+.class interface abstract Liw;
 .super Ljava/lang/Object;
-.source "AppAuthConfig.java"
-.field private static final a:[B
-.field private static final b:[B
-.field private static final c:Ljava/lang/String;
-.field private static final d:Ljava/lang/String;
+.method public abstract a(I)B
+.end method
+.method public abstract a()I
+.end method

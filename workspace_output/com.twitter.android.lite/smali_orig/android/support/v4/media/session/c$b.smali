@@ -1,9 +1,6 @@
 .class Landroid/support/v4/media/session/c$b;
-.super Ljava/lang/Object;
-.source "MediaControllerCompat.java"
-
-# interfaces
-.implements Landroid/support/v4/media/session/e$a;
+.super Landroid/media/session/MediaController$Callback;
+.source "MediaControllerCompatApi21.java"
 
 
 # annotations
@@ -12,266 +9,171 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x8
     name = "b"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T::",
+        "Landroid/support/v4/media/session/c$a;",
+        ">",
+        "Landroid/media/session/MediaController$Callback;"
+    }
 .end annotation
 
 
 # instance fields
-.field private final a:Ljava/lang/ref/WeakReference;
+.field protected final a:Landroid/support/v4/media/session/c$a;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/lang/ref/WeakReference<",
-            "Landroid/support/v4/media/session/c;",
-            ">;"
+            "TT;"
         }
     .end annotation
 .end field
 
 
 # direct methods
-.method constructor <init>(Landroid/support/v4/media/session/c;)V
-    .locals 1
+.method public constructor <init>(Landroid/support/v4/media/session/c$a;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)V"
+        }
+    .end annotation
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 283
+    invoke-direct {p0}, Landroid/media/session/MediaController$Callback;-><init>()V
 
-    .line 2
-    new-instance v0, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Landroid/support/v4/media/session/c$b;->a:Ljava/lang/ref/WeakReference;
+    .line 284
+    iput-object p1, p0, Landroid/support/v4/media/session/c$b;->a:Landroid/support/v4/media/session/c$a;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(IIIII)V
-    .locals 8
+.method public onAudioInfoChanged(Landroid/media/session/MediaController$PlaybackInfo;)V
+    .locals 6
 
-    .line 12
-    iget-object v0, p0, Landroid/support/v4/media/session/c$b;->a:Ljava/lang/ref/WeakReference;
+    .line 326
+    iget-object v0, p0, Landroid/support/v4/media/session/c$b;->a:Landroid/support/v4/media/session/c$a;
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/media/session/MediaController$PlaybackInfo;->getPlaybackType()I
 
-    move-result-object v0
+    move-result v1
 
-    check-cast v0, Landroid/support/v4/media/session/c;
+    .line 327
+    invoke-static {p1}, Landroid/support/v4/media/session/c$c;->b(Ljava/lang/Object;)I
 
-    if-eqz v0, :cond_0
+    move-result v2
 
-    .line 13
-    new-instance v7, Landroid/support/v4/media/session/d;
+    invoke-virtual {p1}, Landroid/media/session/MediaController$PlaybackInfo;->getVolumeControl()I
 
-    move-object v1, v7
+    move-result v3
 
-    move v2, p1
+    .line 328
+    invoke-virtual {p1}, Landroid/media/session/MediaController$PlaybackInfo;->getMaxVolume()I
 
-    move v3, p2
+    move-result v4
 
-    move v4, p3
+    invoke-virtual {p1}, Landroid/media/session/MediaController$PlaybackInfo;->getCurrentVolume()I
 
-    move v5, p4
+    move-result v5
 
-    move v6, p5
+    .line 326
+    invoke-interface/range {v0 .. v5}, Landroid/support/v4/media/session/c$a;->a(IIIII)V
 
-    invoke-direct/range {v1 .. v6}, Landroid/support/v4/media/session/d;-><init>(IIIII)V
-
-    invoke-virtual {v0, v7}, Landroid/support/v4/media/session/c;->a(Landroid/support/v4/media/session/d;)V
-
-    :cond_0
     return-void
 .end method
 
-.method public a(Ljava/lang/CharSequence;)V
+.method public onExtrasChanged(Landroid/os/Bundle;)V
     .locals 1
 
-    .line 10
-    iget-object v0, p0, Landroid/support/v4/media/session/c$b;->a:Ljava/lang/ref/WeakReference;
+    .line 320
+    invoke-static {p1}, Landroid/support/v4/media/session/MediaSessionCompat;->a(Landroid/os/Bundle;)V
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    .line 321
+    iget-object v0, p0, Landroid/support/v4/media/session/c$b;->a:Landroid/support/v4/media/session/c$a;
 
-    move-result-object v0
+    invoke-interface {v0, p1}, Landroid/support/v4/media/session/c$a;->a(Landroid/os/Bundle;)V
 
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_0
-
-    .line 11
-    invoke-virtual {v0, p1}, Landroid/support/v4/media/session/c;->a(Ljava/lang/CharSequence;)V
-
-    :cond_0
     return-void
 .end method
 
-.method public a(Ljava/lang/Object;)V
-    .locals 2
+.method public onMetadataChanged(Landroid/media/MediaMetadata;)V
+    .locals 1
 
-    .line 4
-    iget-object v0, p0, Landroid/support/v4/media/session/c$b;->a:Ljava/lang/ref/WeakReference;
+    .line 305
+    iget-object v0, p0, Landroid/support/v4/media/session/c$b;->a:Landroid/support/v4/media/session/c$a;
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-interface {v0, p1}, Landroid/support/v4/media/session/c$a;->b(Ljava/lang/Object;)V
 
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_1
-
-    .line 5
-    iget-object v1, v0, Landroid/support/v4/media/session/c;->c:Landroid/support/v4/media/session/a;
-
-    if-eqz v1, :cond_0
-
-    goto :goto_0
-
-    .line 6
-    :cond_0
-    invoke-static {p1}, Landroid/support/v4/media/session/PlaybackStateCompat;->a(Ljava/lang/Object;)Landroid/support/v4/media/session/PlaybackStateCompat;
-
-    move-result-object p1
-
-    .line 7
-    invoke-virtual {v0, p1}, Landroid/support/v4/media/session/c;->a(Landroid/support/v4/media/session/PlaybackStateCompat;)V
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 
-.method public a(Ljava/lang/String;Landroid/os/Bundle;)V
-    .locals 3
+.method public onPlaybackStateChanged(Landroid/media/session/PlaybackState;)V
+    .locals 1
 
-    .line 1
-    iget-object v0, p0, Landroid/support/v4/media/session/c$b;->a:Ljava/lang/ref/WeakReference;
+    .line 300
+    iget-object v0, p0, Landroid/support/v4/media/session/c$b;->a:Landroid/support/v4/media/session/c$a;
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-interface {v0, p1}, Landroid/support/v4/media/session/c$a;->a(Ljava/lang/Object;)V
 
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_1
-
-    .line 2
-    iget-object v1, v0, Landroid/support/v4/media/session/c;->c:Landroid/support/v4/media/session/a;
-
-    if-eqz v1, :cond_0
-
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x17
-
-    if-ge v1, v2, :cond_0
-
-    goto :goto_0
-
-    .line 3
-    :cond_0
-    invoke-virtual {v0, p1, p2}, Landroid/support/v4/media/session/c;->a(Ljava/lang/String;Landroid/os/Bundle;)V
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 
-.method public a(Ljava/util/List;)V
+.method public onQueueChanged(Ljava/util/List;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
-            "*>;)V"
+            "Landroid/media/session/MediaSession$QueueItem;",
+            ">;)V"
         }
     .end annotation
 
-    .line 8
-    iget-object v0, p0, Landroid/support/v4/media/session/c$b;->a:Ljava/lang/ref/WeakReference;
+    .line 310
+    iget-object v0, p0, Landroid/support/v4/media/session/c$b;->a:Landroid/support/v4/media/session/c$a;
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-interface {v0, p1}, Landroid/support/v4/media/session/c$a;->a(Ljava/util/List;)V
 
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_0
-
-    .line 9
-    invoke-static {p1}, Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;->a(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Landroid/support/v4/media/session/c;->a(Ljava/util/List;)V
-
-    :cond_0
     return-void
 .end method
 
-.method public b(Landroid/os/Bundle;)V
+.method public onQueueTitleChanged(Ljava/lang/CharSequence;)V
     .locals 1
 
-    .line 3
-    iget-object v0, p0, Landroid/support/v4/media/session/c$b;->a:Ljava/lang/ref/WeakReference;
+    .line 315
+    iget-object v0, p0, Landroid/support/v4/media/session/c$b;->a:Landroid/support/v4/media/session/c$a;
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-interface {v0, p1}, Landroid/support/v4/media/session/c$a;->a(Ljava/lang/CharSequence;)V
 
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_0
-
-    .line 4
-    invoke-virtual {v0, p1}, Landroid/support/v4/media/session/c;->a(Landroid/os/Bundle;)V
-
-    :cond_0
     return-void
 .end method
 
-.method public b(Ljava/lang/Object;)V
+.method public onSessionDestroyed()V
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Landroid/support/v4/media/session/c$b;->a:Ljava/lang/ref/WeakReference;
+    .line 289
+    iget-object v0, p0, Landroid/support/v4/media/session/c$b;->a:Landroid/support/v4/media/session/c$a;
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-interface {v0}, Landroid/support/v4/media/session/c$a;->a()V
 
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    invoke-static {p1}, Landroid/support/v4/media/MediaMetadataCompat;->a(Ljava/lang/Object;)Landroid/support/v4/media/MediaMetadataCompat;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Landroid/support/v4/media/session/c;->a(Landroid/support/v4/media/MediaMetadataCompat;)V
-
-    :cond_0
     return-void
 .end method
 
-.method public e()V
+.method public onSessionEvent(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Landroid/support/v4/media/session/c$b;->a:Ljava/lang/ref/WeakReference;
+    .line 294
+    invoke-static {p2}, Landroid/support/v4/media/session/MediaSessionCompat;->a(Landroid/os/Bundle;)V
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    .line 295
+    iget-object v0, p0, Landroid/support/v4/media/session/c$b;->a:Landroid/support/v4/media/session/c$a;
 
-    move-result-object v0
+    invoke-interface {v0, p1, p2}, Landroid/support/v4/media/session/c$a;->a(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    check-cast v0, Landroid/support/v4/media/session/c;
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    invoke-virtual {v0}, Landroid/support/v4/media/session/c;->a()V
-
-    :cond_0
     return-void
 .end method

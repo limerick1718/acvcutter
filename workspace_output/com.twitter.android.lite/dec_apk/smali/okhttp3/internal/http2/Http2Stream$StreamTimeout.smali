@@ -1,5 +1,5 @@
 .class  Lokhttp3/internal/http2/Http2Stream$StreamTimeout;
-.super Lcx;
+.super Lyq;
 .source "Http2Stream.java"
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lokhttp3/internal/http2/Http2Stream;
@@ -11,8 +11,7 @@ name = "StreamTimeout"
 .field final synthetic this$0:Lokhttp3/internal/http2/Http2Stream;
 .method constructor <init>(Lokhttp3/internal/http2/Http2Stream;)V
 .locals 0
-iput-object p1, p0, Lokhttp3/internal/http2/Http2Stream$StreamTimeout;->this$0:Lokhttp3/internal/http2/Http2Stream;
-invoke-direct {p0}, Lcx;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public exitAndThrowIfTimedOut()V
@@ -22,8 +21,6 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-invoke-virtual {p0}, Lcx;->exit()Z
-move-result v0
 return-void
 .end method
 .method protected newTimeoutException(Ljava/io/IOException;)Ljava/io/IOException;

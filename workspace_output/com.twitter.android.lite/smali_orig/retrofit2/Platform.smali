@@ -20,7 +20,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1
+    .line 29
     invoke-static {}, Lretrofit2/Platform;->findPlatform()Lretrofit2/Platform;
 
     move-result-object v0
@@ -33,7 +33,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,15 +45,15 @@
     :try_start_0
     const-string v0, "android.os.Build"
 
-    .line 1
+    .line 37
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    .line 2
+    .line 38
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-eqz v0, :cond_0
 
-    .line 3
+    .line 39
     new-instance v0, Lretrofit2/Platform$Android;
 
     invoke-direct {v0}, Lretrofit2/Platform$Android;-><init>()V
@@ -67,10 +67,10 @@
     :try_start_1
     const-string v0, "java.util.Optional"
 
-    .line 4
+    .line 44
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    .line 5
+    .line 45
     new-instance v0, Lretrofit2/Platform$Java8;
 
     invoke-direct {v0}, Lretrofit2/Platform$Java8;-><init>()V
@@ -79,7 +79,7 @@
 
     return-object v0
 
-    .line 6
+    .line 48
     :catch_1
     new-instance v0, Lretrofit2/Platform;
 
@@ -91,7 +91,7 @@
 .method static get()Lretrofit2/Platform;
     .locals 1
 
-    .line 1
+    .line 32
     sget-object v0, Lretrofit2/Platform;->PLATFORM:Lretrofit2/Platform;
 
     return-object v0
@@ -108,14 +108,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 1
+    .line 57
     new-instance v0, Lretrofit2/ExecutorCallAdapterFactory;
 
     invoke-direct {v0, p1}, Lretrofit2/ExecutorCallAdapterFactory;-><init>(Ljava/util/concurrent/Executor;)V
 
     return-object v0
 
-    .line 2
+    .line 59
     :cond_0
     sget-object p1, Lretrofit2/DefaultCallAdapterFactory;->INSTANCE:Lretrofit2/CallAdapter$Factory;
 
@@ -161,7 +161,7 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 1
+    .line 68
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V

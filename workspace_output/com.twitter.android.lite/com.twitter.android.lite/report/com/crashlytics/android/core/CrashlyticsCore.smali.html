@@ -1,0 +1,1176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.crashlytics.android.core</a></li>
+        <li><i class="ico ico-class"></i> CrashlyticsCore.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public Lcom/crashlytics/android/core/CrashlyticsCore;
+.super Luw;
+.source "CrashlyticsCore.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lcom/crashlytics/android/core/CrashlyticsCore$NoOpListener;,
+Lcom/crashlytics/android/core/CrashlyticsCore$CrashMarkerCheck;,
+Lcom/crashlytics/android/core/CrashlyticsCore$Builder;
+}
+.end annotation
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Luw<",
+"Ljava/lang/Void;",
+">;"
+}
+.end annotation
+.annotation runtime Lwg;
+a = {
+Lcom/crashlytics/android/core/CrashlyticsNdkDataProvider;
+}
+.end annotation
+
+.field static final CLS_DEFAULT_PROCESS_DELAY:F = 1.0f
+.field static final CRASHLYTICS_REQUIRE_BUILD_ID:Ljava/lang/String; = "com.crashlytics.RequireBuildId"
+.field static final CRASHLYTICS_REQUIRE_BUILD_ID_DEFAULT:Z = true
+.field static final CRASH_MARKER_FILE_NAME:Ljava/lang/String; = "crash_marker"
+.field static final DEFAULT_MAIN_HANDLER_TIMEOUT_SEC:I = 0x4
+.field private static final INITIALIZATION_MARKER_FILE_NAME:Ljava/lang/String; = "initialization_marker"
+.field static final MAX_ATTRIBUTES:I = 0x40
+.field static final MAX_ATTRIBUTE_SIZE:I = 0x400
+.field private static final MISSING_BUILD_ID_MSG:Ljava/lang/String; = "The Crashlytics build ID is missing. This occurs when Crashlytics tooling is absent from your app\'s build configuration. Please review Crashlytics onboarding instructions and ensure you have a valid Crashlytics account."
+.field private static final PREFERENCE_STORE_NAME:Ljava/lang/String; = "com.crashlytics.android.core.CrashlyticsCore"
+.field public static final TAG:Ljava/lang/String; = "CrashlyticsCore"
+.field private final attributes:Ljava/util/concurrent/ConcurrentHashMap;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/concurrent/ConcurrentHashMap<",
+"Ljava/lang/String;",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.end field
+.field private backgroundWorker:Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;
+.field private controller:Lcom/crashlytics/android/core/CrashlyticsController;
+.field private crashMarker:Lcom/crashlytics/android/core/CrashlyticsFileMarker;
+.field private crashlyticsNdkDataProvider:Lcom/crashlytics/android/core/CrashlyticsNdkDataProvider;
+.field private delay:F
+.field private disabled:Z
+.field private httpRequestFactory:Lxi;
+.field private initializationMarker:Lcom/crashlytics/android/core/CrashlyticsFileMarker;
+.field private listener:Lcom/crashlytics/android/core/CrashlyticsListener;
+.field private final pinningInfo:Lcom/crashlytics/android/core/PinningInfoProvider;
+.field private final startTime:J
+.field private userEmail:Ljava/lang/String;
+.field private userId:Ljava/lang/String;
+.field private userName:Ljava/lang/String;
+
+
+.method public constructor &lt;init&gt;()V
+<span class="">	.locals 3</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	const/high16 v1, 0x3f800000    # 1.0f</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	invoke-direct {p0, v1, v0, v0, v2}, Lcom/crashlytics/android/core/CrashlyticsCore;-><init>(FLcom/crashlytics/android/core/CrashlyticsListener;Lcom/crashlytics/android/core/PinningInfoProvider;Z)V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method constructor &lt;init&gt;(FLcom/crashlytics/android/core/CrashlyticsListener;Lcom/crashlytics/android/core/PinningInfoProvider;Z)V</span>
+<span class="">	.locals 7</span>
+
+<span class="cov">	const-string v0, "Crashlytics Exception Handler"</span>
+<span class="exec">	invoke-static {v0}, Lvt;->a(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;</span>
+<span class="cov">	move-result-object v6</span>
+<span class="cov">	move-object v1, p0</span>
+<span class="cov">	move v2, p1</span>
+<span class="cov">	move-object v3, p2</span>
+<span class="cov">	move-object v4, p3</span>
+<span class="cov">	move v5, p4</span>
+<span class="cov">	invoke-direct/range {v1 .. v6}, Lcom/crashlytics/android/core/CrashlyticsCore;-><init>(FLcom/crashlytics/android/core/CrashlyticsListener;Lcom/crashlytics/android/core/PinningInfoProvider;ZLjava/util/concurrent/ExecutorService;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method constructor &lt;init&gt;(FLcom/crashlytics/android/core/CrashlyticsListener;Lcom/crashlytics/android/core/PinningInfoProvider;ZLjava/util/concurrent/ExecutorService;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	invoke-direct {p0}, Luw;-><init>()V</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	iput-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userId:Ljava/lang/String;</span>
+<span class="cov">	iput-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userEmail:Ljava/lang/String;</span>
+<span class="cov">	iput-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userName:Ljava/lang/String;</span>
+<span class="cov">	iput p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->delay:F</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	new-instance p2, Lcom/crashlytics/android/core/CrashlyticsCore$NoOpListener;</span>
+<span class="cov">	invoke-direct {p2, v0}, Lcom/crashlytics/android/core/CrashlyticsCore$NoOpListener;-><init>(Lcom/crashlytics/android/core/CrashlyticsCore$1;)V</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	iput-object p2, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->listener:Lcom/crashlytics/android/core/CrashlyticsListener;</span>
+<span class="cov">	iput-object p3, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->pinningInfo:Lcom/crashlytics/android/core/PinningInfoProvider;</span>
+<span class="cov">	iput-boolean p4, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->disabled:Z</span>
+<span class="cov">	new-instance p1, Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;</span>
+<span class="cov">	invoke-direct {p1, p5}, Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;-><init>(Ljava/util/concurrent/ExecutorService;)V</span>
+<span class="cov">	iput-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->backgroundWorker:Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;</span>
+<span class="cov">	new-instance p1, Ljava/util/concurrent/ConcurrentHashMap;</span>
+<span class="cov">	invoke-direct {p1}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V</span>
+<span class="cov">	iput-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->attributes:Ljava/util/concurrent/ConcurrentHashMap;</span>
+<span class="exec">	invoke-static {}, Ljava/lang/System;->currentTimeMillis()J</span>
+<span class="cov">	move-result-wide p1</span>
+<span class="cov">	iput-wide p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->startTime:J</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method static synthetic access$100(Lcom/crashlytics/android/core/CrashlyticsCore;)Lcom/crashlytics/android/core/CrashlyticsFileMarker;</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iget-object p0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->initializationMarker:Lcom/crashlytics/android/core/CrashlyticsFileMarker;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method private checkForPreviousCrash()V</span>
+<span class="">	.locals 4</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->backgroundWorker:Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;</span>
+<span class="cov">	new-instance v1, Lcom/crashlytics/android/core/CrashlyticsCore$CrashMarkerCheck;</span>
+<span class="cov">	iget-object v2, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->crashMarker:Lcom/crashlytics/android/core/CrashlyticsFileMarker;</span>
+<span class="cov">	invoke-direct {v1, v2}, Lcom/crashlytics/android/core/CrashlyticsCore$CrashMarkerCheck;-><init>(Lcom/crashlytics/android/core/CrashlyticsFileMarker;)V</span>
+<span class="exec">	invoke-virtual {v0, v1}, Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;->submitAndWait(Ljava/util/concurrent/Callable;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	check-cast v0, Ljava/lang/Boolean;</span>
+<span class="cov">	sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;</span>
+<span class="exec">	invoke-virtual {v1, v0}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="exec">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->listener:Lcom/crashlytics/android/core/CrashlyticsListener;</span>
+<span class="missed">	invoke-interface {v0}, Lcom/crashlytics/android/core/CrashlyticsListener;->crashlyticsDidDetectCrashDuringPreviousExecution()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "CrashlyticsCore"</span>
+<span class="missed">	const-string v3, "Exception thrown by CrashlyticsListener while notifying of previous crash."</span>
+<span class="missed">	invoke-interface {v1, v2, v3, v0}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method private doLog(ILjava/lang/String;Ljava/lang/String;)V
+<span class="">	.locals 4</span>
+
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->disabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const-string v0, "prior to logging messages."</span>
+<span class="">	invoke-static {v0}, Lcom/crashlytics/android/core/CrashlyticsCore;->ensureFabricWithCalled(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-static {}, Ljava/lang/System;->currentTimeMillis()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="missed">	iget-wide v2, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->startTime:J</span>
+<span class="missed">	sub-long/2addr v0, v2</span>
+<span class="missed">	iget-object v2, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->controller:Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="">	invoke-static {p1, p2, p3}, Lcom/crashlytics/android/core/CrashlyticsCore;->formatLogMessage(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {v2, v0, v1, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->writeToLog(JLjava/lang/String;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method private static ensureFabricWithCalled(Ljava/lang/String;)Z
+<span class="">	.locals 3</span>
+
+<span class="">	invoke-static {}, Lcom/crashlytics/android/core/CrashlyticsCore;->getInstance()Lcom/crashlytics/android/core/CrashlyticsCore;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	iget-object v0, v0, Lcom/crashlytics/android/core/CrashlyticsCore;->controller:Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p0, 0x1</span>
+<span class="">	return p0</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "Crashlytics must be initialized by calling Fabric.with(Context) "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	const-string v2, "CrashlyticsCore"</span>
+<span class="missed">	invoke-interface {v0, v2, p0, v1}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	return p0</span>
+.end method
+
+.method private finishInitSynchronously()V
+<span class="">	.locals 5</span>
+
+<span class="missed">	new-instance v0, Lcom/crashlytics/android/core/CrashlyticsCore$1;</span>
+<span class="missed">	invoke-direct {v0, p0}, Lcom/crashlytics/android/core/CrashlyticsCore$1;-><init>(Lcom/crashlytics/android/core/CrashlyticsCore;)V</span>
+<span class="">	invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->getDependencies()Ljava/util/Collection;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Lwo;</span>
+<span class="missed">	invoke-virtual {v0, v2}, Lwj;->addDependency(Lwo;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->getFabric()Luq;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1}, Luq;->e()Ljava/util/concurrent/ExecutorService;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-interface {v1, v0}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "CrashlyticsCore"</span>
+<span class="missed">	const-string v3, "Crashlytics detected incomplete initialization on previous app launch. Will initialize synchronously."</span>
+<span class="missed">	invoke-interface {v1, v2, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	const-wide/16 v3, 0x4</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	sget-object v1, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;</span>
+<span class="missed">	invoke-interface {v0, v3, v4, v1}, Ljava/util/concurrent/Future;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_2</span>
+<span class="missed">	.catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1</span>
+<span class="missed">	.catch Ljava/util/concurrent/TimeoutException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v3, "Crashlytics timed out during initialization."</span>
+<span class="missed">	invoke-interface {v1, v2, v3, v0}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v3, "Problem encountered during Crashlytics initialization."</span>
+<span class="missed">	invoke-interface {v1, v2, v3, v0}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_2</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v3, "Crashlytics was interrupted during initialization."</span>
+<span class="missed">	invoke-interface {v1, v2, v3, v0}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	:goto_1</span>
+<span class="">	return-void</span>
+.end method
+
+.method private static formatLogMessage(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="">	invoke-static {p0}, Lvn;->b(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string p0, "/"</span>
+<span class="missed">	invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string p0, " "</span>
+<span class="missed">	invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static getInstance()Lcom/crashlytics/android/core/CrashlyticsCore;
+<span class="">	.locals 1</span>
+
+<span class="missed">	const-class v0, Lcom/crashlytics/android/core/CrashlyticsCore;</span>
+<span class="">	invoke-static {v0}, Luq;->a(Ljava/lang/Class;)Luw;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lcom/crashlytics/android/core/CrashlyticsCore;</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method static isBuildIdValid(Ljava/lang/String;Z)Z</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="cov">	const-string v1, "CrashlyticsCore"</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	const-string p1, "Configured not to require a build ID."</span>
+<span class="missed">	invoke-interface {p0, v1, p1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return v0</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-static {p0}, Lvn;->d(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result p0</span>
+<span class="cov">	if-nez p0, :cond_1</span>
+<span class="exec">	return v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const-string p0, "."</span>
+<span class="missed">	invoke-static {v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	const-string p1, ".     |  | "</span>
+<span class="missed">	invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	const-string p1, ".     |  |"</span>
+<span class="missed">	invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	const-string v0, ".   \\ |  | /"</span>
+<span class="missed">	invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	const-string v0, ".    \\    /"</span>
+<span class="missed">	invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	const-string v0, ".     \\  /"</span>
+<span class="missed">	invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	const-string v0, ".      \\/"</span>
+<span class="missed">	invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	invoke-static {v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	const-string v0, "The Crashlytics build ID is missing. This occurs when Crashlytics tooling is absent from your app\'s build configuration. Please review Crashlytics onboarding instructions and ensure you have a valid Crashlytics account."</span>
+<span class="missed">	invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	invoke-static {v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	const-string v0, ".      /\\"</span>
+<span class="missed">	invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	const-string v0, ".     /  \\"</span>
+<span class="missed">	invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	const-string v0, ".    /    \\"</span>
+<span class="missed">	invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	const-string v0, ".   / |  | \\"</span>
+<span class="missed">	invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	invoke-static {v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	return p0</span>
+.end method
+
+.method private static sanitizeAttribute(Ljava/lang/String;)Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="missed">	if-eqz p0, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-virtual {p0}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/16 v1, 0x400</span>
+<span class="missed">	if-le v0, v1, :cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	invoke-virtual {p0, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public crash()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lcom/crashlytics/android/core/CrashTest;</span>
+<span class="missed">	invoke-direct {v0}, Lcom/crashlytics/android/core/CrashTest;-><init>()V</span>
+<span class="missed">	invoke-virtual {v0}, Lcom/crashlytics/android/core/CrashTest;->indexOutOfBounds()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method  createCrashMarker()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->crashMarker:Lcom/crashlytics/android/core/CrashlyticsFileMarker;</span>
+<span class="missed">	invoke-virtual {v0}, Lcom/crashlytics/android/core/CrashlyticsFileMarker;->create()Z</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method  didPreviousInitializationFail()Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->initializationMarker:Lcom/crashlytics/android/core/CrashlyticsFileMarker;</span>
+<span class="exec">	invoke-virtual {v0}, Lcom/crashlytics/android/core/CrashlyticsFileMarker;->isPresent()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="exec">	return v0</span>
+.end method
+
+<span class="cov">.method protected bridge synthetic doInBackground()Ljava/lang/Object;</span>
+<span class="">	.locals 1</span>
+
+<span class="exec">	invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->doInBackground()Ljava/lang/Void;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method protected doInBackground()Ljava/lang/Void;</span>
+<span class="">	.locals 5</span>
+
+<span class="cov">	const-string v0, "CrashlyticsCore"</span>
+<span class="cov">	invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->markInitializationStarted()V</span>
+<span class="cov">	iget-object v1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->controller:Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="cov">	invoke-virtual {v1}, Lcom/crashlytics/android/core/CrashlyticsController;->cleanInvalidTempFiles()V</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v2, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->controller:Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="cov">	invoke-virtual {v2}, Lcom/crashlytics/android/core/CrashlyticsController;->registerDevicePowerStateListener()V</span>
+<span class="exec">	invoke-static {}, Lyh;->a()Lyh;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="exec">	invoke-virtual {v2}, Lyh;->b()Lyk;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	if-nez v2, :cond_0</span>
+<span class="exec">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	const-string v3, "Received null settings, skipping report submission!"</span>
+<span class="cov">	invoke-interface {v2, v0, v3}, Luz;->d(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="cov">	invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->markInitializationComplete()V</span>
+<span class="exec">	return-object v1</span>
+<span class="">	:try_start_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v3, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->controller:Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="missed">	invoke-virtual {v3, v2}, Lcom/crashlytics/android/core/CrashlyticsController;->registerAnalyticsEventListener(Lyk;)V</span>
+<span class="missed">	iget-object v3, v2, Lyk;->d:Lyd;</span>
+<span class="missed">	iget-boolean v3, v3, Lyd;->c:Z</span>
+<span class="missed">	if-nez v3, :cond_1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v3, "Collection of crash reports disabled in Crashlytics settings."</span>
+<span class="missed">	invoke-interface {v2, v0, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="missed">	invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->markInitializationComplete()V</span>
+<span class="">	return-object v1</span>
+<span class="">	:try_start_2</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->getContext()Landroid/content/Context;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	invoke-static {v3}, Lvq;->a(Landroid/content/Context;)Lvq;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	invoke-virtual {v3}, Lvq;->a()Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-nez v3, :cond_2</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v3, "Automatic collection of crash reports disabled by Firebase settings."</span>
+<span class="missed">	invoke-interface {v2, v0, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	:try_end_2</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0</span>
+<span class="missed">	.catchall {:try_start_2 .. :try_end_2} :catchall_0</span>
+<span class="missed">	invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->markInitializationComplete()V</span>
+<span class="">	return-object v1</span>
+<span class="">	:try_start_3</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->getNativeCrashData()Lcom/crashlytics/android/core/CrashlyticsNdkData;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	if-eqz v3, :cond_3</span>
+<span class="missed">	iget-object v4, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->controller:Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="">	invoke-virtual {v4, v3}, Lcom/crashlytics/android/core/CrashlyticsController;->finalizeNativeReport(Lcom/crashlytics/android/core/CrashlyticsNdkData;)Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-nez v3, :cond_3</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	const-string v4, "Could not finalize previous NDK sessions."</span>
+<span class="missed">	invoke-interface {v3, v0, v4}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	:cond_3</span>
+<span class="missed">	iget-object v3, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->controller:Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="missed">	iget-object v4, v2, Lyk;->b:Lyg;</span>
+<span class="">	invoke-virtual {v3, v4}, Lcom/crashlytics/android/core/CrashlyticsController;->finalizeSessions(Lyg;)Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-nez v3, :cond_4</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	const-string v4, "Could not finalize previous sessions."</span>
+<span class="missed">	invoke-interface {v3, v0, v4}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget-object v3, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->controller:Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="missed">	iget v4, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->delay:F</span>
+<span class="missed">	invoke-virtual {v3, v4, v2}, Lcom/crashlytics/android/core/CrashlyticsController;->submitAllReports(FLyk;)V</span>
+<span class="">	:try_end_3</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0</span>
+<span class="missed">	.catchall {:try_start_3 .. :try_end_3} :catchall_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="">	:try_start_4</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	const-string v4, "Crashlytics encountered a problem during asynchronous initialization."</span>
+<span class="missed">	invoke-interface {v3, v0, v4, v2}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	:try_end_4</span>
+<span class="missed">	.catchall {:try_start_4 .. :try_end_4} :catchall_0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->markInitializationComplete()V</span>
+<span class="">	return-object v1</span>
+<span class="">	:goto_1</span>
+<span class="missed">	invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->markInitializationComplete()V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method  getAttributes()Ljava/util/Map;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/util/Map<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->attributes:Ljava/util/concurrent/ConcurrentHashMap;</span>
+<span class="">	invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method  getController()Lcom/crashlytics/android/core/CrashlyticsController;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->controller:Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public getIdentifier()Ljava/lang/String;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const-string v0, "com.crashlytics.sdk.android.crashlytics-core"</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method  getNativeCrashData()Lcom/crashlytics/android/core/CrashlyticsNdkData;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->crashlyticsNdkDataProvider:Lcom/crashlytics/android/core/CrashlyticsNdkDataProvider;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-interface {v0}, Lcom/crashlytics/android/core/CrashlyticsNdkDataProvider;->getCrashlyticsNdkData()Lcom/crashlytics/android/core/CrashlyticsNdkData;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public getPinningInfoProvider()Lcom/crashlytics/android/core/PinningInfoProvider;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->disabled:Z</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->pinningInfo:Lcom/crashlytics/android/core/PinningInfoProvider;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method  getUserEmail()Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->getIdManager()Lvx;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lvx;->a()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userEmail:Ljava/lang/String;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method  getUserIdentifier()Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->getIdManager()Lvx;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lvx;->a()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userId:Ljava/lang/String;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method  getUserName()Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->getIdManager()Lvx;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lvx;->a()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userName:Ljava/lang/String;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public getVersion()Ljava/lang/String;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	const-string v0, "2.6.8.32"</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method  internalVerifyPinning(Ljava/net/URL;)Z
+<span class="">	.locals 3</span>
+
+<span class="">	invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->getPinningInfoProvider()Lcom/crashlytics/android/core/PinningInfoProvider;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->httpRequestFactory:Lxi;</span>
+<span class="missed">	sget-object v2, Lxg;->a:Lxg;</span>
+<span class="">	invoke-virtual {p1}, Ljava/net/URL;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-interface {v0, v2, p1}, Lxi;->a(Lxg;Ljava/lang/String;)Lxh;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Lxh;->a()Ljava/net/HttpURLConnection;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ljavax/net/ssl/HttpsURLConnection;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljavax/net/ssl/HttpsURLConnection;->setInstanceFollowRedirects(Z)V</span>
+<span class="missed">	invoke-virtual {p1}, Lxh;->b()I</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="">	return v1</span>
+.end method
+
+.method public log(ILjava/lang/String;Ljava/lang/String;)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	invoke-direct {p0, p1, p2, p3}, Lcom/crashlytics/android/core/CrashlyticsCore;->doLog(ILjava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, ""</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p3</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	invoke-interface {v0, p1, p2, p3, v1}, Luz;->a(ILjava/lang/String;Ljava/lang/String;Z)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public log(Ljava/lang/String;)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	const/4 v0, 0x3</span>
+<span class="missed">	const-string v1, "CrashlyticsCore"</span>
+<span class="missed">	invoke-direct {p0, v0, v1, p1}, Lcom/crashlytics/android/core/CrashlyticsCore;->doLog(ILjava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public logException(Ljava/lang/Throwable;)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->disabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const-string v0, "prior to logging exceptions."</span>
+<span class="">	invoke-static {v0}, Lcom/crashlytics/android/core/CrashlyticsCore;->ensureFabricWithCalled(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="missed">	if-nez p1, :cond_2</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const/4 v0, 0x5</span>
+<span class="missed">	const-string v1, "CrashlyticsCore"</span>
+<span class="missed">	const-string v2, "Crashlytics is ignoring a request to log a null exception."</span>
+<span class="missed">	invoke-interface {p1, v0, v1, v2}, Luz;->a(ILjava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->controller:Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="">	invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-virtual {v0, v1, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->writeNonFatalException(Ljava/lang/Thread;Ljava/lang/Throwable;)V</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method  markInitializationComplete()V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->backgroundWorker:Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;</span>
+<span class="cov">	new-instance v1, Lcom/crashlytics/android/core/CrashlyticsCore$3;</span>
+<span class="cov">	invoke-direct {v1, p0}, Lcom/crashlytics/android/core/CrashlyticsCore$3;-><init>(Lcom/crashlytics/android/core/CrashlyticsCore;)V</span>
+<span class="cov">	invoke-virtual {v0, v1}, Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method  markInitializationStarted()V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->backgroundWorker:Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;</span>
+<span class="cov">	new-instance v1, Lcom/crashlytics/android/core/CrashlyticsCore$2;</span>
+<span class="cov">	invoke-direct {v1, p0}, Lcom/crashlytics/android/core/CrashlyticsCore$2;-><init>(Lcom/crashlytics/android/core/CrashlyticsCore;)V</span>
+<span class="cov">	invoke-virtual {v0, v1}, Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;->submitAndWait(Ljava/util/concurrent/Callable;)Ljava/lang/Object;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method protected onPreExecute()Z</span>
+<span class="">	.locals 1</span>
+
+<span class="exec">	invoke-super {p0}, Luw;->getContext()Landroid/content/Context;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {p0, v0}, Lcom/crashlytics/android/core/CrashlyticsCore;->onPreExecute(Landroid/content/Context;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="exec">	return v0</span>
+.end method
+
+<span class="cov">.method  onPreExecute(Landroid/content/Context;)Z</span>
+<span class="">	.locals 18</span>
+
+<span class="cov">	move-object/from16 v12, p0</span>
+<span class="cov">	move-object/from16 v0, p1</span>
+<span class="exec">	invoke-static/range {p1 .. p1}, Lvq;->a(Landroid/content/Context;)Lvq;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-virtual {v1}, Lvq;->a()Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	const/4 v13, 0x1</span>
+<span class="cov">	const-string v14, "CrashlyticsCore"</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Crashlytics is disabled, because data collection is disabled by Firebase."</span>
+<span class="missed">	invoke-interface {v1, v14, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	iput-boolean v13, v12, Lcom/crashlytics/android/core/CrashlyticsCore;->disabled:Z</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-boolean v1, v12, Lcom/crashlytics/android/core/CrashlyticsCore;->disabled:Z</span>
+<span class="cov">	const/4 v15, 0x0</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="">	return v15</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	new-instance v1, Lvl;</span>
+<span class="cov">	invoke-direct {v1}, Lvl;-><init>()V</span>
+<span class="exec">	invoke-virtual {v1, v0}, Lvl;->a(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="missed">	if-nez v1, :cond_2</span>
+<span class="">	return v15</span>
+<span class="cov">	:cond_2</span>
+<span class="exec">	invoke-static/range {p1 .. p1}, Lvn;->m(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	const-string v3, "com.crashlytics.RequireBuildId"</span>
+<span class="exec">	invoke-static {v0, v3, v13}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;Z)Z</span>
+<span class="cov">	move-result v3</span>
+<span class="exec">	invoke-static {v2, v3}, Lcom/crashlytics/android/core/CrashlyticsCore;->isBuildIdValid(Ljava/lang/String;Z)Z</span>
+<span class="cov">	move-result v3</span>
+<span class="cov">	if-eqz v3, :cond_5</span>
+<span class="cov">	const/4 v11, 0x0</span>
+<span class="cov">	:try_start_0</span>
+<span class="exec">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	new-instance v4, Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="cov">	const-string v5, "Initializing Crashlytics "</span>
+<span class="cov">	invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual/range {p0 .. p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->getVersion()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v5</span>
+<span class="cov">	invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	invoke-interface {v3, v14, v4}, Luz;->c(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	new-instance v7, Lxo;</span>
+<span class="cov">	invoke-direct {v7, v12}, Lxo;-><init>(Luw;)V</span>
+<span class="cov">	new-instance v3, Lcom/crashlytics/android/core/CrashlyticsFileMarker;</span>
+<span class="cov">	const-string v4, "crash_marker"</span>
+<span class="cov">	invoke-direct {v3, v4, v7}, Lcom/crashlytics/android/core/CrashlyticsFileMarker;-><init>(Ljava/lang/String;Lxn;)V</span>
+<span class="cov">	iput-object v3, v12, Lcom/crashlytics/android/core/CrashlyticsCore;->crashMarker:Lcom/crashlytics/android/core/CrashlyticsFileMarker;</span>
+<span class="cov">	new-instance v3, Lcom/crashlytics/android/core/CrashlyticsFileMarker;</span>
+<span class="cov">	const-string v4, "initialization_marker"</span>
+<span class="cov">	invoke-direct {v3, v4, v7}, Lcom/crashlytics/android/core/CrashlyticsFileMarker;-><init>(Ljava/lang/String;Lxn;)V</span>
+<span class="cov">	iput-object v3, v12, Lcom/crashlytics/android/core/CrashlyticsCore;->initializationMarker:Lcom/crashlytics/android/core/CrashlyticsFileMarker;</span>
+<span class="cov">	new-instance v3, Lxq;</span>
+<span class="exec">	invoke-virtual/range {p0 .. p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->getContext()Landroid/content/Context;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	const-string v5, "com.crashlytics.android.core.CrashlyticsCore"</span>
+<span class="cov">	invoke-direct {v3, v4, v5}, Lxq;-><init>(Landroid/content/Context;Ljava/lang/String;)V</span>
+<span class="exec">	invoke-static {v3, v12}, Lcom/crashlytics/android/core/PreferenceManager;->create(Lxp;Lcom/crashlytics/android/core/CrashlyticsCore;)Lcom/crashlytics/android/core/PreferenceManager;</span>
+<span class="cov">	move-result-object v6</span>
+<span class="cov">	iget-object v3, v12, Lcom/crashlytics/android/core/CrashlyticsCore;->pinningInfo:Lcom/crashlytics/android/core/PinningInfoProvider;</span>
+<span class="missed">	if-eqz v3, :cond_3</span>
+<span class="missed">	new-instance v3, Lcom/crashlytics/android/core/CrashlyticsPinningInfoProvider;</span>
+<span class="missed">	iget-object v4, v12, Lcom/crashlytics/android/core/CrashlyticsCore;->pinningInfo:Lcom/crashlytics/android/core/PinningInfoProvider;</span>
+<span class="missed">	invoke-direct {v3, v4}, Lcom/crashlytics/android/core/CrashlyticsPinningInfoProvider;-><init>(Lcom/crashlytics/android/core/PinningInfoProvider;)V</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_3</span>
+<span class="cov">	move-object v3, v11</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	new-instance v4, Lxf;</span>
+<span class="exec">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="cov">	move-result-object v5</span>
+<span class="cov">	invoke-direct {v4, v5}, Lxf;-><init>(Luz;)V</span>
+<span class="cov">	iput-object v4, v12, Lcom/crashlytics/android/core/CrashlyticsCore;->httpRequestFactory:Lxi;</span>
+<span class="cov">	iget-object v4, v12, Lcom/crashlytics/android/core/CrashlyticsCore;->httpRequestFactory:Lxi;</span>
+<span class="cov">	invoke-interface {v4, v3}, Lxi;->a(Lxk;)V</span>
+<span class="exec">	invoke-virtual/range {p0 .. p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->getIdManager()Lvx;</span>
+<span class="cov">	move-result-object v5</span>
+<span class="exec">	invoke-static {v0, v5, v1, v2}, Lcom/crashlytics/android/core/AppData;->create(Landroid/content/Context;Lvx;Ljava/lang/String;Ljava/lang/String;)Lcom/crashlytics/android/core/AppData;</span>
+<span class="cov">	move-result-object v8</span>
+<span class="cov">	new-instance v9, Lcom/crashlytics/android/core/ResourceUnityVersionProvider;</span>
+<span class="cov">	new-instance v1, Lcom/crashlytics/android/core/ManifestUnityVersionProvider;</span>
+<span class="cov">	iget-object v2, v8, Lcom/crashlytics/android/core/AppData;->packageName:Ljava/lang/String;</span>
+<span class="cov">	invoke-direct {v1, v0, v2}, Lcom/crashlytics/android/core/ManifestUnityVersionProvider;-><init>(Landroid/content/Context;Ljava/lang/String;)V</span>
+<span class="cov">	invoke-direct {v9, v0, v1}, Lcom/crashlytics/android/core/ResourceUnityVersionProvider;-><init>(Landroid/content/Context;Lcom/crashlytics/android/core/UnityVersionProvider;)V</span>
+<span class="cov">	new-instance v10, Lcom/crashlytics/android/core/DefaultAppMeasurementEventListenerRegistrar;</span>
+<span class="cov">	invoke-direct {v10, v12}, Lcom/crashlytics/android/core/DefaultAppMeasurementEventListenerRegistrar;-><init>(Lcom/crashlytics/android/core/CrashlyticsCore;)V</span>
+<span class="exec">	invoke-static/range {p1 .. p1}, Lcom/crashlytics/android/answers/AppMeasurementEventLogger;->getEventLogger(Landroid/content/Context;)Lcom/crashlytics/android/answers/EventLogger;</span>
+<span class="cov">	move-result-object v16</span>
+<span class="exec">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="cov">	const-string v3, "Installer package name is: "</span>
+<span class="cov">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="cov">	iget-object v3, v8, Lcom/crashlytics/android/core/AppData;->installerPackageName:Ljava/lang/String;</span>
+<span class="cov">	invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	invoke-interface {v1, v14, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	new-instance v4, Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="cov">	iget-object v3, v12, Lcom/crashlytics/android/core/CrashlyticsCore;->backgroundWorker:Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;</span>
+<span class="cov">	iget-object v2, v12, Lcom/crashlytics/android/core/CrashlyticsCore;->httpRequestFactory:Lxi;</span>
+<span class="cov">	move-object v1, v4</span>
+<span class="cov">	move-object/from16 v17, v2</span>
+<span class="cov">	move-object/from16 v2, p0</span>
+<span class="cov">	move-object v13, v4</span>
+<span class="cov">	move-object/from16 v4, v17</span>
+<span class="cov">	move-object/from16 v11, v16</span>
+<span class="cov">	invoke-direct/range {v1 .. v11}, Lcom/crashlytics/android/core/CrashlyticsController;-><init>(Lcom/crashlytics/android/core/CrashlyticsCore;Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;Lxi;Lvx;Lcom/crashlytics/android/core/PreferenceManager;Lxn;Lcom/crashlytics/android/core/AppData;Lcom/crashlytics/android/core/UnityVersionProvider;Lcom/crashlytics/android/core/AppMeasurementEventListenerRegistrar;Lcom/crashlytics/android/answers/EventLogger;)V</span>
+<span class="cov">	iput-object v13, v12, Lcom/crashlytics/android/core/CrashlyticsCore;->controller:Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="exec">	invoke-virtual/range {p0 .. p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->didPreviousInitializationFail()Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	invoke-direct/range {p0 .. p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->checkForPreviousCrash()V</span>
+<span class="cov">	new-instance v2, Lvw;</span>
+<span class="cov">	invoke-direct {v2}, Lvw;-><init>()V</span>
+<span class="exec">	invoke-virtual {v2, v0}, Lvw;->b(Landroid/content/Context;)Z</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	iget-object v3, v12, Lcom/crashlytics/android/core/CrashlyticsCore;->controller:Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="exec">	invoke-static {}, Ljava/lang/Thread;->getDefaultUncaughtExceptionHandler()Ljava/lang/Thread$UncaughtExceptionHandler;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	invoke-virtual {v3, v4, v2}, Lcom/crashlytics/android/core/CrashlyticsController;->enableExceptionHandling(Ljava/lang/Thread$UncaughtExceptionHandler;Z)V</span>
+<span class="missed">	if-eqz v1, :cond_4</span>
+<span class="">	invoke-static/range {p1 .. p1}, Lvn;->o(Landroid/content/Context;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_4</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "Crashlytics did not finish previous background initialization. Initializing synchronously."</span>
+<span class="missed">	invoke-interface {v0, v14, v1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	invoke-direct/range {p0 .. p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->finishInitSynchronously()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return v15</span>
+<span class="cov">	:cond_4</span>
+<span class="exec">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "Exception handling initialization successful"</span>
+<span class="cov">	invoke-interface {v0, v14, v1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="exec">	return v0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Crashlytics was not started due to an exception during initialization"</span>
+<span class="missed">	invoke-interface {v1, v14, v2, v0}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	iput-object v1, v12, Lcom/crashlytics/android/core/CrashlyticsCore;->controller:Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="">	return v15</span>
+<span class="">	:cond_5</span>
+<span class="missed">	new-instance v0, Lwp;</span>
+<span class="missed">	const-string v1, "The Crashlytics build ID is missing. This occurs when Crashlytics tooling is absent from your app\'s build configuration. Please review Crashlytics onboarding instructions and ensure you have a valid Crashlytics account."</span>
+<span class="missed">	invoke-direct {v0, v1}, Lwp;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public setBool(Ljava/lang/String;Z)V
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-static {p2}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-virtual {p0, p1, p2}, Lcom/crashlytics/android/core/CrashlyticsCore;->setString(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method  setCrashlyticsNdkDataProvider(Lcom/crashlytics/android/core/CrashlyticsNdkDataProvider;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->crashlyticsNdkDataProvider:Lcom/crashlytics/android/core/CrashlyticsNdkDataProvider;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setDouble(Ljava/lang/String;D)V
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-static {p2, p3}, Ljava/lang/Double;->toString(D)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-virtual {p0, p1, p2}, Lcom/crashlytics/android/core/CrashlyticsCore;->setString(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setFloat(Ljava/lang/String;F)V
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-static {p2}, Ljava/lang/Float;->toString(F)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-virtual {p0, p1, p2}, Lcom/crashlytics/android/core/CrashlyticsCore;->setString(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setInt(Ljava/lang/String;I)V
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-virtual {p0, p1, p2}, Lcom/crashlytics/android/core/CrashlyticsCore;->setString(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public declared-synchronized setListener(Lcom/crashlytics/android/core/CrashlyticsListener;)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation runtime Ljava/lang/Deprecated;</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "CrashlyticsCore"</span>
+<span class="missed">	const-string v2, "Use of setListener is deprecated."</span>
+<span class="missed">	invoke-interface {v0, v1, v2}, Luz;->d(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	iput-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->listener:Lcom/crashlytics/android/core/CrashlyticsListener;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return-void</span>
+<span class="">	:try_start_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v0, "listener must not be null."</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:try_end_1</span>
+<span class="">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public setLong(Ljava/lang/String;J)V
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-static {p2, p3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-virtual {p0, p1, p2}, Lcom/crashlytics/android/core/CrashlyticsCore;->setString(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setString(Ljava/lang/String;Ljava/lang/String;)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->disabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const-string v0, "prior to setting keys."</span>
+<span class="">	invoke-static {v0}, Lcom/crashlytics/android/core/CrashlyticsCore;->ensureFabricWithCalled(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const-string v0, "CrashlyticsCore"</span>
+<span class="missed">	if-nez p1, :cond_4</span>
+<span class="">	invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsCore;->getContext()Landroid/content/Context;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	if-eqz p1, :cond_3</span>
+<span class="">	invoke-static {p1}, Lvn;->i(Landroid/content/Context;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-nez p1, :cond_2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p2, "Custom attribute key must not be null."</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const/4 p2, 0x0</span>
+<span class="missed">	const-string v1, "Attempting to set custom attribute with null key, ignoring."</span>
+<span class="missed">	invoke-interface {p1, v0, v1, p2}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_4</span>
+<span class="">	invoke-static {p1}, Lcom/crashlytics/android/core/CrashlyticsCore;->sanitizeAttribute(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->attributes:Ljava/util/concurrent/ConcurrentHashMap;</span>
+<span class="">	invoke-virtual {v1}, Ljava/util/concurrent/ConcurrentHashMap;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/16 v2, 0x40</span>
+<span class="missed">	if-lt v1, v2, :cond_5</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->attributes:Ljava/util/concurrent/ConcurrentHashMap;</span>
+<span class="">	invoke-virtual {v1, p1}, Ljava/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_5</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string p2, "Exceeded maximum number of custom attributes (64)"</span>
+<span class="missed">	invoke-interface {p1, v0, p2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_5</span>
+<span class="missed">	if-nez p2, :cond_6</span>
+<span class="missed">	const-string p2, ""</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_6</span>
+<span class="">	invoke-static {p2}, Lcom/crashlytics/android/core/CrashlyticsCore;->sanitizeAttribute(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="">	:goto_1</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->attributes:Ljava/util/concurrent/ConcurrentHashMap;</span>
+<span class="missed">	invoke-virtual {v0, p1, p2}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	iget-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->controller:Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="missed">	iget-object p2, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->attributes:Ljava/util/concurrent/ConcurrentHashMap;</span>
+<span class="missed">	invoke-virtual {p1, p2}, Lcom/crashlytics/android/core/CrashlyticsController;->cacheKeyData(Ljava/util/Map;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setUserEmail(Ljava/lang/String;)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->disabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const-string v0, "prior to setting user data."</span>
+<span class="">	invoke-static {v0}, Lcom/crashlytics/android/core/CrashlyticsCore;->ensureFabricWithCalled(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-static {p1}, Lcom/crashlytics/android/core/CrashlyticsCore;->sanitizeAttribute(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userEmail:Ljava/lang/String;</span>
+<span class="missed">	iget-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->controller:Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userId:Ljava/lang/String;</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userName:Ljava/lang/String;</span>
+<span class="missed">	iget-object v2, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userEmail:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {p1, v0, v1, v2}, Lcom/crashlytics/android/core/CrashlyticsController;->cacheUserData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setUserIdentifier(Ljava/lang/String;)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->disabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const-string v0, "prior to setting user data."</span>
+<span class="">	invoke-static {v0}, Lcom/crashlytics/android/core/CrashlyticsCore;->ensureFabricWithCalled(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-static {p1}, Lcom/crashlytics/android/core/CrashlyticsCore;->sanitizeAttribute(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userId:Ljava/lang/String;</span>
+<span class="missed">	iget-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->controller:Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userId:Ljava/lang/String;</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userName:Ljava/lang/String;</span>
+<span class="missed">	iget-object v2, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userEmail:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {p1, v0, v1, v2}, Lcom/crashlytics/android/core/CrashlyticsController;->cacheUserData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public setUserName(Ljava/lang/String;)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-boolean v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->disabled:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const-string v0, "prior to setting user data."</span>
+<span class="">	invoke-static {v0}, Lcom/crashlytics/android/core/CrashlyticsCore;->ensureFabricWithCalled(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-static {p1}, Lcom/crashlytics/android/core/CrashlyticsCore;->sanitizeAttribute(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	iput-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userName:Ljava/lang/String;</span>
+<span class="missed">	iget-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->controller:Lcom/crashlytics/android/core/CrashlyticsController;</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userId:Ljava/lang/String;</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userName:Ljava/lang/String;</span>
+<span class="missed">	iget-object v2, p0, Lcom/crashlytics/android/core/CrashlyticsCore;->userEmail:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {p1, v0, v1, v2}, Lcom/crashlytics/android/core/CrashlyticsController;->cacheUserData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public verifyPinning(Ljava/net/URL;)Z
+<span class="">	.locals 3</span>
+
+<span class="">	:try_start_0</span>
+<span class="">	invoke-virtual {p0, p1}, Lcom/crashlytics/android/core/CrashlyticsCore;->internalVerifyPinning(Ljava/net/URL;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return p1</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "CrashlyticsCore"</span>
+<span class="missed">	const-string v2, "Could not verify SSL pinning"</span>
+<span class="missed">	invoke-interface {v0, v1, v2, p1}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	return p1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

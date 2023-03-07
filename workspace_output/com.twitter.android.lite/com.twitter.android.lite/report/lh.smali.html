@@ -14,82 +14,76 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Llh;
+		<code>.class final Llh;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.implements Lmh;
+.implements Ljava/lang/Runnable;
 
 
-.field private static final a:Lva;
+.field private final a:Llg;
+.field private final b:I
+.field private final c:Ljava/lang/Throwable;
+.field private final d:[B
+.field private final e:Ljava/lang/String;
+.field private final f:Ljava/util/Map;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lva<",
-"Ljava/lang/Boolean;",
-">;"
+"Ljava/util/Map<",
+"Ljava/lang/String;",
+"Ljava/util/List<",
+"Ljava/lang/String;",
+">;>;"
 }
 .end annotation
 .end field
-.field private static final b:Lva;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lva<",
-"Ljava/lang/Long;",
-">;"
-}
-.end annotation
-.end field
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 4</span>
+.method private constructor &lt;init&gt;(Ljava/lang/String;Llg;ILjava/lang/Throwable;[BLjava/util/Map;)V
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Llg;",</span>
+<span class="">	"I",</span>
+<span class="">	"Ljava/lang/Throwable;",</span>
+<span class="">	"[B",</span>
+<span class="">	"Ljava/util/Map<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;>;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="cov">	new-instance v0, Lbb;</span>
-<span class="cov">	const-string v1, "com.google.android.gms.measurement"</span>
-<span class="exec">	invoke-static {v1}, Lsa;->a(Ljava/lang/String;)Landroid/net/Uri;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	invoke-direct {v0, v1}, Lbb;-><init>(Landroid/net/Uri;)V</span>
-<span class="cov">	const-string v1, "measurement.sdk.attribution.cache"</span>
-<span class="cov">	const/4 v2, 0x1</span>
-<span class="exec">	invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	sput-object v1, Llh;->a:Lva;</span>
-<span class="cov">	const-string v1, "measurement.sdk.attribution.cache.ttl"</span>
-<span class="cov">	const-wide/32 v2, 0x240c8400</span>
-<span class="exec">	invoke-virtual {v0, v1, v2, v3}, Lbb;->a(Ljava/lang/String;J)Lva;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	sput-object v0, Llh;->b:Lva;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	invoke-static {p2}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	iput-object p2, p0, Llh;->a:Llg;</span>
+<span class="missed">	iput p3, p0, Llh;->b:I</span>
+<span class="missed">	iput-object p4, p0, Llh;->c:Ljava/lang/Throwable;</span>
+<span class="missed">	iput-object p5, p0, Llh;->d:[B</span>
+<span class="missed">	iput-object p1, p0, Llh;->e:Ljava/lang/String;</span>
+<span class="missed">	iput-object p6, p0, Llh;->f:Ljava/util/Map;</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public constructor &lt;init&gt;()V</span>
+.method synthetic constructor &lt;init&gt;(Ljava/lang/String;Llg;ILjava/lang/Throwable;[BLjava/util/Map;Llf;)V
 <span class="">	.locals 0</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct/range {p0 .. p6}, Llh;-><init>(Ljava/lang/String;Llg;ILjava/lang/Throwable;[BLjava/util/Map;)V</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public final a()Z</span>
-<span class="">	.locals 1</span>
+.method public final run()V
+<span class="">	.locals 6</span>
 
-<span class="cov">	sget-object v0, Llh;->a:Lva;</span>
-<span class="exec">	invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Ljava/lang/Boolean;</span>
-<span class="exec">	invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
-.end method
-
-<span class="cov">.method public final b()J</span>
-<span class="">	.locals 2</span>
-
-<span class="cov">	sget-object v0, Llh;->b:Lva;</span>
-<span class="exec">	invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Ljava/lang/Long;</span>
-<span class="exec">	invoke-virtual {v0}, Ljava/lang/Long;->longValue()J</span>
-<span class="cov">	move-result-wide v0</span>
-<span class="exec">	return-wide v0</span>
+<span class="missed">	iget-object v0, p0, Llh;->a:Llg;</span>
+<span class="missed">	iget-object v1, p0, Llh;->e:Ljava/lang/String;</span>
+<span class="missed">	iget v2, p0, Llh;->b:I</span>
+<span class="missed">	iget-object v3, p0, Llh;->c:Ljava/lang/Throwable;</span>
+<span class="missed">	iget-object v4, p0, Llh;->d:[B</span>
+<span class="missed">	iget-object v5, p0, Llh;->f:Ljava/util/Map;</span>
+<span class="missed">	invoke-interface/range {v0 .. v5}, Llg;->a(Ljava/lang/String;ILjava/lang/Throwable;[BLjava/util/Map;)V</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

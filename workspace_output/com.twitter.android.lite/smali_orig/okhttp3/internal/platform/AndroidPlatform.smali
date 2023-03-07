@@ -65,32 +65,32 @@
         }
     .end annotation
 
-    .line 1
+    .line 59
     invoke-direct {p0}, Lokhttp3/internal/platform/Platform;-><init>()V
 
-    .line 2
+    .line 56
     invoke-static {}, Lokhttp3/internal/platform/AndroidPlatform$CloseGuard;->get()Lokhttp3/internal/platform/AndroidPlatform$CloseGuard;
 
     move-result-object v0
 
     iput-object v0, p0, Lokhttp3/internal/platform/AndroidPlatform;->closeGuard:Lokhttp3/internal/platform/AndroidPlatform$CloseGuard;
 
-    .line 3
+    .line 60
     iput-object p1, p0, Lokhttp3/internal/platform/AndroidPlatform;->sslParametersClass:Ljava/lang/Class;
 
-    .line 4
+    .line 61
     iput-object p2, p0, Lokhttp3/internal/platform/AndroidPlatform;->sslSocketClass:Ljava/lang/Class;
 
-    .line 5
+    .line 62
     iput-object p3, p0, Lokhttp3/internal/platform/AndroidPlatform;->setUseSessionTickets:Ljava/lang/reflect/Method;
 
-    .line 6
+    .line 63
     iput-object p4, p0, Lokhttp3/internal/platform/AndroidPlatform;->setHostname:Ljava/lang/reflect/Method;
 
-    .line 7
+    .line 64
     iput-object p5, p0, Lokhttp3/internal/platform/AndroidPlatform;->getAlpnSelectedProtocol:Ljava/lang/reflect/Method;
 
-    .line 8
+    .line 65
     iput-object p6, p0, Lokhttp3/internal/platform/AndroidPlatform;->setAlpnProtocols:Ljava/lang/reflect/Method;
 
     return-void
@@ -121,16 +121,17 @@
 
     const/4 v1, 0x0
 
+    .line 195
     new-array v2, v1, [Ljava/lang/Class;
 
-    .line 1
+    .line 196
     invoke-virtual {p2, v0, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object p2
 
+    .line 197
     new-array v0, v1, [Ljava/lang/Object;
 
-    .line 2
     invoke-virtual {p2, p3, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
@@ -145,7 +146,7 @@
 
     return p1
 
-    .line 3
+    .line 199
     :catch_0
     invoke-super {p0, p1}, Lokhttp3/internal/platform/Platform;->isCleartextTrafficPermitted(Ljava/lang/String;)Z
 
@@ -179,25 +180,25 @@
 
     const/4 v1, 0x1
 
+    .line 184
     new-array v2, v1, [Ljava/lang/Class;
 
-    .line 1
     const-class v3, Ljava/lang/String;
 
     const/4 v4, 0x0
 
     aput-object v3, v2, v4
 
-    .line 2
+    .line 185
     invoke-virtual {p2, v0, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
+    .line 186
     new-array v1, v1, [Ljava/lang/Object;
 
     aput-object p1, v1, v4
 
-    .line 3
     invoke-virtual {v0, p3, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -212,7 +213,7 @@
 
     return p1
 
-    .line 4
+    .line 188
     :catch_0
     invoke-direct {p0, p1, p2, p3}, Lokhttp3/internal/platform/AndroidPlatform;->api23IsCleartextTrafficPermitted(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;)Z
 
@@ -229,21 +230,21 @@
     :try_start_0
     const-string v0, "com.android.org.conscrypt.SSLParametersImpl"
 
-    .line 1
+    .line 221
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v2
 
     const-string v0, "com.android.org.conscrypt.OpenSSLSocketImpl"
 
-    .line 2
+    .line 222
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v3
     :try_end_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 3
+    .line 226
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
@@ -255,9 +256,9 @@
 
     const/4 v1, 0x1
 
+    .line 228
     new-array v4, v1, [Ljava/lang/Class;
 
-    .line 4
     sget-object v5, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
     const/4 v6, 0x0
@@ -270,9 +271,9 @@
 
     const-string v0, "setHostname"
 
+    .line 230
     new-array v5, v1, [Ljava/lang/Class;
 
-    .line 5
     const-class v7, Ljava/lang/String;
 
     aput-object v7, v5, v6
@@ -283,18 +284,18 @@
 
     const-string v0, "getAlpnSelectedProtocol"
 
+    .line 231
     new-array v7, v6, [Ljava/lang/Class;
 
-    .line 6
     invoke-virtual {v3, v0, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
     const-string v7, "setAlpnProtocols"
 
+    .line 232
     new-array v1, v1, [Ljava/lang/Class;
 
-    .line 7
     const-class v8, [B
 
     aput-object v8, v1, v6
@@ -303,7 +304,7 @@
 
     move-result-object v7
 
-    .line 8
+    .line 233
     new-instance v8, Lokhttp3/internal/platform/AndroidPlatform;
 
     move-object v1, v8
@@ -316,7 +317,7 @@
 
     return-object v8
 
-    .line 9
+    .line 238
     :catch_0
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -350,73 +351,75 @@
 
 # virtual methods
 .method public buildCertificateChainCleaner(Ljavax/net/ssl/X509TrustManager;)Lokhttp3/internal/tls/CertificateChainCleaner;
-    .locals 8
-
-    .line 1
-    const-class v0, Ljava/lang/String;
+    .locals 7
 
     :try_start_0
-    const-string v1, "android.net.http.X509TrustManagerExtensions"
+    const-string v0, "android.net.http.X509TrustManagerExtensions"
 
-    invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    new-array v3, v2, [Ljava/lang/Class;
-
-    .line 2
-    const-class v4, Ljavax/net/ssl/X509TrustManager;
-
-    const/4 v5, 0x0
-
-    aput-object v4, v3, v5
-
-    invoke-virtual {v1, v3}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
-
-    move-result-object v3
-
-    new-array v4, v2, [Ljava/lang/Object;
-
-    aput-object p1, v4, v5
-
-    .line 3
-    invoke-virtual {v3, v4}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    const-string v4, "checkServerTrusted"
-
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Class;
-
-    .line 4
-    const-class v7, [Ljava/security/cert/X509Certificate;
-
-    aput-object v7, v6, v5
-
-    aput-object v0, v6, v2
-
-    const/4 v2, 0x2
-
-    aput-object v0, v6, v2
-
-    invoke-virtual {v1, v4, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    .line 205
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 5
+    const/4 v1, 0x1
+
+    .line 206
+    new-array v2, v1, [Ljava/lang/Class;
+
+    const-class v3, Ljavax/net/ssl/X509TrustManager;
+
+    const/4 v4, 0x0
+
+    aput-object v3, v2, v4
+
+    invoke-virtual {v0, v2}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v2
+
+    .line 207
+    new-array v3, v1, [Ljava/lang/Object;
+
+    aput-object p1, v3, v4
+
+    invoke-virtual {v2, v3}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    const-string v3, "checkServerTrusted"
+
+    const/4 v5, 0x3
+
+    .line 208
+    new-array v5, v5, [Ljava/lang/Class;
+
+    const-class v6, [Ljava/security/cert/X509Certificate;
+
+    aput-object v6, v5, v4
+
+    const-class v4, Ljava/lang/String;
+
+    aput-object v4, v5, v1
+
+    const/4 v1, 0x2
+
+    const-class v4, Ljava/lang/String;
+
+    aput-object v4, v5, v1
+
+    invoke-virtual {v0, v3, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    .line 210
     new-instance v1, Lokhttp3/internal/platform/AndroidPlatform$AndroidCertificateChainCleaner;
 
-    invoke-direct {v1, v3, v0}, Lokhttp3/internal/platform/AndroidPlatform$AndroidCertificateChainCleaner;-><init>(Ljava/lang/Object;Ljava/lang/reflect/Method;)V
+    invoke-direct {v1, v2, v0}, Lokhttp3/internal/platform/AndroidPlatform$AndroidCertificateChainCleaner;-><init>(Ljava/lang/Object;Ljava/lang/reflect/Method;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v1
 
-    .line 6
+    .line 212
     :catch_0
     invoke-super {p0, p1}, Lokhttp3/internal/platform/Platform;->buildCertificateChainCleaner(Ljavax/net/ssl/X509TrustManager;)Lokhttp3/internal/tls/CertificateChainCleaner;
 
@@ -428,7 +431,7 @@
 .method public buildTrustRootIndex(Ljavax/net/ssl/X509TrustManager;)Lokhttp3/internal/tls/TrustRootIndex;
     .locals 6
 
-    .line 1
+    .line 246
     :try_start_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -450,10 +453,10 @@
 
     move-result-object v0
 
-    .line 2
+    .line 248
     invoke-virtual {v0, v2}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
-    .line 3
+    .line 249
     new-instance v1, Lokhttp3/internal/platform/AndroidPlatform$CustomTrustRootIndex;
 
     invoke-direct {v1, p1, v0}, Lokhttp3/internal/platform/AndroidPlatform$CustomTrustRootIndex;-><init>(Ljavax/net/ssl/X509TrustManager;Ljava/lang/reflect/Method;)V
@@ -462,7 +465,7 @@
 
     return-object v1
 
-    .line 4
+    .line 251
     :catch_0
     invoke-super {p0, p1}, Lokhttp3/internal/platform/Platform;->buildTrustRootIndex(Ljavax/net/ssl/X509TrustManager;)Lokhttp3/internal/tls/TrustRootIndex;
 
@@ -484,7 +487,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 110
     iget-object v0, p0, Lokhttp3/internal/platform/AndroidPlatform;->sslSocketClass:Ljava/lang/Class;
 
     invoke-virtual {v0, p1}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
@@ -502,7 +505,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 2
+    .line 116
     :try_start_0
     iget-object v2, p0, Lokhttp3/internal/platform/AndroidPlatform;->setUseSessionTickets:Ljava/lang/reflect/Method;
 
@@ -516,7 +519,7 @@
 
     invoke-virtual {v2, p1, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3
+    .line 118
     iget-object v2, p0, Lokhttp3/internal/platform/AndroidPlatform;->setHostname:Ljava/lang/reflect/Method;
 
     new-array v3, v1, [Ljava/lang/Object;
@@ -525,13 +528,13 @@
 
     invoke-virtual {v2, p1, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 4
+    .line 122
     :cond_1
     iget-object p2, p0, Lokhttp3/internal/platform/AndroidPlatform;->setAlpnProtocols:Ljava/lang/reflect/Method;
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-static {p3}, Lokhttp3/internal/platform/Platform;->concatLengthPrefixed(Ljava/util/List;)[B
+    invoke-static {p3}, Lokhttp3/internal/platform/AndroidPlatform;->concatLengthPrefixed(Ljava/util/List;)[B
 
     move-result-object p3
 
@@ -552,7 +555,7 @@
     :catch_1
     move-exception p1
 
-    .line 5
+    .line 124
     :goto_0
     new-instance p2, Ljava/lang/AssertionError;
 
@@ -569,7 +572,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 71
     :try_start_0
     invoke-virtual {p1, p2, p3}, Ljava/net/Socket;->connect(Ljava/net/SocketAddress;I)V
     :try_end_0
@@ -581,14 +584,14 @@
     :catch_0
     move-exception p1
 
-    .line 2
+    .line 78
     sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 p3, 0x1a
 
     if-ne p2, p3, :cond_0
 
-    .line 3
+    .line 79
     new-instance p2, Ljava/io/IOException;
 
     const-string p3, "Exception in connect"
@@ -597,14 +600,14 @@
 
     throw p2
 
-    .line 4
+    .line 81
     :cond_0
     throw p1
 
     :catch_1
     move-exception p1
 
-    .line 5
+    .line 73
     invoke-static {p1}, Lokhttp3/internal/Util;->isAndroidGetsocknameError(Ljava/lang/AssertionError;)Z
 
     move-result p2
@@ -617,7 +620,7 @@
 
     throw p2
 
-    .line 6
+    .line 74
     :cond_1
     throw p1
 .end method
@@ -627,7 +630,7 @@
 
     const/4 v0, 0x1
 
-    .line 1
+    .line 403
     :try_start_0
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -648,18 +651,14 @@
     :cond_0
     const/4 v0, 0x0
 
-    goto :goto_0
-
     :catch_0
-    nop
-
     :goto_0
     if-eqz v0, :cond_1
 
     :try_start_1
     const-string v0, "TLSv1.2"
 
-    .line 2
+    .line 412
     invoke-static {v0}, Ljavax/net/ssl/SSLContext;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/SSLContext;
 
     move-result-object v0
@@ -673,7 +672,7 @@
     :try_start_2
     const-string v0, "TLS"
 
-    .line 3
+    .line 419
     invoke-static {v0}, Ljavax/net/ssl/SSLContext;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/SSLContext;
 
     move-result-object v0
@@ -685,7 +684,7 @@
     :catch_2
     move-exception v0
 
-    .line 4
+    .line 421
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "No TLS provider"
@@ -700,7 +699,7 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 1
+    .line 129
     iget-object v0, p0, Lokhttp3/internal/platform/AndroidPlatform;->sslSocketClass:Ljava/lang/Class;
 
     invoke-virtual {v0, p1}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
@@ -713,7 +712,7 @@
 
     return-object v1
 
-    .line 2
+    .line 133
     :cond_0
     :try_start_0
     iget-object v0, p0, Lokhttp3/internal/platform/AndroidPlatform;->getAlpnSelectedProtocol:Ljava/lang/reflect/Method;
@@ -730,7 +729,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 3
+    .line 134
     new-instance v1, Ljava/lang/String;
 
     sget-object v0, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
@@ -751,7 +750,7 @@
     :catch_1
     move-exception p1
 
-    .line 4
+    .line 136
     :goto_0
     new-instance v0, Ljava/lang/AssertionError;
 
@@ -765,7 +764,7 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 1
+    .line 157
     iget-object v0, p0, Lokhttp3/internal/platform/AndroidPlatform;->closeGuard:Lokhttp3/internal/platform/AndroidPlatform$CloseGuard;
 
     invoke-virtual {v0, p1}, Lokhttp3/internal/platform/AndroidPlatform$CloseGuard;->createAndOpen(Ljava/lang/String;)Ljava/lang/Object;
@@ -781,7 +780,7 @@
     :try_start_0
     const-string v0, "android.security.NetworkSecurityPolicy"
 
-    .line 1
+    .line 170
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
@@ -790,23 +789,23 @@
 
     const/4 v2, 0x0
 
+    .line 171
     new-array v3, v2, [Ljava/lang/Class;
 
-    .line 2
     invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v1
 
     const/4 v3, 0x0
 
+    .line 172
     new-array v2, v2, [Ljava/lang/Object;
 
-    .line 3
     invoke-virtual {v1, v3, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 4
+    .line 173
     invoke-direct {p0, p1, v0, v1}, Lokhttp3/internal/platform/AndroidPlatform;->api24IsCleartextTrafficPermitted(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;)Z
 
     move-result p1
@@ -832,7 +831,7 @@
     :catch_2
     move-exception p1
 
-    .line 5
+    .line 177
     :goto_0
     new-instance v0, Ljava/lang/AssertionError;
 
@@ -842,7 +841,7 @@
 
     throw v0
 
-    .line 6
+    .line 175
     :catch_3
     invoke-super {p0, p1}, Lokhttp3/internal/platform/Platform;->isCleartextTrafficPermitted(Ljava/lang/String;)Z
 
@@ -872,7 +871,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 1
+    .line 142
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -894,7 +893,7 @@
     :cond_1
     const/4 p3, 0x0
 
-    .line 2
+    .line 145
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -902,7 +901,7 @@
     :goto_1
     if-ge p3, v1, :cond_4
 
-    .line 3
+    .line 146
     invoke-virtual {p2, p1, p3}, Ljava/lang/String;->indexOf(II)I
 
     move-result v2
@@ -919,12 +918,12 @@
     :goto_2
     add-int/lit16 v3, p3, 0xfa0
 
-    .line 4
+    .line 149
     invoke-static {v2, v3}, Ljava/lang/Math;->min(II)I
 
     move-result v3
 
-    .line 5
+    .line 150
     invoke-virtual {p2, p3, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p3
@@ -951,7 +950,7 @@
 .method public logCloseableLeak(Ljava/lang/String;Ljava/lang/Object;)V
     .locals 1
 
-    .line 1
+    .line 161
     iget-object v0, p0, Lokhttp3/internal/platform/AndroidPlatform;->closeGuard:Lokhttp3/internal/platform/AndroidPlatform$CloseGuard;
 
     invoke-virtual {v0, p2}, Lokhttp3/internal/platform/AndroidPlatform$CloseGuard;->warnIfOpen(Ljava/lang/Object;)Z
@@ -964,7 +963,7 @@
 
     const/4 v0, 0x0
 
-    .line 2
+    .line 164
     invoke-virtual {p0, p2, p1, v0}, Lokhttp3/internal/platform/AndroidPlatform;->log(ILjava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_0
@@ -976,12 +975,12 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 1
+    .line 87
     iget-object v0, p0, Lokhttp3/internal/platform/AndroidPlatform;->sslParametersClass:Ljava/lang/Class;
 
     const-string v1, "sslParameters"
 
-    invoke-static {p1, v0, v1}, Lokhttp3/internal/platform/Platform;->readFieldOrNull(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0, v1}, Lokhttp3/internal/platform/AndroidPlatform;->readFieldOrNull(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -992,7 +991,7 @@
 
     const/4 v2, 0x0
 
-    .line 2
+    .line 94
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v3
@@ -1001,13 +1000,13 @@
 
     move-result-object v3
 
-    .line 3
+    .line 92
     invoke-static {v0, v2, v3}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 4
-    invoke-static {p1, v0, v1}, Lokhttp3/internal/platform/Platform;->readFieldOrNull(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    .line 95
+    invoke-static {p1, v0, v1}, Lokhttp3/internal/platform/AndroidPlatform;->readFieldOrNull(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
     :try_end_0
@@ -1015,7 +1014,7 @@
 
     goto :goto_0
 
-    .line 5
+    .line 97
     :catch_0
     invoke-super {p0, p1}, Lokhttp3/internal/platform/Platform;->trustManager(Ljavax/net/ssl/SSLSocketFactory;)Ljavax/net/ssl/X509TrustManager;
 
@@ -1023,14 +1022,14 @@
 
     return-object p1
 
-    .line 6
+    .line 101
     :cond_0
     :goto_0
     const-class p1, Ljavax/net/ssl/X509TrustManager;
 
     const-string v1, "x509TrustManager"
 
-    invoke-static {v0, p1, v1}, Lokhttp3/internal/platform/Platform;->readFieldOrNull(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, p1, v1}, Lokhttp3/internal/platform/AndroidPlatform;->readFieldOrNull(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -1040,13 +1039,13 @@
 
     return-object p1
 
-    .line 7
+    .line 105
     :cond_1
     const-class p1, Ljavax/net/ssl/X509TrustManager;
 
     const-string v1, "trustManager"
 
-    invoke-static {v0, p1, v1}, Lokhttp3/internal/platform/Platform;->readFieldOrNull(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, p1, v1}, Lokhttp3/internal/platform/AndroidPlatform;->readFieldOrNull(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p1
 

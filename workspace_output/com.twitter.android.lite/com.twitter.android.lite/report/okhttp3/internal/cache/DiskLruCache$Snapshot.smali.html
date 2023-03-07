@@ -30,18 +30,18 @@ name = "Snapshot"
 .field private final key:Ljava/lang/String;
 .field private final lengths:[J
 .field private final sequenceNumber:J
-.field private final sources:[Lwx;
+.field private final sources:[Lzk;
 .field final synthetic this$0:Lokhttp3/internal/cache/DiskLruCache;
 
 
-.method constructor &lt;init&gt;(Lokhttp3/internal/cache/DiskLruCache;Ljava/lang/String;J[Lwx;[J)V
+.method constructor &lt;init&gt;(Lokhttp3/internal/cache/DiskLruCache;Ljava/lang/String;J[Lzk;[J)V
 <span class="">	.locals 0</span>
 
 <span class="missed">	iput-object p1, p0, Lokhttp3/internal/cache/DiskLruCache$Snapshot;->this$0:Lokhttp3/internal/cache/DiskLruCache;</span>
 <span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
 <span class="missed">	iput-object p2, p0, Lokhttp3/internal/cache/DiskLruCache$Snapshot;->key:Ljava/lang/String;</span>
 <span class="missed">	iput-wide p3, p0, Lokhttp3/internal/cache/DiskLruCache$Snapshot;->sequenceNumber:J</span>
-<span class="missed">	iput-object p5, p0, Lokhttp3/internal/cache/DiskLruCache$Snapshot;->sources:[Lwx;</span>
+<span class="missed">	iput-object p5, p0, Lokhttp3/internal/cache/DiskLruCache$Snapshot;->sources:[Lzk;</span>
 <span class="missed">	iput-object p6, p0, Lokhttp3/internal/cache/DiskLruCache$Snapshot;->lengths:[J</span>
 <span class="">	return-void</span>
 .end method
@@ -56,7 +56,7 @@ name = "Snapshot"
 .method public close()V
 <span class="">	.locals 4</span>
 
-<span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache/DiskLruCache$Snapshot;->sources:[Lwx;</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache/DiskLruCache$Snapshot;->sources:[Lzk;</span>
 <span class="missed">	array-length v1, v0</span>
 <span class="missed">	const/4 v2, 0x0</span>
 <span class="">	:goto_0</span>
@@ -95,10 +95,10 @@ name = "Snapshot"
 <span class="">	return-wide v1</span>
 .end method
 
-.method public getSource(I)Lwx;
+.method public getSource(I)Lzk;
 <span class="">	.locals 1</span>
 
-<span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache/DiskLruCache$Snapshot;->sources:[Lwx;</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache/DiskLruCache$Snapshot;->sources:[Lzk;</span>
 <span class="missed">	aget-object p1, v0, p1</span>
 <span class="">	return-object p1</span>
 .end method

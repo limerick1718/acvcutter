@@ -29,10 +29,11 @@ const/4 v1, 0x0
 const-string v2, "com.google.android.gms.common.internal.IGmsServiceBroker"
 invoke-interface {p2, v2}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 move-result-object v2
-new-instance v2, Lcom/google/android/gms/common/internal/m;
-invoke-direct {v2, p2}, Lcom/google/android/gms/common/internal/m;-><init>(Landroid/os/IBinder;)V
+new-instance v2, Lcom/google/android/gms/common/internal/m$a$a;
+invoke-direct {v2, p2}, Lcom/google/android/gms/common/internal/m$a$a;-><init>(Landroid/os/IBinder;)V
+move-object p2, v2
 :goto_0
-invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/b;->a(Lcom/google/android/gms/common/internal/b;Lcom/google/android/gms/common/internal/n;)Lcom/google/android/gms/common/internal/n;
+invoke-static {v0, p2}, Lcom/google/android/gms/common/internal/b;->a(Lcom/google/android/gms/common/internal/b;Lcom/google/android/gms/common/internal/m;)Lcom/google/android/gms/common/internal/m;
 monitor-exit p1
 iget-object p1, p0, Lcom/google/android/gms/common/internal/b$j;->b:Lcom/google/android/gms/common/internal/b;
 const/4 p2, 0x0
@@ -45,6 +46,6 @@ monitor-exit p1
 throw p2
 .end method
 .method public final onServiceDisconnected(Landroid/content/ComponentName;)V
-.locals 3
+.locals 4
 return-void
 .end method

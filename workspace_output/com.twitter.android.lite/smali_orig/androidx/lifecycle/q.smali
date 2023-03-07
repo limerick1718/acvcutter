@@ -21,13 +21,13 @@
 .method public constructor <init>(Landroidx/lifecycle/r;Landroidx/lifecycle/q$a;)V
     .locals 0
 
-    .line 1
+    .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 79
     iput-object p2, p0, Landroidx/lifecycle/q;->a:Landroidx/lifecycle/q$a;
 
-    .line 3
+    .line 80
     iput-object p1, p0, Landroidx/lifecycle/q;->b:Landroidx/lifecycle/r;
 
     return-void
@@ -47,14 +47,14 @@
         }
     .end annotation
 
-    .line 1
+    .line 99
     invoke-virtual {p1}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 2
+    .line 103
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -75,7 +75,7 @@
 
     return-object p1
 
-    .line 3
+    .line 101
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -99,14 +99,14 @@
         }
     .end annotation
 
-    .line 4
+    .line 123
     iget-object v0, p0, Landroidx/lifecycle/q;->b:Landroidx/lifecycle/r;
 
     invoke-virtual {v0, p1}, Landroidx/lifecycle/r;->a(Ljava/lang/String;)Landroidx/lifecycle/p;
 
     move-result-object v0
 
-    .line 5
+    .line 125
     invoke-virtual {p2, v0}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
 
     move-result v1
@@ -115,7 +115,7 @@
 
     return-object v0
 
-    .line 6
+    .line 135
     :cond_0
     iget-object v0, p0, Landroidx/lifecycle/q;->a:Landroidx/lifecycle/q$a;
 
@@ -123,7 +123,7 @@
 
     move-result-object p2
 
-    .line 7
+    .line 136
     iget-object v0, p0, Landroidx/lifecycle/q;->b:Landroidx/lifecycle/r;
 
     invoke-virtual {v0, p1, p2}, Landroidx/lifecycle/r;->a(Ljava/lang/String;Landroidx/lifecycle/p;)V

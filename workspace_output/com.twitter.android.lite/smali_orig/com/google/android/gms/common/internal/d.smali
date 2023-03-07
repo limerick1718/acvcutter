@@ -3,10 +3,10 @@
 
 
 # static fields
-.field private static final a:Lo;
+.field private static final a:Lp;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lo<",
+            "Lp<",
             "Ljava/lang/String;",
             "Ljava/lang/String;",
             ">;"
@@ -23,12 +23,12 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1
-    new-instance v0, Lo;
+    .line 96
+    new-instance v0, Lp;
 
-    invoke-direct {v0}, Lo;-><init>()V
+    invoke-direct {v0}, Lp;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/internal/d;->a:Lo;
+    sput-object v0, Lcom/google/android/gms/common/internal/d;->a:Lp;
 
     return-void
 .end method
@@ -36,18 +36,18 @@
 .method public static a(Landroid/content/Context;)Ljava/lang/String;
     .locals 2
 
-    .line 6
+    .line 62
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 7
+    .line 63
     :try_start_0
-    invoke-static {p0}, Lz5;->a(Landroid/content/Context;)Ly5;
+    invoke-static {p0}, Lbj;->a(Landroid/content/Context;)Lbi;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Ly5;->b(Ljava/lang/String;)Ljava/lang/CharSequence;
+    invoke-virtual {v1, v0}, Lbi;->b(Ljava/lang/String;)Ljava/lang/CharSequence;
 
     move-result-object v1
 
@@ -63,14 +63,14 @@
     :catch_0
     nop
 
-    .line 8
+    .line 65
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object p0
 
     iget-object p0, p0, Landroid/content/pm/ApplicationInfo;->name:Ljava/lang/String;
 
-    .line 9
+    .line 66
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -84,78 +84,214 @@
 .end method
 
 .method public static a(Landroid/content/Context;I)Ljava/lang/String;
-    .locals 1
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    const-string v2, "GoogleApiAvailability"
+
+    packed-switch p1, :pswitch_data_0
+
+    :pswitch_0
+    const/16 p0, 0x21
+
+    .line 25
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0, p0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string p0, "Unexpected error code "
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
     move-result-object p0
 
-    const/4 v0, 0x1
+    invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-eq p1, v0, :cond_2
+    return-object v1
 
-    const/4 v0, 0x2
+    :pswitch_1
+    const-string p1, "The current user profile is restricted and could not use authenticated features."
 
-    if-eq p1, v0, :cond_1
+    .line 23
+    invoke-static {v2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v0, 0x3
+    const-string p1, "common_google_play_services_restricted_profile_title"
 
-    if-eq p1, v0, :cond_0
-
-    const p1, 0x104000a
-
-    .line 2
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    .line 24
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 3
-    :cond_0
-    sget p1, La5;->common_google_play_services_enable_button:I
+    :pswitch_2
+    const-string p1, "The specified account could not be signed in."
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    .line 21
+    invoke-static {v2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string p1, "common_google_play_services_sign_in_failed_title"
+
+    .line 22
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_3
+    const-string p0, "One of the API components you attempted to connect to is not available."
+
+    .line 19
+    invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-object v1
+
+    :pswitch_4
+    const-string p0, "The application is not licensed to the user."
+
+    .line 17
+    invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-object v1
+
+    :pswitch_5
+    const-string p0, "Developer error occurred. Please see logs for detailed information"
+
+    .line 13
+    invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-object v1
+
+    :pswitch_6
+    const-string p0, "Google Play services is invalid. Cannot recover."
+
+    .line 7
+    invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-object v1
+
+    :pswitch_7
+    const-string p0, "Internal error occurred. Please see logs for detailed information"
+
+    .line 11
+    invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-object v1
+
+    :pswitch_8
+    const-string p1, "Network error occurred. Please retry request later."
+
+    .line 9
+    invoke-static {v2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string p1, "common_google_play_services_network_error_title"
+
+    .line 10
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_9
+    const-string p1, "An invalid account was specified when connecting. Please provide a valid account."
+
+    .line 15
+    invoke-static {v2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string p1, "common_google_play_services_invalid_account_title"
+
+    .line 16
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_a
+    return-object v1
+
+    .line 5
+    :pswitch_b
+    sget p0, Laz$b;->common_google_play_services_enable_title:I
+
+    invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 6
+    :pswitch_c
+    sget p0, Laz$b;->common_google_play_services_update_title:I
+
+    invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
     .line 4
-    :cond_1
-    sget p1, La5;->common_google_play_services_update_button:I
+    :pswitch_d
+    sget p0, Laz$b;->common_google_play_services_install_title:I
 
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    .line 5
-    :cond_2
-    sget p1, La5;->common_google_play_services_install_button:I
-
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_a
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_a
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method
 
 .method private static a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
     .locals 4
 
-    .line 15
-    sget-object v0, Lcom/google/android/gms/common/internal/d;->a:Lo;
+    .line 75
+    sget-object v0, Lcom/google/android/gms/common/internal/d;->a:Lp;
 
     monitor-enter v0
 
-    .line 16
+    .line 76
     :try_start_0
-    sget-object v1, Lcom/google/android/gms/common/internal/d;->a:Lo;
+    sget-object v1, Lcom/google/android/gms/common/internal/d;->a:Lp;
 
-    invoke-virtual {v1, p1}, Lo;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, p1}, Lp;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -163,14 +299,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 17
+    .line 78
     monitor-exit v0
 
     return-object v1
 
-    .line 18
+    .line 79
     :cond_0
-    invoke-static {p0}, Lj5;->c(Landroid/content/Context;)Landroid/content/res/Resources;
+    invoke-static {p0}, Lcom/google/android/gms/common/GooglePlayServicesUtil;->getRemoteResource(Landroid/content/Context;)Landroid/content/res/Resources;
 
     move-result-object p0
 
@@ -178,7 +314,7 @@
 
     if-nez p0, :cond_1
 
-    .line 19
+    .line 81
     monitor-exit v0
 
     return-object v1
@@ -188,7 +324,7 @@
 
     const-string v3, "com.google.android.gms"
 
-    .line 20
+    .line 82
     invoke-virtual {p0, p1, v2, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v2
@@ -199,7 +335,7 @@
 
     const-string v2, "Missing resource: "
 
-    .line 21
+    .line 84
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
@@ -224,18 +360,18 @@
     :goto_0
     invoke-static {p0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 22
+    .line 85
     monitor-exit v0
 
     return-object v1
 
-    .line 23
+    .line 86
     :cond_3
     invoke-virtual {p0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 24
+    .line 87
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -246,7 +382,7 @@
 
     const-string v2, "Got empty resource: "
 
-    .line 25
+    .line 88
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
@@ -271,18 +407,18 @@
     :goto_1
     invoke-static {p0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 26
+    .line 89
     monitor-exit v0
 
     return-object v1
 
-    .line 27
+    .line 90
     :cond_5
-    sget-object v1, Lcom/google/android/gms/common/internal/d;->a:Lo;
+    sget-object v1, Lcom/google/android/gms/common/internal/d;->a:Lp;
 
-    invoke-virtual {v1, p1, p0}, Lo;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, p1, p0}, Lp;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 28
+    .line 91
     monitor-exit v0
 
     return-object p0
@@ -290,7 +426,7 @@
     :catchall_0
     move-exception p0
 
-    .line 29
+    .line 92
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -301,27 +437,27 @@
 .method private static a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
-    .line 10
+    .line 69
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 11
+    .line 70
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     if-nez p0, :cond_0
 
-    .line 12
-    sget p0, Lm5;->common_google_play_services_unknown_issue:I
+    .line 72
+    sget p0, Lcom/google/android/gms/common/k$a;->common_google_play_services_unknown_issue:I
 
-    .line 13
+    .line 73
     invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 14
+    .line 74
     :cond_0
     invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
@@ -347,13 +483,13 @@
 .method public static b(Landroid/content/Context;)Ljava/lang/String;
     .locals 1
 
-    .line 16
+    .line 93
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
 
-    .line 17
-    sget v0, La5;->common_google_play_services_notification_channel_name:I
+    .line 94
+    sget v0, Laz$b;->common_google_play_services_notification_channel_name:I
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -363,14 +499,55 @@
 .end method
 
 .method public static b(Landroid/content/Context;I)Ljava/lang/String;
+    .locals 1
+
+    const/4 v0, 0x6
+
+    if-ne p1, v0, :cond_0
+
+    const-string p1, "common_google_play_services_resolution_required_title"
+
+    .line 28
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    .line 29
+    :cond_0
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;I)Ljava/lang/String;
+
+    move-result-object p1
+
+    :goto_0
+    if-nez p1, :cond_1
+
+    .line 32
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p0
+
+    sget p1, Laz$b;->common_google_play_services_notification_ticker:I
+
+    .line 33
+    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    :cond_1
+    return-object p1
+.end method
+
+.method public static c(Landroid/content/Context;I)Ljava/lang/String;
     .locals 5
 
-    .line 1
+    .line 35
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 2
+    .line 36
     invoke-static {p0}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
@@ -407,8 +584,8 @@
 
     packed-switch p1, :pswitch_data_0
 
-    .line 3
-    sget p0, Lm5;->common_google_play_services_unknown_issue:I
+    .line 50
+    sget p0, Lcom/google/android/gms/common/k$a;->common_google_play_services_unknown_issue:I
 
     new-array p1, v3, [Ljava/lang/Object;
 
@@ -420,9 +597,9 @@
 
     return-object p0
 
-    .line 4
+    .line 40
     :pswitch_0
-    sget p0, La5;->common_google_play_services_updating_text:I
+    sget p0, Laz$b;->common_google_play_services_updating_text:I
 
     new-array p1, v3, [Ljava/lang/Object;
 
@@ -437,7 +614,7 @@
     :pswitch_1
     const-string p1, "common_google_play_services_sign_in_failed_text"
 
-    .line 5
+    .line 48
     invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -447,7 +624,7 @@
     :pswitch_2
     const-string p1, "common_google_play_services_api_unavailable_text"
 
-    .line 6
+    .line 47
     invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -457,16 +634,16 @@
     :cond_0
     const-string p1, "common_google_play_services_restricted_profile_text"
 
-    .line 7
+    .line 49
     invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 8
+    .line 44
     :cond_1
-    sget p0, La5;->common_google_play_services_unsupported_text:I
+    sget p0, Laz$b;->common_google_play_services_unsupported_text:I
 
     new-array p1, v3, [Ljava/lang/Object;
 
@@ -481,7 +658,7 @@
     :cond_2
     const-string p1, "common_google_play_services_network_error_text"
 
-    .line 9
+    .line 45
     invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -491,16 +668,16 @@
     :cond_3
     const-string p1, "common_google_play_services_invalid_account_text"
 
-    .line 10
+    .line 46
     invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 11
+    .line 39
     :cond_4
-    sget p0, La5;->common_google_play_services_enable_text:I
+    sget p0, Laz$b;->common_google_play_services_enable_text:I
 
     new-array p1, v3, [Ljava/lang/Object;
 
@@ -512,16 +689,16 @@
 
     return-object p0
 
-    .line 12
+    .line 41
     :cond_5
-    invoke-static {p0}, Lcom/google/android/gms/common/util/i;->c(Landroid/content/Context;)Z
+    invoke-static {p0}, Lcom/google/android/gms/common/util/h;->b(Landroid/content/Context;)Z
 
     move-result p0
 
     if-eqz p0, :cond_6
 
-    .line 13
-    sget p0, La5;->common_google_play_services_wear_update_text:I
+    .line 42
+    sget p0, Laz$b;->common_google_play_services_wear_update_text:I
 
     invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -529,9 +706,9 @@
 
     return-object p0
 
-    .line 14
+    .line 43
     :cond_6
-    sget p0, La5;->common_google_play_services_update_text:I
+    sget p0, Laz$b;->common_google_play_services_update_text:I
 
     new-array p1, v3, [Ljava/lang/Object;
 
@@ -543,9 +720,9 @@
 
     return-object p0
 
-    .line 15
+    .line 38
     :cond_7
-    sget p0, La5;->common_google_play_services_install_text:I
+    sget p0, Laz$b;->common_google_play_services_install_text:I
 
     new-array p1, v3, [Ljava/lang/Object;
 
@@ -567,36 +744,6 @@
     .end packed-switch
 .end method
 
-.method public static c(Landroid/content/Context;I)Ljava/lang/String;
-    .locals 1
-
-    const/4 v0, 0x6
-
-    if-ne p1, v0, :cond_0
-
-    .line 1
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v0, "common_google_play_services_resolution_required_text"
-
-    .line 2
-    invoke-static {p0, v0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    .line 3
-    :cond_0
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->b(Landroid/content/Context;I)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
 .method public static d(Landroid/content/Context;I)Ljava/lang/String;
     .locals 1
 
@@ -604,232 +751,85 @@
 
     if-ne p1, v0, :cond_0
 
-    const-string p1, "common_google_play_services_resolution_required_title"
-
-    .line 1
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    .line 53
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object p1
 
-    goto :goto_0
+    const-string v0, "common_google_play_services_resolution_required_text"
 
-    .line 2
-    :cond_0
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->e(Landroid/content/Context;I)Ljava/lang/String;
-
-    move-result-object p1
-
-    :goto_0
-    if-nez p1, :cond_1
-
-    .line 3
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    .line 54
+    invoke-static {p0, v0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    sget p1, La5;->common_google_play_services_notification_ticker:I
+    return-object p0
 
-    .line 4
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    .line 55
+    :cond_0
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->c(Landroid/content/Context;I)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p0
 
-    :cond_1
-    return-object p1
+    return-object p0
 .end method
 
 .method public static e(Landroid/content/Context;I)Ljava/lang/String;
-    .locals 3
+    .locals 1
 
-    .line 1
+    .line 56
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    const-string v2, "GoogleApiAvailability"
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/16 p0, 0x21
-
-    .line 2
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0, p0}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string p0, "Unexpected error code "
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
     move-result-object p0
 
-    invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v0, 0x1
 
-    return-object v1
+    if-eq p1, v0, :cond_2
 
-    :pswitch_1
-    const-string p1, "The current user profile is restricted and could not use authenticated features."
+    const/4 v0, 0x2
 
-    .line 3
-    invoke-static {v2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    if-eq p1, v0, :cond_1
 
-    const-string p1, "common_google_play_services_restricted_profile_title"
+    const/4 v0, 0x3
 
-    .line 4
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    if-eq p1, v0, :cond_0
+
+    const p1, 0x104000a
+
+    .line 61
+    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    :pswitch_2
-    const-string p1, "The specified account could not be signed in."
+    .line 59
+    :cond_0
+    sget p1, Laz$b;->common_google_play_services_enable_button:I
 
-    .line 5
-    invoke-static {v2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string p1, "common_google_play_services_sign_in_failed_title"
-
-    .line 6
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    :pswitch_3
-    const-string p0, "One of the API components you attempted to connect to is not available."
+    .line 60
+    :cond_1
+    sget p1, Laz$b;->common_google_play_services_update_button:I
 
-    .line 7
-    invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-object v1
-
-    :pswitch_4
-    const-string p0, "The application is not licensed to the user."
-
-    .line 8
-    invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-object v1
-
-    :pswitch_5
-    const-string p0, "Developer error occurred. Please see logs for detailed information"
-
-    .line 9
-    invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-object v1
-
-    :pswitch_6
-    const-string p0, "Google Play services is invalid. Cannot recover."
-
-    .line 10
-    invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-object v1
-
-    :pswitch_7
-    const-string p0, "Internal error occurred. Please see logs for detailed information"
-
-    .line 11
-    invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-object v1
-
-    :pswitch_8
-    const-string p1, "Network error occurred. Please retry request later."
-
-    .line 12
-    invoke-static {v2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string p1, "common_google_play_services_network_error_title"
-
-    .line 13
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    :pswitch_9
-    const-string p1, "An invalid account was specified when connecting. Please provide a valid account."
+    .line 58
+    :cond_2
+    sget p1, Laz$b;->common_google_play_services_install_button:I
 
-    .line 14
-    invoke-static {v2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string p1, "common_google_play_services_invalid_account_title"
-
-    .line 15
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/d;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
-
-    :pswitch_a
-    return-object v1
-
-    .line 16
-    :pswitch_b
-    sget p0, La5;->common_google_play_services_enable_title:I
-
-    invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    .line 17
-    :pswitch_c
-    sget p0, La5;->common_google_play_services_update_title:I
-
-    invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    .line 18
-    :pswitch_d
-    sget p0, La5;->common_google_play_services_install_title:I
-
-    invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_a
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_a
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
 .end method

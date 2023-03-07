@@ -14,120 +14,112 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public Lpt;
+		<code>.class public final Lpt;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.implements Lqt;
+.implements Landroid/os/Parcelable$Creator;
+
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/Object;",
+"Landroid/os/Parcelable$Creator<",
+"Lps;",
+">;"
+}
+.end annotation
 
 
-.field private final a:I
 
-
-<span class="cov">.method public constructor &lt;init&gt;(I)V</span>
+<span class="cov">.method public constructor &lt;init&gt;()V</span>
 <span class="">	.locals 0</span>
 
 <span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	iput p1, p0, Lpt;->a:I</span>
 <span class="exec">	return-void</span>
 .end method
 
-.method private static a([Ljava/lang/StackTraceElement;II)Z
-<span class="">	.locals 5</span>
+<span class="cov">.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;</span>
+<span class="">	.locals 16</span>
 
-<span class="missed">	sub-int v0, p2, p1</span>
-<span class="missed">	add-int v1, p2, v0</span>
-<span class="missed">	array-length v2, p0</span>
-<span class="missed">	const/4 v3, 0x0</span>
-<span class="missed">	if-le v1, v2, :cond_0</span>
-<span class="">	return v3</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	if-ge v1, v0, :cond_2</span>
-<span class="missed">	add-int v2, p1, v1</span>
-<span class="missed">	aget-object v2, p0, v2</span>
-<span class="missed">	add-int v4, p2, v1</span>
-<span class="missed">	aget-object v4, p0, v4</span>
-<span class="">	invoke-virtual {v2, v4}, Ljava/lang/StackTraceElement;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result v2</span>
-<span class="missed">	if-nez v2, :cond_1</span>
-<span class="">	return v3</span>
-<span class="">	:cond_1</span>
-<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="cov">	move-object/from16 v0, p1</span>
+<span class="exec">	invoke-static/range {p1 .. p1}, Lbb;->b(Landroid/os/Parcel;)I</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	const/4 v3, 0x0</span>
+<span class="cov">	const-wide/16 v4, 0x0</span>
+<span class="cov">	move-object v8, v2</span>
+<span class="cov">	move-object v11, v8</span>
+<span class="cov">	move-object v12, v11</span>
+<span class="cov">	move-object v13, v12</span>
+<span class="cov">	move-object v14, v13</span>
+<span class="cov">	move-object v15, v14</span>
+<span class="cov">	move-wide v9, v4</span>
+<span class="cov">	const/4 v7, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->dataPosition()I</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	if-ge v2, v1, :cond_0</span>
+<span class="exec">	invoke-static/range {p1 .. p1}, Lbb;->a(Landroid/os/Parcel;)I</span>
+<span class="cov">	move-result v2</span>
+<span class="exec">	invoke-static {v2}, Lbb;->a(I)I</span>
+<span class="cov">	move-result v3</span>
+<span class="">	packed-switch v3, :pswitch_data_0</span>
+<span class="missed">	invoke-static {v0, v2}, Lbb;->b(Landroid/os/Parcel;I)V</span>
 <span class="">	goto :goto_0</span>
-<span class="">	:cond_2</span>
-<span class="missed">	const/4 p0, 0x1</span>
-<span class="">	return p0</span>
+<span class="">	:pswitch_0</span>
+<span class="">	invoke-static {v0, v2}, Lbb;->h(Landroid/os/Parcel;I)Ljava/lang/Double;</span>
+<span class="missed">	move-result-object v15</span>
+<span class="">	goto :goto_0</span>
+<span class="cov">	:pswitch_1</span>
+<span class="exec">	invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v14</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:pswitch_2</span>
+<span class="">	invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v13</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:pswitch_3</span>
+<span class="">	invoke-static {v0, v2}, Lbb;->g(Landroid/os/Parcel;I)Ljava/lang/Float;</span>
+<span class="missed">	move-result-object v12</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:pswitch_4</span>
+<span class="">	invoke-static {v0, v2}, Lbb;->f(Landroid/os/Parcel;I)Ljava/lang/Long;</span>
+<span class="missed">	move-result-object v11</span>
+<span class="">	goto :goto_0</span>
+<span class="cov">	:pswitch_5</span>
+<span class="exec">	invoke-static {v0, v2}, Lbb;->e(Landroid/os/Parcel;I)J</span>
+<span class="cov">	move-result-wide v9</span>
+<span class="">	goto :goto_0</span>
+<span class="cov">	:pswitch_6</span>
+<span class="exec">	invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v8</span>
+<span class="">	goto :goto_0</span>
+<span class="cov">	:pswitch_7</span>
+<span class="exec">	invoke-static {v0, v2}, Lbb;->d(Landroid/os/Parcel;I)I</span>
+<span class="cov">	move-result v7</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	invoke-static {v0, v1}, Lbb;->l(Landroid/os/Parcel;I)V</span>
+<span class="cov">	new-instance v0, Lps;</span>
+<span class="cov">	move-object v6, v0</span>
+<span class="cov">	invoke-direct/range {v6 .. v15}, Lps;-><init>(ILjava/lang/String;JLjava/lang/Long;Ljava/lang/Float;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;)V</span>
+<span class="exec">	return-object v0</span>
+<span class="">	nop</span>
+<span class="">	:pswitch_data_0</span>
+<span class="">	.packed-switch 0x1</span>
+<span class="">	:pswitch_7</span>
+<span class="">	:pswitch_6</span>
+<span class="">	:pswitch_5</span>
+<span class="">	:pswitch_4</span>
+<span class="">	:pswitch_3</span>
+<span class="">	:pswitch_2</span>
+<span class="">	:pswitch_1</span>
+<span class="">	:pswitch_0</span>
+<span class="">	.end packed-switch</span>
 .end method
 
-.method private static a([Ljava/lang/StackTraceElement;I)[Ljava/lang/StackTraceElement;
-<span class="">	.locals 10</span>
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+<span class="">	.locals 0</span>
 
-<span class="missed">	new-instance v0, Ljava/util/HashMap;</span>
-<span class="missed">	invoke-direct {v0}, Ljava/util/HashMap;-><init>()V</span>
-<span class="missed">	array-length v1, p0</span>
-<span class="missed">	new-array v1, v1, [Ljava/lang/StackTraceElement;</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="missed">	const/4 v3, 0x1</span>
-<span class="missed">	const/4 v4, 0x0</span>
-<span class="missed">	const/4 v5, 0x0</span>
-<span class="missed">	const/4 v6, 0x1</span>
-<span class="">	:goto_0</span>
-<span class="missed">	array-length v7, p0</span>
-<span class="missed">	if-ge v4, v7, :cond_3</span>
-<span class="missed">	aget-object v7, p0, v4</span>
-<span class="">	invoke-interface {v0, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v8</span>
-<span class="missed">	check-cast v8, Ljava/lang/Integer;</span>
-<span class="missed">	if-eqz v8, :cond_2</span>
-<span class="">	invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I</span>
-<span class="missed">	move-result v9</span>
-<span class="">	invoke-static {p0, v9, v4}, Lpt;->a([Ljava/lang/StackTraceElement;II)Z</span>
-<span class="missed">	move-result v9</span>
-<span class="missed">	if-nez v9, :cond_0</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:cond_0</span>
-<span class="">	invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I</span>
-<span class="missed">	move-result v8</span>
-<span class="missed">	sub-int v8, v4, v8</span>
-<span class="missed">	if-ge v6, p1, :cond_1</span>
-<span class="missed">	invoke-static {p0, v4, v1, v5, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
-<span class="missed">	add-int/2addr v5, v8</span>
-<span class="missed">	add-int/lit8 v6, v6, 0x1</span>
-<span class="">	:cond_1</span>
-<span class="missed">	add-int/lit8 v8, v8, -0x1</span>
-<span class="missed">	add-int/2addr v8, v4</span>
-<span class="">	goto :goto_2</span>
-<span class="">	:goto_1</span>
-<span class="">	:cond_2</span>
-<span class="missed">	aget-object v6, p0, v4</span>
-<span class="missed">	aput-object v6, v1, v5</span>
-<span class="missed">	add-int/lit8 v5, v5, 0x1</span>
-<span class="missed">	move v8, v4</span>
-<span class="missed">	const/4 v6, 0x1</span>
-<span class="">	:goto_2</span>
-<span class="">	invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
-<span class="missed">	move-result-object v4</span>
-<span class="missed">	invoke-interface {v0, v7, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	add-int/lit8 v4, v8, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_3</span>
-<span class="missed">	new-array p0, v5, [Ljava/lang/StackTraceElement;</span>
-<span class="missed">	invoke-static {v1, v2, p0, v2, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
-<span class="">	return-object p0</span>
-.end method
-
-.method public a([Ljava/lang/StackTraceElement;)[Ljava/lang/StackTraceElement;
-<span class="">	.locals 3</span>
-
-<span class="missed">	iget v0, p0, Lpt;->a:I</span>
-<span class="">	invoke-static {p1, v0}, Lpt;->a([Ljava/lang/StackTraceElement;I)[Ljava/lang/StackTraceElement;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	array-length v1, v0</span>
-<span class="missed">	array-length v2, p1</span>
-<span class="missed">	if-ge v1, v2, :cond_0</span>
-<span class="">	return-object v0</span>
-<span class="">	:cond_0</span>
+<span class="missed">	new-array p1, p1, [Lps;</span>
 <span class="">	return-object p1</span>
 .end method</code>
 	</pre>

@@ -1,50 +1,83 @@
-.class public final Lsa;
+.class final Lsa;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.field private static final a:Lk;
+.implements Lsc;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lk<",
-"Ljava/lang/String;",
-"Landroid/net/Uri;",
-">;"
+"<TResult:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;",
+"Lsc<",
+"TTResult;>;"
 }
 .end annotation
+.field private final a:Ljava/util/concurrent/Executor;
+.field private final b:Ljava/lang/Object;
+.field private c:Lrk;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lrk<",
+"-TTResult;>;"
+}
+.end annotation
+.annotation build Ljavax/annotation/concurrent/GuardedBy;
+value = "mLock"
+.end annotation
 .end field
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lrk;)V
 .locals 1
-new-instance v0, Lk;
-invoke-direct {v0}, Lk;-><init>()V
-sput-object v0, Lsa;->a:Lk;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(",
+"Ljava/util/concurrent/Executor;",
+"Lrk<",
+"-TTResult;>;)V"
+}
+.end annotation
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+new-instance v0, Ljava/lang/Object;
+invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+iput-object v0, p0, Lsa;->b:Ljava/lang/Object;
+iput-object p1, p0, Lsa;->a:Ljava/util/concurrent/Executor;
+iput-object p2, p0, Lsa;->c:Lrk;
 return-void
 .end method
-.method public static declared-synchronized a(Ljava/lang/String;)Landroid/net/Uri;
-.locals 4
-const-class v0, Lsa;
+.method static synthetic a(Lsa;)Ljava/lang/Object;
+.locals 0
+iget-object p0, p0, Lsa;->b:Ljava/lang/Object;
+return-object p0
+.end method
+.method static synthetic b(Lsa;)Lrk;
+.locals 0
+iget-object p0, p0, Lsa;->c:Lrk;
+return-object p0
+.end method
+.method public final a(Lrm;)V
+.locals 2
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(",
+"Lrm<",
+"TTResult;>;)V"
+}
+.end annotation
+invoke-virtual {p1}, Lrm;->b()Z
+move-result v0
+if-eqz v0, :cond_1
+iget-object v0, p0, Lsa;->b:Ljava/lang/Object;
 monitor-enter v0
-sget-object v1, Lsa;->a:Lk;
-invoke-virtual {v1, p0}, Lo;->get(Ljava/lang/Object;)Ljava/lang/Object;
-move-result-object v1
-check-cast v1, Landroid/net/Uri;
-if-nez v1, :cond_1
-const-string v1, "content://com.google.android.gms.phenotype/"
-invoke-static {p0}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
-move-result-object v2
-invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-move-result-object v2
-invoke-virtual {v2}, Ljava/lang/String;->length()I
-move-result v3
-invoke-virtual {v1, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-move-result-object v1
-invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-move-result-object v1
-sget-object v2, Lsa;->a:Lk;
-invoke-virtual {v2, p0, v1}, Lo;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-:cond_1
+iget-object v1, p0, Lsa;->c:Lrk;
 monitor-exit v0
-return-object v1
+iget-object v0, p0, Lsa;->a:Ljava/util/concurrent/Executor;
+new-instance v1, Lsb;
+invoke-direct {v1, p0, p1}, Lsb;-><init>(Lsa;Lrm;)V
+invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+goto :goto_0
 :catchall_0
-move-exception p0
+move-exception p1
 monitor-exit v0
-throw p0
+throw p1
+:cond_1
+:goto_0
+return-void
 .end method

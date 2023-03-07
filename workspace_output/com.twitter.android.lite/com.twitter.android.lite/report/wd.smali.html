@@ -14,18 +14,352 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lwd;
-.super Ltd;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+		<code>.class public abstract Lwd;
+.super Ljava/lang/Object;
+.source "AsyncTask.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lwd$a;,
+Lwd$e;,
+Lwd$b;,
+Lwd$d;,
+Lwd$c;
+}
+.end annotation
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<Params:",
+"Ljava/lang/Object;",
+"Progress:",
+"Ljava/lang/Object;",
+"Result:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;"
+}
+.end annotation
+
+.field private static final a:I
+.field public static final b:Ljava/util/concurrent/Executor;
+.field public static final c:Ljava/util/concurrent/Executor;
+.field private static final d:I
+.field private static final e:I
+.field private static final f:Ljava/util/concurrent/ThreadFactory;
+.field private static final g:Ljava/util/concurrent/BlockingQueue;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/concurrent/BlockingQueue<",
+"Ljava/lang/Runnable;",
+">;"
+}
+.end annotation
+.end field
+.field private static final h:Lwd$b;
+.field private static volatile i:Ljava/util/concurrent/Executor;
+.field private final j:Lwd$e;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lwd$e<",
+"TParams;TResult;>;"
+}
+.end annotation
+.end field
+.field private final k:Ljava/util/concurrent/FutureTask;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/concurrent/FutureTask<",
+"TResult;>;"
+}
+.end annotation
+.end field
+.field private volatile l:Lwd$d;
+.field private final m:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final n:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 10</span>
 
+<span class="exec">	invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v0}, Ljava/lang/Runtime;->availableProcessors()I</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	sput v0, Lwd;->a:I</span>
+<span class="cov">	sget v0, Lwd;->a:I</span>
+<span class="cov">	add-int/lit8 v1, v0, 0x1</span>
+<span class="cov">	sput v1, Lwd;->d:I</span>
+<span class="cov">	mul-int/lit8 v0, v0, 0x2</span>
+<span class="cov">	add-int/lit8 v0, v0, 0x1</span>
+<span class="cov">	sput v0, Lwd;->e:I</span>
+<span class="cov">	new-instance v0, Lwd$1;</span>
+<span class="cov">	invoke-direct {v0}, Lwd$1;-><init>()V</span>
+<span class="cov">	sput-object v0, Lwd;->f:Ljava/util/concurrent/ThreadFactory;</span>
+<span class="cov">	new-instance v0, Ljava/util/concurrent/LinkedBlockingQueue;</span>
+<span class="cov">	const/16 v1, 0x80</span>
+<span class="cov">	invoke-direct {v0, v1}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>(I)V</span>
+<span class="cov">	sput-object v0, Lwd;->g:Ljava/util/concurrent/BlockingQueue;</span>
+<span class="cov">	new-instance v0, Ljava/util/concurrent/ThreadPoolExecutor;</span>
+<span class="cov">	sget v3, Lwd;->d:I</span>
+<span class="cov">	sget v4, Lwd;->e:I</span>
+<span class="cov">	sget-object v7, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;</span>
+<span class="cov">	sget-object v8, Lwd;->g:Ljava/util/concurrent/BlockingQueue;</span>
+<span class="cov">	sget-object v9, Lwd;->f:Ljava/util/concurrent/ThreadFactory;</span>
+<span class="cov">	const-wide/16 v5, 0x1</span>
+<span class="cov">	move-object v2, v0</span>
+<span class="cov">	invoke-direct/range {v2 .. v9}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V</span>
+<span class="cov">	sput-object v0, Lwd;->b:Ljava/util/concurrent/Executor;</span>
+<span class="cov">	new-instance v0, Lwd$c;</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	invoke-direct {v0, v1}, Lwd$c;-><init>(Lwd$1;)V</span>
+<span class="cov">	sput-object v0, Lwd;->c:Ljava/util/concurrent/Executor;</span>
+<span class="cov">	new-instance v0, Lwd$b;</span>
+<span class="cov">	invoke-direct {v0}, Lwd$b;-><init>()V</span>
+<span class="cov">	sput-object v0, Lwd;->h:Lwd$b;</span>
+<span class="cov">	sget-object v0, Lwd;->c:Ljava/util/concurrent/Executor;</span>
+<span class="cov">	sput-object v0, Lwd;->i:Ljava/util/concurrent/Executor;</span>
+<span class="exec">	return-void</span>
+.end method
 
-.method public constructor &lt;init&gt;(Ljava/lang/String;)V
+<span class="cov">.method public constructor &lt;init&gt;()V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	sget-object v0, Lwd$d;->a:Lwd$d;</span>
+<span class="cov">	iput-object v0, p0, Lwd;->l:Lwd$d;</span>
+<span class="cov">	new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Lwd;->m:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="cov">	new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Lwd;->n:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="cov">	new-instance v0, Lwd$2;</span>
+<span class="cov">	invoke-direct {v0, p0}, Lwd$2;-><init>(Lwd;)V</span>
+<span class="cov">	iput-object v0, p0, Lwd;->j:Lwd$e;</span>
+<span class="cov">	new-instance v0, Lwd$3;</span>
+<span class="cov">	iget-object v1, p0, Lwd;->j:Lwd$e;</span>
+<span class="cov">	invoke-direct {v0, p0, v1}, Lwd$3;-><init>(Lwd;Ljava/util/concurrent/Callable;)V</span>
+<span class="cov">	iput-object v0, p0, Lwd;->k:Ljava/util/concurrent/FutureTask;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method static synthetic a(Lwd;Ljava/lang/Object;)Ljava/lang/Object;</span>
 <span class="">	.locals 0</span>
 
-<span class="missed">	invoke-direct {p0, p1}, Ltd;-><init>(Ljava/lang/String;)V</span>
+<span class="exec">	invoke-direct {p0, p1}, Lwd;->d(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method static synthetic a(Lwd;)Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	iget-object p0, p0, Lwd;->n:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method static synthetic b(Lwd;Ljava/lang/Object;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0, p1}, Lwd;->c(Ljava/lang/Object;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private c(Ljava/lang/Object;)V</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TResult;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-object v0, p0, Lwd;->n:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="exec">	invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	invoke-direct {p0, p1}, Lwd;->d(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method static synthetic c(Lwd;Ljava/lang/Object;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0, p1}, Lwd;->e(Ljava/lang/Object;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private d(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TResult;)TResult;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	sget-object v0, Lwd;->h:Lwd$b;</span>
+<span class="cov">	new-instance v1, Lwd$a;</span>
+<span class="cov">	const/4 v2, 0x1</span>
+<span class="cov">	new-array v3, v2, [Ljava/lang/Object;</span>
+<span class="cov">	const/4 v4, 0x0</span>
+<span class="cov">	aput-object p1, v3, v4</span>
+<span class="cov">	invoke-direct {v1, p0, v3}, Lwd$a;-><init>(Lwd;[Ljava/lang/Object;)V</span>
+<span class="exec">	invoke-virtual {v0, v2, v1}, Lwd$b;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V</span>
+<span class="exec">	return-object p1</span>
+.end method
+
+<span class="cov">.method private e(Ljava/lang/Object;)V</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TResult;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="exec">	invoke-virtual {p0}, Lwd;->d()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lwd;->b(Ljava/lang/Object;)V</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	invoke-virtual {p0, p1}, Lwd;->a(Ljava/lang/Object;)V</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	sget-object p1, Lwd$d;->c:Lwd$d;</span>
+<span class="cov">	iput-object p1, p0, Lwd;->l:Lwd$d;</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method protected varargs abstract a([Ljava/lang/Object;)Ljava/lang/Object;
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"([TParams;)TResult;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+<span class="cov">.method public final varargs a(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Lwd;</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/concurrent/Executor;",</span>
+<span class="">	"[TParams;)",</span>
+<span class="">	"Lwd<",</span>
+<span class="">	"TParams;TProgress;TResult;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-object v0, p0, Lwd;->l:Lwd$d;</span>
+<span class="cov">	sget-object v1, Lwd$d;->a:Lwd$d;</span>
+<span class="missed">	if-eq v0, v1, :cond_2</span>
+<span class="missed">	sget-object v0, Lwd$4;->a:[I</span>
+<span class="missed">	iget-object v1, p0, Lwd;->l:Lwd$d;</span>
+<span class="">	invoke-virtual {v1}, Lwd$d;->ordinal()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	aget v0, v0, v1</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-eq v0, v1, :cond_1</span>
+<span class="missed">	const/4 v1, 0x2</span>
+<span class="missed">	if-eq v0, v1, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string p2, "Cannot execute task: the task has already been executed (a task can be executed only once)"</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string p2, "Cannot execute task: the task is already running."</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	sget-object v0, Lwd$d;->b:Lwd$d;</span>
+<span class="cov">	iput-object v0, p0, Lwd;->l:Lwd$d;</span>
+<span class="cov">	invoke-virtual {p0}, Lwd;->a()V</span>
+<span class="cov">	iget-object v0, p0, Lwd;->j:Lwd$e;</span>
+<span class="cov">	iput-object p2, v0, Lwd$e;->b:[Ljava/lang/Object;</span>
+<span class="cov">	iget-object p2, p0, Lwd;->k:Ljava/util/concurrent/FutureTask;</span>
+<span class="cov">	invoke-interface {p1, p2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method protected a()V</span>
+<span class="">	.locals 0</span>
+
 <span class="">	return-void</span>
+.end method
+
+.method protected a(Ljava/lang/Object;)V
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TResult;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	return-void</span>
+.end method
+
+.method public final a(Z)Z
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lwd;->m:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V</span>
+<span class="missed">	iget-object v0, p0, Lwd;->k:Ljava/util/concurrent/FutureTask;</span>
+<span class="">	invoke-virtual {v0, p1}, Ljava/util/concurrent/FutureTask;->cancel(Z)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+<span class="cov">.method public final b()Lwd$d;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-object v0, p0, Lwd;->l:Lwd$d;</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method protected b(Ljava/lang/Object;)V
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TResult;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	invoke-virtual {p0}, Lwd;->c()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method protected varargs b([Ljava/lang/Object;)V
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"([TProgress;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	return-void</span>
+.end method
+
+.method protected c()V
+<span class="">	.locals 0</span>
+
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public final d()Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	iget-object v0, p0, Lwd;->m:Ljava/util/concurrent/atomic/AtomicBoolean;</span>
+<span class="exec">	invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="exec">	return v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

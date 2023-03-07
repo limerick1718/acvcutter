@@ -33,10 +33,10 @@
     .end annotation
 .end field
 
-.field private final d:Lcom/google/android/gms/common/api/internal/d0;
+.field private final d:Lcom/google/android/gms/common/api/internal/af;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/google/android/gms/common/api/internal/d0<",
+            "Lcom/google/android/gms/common/api/internal/af<",
             "TO;>;"
         }
     .end annotation
@@ -58,8 +58,8 @@
         }
     .end annotation
 
-    .line 1
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/e;->a()Lcom/google/android/gms/common/internal/c$a;
+    .line 91
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/e;->c()Lcom/google/android/gms/common/internal/c$a;
 
     move-result-object v0
 
@@ -67,10 +67,10 @@
 
     move-result-object v4
 
-    .line 2
+    .line 92
     iget-object v0, p0, Lcom/google/android/gms/common/api/e;->b:Lcom/google/android/gms/common/api/a;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/a;->b()Lcom/google/android/gms/common/api/a$a;
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/a;->a()Lcom/google/android/gms/common/api/a$a;
 
     move-result-object v1
 
@@ -84,21 +84,37 @@
 
     move-object v7, p2
 
-    .line 3
-    invoke-virtual/range {v1 .. v7}, Lcom/google/android/gms/common/api/a$a;->a(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/c;Ljava/lang/Object;Lcom/google/android/gms/common/api/f;Lcom/google/android/gms/common/api/g;)Lcom/google/android/gms/common/api/a$f;
+    .line 93
+    invoke-virtual/range {v1 .. v7}, Lcom/google/android/gms/common/api/a$a;->a(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/c;Ljava/lang/Object;Lcom/google/android/gms/common/api/f$a;Lcom/google/android/gms/common/api/f$b;)Lcom/google/android/gms/common/api/a$f;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public a(Landroid/content/Context;Landroid/os/Handler;)Lcom/google/android/gms/common/api/internal/v;
+.method public final a()Lcom/google/android/gms/common/api/internal/af;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/common/api/internal/af<",
+            "TO;>;"
+        }
+    .end annotation
+
+    .line 97
+    iget-object v0, p0, Lcom/google/android/gms/common/api/e;->d:Lcom/google/android/gms/common/api/internal/af;
+
+    return-object v0
+.end method
+
+.method public a(Landroid/content/Context;Landroid/os/Handler;)Lcom/google/android/gms/common/api/internal/x;
     .locals 2
 
-    .line 20
-    new-instance v0, Lcom/google/android/gms/common/api/internal/v;
+    .line 124
+    new-instance v0, Lcom/google/android/gms/common/api/internal/x;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/api/e;->a()Lcom/google/android/gms/common/internal/c$a;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/e;->c()Lcom/google/android/gms/common/internal/c$a;
 
     move-result-object v1
 
@@ -106,44 +122,53 @@
 
     move-result-object v1
 
-    invoke-direct {v0, p1, p2, v1}, Lcom/google/android/gms/common/api/internal/v;-><init>(Landroid/content/Context;Landroid/os/Handler;Lcom/google/android/gms/common/internal/c;)V
+    invoke-direct {v0, p1, p2, v1}, Lcom/google/android/gms/common/api/internal/x;-><init>(Landroid/content/Context;Landroid/os/Handler;Lcom/google/android/gms/common/internal/c;)V
 
     return-object v0
 .end method
 
-.method protected a()Lcom/google/android/gms/common/internal/c$a;
+.method public final b()I
+    .locals 1
+
+    .line 98
+    iget v0, p0, Lcom/google/android/gms/common/api/e;->e:I
+
+    return v0
+.end method
+
+.method protected c()Lcom/google/android/gms/common/internal/c$a;
     .locals 3
 
-    .line 4
+    .line 102
     new-instance v0, Lcom/google/android/gms/common/internal/c$a;
 
     invoke-direct {v0}, Lcom/google/android/gms/common/internal/c$a;-><init>()V
 
-    .line 5
+    .line 104
     iget-object v1, p0, Lcom/google/android/gms/common/api/e;->c:Lcom/google/android/gms/common/api/a$d;
 
     instance-of v2, v1, Lcom/google/android/gms/common/api/a$d$b;
 
     if-eqz v2, :cond_0
 
-    .line 6
+    .line 105
     check-cast v1, Lcom/google/android/gms/common/api/a$d$b;
 
-    .line 7
+    .line 106
     invoke-interface {v1}, Lcom/google/android/gms/common/api/a$d$b;->a()Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 8
-    invoke-virtual {v1}, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->f()Landroid/accounts/Account;
+    .line 108
+    invoke-virtual {v1}, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->d()Landroid/accounts/Account;
 
     move-result-object v1
 
     goto :goto_0
 
-    .line 9
+    .line 109
     :cond_0
     iget-object v1, p0, Lcom/google/android/gms/common/api/e;->c:Lcom/google/android/gms/common/api/a$d;
 
@@ -151,10 +176,10 @@
 
     if-eqz v2, :cond_1
 
-    .line 10
+    .line 110
     check-cast v1, Lcom/google/android/gms/common/api/a$d$a;
 
-    invoke-interface {v1}, Lcom/google/android/gms/common/api/a$d$a;->f()Landroid/accounts/Account;
+    invoke-interface {v1}, Lcom/google/android/gms/common/api/a$d$a;->a()Landroid/accounts/Account;
 
     move-result-object v1
 
@@ -163,47 +188,51 @@
     :cond_1
     const/4 v1, 0x0
 
-    .line 11
+    .line 112
     :goto_0
     invoke-virtual {v0, v1}, Lcom/google/android/gms/common/internal/c$a;->a(Landroid/accounts/Account;)Lcom/google/android/gms/common/internal/c$a;
 
-    .line 12
+    move-result-object v0
+
+    .line 114
     iget-object v1, p0, Lcom/google/android/gms/common/api/e;->c:Lcom/google/android/gms/common/api/a$d;
 
     instance-of v2, v1, Lcom/google/android/gms/common/api/a$d$b;
 
     if-eqz v2, :cond_2
 
-    .line 13
+    .line 115
     check-cast v1, Lcom/google/android/gms/common/api/a$d$b;
 
-    .line 14
+    .line 116
     invoke-interface {v1}, Lcom/google/android/gms/common/api/a$d$b;->a()Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
     move-result-object v1
 
     if-eqz v1, :cond_2
 
-    .line 15
-    invoke-virtual {v1}, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->n()Ljava/util/Set;
+    .line 118
+    invoke-virtual {v1}, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->j()Ljava/util/Set;
 
     move-result-object v1
 
     goto :goto_1
 
-    .line 16
+    .line 119
     :cond_2
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object v1
 
-    .line 17
+    .line 120
     :goto_1
     invoke-virtual {v0, v1}, Lcom/google/android/gms/common/internal/c$a;->a(Ljava/util/Collection;)Lcom/google/android/gms/common/internal/c$a;
 
+    move-result-object v0
+
     iget-object v1, p0, Lcom/google/android/gms/common/api/e;->a:Landroid/content/Context;
 
-    .line 18
+    .line 121
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -212,41 +241,20 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/internal/c$a;->a(Ljava/lang/String;)Lcom/google/android/gms/common/internal/c$a;
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/internal/c$a;->b(Ljava/lang/String;)Lcom/google/android/gms/common/internal/c$a;
+
+    move-result-object v0
 
     iget-object v1, p0, Lcom/google/android/gms/common/api/e;->a:Landroid/content/Context;
 
-    .line 19
+    .line 122
     invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/internal/c$a;->b(Ljava/lang/String;)Lcom/google/android/gms/common/internal/c$a;
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/internal/c$a;->a(Ljava/lang/String;)Lcom/google/android/gms/common/internal/c$a;
 
-    return-object v0
-.end method
-
-.method public final b()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lcom/google/android/gms/common/api/e;->e:I
-
-    return v0
-.end method
-
-.method public final c()Lcom/google/android/gms/common/api/internal/d0;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/android/gms/common/api/internal/d0<",
-            "TO;>;"
-        }
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/api/e;->d:Lcom/google/android/gms/common/api/internal/d0;
+    move-result-object v0
 
     return-object v0
 .end method

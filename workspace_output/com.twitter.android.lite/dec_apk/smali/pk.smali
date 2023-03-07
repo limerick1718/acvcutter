@@ -1,13 +1,23 @@
-.class public interface abstract Lpk;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.method public abstract a()Z
+.class abstract Lpk;
+.super Lpj;
+.field private b:Z
+.method constructor <init>(Lpl;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method
-.method public abstract b()D
+.method protected abstract e()Z
 .end method
-.method public abstract c()J
+.method final j()Z
+.locals 1
+const/4 v0, 0x0
+return v0
 .end method
-.method public abstract d()J
+.method protected final k()V
+.locals 2
+return-void
 .end method
-.method public abstract e()Ljava/lang/String;
+.method public final v()V
+.locals 2
+return-void
 .end method

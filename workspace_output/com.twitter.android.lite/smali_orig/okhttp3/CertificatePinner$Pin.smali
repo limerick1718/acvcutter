@@ -21,7 +21,7 @@
 # instance fields
 .field final canonicalHostname:Ljava/lang/String;
 
-.field final hash:Lhx;
+.field final hash:Lyv;
 
 .field final hashAlgorithm:Ljava/lang/String;
 
@@ -32,15 +32,15 @@
 .method constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
 
-    .line 1
+    .line 268
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 269
     iput-object p1, p0, Lokhttp3/CertificatePinner$Pin;->pattern:Ljava/lang/String;
 
     const-string v0, "*."
 
-    .line 3
+    .line 270
     invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
@@ -49,7 +49,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4
+    .line 271
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 5
+    .line 272
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -105,66 +105,66 @@
 
     const-string p1, "sha1/"
 
-    .line 6
+    .line 273
     invoke-virtual {p2, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 7
+    .line 274
     iput-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hashAlgorithm:Ljava/lang/String;
 
     const/4 p1, 0x5
 
-    .line 8
+    .line 275
     invoke-virtual {p2, p1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {p1}, Lhx;->a(Ljava/lang/String;)Lhx;
+    invoke-static {p1}, Lyv;->b(Ljava/lang/String;)Lyv;
 
     move-result-object p1
 
-    iput-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lhx;
+    iput-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lyv;
 
     goto :goto_1
 
     :cond_1
     const-string p1, "sha256/"
 
-    .line 9
+    .line 276
     invoke-virtual {p2, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 10
+    .line 277
     iput-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hashAlgorithm:Ljava/lang/String;
 
     const/4 p1, 0x7
 
-    .line 11
+    .line 278
     invoke-virtual {p2, p1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {p1}, Lhx;->a(Ljava/lang/String;)Lhx;
+    invoke-static {p1}, Lyv;->b(Ljava/lang/String;)Lyv;
 
     move-result-object p1
 
-    iput-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lhx;
+    iput-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lyv;
 
-    .line 12
+    .line 283
     :goto_1
-    iget-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lhx;
+    iget-object p1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lyv;
 
     if-eqz p1, :cond_2
 
     return-void
 
-    .line 13
+    .line 284
     :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -186,7 +186,7 @@
 
     throw p1
 
-    .line 14
+    .line 280
     :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -214,7 +214,7 @@
 .method public equals(Ljava/lang/Object;)Z
     .locals 2
 
-    .line 1
+    .line 300
     instance-of v0, p1, Lokhttp3/CertificatePinner$Pin;
 
     if-eqz v0, :cond_0
@@ -225,7 +225,7 @@
 
     iget-object v1, p1, Lokhttp3/CertificatePinner$Pin;->pattern:Ljava/lang/String;
 
-    .line 2
+    .line 301
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -236,19 +236,19 @@
 
     iget-object v1, p1, Lokhttp3/CertificatePinner$Pin;->hashAlgorithm:Ljava/lang/String;
 
-    .line 3
+    .line 302
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lhx;
+    iget-object v0, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lyv;
 
-    iget-object p1, p1, Lokhttp3/CertificatePinner$Pin;->hash:Lhx;
+    iget-object p1, p1, Lokhttp3/CertificatePinner$Pin;->hash:Lyv;
 
-    .line 4
-    invoke-virtual {v0, p1}, Lhx;->equals(Ljava/lang/Object;)Z
+    .line 303
+    invoke-virtual {v0, p1}, Lyv;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -268,7 +268,7 @@
 .method public hashCode()I
     .locals 2
 
-    .line 1
+    .line 308
     iget-object v0, p0, Lokhttp3/CertificatePinner$Pin;->pattern:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -281,7 +281,7 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 2
+    .line 309
     iget-object v0, p0, Lokhttp3/CertificatePinner$Pin;->hashAlgorithm:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -292,10 +292,10 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 3
-    iget-object v0, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lhx;
+    .line 310
+    iget-object v0, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lyv;
 
-    invoke-virtual {v0}, Lhx;->hashCode()I
+    invoke-virtual {v0}, Lyv;->hashCode()I
 
     move-result v0
 
@@ -307,7 +307,7 @@
 .method matches(Ljava/lang/String;)Z
     .locals 10
 
-    .line 1
+    .line 289
     iget-object v0, p0, Lokhttp3/CertificatePinner$Pin;->pattern:Ljava/lang/String;
 
     const-string v1, "*."
@@ -320,12 +320,12 @@
 
     const/16 v0, 0x2e
 
-    .line 2
+    .line 290
     invoke-virtual {p1, v0}, Ljava/lang/String;->indexOf(I)I
 
     move-result v0
 
-    .line 3
+    .line 291
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -352,14 +352,14 @@
 
     const/4 v8, 0x0
 
-    .line 4
+    .line 293
     invoke-virtual {v7}, Ljava/lang/String;->length()I
 
     move-result v9
 
     move-object v4, p1
 
-    .line 5
+    .line 292
     invoke-virtual/range {v4 .. v9}, Ljava/lang/String;->regionMatches(ZILjava/lang/String;II)Z
 
     move-result p1
@@ -374,7 +374,7 @@
     :goto_0
     return v2
 
-    .line 6
+    .line 296
     :cond_1
     iget-object v0, p0, Lokhttp3/CertificatePinner$Pin;->canonicalHostname:Ljava/lang/String;
 
@@ -388,7 +388,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 1
+    .line 315
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -397,9 +397,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lhx;
+    iget-object v1, p0, Lokhttp3/CertificatePinner$Pin;->hash:Lyv;
 
-    invoke-virtual {v1}, Lhx;->f()Ljava/lang/String;
+    invoke-virtual {v1}, Lyv;->b()Ljava/lang/String;
 
     move-result-object v1
 

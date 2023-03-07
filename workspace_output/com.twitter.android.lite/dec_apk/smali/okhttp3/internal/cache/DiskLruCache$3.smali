@@ -35,7 +35,7 @@ invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public hasNext()Z
-.locals 5
+.locals 4
 const/4 v0, 0x0
 return v0
 .end method
@@ -45,7 +45,7 @@ const/4 v0, 0x0
 return-object v0
 .end method
 .method public next()Lokhttp3/internal/cache/DiskLruCache$Snapshot;
-.locals 2
+.locals 1
 const/4 v0, 0x0
 return-object v0
 .end method

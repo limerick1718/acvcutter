@@ -1,106 +1,162 @@
-.class public Lnt;
+.class final Lnt;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
 
 # interfaces
-.implements Lqt;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:I
+.field private final synthetic a:Z
 
-.field private final b:[Lqt;
-
-.field private final c:Lot;
+.field private final synthetic b:Lnl;
 
 
 # direct methods
-.method public varargs constructor <init>(I[Lqt;)V
+.method constructor <init>(Lnl;Z)V
     .locals 0
 
     .line 1
+    iput-object p1, p0, Lnt;->b:Lnl;
+
+    iput-boolean p2, p0, Lnt;->a:Z
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    iput p1, p0, Lnt;->a:I
-
-    .line 3
-    iput-object p2, p0, Lnt;->b:[Lqt;
-
-    .line 4
-    new-instance p2, Lot;
-
-    invoke-direct {p2, p1}, Lot;-><init>(I)V
-
-    iput-object p2, p0, Lnt;->c:Lot;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a([Ljava/lang/StackTraceElement;)[Ljava/lang/StackTraceElement;
-    .locals 7
-
-    .line 1
-    array-length v0, p1
-
-    iget v1, p0, Lnt;->a:I
-
-    if-gt v0, v1, :cond_0
-
-    return-object p1
+.method public final run()V
+    .locals 4
 
     .line 2
-    :cond_0
-    iget-object v0, p0, Lnt;->b:[Lqt;
+    iget-object v0, p0, Lnt;->b:Lnl;
 
-    array-length v1, v0
+    iget-object v0, v0, Lnl;->q:Lmf;
 
-    const/4 v2, 0x0
+    invoke-virtual {v0}, Lmf;->C()Z
 
-    move-object v3, p1
-
-    :goto_0
-    if-ge v2, v1, :cond_2
-
-    aget-object v4, v0, v2
+    move-result v0
 
     .line 3
-    array-length v5, v3
+    iget-object v1, p0, Lnt;->b:Lnl;
 
-    iget v6, p0, Lnt;->a:I
+    iget-object v1, v1, Lnl;->q:Lmf;
 
-    if-gt v5, v6, :cond_1
+    invoke-virtual {v1}, Lmf;->B()Z
 
-    goto :goto_1
+    move-result v1
 
     .line 4
-    :cond_1
-    invoke-interface {v4, p1}, Lqt;->a([Ljava/lang/StackTraceElement;)[Ljava/lang/StackTraceElement;
+    iget-object v2, p0, Lnt;->b:Lnl;
 
-    move-result-object v3
+    iget-object v2, v2, Lnl;->q:Lmf;
 
-    add-int/lit8 v2, v2, 0x1
+    iget-boolean v3, p0, Lnt;->a:Z
 
-    goto :goto_0
+    invoke-virtual {v2, v3}, Lmf;->a(Z)V
 
     .line 5
-    :cond_2
-    :goto_1
-    array-length p1, v3
+    iget-boolean v2, p0, Lnt;->a:Z
 
-    iget v0, p0, Lnt;->a:I
-
-    if-le p1, v0, :cond_3
+    if-ne v1, v2, :cond_0
 
     .line 6
-    iget-object p1, p0, Lnt;->c:Lot;
+    iget-object v1, p0, Lnt;->b:Lnl;
 
-    invoke-virtual {p1, v3}, Lot;->a([Ljava/lang/StackTraceElement;)[Ljava/lang/StackTraceElement;
+    iget-object v1, v1, Lnl;->q:Lmf;
 
-    move-result-object v3
+    .line 7
+    invoke-virtual {v1}, Lmf;->r()Lla;
 
-    :cond_3
-    return-object v3
+    move-result-object v1
+
+    .line 8
+    invoke-virtual {v1}, Lla;->x()Llc;
+
+    move-result-object v1
+
+    iget-boolean v2, p0, Lnt;->a:Z
+
+    .line 9
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    const-string v3, "Default data collection state already set to"
+
+    invoke-virtual {v1, v3, v2}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V
+
+    .line 10
+    :cond_0
+    iget-object v1, p0, Lnt;->b:Lnl;
+
+    iget-object v1, v1, Lnl;->q:Lmf;
+
+    invoke-virtual {v1}, Lmf;->C()Z
+
+    move-result v1
+
+    if-eq v1, v0, :cond_1
+
+    iget-object v1, p0, Lnt;->b:Lnl;
+
+    iget-object v1, v1, Lnl;->q:Lmf;
+
+    .line 11
+    invoke-virtual {v1}, Lmf;->C()Z
+
+    move-result v1
+
+    iget-object v2, p0, Lnt;->b:Lnl;
+
+    iget-object v2, v2, Lnl;->q:Lmf;
+
+    invoke-virtual {v2}, Lmf;->B()Z
+
+    move-result v2
+
+    if-eq v1, v2, :cond_2
+
+    .line 12
+    :cond_1
+    iget-object v1, p0, Lnt;->b:Lnl;
+
+    iget-object v1, v1, Lnl;->q:Lmf;
+
+    .line 13
+    invoke-virtual {v1}, Lmf;->r()Lla;
+
+    move-result-object v1
+
+    .line 14
+    invoke-virtual {v1}, Lla;->k()Llc;
+
+    move-result-object v1
+
+    iget-boolean v2, p0, Lnt;->a:Z
+
+    .line 15
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    .line 16
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    const-string v3, "Default data collection is different than actual status"
+
+    .line 17
+    invoke-virtual {v1, v3, v2, v0}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 18
+    :cond_2
+    iget-object v0, p0, Lnt;->b:Lnl;
+
+    invoke-static {v0}, Lnl;->a(Lnl;)V
+
+    return-void
 .end method

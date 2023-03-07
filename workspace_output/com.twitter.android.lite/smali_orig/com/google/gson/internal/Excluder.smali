@@ -3,38 +3,38 @@
 .source "Excluder.java"
 
 # interfaces
-.implements Lwv;
 .implements Ljava/lang/Cloneable;
+.implements Lto;
 
 
 # static fields
-.field public static final g:Lcom/google/gson/internal/Excluder;
+.field public static final a:Lcom/google/gson/internal/Excluder;
 
 
 # instance fields
-.field private a:D
+.field private b:D
 
-.field private b:I
-
-.field private c:Z
+.field private c:I
 
 .field private d:Z
 
-.field private e:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List<",
-            "Lbv;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private e:Z
 
 .field private f:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
-            "Lbv;",
+            "Lst;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private g:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lst;",
             ">;"
         }
     .end annotation
@@ -45,12 +45,12 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1
+    .line 52
     new-instance v0, Lcom/google/gson/internal/Excluder;
 
     invoke-direct {v0}, Lcom/google/gson/internal/Excluder;-><init>()V
 
-    sput-object v0, Lcom/google/gson/internal/Excluder;->g:Lcom/google/gson/internal/Excluder;
+    sput-object v0, Lcom/google/gson/internal/Excluder;->a:Lcom/google/gson/internal/Excluder;
 
     return-void
 .end method
@@ -58,120 +58,39 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 1
+    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-wide/high16 v0, -0x4010000000000000L    # -1.0
 
-    .line 2
-    iput-wide v0, p0, Lcom/google/gson/internal/Excluder;->a:D
+    .line 54
+    iput-wide v0, p0, Lcom/google/gson/internal/Excluder;->b:D
 
     const/16 v0, 0x88
 
-    .line 3
-    iput v0, p0, Lcom/google/gson/internal/Excluder;->b:I
+    .line 55
+    iput v0, p0, Lcom/google/gson/internal/Excluder;->c:I
 
     const/4 v0, 0x1
 
-    .line 4
-    iput-boolean v0, p0, Lcom/google/gson/internal/Excluder;->c:Z
+    .line 56
+    iput-boolean v0, p0, Lcom/google/gson/internal/Excluder;->d:Z
 
-    .line 5
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/gson/internal/Excluder;->e:Ljava/util/List;
-
-    .line 6
+    .line 58
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/gson/internal/Excluder;->f:Ljava/util/List;
 
+    .line 59
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/gson/internal/Excluder;->g:Ljava/util/List;
+
     return-void
-.end method
-
-.method private a(Law;)Z
-    .locals 4
-
-    if-eqz p1, :cond_0
-
-    .line 29
-    invoke-interface {p1}, Law;->value()D
-
-    move-result-wide v0
-
-    .line 30
-    iget-wide v2, p0, Lcom/google/gson/internal/Excluder;->a:D
-
-    cmpl-double p1, v0, v2
-
-    if-lez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x1
-
-    return p1
-.end method
-
-.method private a(Law;Lbw;)Z
-    .locals 0
-
-    .line 28
-    invoke-direct {p0, p1}, Lcom/google/gson/internal/Excluder;->a(Law;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    invoke-direct {p0, p2}, Lcom/google/gson/internal/Excluder;->a(Lbw;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    return p1
-.end method
-
-.method private a(Lbw;)Z
-    .locals 4
-
-    if-eqz p1, :cond_0
-
-    .line 31
-    invoke-interface {p1}, Lbw;->value()D
-
-    move-result-wide v0
-
-    .line 32
-    iget-wide v2, p0, Lcom/google/gson/internal/Excluder;->a:D
-
-    cmpg-double p1, v0, v2
-
-    if-gtz p1, :cond_0
-
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x1
-
-    return p1
 .end method
 
 .method private a(Ljava/lang/Class;)Z
@@ -184,7 +103,7 @@
         }
     .end annotation
 
-    .line 26
+    .line 216
     const-class v0, Ljava/lang/Enum;
 
     invoke-virtual {v0, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -193,7 +112,7 @@
 
     if-nez v0, :cond_1
 
-    .line 27
+    .line 217
     invoke-virtual {p1}, Ljava/lang/Class;->isAnonymousClass()Z
 
     move-result v0
@@ -218,6 +137,87 @@
     return p1
 .end method
 
+.method private a(Lts;)Z
+    .locals 4
+
+    if-eqz p1, :cond_0
+
+    .line 234
+    invoke-interface {p1}, Lts;->a()D
+
+    move-result-wide v0
+
+    .line 235
+    iget-wide v2, p0, Lcom/google/gson/internal/Excluder;->b:D
+
+    cmpl-double p1, v0, v2
+
+    if-lez p1, :cond_0
+
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x1
+
+    return p1
+.end method
+
+.method private a(Lts;Ltt;)Z
+    .locals 0
+
+    .line 229
+    invoke-direct {p0, p1}, Lcom/google/gson/internal/Excluder;->a(Lts;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    invoke-direct {p0, p2}, Lcom/google/gson/internal/Excluder;->a(Ltt;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
+.method private a(Ltt;)Z
+    .locals 4
+
+    if-eqz p1, :cond_0
+
+    .line 244
+    invoke-interface {p1}, Ltt;->a()D
+
+    move-result-wide v0
+
+    .line 245
+    iget-wide v2, p0, Lcom/google/gson/internal/Excluder;->b:D
+
+    cmpg-double p1, v0, v2
+
+    if-gtz p1, :cond_0
+
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x1
+
+    return p1
+.end method
+
 .method private b(Ljava/lang/Class;)Z
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -228,7 +228,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 221
     invoke-virtual {p1}, Ljava/lang/Class;->isMemberClass()Z
 
     move-result v0
@@ -262,7 +262,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 225
     invoke-virtual {p1}, Ljava/lang/Class;->getModifiers()I
 
     move-result p1
@@ -284,36 +284,62 @@
 
 
 # virtual methods
-.method public a(Lfv;Ldw;)Lvv;
+.method protected a()Lcom/google/gson/internal/Excluder;
+    .locals 2
+
+    .line 63
+    :try_start_0
+    invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/gson/internal/Excluder;
+    :try_end_0
+    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    .line 65
+    new-instance v1, Ljava/lang/AssertionError;
+
+    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v1
+.end method
+
+.method public a(Lsx;Ltv;)Ltn;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Lfv;",
-            "Ldw<",
+            "Lsx;",
+            "Ltv<",
             "TT;>;)",
-            "Lvv<",
+            "Ltn<",
             "TT;>;"
         }
     .end annotation
 
-    .line 1
-    invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;
+    .line 112
+    invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;
 
     move-result-object v0
 
     const/4 v1, 0x1
 
-    .line 2
+    .line 113
     invoke-virtual {p0, v0, v1}, Lcom/google/gson/internal/Excluder;->a(Ljava/lang/Class;Z)Z
 
     move-result v5
 
     const/4 v1, 0x0
 
-    .line 3
+    .line 114
     invoke-virtual {p0, v0, v1}, Lcom/google/gson/internal/Excluder;->a(Ljava/lang/Class;Z)Z
 
     move-result v4
@@ -326,9 +352,9 @@
 
     return-object p1
 
-    .line 4
+    .line 120
     :cond_0
-    new-instance v0, Lcom/google/gson/internal/Excluder$a;
+    new-instance v0, Lcom/google/gson/internal/Excluder$1;
 
     move-object v2, v0
 
@@ -338,7 +364,7 @@
 
     move-object v7, p2
 
-    invoke-direct/range {v2 .. v7}, Lcom/google/gson/internal/Excluder$a;-><init>(Lcom/google/gson/internal/Excluder;ZZLfv;Ldw;)V
+    invoke-direct/range {v2 .. v7}, Lcom/google/gson/internal/Excluder$1;-><init>(Lcom/google/gson/internal/Excluder;ZZLsx;Ltv;)V
 
     return-object v0
 .end method
@@ -353,8 +379,8 @@
         }
     .end annotation
 
-    .line 19
-    iget-wide v0, p0, Lcom/google/gson/internal/Excluder;->a:D
+    .line 192
+    iget-wide v0, p0, Lcom/google/gson/internal/Excluder;->b:D
 
     const/4 v2, 0x1
 
@@ -364,24 +390,24 @@
 
     if-eqz v5, :cond_0
 
-    const-class v0, Law;
+    const-class v0, Lts;
 
-    .line 20
+    .line 193
     invoke-virtual {p1, v0}, Ljava/lang/Class;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v0
 
-    check-cast v0, Law;
+    check-cast v0, Lts;
 
-    const-class v1, Lbw;
+    const-class v1, Ltt;
 
     invoke-virtual {p1, v1}, Ljava/lang/Class;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v1
 
-    check-cast v1, Lbw;
+    check-cast v1, Ltt;
 
-    invoke-direct {p0, v0, v1}, Lcom/google/gson/internal/Excluder;->a(Law;Lbw;)Z
+    invoke-direct {p0, v0, v1}, Lcom/google/gson/internal/Excluder;->a(Lts;Ltt;)Z
 
     move-result v0
 
@@ -389,9 +415,9 @@
 
     return v2
 
-    .line 21
+    .line 197
     :cond_0
-    iget-boolean v0, p0, Lcom/google/gson/internal/Excluder;->c:Z
+    iget-boolean v0, p0, Lcom/google/gson/internal/Excluder;->d:Z
 
     if-nez v0, :cond_1
 
@@ -403,7 +429,7 @@
 
     return v2
 
-    .line 22
+    .line 201
     :cond_1
     invoke-direct {p0, p1}, Lcom/google/gson/internal/Excluder;->a(Ljava/lang/Class;)Z
 
@@ -416,15 +442,15 @@
     :cond_2
     if-eqz p2, :cond_3
 
-    .line 23
-    iget-object p2, p0, Lcom/google/gson/internal/Excluder;->e:Ljava/util/List;
+    .line 205
+    iget-object p2, p0, Lcom/google/gson/internal/Excluder;->f:Ljava/util/List;
 
     goto :goto_0
 
     :cond_3
-    iget-object p2, p0, Lcom/google/gson/internal/Excluder;->f:Ljava/util/List;
+    iget-object p2, p0, Lcom/google/gson/internal/Excluder;->g:Ljava/util/List;
 
-    .line 24
+    .line 206
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -441,10 +467,10 @@
 
     move-result-object v0
 
-    check-cast v0, Lbv;
+    check-cast v0, Lst;
 
-    .line 25
-    invoke-interface {v0, p1}, Lbv;->a(Ljava/lang/Class;)Z
+    .line 207
+    invoke-interface {v0, p1}, Lst;->a(Ljava/lang/Class;)Z
 
     move-result v0
 
@@ -461,8 +487,8 @@
 .method public a(Ljava/lang/reflect/Field;Z)Z
     .locals 6
 
-    .line 5
-    iget v0, p0, Lcom/google/gson/internal/Excluder;->b:I
+    .line 150
+    iget v0, p0, Lcom/google/gson/internal/Excluder;->c:I
 
     invoke-virtual {p1}, Ljava/lang/reflect/Field;->getModifiers()I
 
@@ -476,9 +502,9 @@
 
     return v1
 
-    .line 6
+    .line 154
     :cond_0
-    iget-wide v2, p0, Lcom/google/gson/internal/Excluder;->a:D
+    iget-wide v2, p0, Lcom/google/gson/internal/Excluder;->b:D
 
     const-wide/high16 v4, -0x4010000000000000L    # -1.0
 
@@ -486,24 +512,24 @@
 
     if-eqz v0, :cond_1
 
-    const-class v0, Law;
+    const-class v0, Lts;
 
-    .line 7
+    .line 155
     invoke-virtual {p1, v0}, Ljava/lang/reflect/Field;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v0
 
-    check-cast v0, Law;
+    check-cast v0, Lts;
 
-    const-class v2, Lbw;
+    const-class v2, Ltt;
 
     invoke-virtual {p1, v2}, Ljava/lang/reflect/Field;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v2
 
-    check-cast v2, Lbw;
+    check-cast v2, Ltt;
 
-    invoke-direct {p0, v0, v2}, Lcom/google/gson/internal/Excluder;->a(Law;Lbw;)Z
+    invoke-direct {p0, v0, v2}, Lcom/google/gson/internal/Excluder;->a(Lts;Ltt;)Z
 
     move-result v0
 
@@ -511,7 +537,7 @@
 
     return v1
 
-    .line 8
+    .line 159
     :cond_1
     invoke-virtual {p1}, Ljava/lang/reflect/Field;->isSynthetic()Z
 
@@ -521,27 +547,27 @@
 
     return v1
 
-    .line 9
+    .line 163
     :cond_2
-    iget-boolean v0, p0, Lcom/google/gson/internal/Excluder;->d:Z
+    iget-boolean v0, p0, Lcom/google/gson/internal/Excluder;->e:Z
 
     if-eqz v0, :cond_5
 
-    .line 10
-    const-class v0, Lxv;
+    .line 164
+    const-class v0, Ltp;
 
     invoke-virtual {p1, v0}, Ljava/lang/reflect/Field;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v0
 
-    check-cast v0, Lxv;
+    check-cast v0, Ltp;
 
     if-eqz v0, :cond_4
 
     if-eqz p2, :cond_3
 
-    .line 11
-    invoke-interface {v0}, Lxv;->serialize()Z
+    .line 165
+    invoke-interface {v0}, Ltp;->a()Z
 
     move-result v0
 
@@ -550,7 +576,7 @@
     goto :goto_0
 
     :cond_3
-    invoke-interface {v0}, Lxv;->deserialize()Z
+    invoke-interface {v0}, Ltp;->b()Z
 
     move-result v0
 
@@ -560,9 +586,9 @@
     :goto_0
     return v1
 
-    .line 12
+    .line 170
     :cond_5
-    iget-boolean v0, p0, Lcom/google/gson/internal/Excluder;->c:Z
+    iget-boolean v0, p0, Lcom/google/gson/internal/Excluder;->d:Z
 
     if-nez v0, :cond_6
 
@@ -578,7 +604,7 @@
 
     return v1
 
-    .line 13
+    .line 174
     :cond_6
     invoke-virtual {p1}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
 
@@ -595,15 +621,15 @@
     :cond_7
     if-eqz p2, :cond_8
 
-    .line 14
-    iget-object p2, p0, Lcom/google/gson/internal/Excluder;->e:Ljava/util/List;
+    .line 178
+    iget-object p2, p0, Lcom/google/gson/internal/Excluder;->f:Ljava/util/List;
 
     goto :goto_1
 
     :cond_8
-    iget-object p2, p0, Lcom/google/gson/internal/Excluder;->f:Ljava/util/List;
+    iget-object p2, p0, Lcom/google/gson/internal/Excluder;->g:Ljava/util/List;
 
-    .line 15
+    .line 179
     :goto_1
     invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
 
@@ -611,12 +637,12 @@
 
     if-nez v0, :cond_a
 
-    .line 16
-    new-instance v0, Lcv;
+    .line 180
+    new-instance v0, Lsu;
 
-    invoke-direct {v0, p1}, Lcv;-><init>(Ljava/lang/reflect/Field;)V
+    invoke-direct {v0, p1}, Lsu;-><init>(Ljava/lang/reflect/Field;)V
 
-    .line 17
+    .line 181
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -632,10 +658,10 @@
 
     move-result-object p2
 
-    check-cast p2, Lbv;
+    check-cast p2, Lst;
 
-    .line 18
-    invoke-interface {p2, v0}, Lbv;->a(Lcv;)Z
+    .line 182
+    invoke-interface {p2, v0}, Lst;->a(Lsu;)Z
 
     move-result p2
 
@@ -649,33 +675,7 @@
     return p1
 .end method
 
-.method protected clone()Lcom/google/gson/internal/Excluder;
-    .locals 2
-
-    .line 2
-    :try_start_0
-    invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/gson/internal/Excluder;
-    :try_end_0
-    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    .line 3
-    new-instance v1, Ljava/lang/AssertionError;
-
-    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v1
-.end method
-
-.method protected bridge synthetic clone()Ljava/lang/Object;
+.method protected synthetic clone()Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -683,8 +683,8 @@
         }
     .end annotation
 
-    .line 1
-    invoke-virtual {p0}, Lcom/google/gson/internal/Excluder;->clone()Lcom/google/gson/internal/Excluder;
+    .line 50
+    invoke-virtual {p0}, Lcom/google/gson/internal/Excluder;->a()Lcom/google/gson/internal/Excluder;
 
     move-result-object v0
 

@@ -9,6 +9,11 @@ value = Landroid/support/v4/media/session/a;
 accessFlags = 0x409
 name = "a"
 .end annotation
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Landroid/support/v4/media/session/a$a$a;
+}
+.end annotation
 .method public constructor <init>()V
 .locals 1
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

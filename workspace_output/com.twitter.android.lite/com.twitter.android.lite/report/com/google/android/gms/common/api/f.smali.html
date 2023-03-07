@@ -14,20 +14,39 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lcom/google/android/gms/common/api/f;
+		<code>.class public abstract Lcom/google/android/gms/common/api/f;
 .super Ljava/lang/Object;
 
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lcom/google/android/gms/common/api/f$b;,
+Lcom/google/android/gms/common/api/f$a;
+}
+.end annotation
+
+.field private static final a:Ljava/util/Set;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/Set<",
+"Lcom/google/android/gms/common/api/f;",
+">;"
+}
+.end annotation
+.annotation build Ljavax/annotation/concurrent/GuardedBy;
+value = "sAllClients"
+.end annotation
+.end field
 
 
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
 
-.method public abstract a(I)V
-<span class="">	</span>
-
-.end method
-
-.method public abstract c(Landroid/os/Bundle;)V
-<span class="">	</span>
-
+<span class="missed">	new-instance v0, Ljava/util/WeakHashMap;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V</span>
+<span class="">	invoke-static {v0}, Ljava/util/Collections;->newSetFromMap(Ljava/util/Map;)Ljava/util/Set;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lcom/google/android/gms/common/api/f;->a:Ljava/util/Set;</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

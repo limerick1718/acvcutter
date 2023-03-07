@@ -1,20 +1,47 @@
-.class public interface abstract Lli;
+.class final Lli;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic a:Ljava/lang/String;
+
+.field private final synthetic b:J
+
+.field private final synthetic c:Lkh;
+
+
+# direct methods
+.method constructor <init>(Lkh;Ljava/lang/String;J)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lli;->c:Lkh;
+
+    iput-object p2, p0, Lli;->a:Ljava/lang/String;
+
+    iput-wide p3, p0, Lli;->b:J
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()Z
-.end method
+.method public final run()V
+    .locals 4
 
-.method public abstract b()Z
-.end method
+    .line 2
+    iget-object v0, p0, Lli;->c:Lkh;
 
-.method public abstract c()Z
-.end method
+    iget-object v1, p0, Lli;->a:Ljava/lang/String;
 
-.method public abstract d()Z
-.end method
+    iget-wide v2, p0, Lli;->b:J
 
-.method public abstract e()Z
+    invoke-static {v0, v1, v2, v3}, Lkh;->a(Lkh;Ljava/lang/String;J)V
+
+    return-void
 .end method

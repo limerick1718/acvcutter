@@ -14,26 +14,68 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class  Llr;
+		<code>.class public final Llr;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
 
 
-.field public final a:J
-.field public final b:J
-.field public final c:Ljava/lang/String;
-.field public final d:Ljava/lang/String;
+.field private final a:Ljava/lang/String;
+.field private final b:Ljava/lang/String;
+.field private c:Z
+.field private d:Ljava/lang/String;
+.field private final synthetic e:Llm;
 
 
-.method public constructor &lt;init&gt;(JJLjava/lang/String;Ljava/lang/String;)V
+<span class="cov">.method public constructor &lt;init&gt;(Llm;Ljava/lang/String;Ljava/lang/String;)V</span>
 <span class="">	.locals 0</span>
 
-<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="missed">	iput-wide p1, p0, Llr;->a:J</span>
-<span class="missed">	iput-wide p3, p0, Llr;->b:J</span>
-<span class="missed">	iput-object p5, p0, Llr;->c:Ljava/lang/String;</span>
-<span class="missed">	iput-object p6, p0, Llr;->d:Ljava/lang/String;</span>
+<span class="cov">	iput-object p1, p0, Llr;->e:Llm;</span>
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	invoke-static {p2}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	iput-object p2, p0, Llr;->a:Ljava/lang/String;</span>
+<span class="cov">	const/4 p1, 0x0</span>
+<span class="cov">	iput-object p1, p0, Llr;->b:Ljava/lang/String;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public final a()Ljava/lang/String;</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	iget-boolean v0, p0, Llr;->c:Z</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="cov">	iput-boolean v0, p0, Llr;->c:Z</span>
+<span class="cov">	iget-object v0, p0, Llr;->e:Llm;</span>
+<span class="exec">	invoke-static {v0}, Llm;->a(Llm;)Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iget-object v1, p0, Llr;->a:Ljava/lang/String;</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="exec">	invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iput-object v0, p0, Llr;->d:Ljava/lang/String;</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v0, p0, Llr;->d:Ljava/lang/String;</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public final a(Ljava/lang/String;)V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Llr;->d:Ljava/lang/String;</span>
+<span class="exec">	invoke-static {p1, v0}, Lpv;->c(Ljava/lang/String;Ljava/lang/String;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
 <span class="">	return-void</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v0, p0, Llr;->e:Llm;</span>
+<span class="exec">	invoke-static {v0}, Llm;->a(Llm;)Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iget-object v1, p0, Llr;->a:Ljava/lang/String;</span>
+<span class="cov">	invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="cov">	iput-object p1, p0, Llr;->d:Ljava/lang/String;</span>
+<span class="exec">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

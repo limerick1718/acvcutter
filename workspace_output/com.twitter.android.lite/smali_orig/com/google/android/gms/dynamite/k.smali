@@ -6,7 +6,7 @@
 
 
 # virtual methods
-.method public abstract a(Lp6;Ljava/lang/String;ILp6;)Lp6;
+.method public abstract a(Lbk;Ljava/lang/String;ILbk;)Lbk;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -14,7 +14,7 @@
     .end annotation
 .end method
 
-.method public abstract b(Lp6;Ljava/lang/String;ILp6;)Lp6;
+.method public abstract b(Lbk;Ljava/lang/String;ILbk;)Lbk;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -1,168 +1,185 @@
-.class public final Lcom/google/android/gms/common/util/l;
+.class public Lcom/google/android/gms/common/util/l;
 .super Ljava/lang/Object;
 
 
+# static fields
+.field private static a:Ljava/lang/String;
+
+.field private static b:I
+
+
 # direct methods
-.method public static a()Z
+.method static constructor <clinit>()V
+    .locals 0
+
+    return-void
+.end method
+
+.method private static a(Ljava/lang/String;)Ljava/io/BufferedReader;
+    .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 21
+    invoke-static {}, Landroid/os/StrictMode;->allowThreadDiskReads()Landroid/os/StrictMode$ThreadPolicy;
+
+    move-result-object v0
+
+    .line 22
+    :try_start_0
+    new-instance v1, Ljava/io/BufferedReader;
+
+    new-instance v2, Ljava/io/FileReader;
+
+    invoke-direct {v2, p0}, Ljava/io/FileReader;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {v1, v2}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 23
+    invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
+
+    return-object v1
+
+    :catchall_0
+    move-exception p0
+
+    .line 25
+    invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
+
+    throw p0
+.end method
+
+.method public static a()Ljava/lang/String;
     .locals 1
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
 
-    const/4 v0, 0x1
+    .line 2
+    sget-object v0, Lcom/google/android/gms/common/util/l;->a:Ljava/lang/String;
 
-    return v0
-.end method
+    if-nez v0, :cond_1
 
-.method public static b()Z
-    .locals 1
+    .line 3
+    sget v0, Lcom/google/android/gms/common/util/l;->b:I
 
-    const/4 v0, 0x1
+    if-nez v0, :cond_0
 
-    return v0
-.end method
+    .line 4
+    invoke-static {}, Landroid/os/Process;->myPid()I
 
-.method public static c()Z
-    .locals 1
+    move-result v0
 
-    const/4 v0, 0x1
+    sput v0, Lcom/google/android/gms/common/util/l;->b:I
 
-    return v0
-.end method
-
-.method public static d()Z
-    .locals 2
-
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x12
-
-    if-lt v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
+    .line 5
     :cond_0
+    sget v0, Lcom/google/android/gms/common/util/l;->b:I
+
+    .line 6
+    invoke-static {v0}, Lcom/google/android/gms/common/util/l;->a(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gms/common/util/l;->a:Ljava/lang/String;
+
+    .line 7
+    :cond_1
+    sget-object v0, Lcom/google/android/gms/common/util/l;->a:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method private static a(I)Ljava/lang/String;
+    .locals 4
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
+
     const/4 v0, 0x0
 
-    return v0
-.end method
+    if-gtz p0, :cond_0
 
-.method public static e()Z
-    .locals 2
-
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
+    return-object v0
 
     :cond_0
-    const/4 v0, 0x0
+    const/16 v1, 0x19
 
-    return v0
-.end method
+    .line 12
+    :try_start_0
+    new-instance v2, Ljava/lang/StringBuilder;
 
-.method public static f()Z
-    .locals 2
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const-string v1, "/proc/"
 
-    const/16 v1, 0x14
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-lt v0, v1, :cond_0
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const/4 v0, 0x1
+    const-string p0, "/cmdline"
 
-    return v0
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_0
-    const/4 v0, 0x0
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    return v0
-.end method
+    move-result-object p0
 
-.method public static g()Z
-    .locals 2
+    invoke-static {p0}, Lcom/google/android/gms/common/util/l;->a(Ljava/lang/String;)Ljava/io/BufferedReader;
 
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    const/16 v1, 0x15
+    .line 13
+    :try_start_1
+    invoke-virtual {p0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
-    if-lt v0, v1, :cond_0
+    move-result-object v1
 
-    const/4 v0, 0x1
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    return v0
+    move-result-object v0
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :cond_0
-    const/4 v0, 0x0
+    .line 14
+    invoke-static {p0}, Lcom/google/android/gms/common/util/j;->a(Ljava/io/Closeable;)V
 
-    return v0
-.end method
+    goto :goto_1
 
-.method public static h()Z
-    .locals 2
+    :catchall_0
+    move-exception v0
 
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    move-object v3, v0
 
-    const/16 v1, 0x18
+    move-object v0, p0
 
-    if-lt v0, v1, :cond_0
+    move-object p0, v3
 
-    const/4 v0, 0x1
+    goto :goto_0
 
-    return v0
+    :catchall_1
+    move-exception p0
 
-    :cond_0
-    const/4 v0, 0x0
+    .line 19
+    :goto_0
+    invoke-static {v0}, Lcom/google/android/gms/common/util/j;->a(Ljava/io/Closeable;)V
 
-    return v0
-.end method
+    throw p0
 
-.method public static i()Z
-    .locals 2
+    :catch_0
+    move-object p0, v0
 
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 17
+    :catch_1
+    invoke-static {p0}, Lcom/google/android/gms/common/util/j;->a(Ljava/io/Closeable;)V
 
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public static j()Z
-    .locals 2
-
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1c
-
-    if-lt v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
+    :goto_1
+    return-object v0
 .end method

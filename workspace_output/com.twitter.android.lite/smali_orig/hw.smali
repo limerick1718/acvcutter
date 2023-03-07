@@ -1,14 +1,11 @@
-.class public final Lhw;
-.super Ljava/io/IOException;
-.source "MalformedJsonException.java"
+.class public interface abstract Lhw;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lhp;
+.implements Ljava/lang/Cloneable;
 
 
-# direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    return-void
+# virtual methods
+.method public abstract a()Lhw;
 .end method

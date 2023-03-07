@@ -14,33 +14,126 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final Lum;
-.super Lcom/google/android/gms/common/api/a$a;
+		<code>.class public Lum;
+.super Ljava/lang/Object;
+.source "UriUtils.java"
 
+
+.field public static final a:Ljava/util/Set;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lcom/google/android/gms/common/api/a$a<",
-"Lgm;",
-"Ljava/lang/Object;",
+"Ljava/util/Set<",
+"Ljava/lang/String;",
 ">;"
 }
 .end annotation
+.end field
 
 
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 2</span>
 
-.method constructor &lt;init&gt;()V
-<span class="">	.locals 0</span>
-
-<span class="missed">	invoke-direct {p0}, Lcom/google/android/gms/common/api/a$a;-><init>()V</span>
-<span class="">	return-void</span>
+<span class="cov">	new-instance v0, Ljava/util/HashSet;</span>
+<span class="cov">	const/4 v1, 0x3</span>
+<span class="cov">	invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(I)V</span>
+<span class="cov">	sput-object v0, Lum;->a:Ljava/util/Set;</span>
+<span class="cov">	sget-object v0, Lum;->a:Ljava/util/Set;</span>
+<span class="cov">	const-string v1, "twitter.com"</span>
+<span class="cov">	invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object v0, Lum;->a:Ljava/util/Set;</span>
+<span class="cov">	const-string v1, "www.twitter.com"</span>
+<span class="cov">	invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object v0, Lum;->a:Ljava/util/Set;</span>
+<span class="cov">	const-string v1, "mobile.twitter.com"</span>
+<span class="cov">	invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method public final synthetic a(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/c;Ljava/lang/Object;Lcom/google/android/gms/common/api/f;Lcom/google/android/gms/common/api/g;)Lcom/google/android/gms/common/api/a$f;
-<span class="">	.locals 0</span>
+.method public static a(Landroid/net/Uri;)Landroid/net/Uri;
+<span class="">	.locals 3</span>
 
-<span class="missed">	new-instance p1, Ljava/lang/NoSuchMethodError;</span>
-<span class="missed">	invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V</span>
-<span class="">	throw p1</span>
+<span class="">	invoke-virtual {p0}, Landroid/net/Uri;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "/#!"</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, -0x1</span>
+<span class="missed">	if-eq v1, v2, :cond_0</span>
+<span class="missed">	new-instance p0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	invoke-virtual {v0, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x3</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method public static b(Landroid/net/Uri;)Z</span>
+<span class="">	.locals 1</span>
+
+<span class="exec">	invoke-static {p0}, Lum;->d(Landroid/net/Uri;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="exec">	invoke-static {p0}, Lum;->c(Landroid/net/Uri;)Z</span>
+<span class="cov">	move-result p0</span>
+<span class="cov">	if-eqz p0, :cond_0</span>
+<span class="cov">	const/4 p0, 0x1</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 p0, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return p0</span>
+.end method
+
+<span class="cov">.method private static c(Landroid/net/Uri;)Z</span>
+<span class="">	.locals 2</span>
+
+<span class="exec">	invoke-virtual {p0}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	if-eqz p0, :cond_0</span>
+<span class="cov">	sget-object v0, Lum;->a:Ljava/util/Set;</span>
+<span class="cov">	sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;</span>
+<span class="exec">	invoke-virtual {p0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	invoke-interface {v0, p0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result p0</span>
+<span class="cov">	if-eqz p0, :cond_0</span>
+<span class="cov">	const/4 p0, 0x1</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 p0, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return p0</span>
+.end method
+
+<span class="cov">.method private static d(Landroid/net/Uri;)Z</span>
+<span class="">	.locals 1</span>
+
+<span class="exec">	invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	if-eqz p0, :cond_0</span>
+<span class="cov">	sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;</span>
+<span class="exec">	invoke-virtual {p0, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	const-string v0, "https"</span>
+<span class="exec">	invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result p0</span>
+<span class="cov">	if-eqz p0, :cond_0</span>
+<span class="cov">	const/4 p0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

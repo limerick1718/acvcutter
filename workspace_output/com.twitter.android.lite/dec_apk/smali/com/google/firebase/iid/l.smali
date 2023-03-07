@@ -1,29 +1,35 @@
 .class final Lcom/google/firebase/iid/l;
-.super Lcom/google/firebase/iid/j;
-.source "com.google.firebase:firebase-iid@@20.0.0"
-.annotation system Ldalvik/annotation/Signature;
+.super Ljava/lang/Object;
+.field private final a:Landroid/os/Messenger;
+.field private final b:Lcom/google/firebase/iid/ao;
+.method constructor <init>(Landroid/os/IBinder;)V
+.locals 3
+.annotation system Ldalvik/annotation/Throws;
 value = {
-"Lcom/google/firebase/iid/j<",
-"Landroid/os/Bundle;",
-">;"
+Landroid/os/RemoteException;
 }
 .end annotation
-.method constructor <init>(IILandroid/os/Bundle;)V
-.locals 0
-const/4 p2, 0x1
-invoke-direct {p0, p1, p2, p3}, Lcom/google/firebase/iid/j;-><init>(IILandroid/os/Bundle;)V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-interface {p1}, Landroid/os/IBinder;->getInterfaceDescriptor()Ljava/lang/String;
+move-result-object v0
+const-string v1, "android.os.IMessenger"
+invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+move-result v1
+const/4 v2, 0x0
+new-instance v0, Landroid/os/Messenger;
+invoke-direct {v0, p1}, Landroid/os/Messenger;-><init>(Landroid/os/IBinder;)V
+iput-object v0, p0, Lcom/google/firebase/iid/l;->a:Landroid/os/Messenger;
+iput-object v2, p0, Lcom/google/firebase/iid/l;->b:Lcom/google/firebase/iid/ao;
 return-void
 .end method
-.method final a(Landroid/os/Bundle;)V
+.method final a(Landroid/os/Message;)V
 .locals 1
-const-string v0, "data"
-invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
-move-result-object p1
-invoke-virtual {p0, p1}, Lcom/google/firebase/iid/j;->a(Ljava/lang/Object;)V
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Landroid/os/RemoteException;
+}
+.end annotation
+iget-object v0, p0, Lcom/google/firebase/iid/l;->a:Landroid/os/Messenger;
+invoke-virtual {v0, p1}, Landroid/os/Messenger;->send(Landroid/os/Message;)V
 return-void
-.end method
-.method final a()Z
-.locals 1
-const/4 v0, 0x0
-return v0
 .end method

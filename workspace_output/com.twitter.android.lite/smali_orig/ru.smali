@@ -1,192 +1,133 @@
-.class public Lru;
+.class final Lru;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-common@@19.3.0"
+
+# interfaces
+.implements Lsc;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<TResult:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Lsc<",
+        "TTResult;>;"
+    }
+.end annotation
 
 
 # instance fields
-.field private final a:Landroid/content/Context;
+.field private final a:Ljava/util/concurrent/Executor;
 
-.field private final b:Landroid/content/SharedPreferences;
+.field private final b:Ljava/lang/Object;
 
-.field private final c:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private c:Lrh;
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "mLock"
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Lju;)V
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lrh;)V
     .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    invoke-static {p1}, Lru;->a(Landroid/content/Context;)Landroid/content/Context;
+    new-instance v0, Ljava/lang/Object;
 
-    move-result-object p3
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lru;->a:Landroid/content/Context;
+    iput-object v0, p0, Lru;->b:Ljava/lang/Object;
 
     .line 3
-    new-instance p3, Ljava/lang/StringBuilder;
-
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v0, "com.google.firebase.common.prefs:"
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    const/4 p3, 0x0
+    iput-object p1, p0, Lru;->a:Ljava/util/concurrent/Executor;
 
     .line 4
-    invoke-virtual {p1, p2, p3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lru;->b:Landroid/content/SharedPreferences;
-
-    .line 5
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-direct {p0}, Lru;->b()Z
-
-    move-result p2
-
-    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object p1, p0, Lru;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p2, p0, Lru;->c:Lrh;
 
     return-void
 .end method
 
-.method private static a(Landroid/content/Context;)Landroid/content/Context;
-    .locals 2
+.method static synthetic a(Lru;)Ljava/lang/Object;
+    .locals 0
 
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 16
+    iget-object p0, p0, Lru;->b:Ljava/lang/Object;
 
-    const/16 v1, 0x18
-
-    if-lt v0, v1, :cond_1
-
-    .line 2
-    invoke-static {p0}, Ls;->c(Landroid/content/Context;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    .line 3
-    :cond_0
-    invoke-static {p0}, Ls;->a(Landroid/content/Context;)Landroid/content/Context;
-
-    move-result-object p0
-
-    :cond_1
-    :goto_0
     return-object p0
 .end method
 
-.method private b()Z
-    .locals 5
+.method static synthetic b(Lru;)Lrh;
+    .locals 0
 
-    .line 1
-    iget-object v0, p0, Lru;->b:Landroid/content/SharedPreferences;
+    .line 17
+    iget-object p0, p0, Lru;->c:Lrh;
 
-    const-string v1, "firebase_data_collection_default_enabled"
-
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-
-    move-result v0
-
-    const/4 v2, 0x1
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    iget-object v0, p0, Lru;->b:Landroid/content/SharedPreferences;
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    return v0
-
-    .line 3
-    :cond_0
-    :try_start_0
-    iget-object v0, p0, Lru;->a:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    .line 4
-    iget-object v3, p0, Lru;->a:Landroid/content/Context;
-
-    .line 5
-    invoke-virtual {v3}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v3
-
-    const/16 v4, 0x80
-
-    .line 6
-    invoke-virtual {v0, v3, v4}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    .line 7
-    iget-object v3, v0, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
-
-    if-eqz v3, :cond_1
-
-    iget-object v3, v0, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
-
-    .line 8
-    invoke-virtual {v3, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    .line 9
-    iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
-
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v0
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return v0
-
-    :catch_0
-    :cond_1
-    return v2
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public a()Z
+.method public final a(Lrm;)V
     .locals 1
 
-    .line 4
-    iget-object v0, p0, Lru;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    .line 6
+    invoke-virtual {p1}, Lrm;->c()Z
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    move-result p1
 
-    move-result v0
+    if-eqz p1, :cond_1
 
-    return v0
+    .line 7
+    iget-object p1, p0, Lru;->b:Ljava/lang/Object;
+
+    monitor-enter p1
+
+    .line 8
+    :try_start_0
+    iget-object v0, p0, Lru;->c:Lrh;
+
+    if-nez v0, :cond_0
+
+    .line 9
+    monitor-exit p1
+
+    return-void
+
+    .line 10
+    :cond_0
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 11
+    iget-object p1, p0, Lru;->a:Ljava/util/concurrent/Executor;
+
+    new-instance v0, Lrv;
+
+    invoke-direct {v0, p0}, Lrv;-><init>(Lru;)V
+
+    invoke-interface {p1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    .line 10
+    :try_start_1
+    monitor-exit p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+
+    :cond_1
+    :goto_0
+    return-void
 .end method

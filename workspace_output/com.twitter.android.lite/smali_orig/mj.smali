@@ -1,144 +1,47 @@
-.class public final Lmj;
+.class final Lmj;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
 
 # interfaces
-.implements Lkb;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lkb<",
-        "Llj;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field private static b:Lmj;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Lkb;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkb<",
-            "Llj;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final synthetic a:Ljava/lang/String;
+
+.field private final synthetic b:J
+
+.field private final synthetic c:Lkh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Lmj;
-
-    invoke-direct {v0}, Lmj;-><init>()V
-
-    sput-object v0, Lmj;->b:Lmj;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    .line 3
-    new-instance v0, Loj;
-
-    invoke-direct {v0}, Loj;-><init>()V
-
-    invoke-static {v0}, Ljb;->a(Ljava/lang/Object;)Lkb;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lmj;-><init>(Lkb;)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lkb;)V
+.method constructor <init>(Lkh;Ljava/lang/String;J)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkb<",
-            "Llj;",
-            ">;)V"
-        }
-    .end annotation
 
     .line 1
+    iput-object p1, p0, Lmj;->c:Lkh;
+
+    iput-object p2, p0, Lmj;->a:Ljava/lang/String;
+
+    iput-wide p3, p0, Lmj;->b:J
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    invoke-static {p1}, Ljb;->a(Lkb;)Lkb;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lmj;->a:Lkb;
-
     return-void
-.end method
-
-.method public static b()Z
-    .locals 1
-
-    .line 1
-    sget-object v0, Lmj;->b:Lmj;
-
-    invoke-virtual {v0}, Lmj;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Llj;
-
-    invoke-interface {v0}, Llj;->a()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static c()Z
-    .locals 1
-
-    .line 1
-    sget-object v0, Lmj;->b:Lmj;
-
-    invoke-virtual {v0}, Lmj;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Llj;
-
-    invoke-interface {v0}, Llj;->b()Z
-
-    move-result v0
-
-    return v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final run()V
+    .locals 4
 
-    .line 1
-    iget-object v0, p0, Lmj;->a:Lkb;
+    .line 2
+    iget-object v0, p0, Lmj;->c:Lkh;
 
-    invoke-interface {v0}, Lkb;->a()Ljava/lang/Object;
+    iget-object v1, p0, Lmj;->a:Ljava/lang/String;
 
-    move-result-object v0
+    iget-wide v2, p0, Lmj;->b:J
 
-    check-cast v0, Llj;
+    invoke-static {v0, v1, v2, v3}, Lkh;->b(Lkh;Ljava/lang/String;J)V
 
-    return-object v0
+    return-void
 .end method

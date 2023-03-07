@@ -14,33 +14,33 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class interface abstract Lve;
+		<code>.class public interface abstract Lve;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.source "ValueLoader.java"
+
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<T:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;"
+}
+.end annotation
 
 
 
-
-.method public abstract a(Ljava/lang/Class;)Z
+.method public abstract load(Landroid/content/Context;)Ljava/lang/Object;
 <span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Ljava/lang/Class<",</span>
-<span class="">	"*>;)Z"</span>
+<span class="">	Ljava/lang/Exception;</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract b(Ljava/lang/Class;)Lse;
-<span class="">	</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
 <span class="">	"(",</span>
-<span class="">	"Ljava/lang/Class<",</span>
-<span class="">	"*>;)",</span>
-<span class="">	"Lse;"</span>
+<span class="">	"Landroid/content/Context;",</span>
+<span class="">	")TT;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 

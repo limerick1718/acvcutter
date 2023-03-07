@@ -1,31 +1,18 @@
-.class public final Lih;
-.super Landroid/os/Handler;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Looper;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    return-void
-.end method
+.class interface abstract Lih;
+.super Ljava/lang/Object;
 
 
 # virtual methods
-.method public final dispatchMessage(Landroid/os/Message;)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1}, Landroid/os/Handler;->dispatchMessage(Landroid/os/Message;)V
-
-    return-void
+.method public abstract a(Ljava/lang/Class;)Lig;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Class<",
+            "TT;>;)",
+            "Lig<",
+            "TT;>;"
+        }
+    .end annotation
 .end method

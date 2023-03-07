@@ -24,7 +24,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 90
     invoke-direct {p0}, Lretrofit2/Platform;-><init>()V
 
     return-void
@@ -41,14 +41,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 1
+    .line 97
     new-instance v0, Lretrofit2/ExecutorCallAdapterFactory;
 
     invoke-direct {v0, p1}, Lretrofit2/ExecutorCallAdapterFactory;-><init>(Ljava/util/concurrent/Executor;)V
 
     return-object v0
 
-    .line 2
+    .line 96
     :cond_0
     new-instance p1, Ljava/lang/AssertionError;
 
@@ -60,7 +60,7 @@
 .method public defaultCallbackExecutor()Ljava/util/concurrent/Executor;
     .locals 1
 
-    .line 1
+    .line 92
     new-instance v0, Lretrofit2/Platform$Android$MainThreadExecutor;
 
     invoke-direct {v0}, Lretrofit2/Platform$Android$MainThreadExecutor;-><init>()V

@@ -1,18 +1,18 @@
-.class public interface abstract Lbx;
-.super Ljava/lang/Object;
-.source "Provider.java"
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"<T:",
-"Ljava/lang/Object;",
-">",
-"Ljava/lang/Object;"
-}
-.end annotation
-.method public abstract get()Ljava/lang/Object;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"()TT;"
-}
-.end annotation
+.class public Lbx;
+.super Landroid/os/Handler;
+.field private static volatile a:Lby;
+.method public constructor <init>()V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method public constructor <init>(Landroid/os/Looper;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method public constructor <init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method

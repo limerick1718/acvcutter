@@ -57,7 +57,7 @@ return v0
 const/4 v0, 0x0
 return v0
 .end method
-.method public abstract writeTo(Lfx;)V
+.method public abstract writeTo(Lyt;)V
 .annotation system Ldalvik/annotation/Throws;
 value = {
 Ljava/io/IOException;

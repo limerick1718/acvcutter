@@ -17,33 +17,40 @@
 		<code>.class final Lcom/google/gson/internal/bind/TypeAdapters$31;
 .super Ljava/lang/Object;
 .source "TypeAdapters.java"
-.implements Lwv;
+.implements Lto;
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Lcom/google/gson/internal/bind/i;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x8
+name = null
+.end annotation
+
+.field final synthetic a:Ltv;
+.field final synthetic b:Ltn;
 
 
-.field final synthetic a:Ldw;
-.field final synthetic b:Lvv;
-
-
-.method public a(Lfv;Ldw;)Lvv;
+.method public a(Lsx;Ltv;)Ltn;
 <span class="">	.locals 0</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
 <span class="">	"<T:",</span>
 <span class="">	"Ljava/lang/Object;",</span>
 <span class="">	">(",</span>
-<span class="">	"Lfv;",</span>
-<span class="">	"Ldw<",</span>
+<span class="">	"Lsx;",</span>
+<span class="">	"Ltv<",</span>
 <span class="">	"TT;>;)",</span>
-<span class="">	"Lvv<",</span>
+<span class="">	"Ltn<",</span>
 <span class="">	"TT;>;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	iget-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$31;->a:Ldw;</span>
-<span class="">	invoke-virtual {p2, p1}, Ldw;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$31;->a:Ltv;</span>
+<span class="">	invoke-virtual {p2, p1}, Ltv;->equals(Ljava/lang/Object;)Z</span>
 <span class="missed">	move-result p1</span>
 <span class="missed">	if-eqz p1, :cond_0</span>
-<span class="missed">	iget-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$31;->b:Lvv;</span>
+<span class="missed">	iget-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$31;->b:Ltn;</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	const/4 p1, 0x0</span>

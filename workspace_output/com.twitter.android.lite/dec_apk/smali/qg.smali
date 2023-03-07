@@ -1,28 +1,21 @@
-.class final Lqg;
-.super Lpg;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.method constructor <init>()V
-.locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+.class final synthetic Lqg;
+.super Ljava/lang/Object;
+.implements Lqh;
+.field static final a:Lqh;
+.method static constructor <clinit>()V
+.locals 1
+new-instance v0, Lqg;
+invoke-direct {v0}, Lqg;-><init>()V
+sput-object v0, Lqg;->a:Lqh;
 return-void
 .end method
-.method final a(I[BII)I
-.locals 15
-const/4 v0, 0x0
-return v0
+.method private constructor <init>()V
+.locals 0
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method
-.method final a(Ljava/lang/CharSequence;[BII)I
-.locals 22
-const/4 v0, 0x0
-return v0
-.end method
-.method final a([BII)Ljava/lang/String;
-.locals 11
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ltd;
-}
-.end annotation
-const/4 v0, 0x0
-return-object v0
+.method public final a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+.locals 0
+const/4 p1, 0x0
+return-object p1
 .end method

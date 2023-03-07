@@ -7,7 +7,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -16,7 +16,7 @@
 .method public static userAgent()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "okhttp/3.14.7-twitter-20200206"
+    const-string v0, "okhttp/3.14.2-twitter-20190429"
 
     return-object v0
 .end method

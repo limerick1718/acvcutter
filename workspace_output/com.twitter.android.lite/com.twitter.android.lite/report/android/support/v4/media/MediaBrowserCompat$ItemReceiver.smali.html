@@ -15,12 +15,19 @@
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
 		<code>.class  Landroid/support/v4/media/MediaBrowserCompat$ItemReceiver;
-.super Lb;
+.super Lc;
 .source "MediaBrowserCompat.java"
 
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Landroid/support/v4/media/MediaBrowserCompat;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0xa
+name = "ItemReceiver"
+.end annotation
 
-.field private final c:Ljava/lang/String;
-.field private final d:Landroid/support/v4/media/b;
+.field private final d:Ljava/lang/String;
+.field private final e:Landroid/support/v4/media/MediaBrowserCompat$b;
 
 
 .method protected a(ILandroid/os/Bundle;)V
@@ -42,22 +49,22 @@
 <span class="missed">	if-eqz p2, :cond_1</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_1</span>
-<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$ItemReceiver;->d:Landroid/support/v4/media/b;</span>
-<span class="missed">	iget-object p2, p0, Landroid/support/v4/media/MediaBrowserCompat$ItemReceiver;->c:Ljava/lang/String;</span>
-<span class="missed">	invoke-virtual {p1, p2}, Landroid/support/v4/media/b;->a(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$ItemReceiver;->e:Landroid/support/v4/media/MediaBrowserCompat$b;</span>
+<span class="missed">	iget-object p2, p0, Landroid/support/v4/media/MediaBrowserCompat$ItemReceiver;->d:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/support/v4/media/MediaBrowserCompat$b;->a(Ljava/lang/String;)V</span>
 <span class="">	goto :goto_1</span>
 <span class="">	:goto_0</span>
 <span class="">	:cond_2</span>
-<span class="missed">	iget-object p2, p0, Landroid/support/v4/media/MediaBrowserCompat$ItemReceiver;->d:Landroid/support/v4/media/b;</span>
+<span class="missed">	iget-object p2, p0, Landroid/support/v4/media/MediaBrowserCompat$ItemReceiver;->e:Landroid/support/v4/media/MediaBrowserCompat$b;</span>
 <span class="missed">	check-cast p1, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;</span>
-<span class="missed">	invoke-virtual {p2, p1}, Landroid/support/v4/media/b;->a(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;)V</span>
+<span class="missed">	invoke-virtual {p2, p1}, Landroid/support/v4/media/MediaBrowserCompat$b;->a(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;)V</span>
 <span class="">	:goto_1</span>
 <span class="">	return-void</span>
 <span class="">	:goto_2</span>
 <span class="">	:cond_3</span>
-<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$ItemReceiver;->d:Landroid/support/v4/media/b;</span>
-<span class="missed">	iget-object p2, p0, Landroid/support/v4/media/MediaBrowserCompat$ItemReceiver;->c:Ljava/lang/String;</span>
-<span class="missed">	invoke-virtual {p1, p2}, Landroid/support/v4/media/b;->a(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$ItemReceiver;->e:Landroid/support/v4/media/MediaBrowserCompat$b;</span>
+<span class="missed">	iget-object p2, p0, Landroid/support/v4/media/MediaBrowserCompat$ItemReceiver;->d:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/support/v4/media/MediaBrowserCompat$b;->a(Ljava/lang/String;)V</span>
 <span class="">	return-void</span>
 .end method</code>
 	</pre>

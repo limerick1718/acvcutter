@@ -1,13 +1,8 @@
-.class public interface abstract Lcom/google/firebase/components/h;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-components@@16.0.0"
-.method public abstract getComponents()Ljava/util/List;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"()",
-"Ljava/util/List<",
-"Lcom/google/firebase/components/d<",
-"*>;>;"
-}
-.end annotation
+.class public Lcom/google/firebase/components/h;
+.super Lcom/google/firebase/components/g;
+.source "com.google.firebase:firebase-common@@16.0.2"
+.method public constructor <init>(Ljava/lang/String;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method

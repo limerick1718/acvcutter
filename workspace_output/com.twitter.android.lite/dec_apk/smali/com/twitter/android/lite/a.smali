@@ -1,14 +1,16 @@
-.class public final synthetic Lcom/twitter/android/lite/a;
+.class public Lcom/twitter/android/lite/a;
 .super Ljava/lang/Object;
-.source "lambda"
-.implements Landroid/content/DialogInterface$OnClickListener;
-.field private final synthetic a:Lcom/twitter/android/lite/TwitterLiteActivity;
-.method public synthetic constructor <init>(Lcom/twitter/android/lite/TwitterLiteActivity;)V
-.locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
-.end method
-.method public final onClick(Landroid/content/DialogInterface;I)V
+.source "LiteUserAgent.java"
+.method public static a(Landroid/content/Context;)Ljava/lang/String;
 .locals 1
-return-void
+new-instance v0, Ljava/lang/StringBuilder;
+invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+invoke-static {p0}, Landroid/webkit/WebSettings;->getDefaultUserAgent(Landroid/content/Context;)Ljava/lang/String;
+move-result-object p0
+invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+const-string p0, " TwitterAndroidLite"
+invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+move-result-object p0
+return-object p0
 .end method

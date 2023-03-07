@@ -1,131 +1,91 @@
 .class final Lmr;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
 
 
-# static fields
-.field private static final a:Ljava/util/regex/Pattern;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/concurrent/Callable<",
+        "Ljava/util/List<",
+        "Lqd;",
+        ">;>;"
+    }
+.end annotation
+
+
+# instance fields
+.field private final synthetic a:Ljava/lang/String;
+
+.field private final synthetic b:Ljava/lang/String;
+
+.field private final synthetic c:Ljava/lang/String;
+
+.field private final synthetic d:Lmh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "\\s*(\\p{XDigit}+)-\\s*(\\p{XDigit}+)\\s+(.{4})\\s+\\p{XDigit}+\\s+.+\\s+\\d+\\s+(.*)"
+.method constructor <init>(Lmh;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
 
     .line 1
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    iput-object p1, p0, Lmr;->d:Lmh;
 
-    move-result-object v0
+    iput-object p2, p0, Lmr;->a:Ljava/lang/String;
 
-    sput-object v0, Lmr;->a:Ljava/util/regex/Pattern;
+    iput-object p3, p0, Lmr;->b:Ljava/lang/String;
+
+    iput-object p4, p0, Lmr;->c:Ljava/lang/String;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method static a(Ljava/lang/String;)Llr;
-    .locals 11
 
-    .line 1
-    sget-object v0, Lmr;->a:Ljava/util/regex/Pattern;
-
-    invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v0
-
-    .line 2
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_0
-
-    return-object v2
-
-    :cond_0
-    const/4 v1, 0x1
+# virtual methods
+.method public final synthetic call()Ljava/lang/Object;
+    .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 3
-    :try_start_0
-    invoke-virtual {v0, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+    iget-object v0, p0, Lmr;->d:Lmh;
 
-    move-result-object v1
-
-    const/16 v3, 0x10
-
-    invoke-static {v1, v3}, Ljava/lang/Long;->valueOf(Ljava/lang/String;I)Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v5
-
-    const/4 v1, 0x2
-
-    .line 4
-    invoke-virtual {v0, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1, v3}, Ljava/lang/Long;->valueOf(Ljava/lang/String;I)Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v3
-
-    sub-long v7, v3, v5
-
-    const/4 v1, 0x3
-
-    .line 5
-    invoke-virtual {v0, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    const/4 v1, 0x4
-
-    .line 6
-    invoke-virtual {v0, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v10
-
-    .line 7
-    new-instance v0, Llr;
-
-    move-object v4, v0
-
-    invoke-direct/range {v4 .. v10}, Llr;-><init>(JJLjava/lang/String;Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v0
-
-    .line 8
-    :catch_0
-    invoke-static {}, Lmo;->a()Lmo;
+    invoke-static {v0}, Lmh;->a(Lmh;)Lpl;
 
     move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Lpl;->l()V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .line 4
+    iget-object v0, p0, Lmr;->d:Lmh;
 
-    const-string v3, "Could not parse map entry: "
+    invoke-static {v0}, Lmh;->a(Lmh;)Lpl;
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 5
+    invoke-virtual {v0}, Lpl;->d()Lqi;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object p0
+    iget-object v1, p0, Lmr;->a:Ljava/lang/String;
 
-    invoke-virtual {v0, p0}, Lmo;->a(Ljava/lang/String;)V
+    iget-object v2, p0, Lmr;->b:Ljava/lang/String;
 
-    return-object v2
+    iget-object v3, p0, Lmr;->c:Ljava/lang/String;
+
+    .line 6
+    invoke-virtual {v0, v1, v2, v3}, Lqi;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -1,484 +1,91 @@
 .class final Lmq;
-.super Lzq$d$c;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
+.annotation system Ldalvik/annotation/Signature;
     value = {
-        Lmq$b;
+        "Ljava/lang/Object;",
+        "Ljava/util/concurrent/Callable<",
+        "Ljava/util/List<",
+        "Lqd;",
+        ">;>;"
     }
 .end annotation
 
 
 # instance fields
-.field private final a:I
+.field private final synthetic a:Lpz;
 
-.field private final b:Ljava/lang/String;
+.field private final synthetic b:Ljava/lang/String;
 
-.field private final c:I
+.field private final synthetic c:Ljava/lang/String;
 
-.field private final d:J
-
-.field private final e:J
-
-.field private final f:Z
-
-.field private final g:I
-
-.field private final h:Ljava/lang/String;
-
-.field private final i:Ljava/lang/String;
+.field private final synthetic d:Lmh;
 
 
 # direct methods
-.method private constructor <init>(ILjava/lang/String;IJJZILjava/lang/String;Ljava/lang/String;)V
-    .locals 0
-
-    .line 2
-    invoke-direct {p0}, Lzq$d$c;-><init>()V
-
-    .line 3
-    iput p1, p0, Lmq;->a:I
-
-    .line 4
-    iput-object p2, p0, Lmq;->b:Ljava/lang/String;
-
-    .line 5
-    iput p3, p0, Lmq;->c:I
-
-    .line 6
-    iput-wide p4, p0, Lmq;->d:J
-
-    .line 7
-    iput-wide p6, p0, Lmq;->e:J
-
-    .line 8
-    iput-boolean p8, p0, Lmq;->f:Z
-
-    .line 9
-    iput p9, p0, Lmq;->g:I
-
-    .line 10
-    iput-object p10, p0, Lmq;->h:Ljava/lang/String;
-
-    .line 11
-    iput-object p11, p0, Lmq;->i:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(ILjava/lang/String;IJJZILjava/lang/String;Ljava/lang/String;Lmq$a;)V
+.method constructor <init>(Lmh;Lpz;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     .line 1
-    invoke-direct/range {p0 .. p11}, Lmq;-><init>(ILjava/lang/String;IJJZILjava/lang/String;Ljava/lang/String;)V
+    iput-object p1, p0, Lmq;->d:Lmh;
+
+    iput-object p2, p0, Lmq;->a:Lpz;
+
+    iput-object p3, p0, Lmq;->b:Ljava/lang/String;
+
+    iput-object p4, p0, Lmq;->c:Ljava/lang/String;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lmq;->a:I
-
-    return v0
-.end method
-
-.method public b()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lmq;->c:I
-
-    return v0
-.end method
-
-.method public c()J
-    .locals 2
-
-    .line 1
-    iget-wide v0, p0, Lmq;->e:J
-
-    return-wide v0
-.end method
-
-.method public d()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lmq;->h:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public e()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lmq;->b:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 7
-
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    .line 1
-    :cond_0
-    instance-of v1, p1, Lzq$d$c;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_2
-
-    .line 2
-    check-cast p1, Lzq$d$c;
+.method public final synthetic call()Ljava/lang/Object;
+    .locals 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .line 3
-    iget v1, p0, Lmq;->a:I
+    iget-object v0, p0, Lmq;->d:Lmh;
 
-    invoke-virtual {p1}, Lzq$d$c;->a()I
+    invoke-static {v0}, Lmh;->a(Lmh;)Lpl;
 
-    move-result v3
+    move-result-object v0
 
-    if-ne v1, v3, :cond_1
-
-    iget-object v1, p0, Lmq;->b:Ljava/lang/String;
+    invoke-virtual {v0}, Lpl;->l()V
 
     .line 4
-    invoke-virtual {p1}, Lzq$d$c;->e()Ljava/lang/String;
+    iget-object v0, p0, Lmq;->d:Lmh;
 
-    move-result-object v3
+    invoke-static {v0}, Lmh;->a(Lmh;)Lpl;
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget v1, p0, Lmq;->c:I
+    move-result-object v0
 
     .line 5
-    invoke-virtual {p1}, Lzq$d$c;->b()I
+    invoke-virtual {v0}, Lpl;->d()Lqi;
 
-    move-result v3
+    move-result-object v0
 
-    if-ne v1, v3, :cond_1
+    iget-object v1, p0, Lmq;->a:Lpz;
 
-    iget-wide v3, p0, Lmq;->d:J
+    iget-object v1, v1, Lpz;->a:Ljava/lang/String;
 
-    .line 6
-    invoke-virtual {p1}, Lzq$d$c;->g()J
-
-    move-result-wide v5
-
-    cmp-long v1, v3, v5
-
-    if-nez v1, :cond_1
-
-    iget-wide v3, p0, Lmq;->e:J
-
-    .line 7
-    invoke-virtual {p1}, Lzq$d$c;->c()J
-
-    move-result-wide v5
-
-    cmp-long v1, v3, v5
-
-    if-nez v1, :cond_1
-
-    iget-boolean v1, p0, Lmq;->f:Z
-
-    .line 8
-    invoke-virtual {p1}, Lzq$d$c;->i()Z
-
-    move-result v3
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Lmq;->g:I
-
-    .line 9
-    invoke-virtual {p1}, Lzq$d$c;->h()I
-
-    move-result v3
-
-    if-ne v1, v3, :cond_1
-
-    iget-object v1, p0, Lmq;->h:Ljava/lang/String;
-
-    .line 10
-    invoke-virtual {p1}, Lzq$d$c;->d()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lmq;->i:Ljava/lang/String;
-
-    .line 11
-    invoke-virtual {p1}, Lzq$d$c;->f()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    :cond_2
-    return v2
-.end method
-
-.method public f()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lmq;->i:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public g()J
-    .locals 2
-
-    .line 1
-    iget-wide v0, p0, Lmq;->d:J
-
-    return-wide v0
-.end method
-
-.method public h()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lmq;->g:I
-
-    return v0
-.end method
-
-.method public hashCode()I
-    .locals 7
-
-    .line 1
-    iget v0, p0, Lmq;->a:I
-
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    mul-int v0, v0, v1
-
-    .line 2
     iget-object v2, p0, Lmq;->b:Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
-
-    move-result v2
-
-    xor-int/2addr v0, v2
-
-    mul-int v0, v0, v1
-
-    .line 3
-    iget v2, p0, Lmq;->c:I
-
-    xor-int/2addr v0, v2
-
-    mul-int v0, v0, v1
-
-    .line 4
-    iget-wide v2, p0, Lmq;->d:J
-
-    const/16 v4, 0x20
-
-    ushr-long v5, v2, v4
-
-    xor-long/2addr v2, v5
-
-    long-to-int v3, v2
-
-    xor-int/2addr v0, v3
-
-    mul-int v0, v0, v1
-
-    .line 5
-    iget-wide v2, p0, Lmq;->e:J
-
-    ushr-long v4, v2, v4
-
-    xor-long/2addr v2, v4
-
-    long-to-int v3, v2
-
-    xor-int/2addr v0, v3
-
-    mul-int v0, v0, v1
+    iget-object v3, p0, Lmq;->c:Ljava/lang/String;
 
     .line 6
-    iget-boolean v2, p0, Lmq;->f:Z
-
-    if-eqz v2, :cond_0
-
-    const/16 v2, 0x4cf
-
-    goto :goto_0
-
-    :cond_0
-    const/16 v2, 0x4d5
-
-    :goto_0
-    xor-int/2addr v0, v2
-
-    mul-int v0, v0, v1
-
-    .line 7
-    iget v2, p0, Lmq;->g:I
-
-    xor-int/2addr v0, v2
-
-    mul-int v0, v0, v1
-
-    .line 8
-    iget-object v2, p0, Lmq;->h:Ljava/lang/String;
-
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
-
-    move-result v2
-
-    xor-int/2addr v0, v2
-
-    mul-int v0, v0, v1
-
-    .line 9
-    iget-object v1, p0, Lmq;->i:Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    xor-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public i()Z
-    .locals 1
-
-    .line 1
-    iget-boolean v0, p0, Lmq;->f:Z
-
-    return v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 3
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Device{arch="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lmq;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", model="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lmq;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", cores="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lmq;->c:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", ram="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lmq;->d:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", diskSpace="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lmq;->e:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", simulator="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lmq;->f:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", state="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lmq;->g:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", manufacturer="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lmq;->h:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", modelClass="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lmq;->i:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "}"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1, v2, v3}, Lqi;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v0
 

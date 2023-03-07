@@ -3,12 +3,12 @@
 .source "SqlDateTypeAdapter.java"
 
 # interfaces
-.implements Lwv;
+.implements Lto;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/gson/internal/bind/SqlDateTypeAdapter;
+    value = Lcom/google/gson/internal/bind/f;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,23 +29,23 @@
 
 
 # virtual methods
-.method public a(Lfv;Ldw;)Lvv;
+.method public a(Lsx;Ltv;)Ltn;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Lfv;",
-            "Ldw<",
+            "Lsx;",
+            "Ltv<",
             "TT;>;)",
-            "Lvv<",
+            "Ltn<",
             "TT;>;"
         }
     .end annotation
 
-    .line 1
-    invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;
+    .line 42
+    invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;
 
     move-result-object p1
 
@@ -53,9 +53,9 @@
 
     if-ne p1, p2, :cond_0
 
-    new-instance p1, Lcom/google/gson/internal/bind/SqlDateTypeAdapter;
+    new-instance p1, Lcom/google/gson/internal/bind/f;
 
-    invoke-direct {p1}, Lcom/google/gson/internal/bind/SqlDateTypeAdapter;-><init>()V
+    invoke-direct {p1}, Lcom/google/gson/internal/bind/f;-><init>()V
 
     goto :goto_0
 

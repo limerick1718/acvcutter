@@ -67,7 +67,7 @@ value = {
 .end method
 
 .method public hasNext()Z
-<span class="">	.locals 5</span>
+<span class="">	.locals 4</span>
 
 <span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache/DiskLruCache$3;->nextSnapshot:Lokhttp3/internal/cache/DiskLruCache$Snapshot;</span>
 <span class="missed">	const/4 v1, 0x1</span>
@@ -88,24 +88,20 @@ value = {
 <span class="missed">	iget-object v2, p0, Lokhttp3/internal/cache/DiskLruCache$3;->delegate:Ljava/util/Iterator;</span>
 <span class="">	invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z</span>
 <span class="missed">	move-result v2</span>
-<span class="missed">	if-eqz v2, :cond_4</span>
+<span class="missed">	if-eqz v2, :cond_3</span>
 <span class="missed">	iget-object v2, p0, Lokhttp3/internal/cache/DiskLruCache$3;->delegate:Ljava/util/Iterator;</span>
 <span class="">	invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v2</span>
 <span class="missed">	check-cast v2, Lokhttp3/internal/cache/DiskLruCache$Entry;</span>
-<span class="missed">	iget-boolean v4, v2, Lokhttp3/internal/cache/DiskLruCache$Entry;->readable:Z</span>
-<span class="missed">	if-nez v4, :cond_2</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_2</span>
 <span class="">	invoke-virtual {v2}, Lokhttp3/internal/cache/DiskLruCache$Entry;->snapshot()Lokhttp3/internal/cache/DiskLruCache$Snapshot;</span>
 <span class="missed">	move-result-object v2</span>
-<span class="missed">	if-nez v2, :cond_3</span>
+<span class="missed">	if-nez v2, :cond_2</span>
 <span class="">	goto :goto_0</span>
-<span class="">	:cond_3</span>
+<span class="">	:cond_2</span>
 <span class="missed">	iput-object v2, p0, Lokhttp3/internal/cache/DiskLruCache$3;->nextSnapshot:Lokhttp3/internal/cache/DiskLruCache$Snapshot;</span>
 <span class="missed">	monitor-exit v0</span>
 <span class="">	return v1</span>
-<span class="">	:cond_4</span>
+<span class="">	:cond_3</span>
 <span class="missed">	monitor-exit v0</span>
 <span class="">	return v3</span>
 <span class="">	:catchall_0</span>
@@ -125,15 +121,16 @@ value = {
 .end method
 
 .method public next()Lokhttp3/internal/cache/DiskLruCache$Snapshot;
-<span class="">	.locals 2</span>
+<span class="">	.locals 1</span>
 
 <span class="">	invoke-virtual {p0}, Lokhttp3/internal/cache/DiskLruCache$3;->hasNext()Z</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache/DiskLruCache$3;->nextSnapshot:Lokhttp3/internal/cache/DiskLruCache$Snapshot;</span>
 <span class="missed">	iput-object v0, p0, Lokhttp3/internal/cache/DiskLruCache$3;->removeSnapshot:Lokhttp3/internal/cache/DiskLruCache$Snapshot;</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="missed">	iput-object v1, p0, Lokhttp3/internal/cache/DiskLruCache$3;->nextSnapshot:Lokhttp3/internal/cache/DiskLruCache$Snapshot;</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/internal/cache/DiskLruCache$3;->nextSnapshot:Lokhttp3/internal/cache/DiskLruCache$Snapshot;</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache/DiskLruCache$3;->removeSnapshot:Lokhttp3/internal/cache/DiskLruCache$Snapshot;</span>
 <span class="">	return-object v0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	new-instance v0, Ljava/util/NoSuchElementException;</span>

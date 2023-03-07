@@ -14,128 +14,121 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lgg;
-.super Ljava/util/AbstractList;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Lee;
-.implements Ljava/util/RandomAccess;
-
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/AbstractList<",
-"Ljava/lang/String;",
-">;",
-"Lee;",
-"Ljava/util/RandomAccess;"
-}
-.end annotation
-
-.field private final a:Lee;
+		<code>.class final Lgg;
+.super Ljava/lang/Object;
+.implements Lho;
 
 
-.method public constructor &lt;init&gt;(Lee;)V
-<span class="">	.locals 0</span>
+.field private static final a:Lgg;
 
-<span class="missed">	invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V</span>
-<span class="missed">	iput-object p1, p0, Lgg;->a:Lee;</span>
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lgg;</span>
+<span class="missed">	invoke-direct {v0}, Lgg;-><init>()V</span>
+<span class="missed">	sput-object v0, Lgg;->a:Lgg;</span>
 <span class="">	return-void</span>
 .end method
 
-.method static synthetic a(Lgg;)Lee;
+.method private constructor &lt;init&gt;()V
 <span class="">	.locals 0</span>
 
-<span class="missed">	iget-object p0, p0, Lgg;->a:Lee;</span>
-<span class="">	return-object p0</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	return-void</span>
 .end method
 
-.method public final a(Lfc;)V
-<span class="">	.locals 0</span>
-
-<span class="missed">	new-instance p1, Ljava/lang/UnsupportedOperationException;</span>
-<span class="missed">	invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V</span>
-<span class="">	throw p1</span>
-.end method
-
-.method public final b(I)Ljava/lang/Object;
+.method public static a()Lgg;
 <span class="">	.locals 1</span>
 
-<span class="missed">	iget-object v0, p0, Lgg;->a:Lee;</span>
-<span class="">	invoke-interface {v0, p1}, Lee;->b(I)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	return-object p1</span>
-.end method
-
-.method public final d()Ljava/util/List;
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"()",</span>
-<span class="">	"Ljava/util/List<",</span>
-<span class="">	"*>;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	iget-object v0, p0, Lgg;->a:Lee;</span>
-<span class="">	invoke-interface {v0}, Lee;->d()Ljava/util/List;</span>
-<span class="missed">	move-result-object v0</span>
+<span class="missed">	sget-object v0, Lgg;->a:Lgg;</span>
 <span class="">	return-object v0</span>
 .end method
 
-.method public final e()Lee;
-<span class="">	.locals 0</span>
-
-<span class="">	return-object p0</span>
-.end method
-
-.method public final synthetic get(I)Ljava/lang/Object;
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Lgg;->a:Lee;</span>
-<span class="">	invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	check-cast p1, Ljava/lang/String;</span>
-<span class="">	return-object p1</span>
-.end method
-
-.method public final iterator()Ljava/util/Iterator;
+.method public final a(Ljava/lang/Class;)Z
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	"()",</span>
-<span class="">	"Ljava/util/Iterator<",</span>
-<span class="">	"Ljava/lang/String;",</span>
-<span class="">	">;"</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;)Z"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	new-instance v0, Lig;</span>
-<span class="missed">	invoke-direct {v0, p0}, Lig;-><init>(Lgg;)V</span>
-<span class="">	return-object v0</span>
+<span class="missed">	const-class v0, Lgh;</span>
+<span class="">	invoke-virtual {v0, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
 .end method
 
-.method public final listIterator(I)Ljava/util/ListIterator;
-<span class="">	.locals 1</span>
+.method public final b(Ljava/lang/Class;)Lhn;
+<span class="">	.locals 4</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	"(I)",</span>
-<span class="">	"Ljava/util/ListIterator<",</span>
-<span class="">	"Ljava/lang/String;",</span>
-<span class="">	">;"</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;)",</span>
+<span class="">	"Lhn;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	new-instance v0, Ljg;</span>
-<span class="missed">	invoke-direct {v0, p0, p1}, Ljg;-><init>(Lgg;I)V</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public final size()I
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Lgg;->a:Lee;</span>
-<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	const-class v0, Lgh;</span>
+<span class="">	invoke-virtual {v0, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z</span>
 <span class="missed">	move-result v0</span>
-<span class="">	return v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v1, "Unsupported message type: "</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="">	invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/String;</span>
+<span class="missed">	invoke-direct {p1, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+<span class="">	:try_start_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const-class v0, Lgh;</span>
+<span class="">	invoke-virtual {p1, v0}, Ljava/lang/Class;->asSubclass(Ljava/lang/Class;)Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {v0}, Lgh;->a(Ljava/lang/Class;)Lgh;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sget v1, Lgh$e;->c:I</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	invoke-virtual {v0, v1, v2, v2}, Lgh;->a(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lhn;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object v0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	new-instance v1, Ljava/lang/RuntimeException;</span>
+<span class="missed">	const-string v2, "Unable to get message info for "</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-eqz v3, :cond_2</span>
+<span class="">	invoke-virtual {v2, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/String;</span>
+<span class="missed">	invoke-direct {p1, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V</span>
+<span class="">	:goto_1</span>
+<span class="missed">	invoke-direct {v1, p1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	throw v1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -1,18 +1,29 @@
 .class public Lbt;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.field public final a:Ljava/lang/String;
-.field public final b:Ljava/lang/String;
-.field public final c:Ljava/lang/String;
-.field public final d:Ljava/lang/String;
-.field public final e:Ljava/lang/String;
-.field public final f:Ljava/lang/String;
-.field public final g:Ljava/lang/String;
-.field public final h:I
-.field public final i:Ljava/lang/String;
-.field public final j:Ljava/lang/String;
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+.implements Landroid/os/IInterface;
+.field private final a:Landroid/os/IBinder;
+.field private final b:Ljava/lang/String;
+.method protected constructor <init>(Landroid/os/IBinder;Ljava/lang/String;)V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
+.end method
+.method protected final a()Landroid/os/Parcel;
+.locals 2
+const/4 v0, 0x0
+return-object v0
+.end method
+.method protected final a(ILandroid/os/Parcel;)V
+.locals 3
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Landroid/os/RemoteException;
+}
+.end annotation
+return-void
+.end method
+.method public asBinder()Landroid/os/IBinder;
+.locals 1
+const/4 v0, 0x0
+return-object v0
 .end method

@@ -1,5 +1,5 @@
 .class final Lokhttp3/internal/connection/Exchange$RequestBodySink;
-.super Lix;
+.super Lyw;
 .source "Exchange.java"
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lokhttp3/internal/connection/Exchange;
@@ -13,7 +13,7 @@ name = "RequestBodySink"
 .field private completed:Z
 .field private contentLength:J
 .field final synthetic this$0:Lokhttp3/internal/connection/Exchange;
-.method constructor <init>(Lokhttp3/internal/connection/Exchange;Lvx;J)V
+.method constructor <init>(Lokhttp3/internal/connection/Exchange;Lzj;J)V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
@@ -36,7 +36,7 @@ Ljava/io/IOException;
 .end annotation
 return-void
 .end method
-.method public write(Lex;J)V
+.method public write(Lys;J)V
 .locals 5
 .annotation system Ldalvik/annotation/Throws;
 value = {

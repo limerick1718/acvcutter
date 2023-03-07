@@ -14,36 +14,182 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lvl;
-.super Lx7;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Ltl;
+		<code>.class public Lvl;
+.super Ljava/lang/Object;
+.source "ApiKey.java"
 
 
 
 
-.method constructor &lt;init&gt;(Landroid/os/IBinder;)V
-<span class="">	.locals 1</span>
+<span class="cov">.method public constructor &lt;init&gt;()V</span>
+<span class="">	.locals 0</span>
 
-<span class="missed">	const-string v0, "com.google.android.gms.measurement.api.internal.IBundleReceiver"</span>
-<span class="missed">	invoke-direct {p0, p1, v0}, Lx7;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V</span>
-<span class="">	return-void</span>
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method public final a(Landroid/os/Bundle;)V
+.method protected a()Ljava/lang/String;
 <span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Landroid/os/RemoteException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
 
-<span class="">	invoke-virtual {p0}, Lx7;->i()Landroid/os/Parcel;</span>
+<span class="missed">	const-string v0, "Fabric could not be initialized, API key missing from AndroidManifest.xml. Add the following tag to your Application element \n\t<meta-data android:name=\"io.fabric.ApiKey\" android:value=\"YOUR_API_KEY\"/>"</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public a(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="">	.locals 2</span>
+
+<span class="exec">	invoke-virtual {p0, p1}, Lvl;->c(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="">	invoke-virtual {p0, p1}, Lvl;->d(Landroid/content/Context;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	invoke-static {v0, p1}, Lp8;->a(Landroid/os/Parcel;Landroid/os/Parcelable;)V</span>
-<span class="missed">	const/4 p1, 0x1</span>
-<span class="missed">	invoke-virtual {p0, p1, v0}, Lx7;->b(ILandroid/os/Parcel;)V</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="">	invoke-virtual {p0, p1}, Lvl;->b(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="cov">	:cond_1</span>
+<span class="exec">	invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
+<span class="cov">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_2</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lvl;->e(Landroid/content/Context;)V</span>
+<span class="cov">	:cond_2</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method protected b(Landroid/content/Context;)Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lvw;</span>
+<span class="missed">	invoke-direct {v0}, Lvw;-><init>()V</span>
+<span class="">	invoke-virtual {v0, p1}, Lvw;->a(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+<span class="cov">.method protected c(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="">	.locals 5</span>
+
+<span class="cov">	const-string v0, "Fabric"</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	:try_start_0</span>
+<span class="exec">	invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="exec">	invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	const/16 v3, 0x80</span>
+<span class="exec">	invoke-virtual {p1, v2, v3}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	iget-object p1, p1, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;</span>
+<span class="cov">	if-eqz p1, :cond_1</span>
+<span class="cov">	const-string v2, "io.fabric.ApiKey"</span>
+<span class="exec">	invoke-virtual {p1, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1</span>
+<span class="cov">	:try_start_1</span>
+<span class="cov">	const-string v3, "@string/twitter_consumer_secret"</span>
+<span class="exec">	invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v3</span>
+<span class="missed">	if-eqz v3, :cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	const-string v4, "Ignoring bad default value for Fabric ApiKey set by FirebaseUI-Auth"</span>
+<span class="missed">	invoke-interface {v3, v0, v4}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	move-object v1, v2</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	if-nez v1, :cond_1</span>
+<span class="cov">	:try_start_2</span>
+<span class="exec">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	const-string v3, "Falling back to Crashlytics key lookup from Manifest"</span>
+<span class="cov">	invoke-interface {v2, v0, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	const-string v2, "com.crashlytics.ApiKey"</span>
+<span class="exec">	invoke-virtual {p1, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	:try_end_2</span>
+<span class="cov">	.catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	move-object v1, v2</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	:goto_1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	new-instance v3, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "Caught non-fatal exception while retrieving apiKey: "</span>
+<span class="missed">	invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {v2, v0, p1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="cov">	:goto_2</span>
+<span class="cov">	:cond_1</span>
+<span class="exec">	return-object v1</span>
+.end method
+
+.method protected d(Landroid/content/Context;)Ljava/lang/String;
+<span class="">	.locals 4</span>
+
+<span class="missed">	const-string v0, "string"</span>
+<span class="missed">	const-string v1, "io.fabric.ApiKey"</span>
+<span class="">	invoke-static {p1, v1, v0}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Fabric"</span>
+<span class="missed">	const-string v3, "Falling back to Crashlytics key lookup from Strings"</span>
+<span class="missed">	invoke-interface {v1, v2, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	const-string v1, "com.crashlytics.ApiKey"</span>
+<span class="">	invoke-static {p1, v1, v0}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	move-result v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="">	invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method protected e(Landroid/content/Context;)V
+<span class="">	.locals 2</span>
+
+<span class="">	invoke-static {}, Luq;->h()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	invoke-static {p1}, Lvn;->i(Landroid/content/Context;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p0}, Lvl;->a()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "Fabric"</span>
+<span class="missed">	invoke-interface {p1, v1, v0}, Luz;->e(Ljava/lang/String;Ljava/lang/String;)V</span>
 <span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="">	invoke-virtual {p0}, Lvl;->a()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

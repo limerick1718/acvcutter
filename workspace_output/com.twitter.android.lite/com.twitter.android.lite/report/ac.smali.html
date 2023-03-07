@@ -16,25 +16,337 @@
 	<pre class="source lang-smali" id='source'>
 		<code>.class final Lac;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.source "BackStackRecord.java"
+.implements Landroid/os/Parcelable;
 
 
-.field public a:I
-.field public b:J
-.field public c:Ljava/lang/Object;
-.field public final d:Lyc;
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Landroid/os/Parcelable$Creator<",
+"Lac;",
+">;"
+}
+.end annotation
+.end field
+.field final a:[I
+.field final b:I
+.field final c:I
+.field final d:Ljava/lang/String;
+.field final e:I
+.field final f:I
+.field final g:Ljava/lang/CharSequence;
+.field final h:I
+.field final i:Ljava/lang/CharSequence;
+.field final j:Ljava/util/ArrayList;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/ArrayList<",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.end field
+.field final k:Ljava/util/ArrayList;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/ArrayList<",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.end field
+.field final l:Z
 
 
-.method constructor &lt;init&gt;(Lyc;)V
-<span class="">	.locals 0</span>
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Lac$1;</span>
+<span class="missed">	invoke-direct {v0}, Lac$1;-><init>()V</span>
+<span class="missed">	sput-object v0, Lac;->CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public constructor &lt;init&gt;(Lab;)V
+<span class="">	.locals 7</span>
 
 <span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="missed">	iput-object p1, p0, Lac;->d:Lyc;</span>
+<span class="missed">	iget-object v0, p1, Lab;->b:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v0}, Ljava/util/ArrayList;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	mul-int/lit8 v1, v0, 0x6</span>
+<span class="missed">	new-array v1, v1, [I</span>
+<span class="missed">	iput-object v1, p0, Lac;->a:[I</span>
+<span class="missed">	iget-boolean v1, p1, Lab;->i:Z</span>
+<span class="missed">	if-eqz v1, :cond_2</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v1, v0, :cond_1</span>
+<span class="missed">	iget-object v3, p1, Lab;->b:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	check-cast v3, Lab$a;</span>
+<span class="missed">	iget-object v4, p0, Lac;->a:[I</span>
+<span class="missed">	add-int/lit8 v5, v2, 0x1</span>
+<span class="missed">	iget v6, v3, Lab$a;->a:I</span>
+<span class="missed">	aput v6, v4, v2</span>
+<span class="missed">	iget-object v2, p0, Lac;->a:[I</span>
+<span class="missed">	add-int/lit8 v4, v5, 0x1</span>
+<span class="missed">	iget-object v6, v3, Lab$a;->b:Lae;</span>
+<span class="missed">	if-eqz v6, :cond_0</span>
+<span class="missed">	iget-object v6, v3, Lab$a;->b:Lae;</span>
+<span class="missed">	iget v6, v6, Lae;->o:I</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v6, -0x1</span>
+<span class="">	:goto_1</span>
+<span class="missed">	aput v6, v2, v5</span>
+<span class="missed">	iget-object v2, p0, Lac;->a:[I</span>
+<span class="missed">	add-int/lit8 v5, v4, 0x1</span>
+<span class="missed">	iget v6, v3, Lab$a;->c:I</span>
+<span class="missed">	aput v6, v2, v4</span>
+<span class="missed">	iget-object v2, p0, Lac;->a:[I</span>
+<span class="missed">	add-int/lit8 v4, v5, 0x1</span>
+<span class="missed">	iget v6, v3, Lab$a;->d:I</span>
+<span class="missed">	aput v6, v2, v5</span>
+<span class="missed">	iget-object v2, p0, Lac;->a:[I</span>
+<span class="missed">	add-int/lit8 v5, v4, 0x1</span>
+<span class="missed">	iget v6, v3, Lab$a;->e:I</span>
+<span class="missed">	aput v6, v2, v4</span>
+<span class="missed">	iget-object v2, p0, Lac;->a:[I</span>
+<span class="missed">	add-int/lit8 v4, v5, 0x1</span>
+<span class="missed">	iget v3, v3, Lab$a;->f:I</span>
+<span class="missed">	aput v3, v2, v5</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="missed">	move v2, v4</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget v0, p1, Lab;->g:I</span>
+<span class="missed">	iput v0, p0, Lac;->b:I</span>
+<span class="missed">	iget v0, p1, Lab;->h:I</span>
+<span class="missed">	iput v0, p0, Lac;->c:I</span>
+<span class="missed">	iget-object v0, p1, Lab;->k:Ljava/lang/String;</span>
+<span class="missed">	iput-object v0, p0, Lac;->d:Ljava/lang/String;</span>
+<span class="missed">	iget v0, p1, Lab;->m:I</span>
+<span class="missed">	iput v0, p0, Lac;->e:I</span>
+<span class="missed">	iget v0, p1, Lab;->n:I</span>
+<span class="missed">	iput v0, p0, Lac;->f:I</span>
+<span class="missed">	iget-object v0, p1, Lab;->o:Ljava/lang/CharSequence;</span>
+<span class="missed">	iput-object v0, p0, Lac;->g:Ljava/lang/CharSequence;</span>
+<span class="missed">	iget v0, p1, Lab;->p:I</span>
+<span class="missed">	iput v0, p0, Lac;->h:I</span>
+<span class="missed">	iget-object v0, p1, Lab;->q:Ljava/lang/CharSequence;</span>
+<span class="missed">	iput-object v0, p0, Lac;->i:Ljava/lang/CharSequence;</span>
+<span class="missed">	iget-object v0, p1, Lab;->r:Ljava/util/ArrayList;</span>
+<span class="missed">	iput-object v0, p0, Lac;->j:Ljava/util/ArrayList;</span>
+<span class="missed">	iget-object v0, p1, Lab;->s:Ljava/util/ArrayList;</span>
+<span class="missed">	iput-object v0, p0, Lac;->k:Ljava/util/ArrayList;</span>
+<span class="missed">	iget-boolean p1, p1, Lab;->t:Z</span>
+<span class="missed">	iput-boolean p1, p0, Lac;->l:Z</span>
 <span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v0, "Not on back stack"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public constructor &lt;init&gt;(Landroid/os/Parcel;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->createIntArray()[I</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lac;->a:[I</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iput v0, p0, Lac;->b:I</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iput v0, p0, Lac;->c:I</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lac;->d:Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iput v0, p0, Lac;->e:I</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iput v0, p0, Lac;->f:I</span>
+<span class="missed">	sget-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="">	invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ljava/lang/CharSequence;</span>
+<span class="missed">	iput-object v0, p0, Lac;->g:Ljava/lang/CharSequence;</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iput v0, p0, Lac;->h:I</span>
+<span class="missed">	sget-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="">	invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ljava/lang/CharSequence;</span>
+<span class="missed">	iput-object v0, p0, Lac;->i:Ljava/lang/CharSequence;</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lac;->j:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lac;->k:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	const/4 p1, 0x0</span>
-<span class="">	throw p1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iput-boolean p1, p0, Lac;->l:Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method public a(Lak;)Lab;
+<span class="">	.locals 6</span>
+
+<span class="missed">	new-instance v0, Lab;</span>
+<span class="missed">	invoke-direct {v0, p1}, Lab;-><init>(Lak;)V</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object v3, p0, Lac;->a:[I</span>
+<span class="missed">	array-length v3, v3</span>
+<span class="missed">	if-ge v1, v3, :cond_2</span>
+<span class="missed">	new-instance v3, Lab$a;</span>
+<span class="missed">	invoke-direct {v3}, Lab$a;-><init>()V</span>
+<span class="missed">	iget-object v4, p0, Lac;->a:[I</span>
+<span class="missed">	add-int/lit8 v5, v1, 0x1</span>
+<span class="missed">	aget v1, v4, v1</span>
+<span class="missed">	iput v1, v3, Lab$a;->a:I</span>
+<span class="missed">	sget-boolean v1, Lak;->a:Z</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "Instantiate "</span>
+<span class="missed">	invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v4, " op #"</span>
+<span class="missed">	invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v4, " base fragment #"</span>
+<span class="missed">	invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v4, p0, Lac;->a:[I</span>
+<span class="missed">	aget v4, v4, v5</span>
+<span class="missed">	invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v4, "FragmentManager"</span>
+<span class="missed">	invoke-static {v4, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v1, p0, Lac;->a:[I</span>
+<span class="missed">	add-int/lit8 v4, v5, 0x1</span>
+<span class="missed">	aget v1, v1, v5</span>
+<span class="missed">	if-ltz v1, :cond_1</span>
+<span class="missed">	iget-object v5, p1, Lak;->f:Landroid/util/SparseArray;</span>
+<span class="">	invoke-virtual {v5, v1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, Lae;</span>
+<span class="missed">	iput-object v1, v3, Lab$a;->b:Lae;</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	iput-object v1, v3, Lab$a;->b:Lae;</span>
+<span class="">	:goto_1</span>
+<span class="missed">	iget-object v1, p0, Lac;->a:[I</span>
+<span class="missed">	add-int/lit8 v5, v4, 0x1</span>
+<span class="missed">	aget v4, v1, v4</span>
+<span class="missed">	iput v4, v3, Lab$a;->c:I</span>
+<span class="missed">	add-int/lit8 v4, v5, 0x1</span>
+<span class="missed">	aget v5, v1, v5</span>
+<span class="missed">	iput v5, v3, Lab$a;->d:I</span>
+<span class="missed">	add-int/lit8 v5, v4, 0x1</span>
+<span class="missed">	aget v4, v1, v4</span>
+<span class="missed">	iput v4, v3, Lab$a;->e:I</span>
+<span class="missed">	add-int/lit8 v4, v5, 0x1</span>
+<span class="missed">	aget v1, v1, v5</span>
+<span class="missed">	iput v1, v3, Lab$a;->f:I</span>
+<span class="missed">	iget v1, v3, Lab$a;->c:I</span>
+<span class="missed">	iput v1, v0, Lab;->c:I</span>
+<span class="missed">	iget v1, v3, Lab$a;->d:I</span>
+<span class="missed">	iput v1, v0, Lab;->d:I</span>
+<span class="missed">	iget v1, v3, Lab$a;->e:I</span>
+<span class="missed">	iput v1, v0, Lab;->e:I</span>
+<span class="missed">	iget v1, v3, Lab$a;->f:I</span>
+<span class="missed">	iput v1, v0, Lab;->f:I</span>
+<span class="missed">	invoke-virtual {v0, v3}, Lab;->a(Lab$a;)V</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="missed">	move v1, v4</span>
+<span class="">	goto/16 :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget p1, p0, Lac;->b:I</span>
+<span class="missed">	iput p1, v0, Lab;->g:I</span>
+<span class="missed">	iget p1, p0, Lac;->c:I</span>
+<span class="missed">	iput p1, v0, Lab;->h:I</span>
+<span class="missed">	iget-object p1, p0, Lac;->d:Ljava/lang/String;</span>
+<span class="missed">	iput-object p1, v0, Lab;->k:Ljava/lang/String;</span>
+<span class="missed">	iget p1, p0, Lac;->e:I</span>
+<span class="missed">	iput p1, v0, Lab;->m:I</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="missed">	iput-boolean p1, v0, Lab;->i:Z</span>
+<span class="missed">	iget v1, p0, Lac;->f:I</span>
+<span class="missed">	iput v1, v0, Lab;->n:I</span>
+<span class="missed">	iget-object v1, p0, Lac;->g:Ljava/lang/CharSequence;</span>
+<span class="missed">	iput-object v1, v0, Lab;->o:Ljava/lang/CharSequence;</span>
+<span class="missed">	iget v1, p0, Lac;->h:I</span>
+<span class="missed">	iput v1, v0, Lab;->p:I</span>
+<span class="missed">	iget-object v1, p0, Lac;->i:Ljava/lang/CharSequence;</span>
+<span class="missed">	iput-object v1, v0, Lab;->q:Ljava/lang/CharSequence;</span>
+<span class="missed">	iget-object v1, p0, Lac;->j:Ljava/util/ArrayList;</span>
+<span class="missed">	iput-object v1, v0, Lab;->r:Ljava/util/ArrayList;</span>
+<span class="missed">	iget-object v1, p0, Lac;->k:Ljava/util/ArrayList;</span>
+<span class="missed">	iput-object v1, v0, Lab;->s:Ljava/util/ArrayList;</span>
+<span class="missed">	iget-boolean v1, p0, Lac;->l:Z</span>
+<span class="missed">	iput-boolean v1, v0, Lab;->t:Z</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lab;->a(I)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public describeContents()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public writeToParcel(Landroid/os/Parcel;I)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object p2, p0, Lac;->a:[I</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeIntArray([I)V</span>
+<span class="missed">	iget p2, p0, Lac;->b:I</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget p2, p0, Lac;->c:I</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget-object p2, p0, Lac;->d:Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V</span>
+<span class="missed">	iget p2, p0, Lac;->e:I</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget p2, p0, Lac;->f:I</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget-object p2, p0, Lac;->g:Ljava/lang/CharSequence;</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	invoke-static {p2, p1, v0}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V</span>
+<span class="missed">	iget p2, p0, Lac;->h:I</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget-object p2, p0, Lac;->i:Ljava/lang/CharSequence;</span>
+<span class="missed">	invoke-static {p2, p1, v0}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V</span>
+<span class="missed">	iget-object p2, p0, Lac;->j:Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V</span>
+<span class="missed">	iget-object p2, p0, Lac;->k:Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V</span>
+<span class="missed">	iget-boolean p2, p0, Lac;->l:Z</span>
+<span class="missed">	invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

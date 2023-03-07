@@ -1,26 +1,144 @@
-.class final enum Lxg;
-.super Lsg;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.class public final enum Lxg;
+.super Ljava/lang/Enum;
+.source "HttpMethod.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Enum<",
+        "Lxg;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field public static final enum a:Lxg;
+
+.field public static final enum b:Lxg;
+
+.field public static final enum c:Lxg;
+
+.field public static final enum d:Lxg;
+
+.field private static final synthetic e:[Lxg;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;ILzg;I)V
+.method static constructor <clinit>()V
     .locals 6
 
-    const/16 v2, 0xa
+    .line 21
+    new-instance v0, Lxg;
 
-    const/4 v4, 0x2
+    const/4 v1, 0x0
 
-    const/4 v5, 0x0
+    const-string v2, "GET"
 
-    move-object v0, p0
+    invoke-direct {v0, v2, v1}, Lxg;-><init>(Ljava/lang/String;I)V
 
-    move-object v1, p1
+    sput-object v0, Lxg;->a:Lxg;
 
-    move-object v3, p3
+    .line 22
+    new-instance v0, Lxg;
 
-    .line 1
-    invoke-direct/range {v0 .. v5}, Lsg;-><init>(Ljava/lang/String;ILzg;ILtg;)V
+    const/4 v2, 0x1
+
+    const-string v3, "POST"
+
+    invoke-direct {v0, v3, v2}, Lxg;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lxg;->b:Lxg;
+
+    .line 23
+    new-instance v0, Lxg;
+
+    const/4 v3, 0x2
+
+    const-string v4, "PUT"
+
+    invoke-direct {v0, v4, v3}, Lxg;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lxg;->c:Lxg;
+
+    .line 24
+    new-instance v0, Lxg;
+
+    const/4 v4, 0x3
+
+    const-string v5, "DELETE"
+
+    invoke-direct {v0, v5, v4}, Lxg;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lxg;->d:Lxg;
+
+    const/4 v0, 0x4
+
+    .line 20
+    new-array v0, v0, [Lxg;
+
+    sget-object v5, Lxg;->a:Lxg;
+
+    aput-object v5, v0, v1
+
+    sget-object v1, Lxg;->b:Lxg;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lxg;->c:Lxg;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lxg;->d:Lxg;
+
+    aput-object v1, v0, v4
+
+    sput-object v0, Lxg;->e:[Lxg;
 
     return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
+
+    .line 20
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lxg;
+    .locals 1
+
+    .line 20
+    const-class v0, Lxg;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Lxg;
+
+    return-object p0
+.end method
+
+.method public static values()[Lxg;
+    .locals 1
+
+    .line 20
+    sget-object v0, Lxg;->e:[Lxg;
+
+    invoke-virtual {v0}, [Lxg;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lxg;
+
+    return-object v0
 .end method

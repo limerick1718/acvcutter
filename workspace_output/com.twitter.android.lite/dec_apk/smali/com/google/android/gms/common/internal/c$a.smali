@@ -8,10 +8,10 @@ accessFlags = 0x19
 name = "a"
 .end annotation
 .field private a:Landroid/accounts/Account;
-.field private b:Ll;
+.field private b:Lm;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ll<",
+"Lm<",
 "Lcom/google/android/gms/common/api/Scope;",
 ">;"
 }
@@ -32,8 +32,7 @@ value = {
 .field private e:Landroid/view/View;
 .field private f:Ljava/lang/String;
 .field private g:Ljava/lang/String;
-.field private h:Lfm;
-.field private i:Z
+.field private h:Lqp;
 .method public constructor <init>()V
 .locals 1
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +63,7 @@ const/4 v0, 0x0
 return-object v0
 .end method
 .method public final a()Lcom/google/android/gms/common/internal/c;
-.locals 11
+.locals 10
 const/4 v0, 0x0
 return-object v0
 .end method

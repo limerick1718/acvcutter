@@ -1,20 +1,4 @@
-.class public abstract Lcom/google/android/gms/common/api/h;
+.class public interface abstract Lcom/google/android/gms/common/api/h;
 .super Ljava/lang/Object;
-.annotation system Ldalvik/annotation/MemberClasses;
-value = {
-Lcom/google/android/gms/common/api/h$a;
-}
-.end annotation
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"<R::",
-"Lcom/google/android/gms/common/api/j;",
-">",
-"Ljava/lang/Object;"
-}
-.end annotation
-.method public constructor <init>()V
-.locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
+.method public abstract a()V
 .end method

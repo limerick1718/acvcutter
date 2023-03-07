@@ -6,37 +6,60 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/app/a$d;,
         Landroidx/core/app/a$c;,
-        Landroidx/core/app/a$b;
+        Landroidx/core/app/a$b;,
+        Landroidx/core/app/a$a;
     }
 .end annotation
 
 
 # static fields
-.field private static a:Landroidx/core/app/a$c;
+.field private static a:Landroidx/core/app/a$b;
 
 
 # direct methods
-.method public static a()Landroidx/core/app/a$c;
+.method public static a()Landroidx/core/app/a$b;
     .locals 1
 
-    .line 1
-    sget-object v0, Landroidx/core/app/a;->a:Landroidx/core/app/a$c;
+    .line 169
+    sget-object v0, Landroidx/core/app/a;->a:Landroidx/core/app/a$b;
 
     return-object v0
+.end method
+
+.method public static a(Landroid/app/Activity;Landroid/content/Intent;ILandroid/os/Bundle;)V
+    .locals 2
+
+    .line 233
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x10
+
+    if-lt v0, v1, :cond_0
+
+    .line 234
+    invoke-virtual {p0, p1, p2, p3}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;ILandroid/os/Bundle;)V
+
+    goto :goto_0
+
+    .line 236
+    :cond_0
+    invoke-virtual {p0, p1, p2}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
+
+    :goto_0
+    return-void
 .end method
 
 .method public static a(Landroid/app/Activity;[Ljava/lang/String;I)V
     .locals 2
 
-    .line 2
-    sget-object v0, Landroidx/core/app/a;->a:Landroidx/core/app/a$c;
+    .line 491
+    sget-object v0, Landroidx/core/app/a;->a:Landroidx/core/app/a$b;
 
     if-eqz v0, :cond_0
 
-    .line 3
-    invoke-interface {v0, p0, p1, p2}, Landroidx/core/app/a$c;->a(Landroid/app/Activity;[Ljava/lang/String;I)Z
+    .line 492
+    invoke-interface {v0, p0, p1, p2}, Landroidx/core/app/a$b;->a(Landroid/app/Activity;[Ljava/lang/String;I)Z
 
     move-result v0
 
@@ -44,7 +67,7 @@
 
     return-void
 
-    .line 4
+    .line 497
     :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -52,32 +75,32 @@
 
     if-lt v0, v1, :cond_2
 
-    .line 5
-    instance-of v0, p0, Landroidx/core/app/a$d;
+    .line 498
+    instance-of v0, p0, Landroidx/core/app/a$c;
 
     if-eqz v0, :cond_1
 
-    .line 6
+    .line 499
     move-object v0, p0
 
-    check-cast v0, Landroidx/core/app/a$d;
+    check-cast v0, Landroidx/core/app/a$c;
 
-    .line 7
-    invoke-interface {v0, p2}, Landroidx/core/app/a$d;->a(I)V
+    .line 500
+    invoke-interface {v0, p2}, Landroidx/core/app/a$c;->a(I)V
 
-    .line 8
+    .line 502
     :cond_1
     invoke-virtual {p0, p1, p2}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
 
     goto :goto_0
 
-    .line 9
+    .line 503
     :cond_2
-    instance-of v0, p0, Landroidx/core/app/a$b;
+    instance-of v0, p0, Landroidx/core/app/a$a;
 
     if-eqz v0, :cond_3
 
-    .line 10
+    .line 504
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -86,10 +109,10 @@
 
     invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 11
-    new-instance v1, Landroidx/core/app/a$a;
+    .line 505
+    new-instance v1, Landroidx/core/app/a$1;
 
-    invoke-direct {v1, p1, p0, p2}, Landroidx/core/app/a$a;-><init>([Ljava/lang/String;Landroid/app/Activity;I)V
+    invoke-direct {v1, p1, p0, p2}, Landroidx/core/app/a$1;-><init>([Ljava/lang/String;Landroid/app/Activity;I)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

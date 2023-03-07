@@ -1,5 +1,5 @@
 .class public Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
-.super Lp5;
+.super Lba;
 .implements Lcom/google/android/gms/common/internal/ReflectedParcelable;
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
 .annotation system Ldalvik/annotation/Signature;
@@ -10,17 +10,17 @@ value = {
 }
 .end annotation
 .end field
-.field private static n:Lcom/google/android/gms/common/util/e;
-.field private final a:I
-.field private b:Ljava/lang/String;
+.field private static a:Lcom/google/android/gms/common/util/d;
+.field private final b:I
 .field private c:Ljava/lang/String;
 .field private d:Ljava/lang/String;
 .field private e:Ljava/lang/String;
-.field private f:Landroid/net/Uri;
-.field private g:Ljava/lang/String;
-.field private h:J
-.field private i:Ljava/lang/String;
-.field private j:Ljava/util/List;
+.field private f:Ljava/lang/String;
+.field private g:Landroid/net/Uri;
+.field private h:Ljava/lang/String;
+.field private i:J
+.field private j:Ljava/lang/String;
+.field private k:Ljava/util/List;
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "Ljava/util/List<",
@@ -29,9 +29,9 @@ value = {
 }
 .end annotation
 .end field
-.field private k:Ljava/lang/String;
 .field private l:Ljava/lang/String;
-.field private m:Ljava/util/Set;
+.field private m:Ljava/lang/String;
+.field private n:Ljava/util/Set;
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "Ljava/util/Set<",
@@ -64,13 +64,38 @@ value = {
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
+.method public a()Ljava/lang/String;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public b()Ljava/lang/String;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public c()Ljava/lang/String;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public d()Landroid/accounts/Account;
+.locals 3
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public e()Ljava/lang/String;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
 .method public equals(Ljava/lang/Object;)Z
 .locals 4
 const/4 v0, 0x0
 return v0
 .end method
-.method public f()Landroid/accounts/Account;
-.locals 3
+.method public f()Ljava/lang/String;
+.locals 1
 const/4 v0, 0x0
 return-object v0
 .end method
@@ -79,7 +104,7 @@ return-object v0
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public h()Ljava/lang/String;
+.method public h()Landroid/net/Uri;
 .locals 1
 const/4 v0, 0x0
 return-object v0
@@ -94,27 +119,7 @@ return v0
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public j()Ljava/lang/String;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public k()Ljava/lang/String;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public l()Ljava/lang/String;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public m()Landroid/net/Uri;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public n()Ljava/util/Set;
+.method public j()Ljava/util/Set;
 .locals 2
 .annotation system Ldalvik/annotation/Signature;
 value = {
@@ -124,11 +129,6 @@ value = {
 ">;"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public o()Ljava/lang/String;
-.locals 1
 const/4 v0, 0x0
 return-object v0
 .end method

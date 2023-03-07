@@ -42,9 +42,9 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 10
+    .locals 9
 
-    .line 1
+    .line 119
     new-instance v0, Landroidx/lifecycle/e$a;
 
     const/4 v1, 0x0
@@ -55,7 +55,7 @@
 
     sput-object v0, Landroidx/lifecycle/e$a;->ON_CREATE:Landroidx/lifecycle/e$a;
 
-    .line 2
+    .line 123
     new-instance v0, Landroidx/lifecycle/e$a;
 
     const/4 v2, 0x1
@@ -66,7 +66,7 @@
 
     sput-object v0, Landroidx/lifecycle/e$a;->ON_START:Landroidx/lifecycle/e$a;
 
-    .line 3
+    .line 127
     new-instance v0, Landroidx/lifecycle/e$a;
 
     const/4 v3, 0x2
@@ -77,7 +77,7 @@
 
     sput-object v0, Landroidx/lifecycle/e$a;->ON_RESUME:Landroidx/lifecycle/e$a;
 
-    .line 4
+    .line 131
     new-instance v0, Landroidx/lifecycle/e$a;
 
     const/4 v4, 0x3
@@ -88,7 +88,7 @@
 
     sput-object v0, Landroidx/lifecycle/e$a;->ON_PAUSE:Landroidx/lifecycle/e$a;
 
-    .line 5
+    .line 135
     new-instance v0, Landroidx/lifecycle/e$a;
 
     const/4 v5, 0x4
@@ -99,7 +99,7 @@
 
     sput-object v0, Landroidx/lifecycle/e$a;->ON_STOP:Landroidx/lifecycle/e$a;
 
-    .line 6
+    .line 139
     new-instance v0, Landroidx/lifecycle/e$a;
 
     const/4 v6, 0x5
@@ -110,7 +110,7 @@
 
     sput-object v0, Landroidx/lifecycle/e$a;->ON_DESTROY:Landroidx/lifecycle/e$a;
 
-    .line 7
+    .line 143
     new-instance v0, Landroidx/lifecycle/e$a;
 
     const/4 v7, 0x6
@@ -121,38 +121,40 @@
 
     sput-object v0, Landroidx/lifecycle/e$a;->ON_ANY:Landroidx/lifecycle/e$a;
 
-    const/4 v8, 0x7
+    const/4 v0, 0x7
 
-    new-array v8, v8, [Landroidx/lifecycle/e$a;
+    .line 114
+    new-array v0, v0, [Landroidx/lifecycle/e$a;
 
-    .line 8
-    sget-object v9, Landroidx/lifecycle/e$a;->ON_CREATE:Landroidx/lifecycle/e$a;
+    sget-object v8, Landroidx/lifecycle/e$a;->ON_CREATE:Landroidx/lifecycle/e$a;
 
-    aput-object v9, v8, v1
+    aput-object v8, v0, v1
 
     sget-object v1, Landroidx/lifecycle/e$a;->ON_START:Landroidx/lifecycle/e$a;
 
-    aput-object v1, v8, v2
+    aput-object v1, v0, v2
 
     sget-object v1, Landroidx/lifecycle/e$a;->ON_RESUME:Landroidx/lifecycle/e$a;
 
-    aput-object v1, v8, v3
+    aput-object v1, v0, v3
 
     sget-object v1, Landroidx/lifecycle/e$a;->ON_PAUSE:Landroidx/lifecycle/e$a;
 
-    aput-object v1, v8, v4
+    aput-object v1, v0, v4
 
     sget-object v1, Landroidx/lifecycle/e$a;->ON_STOP:Landroidx/lifecycle/e$a;
 
-    aput-object v1, v8, v5
+    aput-object v1, v0, v5
 
     sget-object v1, Landroidx/lifecycle/e$a;->ON_DESTROY:Landroidx/lifecycle/e$a;
 
-    aput-object v1, v8, v6
+    aput-object v1, v0, v6
 
-    aput-object v0, v8, v7
+    sget-object v1, Landroidx/lifecycle/e$a;->ON_ANY:Landroidx/lifecycle/e$a;
 
-    sput-object v8, Landroidx/lifecycle/e$a;->$VALUES:[Landroidx/lifecycle/e$a;
+    aput-object v1, v0, v7
+
+    sput-object v0, Landroidx/lifecycle/e$a;->$VALUES:[Landroidx/lifecycle/e$a;
 
     return-void
 .end method
@@ -165,7 +167,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 115
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -174,7 +176,7 @@
 .method public static valueOf(Ljava/lang/String;)Landroidx/lifecycle/e$a;
     .locals 1
 
-    .line 1
+    .line 114
     const-class v0, Landroidx/lifecycle/e$a;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -189,7 +191,7 @@
 .method public static values()[Landroidx/lifecycle/e$a;
     .locals 1
 
-    .line 1
+    .line 114
     sget-object v0, Landroidx/lifecycle/e$a;->$VALUES:[Landroidx/lifecycle/e$a;
 
     invoke-virtual {v0}, [Landroidx/lifecycle/e$a;->clone()Ljava/lang/Object;

@@ -20,16 +20,16 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
 value = {
-Landroidx/lifecycle/h$b;
+Landroidx/lifecycle/h$a;
 }
 .end annotation
 
-.field private a:Lf;
+.field private a:Lg;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lf<",
+"Lg<",
 "Landroidx/lifecycle/f;",
-"Landroidx/lifecycle/h$b;",
+"Landroidx/lifecycle/h$a;",
 ">;"
 }
 .end annotation
@@ -62,9 +62,9 @@ value = {
 <span class="">	.locals 1</span>
 
 <span class="missed">	invoke-direct {p0}, Landroidx/lifecycle/e;-><init>()V</span>
-<span class="missed">	new-instance v0, Lf;</span>
-<span class="missed">	invoke-direct {v0}, Lf;-><init>()V</span>
-<span class="missed">	iput-object v0, p0, Landroidx/lifecycle/h;->a:Lf;</span>
+<span class="missed">	new-instance v0, Lg;</span>
+<span class="missed">	invoke-direct {v0}, Lg;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/lifecycle/h;->a:Lg;</span>
 <span class="missed">	const/4 v0, 0x0</span>
 <span class="missed">	iput v0, p0, Landroidx/lifecycle/h;->d:I</span>
 <span class="missed">	iput-boolean v0, p0, Landroidx/lifecycle/h;->e:Z</span>
@@ -84,7 +84,7 @@ value = {
 <span class="">	.locals 1</span>
 
 <span class="missed">	if-eqz p1, :cond_0</span>
-<span class="">	invoke-virtual {p1, p0}, Ljava/lang/Enum;->compareTo(Ljava/lang/Enum;)I</span>
+<span class="">	invoke-virtual {p1, p0}, Landroidx/lifecycle/e$b;->compareTo(Ljava/lang/Enum;)I</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-gez v0, :cond_0</span>
 <span class="missed">	move-object p0, p1</span>
@@ -95,8 +95,8 @@ value = {
 .method private a(Landroidx/lifecycle/g;)V
 <span class="">	.locals 5</span>
 
-<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->a:Lf;</span>
-<span class="">	invoke-virtual {v0}, Lg;->c()Ljava/util/Iterator;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->a:Lg;</span>
+<span class="">	invoke-virtual {v0}, Lg;->c()Lh$d;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="">	:cond_0</span>
 <span class="">	invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z</span>
@@ -109,39 +109,239 @@ value = {
 <span class="missed">	check-cast v1, Ljava/util/Map$Entry;</span>
 <span class="">	invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v2</span>
-<span class="missed">	check-cast v2, Landroidx/lifecycle/h$b;</span>
+<span class="missed">	check-cast v2, Landroidx/lifecycle/h$a;</span>
 <span class="">	:goto_0</span>
-<span class="missed">	iget-object v3, v2, Landroidx/lifecycle/h$b;->a:Landroidx/lifecycle/e$b;</span>
+<span class="missed">	iget-object v3, v2, Landroidx/lifecycle/h$a;->a:Landroidx/lifecycle/e$b;</span>
 <span class="missed">	iget-object v4, p0, Landroidx/lifecycle/h;->b:Landroidx/lifecycle/e$b;</span>
-<span class="">	invoke-virtual {v3, v4}, Ljava/lang/Enum;->compareTo(Ljava/lang/Enum;)I</span>
+<span class="">	invoke-virtual {v3, v4}, Landroidx/lifecycle/e$b;->compareTo(Ljava/lang/Enum;)I</span>
 <span class="missed">	move-result v3</span>
-<span class="missed">	if-lez v3, :cond_0</span>
+<span class="missed">	if-gez v3, :cond_0</span>
 <span class="missed">	iget-boolean v3, p0, Landroidx/lifecycle/h;->f:Z</span>
 <span class="missed">	if-nez v3, :cond_0</span>
-<span class="missed">	iget-object v3, p0, Landroidx/lifecycle/h;->a:Lf;</span>
+<span class="missed">	iget-object v3, p0, Landroidx/lifecycle/h;->a:Lg;</span>
 <span class="">	invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v4</span>
-<span class="">	invoke-virtual {v3, v4}, Lf;->contains(Ljava/lang/Object;)Z</span>
+<span class="">	invoke-virtual {v3, v4}, Lg;->c(Ljava/lang/Object;)Z</span>
 <span class="missed">	move-result v3</span>
 <span class="missed">	if-eqz v3, :cond_0</span>
-<span class="missed">	iget-object v3, v2, Landroidx/lifecycle/h$b;->a:Landroidx/lifecycle/e$b;</span>
-<span class="">	invoke-static {v3}, Landroidx/lifecycle/h;->b(Landroidx/lifecycle/e$b;)Landroidx/lifecycle/e$a;</span>
+<span class="missed">	iget-object v3, v2, Landroidx/lifecycle/h$a;->a:Landroidx/lifecycle/e$b;</span>
+<span class="missed">	invoke-direct {p0, v3}, Landroidx/lifecycle/h;->c(Landroidx/lifecycle/e$b;)V</span>
+<span class="missed">	iget-object v3, v2, Landroidx/lifecycle/h$a;->a:Landroidx/lifecycle/e$b;</span>
+<span class="">	invoke-static {v3}, Landroidx/lifecycle/h;->e(Landroidx/lifecycle/e$b;)Landroidx/lifecycle/e$a;</span>
 <span class="missed">	move-result-object v3</span>
-<span class="">	invoke-static {v3}, Landroidx/lifecycle/h;->b(Landroidx/lifecycle/e$a;)Landroidx/lifecycle/e$b;</span>
-<span class="missed">	move-result-object v4</span>
-<span class="missed">	invoke-direct {p0, v4}, Landroidx/lifecycle/h;->d(Landroidx/lifecycle/e$b;)V</span>
-<span class="missed">	invoke-virtual {v2, p1, v3}, Landroidx/lifecycle/h$b;->a(Landroidx/lifecycle/g;Landroidx/lifecycle/e$a;)V</span>
+<span class="missed">	invoke-virtual {v2, p1, v3}, Landroidx/lifecycle/h$a;->a(Landroidx/lifecycle/g;Landroidx/lifecycle/e$a;)V</span>
 <span class="missed">	invoke-direct {p0}, Landroidx/lifecycle/h;->c()V</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_1</span>
 <span class="">	return-void</span>
 .end method
 
-.method private static b(Landroidx/lifecycle/e$b;)Landroidx/lifecycle/e$a;
+.method static b(Landroidx/lifecycle/e$a;)Landroidx/lifecycle/e$b;
 <span class="">	.locals 3</span>
 
-<span class="missed">	sget-object v0, Landroidx/lifecycle/h$a;->b:[I</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I</span>
+<span class="missed">	sget-object v0, Landroidx/lifecycle/h$1;->a:[I</span>
+<span class="">	invoke-virtual {p0}, Landroidx/lifecycle/e$a;->ordinal()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	aget v0, v0, v1</span>
+<span class="">	packed-switch v0, :pswitch_data_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v2, "Unexpected event value "</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v0</span>
+<span class="">	:pswitch_0</span>
+<span class="missed">	sget-object p0, Landroidx/lifecycle/e$b;->a:Landroidx/lifecycle/e$b;</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_1</span>
+<span class="missed">	sget-object p0, Landroidx/lifecycle/e$b;->e:Landroidx/lifecycle/e$b;</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_2</span>
+<span class="missed">	sget-object p0, Landroidx/lifecycle/e$b;->d:Landroidx/lifecycle/e$b;</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_3</span>
+<span class="missed">	sget-object p0, Landroidx/lifecycle/e$b;->c:Landroidx/lifecycle/e$b;</span>
+<span class="">	return-object p0</span>
+<span class="">	:pswitch_data_0</span>
+<span class="">	.packed-switch 0x1</span>
+<span class="">	:pswitch_3</span>
+<span class="">	:pswitch_3</span>
+<span class="">	:pswitch_2</span>
+<span class="">	:pswitch_2</span>
+<span class="">	:pswitch_1</span>
+<span class="">	:pswitch_0</span>
+<span class="">	.end packed-switch</span>
+.end method
+
+.method private b(Landroidx/lifecycle/e$b;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->b:Landroidx/lifecycle/e$b;</span>
+<span class="missed">	if-ne v0, p1, :cond_0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iput-object p1, p0, Landroidx/lifecycle/h;->b:Landroidx/lifecycle/e$b;</span>
+<span class="missed">	iget-boolean p1, p0, Landroidx/lifecycle/h;->e:Z</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-nez p1, :cond_2</span>
+<span class="missed">	iget p1, p0, Landroidx/lifecycle/h;->d:I</span>
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iput-boolean v0, p0, Landroidx/lifecycle/h;->e:Z</span>
+<span class="missed">	invoke-direct {p0}, Landroidx/lifecycle/h;->d()V</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	iput-boolean p1, p0, Landroidx/lifecycle/h;->e:Z</span>
+<span class="">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iput-boolean v0, p0, Landroidx/lifecycle/h;->f:Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method private b(Landroidx/lifecycle/g;)V
+<span class="">	.locals 5</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->a:Lg;</span>
+<span class="">	invoke-virtual {v0}, Lg;->b()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="missed">	iget-boolean v1, p0, Landroidx/lifecycle/h;->f:Z</span>
+<span class="missed">	if-nez v1, :cond_1</span>
+<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, Ljava/util/Map$Entry;</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Landroidx/lifecycle/h$a;</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object v3, v2, Landroidx/lifecycle/h$a;->a:Landroidx/lifecycle/e$b;</span>
+<span class="missed">	iget-object v4, p0, Landroidx/lifecycle/h;->b:Landroidx/lifecycle/e$b;</span>
+<span class="">	invoke-virtual {v3, v4}, Landroidx/lifecycle/e$b;->compareTo(Ljava/lang/Enum;)I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-lez v3, :cond_0</span>
+<span class="missed">	iget-boolean v3, p0, Landroidx/lifecycle/h;->f:Z</span>
+<span class="missed">	if-nez v3, :cond_0</span>
+<span class="missed">	iget-object v3, p0, Landroidx/lifecycle/h;->a:Lg;</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="">	invoke-virtual {v3, v4}, Lg;->c(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-eqz v3, :cond_0</span>
+<span class="missed">	iget-object v3, v2, Landroidx/lifecycle/h$a;->a:Landroidx/lifecycle/e$b;</span>
+<span class="">	invoke-static {v3}, Landroidx/lifecycle/h;->d(Landroidx/lifecycle/e$b;)Landroidx/lifecycle/e$a;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="">	invoke-static {v3}, Landroidx/lifecycle/h;->b(Landroidx/lifecycle/e$a;)Landroidx/lifecycle/e$b;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	invoke-direct {p0, v4}, Landroidx/lifecycle/h;->c(Landroidx/lifecycle/e$b;)V</span>
+<span class="missed">	invoke-virtual {v2, p1, v3}, Landroidx/lifecycle/h$a;->a(Landroidx/lifecycle/g;Landroidx/lifecycle/e$a;)V</span>
+<span class="missed">	invoke-direct {p0}, Landroidx/lifecycle/h;->c()V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+.end method
+
+.method private b()Z
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->a:Lg;</span>
+<span class="">	invoke-virtual {v0}, Lg;->a()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	return v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->a:Lg;</span>
+<span class="">	invoke-virtual {v0}, Lg;->d()Ljava/util/Map$Entry;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Landroidx/lifecycle/h$a;</span>
+<span class="missed">	iget-object v0, v0, Landroidx/lifecycle/h$a;->a:Landroidx/lifecycle/e$b;</span>
+<span class="missed">	iget-object v2, p0, Landroidx/lifecycle/h;->a:Lg;</span>
+<span class="">	invoke-virtual {v2}, Lg;->e()Ljava/util/Map$Entry;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Landroidx/lifecycle/h$a;</span>
+<span class="missed">	iget-object v2, v2, Landroidx/lifecycle/h$a;->a:Landroidx/lifecycle/e$b;</span>
+<span class="missed">	if-ne v0, v2, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->b:Landroidx/lifecycle/e$b;</span>
+<span class="missed">	if-ne v0, v2, :cond_1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return v1</span>
+.end method
+
+.method private c(Landroidx/lifecycle/f;)Landroidx/lifecycle/e$b;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->a:Lg;</span>
+<span class="">	invoke-virtual {v0, p1}, Lg;->d(Ljava/lang/Object;)Ljava/util/Map$Entry;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Landroidx/lifecycle/h$a;</span>
+<span class="missed">	iget-object p1, p1, Landroidx/lifecycle/h$a;->a:Landroidx/lifecycle/e$b;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	move-object p1, v0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object v1, p0, Landroidx/lifecycle/h;->g:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->g:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v0}, Ljava/util/ArrayList;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	add-int/lit8 v1, v1, -0x1</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Landroidx/lifecycle/e$b;</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v1, p0, Landroidx/lifecycle/h;->b:Landroidx/lifecycle/e$b;</span>
+<span class="">	invoke-static {v1, p1}, Landroidx/lifecycle/h;->a(Landroidx/lifecycle/e$b;Landroidx/lifecycle/e$b;)Landroidx/lifecycle/e$b;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1, v0}, Landroidx/lifecycle/h;->a(Landroidx/lifecycle/e$b;Landroidx/lifecycle/e$b;)Landroidx/lifecycle/e$b;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method private c()V
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->g:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v0}, Ljava/util/ArrayList;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	add-int/lit8 v1, v1, -0x1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;</span>
+<span class="">	return-void</span>
+.end method
+
+.method private c(Landroidx/lifecycle/e$b;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->g:Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method private static d(Landroidx/lifecycle/e$b;)Landroidx/lifecycle/e$a;
+<span class="">	.locals 3</span>
+
+<span class="missed">	sget-object v0, Landroidx/lifecycle/h$1;->b:[I</span>
+<span class="">	invoke-virtual {p0}, Landroidx/lifecycle/e$b;->ordinal()I</span>
 <span class="missed">	move-result v1</span>
 <span class="missed">	aget v0, v0, v1</span>
 <span class="missed">	const/4 v1, 0x1</span>
@@ -183,198 +383,6 @@ value = {
 <span class="">	throw p0</span>
 .end method
 
-.method static b(Landroidx/lifecycle/e$a;)Landroidx/lifecycle/e$b;
-<span class="">	.locals 3</span>
-
-<span class="missed">	sget-object v0, Landroidx/lifecycle/h$a;->a:[I</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	aget v0, v0, v1</span>
-<span class="">	packed-switch v0, :pswitch_data_0</span>
-<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
-<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const-string v2, "Unexpected event value "</span>
-<span class="missed">	invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw v0</span>
-<span class="">	:pswitch_0</span>
-<span class="missed">	sget-object p0, Landroidx/lifecycle/e$b;->a:Landroidx/lifecycle/e$b;</span>
-<span class="">	return-object p0</span>
-<span class="">	:pswitch_1</span>
-<span class="missed">	sget-object p0, Landroidx/lifecycle/e$b;->e:Landroidx/lifecycle/e$b;</span>
-<span class="">	return-object p0</span>
-<span class="">	:pswitch_2</span>
-<span class="missed">	sget-object p0, Landroidx/lifecycle/e$b;->d:Landroidx/lifecycle/e$b;</span>
-<span class="">	return-object p0</span>
-<span class="">	:pswitch_3</span>
-<span class="missed">	sget-object p0, Landroidx/lifecycle/e$b;->c:Landroidx/lifecycle/e$b;</span>
-<span class="">	return-object p0</span>
-<span class="">	:pswitch_data_0</span>
-<span class="">	.packed-switch 0x1</span>
-<span class="">	:pswitch_3</span>
-<span class="">	:pswitch_3</span>
-<span class="">	:pswitch_2</span>
-<span class="">	:pswitch_2</span>
-<span class="">	:pswitch_1</span>
-<span class="">	:pswitch_0</span>
-<span class="">	.end packed-switch</span>
-.end method
-
-.method private b(Landroidx/lifecycle/g;)V
-<span class="">	.locals 5</span>
-
-<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->a:Lf;</span>
-<span class="">	invoke-virtual {v0}, Lg;->g()Lg$d;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	:cond_0</span>
-<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	if-eqz v1, :cond_1</span>
-<span class="missed">	iget-boolean v1, p0, Landroidx/lifecycle/h;->f:Z</span>
-<span class="missed">	if-nez v1, :cond_1</span>
-<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	check-cast v1, Ljava/util/Map$Entry;</span>
-<span class="">	invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v2</span>
-<span class="missed">	check-cast v2, Landroidx/lifecycle/h$b;</span>
-<span class="">	:goto_0</span>
-<span class="missed">	iget-object v3, v2, Landroidx/lifecycle/h$b;->a:Landroidx/lifecycle/e$b;</span>
-<span class="missed">	iget-object v4, p0, Landroidx/lifecycle/h;->b:Landroidx/lifecycle/e$b;</span>
-<span class="">	invoke-virtual {v3, v4}, Ljava/lang/Enum;->compareTo(Ljava/lang/Enum;)I</span>
-<span class="missed">	move-result v3</span>
-<span class="missed">	if-gez v3, :cond_0</span>
-<span class="missed">	iget-boolean v3, p0, Landroidx/lifecycle/h;->f:Z</span>
-<span class="missed">	if-nez v3, :cond_0</span>
-<span class="missed">	iget-object v3, p0, Landroidx/lifecycle/h;->a:Lf;</span>
-<span class="">	invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v4</span>
-<span class="">	invoke-virtual {v3, v4}, Lf;->contains(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result v3</span>
-<span class="missed">	if-eqz v3, :cond_0</span>
-<span class="missed">	iget-object v3, v2, Landroidx/lifecycle/h$b;->a:Landroidx/lifecycle/e$b;</span>
-<span class="missed">	invoke-direct {p0, v3}, Landroidx/lifecycle/h;->d(Landroidx/lifecycle/e$b;)V</span>
-<span class="missed">	iget-object v3, v2, Landroidx/lifecycle/h$b;->a:Landroidx/lifecycle/e$b;</span>
-<span class="">	invoke-static {v3}, Landroidx/lifecycle/h;->e(Landroidx/lifecycle/e$b;)Landroidx/lifecycle/e$a;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="missed">	invoke-virtual {v2, p1, v3}, Landroidx/lifecycle/h$b;->a(Landroidx/lifecycle/g;Landroidx/lifecycle/e$a;)V</span>
-<span class="missed">	invoke-direct {p0}, Landroidx/lifecycle/h;->c()V</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_1</span>
-<span class="">	return-void</span>
-.end method
-
-.method private b()Z
-<span class="">	.locals 3</span>
-
-<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->a:Lf;</span>
-<span class="">	invoke-virtual {v0}, Lg;->size()I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	const/4 v1, 0x1</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="">	return v1</span>
-<span class="">	:cond_0</span>
-<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->a:Lf;</span>
-<span class="">	invoke-virtual {v0}, Lg;->f()Ljava/util/Map$Entry;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Landroidx/lifecycle/h$b;</span>
-<span class="missed">	iget-object v0, v0, Landroidx/lifecycle/h$b;->a:Landroidx/lifecycle/e$b;</span>
-<span class="missed">	iget-object v2, p0, Landroidx/lifecycle/h;->a:Lf;</span>
-<span class="">	invoke-virtual {v2}, Lg;->h()Ljava/util/Map$Entry;</span>
-<span class="missed">	move-result-object v2</span>
-<span class="">	invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v2</span>
-<span class="missed">	check-cast v2, Landroidx/lifecycle/h$b;</span>
-<span class="missed">	iget-object v2, v2, Landroidx/lifecycle/h$b;->a:Landroidx/lifecycle/e$b;</span>
-<span class="missed">	if-ne v0, v2, :cond_1</span>
-<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->b:Landroidx/lifecycle/e$b;</span>
-<span class="missed">	if-ne v0, v2, :cond_1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_1</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="">	return v1</span>
-.end method
-
-.method private c(Landroidx/lifecycle/f;)Landroidx/lifecycle/e$b;
-<span class="">	.locals 2</span>
-
-<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->a:Lf;</span>
-<span class="">	invoke-virtual {v0, p1}, Lf;->b(Ljava/lang/Object;)Ljava/util/Map$Entry;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="">	invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	check-cast p1, Landroidx/lifecycle/h$b;</span>
-<span class="missed">	iget-object p1, p1, Landroidx/lifecycle/h$b;->a:Landroidx/lifecycle/e$b;</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	move-object p1, v0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	iget-object v1, p0, Landroidx/lifecycle/h;->g:Ljava/util/ArrayList;</span>
-<span class="">	invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	if-nez v1, :cond_1</span>
-<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->g:Ljava/util/ArrayList;</span>
-<span class="">	invoke-virtual {v0}, Ljava/util/ArrayList;->size()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	add-int/lit8 v1, v1, -0x1</span>
-<span class="">	invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Landroidx/lifecycle/e$b;</span>
-<span class="">	:cond_1</span>
-<span class="missed">	iget-object v1, p0, Landroidx/lifecycle/h;->b:Landroidx/lifecycle/e$b;</span>
-<span class="">	invoke-static {v1, p1}, Landroidx/lifecycle/h;->a(Landroidx/lifecycle/e$b;Landroidx/lifecycle/e$b;)Landroidx/lifecycle/e$b;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	invoke-static {p1, v0}, Landroidx/lifecycle/h;->a(Landroidx/lifecycle/e$b;Landroidx/lifecycle/e$b;)Landroidx/lifecycle/e$b;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	return-object p1</span>
-.end method
-
-.method private c()V
-<span class="">	.locals 2</span>
-
-<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->g:Ljava/util/ArrayList;</span>
-<span class="">	invoke-virtual {v0}, Ljava/util/ArrayList;->size()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	add-int/lit8 v1, v1, -0x1</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;</span>
-<span class="">	return-void</span>
-.end method
-
-.method private c(Landroidx/lifecycle/e$b;)V
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->b:Landroidx/lifecycle/e$b;</span>
-<span class="missed">	if-ne v0, p1, :cond_0</span>
-<span class="">	return-void</span>
-<span class="">	:cond_0</span>
-<span class="missed">	iput-object p1, p0, Landroidx/lifecycle/h;->b:Landroidx/lifecycle/e$b;</span>
-<span class="missed">	iget-boolean p1, p0, Landroidx/lifecycle/h;->e:Z</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	if-nez p1, :cond_2</span>
-<span class="missed">	iget p1, p0, Landroidx/lifecycle/h;->d:I</span>
-<span class="missed">	if-eqz p1, :cond_1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_1</span>
-<span class="missed">	iput-boolean v0, p0, Landroidx/lifecycle/h;->e:Z</span>
-<span class="missed">	invoke-direct {p0}, Landroidx/lifecycle/h;->d()V</span>
-<span class="missed">	const/4 p1, 0x0</span>
-<span class="missed">	iput-boolean p1, p0, Landroidx/lifecycle/h;->e:Z</span>
-<span class="">	return-void</span>
-<span class="">	:cond_2</span>
-<span class="">	:goto_0</span>
-<span class="missed">	iput-boolean v0, p0, Landroidx/lifecycle/h;->f:Z</span>
-<span class="">	return-void</span>
-.end method
-
 .method private d()V
 <span class="">	.locals 3</span>
 
@@ -395,20 +403,20 @@ value = {
 <span class="missed">	if-nez v1, :cond_2</span>
 <span class="missed">	iput-boolean v2, p0, Landroidx/lifecycle/h;->f:Z</span>
 <span class="missed">	iget-object v1, p0, Landroidx/lifecycle/h;->b:Landroidx/lifecycle/e$b;</span>
-<span class="missed">	iget-object v2, p0, Landroidx/lifecycle/h;->a:Lf;</span>
-<span class="">	invoke-virtual {v2}, Lg;->f()Ljava/util/Map$Entry;</span>
+<span class="missed">	iget-object v2, p0, Landroidx/lifecycle/h;->a:Lg;</span>
+<span class="">	invoke-virtual {v2}, Lg;->d()Ljava/util/Map$Entry;</span>
 <span class="missed">	move-result-object v2</span>
 <span class="">	invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v2</span>
-<span class="missed">	check-cast v2, Landroidx/lifecycle/h$b;</span>
-<span class="missed">	iget-object v2, v2, Landroidx/lifecycle/h$b;->a:Landroidx/lifecycle/e$b;</span>
-<span class="">	invoke-virtual {v1, v2}, Ljava/lang/Enum;->compareTo(Ljava/lang/Enum;)I</span>
+<span class="missed">	check-cast v2, Landroidx/lifecycle/h$a;</span>
+<span class="missed">	iget-object v2, v2, Landroidx/lifecycle/h$a;->a:Landroidx/lifecycle/e$b;</span>
+<span class="">	invoke-virtual {v1, v2}, Landroidx/lifecycle/e$b;->compareTo(Ljava/lang/Enum;)I</span>
 <span class="missed">	move-result v1</span>
 <span class="missed">	if-gez v1, :cond_1</span>
-<span class="missed">	invoke-direct {p0, v0}, Landroidx/lifecycle/h;->a(Landroidx/lifecycle/g;)V</span>
+<span class="missed">	invoke-direct {p0, v0}, Landroidx/lifecycle/h;->b(Landroidx/lifecycle/g;)V</span>
 <span class="">	:cond_1</span>
-<span class="missed">	iget-object v1, p0, Landroidx/lifecycle/h;->a:Lf;</span>
-<span class="">	invoke-virtual {v1}, Lg;->h()Ljava/util/Map$Entry;</span>
+<span class="missed">	iget-object v1, p0, Landroidx/lifecycle/h;->a:Lg;</span>
+<span class="">	invoke-virtual {v1}, Lg;->e()Ljava/util/Map$Entry;</span>
 <span class="missed">	move-result-object v1</span>
 <span class="missed">	iget-boolean v2, p0, Landroidx/lifecycle/h;->f:Z</span>
 <span class="missed">	if-nez v2, :cond_0</span>
@@ -416,31 +424,23 @@ value = {
 <span class="missed">	iget-object v2, p0, Landroidx/lifecycle/h;->b:Landroidx/lifecycle/e$b;</span>
 <span class="">	invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v1</span>
-<span class="missed">	check-cast v1, Landroidx/lifecycle/h$b;</span>
-<span class="missed">	iget-object v1, v1, Landroidx/lifecycle/h$b;->a:Landroidx/lifecycle/e$b;</span>
-<span class="">	invoke-virtual {v2, v1}, Ljava/lang/Enum;->compareTo(Ljava/lang/Enum;)I</span>
+<span class="missed">	check-cast v1, Landroidx/lifecycle/h$a;</span>
+<span class="missed">	iget-object v1, v1, Landroidx/lifecycle/h$a;->a:Landroidx/lifecycle/e$b;</span>
+<span class="">	invoke-virtual {v2, v1}, Landroidx/lifecycle/e$b;->compareTo(Ljava/lang/Enum;)I</span>
 <span class="missed">	move-result v1</span>
 <span class="missed">	if-lez v1, :cond_0</span>
-<span class="missed">	invoke-direct {p0, v0}, Landroidx/lifecycle/h;->b(Landroidx/lifecycle/g;)V</span>
+<span class="missed">	invoke-direct {p0, v0}, Landroidx/lifecycle/h;->a(Landroidx/lifecycle/g;)V</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_2</span>
 <span class="missed">	iput-boolean v2, p0, Landroidx/lifecycle/h;->f:Z</span>
 <span class="">	return-void</span>
 .end method
 
-.method private d(Landroidx/lifecycle/e$b;)V
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->g:Ljava/util/ArrayList;</span>
-<span class="missed">	invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z</span>
-<span class="">	return-void</span>
-.end method
-
 .method private static e(Landroidx/lifecycle/e$b;)Landroidx/lifecycle/e$a;
 <span class="">	.locals 3</span>
 
-<span class="missed">	sget-object v0, Landroidx/lifecycle/h$a;->b:[I</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I</span>
+<span class="missed">	sget-object v0, Landroidx/lifecycle/h$1;->b:[I</span>
+<span class="">	invoke-virtual {p0}, Landroidx/lifecycle/e$b;->ordinal()I</span>
 <span class="missed">	move-result v1</span>
 <span class="missed">	aget v0, v0, v1</span>
 <span class="missed">	const/4 v1, 0x1</span>
@@ -493,14 +493,14 @@ value = {
 
 <span class="">	invoke-static {p1}, Landroidx/lifecycle/h;->b(Landroidx/lifecycle/e$a;)Landroidx/lifecycle/e$b;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="missed">	invoke-direct {p0, p1}, Landroidx/lifecycle/h;->c(Landroidx/lifecycle/e$b;)V</span>
+<span class="missed">	invoke-direct {p0, p1}, Landroidx/lifecycle/h;->b(Landroidx/lifecycle/e$b;)V</span>
 <span class="">	return-void</span>
 .end method
 
 .method public a(Landroidx/lifecycle/e$b;)V
 <span class="">	.locals 0</span>
 
-<span class="missed">	invoke-direct {p0, p1}, Landroidx/lifecycle/h;->c(Landroidx/lifecycle/e$b;)V</span>
+<span class="missed">	invoke-direct {p0, p1}, Landroidx/lifecycle/h;->b(Landroidx/lifecycle/e$b;)V</span>
 <span class="">	return-void</span>
 .end method
 
@@ -510,24 +510,25 @@ value = {
 <span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->b:Landroidx/lifecycle/e$b;</span>
 <span class="missed">	sget-object v1, Landroidx/lifecycle/e$b;->a:Landroidx/lifecycle/e$b;</span>
 <span class="missed">	if-ne v0, v1, :cond_0</span>
+<span class="missed">	sget-object v0, Landroidx/lifecycle/e$b;->a:Landroidx/lifecycle/e$b;</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
-<span class="missed">	sget-object v1, Landroidx/lifecycle/e$b;->b:Landroidx/lifecycle/e$b;</span>
+<span class="missed">	sget-object v0, Landroidx/lifecycle/e$b;->b:Landroidx/lifecycle/e$b;</span>
 <span class="">	:goto_0</span>
-<span class="missed">	new-instance v0, Landroidx/lifecycle/h$b;</span>
-<span class="missed">	invoke-direct {v0, p1, v1}, Landroidx/lifecycle/h$b;-><init>(Landroidx/lifecycle/f;Landroidx/lifecycle/e$b;)V</span>
-<span class="missed">	iget-object v1, p0, Landroidx/lifecycle/h;->a:Lf;</span>
-<span class="">	invoke-virtual {v1, p1, v0}, Lf;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	check-cast v1, Landroidx/lifecycle/h$b;</span>
-<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="missed">	new-instance v1, Landroidx/lifecycle/h$a;</span>
+<span class="missed">	invoke-direct {v1, p1, v0}, Landroidx/lifecycle/h$a;-><init>(Landroidx/lifecycle/f;Landroidx/lifecycle/e$b;)V</span>
+<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->a:Lg;</span>
+<span class="">	invoke-virtual {v0, p1, v1}, Lg;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Landroidx/lifecycle/h$a;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
 <span class="">	return-void</span>
 <span class="">	:cond_1</span>
-<span class="missed">	iget-object v1, p0, Landroidx/lifecycle/h;->c:Ljava/lang/ref/WeakReference;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	check-cast v1, Landroidx/lifecycle/g;</span>
-<span class="missed">	if-nez v1, :cond_2</span>
+<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->c:Ljava/lang/ref/WeakReference;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Landroidx/lifecycle/g;</span>
+<span class="missed">	if-nez v0, :cond_2</span>
 <span class="">	return-void</span>
 <span class="">	:cond_2</span>
 <span class="missed">	iget v2, p0, Landroidx/lifecycle/h;->d:I</span>
@@ -549,20 +550,20 @@ value = {
 <span class="missed">	add-int/2addr v5, v3</span>
 <span class="missed">	iput v5, p0, Landroidx/lifecycle/h;->d:I</span>
 <span class="">	:goto_3</span>
-<span class="missed">	iget-object v5, v0, Landroidx/lifecycle/h$b;->a:Landroidx/lifecycle/e$b;</span>
-<span class="">	invoke-virtual {v5, v4}, Ljava/lang/Enum;->compareTo(Ljava/lang/Enum;)I</span>
+<span class="missed">	iget-object v5, v1, Landroidx/lifecycle/h$a;->a:Landroidx/lifecycle/e$b;</span>
+<span class="">	invoke-virtual {v5, v4}, Landroidx/lifecycle/e$b;->compareTo(Ljava/lang/Enum;)I</span>
 <span class="missed">	move-result v4</span>
 <span class="missed">	if-gez v4, :cond_5</span>
-<span class="missed">	iget-object v4, p0, Landroidx/lifecycle/h;->a:Lf;</span>
-<span class="">	invoke-virtual {v4, p1}, Lf;->contains(Ljava/lang/Object;)Z</span>
+<span class="missed">	iget-object v4, p0, Landroidx/lifecycle/h;->a:Lg;</span>
+<span class="">	invoke-virtual {v4, p1}, Lg;->c(Ljava/lang/Object;)Z</span>
 <span class="missed">	move-result v4</span>
 <span class="missed">	if-eqz v4, :cond_5</span>
-<span class="missed">	iget-object v4, v0, Landroidx/lifecycle/h$b;->a:Landroidx/lifecycle/e$b;</span>
-<span class="missed">	invoke-direct {p0, v4}, Landroidx/lifecycle/h;->d(Landroidx/lifecycle/e$b;)V</span>
-<span class="missed">	iget-object v4, v0, Landroidx/lifecycle/h$b;->a:Landroidx/lifecycle/e$b;</span>
+<span class="missed">	iget-object v4, v1, Landroidx/lifecycle/h$a;->a:Landroidx/lifecycle/e$b;</span>
+<span class="missed">	invoke-direct {p0, v4}, Landroidx/lifecycle/h;->c(Landroidx/lifecycle/e$b;)V</span>
+<span class="missed">	iget-object v4, v1, Landroidx/lifecycle/h$a;->a:Landroidx/lifecycle/e$b;</span>
 <span class="">	invoke-static {v4}, Landroidx/lifecycle/h;->e(Landroidx/lifecycle/e$b;)Landroidx/lifecycle/e$a;</span>
 <span class="missed">	move-result-object v4</span>
-<span class="missed">	invoke-virtual {v0, v1, v4}, Landroidx/lifecycle/h$b;->a(Landroidx/lifecycle/g;Landroidx/lifecycle/e$a;)V</span>
+<span class="missed">	invoke-virtual {v1, v0, v4}, Landroidx/lifecycle/h$a;->a(Landroidx/lifecycle/g;Landroidx/lifecycle/e$a;)V</span>
 <span class="missed">	invoke-direct {p0}, Landroidx/lifecycle/h;->c()V</span>
 <span class="">	invoke-direct {p0, p1}, Landroidx/lifecycle/h;->c(Landroidx/lifecycle/f;)Landroidx/lifecycle/e$b;</span>
 <span class="missed">	move-result-object v4</span>
@@ -580,8 +581,8 @@ value = {
 .method public b(Landroidx/lifecycle/f;)V
 <span class="">	.locals 1</span>
 
-<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->a:Lf;</span>
-<span class="missed">	invoke-virtual {v0, p1}, Lf;->remove(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/lifecycle/h;->a:Lg;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lg;->b(Ljava/lang/Object;)Ljava/lang/Object;</span>
 <span class="">	return-void</span>
 .end method</code>
 	</pre>

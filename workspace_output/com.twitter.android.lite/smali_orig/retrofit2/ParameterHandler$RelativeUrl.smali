@@ -26,7 +26,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 57
     invoke-direct {p0}, Lretrofit2/ParameterHandler;-><init>()V
 
     return-void
@@ -43,10 +43,10 @@
 
     const-string v0, "@Url parameter is null."
 
-    .line 1
+    .line 59
     invoke-static {p2, v0}, Lretrofit2/Utils;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 2
+    .line 60
     invoke-virtual {p1, p2}, Lretrofit2/RequestBuilder;->setRelativeUrl(Ljava/lang/Object;)V
 
     return-void

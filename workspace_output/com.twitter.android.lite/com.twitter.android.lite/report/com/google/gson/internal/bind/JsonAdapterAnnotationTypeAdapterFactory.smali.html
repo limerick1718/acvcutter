@@ -17,7 +17,7 @@
 		<code>.class public final Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;
 .super Ljava/lang/Object;
 .source "JsonAdapterAnnotationTypeAdapterFactory.java"
-.implements Lwv;
+.implements Lto;
 
 
 .field private final a:Lcom/google/gson/internal/c;
@@ -31,45 +31,45 @@
 <span class="exec">	return-void</span>
 .end method
 
-.method  a(Lcom/google/gson/internal/c;Lfv;Ldw;Lyv;)Lvv;
+.method  a(Lcom/google/gson/internal/c;Lsx;Ltv;Ltq;)Ltn;
 <span class="">	.locals 8</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
 <span class="">	"(",</span>
 <span class="">	"Lcom/google/gson/internal/c;",</span>
-<span class="">	"Lfv;",</span>
-<span class="">	"Ldw<",</span>
+<span class="">	"Lsx;",</span>
+<span class="">	"Ltv<",</span>
 <span class="">	"*>;",</span>
-<span class="">	"Lyv;",</span>
+<span class="">	"Ltq;",</span>
 <span class="">	")",</span>
-<span class="">	"Lvv<",</span>
+<span class="">	"Ltn<",</span>
 <span class="">	"*>;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="">	invoke-interface {p4}, Lyv;->value()Ljava/lang/Class;</span>
+<span class="">	invoke-interface {p4}, Ltq;->a()Ljava/lang/Class;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	invoke-static {v0}, Ldw;->a(Ljava/lang/Class;)Ldw;</span>
+<span class="">	invoke-static {v0}, Ltv;->b(Ljava/lang/Class;)Ltv;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	invoke-virtual {p1, v0}, Lcom/google/gson/internal/c;->a(Ldw;)Lcom/google/gson/internal/g;</span>
+<span class="">	invoke-virtual {p1, v0}, Lcom/google/gson/internal/c;->a(Ltv;)Lcom/google/gson/internal/g;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	invoke-interface {p1}, Lcom/google/gson/internal/g;->a()Ljava/lang/Object;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="missed">	instance-of v0, p1, Lvv;</span>
+<span class="missed">	instance-of v0, p1, Ltn;</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	check-cast p1, Lvv;</span>
+<span class="missed">	check-cast p1, Ltn;</span>
 <span class="">	goto :goto_2</span>
 <span class="">	:cond_0</span>
-<span class="missed">	instance-of v0, p1, Lwv;</span>
+<span class="missed">	instance-of v0, p1, Lto;</span>
 <span class="missed">	if-eqz v0, :cond_1</span>
-<span class="missed">	check-cast p1, Lwv;</span>
-<span class="">	invoke-interface {p1, p2, p3}, Lwv;->a(Lfv;Ldw;)Lvv;</span>
+<span class="missed">	check-cast p1, Lto;</span>
+<span class="">	invoke-interface {p1, p2, p3}, Lto;->a(Lsx;Ltv;)Ltn;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	goto :goto_2</span>
 <span class="">	:cond_1</span>
-<span class="missed">	instance-of v0, p1, Lsv;</span>
+<span class="missed">	instance-of v0, p1, Ltk;</span>
 <span class="missed">	if-nez v0, :cond_3</span>
-<span class="missed">	instance-of v1, p1, Lkv;</span>
+<span class="missed">	instance-of v1, p1, Ltc;</span>
 <span class="missed">	if-eqz v1, :cond_2</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_2</span>
@@ -85,7 +85,7 @@
 <span class="missed">	invoke-virtual {p4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
 <span class="missed">	const-string p1, " as a @JsonAdapter for "</span>
 <span class="missed">	invoke-virtual {p4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {p3}, Ldw;->toString()Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p3}, Ltv;->toString()Ljava/lang/String;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="missed">	invoke-virtual {p4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
 <span class="missed">	const-string p1, ". @JsonAdapter value must be a TypeAdapter, TypeAdapterFactory,"</span>
@@ -101,16 +101,16 @@
 <span class="missed">	const/4 v1, 0x0</span>
 <span class="missed">	if-eqz v0, :cond_4</span>
 <span class="missed">	move-object v0, p1</span>
-<span class="missed">	check-cast v0, Lsv;</span>
+<span class="missed">	check-cast v0, Ltk;</span>
 <span class="missed">	move-object v3, v0</span>
 <span class="">	goto :goto_1</span>
 <span class="">	:cond_4</span>
 <span class="missed">	move-object v3, v1</span>
 <span class="">	:goto_1</span>
-<span class="missed">	instance-of v0, p1, Lkv;</span>
+<span class="missed">	instance-of v0, p1, Ltc;</span>
 <span class="missed">	if-eqz v0, :cond_5</span>
 <span class="missed">	move-object v1, p1</span>
-<span class="missed">	check-cast v1, Lkv;</span>
+<span class="missed">	check-cast v1, Ltc;</span>
 <span class="">	:cond_5</span>
 <span class="missed">	move-object v4, v1</span>
 <span class="missed">	new-instance p1, Lcom/google/gson/internal/bind/TreeTypeAdapter;</span>
@@ -118,45 +118,45 @@
 <span class="missed">	move-object v2, p1</span>
 <span class="missed">	move-object v5, p2</span>
 <span class="missed">	move-object v6, p3</span>
-<span class="missed">	invoke-direct/range {v2 .. v7}, Lcom/google/gson/internal/bind/TreeTypeAdapter;-><init>(Lsv;Lkv;Lfv;Ldw;Lwv;)V</span>
+<span class="missed">	invoke-direct/range {v2 .. v7}, Lcom/google/gson/internal/bind/TreeTypeAdapter;-><init>(Ltk;Ltc;Lsx;Ltv;Lto;)V</span>
 <span class="">	:goto_2</span>
 <span class="missed">	if-eqz p1, :cond_6</span>
-<span class="">	invoke-interface {p4}, Lyv;->nullSafe()Z</span>
+<span class="">	invoke-interface {p4}, Ltq;->b()Z</span>
 <span class="missed">	move-result p2</span>
 <span class="missed">	if-eqz p2, :cond_6</span>
-<span class="">	invoke-virtual {p1}, Lvv;->a()Lvv;</span>
+<span class="">	invoke-virtual {p1}, Ltn;->a()Ltn;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	:cond_6</span>
 <span class="">	return-object p1</span>
 .end method
 
-<span class="cov">.method public a(Lfv;Ldw;)Lvv;</span>
+<span class="cov">.method public a(Lsx;Ltv;)Ltn;</span>
 <span class="">	.locals 2</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
 <span class="">	"<T:",</span>
 <span class="">	"Ljava/lang/Object;",</span>
 <span class="">	">(",</span>
-<span class="">	"Lfv;",</span>
-<span class="">	"Ldw<",</span>
+<span class="">	"Lsx;",</span>
+<span class="">	"Ltv<",</span>
 <span class="">	"TT;>;)",</span>
-<span class="">	"Lvv<",</span>
+<span class="">	"Ltn<",</span>
 <span class="">	"TT;>;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="exec">	invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;</span>
+<span class="exec">	invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="cov">	const-class v1, Lyv;</span>
+<span class="cov">	const-class v1, Ltq;</span>
 <span class="exec">	invoke-virtual {v0, v1}, Ljava/lang/Class;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lyv;</span>
+<span class="cov">	check-cast v0, Ltq;</span>
 <span class="cov">	if-nez v0, :cond_0</span>
 <span class="cov">	const/4 p1, 0x0</span>
 <span class="exec">	return-object p1</span>
 <span class="">	:cond_0</span>
 <span class="missed">	iget-object v1, p0, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;->a:Lcom/google/gson/internal/c;</span>
-<span class="">	invoke-virtual {p0, v1, p1, p2, v0}, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;->a(Lcom/google/gson/internal/c;Lfv;Ldw;Lyv;)Lvv;</span>
+<span class="">	invoke-virtual {p0, v1, p1, p2, v0}, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;->a(Lcom/google/gson/internal/c;Lsx;Ltv;Ltq;)Ltn;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	return-object p1</span>
 .end method</code>

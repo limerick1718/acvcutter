@@ -15,7 +15,7 @@ Lokhttp3/MultipartBody$Part;
 .field public static final FORM:Lokhttp3/MediaType;
 .field public static final MIXED:Lokhttp3/MediaType;
 .field public static final PARALLEL:Lokhttp3/MediaType;
-.field private final boundary:Lhx;
+.field private final boundary:Lyv;
 .field private contentLength:J
 .field private final contentType:Lokhttp3/MediaType;
 .field private final originalType:Lokhttp3/MediaType;
@@ -28,12 +28,12 @@ value = {
 }
 .end annotation
 .end field
-.method constructor <init>(Lhx;Lokhttp3/MediaType;Ljava/util/List;)V
+.method constructor <init>(Lyv;Lokhttp3/MediaType;Ljava/util/List;)V
 .locals 2
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "(",
-"Lhx;",
+"Lyv;",
 "Lokhttp3/MediaType;",
 "Ljava/util/List<",
 "Lokhttp3/MultipartBody$Part;",
@@ -91,7 +91,7 @@ return v0
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public writeTo(Lfx;)V
+.method public writeTo(Lyt;)V
 .locals 1
 .annotation system Ldalvik/annotation/Throws;
 value = {

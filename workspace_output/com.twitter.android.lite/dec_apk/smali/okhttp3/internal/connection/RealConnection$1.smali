@@ -10,7 +10,7 @@ name = null
 .end annotation
 .field final synthetic this$0:Lokhttp3/internal/connection/RealConnection;
 .field final synthetic val$exchange:Lokhttp3/internal/connection/Exchange;
-.method constructor <init>(Lokhttp3/internal/connection/RealConnection;ZLgx;Lfx;Lokhttp3/internal/connection/Exchange;)V
+.method constructor <init>(Lokhttp3/internal/connection/RealConnection;ZLyu;Lyt;Lokhttp3/internal/connection/Exchange;)V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void

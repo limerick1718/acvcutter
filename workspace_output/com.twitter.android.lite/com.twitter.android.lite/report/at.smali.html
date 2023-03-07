@@ -14,162 +14,18 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class  Lat;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.implements Lzs;
+		<code>.class final Lat;
+.super Landroid/util/AndroidRuntimeException;
+.source "SuperNotCalledException.java"
 
 
 
 
-<span class="cov">.method constructor &lt;init&gt;()V</span>
+.method public constructor &lt;init&gt;(Ljava/lang/String;)V
 <span class="">	.locals 0</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method private static a(Lhp;JLorg/json/JSONObject;)J</span>
-<span class="">	.locals 4</span>
-
-<span class="cov">	const-string v0, "expires_at"</span>
-<span class="exec">	invoke-virtual {p3, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z</span>
-<span class="cov">	move-result v1</span>
-<span class="missed">	if-eqz v1, :cond_0</span>
-<span class="">	invoke-virtual {p3, v0}, Lorg/json/JSONObject;->optLong(Ljava/lang/String;)J</span>
-<span class="missed">	move-result-wide p0</span>
-<span class="">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-interface {p0}, Lhp;->a()J</span>
-<span class="cov">	move-result-wide v0</span>
-<span class="cov">	const-wide/16 v2, 0x3e8</span>
-<span class="cov">	mul-long p1, p1, v2</span>
-<span class="cov">	add-long p0, v0, p1</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return-wide p0</span>
-.end method
-
-<span class="cov">.method private static a(Lorg/json/JSONObject;Lorg/json/JSONObject;)Lct;</span>
-<span class="">	.locals 11</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Lorg/json/JSONException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	const-string v0, "status"</span>
-<span class="exec">	invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object v2</span>
-<span class="cov">	const-string v0, "new"</span>
-<span class="exec">	invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	const-string v1, "bundle_id"</span>
-<span class="exec">	invoke-virtual {p0, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object v6</span>
-<span class="cov">	const-string v1, "org_id"</span>
-<span class="exec">	invoke-virtual {p0, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object v7</span>
-<span class="cov">	const/4 p0, 0x1</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	const-string v0, "https://update.crashlytics.com/spi/v1/platforms/android/apps"</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;</span>
-<span class="cov">	new-array v3, p0, [Ljava/lang/Object;</span>
-<span class="cov">	aput-object v6, v3, v1</span>
-<span class="cov">	const-string v4, "https://update.crashlytics.com/spi/v1/platforms/android/apps/%s"</span>
-<span class="exec">	invoke-static {v0, v4, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	move-object v3, v0</span>
-<span class="cov">	sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;</span>
-<span class="cov">	new-array v4, p0, [Ljava/lang/Object;</span>
-<span class="cov">	aput-object v6, v4, v1</span>
-<span class="cov">	const-string v5, "https://reports.crashlytics.com/spi/v1/platforms/android/apps/%s/reports"</span>
-<span class="exec">	invoke-static {v0, v5, v4}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object v4</span>
-<span class="cov">	sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;</span>
-<span class="cov">	new-array p0, p0, [Ljava/lang/Object;</span>
-<span class="cov">	aput-object v6, p0, v1</span>
-<span class="cov">	const-string v5, "https://reports.crashlytics.com/sdk-api/v1/platforms/android/apps/%s/minidumps"</span>
-<span class="exec">	invoke-static {v0, v5, p0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object v5</span>
-<span class="cov">	const-string p0, "update_required"</span>
-<span class="exec">	invoke-virtual {p1, p0, v1}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z</span>
-<span class="cov">	move-result v8</span>
-<span class="cov">	const-string p0, "report_upload_variant"</span>
-<span class="exec">	invoke-virtual {p1, p0, v1}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I</span>
-<span class="cov">	move-result v9</span>
-<span class="cov">	const-string p0, "native_report_upload_variant"</span>
-<span class="exec">	invoke-virtual {p1, p0, v1}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I</span>
-<span class="cov">	move-result v10</span>
-<span class="cov">	new-instance p0, Lct;</span>
-<span class="cov">	move-object v1, p0</span>
-<span class="cov">	invoke-direct/range {v1 .. v10}, Lct;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZII)V</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-<span class="cov">.method private static a(Lorg/json/JSONObject;)Ldt;</span>
-<span class="">	.locals 2</span>
-
-<span class="cov">	const-string v0, "collect_reports"</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="exec">	invoke-virtual {p0, v0, v1}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z</span>
-<span class="cov">	move-result p0</span>
-<span class="cov">	new-instance v0, Ldt;</span>
-<span class="cov">	invoke-direct {v0, p0}, Ldt;-><init>(Z)V</span>
-<span class="exec">	return-object v0</span>
-.end method
-
-<span class="cov">.method private static a()Let;</span>
-<span class="">	.locals 3</span>
-
-<span class="cov">	new-instance v0, Let;</span>
-<span class="cov">	const/16 v1, 0x8</span>
-<span class="cov">	const/4 v2, 0x4</span>
-<span class="cov">	invoke-direct {v0, v1, v2}, Let;-><init>(II)V</span>
-<span class="exec">	return-object v0</span>
-.end method
-
-<span class="cov">.method public a(Lhp;Lorg/json/JSONObject;)Lgt;</span>
-<span class="">	.locals 10</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Lorg/json/JSONException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	const-string v0, "settings_version"</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="exec">	invoke-virtual {p2, v0, v1}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I</span>
-<span class="cov">	move-result v8</span>
-<span class="cov">	const-string v0, "cache_duration"</span>
-<span class="cov">	const/16 v1, 0xe10</span>
-<span class="exec">	invoke-virtual {p2, v0, v1}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I</span>
-<span class="cov">	move-result v9</span>
-<span class="cov">	const-string v0, "fabric"</span>
-<span class="exec">	invoke-virtual {p2, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	const-string v1, "app"</span>
-<span class="exec">	invoke-virtual {p2, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="exec">	invoke-static {v0, v1}, Lat;->a(Lorg/json/JSONObject;Lorg/json/JSONObject;)Lct;</span>
-<span class="cov">	move-result-object v5</span>
-<span class="exec">	invoke-static {}, Lat;->a()Let;</span>
-<span class="cov">	move-result-object v6</span>
-<span class="cov">	const-string v0, "features"</span>
-<span class="exec">	invoke-virtual {p2, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-static {v0}, Lat;->a(Lorg/json/JSONObject;)Ldt;</span>
-<span class="cov">	move-result-object v7</span>
-<span class="cov">	int-to-long v0, v9</span>
-<span class="exec">	invoke-static {p1, v0, v1, p2}, Lat;->a(Lhp;JLorg/json/JSONObject;)J</span>
-<span class="cov">	move-result-wide v3</span>
-<span class="cov">	new-instance p1, Lgt;</span>
-<span class="cov">	move-object v2, p1</span>
-<span class="cov">	invoke-direct/range {v2 .. v9}, Lgt;-><init>(JLct;Let;Ldt;II)V</span>
-<span class="exec">	return-object p1</span>
+<span class="missed">	invoke-direct {p0, p1}, Landroid/util/AndroidRuntimeException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

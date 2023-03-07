@@ -1,25 +1,41 @@
-.class public final Lcom/google/android/gms/common/api/internal/z;
+.class final Lcom/google/android/gms/common/api/internal/z;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Lcom/google/android/gms/common/api/Status;
+
+# instance fields
+.field private final synthetic a:Lra;
+
+.field private final synthetic b:Lcom/google/android/gms/common/api/internal/x;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Lcom/google/android/gms/common/api/internal/x;Lra;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lcom/google/android/gms/common/api/Status;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/z;->b:Lcom/google/android/gms/common/api/internal/x;
 
-    const/16 v1, 0x8
+    iput-object p2, p0, Lcom/google/android/gms/common/api/internal/z;->a:Lra;
 
-    const-string v2, "The connection to Google Play services was lost"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
+    return-void
+.end method
 
-    sput-object v0, Lcom/google/android/gms/common/api/internal/z;->a:Lcom/google/android/gms/common/api/Status;
+
+# virtual methods
+.method public final run()V
+    .locals 2
+
+    .line 2
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/z;->b:Lcom/google/android/gms/common/api/internal/x;
+
+    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/z;->a:Lra;
+
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/api/internal/x;->a(Lcom/google/android/gms/common/api/internal/x;Lra;)V
 
     return-void
 .end method

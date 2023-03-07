@@ -24,7 +24,7 @@
 .method constructor <init>(Lokhttp3/MediaType;Ljava/io/File;)V
     .locals 0
 
-    .line 1
+    .line 160
     iput-object p1, p0, Lokhttp3/RequestBody$3;->val$contentType:Lokhttp3/MediaType;
 
     iput-object p2, p0, Lokhttp3/RequestBody$3;->val$file:Ljava/io/File;
@@ -39,7 +39,7 @@
 .method public contentLength()J
     .locals 2
 
-    .line 1
+    .line 166
     iget-object v0, p0, Lokhttp3/RequestBody$3;->val$file:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->length()J
@@ -54,13 +54,13 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 1
+    .line 162
     iget-object v0, p0, Lokhttp3/RequestBody$3;->val$contentType:Lokhttp3/MediaType;
 
     return-object v0
 .end method
 
-.method public writeTo(Lfx;)V
+.method public writeTo(Lyt;)V
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -68,23 +68,24 @@
         }
     .end annotation
 
-    .line 1
+    .line 170
     iget-object v0, p0, Lokhttp3/RequestBody$3;->val$file:Ljava/io/File;
 
-    invoke-static {v0}, Lnx;->c(Ljava/io/File;)Lwx;
+    invoke-static {v0}, Lzb;->a(Ljava/io/File;)Lzk;
 
     move-result-object v0
 
-    .line 2
+    .line 171
     :try_start_0
-    invoke-interface {p1, v0}, Lfx;->a(Lwx;)J
+    invoke-interface {p1, v0}, Lyt;->a(Lzk;)J
     :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     if-eqz v0, :cond_0
 
-    .line 3
-    invoke-interface {v0}, Lwx;->close()V
+    .line 172
+    invoke-interface {v0}, Lzk;->close()V
 
     :cond_0
     return-void
@@ -92,31 +93,46 @@
     :catchall_0
     move-exception p1
 
-    .line 4
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v1
+
+    .line 170
     :try_start_1
-    throw p1
+    throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     :catchall_1
-    move-exception v1
+    move-exception p1
 
-    if-eqz v0, :cond_1
+    :goto_0
+    if-eqz v0, :cond_2
 
-    .line 5
+    if-eqz v1, :cond_1
+
+    .line 172
     :try_start_2
-    invoke-interface {v0}, Lwx;->close()V
+    invoke-interface {v0}, Lzk;->close()V
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_1
 
-    goto :goto_0
+    goto :goto_1
 
-    :catchall_2
+    :catch_1
     move-exception v0
 
-    invoke-virtual {p1, v0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+    invoke-virtual {v1, v0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+
+    goto :goto_1
 
     :cond_1
-    :goto_0
-    throw v1
+    invoke-interface {v0}, Lzk;->close()V
+
+    :cond_2
+    :goto_1
+    throw p1
 .end method

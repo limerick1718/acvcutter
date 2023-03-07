@@ -1,94 +1,150 @@
-.class public abstract Lrc;
+.class public final Lrc;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+
+
+# static fields
+.field public static final a:Lcom/google/android/gms/common/api/a$a;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/common/api/a$a<",
+            "Lqq;",
+            "Lqp;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static final b:Lcom/google/android/gms/common/api/a;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/common/api/a<",
+            "Lqp;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final c:Lcom/google/android/gms/common/api/a$g;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/common/api/a$g<",
+            "Lqq;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final d:Lcom/google/android/gms/common/api/a$g;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/common/api/a$g<",
+            "Lqq;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final e:Lcom/google/android/gms/common/api/a$a;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/common/api/a$a<",
+            "Lqq;",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final f:Lcom/google/android/gms/common/api/Scope;
+
+.field private static final g:Lcom/google/android/gms/common/api/Scope;
+
+.field private static final h:Lcom/google/android/gms/common/api/a;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/common/api/a<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method private constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lqc;)V
-    .locals 0
-
-    .line 2
-    invoke-direct {p0}, Lrc;-><init>()V
-
-    return-void
-.end method
-
-.method public static a(I)I
-    .locals 1
-
-    ushr-int/lit8 v0, p0, 0x1
-
-    and-int/lit8 p0, p0, 0x1
-
-    neg-int p0, p0
-
-    xor-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public static a(J)J
+.method static constructor <clinit>()V
     .locals 4
 
-    const/4 v0, 0x1
-
-    ushr-long v0, p0, v0
-
-    const-wide/16 v2, 0x1
-
-    and-long/2addr p0, v2
-
-    neg-long p0, p0
-
-    xor-long/2addr p0, v0
-
-    return-wide p0
-.end method
-
-.method static a([BIIZ)Lrc;
-    .locals 6
-
     .line 1
-    new-instance p1, Lsc;
+    new-instance v0, Lcom/google/android/gms/common/api/a$g;
 
-    const/4 v2, 0x0
+    invoke-direct {v0}, Lcom/google/android/gms/common/api/a$g;-><init>()V
 
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    move-object v0, p1
-
-    move-object v1, p0
-
-    move v3, p2
-
-    invoke-direct/range {v0 .. v5}, Lsc;-><init>([BIIZLqc;)V
+    sput-object v0, Lrc;->c:Lcom/google/android/gms/common/api/a$g;
 
     .line 2
-    :try_start_0
-    invoke-virtual {p1, p2}, Lsc;->b(I)I
-    :try_end_0
-    .catch Ltd; {:try_start_0 .. :try_end_0} :catch_0
+    new-instance v0, Lcom/google/android/gms/common/api/a$g;
 
-    return-object p1
+    invoke-direct {v0}, Lcom/google/android/gms/common/api/a$g;-><init>()V
 
-    :catch_0
-    move-exception p0
+    sput-object v0, Lrc;->d:Lcom/google/android/gms/common/api/a$g;
 
     .line 3
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Lrd;
 
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v0}, Lrd;-><init>()V
 
-    throw p1
+    sput-object v0, Lrc;->a:Lcom/google/android/gms/common/api/a$a;
+
+    .line 4
+    new-instance v0, Lre;
+
+    invoke-direct {v0}, Lre;-><init>()V
+
+    sput-object v0, Lrc;->e:Lcom/google/android/gms/common/api/a$a;
+
+    .line 5
+    new-instance v0, Lcom/google/android/gms/common/api/Scope;
+
+    const-string v1, "profile"
+
+    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/Scope;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lrc;->f:Lcom/google/android/gms/common/api/Scope;
+
+    .line 6
+    new-instance v0, Lcom/google/android/gms/common/api/Scope;
+
+    const-string v1, "email"
+
+    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/Scope;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lrc;->g:Lcom/google/android/gms/common/api/Scope;
+
+    .line 7
+    new-instance v0, Lcom/google/android/gms/common/api/a;
+
+    sget-object v1, Lrc;->a:Lcom/google/android/gms/common/api/a$a;
+
+    sget-object v2, Lrc;->c:Lcom/google/android/gms/common/api/a$g;
+
+    const-string v3, "SignIn.API"
+
+    invoke-direct {v0, v3, v1, v2}, Lcom/google/android/gms/common/api/a;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/a$a;Lcom/google/android/gms/common/api/a$g;)V
+
+    sput-object v0, Lrc;->b:Lcom/google/android/gms/common/api/a;
+
+    .line 8
+    new-instance v0, Lcom/google/android/gms/common/api/a;
+
+    sget-object v1, Lrc;->e:Lcom/google/android/gms/common/api/a$a;
+
+    sget-object v2, Lrc;->d:Lcom/google/android/gms/common/api/a$g;
+
+    const-string v3, "SignIn.INTERNAL_API"
+
+    invoke-direct {v0, v3, v1, v2}, Lcom/google/android/gms/common/api/a;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/a$a;Lcom/google/android/gms/common/api/a$g;)V
+
+    sput-object v0, Lrc;->h:Lcom/google/android/gms/common/api/a;
+
+    return-void
 .end method

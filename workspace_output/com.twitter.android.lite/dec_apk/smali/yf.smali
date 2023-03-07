@@ -1,19 +1,15 @@
-.class final Lyf;
+.class public Lyf;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Lse;
-.method public final a()I
-.locals 1
-const/4 v0, 0x0
-return v0
-.end method
-.method public final b()Z
-.locals 1
-const/4 v0, 0x0
-return v0
-.end method
-.method public final c()Lue;
-.locals 1
-const/4 v0, 0x0
-return-object v0
+.source "PromptSettingsData.java"
+.field public final a:Ljava/lang/String;
+.field public final b:Ljava/lang/String;
+.field public final c:Ljava/lang/String;
+.field public final d:Z
+.field public final e:Ljava/lang/String;
+.field public final f:Z
+.field public final g:Ljava/lang/String;
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;ZLjava/lang/String;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method

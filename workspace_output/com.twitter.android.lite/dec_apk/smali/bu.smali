@@ -1,24 +1,34 @@
-.class public interface abstract Lbu;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-encoders-json@@16.1.0"
-.annotation system Ldalvik/annotation/Signature;
+.class public Lbu;
+.super Landroid/os/Binder;
+.implements Landroid/os/IInterface;
+.field private static a:Lbw;
+.method protected constructor <init>(Ljava/lang/String;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method protected a(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+.locals 0
+.annotation system Ldalvik/annotation/Throws;
 value = {
-"<T::",
-"Lbu<",
-"TT;>;>",
-"Ljava/lang/Object;"
+Landroid/os/RemoteException;
 }
 .end annotation
-.method public abstract a(Ljava/lang/Class;Lwt;)Lbu;
-.annotation system Ldalvik/annotation/Signature;
+const/4 v0, 0x0
+return v0
+.end method
+.method public asBinder()Landroid/os/IBinder;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+.locals 1
+.annotation system Ldalvik/annotation/Throws;
 value = {
-"<U:",
-"Ljava/lang/Object;",
-">(",
-"Ljava/lang/Class<",
-"TU;>;",
-"Lwt<",
-"-TU;>;)TT;"
+Landroid/os/RemoteException;
 }
 .end annotation
+const/4 v0, 0x0
+return v0
 .end method

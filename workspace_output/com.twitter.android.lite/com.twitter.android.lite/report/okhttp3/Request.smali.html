@@ -49,88 +49,88 @@ value = {
 .field final url:Lokhttp3/HttpUrl;
 
 
-<span class="cov">.method constructor &lt;init&gt;(Lokhttp3/Request$Builder;)V</span>
+.method constructor &lt;init&gt;(Lokhttp3/Request$Builder;)V
 <span class="">	.locals 1</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/Request$Builder;->url:Lokhttp3/HttpUrl;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/Request;->url:Lokhttp3/HttpUrl;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/Request$Builder;->method:Ljava/lang/String;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/Request;->method:Ljava/lang/String;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/Request$Builder;->headers:Lokhttp3/Headers$Builder;</span>
-<span class="exec">	invoke-virtual {v0}, Lokhttp3/Headers$Builder;->build()Lokhttp3/Headers;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/Request;->headers:Lokhttp3/Headers;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/Request$Builder;->body:Lokhttp3/RequestBody;</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/Request;->body:Lokhttp3/RequestBody;</span>
-<span class="cov">	iget-object v0, p1, Lokhttp3/Request$Builder;->tags:Ljava/util/Map;</span>
-<span class="exec">	invoke-static {v0}, Lokhttp3/internal/Util;->immutableMap(Ljava/util/Map;)Ljava/util/Map;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/Request;->tags:Ljava/util/Map;</span>
-<span class="cov">	iget-object p1, p1, Lokhttp3/Request$Builder;->requestBodyPresent:Ljava/lang/Boolean;</span>
-<span class="cov">	iput-object p1, p0, Lokhttp3/Request;->requestBodyPresent:Ljava/lang/Boolean;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/Request$Builder;->url:Lokhttp3/HttpUrl;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/Request;->url:Lokhttp3/HttpUrl;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/Request$Builder;->method:Ljava/lang/String;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/Request;->method:Ljava/lang/String;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/Request$Builder;->headers:Lokhttp3/Headers$Builder;</span>
+<span class="">	invoke-virtual {v0}, Lokhttp3/Headers$Builder;->build()Lokhttp3/Headers;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/Request;->headers:Lokhttp3/Headers;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/Request$Builder;->body:Lokhttp3/RequestBody;</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/Request;->body:Lokhttp3/RequestBody;</span>
+<span class="missed">	iget-object v0, p1, Lokhttp3/Request$Builder;->tags:Ljava/util/Map;</span>
+<span class="">	invoke-static {v0}, Lokhttp3/internal/Util;->immutableMap(Ljava/util/Map;)Ljava/util/Map;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/Request;->tags:Ljava/util/Map;</span>
+<span class="missed">	iget-object p1, p1, Lokhttp3/Request$Builder;->requestBodyPresent:Ljava/lang/Boolean;</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/Request;->requestBodyPresent:Ljava/lang/Boolean;</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method static permitsRequestBody(Ljava/lang/Boolean;Ljava/lang/String;)Z</span>
+.method static permitsRequestBody(Ljava/lang/Boolean;Ljava/lang/String;)Z
 <span class="">	.locals 0</span>
 
 <span class="missed">	if-eqz p0, :cond_0</span>
 <span class="">	invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z</span>
 <span class="missed">	move-result p0</span>
 <span class="">	return p0</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-static {p1}, Lokhttp3/internal/http/HttpMethod;->permitsRequestBody(Ljava/lang/String;)Z</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	return p0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpMethod;->permitsRequestBody(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
 .end method
 
-<span class="cov">.method static requiresRequestBody(Ljava/lang/Boolean;Ljava/lang/String;)Z</span>
+.method static requiresRequestBody(Ljava/lang/Boolean;Ljava/lang/String;)Z
 <span class="">	.locals 0</span>
 
 <span class="missed">	if-eqz p0, :cond_0</span>
 <span class="">	invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z</span>
 <span class="missed">	move-result p0</span>
 <span class="">	return p0</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-static {p1}, Lokhttp3/internal/http/HttpMethod;->requiresRequestBody(Ljava/lang/String;)Z</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	return p0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpMethod;->requiresRequestBody(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
 .end method
 
-<span class="cov">.method public body()Lokhttp3/RequestBody;</span>
+.method public body()Lokhttp3/RequestBody;
 <span class="">	.locals 1</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/Request;->body:Lokhttp3/RequestBody;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Request;->body:Lokhttp3/RequestBody;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public cacheControl()Lokhttp3/CacheControl;</span>
+.method public cacheControl()Lokhttp3/CacheControl;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/Request;->cacheControl:Lokhttp3/CacheControl;</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Request;->cacheControl:Lokhttp3/CacheControl;</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/Request;->headers:Lokhttp3/Headers;</span>
-<span class="exec">	invoke-static {v0}, Lokhttp3/CacheControl;->parse(Lokhttp3/Headers;)Lokhttp3/CacheControl;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	iput-object v0, p0, Lokhttp3/Request;->cacheControl:Lokhttp3/CacheControl;</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return-object v0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Request;->headers:Lokhttp3/Headers;</span>
+<span class="">	invoke-static {v0}, Lokhttp3/CacheControl;->parse(Lokhttp3/Headers;)Lokhttp3/CacheControl;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/Request;->cacheControl:Lokhttp3/CacheControl;</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public header(Ljava/lang/String;)Ljava/lang/String;</span>
+.method public header(Ljava/lang/String;)Ljava/lang/String;
 <span class="">	.locals 1</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/Request;->headers:Lokhttp3/Headers;</span>
-<span class="exec">	invoke-virtual {v0, p1}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	return-object p1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Request;->headers:Lokhttp3/Headers;</span>
+<span class="">	invoke-virtual {v0, p1}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
 .end method
 
 .method public headers(Ljava/lang/String;)Ljava/util/List;
@@ -152,11 +152,11 @@ value = {
 <span class="">	return-object p1</span>
 .end method
 
-<span class="cov">.method public headers()Lokhttp3/Headers;</span>
+.method public headers()Lokhttp3/Headers;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/Request;->headers:Lokhttp3/Headers;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Request;->headers:Lokhttp3/Headers;</span>
+<span class="">	return-object v0</span>
 .end method
 
 .method public isHttps()Z
@@ -168,29 +168,29 @@ value = {
 <span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public method()Ljava/lang/String;</span>
+.method public method()Ljava/lang/String;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/Request;->method:Ljava/lang/String;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Request;->method:Ljava/lang/String;</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public newBuilder()Lokhttp3/Request$Builder;</span>
+.method public newBuilder()Lokhttp3/Request$Builder;
 <span class="">	.locals 1</span>
 
-<span class="cov">	new-instance v0, Lokhttp3/Request$Builder;</span>
-<span class="cov">	invoke-direct {v0, p0}, Lokhttp3/Request$Builder;-><init>(Lokhttp3/Request;)V</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	new-instance v0, Lokhttp3/Request$Builder;</span>
+<span class="missed">	invoke-direct {v0, p0}, Lokhttp3/Request$Builder;-><init>(Lokhttp3/Request;)V</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public permitsRequestBody()Z</span>
+.method public permitsRequestBody()Z
 <span class="">	.locals 2</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/Request;->requestBodyPresent:Ljava/lang/Boolean;</span>
-<span class="cov">	iget-object v1, p0, Lokhttp3/Request;->method:Ljava/lang/String;</span>
-<span class="exec">	invoke-static {v0, v1}, Lokhttp3/Request;->permitsRequestBody(Ljava/lang/Boolean;Ljava/lang/String;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Request;->requestBodyPresent:Ljava/lang/Boolean;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/Request;->method:Ljava/lang/String;</span>
+<span class="">	invoke-static {v0, v1}, Lokhttp3/Request;->permitsRequestBody(Ljava/lang/Boolean;Ljava/lang/String;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
 .end method
 
 .method public tag()Ljava/lang/Object;
@@ -250,11 +250,11 @@ value = {
 <span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public url()Lokhttp3/HttpUrl;</span>
+.method public url()Lokhttp3/HttpUrl;
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/Request;->url:Lokhttp3/HttpUrl;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/Request;->url:Lokhttp3/HttpUrl;</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -14,7 +14,7 @@ name = null
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public appendingSink(Ljava/io/File;)Lvx;
+.method public appendingSink(Ljava/io/File;)Lzj;
 .locals 1
 .annotation system Ldalvik/annotation/Throws;
 value = {
@@ -56,7 +56,7 @@ Ljava/io/IOException;
 .end annotation
 return-void
 .end method
-.method public sink(Ljava/io/File;)Lvx;
+.method public sink(Ljava/io/File;)Lzj;
 .locals 1
 .annotation system Ldalvik/annotation/Throws;
 value = {
@@ -71,7 +71,7 @@ return-object v0
 const-wide v0, 0x0
 return-wide v0
 .end method
-.method public source(Ljava/io/File;)Lwx;
+.method public source(Ljava/io/File;)Lzk;
 .locals 0
 .annotation system Ldalvik/annotation/Throws;
 value = {

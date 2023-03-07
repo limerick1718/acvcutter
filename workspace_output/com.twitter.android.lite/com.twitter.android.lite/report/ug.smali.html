@@ -14,24 +14,81 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final enum Lug;
-.super Lsg;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+		<code>.class public Lug;
+.super Ljava/lang/Object;
+.source "PushTokenHelper.java"
 
 
 
 
-.method constructor &lt;init&gt;(Ljava/lang/String;ILzg;I)V
-<span class="">	.locals 6</span>
+<span class="cov">.method public static a(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="">	.locals 2</span>
 
-<span class="missed">	const/16 v2, 0x9</span>
-<span class="missed">	const/4 v4, 0x3</span>
-<span class="missed">	const/4 v5, 0x0</span>
-<span class="missed">	move-object v0, p0</span>
-<span class="missed">	move-object v1, p1</span>
-<span class="missed">	move-object v3, p3</span>
-<span class="missed">	invoke-direct/range {v0 .. v5}, Lsg;-><init>(Ljava/lang/String;ILzg;ILtg;)V</span>
+<span class="exec">	invoke-static {p0}, Lug;->d(Landroid/content/Context;)Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	const-string v0, "push_token"</span>
+<span class="cov">	const-string v1, ""</span>
+<span class="exec">	invoke-interface {p0, v0, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method public static a(Landroid/content/Context;Ljava/lang/String;)V</span>
+<span class="">	.locals 2</span>
+
+<span class="exec">	invoke-static {p0}, Lug;->d(Landroid/content/Context;)Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "push_token"</span>
+<span class="exec">	invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="exec">	invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	const-string p1, "token_sent"</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="exec">	invoke-interface {p0, p1, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public static b(Landroid/content/Context;)V
+<span class="">	.locals 2</span>
+
+<span class="">	invoke-static {p0}, Lug;->d(Landroid/content/Context;)Landroid/content/SharedPreferences;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	const-string v0, "token_sent"</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	invoke-interface {p0, v0, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V</span>
 <span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public static c(Landroid/content/Context;)Z</span>
+<span class="">	.locals 2</span>
+
+<span class="exec">	invoke-static {p0}, Lug;->d(Landroid/content/Context;)Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	const-string v0, "token_sent"</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="exec">	invoke-interface {p0, v0, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z</span>
+<span class="cov">	move-result p0</span>
+<span class="exec">	return p0</span>
+.end method
+
+<span class="cov">.method private static d(Landroid/content/Context;)Landroid/content/SharedPreferences;</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	const-string v0, "twitter_lite"</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="exec">	invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	return-object p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

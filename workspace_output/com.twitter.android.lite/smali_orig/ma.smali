@@ -1,306 +1,726 @@
-.class final Lma;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-
-# interfaces
-.implements Lla;
+.class public final Lma;
+.super Lnc;
 
 
 # static fields
-.field private static c:Lma;
+.field private static final j:Ljava/util/concurrent/atomic/AtomicLong;
 
 
 # instance fields
-.field private final a:Landroid/content/Context;
-    .annotation runtime Ljavax/annotation/Nullable;
+.field private a:Lme;
+
+.field private b:Lme;
+
+.field private final c:Ljava/util/concurrent/PriorityBlockingQueue;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/concurrent/PriorityBlockingQueue<",
+            "Lmd<",
+            "*>;>;"
+        }
     .end annotation
 .end field
 
-.field private final b:Landroid/database/ContentObserver;
-    .annotation runtime Ljavax/annotation/Nullable;
+.field private final d:Ljava/util/concurrent/BlockingQueue;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/concurrent/BlockingQueue<",
+            "Lmd<",
+            "*>;>;"
+        }
     .end annotation
 .end field
+
+.field private final e:Ljava/lang/Thread$UncaughtExceptionHandler;
+
+.field private final f:Ljava/lang/Thread$UncaughtExceptionHandler;
+
+.field private final g:Ljava/lang/Object;
+
+.field private final h:Ljava/util/concurrent/Semaphore;
+
+.field private volatile i:Z
 
 
 # direct methods
-.method private constructor <init>()V
+.method static constructor <clinit>()V
+    .locals 3
+
+    .line 93
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
+
+    const-wide/high16 v1, -0x8000000000000000L
+
+    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
+
+    sput-object v0, Lma;->j:Ljava/util/concurrent/atomic/AtomicLong;
+
+    return-void
+.end method
+
+.method constructor <init>(Lmf;)V
     .locals 1
 
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1
+    invoke-direct {p0, p1}, Lnc;-><init>(Lmf;)V
 
-    const/4 v0, 0x0
+    .line 2
+    new-instance p1, Ljava/lang/Object;
+
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lma;->g:Ljava/lang/Object;
+
+    .line 3
+    new-instance p1, Ljava/util/concurrent/Semaphore;
+
+    const/4 v0, 0x2
+
+    invoke-direct {p1, v0}, Ljava/util/concurrent/Semaphore;-><init>(I)V
+
+    iput-object p1, p0, Lma;->h:Ljava/util/concurrent/Semaphore;
+
+    .line 4
+    new-instance p1, Ljava/util/concurrent/PriorityBlockingQueue;
+
+    invoke-direct {p1}, Ljava/util/concurrent/PriorityBlockingQueue;-><init>()V
+
+    iput-object p1, p0, Lma;->c:Ljava/util/concurrent/PriorityBlockingQueue;
+
+    .line 5
+    new-instance p1, Ljava/util/concurrent/LinkedBlockingQueue;
+
+    invoke-direct {p1}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
+
+    iput-object p1, p0, Lma;->d:Ljava/util/concurrent/BlockingQueue;
 
     .line 6
-    iput-object v0, p0, Lma;->a:Landroid/content/Context;
+    new-instance p1, Lmc;
+
+    const-string v0, "Thread death: Uncaught exception on worker thread"
+
+    invoke-direct {p1, p0, v0}, Lmc;-><init>(Lma;Ljava/lang/String;)V
+
+    iput-object p1, p0, Lma;->e:Ljava/lang/Thread$UncaughtExceptionHandler;
 
     .line 7
-    iput-object v0, p0, Lma;->b:Landroid/database/ContentObserver;
+    new-instance p1, Lmc;
+
+    const-string v0, "Thread death: Uncaught exception on network thread"
+
+    invoke-direct {p1, p0, v0}, Lmc;-><init>(Lma;Ljava/lang/String;)V
+
+    iput-object p1, p0, Lma;->f:Ljava/lang/Thread$UncaughtExceptionHandler;
 
     return-void
 .end method
 
-.method private constructor <init>(Landroid/content/Context;)V
-    .locals 3
+.method static synthetic a(Lma;)Ljava/util/concurrent/Semaphore;
+    .locals 0
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    iput-object p1, p0, Lma;->a:Landroid/content/Context;
-
-    .line 3
-    new-instance v0, Loa;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Loa;-><init>(Lma;Landroid/os/Handler;)V
-
-    iput-object v0, p0, Lma;->b:Landroid/database/ContentObserver;
-
-    .line 4
-    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object p1
-
-    sget-object v0, Lca;->a:Landroid/net/Uri;
-
-    iget-object v1, p0, Lma;->b:Landroid/database/ContentObserver;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {p1, v0, v2, v1}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
-
-    return-void
-.end method
-
-.method static a(Landroid/content/Context;)Lma;
-    .locals 2
-
-    .line 1
-    const-class v0, Lma;
-
-    monitor-enter v0
-
-    .line 2
-    :try_start_0
-    sget-object v1, Lma;->c:Lma;
-
-    if-nez v1, :cond_2
-
-    const-string v1, "com.google.android.providers.gsf.permission.READ_GSERVICES"
-
-    .line 3
-    invoke-static {p0, v1}, Lt;->a(Landroid/content/Context;Ljava/lang/String;)I
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    const/4 v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    :goto_0
-    if-eqz v1, :cond_1
-
-    .line 4
-    new-instance v1, Lma;
-
-    invoke-direct {v1, p0}, Lma;-><init>(Landroid/content/Context;)V
-
-    goto :goto_1
-
-    :cond_1
-    new-instance v1, Lma;
-
-    invoke-direct {v1}, Lma;-><init>()V
-
-    :goto_1
-    sput-object v1, Lma;->c:Lma;
-
-    .line 5
-    :cond_2
-    sget-object p0, Lma;->c:Lma;
-
-    monitor-exit v0
+    .line 85
+    iget-object p0, p0, Lma;->h:Ljava/util/concurrent/Semaphore;
 
     return-object p0
-
-    :catchall_0
-    move-exception p0
-
-    .line 6
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
 .end method
 
-.method static declared-synchronized a()V
-    .locals 3
+.method static synthetic a(Lma;Lme;)Lme;
+    .locals 0
 
-    const-class v0, Lma;
+    const/4 p1, 0x0
+
+    .line 89
+    iput-object p1, p0, Lma;->a:Lme;
+
+    return-object p1
+.end method
+
+.method private final a(Lmd;)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lmd<",
+            "*>;)V"
+        }
+    .end annotation
+
+    .line 49
+    iget-object v0, p0, Lma;->g:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 7
+    .line 50
     :try_start_0
-    sget-object v1, Lma;->c:Lma;
+    iget-object v1, p0, Lma;->c:Ljava/util/concurrent/PriorityBlockingQueue;
 
-    if-eqz v1, :cond_0
+    invoke-virtual {v1, p1}, Ljava/util/concurrent/PriorityBlockingQueue;->add(Ljava/lang/Object;)Z
 
-    sget-object v1, Lma;->c:Lma;
+    .line 51
+    iget-object p1, p0, Lma;->a:Lme;
 
-    iget-object v1, v1, Lma;->a:Landroid/content/Context;
+    if-nez p1, :cond_0
 
-    if-eqz v1, :cond_0
+    .line 52
+    new-instance p1, Lme;
 
-    sget-object v1, Lma;->c:Lma;
+    const-string v1, "Measurement Worker"
 
-    iget-object v1, v1, Lma;->b:Landroid/database/ContentObserver;
+    iget-object v2, p0, Lma;->c:Ljava/util/concurrent/PriorityBlockingQueue;
 
-    if-eqz v1, :cond_0
+    invoke-direct {p1, p0, v1, v2}, Lme;-><init>(Lma;Ljava/lang/String;Ljava/util/concurrent/BlockingQueue;)V
 
-    .line 8
-    sget-object v1, Lma;->c:Lma;
+    iput-object p1, p0, Lma;->a:Lme;
 
-    iget-object v1, v1, Lma;->a:Landroid/content/Context;
+    .line 53
+    iget-object p1, p0, Lma;->a:Lme;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    iget-object v1, p0, Lma;->e:Ljava/lang/Thread$UncaughtExceptionHandler;
 
-    move-result-object v1
+    invoke-virtual {p1, v1}, Lme;->setUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
 
-    sget-object v2, Lma;->c:Lma;
+    .line 54
+    iget-object p1, p0, Lma;->a:Lme;
 
-    iget-object v2, v2, Lma;->b:Landroid/database/ContentObserver;
+    invoke-virtual {p1}, Lme;->start()V
 
-    invoke-virtual {v1, v2}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
+    goto :goto_0
 
+    .line 55
     :cond_0
-    const/4 v1, 0x0
+    iget-object p1, p0, Lma;->a:Lme;
 
-    .line 9
-    sput-object v1, Lma;->c:Lma;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {p1}, Lme;->a()V
 
-    .line 10
+    .line 56
+    :goto_0
     monitor-exit v0
 
     return-void
 
     :catchall_0
-    move-exception v1
+    move-exception p1
 
     monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v1
+    throw p1
 .end method
 
-.method private final c(Ljava/lang/String;)Ljava/lang/String;
-    .locals 4
+.method static synthetic b(Lma;Lme;)Lme;
+    .locals 0
 
-    .line 1
-    iget-object v0, p0, Lma;->a:Landroid/content/Context;
+    const/4 p1, 0x0
 
-    const/4 v1, 0x0
+    .line 91
+    iput-object p1, p0, Lma;->b:Lme;
 
-    if-nez v0, :cond_0
+    return-object p1
+.end method
 
-    return-object v1
+.method static synthetic b(Lma;)Z
+    .locals 0
 
-    .line 2
-    :cond_0
-    :try_start_0
-    new-instance v0, Lpa;
+    .line 86
+    iget-boolean p0, p0, Lma;->i:Z
 
-    invoke-direct {v0, p0, p1}, Lpa;-><init>(Lma;Ljava/lang/String;)V
+    return p0
+.end method
 
-    invoke-static {v0}, Lka;->a(Lna;)Ljava/lang/Object;
+.method static synthetic c(Lma;)Ljava/lang/Object;
+    .locals 0
 
-    move-result-object v0
+    .line 87
+    iget-object p0, p0, Lma;->g:Ljava/lang/Object;
 
-    check-cast v0, Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    return-object p0
+.end method
+
+.method static synthetic d(Lma;)Lme;
+    .locals 0
+
+    .line 88
+    iget-object p0, p0, Lma;->a:Lme;
+
+    return-object p0
+.end method
+
+.method static synthetic e(Lma;)Lme;
+    .locals 0
+
+    .line 90
+    iget-object p0, p0, Lma;->b:Lme;
+
+    return-object p0
+.end method
+
+.method static synthetic h()Ljava/util/concurrent/atomic/AtomicLong;
+    .locals 1
+
+    .line 92
+    sget-object v0, Lma;->j:Ljava/util/concurrent/atomic/AtomicLong;
 
     return-object v0
-
-    :catch_0
-    move-exception v0
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v0
-
-    :goto_0
-    const-string v2, "Unable to read GServices for: "
-
-    .line 3
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    invoke-virtual {v2, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p1, Ljava/lang/String;
-
-    invoke-direct {p1, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    :goto_1
-    const-string v2, "GservicesLoader"
-
-    invoke-static {v2, p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    return-object v1
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/String;)Ljava/lang/Object;
-    .locals 0
+.method public final a(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/concurrent/Callable<",
+            "TV;>;)",
+            "Ljava/util/concurrent/Future<",
+            "TV;>;"
+        }
+    .end annotation
 
-    .line 11
-    invoke-direct {p0, p1}, Lma;->c(Ljava/lang/String;)Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalStateException;
+        }
+    .end annotation
 
-    move-result-object p1
+    .line 17
+    invoke-virtual {p0}, Lnc;->A()V
 
-    return-object p1
-.end method
+    .line 18
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-.method final synthetic b(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lma;->a:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
+    .line 19
+    new-instance v0, Lmd;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, p1, v1}, Lca;->a(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    const-string v2, "Task exception on worker thread"
+
+    invoke-direct {v0, p0, p1, v1, v2}, Lmd;-><init>(Lma;Ljava/util/concurrent/Callable;ZLjava/lang/String;)V
+
+    .line 20
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object p1
 
-    return-object p1
+    iget-object v1, p0, Lma;->a:Lme;
+
+    if-ne p1, v1, :cond_1
+
+    .line 21
+    iget-object p1, p0, Lma;->c:Ljava/util/concurrent/PriorityBlockingQueue;
+
+    invoke-virtual {p1}, Ljava/util/concurrent/PriorityBlockingQueue;->isEmpty()Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    .line 22
+    invoke-virtual {p0}, Lnb;->r()Lla;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lla;->i()Llc;
+
+    move-result-object p1
+
+    const-string v1, "Callable skipped the worker queue."
+
+    invoke-virtual {p1, v1}, Llc;->a(Ljava/lang/String;)V
+
+    .line 23
+    :cond_0
+    invoke-virtual {v0}, Lmd;->run()V
+
+    goto :goto_0
+
+    .line 24
+    :cond_1
+    invoke-direct {p0, v0}, Lma;->a(Lmd;)V
+
+    :goto_0
+    return-object v0
+.end method
+
+.method public final bridge synthetic a()V
+    .locals 0
+
+    .line 73
+    invoke-super {p0}, Lnc;->a()V
+
+    return-void
+.end method
+
+.method public final a(Ljava/lang/Runnable;)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalStateException;
+        }
+    .end annotation
+
+    .line 33
+    invoke-virtual {p0}, Lnc;->A()V
+
+    .line 34
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 35
+    new-instance v0, Lmd;
+
+    const/4 v1, 0x0
+
+    const-string v2, "Task exception on worker thread"
+
+    invoke-direct {v0, p0, p1, v1, v2}, Lmd;-><init>(Lma;Ljava/lang/Runnable;ZLjava/lang/String;)V
+
+    invoke-direct {p0, v0}, Lma;->a(Lmd;)V
+
+    return-void
+.end method
+
+.method public final b(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/concurrent/Callable<",
+            "TV;>;)",
+            "Ljava/util/concurrent/Future<",
+            "TV;>;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalStateException;
+        }
+    .end annotation
+
+    .line 26
+    invoke-virtual {p0}, Lnc;->A()V
+
+    .line 27
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 28
+    new-instance v0, Lmd;
+
+    const/4 v1, 0x1
+
+    const-string v2, "Task exception on worker thread"
+
+    invoke-direct {v0, p0, p1, v1, v2}, Lmd;-><init>(Lma;Ljava/util/concurrent/Callable;ZLjava/lang/String;)V
+
+    .line 29
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object p1
+
+    iget-object v1, p0, Lma;->a:Lme;
+
+    if-ne p1, v1, :cond_0
+
+    .line 30
+    invoke-virtual {v0}, Lmd;->run()V
+
+    goto :goto_0
+
+    .line 31
+    :cond_0
+    invoke-direct {p0, v0}, Lma;->a(Lmd;)V
+
+    :goto_0
+    return-object v0
+.end method
+
+.method public final bridge synthetic b()V
+    .locals 0
+
+    .line 74
+    invoke-super {p0}, Lnc;->b()V
+
+    return-void
+.end method
+
+.method public final b(Ljava/lang/Runnable;)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalStateException;
+        }
+    .end annotation
+
+    .line 57
+    invoke-virtual {p0}, Lnc;->A()V
+
+    .line 58
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 59
+    new-instance v0, Lmd;
+
+    const/4 v1, 0x0
+
+    const-string v2, "Task exception on network thread"
+
+    invoke-direct {v0, p0, p1, v1, v2}, Lmd;-><init>(Lma;Ljava/lang/Runnable;ZLjava/lang/String;)V
+
+    .line 60
+    iget-object p1, p0, Lma;->g:Ljava/lang/Object;
+
+    monitor-enter p1
+
+    .line 61
+    :try_start_0
+    iget-object v1, p0, Lma;->d:Ljava/util/concurrent/BlockingQueue;
+
+    invoke-interface {v1, v0}, Ljava/util/concurrent/BlockingQueue;->add(Ljava/lang/Object;)Z
+
+    .line 62
+    iget-object v0, p0, Lma;->b:Lme;
+
+    if-nez v0, :cond_0
+
+    .line 63
+    new-instance v0, Lme;
+
+    const-string v1, "Measurement Network"
+
+    iget-object v2, p0, Lma;->d:Ljava/util/concurrent/BlockingQueue;
+
+    invoke-direct {v0, p0, v1, v2}, Lme;-><init>(Lma;Ljava/lang/String;Ljava/util/concurrent/BlockingQueue;)V
+
+    iput-object v0, p0, Lma;->b:Lme;
+
+    .line 64
+    iget-object v0, p0, Lma;->b:Lme;
+
+    iget-object v1, p0, Lma;->f:Ljava/lang/Thread$UncaughtExceptionHandler;
+
+    invoke-virtual {v0, v1}, Lme;->setUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
+
+    .line 65
+    iget-object v0, p0, Lma;->b:Lme;
+
+    invoke-virtual {v0}, Lme;->start()V
+
+    goto :goto_0
+
+    .line 66
+    :cond_0
+    iget-object v0, p0, Lma;->b:Lme;
+
+    invoke-virtual {v0}, Lme;->a()V
+
+    .line 67
+    :goto_0
+    monitor-exit p1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final c()V
+    .locals 2
+
+    .line 13
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lma;->b:Lme;
+
+    if-ne v0, v1, :cond_0
+
+    return-void
+
+    .line 14
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Call expected from network thread"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final d()V
+    .locals 2
+
+    .line 10
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lma;->a:Lme;
+
+    if-ne v0, v1, :cond_0
+
+    return-void
+
+    .line 11
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Call expected from worker thread"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method protected final e()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final g()Z
+    .locals 2
+
+    .line 16
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lma;->a:Lme;
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final bridge synthetic l()Lki;
+    .locals 1
+
+    .line 75
+    invoke-super {p0}, Lnc;->l()Lki;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic m()Lcom/google/android/gms/common/util/d;
+    .locals 1
+
+    .line 76
+    invoke-super {p0}, Lnc;->m()Lcom/google/android/gms/common/util/d;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic n()Landroid/content/Context;
+    .locals 1
+
+    .line 77
+    invoke-super {p0}, Lnc;->n()Landroid/content/Context;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic o()Lky;
+    .locals 1
+
+    .line 78
+    invoke-super {p0}, Lnc;->o()Lky;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic p()Lpv;
+    .locals 1
+
+    .line 79
+    invoke-super {p0}, Lnc;->p()Lpv;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic q()Lma;
+    .locals 1
+
+    .line 80
+    invoke-super {p0}, Lnc;->q()Lma;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic r()Lla;
+    .locals 1
+
+    .line 81
+    invoke-super {p0}, Lnc;->r()Lla;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic s()Llm;
+    .locals 1
+
+    .line 82
+    invoke-super {p0}, Lnc;->s()Llm;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic t()Lqf;
+    .locals 1
+
+    .line 83
+    invoke-super {p0}, Lnc;->t()Lqf;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic u()Lqc;
+    .locals 1
+
+    .line 84
+    invoke-super {p0}, Lnc;->u()Lqc;
+
+    move-result-object v0
+
+    return-object v0
 .end method

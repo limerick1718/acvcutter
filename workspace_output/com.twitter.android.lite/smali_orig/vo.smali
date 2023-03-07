@@ -1,36 +1,55 @@
 .class public abstract Lvo;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.source "Crash.java"
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lvo$a;,
+        Lvo$b;
+    }
+.end annotation
+
+
+# instance fields
+.field private final a:Ljava/lang/String;
+
+.field private final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 1
+    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 31
+    iput-object p1, p0, Lvo;->a:Ljava/lang/String;
+
+    .line 32
+    iput-object p2, p0, Lvo;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected abstract a()V
-.end method
-
-.method public final run()V
+.method public a()Ljava/lang/String;
     .locals 1
 
-    const/16 v0, 0xa
+    .line 36
+    iget-object v0, p0, Lvo;->a:Ljava/lang/String;
 
-    .line 1
-    invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
+    return-object v0
+.end method
 
-    .line 2
-    invoke-virtual {p0}, Lvo;->a()V
+.method public b()Ljava/lang/String;
+    .locals 1
 
-    return-void
+    .line 39
+    iget-object v0, p0, Lvo;->b:Ljava/lang/String;
+
+    return-object v0
 .end method

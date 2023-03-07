@@ -17,29 +17,29 @@
 		<code>.class public final Lcom/google/gson/internal/Excluder;
 .super Ljava/lang/Object;
 .source "Excluder.java"
-.implements Lwv;
 .implements Ljava/lang/Cloneable;
+.implements Lto;
 
 
-.field public static final g:Lcom/google/gson/internal/Excluder;
-.field private a:D
-.field private b:I
-.field private c:Z
+.field public static final a:Lcom/google/gson/internal/Excluder;
+.field private b:D
+.field private c:I
 .field private d:Z
-.field private e:Ljava/util/List;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/List<",
-"Lbv;",
-">;"
-}
-.end annotation
-.end field
+.field private e:Z
 .field private f:Ljava/util/List;
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "Ljava/util/List<",
-"Lbv;",
+"Lst;",
+">;"
+}
+.end annotation
+.end field
+.field private g:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Lst;",
 ">;"
 }
 .end annotation
@@ -51,7 +51,7 @@ value = {
 
 <span class="cov">	new-instance v0, Lcom/google/gson/internal/Excluder;</span>
 <span class="cov">	invoke-direct {v0}, Lcom/google/gson/internal/Excluder;-><init>()V</span>
-<span class="cov">	sput-object v0, Lcom/google/gson/internal/Excluder;->g:Lcom/google/gson/internal/Excluder;</span>
+<span class="cov">	sput-object v0, Lcom/google/gson/internal/Excluder;->a:Lcom/google/gson/internal/Excluder;</span>
 <span class="exec">	return-void</span>
 .end method
 
@@ -60,67 +60,18 @@ value = {
 
 <span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
 <span class="cov">	const-wide/high16 v0, -0x4010000000000000L    # -1.0</span>
-<span class="cov">	iput-wide v0, p0, Lcom/google/gson/internal/Excluder;->a:D</span>
+<span class="cov">	iput-wide v0, p0, Lcom/google/gson/internal/Excluder;->b:D</span>
 <span class="cov">	const/16 v0, 0x88</span>
-<span class="cov">	iput v0, p0, Lcom/google/gson/internal/Excluder;->b:I</span>
+<span class="cov">	iput v0, p0, Lcom/google/gson/internal/Excluder;->c:I</span>
 <span class="cov">	const/4 v0, 0x1</span>
-<span class="cov">	iput-boolean v0, p0, Lcom/google/gson/internal/Excluder;->c:Z</span>
-<span class="exec">	invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	iput-object v0, p0, Lcom/google/gson/internal/Excluder;->e:Ljava/util/List;</span>
+<span class="cov">	iput-boolean v0, p0, Lcom/google/gson/internal/Excluder;->d:Z</span>
 <span class="exec">	invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;</span>
 <span class="cov">	move-result-object v0</span>
 <span class="cov">	iput-object v0, p0, Lcom/google/gson/internal/Excluder;->f:Ljava/util/List;</span>
+<span class="exec">	invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iput-object v0, p0, Lcom/google/gson/internal/Excluder;->g:Ljava/util/List;</span>
 <span class="exec">	return-void</span>
-.end method
-
-.method private a(Law;)Z
-<span class="">	.locals 4</span>
-
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="">	invoke-interface {p1}, Law;->value()D</span>
-<span class="missed">	move-result-wide v0</span>
-<span class="missed">	iget-wide v2, p0, Lcom/google/gson/internal/Excluder;->a:D</span>
-<span class="missed">	cmpl-double p1, v0, v2</span>
-<span class="missed">	if-lez p1, :cond_0</span>
-<span class="missed">	const/4 p1, 0x0</span>
-<span class="">	return p1</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 p1, 0x1</span>
-<span class="">	return p1</span>
-.end method
-
-.method private a(Law;Lbw;)Z
-<span class="">	.locals 0</span>
-
-<span class="">	invoke-direct {p0, p1}, Lcom/google/gson/internal/Excluder;->a(Law;)Z</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="">	invoke-direct {p0, p2}, Lcom/google/gson/internal/Excluder;->a(Lbw;)Z</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="missed">	const/4 p1, 0x1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 p1, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="">	return p1</span>
-.end method
-
-.method private a(Lbw;)Z
-<span class="">	.locals 4</span>
-
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="">	invoke-interface {p1}, Lbw;->value()D</span>
-<span class="missed">	move-result-wide v0</span>
-<span class="missed">	iget-wide v2, p0, Lcom/google/gson/internal/Excluder;->a:D</span>
-<span class="missed">	cmpg-double p1, v0, v2</span>
-<span class="missed">	if-gtz p1, :cond_0</span>
-<span class="missed">	const/4 p1, 0x0</span>
-<span class="">	return p1</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 p1, 0x1</span>
-<span class="">	return p1</span>
 .end method
 
 <span class="cov">.method private a(Ljava/lang/Class;)Z</span>
@@ -150,6 +101,55 @@ value = {
 <span class="cov">	const/4 p1, 0x0</span>
 <span class="cov">	:goto_0</span>
 <span class="exec">	return p1</span>
+.end method
+
+.method private a(Lts;)Z
+<span class="">	.locals 4</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="">	invoke-interface {p1}, Lts;->a()D</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="missed">	iget-wide v2, p0, Lcom/google/gson/internal/Excluder;->b:D</span>
+<span class="missed">	cmpl-double p1, v0, v2</span>
+<span class="missed">	if-lez p1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	return p1</span>
+.end method
+
+.method private a(Lts;Ltt;)Z
+<span class="">	.locals 0</span>
+
+<span class="">	invoke-direct {p0, p1}, Lcom/google/gson/internal/Excluder;->a(Lts;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="">	invoke-direct {p0, p2}, Lcom/google/gson/internal/Excluder;->a(Ltt;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return p1</span>
+.end method
+
+.method private a(Ltt;)Z
+<span class="">	.locals 4</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="">	invoke-interface {p1}, Ltt;->a()D</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="missed">	iget-wide v2, p0, Lcom/google/gson/internal/Excluder;->b:D</span>
+<span class="missed">	cmpg-double p1, v0, v2</span>
+<span class="missed">	if-gtz p1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	return p1</span>
 .end method
 
 .method private b(Ljava/lang/Class;)Z
@@ -198,206 +198,7 @@ value = {
 <span class="">	return p1</span>
 .end method
 
-<span class="cov">.method public a(Lfv;Ldw;)Lvv;</span>
-<span class="">	.locals 8</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"<T:",</span>
-<span class="">	"Ljava/lang/Object;",</span>
-<span class="">	">(",</span>
-<span class="">	"Lfv;",</span>
-<span class="">	"Ldw<",</span>
-<span class="">	"TT;>;)",</span>
-<span class="">	"Lvv<",</span>
-<span class="">	"TT;>;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="exec">	invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="exec">	invoke-virtual {p0, v0, v1}, Lcom/google/gson/internal/Excluder;->a(Ljava/lang/Class;Z)Z</span>
-<span class="cov">	move-result v5</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="exec">	invoke-virtual {p0, v0, v1}, Lcom/google/gson/internal/Excluder;->a(Ljava/lang/Class;Z)Z</span>
-<span class="cov">	move-result v4</span>
-<span class="cov">	if-nez v5, :cond_0</span>
-<span class="cov">	if-nez v4, :cond_0</span>
-<span class="cov">	const/4 p1, 0x0</span>
-<span class="exec">	return-object p1</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-instance v0, Lcom/google/gson/internal/Excluder$a;</span>
-<span class="missed">	move-object v2, v0</span>
-<span class="missed">	move-object v3, p0</span>
-<span class="missed">	move-object v6, p1</span>
-<span class="missed">	move-object v7, p2</span>
-<span class="missed">	invoke-direct/range {v2 .. v7}, Lcom/google/gson/internal/Excluder$a;-><init>(Lcom/google/gson/internal/Excluder;ZZLfv;Ldw;)V</span>
-<span class="">	return-object v0</span>
-.end method
-
-<span class="cov">.method public a(Ljava/lang/Class;Z)Z</span>
-<span class="">	.locals 6</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Ljava/lang/Class<",</span>
-<span class="">	"*>;Z)Z"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	iget-wide v0, p0, Lcom/google/gson/internal/Excluder;->a:D</span>
-<span class="cov">	const/4 v2, 0x1</span>
-<span class="cov">	const-wide/high16 v3, -0x4010000000000000L    # -1.0</span>
-<span class="cov">	cmpl-double v5, v0, v3</span>
-<span class="missed">	if-eqz v5, :cond_0</span>
-<span class="missed">	const-class v0, Law;</span>
-<span class="">	invoke-virtual {p1, v0}, Ljava/lang/Class;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Law;</span>
-<span class="missed">	const-class v1, Lbw;</span>
-<span class="">	invoke-virtual {p1, v1}, Ljava/lang/Class;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	check-cast v1, Lbw;</span>
-<span class="">	invoke-direct {p0, v0, v1}, Lcom/google/gson/internal/Excluder;->a(Law;Lbw;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="">	return v2</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	iget-boolean v0, p0, Lcom/google/gson/internal/Excluder;->c:Z</span>
-<span class="missed">	if-nez v0, :cond_1</span>
-<span class="">	invoke-direct {p0, p1}, Lcom/google/gson/internal/Excluder;->b(Ljava/lang/Class;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_1</span>
-<span class="">	return v2</span>
-<span class="cov">	:cond_1</span>
-<span class="exec">	invoke-direct {p0, p1}, Lcom/google/gson/internal/Excluder;->a(Ljava/lang/Class;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_2</span>
-<span class="">	return v2</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	if-eqz p2, :cond_3</span>
-<span class="cov">	iget-object p2, p0, Lcom/google/gson/internal/Excluder;->e:Ljava/util/List;</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_3</span>
-<span class="cov">	iget-object p2, p0, Lcom/google/gson/internal/Excluder;->f:Ljava/util/List;</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
-<span class="cov">	move-result-object p2</span>
-<span class="cov">	:cond_4</span>
-<span class="exec">	invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_5</span>
-<span class="">	invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Lbv;</span>
-<span class="">	invoke-interface {v0, p1}, Lbv;->a(Ljava/lang/Class;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_4</span>
-<span class="">	return v2</span>
-<span class="cov">	:cond_5</span>
-<span class="cov">	const/4 p1, 0x0</span>
-<span class="exec">	return p1</span>
-.end method
-
-<span class="cov">.method public a(Ljava/lang/reflect/Field;Z)Z</span>
-<span class="">	.locals 6</span>
-
-<span class="cov">	iget v0, p0, Lcom/google/gson/internal/Excluder;->b:I</span>
-<span class="exec">	invoke-virtual {p1}, Ljava/lang/reflect/Field;->getModifiers()I</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	and-int/2addr v0, v1</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="">	return v1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	iget-wide v2, p0, Lcom/google/gson/internal/Excluder;->a:D</span>
-<span class="cov">	const-wide/high16 v4, -0x4010000000000000L    # -1.0</span>
-<span class="cov">	cmpl-double v0, v2, v4</span>
-<span class="missed">	if-eqz v0, :cond_1</span>
-<span class="missed">	const-class v0, Law;</span>
-<span class="">	invoke-virtual {p1, v0}, Ljava/lang/reflect/Field;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Law;</span>
-<span class="missed">	const-class v2, Lbw;</span>
-<span class="">	invoke-virtual {p1, v2}, Ljava/lang/reflect/Field;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;</span>
-<span class="missed">	move-result-object v2</span>
-<span class="missed">	check-cast v2, Lbw;</span>
-<span class="">	invoke-direct {p0, v0, v2}, Lcom/google/gson/internal/Excluder;->a(Law;Lbw;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-nez v0, :cond_1</span>
-<span class="">	return v1</span>
-<span class="cov">	:cond_1</span>
-<span class="exec">	invoke-virtual {p1}, Ljava/lang/reflect/Field;->isSynthetic()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_2</span>
-<span class="">	return v1</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	iget-boolean v0, p0, Lcom/google/gson/internal/Excluder;->d:Z</span>
-<span class="missed">	if-eqz v0, :cond_5</span>
-<span class="missed">	const-class v0, Lxv;</span>
-<span class="">	invoke-virtual {p1, v0}, Ljava/lang/reflect/Field;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Lxv;</span>
-<span class="missed">	if-eqz v0, :cond_4</span>
-<span class="missed">	if-eqz p2, :cond_3</span>
-<span class="">	invoke-interface {v0}, Lxv;->serialize()Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-nez v0, :cond_5</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_3</span>
-<span class="">	invoke-interface {v0}, Lxv;->deserialize()Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-nez v0, :cond_5</span>
-<span class="">	:goto_0</span>
-<span class="">	:cond_4</span>
-<span class="">	return v1</span>
-<span class="cov">	:cond_5</span>
-<span class="cov">	iget-boolean v0, p0, Lcom/google/gson/internal/Excluder;->c:Z</span>
-<span class="missed">	if-nez v0, :cond_6</span>
-<span class="">	invoke-virtual {p1}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	invoke-direct {p0, v0}, Lcom/google/gson/internal/Excluder;->b(Ljava/lang/Class;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_6</span>
-<span class="">	return v1</span>
-<span class="cov">	:cond_6</span>
-<span class="exec">	invoke-virtual {p1}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-direct {p0, v0}, Lcom/google/gson/internal/Excluder;->a(Ljava/lang/Class;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_7</span>
-<span class="">	return v1</span>
-<span class="cov">	:cond_7</span>
-<span class="cov">	if-eqz p2, :cond_8</span>
-<span class="cov">	iget-object p2, p0, Lcom/google/gson/internal/Excluder;->e:Ljava/util/List;</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:cond_8</span>
-<span class="cov">	iget-object p2, p0, Lcom/google/gson/internal/Excluder;->f:Ljava/util/List;</span>
-<span class="cov">	:goto_1</span>
-<span class="exec">	invoke-interface {p2}, Ljava/util/List;->isEmpty()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="missed">	if-nez v0, :cond_a</span>
-<span class="missed">	new-instance v0, Lcv;</span>
-<span class="missed">	invoke-direct {v0, p1}, Lcv;-><init>(Ljava/lang/reflect/Field;)V</span>
-<span class="">	invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	:cond_9</span>
-<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z</span>
-<span class="missed">	move-result p2</span>
-<span class="missed">	if-eqz p2, :cond_a</span>
-<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object p2</span>
-<span class="missed">	check-cast p2, Lbv;</span>
-<span class="">	invoke-interface {p2, v0}, Lbv;->a(Lcv;)Z</span>
-<span class="missed">	move-result p2</span>
-<span class="missed">	if-eqz p2, :cond_9</span>
-<span class="">	return v1</span>
-<span class="cov">	:cond_a</span>
-<span class="cov">	const/4 p1, 0x0</span>
-<span class="exec">	return p1</span>
-.end method
-
-.method protected clone()Lcom/google/gson/internal/Excluder;
+.method protected a()Lcom/google/gson/internal/Excluder;
 <span class="">	.locals 2</span>
 
 <span class="">	:try_start_0</span>
@@ -414,7 +215,206 @@ value = {
 <span class="">	throw v1</span>
 .end method
 
-.method protected bridge synthetic clone()Ljava/lang/Object;
+<span class="cov">.method public a(Lsx;Ltv;)Ltn;</span>
+<span class="">	.locals 8</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<T:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Lsx;",</span>
+<span class="">	"Ltv<",</span>
+<span class="">	"TT;>;)",</span>
+<span class="">	"Ltn<",</span>
+<span class="">	"TT;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="exec">	invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="exec">	invoke-virtual {p0, v0, v1}, Lcom/google/gson/internal/Excluder;->a(Ljava/lang/Class;Z)Z</span>
+<span class="cov">	move-result v5</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="exec">	invoke-virtual {p0, v0, v1}, Lcom/google/gson/internal/Excluder;->a(Ljava/lang/Class;Z)Z</span>
+<span class="cov">	move-result v4</span>
+<span class="cov">	if-nez v5, :cond_0</span>
+<span class="cov">	if-nez v4, :cond_0</span>
+<span class="cov">	const/4 p1, 0x0</span>
+<span class="exec">	return-object p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Lcom/google/gson/internal/Excluder$1;</span>
+<span class="missed">	move-object v2, v0</span>
+<span class="missed">	move-object v3, p0</span>
+<span class="missed">	move-object v6, p1</span>
+<span class="missed">	move-object v7, p2</span>
+<span class="missed">	invoke-direct/range {v2 .. v7}, Lcom/google/gson/internal/Excluder$1;-><init>(Lcom/google/gson/internal/Excluder;ZZLsx;Ltv;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public a(Ljava/lang/Class;Z)Z</span>
+<span class="">	.locals 6</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;Z)Z"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-wide v0, p0, Lcom/google/gson/internal/Excluder;->b:D</span>
+<span class="cov">	const/4 v2, 0x1</span>
+<span class="cov">	const-wide/high16 v3, -0x4010000000000000L    # -1.0</span>
+<span class="cov">	cmpl-double v5, v0, v3</span>
+<span class="missed">	if-eqz v5, :cond_0</span>
+<span class="missed">	const-class v0, Lts;</span>
+<span class="">	invoke-virtual {p1, v0}, Ljava/lang/Class;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lts;</span>
+<span class="missed">	const-class v1, Ltt;</span>
+<span class="">	invoke-virtual {p1, v1}, Ljava/lang/Class;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, Ltt;</span>
+<span class="">	invoke-direct {p0, v0, v1}, Lcom/google/gson/internal/Excluder;->a(Lts;Ltt;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	return v2</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-boolean v0, p0, Lcom/google/gson/internal/Excluder;->d:Z</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	invoke-direct {p0, p1}, Lcom/google/gson/internal/Excluder;->b(Ljava/lang/Class;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	return v2</span>
+<span class="cov">	:cond_1</span>
+<span class="exec">	invoke-direct {p0, p1}, Lcom/google/gson/internal/Excluder;->a(Ljava/lang/Class;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="">	return v2</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	if-eqz p2, :cond_3</span>
+<span class="cov">	iget-object p2, p0, Lcom/google/gson/internal/Excluder;->f:Ljava/util/List;</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_3</span>
+<span class="cov">	iget-object p2, p0, Lcom/google/gson/internal/Excluder;->g:Ljava/util/List;</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="cov">	move-result-object p2</span>
+<span class="cov">	:cond_4</span>
+<span class="exec">	invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_5</span>
+<span class="">	invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lst;</span>
+<span class="">	invoke-interface {v0, p1}, Lst;->a(Ljava/lang/Class;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_4</span>
+<span class="">	return v2</span>
+<span class="cov">	:cond_5</span>
+<span class="cov">	const/4 p1, 0x0</span>
+<span class="exec">	return p1</span>
+.end method
+
+<span class="cov">.method public a(Ljava/lang/reflect/Field;Z)Z</span>
+<span class="">	.locals 6</span>
+
+<span class="cov">	iget v0, p0, Lcom/google/gson/internal/Excluder;->c:I</span>
+<span class="exec">	invoke-virtual {p1}, Ljava/lang/reflect/Field;->getModifiers()I</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	and-int/2addr v0, v1</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	return v1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-wide v2, p0, Lcom/google/gson/internal/Excluder;->b:D</span>
+<span class="cov">	const-wide/high16 v4, -0x4010000000000000L    # -1.0</span>
+<span class="cov">	cmpl-double v0, v2, v4</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	const-class v0, Lts;</span>
+<span class="">	invoke-virtual {p1, v0}, Ljava/lang/reflect/Field;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lts;</span>
+<span class="missed">	const-class v2, Ltt;</span>
+<span class="">	invoke-virtual {p1, v2}, Ljava/lang/reflect/Field;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Ltt;</span>
+<span class="">	invoke-direct {p0, v0, v2}, Lcom/google/gson/internal/Excluder;->a(Lts;Ltt;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	return v1</span>
+<span class="cov">	:cond_1</span>
+<span class="exec">	invoke-virtual {p1}, Ljava/lang/reflect/Field;->isSynthetic()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="">	return v1</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	iget-boolean v0, p0, Lcom/google/gson/internal/Excluder;->e:Z</span>
+<span class="missed">	if-eqz v0, :cond_5</span>
+<span class="missed">	const-class v0, Ltp;</span>
+<span class="">	invoke-virtual {p1, v0}, Ljava/lang/reflect/Field;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ltp;</span>
+<span class="missed">	if-eqz v0, :cond_4</span>
+<span class="missed">	if-eqz p2, :cond_3</span>
+<span class="">	invoke-interface {v0}, Ltp;->a()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_5</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-interface {v0}, Ltp;->b()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_5</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_4</span>
+<span class="">	return v1</span>
+<span class="cov">	:cond_5</span>
+<span class="cov">	iget-boolean v0, p0, Lcom/google/gson/internal/Excluder;->d:Z</span>
+<span class="missed">	if-nez v0, :cond_6</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-direct {p0, v0}, Lcom/google/gson/internal/Excluder;->b(Ljava/lang/Class;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_6</span>
+<span class="">	return v1</span>
+<span class="cov">	:cond_6</span>
+<span class="exec">	invoke-virtual {p1}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-direct {p0, v0}, Lcom/google/gson/internal/Excluder;->a(Ljava/lang/Class;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_7</span>
+<span class="">	return v1</span>
+<span class="cov">	:cond_7</span>
+<span class="cov">	if-eqz p2, :cond_8</span>
+<span class="cov">	iget-object p2, p0, Lcom/google/gson/internal/Excluder;->f:Ljava/util/List;</span>
+<span class="exec">	goto :goto_1</span>
+<span class="cov">	:cond_8</span>
+<span class="cov">	iget-object p2, p0, Lcom/google/gson/internal/Excluder;->g:Ljava/util/List;</span>
+<span class="cov">	:goto_1</span>
+<span class="exec">	invoke-interface {p2}, Ljava/util/List;->isEmpty()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_a</span>
+<span class="missed">	new-instance v0, Lsu;</span>
+<span class="missed">	invoke-direct {v0, p1}, Lsu;-><init>(Ljava/lang/reflect/Field;)V</span>
+<span class="">	invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:cond_9</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result p2</span>
+<span class="missed">	if-eqz p2, :cond_a</span>
+<span class="">	invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	check-cast p2, Lst;</span>
+<span class="">	invoke-interface {p2, v0}, Lst;->a(Lsu;)Z</span>
+<span class="missed">	move-result p2</span>
+<span class="missed">	if-eqz p2, :cond_9</span>
+<span class="">	return v1</span>
+<span class="cov">	:cond_a</span>
+<span class="cov">	const/4 p1, 0x0</span>
+<span class="exec">	return p1</span>
+.end method
+
+.method protected synthetic clone()Ljava/lang/Object;
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -422,7 +422,7 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="">	invoke-virtual {p0}, Lcom/google/gson/internal/Excluder;->clone()Lcom/google/gson/internal/Excluder;</span>
+<span class="">	invoke-virtual {p0}, Lcom/google/gson/internal/Excluder;->a()Lcom/google/gson/internal/Excluder;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="">	return-object v0</span>
 .end method</code>

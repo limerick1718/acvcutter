@@ -17,5 +17,5 @@
 .method public abstract a(I)V
 .end method
 
-.method public abstract c(Landroid/os/Bundle;)V
+.method public abstract a(Landroid/os/Bundle;)V
 .end method

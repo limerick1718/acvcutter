@@ -1,7 +1,18 @@
-.class public interface abstract Lth;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.method public abstract a()Z
+.class public Lth;
+.super Ljava/lang/RuntimeException;
+.source "JsonParseException.java"
+.method public constructor <init>(Ljava/lang/String;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method
-.method public abstract b()Z
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method public constructor <init>(Ljava/lang/Throwable;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method

@@ -1,6 +1,5 @@
-.class public interface abstract Lro;
+.class public final Lro;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
 
 
 # annotations
@@ -11,9 +10,29 @@
 .end annotation
 
 
-# virtual methods
-.method public abstract a(Lro$a;)V
-.end method
+# static fields
+.field public static final a:Ljava/util/concurrent/Executor;
 
-.method public abstract a()Z
+.field static final b:Ljava/util/concurrent/Executor;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .line 2
+    new-instance v0, Lro$a;
+
+    invoke-direct {v0}, Lro$a;-><init>()V
+
+    sput-object v0, Lro;->a:Ljava/util/concurrent/Executor;
+
+    .line 3
+    new-instance v0, Lse;
+
+    invoke-direct {v0}, Lse;-><init>()V
+
+    sput-object v0, Lro;->b:Ljava/util/concurrent/Executor;
+
+    return-void
 .end method

@@ -1,48 +1,41 @@
-.class public abstract Lxb;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-
-# interfaces
-.implements Ldf;
+.class public Lxb;
+.super Lxc;
+.source "GZIPQueueFileEventStorage.java"
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Landroid/content/Context;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 32
+    invoke-direct {p0, p1, p2, p3, p4}, Lxc;-><init>(Landroid/content/Context;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ldf;
+.method public a(Ljava/io/File;)Ljava/io/OutputStream;
     .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "clone() should be implemented by subclasses."
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public synthetic clone()Ljava/lang/Object;
-    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/lang/CloneNotSupportedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 1
-    invoke-virtual {p0}, Lxb;->a()Ldf;
+    .line 37
+    new-instance v0, Ljava/util/zip/GZIPOutputStream;
 
-    move-result-object v0
+    new-instance v1, Ljava/io/FileOutputStream;
+
+    invoke-direct {v1, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+
+    invoke-direct {v0, v1}, Ljava/util/zip/GZIPOutputStream;-><init>(Ljava/io/OutputStream;)V
 
     return-object v0
 .end method

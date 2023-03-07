@@ -1,86 +1,154 @@
-.class public final Leh;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-
-# interfaces
-.implements Lfh;
+.class final Leh;
+.super Lef;
 
 
-# static fields
-.field private static final a:Lva;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lva<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lef<",
+        "Ljava/lang/Integer;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Lel;Ljava/lang/String;Ljava/lang/Integer;)V
+    .locals 1
+
+    const/4 v0, 0x0
 
     .line 1
-    new-instance v0, Lbb;
-
-    const-string v1, "com.google.android.gms.measurement"
-
-    .line 2
-    invoke-static {v1}, Lsa;->a(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lbb;-><init>(Landroid/net/Uri;)V
-
-    const-string v1, "measurement.androidId.delete_feature"
-
-    const/4 v2, 0x1
-
-    .line 3
-    invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;
-
-    move-result-object v1
-
-    sput-object v1, Leh;->a:Lva;
-
-    const-string v1, "measurement.log_androidId_enabled"
-
-    const/4 v2, 0x0
-
-    .line 4
-    invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;
+    invoke-direct {p0, p1, p2, p3, v0}, Lef;-><init>(Lel;Ljava/lang/String;Ljava/lang/Object;Leg;)V
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 0
+.method private final b(Ljava/lang/Object;)Ljava/lang/Integer;
+    .locals 3
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 2
+    instance-of v0, p1, Ljava/lang/Integer;
 
-    return-void
+    if-eqz v0, :cond_0
+
+    .line 3
+    check-cast p1, Ljava/lang/Integer;
+
+    return-object p1
+
+    .line 4
+    :cond_0
+    instance-of v0, p1, Ljava/lang/Long;
+
+    if-eqz v0, :cond_1
+
+    .line 5
+    check-cast p1, Ljava/lang/Long;
+
+    invoke-virtual {p1}, Ljava/lang/Long;->intValue()I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    return-object p1
+
+    .line 6
+    :cond_1
+    instance-of v0, p1, Ljava/lang/String;
+
+    if-eqz v0, :cond_2
+
+    .line 7
+    :try_start_0
+    move-object v0, p1
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p1
+
+    .line 9
+    :catch_0
+    :cond_2
+    invoke-super {p0}, Lef;->b()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x18
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/2addr v1, v2
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Invalid int value for "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ": "
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v0, "PhenotypeFlag"
+
+    invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 p1, 0x0
+
+    return-object p1
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    .line 1
-    sget-object v0, Leh;->a:Lva;
+    .line 11
+    invoke-direct {p0, p1}, Leh;->b(Ljava/lang/Object;)Ljava/lang/Integer;
 
-    invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
+    return-object p1
 .end method

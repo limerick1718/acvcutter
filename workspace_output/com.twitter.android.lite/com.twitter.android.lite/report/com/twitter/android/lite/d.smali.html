@@ -16,21 +16,44 @@
 	<pre class="source lang-smali" id='source'>
 		<code>.class public Lcom/twitter/android/lite/d;
 .super Ljava/lang/Object;
-.source "NetworkInterceptor.java"
+.source "RwebLinks.java"
 
 
+.field private static final a:Landroid/net/Uri;
 
 
-<span class="cov">.method public static a(Lokhttp3/OkHttpClient$Builder;)Lokhttp3/OkHttpClient$Builder;</span>
-<span class="">	.locals 0</span>
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 1</span>
 
-<span class="">	return-object p0</span>
+<span class="cov">	const-string v0, "https://mobile.twitter.com"</span>
+<span class="exec">	invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/twitter/android/lite/d;->a:Landroid/net/Uri;</span>
+<span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public static a(Landroid/app/Application;)V</span>
-<span class="">	.locals 0</span>
+<span class="cov">.method public static a()Landroid/net/Uri;</span>
+<span class="">	.locals 1</span>
 
-<span class="">	return-void</span>
+<span class="cov">	sget-object v0, Lcom/twitter/android/lite/d;->a:Landroid/net/Uri;</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method public static a(Ljava/lang/String;)Landroid/net/Uri;
+<span class="">	.locals 2</span>
+
+<span class="missed">	sget-object v0, Lcom/twitter/android/lite/d;->a:Landroid/net/Uri;</span>
+<span class="">	invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "compose/tweet"</span>
+<span class="">	invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendEncodedPath(Ljava/lang/String;)Landroid/net/Uri$Builder;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "text"</span>
+<span class="">	invoke-virtual {v0, v1, p0}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-virtual {p0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

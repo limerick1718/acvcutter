@@ -1,8 +1,10 @@
-.class public interface abstract Lqk;
+.class interface abstract Lqk;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
 
 
 # virtual methods
-.method public abstract a()Z
+.method public abstract a(Ldk;)V
+.end method
+
+.method public abstract a(JLdh;)Z
 .end method

@@ -1,9 +1,9 @@
 .class final Lcom/google/gson/internal/bind/TimeTypeAdapter$1;
 .super Ljava/lang/Object;
 .source "TimeTypeAdapter.java"
-.implements Lwv;
+.implements Lto;
 .annotation system Ldalvik/annotation/EnclosingClass;
-value = Lcom/google/gson/internal/bind/TimeTypeAdapter;
+value = Lcom/google/gson/internal/bind/g;
 .end annotation
 .annotation system Ldalvik/annotation/InnerClass;
 accessFlags = 0x8
@@ -14,21 +14,21 @@ name = null
 invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public a(Lfv;Ldw;)Lvv;
+.method public a(Lsx;Ltv;)Ltn;
 .locals 0
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "<T:",
 "Ljava/lang/Object;",
 ">(",
-"Lfv;",
-"Ldw<",
+"Lsx;",
+"Ltv<",
 "TT;>;)",
-"Lvv<",
+"Ltn<",
 "TT;>;"
 }
 .end annotation
-invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;
+invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;
 move-result-object p1
 const-class p2, Ljava/sql/Time;
 const/4 p1, 0x0

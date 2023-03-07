@@ -16,107 +16,58 @@
 	<pre class="source lang-smali" id='source'>
 		<code>.class final Lkf;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
 
 
-.field private static final c:Lkf;
-.field private final a:Lmf;
-.field private final b:Ljava/util/concurrent/ConcurrentMap;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/concurrent/ConcurrentMap<",
-"Ljava/lang/Class<",
-"*>;",
-"Lnf<",
-"*>;>;"
-}
-.end annotation
-.end field
+.field final a:I
+.field final b:[B
 
 
-.method static constructor &lt;clinit&gt;()V
-<span class="">	.locals 1</span>
-
-<span class="missed">	new-instance v0, Lkf;</span>
-<span class="missed">	invoke-direct {v0}, Lkf;-><init>()V</span>
-<span class="missed">	sput-object v0, Lkf;->c:Lkf;</span>
-<span class="">	return-void</span>
-.end method
-
-.method private constructor &lt;init&gt;()V
-<span class="">	.locals 1</span>
+.method constructor &lt;init&gt;(I[B)V
+<span class="">	.locals 0</span>
 
 <span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="missed">	new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;</span>
-<span class="missed">	invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V</span>
-<span class="missed">	iput-object v0, p0, Lkf;->b:Ljava/util/concurrent/ConcurrentMap;</span>
-<span class="missed">	new-instance v0, Lle;</span>
-<span class="missed">	invoke-direct {v0}, Lle;-><init>()V</span>
-<span class="missed">	iput-object v0, p0, Lkf;->a:Lmf;</span>
+<span class="missed">	iput p1, p0, Lkf;->a:I</span>
+<span class="missed">	iput-object p2, p0, Lkf;->b:[B</span>
 <span class="">	return-void</span>
 .end method
 
-.method public static a()Lkf;
-<span class="">	.locals 1</span>
+.method public final equals(Ljava/lang/Object;)Z
+<span class="">	.locals 4</span>
 
-<span class="missed">	sget-object v0, Lkf;->c:Lkf;</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public final a(Ljava/lang/Class;)Lnf;
-<span class="">	.locals 2</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"<T:",</span>
-<span class="">	"Ljava/lang/Object;",</span>
-<span class="">	">(",</span>
-<span class="">	"Ljava/lang/Class<",</span>
-<span class="">	"TT;>;)",</span>
-<span class="">	"Lnf<",</span>
-<span class="">	"TT;>;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	const-string v0, "messageType"</span>
-<span class="missed">	invoke-static {p1, v0}, Lpd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;</span>
-<span class="missed">	iget-object v1, p0, Lkf;->b:Ljava/util/concurrent/ConcurrentMap;</span>
-<span class="">	invoke-interface {v1, p1}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	check-cast v1, Lnf;</span>
-<span class="missed">	if-nez v1, :cond_0</span>
-<span class="missed">	iget-object v1, p0, Lkf;->a:Lmf;</span>
-<span class="">	invoke-interface {v1, p1}, Lmf;->a(Ljava/lang/Class;)Lnf;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	invoke-static {p1, v0}, Lpd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;</span>
-<span class="missed">	const-string v0, "schema"</span>
-<span class="missed">	invoke-static {v1, v0}, Lpd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;</span>
-<span class="missed">	iget-object v0, p0, Lkf;->b:Ljava/util/concurrent/ConcurrentMap;</span>
-<span class="">	invoke-interface {v0, p1, v1}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	check-cast p1, Lnf;</span>
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="missed">	move-object v1, p1</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	if-ne p1, p0, :cond_0</span>
+<span class="">	return v0</span>
 <span class="">	:cond_0</span>
-<span class="">	return-object v1</span>
+<span class="missed">	instance-of v1, p1, Lkf;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-nez v1, :cond_1</span>
+<span class="">	return v2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	check-cast p1, Lkf;</span>
+<span class="missed">	iget v1, p0, Lkf;->a:I</span>
+<span class="missed">	iget v3, p1, Lkf;->a:I</span>
+<span class="missed">	if-ne v1, v3, :cond_2</span>
+<span class="missed">	iget-object v1, p0, Lkf;->b:[B</span>
+<span class="missed">	iget-object p1, p1, Lkf;->b:[B</span>
+<span class="">	invoke-static {v1, p1}, Ljava/util/Arrays;->equals([B[B)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_2</span>
+<span class="">	return v0</span>
+<span class="">	:cond_2</span>
+<span class="">	return v2</span>
 .end method
 
-.method public final a(Ljava/lang/Object;)Lnf;
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"<T:",</span>
-<span class="">	"Ljava/lang/Object;",</span>
-<span class="">	">(TT;)",</span>
-<span class="">	"Lnf<",</span>
-<span class="">	"TT;>;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
+.method public final hashCode()I
+<span class="">	.locals 2</span>
 
-<span class="">	invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	invoke-virtual {p0, p1}, Lkf;->a(Ljava/lang/Class;)Lnf;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	return-object p1</span>
+<span class="missed">	iget v0, p0, Lkf;->a:I</span>
+<span class="missed">	add-int/lit16 v0, v0, 0x20f</span>
+<span class="missed">	mul-int/lit8 v0, v0, 0x1f</span>
+<span class="missed">	iget-object v1, p0, Lkf;->b:[B</span>
+<span class="">	invoke-static {v1}, Ljava/util/Arrays;->hashCode([B)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	add-int/2addr v0, v1</span>
+<span class="">	return v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

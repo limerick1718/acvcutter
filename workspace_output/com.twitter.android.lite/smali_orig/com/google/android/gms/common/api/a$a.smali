@@ -37,7 +37,7 @@
 
 
 # virtual methods
-.method public abstract a(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/c;Ljava/lang/Object;Lcom/google/android/gms/common/api/f;Lcom/google/android/gms/common/api/g;)Lcom/google/android/gms/common/api/a$f;
+.method public abstract a(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/c;Ljava/lang/Object;Lcom/google/android/gms/common/api/f$a;Lcom/google/android/gms/common/api/f$b;)Lcom/google/android/gms/common/api/a$f;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -45,8 +45,8 @@
             "Landroid/os/Looper;",
             "Lcom/google/android/gms/common/internal/c;",
             "TO;",
-            "Lcom/google/android/gms/common/api/f;",
-            "Lcom/google/android/gms/common/api/g;",
+            "Lcom/google/android/gms/common/api/f$a;",
+            "Lcom/google/android/gms/common/api/f$b;",
             ")TT;"
         }
     .end annotation

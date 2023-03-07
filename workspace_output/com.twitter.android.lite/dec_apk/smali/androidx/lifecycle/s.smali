@@ -1,5 +1,5 @@
 .class public interface abstract Landroidx/lifecycle/s;
 .super Ljava/lang/Object;
 .source "ViewModelStoreOwner.java"
-.method public abstract b()Landroidx/lifecycle/r;
+.method public abstract g()Landroidx/lifecycle/r;
 .end method

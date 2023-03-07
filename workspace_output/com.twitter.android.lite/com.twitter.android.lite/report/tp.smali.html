@@ -14,40 +14,38 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public Ltp;
+		<code>.class public interface abstract annotation Ltp;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.source "Expose.java"
+.implements Ljava/lang/annotation/Annotation;
+
+.annotation system Ldalvik/annotation/AnnotationDefault;
+value = .subannotation Ltp;
+a = true
+b = true
+.end subannotation
+.end annotation
+.annotation runtime Ljava/lang/annotation/Documented;
+.end annotation
+.annotation runtime Ljava/lang/annotation/Retention;
+value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
+.end annotation
+.annotation runtime Ljava/lang/annotation/Target;
+value = {
+.enum Ljava/lang/annotation/ElementType;->FIELD:Ljava/lang/annotation/ElementType;
+}
+.end annotation
 
 
 
+.method public abstract a()Z
+<span class="">	</span>
 
-.method public static a(I)I
-<span class="">	.locals 3</span>
+.end method
 
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="missed">	const/16 v1, 0xc8</span>
-<span class="missed">	if-lt p0, v1, :cond_0</span>
-<span class="missed">	const/16 v1, 0x12b</span>
-<span class="missed">	if-gt p0, v1, :cond_0</span>
-<span class="">	return v0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/16 v1, 0x12c</span>
-<span class="missed">	const/4 v2, 0x1</span>
-<span class="missed">	if-lt p0, v1, :cond_1</span>
-<span class="missed">	const/16 v1, 0x18f</span>
-<span class="missed">	if-gt p0, v1, :cond_1</span>
-<span class="">	return v2</span>
-<span class="">	:cond_1</span>
-<span class="missed">	const/16 v1, 0x190</span>
-<span class="missed">	if-lt p0, v1, :cond_2</span>
-<span class="missed">	const/16 v1, 0x1f3</span>
-<span class="missed">	if-gt p0, v1, :cond_2</span>
-<span class="">	return v0</span>
-<span class="">	:cond_2</span>
-<span class="missed">	const/16 v0, 0x1f4</span>
-<span class="missed">	if-lt p0, v0, :cond_3</span>
-<span class="">	:cond_3</span>
-<span class="">	return v2</span>
+.method public abstract b()Z
+<span class="">	</span>
+
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -18,7 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,7 +27,7 @@
 .method protected static getParameterUpperBound(ILjava/lang/reflect/ParameterizedType;)Ljava/lang/reflect/Type;
     .locals 0
 
-    .line 1
+    .line 85
     invoke-static {p0, p1}, Lretrofit2/Utils;->getParameterUpperBound(ILjava/lang/reflect/ParameterizedType;)Ljava/lang/reflect/Type;
 
     move-result-object p0
@@ -47,7 +47,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 93
     invoke-static {p0}, Lretrofit2/Utils;->getRawType(Ljava/lang/reflect/Type;)Ljava/lang/Class;
 
     move-result-object p0

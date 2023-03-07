@@ -14,19 +14,206 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class synthetic Luq$a;
+		<code>.class public Luq$a;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.source "Fabric.java"
 
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Luq;
 .end annotation
 .annotation system Ldalvik/annotation/InnerClass;
-accessFlags = 0x1008
-name = null
+accessFlags = 0x9
+name = "a"
 .end annotation
 
-</code>
+.field private final a:Landroid/content/Context;
+.field private b:[Luw;
+.field private c:Lwn;
+.field private d:Landroid/os/Handler;
+.field private e:Luz;
+.field private f:Z
+.field private g:Ljava/lang/String;
+.field private h:Ljava/lang/String;
+.field private i:Lut;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lut<",
+"Luq;",
+">;"
+}
+.end annotation
+.end field
+
+
+<span class="cov">.method public constructor &lt;init&gt;(Landroid/content/Context;)V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	if-eqz p1, :cond_0</span>
+<span class="cov">	iput-object p1, p0, Luq$a;->a:Landroid/content/Context;</span>
+<span class="exec">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string v0, "Context must not be null."</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public varargs a([Luw;)Luq$a;</span>
+<span class="">	.locals 11</span>
+
+<span class="cov">	iget-object v0, p0, Luq$a;->b:[Luw;</span>
+<span class="cov">	if-nez v0, :cond_7</span>
+<span class="cov">	iget-object v0, p0, Luq$a;->a:Landroid/content/Context;</span>
+<span class="exec">	invoke-static {v0}, Lvq;->a(Landroid/content/Context;)Lvq;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v0}, Lvq;->a()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_6</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	array-length v1, p1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v3, v1, :cond_5</span>
+<span class="missed">	aget-object v5, p1, v3</span>
+<span class="">	invoke-virtual {v5}, Luw;->getIdentifier()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	const/4 v7, -0x1</span>
+<span class="">	invoke-virtual {v6}, Ljava/lang/String;->hashCode()I</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	const v9, 0x243171f4</span>
+<span class="missed">	const/4 v10, 0x1</span>
+<span class="missed">	if-eq v8, v9, :cond_1</span>
+<span class="missed">	const v9, 0x6d1a7d18</span>
+<span class="missed">	if-eq v8, v9, :cond_0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const-string v8, "com.crashlytics.sdk.android:crashlytics"</span>
+<span class="">	invoke-virtual {v6, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	if-eqz v6, :cond_2</span>
+<span class="missed">	const/4 v7, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const-string v8, "com.crashlytics.sdk.android:answers"</span>
+<span class="">	invoke-virtual {v6, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v6</span>
+<span class="missed">	if-eqz v6, :cond_2</span>
+<span class="missed">	const/4 v7, 0x1</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	if-eqz v7, :cond_3</span>
+<span class="missed">	if-eq v7, v10, :cond_3</span>
+<span class="missed">	if-nez v4, :cond_4</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	const-string v5, "Fabric"</span>
+<span class="missed">	const-string v6, "Fabric will not initialize any kits when Firebase automatic data collection is disabled; to use Third-party kits with automatic data collection disabled, initialize these kits via non-Fabric means."</span>
+<span class="missed">	invoke-interface {v4, v5, v6}, Luz;->d(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="">	:goto_2</span>
+<span class="">	:cond_4</span>
+<span class="missed">	add-int/lit8 v3, v3, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_5</span>
+<span class="missed">	new-array p1, v2, [Luw;</span>
+<span class="">	invoke-interface {v0, p1}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, [Luw;</span>
+<span class="cov">	:cond_6</span>
+<span class="cov">	iput-object p1, p0, Luq$a;->b:[Luw;</span>
+<span class="exec">	return-object p0</span>
+<span class="">	:cond_7</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	const-string v0, "Kits already set."</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public a()Luq;</span>
+<span class="">	.locals 11</span>
+
+<span class="cov">	iget-object v0, p0, Luq$a;->c:Lwn;</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="exec">	invoke-static {}, Lwn;->a()Lwn;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iput-object v0, p0, Luq$a;->c:Lwn;</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v0, p0, Luq$a;->d:Landroid/os/Handler;</span>
+<span class="cov">	if-nez v0, :cond_1</span>
+<span class="cov">	new-instance v0, Landroid/os/Handler;</span>
+<span class="exec">	invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V</span>
+<span class="cov">	iput-object v0, p0, Luq$a;->d:Landroid/os/Handler;</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	iget-object v0, p0, Luq$a;->e:Luz;</span>
+<span class="cov">	if-nez v0, :cond_3</span>
+<span class="cov">	iget-boolean v0, p0, Luq$a;->f:Z</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="missed">	new-instance v0, Lup;</span>
+<span class="missed">	const/4 v1, 0x3</span>
+<span class="missed">	invoke-direct {v0, v1}, Lup;-><init>(I)V</span>
+<span class="missed">	iput-object v0, p0, Luq$a;->e:Luz;</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	new-instance v0, Lup;</span>
+<span class="cov">	invoke-direct {v0}, Lup;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Luq$a;->e:Luz;</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	:cond_3</span>
+<span class="cov">	iget-object v0, p0, Luq$a;->h:Ljava/lang/String;</span>
+<span class="cov">	if-nez v0, :cond_4</span>
+<span class="cov">	iget-object v0, p0, Luq$a;->a:Landroid/content/Context;</span>
+<span class="exec">	invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iput-object v0, p0, Luq$a;->h:Ljava/lang/String;</span>
+<span class="cov">	:cond_4</span>
+<span class="cov">	iget-object v0, p0, Luq$a;->i:Lut;</span>
+<span class="cov">	if-nez v0, :cond_5</span>
+<span class="cov">	sget-object v0, Lut;->d:Lut;</span>
+<span class="cov">	iput-object v0, p0, Luq$a;->i:Lut;</span>
+<span class="cov">	:cond_5</span>
+<span class="cov">	iget-object v0, p0, Luq$a;->b:[Luw;</span>
+<span class="missed">	if-nez v0, :cond_6</span>
+<span class="missed">	new-instance v0, Ljava/util/HashMap;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/HashMap;-><init>()V</span>
+<span class="">	goto :goto_1</span>
+<span class="cov">	:cond_6</span>
+<span class="exec">	invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-static {v0}, Luq;->a(Ljava/util/Collection;)Ljava/util/Map;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	:goto_1</span>
+<span class="cov">	move-object v3, v0</span>
+<span class="cov">	iget-object v0, p0, Luq$a;->a:Landroid/content/Context;</span>
+<span class="exec">	invoke-virtual {v0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	new-instance v9, Lvx;</span>
+<span class="cov">	iget-object v0, p0, Luq$a;->h:Ljava/lang/String;</span>
+<span class="cov">	iget-object v1, p0, Luq$a;->g:Ljava/lang/String;</span>
+<span class="exec">	invoke-interface {v3}, Ljava/util/Map;->values()Ljava/util/Collection;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	invoke-direct {v9, v2, v0, v1, v4}, Lvx;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/util/Collection;)V</span>
+<span class="cov">	new-instance v0, Luq;</span>
+<span class="cov">	iget-object v4, p0, Luq$a;->c:Lwn;</span>
+<span class="cov">	iget-object v5, p0, Luq$a;->d:Landroid/os/Handler;</span>
+<span class="cov">	iget-object v6, p0, Luq$a;->e:Luz;</span>
+<span class="cov">	iget-boolean v7, p0, Luq$a;->f:Z</span>
+<span class="cov">	iget-object v8, p0, Luq$a;->i:Lut;</span>
+<span class="cov">	iget-object v1, p0, Luq$a;->a:Landroid/content/Context;</span>
+<span class="exec">	invoke-static {v1}, Luq;->c(Landroid/content/Context;)Landroid/app/Activity;</span>
+<span class="cov">	move-result-object v10</span>
+<span class="cov">	move-object v1, v0</span>
+<span class="cov">	invoke-direct/range {v1 .. v10}, Luq;-><init>(Landroid/content/Context;Ljava/util/Map;Lwn;Landroid/os/Handler;Luz;ZLut;Lvx;Landroid/app/Activity;)V</span>
+<span class="exec">	return-object v0</span>
+.end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
 

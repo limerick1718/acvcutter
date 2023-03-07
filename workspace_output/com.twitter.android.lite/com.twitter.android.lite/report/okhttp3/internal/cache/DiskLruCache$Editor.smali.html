@@ -163,9 +163,10 @@ name = "Editor"
 <span class="missed">	const/4 v0, 0x0</span>
 <span class="">	:goto_0</span>
 <span class="missed">	iget-object v1, p0, Lokhttp3/internal/cache/DiskLruCache$Editor;->this$0:Lokhttp3/internal/cache/DiskLruCache;</span>
-<span class="missed">	iget v2, v1, Lokhttp3/internal/cache/DiskLruCache;->valueCount:I</span>
-<span class="missed">	if-ge v0, v2, :cond_0</span>
+<span class="missed">	iget v1, v1, Lokhttp3/internal/cache/DiskLruCache;->valueCount:I</span>
+<span class="missed">	if-ge v0, v1, :cond_0</span>
 <span class="">	:try_start_0</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/cache/DiskLruCache$Editor;->this$0:Lokhttp3/internal/cache/DiskLruCache;</span>
 <span class="missed">	iget-object v1, v1, Lokhttp3/internal/cache/DiskLruCache;->fileSystem:Lokhttp3/internal/io/FileSystem;</span>
 <span class="missed">	iget-object v2, p0, Lokhttp3/internal/cache/DiskLruCache$Editor;->entry:Lokhttp3/internal/cache/DiskLruCache$Entry;</span>
 <span class="missed">	iget-object v2, v2, Lokhttp3/internal/cache/DiskLruCache$Entry;->dirtyFiles:[Ljava/io/File;</span>
@@ -184,7 +185,7 @@ name = "Editor"
 <span class="">	return-void</span>
 .end method
 
-.method public newSink(I)Lvx;
+.method public newSink(I)Lzj;
 <span class="">	.locals 3</span>
 
 <span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache/DiskLruCache$Editor;->this$0:Lokhttp3/internal/cache/DiskLruCache;</span>
@@ -195,7 +196,7 @@ name = "Editor"
 <span class="missed">	iget-object v1, p0, Lokhttp3/internal/cache/DiskLruCache$Editor;->entry:Lokhttp3/internal/cache/DiskLruCache$Entry;</span>
 <span class="missed">	iget-object v1, v1, Lokhttp3/internal/cache/DiskLruCache$Entry;->currentEditor:Lokhttp3/internal/cache/DiskLruCache$Editor;</span>
 <span class="missed">	if-eq v1, p0, :cond_0</span>
-<span class="">	invoke-static {}, Lnx;->a()Lvx;</span>
+<span class="">	invoke-static {}, Lzb;->a()Lzj;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="missed">	monitor-exit v0</span>
 <span class="">	return-object p1</span>
@@ -215,18 +216,18 @@ name = "Editor"
 <span class="">	:try_start_1</span>
 <span class="missed">	iget-object v1, p0, Lokhttp3/internal/cache/DiskLruCache$Editor;->this$0:Lokhttp3/internal/cache/DiskLruCache;</span>
 <span class="missed">	iget-object v1, v1, Lokhttp3/internal/cache/DiskLruCache;->fileSystem:Lokhttp3/internal/io/FileSystem;</span>
-<span class="">	invoke-interface {v1, p1}, Lokhttp3/internal/io/FileSystem;->sink(Ljava/io/File;)Lvx;</span>
+<span class="">	invoke-interface {v1, p1}, Lokhttp3/internal/io/FileSystem;->sink(Ljava/io/File;)Lzj;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	:try_end_1</span>
 <span class="missed">	.catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_0</span>
 <span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
 <span class="">	:try_start_2</span>
 <span class="missed">	new-instance v1, Lokhttp3/internal/cache/DiskLruCache$Editor$1;</span>
-<span class="missed">	invoke-direct {v1, p0, p1}, Lokhttp3/internal/cache/DiskLruCache$Editor$1;-><init>(Lokhttp3/internal/cache/DiskLruCache$Editor;Lvx;)V</span>
+<span class="missed">	invoke-direct {v1, p0, p1}, Lokhttp3/internal/cache/DiskLruCache$Editor$1;-><init>(Lokhttp3/internal/cache/DiskLruCache$Editor;Lzj;)V</span>
 <span class="missed">	monitor-exit v0</span>
 <span class="">	return-object v1</span>
 <span class="">	:catch_0</span>
-<span class="">	invoke-static {}, Lnx;->a()Lvx;</span>
+<span class="">	invoke-static {}, Lzb;->a()Lzj;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="missed">	monitor-exit v0</span>
 <span class="">	return-object p1</span>
@@ -242,7 +243,7 @@ name = "Editor"
 <span class="">	throw p1</span>
 .end method
 
-.method public newSource(I)Lwx;
+.method public newSource(I)Lzk;
 <span class="">	.locals 4</span>
 
 <span class="missed">	iget-object v0, p0, Lokhttp3/internal/cache/DiskLruCache$Editor;->this$0:Lokhttp3/internal/cache/DiskLruCache;</span>
@@ -267,7 +268,7 @@ name = "Editor"
 <span class="missed">	iget-object v3, p0, Lokhttp3/internal/cache/DiskLruCache$Editor;->entry:Lokhttp3/internal/cache/DiskLruCache$Entry;</span>
 <span class="missed">	iget-object v3, v3, Lokhttp3/internal/cache/DiskLruCache$Entry;->cleanFiles:[Ljava/io/File;</span>
 <span class="missed">	aget-object p1, v3, p1</span>
-<span class="">	invoke-interface {v1, p1}, Lokhttp3/internal/io/FileSystem;->source(Ljava/io/File;)Lwx;</span>
+<span class="">	invoke-interface {v1, p1}, Lokhttp3/internal/io/FileSystem;->source(Ljava/io/File;)Lzk;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	:try_end_1</span>
 <span class="missed">	.catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_0</span>

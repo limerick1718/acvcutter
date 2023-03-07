@@ -171,12 +171,12 @@
 <span class="">	:try_start_0</span>
 <span class="missed">	const-class v0, Ljava/lang/Object;</span>
 <span class="missed">	const-string v1, "sslParameters"</span>
-<span class="">	invoke-static {p1, v0, v1}, Lokhttp3/internal/platform/Platform;->readFieldOrNull(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="">	invoke-static {p1, v0, v1}, Lokhttp3/internal/platform/ConscryptPlatform;->readFieldOrNull(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="missed">	if-eqz p1, :cond_1</span>
 <span class="missed">	const-class v0, Ljavax/net/ssl/X509TrustManager;</span>
 <span class="missed">	const-string v1, "x509TrustManager"</span>
-<span class="">	invoke-static {p1, v0, v1}, Lokhttp3/internal/platform/Platform;->readFieldOrNull(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="">	invoke-static {p1, v0, v1}, Lokhttp3/internal/platform/ConscryptPlatform;->readFieldOrNull(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="missed">	check-cast p1, Ljavax/net/ssl/X509TrustManager;</span>
 <span class="">	:try_end_0</span>

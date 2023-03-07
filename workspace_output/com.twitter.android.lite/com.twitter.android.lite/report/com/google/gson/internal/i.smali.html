@@ -41,30 +41,30 @@ Lcom/google/gson/internal/i$a;
 <span class="exec">	return-object p0</span>
 .end method
 
-.method public static a(Lew;)Llv;
+.method public static a(Ltw;)Ltd;
 <span class="">	.locals 2</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
-<span class="">	Lpv;</span>
+<span class="">	Lth;</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
 <span class="">	:try_start_0</span>
-<span class="missed">	invoke-virtual {p0}, Lew;->peek()Lfw;</span>
+<span class="missed">	invoke-virtual {p0}, Ltw;->f()Ltx;</span>
 <span class="">	:try_end_0</span>
 <span class="missed">	.catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_4</span>
-<span class="missed">	.catch Lhw; {:try_start_0 .. :try_end_0} :catch_3</span>
+<span class="missed">	.catch Ltz; {:try_start_0 .. :try_end_0} :catch_3</span>
 <span class="missed">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2</span>
 <span class="missed">	.catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_1</span>
 <span class="missed">	const/4 v0, 0x0</span>
 <span class="">	:try_start_1</span>
-<span class="missed">	sget-object v1, Lcom/google/gson/internal/bind/TypeAdapters;->X:Lvv;</span>
-<span class="">	invoke-virtual {v1, p0}, Lvv;->a(Lew;)Ljava/lang/Object;</span>
+<span class="missed">	sget-object v1, Lcom/google/gson/internal/bind/i;->X:Ltn;</span>
+<span class="">	invoke-virtual {v1, p0}, Ltn;->b(Ltw;)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object p0</span>
-<span class="missed">	check-cast p0, Llv;</span>
+<span class="missed">	check-cast p0, Ltd;</span>
 <span class="">	:try_end_1</span>
 <span class="missed">	.catch Ljava/io/EOFException; {:try_start_1 .. :try_end_1} :catch_0</span>
-<span class="missed">	.catch Lhw; {:try_start_1 .. :try_end_1} :catch_3</span>
+<span class="missed">	.catch Ltz; {:try_start_1 .. :try_end_1} :catch_3</span>
 <span class="missed">	.catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2</span>
 <span class="missed">	.catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1</span>
 <span class="">	return-object p0</span>
@@ -73,33 +73,33 @@ Lcom/google/gson/internal/i$a;
 <span class="">	goto :goto_0</span>
 <span class="">	:catch_1</span>
 <span class="missed">	move-exception p0</span>
-<span class="missed">	new-instance v0, Ltv;</span>
-<span class="missed">	invoke-direct {v0, p0}, Ltv;-><init>(Ljava/lang/Throwable;)V</span>
+<span class="missed">	new-instance v0, Ltl;</span>
+<span class="missed">	invoke-direct {v0, p0}, Ltl;-><init>(Ljava/lang/Throwable;)V</span>
 <span class="">	throw v0</span>
 <span class="">	:catch_2</span>
 <span class="missed">	move-exception p0</span>
-<span class="missed">	new-instance v0, Lmv;</span>
-<span class="missed">	invoke-direct {v0, p0}, Lmv;-><init>(Ljava/lang/Throwable;)V</span>
+<span class="missed">	new-instance v0, Lte;</span>
+<span class="missed">	invoke-direct {v0, p0}, Lte;-><init>(Ljava/lang/Throwable;)V</span>
 <span class="">	throw v0</span>
 <span class="">	:catch_3</span>
 <span class="missed">	move-exception p0</span>
-<span class="missed">	new-instance v0, Ltv;</span>
-<span class="missed">	invoke-direct {v0, p0}, Ltv;-><init>(Ljava/lang/Throwable;)V</span>
+<span class="missed">	new-instance v0, Ltl;</span>
+<span class="missed">	invoke-direct {v0, p0}, Ltl;-><init>(Ljava/lang/Throwable;)V</span>
 <span class="">	throw v0</span>
 <span class="">	:catch_4</span>
 <span class="missed">	move-exception p0</span>
 <span class="missed">	const/4 v0, 0x1</span>
 <span class="">	:goto_0</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	sget-object p0, Lnv;->a:Lnv;</span>
+<span class="missed">	sget-object p0, Ltf;->a:Ltf;</span>
 <span class="">	return-object p0</span>
 <span class="">	:cond_0</span>
-<span class="missed">	new-instance v0, Ltv;</span>
-<span class="missed">	invoke-direct {v0, p0}, Ltv;-><init>(Ljava/lang/Throwable;)V</span>
+<span class="missed">	new-instance v0, Ltl;</span>
+<span class="missed">	invoke-direct {v0, p0}, Ltl;-><init>(Ljava/lang/Throwable;)V</span>
 <span class="">	throw v0</span>
 .end method
 
-.method public static a(Llv;Lgw;)V
+.method public static a(Ltd;Lty;)V
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -107,8 +107,8 @@ Lcom/google/gson/internal/i$a;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->X:Lvv;</span>
-<span class="missed">	invoke-virtual {v0, p1, p0}, Lvv;->a(Lgw;Ljava/lang/Object;)V</span>
+<span class="missed">	sget-object v0, Lcom/google/gson/internal/bind/i;->X:Ltn;</span>
+<span class="missed">	invoke-virtual {v0, p1, p0}, Ltn;->a(Lty;Ljava/lang/Object;)V</span>
 <span class="">	return-void</span>
 .end method</code>
 	</pre>

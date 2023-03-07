@@ -1,17 +1,34 @@
-.class public final Lal;
+.class public Lal;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-
-# interfaces
-.implements Lbl;
+.source "FragmentManagerNonConfig.java"
 
 
-# static fields
-.field private static final a:Lva;
+# instance fields
+.field private final a:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lva<",
-            "Ljava/lang/Boolean;",
+            "Ljava/util/List<",
+            "Lae;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final b:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lal;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final c:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Landroidx/lifecycle/r;",
             ">;"
         }
     .end annotation
@@ -19,69 +36,87 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    .line 1
-    new-instance v0, Lbb;
-
-    const-string v1, "com.google.android.gms.measurement"
-
-    .line 2
-    invoke-static {v1}, Lsa;->a(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lbb;-><init>(Landroid/net/Uri;)V
-
-    const-string v1, "measurement.client.string_reader"
-
-    const/4 v2, 0x1
-
-    .line 3
-    invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;
-
-    move-result-object v0
-
-    sput-object v0, Lal;->a:Lva;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lae;",
+            ">;",
+            "Ljava/util/List<",
+            "Lal;",
+            ">;",
+            "Ljava/util/List<",
+            "Landroidx/lifecycle/r;",
+            ">;)V"
+        }
+    .end annotation
 
-    .line 1
+    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 43
+    iput-object p1, p0, Lal;->a:Ljava/util/List;
+
+    .line 44
+    iput-object p2, p0, Lal;->b:Ljava/util/List;
+
+    .line 45
+    iput-object p3, p0, Lal;->c:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
+.method a()Ljava/util/List;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lae;",
+            ">;"
+        }
+    .end annotation
 
-    const/4 v0, 0x1
+    .line 52
+    iget-object v0, p0, Lal;->a:Ljava/util/List;
 
-    return v0
+    return-object v0
 .end method
 
-.method public final b()Z
+.method b()Ljava/util/List;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lal;",
+            ">;"
+        }
+    .end annotation
 
-    .line 1
-    sget-object v0, Lal;->a:Lva;
+    .line 59
+    iget-object v0, p0, Lal;->b:Ljava/util/List;
 
-    invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
+    return-object v0
+.end method
 
-    move-result-object v0
+.method c()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Landroidx/lifecycle/r;",
+            ">;"
+        }
+    .end annotation
 
-    check-cast v0, Ljava/lang/Boolean;
+    .line 66
+    iget-object v0, p0, Lal;->c:Ljava/util/List;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
+    return-object v0
 .end method

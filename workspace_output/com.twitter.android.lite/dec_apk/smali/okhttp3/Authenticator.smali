@@ -4,7 +4,7 @@
 .field public static final NONE:Lokhttp3/Authenticator;
 .method static constructor <clinit>()V
 .locals 1
-sget-object v0, Lokhttp3/a;->a:Lokhttp3/a;
+sget-object v0, Lokhttp3/-$$Lambda$Authenticator$xBBU2iHkJpDKH0vhaB2vteUyEoc;->INSTANCE:Lokhttp3/-$$Lambda$Authenticator$xBBU2iHkJpDKH0vhaB2vteUyEoc;
 sput-object v0, Lokhttp3/Authenticator;->NONE:Lokhttp3/Authenticator;
 return-void
 .end method

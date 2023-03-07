@@ -1,3 +1,2 @@
-.class  Lsp;
+.class public interface abstract Lsp;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"

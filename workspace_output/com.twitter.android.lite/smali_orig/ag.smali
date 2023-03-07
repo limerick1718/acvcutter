@@ -1,22 +1,13 @@
-.class final Lag;
+.class public abstract Lag;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-
-# interfaces
-.implements Ldg;
-
-
-# instance fields
-.field private final synthetic a:Lfc;
+.source "FragmentContainer.java"
 
 
 # direct methods
-.method constructor <init>(Lfc;)V
+.method public constructor <init>()V
     .locals 0
 
-    .line 1
-    iput-object p1, p0, Lag;->a:Lfc;
-
+    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,28 +15,19 @@
 
 
 # virtual methods
-.method public final a(I)B
-    .locals 1
+.method public a(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Lae;
+    .locals 0
 
-    .line 2
-    iget-object v0, p0, Lag;->a:Lfc;
+    .line 50
+    invoke-static {p1, p2, p3}, Lae;->a(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Lae;
 
-    invoke-virtual {v0, p1}, Lfc;->a(I)B
+    move-result-object p1
 
-    move-result p1
-
-    return p1
+    return-object p1
 .end method
 
-.method public final a()I
-    .locals 1
+.method public abstract a(I)Landroid/view/View;
+.end method
 
-    .line 1
-    iget-object v0, p0, Lag;->a:Lfc;
-
-    invoke-virtual {v0}, Lfc;->a()I
-
-    move-result v0
-
-    return v0
+.method public abstract a()Z
 .end method

@@ -1,64 +1,73 @@
-.class final Ltf;
-.super Lzf;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.class public final Ltf;
+.super Ltd;
+.source "JsonNull.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lzf;"
-    }
-.end annotation
-
-
-# instance fields
-.field private final synthetic b:Lof;
+# static fields
+.field public static final a:Ltf;
 
 
 # direct methods
-.method private constructor <init>(Lof;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    .line 1
-    iput-object p1, p0, Ltf;->b:Lof;
+    .line 32
+    new-instance v0, Ltf;
 
-    const/4 v0, 0x0
+    invoke-direct {v0}, Ltf;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Lzf;-><init>(Lof;Lrf;)V
+    sput-object v0, Ltf;->a:Ltf;
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lof;Lrf;)V
+.method public constructor <init>()V
     .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    .line 2
-    invoke-direct {p0, p1}, Ltf;-><init>(Lof;)V
+    .line 39
+    invoke-direct {p0}, Ltd;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final iterator()Ljava/util/Iterator;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Iterator<",
-            "Ljava/util/Map$Entry<",
-            "TK;TV;>;>;"
-        }
-    .end annotation
+.method public equals(Ljava/lang/Object;)Z
+    .locals 0
 
-    .line 1
-    new-instance v0, Lqf;
+    if-eq p0, p1, :cond_1
 
-    iget-object v1, p0, Ltf;->b:Lof;
+    .line 61
+    instance-of p1, p1, Ltf;
 
-    const/4 v2, 0x0
+    if-eqz p1, :cond_0
 
-    invoke-direct {v0, v1, v2}, Lqf;-><init>(Lof;Lrf;)V
+    goto :goto_0
 
-    return-object v0
+    :cond_0
+    const/4 p1, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 p1, 0x1
+
+    :goto_1
+    return p1
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    .line 53
+    const-class v0, Ltf;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    return v0
 .end method

@@ -1,51 +1,47 @@
 .class public final Llp;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.method public static a(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
-.locals 1
-invoke-static {p0}, Llp;->b(Ljava/lang/String;)Ljava/util/concurrent/ThreadFactory;
-move-result-object v0
-invoke-static {v0}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
-move-result-object v0
-invoke-static {p0, v0}, Llp;->a(Ljava/lang/String;Ljava/util/concurrent/ExecutorService;)V
-return-object v0
-.end method
-.method private static final a(Ljava/lang/String;Ljava/util/concurrent/ExecutorService;)V
-.locals 3
-sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-const-wide/16 v1, 0x2
-invoke-static {p0, p1, v1, v2, v0}, Llp;->a(Ljava/lang/String;Ljava/util/concurrent/ExecutorService;JLjava/util/concurrent/TimeUnit;)V
+.field private final a:Ljava/lang/String;
+.field private final b:J
+.field private c:Z
+.field private d:J
+.field private final synthetic e:Llm;
+.method public constructor <init>(Llm;Ljava/lang/String;J)V
+.locals 0
+iput-object p1, p0, Llp;->e:Llm;
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-static {p2}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/String;)Ljava/lang/String;
+iput-object p2, p0, Llp;->a:Ljava/lang/String;
+iput-wide p3, p0, Llp;->b:J
 return-void
 .end method
-.method public static final a(Ljava/lang/String;Ljava/util/concurrent/ExecutorService;JLjava/util/concurrent/TimeUnit;)V
-.locals 9
-invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+.method public final a()J
+.locals 4
+iget-boolean v0, p0, Llp;->c:Z
+if-nez v0, :cond_0
+const/4 v0, 0x1
+iput-boolean v0, p0, Llp;->c:Z
+iget-object v0, p0, Llp;->e:Llm;
+invoke-static {v0}, Llm;->a(Llm;)Landroid/content/SharedPreferences;
 move-result-object v0
-new-instance v1, Ljava/lang/Thread;
-new-instance v8, Llp$b;
-move-object v2, v8
-move-object v3, p0
-move-object v4, p1
-move-wide v5, p2
-move-object v7, p4
-invoke-direct/range {v2 .. v7}, Llp$b;-><init>(Ljava/lang/String;Ljava/util/concurrent/ExecutorService;JLjava/util/concurrent/TimeUnit;)V
-new-instance p1, Ljava/lang/StringBuilder;
-invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-const-string p2, "Crashlytics Shutdown Hook for "
-invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object p0
-invoke-direct {v1, v8, p0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
-invoke-virtual {v0, v1}, Ljava/lang/Runtime;->addShutdownHook(Ljava/lang/Thread;)V
-return-void
+iget-object v1, p0, Llp;->a:Ljava/lang/String;
+iget-wide v2, p0, Llp;->b:J
+invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+move-result-wide v0
+iput-wide v0, p0, Llp;->d:J
+:cond_0
+iget-wide v0, p0, Llp;->d:J
+return-wide v0
 .end method
-.method public static final b(Ljava/lang/String;)Ljava/util/concurrent/ThreadFactory;
-.locals 3
-new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-const-wide/16 v1, 0x1
-invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
-new-instance v1, Llp$a;
-invoke-direct {v1, p0, v0}, Llp$a;-><init>(Ljava/lang/String;Ljava/util/concurrent/atomic/AtomicLong;)V
-return-object v1
+.method public final a(J)V
+.locals 2
+iget-object v0, p0, Llp;->e:Llm;
+invoke-static {v0}, Llm;->a(Llm;)Landroid/content/SharedPreferences;
+move-result-object v0
+invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+move-result-object v0
+iget-object v1, p0, Llp;->a:Ljava/lang/String;
+invoke-interface {v0, v1, p1, p2}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+iput-wide p1, p0, Llp;->d:J
+return-void
 .end method

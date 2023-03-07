@@ -14,229 +14,49 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public Lio;
+		<code>.class final Lio;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-api@@17.4.0"
-.implements Lho;
+.implements Ljava/util/Iterator;
 
-
-.field private static volatile c:Lho;
-.field private final a:Lcom/google/android/gms/measurement/AppMeasurement;
-.field final b:Ljava/util/Map;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ljava/util/Map<",
-"Ljava/lang/String;",
+"Ljava/lang/Object;",
+"Ljava/util/Iterator<",
 "Ljava/lang/Object;",
 ">;"
 }
 .end annotation
-.end field
 
 
-<span class="cov">.method private constructor &lt;init&gt;(Lcom/google/android/gms/measurement/AppMeasurement;)V</span>
+
+.method constructor &lt;init&gt;()V
 <span class="">	.locals 0</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	invoke-static {p1}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	iput-object p1, p0, Lio;->a:Lcom/google/android/gms/measurement/AppMeasurement;</span>
-<span class="cov">	new-instance p1, Ljava/util/concurrent/ConcurrentHashMap;</span>
-<span class="cov">	invoke-direct {p1}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V</span>
-<span class="cov">	iput-object p1, p0, Lio;->b:Ljava/util/Map;</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public static a(Lfo;Landroid/content/Context;Lku;)Lho;</span>
-<span class="">	.locals 5</span>
-
-<span class="cov">	invoke-static {p0}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	invoke-static {p1}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	invoke-static {p2}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="exec">	invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	invoke-static {v0}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	sget-object v0, Lio;->c:Lho;</span>
-<span class="cov">	if-nez v0, :cond_2</span>
-<span class="cov">	const-class v0, Lio;</span>
-<span class="cov">	monitor-enter v0</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	sget-object v1, Lio;->c:Lho;</span>
-<span class="cov">	if-nez v1, :cond_1</span>
-<span class="cov">	new-instance v1, Landroid/os/Bundle;</span>
-<span class="cov">	const/4 v2, 0x1</span>
-<span class="cov">	invoke-direct {v1, v2}, Landroid/os/Bundle;-><init>(I)V</span>
-<span class="exec">	invoke-virtual {p0}, Lfo;->f()Z</span>
-<span class="cov">	move-result v2</span>
-<span class="cov">	if-eqz v2, :cond_0</span>
-<span class="cov">	const-class v2, Ldo;</span>
-<span class="cov">	sget-object v3, Ljo;->a:Ljava/util/concurrent/Executor;</span>
-<span class="cov">	sget-object v4, Lko;->a:Liu;</span>
-<span class="cov">	invoke-interface {p2, v2, v3, v4}, Lku;->a(Ljava/lang/Class;Ljava/util/concurrent/Executor;Liu;)V</span>
-<span class="cov">	const-string p2, "dataCollectionDefaultEnabled"</span>
-<span class="exec">	invoke-virtual {p0}, Lfo;->e()Z</span>
-<span class="cov">	move-result p0</span>
-<span class="cov">	invoke-virtual {v1, p2, p0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	new-instance p0, Lio;</span>
-<span class="exec">	invoke-static {p1, v1}, Lcom/google/android/gms/measurement/AppMeasurement;->a(Landroid/content/Context;Landroid/os/Bundle;)Lcom/google/android/gms/measurement/AppMeasurement;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	invoke-direct {p0, p1}, Lio;-><init>(Lcom/google/android/gms/measurement/AppMeasurement;)V</span>
-<span class="cov">	sput-object p0, Lio;->c:Lho;</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	monitor-exit v0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:catchall_0</span>
-<span class="missed">	move-exception p0</span>
-<span class="missed">	monitor-exit v0</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="">	throw p0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	sget-object p0, Lio;->c:Lho;</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-.method static final synthetic a(Lhu;)V
-<span class="">	.locals 2</span>
-
-<span class="">	invoke-virtual {p0}, Lhu;->a()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	check-cast p0, Ldo;</span>
-<span class="missed">	iget-boolean p0, p0, Ldo;->a:Z</span>
-<span class="missed">	const-class v0, Lio;</span>
-<span class="missed">	monitor-enter v0</span>
-<span class="">	:try_start_0</span>
-<span class="missed">	sget-object v1, Lio;->c:Lho;</span>
-<span class="missed">	check-cast v1, Lio;</span>
-<span class="missed">	iget-object v1, v1, Lio;->a:Lcom/google/android/gms/measurement/AppMeasurement;</span>
-<span class="missed">	invoke-virtual {v1, p0}, Lcom/google/android/gms/measurement/AppMeasurement;->a(Z)V</span>
-<span class="missed">	monitor-exit v0</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
 <span class="">	return-void</span>
-<span class="">	:catchall_0</span>
-<span class="missed">	move-exception p0</span>
-<span class="missed">	monitor-exit v0</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="">	throw p0</span>
 .end method
 
-<span class="cov">.method private final a(Ljava/lang/String;)Z</span>
+.method public final hasNext()Z
 <span class="">	.locals 1</span>
 
-<span class="exec">	invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-nez v0, :cond_0</span>
-<span class="cov">	iget-object v0, p0, Lio;->b:Ljava/util/Map;</span>
-<span class="exec">	invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	iget-object v0, p0, Lio;->b:Ljava/util/Map;</span>
-<span class="">	invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="missed">	const/4 p1, 0x1</span>
-<span class="">	return p1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 p1, 0x0</span>
-<span class="exec">	return p1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public a(Ljava/lang/String;Lho$b;)Lho$a;</span>
-<span class="">	.locals 3</span>
-
-<span class="cov">	invoke-static {p2}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="exec">	invoke-static {p1}, Lcom/google/firebase/analytics/connector/internal/a;->a(Ljava/lang/String;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="">	return-object v1</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-direct {p0, p1}, Lio;->a(Ljava/lang/String;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_1</span>
-<span class="">	return-object v1</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	iget-object v0, p0, Lio;->a:Lcom/google/android/gms/measurement/AppMeasurement;</span>
-<span class="cov">	const-string v2, "fiam"</span>
-<span class="exec">	invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v2</span>
-<span class="missed">	if-eqz v2, :cond_2</span>
-<span class="missed">	new-instance v2, Lcom/google/firebase/analytics/connector/internal/d;</span>
-<span class="missed">	invoke-direct {v2, v0, p2}, Lcom/google/firebase/analytics/connector/internal/d;-><init>(Lcom/google/android/gms/measurement/AppMeasurement;Lho$b;)V</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	const-string v2, "crash"</span>
-<span class="exec">	invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v2</span>
-<span class="cov">	if-nez v2, :cond_4</span>
-<span class="cov">	const-string v2, "clx"</span>
-<span class="exec">	invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v2</span>
-<span class="cov">	if-eqz v2, :cond_3</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_3</span>
-<span class="missed">	move-object v2, v1</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	:cond_4</span>
-<span class="cov">	new-instance v2, Lcom/google/firebase/analytics/connector/internal/f;</span>
-<span class="cov">	invoke-direct {v2, v0, p2}, Lcom/google/firebase/analytics/connector/internal/f;-><init>(Lcom/google/android/gms/measurement/AppMeasurement;Lho$b;)V</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	if-eqz v2, :cond_5</span>
-<span class="cov">	iget-object p2, p0, Lio;->b:Ljava/util/Map;</span>
-<span class="cov">	invoke-interface {p2, p1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	new-instance p2, Lio$a;</span>
-<span class="cov">	invoke-direct {p2, p0, p1}, Lio$a;-><init>(Lio;Ljava/lang/String;)V</span>
-<span class="exec">	return-object p2</span>
-<span class="">	:cond_5</span>
-<span class="">	return-object v1</span>
-.end method
-
-.method public a(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
+.method public final next()Ljava/lang/Object;
 <span class="">	.locals 1</span>
 
-<span class="missed">	if-nez p3, :cond_0</span>
-<span class="missed">	new-instance p3, Landroid/os/Bundle;</span>
-<span class="missed">	invoke-direct {p3}, Landroid/os/Bundle;-><init>()V</span>
-<span class="">	:cond_0</span>
-<span class="">	invoke-static {p1}, Lcom/google/firebase/analytics/connector/internal/a;->a(Ljava/lang/String;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-nez v0, :cond_1</span>
-<span class="">	return-void</span>
-<span class="">	:cond_1</span>
-<span class="">	invoke-static {p2, p3}, Lcom/google/firebase/analytics/connector/internal/a;->a(Ljava/lang/String;Landroid/os/Bundle;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-nez v0, :cond_2</span>
-<span class="">	return-void</span>
-<span class="">	:cond_2</span>
-<span class="">	invoke-static {p1, p2, p3}, Lcom/google/firebase/analytics/connector/internal/a;->a(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-nez v0, :cond_3</span>
-<span class="">	return-void</span>
-<span class="">	:cond_3</span>
-<span class="missed">	invoke-static {p1, p2, p3}, Lcom/google/firebase/analytics/connector/internal/a;->b(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V</span>
-<span class="missed">	iget-object v0, p0, Lio;->a:Lcom/google/android/gms/measurement/AppMeasurement;</span>
-<span class="missed">	invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/gms/measurement/AppMeasurement;->logEventInternal(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V</span>
-<span class="">	return-void</span>
+<span class="missed">	new-instance v0, Ljava/util/NoSuchElementException;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V</span>
+<span class="">	throw v0</span>
 .end method
 
-.method public a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+.method public final remove()V
 <span class="">	.locals 1</span>
 
-<span class="">	invoke-static {p1}, Lcom/google/firebase/analytics/connector/internal/a;->a(Ljava/lang/String;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="">	return-void</span>
-<span class="">	:cond_0</span>
-<span class="">	invoke-static {p1, p2}, Lcom/google/firebase/analytics/connector/internal/a;->a(Ljava/lang/String;Ljava/lang/String;)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-nez v0, :cond_1</span>
-<span class="">	return-void</span>
-<span class="">	:cond_1</span>
-<span class="missed">	iget-object v0, p0, Lio;->a:Lcom/google/android/gms/measurement/AppMeasurement;</span>
-<span class="missed">	invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/gms/measurement/AppMeasurement;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V</span>
-<span class="">	return-void</span>
+<span class="missed">	new-instance v0, Ljava/lang/UnsupportedOperationException;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V</span>
+<span class="">	throw v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

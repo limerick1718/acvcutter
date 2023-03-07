@@ -1,59 +1,56 @@
-.class public final Lgv;
+.class final Lgv;
 .super Ljava/lang/Object;
-.source "GsonBuilder.java"
-.field private a:Lcom/google/gson/internal/Excluder;
-.field private b:Luv;
-.field private c:Lev;
-.field private final d:Ljava/util/Map;
+.implements Ljava/util/Iterator;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ljava/util/Map<",
-"Ljava/lang/reflect/Type;",
-"Lhv<",
-"*>;>;"
+"<K:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;",
+"Ljava/util/Iterator<",
+"Ljava/util/Map$Entry<",
+"TK;",
+"Ljava/lang/Object;",
+">;>;"
+}
+.end annotation
+.field private a:Ljava/util/Iterator;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/Iterator<",
+"Ljava/util/Map$Entry<",
+"TK;",
+"Ljava/lang/Object;",
+">;>;"
 }
 .end annotation
 .end field
-.field private final e:Ljava/util/List;
+.method public constructor <init>(Ljava/util/Iterator;)V
+.locals 0
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ljava/util/List<",
-"Lwv;",
-">;"
+"(",
+"Ljava/util/Iterator<",
+"Ljava/util/Map$Entry<",
+"TK;",
+"Ljava/lang/Object;",
+">;>;)V"
 }
 .end annotation
-.end field
-.field private final f:Ljava/util/List;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/List<",
-"Lwv;",
-">;"
-}
-.end annotation
-.end field
-.field private g:Z
-.field private h:Ljava/lang/String;
-.field private i:I
-.field private j:I
-.field private k:Z
-.field private l:Z
-.field private m:Z
-.field private n:Z
-.field private o:Z
-.field private p:Z
-.method public constructor <init>()V
-.locals 2
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public a()Lfv;
-.locals 14
+.method public final hasNext()Z
+.locals 1
+const/4 v0, 0x0
+return v0
+.end method
+.method public final synthetic next()Ljava/lang/Object;
+.locals 3
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public b()Lgv;
+.method public final remove()V
 .locals 1
-const/4 v0, 0x0
-return-object v0
+return-void
 .end method

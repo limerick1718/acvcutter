@@ -1,45 +1,128 @@
-.class abstract Lgc;
+.class final synthetic Lgc;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
 
-# interfaces
-.implements Lkc;
+
+# static fields
+.field static final synthetic a:[I
+
+.field static final synthetic b:[I
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public synthetic next()Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    invoke-interface {p0}, Lkc;->a()B
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    invoke-static {}, Lgq;->values()[Lgq;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    array-length v0, v0
 
-.method public final remove()V
-    .locals 1
+    new-array v0, v0, [I
 
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    sput-object v0, Lgc;->b:[I
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    const/4 v0, 0x1
 
-    throw v0
+    :try_start_0
+    sget-object v1, Lgc;->b:[I
+
+    sget-object v2, Lgq;->h:Lgq;
+
+    invoke-virtual {v2}, Lgq;->ordinal()I
+
+    move-result v2
+
+    aput v0, v1, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    const/4 v1, 0x2
+
+    :try_start_1
+    sget-object v2, Lgc;->b:[I
+
+    sget-object v3, Lgq;->j:Lgq;
+
+    invoke-virtual {v3}, Lgq;->ordinal()I
+
+    move-result v3
+
+    aput v1, v2, v3
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    const/4 v2, 0x3
+
+    :try_start_2
+    sget-object v3, Lgc;->b:[I
+
+    sget-object v4, Lgq;->g:Lgq;
+
+    invoke-virtual {v4}, Lgq;->ordinal()I
+
+    move-result v4
+
+    aput v2, v3, v4
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    .line 2
+    :catch_2
+    invoke-static {}, Lgd;->values()[Lgd;
+
+    move-result-object v3
+
+    array-length v3, v3
+
+    new-array v3, v3, [I
+
+    sput-object v3, Lgc;->a:[I
+
+    :try_start_3
+    sget-object v3, Lgc;->a:[I
+
+    sget-object v4, Lgd;->d:Lgd;
+
+    invoke-virtual {v4}, Lgd;->ordinal()I
+
+    move-result v4
+
+    aput v0, v3, v4
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    :catch_3
+    :try_start_4
+    sget-object v0, Lgc;->a:[I
+
+    sget-object v3, Lgd;->b:Lgd;
+
+    invoke-virtual {v3}, Lgd;->ordinal()I
+
+    move-result v3
+
+    aput v1, v0, v3
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+
+    :catch_4
+    :try_start_5
+    sget-object v0, Lgc;->a:[I
+
+    sget-object v1, Lgd;->a:Lgd;
+
+    invoke-virtual {v1}, Lgd;->ordinal()I
+
+    move-result v1
+
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
+    :catch_5
+    return-void
 .end method

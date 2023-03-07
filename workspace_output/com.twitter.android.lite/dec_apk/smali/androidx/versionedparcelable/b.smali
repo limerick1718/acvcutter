@@ -18,8 +18,8 @@ return-void
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public a()V
-.locals 4
+.method public a(I)V
+.locals 1
 return-void
 .end method
 .method public a(Landroid/os/Parcelable;)V
@@ -34,35 +34,40 @@ return-void
 .locals 2
 return-void
 .end method
-.method public a(I)Z
+.method public b()V
+.locals 4
+return-void
+.end method
+.method public b(I)Z
 .locals 1
 const/4 v0, 0x0
 return v0
 .end method
-.method protected b()Landroidx/versionedparcelable/a;
+.method protected c()Landroidx/versionedparcelable/a;
 .locals 6
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public b(I)V
-.locals 2
-return-void
-.end method
 .method public c(I)V
-.locals 1
+.locals 2
 return-void
 .end method
-.method public d()[B
-.locals 2
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public e()I
+.method public d()I
 .locals 1
 const/4 v0, 0x0
 return v0
 .end method
-.method public f()Landroid/os/Parcelable;
+.method public e()Ljava/lang/String;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public f()[B
+.locals 2
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public g()Landroid/os/Parcelable;
 .locals 2
 .annotation system Ldalvik/annotation/Signature;
 value = {
@@ -71,11 +76,6 @@ value = {
 ">()TT;"
 }
 .end annotation
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public g()Ljava/lang/String;
-.locals 1
 const/4 v0, 0x0
 return-object v0
 .end method

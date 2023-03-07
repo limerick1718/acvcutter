@@ -14,23 +14,21 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final synthetic Lcom/google/firebase/components/k;
+		<code>.class final Lcom/google/firebase/components/k;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-components@@16.0.0"
-.implements Lqu;
+.source "com.google.firebase:firebase-common@@16.0.2"
+.implements Lcom/google/firebase/components/l;
+
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/Object;",
+"Lcom/google/firebase/components/l<",
+"Landroid/content/Context;",
+">;"
+}
+.end annotation
 
 
-.field private static final a:Lcom/google/firebase/components/k;
-
-
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	new-instance v0, Lcom/google/firebase/components/k;</span>
-<span class="cov">	invoke-direct {v0}, Lcom/google/firebase/components/k;-><init>()V</span>
-<span class="cov">	sput-object v0, Lcom/google/firebase/components/k;->a:Lcom/google/firebase/components/k;</span>
-<span class="exec">	return-void</span>
-.end method
 
 <span class="cov">.method private constructor &lt;init&gt;()V</span>
 <span class="">	.locals 0</span>
@@ -39,19 +37,92 @@
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public static a()Lqu;</span>
-<span class="">	.locals 1</span>
+<span class="cov">.method synthetic constructor &lt;init&gt;(B)V</span>
+<span class="">	.locals 0</span>
 
-<span class="cov">	sget-object v0, Lcom/google/firebase/components/k;->a:Lcom/google/firebase/components/k;</span>
-<span class="exec">	return-object v0</span>
+<span class="cov">	invoke-direct {p0}, Lcom/google/firebase/components/k;-><init>()V</span>
+<span class="exec">	return-void</span>
 .end method
 
-.method public get()Ljava/lang/Object;
-<span class="">	.locals 1</span>
+<span class="cov">.method private static a(Landroid/content/Context;)Landroid/os/Bundle;</span>
+<span class="">	.locals 5</span>
 
-<span class="">	invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	return-object v0</span>
+<span class="cov">	const-string v0, "ComponentDiscovery"</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	:try_start_0</span>
+<span class="exec">	invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="missed">	if-nez v2, :cond_0</span>
+<span class="missed">	const-string p0, "Context has no PackageManager."</span>
+<span class="missed">	invoke-static {v0, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	return-object v1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	new-instance v3, Landroid/content/ComponentName;</span>
+<span class="cov">	const-class v4, Lcom/google/firebase/components/ComponentDiscoveryService;</span>
+<span class="cov">	invoke-direct {v3, p0, v4}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V</span>
+<span class="cov">	const/16 p0, 0x80</span>
+<span class="exec">	invoke-virtual {v2, v3, p0}, Landroid/content/pm/PackageManager;->getServiceInfo(Landroid/content/ComponentName;I)Landroid/content/pm/ServiceInfo;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="missed">	if-nez p0, :cond_1</span>
+<span class="missed">	const-string p0, "ComponentDiscoveryService has no service info."</span>
+<span class="missed">	invoke-static {v0, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	return-object v1</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	iget-object p0, p0, Landroid/content/pm/ServiceInfo;->metaData:Landroid/os/Bundle;</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="exec">	return-object p0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	const-string p0, "Application info not found."</span>
+<span class="missed">	invoke-static {v0, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	return-object v1</span>
+.end method
+
+<span class="cov">.method public final synthetic a(Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="">	.locals 5</span>
+
+<span class="cov">	check-cast p1, Landroid/content/Context;</span>
+<span class="exec">	invoke-static {p1}, Lcom/google/firebase/components/k;->a(Landroid/content/Context;)Landroid/os/Bundle;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="missed">	const-string p1, "ComponentDiscovery"</span>
+<span class="missed">	const-string v0, "Could not retrieve metadata, returning empty list of registrars."</span>
+<span class="missed">	invoke-static {p1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="exec">	invoke-virtual {p1}, Landroid/os/Bundle;->keySet()Ljava/util/Set;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	if-eqz v2, :cond_2</span>
+<span class="exec">	invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	check-cast v2, Ljava/lang/String;</span>
+<span class="exec">	invoke-virtual {p1, v2}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	const-string v4, "com.google.firebase.components.ComponentRegistrar"</span>
+<span class="exec">	invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="cov">	move-result v3</span>
+<span class="cov">	if-eqz v3, :cond_1</span>
+<span class="cov">	const-string v3, "com.google.firebase.components:"</span>
+<span class="exec">	invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result v3</span>
+<span class="cov">	if-eqz v3, :cond_1</span>
+<span class="cov">	const/16 v3, 0x1f</span>
+<span class="exec">	invoke-virtual {v2, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="">	goto :goto_0</span>
+<span class="cov">	:cond_2</span>
+<span class="exec">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

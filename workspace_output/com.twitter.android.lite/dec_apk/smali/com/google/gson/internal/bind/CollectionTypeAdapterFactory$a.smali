@@ -1,5 +1,5 @@
 .class final Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$a;
-.super Lvv;
+.super Ltn;
 .source "CollectionTypeAdapterFactory.java"
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory;
@@ -13,15 +13,15 @@ value = {
 "<E:",
 "Ljava/lang/Object;",
 ">",
-"Lvv<",
+"Ltn<",
 "Ljava/util/Collection<",
 "TE;>;>;"
 }
 .end annotation
-.field private final a:Lvv;
+.field private final a:Ltn;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lvv<",
+"Ltn<",
 "TE;>;"
 }
 .end annotation
@@ -36,14 +36,14 @@ value = {
 }
 .end annotation
 .end field
-.method public constructor <init>(Lfv;Ljava/lang/reflect/Type;Lvv;Lcom/google/gson/internal/g;)V
+.method public constructor <init>(Lsx;Ljava/lang/reflect/Type;Ltn;Lcom/google/gson/internal/g;)V
 .locals 1
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "(",
-"Lfv;",
+"Lsx;",
 "Ljava/lang/reflect/Type;",
-"Lvv<",
+"Ltn<",
 "TE;>;",
 "Lcom/google/gson/internal/g<",
 "+",
@@ -54,22 +54,12 @@ value = {
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public bridge synthetic a(Lew;)Ljava/lang/Object;
-.locals 0
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public a(Lew;)Ljava/util/Collection;
+.method public a(Ltw;)Ljava/util/Collection;
 .locals 2
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "(",
-"Lew;",
+"Ltw;",
 ")",
 "Ljava/util/Collection<",
 "TE;>;"
@@ -83,7 +73,7 @@ Ljava/io/IOException;
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public bridge synthetic a(Lgw;Ljava/lang/Object;)V
+.method public bridge synthetic a(Lty;Ljava/lang/Object;)V
 .locals 0
 .annotation system Ldalvik/annotation/Throws;
 value = {
@@ -92,12 +82,12 @@ Ljava/io/IOException;
 .end annotation
 return-void
 .end method
-.method public a(Lgw;Ljava/util/Collection;)V
+.method public a(Lty;Ljava/util/Collection;)V
 .locals 2
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "(",
-"Lgw;",
+"Lty;",
 "Ljava/util/Collection<",
 "TE;>;)V"
 }
@@ -108,4 +98,14 @@ Ljava/io/IOException;
 }
 .end annotation
 return-void
+.end method
+.method public synthetic b(Ltw;)Ljava/lang/Object;
+.locals 0
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Ljava/io/IOException;
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
 .end method

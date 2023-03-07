@@ -1,175 +1,254 @@
-.class public Ljs;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.class public final enum Ljs;
+.super Ljava/lang/Enum;
 
-# interfaces
-.implements Lks;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Enum<",
+        "Ljs;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field public static final enum a:Ljs;
+
+.field public static final enum b:Ljs;
+
+.field public static final enum c:Ljs;
+
+.field public static final enum d:Ljs;
+
+.field public static final enum e:Ljs;
+
+.field public static final enum f:Ljs;
+
+.field public static final enum g:Ljs;
+
+.field public static final enum h:Ljs;
+
+.field public static final enum i:Ljs;
+
+.field private static final synthetic k:[Ljs;
 
 
 # instance fields
-.field private final a:Ljava/io/File;
+.field private final j:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/File;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 12
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 5
+    new-instance v0, Ljs;
 
-    .line 2
-    iput-object p1, p0, Ljs;->a:Ljava/io/File;
+    const/4 v1, 0x0
 
-    return-void
-.end method
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
+    move-result-object v2
 
-# virtual methods
-.method public a()Ljava/util/Map;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Map<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
+    const-string v3, "INT"
 
-    const/4 v0, 0x0
+    invoke-direct {v0, v3, v1, v2}, Ljs;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
 
-    return-object v0
-.end method
+    sput-object v0, Ljs;->a:Ljs;
 
-.method public b()[Ljava/io/File;
-    .locals 1
+    .line 6
+    new-instance v0, Ljs;
 
-    .line 1
-    iget-object v0, p0, Ljs;->a:Ljava/io/File;
+    const-wide/16 v2, 0x0
 
-    invoke-virtual {v0}, Ljava/io/File;->listFiles()[Ljava/io/File;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object v2
 
-    return-object v0
-.end method
+    const/4 v3, 0x1
 
-.method public c()Ljava/lang/String;
-    .locals 1
+    const-string v4, "LONG"
 
-    const/4 v0, 0x0
+    invoke-direct {v0, v4, v3, v2}, Ljs;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
 
-    return-object v0
-.end method
+    sput-object v0, Ljs;->b:Ljs;
 
-.method public d()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Ljs;->a:Ljava/io/File;
-
-    invoke-virtual {v0}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public e()Lks$a;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lks$a;->b:Lks$a;
-
-    return-object v0
-.end method
-
-.method public f()Ljava/io/File;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public remove()V
-    .locals 7
-
-    .line 1
-    invoke-virtual {p0}, Ljs;->b()[Ljava/io/File;
-
-    move-result-object v0
-
-    array-length v1, v0
+    .line 7
+    new-instance v0, Ljs;
 
     const/4 v2, 0x0
 
-    :goto_0
-    if-ge v2, v1, :cond_0
+    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    aget-object v3, v0, v2
+    move-result-object v2
+
+    const/4 v4, 0x2
+
+    const-string v5, "FLOAT"
+
+    invoke-direct {v0, v5, v4, v2}, Ljs;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
+
+    sput-object v0, Ljs;->c:Ljs;
+
+    .line 8
+    new-instance v0, Ljs;
+
+    const-wide/16 v5, 0x0
+
+    invoke-static {v5, v6}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v2
+
+    const/4 v5, 0x3
+
+    const-string v6, "DOUBLE"
+
+    invoke-direct {v0, v6, v5, v2}, Ljs;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
+
+    sput-object v0, Ljs;->d:Ljs;
+
+    .line 9
+    new-instance v0, Ljs;
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    const/4 v6, 0x4
+
+    const-string v7, "BOOLEAN"
+
+    invoke-direct {v0, v7, v6, v2}, Ljs;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
+
+    sput-object v0, Ljs;->e:Ljs;
+
+    .line 10
+    new-instance v0, Ljs;
+
+    const/4 v2, 0x5
+
+    const-string v7, "STRING"
+
+    const-string v8, ""
+
+    invoke-direct {v0, v7, v2, v8}, Ljs;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
+
+    sput-object v0, Ljs;->f:Ljs;
+
+    .line 11
+    new-instance v0, Ljs;
+
+    sget-object v7, Lew;->a:Lew;
+
+    const/4 v8, 0x6
+
+    const-string v9, "BYTE_STRING"
+
+    invoke-direct {v0, v9, v8, v7}, Ljs;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
+
+    sput-object v0, Ljs;->g:Ljs;
+
+    .line 12
+    new-instance v0, Ljs;
+
+    const/4 v7, 0x0
+
+    const/4 v9, 0x7
+
+    const-string v10, "ENUM"
+
+    invoke-direct {v0, v10, v9, v7}, Ljs;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
+
+    sput-object v0, Ljs;->h:Ljs;
+
+    .line 13
+    new-instance v0, Ljs;
+
+    const/16 v10, 0x8
+
+    const-string v11, "MESSAGE"
+
+    invoke-direct {v0, v11, v10, v7}, Ljs;-><init>(Ljava/lang/String;ILjava/lang/Object;)V
+
+    sput-object v0, Ljs;->i:Ljs;
+
+    const/16 v0, 0x9
+
+    .line 14
+    new-array v0, v0, [Ljs;
+
+    sget-object v7, Ljs;->a:Ljs;
+
+    aput-object v7, v0, v1
+
+    sget-object v1, Ljs;->b:Ljs;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Ljs;->c:Ljs;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Ljs;->d:Ljs;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Ljs;->e:Ljs;
+
+    aput-object v1, v0, v6
+
+    sget-object v1, Ljs;->f:Ljs;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Ljs;->g:Ljs;
+
+    aput-object v1, v0, v8
+
+    sget-object v1, Ljs;->h:Ljs;
+
+    aput-object v1, v0, v9
+
+    sget-object v1, Ljs;->i:Ljs;
+
+    aput-object v1, v0, v10
+
+    sput-object v0, Ljs;->k:[Ljs;
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/Object;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            ")V"
+        }
+    .end annotation
 
     .line 2
-    invoke-static {}, Lmo;->a()Lmo;
-
-    move-result-object v4
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "Removing native report file at "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Lmo;->a(Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 3
-    invoke-virtual {v3}, Ljava/io/File;->delete()Z
+    iput-object p3, p0, Ljs;->j:Ljava/lang/Object;
 
-    add-int/lit8 v2, v2, 0x1
+    return-void
+.end method
 
-    goto :goto_0
+.method public static values()[Ljs;
+    .locals 1
 
-    .line 4
-    :cond_0
-    invoke-static {}, Lmo;->a()Lmo;
+    .line 1
+    sget-object v0, Ljs;->k:[Ljs;
+
+    invoke-virtual {v0}, [Ljs;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    check-cast v0, [Ljs;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Removing native report directory at "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, p0, Ljs;->a:Ljava/io/File;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lmo;->a(Ljava/lang/String;)V
-
-    .line 5
-    iget-object v0, p0, Ljs;->a:Ljava/io/File;
-
-    invoke-virtual {v0}, Ljava/io/File;->delete()Z
-
-    return-void
+    return-object v0
 .end method

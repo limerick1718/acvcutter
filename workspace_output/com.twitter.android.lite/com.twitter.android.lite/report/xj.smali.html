@@ -14,26 +14,42 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lxj;
+		<code>.class public final Lxj;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
+.source "NetworkUtils.java"
 
 
 
 
-.method public abstract a()Z
-<span class="">	</span>
+.method public static final a(Lxk;)Ljavax/net/ssl/SSLSocketFactory;
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/security/KeyManagementException;,</span>
+<span class="">	Ljava/security/NoSuchAlgorithmException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-.end method
-
-.method public abstract b()Z
-<span class="">	</span>
-
-.end method
-
-.method public abstract c()Z
-<span class="">	</span>
-
+<span class="missed">	const-string v0, "TLS"</span>
+<span class="">	invoke-static {v0}, Ljavax/net/ssl/SSLContext;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/SSLContext;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-instance v1, Lxm;</span>
+<span class="">	invoke-interface {p0}, Lxk;->getKeyStoreStream()Ljava/io/InputStream;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-interface {p0}, Lxk;->getKeyStorePassword()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-direct {v1, v2, v3}, Lxm;-><init>(Ljava/io/InputStream;Ljava/lang/String;)V</span>
+<span class="missed">	new-instance v2, Lxl;</span>
+<span class="missed">	invoke-direct {v2, v1, p0}, Lxl;-><init>(Lxm;Lxk;)V</span>
+<span class="missed">	const/4 p0, 0x1</span>
+<span class="missed">	new-array p0, p0, [Ljavax/net/ssl/TrustManager;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	aput-object v2, p0, v1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-virtual {v0, v1, p0, v1}, Ljavax/net/ssl/SSLContext;->init([Ljavax/net/ssl/KeyManager;[Ljavax/net/ssl/TrustManager;Ljava/security/SecureRandom;)V</span>
+<span class="">	invoke-virtual {v0}, Ljavax/net/ssl/SSLContext;->getSocketFactory()Ljavax/net/ssl/SSLSocketFactory;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -1,26 +1,24 @@
-.class final enum Lwg;
-.super Lsg;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.class public interface abstract annotation Lwg;
+.super Ljava/lang/Object;
+.source "DependsOn.java"
+
+# interfaces
+.implements Ljava/lang/annotation/Annotation;
 
 
-# direct methods
-.method constructor <init>(Ljava/lang/String;ILzg;I)V
-    .locals 6
+# annotations
+.annotation runtime Ljava/lang/annotation/Retention;
+    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
+.end annotation
 
-    const/16 v2, 0xb
 
-    const/4 v4, 0x2
-
-    const/4 v5, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v3, p3
-
-    .line 1
-    invoke-direct/range {v0 .. v5}, Lsg;-><init>(Ljava/lang/String;ILzg;ILtg;)V
-
-    return-void
+# virtual methods
+.method public abstract a()[Ljava/lang/Class;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()[",
+            "Ljava/lang/Class<",
+            "*>;"
+        }
+    .end annotation
 .end method

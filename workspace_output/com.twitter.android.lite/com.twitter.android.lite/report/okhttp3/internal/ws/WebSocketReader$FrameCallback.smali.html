@@ -33,16 +33,6 @@ name = "FrameCallback"
 
 .end method
 
-.method public abstract onReadMessage(Lhx;)V
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
 .method public abstract onReadMessage(Ljava/lang/String;)V
 <span class="">	</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
@@ -53,12 +43,22 @@ name = "FrameCallback"
 
 .end method
 
-.method public abstract onReadPing(Lhx;)V
+.method public abstract onReadMessage(Lyv;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract onReadPing(Lyv;)V
 <span class="">	</span>
 
 .end method
 
-.method public abstract onReadPong(Lhx;)V
+.method public abstract onReadPong(Lyv;)V
 <span class="">	</span>
 
 .end method</code>

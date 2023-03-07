@@ -1,44 +1,36 @@
-.class final Lb$a;
-.super Ljava/lang/Object;
-.source "ResultReceiver.java"
-.implements Landroid/os/Parcelable$Creator;
+.class public abstract Lb$a;
+.super Landroid/os/Binder;
+.source "IResultReceiver.java"
+.implements Lb;
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lb;
 .end annotation
 .annotation system Ldalvik/annotation/InnerClass;
-accessFlags = 0x8
-name = null
+accessFlags = 0x409
+name = "a"
 .end annotation
-.annotation system Ldalvik/annotation/Signature;
+.annotation system Ldalvik/annotation/MemberClasses;
 value = {
-"Ljava/lang/Object;",
-"Landroid/os/Parcelable$Creator<",
-"Lb;",
-">;"
+Lb$a$a;
 }
 .end annotation
-.method constructor <init>()V
-.locals 0
+.method public constructor <init>()V
+.locals 1
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public createFromParcel(Landroid/os/Parcel;)Lb;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public asBinder()Landroid/os/IBinder;
 .locals 0
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public newArray(I)[Lb;
-.locals 0
+.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+.locals 3
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Landroid/os/RemoteException;
+}
+.end annotation
 const/4 v0, 0x0
-return-object v0
-.end method
-.method public bridge synthetic newArray(I)[Ljava/lang/Object;
-.locals 0
-const/4 v0, 0x0
-return-object v0
+return v0
 .end method

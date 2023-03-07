@@ -1,777 +1,269 @@
-.class public abstract Lmd;
-.super Lvb;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.class final Lmd;
+.super Ljava/util/concurrent/FutureTask;
+
+# interfaces
+.implements Ljava/lang/Comparable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lmd$c;,
-        Lmd$d;,
-        Lmd$e;,
-        Lmd$b;,
-        Lmd$a;,
-        Lmd$f;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<MessageType:",
-        "Lmd<",
-        "TMessageType;TBuilderType;>;BuilderType:",
-        "Lmd$a<",
-        "TMessageType;TBuilderType;>;>",
-        "Lvb<",
-        "TMessageType;TBuilderType;>;"
+        "<V:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/util/concurrent/FutureTask<",
+        "TV;>;",
+        "Ljava/lang/Comparable<",
+        "Lmd;",
+        ">;"
     }
 .end annotation
-
-
-# static fields
-.field private static zzd:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map<",
-            "Ljava/lang/Object;",
-            "Lmd<",
-            "**>;>;"
-        }
-    .end annotation
-.end field
 
 
 # instance fields
-.field protected zzb:Leg;
+.field final a:Z
 
-.field private zzc:I
+.field private final b:J
+
+.field private final c:Ljava/lang/String;
+
+.field private final synthetic d:Lma;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    sput-object v0, Lmd;->zzd:Ljava/util/Map;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    .line 1
-    invoke-direct {p0}, Lvb;-><init>()V
-
-    .line 2
-    invoke-static {}, Leg;->d()Leg;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lmd;->zzb:Leg;
-
-    const/4 v0, -0x1
-
-    .line 3
-    iput v0, p0, Lmd;->zzc:I
-
-    return-void
-.end method
-
-.method static varargs a(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 17
-    :try_start_0
-    invoke-virtual {p0, p1, p2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    :catch_0
-    move-exception p0
-
-    .line 18
-    invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object p0
-
-    .line 19
-    instance-of p1, p0, Ljava/lang/RuntimeException;
-
-    if-nez p1, :cond_1
-
-    .line 20
-    instance-of p1, p0, Ljava/lang/Error;
-
-    if-eqz p1, :cond_0
-
-    .line 21
-    check-cast p0, Ljava/lang/Error;
-
-    throw p0
-
-    .line 22
-    :cond_0
-    new-instance p1, Ljava/lang/RuntimeException;
-
-    const-string p2, "Unexpected exception thrown by generated accessor method."
-
-    invoke-direct {p1, p2, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw p1
-
-    .line 23
-    :cond_1
-    check-cast p0, Ljava/lang/RuntimeException;
-
-    throw p0
-
-    :catch_1
-    move-exception p0
-
-    .line 24
-    new-instance p1, Ljava/lang/RuntimeException;
-
-    const-string p2, "Couldn\'t use Java reflection to implement protocol message reflection."
-
-    invoke-direct {p1, p2, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw p1
-.end method
-
-.method protected static a(Lue;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .line 16
-    new-instance v0, Llf;
-
-    invoke-direct {v0, p0, p1, p2}, Llf;-><init>(Lue;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    return-object v0
-.end method
-
-.method static a(Ljava/lang/Class;)Lmd;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Lmd<",
-            "**>;>(",
-            "Ljava/lang/Class<",
-            "TT;>;)TT;"
-        }
-    .end annotation
-
-    .line 5
-    sget-object v0, Lmd;->zzd:Ljava/util/Map;
-
-    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lmd;
-
-    if-nez v0, :cond_0
-
-    .line 6
-    :try_start_0
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
-
-    move-result-object v2
-
-    invoke-static {v0, v1, v2}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
-    :try_end_0
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 7
-    sget-object v0, Lmd;->zzd:Ljava/util/Map;
-
-    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lmd;
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p0
-
-    .line 8
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Class initialization cannot fail."
-
-    invoke-direct {v0, v1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v0
-
-    :cond_0
-    :goto_0
-    if-nez v0, :cond_2
-
-    .line 9
-    invoke-static {p0}, Llg;->a(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lmd;
+.method constructor <init>(Lma;Ljava/lang/Runnable;ZLjava/lang/String;)V
+    .locals 2
 
     .line 10
-    sget v1, Lmd$f;->f:I
+    iput-object p1, p0, Lmd;->d:Lma;
 
-    const/4 v2, 0x0
+    const/4 p3, 0x0
 
     .line 11
-    invoke-virtual {v0, v1, v2, v2}, Lmd;->a(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
+    invoke-direct {p0, p2, p3}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/lang/Runnable;Ljava/lang/Object;)V
 
     .line 12
-    check-cast v0, Lmd;
-
-    if-eqz v0, :cond_1
+    invoke-static {p4}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 13
-    sget-object v1, Lmd;->zzd:Ljava/util/Map;
+    invoke-static {}, Lma;->h()Ljava/util/concurrent/atomic/AtomicLong;
 
-    invoke-interface {v1, p0, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object p2
 
-    goto :goto_1
+    invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicLong;->getAndIncrement()J
+
+    move-result-wide p2
+
+    iput-wide p2, p0, Lmd;->b:J
 
     .line 14
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
+    iput-object p4, p0, Lmd;->c:Ljava/lang/String;
 
-    invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw p0
-
-    :cond_2
-    :goto_1
-    return-object v0
-.end method
-
-.method protected static a(Lrd;)Lrd;
-    .locals 1
-
-    .line 31
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0xa
-
-    goto :goto_0
-
-    :cond_0
-    shl-int/lit8 v0, v0, 0x1
-
-    .line 32
-    :goto_0
-    invoke-interface {p0, v0}, Lrd;->c(I)Lrd;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method protected static a(Lud;)Lud;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<E:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Lud<",
-            "TE;>;)",
-            "Lud<",
-            "TE;>;"
-        }
-    .end annotation
-
-    .line 33
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0xa
-
-    goto :goto_0
-
-    :cond_0
-    shl-int/lit8 v0, v0, 0x1
-
-    .line 34
-    :goto_0
-    invoke-interface {p0, v0}, Lud;->a(I)Lud;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method protected static a(Ljava/lang/Class;Lmd;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Lmd<",
-            "**>;>(",
-            "Ljava/lang/Class<",
-            "TT;>;TT;)V"
-        }
-    .end annotation
+    const/4 p2, 0x0
 
     .line 15
-    sget-object v0, Lmd;->zzd:Ljava/util/Map;
+    iput-boolean p2, p0, Lmd;->a:Z
 
-    invoke-interface {v0, p0, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 16
+    iget-wide p2, p0, Lmd;->b:J
 
+    const-wide v0, 0x7fffffffffffffffL
+
+    cmp-long p4, p2, v0
+
+    if-nez p4, :cond_0
+
+    .line 17
+    invoke-virtual {p1}, Lnb;->r()Lla;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lla;->c_()Llc;
+
+    move-result-object p1
+
+    const-string p2, "Tasks index overflow"
+
+    invoke-virtual {p1, p2}, Llc;->a(Ljava/lang/String;)V
+
+    :cond_0
     return-void
 .end method
 
-.method protected static final a(Lmd;Z)Z
-    .locals 3
+.method constructor <init>(Lma;Ljava/util/concurrent/Callable;ZLjava/lang/String;)V
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "<T:",
-            "Lmd<",
-            "TT;*>;>(TT;Z)Z"
+            "(",
+            "Ljava/util/concurrent/Callable<",
+            "TV;>;Z",
+            "Ljava/lang/String;",
+            ")V"
         }
     .end annotation
 
-    .line 25
-    sget v0, Lmd$f;->a:I
+    .line 1
+    iput-object p1, p0, Lmd;->d:Lma;
 
-    const/4 v1, 0x0
+    .line 2
+    invoke-direct {p0, p2}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/util/concurrent/Callable;)V
 
-    .line 26
-    invoke-virtual {p0, v0, v1, v1}, Lmd;->a(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 3
+    invoke-static {p4}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    .line 4
+    invoke-static {}, Lma;->h()Ljava/util/concurrent/atomic/AtomicLong;
 
-    .line 27
-    check-cast v0, Ljava/lang/Byte;
+    move-result-object p2
 
-    invoke-virtual {v0}, Ljava/lang/Byte;->byteValue()B
+    invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicLong;->getAndIncrement()J
 
-    move-result v0
+    move-result-wide v0
 
-    const/4 v2, 0x1
+    iput-wide v0, p0, Lmd;->b:J
 
-    if-ne v0, v2, :cond_0
+    .line 5
+    iput-object p4, p0, Lmd;->c:Ljava/lang/String;
 
-    return v2
+    .line 6
+    iput-boolean p3, p0, Lmd;->a:Z
+
+    .line 7
+    iget-wide p2, p0, Lmd;->b:J
+
+    const-wide v0, 0x7fffffffffffffffL
+
+    cmp-long p4, p2, v0
+
+    if-nez p4, :cond_0
+
+    .line 8
+    invoke-virtual {p1}, Lnb;->r()Lla;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lla;->c_()Llc;
+
+    move-result-object p1
+
+    const-string p2, "Tasks index overflow"
+
+    invoke-virtual {p1, p2}, Llc;->a(Ljava/lang/String;)V
 
     :cond_0
-    if-nez v0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    .line 28
-    :cond_1
-    invoke-static {}, Lkf;->a()Lkf;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lkf;->a(Ljava/lang/Object;)Lnf;
-
-    move-result-object v0
-
-    invoke-interface {v0, p0}, Lnf;->d(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz p1, :cond_3
-
-    .line 29
-    sget p1, Lmd$f;->b:I
-
-    if-eqz v0, :cond_2
-
-    move-object v2, p0
-
-    goto :goto_0
-
-    :cond_2
-    move-object v2, v1
-
-    .line 30
-    :goto_0
-    invoke-virtual {p0, p1, v2, v1}, Lmd;->a(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_3
-    return v0
-.end method
-
-.method protected static n()Lsd;
-    .locals 1
-
-    .line 1
-    invoke-static {}, Lnd;->d()Lnd;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected static o()Lrd;
-    .locals 1
-
-    .line 1
-    invoke-static {}, Lie;->d()Lie;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected static p()Lud;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<E:",
-            "Ljava/lang/Object;",
-            ">()",
-            "Lud<",
-            "TE;>;"
-        }
-    .end annotation
-
-    .line 1
-    invoke-static {}, Ljf;->d()Ljf;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
-.method protected abstract a(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-.end method
+.method public final synthetic compareTo(Ljava/lang/Object;)I
+    .locals 6
 
-.method final a(I)V
-    .locals 0
-
-    .line 1
-    iput p1, p0, Lmd;->zzc:I
-
-    return-void
-.end method
-
-.method public final a(Ltc;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .line 2
-    invoke-static {}, Lkf;->a()Lkf;
-
-    move-result-object v0
-
-    .line 3
-    invoke-virtual {v0, p0}, Lkf;->a(Ljava/lang/Object;)Lnf;
-
-    move-result-object v0
-
-    .line 4
-    invoke-static {p1}, Lvc;->a(Ltc;)Lvc;
-
-    move-result-object p1
-
-    invoke-interface {v0, p0, p1}, Lnf;->a(Ljava/lang/Object;Lyg;)V
-
-    return-void
-.end method
-
-.method public final b()Z
-    .locals 1
-
-    .line 1
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    invoke-static {p0, v0}, Lmd;->a(Lmd;Z)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final c()I
-    .locals 2
-
-    .line 1
-    iget v0, p0, Lmd;->zzc:I
-
-    const/4 v1, -0x1
-
-    if-ne v0, v1, :cond_0
-
-    .line 2
-    invoke-static {}, Lkf;->a()Lkf;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lkf;->a(Ljava/lang/Object;)Lnf;
-
-    move-result-object v0
-
-    invoke-interface {v0, p0}, Lnf;->c(Ljava/lang/Object;)I
-
-    move-result v0
-
-    iput v0, p0, Lmd;->zzc:I
-
-    .line 3
-    :cond_0
-    iget v0, p0, Lmd;->zzc:I
-
-    return v0
-.end method
-
-.method public final synthetic d()Lxe;
-    .locals 2
-
-    .line 1
-    sget v0, Lmd$f;->e:I
-
-    const/4 v1, 0x0
-
-    .line 2
-    invoke-virtual {p0, v0, v1, v1}, Lmd;->a(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 3
-    check-cast v0, Lmd$a;
-
-    .line 4
-    invoke-virtual {v0, p0}, Lmd$a;->a(Lmd;)Lmd$a;
-
-    return-object v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    if-ne p0, p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    const/4 v0, 0x0
-
-    if-nez p1, :cond_1
-
-    return v0
-
-    .line 1
-    :cond_1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    if-eq v1, v2, :cond_2
-
-    return v0
-
-    .line 2
-    :cond_2
-    invoke-static {}, Lkf;->a()Lkf;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lkf;->a(Ljava/lang/Object;)Lnf;
-
-    move-result-object v0
-
+    .line 25
     check-cast p1, Lmd;
 
-    invoke-interface {v0, p0, p1}, Lnf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .line 26
+    iget-boolean v0, p0, Lmd;->a:Z
 
-    move-result p1
+    iget-boolean v1, p1, Lmd;->a:Z
 
-    return p1
-.end method
+    const/4 v2, 0x1
 
-.method public final synthetic g()Lue;
-    .locals 2
+    const/4 v3, -0x1
 
-    .line 1
-    sget v0, Lmd$f;->f:I
-
-    const/4 v1, 0x0
-
-    .line 2
-    invoke-virtual {p0, v0, v1, v1}, Lmd;->a(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 3
-    check-cast v0, Lmd;
-
-    return-object v0
-.end method
-
-.method public final synthetic h()Lxe;
-    .locals 2
-
-    .line 1
-    sget v0, Lmd$f;->e:I
-
-    const/4 v1, 0x0
-
-    .line 2
-    invoke-virtual {p0, v0, v1, v1}, Lmd;->a(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 3
-    check-cast v0, Lmd$a;
-
-    return-object v0
-.end method
-
-.method public hashCode()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lvb;->zza:I
+    if-eq v0, v1, :cond_1
 
     if-eqz v0, :cond_0
 
-    return v0
+    return v3
 
-    .line 2
     :cond_0
-    invoke-static {}, Lkf;->a()Lkf;
+    return v2
+
+    .line 28
+    :cond_1
+    iget-wide v0, p0, Lmd;->b:J
+
+    iget-wide v4, p1, Lmd;->b:J
+
+    cmp-long p1, v0, v4
+
+    if-gez p1, :cond_2
+
+    return v3
+
+    :cond_2
+    cmp-long p1, v0, v4
+
+    if-lez p1, :cond_3
+
+    return v2
+
+    .line 32
+    :cond_3
+    iget-object p1, p0, Lmd;->d:Lma;
+
+    invoke-virtual {p1}, Lnb;->r()Lla;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lla;->g()Llc;
+
+    move-result-object p1
+
+    iget-wide v0, p0, Lmd;->b:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Lkf;->a(Ljava/lang/Object;)Lnf;
+    const-string v1, "Two tasks share the same index. index"
 
-    move-result-object v0
+    invoke-virtual {p1, v1, v0}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V
 
-    invoke-interface {v0, p0}, Lnf;->a(Ljava/lang/Object;)I
+    const/4 p1, 0x0
 
-    move-result v0
-
-    iput v0, p0, Lvb;->zza:I
-
-    return v0
+    return p1
 .end method
 
-.method final j()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lmd;->zzc:I
-
-    return v0
-.end method
-
-.method protected final k()Lmd$a;
+.method protected final setException(Ljava/lang/Throwable;)V
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<MessageType:",
-            "Lmd<",
-            "TMessageType;TBuilderType;>;BuilderType:",
-            "Lmd$a<",
-            "TMessageType;TBuilderType;>;>()TBuilderType;"
-        }
-    .end annotation
 
-    .line 1
-    sget v0, Lmd$f;->e:I
+    .line 19
+    iget-object v0, p0, Lmd;->d:Lma;
 
-    const/4 v1, 0x0
-
-    .line 2
-    invoke-virtual {p0, v0, v1, v1}, Lmd;->a(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lnb;->r()Lla;
 
     move-result-object v0
 
-    .line 3
-    check-cast v0, Lmd$a;
-
-    return-object v0
-.end method
-
-.method public final m()Lmd$a;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TBuilderType;"
-        }
-    .end annotation
-
-    .line 1
-    sget v0, Lmd$f;->e:I
-
-    const/4 v1, 0x0
-
-    .line 2
-    invoke-virtual {p0, v0, v1, v1}, Lmd;->a(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lla;->c_()Llc;
 
     move-result-object v0
 
-    .line 3
-    check-cast v0, Lmd$a;
+    iget-object v1, p0, Lmd;->c:Ljava/lang/String;
 
-    .line 4
-    invoke-virtual {v0, p0}, Lmd$a;->a(Lmd;)Lmd$a;
+    invoke-virtual {v0, v1, p1}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V
 
-    return-object v0
-.end method
+    .line 20
+    instance-of v0, p1, Lmb;
 
-.method public toString()Ljava/lang/String;
-    .locals 1
+    if-eqz v0, :cond_0
 
-    .line 1
-    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    .line 21
+    invoke-static {}, Ljava/lang/Thread;->getDefaultUncaughtExceptionHandler()Ljava/lang/Thread$UncaughtExceptionHandler;
 
     move-result-object v0
 
-    invoke-static {p0, v0}, Lze;->a(Lue;Ljava/lang/String;)Ljava/lang/String;
+    .line 22
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    move-result-object v0
+    move-result-object v1
 
-    return-object v0
+    invoke-interface {v0, v1, p1}, Ljava/lang/Thread$UncaughtExceptionHandler;->uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
+
+    .line 23
+    :cond_0
+    invoke-super {p0, p1}, Ljava/util/concurrent/FutureTask;->setException(Ljava/lang/Throwable;)V
+
+    return-void
 .end method

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href=".resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href=".resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html"></a></li>
+        <li><i class="ico ico-class"></i> sy.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final Lsy;
+.super Ljava/lang/Object;
+.source "GsonBuilder.java"
+
+
+.field private a:Lcom/google/gson/internal/Excluder;
+.field private b:Ltm;
+.field private c:Lsw;
+.field private final d:Ljava/util/Map;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/Map<",
+"Ljava/lang/reflect/Type;",
+"Lsz<",
+"*>;>;"
+}
+.end annotation
+.end field
+.field private final e:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Lto;",
+">;"
+}
+.end annotation
+.end field
+.field private final f:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Lto;",
+">;"
+}
+.end annotation
+.end field
+.field private g:Z
+.field private h:Ljava/lang/String;
+.field private i:I
+.field private j:I
+.field private k:Z
+.field private l:Z
+.field private m:Z
+.field private n:Z
+.field private o:Z
+.field private p:Z
+
+
+.method public constructor &lt;init&gt;()V
+<span class="">	.locals 2</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	sget-object v0, Lcom/google/gson/internal/Excluder;->a:Lcom/google/gson/internal/Excluder;</span>
+<span class="missed">	iput-object v0, p0, Lsy;->a:Lcom/google/gson/internal/Excluder;</span>
+<span class="missed">	sget-object v0, Ltm;->a:Ltm;</span>
+<span class="missed">	iput-object v0, p0, Lsy;->b:Ltm;</span>
+<span class="missed">	sget-object v0, Lsv;->a:Lsv;</span>
+<span class="missed">	iput-object v0, p0, Lsy;->c:Lsw;</span>
+<span class="missed">	new-instance v0, Ljava/util/HashMap;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/HashMap;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lsy;->d:Ljava/util/Map;</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lsy;->e:Ljava/util/List;</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lsy;->f:Ljava/util/List;</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-boolean v0, p0, Lsy;->g:Z</span>
+<span class="missed">	const/4 v1, 0x2</span>
+<span class="missed">	iput v1, p0, Lsy;->i:I</span>
+<span class="missed">	iput v1, p0, Lsy;->j:I</span>
+<span class="missed">	iput-boolean v0, p0, Lsy;->k:Z</span>
+<span class="missed">	iput-boolean v0, p0, Lsy;->l:Z</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	iput-boolean v1, p0, Lsy;->m:Z</span>
+<span class="missed">	iput-boolean v0, p0, Lsy;->n:Z</span>
+<span class="missed">	iput-boolean v0, p0, Lsy;->o:Z</span>
+<span class="missed">	iput-boolean v0, p0, Lsy;->p:Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method private a(Ljava/lang/String;IILjava/util/List;)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"II",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Lto;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, ""</span>
+<span class="">	invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	new-instance p2, Lss;</span>
+<span class="missed">	const-class p3, Ljava/util/Date;</span>
+<span class="missed">	invoke-direct {p2, p3, p1}, Lss;-><init>(Ljava/lang/Class;Ljava/lang/String;)V</span>
+<span class="missed">	new-instance p3, Lss;</span>
+<span class="missed">	const-class v0, Ljava/sql/Timestamp;</span>
+<span class="missed">	invoke-direct {p3, v0, p1}, Lss;-><init>(Ljava/lang/Class;Ljava/lang/String;)V</span>
+<span class="missed">	new-instance v0, Lss;</span>
+<span class="missed">	const-class v1, Ljava/sql/Date;</span>
+<span class="missed">	invoke-direct {v0, v1, p1}, Lss;-><init>(Ljava/lang/Class;Ljava/lang/String;)V</span>
+<span class="missed">	move-object p1, p2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x2</span>
+<span class="missed">	if-eq p2, p1, :cond_1</span>
+<span class="missed">	if-eq p3, p1, :cond_1</span>
+<span class="missed">	new-instance p1, Lss;</span>
+<span class="missed">	const-class v0, Ljava/util/Date;</span>
+<span class="missed">	invoke-direct {p1, v0, p2, p3}, Lss;-><init>(Ljava/lang/Class;II)V</span>
+<span class="missed">	new-instance v0, Lss;</span>
+<span class="missed">	const-class v1, Ljava/sql/Timestamp;</span>
+<span class="missed">	invoke-direct {v0, v1, p2, p3}, Lss;-><init>(Ljava/lang/Class;II)V</span>
+<span class="missed">	new-instance v1, Lss;</span>
+<span class="missed">	const-class v2, Ljava/sql/Date;</span>
+<span class="missed">	invoke-direct {v1, v2, p2, p3}, Lss;-><init>(Ljava/lang/Class;II)V</span>
+<span class="missed">	move-object p3, v0</span>
+<span class="missed">	move-object v0, v1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const-class p2, Ljava/util/Date;</span>
+<span class="">	invoke-static {p2, p1}, Lcom/google/gson/internal/bind/i;->a(Ljava/lang/Class;Ltn;)Lto;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {p4, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	const-class p1, Ljava/sql/Timestamp;</span>
+<span class="">	invoke-static {p1, p3}, Lcom/google/gson/internal/bind/i;->a(Ljava/lang/Class;Ltn;)Lto;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {p4, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	const-class p1, Ljava/sql/Date;</span>
+<span class="">	invoke-static {p1, v0}, Lcom/google/gson/internal/bind/i;->a(Ljava/lang/Class;Ltn;)Lto;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {p4, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="">	:cond_1</span>
+<span class="">	return-void</span>
+.end method
+
+.method public a()Lsy;
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-boolean v0, p0, Lsy;->m:Z</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public b()Lsx;
+<span class="">	.locals 14</span>
+
+<span class="missed">	new-instance v12, Ljava/util/ArrayList;</span>
+<span class="missed">	iget-object v0, p0, Lsy;->e:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	iget-object v1, p0, Lsy;->f:Ljava/util/List;</span>
+<span class="">	invoke-interface {v1}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	add-int/2addr v0, v1</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x3</span>
+<span class="missed">	invoke-direct {v12, v0}, Ljava/util/ArrayList;-><init>(I)V</span>
+<span class="missed">	iget-object v0, p0, Lsy;->e:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {v12, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z</span>
+<span class="missed">	invoke-static {v12}, Ljava/util/Collections;->reverse(Ljava/util/List;)V</span>
+<span class="missed">	iget-object v0, p0, Lsy;->f:Ljava/util/List;</span>
+<span class="missed">	invoke-static {v0}, Ljava/util/Collections;->reverse(Ljava/util/List;)V</span>
+<span class="missed">	iget-object v0, p0, Lsy;->f:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {v12, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z</span>
+<span class="missed">	iget-object v0, p0, Lsy;->h:Ljava/lang/String;</span>
+<span class="missed">	iget v1, p0, Lsy;->i:I</span>
+<span class="missed">	iget v2, p0, Lsy;->j:I</span>
+<span class="missed">	invoke-direct {p0, v0, v1, v2, v12}, Lsy;->a(Ljava/lang/String;IILjava/util/List;)V</span>
+<span class="missed">	new-instance v13, Lsx;</span>
+<span class="missed">	iget-object v1, p0, Lsy;->a:Lcom/google/gson/internal/Excluder;</span>
+<span class="missed">	iget-object v2, p0, Lsy;->c:Lsw;</span>
+<span class="missed">	iget-object v3, p0, Lsy;->d:Ljava/util/Map;</span>
+<span class="missed">	iget-boolean v4, p0, Lsy;->g:Z</span>
+<span class="missed">	iget-boolean v5, p0, Lsy;->k:Z</span>
+<span class="missed">	iget-boolean v6, p0, Lsy;->o:Z</span>
+<span class="missed">	iget-boolean v7, p0, Lsy;->m:Z</span>
+<span class="missed">	iget-boolean v8, p0, Lsy;->n:Z</span>
+<span class="missed">	iget-boolean v9, p0, Lsy;->p:Z</span>
+<span class="missed">	iget-boolean v10, p0, Lsy;->l:Z</span>
+<span class="missed">	iget-object v11, p0, Lsy;->b:Ltm;</span>
+<span class="missed">	move-object v0, v13</span>
+<span class="missed">	invoke-direct/range {v0 .. v12}, Lsx;-><init>(Lcom/google/gson/internal/Excluder;Lsw;Ljava/util/Map;ZZZZZZZLtm;Ljava/util/List;)V</span>
+<span class="">	return-object v13</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src=".resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src=".resources/report.js"></script>
+</body>
+</html>

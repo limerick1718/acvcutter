@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.crashlytics.android.answers</a></li>
+        <li><i class="ico ico-class"></i> SessionAnalyticsFilesSender.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Lcom/crashlytics/android/answers/SessionAnalyticsFilesSender;
+.super Lvf;
+.source "SessionAnalyticsFilesSender.java"
+.implements Lxa;
+
+
+.field static final FILE_CONTENT_TYPE:Ljava/lang/String; = "application/vnd.crashlytics.android.events"
+.field static final FILE_PARAM_NAME:Ljava/lang/String; = "session_analytics_file_"
+.field private final apiKey:Ljava/lang/String;
+
+
+.method public constructor &lt;init&gt;(Luw;Ljava/lang/String;Ljava/lang/String;Lxi;Ljava/lang/String;)V
+<span class="">	.locals 6</span>
+
+<span class="missed">	sget-object v5, Lxg;->b:Lxg;</span>
+<span class="missed">	move-object v0, p0</span>
+<span class="missed">	move-object v1, p1</span>
+<span class="missed">	move-object v2, p2</span>
+<span class="missed">	move-object v3, p3</span>
+<span class="missed">	move-object v4, p4</span>
+<span class="missed">	invoke-direct/range {v0 .. v5}, Lvf;-><init>(Luw;Ljava/lang/String;Ljava/lang/String;Lxi;Lxg;)V</span>
+<span class="missed">	iput-object p5, p0, Lcom/crashlytics/android/answers/SessionAnalyticsFilesSender;->apiKey:Ljava/lang/String;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public send(Ljava/util/List;)Z
+<span class="">	.locals 9</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/io/File;",</span>
+<span class="">	">;)Z"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0}, Lcom/crashlytics/android/answers/SessionAnalyticsFilesSender;->getHttpRequest()Lxh;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "X-CRASHLYTICS-API-CLIENT-TYPE"</span>
+<span class="missed">	const-string v2, "android"</span>
+<span class="">	invoke-virtual {v0, v1, v2}, Lxh;->a(Ljava/lang/String;Ljava/lang/String;)Lxh;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/answers/SessionAnalyticsFilesSender;->kit:Luw;</span>
+<span class="">	invoke-virtual {v1}, Luw;->getVersion()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "X-CRASHLYTICS-API-CLIENT-VERSION"</span>
+<span class="">	invoke-virtual {v0, v2, v1}, Lxh;->a(Ljava/lang/String;Ljava/lang/String;)Lxh;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/answers/SessionAnalyticsFilesSender;->apiKey:Ljava/lang/String;</span>
+<span class="missed">	const-string v2, "X-CRASHLYTICS-API-KEY"</span>
+<span class="">	invoke-virtual {v0, v2, v1}, Lxh;->a(Ljava/lang/String;Ljava/lang/String;)Lxh;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	const/4 v5, 0x1</span>
+<span class="missed">	if-eqz v4, :cond_0</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="missed">	check-cast v4, Ljava/io/File;</span>
+<span class="missed">	new-instance v6, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v7, "session_analytics_file_"</span>
+<span class="missed">	invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="">	invoke-virtual {v4}, Ljava/io/File;->getName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="missed">	const-string v8, "application/vnd.crashlytics.android.events"</span>
+<span class="missed">	invoke-virtual {v0, v6, v7, v8, v4}, Lxh;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Lxh;</span>
+<span class="missed">	add-int/2addr v3, v5</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	new-instance v3, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "Sending "</span>
+<span class="missed">	invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-interface {p1}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string p1, " analytics files to "</span>
+<span class="missed">	invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p0}, Lcom/crashlytics/android/answers/SessionAnalyticsFilesSender;->getUrl()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v3, "Answers"</span>
+<span class="missed">	invoke-interface {v1, v3, p1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	invoke-virtual {v0}, Lxh;->b()I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "Response code for analytics file send is "</span>
+<span class="missed">	invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	invoke-interface {v0, v3, v1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	invoke-static {p1}, Lwa;->a(I)I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-nez p1, :cond_1</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="">	:cond_1</span>
+<span class="">	return v2</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

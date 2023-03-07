@@ -342,7 +342,7 @@ Lcom/google/gson/internal/b$b;
 <span class="missed">	move-result-object p0</span>
 <span class="missed">	aget-object p1, v0, v2</span>
 <span class="missed">	if-eq p0, p1, :cond_d</span>
-<span class="">	invoke-static {p0}, Lcom/google/gson/internal/b;->g(Ljava/lang/reflect/Type;)Ljava/lang/reflect/WildcardType;</span>
+<span class="">	invoke-static {p0}, Lcom/google/gson/internal/b;->c(Ljava/lang/reflect/Type;)Ljava/lang/reflect/WildcardType;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="">	return-object p0</span>
 <span class="">	:cond_c</span>
@@ -353,15 +353,15 @@ Lcom/google/gson/internal/b$b;
 <span class="">	invoke-static {p0, p1, v0}, Lcom/google/gson/internal/b;->a(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="">	:try_end_0</span>
-<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	.catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0</span>
 <span class="missed">	aget-object p1, v3, v2</span>
 <span class="missed">	if-eq p0, p1, :cond_d</span>
-<span class="">	invoke-static {p0}, Lcom/google/gson/internal/b;->f(Ljava/lang/reflect/Type;)Ljava/lang/reflect/WildcardType;</span>
+<span class="">	invoke-static {p0}, Lcom/google/gson/internal/b;->b(Ljava/lang/reflect/Type;)Ljava/lang/reflect/WildcardType;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="">	return-object p0</span>
 <span class="cov">	:cond_d</span>
 <span class="exec">	return-object p2</span>
-<span class="">	:catchall_0</span>
+<span class="">	:catch_0</span>
 <span class="missed">	move-exception p0</span>
 <span class="">	throw p0</span>
 .end method
@@ -543,7 +543,119 @@ Lcom/google/gson/internal/b$b;
 <span class="">	return v2</span>
 .end method
 
-<span class="cov">.method public static b(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;</span>
+<span class="cov">.method static b(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Type;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/reflect/Type;",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;)",</span>
+<span class="">	"Ljava/lang/reflect/Type;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="exec">	invoke-virtual {p2, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	invoke-static {v0}, Lcom/google/gson/internal/a;->a(Z)V</span>
+<span class="exec">	invoke-static {p0, p1, p2}, Lcom/google/gson/internal/b;->a(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Type;</span>
+<span class="cov">	move-result-object p2</span>
+<span class="exec">	invoke-static {p0, p1, p2}, Lcom/google/gson/internal/b;->a(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+.method public static b(Ljava/lang/reflect/Type;)Ljava/lang/reflect/WildcardType;
+<span class="">	.locals 2</span>
+
+<span class="missed">	instance-of v0, p0, Ljava/lang/reflect/WildcardType;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	check-cast p0, Ljava/lang/reflect/WildcardType;</span>
+<span class="">	invoke-interface {p0}, Ljava/lang/reflect/WildcardType;->getUpperBounds()[Ljava/lang/reflect/Type;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	new-array v0, v0, [Ljava/lang/reflect/Type;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	aput-object p0, v0, v1</span>
+<span class="missed">	move-object p0, v0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	new-instance v0, Lcom/google/gson/internal/b$c;</span>
+<span class="missed">	sget-object v1, Lcom/google/gson/internal/b;->a:[Ljava/lang/reflect/Type;</span>
+<span class="missed">	invoke-direct {v0, p0, v1}, Lcom/google/gson/internal/b$c;-><init>([Ljava/lang/reflect/Type;[Ljava/lang/reflect/Type;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public static b(Ljava/lang/reflect/Type;Ljava/lang/Class;)[Ljava/lang/reflect/Type;</span>
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/reflect/Type;",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;)[",</span>
+<span class="">	"Ljava/lang/reflect/Type;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	const-class v0, Ljava/util/Properties;</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	const/4 v3, 0x2</span>
+<span class="missed">	if-ne p0, v0, :cond_0</span>
+<span class="missed">	new-array p0, v3, [Ljava/lang/reflect/Type;</span>
+<span class="missed">	const-class p1, Ljava/lang/String;</span>
+<span class="missed">	aput-object p1, p0, v2</span>
+<span class="missed">	const-class p1, Ljava/lang/String;</span>
+<span class="missed">	aput-object p1, p0, v1</span>
+<span class="">	return-object p0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const-class v0, Ljava/util/Map;</span>
+<span class="exec">	invoke-static {p0, p1, v0}, Lcom/google/gson/internal/b;->b(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Type;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	instance-of p1, p0, Ljava/lang/reflect/ParameterizedType;</span>
+<span class="cov">	if-eqz p1, :cond_1</span>
+<span class="cov">	check-cast p0, Ljava/lang/reflect/ParameterizedType;</span>
+<span class="exec">	invoke-interface {p0}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	return-object p0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	new-array p0, v3, [Ljava/lang/reflect/Type;</span>
+<span class="missed">	const-class p1, Ljava/lang/Object;</span>
+<span class="missed">	aput-object p1, p0, v2</span>
+<span class="missed">	const-class p1, Ljava/lang/Object;</span>
+<span class="missed">	aput-object p1, p0, v1</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static c(Ljava/lang/reflect/Type;)Ljava/lang/reflect/WildcardType;
+<span class="">	.locals 4</span>
+
+<span class="missed">	instance-of v0, p0, Ljava/lang/reflect/WildcardType;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	check-cast p0, Ljava/lang/reflect/WildcardType;</span>
+<span class="">	invoke-interface {p0}, Ljava/lang/reflect/WildcardType;->getLowerBounds()[Ljava/lang/reflect/Type;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-array v0, v2, [Ljava/lang/reflect/Type;</span>
+<span class="missed">	aput-object p0, v0, v1</span>
+<span class="missed">	move-object p0, v0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	new-instance v0, Lcom/google/gson/internal/b$c;</span>
+<span class="missed">	new-array v2, v2, [Ljava/lang/reflect/Type;</span>
+<span class="missed">	const-class v3, Ljava/lang/Object;</span>
+<span class="missed">	aput-object v3, v2, v1</span>
+<span class="missed">	invoke-direct {v0, v2, p0}, Lcom/google/gson/internal/b$c;-><init>([Ljava/lang/reflect/Type;[Ljava/lang/reflect/Type;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public static d(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;</span>
 <span class="">	.locals 3</span>
 
 <span class="cov">	instance-of v0, p0, Ljava/lang/Class;</span>
@@ -555,11 +667,12 @@ Lcom/google/gson/internal/b$b;
 <span class="missed">	new-instance v0, Lcom/google/gson/internal/b$a;</span>
 <span class="">	invoke-virtual {p0}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;</span>
 <span class="missed">	move-result-object p0</span>
-<span class="">	invoke-static {p0}, Lcom/google/gson/internal/b;->b(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;</span>
+<span class="">	invoke-static {p0}, Lcom/google/gson/internal/b;->d(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="missed">	invoke-direct {v0, p0}, Lcom/google/gson/internal/b$a;-><init>(Ljava/lang/reflect/Type;)V</span>
 <span class="missed">	move-object p0, v0</span>
 <span class="cov">	:cond_0</span>
+<span class="cov">	check-cast p0, Ljava/lang/reflect/Type;</span>
 <span class="exec">	return-object p0</span>
 <span class="cov">	:cond_1</span>
 <span class="cov">	instance-of v0, p0, Ljava/lang/reflect/ParameterizedType;</span>
@@ -596,108 +709,6 @@ Lcom/google/gson/internal/b$b;
 <span class="">	return-object v0</span>
 <span class="cov">	:cond_4</span>
 <span class="exec">	return-object p0</span>
-.end method
-
-<span class="cov">.method static b(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Type;</span>
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Ljava/lang/reflect/Type;",</span>
-<span class="">	"Ljava/lang/Class<",</span>
-<span class="">	"*>;",</span>
-<span class="">	"Ljava/lang/Class<",</span>
-<span class="">	"*>;)",</span>
-<span class="">	"Ljava/lang/reflect/Type;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="exec">	invoke-virtual {p2, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	invoke-static {v0}, Lcom/google/gson/internal/a;->a(Z)V</span>
-<span class="exec">	invoke-static {p0, p1, p2}, Lcom/google/gson/internal/b;->a(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Type;</span>
-<span class="cov">	move-result-object p2</span>
-<span class="exec">	invoke-static {p0, p1, p2}, Lcom/google/gson/internal/b;->a(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	return-object p0</span>
-.end method
-
-<span class="cov">.method public static b(Ljava/lang/reflect/Type;Ljava/lang/Class;)[Ljava/lang/reflect/Type;</span>
-<span class="">	.locals 6</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Ljava/lang/reflect/Type;",</span>
-<span class="">	"Ljava/lang/Class<",</span>
-<span class="">	"*>;)[",</span>
-<span class="">	"Ljava/lang/reflect/Type;"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="cov">	const-class v0, Ljava/lang/Object;</span>
-<span class="cov">	const-class v1, Ljava/lang/String;</span>
-<span class="cov">	const-class v2, Ljava/util/Properties;</span>
-<span class="cov">	const/4 v3, 0x1</span>
-<span class="cov">	const/4 v4, 0x0</span>
-<span class="cov">	const/4 v5, 0x2</span>
-<span class="missed">	if-ne p0, v2, :cond_0</span>
-<span class="missed">	new-array p0, v5, [Ljava/lang/reflect/Type;</span>
-<span class="missed">	aput-object v1, p0, v4</span>
-<span class="missed">	aput-object v1, p0, v3</span>
-<span class="">	return-object p0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const-class v1, Ljava/util/Map;</span>
-<span class="exec">	invoke-static {p0, p1, v1}, Lcom/google/gson/internal/b;->b(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Type;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="cov">	instance-of p1, p0, Ljava/lang/reflect/ParameterizedType;</span>
-<span class="cov">	if-eqz p1, :cond_1</span>
-<span class="cov">	check-cast p0, Ljava/lang/reflect/ParameterizedType;</span>
-<span class="exec">	invoke-interface {p0}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	return-object p0</span>
-<span class="">	:cond_1</span>
-<span class="missed">	new-array p0, v5, [Ljava/lang/reflect/Type;</span>
-<span class="missed">	aput-object v0, p0, v4</span>
-<span class="missed">	aput-object v0, p0, v3</span>
-<span class="">	return-object p0</span>
-.end method
-
-.method static c(Ljava/lang/reflect/Type;)V
-<span class="">	.locals 1</span>
-
-<span class="missed">	instance-of v0, p0, Ljava/lang/Class;</span>
-<span class="missed">	if-eqz v0, :cond_1</span>
-<span class="missed">	check-cast p0, Ljava/lang/Class;</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/Class;->isPrimitive()Z</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	if-nez p0, :cond_0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 p0, 0x0</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:cond_1</span>
-<span class="">	:goto_0</span>
-<span class="missed">	const/4 p0, 0x1</span>
-<span class="">	:goto_1</span>
-<span class="missed">	invoke-static {p0}, Lcom/google/gson/internal/a;->a(Z)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public static d(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
-<span class="">	.locals 1</span>
-
-<span class="missed">	instance-of v0, p0, Ljava/lang/reflect/GenericArrayType;</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	check-cast p0, Ljava/lang/reflect/GenericArrayType;</span>
-<span class="">	invoke-interface {p0}, Ljava/lang/reflect/GenericArrayType;->getGenericComponentType()Ljava/lang/reflect/Type;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	check-cast p0, Ljava/lang/Class;</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	:goto_0</span>
-<span class="">	return-object p0</span>
 .end method
 
 <span class="cov">.method public static e(Ljava/lang/reflect/Type;)Ljava/lang/Class;</span>
@@ -780,53 +791,7 @@ Lcom/google/gson/internal/b$b;
 <span class="">	throw v1</span>
 .end method
 
-.method public static f(Ljava/lang/reflect/Type;)Ljava/lang/reflect/WildcardType;
-<span class="">	.locals 2</span>
-
-<span class="missed">	instance-of v0, p0, Ljava/lang/reflect/WildcardType;</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	check-cast p0, Ljava/lang/reflect/WildcardType;</span>
-<span class="">	invoke-interface {p0}, Ljava/lang/reflect/WildcardType;->getUpperBounds()[Ljava/lang/reflect/Type;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	new-array v0, v0, [Ljava/lang/reflect/Type;</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="missed">	aput-object p0, v0, v1</span>
-<span class="missed">	move-object p0, v0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	new-instance v0, Lcom/google/gson/internal/b$c;</span>
-<span class="missed">	sget-object v1, Lcom/google/gson/internal/b;->a:[Ljava/lang/reflect/Type;</span>
-<span class="missed">	invoke-direct {v0, p0, v1}, Lcom/google/gson/internal/b$c;-><init>([Ljava/lang/reflect/Type;[Ljava/lang/reflect/Type;)V</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public static g(Ljava/lang/reflect/Type;)Ljava/lang/reflect/WildcardType;
-<span class="">	.locals 4</span>
-
-<span class="missed">	instance-of v0, p0, Ljava/lang/reflect/WildcardType;</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="missed">	const/4 v2, 0x1</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	check-cast p0, Ljava/lang/reflect/WildcardType;</span>
-<span class="">	invoke-interface {p0}, Ljava/lang/reflect/WildcardType;->getLowerBounds()[Ljava/lang/reflect/Type;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-array v0, v2, [Ljava/lang/reflect/Type;</span>
-<span class="missed">	aput-object p0, v0, v1</span>
-<span class="missed">	move-object p0, v0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	new-instance v0, Lcom/google/gson/internal/b$c;</span>
-<span class="missed">	new-array v2, v2, [Ljava/lang/reflect/Type;</span>
-<span class="missed">	const-class v3, Ljava/lang/Object;</span>
-<span class="missed">	aput-object v3, v2, v1</span>
-<span class="missed">	invoke-direct {v0, v2, p0}, Lcom/google/gson/internal/b$c;-><init>([Ljava/lang/reflect/Type;[Ljava/lang/reflect/Type;)V</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public static h(Ljava/lang/reflect/Type;)Ljava/lang/String;
+.method public static f(Ljava/lang/reflect/Type;)Ljava/lang/String;
 <span class="">	.locals 1</span>
 
 <span class="missed">	instance-of v0, p0, Ljava/lang/Class;</span>
@@ -840,6 +805,44 @@ Lcom/google/gson/internal/b$b;
 <span class="missed">	move-result-object p0</span>
 <span class="">	:goto_0</span>
 <span class="">	return-object p0</span>
+.end method
+
+.method public static g(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
+<span class="">	.locals 1</span>
+
+<span class="missed">	instance-of v0, p0, Ljava/lang/reflect/GenericArrayType;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	check-cast p0, Ljava/lang/reflect/GenericArrayType;</span>
+<span class="">	invoke-interface {p0}, Ljava/lang/reflect/GenericArrayType;->getGenericComponentType()Ljava/lang/reflect/Type;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	check-cast p0, Ljava/lang/Class;</span>
+<span class="">	invoke-virtual {p0}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method static h(Ljava/lang/reflect/Type;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	instance-of v0, p0, Ljava/lang/Class;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	check-cast p0, Ljava/lang/Class;</span>
+<span class="">	invoke-virtual {p0}, Ljava/lang/Class;->isPrimitive()Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-nez p0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 p0, 0x1</span>
+<span class="">	:goto_1</span>
+<span class="missed">	invoke-static {p0}, Lcom/google/gson/internal/a;->a(Z)V</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

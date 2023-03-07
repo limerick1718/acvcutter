@@ -1,7 +1,8 @@
-.class public abstract Landroid/support/v4/media/b;
+.class  Landroid/support/v4/media/b;
 .super Ljava/lang/Object;
-.source "MediaBrowserCompat.java"
-.method public abstract a(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;)V
-.end method
-.method public abstract a(Ljava/lang/String;)V
-.end method
+.source "MediaDescriptionCompatApi23.java"
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Landroid/support/v4/media/b$a;
+}
+.end annotation

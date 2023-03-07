@@ -17,7 +17,7 @@
 		<code>.class final Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;
 .super Ljava/lang/Object;
 .source "TreeTypeAdapter.java"
-.implements Lwv;
+.implements Lto;
 
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lcom/google/gson/internal/bind/TreeTypeAdapter;
@@ -27,10 +27,10 @@ accessFlags = 0x1a
 name = "SingleTypeFactory"
 .end annotation
 
-.field private final a:Ldw;
+.field private final a:Ltv;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ldw<",
+"Ltv<",
 "*>;"
 }
 .end annotation
@@ -44,50 +44,50 @@ value = {
 }
 .end annotation
 .end field
-.field private final d:Lsv;
+.field private final d:Ltk;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lsv<",
+"Ltk<",
 "*>;"
 }
 .end annotation
 .end field
-.field private final e:Lkv;
+.field private final e:Ltc;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lkv<",
+"Ltc<",
 "*>;"
 }
 .end annotation
 .end field
 
 
-.method public a(Lfv;Ldw;)Lvv;
+.method public a(Lsx;Ltv;)Ltn;
 <span class="">	.locals 7</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
 <span class="">	"<T:",</span>
 <span class="">	"Ljava/lang/Object;",</span>
 <span class="">	">(",</span>
-<span class="">	"Lfv;",</span>
-<span class="">	"Ldw<",</span>
+<span class="">	"Lsx;",</span>
+<span class="">	"Ltv<",</span>
 <span class="">	"TT;>;)",</span>
-<span class="">	"Lvv<",</span>
+<span class="">	"Ltn<",</span>
 <span class="">	"TT;>;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->a:Ldw;</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->a:Ltv;</span>
 <span class="missed">	if-eqz v0, :cond_2</span>
-<span class="">	invoke-virtual {v0, p2}, Ldw;->equals(Ljava/lang/Object;)Z</span>
+<span class="">	invoke-virtual {v0, p2}, Ltv;->equals(Ljava/lang/Object;)Z</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-nez v0, :cond_1</span>
 <span class="missed">	iget-boolean v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->b:Z</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->a:Ldw;</span>
-<span class="">	invoke-virtual {v0}, Ldw;->b()Ljava/lang/reflect/Type;</span>
+<span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->a:Ltv;</span>
+<span class="">	invoke-virtual {v0}, Ltv;->b()Ljava/lang/reflect/Type;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;</span>
+<span class="">	invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;</span>
 <span class="missed">	move-result-object v1</span>
 <span class="missed">	if-ne v0, v1, :cond_0</span>
 <span class="">	goto :goto_0</span>
@@ -100,20 +100,20 @@ value = {
 <span class="">	goto :goto_1</span>
 <span class="">	:cond_2</span>
 <span class="missed">	iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->c:Ljava/lang/Class;</span>
-<span class="">	invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;</span>
+<span class="">	invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;</span>
 <span class="missed">	move-result-object v1</span>
 <span class="">	invoke-virtual {v0, v1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z</span>
 <span class="missed">	move-result v0</span>
 <span class="">	:goto_1</span>
 <span class="missed">	if-eqz v0, :cond_3</span>
 <span class="missed">	new-instance v0, Lcom/google/gson/internal/bind/TreeTypeAdapter;</span>
-<span class="missed">	iget-object v2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->d:Lsv;</span>
-<span class="missed">	iget-object v3, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->e:Lkv;</span>
+<span class="missed">	iget-object v2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->d:Ltk;</span>
+<span class="missed">	iget-object v3, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->e:Ltc;</span>
 <span class="missed">	move-object v1, v0</span>
 <span class="missed">	move-object v4, p1</span>
 <span class="missed">	move-object v5, p2</span>
 <span class="missed">	move-object v6, p0</span>
-<span class="missed">	invoke-direct/range {v1 .. v6}, Lcom/google/gson/internal/bind/TreeTypeAdapter;-><init>(Lsv;Lkv;Lfv;Ldw;Lwv;)V</span>
+<span class="missed">	invoke-direct/range {v1 .. v6}, Lcom/google/gson/internal/bind/TreeTypeAdapter;-><init>(Ltk;Ltc;Lsx;Ltv;Lto;)V</span>
 <span class="">	goto :goto_2</span>
 <span class="">	:cond_3</span>
 <span class="missed">	const/4 v0, 0x0</span>

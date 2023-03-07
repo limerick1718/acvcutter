@@ -1,222 +1,157 @@
-.class public final Lcom/google/android/gms/common/internal/i;
+.class public Lcom/google/android/gms/common/internal/i;
 .super Ljava/lang/Object;
 
 
 # instance fields
-.field private final a:Ljava/lang/String;
+.field private final a:Landroid/util/SparseIntArray;
 
-.field private final b:Ljava/lang/String;
+.field private b:Lcom/google/android/gms/common/f;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 5
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-string v0, "log tag cannot be null"
-
-    .line 2
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 3
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    const/16 v3, 0x17
-
-    if-gt v0, v3, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    const/4 v4, 0x2
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    aput-object p1, v4, v2
-
-    .line 4
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    aput-object v2, v4, v1
-
-    const-string v1, "tag \"%s\" is longer than the %d character maximum"
-
-    .line 5
-    invoke-static {v0, v1, v4}, Lcom/google/android/gms/common/internal/q;->a(ZLjava/lang/String;[Ljava/lang/Object;)V
-
-    .line 6
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/i;->a:Ljava/lang/String;
-
-    if-eqz p2, :cond_2
-
-    .line 7
-    invoke-virtual {p2}, Ljava/lang/String;->length()I
-
-    move-result p1
-
-    if-gtz p1, :cond_1
-
-    goto :goto_1
-
-    .line 8
-    :cond_1
-    iput-object p2, p0, Lcom/google/android/gms/common/internal/i;->b:Ljava/lang/String;
-
-    return-void
-
-    :cond_2
-    :goto_1
-    const/4 p1, 0x0
-
-    .line 9
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/i;->b:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method private final a(Ljava/lang/String;)Ljava/lang/String;
+.method public constructor <init>()V
     .locals 1
 
+    .line 1
+    invoke-static {}, Lcom/google/android/gms/common/e;->a()Lcom/google/android/gms/common/e;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcom/google/android/gms/common/internal/i;-><init>(Lcom/google/android/gms/common/f;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/google/android/gms/common/f;)V
+    .locals 1
+
+    .line 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 4
+    new-instance v0, Landroid/util/SparseIntArray;
+
+    invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/gms/common/internal/i;->a:Landroid/util/SparseIntArray;
+
+    .line 5
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 6
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/i;->b:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/i;->b:Lcom/google/android/gms/common/f;
 
-    if-nez v0, :cond_0
-
-    return-object p1
-
-    .line 7
-    :cond_0
-    invoke-virtual {v0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
+.method public a(Landroid/content/Context;Lcom/google/android/gms/common/api/a$f;)I
+    .locals 6
 
-    const/4 v0, 0x3
+    .line 8
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/internal/i;->a(I)Z
+    .line 9
+    invoke-static {p2}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 3
-    invoke-direct {p0, p2}, Lcom/google/android/gms/common/internal/i;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-static {p1, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_0
-    return-void
-.end method
-
-.method public final a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 1
-
-    const/4 v0, 0x6
-
-    .line 4
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/internal/i;->a(I)Z
+    .line 10
+    invoke-interface {p2}, Lcom/google/android/gms/common/api/a$f;->e()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x0
 
-    .line 5
-    invoke-direct {p0, p2}, Lcom/google/android/gms/common/internal/i;->a(Ljava/lang/String;)Ljava/lang/String;
+    if-nez v0, :cond_0
 
-    move-result-object p2
+    return v1
 
-    invoke-static {p1, p2, p3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
+    .line 12
     :cond_0
-    return-void
-.end method
+    invoke-interface {p2}, Lcom/google/android/gms/common/api/a$f;->g()I
 
-.method public final a(I)Z
-    .locals 1
+    move-result p2
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/i;->a:Ljava/lang/String;
+    .line 13
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/i;->a:Landroid/util/SparseIntArray;
 
-    invoke-static {v0, p1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    const/4 v2, -0x1
 
-    move-result p1
-
-    return p1
-.end method
-
-.method public final b(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
-
-    const/4 v0, 0x6
-
-    .line 1
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/internal/i;->a(I)Z
+    invoke-virtual {v0, p2, v2}, Landroid/util/SparseIntArray;->get(II)I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eq v0, v2, :cond_1
 
-    .line 2
-    invoke-direct {p0, p2}, Lcom/google/android/gms/common/internal/i;->a(Ljava/lang/String;)Ljava/lang/String;
+    return v0
 
-    move-result-object p2
+    :cond_1
+    const/4 v3, 0x0
 
-    invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    .line 16
+    :goto_0
+    iget-object v4, p0, Lcom/google/android/gms/common/internal/i;->a:Landroid/util/SparseIntArray;
 
-    :cond_0
-    return-void
-.end method
+    invoke-virtual {v4}, Landroid/util/SparseIntArray;->size()I
 
-.method public final c(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
+    move-result v4
 
-    const/4 v0, 0x2
+    if-ge v3, v4, :cond_3
 
-    .line 1
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/internal/i;->a(I)Z
+    .line 17
+    iget-object v4, p0, Lcom/google/android/gms/common/internal/i;->a:Landroid/util/SparseIntArray;
+
+    invoke-virtual {v4, v3}, Landroid/util/SparseIntArray;->keyAt(I)I
+
+    move-result v4
+
+    if-le v4, p2, :cond_2
+
+    .line 18
+    iget-object v5, p0, Lcom/google/android/gms/common/internal/i;->a:Landroid/util/SparseIntArray;
+
+    invoke-virtual {v5, v4}, Landroid/util/SparseIntArray;->get(I)I
+
+    move-result v4
+
+    if-nez v4, :cond_2
+
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_2
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    :goto_1
+    if-ne v0, v2, :cond_4
+
+    .line 23
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/i;->b:Lcom/google/android/gms/common/f;
+
+    invoke-virtual {v0, p1, p2}, Lcom/google/android/gms/common/f;->b(Landroid/content/Context;I)I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    .line 24
+    :cond_4
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/i;->a:Landroid/util/SparseIntArray;
 
-    .line 2
-    invoke-direct {p0, p2}, Lcom/google/android/gms/common/internal/i;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, p2, v0}, Landroid/util/SparseIntArray;->put(II)V
 
-    move-result-object p2
+    return v0
+.end method
 
-    invoke-static {p1, p2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+.method public a()V
+    .locals 1
 
-    :cond_0
+    .line 26
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/i;->a:Landroid/util/SparseIntArray;
+
+    invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
+
     return-void
 .end method

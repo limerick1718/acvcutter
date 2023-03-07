@@ -6,19 +6,47 @@
 
 
 # instance fields
-.field private final synthetic a:Lgn;
+.field private final synthetic a:Ljava/lang/String;
 
-.field private final synthetic b:Lmn;
+.field private final synthetic b:Ljava/lang/String;
+
+.field private final synthetic c:J
+
+.field private final synthetic d:Landroid/os/Bundle;
+
+.field private final synthetic e:Z
+
+.field private final synthetic f:Z
+
+.field private final synthetic g:Z
+
+.field private final synthetic h:Ljava/lang/String;
+
+.field private final synthetic i:Lnl;
 
 
 # direct methods
-.method constructor <init>(Lmn;Lgn;)V
+.method constructor <init>(Lnl;Ljava/lang/String;Ljava/lang/String;JLandroid/os/Bundle;ZZZLjava/lang/String;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lnn;->b:Lmn;
+    iput-object p1, p0, Lnn;->i:Lnl;
 
-    iput-object p2, p0, Lnn;->a:Lgn;
+    iput-object p2, p0, Lnn;->a:Ljava/lang/String;
+
+    iput-object p3, p0, Lnn;->b:Ljava/lang/String;
+
+    iput-wide p4, p0, Lnn;->c:J
+
+    iput-object p6, p0, Lnn;->d:Landroid/os/Bundle;
+
+    iput-boolean p7, p0, Lnn;->e:Z
+
+    iput-boolean p8, p0, Lnn;->f:Z
+
+    iput-boolean p9, p0, Lnn;->g:Z
+
+    iput-object p10, p0, Lnn;->h:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,118 +56,28 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
-
-    .line 1
-    :try_start_0
-    iget-object v0, p0, Lnn;->b:Lmn;
-
-    invoke-static {v0}, Lmn;->a(Lmn;)Lzm;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lnn;->a:Lgn;
-
-    invoke-interface {v0, v1}, Lzm;->a(Lgn;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgn;
-    :try_end_0
-    .catch Len; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    if-nez v0, :cond_0
+    .locals 10
 
     .line 2
-    iget-object v0, p0, Lnn;->b:Lmn;
+    iget-object v0, p0, Lnn;->i:Lnl;
 
-    new-instance v1, Ljava/lang/NullPointerException;
+    iget-object v1, p0, Lnn;->a:Ljava/lang/String;
 
-    const-string v2, "Continuation returned null"
+    iget-object v2, p0, Lnn;->b:Ljava/lang/String;
 
-    invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    iget-wide v3, p0, Lnn;->c:J
 
-    invoke-virtual {v0, v1}, Lmn;->a(Ljava/lang/Exception;)V
+    iget-object v5, p0, Lnn;->d:Landroid/os/Bundle;
 
-    return-void
+    iget-boolean v6, p0, Lnn;->e:Z
 
-    .line 3
-    :cond_0
-    sget-object v1, Lin;->b:Ljava/util/concurrent/Executor;
+    iget-boolean v7, p0, Lnn;->f:Z
 
-    iget-object v2, p0, Lnn;->b:Lmn;
+    iget-boolean v8, p0, Lnn;->g:Z
 
-    invoke-virtual {v0, v1, v2}, Lgn;->a(Ljava/util/concurrent/Executor;Ldn;)Lgn;
+    iget-object v9, p0, Lnn;->h:Ljava/lang/String;
 
-    .line 4
-    sget-object v1, Lin;->b:Ljava/util/concurrent/Executor;
-
-    iget-object v2, p0, Lnn;->b:Lmn;
-
-    invoke-virtual {v0, v1, v2}, Lgn;->a(Ljava/util/concurrent/Executor;Lcn;)Lgn;
-
-    .line 5
-    sget-object v1, Lin;->b:Ljava/util/concurrent/Executor;
-
-    iget-object v2, p0, Lnn;->b:Lmn;
-
-    invoke-virtual {v0, v1, v2}, Lgn;->a(Ljava/util/concurrent/Executor;Lan;)Lgn;
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    .line 6
-    iget-object v1, p0, Lnn;->b:Lmn;
-
-    invoke-static {v1}, Lmn;->b(Lmn;)Lbo;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lbo;->a(Ljava/lang/Exception;)V
-
-    return-void
-
-    :catch_1
-    move-exception v0
-
-    .line 7
-    invoke-virtual {v0}, Ljava/lang/RuntimeException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v1
-
-    instance-of v1, v1, Ljava/lang/Exception;
-
-    if-eqz v1, :cond_1
-
-    .line 8
-    iget-object v1, p0, Lnn;->b:Lmn;
-
-    invoke-static {v1}, Lmn;->b(Lmn;)Lbo;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Ljava/lang/RuntimeException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Exception;
-
-    invoke-virtual {v1, v0}, Lbo;->a(Ljava/lang/Exception;)V
-
-    return-void
-
-    .line 9
-    :cond_1
-    iget-object v1, p0, Lnn;->b:Lmn;
-
-    invoke-static {v1}, Lmn;->b(Lmn;)Lbo;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lbo;->a(Ljava/lang/Exception;)V
+    invoke-static/range {v0 .. v9}, Lnl;->a(Lnl;Ljava/lang/String;Ljava/lang/String;JLandroid/os/Bundle;ZZZLjava/lang/String;)V
 
     return-void
 .end method

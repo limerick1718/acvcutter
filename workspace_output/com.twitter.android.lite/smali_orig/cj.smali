@@ -1,17 +1,25 @@
-.class public final Lcj;
+.class final Lcj;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-
-# interfaces
-.implements Ldj;
 
 
-# static fields
-.field private static final a:Lva;
+# instance fields
+.field private final a:Ljava/util/concurrent/ConcurrentHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lva<",
-            "Ljava/lang/Boolean;",
+            "Ljava/util/concurrent/ConcurrentHashMap<",
+            "Lck;",
+            "Ljava/util/List<",
+            "Ljava/lang/Throwable;",
+            ">;>;"
+        }
+    .end annotation
+.end field
+
+.field private final b:Ljava/lang/ref/ReferenceQueue;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ref/ReferenceQueue<",
+            "Ljava/lang/Throwable;",
             ">;"
         }
     .end annotation
@@ -19,69 +27,122 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    .line 1
-    new-instance v0, Lbb;
-
-    const-string v1, "com.google.android.gms.measurement"
-
-    .line 2
-    invoke-static {v1}, Lsa;->a(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lbb;-><init>(Landroid/net/Uri;)V
-
-    const-string v1, "measurement.client.freeride_engagement_fix"
-
-    const/4 v2, 0x1
-
-    .line 3
-    invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;
-
-    move-result-object v0
-
-    sput-object v0, Lcj;->a:Lva;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
+.method constructor <init>()V
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    const/16 v1, 0x10
+
+    const/high16 v2, 0x3f400000    # 0.75f
+
+    const/16 v3, 0xa
+
+    invoke-direct {v0, v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;-><init>(IFI)V
+
+    iput-object v0, p0, Lcj;->a:Ljava/util/concurrent/ConcurrentHashMap;
+
+    .line 3
+    new-instance v0, Ljava/lang/ref/ReferenceQueue;
+
+    invoke-direct {v0}, Ljava/lang/ref/ReferenceQueue;-><init>()V
+
+    iput-object v0, p0, Lcj;->b:Ljava/lang/ref/ReferenceQueue;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method public final a(Ljava/lang/Throwable;Z)Ljava/util/List;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Throwable;",
+            "Z)",
+            "Ljava/util/List<",
+            "Ljava/lang/Throwable;",
+            ">;"
+        }
+    .end annotation
 
-    const/4 v0, 0x1
+    .line 5
+    iget-object p2, p0, Lcj;->b:Ljava/lang/ref/ReferenceQueue;
 
-    return v0
-.end method
+    invoke-virtual {p2}, Ljava/lang/ref/ReferenceQueue;->poll()Ljava/lang/ref/Reference;
 
-.method public final b()Z
-    .locals 1
+    move-result-object p2
 
-    .line 1
-    sget-object v0, Lcj;->a:Lva;
+    :goto_0
+    if-eqz p2, :cond_0
 
-    invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
+    .line 6
+    iget-object v0, p0, Lcj;->a:Ljava/util/concurrent/ConcurrentHashMap;
 
-    move-result-object v0
+    invoke-virtual {v0, p2}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast v0, Ljava/lang/Boolean;
+    .line 7
+    iget-object p2, p0, Lcj;->b:Ljava/lang/ref/ReferenceQueue;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {p2}, Ljava/lang/ref/ReferenceQueue;->poll()Ljava/lang/ref/Reference;
 
-    move-result v0
+    move-result-object p2
 
-    return v0
+    goto :goto_0
+
+    .line 8
+    :cond_0
+    new-instance p2, Lck;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p2, p1, v0}, Lck;-><init>(Ljava/lang/Throwable;Ljava/lang/ref/ReferenceQueue;)V
+
+    .line 9
+    iget-object v0, p0, Lcj;->a:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0, p2}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    if-eqz p2, :cond_1
+
+    return-object p2
+
+    .line 12
+    :cond_1
+    new-instance p2, Ljava/util/Vector;
+
+    const/4 v0, 0x2
+
+    invoke-direct {p2, v0}, Ljava/util/Vector;-><init>(I)V
+
+    .line 13
+    iget-object v0, p0, Lcj;->a:Ljava/util/concurrent/ConcurrentHashMap;
+
+    new-instance v1, Lck;
+
+    iget-object v2, p0, Lcj;->b:Ljava/lang/ref/ReferenceQueue;
+
+    invoke-direct {v1, p1, v2}, Lck;-><init>(Ljava/lang/Throwable;Ljava/lang/ref/ReferenceQueue;)V
+
+    invoke-virtual {v0, v1, p2}, Ljava/util/concurrent/ConcurrentHashMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/util/List;
+
+    if-nez p1, :cond_2
+
+    return-object p2
+
+    :cond_2
+    return-object p1
 .end method

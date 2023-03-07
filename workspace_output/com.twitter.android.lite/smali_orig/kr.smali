@@ -1,84 +1,199 @@
-.class public final Lkr;
+.class public interface abstract Lkr;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+
+# interfaces
+.implements Landroid/os/IInterface;
 
 
-# direct methods
-.method public static a(Ljava/io/File;Landroid/content/Context;)[B
-    .locals 3
-    .annotation system Ldalvik/annotation/Throws;
+# virtual methods
+.method public abstract a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
         value = {
-            Ljava/io/IOException;
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ")",
+            "Ljava/util/List<",
+            "Lqd;",
+            ">;"
         }
     .end annotation
 
-    if-eqz p0, :cond_1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 1
-    invoke-virtual {p0}, Ljava/io/File;->exists()Z
+.method public abstract a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Z)",
+            "Ljava/util/List<",
+            "Lps;",
+            ">;"
+        }
+    .end annotation
 
-    move-result v0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    if-nez v0, :cond_0
+.method public abstract a(Ljava/lang/String;Ljava/lang/String;Lpz;)Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Lpz;",
+            ")",
+            "Ljava/util/List<",
+            "Lqd;",
+            ">;"
+        }
+    .end annotation
 
-    goto :goto_1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    :cond_0
-    const/4 v0, 0x0
+.method public abstract a(Ljava/lang/String;Ljava/lang/String;ZLpz;)Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Z",
+            "Lpz;",
+            ")",
+            "Ljava/util/List<",
+            "Lps;",
+            ">;"
+        }
+    .end annotation
 
-    .line 2
-    :try_start_0
-    new-instance v1, Ljava/io/BufferedReader;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    new-instance v2, Ljava/io/FileReader;
+.method public abstract a(Lpz;Z)Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lpz;",
+            "Z)",
+            "Ljava/util/List<",
+            "Lps;",
+            ">;"
+        }
+    .end annotation
 
-    invoke-direct {v2, p0}, Ljava/io/FileReader;-><init>(Ljava/io/File;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    invoke-direct {v1, v2}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+.method public abstract a(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 3
-    :try_start_1
-    new-instance p0, Ljr;
+.method public abstract a(Lko;Ljava/lang/String;Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    new-instance v0, Lnr;
+.method public abstract a(Lko;Lpz;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    invoke-direct {v0}, Lnr;-><init>()V
+.method public abstract a(Lps;Lpz;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    invoke-direct {p0, p1, v0}, Ljr;-><init>(Landroid/content/Context;Ljr$a;)V
+.method public abstract a(Lpz;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    invoke-virtual {p0, v1}, Ljr;->a(Ljava/io/BufferedReader;)[B
+.method public abstract a(Lqd;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    move-result-object p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+.method public abstract a(Lqd;Lpz;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    .line 4
-    invoke-static {v1}, Lzo;->a(Ljava/io/Closeable;)V
+.method public abstract a(Lko;Ljava/lang/String;)[B
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    return-object p0
+.method public abstract b(Lpz;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    :catchall_0
-    move-exception p0
+.method public abstract c(Lpz;)Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
 
-    move-object v0, v1
-
-    goto :goto_0
-
-    :catchall_1
-    move-exception p0
-
-    :goto_0
-    invoke-static {v0}, Lzo;->a(Ljava/io/Closeable;)V
-
-    throw p0
-
-    :cond_1
-    :goto_1
-    const/4 p0, 0x0
-
-    new-array p0, p0, [B
-
-    return-object p0
+.method public abstract d(Lpz;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
 .end method

@@ -1,17 +1,14 @@
-.class public final Lrm;
+.class public abstract Lrm;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
+        "<TResult:",
         "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator<",
-        "Lqm;",
-        ">;"
+        ">",
+        "Ljava/lang/Object;"
     }
 .end annotation
 
@@ -28,108 +25,164 @@
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 7
+.method public abstract a(Ljava/lang/Class;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<X:",
+            "Ljava/lang/Throwable;",
+            ">(",
+            "Ljava/lang/Class<",
+            "TX;>;)TTResult;^TX;"
+        }
+    .end annotation
 
-    .line 1
-    invoke-static {p1}, Lq5;->b(Landroid/os/Parcel;)I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    move-object v2, v1
-
-    const/4 v3, 0x0
-
-    .line 2
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v4
-
-    if-ge v4, v0, :cond_3
-
-    .line 3
-    invoke-static {p1}, Lq5;->a(Landroid/os/Parcel;)I
-
-    move-result v4
-
-    .line 4
-    invoke-static {v4}, Lq5;->a(I)I
-
-    move-result v5
-
-    const/4 v6, 0x1
-
-    if-eq v5, v6, :cond_2
-
-    const/4 v6, 0x2
-
-    if-eq v5, v6, :cond_1
-
-    const/4 v6, 0x3
-
-    if-eq v5, v6, :cond_0
-
-    .line 5
-    invoke-static {p1, v4}, Lq5;->o(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    .line 6
-    :cond_0
-    sget-object v2, Lcom/google/android/gms/common/internal/s;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    .line 7
-    invoke-static {p1, v4, v2}, Lq5;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/google/android/gms/common/internal/s;
-
-    goto :goto_0
-
-    .line 8
-    :cond_1
-    sget-object v1, Lc5;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    .line 9
-    invoke-static {p1, v4, v1}, Lq5;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object v1
-
-    check-cast v1, Lc5;
-
-    goto :goto_0
-
-    .line 10
-    :cond_2
-    invoke-static {p1, v4}, Lq5;->k(Landroid/os/Parcel;I)I
-
-    move-result v3
-
-    goto :goto_0
-
-    .line 11
-    :cond_3
-    invoke-static {p1, v0}, Lq5;->d(Landroid/os/Parcel;I)V
-
-    .line 12
-    new-instance p1, Lqm;
-
-    invoke-direct {p1, v3, v1, v2}, Lqm;-><init>(ILc5;Lcom/google/android/gms/common/internal/s;)V
-
-    return-object p1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Throwable;
+        }
+    .end annotation
 .end method
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
+.method public a(Ljava/util/concurrent/Executor;Lrg;)Lrm;
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<TContinuationResult:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/concurrent/Executor;",
+            "Lrg<",
+            "TTResult;TTContinuationResult;>;)",
+            "Lrm<",
+            "TTContinuationResult;>;"
+        }
+    .end annotation
 
-    .line 1
-    new-array p1, p1, [Lqm;
+    .line 9
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
 
-    return-object p1
+    const-string p2, "continueWith is not implemented"
+
+    invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public a(Ljava/util/concurrent/Executor;Lrh;)Lrm;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/concurrent/Executor;",
+            "Lrh;",
+            ")",
+            "Lrm<",
+            "TTResult;>;"
+        }
+    .end annotation
+
+    .line 6
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    const-string p2, "addOnCanceledListener is not implemented"
+
+    invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public a(Ljava/util/concurrent/Executor;Lri;)Lrm;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/concurrent/Executor;",
+            "Lri<",
+            "TTResult;>;)",
+            "Lrm<",
+            "TTResult;>;"
+        }
+    .end annotation
+
+    .line 3
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    const-string p2, "addOnCompleteListener is not implemented"
+
+    invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public abstract a(Ljava/util/concurrent/Executor;Lrj;)Lrm;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/concurrent/Executor;",
+            "Lrj;",
+            ")",
+            "Lrm<",
+            "TTResult;>;"
+        }
+    .end annotation
+.end method
+
+.method public abstract a(Ljava/util/concurrent/Executor;Lrk;)Lrm;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/concurrent/Executor;",
+            "Lrk<",
+            "-TTResult;>;)",
+            "Lrm<",
+            "TTResult;>;"
+        }
+    .end annotation
+.end method
+
+.method public abstract a()Z
+.end method
+
+.method public b(Ljava/util/concurrent/Executor;Lrg;)Lrm;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<TContinuationResult:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/concurrent/Executor;",
+            "Lrg<",
+            "TTResult;",
+            "Lrm<",
+            "TTContinuationResult;>;>;)",
+            "Lrm<",
+            "TTContinuationResult;>;"
+        }
+    .end annotation
+
+    .line 11
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    const-string p2, "continueWithTask is not implemented"
+
+    invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public abstract b()Z
+.end method
+
+.method public abstract c()Z
+.end method
+
+.method public abstract d()Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TTResult;"
+        }
+    .end annotation
+.end method
+
+.method public abstract e()Ljava/lang/Exception;
 .end method

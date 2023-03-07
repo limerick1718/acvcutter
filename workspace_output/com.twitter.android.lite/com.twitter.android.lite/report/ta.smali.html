@@ -15,164 +15,230 @@
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
 		<code>.class public final Lta;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
+.super Ltd;
+.source "JsonArray.java"
+.implements Ljava/lang/Iterable;
 
-
-.field private static volatile a:Leb;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Leb<",
-"Ljava/lang/Boolean;",
+"Ltd;",
+"Ljava/lang/Iterable<",
+"Ltd;",
+">;"
+}
+.end annotation
+
+.field private final a:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Ltd;",
 ">;"
 }
 .end annotation
 .end field
-.field private static final b:Ljava/lang/Object;
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+.method public constructor &lt;init&gt;()V
 <span class="">	.locals 1</span>
 
-<span class="exec">	invoke-static {}, Leb;->c()Leb;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	sput-object v0, Lta;->a:Leb;</span>
-<span class="cov">	new-instance v0, Ljava/lang/Object;</span>
-<span class="cov">	invoke-direct {v0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	sput-object v0, Lta;->b:Ljava/lang/Object;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct {p0}, Ltd;-><init>()V</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lta;->a:Ljava/util/List;</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method private static a(Landroid/content/Context;)Z</span>
+.method public a()Ljava/lang/Number;
 <span class="">	.locals 2</span>
 
-<span class="exec">	invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	const-string v1, "com.google.android.gms"</span>
-<span class="exec">	invoke-virtual {p0, v1, v0}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="cov">	iget p0, p0, Landroid/content/pm/ApplicationInfo;->flags:I</span>
-<span class="cov">	and-int/lit16 p0, p0, 0x81</span>
-<span class="cov">	if-eqz p0, :cond_0</span>
-<span class="cov">	const/4 p0, 0x1</span>
-<span class="exec">	return p0</span>
+<span class="missed">	iget-object v0, p0, Lta;->a:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-ne v0, v1, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lta;->a:Ljava/util/List;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ltd;</span>
+<span class="">	invoke-virtual {v0}, Ltd;->a()Ljava/lang/Number;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
 <span class="">	:cond_0</span>
-<span class="">	:catch_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public a(Ltd;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="missed">	sget-object p1, Ltf;->a:Ltf;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lta;->a:Ljava/util/List;</span>
+<span class="missed">	invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method public b()Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lta;->a:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-ne v0, v1, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lta;->a:Ljava/util/List;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ltd;</span>
+<span class="">	invoke-virtual {v0}, Ltd;->b()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public c()D
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lta;->a:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-ne v0, v1, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lta;->a:Ljava/util/List;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ltd;</span>
+<span class="">	invoke-virtual {v0}, Ltd;->c()D</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	return-wide v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public d()J
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lta;->a:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-ne v0, v1, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lta;->a:Ljava/util/List;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ltd;</span>
+<span class="">	invoke-virtual {v0}, Ltd;->d()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	return-wide v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public e()I
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lta;->a:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-ne v0, v1, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lta;->a:Ljava/util/List;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ltd;</span>
+<span class="">	invoke-virtual {v0}, Ltd;->e()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eq p1, p0, :cond_1</span>
+<span class="missed">	instance-of v0, p1, Lta;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	check-cast p1, Lta;</span>
+<span class="missed">	iget-object p1, p1, Lta;->a:Ljava/util/List;</span>
+<span class="missed">	iget-object v0, p0, Lta;->a:Ljava/util/List;</span>
+<span class="">	invoke-interface {p1, v0}, Ljava/util/List;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	:goto_1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public f()Z
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lta;->a:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	if-ne v0, v1, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lta;->a:Ljava/util/List;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ltd;</span>
+<span class="">	invoke-virtual {v0}, Ltd;->f()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V</span>
+<span class="">	throw v0</span>
+.end method
+
+.method public hashCode()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lta;->a:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->hashCode()I</span>
+<span class="missed">	move-result v0</span>
 <span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public static a(Landroid/content/Context;Landroid/net/Uri;)Z</span>
-<span class="">	.locals 4</span>
+.method public iterator()Ljava/util/Iterator;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/util/Iterator<",</span>
+<span class="">	"Ltd;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="exec">	invoke-virtual {p1}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	const-string v0, "com.google.android.gms.phenotype"</span>
-<span class="exec">	invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="">	invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/String;->length()I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	add-int/lit8 p0, p0, 0x5b</span>
-<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {v0, p0}, Ljava/lang/StringBuilder;-><init>(I)V</span>
-<span class="missed">	invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string p0, " is an unsupported authority. Only com.google.android.gms.phenotype authority is supported."</span>
-<span class="missed">	invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	const-string p1, "PhenotypeClientHelper"</span>
-<span class="missed">	invoke-static {p1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
-<span class="">	return v1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	sget-object p1, Lta;->a:Leb;</span>
-<span class="exec">	invoke-virtual {p1}, Leb;->a()Z</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	if-eqz p1, :cond_1</span>
-<span class="cov">	sget-object p0, Lta;->a:Leb;</span>
-<span class="exec">	invoke-virtual {p0}, Leb;->b()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="cov">	check-cast p0, Ljava/lang/Boolean;</span>
-<span class="exec">	invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	return p0</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	sget-object p1, Lta;->b:Ljava/lang/Object;</span>
-<span class="cov">	monitor-enter p1</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	sget-object v0, Lta;->a:Leb;</span>
-<span class="exec">	invoke-virtual {v0}, Leb;->a()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_2</span>
-<span class="missed">	sget-object p0, Lta;->a:Leb;</span>
-<span class="">	invoke-virtual {p0}, Leb;->b()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	check-cast p0, Ljava/lang/Boolean;</span>
-<span class="">	invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	monitor-exit p1</span>
-<span class="">	return p0</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	const-string v0, "com.google.android.gms"</span>
-<span class="exec">	invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v2</span>
-<span class="exec">	invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	const/4 v2, 0x1</span>
-<span class="missed">	if-eqz v0, :cond_3</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	const/4 v0, 0x1</span>
-<span class="">	goto :goto_1</span>
-<span class="cov">	:cond_3</span>
-<span class="exec">	invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	const-string v3, "com.google.android.gms.phenotype"</span>
-<span class="exec">	invoke-virtual {v0, v3, v1}, Landroid/content/pm/PackageManager;->resolveContentProvider(Ljava/lang/String;I)Landroid/content/pm/ProviderInfo;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	if-eqz v0, :cond_4</span>
-<span class="cov">	const-string v3, "com.google.android.gms"</span>
-<span class="cov">	iget-object v0, v0, Landroid/content/pm/ProviderInfo;->packageName:Ljava/lang/String;</span>
-<span class="exec">	invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-eqz v0, :cond_4</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_4</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	if-eqz v0, :cond_5</span>
-<span class="exec">	invoke-static {p0}, Lta;->a(Landroid/content/Context;)Z</span>
-<span class="cov">	move-result p0</span>
-<span class="cov">	if-eqz p0, :cond_5</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="cov">	:cond_5</span>
-<span class="exec">	invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	invoke-static {p0}, Leb;->a(Ljava/lang/Object;)Leb;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="cov">	sput-object p0, Lta;->a:Leb;</span>
-<span class="cov">	monitor-exit p1</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="cov">	sget-object p0, Lta;->a:Leb;</span>
-<span class="exec">	invoke-virtual {p0}, Leb;->b()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="cov">	check-cast p0, Ljava/lang/Boolean;</span>
-<span class="exec">	invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z</span>
-<span class="cov">	move-result p0</span>
-<span class="exec">	return p0</span>
-<span class="">	:catchall_0</span>
-<span class="missed">	move-exception p0</span>
-<span class="">	:try_start_1</span>
-<span class="missed">	monitor-exit p1</span>
-<span class="">	:try_end_1</span>
-<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
-<span class="">	throw p0</span>
+<span class="missed">	iget-object v0, p0, Lta;->a:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

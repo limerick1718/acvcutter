@@ -1,101 +1,103 @@
 .class public final Llp;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+
+
+# instance fields
+.field private final a:Ljava/lang/String;
+
+.field private final b:J
+
+.field private c:Z
+
+.field private d:J
+
+.field private final synthetic e:Llm;
 
 
 # direct methods
-.method public static a(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
-    .locals 1
+.method public constructor <init>(Llm;Ljava/lang/String;J)V
+    .locals 0
 
     .line 1
-    invoke-static {p0}, Llp;->b(Ljava/lang/String;)Ljava/util/concurrent/ThreadFactory;
+    iput-object p1, p0, Llp;->e:Llm;
 
-    move-result-object v0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    invoke-static {v0}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
+    invoke-static {p2}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/String;)Ljava/lang/String;
 
     .line 3
-    invoke-static {p0, v0}, Llp;->a(Ljava/lang/String;Ljava/util/concurrent/ExecutorService;)V
-
-    return-object v0
-.end method
-
-.method private static final a(Ljava/lang/String;Ljava/util/concurrent/ExecutorService;)V
-    .locals 3
+    iput-object p2, p0, Llp;->a:Ljava/lang/String;
 
     .line 4
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    const-wide/16 v1, 0x2
-
-    invoke-static {p0, p1, v1, v2, v0}, Llp;->a(Ljava/lang/String;Ljava/util/concurrent/ExecutorService;JLjava/util/concurrent/TimeUnit;)V
+    iput-wide p3, p0, Llp;->b:J
 
     return-void
 .end method
 
-.method public static final a(Ljava/lang/String;Ljava/util/concurrent/ExecutorService;JLjava/util/concurrent/TimeUnit;)V
-    .locals 9
 
-    .line 5
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+# virtual methods
+.method public final a()J
+    .locals 4
+
+    .line 7
+    iget-boolean v0, p0, Llp;->c:Z
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    .line 8
+    iput-boolean v0, p0, Llp;->c:Z
+
+    .line 9
+    iget-object v0, p0, Llp;->e:Llm;
+
+    invoke-static {v0}, Llm;->a(Llm;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    new-instance v1, Ljava/lang/Thread;
+    iget-object v1, p0, Llp;->a:Ljava/lang/String;
 
-    new-instance v8, Llp$b;
+    iget-wide v2, p0, Llp;->b:J
 
-    move-object v2, v8
+    invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
-    move-object v3, p0
+    move-result-wide v0
 
-    move-object v4, p1
+    iput-wide v0, p0, Llp;->d:J
 
-    move-wide v5, p2
+    .line 10
+    :cond_0
+    iget-wide v0, p0, Llp;->d:J
 
-    move-object v7, p4
-
-    invoke-direct/range {v2 .. v7}, Llp$b;-><init>(Ljava/lang/String;Ljava/util/concurrent/ExecutorService;JLjava/util/concurrent/TimeUnit;)V
-
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string p2, "Crashlytics Shutdown Hook for "
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v1, v8, p0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
-
-    .line 6
-    invoke-virtual {v0, v1}, Ljava/lang/Runtime;->addShutdownHook(Ljava/lang/Thread;)V
-
-    return-void
+    return-wide v0
 .end method
 
-.method public static final b(Ljava/lang/String;)Ljava/util/concurrent/ThreadFactory;
-    .locals 3
+.method public final a(J)V
+    .locals 2
 
-    .line 1
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
+    .line 11
+    iget-object v0, p0, Llp;->e:Llm;
 
-    const-wide/16 v1, 0x1
+    invoke-static {v0}, Llm;->a(Llm;)Landroid/content/SharedPreferences;
 
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
+    move-result-object v0
 
-    .line 2
-    new-instance v1, Llp$a;
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-    invoke-direct {v1, p0, v0}, Llp$a;-><init>(Ljava/lang/String;Ljava/util/concurrent/atomic/AtomicLong;)V
+    move-result-object v0
 
-    return-object v1
+    .line 12
+    iget-object v1, p0, Llp;->a:Ljava/lang/String;
+
+    invoke-interface {v0, v1, p1, p2}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+
+    .line 13
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 14
+    iput-wide p1, p0, Llp;->d:J
+
+    return-void
 .end method

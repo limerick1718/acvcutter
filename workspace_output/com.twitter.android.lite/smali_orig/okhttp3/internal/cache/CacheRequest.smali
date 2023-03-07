@@ -7,7 +7,7 @@
 .method public abstract abort()V
 .end method
 
-.method public abstract body()Lvx;
+.method public abstract body()Lzj;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

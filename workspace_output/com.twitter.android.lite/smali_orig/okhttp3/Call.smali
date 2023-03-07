@@ -41,5 +41,5 @@
 .method public abstract request()Lokhttp3/Request;
 .end method
 
-.method public abstract timeout()Lxx;
+.method public abstract timeout()Lzl;
 .end method

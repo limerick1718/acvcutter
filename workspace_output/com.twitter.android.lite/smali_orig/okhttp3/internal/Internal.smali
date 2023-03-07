@@ -11,7 +11,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,7 +20,7 @@
 .method public static initializeInstanceForTests()V
     .locals 1
 
-    .line 1
+    .line 39
     new-instance v0, Lokhttp3/OkHttpClient;
 
     invoke-direct {v0}, Lokhttp3/OkHttpClient;-><init>()V

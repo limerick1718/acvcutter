@@ -24,19 +24,21 @@
 .method constructor <init>(ILjava/lang/reflect/Method;)V
     .locals 0
 
-    .line 1
+    .line 204
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 205
     iput p1, p0, Landroidx/lifecycle/a$b;->a:I
 
-    .line 3
+    .line 206
     iput-object p2, p0, Landroidx/lifecycle/a$b;->b:Ljava/lang/reflect/Method;
 
-    const/4 p1, 0x1
+    .line 207
+    iget-object p1, p0, Landroidx/lifecycle/a$b;->b:Ljava/lang/reflect/Method;
 
-    .line 4
-    invoke-virtual {p2, p1}, Ljava/lang/reflect/Method;->setAccessible(Z)V
+    const/4 p2, 0x1
+
+    invoke-virtual {p1, p2}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
     return-void
 .end method
@@ -46,7 +48,7 @@
 .method a(Landroidx/lifecycle/g;Landroidx/lifecycle/e$a;Ljava/lang/Object;)V
     .locals 4
 
-    .line 1
+    .line 213
     :try_start_0
     iget v0, p0, Landroidx/lifecycle/a$b;->a:I
 
@@ -64,7 +66,7 @@
 
     goto :goto_0
 
-    .line 2
+    .line 221
     :cond_0
     iget-object v0, p0, Landroidx/lifecycle/a$b;->b:Ljava/lang/reflect/Method;
 
@@ -78,7 +80,7 @@
 
     goto :goto_0
 
-    .line 3
+    .line 218
     :cond_1
     iget-object p2, p0, Landroidx/lifecycle/a$b;->b:Ljava/lang/reflect/Method;
 
@@ -90,7 +92,7 @@
 
     goto :goto_0
 
-    .line 4
+    .line 215
     :cond_2
     iget-object p1, p0, Landroidx/lifecycle/a$b;->b:Ljava/lang/reflect/Method;
 
@@ -107,7 +109,7 @@
     :catch_0
     move-exception p1
 
-    .line 5
+    .line 227
     new-instance p2, Ljava/lang/RuntimeException;
 
     invoke-direct {p2, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -117,7 +119,7 @@
     :catch_1
     move-exception p1
 
-    .line 6
+    .line 225
     new-instance p2, Ljava/lang/RuntimeException;
 
     invoke-virtual {p1}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
@@ -145,8 +147,10 @@
 
     if-eqz p1, :cond_3
 
-    .line 1
-    const-class v2, Landroidx/lifecycle/a$b;
+    .line 236
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -156,11 +160,11 @@
 
     goto :goto_1
 
-    .line 2
+    .line 240
     :cond_1
     check-cast p1, Landroidx/lifecycle/a$b;
 
-    .line 3
+    .line 241
     iget v2, p0, Landroidx/lifecycle/a$b;->a:I
 
     iget v3, p1, Landroidx/lifecycle/a$b;->a:I
@@ -201,7 +205,7 @@
 .method public hashCode()I
     .locals 2
 
-    .line 1
+    .line 246
     iget v0, p0, Landroidx/lifecycle/a$b;->a:I
 
     mul-int/lit8 v0, v0, 0x1f

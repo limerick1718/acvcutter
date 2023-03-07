@@ -13,14 +13,15 @@
         ">",
         "Lcom/google/android/gms/common/internal/b<",
         "TT;>;",
-        "Lcom/google/android/gms/common/api/a$f;",
-        "Ljava/lang/Object;"
+        "Lcom/google/android/gms/common/api/a$f;"
     }
 .end annotation
 
 
 # instance fields
-.field private final w:Ljava/util/Set;
+.field private final e:Lcom/google/android/gms/common/internal/c;
+
+.field private final f:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
@@ -30,36 +31,40 @@
     .end annotation
 .end field
 
-.field private final x:Landroid/accounts/Account;
+.field private final g:Landroid/accounts/Account;
 
 
 # direct methods
-.method protected constructor <init>(Landroid/content/Context;Landroid/os/Looper;ILcom/google/android/gms/common/internal/c;Lcom/google/android/gms/common/api/f;Lcom/google/android/gms/common/api/g;)V
+.method protected constructor <init>(Landroid/content/Context;Landroid/os/Looper;ILcom/google/android/gms/common/internal/c;Lcom/google/android/gms/common/api/f$a;Lcom/google/android/gms/common/api/f$b;)V
     .locals 9
 
-    .line 1
+    .line 7
     invoke-static {p1}, Lcom/google/android/gms/common/internal/h;->a(Landroid/content/Context;)Lcom/google/android/gms/common/internal/h;
 
     move-result-object v3
 
-    .line 2
-    invoke-static {}, Lf5;->a()Lf5;
+    .line 8
+    invoke-static {}, Lcom/google/android/gms/common/e;->a()Lcom/google/android/gms/common/e;
 
     move-result-object v4
 
-    .line 3
-    invoke-static {p5}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 9
+    invoke-static {p5}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p5
 
     move-object v7, p5
 
-    check-cast v7, Lcom/google/android/gms/common/api/f;
+    check-cast v7, Lcom/google/android/gms/common/api/f$a;
 
-    .line 4
-    invoke-static {p6}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 10
+    invoke-static {p6}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-object v8, p6
+    move-result-object p5
 
-    check-cast v8, Lcom/google/android/gms/common/api/g;
+    move-object v8, p5
+
+    check-cast v8, Lcom/google/android/gms/common/api/f$b;
 
     move-object v0, p0
 
@@ -71,29 +76,29 @@
 
     move-object v6, p4
 
-    .line 5
-    invoke-direct/range {v0 .. v8}, Lcom/google/android/gms/common/internal/g;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/h;Lf5;ILcom/google/android/gms/common/internal/c;Lcom/google/android/gms/common/api/f;Lcom/google/android/gms/common/api/g;)V
+    .line 11
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/gms/common/internal/g;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/h;Lcom/google/android/gms/common/e;ILcom/google/android/gms/common/internal/c;Lcom/google/android/gms/common/api/f$a;Lcom/google/android/gms/common/api/f$b;)V
 
     return-void
 .end method
 
-.method protected constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/h;Lf5;ILcom/google/android/gms/common/internal/c;Lcom/google/android/gms/common/api/f;Lcom/google/android/gms/common/api/g;)V
+.method protected constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/h;Lcom/google/android/gms/common/e;ILcom/google/android/gms/common/internal/c;Lcom/google/android/gms/common/api/f$a;Lcom/google/android/gms/common/api/f$b;)V
     .locals 10
 
     move-object v9, p0
 
-    .line 6
-    invoke-static/range {p7 .. p7}, Lcom/google/android/gms/common/internal/g;->a(Lcom/google/android/gms/common/api/f;)Lcom/google/android/gms/common/internal/b$a;
+    .line 19
+    invoke-static/range {p7 .. p7}, Lcom/google/android/gms/common/internal/g;->a(Lcom/google/android/gms/common/api/f$a;)Lcom/google/android/gms/common/internal/b$a;
 
     move-result-object v6
 
-    .line 7
-    invoke-static/range {p8 .. p8}, Lcom/google/android/gms/common/internal/g;->a(Lcom/google/android/gms/common/api/g;)Lcom/google/android/gms/common/internal/b$b;
+    .line 20
+    invoke-static/range {p8 .. p8}, Lcom/google/android/gms/common/internal/g;->a(Lcom/google/android/gms/common/api/f$b;)Lcom/google/android/gms/common/internal/b$b;
 
     move-result-object v7
 
-    .line 8
-    invoke-virtual/range {p6 .. p6}, Lcom/google/android/gms/common/internal/c;->e()Ljava/lang/String;
+    .line 21
+    invoke-virtual/range {p6 .. p6}, Lcom/google/android/gms/common/internal/c;->f()Ljava/lang/String;
 
     move-result-object v8
 
@@ -109,29 +114,36 @@
 
     move v5, p5
 
-    .line 9
-    invoke-direct/range {v0 .. v8}, Lcom/google/android/gms/common/internal/b;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/h;Lg5;ILcom/google/android/gms/common/internal/b$a;Lcom/google/android/gms/common/internal/b$b;Ljava/lang/String;)V
+    .line 22
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/gms/common/internal/b;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/h;Lcom/google/android/gms/common/f;ILcom/google/android/gms/common/internal/b$a;Lcom/google/android/gms/common/internal/b$b;Ljava/lang/String;)V
 
-    .line 10
+    move-object/from16 v0, p6
+
+    .line 23
+    iput-object v0, v9, Lcom/google/android/gms/common/internal/g;->e:Lcom/google/android/gms/common/internal/c;
+
+    .line 24
     invoke-virtual/range {p6 .. p6}, Lcom/google/android/gms/common/internal/c;->a()Landroid/accounts/Account;
 
-    move-result-object v0
+    move-result-object v1
 
-    iput-object v0, v9, Lcom/google/android/gms/common/internal/g;->x:Landroid/accounts/Account;
+    iput-object v1, v9, Lcom/google/android/gms/common/internal/g;->g:Landroid/accounts/Account;
 
-    .line 11
-    invoke-virtual/range {p6 .. p6}, Lcom/google/android/gms/common/internal/c;->c()Ljava/util/Set;
+    .line 25
+    invoke-virtual/range {p6 .. p6}, Lcom/google/android/gms/common/internal/c;->d()Ljava/util/Set;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/android/gms/common/internal/g;->b(Ljava/util/Set;)Ljava/util/Set;
 
-    iput-object v0, v9, Lcom/google/android/gms/common/internal/g;->w:Ljava/util/Set;
+    move-result-object v0
+
+    iput-object v0, v9, Lcom/google/android/gms/common/internal/g;->f:Ljava/util/Set;
 
     return-void
 .end method
 
-.method private static a(Lcom/google/android/gms/common/api/f;)Lcom/google/android/gms/common/internal/b$a;
+.method private static a(Lcom/google/android/gms/common/api/f$a;)Lcom/google/android/gms/common/internal/b$a;
     .locals 1
 
     if-nez p0, :cond_0
@@ -140,16 +152,16 @@
 
     return-object p0
 
-    .line 1
+    .line 48
     :cond_0
     new-instance v0, Lcom/google/android/gms/common/internal/w;
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/common/internal/w;-><init>(Lcom/google/android/gms/common/api/f;)V
+    invoke-direct {v0, p0}, Lcom/google/android/gms/common/internal/w;-><init>(Lcom/google/android/gms/common/api/f$a;)V
 
     return-object v0
 .end method
 
-.method private static a(Lcom/google/android/gms/common/api/g;)Lcom/google/android/gms/common/internal/b$b;
+.method private static a(Lcom/google/android/gms/common/api/f$b;)Lcom/google/android/gms/common/internal/b$b;
     .locals 1
 
     if-nez p0, :cond_0
@@ -158,17 +170,17 @@
 
     return-object p0
 
-    .line 2
+    .line 52
     :cond_0
     new-instance v0, Lcom/google/android/gms/common/internal/x;
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/common/internal/x;-><init>(Lcom/google/android/gms/common/api/g;)V
+    invoke-direct {v0, p0}, Lcom/google/android/gms/common/internal/x;-><init>(Lcom/google/android/gms/common/api/f$b;)V
 
     return-object v0
 .end method
 
 .method private final b(Ljava/util/Set;)Ljava/util/Set;
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -181,37 +193,39 @@
         }
     .end annotation
 
-    .line 1
+    .line 35
     invoke-virtual {p0, p1}, Lcom/google/android/gms/common/internal/g;->a(Ljava/util/Set;)Ljava/util/Set;
-
-    .line 2
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 36
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    check-cast v1, Lcom/google/android/gms/common/api/Scope;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 3
-    invoke-interface {p1, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    move-result v2
 
-    move-result v1
+    if-eqz v2, :cond_1
 
-    if-eqz v1, :cond_0
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/google/android/gms/common/api/Scope;
+
+    .line 37
+    invoke-interface {p1, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
 
     goto :goto_0
 
-    .line 4
+    .line 38
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -222,7 +236,7 @@
     throw p1
 
     :cond_1
-    return-object p1
+    return-object v0
 .end method
 
 
@@ -244,11 +258,11 @@
     return-object p1
 .end method
 
-.method public k()I
+.method public g()I
     .locals 1
 
-    .line 1
-    invoke-super {p0}, Lcom/google/android/gms/common/internal/b;->k()I
+    .line 54
+    invoke-super {p0}, Lcom/google/android/gms/common/internal/b;->g()I
 
     move-result v0
 
@@ -258,13 +272,13 @@
 .method public final o()Landroid/accounts/Account;
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/g;->x:Landroid/accounts/Account;
+    .line 42
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/g;->g:Landroid/accounts/Account;
 
     return-object v0
 .end method
 
-.method protected final u()Ljava/util/Set;
+.method protected final v()Ljava/util/Set;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -275,8 +289,8 @@
         }
     .end annotation
 
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/g;->w:Ljava/util/Set;
+    .line 44
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/g;->f:Ljava/util/Set;
 
     return-object v0
 .end method

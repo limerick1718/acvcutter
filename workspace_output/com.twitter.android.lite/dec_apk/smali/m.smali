@@ -1,38 +1,199 @@
-.class  Lm;
+.class public final Lm;
 .super Ljava/lang/Object;
-.source "ContainerHelpers.java"
-.field static final a:[I
-.field static final b:[Ljava/lang/Object;
-.method static constructor <clinit>()V
-.locals 2
-const/4 v0, 0x0
-new-array v1, v0, [I
-sput-object v1, Lm;->a:[I
-new-array v0, v0, [Ljava/lang/Object;
-sput-object v0, Lm;->b:[Ljava/lang/Object;
+.source "ArraySet.java"
+.implements Ljava/util/Collection;
+.implements Ljava/util/Set;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<E:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;",
+"Ljava/util/Collection<",
+"TE;>;",
+"Ljava/util/Set<",
+"TE;>;"
+}
+.end annotation
+.field private static final c:[I
+.field private static final d:[Ljava/lang/Object;
+.field private static e:[Ljava/lang/Object;
+.field private static f:I
+.field private static g:[Ljava/lang/Object;
+.field private static h:I
+.field  a:[Ljava/lang/Object;
+.field  b:I
+.field private i:[I
+.field private j:Lo;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lo<",
+"TE;TE;>;"
+}
+.end annotation
+.end field
+.method public constructor <init>()V
+.locals 1
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method static a([III)I
-.locals 3
-add-int/lit8 p1, p1, -0x1
+.method public constructor <init>(I)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method public a(Ljava/lang/Object;)I
+.locals 1
 const/4 v0, 0x0
-:goto_0
-if-gt v0, p1, :cond_2
-add-int v1, v0, p1
-ushr-int/lit8 v1, v1, 0x1
-aget v2, p0, v1
-if-ge v2, p2, :cond_0
-add-int/lit8 v1, v1, 0x1
-move v0, v1
-goto :goto_0
-:cond_0
-if-le v2, p2, :cond_1
-add-int/lit8 v1, v1, -0x1
-move p1, v1
-goto :goto_0
-:cond_1
-return v1
-:cond_2
-not-int p0, v0
-return p0
+return v0
+.end method
+.method public a(I)V
+.locals 4
+return-void
+.end method
+.method public add(Ljava/lang/Object;)Z
+.locals 8
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(TE;)Z"
+}
+.end annotation
+const/4 v0, 0x0
+return v0
+.end method
+.method public addAll(Ljava/util/Collection;)Z
+.locals 2
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(",
+"Ljava/util/Collection<",
+"+TE;>;)Z"
+}
+.end annotation
+const/4 v0, 0x0
+return v0
+.end method
+.method public b(I)Ljava/lang/Object;
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(I)TE;"
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public c(I)Ljava/lang/Object;
+.locals 7
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(I)TE;"
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public clear()V
+.locals 3
+return-void
+.end method
+.method public contains(Ljava/lang/Object;)Z
+.locals 0
+const/4 v0, 0x0
+return v0
+.end method
+.method public containsAll(Ljava/util/Collection;)Z
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(",
+"Ljava/util/Collection<",
+"*>;)Z"
+}
+.end annotation
+const/4 v0, 0x0
+return v0
+.end method
+.method public equals(Ljava/lang/Object;)Z
+.locals 4
+const/4 v0, 0x0
+return v0
+.end method
+.method public hashCode()I
+.locals 5
+const/4 v0, 0x0
+return v0
+.end method
+.method public isEmpty()Z
+.locals 1
+const/4 v0, 0x0
+return v0
+.end method
+.method public iterator()Ljava/util/Iterator;
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"()",
+"Ljava/util/Iterator<",
+"TE;>;"
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public remove(Ljava/lang/Object;)Z
+.locals 0
+const/4 v0, 0x0
+return v0
+.end method
+.method public removeAll(Ljava/util/Collection;)Z
+.locals 2
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(",
+"Ljava/util/Collection<",
+"*>;)Z"
+}
+.end annotation
+const/4 v0, 0x0
+return v0
+.end method
+.method public retainAll(Ljava/util/Collection;)Z
+.locals 4
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(",
+"Ljava/util/Collection<",
+"*>;)Z"
+}
+.end annotation
+const/4 v0, 0x0
+return v0
+.end method
+.method public size()I
+.locals 1
+const/4 v0, 0x0
+return v0
+.end method
+.method public toArray()[Ljava/lang/Object;
+.locals 4
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+.locals 3
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<T:",
+"Ljava/lang/Object;",
+">([TT;)[TT;"
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public toString()Ljava/lang/String;
+.locals 3
+const/4 v0, 0x0
+return-object v0
 .end method

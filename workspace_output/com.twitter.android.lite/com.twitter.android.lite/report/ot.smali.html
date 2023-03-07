@@ -14,40 +14,33 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public Lot;
+		<code>.class final Lot;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.implements Lqt;
+.implements Ljava/lang/Runnable;
 
 
-.field private final a:I
+.field private final synthetic a:Loo;
 
 
-<span class="cov">.method public constructor &lt;init&gt;(I)V</span>
+.method constructor &lt;init&gt;(Loo;)V
 <span class="">	.locals 0</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	iput p1, p0, Lot;->a:I</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iput-object p1, p0, Lot;->a:Loo;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	return-void</span>
 .end method
 
-.method public a([Ljava/lang/StackTraceElement;)[Ljava/lang/StackTraceElement;
-<span class="">	.locals 4</span>
+.method public final run()V
+<span class="">	.locals 2</span>
 
-<span class="missed">	array-length v0, p1</span>
-<span class="missed">	iget v1, p0, Lot;->a:I</span>
-<span class="missed">	if-gt v0, v1, :cond_0</span>
-<span class="">	return-object p1</span>
-<span class="">	:cond_0</span>
-<span class="missed">	div-int/lit8 v0, v1, 0x2</span>
-<span class="missed">	sub-int v2, v1, v0</span>
-<span class="missed">	new-array v1, v1, [Ljava/lang/StackTraceElement;</span>
-<span class="missed">	const/4 v3, 0x0</span>
-<span class="missed">	invoke-static {p1, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
-<span class="missed">	array-length v3, p1</span>
-<span class="missed">	sub-int/2addr v3, v0</span>
-<span class="missed">	invoke-static {p1, v3, v1, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
-<span class="">	return-object v1</span>
+<span class="missed">	iget-object v0, p0, Lot;->a:Loo;</span>
+<span class="missed">	iget-object v0, v0, Loo;->a:Loc;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-static {v0, v1}, Loc;->a(Loc;Lkr;)Lkr;</span>
+<span class="missed">	iget-object v0, p0, Lot;->a:Loo;</span>
+<span class="missed">	iget-object v0, v0, Loo;->a:Loc;</span>
+<span class="missed">	invoke-static {v0}, Loc;->b(Loc;)V</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

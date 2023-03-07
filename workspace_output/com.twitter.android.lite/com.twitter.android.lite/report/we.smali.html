@@ -16,18 +16,43 @@
 	<pre class="source lang-smali" id='source'>
 		<code>.class public interface abstract Lwe;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.source "Dependency.java"
+
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<T:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;"
+}
+.end annotation
 
 
 
+.method public abstract addDependency(Ljava/lang/Object;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(TT;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-.method public abstract b()Z
+.end method
+
+.method public abstract areDependenciesMet()Z
 <span class="">	</span>
 
 .end method
 
-.method public abstract g()Lue;
+.method public abstract getDependencies()Ljava/util/Collection;
 <span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/util/Collection<",</span>
+<span class="">	"TT;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
 .end method</code>
 	</pre>

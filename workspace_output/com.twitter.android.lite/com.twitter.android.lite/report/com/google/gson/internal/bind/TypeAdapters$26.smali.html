@@ -17,10 +17,10 @@
 		<code>.class final Lcom/google/gson/internal/bind/TypeAdapters$26;
 .super Ljava/lang/Object;
 .source "TypeAdapters.java"
-.implements Lwv;
+.implements Lto;
 
 .annotation system Ldalvik/annotation/EnclosingClass;
-value = Lcom/google/gson/internal/bind/TypeAdapters;
+value = Lcom/google/gson/internal/bind/i;
 .end annotation
 .annotation system Ldalvik/annotation/InnerClass;
 accessFlags = 0x8
@@ -36,22 +36,22 @@ name = null
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public a(Lfv;Ldw;)Lvv;</span>
+<span class="cov">.method public a(Lsx;Ltv;)Ltn;</span>
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
 <span class="">	"<T:",</span>
 <span class="">	"Ljava/lang/Object;",</span>
 <span class="">	">(",</span>
-<span class="">	"Lfv;",</span>
-<span class="">	"Ldw<",</span>
+<span class="">	"Lsx;",</span>
+<span class="">	"Ltv<",</span>
 <span class="">	"TT;>;)",</span>
-<span class="">	"Lvv<",</span>
+<span class="">	"Ltn<",</span>
 <span class="">	"TT;>;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="exec">	invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;</span>
+<span class="exec">	invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;</span>
 <span class="cov">	move-result-object p2</span>
 <span class="cov">	const-class v0, Ljava/sql/Timestamp;</span>
 <span class="cov">	if-eq p2, v0, :cond_0</span>
@@ -59,10 +59,10 @@ name = null
 <span class="exec">	return-object p1</span>
 <span class="">	:cond_0</span>
 <span class="missed">	const-class p2, Ljava/util/Date;</span>
-<span class="">	invoke-virtual {p1, p2}, Lfv;->a(Ljava/lang/Class;)Lvv;</span>
+<span class="">	invoke-virtual {p1, p2}, Lsx;->a(Ljava/lang/Class;)Ltn;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="missed">	new-instance p2, Lcom/google/gson/internal/bind/TypeAdapters$26$a;</span>
-<span class="missed">	invoke-direct {p2, p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$26$a;-><init>(Lcom/google/gson/internal/bind/TypeAdapters$26;Lvv;)V</span>
+<span class="missed">	new-instance p2, Lcom/google/gson/internal/bind/TypeAdapters$26$1;</span>
+<span class="missed">	invoke-direct {p2, p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$26$1;-><init>(Lcom/google/gson/internal/bind/TypeAdapters$26;Ltn;)V</span>
 <span class="">	return-object p2</span>
 .end method</code>
 	</pre>

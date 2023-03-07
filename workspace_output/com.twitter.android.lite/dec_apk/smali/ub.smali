@@ -1,78 +1,31 @@
-.class public abstract Lub;
+.class public interface abstract Lub;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Lxe;
+.source "AuthService.java"
+.method public abstract a(Ljava/lang/String;Ljava/lang/String;)Lretrofit2/Call;
+.param p1    # Ljava/lang/String;
+.annotation runtime Lretrofit2/http/Header;
+value = "authorization"
+.end annotation
+.end param
+.param p2    # Ljava/lang/String;
+.annotation runtime Lretrofit2/http/Field;
+value = "grant_type"
+.end annotation
+.end param
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"<MessageType:",
-"Lvb<",
-"TMessageType;TBuilderType;>;BuilderType:",
-"Lub<",
-"TMessageType;TBuilderType;>;>",
-"Ljava/lang/Object;",
-"Lxe;"
+"(",
+"Ljava/lang/String;",
+"Ljava/lang/String;",
+")",
+"Lretrofit2/Call<",
+"Lcom/twitter/android/lite/model/AccessToken;",
+">;"
 }
 .end annotation
-.method public constructor <init>()V
-.locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
-.end method
-.method protected abstract a(Lvb;)Lub;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"(TMessageType;)TBuilderType;"
-}
+.annotation runtime Lretrofit2/http/FormUrlEncoded;
 .end annotation
-.end method
-.method public abstract a([BII)Lub;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"([BII)TBuilderType;"
-}
+.annotation runtime Lretrofit2/http/POST;
+value = "/oauth2/token"
 .end annotation
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ltd;
-}
-.end annotation
-.end method
-.method public abstract a([BIILyc;)Lub;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"([BII",
-"Lyc;",
-")TBuilderType;"
-}
-.end annotation
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ltd;
-}
-.end annotation
-.end method
-.method public final synthetic a(Lue;)Lxe;
-.locals 1
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public final synthetic a([B)Lxe;
-.locals 2
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ltd;
-}
-.end annotation
-const/4 v0, 0x0
-return-object v0
-.end method
-.method public final synthetic a([BLyc;)Lxe;
-.locals 2
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ltd;
-}
-.end annotation
-const/4 v0, 0x0
-return-object v0
 .end method

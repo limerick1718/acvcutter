@@ -79,25 +79,25 @@ name = "CloseGuard"
 <span class="exec">	return-object v2</span>
 .end method
 
-<span class="cov">.method  createAndOpen(Ljava/lang/String;)Ljava/lang/Object;</span>
+.method  createAndOpen(Ljava/lang/String;)Ljava/lang/Object;
 <span class="">	.locals 5</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/platform/AndroidPlatform$CloseGuard;->getMethod:Ljava/lang/reflect/Method;</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	const/4 v2, 0x0</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	new-array v3, v2, [Ljava/lang/Object;</span>
-<span class="exec">	invoke-virtual {v0, v1, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	iget-object v3, p0, Lokhttp3/internal/platform/AndroidPlatform$CloseGuard;->openMethod:Ljava/lang/reflect/Method;</span>
-<span class="cov">	const/4 v4, 0x1</span>
-<span class="cov">	new-array v4, v4, [Ljava/lang/Object;</span>
-<span class="cov">	aput-object p1, v4, v2</span>
-<span class="cov">	invoke-virtual {v3, v0, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/platform/AndroidPlatform$CloseGuard;->getMethod:Ljava/lang/reflect/Method;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	new-array v3, v2, [Ljava/lang/Object;</span>
+<span class="">	invoke-virtual {v0, v1, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iget-object v3, p0, Lokhttp3/internal/platform/AndroidPlatform$CloseGuard;->openMethod:Ljava/lang/reflect/Method;</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	new-array v4, v4, [Ljava/lang/Object;</span>
+<span class="missed">	aput-object p1, v4, v2</span>
+<span class="missed">	invoke-virtual {v3, v0, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object v0</span>
 <span class="">	:cond_0</span>
 <span class="">	:catch_0</span>
 <span class="">	return-object v1</span>

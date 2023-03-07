@@ -1,53 +1,65 @@
-.class final Lcom/google/gson/internal/f$c;
-.super Ljava/util/AbstractSet;
+.class abstract Lcom/google/gson/internal/f$c;
+.super Ljava/lang/Object;
 .source "LinkedTreeMap.java"
+.implements Ljava/util/Iterator;
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lcom/google/gson/internal/f;
 .end annotation
 .annotation system Ldalvik/annotation/InnerClass;
-accessFlags = 0x10
+accessFlags = 0x402
 name = "c"
 .end annotation
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ljava/util/AbstractSet<",
-"TK;>;"
+"<T:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;",
+"Ljava/util/Iterator<",
+"TT;>;"
 }
 .end annotation
-.field final synthetic a:Lcom/google/gson/internal/f;
+.field  b:Lcom/google/gson/internal/f$d;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/gson/internal/f$d<",
+"TK;TV;>;"
+}
+.end annotation
+.end field
+.field  c:Lcom/google/gson/internal/f$d;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lcom/google/gson/internal/f$d<",
+"TK;TV;>;"
+}
+.end annotation
+.end field
+.field  d:I
+.field final synthetic e:Lcom/google/gson/internal/f;
 .method constructor <init>(Lcom/google/gson/internal/f;)V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public clear()V
-.locals 1
-return-void
-.end method
-.method public contains(Ljava/lang/Object;)Z
-.locals 1
-const/4 v0, 0x0
-return v0
-.end method
-.method public iterator()Ljava/util/Iterator;
-.locals 1
+.method final b()Lcom/google/gson/internal/f$d;
+.locals 3
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "()",
-"Ljava/util/Iterator<",
-"TK;>;"
+"Lcom/google/gson/internal/f$d<",
+"TK;TV;>;"
 }
 .end annotation
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public remove(Ljava/lang/Object;)Z
-.locals 1
+.method public final hasNext()Z
+.locals 2
 const/4 v0, 0x0
 return v0
 .end method
-.method public size()I
-.locals 1
-const/4 v0, 0x0
-return v0
+.method public final remove()V
+.locals 3
+return-void
 .end method

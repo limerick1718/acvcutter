@@ -14,138 +14,842 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final Lqf;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Ljava/util/Iterator;
-
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/Object;",
-"Ljava/util/Iterator<",
-"Ljava/util/Map$Entry<",
-"TK;TV;>;>;"
-}
-.end annotation
-
-.field private a:I
-.field private b:Ljava/util/Iterator;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/util/Iterator<",
-"Ljava/util/Map$Entry<",
-"TK;TV;>;>;"
-}
-.end annotation
-.end field
-.field private final synthetic c:Lof;
+		<code>.class public final Lqf;
+.super Lnb;
 
 
-.method private constructor &lt;init&gt;(Lof;)V
-<span class="">	.locals 0</span>
+.field private a:Ljava/lang/Boolean;
+.field private b:Lqh;
+.field private c:Ljava/lang/Boolean;
 
-<span class="missed">	iput-object p1, p0, Lqf;->c:Lof;</span>
-<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="missed">	iget-object p1, p0, Lqf;->c:Lof;</span>
-<span class="">	invoke-static {p1}, Lof;->b(Lof;)Ljava/util/List;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	invoke-interface {p1}, Ljava/util/List;->size()I</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	iput p1, p0, Lqf;->a:I</span>
-<span class="">	return-void</span>
-.end method
 
-.method synthetic constructor &lt;init&gt;(Lof;Lrf;)V
-<span class="">	.locals 0</span>
-
-<span class="missed">	invoke-direct {p0, p1}, Lqf;-><init>(Lof;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method private final a()Ljava/util/Iterator;
+<span class="cov">.method constructor &lt;init&gt;(Lmf;)V</span>
 <span class="">	.locals 1</span>
+
+<span class="cov">	invoke-direct {p0, p1}, Lnb;-><init>(Lmf;)V</span>
+<span class="cov">	sget-object v0, Lqg;->a:Lqh;</span>
+<span class="cov">	iput-object v0, p0, Lqf;->b:Lqh;</span>
+<span class="cov">	invoke-static {p1}, Lkq;->a(Lmf;)V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method static e()Ljava/lang/String;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	sget-object v0, Lkq;->i:Lkq$a;</span>
+<span class="exec">	invoke-virtual {v0}, Lkq$a;->b()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	check-cast v0, Ljava/lang/String;</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method public static j()J
+<span class="">	.locals 2</span>
+
+<span class="missed">	sget-object v0, Lkq;->L:Lkq$a;</span>
+<span class="">	invoke-virtual {v0}, Lkq$a;->b()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ljava/lang/Long;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Long;->longValue()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	return-wide v0</span>
+.end method
+
+.method public static k()J
+<span class="">	.locals 2</span>
+
+<span class="missed">	sget-object v0, Lkq;->l:Lkq$a;</span>
+<span class="">	invoke-virtual {v0}, Lkq$a;->b()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ljava/lang/Long;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Long;->longValue()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	return-wide v0</span>
+.end method
+
+.method public static w()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lkq;->h:Lkq$a;</span>
+<span class="">	invoke-virtual {v0}, Lkq$a;->b()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ljava/lang/Boolean;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method static y()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lkq;->ah:Lkq$a;</span>
+<span class="">	invoke-virtual {v0}, Lkq$a;->b()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ljava/lang/Boolean;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public final a(Ljava/lang/String;)I
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lkq;->w:Lkq$a;</span>
+<span class="">	invoke-virtual {p0, p1, v0}, Lqf;->b(Ljava/lang/String;Lkq$a;)I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public final a(Ljava/lang/String;Lkq$a;)J
+<span class="">	.locals 2</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	"()",</span>
-<span class="">	"Ljava/util/Iterator<",</span>
-<span class="">	"Ljava/util/Map$Entry<",</span>
-<span class="">	"TK;TV;>;>;"</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Lkq$a<",</span>
+<span class="">	"Ljava/lang/Long;",</span>
+<span class="">	">;)J"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	iget-object v0, p0, Lqf;->b:Ljava/util/Iterator;</span>
-<span class="missed">	if-nez v0, :cond_0</span>
-<span class="missed">	iget-object v0, p0, Lqf;->c:Lof;</span>
-<span class="">	invoke-static {v0}, Lof;->d(Lof;)Ljava/util/Map;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	iput-object v0, p0, Lqf;->b:Ljava/util/Iterator;</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="">	invoke-virtual {p2}, Lkq$a;->b()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Ljava/lang/Long;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Long;->longValue()J</span>
+<span class="missed">	move-result-wide p1</span>
+<span class="">	return-wide p1</span>
 <span class="">	:cond_0</span>
-<span class="missed">	iget-object v0, p0, Lqf;->b:Ljava/util/Iterator;</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public final hasNext()Z
-<span class="">	.locals 2</span>
-
-<span class="missed">	iget v0, p0, Lqf;->a:I</span>
-<span class="missed">	if-lez v0, :cond_0</span>
-<span class="missed">	iget-object v1, p0, Lqf;->c:Lof;</span>
-<span class="">	invoke-static {v1}, Lof;->b(Lof;)Ljava/util/List;</span>
+<span class="missed">	iget-object v0, p0, Lqf;->b:Lqh;</span>
+<span class="">	invoke-virtual {p2}, Lkq$a;->a()Ljava/lang/String;</span>
 <span class="missed">	move-result-object v1</span>
-<span class="">	invoke-interface {v1}, Ljava/util/List;->size()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	if-le v0, v1, :cond_1</span>
-<span class="">	:cond_0</span>
-<span class="">	invoke-direct {p0}, Lqf;->a()Ljava/util/Iterator;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="">	invoke-interface {v0, p1, v1}, Lqh;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
 <span class="missed">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-virtual {p2}, Lkq$a;->b()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Ljava/lang/Long;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Long;->longValue()J</span>
+<span class="missed">	move-result-wide p1</span>
+<span class="">	return-wide p1</span>
 <span class="">	:cond_1</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="">	return v0</span>
-<span class="">	:cond_2</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="">	return v0</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-static {p1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p2, p1}, Lkq$a;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Ljava/lang/Long;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Long;->longValue()J</span>
+<span class="missed">	move-result-wide p1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-wide p1</span>
+<span class="">	:catch_0</span>
+<span class="">	invoke-virtual {p2}, Lkq$a;->b()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Ljava/lang/Long;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Long;->longValue()J</span>
+<span class="missed">	move-result-wide p1</span>
+<span class="">	return-wide p1</span>
 .end method
 
-.method public final synthetic next()Ljava/lang/Object;
+.method public final bridge synthetic a()V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0}, Lnb;->a()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method final a(Lqh;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-object p1, p0, Lqf;->b:Lqh;</span>
+<span class="">	return-void</span>
+.end method
+
+<span class="cov">.method public final a(Lkq$a;)Z</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lkq$a<",</span>
+<span class="">	"Ljava/lang/Boolean;",</span>
+<span class="">	">;)Z"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="exec">	invoke-virtual {p0, v0, p1}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="exec">	return p1</span>
+.end method
+
+.method public final b(Ljava/lang/String;Lkq$a;)I
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Lkq$a<",</span>
+<span class="">	"Ljava/lang/Integer;",</span>
+<span class="">	">;)I"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="">	invoke-virtual {p2}, Lkq$a;->b()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Ljava/lang/Integer;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lqf;->b:Lqh;</span>
+<span class="">	invoke-virtual {p2}, Lkq$a;->a()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-interface {v0, p1, v1}, Lqh;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-virtual {p2}, Lkq$a;->b()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Ljava/lang/Integer;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+<span class="">	:cond_1</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p2, p1}, Lkq$a;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Ljava/lang/Integer;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return p1</span>
+<span class="">	:catch_0</span>
+<span class="">	invoke-virtual {p2}, Lkq$a;->b()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Ljava/lang/Integer;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+<span class="cov">.method final b(Ljava/lang/String;)Ljava/lang/Boolean;</span>
+<span class="">	.locals 4</span>
+
+<span class="cov">	invoke-static {p1}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	:try_start_0</span>
+<span class="exec">	invoke-virtual {p0}, Lnb;->n()Landroid/content/Context;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="missed">	if-nez v1, :cond_0</span>
+<span class="">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v1, "Failed to load metadata: PackageManager is null"</span>
+<span class="missed">	invoke-virtual {p1, v1}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="">	return-object v0</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-virtual {p0}, Lnb;->n()Landroid/content/Context;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-static {v1}, Lbj;->a(Landroid/content/Context;)Lbi;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-virtual {p0}, Lnb;->n()Landroid/content/Context;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="exec">	invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	const/16 v3, 0x80</span>
+<span class="exec">	invoke-virtual {v1, v2, v3}, Lbi;->a(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="missed">	if-nez v1, :cond_1</span>
+<span class="">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v1, "Failed to load metadata: ApplicationInfo is null"</span>
+<span class="missed">	invoke-virtual {p1, v1}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="">	return-object v0</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	iget-object v2, v1, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;</span>
+<span class="missed">	if-nez v2, :cond_2</span>
+<span class="">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v1, "Failed to load metadata: Metadata bundle is null"</span>
+<span class="missed">	invoke-virtual {p1, v1}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="">	return-object v0</span>
+<span class="cov">	:cond_2</span>
+<span class="cov">	iget-object v2, v1, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;</span>
+<span class="exec">	invoke-virtual {v2, p1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	if-nez v2, :cond_3</span>
+<span class="exec">	return-object v0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	iget-object v1, v1, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;</span>
+<span class="">	invoke-virtual {v1, p1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object p1</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v1}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Failed to load metadata: Package name not found"</span>
+<span class="missed">	invoke-virtual {v1, v2, p1}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public final bridge synthetic b()V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-super {p0}, Lnb;->b()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public final bridge synthetic c()V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0}, Lnb;->c()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final c(Ljava/lang/String;)Z
 <span class="">	.locals 2</span>
 
-<span class="">	invoke-direct {p0}, Lqf;->a()Ljava/util/Iterator;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="">	invoke-direct {p0}, Lqf;->a()Ljava/util/Iterator;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Ljava/util/Map$Entry;</span>
-<span class="">	return-object v0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	iget-object v0, p0, Lqf;->c:Lof;</span>
-<span class="">	invoke-static {v0}, Lof;->b(Lof;)Ljava/util/List;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	iget v1, p0, Lqf;->a:I</span>
-<span class="missed">	add-int/lit8 v1, v1, -0x1</span>
-<span class="missed">	iput v1, p0, Lqf;->a:I</span>
-<span class="">	invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Ljava/util/Map$Entry;</span>
-<span class="">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Lqf;->b:Lqh;</span>
+<span class="missed">	const-string v1, "gaia_collection_enabled"</span>
+<span class="">	invoke-interface {v0, p1, v1}, Lqh;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v0, "1"</span>
+<span class="">	invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
 .end method
 
-.method public final remove()V
+<span class="cov">.method public final c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Lkq$a<",</span>
+<span class="">	"Ljava/lang/Boolean;",</span>
+<span class="">	">;)Z"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	if-nez p1, :cond_0</span>
+<span class="exec">	invoke-virtual {p2}, Lkq$a;->b()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	check-cast p1, Ljava/lang/Boolean;</span>
+<span class="exec">	invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="cov">	move-result p1</span>
+<span class="exec">	return p1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v0, p0, Lqf;->b:Lqh;</span>
+<span class="exec">	invoke-virtual {p2}, Lkq$a;->a()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-interface {v0, p1, v1}, Lqh;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-eqz v0, :cond_1</span>
+<span class="exec">	invoke-virtual {p2}, Lkq$a;->b()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	check-cast p1, Ljava/lang/Boolean;</span>
+<span class="exec">	invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="cov">	move-result p1</span>
+<span class="exec">	return p1</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-static {p1}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p2, p1}, Lkq$a;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Ljava/lang/Boolean;</span>
+<span class="">	invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public final bridge synthetic d()V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-super {p0}, Lnb;->d()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public final d(Ljava/lang/String;)Z
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lqf;->b:Lqh;</span>
+<span class="missed">	const-string v1, "measurement.event_sampling_enabled"</span>
+<span class="">	invoke-interface {v0, p1, v1}, Lqh;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string v0, "1"</span>
+<span class="">	invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+<span class="cov">.method public final d(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	"Lkq$a<",</span>
+<span class="">	"Ljava/lang/Boolean;",</span>
+<span class="">	">;)Z"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="exec">	invoke-virtual {p0, p1, p2}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="exec">	return p1</span>
+.end method
+
+.method final e(Ljava/lang/String;)Z
 <span class="">	.locals 1</span>
 
-<span class="missed">	new-instance v0, Ljava/lang/UnsupportedOperationException;</span>
-<span class="missed">	invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V</span>
+<span class="missed">	sget-object v0, Lkq;->V:Lkq$a;</span>
+<span class="">	invoke-virtual {p0, p1, v0}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+<span class="cov">.method public final f()J</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	invoke-virtual {p0}, Lnb;->u()Lqc;</span>
+<span class="cov">	const-wide/16 v0, 0x3976</span>
+<span class="exec">	return-wide v0</span>
+.end method
+
+<span class="cov">.method final f(Ljava/lang/String;)Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	sget-object v0, Lkq;->X:Lkq$a;</span>
+<span class="exec">	invoke-virtual {p0, p1, v0}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="exec">	return p1</span>
+.end method
+
+.method public final g()Z
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lqf;->c:Ljava/lang/Boolean;</span>
+<span class="missed">	if-nez v0, :cond_3</span>
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lqf;->c:Ljava/lang/Boolean;</span>
+<span class="missed">	if-nez v0, :cond_2</span>
+<span class="">	invoke-virtual {p0}, Lnb;->n()Landroid/content/Context;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Lcom/google/android/gms/common/util/l;->a()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->processName:Ljava/lang/String;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	iput-object v0, p0, Lqf;->c:Ljava/lang/Boolean;</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v0, p0, Lqf;->c:Ljava/lang/Boolean;</span>
+<span class="missed">	if-nez v0, :cond_2</span>
+<span class="missed">	sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;</span>
+<span class="missed">	iput-object v0, p0, Lqf;->c:Ljava/lang/Boolean;</span>
+<span class="">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "My process not in the list of running processes"</span>
+<span class="missed">	invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V</span>
+<span class="">	:cond_2</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
 <span class="">	throw v0</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_3</span>
+<span class="missed">	iget-object v0, p0, Lqf;->c:Ljava/lang/Boolean;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
+.end method
+
+.method final g(Ljava/lang/String;)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lkq;->Y:Lkq$a;</span>
+<span class="">	invoke-virtual {p0, p1, v0}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+<span class="cov">.method public final h()Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	invoke-virtual {p0}, Lnb;->u()Lqc;</span>
+<span class="cov">	const-string v0, "firebase_analytics_collection_deactivated"</span>
+<span class="exec">	invoke-virtual {p0, v0}, Lqf;->b(Ljava/lang/String;)Ljava/lang/Boolean;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	return v0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="exec">	return v0</span>
+.end method
+
+.method final h(Ljava/lang/String;)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lkq;->P:Lkq$a;</span>
+<span class="">	invoke-virtual {p0, p1, v0}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+<span class="cov">.method public final i()Ljava/lang/Boolean;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	invoke-virtual {p0}, Lnb;->u()Lqc;</span>
+<span class="cov">	const-string v0, "firebase_analytics_collection_enabled"</span>
+<span class="exec">	invoke-virtual {p0, v0}, Lqf;->b(Ljava/lang/String;)Ljava/lang/Boolean;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method final i(Ljava/lang/String;)Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	sget-object v0, Lkq;->Z:Lkq$a;</span>
+<span class="exec">	invoke-virtual {p0, p1, v0}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="exec">	return p1</span>
+.end method
+
+<span class="cov">.method final j(Ljava/lang/String;)Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	sget-object v0, Lkq;->aa:Lkq$a;</span>
+<span class="exec">	invoke-virtual {p0, p1, v0}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="exec">	return p1</span>
+.end method
+
+.method final k(Ljava/lang/String;)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lkq;->ac:Lkq$a;</span>
+<span class="">	invoke-virtual {p0, p1, v0}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public final bridge synthetic l()Lki;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Lnb;->l()Lki;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method final l(Ljava/lang/String;)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lkq;->ad:Lkq$a;</span>
+<span class="">	invoke-virtual {p0, p1, v0}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public final bridge synthetic m()Lcom/google/android/gms/common/util/d;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Lnb;->m()Lcom/google/android/gms/common/util/d;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method final m(Ljava/lang/String;)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lkq;->ae:Lkq$a;</span>
+<span class="">	invoke-virtual {p0, p1, v0}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+<span class="cov">.method public final bridge synthetic n()Landroid/content/Context;</span>
+<span class="">	.locals 1</span>
+
+<span class="exec">	invoke-super {p0}, Lnb;->n()Landroid/content/Context;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method final n(Ljava/lang/String;)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lkq;->ag:Lkq$a;</span>
+<span class="">	invoke-virtual {p0, p1, v0}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public final bridge synthetic o()Lky;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Lnb;->o()Lky;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method final o(Ljava/lang/String;)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lkq;->af:Lkq$a;</span>
+<span class="">	invoke-virtual {p0, p1, v0}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public final bridge synthetic p()Lpv;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Lnb;->p()Lpv;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method final p(Ljava/lang/String;)Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	sget-object v0, Lkq;->ai:Lkq$a;</span>
+<span class="exec">	invoke-virtual {p0, p1, v0}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="exec">	return p1</span>
+.end method
+
+.method public final bridge synthetic q()Lma;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Lnb;->q()Lma;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method final q(Ljava/lang/String;)Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	sget-object v0, Lkq;->aj:Lkq$a;</span>
+<span class="exec">	invoke-virtual {p0, p1, v0}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="exec">	return p1</span>
+.end method
+
+.method public final bridge synthetic r()Lla;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method final r(Ljava/lang/String;)Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	sget-object v0, Lkq;->ak:Lkq$a;</span>
+<span class="exec">	invoke-virtual {p0, p1, v0}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="exec">	return p1</span>
+.end method
+
+.method public final bridge synthetic s()Llm;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Lnb;->s()Llm;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method final s(Ljava/lang/String;)Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	sget-object v0, Lkq;->al:Lkq$a;</span>
+<span class="exec">	invoke-virtual {p0, p1, v0}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="exec">	return p1</span>
+.end method
+
+.method public final bridge synthetic t()Lqf;
+<span class="">	.locals 1</span>
+
+<span class="">	invoke-super {p0}, Lnb;->t()Lqf;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method final t(Ljava/lang/String;)Z</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	sget-object v0, Lkq;->an:Lkq$a;</span>
+<span class="exec">	invoke-virtual {p0, p1, v0}, Lqf;->c(Ljava/lang/String;Lkq$a;)Z</span>
+<span class="cov">	move-result p1</span>
+<span class="exec">	return p1</span>
+.end method
+
+<span class="cov">.method public final bridge synthetic u()Lqc;</span>
+<span class="">	.locals 1</span>
+
+<span class="exec">	invoke-super {p0}, Lnb;->u()Lqc;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public final v()Ljava/lang/String;</span>
+<span class="">	.locals 8</span>
+
+<span class="cov">	const-string v0, ""</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	const-string v1, "android.os.SystemProperties"</span>
+<span class="exec">	invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const-string v2, "get"</span>
+<span class="cov">	const/4 v3, 0x2</span>
+<span class="cov">	new-array v4, v3, [Ljava/lang/Class;</span>
+<span class="cov">	const-class v5, Ljava/lang/String;</span>
+<span class="cov">	const/4 v6, 0x0</span>
+<span class="cov">	aput-object v5, v4, v6</span>
+<span class="cov">	const-class v5, Ljava/lang/String;</span>
+<span class="cov">	const/4 v7, 0x1</span>
+<span class="cov">	aput-object v5, v4, v7</span>
+<span class="exec">	invoke-virtual {v1, v2, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	new-array v3, v3, [Ljava/lang/Object;</span>
+<span class="cov">	const-string v4, "debug.firebase.analytics.app"</span>
+<span class="cov">	aput-object v4, v3, v6</span>
+<span class="cov">	aput-object v0, v3, v7</span>
+<span class="exec">	invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	check-cast v1, Ljava/lang/String;</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_3</span>
+<span class="cov">	.catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_2</span>
+<span class="cov">	.catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1</span>
+<span class="cov">	.catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="exec">	return-object v1</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v2}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v3, "SystemProperties.get() threw an exception"</span>
+<span class="missed">	invoke-virtual {v2, v3, v1}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception v1</span>
+<span class="">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v2}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v3, "Could not access SystemProperties.get()"</span>
+<span class="missed">	invoke-virtual {v2, v3, v1}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_2</span>
+<span class="missed">	move-exception v1</span>
+<span class="">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v2}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v3, "Could not find SystemProperties.get() method"</span>
+<span class="missed">	invoke-virtual {v2, v3, v1}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_3</span>
+<span class="missed">	move-exception v1</span>
+<span class="">	invoke-virtual {p0}, Lnb;->r()Lla;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {v2}, Lla;->c_()Llc;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	const-string v3, "Could not find SystemProperties class"</span>
+<span class="missed">	invoke-virtual {v2, v3, v1}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method final x()Z</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	iget-object v0, p0, Lqf;->a:Ljava/lang/Boolean;</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="cov">	const-string v0, "app_measurement_lite"</span>
+<span class="exec">	invoke-virtual {p0, v0}, Lqf;->b(Ljava/lang/String;)Ljava/lang/Boolean;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iput-object v0, p0, Lqf;->a:Ljava/lang/Boolean;</span>
+<span class="cov">	iget-object v0, p0, Lqf;->a:Ljava/lang/Boolean;</span>
+<span class="cov">	if-nez v0, :cond_0</span>
+<span class="exec">	invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	iput-object v0, p0, Lqf;->a:Ljava/lang/Boolean;</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	iget-object v0, p0, Lqf;->a:Ljava/lang/Boolean;</span>
+<span class="exec">	invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	if-nez v0, :cond_2</span>
+<span class="cov">	iget-object v0, p0, Lqf;->q:Lmf;</span>
+<span class="exec">	invoke-virtual {v0}, Lmf;->v()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="">	goto :goto_0</span>
+<span class="cov">	:cond_1</span>
+<span class="exec">	return v1</span>
+<span class="">	:cond_2</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	return v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

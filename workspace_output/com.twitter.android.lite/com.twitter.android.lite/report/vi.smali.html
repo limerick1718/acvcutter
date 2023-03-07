@@ -14,62 +14,169 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lvi;
+		<code>.class  Lvi;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.implements Lsi;
+.source "AdvertisingInfoReflectionStrategy.java"
+.implements Lvk;
 
 
-.field private static final a:Lva;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lva<",
-"Ljava/lang/Boolean;",
-">;"
-}
-.end annotation
-.end field
+.field private final a:Landroid/content/Context;
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 3</span>
-
-<span class="cov">	new-instance v0, Lbb;</span>
-<span class="cov">	const-string v1, "com.google.android.gms.measurement"</span>
-<span class="exec">	invoke-static {v1}, Lsa;->a(Ljava/lang/String;)Landroid/net/Uri;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	invoke-direct {v0, v1}, Lbb;-><init>(Landroid/net/Uri;)V</span>
-<span class="cov">	const-string v1, "measurement.engagement_time_main_thread"</span>
-<span class="cov">	const/4 v2, 0x1</span>
-<span class="exec">	invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	sput-object v0, Lvi;->a:Lva;</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public constructor &lt;init&gt;()V</span>
+<span class="cov">.method public constructor &lt;init&gt;(Landroid/content/Context;)V</span>
 <span class="">	.locals 0</span>
 
 <span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="exec">	invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	iput-object p1, p0, Lvi;->a:Landroid/content/Context;</span>
 <span class="exec">	return-void</span>
 .end method
 
-.method public final a()Z
-<span class="">	.locals 1</span>
+<span class="cov">.method private b()Ljava/lang/String;</span>
+<span class="">	.locals 4</span>
 
-<span class="missed">	const/4 v0, 0x1</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	const-string v0, "com.google.android.gms.ads.identifier.AdvertisingIdClient$Info"</span>
+<span class="exec">	invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-string v1, "getId"</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	new-array v3, v2, [Ljava/lang/Class;</span>
+<span class="exec">	invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-direct {p0}, Lvi;->d()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	new-array v2, v2, [Ljava/lang/Object;</span>
+<span class="exec">	invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	check-cast v0, Ljava/lang/String;</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="exec">	return-object v0</span>
+<span class="">	:catch_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "Fabric"</span>
+<span class="missed">	const-string v2, "Could not call getId on com.google.android.gms.ads.identifier.AdvertisingIdClient$Info"</span>
+<span class="missed">	invoke-interface {v0, v1, v2}, Luz;->d(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method private c()Z</span>
+<span class="">	.locals 4</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	const-string v1, "com.google.android.gms.ads.identifier.AdvertisingIdClient$Info"</span>
+<span class="exec">	invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const-string v2, "isLimitAdTrackingEnabled"</span>
+<span class="cov">	new-array v3, v0, [Ljava/lang/Class;</span>
+<span class="exec">	invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-direct {p0}, Lvi;->d()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	new-array v3, v0, [Ljava/lang/Object;</span>
+<span class="exec">	invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	check-cast v1, Ljava/lang/Boolean;</span>
+<span class="exec">	invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="exec">	return v0</span>
+<span class="">	:catch_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Fabric"</span>
+<span class="missed">	const-string v3, "Could not call isLimitAdTrackingEnabled on com.google.android.gms.ads.identifier.AdvertisingIdClient$Info"</span>
+<span class="missed">	invoke-interface {v1, v2, v3}, Luz;->d(Ljava/lang/String;Ljava/lang/String;)V</span>
 <span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public final b()Z</span>
-<span class="">	.locals 1</span>
+<span class="cov">.method private d()Ljava/lang/Object;</span>
+<span class="">	.locals 7</span>
 
-<span class="cov">	sget-object v0, Lvi;->a:Lva;</span>
-<span class="exec">	invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	const-string v1, "com.google.android.gms.ads.identifier.AdvertisingIdClient"</span>
+<span class="exec">	invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const-string v2, "getAdvertisingIdInfo"</span>
+<span class="cov">	const/4 v3, 0x1</span>
+<span class="cov">	new-array v4, v3, [Ljava/lang/Class;</span>
+<span class="cov">	const-class v5, Landroid/content/Context;</span>
+<span class="cov">	const/4 v6, 0x0</span>
+<span class="cov">	aput-object v5, v4, v6</span>
+<span class="exec">	invoke-virtual {v1, v2, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	new-array v2, v3, [Ljava/lang/Object;</span>
+<span class="cov">	iget-object v3, p0, Lvi;->a:Landroid/content/Context;</span>
+<span class="cov">	aput-object v3, v2, v6</span>
+<span class="exec">	invoke-virtual {v1, v0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
 <span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Ljava/lang/Boolean;</span>
-<span class="exec">	invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="exec">	return-object v0</span>
+<span class="">	:catch_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "Fabric"</span>
+<span class="missed">	const-string v3, "Could not call getAdvertisingIdInfo on com.google.android.gms.ads.identifier.AdvertisingIdClient"</span>
+<span class="missed">	invoke-interface {v1, v2, v3}, Luz;->d(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public a()Lvg;</span>
+<span class="">	.locals 3</span>
+
+<span class="cov">	iget-object v0, p0, Lvi;->a:Landroid/content/Context;</span>
+<span class="exec">	invoke-virtual {p0, v0}, Lvi;->a(Landroid/content/Context;)Z</span>
 <span class="cov">	move-result v0</span>
+<span class="cov">	if-eqz v0, :cond_0</span>
+<span class="cov">	new-instance v0, Lvg;</span>
+<span class="exec">	invoke-direct {p0}, Lvi;->b()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="exec">	invoke-direct {p0}, Lvi;->c()Z</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	invoke-direct {v0, v1, v2}, Lvg;-><init>(Ljava/lang/String;Z)V</span>
+<span class="exec">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method  a(Landroid/content/Context;)Z</span>
+<span class="">	.locals 6</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	const-string v1, "com.google.android.gms.common.GooglePlayServicesUtil"</span>
+<span class="exec">	invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const-string v2, "isGooglePlayServicesAvailable"</span>
+<span class="cov">	const/4 v3, 0x1</span>
+<span class="cov">	new-array v4, v3, [Ljava/lang/Class;</span>
+<span class="cov">	const-class v5, Landroid/content/Context;</span>
+<span class="cov">	aput-object v5, v4, v0</span>
+<span class="exec">	invoke-virtual {v1, v2, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	new-array v4, v3, [Ljava/lang/Object;</span>
+<span class="cov">	aput-object p1, v4, v0</span>
+<span class="exec">	invoke-virtual {v1, v2, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	check-cast p1, Ljava/lang/Integer;</span>
+<span class="exec">	invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I</span>
+<span class="cov">	move-result p1</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="cov">	if-nez p1, :cond_0</span>
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	:catch_0</span>
 <span class="exec">	return v0</span>
 .end method</code>
 	</pre>

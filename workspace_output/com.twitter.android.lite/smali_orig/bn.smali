@@ -1,25 +1,44 @@
-.class public interface abstract Lbn;
-.super Ljava/lang/Object;
+.class public Lbn;
+.super Landroid/os/Binder;
+
+# interfaces
+.implements Landroid/os/IInterface;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<TResult:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
+# static fields
+.field private static a:Lbp;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 0
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Lgn;)V
-    .annotation system Ldalvik/annotation/Signature;
+.method public asBinder()Landroid/os/IBinder;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
         value = {
-            "(",
-            "Lgn<",
-            "TTResult;>;)V"
+            Landroid/os/RemoteException;
         }
     .end annotation
+
+    new-instance p1, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw p1
 .end method

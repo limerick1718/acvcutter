@@ -1,27 +1,14 @@
-.class final Lkg;
+.class public final Lkg;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Ljava/security/PrivilegedExceptionAction;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/Object;",
-"Ljava/security/PrivilegedExceptionAction<",
-"Lsun/misc/Unsafe;",
-">;"
-}
-.end annotation
-.method constructor <init>()V
-.locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
-.end method
-.method public final synthetic run()Ljava/lang/Object;
-.locals 7
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/lang/Exception;
-}
-.end annotation
-const/4 v0, 0x0
-return-object v0
-.end method
+.field public static final a:[I
+.field public static final b:[J
+.field public static final c:[Ljava/lang/String;
+.field public static final d:[B
+.field private static final e:I = 0xb
+.field private static final f:I = 0xc
+.field private static final g:I = 0x10
+.field private static final h:I = 0x1a
+.field private static final i:[F
+.field private static final j:[D
+.field private static final k:[Z
+.field private static final l:[[B

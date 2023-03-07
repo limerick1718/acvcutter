@@ -30,7 +30,7 @@
     .end annotation
 .end method
 
-.method public abstract a(ILandroid/os/IBinder;Lcom/google/android/gms/common/internal/a0;)V
+.method public abstract a(ILandroid/os/IBinder;Lcom/google/android/gms/common/internal/aa;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

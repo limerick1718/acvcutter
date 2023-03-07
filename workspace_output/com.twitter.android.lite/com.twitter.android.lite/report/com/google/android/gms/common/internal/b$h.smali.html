@@ -63,23 +63,6 @@ value = {
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public final a()V</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	monitor-enter p0</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	iput-object v0, p0, Lcom/google/android/gms/common/internal/b$h;->a:Ljava/lang/Object;</span>
-<span class="cov">	monitor-exit p0</span>
-<span class="exec">	return-void</span>
-<span class="">	:catchall_0</span>
-<span class="missed">	move-exception v0</span>
-<span class="missed">	monitor-exit p0</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="">	throw v0</span>
-.end method
-
 .method protected abstract a(Ljava/lang/Object;)V
 <span class="">	</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
@@ -92,35 +75,12 @@ value = {
 
 .end method
 
-<span class="cov">.method public final b()V</span>
-<span class="">	.locals 2</span>
-
-<span class="cov">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$h;->a()V</span>
-<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b$h;->c:Lcom/google/android/gms/common/internal/b;</span>
-<span class="exec">	invoke-static {v0}, Lcom/google/android/gms/common/internal/b;->f(Lcom/google/android/gms/common/internal/b;)Ljava/util/ArrayList;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	monitor-enter v0</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/internal/b$h;->c:Lcom/google/android/gms/common/internal/b;</span>
-<span class="exec">	invoke-static {v1}, Lcom/google/android/gms/common/internal/b;->f(Lcom/google/android/gms/common/internal/b;)Ljava/util/ArrayList;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	invoke-virtual {v1, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z</span>
-<span class="cov">	monitor-exit v0</span>
-<span class="exec">	return-void</span>
-<span class="">	:catchall_0</span>
-<span class="missed">	move-exception v1</span>
-<span class="missed">	monitor-exit v0</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="">	throw v1</span>
-.end method
-
-.method protected abstract c()V
+.method protected abstract b()V
 <span class="">	</span>
 
 .end method
 
-<span class="cov">.method public final d()V</span>
+<span class="cov">.method public final c()V</span>
 <span class="">	.locals 5</span>
 
 <span class="cov">	monitor-enter p0</span>
@@ -158,10 +118,10 @@ value = {
 <span class="">	goto :goto_0</span>
 <span class="">	:catch_0</span>
 <span class="missed">	move-exception v0</span>
-<span class="missed">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$h;->c()V</span>
+<span class="missed">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$h;->b()V</span>
 <span class="">	throw v0</span>
 <span class="">	:cond_1</span>
-<span class="missed">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$h;->c()V</span>
+<span class="missed">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$h;->b()V</span>
 <span class="cov">	:goto_0</span>
 <span class="cov">	monitor-enter p0</span>
 <span class="cov">	const/4 v0, 0x1</span>
@@ -170,7 +130,7 @@ value = {
 <span class="cov">	monitor-exit p0</span>
 <span class="cov">	:try_end_2</span>
 <span class="cov">	.catchall {:try_start_2 .. :try_end_2} :catchall_0</span>
-<span class="cov">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$h;->b()V</span>
+<span class="cov">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$h;->d()V</span>
 <span class="exec">	return-void</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception v0</span>
@@ -185,6 +145,46 @@ value = {
 <span class="missed">	monitor-exit p0</span>
 <span class="">	:try_end_4</span>
 <span class="missed">	.catchall {:try_start_4 .. :try_end_4} :catchall_1</span>
+<span class="">	throw v0</span>
+.end method
+
+<span class="cov">.method public final d()V</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	invoke-virtual {p0}, Lcom/google/android/gms/common/internal/b$h;->e()V</span>
+<span class="cov">	iget-object v0, p0, Lcom/google/android/gms/common/internal/b$h;->c:Lcom/google/android/gms/common/internal/b;</span>
+<span class="exec">	invoke-static {v0}, Lcom/google/android/gms/common/internal/b;->f(Lcom/google/android/gms/common/internal/b;)Ljava/util/ArrayList;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/android/gms/common/internal/b$h;->c:Lcom/google/android/gms/common/internal/b;</span>
+<span class="exec">	invoke-static {v1}, Lcom/google/android/gms/common/internal/b;->f(Lcom/google/android/gms/common/internal/b;)Ljava/util/ArrayList;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	invoke-virtual {v1, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="exec">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method
+
+<span class="cov">.method public final e()V</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	monitor-enter p0</span>
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	iput-object v0, p0, Lcom/google/android/gms/common/internal/b$h;->a:Ljava/lang/Object;</span>
+<span class="cov">	monitor-exit p0</span>
+<span class="exec">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
 <span class="">	throw v0</span>
 .end method</code>
 	</pre>

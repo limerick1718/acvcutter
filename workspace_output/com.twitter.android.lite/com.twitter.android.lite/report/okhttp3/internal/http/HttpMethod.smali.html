@@ -62,23 +62,23 @@
 <span class="">	return p0</span>
 .end method
 
-<span class="cov">.method public static permitsRequestBody(Ljava/lang/String;)Z</span>
+.method public static permitsRequestBody(Ljava/lang/String;)Z
 <span class="">	.locals 1</span>
 
-<span class="cov">	const-string v0, "GET"</span>
-<span class="exec">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v0</span>
+<span class="missed">	const-string v0, "GET"</span>
+<span class="">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
 <span class="missed">	if-nez v0, :cond_0</span>
 <span class="missed">	const-string v0, "HEAD"</span>
 <span class="">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
 <span class="missed">	move-result p0</span>
 <span class="missed">	if-nez p0, :cond_0</span>
 <span class="missed">	const/4 p0, 0x1</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 p0, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return p0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return p0</span>
 .end method
 
 .method public static redirectsToGet(Ljava/lang/String;)Z
@@ -100,38 +100,38 @@
 <span class="">	return p0</span>
 .end method
 
-<span class="cov">.method public static requiresRequestBody(Ljava/lang/String;)Z</span>
+.method public static requiresRequestBody(Ljava/lang/String;)Z
 <span class="">	.locals 1</span>
 
-<span class="cov">	const-string v0, "POST"</span>
-<span class="exec">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-nez v0, :cond_1</span>
-<span class="cov">	const-string v0, "PUT"</span>
-<span class="exec">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-nez v0, :cond_1</span>
-<span class="cov">	const-string v0, "PATCH"</span>
-<span class="exec">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-nez v0, :cond_1</span>
-<span class="cov">	const-string v0, "PROPPATCH"</span>
-<span class="exec">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-nez v0, :cond_1</span>
-<span class="cov">	const-string v0, "REPORT"</span>
-<span class="exec">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result p0</span>
+<span class="missed">	const-string v0, "POST"</span>
+<span class="">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	const-string v0, "PUT"</span>
+<span class="">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	const-string v0, "PATCH"</span>
+<span class="">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	const-string v0, "PROPPATCH"</span>
+<span class="">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_1</span>
+<span class="missed">	const-string v0, "REPORT"</span>
+<span class="">	invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p0</span>
 <span class="missed">	if-eqz p0, :cond_0</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 p0, 0x0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p0, 0x0</span>
 <span class="">	goto :goto_1</span>
 <span class="">	:cond_1</span>
 <span class="">	:goto_0</span>
 <span class="missed">	const/4 p0, 0x1</span>
-<span class="cov">	:goto_1</span>
-<span class="exec">	return p0</span>
+<span class="">	:goto_1</span>
+<span class="">	return p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

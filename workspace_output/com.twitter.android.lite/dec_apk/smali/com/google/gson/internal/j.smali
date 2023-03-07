@@ -27,8 +27,8 @@ const-class v8, Ljava/lang/Class;
 aput-object v8, v7, v2
 invoke-virtual {v4, v6, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 move-result-object v4
-new-instance v6, Lcom/google/gson/internal/j$a;
-invoke-direct {v6, v4, v5}, Lcom/google/gson/internal/j$a;-><init>(Ljava/lang/reflect/Method;Ljava/lang/Object;)V
+new-instance v6, Lcom/google/gson/internal/j$1;
+invoke-direct {v6, v4, v5}, Lcom/google/gson/internal/j$1;-><init>(Ljava/lang/reflect/Method;Ljava/lang/Object;)V
 return-object v6
 .end method
 .method public abstract a(Ljava/lang/Class;)Ljava/lang/Object;

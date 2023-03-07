@@ -54,7 +54,7 @@ value = {
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "Ljava/util/ArrayDeque<",
-"Lhx;",
+"Lyv;",
 ">;"
 }
 .end annotation
@@ -73,10 +73,6 @@ value = {
 .method public constructor <init>(Lokhttp3/Request;Lokhttp3/WebSocketListener;Ljava/util/Random;J)V
 .locals 2
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
-.end method
-.method public synthetic a()V
-.locals 2
 return-void
 .end method
 .method  awaitTermination(ILjava/util/concurrent/TimeUnit;)V
@@ -128,12 +124,16 @@ return-void
 return-void
 .end method
 .method public initReaderAndWriter(Ljava/lang/String;Lokhttp3/internal/ws/RealWebSocket$Streams;)V
-.locals 11
+.locals 7
 .annotation system Ldalvik/annotation/Throws;
 value = {
 Ljava/io/IOException;
 }
 .end annotation
+return-void
+.end method
+.method public synthetic lambda$new$0$RealWebSocket()V
+.locals 2
 return-void
 .end method
 .method public loopReader()V
@@ -149,15 +149,6 @@ return-void
 .locals 3
 return-void
 .end method
-.method public onReadMessage(Lhx;)V
-.locals 1
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-return-void
-.end method
 .method public onReadMessage(Ljava/lang/String;)V
 .locals 1
 .annotation system Ldalvik/annotation/Throws;
@@ -167,15 +158,24 @@ Ljava/io/IOException;
 .end annotation
 return-void
 .end method
-.method public declared-synchronized onReadPing(Lhx;)V
+.method public onReadMessage(Lyv;)V
+.locals 1
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Ljava/io/IOException;
+}
+.end annotation
+return-void
+.end method
+.method public declared-synchronized onReadPing(Lyv;)V
 .locals 1
 return-void
 .end method
-.method public declared-synchronized onReadPong(Lhx;)V
+.method public declared-synchronized onReadPong(Lyv;)V
 .locals 0
 return-void
 .end method
-.method declared-synchronized pong(Lhx;)Z
+.method declared-synchronized pong(Lyv;)Z
 .locals 1
 const/4 v0, 0x0
 return v0
@@ -210,12 +210,12 @@ return v0
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public send(Lhx;)Z
+.method public send(Ljava/lang/String;)Z
 .locals 1
 const/4 v0, 0x0
 return v0
 .end method
-.method public send(Ljava/lang/String;)Z
+.method public send(Lyv;)Z
 .locals 1
 const/4 v0, 0x0
 return v0
@@ -235,7 +235,7 @@ Ljava/lang/InterruptedException;
 return-void
 .end method
 .method  writeOneFrame()Z
-.locals 12
+.locals 11
 .annotation system Ldalvik/annotation/Throws;
 value = {
 Ljava/io/IOException;

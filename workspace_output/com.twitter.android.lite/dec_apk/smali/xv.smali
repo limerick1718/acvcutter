@@ -1,24 +1,15 @@
-.class public interface abstract annotation Lxv;
+.class public Lxv;
 .super Ljava/lang/Object;
-.source "Expose.java"
-.implements Ljava/lang/annotation/Annotation;
-.annotation system Ldalvik/annotation/AnnotationDefault;
-value = .subannotation Lxv;
-deserialize = true
-serialize = true
-.end subannotation
-.end annotation
-.annotation runtime Ljava/lang/annotation/Documented;
-.end annotation
-.annotation runtime Ljava/lang/annotation/Retention;
-value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
-.end annotation
-.annotation runtime Ljava/lang/annotation/Target;
-value = {
-.enum Ljava/lang/annotation/ElementType;->FIELD:Ljava/lang/annotation/ElementType;
-}
-.end annotation
-.method public abstract deserialize()Z
-.end method
-.method public abstract serialize()Z
+.source "AppSettingsData.java"
+.field public final a:Ljava/lang/String;
+.field public final b:Ljava/lang/String;
+.field public final c:Ljava/lang/String;
+.field public final d:Ljava/lang/String;
+.field public final e:Ljava/lang/String;
+.field public final f:Z
+.field public final g:Lxt;
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLxt;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method

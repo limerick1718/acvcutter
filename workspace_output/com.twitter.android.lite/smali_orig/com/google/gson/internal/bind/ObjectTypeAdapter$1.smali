@@ -3,12 +3,12 @@
 .source "ObjectTypeAdapter.java"
 
 # interfaces
-.implements Lwv;
+.implements Lto;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/gson/internal/bind/ObjectTypeAdapter;
+    value = Lcom/google/gson/internal/bind/e;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,23 +29,23 @@
 
 
 # virtual methods
-.method public a(Lfv;Ldw;)Lvv;
+.method public a(Lsx;Ltv;)Ltn;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Lfv;",
-            "Ldw<",
+            "Lsx;",
+            "Ltv<",
             "TT;>;)",
-            "Lvv<",
+            "Ltn<",
             "TT;>;"
         }
     .end annotation
 
-    .line 1
-    invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;
+    .line 41
+    invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;
 
     move-result-object p2
 
@@ -53,10 +53,10 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 2
-    new-instance p2, Lcom/google/gson/internal/bind/ObjectTypeAdapter;
+    .line 42
+    new-instance p2, Lcom/google/gson/internal/bind/e;
 
-    invoke-direct {p2, p1}, Lcom/google/gson/internal/bind/ObjectTypeAdapter;-><init>(Lfv;)V
+    invoke-direct {p2, p1}, Lcom/google/gson/internal/bind/e;-><init>(Lsx;)V
 
     return-object p2
 

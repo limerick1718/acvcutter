@@ -1,18 +1,17 @@
-.class  Lcom/google/gson/internal/f$b;
+.class final Lcom/google/gson/internal/f$b;
 .super Ljava/util/AbstractSet;
 .source "LinkedTreeMap.java"
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lcom/google/gson/internal/f;
 .end annotation
 .annotation system Ldalvik/annotation/InnerClass;
-accessFlags = 0x0
+accessFlags = 0x10
 name = "b"
 .end annotation
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "Ljava/util/AbstractSet<",
-"Ljava/util/Map$Entry<",
-"TK;TV;>;>;"
+"TK;>;"
 }
 .end annotation
 .field final synthetic a:Lcom/google/gson/internal/f;
@@ -36,15 +35,14 @@ return v0
 value = {
 "()",
 "Ljava/util/Iterator<",
-"Ljava/util/Map$Entry<",
-"TK;TV;>;>;"
+"TK;>;"
 }
 .end annotation
 const/4 v0, 0x0
 return-object v0
 .end method
 .method public remove(Ljava/lang/Object;)Z
-.locals 2
+.locals 1
 const/4 v0, 0x0
 return v0
 .end method

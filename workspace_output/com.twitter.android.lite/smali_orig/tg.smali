@@ -1,312 +1,127 @@
-.class final synthetic Ltg;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.class public final Ltg;
+.super Ltd;
+.source "JsonObject.java"
 
 
-# static fields
-.field private static final synthetic a:[I
+# instance fields
+.field private final a:Lcom/google/gson/internal/f;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/gson/internal/f<",
+            "Ljava/lang/String;",
+            "Ltd;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>()V
+    .locals 1
 
-    .line 1
-    invoke-static {}, Lsg;->values()[Lsg;
+    .line 32
+    invoke-direct {p0}, Ltd;-><init>()V
+
+    .line 33
+    new-instance v0, Lcom/google/gson/internal/f;
+
+    invoke-direct {v0}, Lcom/google/gson/internal/f;-><init>()V
+
+    iput-object v0, p0, Ltg;->a:Lcom/google/gson/internal/f;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a(Ljava/lang/String;Ltd;)V
+    .locals 1
+
+    if-nez p2, :cond_0
+
+    .line 55
+    sget-object p2, Ltf;->a:Ltf;
+
+    .line 57
+    :cond_0
+    iget-object v0, p0, Ltg;->a:Lcom/google/gson/internal/f;
+
+    invoke-virtual {v0, p1, p2}, Lcom/google/gson/internal/f;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    if-eq p1, p0, :cond_1
+
+    .line 206
+    instance-of v0, p1, Ltg;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Ltg;
+
+    iget-object p1, p1, Ltg;->a:Lcom/google/gson/internal/f;
+
+    iget-object v0, p0, Ltg;->a:Lcom/google/gson/internal/f;
+
+    .line 207
+    invoke-virtual {p1, v0}, Lcom/google/gson/internal/f;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 p1, 0x1
+
+    :goto_1
+    return p1
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    .line 212
+    iget-object v0, p0, Ltg;->a:Lcom/google/gson/internal/f;
+
+    invoke-virtual {v0}, Lcom/google/gson/internal/f;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public o()Ljava/util/Set;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set<",
+            "Ljava/util/Map$Entry<",
+            "Ljava/lang/String;",
+            "Ltd;",
+            ">;>;"
+        }
+    .end annotation
+
+    .line 132
+    iget-object v0, p0, Ltg;->a:Lcom/google/gson/internal/f;
+
+    invoke-virtual {v0}, Lcom/google/gson/internal/f;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Ltg;->a:[I
-
-    :try_start_0
-    sget-object v1, Lsg;->c:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    :try_start_1
-    sget-object v0, Ltg;->a:[I
-
-    sget-object v1, Lsg;->d:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    :try_start_2
-    sget-object v0, Ltg;->a:[I
-
-    sget-object v1, Lsg;->e:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    :try_start_3
-    sget-object v0, Ltg;->a:[I
-
-    sget-object v1, Lsg;->f:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    :try_start_4
-    sget-object v0, Ltg;->a:[I
-
-    sget-object v1, Lsg;->g:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    :try_start_5
-    sget-object v0, Ltg;->a:[I
-
-    sget-object v1, Lsg;->h:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x6
-
-    aput v2, v0, v1
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
-
-    :catch_5
-    :try_start_6
-    sget-object v0, Ltg;->a:[I
-
-    sget-object v1, Lsg;->i:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x7
-
-    aput v2, v0, v1
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
-
-    :catch_6
-    :try_start_7
-    sget-object v0, Ltg;->a:[I
-
-    sget-object v1, Lsg;->j:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x8
-
-    aput v2, v0, v1
-    :try_end_7
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
-
-    :catch_7
-    :try_start_8
-    sget-object v0, Ltg;->a:[I
-
-    sget-object v1, Lsg;->n:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x9
-
-    aput v2, v0, v1
-    :try_end_8
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8
-
-    :catch_8
-    :try_start_9
-    sget-object v0, Ltg;->a:[I
-
-    sget-object v1, Lsg;->o:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xa
-
-    aput v2, v0, v1
-    :try_end_9
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_9
-
-    :catch_9
-    :try_start_a
-    sget-object v0, Ltg;->a:[I
-
-    sget-object v1, Lsg;->q:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xb
-
-    aput v2, v0, v1
-    :try_end_a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_a
-
-    :catch_a
-    :try_start_b
-    sget-object v0, Ltg;->a:[I
-
-    sget-object v1, Lsg;->r:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xc
-
-    aput v2, v0, v1
-    :try_end_b
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_b .. :try_end_b} :catch_b
-
-    :catch_b
-    :try_start_c
-    sget-object v0, Ltg;->a:[I
-
-    sget-object v1, Lsg;->s:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xd
-
-    aput v2, v0, v1
-    :try_end_c
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_c .. :try_end_c} :catch_c
-
-    :catch_c
-    :try_start_d
-    sget-object v0, Ltg;->a:[I
-
-    sget-object v1, Lsg;->t:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xe
-
-    aput v2, v0, v1
-    :try_end_d
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_d .. :try_end_d} :catch_d
-
-    :catch_d
-    :try_start_e
-    sget-object v0, Ltg;->a:[I
-
-    sget-object v1, Lsg;->k:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xf
-
-    aput v2, v0, v1
-    :try_end_e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_e .. :try_end_e} :catch_e
-
-    :catch_e
-    :try_start_f
-    sget-object v0, Ltg;->a:[I
-
-    sget-object v1, Lsg;->l:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x10
-
-    aput v2, v0, v1
-    :try_end_f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_f .. :try_end_f} :catch_f
-
-    :catch_f
-    :try_start_10
-    sget-object v0, Ltg;->a:[I
-
-    sget-object v1, Lsg;->m:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x11
-
-    aput v2, v0, v1
-    :try_end_10
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_10 .. :try_end_10} :catch_10
-
-    :catch_10
-    :try_start_11
-    sget-object v0, Ltg;->a:[I
-
-    sget-object v1, Lsg;->p:Lsg;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x12
-
-    aput v2, v0, v1
-    :try_end_11
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_11 .. :try_end_11} :catch_11
-
-    :catch_11
-    return-void
+    return-object v0
 .end method

@@ -14,15 +14,26 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lev;
+		<code>.class public abstract Lev;
 .super Ljava/lang/Object;
-.source "FieldNamingStrategy.java"
 
 
 
 
-.method public abstract a(Ljava/lang/reflect/Field;)Ljava/lang/String;
+.method public constructor &lt;init&gt;()V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public abstract a([BII)V
 <span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
 .end method</code>
 	</pre>

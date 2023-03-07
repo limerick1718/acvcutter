@@ -14,33 +14,416 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lq;
+		<code>.class public Lq;
 .super Ljava/lang/Object;
+.source "SparseArrayCompat.java"
+.implements Ljava/lang/Cloneable;
+
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<E:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;",
+"Ljava/lang/Cloneable;"
+}
+.end annotation
+
+.field private static final a:Ljava/lang/Object;
+.field private b:Z
+.field private c:[I
+.field private d:[Ljava/lang/Object;
+.field private e:I
 
 
-.field public static final compat_button_inset_horizontal_material:I = 0x7f030002
-.field public static final compat_button_inset_vertical_material:I = 0x7f030003
-.field public static final compat_button_padding_horizontal_material:I = 0x7f030004
-.field public static final compat_button_padding_vertical_material:I = 0x7f030005
-.field public static final compat_control_corner_material:I = 0x7f030006
-.field public static final compat_notification_large_icon_max_height:I = 0x7f030007
-.field public static final compat_notification_large_icon_max_width:I = 0x7f030008
-.field public static final notification_action_icon_size:I = 0x7f030009
-.field public static final notification_action_text_size:I = 0x7f03000a
-.field public static final notification_big_circle_margin:I = 0x7f03000b
-.field public static final notification_content_margin_start:I = 0x7f03000c
-.field public static final notification_large_icon_height:I = 0x7f03000d
-.field public static final notification_large_icon_width:I = 0x7f03000e
-.field public static final notification_main_column_padding_top:I = 0x7f03000f
-.field public static final notification_media_narrow_margin:I = 0x7f030010
-.field public static final notification_right_icon_size:I = 0x7f030011
-.field public static final notification_right_side_padding_top:I = 0x7f030012
-.field public static final notification_small_icon_background_padding:I = 0x7f030013
-.field public static final notification_small_icon_size_as_large:I = 0x7f030014
-.field public static final notification_subtext_size:I = 0x7f030015
-.field public static final notification_top_pad:I = 0x7f030016
-.field public static final notification_top_pad_large_text:I = 0x7f030017
-</code>
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Ljava/lang/Object;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	sput-object v0, Lq;->a:Ljava/lang/Object;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public constructor &lt;init&gt;()V
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/16 v0, 0xa</span>
+<span class="missed">	invoke-direct {p0, v0}, Lq;-><init>(I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public constructor &lt;init&gt;(I)V
+<span class="">	.locals 2</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-boolean v0, p0, Lq;->b:Z</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="missed">	sget-object p1, Ln;->a:[I</span>
+<span class="missed">	iput-object p1, p0, Lq;->c:[I</span>
+<span class="missed">	sget-object p1, Ln;->c:[Ljava/lang/Object;</span>
+<span class="missed">	iput-object p1, p0, Lq;->d:[Ljava/lang/Object;</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {p1}, Ln;->a(I)I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	new-array v1, p1, [I</span>
+<span class="missed">	iput-object v1, p0, Lq;->c:[I</span>
+<span class="missed">	new-array p1, p1, [Ljava/lang/Object;</span>
+<span class="missed">	iput-object p1, p0, Lq;->d:[Ljava/lang/Object;</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iput v0, p0, Lq;->e:I</span>
+<span class="">	return-void</span>
+.end method
+
+.method private d()V
+<span class="">	.locals 8</span>
+
+<span class="missed">	iget v0, p0, Lq;->e:I</span>
+<span class="missed">	iget-object v1, p0, Lq;->c:[I</span>
+<span class="missed">	iget-object v2, p0, Lq;->d:[Ljava/lang/Object;</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v4, v0, :cond_2</span>
+<span class="missed">	aget-object v6, v2, v4</span>
+<span class="missed">	sget-object v7, Lq;->a:Ljava/lang/Object;</span>
+<span class="missed">	if-eq v6, v7, :cond_1</span>
+<span class="missed">	if-eq v4, v5, :cond_0</span>
+<span class="missed">	aget v7, v1, v4</span>
+<span class="missed">	aput v7, v1, v5</span>
+<span class="missed">	aput-object v6, v2, v5</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="missed">	aput-object v6, v2, v4</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/lit8 v5, v5, 0x1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	add-int/lit8 v4, v4, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iput-boolean v3, p0, Lq;->b:Z</span>
+<span class="missed">	iput v5, p0, Lq;->e:I</span>
+<span class="">	return-void</span>
+.end method
+
+.method public a(I)Ljava/lang/Object;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(I)TE;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	invoke-virtual {p0, p1, v0}, Lq;->a(ILjava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public a(ILjava/lang/Object;)Ljava/lang/Object;
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(ITE;)TE;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lq;->c:[I</span>
+<span class="missed">	iget v1, p0, Lq;->e:I</span>
+<span class="">	invoke-static {v0, v1, p1}, Ln;->a([III)I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-ltz p1, :cond_1</span>
+<span class="missed">	iget-object v0, p0, Lq;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aget-object v1, v0, p1</span>
+<span class="missed">	sget-object v2, Lq;->a:Ljava/lang/Object;</span>
+<span class="missed">	if-ne v1, v2, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	aget-object p1, v0, p1</span>
+<span class="">	return-object p1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object p2</span>
+.end method
+
+.method public a()Lq;
+<span class="">	.locals 2</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Lq<",</span>
+<span class="">	"TE;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	:try_start_0</span>
+<span class="">	invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Lq;</span>
+<span class="missed">	iget-object v1, p0, Lq;->c:[I</span>
+<span class="">	invoke-virtual {v1}, [I->clone()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, [I</span>
+<span class="missed">	iput-object v1, v0, Lq;->c:[I</span>
+<span class="missed">	iget-object v1, p0, Lq;->d:[Ljava/lang/Object;</span>
+<span class="">	invoke-virtual {v1}, [Ljava/lang/Object;->clone()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, [Ljava/lang/Object;</span>
+<span class="missed">	iput-object v1, v0, Lq;->d:[Ljava/lang/Object;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object v0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	new-instance v1, Ljava/lang/AssertionError;</span>
+<span class="missed">	invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V</span>
+<span class="">	throw v1</span>
+.end method
+
+.method public b()I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-boolean v0, p0, Lq;->b:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-direct {p0}, Lq;->d()V</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget v0, p0, Lq;->e:I</span>
+<span class="">	return v0</span>
+.end method
+
+.method public b(I)V
+<span class="">	.locals 3</span>
+
+<span class="missed">	iget-object v0, p0, Lq;->c:[I</span>
+<span class="missed">	iget v1, p0, Lq;->e:I</span>
+<span class="">	invoke-static {v0, v1, p1}, Ln;->a([III)I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-ltz p1, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lq;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aget-object v1, v0, p1</span>
+<span class="missed">	sget-object v2, Lq;->a:Ljava/lang/Object;</span>
+<span class="missed">	if-eq v1, v2, :cond_0</span>
+<span class="missed">	aput-object v2, v0, p1</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="missed">	iput-boolean p1, p0, Lq;->b:Z</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public b(ILjava/lang/Object;)V
+<span class="">	.locals 6</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(ITE;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lq;->c:[I</span>
+<span class="missed">	iget v1, p0, Lq;->e:I</span>
+<span class="">	invoke-static {v0, v1, p1}, Ln;->a([III)I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-ltz v0, :cond_0</span>
+<span class="missed">	iget-object p1, p0, Lq;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aput-object p2, p1, v0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	not-int v0, v0</span>
+<span class="missed">	iget v1, p0, Lq;->e:I</span>
+<span class="missed">	if-ge v0, v1, :cond_1</span>
+<span class="missed">	iget-object v1, p0, Lq;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aget-object v2, v1, v0</span>
+<span class="missed">	sget-object v3, Lq;->a:Ljava/lang/Object;</span>
+<span class="missed">	if-ne v2, v3, :cond_1</span>
+<span class="missed">	iget-object v2, p0, Lq;->c:[I</span>
+<span class="missed">	aput p1, v2, v0</span>
+<span class="missed">	aput-object p2, v1, v0</span>
+<span class="">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-boolean v1, p0, Lq;->b:Z</span>
+<span class="missed">	if-eqz v1, :cond_2</span>
+<span class="missed">	iget v1, p0, Lq;->e:I</span>
+<span class="missed">	iget-object v2, p0, Lq;->c:[I</span>
+<span class="missed">	array-length v2, v2</span>
+<span class="missed">	if-lt v1, v2, :cond_2</span>
+<span class="missed">	invoke-direct {p0}, Lq;->d()V</span>
+<span class="missed">	iget-object v0, p0, Lq;->c:[I</span>
+<span class="missed">	iget v1, p0, Lq;->e:I</span>
+<span class="">	invoke-static {v0, v1, p1}, Ln;->a([III)I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	not-int v0, v0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget v1, p0, Lq;->e:I</span>
+<span class="missed">	iget-object v2, p0, Lq;->c:[I</span>
+<span class="missed">	array-length v2, v2</span>
+<span class="missed">	if-lt v1, v2, :cond_3</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	invoke-static {v1}, Ln;->a(I)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	new-array v2, v1, [I</span>
+<span class="missed">	new-array v1, v1, [Ljava/lang/Object;</span>
+<span class="missed">	iget-object v3, p0, Lq;->c:[I</span>
+<span class="missed">	array-length v4, v3</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="missed">	invoke-static {v3, v5, v2, v5, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
+<span class="missed">	iget-object v3, p0, Lq;->d:[Ljava/lang/Object;</span>
+<span class="missed">	array-length v4, v3</span>
+<span class="missed">	invoke-static {v3, v5, v1, v5, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
+<span class="missed">	iput-object v2, p0, Lq;->c:[I</span>
+<span class="missed">	iput-object v1, p0, Lq;->d:[Ljava/lang/Object;</span>
+<span class="">	:cond_3</span>
+<span class="missed">	iget v1, p0, Lq;->e:I</span>
+<span class="missed">	sub-int v2, v1, v0</span>
+<span class="missed">	if-eqz v2, :cond_4</span>
+<span class="missed">	iget-object v2, p0, Lq;->c:[I</span>
+<span class="missed">	add-int/lit8 v3, v0, 0x1</span>
+<span class="missed">	sub-int/2addr v1, v0</span>
+<span class="missed">	invoke-static {v2, v0, v2, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
+<span class="missed">	iget-object v1, p0, Lq;->d:[Ljava/lang/Object;</span>
+<span class="missed">	iget v2, p0, Lq;->e:I</span>
+<span class="missed">	sub-int/2addr v2, v0</span>
+<span class="missed">	invoke-static {v1, v0, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget-object v1, p0, Lq;->c:[I</span>
+<span class="missed">	aput p1, v1, v0</span>
+<span class="missed">	iget-object p1, p0, Lq;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aput-object p2, p1, v0</span>
+<span class="missed">	iget p1, p0, Lq;->e:I</span>
+<span class="missed">	add-int/lit8 p1, p1, 0x1</span>
+<span class="missed">	iput p1, p0, Lq;->e:I</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
+.end method
+
+.method public c()V
+<span class="">	.locals 5</span>
+
+<span class="missed">	iget v0, p0, Lq;->e:I</span>
+<span class="missed">	iget-object v1, p0, Lq;->d:[Ljava/lang/Object;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v3, v0, :cond_0</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	aput-object v4, v1, v3</span>
+<span class="missed">	add-int/lit8 v3, v3, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iput v2, p0, Lq;->e:I</span>
+<span class="missed">	iput-boolean v2, p0, Lq;->b:Z</span>
+<span class="">	return-void</span>
+.end method
+
+.method public c(I)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-virtual {p0, p1}, Lq;->b(I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public synthetic clone()Ljava/lang/Object;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/lang/CloneNotSupportedException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p0}, Lq;->a()Lq;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public d(I)I
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-boolean v0, p0, Lq;->b:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-direct {p0}, Lq;->d()V</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lq;->c:[I</span>
+<span class="missed">	aget p1, v0, p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public e(I)Ljava/lang/Object;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(I)TE;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-boolean v0, p0, Lq;->b:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-direct {p0}, Lq;->d()V</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lq;->d:[Ljava/lang/Object;</span>
+<span class="missed">	aget-object p1, v0, p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public f(I)I
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-boolean v0, p0, Lq;->b:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-direct {p0}, Lq;->d()V</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lq;->c:[I</span>
+<span class="missed">	iget v1, p0, Lq;->e:I</span>
+<span class="">	invoke-static {v0, v1, p1}, Ln;->a([III)I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public toString()Ljava/lang/String;
+<span class="">	.locals 3</span>
+
+<span class="">	invoke-virtual {p0}, Lq;->b()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-gtz v0, :cond_0</span>
+<span class="missed">	const-string v0, "{}"</span>
+<span class="">	return-object v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget v1, p0, Lq;->e:I</span>
+<span class="missed">	mul-int/lit8 v1, v1, 0x1c</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V</span>
+<span class="missed">	const/16 v1, 0x7b</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget v2, p0, Lq;->e:I</span>
+<span class="missed">	if-ge v1, v2, :cond_3</span>
+<span class="missed">	if-lez v1, :cond_1</span>
+<span class="missed">	const-string v2, ", "</span>
+<span class="missed">	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {p0, v1}, Lq;->d(I)I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const/16 v2, 0x3d</span>
+<span class="missed">	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {p0, v1}, Lq;->e(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	if-eq v2, p0, :cond_2</span>
+<span class="missed">	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const-string v2, "(this Map)"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	:goto_1</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const/16 v1, 0x7d</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
 

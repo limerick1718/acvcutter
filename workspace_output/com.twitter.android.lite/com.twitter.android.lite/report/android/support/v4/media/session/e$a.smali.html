@@ -14,65 +14,54 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Landroid/support/v4/media/session/e$a;
+		<code>.class final Landroid/support/v4/media/session/e$a;
 .super Ljava/lang/Object;
-.source "MediaControllerCompatApi21.java"
+.source "PlaybackStateCompatApi21.java"
 
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Landroid/support/v4/media/session/e;
 .end annotation
 .annotation system Ldalvik/annotation/InnerClass;
-accessFlags = 0x609
+accessFlags = 0x18
 name = "a"
 .end annotation
 
 
 
-.method public abstract a(IIIII)V
-<span class="">	</span>
+.method public static a(Ljava/lang/Object;)Ljava/lang/String;
+<span class="">	.locals 0</span>
 
+<span class="missed">	check-cast p0, Landroid/media/session/PlaybackState$CustomAction;</span>
+<span class="">	invoke-virtual {p0}, Landroid/media/session/PlaybackState$CustomAction;->getAction()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
 .end method
 
-.method public abstract a(Ljava/lang/CharSequence;)V
-<span class="">	</span>
+.method public static b(Ljava/lang/Object;)Ljava/lang/CharSequence;
+<span class="">	.locals 0</span>
 
+<span class="missed">	check-cast p0, Landroid/media/session/PlaybackState$CustomAction;</span>
+<span class="">	invoke-virtual {p0}, Landroid/media/session/PlaybackState$CustomAction;->getName()Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
 .end method
 
-.method public abstract a(Ljava/lang/Object;)V
-<span class="">	</span>
+.method public static c(Ljava/lang/Object;)I
+<span class="">	.locals 0</span>
 
+<span class="missed">	check-cast p0, Landroid/media/session/PlaybackState$CustomAction;</span>
+<span class="">	invoke-virtual {p0}, Landroid/media/session/PlaybackState$CustomAction;->getIcon()I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
 .end method
 
-.method public abstract a(Ljava/lang/String;Landroid/os/Bundle;)V
-<span class="">	</span>
+.method public static d(Ljava/lang/Object;)Landroid/os/Bundle;
+<span class="">	.locals 0</span>
 
-.end method
-
-.method public abstract a(Ljava/util/List;)V
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Ljava/util/List<",</span>
-<span class="">	"*>;)V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract b(Landroid/os/Bundle;)V
-<span class="">	</span>
-
-.end method
-
-.method public abstract b(Ljava/lang/Object;)V
-<span class="">	</span>
-
-.end method
-
-.method public abstract e()V
-<span class="">	</span>
-
+<span class="missed">	check-cast p0, Landroid/media/session/PlaybackState$CustomAction;</span>
+<span class="">	invoke-virtual {p0}, Landroid/media/session/PlaybackState$CustomAction;->getExtras()Landroid/os/Bundle;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

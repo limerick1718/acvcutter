@@ -19,6 +19,8 @@
 # instance fields
 .field private final a:I
 
+.field private final b:I
+
 
 # direct methods
 .method public constructor <init>(II)V
@@ -30,6 +32,11 @@
     .line 2
     iput p1, p0, Lcom/google/android/gms/dynamite/DynamiteModule$d;->a:I
 
+    const/4 p1, 0x0
+
+    .line 3
+    iput p1, p0, Lcom/google/android/gms/dynamite/DynamiteModule$d;->b:I
+
     return-void
 .end method
 
@@ -38,7 +45,7 @@
 .method public final a(Landroid/content/Context;Ljava/lang/String;)I
     .locals 0
 
-    .line 1
+    .line 6
     iget p1, p0, Lcom/google/android/gms/dynamite/DynamiteModule$d;->a:I
 
     return p1

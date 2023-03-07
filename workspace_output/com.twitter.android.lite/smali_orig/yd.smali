@@ -1,51 +1,41 @@
-.class public final Lyd;
-.super Lce;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.class public Lyd;
+.super Ljava/lang/Object;
+.source "FeaturesSettingsData.java"
+
+
+# instance fields
+.field public final a:Z
+
+.field public final b:Z
+
+.field public final c:Z
+
+.field public final d:Z
+
+.field public final e:Z
 
 
 # direct methods
-.method public static c()Lue;
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljava/lang/NoSuchMethodError;
-
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
-
-    throw v0
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public constructor <init>(ZZZZZ)V
     .locals 0
 
-    .line 1
-    new-instance p1, Ljava/lang/NoSuchMethodError;
+    .line 31
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V
+    .line 32
+    iput-boolean p1, p0, Lyd;->a:Z
 
-    throw p1
-.end method
+    .line 33
+    iput-boolean p2, p0, Lyd;->b:Z
 
-.method public final hashCode()I
-    .locals 1
+    .line 34
+    iput-boolean p3, p0, Lyd;->c:Z
 
-    .line 1
-    new-instance v0, Ljava/lang/NoSuchMethodError;
+    .line 35
+    iput-boolean p4, p0, Lyd;->d:Z
 
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+    .line 36
+    iput-boolean p5, p0, Lyd;->e:Z
 
-    throw v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljava/lang/NoSuchMethodError;
-
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
-
-    throw v0
+    return-void
 .end method

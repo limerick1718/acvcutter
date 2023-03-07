@@ -5,17 +5,17 @@
 value = {
 "Ljava/lang/Object;",
 "Landroid/os/Parcelable$Creator<",
-"Lcom/google/android/gms/common/api/Scope;",
+"Lcom/google/android/gms/common/api/Status;",
 ">;"
 }
 .end annotation
 .method public constructor <init>()V
 .locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-.locals 6
+.locals 8
 const/4 v0, 0x0
 return-object v0
 .end method

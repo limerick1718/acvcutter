@@ -1,42 +1,42 @@
 .class final Lcom/google/gson/internal/bind/TypeAdapters$32;
 .super Ljava/lang/Object;
 .source "TypeAdapters.java"
-.implements Lwv;
+.implements Lto;
 .annotation system Ldalvik/annotation/EnclosingMethod;
-value = Lcom/google/gson/internal/bind/TypeAdapters;->a(Ljava/lang/Class;Lvv;)Lwv;
+value = Lcom/google/gson/internal/bind/i;->a(Ljava/lang/Class;Ltn;)Lto;
 .end annotation
 .annotation system Ldalvik/annotation/InnerClass;
 accessFlags = 0x8
 name = null
 .end annotation
 .field final synthetic a:Ljava/lang/Class;
-.field final synthetic b:Lvv;
-.method constructor <init>(Ljava/lang/Class;Lvv;)V
+.field final synthetic b:Ltn;
+.method constructor <init>(Ljava/lang/Class;Ltn;)V
 .locals 0
 iput-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->a:Ljava/lang/Class;
-iput-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->b:Lvv;
+iput-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->b:Ltn;
 invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public a(Lfv;Ldw;)Lvv;
+.method public a(Lsx;Ltv;)Ltn;
 .locals 0
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "<T:",
 "Ljava/lang/Object;",
 ">(",
-"Lfv;",
-"Ldw<",
+"Lsx;",
+"Ltv<",
 "TT;>;)",
-"Lvv<",
+"Ltn<",
 "TT;>;"
 }
 .end annotation
-invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;
+invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;
 move-result-object p1
 iget-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->a:Ljava/lang/Class;
 if-ne p1, p2, :cond_0
-iget-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->b:Lvv;
+iget-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$32;->b:Ltn;
 goto :goto_0
 :cond_0
 const/4 p1, 0x0

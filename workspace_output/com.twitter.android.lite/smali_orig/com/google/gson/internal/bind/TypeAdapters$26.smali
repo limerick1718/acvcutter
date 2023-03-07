@@ -3,12 +3,12 @@
 .source "TypeAdapters.java"
 
 # interfaces
-.implements Lwv;
+.implements Lto;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/gson/internal/bind/TypeAdapters;
+    value = Lcom/google/gson/internal/bind/i;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 571
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,23 +29,23 @@
 
 
 # virtual methods
-.method public a(Lfv;Ldw;)Lvv;
+.method public a(Lsx;Ltv;)Ltn;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Lfv;",
-            "Ldw<",
+            "Lsx;",
+            "Ltv<",
             "TT;>;)",
-            "Lvv<",
+            "Ltn<",
             "TT;>;"
         }
     .end annotation
 
-    .line 1
-    invoke-virtual {p2}, Ldw;->a()Ljava/lang/Class;
+    .line 574
+    invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;
 
     move-result-object p2
 
@@ -57,18 +57,18 @@
 
     return-object p1
 
-    .line 2
+    .line 578
     :cond_0
     const-class p2, Ljava/util/Date;
 
-    invoke-virtual {p1, p2}, Lfv;->a(Ljava/lang/Class;)Lvv;
+    invoke-virtual {p1, p2}, Lsx;->a(Ljava/lang/Class;)Ltn;
 
     move-result-object p1
 
-    .line 3
-    new-instance p2, Lcom/google/gson/internal/bind/TypeAdapters$26$a;
+    .line 579
+    new-instance p2, Lcom/google/gson/internal/bind/TypeAdapters$26$1;
 
-    invoke-direct {p2, p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$26$a;-><init>(Lcom/google/gson/internal/bind/TypeAdapters$26;Lvv;)V
+    invoke-direct {p2, p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$26$1;-><init>(Lcom/google/gson/internal/bind/TypeAdapters$26;Ltn;)V
 
     return-object p2
 .end method

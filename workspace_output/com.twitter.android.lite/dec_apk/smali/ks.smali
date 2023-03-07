@@ -1,31 +1,18 @@
-.class public interface abstract Lks;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.annotation system Ldalvik/annotation/MemberClasses;
+.class public abstract Lks;
+.super Ldp;
+.implements Lkr;
+.method public constructor <init>()V
+.locals 1
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method protected final a(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+.locals 6
+.annotation system Ldalvik/annotation/Throws;
 value = {
-Lks$a;
+Landroid/os/RemoteException;
 }
 .end annotation
-.method public abstract a()Ljava/util/Map;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"()",
-"Ljava/util/Map<",
-"Ljava/lang/String;",
-"Ljava/lang/String;",
-">;"
-}
-.end annotation
-.end method
-.method public abstract b()[Ljava/io/File;
-.end method
-.method public abstract c()Ljava/lang/String;
-.end method
-.method public abstract d()Ljava/lang/String;
-.end method
-.method public abstract e()Lks$a;
-.end method
-.method public abstract f()Ljava/io/File;
-.end method
-.method public abstract remove()V
+const/4 v0, 0x0
+return v0
 .end method

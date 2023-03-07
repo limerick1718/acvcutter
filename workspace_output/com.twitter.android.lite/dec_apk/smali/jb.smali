@@ -1,47 +1,81 @@
 .class public final Ljb;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.method public static a(Ljava/lang/Object;)Lkb;
-.locals 1
-.param p0    # Ljava/lang/Object;
-.annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
-.end annotation
-.end param
+.super Ljava/util/AbstractList;
+.implements Lgy;
+.implements Ljava/util/RandomAccess;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"<T:",
-"Ljava/lang/Object;",
-">(TT;)",
-"Lkb<",
-"TT;>;"
+"Ljava/util/AbstractList<",
+"Ljava/lang/String;",
+">;",
+"Lgy;",
+"Ljava/util/RandomAccess;"
 }
 .end annotation
-new-instance v0, Lob;
-invoke-direct {v0, p0}, Lob;-><init>(Ljava/lang/Object;)V
+.field private final a:Lgy;
+.method public constructor <init>(Lgy;)V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
+.end method
+.method public final a(Lew;)V
+.locals 0
+return-void
+.end method
+.method public final b(I)Ljava/lang/Object;
+.locals 1
+const/4 v0, 0x0
 return-object v0
 .end method
-.method public static a(Lkb;)Lkb;
+.method public final d()Ljava/util/List;
 .locals 1
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"<T:",
-"Ljava/lang/Object;",
-">(",
-"Lkb<",
-"TT;>;)",
-"Lkb<",
-"TT;>;"
+"()",
+"Ljava/util/List<",
+"*>;"
 }
 .end annotation
-instance-of v0, p0, Llb;
-instance-of v0, p0, Lmb;
-instance-of v0, p0, Ljava/io/Serializable;
-if-eqz v0, :cond_1
-new-instance v0, Lmb;
-invoke-direct {v0, p0}, Lmb;-><init>(Lkb;)V
+const/4 v0, 0x0
 return-object v0
-:cond_1
-new-instance v0, Llb;
-invoke-direct {v0, p0}, Llb;-><init>(Lkb;)V
+.end method
+.method public final e()Lgy;
+.locals 0
+const/4 v0, 0x0
 return-object v0
+.end method
+.method public final synthetic get(I)Ljava/lang/Object;
+.locals 1
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final iterator()Ljava/util/Iterator;
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"()",
+"Ljava/util/Iterator<",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final listIterator(I)Ljava/util/ListIterator;
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(I)",
+"Ljava/util/ListIterator<",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public final size()I
+.locals 1
+const/4 v0, 0x0
+return v0
 .end method

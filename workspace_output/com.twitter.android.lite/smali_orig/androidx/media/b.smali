@@ -22,12 +22,12 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 1
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, -0x1
 
-    .line 2
+    .line 43
     iput v0, p0, Landroidx/media/b;->b:I
 
     return-void
@@ -38,7 +38,7 @@
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
 
-    .line 1
+    .line 150
     instance-of v0, p1, Landroidx/media/b;
 
     if-nez v0, :cond_0
@@ -47,11 +47,11 @@
 
     return p1
 
-    .line 2
+    .line 153
     :cond_0
     check-cast p1, Landroidx/media/b;
 
-    .line 3
+    .line 154
     iget-object v0, p0, Landroidx/media/b;->a:Landroid/media/AudioAttributes;
 
     iget-object p1, p1, Landroidx/media/b;->a:Landroid/media/AudioAttributes;
@@ -66,7 +66,7 @@
 .method public hashCode()I
     .locals 1
 
-    .line 1
+    .line 145
     iget-object v0, p0, Landroidx/media/b;->a:Landroid/media/AudioAttributes;
 
     invoke-virtual {v0}, Landroid/media/AudioAttributes;->hashCode()I
@@ -79,7 +79,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 1
+    .line 159
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

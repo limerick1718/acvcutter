@@ -1,112 +1,96 @@
-.class Lfu$a;
+.class final Lfu$a;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-encoders-json@@16.1.0"
-
-# interfaces
-.implements Lut;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lfu;->a()Lut;
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lfu;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    accessFlags = 0x18
+    name = "a"
 .end annotation
 
 
 # instance fields
-.field final synthetic a:Lfu;
+.field private final a:Ljava/lang/Object;
+
+.field private final b:I
 
 
 # direct methods
-.method constructor <init>(Lfu;)V
+.method constructor <init>(Ljava/lang/Object;I)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lfu$a;->a:Lfu;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Lfu$a;->a:Ljava/lang/Object;
+
+    .line 3
+    iput p2, p0, Lfu$a;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/Object;)Ljava/lang/String;
-    .locals 1
-
-    .line 5
-    new-instance v0, Ljava/io/StringWriter;
-
-    invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
     .line 6
-    :try_start_0
-    invoke-virtual {p0, p1, v0}, Lfu$a;->a(Ljava/lang/Object;Ljava/io/Writer;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    instance-of v0, p1, Lfu$a;
 
-    .line 7
-    :catch_0
-    invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
+    const/4 v1, 0x0
 
-    move-result-object p1
+    if-nez v0, :cond_0
 
-    return-object p1
+    return v1
+
+    .line 8
+    :cond_0
+    check-cast p1, Lfu$a;
+
+    .line 9
+    iget-object v0, p0, Lfu$a;->a:Ljava/lang/Object;
+
+    iget-object v2, p1, Lfu$a;->a:Ljava/lang/Object;
+
+    if-ne v0, v2, :cond_1
+
+    iget v0, p0, Lfu$a;->b:I
+
+    iget p1, p1, Lfu$a;->b:I
+
+    if-ne v0, p1, :cond_1
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_1
+    return v1
 .end method
 
-.method public a(Ljava/lang/Object;Ljava/io/Writer;)V
-    .locals 7
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+.method public final hashCode()I
+    .locals 2
 
-    .line 1
-    new-instance v6, Lgu;
+    .line 5
+    iget-object v0, p0, Lfu$a;->a:Ljava/lang/Object;
 
-    iget-object v0, p0, Lfu$a;->a:Lfu;
+    invoke-static {v0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
-    .line 2
-    invoke-static {v0}, Lfu;->a(Lfu;)Ljava/util/Map;
+    move-result v0
 
-    move-result-object v2
+    const v1, 0xffff
 
-    iget-object v0, p0, Lfu$a;->a:Lfu;
+    mul-int v0, v0, v1
 
-    invoke-static {v0}, Lfu;->b(Lfu;)Ljava/util/Map;
+    iget v1, p0, Lfu$a;->b:I
 
-    move-result-object v3
+    add-int/2addr v0, v1
 
-    iget-object v0, p0, Lfu$a;->a:Lfu;
-
-    invoke-static {v0}, Lfu;->c(Lfu;)Lwt;
-
-    move-result-object v4
-
-    iget-object v0, p0, Lfu$a;->a:Lfu;
-
-    invoke-static {v0}, Lfu;->d(Lfu;)Z
-
-    move-result v5
-
-    move-object v0, v6
-
-    move-object v1, p2
-
-    invoke-direct/range {v0 .. v5}, Lgu;-><init>(Ljava/io/Writer;Ljava/util/Map;Ljava/util/Map;Lwt;Z)V
-
-    const/4 p2, 0x0
-
-    .line 3
-    invoke-virtual {v6, p1, p2}, Lgu;->a(Ljava/lang/Object;Z)Lgu;
-
-    .line 4
-    invoke-virtual {v6}, Lgu;->a()V
-
-    return-void
+    return v0
 .end method

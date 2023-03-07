@@ -1,330 +1,479 @@
-.class public Lss;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.class final Lss;
+.super Ltn;
+.source "DefaultDateTypeAdapter.java"
 
 
-# static fields
-.field private static final b:Lir;
-
-.field private static final c:Ljava/lang/String;
-
-.field private static final d:Ljava/lang/String;
-
-.field private static final e:Ld1;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ld1<",
-            "Lzq;",
-            "[B>;"
-        }
-    .end annotation
-.end field
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ltn<",
+        "Ljava/util/Date;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field private final a:Le1;
+.field private final a:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Le1<",
-            "Lzq;",
+            "Ljava/lang/Class<",
+            "+",
+            "Ljava/util/Date;",
             ">;"
         }
     .end annotation
 .end field
 
+.field private final b:Ljava/text/DateFormat;
+
+.field private final c:Ljava/text/DateFormat;
+
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    .line 1
-    new-instance v0, Lir;
-
-    invoke-direct {v0}, Lir;-><init>()V
-
-    sput-object v0, Lss;->b:Lir;
-
-    const-string v0, "hts/cahyiseot-agolai.o/1frlglgc/aclg"
-
-    const-string v1, "tp:/rsltcrprsp.ogepscmv/ieo/eaybtho"
-
-    .line 2
-    invoke-static {v0, v1}, Lss;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lss;->c:Ljava/lang/String;
-
-    const-string v0, "AzSBpY4F0rHiHFdinTvM"
-
-    const-string v1, "IayrSTFL9eJ69YeSUO2"
-
-    .line 3
-    invoke-static {v0, v1}, Lss;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lss;->d:Ljava/lang/String;
-
-    .line 4
-    invoke-static {}, Lrs;->a()Ld1;
-
-    move-result-object v0
-
-    sput-object v0, Lss;->e:Ld1;
-
-    return-void
-.end method
-
-.method constructor <init>(Le1;Ld1;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/Class;II)V
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Le1<",
-            "Lzq;",
-            ">;",
-            "Ld1<",
-            "Lzq;",
-            "[B>;)V"
+            "Ljava/lang/Class<",
+            "+",
+            "Ljava/util/Date;",
+            ">;II)V"
         }
     .end annotation
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    iput-object p1, p0, Lss;->a:Le1;
-
-    return-void
-.end method
-
-.method private static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
-
-    .line 16
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    sub-int/2addr v0, v1
-
-    if-ltz v0, :cond_2
-
-    const/4 v1, 0x1
-
-    if-gt v0, v1, :cond_2
-
-    .line 17
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/2addr v1, v2
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const/4 v1, 0x0
-
-    .line 18
-    :goto_0
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-ge v1, v2, :cond_1
-
-    .line 19
-    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 20
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-le v2, v1, :cond_0
-
-    .line 21
-    invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    :cond_0
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    .line 22
-    :cond_1
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    .line 23
-    :cond_2
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Invalid input received"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public static a(Landroid/content/Context;)Lss;
-    .locals 4
-
-    .line 2
-    invoke-static {p0}, Lm2;->a(Landroid/content/Context;)V
-
-    .line 3
-    invoke-static {}, Lm2;->b()Lm2;
-
-    move-result-object p0
-
-    new-instance v0, Lcom/google/android/datatransport/cct/a;
-
-    sget-object v1, Lss;->c:Ljava/lang/String;
-
-    sget-object v2, Lss;->d:Ljava/lang/String;
-
-    invoke-direct {v0, v1, v2}, Lcom/google/android/datatransport/cct/a;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 4
-    invoke-virtual {p0, v0}, Lm2;->a(Lb2;)Lf1;
-
-    move-result-object p0
-
-    const-class v0, Lzq;
-
-    const-string v1, "json"
-
-    .line 5
-    invoke-static {v1}, La1;->a(Ljava/lang/String;)La1;
-
-    move-result-object v1
-
-    sget-object v2, Lss;->e:Ld1;
-
-    const-string v3, "FIREBASE_CRASHLYTICS_REPORT"
-
-    .line 6
-    invoke-interface {p0, v3, v0, v1, v2}, Lf1;->a(Ljava/lang/String;Ljava/lang/Class;La1;Ld1;)Le1;
-
-    move-result-object p0
-
-    .line 7
-    new-instance v0, Lss;
-
-    sget-object v1, Lss;->e:Ld1;
-
-    invoke-direct {v0, p0, v1}, Lss;-><init>(Le1;Ld1;)V
-
-    return-object v0
-.end method
-
-.method static synthetic a(Lhn;Lfp;Ljava/lang/Exception;)V
-    .locals 0
-
-    if-eqz p2, :cond_0
-
-    .line 14
-    invoke-virtual {p0, p2}, Lhn;->b(Ljava/lang/Exception;)Z
-
-    return-void
-
-    .line 15
-    :cond_0
-    invoke-virtual {p0, p1}, Lhn;->b(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method static synthetic a(Lzq;)[B
-    .locals 1
-
-    .line 1
-    sget-object v0, Lss;->b:Lir;
-
-    invoke-virtual {v0, p0}, Lir;->a(Lzq;)Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string v0, "UTF-8"
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+    .line 69
+    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+
+    .line 70
+    invoke-static {p2, p3, v0}, Ljava/text/DateFormat;->getDateTimeInstance(IILjava/util/Locale;)Ljava/text/DateFormat;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+    .line 71
+    invoke-static {p2, p3}, Ljava/text/DateFormat;->getDateTimeInstance(II)Ljava/text/DateFormat;
 
-    move-result-object p0
+    move-result-object p2
 
-    return-object p0
+    .line 69
+    invoke-direct {p0, p1, v0, p2}, Lss;-><init>(Ljava/lang/Class;Ljava/text/DateFormat;Ljava/text/DateFormat;)V
+
+    return-void
+.end method
+
+.method constructor <init>(Ljava/lang/Class;Ljava/lang/String;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class<",
+            "+",
+            "Ljava/util/Date;",
+            ">;",
+            "Ljava/lang/String;",
+            ")V"
+        }
+    .end annotation
+
+    .line 55
+    new-instance v0, Ljava/text/SimpleDateFormat;
+
+    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+
+    invoke-direct {v0, p2, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+
+    new-instance v1, Ljava/text/SimpleDateFormat;
+
+    invoke-direct {v1, p2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {p0, p1, v0, v1}, Lss;-><init>(Ljava/lang/Class;Ljava/text/DateFormat;Ljava/text/DateFormat;)V
+
+    return-void
+.end method
+
+.method constructor <init>(Ljava/lang/Class;Ljava/text/DateFormat;Ljava/text/DateFormat;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class<",
+            "+",
+            "Ljava/util/Date;",
+            ">;",
+            "Ljava/text/DateFormat;",
+            "Ljava/text/DateFormat;",
+            ")V"
+        }
+    .end annotation
+
+    .line 74
+    invoke-direct {p0}, Ltn;-><init>()V
+
+    .line 75
+    const-class v0, Ljava/util/Date;
+
+    if-eq p1, v0, :cond_1
+
+    const-class v0, Ljava/sql/Date;
+
+    if-eq p1, v0, :cond_1
+
+    const-class v0, Ljava/sql/Timestamp;
+
+    if-ne p1, v0, :cond_0
+
+    goto :goto_0
+
+    .line 76
+    :cond_0
+    new-instance p2, Ljava/lang/IllegalArgumentException;
+
+    new-instance p3, Ljava/lang/StringBuilder;
+
+    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "Date type must be one of "
+
+    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-class v0, Ljava/util/Date;
+
+    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", "
+
+    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-class v0, Ljava/sql/Timestamp;
+
+    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", or "
+
+    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-class v0, Ljava/sql/Date;
+
+    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, " but was "
+
+    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+
+    .line 78
+    :cond_1
+    :goto_0
+    iput-object p1, p0, Lss;->a:Ljava/lang/Class;
+
+    .line 79
+    iput-object p2, p0, Lss;->b:Ljava/text/DateFormat;
+
+    .line 80
+    iput-object p3, p0, Lss;->c:Ljava/text/DateFormat;
+
+    return-void
+.end method
+
+.method private a(Ljava/lang/String;)Ljava/util/Date;
+    .locals 3
+
+    .line 112
+    iget-object v0, p0, Lss;->c:Ljava/text/DateFormat;
+
+    monitor-enter v0
+
+    .line 114
+    :try_start_0
+    iget-object v1, p0, Lss;->c:Ljava/text/DateFormat;
+
+    invoke-virtual {v1, p1}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
+
+    move-result-object p1
+    :try_end_0
+    .catch Ljava/text/ParseException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_0
+
+    .line 117
+    :catch_0
+    :try_start_2
+    iget-object v1, p0, Lss;->b:Ljava/text/DateFormat;
+
+    invoke-virtual {v1, p1}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
+
+    move-result-object p1
+    :try_end_2
+    .catch Ljava/text/ParseException; {:try_start_2 .. :try_end_2} :catch_1
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :try_start_3
+    monitor-exit v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    return-object p1
+
+    .line 120
+    :catch_1
+    :try_start_4
+    new-instance v1, Ljava/text/ParsePosition;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v2}, Ljava/text/ParsePosition;-><init>(I)V
+
+    invoke-static {p1, v1}, Ltu;->a(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;
+
+    move-result-object p1
+    :try_end_4
+    .catch Ljava/text/ParseException; {:try_start_4 .. :try_end_4} :catch_2
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    :try_start_5
+    monitor-exit v0
+
+    return-object p1
+
+    :catch_2
+    move-exception v1
+
+    .line 122
+    new-instance v2, Ltl;
+
+    invoke-direct {v2, p1, v1}, Ltl;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v2
+
+    .line 124
+    :goto_0
+    monitor-exit v0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    throw p1
 .end method
 
 
 # virtual methods
-.method public a(Lfp;)Lgn;
+.method public a(Ltw;)Ljava/util/Date;
     .locals 3
-    .annotation system Ldalvik/annotation/Signature;
+    .annotation system Ldalvik/annotation/Throws;
         value = {
-            "(",
-            "Lfp;",
-            ")",
-            "Lgn<",
-            "Lfp;",
-            ">;"
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 8
-    invoke-virtual {p1}, Lfp;->a()Lzq;
+    .line 95
+    invoke-virtual {p1}, Ltw;->f()Ltx;
 
     move-result-object v0
 
-    .line 9
-    new-instance v1, Lhn;
+    sget-object v1, Ltx;->f:Ltx;
 
-    invoke-direct {v1}, Lhn;-><init>()V
+    if-ne v0, v1, :cond_3
 
-    .line 10
-    iget-object v2, p0, Lss;->a:Le1;
-
-    .line 11
-    invoke-static {v0}, Lb1;->a(Ljava/lang/Object;)Lb1;
-
-    move-result-object v0
-
-    invoke-static {v1, p1}, Lqs;->a(Lhn;Lfp;)Lg1;
+    .line 98
+    invoke-virtual {p1}, Ltw;->h()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 12
-    invoke-interface {v2, v0, p1}, Le1;->a(Lb1;Lg1;)V
+    invoke-direct {p0, p1}, Lss;->a(Ljava/lang/String;)Ljava/util/Date;
 
-    .line 13
-    invoke-virtual {v1}, Lhn;->a()Lgn;
+    move-result-object p1
+
+    .line 99
+    iget-object v0, p0, Lss;->a:Ljava/lang/Class;
+
+    const-class v1, Ljava/util/Date;
+
+    if-ne v0, v1, :cond_0
+
+    return-object p1
+
+    .line 101
+    :cond_0
+    const-class v1, Ljava/sql/Timestamp;
+
+    if-ne v0, v1, :cond_1
+
+    .line 102
+    new-instance v0, Ljava/sql/Timestamp;
+
+    invoke-virtual {p1}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v1
+
+    invoke-direct {v0, v1, v2}, Ljava/sql/Timestamp;-><init>(J)V
+
+    return-object v0
+
+    .line 103
+    :cond_1
+    const-class v1, Ljava/sql/Date;
+
+    if-ne v0, v1, :cond_2
+
+    .line 104
+    new-instance v0, Ljava/sql/Date;
+
+    invoke-virtual {p1}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v1
+
+    invoke-direct {v0, v1, v2}, Ljava/sql/Date;-><init>(J)V
+
+    return-object v0
+
+    .line 107
+    :cond_2
+    new-instance p1, Ljava/lang/AssertionError;
+
+    invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V
+
+    throw p1
+
+    .line 96
+    :cond_3
+    new-instance p1, Lth;
+
+    const-string v0, "The date should be a string value"
+
+    invoke-direct {p1, v0}, Lth;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public bridge synthetic a(Lty;Ljava/lang/Object;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 40
+    check-cast p2, Ljava/util/Date;
+
+    invoke-virtual {p0, p1, p2}, Lss;->a(Lty;Ljava/util/Date;)V
+
+    return-void
+.end method
+
+.method public a(Lty;Ljava/util/Date;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 87
+    iget-object v0, p0, Lss;->c:Ljava/text/DateFormat;
+
+    monitor-enter v0
+
+    .line 88
+    :try_start_0
+    iget-object v1, p0, Lss;->b:Ljava/text/DateFormat;
+
+    invoke-virtual {v1, p2}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object p2
+
+    .line 89
+    invoke-virtual {p1, p2}, Lty;->b(Ljava/lang/String;)Lty;
+
+    .line 90
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+.end method
+
+.method public synthetic b(Ltw;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 40
+    invoke-virtual {p0, p1}, Lss;->a(Ltw;)Ljava/util/Date;
 
     move-result-object p1
 
     return-object p1
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    .line 129
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "DefaultDateTypeAdapter"
+
+    .line 130
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x28
+
+    .line 131
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lss;->c:Ljava/text/DateFormat;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x29
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 132
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

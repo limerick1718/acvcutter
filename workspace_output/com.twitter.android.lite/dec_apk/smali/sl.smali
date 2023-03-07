@@ -1,19 +1,53 @@
-.class public abstract Lsl;
-.super Lha;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Ltl;
-.method public constructor <init>()V
-.locals 1
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
-.end method
-.method protected final a(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-.locals 0
-.annotation system Ldalvik/annotation/Throws;
+.class public Lsl;
+.super Ljava/lang/Object;
+.source "com.google.firebase:firebase-common@@16.0.2"
+.annotation system Ldalvik/annotation/Signature;
 value = {
-Landroid/os/RemoteException;
+"<T:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;"
+}
+.end annotation
+.field private final a:Ljava/lang/Class;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/Class<",
+"TT;>;"
+}
+.end annotation
+.end field
+.field private final b:Ljava/lang/Object;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"TT;"
+}
+.end annotation
+.end field
+.method public a()Ljava/lang/Class;
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"()",
+"Ljava/lang/Class<",
+"TT;>;"
 }
 .end annotation
 const/4 v0, 0x0
-return v0
+return-object v0
+.end method
+.method public b()Ljava/lang/Object;
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"()TT;"
+}
+.end annotation
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public toString()Ljava/lang/String;
+.locals 3
+const/4 v0, 0x0
+return-object v0
 .end method

@@ -1,191 +1,98 @@
-.class final Luo;
-.super Lfp;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.class public Luo;
+.super Ljava/lang/Object;
+.source "ActivityLifecycleManager.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Luo$a;,
+        Luo$b;
+    }
+.end annotation
 
 
 # instance fields
-.field private final a:Lzq;
+.field private final a:Landroid/app/Application;
 
-.field private final b:Ljava/lang/String;
+.field private b:Luo$a;
 
 
 # direct methods
-.method constructor <init>(Lzq;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 1
 
-    .line 1
-    invoke-direct {p0}, Lfp;-><init>()V
+    .line 55
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p1, :cond_1
+    .line 56
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    .line 2
-    iput-object p1, p0, Luo;->a:Lzq;
+    move-result-object p1
 
-    if-eqz p2, :cond_0
+    check-cast p1, Landroid/app/Application;
 
-    .line 3
-    iput-object p2, p0, Luo;->b:Ljava/lang/String;
+    iput-object p1, p0, Luo;->a:Landroid/app/Application;
 
-    return-void
+    .line 57
+    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 4
+    const/16 v0, 0xe
+
+    if-lt p1, v0, :cond_0
+
+    .line 58
+    new-instance p1, Luo$a;
+
+    iget-object v0, p0, Luo;->a:Landroid/app/Application;
+
+    invoke-direct {p1, v0}, Luo$a;-><init>(Landroid/app/Application;)V
+
+    iput-object p1, p0, Luo;->b:Luo$a;
+
     :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Null sessionId"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    .line 5
-    :cond_1
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Null report"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
+    return-void
 .end method
 
 
 # virtual methods
-.method public a()Lzq;
+.method public a()V
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Luo;->a:Lzq;
+    .line 76
+    iget-object v0, p0, Luo;->b:Luo$a;
 
-    return-object v0
-.end method
+    if-eqz v0, :cond_0
 
-.method public b()Ljava/lang/String;
-    .locals 1
+    .line 77
+    invoke-static {v0}, Luo$a;->a(Luo$a;)V
 
-    .line 1
-    iget-object v0, p0, Luo;->b:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    .line 1
     :cond_0
-    instance-of v1, p1, Lfp;
+    return-void
+.end method
 
-    const/4 v2, 0x0
+.method public a(Luo$b;)Z
+    .locals 1
 
-    if-eqz v1, :cond_2
+    .line 68
+    iget-object v0, p0, Luo;->b:Luo$a;
 
-    .line 2
-    check-cast p1, Lfp;
+    if-eqz v0, :cond_0
 
-    .line 3
-    iget-object v1, p0, Luo;->a:Lzq;
-
-    invoke-virtual {p1}, Lfp;->a()Lzq;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Luo;->b:Ljava/lang/String;
-
-    .line 4
-    invoke-virtual {p1}, Lfp;->b()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 69
+    invoke-static {v0, p1}, Luo$a;->a(Luo$a;Luo$b;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
 
     goto :goto_0
 
-    :cond_1
-    const/4 v0, 0x0
+    :cond_0
+    const/4 p1, 0x0
 
     :goto_0
-    return v0
-
-    :cond_2
-    return v2
-.end method
-
-.method public hashCode()I
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Luo;->a:Lzq;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    mul-int v0, v0, v1
-
-    .line 2
-    iget-object v1, p0, Luo;->b:Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    xor-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "CrashlyticsReportWithSessionId{report="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Luo;->a:Lzq;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", sessionId="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Luo;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "}"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return p1
 .end method

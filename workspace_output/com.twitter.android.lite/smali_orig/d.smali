@@ -1,44 +1,117 @@
 .class public Ld;
-.super Le;
-.source "DefaultTaskExecutor.java"
+.super Lf;
+.source "ArchTaskExecutor.java"
+
+
+# static fields
+.field private static volatile a:Ld;
+
+.field private static final d:Ljava/util/concurrent/Executor;
+
+.field private static final e:Ljava/util/concurrent/Executor;
 
 
 # instance fields
-.field private final a:Ljava/lang/Object;
+.field private b:Lf;
 
-.field private final b:Ljava/util/concurrent/ExecutorService;
-
-.field private volatile c:Landroid/os/Handler;
+.field private c:Lf;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
 
-    .line 1
-    invoke-direct {p0}, Le;-><init>()V
+    .line 42
+    new-instance v0, Ld$1;
 
-    .line 2
-    new-instance v0, Ljava/lang/Object;
+    invoke-direct {v0}, Ld$1;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Ld;->d:Ljava/util/concurrent/Executor;
 
-    iput-object v0, p0, Ld;->a:Ljava/lang/Object;
+    .line 50
+    new-instance v0, Ld$2;
 
-    .line 3
-    new-instance v0, Ld$a;
+    invoke-direct {v0}, Ld$2;-><init>()V
 
-    invoke-direct {v0, p0}, Ld$a;-><init>(Ld;)V
-
-    const/4 v1, 0x2
-
-    invoke-static {v1, v0}, Ljava/util/concurrent/Executors;->newFixedThreadPool(ILjava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ld;->b:Ljava/util/concurrent/ExecutorService;
+    sput-object v0, Ld;->e:Ljava/util/concurrent/Executor;
 
     return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 1
+
+    .line 57
+    invoke-direct {p0}, Lf;-><init>()V
+
+    .line 58
+    new-instance v0, Le;
+
+    invoke-direct {v0}, Le;-><init>()V
+
+    iput-object v0, p0, Ld;->c:Lf;
+
+    .line 59
+    iget-object v0, p0, Ld;->c:Lf;
+
+    iput-object v0, p0, Ld;->b:Lf;
+
+    return-void
+.end method
+
+.method public static a()Ld;
+    .locals 2
+
+    .line 69
+    sget-object v0, Ld;->a:Ld;
+
+    if-eqz v0, :cond_0
+
+    .line 70
+    sget-object v0, Ld;->a:Ld;
+
+    return-object v0
+
+    .line 72
+    :cond_0
+    const-class v0, Ld;
+
+    monitor-enter v0
+
+    .line 73
+    :try_start_0
+    sget-object v1, Ld;->a:Ld;
+
+    if-nez v1, :cond_1
+
+    .line 74
+    new-instance v1, Ld;
+
+    invoke-direct {v1}, Ld;-><init>()V
+
+    sput-object v1, Ld;->a:Ld;
+
+    .line 76
+    :cond_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 77
+    sget-object v0, Ld;->a:Ld;
+
+    return-object v0
+
+    :catchall_0
+    move-exception v1
+
+    .line 76
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v1
 .end method
 
 
@@ -46,94 +119,34 @@
 .method public a(Ljava/lang/Runnable;)V
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Ld;->b:Ljava/util/concurrent/ExecutorService;
+    .line 96
+    iget-object v0, p0, Ld;->b:Lf;
 
-    invoke-interface {v0, p1}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
+    invoke-virtual {v0, p1}, Lf;->a(Ljava/lang/Runnable;)V
 
     return-void
-.end method
-
-.method public a()Z
-    .locals 2
-
-    .line 2
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Looper;->getThread()Ljava/lang/Thread;
-
-    move-result-object v0
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v1
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
 .end method
 
 .method public b(Ljava/lang/Runnable;)V
-    .locals 3
+    .locals 1
 
-    .line 1
-    iget-object v0, p0, Ld;->c:Landroid/os/Handler;
+    .line 101
+    iget-object v0, p0, Ld;->b:Lf;
 
-    if-nez v0, :cond_1
-
-    .line 2
-    iget-object v0, p0, Ld;->a:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    .line 3
-    :try_start_0
-    iget-object v1, p0, Ld;->c:Landroid/os/Handler;
-
-    if-nez v1, :cond_0
-
-    .line 4
-    new-instance v1, Landroid/os/Handler;
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    iput-object v1, p0, Ld;->c:Landroid/os/Handler;
-
-    .line 5
-    :cond_0
-    monitor-exit v0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    .line 6
-    :cond_1
-    :goto_0
-    iget-object v0, p0, Ld;->c:Landroid/os/Handler;
-
-    invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, p1}, Lf;->b(Ljava/lang/Runnable;)V
 
     return-void
+.end method
+
+.method public b()Z
+    .locals 1
+
+    .line 116
+    iget-object v0, p0, Ld;->b:Lf;
+
+    invoke-virtual {v0}, Lf;->b()Z
+
+    move-result v0
+
+    return v0
 .end method

@@ -1,36 +1,86 @@
 .class public Lu;
 .super Ljava/lang/Object;
-.source "UserManagerCompat.java"
+.source "DebugUtils.java"
 
 
 # direct methods
-.method public static a(Landroid/content/Context;)Z
+.method public static a(Ljava/lang/Object;Ljava/lang/StringBuilder;)V
     .locals 2
 
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    if-nez p0, :cond_0
 
-    const/16 v1, 0x18
+    const-string p0, "null"
 
-    if-lt v0, v1, :cond_0
+    .line 33
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2
-    const-class v0, Landroid/os/UserManager;
+    goto :goto_0
 
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+    .line 35
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object p0
+    move-result-object v0
 
-    check-cast p0, Landroid/os/UserManager;
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
-    invoke-virtual {p0}, Landroid/os/UserManager;->isUserUnlocked()Z
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    .line 36
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-gtz v1, :cond_2
+
+    .line 37
+    :cond_1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    const/16 v1, 0x2e
+
+    .line 38
+    invoke-virtual {v0, v1}, Ljava/lang/String;->lastIndexOf(I)I
+
+    move-result v1
+
+    if-lez v1, :cond_2
+
+    add-int/lit8 v1, v1, 0x1
+
+    .line 40
+    invoke-virtual {v0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 43
+    :cond_2
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v0, 0x7b
+
+    .line 44
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 45
+    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result p0
 
-    return p0
+    invoke-static {p0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    :cond_0
-    const/4 p0, 0x1
+    move-result-object p0
 
-    return p0
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :goto_0
+    return-void
 .end method

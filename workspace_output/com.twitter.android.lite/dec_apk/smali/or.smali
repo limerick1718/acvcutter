@@ -1,59 +1,44 @@
-.class public final enum Lor;
-.super Ljava/lang/Enum;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/Enum<",
-"Lor;",
-">;"
-}
-.end annotation
-.field public static final enum a:Lor;
-.field public static final enum b:Lor;
-.field public static final enum c:Lor;
-.field public static final enum d:Lor;
-.field private static final synthetic e:[Lor;
-.method static constructor <clinit>()V
-.locals 7
-new-instance v0, Lor;
-const/4 v1, 0x0
-const-string v2, "GET"
-invoke-direct {v0, v2, v1}, Lor;-><init>(Ljava/lang/String;I)V
-sput-object v0, Lor;->a:Lor;
-new-instance v0, Lor;
-const/4 v2, 0x1
-const-string v3, "POST"
-invoke-direct {v0, v3, v2}, Lor;-><init>(Ljava/lang/String;I)V
-sput-object v0, Lor;->b:Lor;
-new-instance v0, Lor;
-const/4 v3, 0x2
-const-string v4, "PUT"
-invoke-direct {v0, v4, v3}, Lor;-><init>(Ljava/lang/String;I)V
-sput-object v0, Lor;->c:Lor;
-new-instance v0, Lor;
-const/4 v4, 0x3
-const-string v5, "DELETE"
-invoke-direct {v0, v5, v4}, Lor;-><init>(Ljava/lang/String;I)V
-sput-object v0, Lor;->d:Lor;
-const/4 v5, 0x4
-new-array v5, v5, [Lor;
-sget-object v6, Lor;->a:Lor;
-aput-object v6, v5, v1
-sget-object v1, Lor;->b:Lor;
-aput-object v1, v5, v2
-sget-object v1, Lor;->c:Lor;
-aput-object v1, v5, v3
-aput-object v0, v5, v4
-sput-object v5, Lor;->e:[Lor;
+.class final Lor;
+.super Ljava/lang/Object;
+.implements Ljava/lang/Runnable;
+.field private final synthetic a:Lkr;
+.field private final synthetic b:Loo;
+.method constructor <init>(Loo;Lkr;)V
+.locals 0
+iput-object p1, p0, Lor;->b:Loo;
+iput-object p2, p0, Lor;->a:Lkr;
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method private constructor <init>(Ljava/lang/String;I)V
-.locals 0
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"()V"
-}
-.end annotation
-invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+.method public final run()V
+.locals 3
+iget-object v0, p0, Lor;->b:Loo;
+monitor-enter v0
+iget-object v1, p0, Lor;->b:Loo;
+const/4 v2, 0x0
+invoke-static {v1, v2}, Loo;->a(Loo;Z)Z
+iget-object v1, p0, Lor;->b:Loo;
+iget-object v1, v1, Loo;->a:Loc;
+invoke-virtual {v1}, Loc;->x()Z
+move-result v1
+if-nez v1, :cond_0
+iget-object v1, p0, Lor;->b:Loo;
+iget-object v1, v1, Loo;->a:Loc;
+invoke-virtual {v1}, Lnb;->r()Lla;
+move-result-object v1
+invoke-virtual {v1}, Lla;->w()Llc;
+move-result-object v1
+const-string v2, "Connected to remote service"
+invoke-virtual {v1, v2}, Llc;->a(Ljava/lang/String;)V
+iget-object v1, p0, Lor;->b:Loo;
+iget-object v1, v1, Loo;->a:Loc;
+iget-object v2, p0, Lor;->a:Lkr;
+invoke-virtual {v1, v2}, Loc;->a(Lkr;)V
+:cond_0
+monitor-exit v0
 return-void
+:catchall_0
+move-exception v1
+monitor-exit v0
+throw v1
 .end method

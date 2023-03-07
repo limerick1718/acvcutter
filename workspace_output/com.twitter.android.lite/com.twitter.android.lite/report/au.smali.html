@@ -14,23 +14,140 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lau;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-encoders-json@@16.1.0"
+		<code>.class public abstract Lau;
+.super Landroid/content/BroadcastReceiver;
+.source "WakefulBroadcastReceiver.java"
+
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
+.field private static final a:Landroid/util/SparseArray;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Landroid/util/SparseArray<",
+"Landroid/os/PowerManager$WakeLock;",
+">;"
+}
+.end annotation
+.end field
+.field private static b:I
 
 
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+<span class="">	.locals 1</span>
 
+<span class="cov">	new-instance v0, Landroid/util/SparseArray;</span>
+<span class="cov">	invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V</span>
+<span class="cov">	sput-object v0, Lau;->a:Landroid/util/SparseArray;</span>
+<span class="cov">	const/4 v0, 0x1</span>
+<span class="cov">	sput v0, Lau;->b:I</span>
+<span class="exec">	return-void</span>
+.end method
 
-.method public abstract a(Lbu;)V
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Lbu<",</span>
-<span class="">	"*>;)V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
+<span class="cov">.method public constructor &lt;init&gt;()V</span>
+<span class="">	.locals 0</span>
 
+<span class="cov">	invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method public static a(Landroid/content/Intent;)Z</span>
+<span class="">	.locals 5</span>
+
+<span class="cov">	const/4 v0, 0x0</span>
+<span class="cov">	const-string v1, "androidx.contentpager.content.wakelockid"</span>
+<span class="exec">	invoke-virtual {p0, v1, v0}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I</span>
+<span class="cov">	move-result p0</span>
+<span class="missed">	if-nez p0, :cond_0</span>
+<span class="">	return v0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	sget-object v0, Lau;->a:Landroid/util/SparseArray;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	sget-object v1, Lau;->a:Landroid/util/SparseArray;</span>
+<span class="exec">	invoke-virtual {v1, p0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	check-cast v1, Landroid/os/PowerManager$WakeLock;</span>
+<span class="cov">	const/4 v2, 0x1</span>
+<span class="cov">	if-eqz v1, :cond_1</span>
+<span class="cov">	invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V</span>
+<span class="cov">	sget-object v1, Lau;->a:Landroid/util/SparseArray;</span>
+<span class="cov">	invoke-virtual {v1, p0}, Landroid/util/SparseArray;->remove(I)V</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="exec">	return v2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const-string v1, "WakefulBroadcastReceiv."</span>
+<span class="missed">	new-instance v3, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "No active wake lock id #"</span>
+<span class="missed">	invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	invoke-static {v1, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return v2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw p0</span>
+.end method
+
+<span class="cov">.method public static a_(Landroid/content/Context;Landroid/content/Intent;)Landroid/content/ComponentName;</span>
+<span class="">	.locals 5</span>
+
+<span class="cov">	sget-object v0, Lau;->a:Landroid/util/SparseArray;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	sget v1, Lau;->b:I</span>
+<span class="cov">	sget v2, Lau;->b:I</span>
+<span class="cov">	const/4 v3, 0x1</span>
+<span class="cov">	add-int/2addr v2, v3</span>
+<span class="cov">	sput v2, Lau;->b:I</span>
+<span class="cov">	sget v2, Lau;->b:I</span>
+<span class="missed">	if-gtz v2, :cond_0</span>
+<span class="missed">	sput v3, Lau;->b:I</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	const-string v2, "androidx.contentpager.content.wakelockid"</span>
+<span class="cov">	invoke-virtual {p1, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;</span>
+<span class="exec">	invoke-virtual {p0, p1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="missed">	if-nez p1, :cond_1</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-object p0</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	const-string v2, "power"</span>
+<span class="exec">	invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	check-cast p0, Landroid/os/PowerManager;</span>
+<span class="cov">	new-instance v2, Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="cov">	const-string v4, "androidx.core:wake:"</span>
+<span class="cov">	invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual {p1}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="exec">	invoke-virtual {p0, v3, v2}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	invoke-virtual {p0, v2}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V</span>
+<span class="cov">	const-wide/32 v2, 0xea60</span>
+<span class="cov">	invoke-virtual {p0, v2, v3}, Landroid/os/PowerManager$WakeLock;->acquire(J)V</span>
+<span class="cov">	sget-object v2, Lau;->a:Landroid/util/SparseArray;</span>
+<span class="cov">	invoke-virtual {v2, v1, p0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="exec">	return-object p1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

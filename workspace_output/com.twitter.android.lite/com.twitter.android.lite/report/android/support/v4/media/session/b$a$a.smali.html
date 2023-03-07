@@ -38,6 +38,322 @@ name = "a"
 <span class="">	return-void</span>
 .end method
 
+.method public a(I)V
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v2, 0x2c</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	invoke-interface {p1, v2, v0, v1, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(IILjava/lang/String;)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 p2, 0xb</span>
+<span class="missed">	const/4 p3, 0x0</span>
+<span class="missed">	invoke-interface {p1, p2, v0, v1, p3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(J)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {v0, p1, p2}, Landroid/os/Parcel;->writeLong(J)V</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 p2, 0x11</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	invoke-interface {p1, p2, v0, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(Landroid/net/Uri;Landroid/os/Bundle;)V
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p1, v0, v3}, Landroid/net/Uri;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-eqz p2, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p2, v0, v3}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_1</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 p2, 0x24</span>
+<span class="missed">	invoke-interface {p1, p2, v0, v1, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(Landroid/support/v4/media/MediaDescriptionCompat;)V
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p1, v0, v2}, Landroid/support/v4/media/MediaDescriptionCompat;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x29</span>
+<span class="missed">	invoke-interface {p1, v3, v0, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(Landroid/support/v4/media/MediaDescriptionCompat;I)V
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p1, v0, v2}, Landroid/support/v4/media/MediaDescriptionCompat;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 p2, 0x2a</span>
+<span class="missed">	invoke-interface {p1, p2, v0, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(Landroid/support/v4/media/RatingCompat;)V
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p1, v0, v2}, Landroid/support/v4/media/RatingCompat;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x19</span>
+<span class="missed">	invoke-interface {p1, v3, v0, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(Landroid/support/v4/media/RatingCompat;Landroid/os/Bundle;)V
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p1, v0, v3}, Landroid/support/v4/media/RatingCompat;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-eqz p2, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p2, v0, v3}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_1</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 p2, 0x33</span>
+<span class="missed">	invoke-interface {p1, p2, v0, v1, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
 .method public a(Landroid/support/v4/media/session/a;)V
 <span class="">	.locals 4</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
@@ -54,7 +370,7 @@ name = "a"
 <span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
 <span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
 <span class="missed">	if-eqz p1, :cond_0</span>
-<span class="">	invoke-interface {p1}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;</span>
+<span class="">	invoke-interface {p1}, Landroid/support/v4/media/session/a;->asBinder()Landroid/os/IBinder;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
@@ -78,11 +394,1521 @@ name = "a"
 <span class="">	throw p1</span>
 .end method
 
+.method public a(Ljava/lang/String;Landroid/os/Bundle;)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p2, v0, p1}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object p2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v2, 0x22</span>
+<span class="missed">	invoke-interface {p2, v2, v0, v1, p1}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(Ljava/lang/String;Landroid/os/Bundle;Landroid/support/v4/media/session/MediaSessionCompat$ResultReceiverWrapper;)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p2, v0, v2}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-eqz p3, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p3, v0, v2}, Landroid/support/v4/media/session/MediaSessionCompat$ResultReceiverWrapper;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_1</span>
+<span class="missed">	iget-object p2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	invoke-interface {p2, p1, v0, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(Z)V
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x2e</span>
+<span class="missed">	invoke-interface {p1, v3, v0, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a()Z
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/4 v3, 0x5</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return v4</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public a(Landroid/view/KeyEvent;)Z
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p1, v0, v3}, Landroid/view/KeyEvent;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/4 v4, 0x2</span>
+<span class="missed">	invoke-interface {p1, v4, v0, v1, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return v2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
 .method public asBinder()Landroid/os/IBinder;
 <span class="">	.locals 1</span>
 
 <span class="missed">	iget-object v0, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
 <span class="">	return-object v0</span>
+.end method
+
+.method public b()Ljava/lang/String;
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/4 v3, 0x6</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->readString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-object v2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public b(I)V
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v2, 0x27</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	invoke-interface {p1, v2, v0, v1, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public b(IILjava/lang/String;)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 p2, 0xc</span>
+<span class="missed">	const/4 p3, 0x0</span>
+<span class="missed">	invoke-interface {p1, p2, v0, v1, p3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public b(J)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {v0, p1, p2}, Landroid/os/Parcel;->writeLong(J)V</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 p2, 0x18</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	invoke-interface {p1, p2, v0, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public b(Landroid/net/Uri;Landroid/os/Bundle;)V
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p1, v0, v3}, Landroid/net/Uri;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-eqz p2, :cond_1</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p2, v0, v3}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_1</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 p2, 0x10</span>
+<span class="missed">	invoke-interface {p1, p2, v0, v1, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public b(Landroid/support/v4/media/MediaDescriptionCompat;)V
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p1, v0, v2}, Landroid/support/v4/media/MediaDescriptionCompat;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x2b</span>
+<span class="missed">	invoke-interface {p1, v3, v0, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public b(Landroid/support/v4/media/session/a;)V
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="">	invoke-interface {p1}, Landroid/support/v4/media/session/a;->asBinder()Landroid/os/IBinder;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/4 v2, 0x4</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	invoke-interface {p1, v2, v0, v1, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public b(Ljava/lang/String;Landroid/os/Bundle;)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p2, v0, p1}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object p2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v2, 0x23</span>
+<span class="missed">	invoke-interface {p2, v2, v0, v1, p1}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public b(Z)V
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x28</span>
+<span class="missed">	invoke-interface {p1, v3, v0, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public c()Ljava/lang/String;
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/4 v3, 0x7</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->readString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-object v2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public c(I)V
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	iget-object p1, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v2, 0x30</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	invoke-interface {p1, v2, v0, v1, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public c(Ljava/lang/String;Landroid/os/Bundle;)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p2, v0, p1}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object p2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v2, 0xe</span>
+<span class="missed">	invoke-interface {p2, v2, v0, v1, p1}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public d()Landroid/app/PendingIntent;
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x8</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="missed">	sget-object v2, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="">	invoke-interface {v2, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Landroid/app/PendingIntent;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-object v2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public d(Ljava/lang/String;Landroid/os/Bundle;)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p2, v0, p1}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object p2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v2, 0xf</span>
+<span class="missed">	invoke-interface {p2, v2, v0, v1, p1}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public e()J
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x9</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->readLong()J</span>
+<span class="missed">	move-result-wide v2</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-wide v2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public e(Ljava/lang/String;Landroid/os/Bundle;)V
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="missed">	invoke-virtual {p2, v0, p1}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iget-object p2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v2, 0x1a</span>
+<span class="missed">	invoke-interface {p2, v2, v0, v1, p1}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public f()Landroid/support/v4/media/session/ParcelableVolumeInfo;
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0xa</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="missed">	sget-object v2, Landroid/support/v4/media/session/ParcelableVolumeInfo;->CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="">	invoke-interface {v2, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Landroid/support/v4/media/session/ParcelableVolumeInfo;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-object v2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public g()Landroid/support/v4/media/MediaMetadataCompat;
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x1b</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="missed">	sget-object v2, Landroid/support/v4/media/MediaMetadataCompat;->CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="">	invoke-interface {v2, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Landroid/support/v4/media/MediaMetadataCompat;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-object v2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public h()Landroid/support/v4/media/session/PlaybackStateCompat;
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x1c</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="missed">	sget-object v2, Landroid/support/v4/media/session/PlaybackStateCompat;->CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="">	invoke-interface {v2, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Landroid/support/v4/media/session/PlaybackStateCompat;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-object v2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public i()Ljava/util/List;
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x1d</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="missed">	sget-object v2, Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;->CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="">	invoke-virtual {v1, v2}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-object v2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public j()Ljava/lang/CharSequence;
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x1e</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="missed">	sget-object v2, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="">	invoke-interface {v2, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Ljava/lang/CharSequence;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-object v2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public k()Landroid/os/Bundle;
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x1f</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="missed">	sget-object v2, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="">	invoke-interface {v2, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Landroid/os/Bundle;</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-object v2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public l()I
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x20</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return v2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public m()Z
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x2d</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return v4</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public n()I
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x25</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return v2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public o()Z
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x26</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return v4</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public p()I
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x2f</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I</span>
+<span class="missed">	move-result v2</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return v2</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public q()V
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x21</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public r()V
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0xd</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public s()V
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x12</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public t()V
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x13</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public u()V
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x14</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public v()V
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x15</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public w()V
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x16</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public x()V
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Landroid/os/RemoteException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-string v2, "android.support.v4.media.session.IMediaSession"</span>
+<span class="missed">	invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v2, p0, Landroid/support/v4/media/session/b$a$a;->a:Landroid/os/IBinder;</span>
+<span class="missed">	const/16 v3, 0x17</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->readException()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V</span>
+<span class="">	throw v2</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

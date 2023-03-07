@@ -14,26 +14,96 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public abstract Landroid/support/v4/media/a;
+		<code>.class  Landroid/support/v4/media/a;
 .super Ljava/lang/Object;
-.source "MediaBrowserCompat.java"
+.source "MediaDescriptionCompatApi21.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Landroid/support/v4/media/a$a;
+}
+.end annotation
 
 
 
+.method public static a(Landroid/os/Parcel;)Ljava/lang/Object;
+<span class="">	.locals 1</span>
 
-.method public abstract a(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/Bundle;)V
-<span class="">	</span>
-
+<span class="missed">	sget-object v0, Landroid/media/MediaDescription;->CREATOR:Landroid/os/Parcelable$Creator;</span>
+<span class="">	invoke-interface {v0, p0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
 .end method
 
-.method public abstract b(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/Bundle;)V
-<span class="">	</span>
+.method public static a(Ljava/lang/Object;)Ljava/lang/String;
+<span class="">	.locals 0</span>
 
+<span class="missed">	check-cast p0, Landroid/media/MediaDescription;</span>
+<span class="">	invoke-virtual {p0}, Landroid/media/MediaDescription;->getMediaId()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
 .end method
 
-.method public abstract c(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/Bundle;)V
-<span class="">	</span>
+.method public static a(Ljava/lang/Object;Landroid/os/Parcel;I)V
+<span class="">	.locals 0</span>
 
+<span class="missed">	check-cast p0, Landroid/media/MediaDescription;</span>
+<span class="missed">	invoke-virtual {p0, p1, p2}, Landroid/media/MediaDescription;->writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public static b(Ljava/lang/Object;)Ljava/lang/CharSequence;
+<span class="">	.locals 0</span>
+
+<span class="missed">	check-cast p0, Landroid/media/MediaDescription;</span>
+<span class="">	invoke-virtual {p0}, Landroid/media/MediaDescription;->getTitle()Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static c(Ljava/lang/Object;)Ljava/lang/CharSequence;
+<span class="">	.locals 0</span>
+
+<span class="missed">	check-cast p0, Landroid/media/MediaDescription;</span>
+<span class="">	invoke-virtual {p0}, Landroid/media/MediaDescription;->getSubtitle()Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static d(Ljava/lang/Object;)Ljava/lang/CharSequence;
+<span class="">	.locals 0</span>
+
+<span class="missed">	check-cast p0, Landroid/media/MediaDescription;</span>
+<span class="">	invoke-virtual {p0}, Landroid/media/MediaDescription;->getDescription()Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static e(Ljava/lang/Object;)Landroid/graphics/Bitmap;
+<span class="">	.locals 0</span>
+
+<span class="missed">	check-cast p0, Landroid/media/MediaDescription;</span>
+<span class="">	invoke-virtual {p0}, Landroid/media/MediaDescription;->getIconBitmap()Landroid/graphics/Bitmap;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static f(Ljava/lang/Object;)Landroid/net/Uri;
+<span class="">	.locals 0</span>
+
+<span class="missed">	check-cast p0, Landroid/media/MediaDescription;</span>
+<span class="">	invoke-virtual {p0}, Landroid/media/MediaDescription;->getIconUri()Landroid/net/Uri;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static g(Ljava/lang/Object;)Landroid/os/Bundle;
+<span class="">	.locals 0</span>
+
+<span class="missed">	check-cast p0, Landroid/media/MediaDescription;</span>
+<span class="">	invoke-virtual {p0}, Landroid/media/MediaDescription;->getExtras()Landroid/os/Bundle;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

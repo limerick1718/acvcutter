@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 9
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -16,17 +16,17 @@
 .method public static read(Landroidx/versionedparcelable/a;)Landroidx/media/AudioAttributesCompat;
     .locals 3
 
-    .line 1
+    .line 11
     new-instance v0, Landroidx/media/AudioAttributesCompat;
 
     invoke-direct {v0}, Landroidx/media/AudioAttributesCompat;-><init>()V
 
-    .line 2
+    .line 12
     iget-object v1, v0, Landroidx/media/AudioAttributesCompat;->a:Landroidx/media/a;
 
     const/4 v2, 0x1
 
-    invoke-virtual {p0, v1, v2}, Landroidx/versionedparcelable/a;->a(Landroidx/versionedparcelable/c;I)Landroidx/versionedparcelable/c;
+    invoke-virtual {p0, v1, v2}, Landroidx/versionedparcelable/a;->b(Landroidx/versionedparcelable/c;I)Landroidx/versionedparcelable/c;
 
     move-result-object p0
 
@@ -42,15 +42,15 @@
 
     const/4 v0, 0x0
 
-    .line 1
+    .line 17
     invoke-virtual {p1, v0, v0}, Landroidx/versionedparcelable/a;->a(ZZ)V
 
-    .line 2
+    .line 18
     iget-object p0, p0, Landroidx/media/AudioAttributesCompat;->a:Landroidx/media/a;
 
     const/4 v0, 0x1
 
-    invoke-virtual {p1, p0, v0}, Landroidx/versionedparcelable/a;->b(Landroidx/versionedparcelable/c;I)V
+    invoke-virtual {p1, p0, v0}, Landroidx/versionedparcelable/a;->a(Landroidx/versionedparcelable/c;I)V
 
     return-void
 .end method

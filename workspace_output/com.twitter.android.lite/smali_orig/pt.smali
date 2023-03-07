@@ -1,212 +1,187 @@
-.class public Lpt;
+.class public final Lpt;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
 
 # interfaces
-.implements Lqt;
+.implements Landroid/os/Parcelable$Creator;
 
 
-# instance fields
-.field private final a:I
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator<",
+        "Lps;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput p1, p0, Lpt;->a:I
-
     return-void
-.end method
-
-.method private static a([Ljava/lang/StackTraceElement;II)Z
-    .locals 5
-
-    sub-int v0, p2, p1
-
-    add-int v1, p2, v0
-
-    .line 15
-    array-length v2, p0
-
-    const/4 v3, 0x0
-
-    if-le v1, v2, :cond_0
-
-    return v3
-
-    :cond_0
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, v0, :cond_2
-
-    add-int v2, p1, v1
-
-    .line 16
-    aget-object v2, p0, v2
-
-    add-int v4, p2, v1
-
-    aget-object v4, p0, v4
-
-    invoke-virtual {v2, v4}, Ljava/lang/StackTraceElement;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    return v3
-
-    :cond_1
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method private static a([Ljava/lang/StackTraceElement;I)[Ljava/lang/StackTraceElement;
-    .locals 10
-
-    .line 3
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    .line 4
-    array-length v1, p0
-
-    new-array v1, v1, [Ljava/lang/StackTraceElement;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x1
-
-    .line 5
-    :goto_0
-    array-length v7, p0
-
-    if-ge v4, v7, :cond_3
-
-    .line 6
-    aget-object v7, p0, v4
-
-    .line 7
-    invoke-interface {v0, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Ljava/lang/Integer;
-
-    if-eqz v8, :cond_2
-
-    .line 8
-    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
-
-    move-result v9
-
-    invoke-static {p0, v9, v4}, Lpt;->a([Ljava/lang/StackTraceElement;II)Z
-
-    move-result v9
-
-    if-nez v9, :cond_0
-
-    goto :goto_1
-
-    .line 9
-    :cond_0
-    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
-
-    move-result v8
-
-    sub-int v8, v4, v8
-
-    if-ge v6, p1, :cond_1
-
-    .line 10
-    invoke-static {p0, v4, v1, v5, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    add-int/2addr v5, v8
-
-    add-int/lit8 v6, v6, 0x1
-
-    :cond_1
-    add-int/lit8 v8, v8, -0x1
-
-    add-int/2addr v8, v4
-
-    goto :goto_2
-
-    .line 11
-    :cond_2
-    :goto_1
-    aget-object v6, p0, v4
-
-    aput-object v6, v1, v5
-
-    add-int/lit8 v5, v5, 0x1
-
-    move v8, v4
-
-    const/4 v6, 0x1
-
-    .line 12
-    :goto_2
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-interface {v0, v7, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    add-int/lit8 v4, v8, 0x1
-
-    goto :goto_0
-
-    .line 13
-    :cond_3
-    new-array p0, v5, [Ljava/lang/StackTraceElement;
-
-    .line 14
-    invoke-static {v1, v2, p0, v2, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    return-object p0
 .end method
 
 
 # virtual methods
-.method public a([Ljava/lang/StackTraceElement;)[Ljava/lang/StackTraceElement;
-    .locals 3
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 16
 
-    .line 1
-    iget v0, p0, Lpt;->a:I
+    move-object/from16 v0, p1
 
-    invoke-static {p1, v0}, Lpt;->a([Ljava/lang/StackTraceElement;I)[Ljava/lang/StackTraceElement;
+    .line 7
+    invoke-static/range {p1 .. p1}, Lbb;->b(Landroid/os/Parcel;)I
 
-    move-result-object v0
+    move-result v1
 
-    .line 2
-    array-length v1, v0
+    const/4 v2, 0x0
 
-    array-length v2, p1
+    const/4 v3, 0x0
 
-    if-ge v1, v2, :cond_0
+    const-wide/16 v4, 0x0
+
+    move-object v8, v2
+
+    move-object v11, v8
+
+    move-object v12, v11
+
+    move-object v13, v12
+
+    move-object v14, v13
+
+    move-object v15, v14
+
+    move-wide v9, v4
+
+    const/4 v7, 0x0
+
+    .line 16
+    :goto_0
+    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v2
+
+    if-ge v2, v1, :cond_0
+
+    .line 17
+    invoke-static/range {p1 .. p1}, Lbb;->a(Landroid/os/Parcel;)I
+
+    move-result v2
+
+    .line 18
+    invoke-static {v2}, Lbb;->a(I)I
+
+    move-result v3
+
+    packed-switch v3, :pswitch_data_0
+
+    .line 43
+    invoke-static {v0, v2}, Lbb;->b(Landroid/os/Parcel;I)V
+
+    goto :goto_0
+
+    .line 41
+    :pswitch_0
+    invoke-static {v0, v2}, Lbb;->h(Landroid/os/Parcel;I)Ljava/lang/Double;
+
+    move-result-object v15
+
+    goto :goto_0
+
+    .line 38
+    :pswitch_1
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v14
+
+    goto :goto_0
+
+    .line 35
+    :pswitch_2
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v13
+
+    goto :goto_0
+
+    .line 32
+    :pswitch_3
+    invoke-static {v0, v2}, Lbb;->g(Landroid/os/Parcel;I)Ljava/lang/Float;
+
+    move-result-object v12
+
+    goto :goto_0
+
+    .line 29
+    :pswitch_4
+    invoke-static {v0, v2}, Lbb;->f(Landroid/os/Parcel;I)Ljava/lang/Long;
+
+    move-result-object v11
+
+    goto :goto_0
+
+    .line 26
+    :pswitch_5
+    invoke-static {v0, v2}, Lbb;->e(Landroid/os/Parcel;I)J
+
+    move-result-wide v9
+
+    goto :goto_0
+
+    .line 23
+    :pswitch_6
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v8
+
+    goto :goto_0
+
+    .line 20
+    :pswitch_7
+    invoke-static {v0, v2}, Lbb;->d(Landroid/os/Parcel;I)I
+
+    move-result v7
+
+    goto :goto_0
+
+    .line 45
+    :cond_0
+    invoke-static {v0, v1}, Lbb;->l(Landroid/os/Parcel;I)V
+
+    .line 46
+    new-instance v0, Lps;
+
+    move-object v6, v0
+
+    invoke-direct/range {v6 .. v15}, Lps;-><init>(ILjava/lang/String;JLjava/lang/Long;Ljava/lang/Float;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;)V
 
     return-object v0
 
-    :cond_0
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 0
+
+    .line 4
+    new-array p1, p1, [Lps;
+
     return-object p1
 .end method

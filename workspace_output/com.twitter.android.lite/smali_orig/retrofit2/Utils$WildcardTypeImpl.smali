@@ -25,60 +25,60 @@
 
 # direct methods
 .method constructor <init>([Ljava/lang/reflect/Type;[Ljava/lang/reflect/Type;)V
-    .locals 5
+    .locals 3
 
-    .line 1
-    const-class v0, Ljava/lang/Object;
-
+    .line 456
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    array-length v1, p2
+    .line 457
+    array-length v0, p2
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    if-gt v1, v2, :cond_5
+    if-gt v0, v1, :cond_5
 
-    .line 3
-    array-length v1, p1
+    .line 458
+    array-length v0, p1
 
-    if-ne v1, v2, :cond_4
+    if-ne v0, v1, :cond_4
 
-    .line 4
-    array-length v1, p2
+    .line 460
+    array-length v0, p2
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    const/4 v4, 0x0
+    if-ne v0, v1, :cond_2
 
-    if-ne v1, v2, :cond_2
+    .line 461
+    aget-object v0, p2, v2
 
-    .line 5
-    aget-object v1, p2, v4
+    if-eqz v0, :cond_1
 
-    if-eqz v1, :cond_1
+    .line 462
+    aget-object v0, p2, v2
 
-    .line 6
-    aget-object v1, p2, v4
+    invoke-static {v0}, Lretrofit2/Utils;->checkNotPrimitive(Ljava/lang/reflect/Type;)V
 
-    invoke-static {v1}, Lretrofit2/Utils;->checkNotPrimitive(Ljava/lang/reflect/Type;)V
+    .line 463
+    aget-object p1, p1, v2
 
-    .line 7
-    aget-object p1, p1, v4
+    const-class v0, Ljava/lang/Object;
 
     if-ne p1, v0, :cond_0
 
-    .line 8
-    aget-object p1, p2, v4
+    .line 464
+    aget-object p1, p2, v2
 
     iput-object p1, p0, Lretrofit2/Utils$WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
 
-    .line 9
-    iput-object v0, p0, Lretrofit2/Utils$WildcardTypeImpl;->upperBound:Ljava/lang/reflect/Type;
+    .line 465
+    const-class p1, Ljava/lang/Object;
+
+    iput-object p1, p0, Lretrofit2/Utils$WildcardTypeImpl;->upperBound:Ljava/lang/reflect/Type;
 
     goto :goto_0
 
-    .line 10
+    .line 463
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -86,37 +86,47 @@
 
     throw p1
 
-    .line 11
+    .line 461
     :cond_1
-    throw v3
+    new-instance p1, Ljava/lang/NullPointerException;
 
-    .line 12
+    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw p1
+
+    .line 467
     :cond_2
-    aget-object p2, p1, v4
+    aget-object p2, p1, v2
 
     if-eqz p2, :cond_3
 
-    .line 13
-    aget-object p2, p1, v4
+    .line 468
+    aget-object p2, p1, v2
 
     invoke-static {p2}, Lretrofit2/Utils;->checkNotPrimitive(Ljava/lang/reflect/Type;)V
 
-    .line 14
-    iput-object v3, p0, Lretrofit2/Utils$WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
+    const/4 p2, 0x0
 
-    .line 15
-    aget-object p1, p1, v4
+    .line 469
+    iput-object p2, p0, Lretrofit2/Utils$WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
+
+    .line 470
+    aget-object p1, p1, v2
 
     iput-object p1, p0, Lretrofit2/Utils$WildcardTypeImpl;->upperBound:Ljava/lang/reflect/Type;
 
     :goto_0
     return-void
 
-    .line 16
+    .line 467
     :cond_3
-    throw v3
+    new-instance p1, Ljava/lang/NullPointerException;
 
-    .line 17
+    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw p1
+
+    .line 458
     :cond_4
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -124,7 +134,7 @@
 
     throw p1
 
-    .line 18
+    .line 457
     :cond_5
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -138,7 +148,7 @@
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
 
-    .line 1
+    .line 483
     instance-of v0, p1, Ljava/lang/reflect/WildcardType;
 
     if-eqz v0, :cond_0
@@ -165,7 +175,7 @@
 .method public getLowerBounds()[Ljava/lang/reflect/Type;
     .locals 3
 
-    .line 1
+    .line 479
     iget-object v0, p0, Lretrofit2/Utils$WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
 
     if-eqz v0, :cond_0
@@ -192,9 +202,9 @@
 
     const/4 v0, 0x1
 
+    .line 475
     new-array v0, v0, [Ljava/lang/reflect/Type;
 
-    .line 1
     iget-object v1, p0, Lretrofit2/Utils$WildcardTypeImpl;->upperBound:Ljava/lang/reflect/Type;
 
     const/4 v2, 0x0
@@ -207,7 +217,7 @@
 .method public hashCode()I
     .locals 2
 
-    .line 1
+    .line 488
     iget-object v0, p0, Lretrofit2/Utils$WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
 
     if-eqz v0, :cond_0
@@ -240,7 +250,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 1
+    .line 492
     iget-object v0, p0, Lretrofit2/Utils$WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
 
     if-eqz v0, :cond_0
@@ -267,7 +277,7 @@
 
     return-object v0
 
-    .line 2
+    .line 493
     :cond_0
     iget-object v0, p0, Lretrofit2/Utils$WildcardTypeImpl;->upperBound:Ljava/lang/reflect/Type;
 
@@ -279,7 +289,7 @@
 
     return-object v0
 
-    .line 3
+    .line 494
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 

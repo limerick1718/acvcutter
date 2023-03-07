@@ -22,19 +22,19 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 10
+    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     if-eqz p1, :cond_1
 
     if-eqz p2, :cond_0
 
-    .line 11
+    .line 49
     iput-object p1, p0, Lokhttp3/Challenge;->scheme:Ljava/lang/String;
 
     const-string p1, "realm"
 
-    .line 12
+    .line 50
     invoke-static {p1, p2}, Ljava/util/Collections;->singletonMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;
 
     move-result-object p1
@@ -43,7 +43,7 @@
 
     return-void
 
-    .line 13
+    .line 48
     :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
@@ -53,7 +53,7 @@
 
     throw p1
 
-    .line 14
+    .line 47
     :cond_1
     new-instance p1, Ljava/lang/NullPointerException;
 
@@ -77,22 +77,22 @@
         }
     .end annotation
 
-    .line 1
+    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     if-eqz p1, :cond_3
 
     if-eqz p2, :cond_2
 
-    .line 2
+    .line 37
     iput-object p1, p0, Lokhttp3/Challenge;->scheme:Ljava/lang/String;
 
-    .line 3
+    .line 38
     new-instance p1, Ljava/util/LinkedHashMap;
 
     invoke-direct {p1}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 4
+    .line 39
     invoke-interface {p2}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p2
@@ -114,7 +114,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 5
+    .line 40
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
@@ -138,7 +138,7 @@
 
     move-result-object v1
 
-    .line 6
+    .line 41
     :goto_1
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -150,7 +150,7 @@
 
     goto :goto_0
 
-    .line 7
+    .line 43
     :cond_1
     invoke-static {p1}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
@@ -160,7 +160,7 @@
 
     return-void
 
-    .line 8
+    .line 36
     :cond_2
     new-instance p1, Ljava/lang/NullPointerException;
 
@@ -170,7 +170,7 @@
 
     throw p1
 
-    .line 9
+    .line 35
     :cond_3
     new-instance p1, Ljava/lang/NullPointerException;
 
@@ -195,7 +195,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 71
     iget-object v0, p0, Lokhttp3/Challenge;->authParams:Ljava/util/Map;
 
     return-object v0
@@ -204,7 +204,7 @@
 .method public charset()Ljava/nio/charset/Charset;
     .locals 2
 
-    .line 1
+    .line 81
     iget-object v0, p0, Lokhttp3/Challenge;->authParams:Ljava/util/Map;
 
     const-string v1, "charset"
@@ -217,7 +217,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2
+    .line 84
     :try_start_0
     invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
 
@@ -227,7 +227,7 @@
 
     return-object v0
 
-    .line 3
+    .line 88
     :catch_0
     :cond_0
     sget-object v0, Ljava/nio/charset/StandardCharsets;->ISO_8859_1:Ljava/nio/charset/Charset;
@@ -242,7 +242,7 @@
         .end annotation
     .end param
 
-    .line 1
+    .line 92
     instance-of v0, p1, Lokhttp3/Challenge;
 
     if-eqz v0, :cond_0
@@ -253,7 +253,7 @@
 
     iget-object v1, p0, Lokhttp3/Challenge;->scheme:Ljava/lang/String;
 
-    .line 2
+    .line 93
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -264,7 +264,7 @@
 
     iget-object v0, p0, Lokhttp3/Challenge;->authParams:Ljava/util/Map;
 
-    .line 3
+    .line 94
     invoke-interface {p1, v0}, Ljava/util/Map;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -285,7 +285,7 @@
 .method public hashCode()I
     .locals 2
 
-    .line 1
+    .line 99
     iget-object v0, p0, Lokhttp3/Challenge;->scheme:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -298,7 +298,7 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 2
+    .line 100
     iget-object v0, p0, Lokhttp3/Challenge;->authParams:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->hashCode()I
@@ -313,7 +313,7 @@
 .method public realm()Ljava/lang/String;
     .locals 2
 
-    .line 1
+    .line 76
     iget-object v0, p0, Lokhttp3/Challenge;->authParams:Ljava/util/Map;
 
     const-string v1, "realm"
@@ -330,7 +330,7 @@
 .method public scheme()Ljava/lang/String;
     .locals 1
 
-    .line 1
+    .line 63
     iget-object v0, p0, Lokhttp3/Challenge;->scheme:Ljava/lang/String;
 
     return-object v0
@@ -339,7 +339,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 1
+    .line 105
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -368,14 +368,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 1
+    .line 56
     new-instance v0, Ljava/util/LinkedHashMap;
 
     iget-object v1, p0, Lokhttp3/Challenge;->authParams:Ljava/util/Map;
 
     invoke-direct {v0, v1}, Ljava/util/LinkedHashMap;-><init>(Ljava/util/Map;)V
 
-    .line 2
+    .line 57
     invoke-virtual {p1}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
 
     move-result-object p1
@@ -384,7 +384,7 @@
 
     invoke-interface {v0, v1, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3
+    .line 58
     new-instance p1, Lokhttp3/Challenge;
 
     iget-object v1, p0, Lokhttp3/Challenge;->scheme:Ljava/lang/String;
@@ -393,7 +393,7 @@
 
     return-object p1
 
-    .line 4
+    .line 55
     :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 

@@ -1,9 +1,9 @@
 .class public final Lcom/google/gson/internal/bind/TreeTypeAdapter;
-.super Lvv;
+.super Ltn;
 .source "TreeTypeAdapter.java"
 .annotation system Ldalvik/annotation/MemberClasses;
 value = {
-Lcom/google/gson/internal/bind/TreeTypeAdapter$b;,
+Lcom/google/gson/internal/bind/TreeTypeAdapter$a;,
 Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;
 }
 .end annotation
@@ -12,77 +12,93 @@ value = {
 "<T:",
 "Ljava/lang/Object;",
 ">",
-"Lvv<",
+"Ltn<",
 "TT;>;"
 }
 .end annotation
-.field private final a:Lsv;
+.field final a:Lsx;
+.field private final b:Ltk;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lsv<",
+"Ltk<",
 "TT;>;"
 }
 .end annotation
 .end field
-.field private final b:Lkv;
+.field private final c:Ltc;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lkv<",
+"Ltc<",
 "TT;>;"
 }
 .end annotation
 .end field
-.field final c:Lfv;
-.field private final d:Ldw;
+.field private final d:Ltv;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ldw<",
+"Ltv<",
 "TT;>;"
 }
 .end annotation
 .end field
-.field private final e:Lwv;
-.field private final f:Lcom/google/gson/internal/bind/TreeTypeAdapter$b;
+.field private final e:Lto;
+.field private final f:Lcom/google/gson/internal/bind/TreeTypeAdapter$a;
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "Lcom/google/gson/internal/bind/TreeTypeAdapter<",
-"TT;>.b;"
+"TT;>.a;"
 }
 .end annotation
 .end field
-.field private g:Lvv;
+.field private g:Ltn;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lvv<",
+"Ltn<",
 "TT;>;"
 }
 .end annotation
 .end field
-.method public constructor <init>(Lsv;Lkv;Lfv;Ldw;Lwv;)V
+.method public constructor <init>(Ltk;Ltc;Lsx;Ltv;Lto;)V
 .locals 2
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "(",
-"Lsv<",
+"Ltk<",
 "TT;>;",
-"Lkv<",
+"Ltc<",
 "TT;>;",
-"Lfv;",
-"Ldw<",
+"Lsx;",
+"Ltv<",
 "TT;>;",
-"Lwv;",
+"Lto;",
 ")V"
 }
 .end annotation
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public a(Lew;)Ljava/lang/Object;
+.method public a(Lty;Ljava/lang/Object;)V
 .locals 3
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "(",
-"Lew;",
+"Lty;",
+"TT;)V"
+}
+.end annotation
+.annotation system Ldalvik/annotation/Throws;
+value = {
+Ljava/io/IOException;
+}
+.end annotation
+return-void
+.end method
+.method public b(Ltw;)Ljava/lang/Object;
+.locals 3
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(",
+"Ltw;",
 ")TT;"
 }
 .end annotation
@@ -93,20 +109,4 @@ Ljava/io/IOException;
 .end annotation
 const/4 v0, 0x0
 return-object v0
-.end method
-.method public a(Lgw;Ljava/lang/Object;)V
-.locals 3
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"(",
-"Lgw;",
-"TT;)V"
-}
-.end annotation
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-return-void
 .end method

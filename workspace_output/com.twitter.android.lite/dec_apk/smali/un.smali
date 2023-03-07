@@ -1,83 +1,148 @@
-.class final Lun;
+.class public Lun;
 .super Ljava/lang/Object;
-.implements Lyn;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"<TResult:",
-"Ljava/lang/Object;",
-">",
-"Ljava/lang/Object;",
-"Lyn<",
-"TTResult;>;"
-}
-.end annotation
-.field private final a:Ljava/util/concurrent/Executor;
-.field private final b:Ljava/lang/Object;
-.field private c:Ldn;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ldn<",
-"-TTResult;>;"
-}
-.end annotation
-.annotation build Ljavax/annotation/concurrent/GuardedBy;
-value = "mLock"
+.source "NymizerParams.java"
+.field private a:Ljava/lang/String;
+.annotation runtime Ltr;
+a = "aid"
 .end annotation
 .end field
-.method public constructor <init>(Ljava/util/concurrent/Executor;Ldn;)V
-.locals 1
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"(",
-"Ljava/util/concurrent/Executor;",
-"Ldn<",
-"-TTResult;>;)V"
-}
+.field private b:I
+.annotation runtime Ltr;
+a = "limit_ad_tracking"
 .end annotation
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-new-instance v0, Ljava/lang/Object;
-invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-iput-object v0, p0, Lun;->b:Ljava/lang/Object;
-iput-object p1, p0, Lun;->a:Ljava/util/concurrent/Executor;
-iput-object p2, p0, Lun;->c:Ldn;
+.end field
+.field private c:Ljava/lang/String;
+.annotation runtime Ltr;
+a = "country_code"
+.end annotation
+.end field
+.field private d:Ljava/lang/String;
+.annotation runtime Ltr;
+a = "dev_brand"
+.end annotation
+.end field
+.field private e:Ljava/lang/String;
+.annotation runtime Ltr;
+a = "dev_model"
+.end annotation
+.end field
+.field private f:Ljava/lang/String;
+.annotation runtime Ltr;
+a = "dev_carrier"
+.end annotation
+.end field
+.field private g:Ljava/lang/String;
+.annotation runtime Ltr;
+a = "lang"
+.end annotation
+.end field
+.field private h:I
+.annotation runtime Ltr;
+a = "os_ver"
+.end annotation
+.end field
+.field private i:J
+.annotation runtime Ltr;
+a = "ts"
+.end annotation
+.end field
+.field private j:Ljava/lang/String;
+.annotation runtime Ltr;
+a = "os_name"
+.end annotation
+.end field
+.field private k:Ljava/lang/String;
+.annotation runtime Ltr;
+a = "action"
+.end annotation
+.end field
+.field private l:Ljava/lang/String;
+.annotation runtime Ltr;
+a = "referrer"
+.end annotation
+.end field
+.field private m:Ljava/lang/String;
+.annotation runtime Ltr;
+a = "ref"
+.end annotation
+.end field
+.field private n:Ljava/lang/String;
+.annotation runtime Ltr;
+a = "mat_click_id"
+.end annotation
+.end field
+.method private constructor <init>()V
+.locals 0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method static synthetic a(Lun;)Ljava/lang/Object;
+.method public a(I)Lun;
 .locals 0
-iget-object p0, p0, Lun;->b:Ljava/lang/Object;
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
-.method static synthetic b(Lun;)Ldn;
+.method public a(J)Lun;
 .locals 0
-iget-object p0, p0, Lun;->c:Ldn;
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
-.method public final a(Lgn;)V
-.locals 2
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"(",
-"Lgn<",
-"TTResult;>;)V"
-}
-.end annotation
-invoke-virtual {p1}, Lgn;->e()Z
-move-result v0
-if-eqz v0, :cond_1
-iget-object v0, p0, Lun;->b:Ljava/lang/Object;
-monitor-enter v0
-iget-object v1, p0, Lun;->c:Ldn;
-monitor-exit v0
-iget-object v0, p0, Lun;->a:Ljava/util/concurrent/Executor;
-new-instance v1, Lvn;
-invoke-direct {v1, p0, p1}, Lvn;-><init>(Lun;Lgn;)V
-invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-goto :goto_0
-:catchall_0
-move-exception p1
-monitor-exit v0
-throw p1
-:cond_1
-:goto_0
-return-void
+.method public a(Ljava/lang/String;)Lun;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public a(Z)Lun;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public b(Ljava/lang/String;)Lun;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public c(Ljava/lang/String;)Lun;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public d(Ljava/lang/String;)Lun;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public e(Ljava/lang/String;)Lun;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public f(Ljava/lang/String;)Lun;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public g(Ljava/lang/String;)Lun;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public h(Ljava/lang/String;)Lun;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public i(Ljava/lang/String;)Lun;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public j(Ljava/lang/String;)Lun;
+.locals 0
+const/4 v0, 0x0
+return-object v0
+.end method
+.method public k(Ljava/lang/String;)Lun;
+.locals 0
+const/4 v0, 0x0
+return-object v0
 .end method

@@ -1,35 +1,68 @@
-.class final Lrn;
+.class public Lrn;
 .super Ljava/lang/Object;
-.implements Ljava/lang/Runnable;
-.field private final synthetic a:Lgn;
-.field private final synthetic b:Lqn;
-.method constructor <init>(Lqn;Lgn;)V
-.locals 0
-iput-object p1, p0, Lrn;->b:Lqn;
-iput-object p2, p0, Lrn;->a:Lgn;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"<TResult:",
+"Ljava/lang/Object;",
+">",
+"Ljava/lang/Object;"
+}
+.end annotation
+.field private final a:Lsf;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Lsf<",
+"TTResult;>;"
+}
+.end annotation
+.end field
+.method public constructor <init>()V
+.locals 1
 invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+new-instance v0, Lsf;
+invoke-direct {v0}, Lsf;-><init>()V
+iput-object v0, p0, Lrn;->a:Lsf;
 return-void
 .end method
-.method public final run()V
-.locals 3
-iget-object v0, p0, Lrn;->b:Lqn;
-invoke-static {v0}, Lqn;->a(Lqn;)Ljava/lang/Object;
-move-result-object v0
-monitor-enter v0
-iget-object v1, p0, Lrn;->b:Lqn;
-invoke-static {v1}, Lqn;->b(Lqn;)Lbn;
-move-result-object v1
-if-eqz v1, :cond_0
-iget-object v1, p0, Lrn;->b:Lqn;
-invoke-static {v1}, Lqn;->b(Lqn;)Lbn;
-move-result-object v1
-iget-object v2, p0, Lrn;->a:Lgn;
-invoke-interface {v1, v2}, Lbn;->a(Lgn;)V
-:cond_0
-monitor-exit v0
+.method public a()Lrm;
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"()",
+"Lrm<",
+"TTResult;>;"
+}
+.end annotation
+iget-object v0, p0, Lrn;->a:Lsf;
+return-object v0
+.end method
+.method public a(Ljava/lang/Exception;)V
+.locals 1
 return-void
-:catchall_0
-move-exception v1
-monitor-exit v0
-throw v1
+.end method
+.method public a(Ljava/lang/Object;)V
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(TTResult;)V"
+}
+.end annotation
+iget-object v0, p0, Lrn;->a:Lsf;
+invoke-virtual {v0, p1}, Lsf;->a(Ljava/lang/Object;)V
+return-void
+.end method
+.method public b(Ljava/lang/Exception;)Z
+.locals 1
+const/4 v0, 0x0
+return v0
+.end method
+.method public b(Ljava/lang/Object;)Z
+.locals 1
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(TTResult;)Z"
+}
+.end annotation
+const/4 v0, 0x0
+return v0
 .end method

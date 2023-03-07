@@ -1,92 +1,118 @@
-.class final Lkg;
+.class public final Lkg;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-
-# interfaces
-.implements Ljava/security/PrivilegedExceptionAction;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/security/PrivilegedExceptionAction<",
-        "Lsun/misc/Unsafe;",
-        ">;"
-    }
-.end annotation
+# static fields
+.field public static final a:[I
+
+.field public static final b:[J
+
+.field public static final c:[Ljava/lang/String;
+
+.field public static final d:[B
+
+.field private static final e:I = 0xb
+
+.field private static final f:I = 0xc
+
+.field private static final g:I = 0x10
+
+.field private static final h:I = 0x1a
+
+.field private static final i:[F
+
+.field private static final j:[D
+
+.field private static final k:[Z
+
+.field private static final l:[[B
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
+
+    .line 17
+    new-array v1, v0, [I
+
+    sput-object v1, Lkg;->a:[I
+
+    .line 18
+    new-array v1, v0, [J
+
+    sput-object v1, Lkg;->b:[J
+
+    .line 19
+    new-array v1, v0, [F
+
+    sput-object v1, Lkg;->i:[F
+
+    .line 20
+    new-array v1, v0, [D
+
+    sput-object v1, Lkg;->j:[D
+
+    .line 21
+    new-array v1, v0, [Z
+
+    sput-object v1, Lkg;->k:[Z
+
+    .line 22
+    new-array v1, v0, [Ljava/lang/String;
+
+    sput-object v1, Lkg;->c:[Ljava/lang/String;
+
+    .line 23
+    new-array v1, v0, [[B
+
+    sput-object v1, Lkg;->l:[[B
+
+    .line 24
+    new-array v0, v0, [B
+
+    sput-object v0, Lkg;->d:[B
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic run()Ljava/lang/Object;
-    .locals 7
+.method public static final a(Lju;I)I
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/lang/Exception;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 1
-    const-class v0, Lsun/misc/Unsafe;
-
     .line 2
-    invoke-virtual {v0}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;
+    invoke-virtual {p0}, Lju;->i()I
 
-    move-result-object v1
-
-    array-length v2, v1
-
-    const/4 v3, 0x0
-
-    :goto_0
-    const/4 v4, 0x0
-
-    if-ge v3, v2, :cond_1
-
-    aget-object v5, v1, v3
-
-    const/4 v6, 0x1
+    move-result v0
 
     .line 3
-    invoke-virtual {v5, v6}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    invoke-virtual {p0, p1}, Lju;->b(I)Z
+
+    const/4 v1, 0x1
 
     .line 4
-    invoke-virtual {v5, v4}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    :goto_0
+    invoke-virtual {p0}, Lju;->a()I
 
-    move-result-object v4
+    move-result v2
+
+    if-ne v2, p1, :cond_0
 
     .line 5
-    invoke-virtual {v0, v4}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
+    invoke-virtual {p0, p1}, Lju;->b(I)Z
 
-    move-result v5
-
-    if-eqz v5, :cond_0
-
-    .line 6
-    invoke-virtual {v0, v4}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lsun/misc/Unsafe;
-
-    return-object v0
-
-    :cond_0
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_1
-    return-object v4
+    .line 7
+    :cond_0
+    invoke-virtual {p0, v0, p1}, Lju;->b(II)V
+
+    return v1
 .end method

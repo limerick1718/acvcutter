@@ -1,57 +1,25 @@
-.class public final Lll;
+.class final Lll;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
 
 # interfaces
-.implements Lil;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field private static final a:Lva;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lva<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
+# instance fields
+.field private final synthetic a:Z
+
+.field private final synthetic b:Llk;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    .line 1
-    new-instance v0, Lbb;
-
-    const-string v1, "com.google.android.gms.measurement"
-
-    .line 2
-    invoke-static {v1}, Lsa;->a(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lbb;-><init>(Landroid/net/Uri;)V
-
-    const-string v1, "measurement.sdk.collection.retrieve_deeplink_from_bow_2"
-
-    const/4 v2, 0x1
-
-    .line 3
-    invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;
-
-    move-result-object v0
-
-    sput-object v0, Lll;->a:Lva;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Llk;Z)V
     .locals 0
 
     .line 1
+    iput-object p1, p0, Lll;->b:Llk;
+
+    iput-boolean p2, p0, Lll;->a:Z
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -59,21 +27,19 @@
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    .line 1
-    sget-object v0, Lll;->a:Lva;
+    .line 2
+    iget-object v0, p0, Lll;->b:Llk;
 
-    invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
+    invoke-static {v0}, Llk;->a(Llk;)Lpl;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Boolean;
+    iget-boolean v1, p0, Lll;->a:Z
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v0, v1}, Lpl;->a(Z)V
 
-    move-result v0
-
-    return v0
+    return-void
 .end method

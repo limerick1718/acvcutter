@@ -14,44 +14,28 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final synthetic Ldr;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-.implements Lir$a;
+		<code>.class final Ldr;
+.super Landroid/database/ContentObserver;
 
 
-.field private static final a:Ldr;
 
 
-.method static constructor &lt;clinit&gt;()V
-<span class="">	.locals 1</span>
+.method constructor &lt;init&gt;(Landroid/os/Handler;)V
+<span class="">	.locals 0</span>
 
-<span class="missed">	new-instance v0, Ldr;</span>
-<span class="missed">	invoke-direct {v0}, Ldr;-><init>()V</span>
-<span class="missed">	sput-object v0, Ldr;->a:Ldr;</span>
+<span class="missed">	const/4 p1, 0x0</span>
+<span class="missed">	invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V</span>
 <span class="">	return-void</span>
 .end method
 
-.method private constructor &lt;init&gt;()V
-<span class="">	.locals 0</span>
-
-<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public static a()Lir$a;
+.method public final onChange(Z)V
 <span class="">	.locals 1</span>
 
-<span class="missed">	sget-object v0, Ldr;->a:Ldr;</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public a(Landroid/util/JsonReader;)Ljava/lang/Object;
-<span class="">	.locals 0</span>
-
-<span class="">	invoke-static {p1}, Lir;->c(Landroid/util/JsonReader;)Lzq$b;</span>
+<span class="">	invoke-static {}, Ldq;->a()Ljava/util/concurrent/atomic/AtomicBoolean;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="">	return-object p1</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	invoke-virtual {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V</span>
+<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

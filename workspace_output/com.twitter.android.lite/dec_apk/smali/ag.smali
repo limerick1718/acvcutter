@@ -1,20 +1,17 @@
-.class final Lag;
+.class public abstract Lag;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Ldg;
-.field private final synthetic a:Lfc;
-.method constructor <init>(Lfc;)V
+.source "FragmentContainer.java"
+.method public constructor <init>()V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public final a(I)B
-.locals 1
+.method public a(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Lae;
+.locals 0
 const/4 v0, 0x0
-return v0
+return-object v0
 .end method
-.method public final a()I
-.locals 1
-const/4 v0, 0x0
-return v0
+.method public abstract a(I)Landroid/view/View;
+.end method
+.method public abstract a()Z
 .end method

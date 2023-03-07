@@ -15,7 +15,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 37
     invoke-direct {p0}, Landroid/app/AppComponentFactory;-><init>()V
 
     return-void
@@ -31,12 +31,12 @@
         }
     .end annotation
 
-    .line 1
+    .line 72
     instance-of v0, p0, Landroidx/core/app/CoreComponentFactory$a;
 
     if-eqz v0, :cond_0
 
-    .line 2
+    .line 73
     move-object v0, p0
 
     check-cast v0, Landroidx/core/app/CoreComponentFactory$a;
@@ -65,7 +65,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 43
     invoke-super {p0, p1, p2, p3}, Landroid/app/AppComponentFactory;->instantiateActivity(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;
 
     move-result-object p1
@@ -89,7 +89,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 49
     invoke-super {p0, p1, p2}, Landroid/app/AppComponentFactory;->instantiateApplication(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/app/Application;
 
     move-result-object p1
@@ -113,7 +113,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 62
     invoke-super {p0, p1, p2}, Landroid/app/AppComponentFactory;->instantiateProvider(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/content/ContentProvider;
 
     move-result-object p1
@@ -137,7 +137,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 56
     invoke-super {p0, p1, p2, p3}, Landroid/app/AppComponentFactory;->instantiateReceiver(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/content/BroadcastReceiver;
 
     move-result-object p1
@@ -161,7 +161,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 68
     invoke-super {p0, p1, p2, p3}, Landroid/app/AppComponentFactory;->instantiateService(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Service;
 
     move-result-object p1

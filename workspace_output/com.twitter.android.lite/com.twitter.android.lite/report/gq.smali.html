@@ -14,115 +14,226 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final Lgq;
-.super Lzq$b;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+		<code>.class public final enum Lgq;
+.super Ljava/lang/Enum;
 
-.annotation system Ldalvik/annotation/MemberClasses;
+.annotation system Ldalvik/annotation/Signature;
 value = {
-Lgq$b;
+"Ljava/lang/Enum<",
+"Lgq;",
+">;"
 }
 .end annotation
 
-.field private final a:Ljava/lang/String;
-.field private final b:Ljava/lang/String;
+.field public static final enum a:Lgq;
+.field public static final enum b:Lgq;
+.field public static final enum c:Lgq;
+.field public static final enum d:Lgq;
+.field public static final enum e:Lgq;
+.field public static final enum f:Lgq;
+.field public static final enum g:Lgq;
+.field public static final enum h:Lgq;
+.field public static final enum i:Lgq;
+.field public static final enum j:Lgq;
+.field private static final synthetic n:[Lgq;
+.field private final k:Ljava/lang/Class;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/Class<",
+"*>;"
+}
+.end annotation
+.end field
+.field private final l:Ljava/lang/Class;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/Class<",
+"*>;"
+}
+.end annotation
+.end field
+.field private final m:Ljava/lang/Object;
 
 
-.method private constructor &lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V
-<span class="">	.locals 0</span>
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 14</span>
 
-<span class="missed">	invoke-direct {p0}, Lzq$b;-><init>()V</span>
-<span class="missed">	iput-object p1, p0, Lgq;->a:Ljava/lang/String;</span>
-<span class="missed">	iput-object p2, p0, Lgq;->b:Ljava/lang/String;</span>
-<span class="">	return-void</span>
-.end method
-
-.method synthetic constructor &lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Lgq$a;)V
-<span class="">	.locals 0</span>
-
-<span class="missed">	invoke-direct {p0, p1, p2}, Lgq;-><init>(Ljava/lang/String;Ljava/lang/String;)V</span>
-<span class="">	return-void</span>
-.end method
-
-.method public a()Ljava/lang/String;
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Lgq;->a:Ljava/lang/String;</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public b()Ljava/lang/String;
-<span class="">	.locals 1</span>
-
-<span class="missed">	iget-object v0, p0, Lgq;->b:Ljava/lang/String;</span>
-<span class="">	return-object v0</span>
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-<span class="">	.locals 4</span>
-
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	if-ne p1, p0, :cond_0</span>
-<span class="">	return v0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	instance-of v1, p1, Lzq$b;</span>
+<span class="missed">	new-instance v6, Lgq;</span>
+<span class="missed">	const-class v3, Ljava/lang/Void;</span>
+<span class="missed">	const-class v4, Ljava/lang/Void;</span>
+<span class="missed">	const-string v1, "VOID"</span>
 <span class="missed">	const/4 v2, 0x0</span>
-<span class="missed">	if-eqz v1, :cond_2</span>
-<span class="missed">	check-cast p1, Lzq$b;</span>
-<span class="missed">	iget-object v1, p0, Lgq;->a:Ljava/lang/String;</span>
-<span class="">	invoke-virtual {p1}, Lzq$b;->a()Ljava/lang/String;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="">	invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	if-eqz v1, :cond_1</span>
-<span class="missed">	iget-object v1, p0, Lgq;->b:Ljava/lang/String;</span>
-<span class="">	invoke-virtual {p1}, Lzq$b;->b()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	if-eqz p1, :cond_1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_1</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="">	:goto_0</span>
-<span class="">	return v0</span>
-<span class="">	:cond_2</span>
-<span class="">	return v2</span>
+<span class="missed">	const/4 v5, 0x0</span>
+<span class="missed">	move-object v0, v6</span>
+<span class="missed">	invoke-direct/range {v0 .. v5}, Lgq;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V</span>
+<span class="missed">	sput-object v6, Lgq;->a:Lgq;</span>
+<span class="missed">	new-instance v0, Lgq;</span>
+<span class="missed">	sget-object v10, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	const-class v11, Ljava/lang/Integer;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object v12</span>
+<span class="missed">	const-string v8, "INT"</span>
+<span class="missed">	const/4 v9, 0x1</span>
+<span class="missed">	move-object v7, v0</span>
+<span class="missed">	invoke-direct/range {v7 .. v12}, Lgq;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V</span>
+<span class="missed">	sput-object v0, Lgq;->b:Lgq;</span>
+<span class="missed">	new-instance v0, Lgq;</span>
+<span class="missed">	sget-object v5, Ljava/lang/Long;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	const-class v6, Ljava/lang/Long;</span>
+<span class="missed">	const-wide/16 v2, 0x0</span>
+<span class="">	invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="missed">	const-string v3, "LONG"</span>
+<span class="missed">	const/4 v4, 0x2</span>
+<span class="missed">	move-object v2, v0</span>
+<span class="missed">	invoke-direct/range {v2 .. v7}, Lgq;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V</span>
+<span class="missed">	sput-object v0, Lgq;->c:Lgq;</span>
+<span class="missed">	new-instance v0, Lgq;</span>
+<span class="missed">	sget-object v11, Ljava/lang/Float;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	const-class v12, Ljava/lang/Float;</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;</span>
+<span class="missed">	move-result-object v13</span>
+<span class="missed">	const-string v9, "FLOAT"</span>
+<span class="missed">	const/4 v10, 0x3</span>
+<span class="missed">	move-object v8, v0</span>
+<span class="missed">	invoke-direct/range {v8 .. v13}, Lgq;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V</span>
+<span class="missed">	sput-object v0, Lgq;->d:Lgq;</span>
+<span class="missed">	new-instance v0, Lgq;</span>
+<span class="missed">	sget-object v5, Ljava/lang/Double;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	const-class v6, Ljava/lang/Double;</span>
+<span class="missed">	const-wide/16 v2, 0x0</span>
+<span class="">	invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="missed">	const-string v3, "DOUBLE"</span>
+<span class="missed">	const/4 v4, 0x4</span>
+<span class="missed">	move-object v2, v0</span>
+<span class="missed">	invoke-direct/range {v2 .. v7}, Lgq;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V</span>
+<span class="missed">	sput-object v0, Lgq;->e:Lgq;</span>
+<span class="missed">	new-instance v0, Lgq;</span>
+<span class="missed">	sget-object v11, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	const-class v12, Ljava/lang/Boolean;</span>
+<span class="">	invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;</span>
+<span class="missed">	move-result-object v13</span>
+<span class="missed">	const-string v9, "BOOLEAN"</span>
+<span class="missed">	const/4 v10, 0x5</span>
+<span class="missed">	move-object v8, v0</span>
+<span class="missed">	invoke-direct/range {v8 .. v13}, Lgq;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V</span>
+<span class="missed">	sput-object v0, Lgq;->f:Lgq;</span>
+<span class="missed">	new-instance v0, Lgq;</span>
+<span class="missed">	const-class v5, Ljava/lang/String;</span>
+<span class="missed">	const-class v6, Ljava/lang/String;</span>
+<span class="missed">	const-string v3, "STRING"</span>
+<span class="missed">	const/4 v4, 0x6</span>
+<span class="missed">	const-string v7, ""</span>
+<span class="missed">	move-object v2, v0</span>
+<span class="missed">	invoke-direct/range {v2 .. v7}, Lgq;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V</span>
+<span class="missed">	sput-object v0, Lgq;->g:Lgq;</span>
+<span class="missed">	new-instance v0, Lgq;</span>
+<span class="missed">	const-class v11, Lew;</span>
+<span class="missed">	const-class v12, Lew;</span>
+<span class="missed">	sget-object v13, Lew;->a:Lew;</span>
+<span class="missed">	const-string v9, "BYTE_STRING"</span>
+<span class="missed">	const/4 v10, 0x7</span>
+<span class="missed">	move-object v8, v0</span>
+<span class="missed">	invoke-direct/range {v8 .. v13}, Lgq;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V</span>
+<span class="missed">	sput-object v0, Lgq;->h:Lgq;</span>
+<span class="missed">	new-instance v0, Lgq;</span>
+<span class="missed">	sget-object v5, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	const-class v6, Ljava/lang/Integer;</span>
+<span class="missed">	const-string v3, "ENUM"</span>
+<span class="missed">	const/16 v4, 0x8</span>
+<span class="missed">	const/4 v7, 0x0</span>
+<span class="missed">	move-object v2, v0</span>
+<span class="missed">	invoke-direct/range {v2 .. v7}, Lgq;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V</span>
+<span class="missed">	sput-object v0, Lgq;->i:Lgq;</span>
+<span class="missed">	new-instance v0, Lgq;</span>
+<span class="missed">	const-class v11, Ljava/lang/Object;</span>
+<span class="missed">	const-class v12, Ljava/lang/Object;</span>
+<span class="missed">	const-string v9, "MESSAGE"</span>
+<span class="missed">	const/16 v10, 0x9</span>
+<span class="missed">	const/4 v13, 0x0</span>
+<span class="missed">	move-object v8, v0</span>
+<span class="missed">	invoke-direct/range {v8 .. v13}, Lgq;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V</span>
+<span class="missed">	sput-object v0, Lgq;->j:Lgq;</span>
+<span class="missed">	const/16 v0, 0xa</span>
+<span class="missed">	new-array v0, v0, [Lgq;</span>
+<span class="missed">	sget-object v2, Lgq;->a:Lgq;</span>
+<span class="missed">	aput-object v2, v0, v1</span>
+<span class="missed">	sget-object v1, Lgq;->b:Lgq;</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	aput-object v1, v0, v2</span>
+<span class="missed">	sget-object v1, Lgq;->c:Lgq;</span>
+<span class="missed">	const/4 v2, 0x2</span>
+<span class="missed">	aput-object v1, v0, v2</span>
+<span class="missed">	sget-object v1, Lgq;->d:Lgq;</span>
+<span class="missed">	const/4 v2, 0x3</span>
+<span class="missed">	aput-object v1, v0, v2</span>
+<span class="missed">	sget-object v1, Lgq;->e:Lgq;</span>
+<span class="missed">	const/4 v2, 0x4</span>
+<span class="missed">	aput-object v1, v0, v2</span>
+<span class="missed">	sget-object v1, Lgq;->f:Lgq;</span>
+<span class="missed">	const/4 v2, 0x5</span>
+<span class="missed">	aput-object v1, v0, v2</span>
+<span class="missed">	sget-object v1, Lgq;->g:Lgq;</span>
+<span class="missed">	const/4 v2, 0x6</span>
+<span class="missed">	aput-object v1, v0, v2</span>
+<span class="missed">	sget-object v1, Lgq;->h:Lgq;</span>
+<span class="missed">	const/4 v2, 0x7</span>
+<span class="missed">	aput-object v1, v0, v2</span>
+<span class="missed">	sget-object v1, Lgq;->i:Lgq;</span>
+<span class="missed">	const/16 v2, 0x8</span>
+<span class="missed">	aput-object v1, v0, v2</span>
+<span class="missed">	sget-object v1, Lgq;->j:Lgq;</span>
+<span class="missed">	const/16 v2, 0x9</span>
+<span class="missed">	aput-object v1, v0, v2</span>
+<span class="missed">	sput-object v0, Lgq;->n:[Lgq;</span>
+<span class="">	return-void</span>
 .end method
 
-.method public hashCode()I
-<span class="">	.locals 2</span>
+.method private constructor &lt;init&gt;(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	")V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="missed">	iget-object v0, p0, Lgq;->a:Ljava/lang/String;</span>
-<span class="">	invoke-virtual {v0}, Ljava/lang/String;->hashCode()I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	const v1, 0xf4243</span>
-<span class="missed">	xor-int/2addr v0, v1</span>
-<span class="missed">	mul-int v0, v0, v1</span>
-<span class="missed">	iget-object v1, p0, Lgq;->b:Ljava/lang/String;</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/String;->hashCode()I</span>
-<span class="missed">	move-result v1</span>
-<span class="missed">	xor-int/2addr v0, v1</span>
-<span class="">	return v0</span>
+<span class="missed">	invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V</span>
+<span class="missed">	iput-object p3, p0, Lgq;->k:Ljava/lang/Class;</span>
+<span class="missed">	iput-object p4, p0, Lgq;->l:Ljava/lang/Class;</span>
+<span class="missed">	iput-object p5, p0, Lgq;->m:Ljava/lang/Object;</span>
+<span class="">	return-void</span>
 .end method
 
-.method public toString()Ljava/lang/String;
-<span class="">	.locals 2</span>
+.method public static values()[Lgq;
+<span class="">	.locals 1</span>
 
-<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="missed">	const-string v1, "CustomAttribute{key="</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	iget-object v1, p0, Lgq;->a:Ljava/lang/String;</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string v1, ", value="</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	iget-object v1, p0, Lgq;->b:Ljava/lang/String;</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	const-string v1, "}"</span>
-<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	sget-object v0, Lgq;->n:[Lgq;</span>
+<span class="">	invoke-virtual {v0}, [Lgq;->clone()Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, [Lgq;</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final a()Ljava/lang/Class;
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"*>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lgq;->l:Ljava/lang/Class;</span>
 <span class="">	return-object v0</span>
 .end method</code>
 	</pre>

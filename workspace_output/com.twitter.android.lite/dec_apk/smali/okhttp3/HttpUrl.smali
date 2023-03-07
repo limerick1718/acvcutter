@@ -100,12 +100,6 @@ move-result-object v0
 iput-object v0, p0, Lokhttp3/HttpUrl;->pathSegments:Ljava/util/List;
 iget-object v0, p1, Lokhttp3/HttpUrl$Builder;->encodedQueryNamesAndValues:Ljava/util/List;
 const/4 v2, 0x0
-if-eqz v0, :cond_0
-const/4 v3, 0x1
-invoke-direct {p0, v0, v3}, Lokhttp3/HttpUrl;->percentDecode(Ljava/util/List;Z)Ljava/util/List;
-move-result-object v0
-goto :goto_0
-:cond_0
 move-object v0, v2
 :goto_0
 iput-object v0, p0, Lokhttp3/HttpUrl;->queryNamesAndValues:Ljava/util/List;
@@ -115,54 +109,6 @@ invoke-virtual {p1}, Lokhttp3/HttpUrl$Builder;->toString()Ljava/lang/String;
 move-result-object p1
 iput-object p1, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
 return-void
-.end method
-.method static canonicalize(Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;)Ljava/lang/String;
-.locals 11
-.param p8    # Ljava/nio/charset/Charset;
-.annotation runtime Ljavax/annotation/Nullable;
-.end annotation
-.end param
-move-object v1, p0
-move v3, p2
-move v2, p1
-:goto_0
-if-ge v2, v3, :cond_5
-invoke-virtual {p0, v2}, Ljava/lang/String;->codePointAt(I)I
-move-result v0
-const/16 v4, 0x20
-const/16 v4, 0x7f
-const/16 v4, 0x80
-move-object v4, p3
-invoke-virtual {p3, v0}, Ljava/lang/String;->indexOf(I)I
-move-result v5
-const/4 v6, -0x1
-const/16 v5, 0x25
-const/16 v5, 0x2b
-invoke-static {v0}, Ljava/lang/Character;->charCount(I)I
-move-result v0
-add-int/2addr v2, v0
-goto :goto_0
-:cond_5
-move v0, p1
-invoke-virtual {p0, p1, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-move-result-object v0
-return-object v0
-.end method
-.method static canonicalize(Ljava/lang/String;Ljava/lang/String;ZZZZ)Ljava/lang/String;
-.locals 9
-invoke-virtual {p0}, Ljava/lang/String;->length()I
-move-result v2
-const/4 v1, 0x0
-const/4 v8, 0x0
-move-object v0, p0
-move-object v3, p1
-move v4, p2
-move v5, p3
-move v6, p4
-move v7, p5
-invoke-static/range {v0 .. v8}, Lokhttp3/HttpUrl;->canonicalize(Ljava/lang/String;IILjava/lang/String;ZZZZLjava/nio/charset/Charset;)Ljava/lang/String;
-move-result-object p0
-return-object p0
 .end method
 .method public static defaultPort(Ljava/lang/String;)I
 .locals 1
@@ -189,44 +135,6 @@ move-result-object p0
 invoke-virtual {p0}, Lokhttp3/HttpUrl$Builder;->build()Lokhttp3/HttpUrl;
 move-result-object p0
 return-object p0
-.end method
-.method static namesAndValuesToQueryString(Ljava/lang/StringBuilder;Ljava/util/List;)V
-.locals 5
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"(",
-"Ljava/lang/StringBuilder;",
-"Ljava/util/List<",
-"Ljava/lang/String;",
-">;)V"
-}
-.end annotation
-invoke-interface {p1}, Ljava/util/List;->size()I
-move-result v0
-const/4 v1, 0x0
-:goto_0
-if-ge v1, v0, :cond_2
-invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-move-result-object v2
-check-cast v2, Ljava/lang/String;
-add-int/lit8 v3, v1, 0x1
-invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-move-result-object v3
-check-cast v3, Ljava/lang/String;
-if-lez v1, :cond_0
-const/16 v4, 0x26
-invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-:cond_0
-invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-if-eqz v3, :cond_1
-const/16 v2, 0x3d
-invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-:cond_1
-add-int/lit8 v1, v1, 0x2
-goto :goto_0
-:cond_2
-return-void
 .end method
 .method public static parse(Ljava/lang/String;)Lokhttp3/HttpUrl;
 .locals 0
@@ -325,37 +233,17 @@ return-object p1
 .locals 2
 .annotation runtime Ljavax/annotation/Nullable;
 .end annotation
-iget-object v0, p0, Lokhttp3/HttpUrl;->fragment:Ljava/lang/String;
 const/4 v0, 0x0
 return-object v0
 .end method
 .method public encodedPassword()Ljava/lang/String;
 .locals 3
-iget-object v0, p0, Lokhttp3/HttpUrl;->password:Ljava/lang/String;
-invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
-move-result v0
-const-string v0, ""
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public encodedPath()Ljava/lang/String;
 .locals 4
-iget-object v0, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
-iget-object v1, p0, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;
-invoke-virtual {v1}, Ljava/lang/String;->length()I
-move-result v1
-add-int/lit8 v1, v1, 0x3
-const/16 v2, 0x2f
-invoke-virtual {v0, v2, v1}, Ljava/lang/String;->indexOf(II)I
-move-result v0
-iget-object v1, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
-invoke-virtual {v1}, Ljava/lang/String;->length()I
-move-result v2
-const-string v3, "?#"
-invoke-static {v1, v0, v2, v3}, Lokhttp3/internal/Util;->delimiterOffset(Ljava/lang/String;IILjava/lang/String;)I
-move-result v1
-iget-object v2, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
-invoke-virtual {v2, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public encodedPathSegments()Ljava/util/List;
@@ -368,68 +256,19 @@ value = {
 ">;"
 }
 .end annotation
-iget-object v0, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
-iget-object v1, p0, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;
-invoke-virtual {v1}, Ljava/lang/String;->length()I
-move-result v1
-add-int/lit8 v1, v1, 0x3
-const/16 v2, 0x2f
-invoke-virtual {v0, v2, v1}, Ljava/lang/String;->indexOf(II)I
-move-result v0
-iget-object v1, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
-invoke-virtual {v1}, Ljava/lang/String;->length()I
-move-result v3
-const-string v4, "?#"
-invoke-static {v1, v0, v3, v4}, Lokhttp3/internal/Util;->delimiterOffset(Ljava/lang/String;IILjava/lang/String;)I
-move-result v1
-new-instance v3, Ljava/util/ArrayList;
-invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
-:goto_0
-if-ge v0, v1, :cond_0
-add-int/lit8 v0, v0, 0x1
-iget-object v4, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
-invoke-static {v4, v0, v1, v2}, Lokhttp3/internal/Util;->delimiterOffset(Ljava/lang/String;IIC)I
-move-result v4
-iget-object v5, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
-invoke-virtual {v5, v0, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-move-result-object v0
-invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-move v0, v4
-goto :goto_0
-:cond_0
-return-object v3
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public encodedQuery()Ljava/lang/String;
 .locals 4
 .annotation runtime Ljavax/annotation/Nullable;
 .end annotation
-iget-object v0, p0, Lokhttp3/HttpUrl;->queryNamesAndValues:Ljava/util/List;
-if-nez v0, :cond_0
 const/4 v0, 0x0
-return-object v0
-:cond_0
-iget-object v0, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
-const/16 v1, 0x3f
-invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(I)I
-move-result v0
-add-int/lit8 v0, v0, 0x1
-iget-object v1, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
-invoke-virtual {v1}, Ljava/lang/String;->length()I
-move-result v2
-const/16 v3, 0x23
-invoke-static {v1, v0, v2, v3}, Lokhttp3/internal/Util;->delimiterOffset(Ljava/lang/String;IIC)I
-move-result v1
-iget-object v2, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
-invoke-virtual {v2, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-move-result-object v0
 return-object v0
 .end method
 .method public encodedUsername()Ljava/lang/String;
 .locals 4
-iget-object v0, p0, Lokhttp3/HttpUrl;->username:Ljava/lang/String;
-invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
-move-result v0
-const-string v0, ""
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public equals(Ljava/lang/Object;)Z
@@ -450,9 +289,7 @@ return-object v0
 .end method
 .method public hashCode()I
 .locals 1
-iget-object v0, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
-invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public host()Ljava/lang/String;
@@ -462,45 +299,12 @@ return-object v0
 .end method
 .method public isHttps()Z
 .locals 2
-iget-object v0, p0, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;
-const-string v1, "https"
-invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public newBuilder()Lokhttp3/HttpUrl$Builder;
 .locals 3
-new-instance v0, Lokhttp3/HttpUrl$Builder;
-invoke-direct {v0}, Lokhttp3/HttpUrl$Builder;-><init>()V
-iget-object v1, p0, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;
-iput-object v1, v0, Lokhttp3/HttpUrl$Builder;->scheme:Ljava/lang/String;
-invoke-virtual {p0}, Lokhttp3/HttpUrl;->encodedUsername()Ljava/lang/String;
-move-result-object v1
-iput-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedUsername:Ljava/lang/String;
-invoke-virtual {p0}, Lokhttp3/HttpUrl;->encodedPassword()Ljava/lang/String;
-move-result-object v1
-iput-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedPassword:Ljava/lang/String;
-iget-object v1, p0, Lokhttp3/HttpUrl;->host:Ljava/lang/String;
-iput-object v1, v0, Lokhttp3/HttpUrl$Builder;->host:Ljava/lang/String;
-iget v1, p0, Lokhttp3/HttpUrl;->port:I
-iget-object v2, p0, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;
-invoke-static {v2}, Lokhttp3/HttpUrl;->defaultPort(Ljava/lang/String;)I
-move-result v2
-const/4 v1, -0x1
-:goto_0
-iput v1, v0, Lokhttp3/HttpUrl$Builder;->port:I
-iget-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;
-invoke-interface {v1}, Ljava/util/List;->clear()V
-iget-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedPathSegments:Ljava/util/List;
-invoke-virtual {p0}, Lokhttp3/HttpUrl;->encodedPathSegments()Ljava/util/List;
-move-result-object v2
-invoke-interface {v1, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-invoke-virtual {p0}, Lokhttp3/HttpUrl;->encodedQuery()Ljava/lang/String;
-move-result-object v1
-invoke-virtual {v0, v1}, Lokhttp3/HttpUrl$Builder;->encodedQuery(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
-invoke-virtual {p0}, Lokhttp3/HttpUrl;->encodedFragment()Ljava/lang/String;
-move-result-object v1
-iput-object v1, v0, Lokhttp3/HttpUrl$Builder;->encodedFragment:Ljava/lang/String;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public newBuilder(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
@@ -535,7 +339,7 @@ return v0
 .end method
 .method public port()I
 .locals 1
-iget v0, p0, Lokhttp3/HttpUrl;->port:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public query()Ljava/lang/String;
@@ -609,7 +413,7 @@ return-object v0
 .end method
 .method public scheme()Ljava/lang/String;
 .locals 1
-iget-object v0, p0, Lokhttp3/HttpUrl;->scheme:Ljava/lang/String;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public toString()Ljava/lang/String;
@@ -626,15 +430,8 @@ return-object v0
 .end method
 .method public uri()Ljava/net/URI;
 .locals 4
-invoke-virtual {p0}, Lokhttp3/HttpUrl;->newBuilder()Lokhttp3/HttpUrl$Builder;
-move-result-object v0
-invoke-virtual {v0}, Lokhttp3/HttpUrl$Builder;->reencodeForUri()Lokhttp3/HttpUrl$Builder;
-move-result-object v0
-invoke-virtual {v0}, Lokhttp3/HttpUrl$Builder;->toString()Ljava/lang/String;
-move-result-object v0
-new-instance v1, Ljava/net/URI;
-invoke-direct {v1, v0}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
-return-object v1
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public url()Ljava/net/URL;
 .locals 2

@@ -11,7 +11,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1
+    .line 76
     new-instance v0, Lokhttp3/internal/http2/PushObserver$1;
 
     invoke-direct {v0}, Lokhttp3/internal/http2/PushObserver$1;-><init>()V
@@ -23,7 +23,7 @@
 
 
 # virtual methods
-.method public abstract onData(ILgx;IZ)Z
+.method public abstract onData(ILyu;IZ)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

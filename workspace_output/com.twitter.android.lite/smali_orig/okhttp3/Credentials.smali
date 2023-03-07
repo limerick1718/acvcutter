@@ -7,7 +7,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -16,7 +16,7 @@
 .method public static basic(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
-    .line 1
+    .line 30
     sget-object v0, Ljava/nio/charset/StandardCharsets;->ISO_8859_1:Ljava/nio/charset/Charset;
 
     invoke-static {p0, p1, v0}, Lokhttp3/Credentials;->basic(Ljava/lang/String;Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String;
@@ -29,7 +29,7 @@
 .method public static basic(Ljava/lang/String;Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String;
     .locals 1
 
-    .line 2
+    .line 34
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -46,16 +46,16 @@
 
     move-result-object p0
 
-    .line 3
-    invoke-static {p0, p2}, Lhx;->a(Ljava/lang/String;Ljava/nio/charset/Charset;)Lhx;
+    .line 35
+    invoke-static {p0, p2}, Lyv;->a(Ljava/lang/String;Ljava/nio/charset/Charset;)Lyv;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Lhx;->f()Ljava/lang/String;
+    invoke-virtual {p0}, Lyv;->b()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 4
+    .line 36
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V

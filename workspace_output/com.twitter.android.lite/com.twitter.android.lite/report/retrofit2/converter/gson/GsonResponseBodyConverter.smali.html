@@ -31,31 +31,31 @@ value = {
 }
 .end annotation
 
-.field private final adapter:Lvv;
+.field private final adapter:Ltn;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lvv<",
+"Ltn<",
 "TT;>;"
 }
 .end annotation
 .end field
-.field private final gson:Lfv;
+.field private final gson:Lsx;
 
 
-.method constructor &lt;init&gt;(Lfv;Lvv;)V
+.method constructor &lt;init&gt;(Lsx;Ltn;)V
 <span class="">	.locals 0</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
 <span class="">	"(",</span>
-<span class="">	"Lfv;",</span>
-<span class="">	"Lvv<",</span>
+<span class="">	"Lsx;",</span>
+<span class="">	"Ltn<",</span>
 <span class="">	"TT;>;)V"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
 <span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="missed">	iput-object p1, p0, Lretrofit2/converter/gson/GsonResponseBodyConverter;->gson:Lfv;</span>
-<span class="missed">	iput-object p2, p0, Lretrofit2/converter/gson/GsonResponseBodyConverter;->adapter:Lvv;</span>
+<span class="missed">	iput-object p1, p0, Lretrofit2/converter/gson/GsonResponseBodyConverter;->gson:Lsx;</span>
+<span class="missed">	iput-object p2, p0, Lretrofit2/converter/gson/GsonResponseBodyConverter;->adapter:Ltn;</span>
 <span class="">	return-void</span>
 .end method
 
@@ -88,14 +88,14 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	iget-object v0, p0, Lretrofit2/converter/gson/GsonResponseBodyConverter;->gson:Lfv;</span>
+<span class="missed">	iget-object v0, p0, Lretrofit2/converter/gson/GsonResponseBodyConverter;->gson:Lsx;</span>
 <span class="">	invoke-virtual {p1}, Lokhttp3/ResponseBody;->charStream()Ljava/io/Reader;</span>
 <span class="missed">	move-result-object v1</span>
-<span class="">	invoke-virtual {v0, v1}, Lfv;->a(Ljava/io/Reader;)Lew;</span>
+<span class="">	invoke-virtual {v0, v1}, Lsx;->a(Ljava/io/Reader;)Ltw;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="">	:try_start_0</span>
-<span class="missed">	iget-object v1, p0, Lretrofit2/converter/gson/GsonResponseBodyConverter;->adapter:Lvv;</span>
-<span class="">	invoke-virtual {v1, v0}, Lvv;->a(Lew;)Ljava/lang/Object;</span>
+<span class="missed">	iget-object v1, p0, Lretrofit2/converter/gson/GsonResponseBodyConverter;->adapter:Ltn;</span>
+<span class="">	invoke-virtual {v1, v0}, Ltn;->b(Ltw;)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="">	:try_end_0</span>
 <span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>

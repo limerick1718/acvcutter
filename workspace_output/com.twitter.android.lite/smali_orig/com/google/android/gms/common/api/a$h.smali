@@ -37,6 +37,9 @@
     .end annotation
 .end method
 
+.method public abstract a()Ljava/lang/String;
+.end method
+
 .method public abstract a(ILandroid/os/IInterface;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -45,8 +48,5 @@
     .end annotation
 .end method
 
-.method public abstract e()Ljava/lang/String;
-.end method
-
-.method public abstract i()Ljava/lang/String;
+.method public abstract b()Ljava/lang/String;
 .end method

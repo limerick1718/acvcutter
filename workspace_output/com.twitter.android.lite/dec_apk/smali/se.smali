@@ -1,9 +1,13 @@
-.class interface abstract Lse;
+.class final Lse;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.method public abstract a()I
+.implements Ljava/util/concurrent/Executor;
+.method constructor <init>()V
+.locals 0
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method
-.method public abstract b()Z
-.end method
-.method public abstract c()Lue;
+.method public final execute(Ljava/lang/Runnable;)V
+.locals 0
+invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+return-void
 .end method

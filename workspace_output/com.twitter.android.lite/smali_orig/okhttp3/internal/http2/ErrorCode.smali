@@ -47,7 +47,7 @@
 .method static constructor <clinit>()V
     .locals 15
 
-    .line 1
+    .line 21
     new-instance v0, Lokhttp3/internal/http2/ErrorCode;
 
     const/4 v1, 0x0
@@ -58,7 +58,7 @@
 
     sput-object v0, Lokhttp3/internal/http2/ErrorCode;->NO_ERROR:Lokhttp3/internal/http2/ErrorCode;
 
-    .line 2
+    .line 23
     new-instance v0, Lokhttp3/internal/http2/ErrorCode;
 
     const/4 v2, 0x1
@@ -69,7 +69,7 @@
 
     sput-object v0, Lokhttp3/internal/http2/ErrorCode;->PROTOCOL_ERROR:Lokhttp3/internal/http2/ErrorCode;
 
-    .line 3
+    .line 25
     new-instance v0, Lokhttp3/internal/http2/ErrorCode;
 
     const/4 v3, 0x2
@@ -80,7 +80,7 @@
 
     sput-object v0, Lokhttp3/internal/http2/ErrorCode;->INTERNAL_ERROR:Lokhttp3/internal/http2/ErrorCode;
 
-    .line 4
+    .line 27
     new-instance v0, Lokhttp3/internal/http2/ErrorCode;
 
     const/4 v4, 0x3
@@ -91,7 +91,7 @@
 
     sput-object v0, Lokhttp3/internal/http2/ErrorCode;->FLOW_CONTROL_ERROR:Lokhttp3/internal/http2/ErrorCode;
 
-    .line 5
+    .line 29
     new-instance v0, Lokhttp3/internal/http2/ErrorCode;
 
     const/4 v5, 0x4
@@ -104,7 +104,7 @@
 
     sput-object v0, Lokhttp3/internal/http2/ErrorCode;->REFUSED_STREAM:Lokhttp3/internal/http2/ErrorCode;
 
-    .line 6
+    .line 31
     new-instance v0, Lokhttp3/internal/http2/ErrorCode;
 
     const/4 v7, 0x5
@@ -117,7 +117,7 @@
 
     sput-object v0, Lokhttp3/internal/http2/ErrorCode;->CANCEL:Lokhttp3/internal/http2/ErrorCode;
 
-    .line 7
+    .line 33
     new-instance v0, Lokhttp3/internal/http2/ErrorCode;
 
     const/4 v9, 0x6
@@ -130,7 +130,7 @@
 
     sput-object v0, Lokhttp3/internal/http2/ErrorCode;->COMPRESSION_ERROR:Lokhttp3/internal/http2/ErrorCode;
 
-    .line 8
+    .line 35
     new-instance v0, Lokhttp3/internal/http2/ErrorCode;
 
     const/16 v11, 0xa
@@ -141,7 +141,7 @@
 
     sput-object v0, Lokhttp3/internal/http2/ErrorCode;->CONNECT_ERROR:Lokhttp3/internal/http2/ErrorCode;
 
-    .line 9
+    .line 37
     new-instance v0, Lokhttp3/internal/http2/ErrorCode;
 
     const/16 v12, 0xb
@@ -152,7 +152,7 @@
 
     sput-object v0, Lokhttp3/internal/http2/ErrorCode;->ENHANCE_YOUR_CALM:Lokhttp3/internal/http2/ErrorCode;
 
-    .line 10
+    .line 39
     new-instance v0, Lokhttp3/internal/http2/ErrorCode;
 
     const-string v13, "INADEQUATE_SECURITY"
@@ -163,7 +163,7 @@
 
     sput-object v0, Lokhttp3/internal/http2/ErrorCode;->INADEQUATE_SECURITY:Lokhttp3/internal/http2/ErrorCode;
 
-    .line 11
+    .line 41
     new-instance v0, Lokhttp3/internal/http2/ErrorCode;
 
     const-string v13, "HTTP_1_1_REQUIRED"
@@ -174,52 +174,54 @@
 
     sput-object v0, Lokhttp3/internal/http2/ErrorCode;->HTTP_1_1_REQUIRED:Lokhttp3/internal/http2/ErrorCode;
 
-    new-array v12, v12, [Lokhttp3/internal/http2/ErrorCode;
+    .line 19
+    new-array v0, v12, [Lokhttp3/internal/http2/ErrorCode;
 
-    .line 12
-    sget-object v13, Lokhttp3/internal/http2/ErrorCode;->NO_ERROR:Lokhttp3/internal/http2/ErrorCode;
+    sget-object v12, Lokhttp3/internal/http2/ErrorCode;->NO_ERROR:Lokhttp3/internal/http2/ErrorCode;
 
-    aput-object v13, v12, v1
+    aput-object v12, v0, v1
 
     sget-object v1, Lokhttp3/internal/http2/ErrorCode;->PROTOCOL_ERROR:Lokhttp3/internal/http2/ErrorCode;
 
-    aput-object v1, v12, v2
+    aput-object v1, v0, v2
 
     sget-object v1, Lokhttp3/internal/http2/ErrorCode;->INTERNAL_ERROR:Lokhttp3/internal/http2/ErrorCode;
 
-    aput-object v1, v12, v3
+    aput-object v1, v0, v3
 
     sget-object v1, Lokhttp3/internal/http2/ErrorCode;->FLOW_CONTROL_ERROR:Lokhttp3/internal/http2/ErrorCode;
 
-    aput-object v1, v12, v4
+    aput-object v1, v0, v4
 
     sget-object v1, Lokhttp3/internal/http2/ErrorCode;->REFUSED_STREAM:Lokhttp3/internal/http2/ErrorCode;
 
-    aput-object v1, v12, v5
+    aput-object v1, v0, v5
 
     sget-object v1, Lokhttp3/internal/http2/ErrorCode;->CANCEL:Lokhttp3/internal/http2/ErrorCode;
 
-    aput-object v1, v12, v7
+    aput-object v1, v0, v7
 
     sget-object v1, Lokhttp3/internal/http2/ErrorCode;->COMPRESSION_ERROR:Lokhttp3/internal/http2/ErrorCode;
 
-    aput-object v1, v12, v9
+    aput-object v1, v0, v9
 
     sget-object v1, Lokhttp3/internal/http2/ErrorCode;->CONNECT_ERROR:Lokhttp3/internal/http2/ErrorCode;
 
-    aput-object v1, v12, v6
+    aput-object v1, v0, v6
 
     sget-object v1, Lokhttp3/internal/http2/ErrorCode;->ENHANCE_YOUR_CALM:Lokhttp3/internal/http2/ErrorCode;
 
-    aput-object v1, v12, v8
+    aput-object v1, v0, v8
 
     sget-object v1, Lokhttp3/internal/http2/ErrorCode;->INADEQUATE_SECURITY:Lokhttp3/internal/http2/ErrorCode;
 
-    aput-object v1, v12, v10
+    aput-object v1, v0, v10
 
-    aput-object v0, v12, v11
+    sget-object v1, Lokhttp3/internal/http2/ErrorCode;->HTTP_1_1_REQUIRED:Lokhttp3/internal/http2/ErrorCode;
 
-    sput-object v12, Lokhttp3/internal/http2/ErrorCode;->$VALUES:[Lokhttp3/internal/http2/ErrorCode;
+    aput-object v1, v0, v11
+
+    sput-object v0, Lokhttp3/internal/http2/ErrorCode;->$VALUES:[Lokhttp3/internal/http2/ErrorCode;
 
     return-void
 .end method
@@ -232,10 +234,10 @@
         }
     .end annotation
 
-    .line 1
+    .line 45
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 2
+    .line 46
     iput p3, p0, Lokhttp3/internal/http2/ErrorCode;->httpCode:I
 
     return-void
@@ -244,7 +246,7 @@
 .method public static fromHttp2(I)Lokhttp3/internal/http2/ErrorCode;
     .locals 5
 
-    .line 1
+    .line 50
     invoke-static {}, Lokhttp3/internal/http2/ErrorCode;->values()[Lokhttp3/internal/http2/ErrorCode;
 
     move-result-object v0
@@ -258,7 +260,7 @@
 
     aget-object v3, v0, v2
 
-    .line 2
+    .line 51
     iget v4, v3, Lokhttp3/internal/http2/ErrorCode;->httpCode:I
 
     if-ne v4, p0, :cond_0
@@ -279,7 +281,7 @@
 .method public static valueOf(Ljava/lang/String;)Lokhttp3/internal/http2/ErrorCode;
     .locals 1
 
-    .line 1
+    .line 19
     const-class v0, Lokhttp3/internal/http2/ErrorCode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -294,7 +296,7 @@
 .method public static values()[Lokhttp3/internal/http2/ErrorCode;
     .locals 1
 
-    .line 1
+    .line 19
     sget-object v0, Lokhttp3/internal/http2/ErrorCode;->$VALUES:[Lokhttp3/internal/http2/ErrorCode;
 
     invoke-virtual {v0}, [Lokhttp3/internal/http2/ErrorCode;->clone()Ljava/lang/Object;

@@ -9,7 +9,7 @@
         value = {
             "Ljava/util/Map<",
             "Ljava/lang/reflect/Type;",
-            "Lhv<",
+            "Lsz<",
             "*>;>;"
         }
     .end annotation
@@ -24,15 +24,15 @@
             "(",
             "Ljava/util/Map<",
             "Ljava/lang/reflect/Type;",
-            "Lhv<",
+            "Lsz<",
             "*>;>;)V"
         }
     .end annotation
 
-    .line 1
+    .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 52
     iput-object p1, p0, Lcom/google/gson/internal/c;->a:Ljava/util/Map;
 
     return-void
@@ -54,15 +54,15 @@
 
     const/4 v0, 0x0
 
+    .line 99
     :try_start_0
     new-array v0, v0, [Ljava/lang/Class;
 
-    .line 11
     invoke-virtual {p1, v0}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
     move-result-object p1
 
-    .line 12
+    .line 100
     invoke-virtual {p1}, Ljava/lang/reflect/Constructor;->isAccessible()Z
 
     move-result v0
@@ -71,14 +71,14 @@
 
     const/4 v0, 0x1
 
-    .line 13
+    .line 101
     invoke-virtual {p1, v0}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
 
-    .line 14
+    .line 103
     :cond_0
-    new-instance v0, Lcom/google/gson/internal/c$h;
+    new-instance v0, Lcom/google/gson/internal/c$8;
 
-    invoke-direct {v0, p0, p1}, Lcom/google/gson/internal/c$h;-><init>(Lcom/google/gson/internal/c;Ljava/lang/reflect/Constructor;)V
+    invoke-direct {v0, p0, p1}, Lcom/google/gson/internal/c$8;-><init>(Lcom/google/gson/internal/c;Ljava/lang/reflect/Constructor;)V
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -105,7 +105,7 @@
         }
     .end annotation
 
-    .line 15
+    .line 134
     const-class v0, Ljava/util/Collection;
 
     invoke-virtual {v0, p2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -114,7 +114,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 16
+    .line 135
     const-class v0, Ljava/util/SortedSet;
 
     invoke-virtual {v0, p2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -123,14 +123,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 17
-    new-instance p1, Lcom/google/gson/internal/c$i;
+    .line 136
+    new-instance p1, Lcom/google/gson/internal/c$9;
 
-    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$i;-><init>(Lcom/google/gson/internal/c;)V
+    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$9;-><init>(Lcom/google/gson/internal/c;)V
 
     return-object p1
 
-    .line 18
+    .line 141
     :cond_0
     const-class v0, Ljava/util/EnumSet;
 
@@ -140,14 +140,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 19
-    new-instance p2, Lcom/google/gson/internal/c$j;
+    .line 142
+    new-instance p2, Lcom/google/gson/internal/c$10;
 
-    invoke-direct {p2, p0, p1}, Lcom/google/gson/internal/c$j;-><init>(Lcom/google/gson/internal/c;Ljava/lang/reflect/Type;)V
+    invoke-direct {p2, p0, p1}, Lcom/google/gson/internal/c$10;-><init>(Lcom/google/gson/internal/c;Ljava/lang/reflect/Type;)V
 
     return-object p2
 
-    .line 20
+    .line 157
     :cond_1
     const-class p1, Ljava/util/Set;
 
@@ -157,14 +157,14 @@
 
     if-eqz p1, :cond_2
 
-    .line 21
-    new-instance p1, Lcom/google/gson/internal/c$k;
+    .line 158
+    new-instance p1, Lcom/google/gson/internal/c$11;
 
-    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$k;-><init>(Lcom/google/gson/internal/c;)V
+    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$11;-><init>(Lcom/google/gson/internal/c;)V
 
     return-object p1
 
-    .line 22
+    .line 163
     :cond_2
     const-class p1, Ljava/util/Queue;
 
@@ -174,22 +174,22 @@
 
     if-eqz p1, :cond_3
 
-    .line 23
-    new-instance p1, Lcom/google/gson/internal/c$l;
+    .line 164
+    new-instance p1, Lcom/google/gson/internal/c$12;
 
-    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$l;-><init>(Lcom/google/gson/internal/c;)V
+    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$12;-><init>(Lcom/google/gson/internal/c;)V
 
     return-object p1
 
-    .line 24
+    .line 170
     :cond_3
-    new-instance p1, Lcom/google/gson/internal/c$m;
+    new-instance p1, Lcom/google/gson/internal/c$13;
 
-    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$m;-><init>(Lcom/google/gson/internal/c;)V
+    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$13;-><init>(Lcom/google/gson/internal/c;)V
 
     return-object p1
 
-    .line 25
+    .line 178
     :cond_4
     const-class v0, Ljava/util/Map;
 
@@ -199,7 +199,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 26
+    .line 179
     const-class v0, Ljava/util/concurrent/ConcurrentNavigableMap;
 
     invoke-virtual {v0, p2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -208,14 +208,14 @@
 
     if-eqz v0, :cond_5
 
-    .line 27
-    new-instance p1, Lcom/google/gson/internal/c$n;
+    .line 180
+    new-instance p1, Lcom/google/gson/internal/c$14;
 
-    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$n;-><init>(Lcom/google/gson/internal/c;)V
+    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$14;-><init>(Lcom/google/gson/internal/c;)V
 
     return-object p1
 
-    .line 28
+    .line 185
     :cond_5
     const-class v0, Ljava/util/concurrent/ConcurrentMap;
 
@@ -225,14 +225,14 @@
 
     if-eqz v0, :cond_6
 
-    .line 29
-    new-instance p1, Lcom/google/gson/internal/c$a;
+    .line 186
+    new-instance p1, Lcom/google/gson/internal/c$2;
 
-    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$a;-><init>(Lcom/google/gson/internal/c;)V
+    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$2;-><init>(Lcom/google/gson/internal/c;)V
 
     return-object p1
 
-    .line 30
+    .line 191
     :cond_6
     const-class v0, Ljava/util/SortedMap;
 
@@ -242,14 +242,14 @@
 
     if-eqz p2, :cond_7
 
-    .line 31
-    new-instance p1, Lcom/google/gson/internal/c$b;
+    .line 192
+    new-instance p1, Lcom/google/gson/internal/c$3;
 
-    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$b;-><init>(Lcom/google/gson/internal/c;)V
+    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$3;-><init>(Lcom/google/gson/internal/c;)V
 
     return-object p1
 
-    .line 32
+    .line 197
     :cond_7
     instance-of p2, p1, Ljava/lang/reflect/ParameterizedType;
 
@@ -259,7 +259,7 @@
 
     check-cast p1, Ljava/lang/reflect/ParameterizedType;
 
-    .line 33
+    .line 198
     invoke-interface {p1}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
 
     move-result-object p1
@@ -268,33 +268,33 @@
 
     aget-object p1, p1, v0
 
-    invoke-static {p1}, Ldw;->a(Ljava/lang/reflect/Type;)Ldw;
+    invoke-static {p1}, Ltv;->a(Ljava/lang/reflect/Type;)Ltv;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Ldw;->a()Ljava/lang/Class;
+    invoke-virtual {p1}, Ltv;->a()Ljava/lang/Class;
 
     move-result-object p1
 
-    .line 34
+    .line 197
     invoke-virtual {p2, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result p1
 
     if-nez p1, :cond_8
 
-    .line 35
-    new-instance p1, Lcom/google/gson/internal/c$c;
+    .line 199
+    new-instance p1, Lcom/google/gson/internal/c$4;
 
-    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$c;-><init>(Lcom/google/gson/internal/c;)V
+    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$4;-><init>(Lcom/google/gson/internal/c;)V
 
     return-object p1
 
-    .line 36
+    .line 205
     :cond_8
-    new-instance p1, Lcom/google/gson/internal/c$d;
+    new-instance p1, Lcom/google/gson/internal/c$5;
 
-    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$d;-><init>(Lcom/google/gson/internal/c;)V
+    invoke-direct {p1, p0}, Lcom/google/gson/internal/c$5;-><init>(Lcom/google/gson/internal/c;)V
 
     return-object p1
 
@@ -319,79 +319,79 @@
         }
     .end annotation
 
-    .line 1
-    new-instance v0, Lcom/google/gson/internal/c$e;
+    .line 218
+    new-instance v0, Lcom/google/gson/internal/c$6;
 
-    invoke-direct {v0, p0, p2, p1}, Lcom/google/gson/internal/c$e;-><init>(Lcom/google/gson/internal/c;Ljava/lang/Class;Ljava/lang/reflect/Type;)V
+    invoke-direct {v0, p0, p2, p1}, Lcom/google/gson/internal/c$6;-><init>(Lcom/google/gson/internal/c;Ljava/lang/Class;Ljava/lang/reflect/Type;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public a(Ldw;)Lcom/google/gson/internal/g;
+.method public a(Ltv;)Lcom/google/gson/internal/g;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Ldw<",
+            "Ltv<",
             "TT;>;)",
             "Lcom/google/gson/internal/g<",
             "TT;>;"
         }
     .end annotation
 
-    .line 1
-    invoke-virtual {p1}, Ldw;->b()Ljava/lang/reflect/Type;
+    .line 56
+    invoke-virtual {p1}, Ltv;->b()Ljava/lang/reflect/Type;
 
     move-result-object v0
 
-    .line 2
-    invoke-virtual {p1}, Ldw;->a()Ljava/lang/Class;
+    .line 57
+    invoke-virtual {p1}, Ltv;->a()Ljava/lang/Class;
 
     move-result-object p1
 
-    .line 3
+    .line 62
     iget-object v1, p0, Lcom/google/gson/internal/c;->a:Ljava/util/Map;
 
     invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lhv;
+    check-cast v1, Lsz;
 
     if-eqz v1, :cond_0
 
-    .line 4
-    new-instance p1, Lcom/google/gson/internal/c$f;
+    .line 64
+    new-instance p1, Lcom/google/gson/internal/c$1;
 
-    invoke-direct {p1, p0, v1, v0}, Lcom/google/gson/internal/c$f;-><init>(Lcom/google/gson/internal/c;Lhv;Ljava/lang/reflect/Type;)V
+    invoke-direct {p1, p0, v1, v0}, Lcom/google/gson/internal/c$1;-><init>(Lcom/google/gson/internal/c;Lsz;Ljava/lang/reflect/Type;)V
 
     return-object p1
 
-    .line 5
+    .line 73
     :cond_0
     iget-object v1, p0, Lcom/google/gson/internal/c;->a:Ljava/util/Map;
 
-    .line 6
+    .line 74
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lhv;
+    check-cast v1, Lsz;
 
     if-eqz v1, :cond_1
 
-    .line 7
-    new-instance p1, Lcom/google/gson/internal/c$g;
+    .line 76
+    new-instance p1, Lcom/google/gson/internal/c$7;
 
-    invoke-direct {p1, p0, v1, v0}, Lcom/google/gson/internal/c$g;-><init>(Lcom/google/gson/internal/c;Lhv;Ljava/lang/reflect/Type;)V
+    invoke-direct {p1, p0, v1, v0}, Lcom/google/gson/internal/c$7;-><init>(Lcom/google/gson/internal/c;Lsz;Ljava/lang/reflect/Type;)V
 
     return-object p1
 
-    .line 8
+    .line 83
     :cond_1
     invoke-direct {p0, p1}, Lcom/google/gson/internal/c;->a(Ljava/lang/Class;)Lcom/google/gson/internal/g;
 
@@ -401,7 +401,7 @@
 
     return-object v1
 
-    .line 9
+    .line 88
     :cond_2
     invoke-direct {p0, v0, p1}, Lcom/google/gson/internal/c;->a(Ljava/lang/reflect/Type;Ljava/lang/Class;)Lcom/google/gson/internal/g;
 
@@ -411,7 +411,7 @@
 
     return-object v1
 
-    .line 10
+    .line 94
     :cond_3
     invoke-direct {p0, v0, p1}, Lcom/google/gson/internal/c;->b(Ljava/lang/reflect/Type;Ljava/lang/Class;)Lcom/google/gson/internal/g;
 
@@ -423,7 +423,7 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 1
+    .line 234
     iget-object v0, p0, Lcom/google/gson/internal/c;->a:Ljava/util/Map;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;

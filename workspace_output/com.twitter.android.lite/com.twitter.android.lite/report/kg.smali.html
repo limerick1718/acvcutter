@@ -14,62 +14,69 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final Lkg;
+		<code>.class public final Lkg;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Ljava/security/PrivilegedExceptionAction;
-
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/Object;",
-"Ljava/security/PrivilegedExceptionAction<",
-"Lsun/misc/Unsafe;",
-">;"
-}
-.end annotation
 
 
+.field public static final a:[I
+.field public static final b:[J
+.field public static final c:[Ljava/lang/String;
+.field public static final d:[B
+.field private static final e:I = 0xb
+.field private static final f:I = 0xc
+.field private static final g:I = 0x10
+.field private static final h:I = 0x1a
+.field private static final i:[F
+.field private static final j:[D
+.field private static final k:[Z
+.field private static final l:[[B
 
-.method constructor &lt;init&gt;()V
-<span class="">	.locals 0</span>
 
-<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 2</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	new-array v1, v0, [I</span>
+<span class="missed">	sput-object v1, Lkg;->a:[I</span>
+<span class="missed">	new-array v1, v0, [J</span>
+<span class="missed">	sput-object v1, Lkg;->b:[J</span>
+<span class="missed">	new-array v1, v0, [F</span>
+<span class="missed">	sput-object v1, Lkg;->i:[F</span>
+<span class="missed">	new-array v1, v0, [D</span>
+<span class="missed">	sput-object v1, Lkg;->j:[D</span>
+<span class="missed">	new-array v1, v0, [Z</span>
+<span class="missed">	sput-object v1, Lkg;->k:[Z</span>
+<span class="missed">	new-array v1, v0, [Ljava/lang/String;</span>
+<span class="missed">	sput-object v1, Lkg;->c:[Ljava/lang/String;</span>
+<span class="missed">	new-array v1, v0, [[B</span>
+<span class="missed">	sput-object v1, Lkg;->l:[[B</span>
+<span class="missed">	new-array v0, v0, [B</span>
+<span class="missed">	sput-object v0, Lkg;->d:[B</span>
 <span class="">	return-void</span>
 .end method
 
-.method public final synthetic run()Ljava/lang/Object;
-<span class="">	.locals 7</span>
+.method public static final a(Lju;I)I
+<span class="">	.locals 3</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
-<span class="">	Ljava/lang/Exception;</span>
+<span class="">	Ljava/io/IOException;</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	const-class v0, Lsun/misc/Unsafe;</span>
-<span class="">	invoke-virtual {v0}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;</span>
-<span class="missed">	move-result-object v1</span>
-<span class="missed">	array-length v2, v1</span>
-<span class="missed">	const/4 v3, 0x0</span>
+<span class="">	invoke-virtual {p0}, Lju;->i()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lju;->b(I)Z</span>
+<span class="missed">	const/4 v1, 0x1</span>
 <span class="">	:goto_0</span>
-<span class="missed">	const/4 v4, 0x0</span>
-<span class="missed">	if-ge v3, v2, :cond_1</span>
-<span class="missed">	aget-object v5, v1, v3</span>
-<span class="missed">	const/4 v6, 0x1</span>
-<span class="missed">	invoke-virtual {v5, v6}, Ljava/lang/reflect/Field;->setAccessible(Z)V</span>
-<span class="">	invoke-virtual {v5, v4}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v4</span>
-<span class="">	invoke-virtual {v0, v4}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result v5</span>
-<span class="missed">	if-eqz v5, :cond_0</span>
-<span class="">	invoke-virtual {v0, v4}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Lsun/misc/Unsafe;</span>
-<span class="">	return-object v0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	add-int/lit8 v3, v3, 0x1</span>
+<span class="">	invoke-virtual {p0}, Lju;->a()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-ne v2, p1, :cond_0</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lju;->b(I)Z</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
 <span class="">	goto :goto_0</span>
-<span class="">	:cond_1</span>
-<span class="">	return-object v4</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-virtual {p0, v0, p1}, Lju;->b(II)V</span>
+<span class="">	return v1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

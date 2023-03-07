@@ -16,8 +16,7 @@
 	<pre class="source lang-smali" id='source'>
 		<code>.class public Lcom/google/firebase/analytics/connector/internal/AnalyticsConnectorRegistrar;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-api@@17.4.0"
-.implements Lcom/google/firebase/components/h;
+.implements Lcom/google/firebase/components/d;
 
 .annotation build Landroidx/annotation/Keep;
 .end annotation
@@ -32,12 +31,12 @@
 .end method
 
 <span class="cov">.method public getComponents()Ljava/util/List;</span>
-<span class="">	.locals 3</span>
+<span class="">	.locals 2</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
 <span class="">	"()",</span>
 <span class="">	"Ljava/util/List<",</span>
-<span class="">	"Lcom/google/firebase/components/d<",</span>
+<span class="">	"Lcom/google/firebase/components/a<",</span>
 <span class="">	"*>;>;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
@@ -49,37 +48,32 @@
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	const/4 v0, 0x2</span>
-<span class="cov">	new-array v0, v0, [Lcom/google/firebase/components/d;</span>
-<span class="cov">	const-class v1, Lho;</span>
-<span class="exec">	invoke-static {v1}, Lcom/google/firebase/components/d;->a(Ljava/lang/Class;)Lcom/google/firebase/components/d$b;</span>
+<span class="cov">	const-class v0, Lsh;</span>
+<span class="exec">	invoke-static {v0}, Lcom/google/firebase/components/a;->a(Ljava/lang/Class;)Lcom/google/firebase/components/a$a;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-class v1, Lcom/google/firebase/FirebaseApp;</span>
+<span class="exec">	invoke-static {v1}, Lcom/google/firebase/components/e;->a(Ljava/lang/Class;)Lcom/google/firebase/components/e;</span>
 <span class="cov">	move-result-object v1</span>
-<span class="cov">	const-class v2, Lfo;</span>
-<span class="exec">	invoke-static {v2}, Lcom/google/firebase/components/n;->b(Ljava/lang/Class;)Lcom/google/firebase/components/n;</span>
-<span class="cov">	move-result-object v2</span>
-<span class="cov">	invoke-virtual {v1, v2}, Lcom/google/firebase/components/d$b;->a(Lcom/google/firebase/components/n;)Lcom/google/firebase/components/d$b;</span>
-<span class="cov">	const-class v2, Landroid/content/Context;</span>
-<span class="exec">	invoke-static {v2}, Lcom/google/firebase/components/n;->b(Ljava/lang/Class;)Lcom/google/firebase/components/n;</span>
-<span class="cov">	move-result-object v2</span>
-<span class="cov">	invoke-virtual {v1, v2}, Lcom/google/firebase/components/d$b;->a(Lcom/google/firebase/components/n;)Lcom/google/firebase/components/d$b;</span>
-<span class="cov">	const-class v2, Lku;</span>
-<span class="exec">	invoke-static {v2}, Lcom/google/firebase/components/n;->b(Ljava/lang/Class;)Lcom/google/firebase/components/n;</span>
-<span class="cov">	move-result-object v2</span>
-<span class="cov">	invoke-virtual {v1, v2}, Lcom/google/firebase/components/d$b;->a(Lcom/google/firebase/components/n;)Lcom/google/firebase/components/d$b;</span>
-<span class="cov">	sget-object v2, Lcom/google/firebase/analytics/connector/internal/b;->a:Lcom/google/firebase/components/g;</span>
-<span class="cov">	invoke-virtual {v1, v2}, Lcom/google/firebase/components/d$b;->a(Lcom/google/firebase/components/g;)Lcom/google/firebase/components/d$b;</span>
-<span class="cov">	invoke-virtual {v1}, Lcom/google/firebase/components/d$b;->c()Lcom/google/firebase/components/d$b;</span>
-<span class="exec">	invoke-virtual {v1}, Lcom/google/firebase/components/d$b;->b()Lcom/google/firebase/components/d;</span>
+<span class="exec">	invoke-virtual {v0, v1}, Lcom/google/firebase/components/a$a;->a(Lcom/google/firebase/components/e;)Lcom/google/firebase/components/a$a;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-class v1, Landroid/content/Context;</span>
+<span class="exec">	invoke-static {v1}, Lcom/google/firebase/components/e;->a(Ljava/lang/Class;)Lcom/google/firebase/components/e;</span>
 <span class="cov">	move-result-object v1</span>
-<span class="cov">	const/4 v2, 0x0</span>
-<span class="cov">	aput-object v1, v0, v2</span>
-<span class="cov">	const-string v1, "fire-analytics"</span>
-<span class="cov">	const-string v2, "17.4.0"</span>
-<span class="exec">	invoke-static {v1, v2}, Lyu;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/google/firebase/components/d;</span>
+<span class="exec">	invoke-virtual {v0, v1}, Lcom/google/firebase/components/a$a;->a(Lcom/google/firebase/components/e;)Lcom/google/firebase/components/a$a;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const-class v1, Lso;</span>
+<span class="exec">	invoke-static {v1}, Lcom/google/firebase/components/e;->a(Ljava/lang/Class;)Lcom/google/firebase/components/e;</span>
 <span class="cov">	move-result-object v1</span>
-<span class="cov">	const/4 v2, 0x1</span>
-<span class="cov">	aput-object v1, v0, v2</span>
-<span class="exec">	invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;</span>
+<span class="exec">	invoke-virtual {v0, v1}, Lcom/google/firebase/components/a$a;->a(Lcom/google/firebase/components/e;)Lcom/google/firebase/components/a$a;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sget-object v1, Lcom/google/firebase/analytics/connector/internal/a;->a:Lcom/google/firebase/components/c;</span>
+<span class="exec">	invoke-virtual {v0, v1}, Lcom/google/firebase/components/a$a;->a(Lcom/google/firebase/components/c;)Lcom/google/firebase/components/a$a;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v0}, Lcom/google/firebase/components/a$a;->b()Lcom/google/firebase/components/a$a;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {v0}, Lcom/google/firebase/components/a$a;->c()Lcom/google/firebase/components/a;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;</span>
 <span class="cov">	move-result-object v0</span>
 <span class="exec">	return-object v0</span>
 .end method</code>

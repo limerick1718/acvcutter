@@ -1,9 +1,8 @@
 .class public final Lcom/google/firebase/iid/Registrar;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-iid@@20.0.0"
 
 # interfaces
-.implements Lcom/google/firebase/components/h;
+.implements Lcom/google/firebase/components/d;
 
 
 # annotations
@@ -30,7 +29,7 @@
 
 # virtual methods
 .method public final getComponents()Ljava/util/List;
-    .locals 5
+    .locals 4
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
@@ -38,111 +37,103 @@
         value = {
             "()",
             "Ljava/util/List<",
-            "Lcom/google/firebase/components/d<",
+            "Lcom/google/firebase/components/a<",
             "*>;>;"
         }
     .end annotation
 
-    .line 1
+    .line 2
     const-class v0, Lcom/google/firebase/iid/FirebaseInstanceId;
 
-    .line 2
-    invoke-static {v0}, Lcom/google/firebase/components/d;->a(Ljava/lang/Class;)Lcom/google/firebase/components/d$b;
-
-    move-result-object v1
-
-    const-class v2, Lfo;
-
     .line 3
-    invoke-static {v2}, Lcom/google/firebase/components/n;->b(Ljava/lang/Class;)Lcom/google/firebase/components/n;
+    invoke-static {v0}, Lcom/google/firebase/components/a;->a(Ljava/lang/Class;)Lcom/google/firebase/components/a$a;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Lcom/google/firebase/components/d$b;->a(Lcom/google/firebase/components/n;)Lcom/google/firebase/components/d$b;
-
-    const-class v2, Lku;
+    const-class v1, Lcom/google/firebase/FirebaseApp;
 
     .line 4
-    invoke-static {v2}, Lcom/google/firebase/components/n;->b(Ljava/lang/Class;)Lcom/google/firebase/components/n;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/google/firebase/components/d$b;->a(Lcom/google/firebase/components/n;)Lcom/google/firebase/components/d$b;
-
-    const-class v2, Lzu;
-
-    .line 5
-    invoke-static {v2}, Lcom/google/firebase/components/n;->b(Ljava/lang/Class;)Lcom/google/firebase/components/n;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/google/firebase/components/d$b;->a(Lcom/google/firebase/components/n;)Lcom/google/firebase/components/d$b;
-
-    sget-object v2, Lcom/google/firebase/iid/m;->a:Lcom/google/firebase/components/g;
-
-    .line 6
-    invoke-virtual {v1, v2}, Lcom/google/firebase/components/d$b;->a(Lcom/google/firebase/components/g;)Lcom/google/firebase/components/d$b;
-
-    .line 7
-    invoke-virtual {v1}, Lcom/google/firebase/components/d$b;->a()Lcom/google/firebase/components/d$b;
-
-    .line 8
-    invoke-virtual {v1}, Lcom/google/firebase/components/d$b;->b()Lcom/google/firebase/components/d;
+    invoke-static {v1}, Lcom/google/firebase/components/e;->a(Ljava/lang/Class;)Lcom/google/firebase/components/e;
 
     move-result-object v1
 
+    invoke-virtual {v0, v1}, Lcom/google/firebase/components/a$a;->a(Lcom/google/firebase/components/e;)Lcom/google/firebase/components/a$a;
+
+    move-result-object v0
+
+    const-class v1, Lso;
+
+    .line 5
+    invoke-static {v1}, Lcom/google/firebase/components/e;->a(Ljava/lang/Class;)Lcom/google/firebase/components/e;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/firebase/components/a$a;->a(Lcom/google/firebase/components/e;)Lcom/google/firebase/components/a$a;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/google/firebase/iid/r;->a:Lcom/google/firebase/components/c;
+
+    .line 6
+    invoke-virtual {v0, v1}, Lcom/google/firebase/components/a$a;->a(Lcom/google/firebase/components/c;)Lcom/google/firebase/components/a$a;
+
+    move-result-object v0
+
+    .line 7
+    invoke-virtual {v0}, Lcom/google/firebase/components/a$a;->a()Lcom/google/firebase/components/a$a;
+
+    move-result-object v0
+
+    .line 8
+    invoke-virtual {v0}, Lcom/google/firebase/components/a$a;->c()Lcom/google/firebase/components/a;
+
+    move-result-object v0
+
     .line 9
-    const-class v2, Lpu;
+    const-class v1, Lsp;
 
     .line 10
-    invoke-static {v2}, Lcom/google/firebase/components/d;->a(Ljava/lang/Class;)Lcom/google/firebase/components/d$b;
+    invoke-static {v1}, Lcom/google/firebase/components/a;->a(Ljava/lang/Class;)Lcom/google/firebase/components/a$a;
 
-    move-result-object v2
+    move-result-object v1
+
+    const-class v2, Lcom/google/firebase/iid/FirebaseInstanceId;
 
     .line 11
-    invoke-static {v0}, Lcom/google/firebase/components/n;->b(Ljava/lang/Class;)Lcom/google/firebase/components/n;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Lcom/google/firebase/components/d$b;->a(Lcom/google/firebase/components/n;)Lcom/google/firebase/components/d$b;
-
-    sget-object v0, Lcom/google/firebase/iid/n;->a:Lcom/google/firebase/components/g;
-
-    .line 12
-    invoke-virtual {v2, v0}, Lcom/google/firebase/components/d$b;->a(Lcom/google/firebase/components/g;)Lcom/google/firebase/components/d$b;
-
-    .line 13
-    invoke-virtual {v2}, Lcom/google/firebase/components/d$b;->b()Lcom/google/firebase/components/d;
-
-    move-result-object v0
-
-    const-string v2, "fire-iid"
-
-    const-string v3, "20.0.0"
-
-    .line 14
-    invoke-static {v2, v3}, Lyu;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/google/firebase/components/d;
+    invoke-static {v2}, Lcom/google/firebase/components/e;->a(Ljava/lang/Class;)Lcom/google/firebase/components/e;
 
     move-result-object v2
 
-    const/4 v3, 0x3
+    invoke-virtual {v1, v2}, Lcom/google/firebase/components/a$a;->a(Lcom/google/firebase/components/e;)Lcom/google/firebase/components/a$a;
 
-    new-array v3, v3, [Lcom/google/firebase/components/d;
+    move-result-object v1
 
-    const/4 v4, 0x0
+    sget-object v2, Lcom/google/firebase/iid/s;->a:Lcom/google/firebase/components/c;
 
-    aput-object v1, v3, v4
+    .line 12
+    invoke-virtual {v1, v2}, Lcom/google/firebase/components/a$a;->a(Lcom/google/firebase/components/c;)Lcom/google/firebase/components/a$a;
 
-    const/4 v1, 0x1
+    move-result-object v1
 
-    aput-object v0, v3, v1
+    .line 13
+    invoke-virtual {v1}, Lcom/google/firebase/components/a$a;->c()Lcom/google/firebase/components/a;
 
-    const/4 v0, 0x2
+    move-result-object v1
 
-    aput-object v2, v3, v0
+    const/4 v2, 0x2
 
-    .line 15
-    invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    .line 14
+    new-array v2, v2, [Lcom/google/firebase/components/a;
+
+    const/4 v3, 0x0
+
+    aput-object v0, v2, v3
+
+    const/4 v0, 0x1
+
+    aput-object v1, v2, v0
+
+    invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 

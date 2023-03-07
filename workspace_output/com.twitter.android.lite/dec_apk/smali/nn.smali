@@ -1,32 +1,40 @@
 .class final Lnn;
 .super Ljava/lang/Object;
 .implements Ljava/lang/Runnable;
-.field private final synthetic a:Lgn;
-.field private final synthetic b:Lmn;
-.method constructor <init>(Lmn;Lgn;)V
+.field private final synthetic a:Ljava/lang/String;
+.field private final synthetic b:Ljava/lang/String;
+.field private final synthetic c:J
+.field private final synthetic d:Landroid/os/Bundle;
+.field private final synthetic e:Z
+.field private final synthetic f:Z
+.field private final synthetic g:Z
+.field private final synthetic h:Ljava/lang/String;
+.field private final synthetic i:Lnl;
+.method constructor <init>(Lnl;Ljava/lang/String;Ljava/lang/String;JLandroid/os/Bundle;ZZZLjava/lang/String;)V
 .locals 0
-iput-object p1, p0, Lnn;->b:Lmn;
-iput-object p2, p0, Lnn;->a:Lgn;
+iput-object p1, p0, Lnn;->i:Lnl;
+iput-object p2, p0, Lnn;->a:Ljava/lang/String;
+iput-object p3, p0, Lnn;->b:Ljava/lang/String;
+iput-wide p4, p0, Lnn;->c:J
+iput-object p6, p0, Lnn;->d:Landroid/os/Bundle;
+iput-boolean p7, p0, Lnn;->e:Z
+iput-boolean p8, p0, Lnn;->f:Z
+iput-boolean p9, p0, Lnn;->g:Z
+iput-object p10, p0, Lnn;->h:Ljava/lang/String;
 invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public final run()V
-.locals 3
-iget-object v0, p0, Lnn;->b:Lmn;
-invoke-static {v0}, Lmn;->a(Lmn;)Lzm;
-move-result-object v0
-iget-object v1, p0, Lnn;->a:Lgn;
-invoke-interface {v0, v1}, Lzm;->a(Lgn;)Ljava/lang/Object;
-move-result-object v0
-check-cast v0, Lgn;
-sget-object v1, Lin;->b:Ljava/util/concurrent/Executor;
-iget-object v2, p0, Lnn;->b:Lmn;
-invoke-virtual {v0, v1, v2}, Lgn;->a(Ljava/util/concurrent/Executor;Ldn;)Lgn;
-sget-object v1, Lin;->b:Ljava/util/concurrent/Executor;
-iget-object v2, p0, Lnn;->b:Lmn;
-invoke-virtual {v0, v1, v2}, Lgn;->a(Ljava/util/concurrent/Executor;Lcn;)Lgn;
-sget-object v1, Lin;->b:Ljava/util/concurrent/Executor;
-iget-object v2, p0, Lnn;->b:Lmn;
-invoke-virtual {v0, v1, v2}, Lgn;->a(Ljava/util/concurrent/Executor;Lan;)Lgn;
+.locals 10
+iget-object v0, p0, Lnn;->i:Lnl;
+iget-object v1, p0, Lnn;->a:Ljava/lang/String;
+iget-object v2, p0, Lnn;->b:Ljava/lang/String;
+iget-wide v3, p0, Lnn;->c:J
+iget-object v5, p0, Lnn;->d:Landroid/os/Bundle;
+iget-boolean v6, p0, Lnn;->e:Z
+iget-boolean v7, p0, Lnn;->f:Z
+iget-boolean v8, p0, Lnn;->g:Z
+iget-object v9, p0, Lnn;->h:Ljava/lang/String;
+invoke-static/range {v0 .. v9}, Lnl;->a(Lnl;Ljava/lang/String;Ljava/lang/String;JLandroid/os/Bundle;ZZZLjava/lang/String;)V
 return-void
 .end method

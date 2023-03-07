@@ -14,20 +14,16 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public Lsw;
+		<code>.class public interface abstract Lsw;
 .super Ljava/lang/Object;
-.source "LogUtils.java"
+.source "FieldNamingStrategy.java"
 
 
 
 
-.method public static a(Ljava/lang/Throwable;)V
-<span class="">	.locals 1</span>
+.method public abstract a(Ljava/lang/reflect/Field;)Ljava/lang/String;
+<span class="">	</span>
 
-<span class="">	invoke-static {}, Lcom/google/firebase/crashlytics/b;->a()Lcom/google/firebase/crashlytics/b;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	invoke-virtual {v0, p0}, Lcom/google/firebase/crashlytics/b;->a(Ljava/lang/Throwable;)V</span>
-<span class="">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

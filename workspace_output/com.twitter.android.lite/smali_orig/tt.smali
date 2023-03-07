@@ -1,8 +1,27 @@
-.class public interface abstract Ltt;
+.class public interface abstract annotation Ltt;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.source "Until.java"
+
+# interfaces
+.implements Ljava/lang/annotation/Annotation;
+
+
+# annotations
+.annotation runtime Ljava/lang/annotation/Documented;
+.end annotation
+
+.annotation runtime Ljava/lang/annotation/Retention;
+    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
+.end annotation
+
+.annotation runtime Ljava/lang/annotation/Target;
+    value = {
+        .enum Ljava/lang/annotation/ElementType;->FIELD:Ljava/lang/annotation/ElementType;,
+        .enum Ljava/lang/annotation/ElementType;->TYPE:Ljava/lang/annotation/ElementType;
+    }
+.end annotation
 
 
 # virtual methods
-.method public abstract a()Ljava/lang/String;
+.method public abstract a()D
 .end method

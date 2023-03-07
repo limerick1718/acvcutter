@@ -1,98 +1,125 @@
-.class Lpp;
+.class final Lpp;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/concurrent/Callable<",
+        "Ljava/lang/String;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field private a:Ljava/lang/String;
+.field private final synthetic a:Lpz;
+
+.field private final synthetic b:Lpl;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lpl;Lpz;)V
     .locals 0
 
     .line 1
+    iput-object p1, p0, Lpp;->b:Lpl;
+
+    iput-object p2, p0, Lpp;->a:Lpz;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private static b(Landroid/content/Context;)Ljava/lang/String;
-    .locals 1
 
-    .line 1
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+# virtual methods
+.method public final synthetic call()Ljava/lang/Object;
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .line 3
+    iget-object v0, p0, Lpp;->b:Lpl;
+
+    invoke-virtual {v0}, Lpl;->b()Lqf;
 
     move-result-object v0
 
-    .line 2
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    iget-object v1, p0, Lpp;->a:Lpz;
 
-    move-result-object p0
+    iget-object v1, v1, Lpz;->a:Ljava/lang/String;
 
-    .line 3
-    invoke-virtual {v0, p0}, Landroid/content/pm/PackageManager;->getInstallerPackageName(Ljava/lang/String;)Ljava/lang/String;
+    .line 4
+    invoke-virtual {v0, v1}, Lqf;->j(Ljava/lang/String;)Z
 
-    move-result-object p0
+    move-result v0
 
-    if-nez p0, :cond_0
+    if-eqz v0, :cond_0
 
-    const-string p0, ""
+    .line 5
+    iget-object v0, p0, Lpp;->b:Lpl;
 
-    :cond_0
-    return-object p0
-.end method
+    iget-object v1, p0, Lpp;->a:Lpz;
 
+    invoke-static {v0, v1}, Lpl;->a(Lpl;Lpz;)Lpx;
 
-# virtual methods
-.method declared-synchronized a(Landroid/content/Context;)Ljava/lang/String;
-    .locals 1
-
-    monitor-enter p0
-
-    .line 1
-    :try_start_0
-    iget-object v0, p0, Lpp;->a:Ljava/lang/String;
-
-    if-nez v0, :cond_0
-
-    .line 2
-    invoke-static {p1}, Lpp;->b(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lpp;->a:Ljava/lang/String;
-
-    :cond_0
-    const-string p1, ""
-
-    .line 3
-    iget-object v0, p0, Lpp;->a:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    const/4 p1, 0x0
+    move-result-object v0
 
     goto :goto_0
 
-    :cond_1
-    iget-object p1, p0, Lpp;->a:Ljava/lang/String;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .line 6
+    :cond_0
+    iget-object v0, p0, Lpp;->b:Lpl;
+
+    invoke-virtual {v0}, Lpl;->d()Lqi;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lpp;->a:Lpz;
+
+    iget-object v1, v1, Lpz;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lqi;->b(Ljava/lang/String;)Lpx;
+
+    move-result-object v0
 
     :goto_0
-    monitor-exit p0
+    if-nez v0, :cond_1
 
-    return-object p1
+    .line 8
+    iget-object v0, p0, Lpp;->b:Lpl;
 
-    :catchall_0
-    move-exception p1
+    invoke-virtual {v0}, Lpl;->r()Lla;
 
-    monitor-exit p0
+    move-result-object v0
 
-    throw p1
+    .line 9
+    invoke-virtual {v0}, Lla;->i()Llc;
+
+    move-result-object v0
+
+    const-string v1, "App info was null when attempting to get app instance id"
+
+    .line 10
+    invoke-virtual {v0, v1}, Llc;->a(Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    .line 12
+    :cond_1
+    invoke-virtual {v0}, Lpx;->c()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

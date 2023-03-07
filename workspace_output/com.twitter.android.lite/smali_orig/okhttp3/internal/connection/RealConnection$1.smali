@@ -21,15 +21,15 @@
 
 
 # direct methods
-.method constructor <init>(Lokhttp3/internal/connection/RealConnection;ZLgx;Lfx;Lokhttp3/internal/connection/Exchange;)V
+.method constructor <init>(Lokhttp3/internal/connection/RealConnection;ZLyu;Lyt;Lokhttp3/internal/connection/Exchange;)V
     .locals 0
 
-    .line 1
+    .line 564
     iput-object p1, p0, Lokhttp3/internal/connection/RealConnection$1;->this$0:Lokhttp3/internal/connection/RealConnection;
 
     iput-object p5, p0, Lokhttp3/internal/connection/RealConnection$1;->val$exchange:Lokhttp3/internal/connection/Exchange;
 
-    invoke-direct {p0, p2, p3, p4}, Lokhttp3/internal/ws/RealWebSocket$Streams;-><init>(ZLgx;Lfx;)V
+    invoke-direct {p0, p2, p3, p4}, Lokhttp3/internal/ws/RealWebSocket$Streams;-><init>(ZLyu;Lyt;)V
 
     return-void
 .end method
@@ -44,7 +44,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 566
     iget-object v0, p0, Lokhttp3/internal/connection/RealConnection$1;->val$exchange:Lokhttp3/internal/connection/Exchange;
 
     const-wide/16 v1, -0x1

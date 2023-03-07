@@ -44,7 +44,7 @@ value = {
 
 
 .method static constructor &lt;clinit&gt;()V
-<span class="">	.locals 10</span>
+<span class="">	.locals 9</span>
 
 <span class="missed">	new-instance v0, Landroidx/lifecycle/e$a;</span>
 <span class="missed">	const/4 v1, 0x0</span>
@@ -81,22 +81,23 @@ value = {
 <span class="missed">	const-string v8, "ON_ANY"</span>
 <span class="missed">	invoke-direct {v0, v8, v7}, Landroidx/lifecycle/e$a;-><init>(Ljava/lang/String;I)V</span>
 <span class="missed">	sput-object v0, Landroidx/lifecycle/e$a;->ON_ANY:Landroidx/lifecycle/e$a;</span>
-<span class="missed">	const/4 v8, 0x7</span>
-<span class="missed">	new-array v8, v8, [Landroidx/lifecycle/e$a;</span>
-<span class="missed">	sget-object v9, Landroidx/lifecycle/e$a;->ON_CREATE:Landroidx/lifecycle/e$a;</span>
-<span class="missed">	aput-object v9, v8, v1</span>
+<span class="missed">	const/4 v0, 0x7</span>
+<span class="missed">	new-array v0, v0, [Landroidx/lifecycle/e$a;</span>
+<span class="missed">	sget-object v8, Landroidx/lifecycle/e$a;->ON_CREATE:Landroidx/lifecycle/e$a;</span>
+<span class="missed">	aput-object v8, v0, v1</span>
 <span class="missed">	sget-object v1, Landroidx/lifecycle/e$a;->ON_START:Landroidx/lifecycle/e$a;</span>
-<span class="missed">	aput-object v1, v8, v2</span>
+<span class="missed">	aput-object v1, v0, v2</span>
 <span class="missed">	sget-object v1, Landroidx/lifecycle/e$a;->ON_RESUME:Landroidx/lifecycle/e$a;</span>
-<span class="missed">	aput-object v1, v8, v3</span>
+<span class="missed">	aput-object v1, v0, v3</span>
 <span class="missed">	sget-object v1, Landroidx/lifecycle/e$a;->ON_PAUSE:Landroidx/lifecycle/e$a;</span>
-<span class="missed">	aput-object v1, v8, v4</span>
+<span class="missed">	aput-object v1, v0, v4</span>
 <span class="missed">	sget-object v1, Landroidx/lifecycle/e$a;->ON_STOP:Landroidx/lifecycle/e$a;</span>
-<span class="missed">	aput-object v1, v8, v5</span>
+<span class="missed">	aput-object v1, v0, v5</span>
 <span class="missed">	sget-object v1, Landroidx/lifecycle/e$a;->ON_DESTROY:Landroidx/lifecycle/e$a;</span>
-<span class="missed">	aput-object v1, v8, v6</span>
-<span class="missed">	aput-object v0, v8, v7</span>
-<span class="missed">	sput-object v8, Landroidx/lifecycle/e$a;->$VALUES:[Landroidx/lifecycle/e$a;</span>
+<span class="missed">	aput-object v1, v0, v6</span>
+<span class="missed">	sget-object v1, Landroidx/lifecycle/e$a;->ON_ANY:Landroidx/lifecycle/e$a;</span>
+<span class="missed">	aput-object v1, v0, v7</span>
+<span class="missed">	sput-object v0, Landroidx/lifecycle/e$a;->$VALUES:[Landroidx/lifecycle/e$a;</span>
 <span class="">	return-void</span>
 .end method
 

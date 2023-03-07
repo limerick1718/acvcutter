@@ -1,73 +1,145 @@
-.class public Lrt;
+.class final Lrt;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field private final synthetic a:Lrm;
 
-.field public final b:Ljava/lang/String;
-
-.field public final c:[Ljava/lang/StackTraceElement;
-
-.field public final d:Lrt;
+.field private final synthetic b:Lrs;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Throwable;Lqt;)V
-    .locals 1
+.method constructor <init>(Lrs;Lrm;)V
+    .locals 0
 
     .line 1
+    iput-object p1, p0, Lrt;->b:Lrs;
+
+    iput-object p2, p0, Lrt;->a:Lrm;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .locals 3
+
     .line 2
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getLocalizedMessage()Ljava/lang/String;
+    :try_start_0
+    iget-object v0, p0, Lrt;->b:Lrs;
+
+    invoke-static {v0}, Lrs;->a(Lrs;)Lrg;
 
     move-result-object v0
 
-    iput-object v0, p0, Lrt;->a:Ljava/lang/String;
+    iget-object v1, p0, Lrt;->a:Lrm;
 
-    .line 3
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-interface {v0, v1}, Lrg;->a(Lrm;)Ljava/lang/Object;
 
     move-result-object v0
 
-    iput-object v0, p0, Lrt;->b:Ljava/lang/String;
+    check-cast v0, Lrm;
+    :try_end_0
+    .catch Lrl; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
+    if-nez v0, :cond_0
 
-    move-result-object v0
+    .line 13
+    iget-object v0, p0, Lrt;->b:Lrs;
 
-    invoke-interface {p2, v0}, Lqt;->a([Ljava/lang/StackTraceElement;)[Ljava/lang/StackTraceElement;
+    new-instance v1, Ljava/lang/NullPointerException;
 
-    move-result-object v0
+    const-string v2, "Continuation returned null"
 
-    iput-object v0, p0, Lrt;->c:[Ljava/lang/StackTraceElement;
+    invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lrs;->a(Ljava/lang/Exception;)V
+
+    return-void
+
+    .line 15
+    :cond_0
+    sget-object v1, Lro;->b:Ljava/util/concurrent/Executor;
+
+    iget-object v2, p0, Lrt;->b:Lrs;
+
+    invoke-virtual {v0, v1, v2}, Lrm;->a(Ljava/util/concurrent/Executor;Lrk;)Lrm;
+
+    .line 16
+    sget-object v1, Lro;->b:Ljava/util/concurrent/Executor;
+
+    iget-object v2, p0, Lrt;->b:Lrs;
+
+    invoke-virtual {v0, v1, v2}, Lrm;->a(Ljava/util/concurrent/Executor;Lrj;)Lrm;
+
+    .line 17
+    sget-object v1, Lro;->b:Ljava/util/concurrent/Executor;
+
+    iget-object v2, p0, Lrt;->b:Lrs;
+
+    invoke-virtual {v0, v1, v2}, Lrm;->a(Ljava/util/concurrent/Executor;Lrh;)Lrm;
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    .line 10
+    iget-object v1, p0, Lrt;->b:Lrs;
+
+    invoke-static {v1}, Lrs;->b(Lrs;)Lsf;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lsf;->a(Ljava/lang/Exception;)V
+
+    return-void
+
+    :catch_1
+    move-exception v0
 
     .line 5
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
+    invoke-virtual {v0}, Lrl;->getCause()Ljava/lang/Throwable;
 
-    move-result-object p1
+    move-result-object v1
 
-    if-eqz p1, :cond_0
+    instance-of v1, v1, Ljava/lang/Exception;
+
+    if-eqz v1, :cond_1
 
     .line 6
-    new-instance v0, Lrt;
+    iget-object v1, p0, Lrt;->b:Lrs;
 
-    invoke-direct {v0, p1, p2}, Lrt;-><init>(Ljava/lang/Throwable;Lqt;)V
+    invoke-static {v1}, Lrs;->b(Lrs;)Lsf;
 
-    goto :goto_0
+    move-result-object v1
 
-    :cond_0
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Lrl;->getCause()Ljava/lang/Throwable;
 
-    :goto_0
-    iput-object v0, p0, Lrt;->d:Lrt;
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Exception;
+
+    invoke-virtual {v1, v0}, Lsf;->a(Ljava/lang/Exception;)V
+
+    return-void
+
+    .line 7
+    :cond_1
+    iget-object v1, p0, Lrt;->b:Lrs;
+
+    invoke-static {v1}, Lrs;->b(Lrs;)Lsf;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lsf;->a(Ljava/lang/Exception;)V
 
     return-void
 .end method

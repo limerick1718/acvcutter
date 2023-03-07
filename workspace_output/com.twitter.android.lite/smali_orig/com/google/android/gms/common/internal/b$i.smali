@@ -40,7 +40,7 @@
 .method public final a(ILandroid/os/Bundle;)V
     .locals 1
 
-    .line 1
+    .line 5
     new-instance p1, Ljava/lang/Exception;
 
     invoke-direct {p1}, Ljava/lang/Exception;-><init>()V
@@ -57,14 +57,14 @@
 .method public final a(ILandroid/os/IBinder;Landroid/os/Bundle;)V
     .locals 2
 
-    .line 2
+    .line 7
     iget-object v0, p0, Lcom/google/android/gms/common/internal/b$i;->a:Lcom/google/android/gms/common/internal/b;
 
     const-string v1, "onPostInitComplete can be called only once per call to getRemoteService"
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3
+    .line 8
     iget-object v0, p0, Lcom/google/android/gms/common/internal/b$i;->a:Lcom/google/android/gms/common/internal/b;
 
     iget v1, p0, Lcom/google/android/gms/common/internal/b$i;->b:I
@@ -73,34 +73,34 @@
 
     const/4 p1, 0x0
 
-    .line 4
+    .line 10
     iput-object p1, p0, Lcom/google/android/gms/common/internal/b$i;->a:Lcom/google/android/gms/common/internal/b;
 
     return-void
 .end method
 
-.method public final a(ILandroid/os/IBinder;Lcom/google/android/gms/common/internal/a0;)V
+.method public final a(ILandroid/os/IBinder;Lcom/google/android/gms/common/internal/aa;)V
     .locals 2
 
-    .line 5
+    .line 12
     iget-object v0, p0, Lcom/google/android/gms/common/internal/b$i;->a:Lcom/google/android/gms/common/internal/b;
 
     const-string v1, "onPostInitCompleteWithConnectionInfo can be called only once per call togetRemoteService"
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 6
-    invoke-static {p3}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 13
+    invoke-static {p3}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 7
+    .line 14
     iget-object v0, p0, Lcom/google/android/gms/common/internal/b$i;->a:Lcom/google/android/gms/common/internal/b;
 
-    invoke-static {v0, p3}, Lcom/google/android/gms/common/internal/b;->a(Lcom/google/android/gms/common/internal/b;Lcom/google/android/gms/common/internal/a0;)V
+    invoke-static {v0, p3}, Lcom/google/android/gms/common/internal/b;->a(Lcom/google/android/gms/common/internal/b;Lcom/google/android/gms/common/internal/aa;)V
 
-    .line 8
-    iget-object p3, p3, Lcom/google/android/gms/common/internal/a0;->a:Landroid/os/Bundle;
+    .line 16
+    iget-object p3, p3, Lcom/google/android/gms/common/internal/aa;->a:Landroid/os/Bundle;
 
-    .line 9
+    .line 17
     invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/gms/common/internal/b$i;->a(ILandroid/os/IBinder;Landroid/os/Bundle;)V
 
     return-void

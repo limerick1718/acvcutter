@@ -1,21 +1,14 @@
-.class final Lco;
+.class final synthetic Lco;
 .super Ljava/lang/Object;
-.implements Ljava/lang/Runnable;
-.field private final synthetic a:Lbo;
-.field private final synthetic b:Ljava/util/concurrent/Callable;
-.method constructor <init>(Lbo;Ljava/util/concurrent/Callable;)V
+.implements Lcp;
+.field static final a:Lcp;
+.method private constructor <init>()V
 .locals 0
-iput-object p1, p0, Lco;->a:Lbo;
-iput-object p2, p0, Lco;->b:Ljava/util/concurrent/Callable;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public final run()V
-.locals 2
-iget-object v0, p0, Lco;->a:Lbo;
-iget-object v1, p0, Lco;->b:Ljava/util/concurrent/Callable;
-invoke-interface {v1}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
-move-result-object v1
-invoke-virtual {v0, v1}, Lbo;->a(Ljava/lang/Object;)V
-return-void
+.method public final a()Z
+.locals 1
+const/4 v0, 0x0
+return v0
 .end method

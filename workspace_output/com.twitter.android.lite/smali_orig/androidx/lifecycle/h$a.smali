@@ -1,4 +1,4 @@
-.class synthetic Landroidx/lifecycle/h$a;
+.class Landroidx/lifecycle/h$a;
 .super Ljava/lang/Object;
 .source "LifecycleRegistry.java"
 
@@ -9,220 +9,63 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
-    name = null
+    accessFlags = 0x8
+    name = "a"
 .end annotation
 
 
-# static fields
-.field static final synthetic a:[I
+# instance fields
+.field a:Landroidx/lifecycle/e$b;
 
-.field static final synthetic b:[I
+.field b:Landroidx/lifecycle/d;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
+.method constructor <init>(Landroidx/lifecycle/f;Landroidx/lifecycle/e$b;)V
+    .locals 0
 
-    .line 1
-    invoke-static {}, Landroidx/lifecycle/e$b;->values()[Landroidx/lifecycle/e$b;
+    .line 347
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 348
+    invoke-static {p1}, Landroidx/lifecycle/j;->a(Ljava/lang/Object;)Landroidx/lifecycle/d;
+
+    move-result-object p1
+
+    iput-object p1, p0, Landroidx/lifecycle/h$a;->b:Landroidx/lifecycle/d;
+
+    .line 349
+    iput-object p2, p0, Landroidx/lifecycle/h$a;->a:Landroidx/lifecycle/e$b;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method a(Landroidx/lifecycle/g;Landroidx/lifecycle/e$a;)V
+    .locals 2
+
+    .line 353
+    invoke-static {p2}, Landroidx/lifecycle/h;->b(Landroidx/lifecycle/e$a;)Landroidx/lifecycle/e$b;
 
     move-result-object v0
 
-    array-length v0, v0
+    .line 354
+    iget-object v1, p0, Landroidx/lifecycle/h$a;->a:Landroidx/lifecycle/e$b;
 
-    new-array v0, v0, [I
+    invoke-static {v1, v0}, Landroidx/lifecycle/h;->a(Landroidx/lifecycle/e$b;Landroidx/lifecycle/e$b;)Landroidx/lifecycle/e$b;
 
-    sput-object v0, Landroidx/lifecycle/h$a;->b:[I
+    move-result-object v1
 
-    const/4 v1, 0x1
+    iput-object v1, p0, Landroidx/lifecycle/h$a;->a:Landroidx/lifecycle/e$b;
 
-    :try_start_0
-    sget-object v2, Landroidx/lifecycle/e$b;->b:Landroidx/lifecycle/e$b;
+    .line 355
+    iget-object v1, p0, Landroidx/lifecycle/h$a;->b:Landroidx/lifecycle/d;
 
-    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
+    invoke-interface {v1, p1, p2}, Landroidx/lifecycle/d;->a(Landroidx/lifecycle/g;Landroidx/lifecycle/e$a;)V
 
-    move-result v2
+    .line 356
+    iput-object v0, p0, Landroidx/lifecycle/h$a;->a:Landroidx/lifecycle/e$b;
 
-    aput v1, v0, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    const/4 v0, 0x2
-
-    :try_start_1
-    sget-object v2, Landroidx/lifecycle/h$a;->b:[I
-
-    sget-object v3, Landroidx/lifecycle/e$b;->c:Landroidx/lifecycle/e$b;
-
-    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v3
-
-    aput v0, v2, v3
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    const/4 v2, 0x3
-
-    :try_start_2
-    sget-object v3, Landroidx/lifecycle/h$a;->b:[I
-
-    sget-object v4, Landroidx/lifecycle/e$b;->d:Landroidx/lifecycle/e$b;
-
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v4
-
-    aput v2, v3, v4
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    const/4 v3, 0x4
-
-    :try_start_3
-    sget-object v4, Landroidx/lifecycle/h$a;->b:[I
-
-    sget-object v5, Landroidx/lifecycle/e$b;->e:Landroidx/lifecycle/e$b;
-
-    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v5
-
-    aput v3, v4, v5
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    const/4 v4, 0x5
-
-    :try_start_4
-    sget-object v5, Landroidx/lifecycle/h$a;->b:[I
-
-    sget-object v6, Landroidx/lifecycle/e$b;->a:Landroidx/lifecycle/e$b;
-
-    invoke-virtual {v6}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v6
-
-    aput v4, v5, v6
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    .line 2
-    :catch_4
-    invoke-static {}, Landroidx/lifecycle/e$a;->values()[Landroidx/lifecycle/e$a;
-
-    move-result-object v5
-
-    array-length v5, v5
-
-    new-array v5, v5, [I
-
-    sput-object v5, Landroidx/lifecycle/h$a;->a:[I
-
-    :try_start_5
-    sget-object v6, Landroidx/lifecycle/e$a;->ON_CREATE:Landroidx/lifecycle/e$a;
-
-    invoke-virtual {v6}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v6
-
-    aput v1, v5, v6
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
-
-    :catch_5
-    :try_start_6
-    sget-object v1, Landroidx/lifecycle/h$a;->a:[I
-
-    sget-object v5, Landroidx/lifecycle/e$a;->ON_STOP:Landroidx/lifecycle/e$a;
-
-    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v5
-
-    aput v0, v1, v5
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
-
-    :catch_6
-    :try_start_7
-    sget-object v0, Landroidx/lifecycle/h$a;->a:[I
-
-    sget-object v1, Landroidx/lifecycle/e$a;->ON_START:Landroidx/lifecycle/e$a;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    aput v2, v0, v1
-    :try_end_7
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
-
-    :catch_7
-    :try_start_8
-    sget-object v0, Landroidx/lifecycle/h$a;->a:[I
-
-    sget-object v1, Landroidx/lifecycle/e$a;->ON_PAUSE:Landroidx/lifecycle/e$a;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    aput v3, v0, v1
-    :try_end_8
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8
-
-    :catch_8
-    :try_start_9
-    sget-object v0, Landroidx/lifecycle/h$a;->a:[I
-
-    sget-object v1, Landroidx/lifecycle/e$a;->ON_RESUME:Landroidx/lifecycle/e$a;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    aput v4, v0, v1
-    :try_end_9
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_9
-
-    :catch_9
-    :try_start_a
-    sget-object v0, Landroidx/lifecycle/h$a;->a:[I
-
-    sget-object v1, Landroidx/lifecycle/e$a;->ON_DESTROY:Landroidx/lifecycle/e$a;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x6
-
-    aput v2, v0, v1
-    :try_end_a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_a
-
-    :catch_a
-    :try_start_b
-    sget-object v0, Landroidx/lifecycle/h$a;->a:[I
-
-    sget-object v1, Landroidx/lifecycle/e$a;->ON_ANY:Landroidx/lifecycle/e$a;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x7
-
-    aput v2, v0, v1
-    :try_end_b
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_b .. :try_end_b} :catch_b
-
-    :catch_b
     return-void
 .end method

@@ -1,94 +1,41 @@
-.class final Lec;
-.super Lgc;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.class final synthetic Lec;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lea;
 
 
 # instance fields
-.field private a:I
+.field private final a:Leb;
 
-.field private final b:I
-
-.field private final synthetic c:Lfc;
+.field private final b:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lfc;)V
+.method constructor <init>(Leb;Ljava/lang/String;)V
     .locals 0
 
-    .line 1
-    iput-object p1, p0, Lec;->c:Lfc;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lgc;-><init>()V
+    iput-object p1, p0, Lec;->a:Leb;
 
-    const/4 p1, 0x0
-
-    .line 2
-    iput p1, p0, Lec;->a:I
-
-    .line 3
-    iget-object p1, p0, Lec;->c:Lfc;
-
-    invoke-virtual {p1}, Lfc;->a()I
-
-    move-result p1
-
-    iput p1, p0, Lec;->b:I
+    iput-object p2, p0, Lec;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()B
+.method public final a()Ljava/lang/Object;
     .locals 2
 
-    .line 1
-    iget v0, p0, Lec;->a:I
+    iget-object v0, p0, Lec;->a:Leb;
 
-    .line 2
-    iget v1, p0, Lec;->b:I
+    iget-object v1, p0, Lec;->b:Ljava/lang/String;
 
-    if-ge v0, v1, :cond_0
+    invoke-virtual {v0, v1}, Leb;->b(Ljava/lang/String;)Ljava/lang/String;
 
-    add-int/lit8 v1, v0, 0x1
+    move-result-object v0
 
-    .line 3
-    iput v1, p0, Lec;->a:I
-
-    .line 4
-    iget-object v1, p0, Lec;->c:Lfc;
-
-    invoke-virtual {v1, v0}, Lfc;->b(I)B
-
-    move-result v0
-
-    return v0
-
-    .line 5
-    :cond_0
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final hasNext()Z
-    .locals 2
-
-    .line 1
-    iget v0, p0, Lec;->a:I
-
-    iget v1, p0, Lec;->b:I
-
-    if-ge v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
+    return-object v0
 .end method

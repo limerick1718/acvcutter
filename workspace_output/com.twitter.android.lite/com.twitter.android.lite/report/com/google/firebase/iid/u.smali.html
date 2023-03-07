@@ -14,155 +14,32 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final Lcom/google/firebase/iid/u;
+		<code>.class final synthetic Lcom/google/firebase/iid/u;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-iid@@20.0.0"
+.implements Lrg;
 
 
-.field private static final d:J
-.field final a:Ljava/lang/String;
-.field private final b:Ljava/lang/String;
-.field private final c:J
+.field private final a:Lcom/google/firebase/iid/t;
+.field private final b:Landroid/util/Pair;
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 3</span>
-
-<span class="cov">	sget-object v0, Ljava/util/concurrent/TimeUnit;->DAYS:Ljava/util/concurrent/TimeUnit;</span>
-<span class="cov">	const-wide/16 v1, 0x7</span>
-<span class="exec">	invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J</span>
-<span class="cov">	move-result-wide v0</span>
-<span class="cov">	sput-wide v0, Lcom/google/firebase/iid/u;->d:J</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method private constructor &lt;init&gt;(Ljava/lang/String;Ljava/lang/String;J)V</span>
+<span class="cov">.method constructor &lt;init&gt;(Lcom/google/firebase/iid/t;Landroid/util/Pair;)V</span>
 <span class="">	.locals 0</span>
 
 <span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	iput-object p1, p0, Lcom/google/firebase/iid/u;->a:Ljava/lang/String;</span>
-<span class="cov">	iput-object p2, p0, Lcom/google/firebase/iid/u;->b:Ljava/lang/String;</span>
-<span class="cov">	iput-wide p3, p0, Lcom/google/firebase/iid/u;->c:J</span>
+<span class="cov">	iput-object p1, p0, Lcom/google/firebase/iid/u;->a:Lcom/google/firebase/iid/t;</span>
+<span class="cov">	iput-object p2, p0, Lcom/google/firebase/iid/u;->b:Landroid/util/Pair;</span>
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method static a(Ljava/lang/String;Ljava/lang/String;J)Ljava/lang/String;</span>
+<span class="cov">.method public final a(Lrm;)Ljava/lang/Object;</span>
 <span class="">	.locals 2</span>
 
-<span class="cov">	:try_start_0</span>
-<span class="cov">	new-instance v0, Lorg/json/JSONObject;</span>
-<span class="cov">	invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V</span>
-<span class="cov">	const-string v1, "token"</span>
-<span class="cov">	invoke-virtual {v0, v1, p0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;</span>
-<span class="cov">	const-string p0, "appVersion"</span>
-<span class="cov">	invoke-virtual {v0, p0, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;</span>
-<span class="cov">	const-string p0, "timestamp"</span>
-<span class="cov">	invoke-virtual {v0, p0, p2, p3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;</span>
-<span class="exec">	invoke-virtual {v0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="exec">	return-object p0</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception p0</span>
-<span class="">	invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="">	invoke-virtual {p1}, Ljava/lang/String;->length()I</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	add-int/lit8 p1, p1, 0x18</span>
-<span class="missed">	new-instance p2, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {p2, p1}, Ljava/lang/StringBuilder;-><init>(I)V</span>
-<span class="missed">	const-string p1, "Failed to encode token: "</span>
-<span class="missed">	invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	const-string p1, "FirebaseInstanceId"</span>
-<span class="missed">	invoke-static {p1, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I</span>
-<span class="missed">	const/4 p0, 0x0</span>
-<span class="">	return-object p0</span>
-.end method
-
-<span class="cov">.method static b(Ljava/lang/String;)Lcom/google/firebase/iid/u;</span>
-<span class="">	.locals 6</span>
-
-<span class="exec">	invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="exec">	return-object v1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const-string v0, "{"</span>
-<span class="exec">	invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-eqz v0, :cond_1</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	new-instance v0, Lorg/json/JSONObject;</span>
-<span class="cov">	invoke-direct {v0, p0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V</span>
-<span class="cov">	new-instance p0, Lcom/google/firebase/iid/u;</span>
-<span class="cov">	const-string v2, "token"</span>
-<span class="exec">	invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object v2</span>
-<span class="cov">	const-string v3, "appVersion"</span>
-<span class="exec">	invoke-virtual {v0, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object v3</span>
-<span class="cov">	const-string v4, "timestamp"</span>
-<span class="exec">	invoke-virtual {v0, v4}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J</span>
-<span class="cov">	move-result-wide v4</span>
-<span class="cov">	invoke-direct {p0, v2, v3, v4, v5}, Lcom/google/firebase/iid/u;-><init>(Ljava/lang/String;Ljava/lang/String;J)V</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="exec">	return-object p0</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception p0</span>
-<span class="">	invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	invoke-virtual {v0}, Ljava/lang/String;->length()I</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	add-int/lit8 v0, v0, 0x17</span>
-<span class="missed">	new-instance v2, Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(I)V</span>
-<span class="missed">	const-string v0, "Failed to parse token: "</span>
-<span class="missed">	invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="missed">	invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="">	invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="missed">	const-string v0, "FirebaseInstanceId"</span>
-<span class="missed">	invoke-static {v0, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I</span>
-<span class="">	return-object v1</span>
-<span class="">	:cond_1</span>
-<span class="missed">	new-instance v0, Lcom/google/firebase/iid/u;</span>
-<span class="missed">	const-wide/16 v2, 0x0</span>
-<span class="missed">	invoke-direct {v0, p0, v1, v2, v3}, Lcom/google/firebase/iid/u;-><init>(Ljava/lang/String;Ljava/lang/String;J)V</span>
-<span class="">	return-object v0</span>
-.end method
-
-<span class="cov">.method final a(Ljava/lang/String;)Z</span>
-<span class="">	.locals 6</span>
-
-<span class="exec">	invoke-static {}, Ljava/lang/System;->currentTimeMillis()J</span>
-<span class="cov">	move-result-wide v0</span>
-<span class="cov">	iget-wide v2, p0, Lcom/google/firebase/iid/u;->c:J</span>
-<span class="cov">	sget-wide v4, Lcom/google/firebase/iid/u;->d:J</span>
-<span class="cov">	add-long/2addr v2, v4</span>
-<span class="cov">	cmp-long v4, v0, v2</span>
-<span class="cov">	if-gtz v4, :cond_1</span>
-<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/u;->b:Ljava/lang/String;</span>
-<span class="exec">	invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result p1</span>
-<span class="missed">	if-nez p1, :cond_0</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 p1, 0x0</span>
-<span class="exec">	return p1</span>
-<span class="">	:cond_1</span>
-<span class="">	:goto_0</span>
-<span class="missed">	const/4 p1, 0x1</span>
-<span class="">	return p1</span>
+<span class="cov">	iget-object v0, p0, Lcom/google/firebase/iid/u;->a:Lcom/google/firebase/iid/t;</span>
+<span class="cov">	iget-object v1, p0, Lcom/google/firebase/iid/u;->b:Landroid/util/Pair;</span>
+<span class="exec">	invoke-virtual {v0, v1, p1}, Lcom/google/firebase/iid/t;->a(Landroid/util/Pair;Lrm;)Lrm;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	return-object p1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

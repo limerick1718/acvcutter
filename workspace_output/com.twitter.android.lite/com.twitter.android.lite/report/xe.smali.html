@@ -14,48 +14,100 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lxe;
+		<code>.class final Lxe;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Lwe;
-.implements Ljava/lang/Cloneable;
+.source "CertificateChainCleaner.java"
 
 
 
 
-.method public abstract a(Lue;)Lxe;
-<span class="">	</span>
+.method private static a(Ljava/security/cert/X509Certificate;Ljava/security/cert/X509Certificate;)Z
+<span class="">	.locals 2</span>
 
+<span class="">	invoke-virtual {p0}, Ljava/security/cert/X509Certificate;->getSubjectX500Principal()Ljavax/security/auth/x500/X500Principal;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p1}, Ljava/security/cert/X509Certificate;->getIssuerX500Principal()Ljavax/security/auth/x500/X500Principal;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v0, v1}, Ljavax/security/auth/x500/X500Principal;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	return v1</span>
+<span class="">	:cond_0</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-virtual {p0}, Ljava/security/cert/X509Certificate;->getPublicKey()Ljava/security/PublicKey;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	invoke-virtual {p1, p0}, Ljava/security/cert/X509Certificate;->verify(Ljava/security/PublicKey;)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	const/4 p0, 0x1</span>
+<span class="">	return p0</span>
+<span class="">	:catch_0</span>
+<span class="">	return v1</span>
 .end method
 
-.method public abstract a([B)Lxe;
-<span class="">	</span>
+.method public static a([Ljava/security/cert/X509Certificate;Lxm;)[Ljava/security/cert/X509Certificate;
+<span class="">	.locals 6</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
-<span class="">	Ltd;</span>
+<span class="">	Ljava/security/cert/CertificateException;</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-.end method
-
-.method public abstract a([BLyc;)Lxe;
-<span class="">	</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ltd;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-.end method
-
-.method public abstract f()Lue;
-<span class="">	</span>
-
-.end method
-
-.method public abstract l()Lue;
-<span class="">	</span>
-
+<span class="missed">	new-instance v0, Ljava/util/LinkedList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	aget-object v2, p0, v1</span>
+<span class="">	invoke-virtual {p1, v2}, Lxm;->a(Ljava/security/cert/X509Certificate;)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	aget-object v1, p0, v1</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	move v3, v2</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	array-length v4, p0</span>
+<span class="missed">	if-ge v2, v4, :cond_1</span>
+<span class="missed">	aget-object v4, p0, v2</span>
+<span class="">	invoke-virtual {p1, v4}, Lxm;->a(Ljava/security/cert/X509Certificate;)Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-eqz v4, :cond_0</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	aget-object v4, p0, v2</span>
+<span class="missed">	add-int/lit8 v5, v2, -0x1</span>
+<span class="missed">	aget-object v5, p0, v5</span>
+<span class="">	invoke-static {v4, v5}, Lxe;->a(Ljava/security/cert/X509Certificate;Ljava/security/cert/X509Certificate;)Z</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	if-eqz v4, :cond_1</span>
+<span class="missed">	aget-object v4, p0, v2</span>
+<span class="missed">	invoke-virtual {v0, v4}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	sub-int/2addr v2, v1</span>
+<span class="missed">	aget-object p0, p0, v2</span>
+<span class="">	invoke-virtual {p1, p0}, Lxm;->b(Ljava/security/cert/X509Certificate;)Ljava/security/cert/X509Certificate;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	if-eqz p0, :cond_2</span>
+<span class="missed">	invoke-virtual {v0, p0}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="missed">	move v1, v3</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-eqz v1, :cond_3</span>
+<span class="">	invoke-virtual {v0}, Ljava/util/LinkedList;->size()I</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	new-array p0, p0, [Ljava/security/cert/X509Certificate;</span>
+<span class="">	invoke-virtual {v0, p0}, Ljava/util/LinkedList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	check-cast p0, [Ljava/security/cert/X509Certificate;</span>
+<span class="">	return-object p0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	new-instance p0, Ljava/security/cert/CertificateException;</span>
+<span class="missed">	const-string p1, "Didn\'t find a trust anchor in chain cleanup!"</span>
+<span class="missed">	invoke-direct {p0, p1}, Ljava/security/cert/CertificateException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

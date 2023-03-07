@@ -30,38 +30,40 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 .field private final client:Z
 .field private final continuation:Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 .field final hpackReader:Lokhttp3/internal/http2/Hpack$Reader;
-.field private final source:Lgx;
+.field private final source:Lyu;
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+.method static constructor &lt;clinit&gt;()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	const-class v0, Lokhttp3/internal/http2/Http2;</span>
-<span class="exec">	invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	sput-object v0, Lokhttp3/internal/http2/Http2Reader;->logger:Ljava/util/logging/Logger;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	const-class v0, Lokhttp3/internal/http2/Http2;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lokhttp3/internal/http2/Http2Reader;->logger:Ljava/util/logging/Logger;</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method constructor &lt;init&gt;(Lgx;Z)V</span>
+.method constructor &lt;init&gt;(Lyu;Z)V
 <span class="">	.locals 1</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	iput-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="cov">	iput-boolean p2, p0, Lokhttp3/internal/http2/Http2Reader;->client:Z</span>
-<span class="cov">	new-instance p2, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;</span>
-<span class="cov">	invoke-direct {p2, p1}, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;-><init>(Lgx;)V</span>
-<span class="cov">	iput-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->continuation:Lokhttp3/internal/http2/Http2Reader$ContinuationSource;</span>
-<span class="cov">	new-instance p1, Lokhttp3/internal/http2/Hpack$Reader;</span>
-<span class="cov">	const/16 v0, 0x1000</span>
-<span class="cov">	invoke-direct {p1, v0, p2}, Lokhttp3/internal/http2/Hpack$Reader;-><init>(ILwx;)V</span>
-<span class="cov">	iput-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->hpackReader:Lokhttp3/internal/http2/Hpack$Reader;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="missed">	iput-boolean p2, p0, Lokhttp3/internal/http2/Http2Reader;->client:Z</span>
+<span class="missed">	new-instance p1, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;</span>
+<span class="missed">	iget-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="missed">	invoke-direct {p1, p2}, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;-><init>(Lyu;)V</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->continuation:Lokhttp3/internal/http2/Http2Reader$ContinuationSource;</span>
+<span class="missed">	new-instance p1, Lokhttp3/internal/http2/Hpack$Reader;</span>
+<span class="missed">	iget-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->continuation:Lokhttp3/internal/http2/Http2Reader$ContinuationSource;</span>
+<span class="missed">	const/16 v0, 0x1000</span>
+<span class="missed">	invoke-direct {p1, v0, p2}, Lokhttp3/internal/http2/Hpack$Reader;-><init>(ILzk;)V</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->hpackReader:Lokhttp3/internal/http2/Hpack$Reader;</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method static lengthWithoutPadding(IBS)I</span>
+.method static lengthWithoutPadding(IBS)I
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -69,14 +71,14 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	and-int/lit8 p1, p1, 0x8</span>
-<span class="cov">	if-eqz p1, :cond_0</span>
-<span class="cov">	add-int/lit8 p0, p0, -0x1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	if-gt p2, p0, :cond_1</span>
-<span class="cov">	sub-int/2addr p0, p2</span>
-<span class="cov">	int-to-short p0, p0</span>
-<span class="exec">	return p0</span>
+<span class="missed">	and-int/lit8 p1, p1, 0x8</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	add-int/lit8 p0, p0, -0x1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	if-gt p2, p0, :cond_1</span>
+<span class="missed">	sub-int/2addr p0, p2</span>
+<span class="missed">	int-to-short p0, p0</span>
+<span class="">	return p0</span>
 <span class="">	:cond_1</span>
 <span class="missed">	const/4 p1, 0x2</span>
 <span class="missed">	new-array p1, p1, [Ljava/lang/Object;</span>
@@ -94,7 +96,7 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	throw p0</span>
 .end method
 
-<span class="cov">.method private readData(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
+.method private readData(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V
 <span class="">	.locals 4</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -102,39 +104,39 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	if-eqz p4, :cond_4</span>
-<span class="cov">	and-int/lit8 v1, p3, 0x1</span>
-<span class="cov">	const/4 v2, 0x1</span>
-<span class="cov">	if-eqz v1, :cond_0</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	and-int/lit8 v3, p3, 0x20</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	if-eqz p4, :cond_4</span>
+<span class="missed">	and-int/lit8 v1, p3, 0x1</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	and-int/lit8 v3, p3, 0x20</span>
 <span class="missed">	if-eqz v3, :cond_1</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	const/4 v2, 0x0</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	if-nez v2, :cond_3</span>
-<span class="cov">	and-int/lit8 v2, p3, 0x8</span>
-<span class="cov">	if-eqz v2, :cond_2</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="exec">	invoke-interface {v0}, Lgx;->readByte()B</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	and-int/lit16 v0, v0, 0xff</span>
-<span class="cov">	int-to-short v0, v0</span>
-<span class="cov">	:cond_2</span>
-<span class="exec">	invoke-static {p2, p3, v0}, Lokhttp3/internal/http2/Http2Reader;->lengthWithoutPadding(IBS)I</span>
-<span class="cov">	move-result p2</span>
-<span class="cov">	iget-object p3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="cov">	invoke-interface {p1, v1, p4, p3, p2}, Lokhttp3/internal/http2/Http2Reader$Handler;->data(ZILgx;I)V</span>
-<span class="cov">	iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="cov">	int-to-long p2, v0</span>
-<span class="cov">	invoke-interface {p1, p2, p3}, Lgx;->skip(J)V</span>
-<span class="exec">	return-void</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-nez v2, :cond_3</span>
+<span class="missed">	and-int/lit8 v2, p3, 0x8</span>
+<span class="missed">	if-eqz v2, :cond_2</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-interface {v0}, Lyu;->k()B</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	and-int/lit16 v0, v0, 0xff</span>
+<span class="missed">	int-to-short v0, v0</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-static {p2, p3, v0}, Lokhttp3/internal/http2/Http2Reader;->lengthWithoutPadding(IBS)I</span>
+<span class="missed">	move-result p2</span>
+<span class="missed">	iget-object p3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="missed">	invoke-interface {p1, v1, p4, p3, p2}, Lokhttp3/internal/http2/Http2Reader$Handler;->data(ZILyu;I)V</span>
+<span class="missed">	iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="missed">	int-to-long p2, v0</span>
+<span class="missed">	invoke-interface {p1, p2, p3}, Lyu;->i(J)V</span>
+<span class="">	return-void</span>
 <span class="">	:cond_3</span>
 <span class="missed">	new-array p1, v0, [Ljava/lang/Object;</span>
 <span class="missed">	const-string p2, "PROTOCOL_ERROR: FLAG_COMPRESSED without SETTINGS_COMPRESS_DATA"</span>
@@ -162,24 +164,24 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="missed">	const/4 v1, 0x0</span>
 <span class="missed">	if-lt p2, v0, :cond_3</span>
 <span class="missed">	if-nez p4, :cond_2</span>
-<span class="missed">	iget-object p4, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="">	invoke-interface {p4}, Lgx;->readInt()I</span>
+<span class="missed">	iget-object p4, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-interface {p4}, Lyu;->m()I</span>
 <span class="missed">	move-result p4</span>
-<span class="missed">	iget-object v2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="">	invoke-interface {v2}, Lgx;->readInt()I</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-interface {v2}, Lyu;->m()I</span>
 <span class="missed">	move-result v2</span>
 <span class="missed">	sub-int/2addr p2, v0</span>
 <span class="">	invoke-static {v2}, Lokhttp3/internal/http2/ErrorCode;->fromHttp2(I)Lokhttp3/internal/http2/ErrorCode;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="missed">	if-eqz v0, :cond_1</span>
-<span class="missed">	sget-object p3, Lhx;->e:Lhx;</span>
+<span class="missed">	sget-object p3, Lyv;->b:Lyv;</span>
 <span class="missed">	if-lez p2, :cond_0</span>
-<span class="missed">	iget-object p3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
+<span class="missed">	iget-object p3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
 <span class="missed">	int-to-long v1, p2</span>
-<span class="">	invoke-interface {p3, v1, v2}, Lgx;->b(J)Lhx;</span>
+<span class="">	invoke-interface {p3, v1, v2}, Lyu;->d(J)Lyv;</span>
 <span class="missed">	move-result-object p3</span>
 <span class="">	:cond_0</span>
-<span class="missed">	invoke-interface {p1, p4, v0, p3}, Lokhttp3/internal/http2/Http2Reader$Handler;->goAway(ILokhttp3/internal/http2/ErrorCode;Lhx;)V</span>
+<span class="missed">	invoke-interface {p1, p4, v0, p3}, Lokhttp3/internal/http2/Http2Reader$Handler;->goAway(ILokhttp3/internal/http2/ErrorCode;Lyv;)V</span>
 <span class="">	return-void</span>
 <span class="">	:cond_1</span>
 <span class="missed">	new-array p1, p3, [Ljava/lang/Object;</span>
@@ -207,7 +209,7 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	throw p1</span>
 .end method
 
-<span class="cov">.method private readHeaderBlock(ISBI)Ljava/util/List;</span>
+.method private readHeaderBlock(ISBI)Ljava/util/List;
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -223,21 +225,21 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->continuation:Lokhttp3/internal/http2/Http2Reader$ContinuationSource;</span>
-<span class="cov">	iput p1, v0, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;->left:I</span>
-<span class="cov">	iput p1, v0, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;->length:I</span>
-<span class="cov">	iput-short p2, v0, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;->padding:S</span>
-<span class="cov">	iput-byte p3, v0, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;->flags:B</span>
-<span class="cov">	iput p4, v0, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;->streamId:I</span>
-<span class="cov">	iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->hpackReader:Lokhttp3/internal/http2/Hpack$Reader;</span>
-<span class="cov">	invoke-virtual {p1}, Lokhttp3/internal/http2/Hpack$Reader;->readHeaders()V</span>
-<span class="cov">	iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->hpackReader:Lokhttp3/internal/http2/Hpack$Reader;</span>
-<span class="exec">	invoke-virtual {p1}, Lokhttp3/internal/http2/Hpack$Reader;->getAndResetHeaderList()Ljava/util/List;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	return-object p1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->continuation:Lokhttp3/internal/http2/Http2Reader$ContinuationSource;</span>
+<span class="missed">	iput p1, v0, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;->left:I</span>
+<span class="missed">	iput p1, v0, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;->length:I</span>
+<span class="missed">	iput-short p2, v0, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;->padding:S</span>
+<span class="missed">	iput-byte p3, v0, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;->flags:B</span>
+<span class="missed">	iput p4, v0, Lokhttp3/internal/http2/Http2Reader$ContinuationSource;->streamId:I</span>
+<span class="missed">	iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->hpackReader:Lokhttp3/internal/http2/Hpack$Reader;</span>
+<span class="missed">	invoke-virtual {p1}, Lokhttp3/internal/http2/Hpack$Reader;->readHeaders()V</span>
+<span class="missed">	iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->hpackReader:Lokhttp3/internal/http2/Hpack$Reader;</span>
+<span class="">	invoke-virtual {p1}, Lokhttp3/internal/http2/Hpack$Reader;->getAndResetHeaderList()Ljava/util/List;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
 .end method
 
-<span class="cov">.method private readHeaders(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
+.method private readHeaders(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V
 <span class="">	.locals 3</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -245,35 +247,35 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	if-eqz p4, :cond_3</span>
-<span class="cov">	and-int/lit8 v1, p3, 0x1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	if-eqz p4, :cond_3</span>
+<span class="missed">	and-int/lit8 v1, p3, 0x1</span>
 <span class="missed">	if-eqz v1, :cond_0</span>
 <span class="missed">	const/4 v1, 0x1</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	and-int/lit8 v2, p3, 0x8</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	and-int/lit8 v2, p3, 0x8</span>
 <span class="missed">	if-eqz v2, :cond_1</span>
-<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="">	invoke-interface {v0}, Lgx;->readByte()B</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-interface {v0}, Lyu;->k()B</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	and-int/lit16 v0, v0, 0xff</span>
 <span class="missed">	int-to-short v0, v0</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	and-int/lit8 v2, p3, 0x20</span>
+<span class="">	:cond_1</span>
+<span class="missed">	and-int/lit8 v2, p3, 0x20</span>
 <span class="missed">	if-eqz v2, :cond_2</span>
 <span class="missed">	invoke-direct {p0, p1, p4}, Lokhttp3/internal/http2/Http2Reader;->readPriority(Lokhttp3/internal/http2/Http2Reader$Handler;I)V</span>
 <span class="missed">	add-int/lit8 p2, p2, -0x5</span>
-<span class="cov">	:cond_2</span>
-<span class="exec">	invoke-static {p2, p3, v0}, Lokhttp3/internal/http2/Http2Reader;->lengthWithoutPadding(IBS)I</span>
-<span class="cov">	move-result p2</span>
-<span class="exec">	invoke-direct {p0, p2, v0, p3, p4}, Lokhttp3/internal/http2/Http2Reader;->readHeaderBlock(ISBI)Ljava/util/List;</span>
-<span class="cov">	move-result-object p2</span>
-<span class="cov">	const/4 p3, -0x1</span>
-<span class="cov">	invoke-interface {p1, v1, p4, p3, p2}, Lokhttp3/internal/http2/Http2Reader$Handler;->headers(ZIILjava/util/List;)V</span>
-<span class="exec">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-static {p2, p3, v0}, Lokhttp3/internal/http2/Http2Reader;->lengthWithoutPadding(IBS)I</span>
+<span class="missed">	move-result p2</span>
+<span class="">	invoke-direct {p0, p2, v0, p3, p4}, Lokhttp3/internal/http2/Http2Reader;->readHeaderBlock(ISBI)Ljava/util/List;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	const/4 p3, -0x1</span>
+<span class="missed">	invoke-interface {p1, v1, p4, p3, p2}, Lokhttp3/internal/http2/Http2Reader$Handler;->headers(ZIILjava/util/List;)V</span>
+<span class="">	return-void</span>
 <span class="">	:cond_3</span>
 <span class="missed">	new-array p1, v0, [Ljava/lang/Object;</span>
 <span class="missed">	const-string p2, "PROTOCOL_ERROR: TYPE_HEADERS streamId == 0"</span>
@@ -282,7 +284,7 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	throw p1</span>
 .end method
 
-<span class="cov">.method static readMedium(Lgx;)I</span>
+.method static readMedium(Lyu;)I
 <span class="">	.locals 2</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -290,23 +292,23 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="exec">	invoke-interface {p0}, Lgx;->readByte()B</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	and-int/lit16 v0, v0, 0xff</span>
-<span class="cov">	shl-int/lit8 v0, v0, 0x10</span>
-<span class="exec">	invoke-interface {p0}, Lgx;->readByte()B</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	and-int/lit16 v1, v1, 0xff</span>
-<span class="cov">	shl-int/lit8 v1, v1, 0x8</span>
-<span class="cov">	or-int/2addr v0, v1</span>
-<span class="exec">	invoke-interface {p0}, Lgx;->readByte()B</span>
-<span class="cov">	move-result p0</span>
-<span class="cov">	and-int/lit16 p0, p0, 0xff</span>
-<span class="cov">	or-int/2addr p0, v0</span>
-<span class="exec">	return p0</span>
+<span class="">	invoke-interface {p0}, Lyu;->k()B</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	and-int/lit16 v0, v0, 0xff</span>
+<span class="missed">	shl-int/lit8 v0, v0, 0x10</span>
+<span class="">	invoke-interface {p0}, Lyu;->k()B</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	and-int/lit16 v1, v1, 0xff</span>
+<span class="missed">	shl-int/lit8 v1, v1, 0x8</span>
+<span class="missed">	or-int/2addr v0, v1</span>
+<span class="">	invoke-interface {p0}, Lyu;->k()B</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	and-int/lit16 p0, p0, 0xff</span>
+<span class="missed">	or-int/2addr p0, v0</span>
+<span class="">	return p0</span>
 .end method
 
-<span class="cov">.method private readPing(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
+.method private readPing(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V
 <span class="">	.locals 3</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -314,23 +316,23 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="cov">	const/16 v2, 0x8</span>
-<span class="cov">	if-ne p2, v2, :cond_2</span>
-<span class="cov">	if-nez p4, :cond_1</span>
-<span class="cov">	iget-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="exec">	invoke-interface {p2}, Lgx;->readInt()I</span>
-<span class="cov">	move-result p2</span>
-<span class="cov">	iget-object p4, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="exec">	invoke-interface {p4}, Lgx;->readInt()I</span>
-<span class="cov">	move-result p4</span>
-<span class="cov">	and-int/2addr p3, v1</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	const/16 v2, 0x8</span>
+<span class="missed">	if-ne p2, v2, :cond_2</span>
+<span class="missed">	if-nez p4, :cond_1</span>
+<span class="missed">	iget-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-interface {p2}, Lyu;->m()I</span>
+<span class="missed">	move-result p2</span>
+<span class="missed">	iget-object p4, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-interface {p4}, Lyu;->m()I</span>
+<span class="missed">	move-result p4</span>
+<span class="missed">	and-int/2addr p3, v1</span>
 <span class="missed">	if-eqz p3, :cond_0</span>
 <span class="missed">	const/4 v0, 0x1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	invoke-interface {p1, v0, p2, p4}, Lokhttp3/internal/http2/Http2Reader$Handler;->ping(ZII)V</span>
-<span class="exec">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-interface {p1, v0, p2, p4}, Lokhttp3/internal/http2/Http2Reader$Handler;->ping(ZII)V</span>
+<span class="">	return-void</span>
 <span class="">	:cond_1</span>
 <span class="missed">	new-array p1, v0, [Ljava/lang/Object;</span>
 <span class="missed">	const-string p2, "TYPE_PING streamId != 0"</span>
@@ -356,8 +358,8 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="">	invoke-interface {v0}, Lgx;->readInt()I</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-interface {v0}, Lyu;->m()I</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	const/high16 v1, -0x80000000</span>
 <span class="missed">	and-int/2addr v1, v0</span>
@@ -370,8 +372,8 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	:goto_0</span>
 <span class="missed">	const v3, 0x7fffffff</span>
 <span class="missed">	and-int/2addr v0, v3</span>
-<span class="missed">	iget-object v3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="">	invoke-interface {v3}, Lgx;->readByte()B</span>
+<span class="missed">	iget-object v3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-interface {v3}, Lyu;->k()B</span>
 <span class="missed">	move-result v3</span>
 <span class="missed">	and-int/lit16 v3, v3, 0xff</span>
 <span class="missed">	add-int/2addr v3, v2</span>
@@ -423,14 +425,14 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="missed">	if-eqz p4, :cond_1</span>
 <span class="missed">	and-int/lit8 v1, p3, 0x8</span>
 <span class="missed">	if-eqz v1, :cond_0</span>
-<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="">	invoke-interface {v0}, Lgx;->readByte()B</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-interface {v0}, Lyu;->k()B</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	and-int/lit16 v0, v0, 0xff</span>
 <span class="missed">	int-to-short v0, v0</span>
 <span class="">	:cond_0</span>
-<span class="missed">	iget-object v1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="">	invoke-interface {v1}, Lgx;->readInt()I</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-interface {v1}, Lyu;->m()I</span>
 <span class="missed">	move-result v1</span>
 <span class="missed">	const v2, 0x7fffffff</span>
 <span class="missed">	and-int/2addr v1, v2</span>
@@ -462,8 +464,8 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="missed">	const/4 v1, 0x4</span>
 <span class="missed">	if-ne p2, v1, :cond_2</span>
 <span class="missed">	if-eqz p4, :cond_1</span>
-<span class="missed">	iget-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="">	invoke-interface {p2}, Lgx;->readInt()I</span>
+<span class="missed">	iget-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-interface {p2}, Lyu;->m()I</span>
 <span class="missed">	move-result p2</span>
 <span class="">	invoke-static {p2}, Lokhttp3/internal/http2/ErrorCode;->fromHttp2(I)Lokhttp3/internal/http2/ErrorCode;</span>
 <span class="missed">	move-result-object v1</span>
@@ -496,60 +498,53 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	throw p1</span>
 .end method
 
-<span class="cov">.method private readSettings(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
-<span class="">	.locals 6</span>
+.method private readSettings(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V
+<span class="">	.locals 5</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
 <span class="">	Ljava/io/IOException;</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	if-nez p4, :cond_c</span>
-<span class="cov">	const/4 p4, 0x1</span>
-<span class="cov">	and-int/2addr p3, p4</span>
-<span class="cov">	if-eqz p3, :cond_1</span>
-<span class="cov">	if-nez p2, :cond_0</span>
-<span class="cov">	invoke-interface {p1}, Lokhttp3/internal/http2/Http2Reader$Handler;->ackSettings()V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	if-nez p4, :cond_8</span>
+<span class="missed">	const/4 p4, 0x1</span>
+<span class="missed">	and-int/2addr p3, p4</span>
+<span class="missed">	if-eqz p3, :cond_1</span>
+<span class="missed">	if-nez p2, :cond_0</span>
+<span class="missed">	invoke-interface {p1}, Lokhttp3/internal/http2/Http2Reader$Handler;->ackSettings()V</span>
+<span class="">	return-void</span>
 <span class="">	:cond_0</span>
 <span class="missed">	new-array p1, v0, [Ljava/lang/Object;</span>
 <span class="missed">	const-string p2, "FRAME_SIZE_ERROR ack frame should be empty!"</span>
 <span class="">	invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	throw p1</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	rem-int/lit8 p3, p2, 0x6</span>
-<span class="cov">	if-nez p3, :cond_b</span>
-<span class="cov">	new-instance p3, Lokhttp3/internal/http2/Settings;</span>
-<span class="cov">	invoke-direct {p3}, Lokhttp3/internal/http2/Settings;-><init>()V</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	if-ge v1, p2, :cond_a</span>
-<span class="cov">	iget-object v2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="exec">	invoke-interface {v2}, Lgx;->readShort()S</span>
-<span class="cov">	move-result v2</span>
-<span class="cov">	const v3, 0xffff</span>
-<span class="cov">	and-int/2addr v2, v3</span>
-<span class="cov">	iget-object v3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="exec">	invoke-interface {v3}, Lgx;->readInt()I</span>
-<span class="cov">	move-result v3</span>
-<span class="cov">	const/4 v4, 0x2</span>
-<span class="cov">	const/4 v5, 0x4</span>
-<span class="cov">	if-eq v2, v4, :cond_7</span>
-<span class="cov">	const/4 v4, 0x3</span>
-<span class="cov">	if-eq v2, v4, :cond_6</span>
-<span class="cov">	if-eq v2, v5, :cond_4</span>
-<span class="cov">	const/4 v4, 0x5</span>
-<span class="cov">	if-eq v2, v4, :cond_2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	rem-int/lit8 p3, p2, 0x6</span>
+<span class="missed">	if-nez p3, :cond_7</span>
+<span class="missed">	new-instance p3, Lokhttp3/internal/http2/Settings;</span>
+<span class="missed">	invoke-direct {p3}, Lokhttp3/internal/http2/Settings;-><init>()V</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v1, p2, :cond_6</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-interface {v2}, Lyu;->l()S</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	const v3, 0xffff</span>
+<span class="missed">	and-int/2addr v2, v3</span>
+<span class="missed">	iget-object v3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-interface {v3}, Lyu;->m()I</span>
+<span class="missed">	move-result v3</span>
+<span class="">	packed-switch v2, :pswitch_data_0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:pswitch_0</span>
+<span class="missed">	const/16 v4, 0x4000</span>
+<span class="missed">	if-lt v3, v4, :cond_2</span>
+<span class="missed">	const v4, 0xffffff</span>
+<span class="missed">	if-gt v3, v4, :cond_2</span>
 <span class="">	goto :goto_1</span>
 <span class="">	:cond_2</span>
-<span class="missed">	const/16 v4, 0x4000</span>
-<span class="missed">	if-lt v3, v4, :cond_3</span>
-<span class="missed">	const v4, 0xffffff</span>
-<span class="missed">	if-gt v3, v4, :cond_3</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:cond_3</span>
 <span class="missed">	new-array p1, p4, [Ljava/lang/Object;</span>
 <span class="">	invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
 <span class="missed">	move-result-object p2</span>
@@ -558,38 +553,39 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	throw p1</span>
-<span class="cov">	:cond_4</span>
-<span class="cov">	const/4 v2, 0x7</span>
-<span class="cov">	if-ltz v3, :cond_5</span>
+<span class="">	:pswitch_1</span>
+<span class="missed">	const/4 v2, 0x7</span>
+<span class="missed">	if-ltz v3, :cond_3</span>
 <span class="">	goto :goto_1</span>
-<span class="">	:cond_5</span>
+<span class="">	:cond_3</span>
 <span class="missed">	new-array p1, v0, [Ljava/lang/Object;</span>
 <span class="missed">	const-string p2, "PROTOCOL_ERROR SETTINGS_INITIAL_WINDOW_SIZE > 2^31 - 1"</span>
 <span class="">	invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	throw p1</span>
-<span class="cov">	:cond_6</span>
-<span class="cov">	const/4 v2, 0x4</span>
+<span class="">	:pswitch_2</span>
+<span class="missed">	const/4 v2, 0x4</span>
 <span class="">	goto :goto_1</span>
-<span class="">	:cond_7</span>
-<span class="missed">	if-eqz v3, :cond_9</span>
-<span class="missed">	if-ne v3, p4, :cond_8</span>
+<span class="">	:pswitch_3</span>
+<span class="missed">	if-eqz v3, :cond_5</span>
+<span class="missed">	if-ne v3, p4, :cond_4</span>
 <span class="">	goto :goto_1</span>
-<span class="">	:cond_8</span>
+<span class="">	:cond_4</span>
 <span class="missed">	new-array p1, v0, [Ljava/lang/Object;</span>
 <span class="missed">	const-string p2, "PROTOCOL_ERROR SETTINGS_ENABLE_PUSH != 0 or 1"</span>
 <span class="">	invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	throw p1</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	:cond_9</span>
-<span class="cov">	invoke-virtual {p3, v2, v3}, Lokhttp3/internal/http2/Settings;->set(II)Lokhttp3/internal/http2/Settings;</span>
-<span class="cov">	add-int/lit8 v1, v1, 0x6</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_a</span>
-<span class="cov">	invoke-interface {p1, v0, p3}, Lokhttp3/internal/http2/Http2Reader$Handler;->settings(ZLokhttp3/internal/http2/Settings;)V</span>
-<span class="exec">	return-void</span>
-<span class="">	:cond_b</span>
+<span class="">	:pswitch_4</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_5</span>
+<span class="missed">	invoke-virtual {p3, v2, v3}, Lokhttp3/internal/http2/Settings;->set(II)Lokhttp3/internal/http2/Settings;</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x6</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_6</span>
+<span class="missed">	invoke-interface {p1, v0, p3}, Lokhttp3/internal/http2/Http2Reader$Handler;->settings(ZLokhttp3/internal/http2/Settings;)V</span>
+<span class="">	return-void</span>
+<span class="">	:cond_7</span>
 <span class="missed">	new-array p1, p4, [Ljava/lang/Object;</span>
 <span class="">	invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
 <span class="missed">	move-result-object p2</span>
@@ -598,15 +594,24 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	throw p1</span>
-<span class="">	:cond_c</span>
+<span class="">	:cond_8</span>
 <span class="missed">	new-array p1, v0, [Ljava/lang/Object;</span>
 <span class="missed">	const-string p2, "TYPE_SETTINGS streamId != 0"</span>
 <span class="">	invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	throw p1</span>
+<span class="">	:pswitch_data_0</span>
+<span class="">	.packed-switch 0x1</span>
+<span class="">	:pswitch_4</span>
+<span class="">	:pswitch_3</span>
+<span class="">	:pswitch_2</span>
+<span class="">	:pswitch_1</span>
+<span class="">	:pswitch_0</span>
+<span class="">	:pswitch_4</span>
+<span class="">	.end packed-switch</span>
 .end method
 
-<span class="cov">.method private readWindowUpdate(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
+.method private readWindowUpdate(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V
 <span class="">	.locals 5</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -614,21 +619,21 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	const/4 p3, 0x0</span>
-<span class="cov">	const/4 v0, 0x1</span>
-<span class="cov">	const/4 v1, 0x4</span>
-<span class="cov">	if-ne p2, v1, :cond_1</span>
-<span class="cov">	iget-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="exec">	invoke-interface {p2}, Lgx;->readInt()I</span>
-<span class="cov">	move-result p2</span>
-<span class="cov">	int-to-long v1, p2</span>
-<span class="cov">	const-wide/32 v3, 0x7fffffff</span>
-<span class="cov">	and-long/2addr v1, v3</span>
-<span class="cov">	const-wide/16 v3, 0x0</span>
-<span class="cov">	cmp-long p2, v1, v3</span>
-<span class="cov">	if-eqz p2, :cond_0</span>
-<span class="cov">	invoke-interface {p1, p4, v1, v2}, Lokhttp3/internal/http2/Http2Reader$Handler;->windowUpdate(IJ)V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	const/4 p3, 0x0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	const/4 v1, 0x4</span>
+<span class="missed">	if-ne p2, v1, :cond_1</span>
+<span class="missed">	iget-object p2, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-interface {p2}, Lyu;->m()I</span>
+<span class="missed">	move-result p2</span>
+<span class="missed">	int-to-long v1, p2</span>
+<span class="missed">	const-wide/32 v3, 0x7fffffff</span>
+<span class="missed">	and-long/2addr v1, v3</span>
+<span class="missed">	const-wide/16 v3, 0x0</span>
+<span class="missed">	cmp-long p2, v1, v3</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="missed">	invoke-interface {p1, p4, v1, v2}, Lokhttp3/internal/http2/Http2Reader$Handler;->windowUpdate(IJ)V</span>
+<span class="">	return-void</span>
 <span class="">	:cond_0</span>
 <span class="missed">	new-array p1, v0, [Ljava/lang/Object;</span>
 <span class="">	invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;</span>
@@ -657,12 +662,12 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="missed">	invoke-interface {v0}, Lwx;->close()V</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="missed">	invoke-interface {v0}, Lyu;->close()V</span>
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public nextFrame(ZLokhttp3/internal/http2/Http2Reader$Handler;)Z</span>
+.method public nextFrame(ZLokhttp3/internal/http2/Http2Reader$Handler;)Z
 <span class="">	.locals 6</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -670,28 +675,28 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	iget-object v1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="cov">	const-wide/16 v2, 0x9</span>
-<span class="cov">	invoke-interface {v1, v2, v3}, Lgx;->e(J)V</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="cov">	iget-object v1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="exec">	invoke-static {v1}, Lokhttp3/internal/http2/Http2Reader;->readMedium(Lgx;)I</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	const/4 v2, 0x1</span>
-<span class="cov">	if-ltz v1, :cond_3</span>
-<span class="cov">	const/16 v3, 0x4000</span>
-<span class="cov">	if-gt v1, v3, :cond_3</span>
-<span class="cov">	iget-object v3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="exec">	invoke-interface {v3}, Lgx;->readByte()B</span>
-<span class="cov">	move-result v3</span>
-<span class="cov">	and-int/lit16 v3, v3, 0xff</span>
-<span class="cov">	int-to-byte v3, v3</span>
-<span class="cov">	if-eqz p1, :cond_1</span>
-<span class="cov">	const/4 p1, 0x4</span>
-<span class="cov">	if-ne v3, p1, :cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="missed">	const-wide/16 v2, 0x9</span>
+<span class="missed">	invoke-interface {v1, v2, v3}, Lyu;->a(J)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-static {v1}, Lokhttp3/internal/http2/Http2Reader;->readMedium(Lyu;)I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	if-ltz v1, :cond_3</span>
+<span class="missed">	const/16 v3, 0x4000</span>
+<span class="missed">	if-gt v1, v3, :cond_3</span>
+<span class="missed">	iget-object v3, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-interface {v3}, Lyu;->k()B</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	and-int/lit16 v3, v3, 0xff</span>
+<span class="missed">	int-to-byte v3, v3</span>
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="missed">	const/4 p1, 0x4</span>
+<span class="missed">	if-ne v3, p1, :cond_0</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	new-array p1, v2, [Ljava/lang/Object;</span>
@@ -702,61 +707,61 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	invoke-static {p2, p1}, Lokhttp3/internal/http2/Http2;->ioException(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/IOException;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="">	throw p1</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="exec">	invoke-interface {p1}, Lgx;->readByte()B</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	and-int/lit16 p1, p1, 0xff</span>
-<span class="cov">	int-to-byte p1, p1</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="exec">	invoke-interface {v0}, Lgx;->readInt()I</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	const v4, 0x7fffffff</span>
-<span class="cov">	and-int/2addr v0, v4</span>
-<span class="cov">	sget-object v4, Lokhttp3/internal/http2/Http2Reader;->logger:Ljava/util/logging/Logger;</span>
-<span class="cov">	sget-object v5, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;</span>
-<span class="exec">	invoke-virtual {v4, v5}, Ljava/util/logging/Logger;->isLoggable(Ljava/util/logging/Level;)Z</span>
-<span class="cov">	move-result v4</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-interface {p1}, Lyu;->k()B</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	and-int/lit16 p1, p1, 0xff</span>
+<span class="missed">	int-to-byte p1, p1</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="">	invoke-interface {v0}, Lyu;->m()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const v4, 0x7fffffff</span>
+<span class="missed">	and-int/2addr v0, v4</span>
+<span class="missed">	sget-object v4, Lokhttp3/internal/http2/Http2Reader;->logger:Ljava/util/logging/Logger;</span>
+<span class="missed">	sget-object v5, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;</span>
+<span class="">	invoke-virtual {v4, v5}, Ljava/util/logging/Logger;->isLoggable(Ljava/util/logging/Level;)Z</span>
+<span class="missed">	move-result v4</span>
 <span class="missed">	if-eqz v4, :cond_2</span>
 <span class="missed">	sget-object v4, Lokhttp3/internal/http2/Http2Reader;->logger:Ljava/util/logging/Logger;</span>
 <span class="">	invoke-static {v2, v0, v1, v3, p1}, Lokhttp3/internal/http2/Http2;->frameLog(ZIIBB)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v5</span>
 <span class="missed">	invoke-virtual {v4, v5}, Ljava/util/logging/Logger;->fine(Ljava/lang/String;)V</span>
-<span class="cov">	:cond_2</span>
+<span class="">	:cond_2</span>
 <span class="">	packed-switch v3, :pswitch_data_0</span>
-<span class="missed">	iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
+<span class="missed">	iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
 <span class="missed">	int-to-long v0, v1</span>
-<span class="missed">	invoke-interface {p1, v0, v1}, Lgx;->skip(J)V</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:pswitch_0</span>
-<span class="cov">	invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readWindowUpdate(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
+<span class="missed">	invoke-interface {p1, v0, v1}, Lyu;->i(J)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:pswitch_0</span>
+<span class="missed">	invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readWindowUpdate(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
 <span class="">	goto :goto_1</span>
 <span class="">	:pswitch_1</span>
 <span class="missed">	invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readGoAway(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:pswitch_2</span>
-<span class="cov">	invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readPing(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:pswitch_2</span>
+<span class="missed">	invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readPing(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
 <span class="">	goto :goto_1</span>
 <span class="">	:pswitch_3</span>
 <span class="missed">	invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readPushPromise(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:pswitch_4</span>
-<span class="cov">	invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readSettings(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:pswitch_4</span>
+<span class="missed">	invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readSettings(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
 <span class="">	goto :goto_1</span>
 <span class="">	:pswitch_5</span>
 <span class="missed">	invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readRstStream(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
 <span class="">	goto :goto_1</span>
 <span class="">	:pswitch_6</span>
 <span class="missed">	invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readPriority(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:pswitch_7</span>
-<span class="cov">	invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readHeaders(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:pswitch_8</span>
-<span class="cov">	invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readData(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
-<span class="cov">	:goto_1</span>
-<span class="exec">	return v2</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:pswitch_7</span>
+<span class="missed">	invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readHeaders(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:pswitch_8</span>
+<span class="missed">	invoke-direct {p0, p2, v1, p1, v0}, Lokhttp3/internal/http2/Http2Reader;->readData(Lokhttp3/internal/http2/Http2Reader$Handler;IBI)V</span>
+<span class="">	:goto_1</span>
+<span class="">	return v2</span>
 <span class="">	:cond_3</span>
 <span class="missed">	new-array p1, v2, [Ljava/lang/Object;</span>
 <span class="">	invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
@@ -783,7 +788,7 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	.end packed-switch</span>
 .end method
 
-<span class="cov">.method public readConnectionPreface(Lokhttp3/internal/http2/Http2Reader$Handler;)V</span>
+.method public readConnectionPreface(Lokhttp3/internal/http2/Http2Reader$Handler;)V
 <span class="">	.locals 5</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -791,13 +796,13 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Reader;->client:Z</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	const/4 v2, 0x1</span>
-<span class="cov">	if-eqz v0, :cond_1</span>
-<span class="exec">	invoke-virtual {p0, v2, p1}, Lokhttp3/internal/http2/Http2Reader;->nextFrame(ZLokhttp3/internal/http2/Http2Reader$Handler;)Z</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	if-eqz p1, :cond_0</span>
+<span class="missed">	iget-boolean v0, p0, Lokhttp3/internal/http2/Http2Reader;->client:Z</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	const/4 v2, 0x1</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-virtual {p0, v2, p1}, Lokhttp3/internal/http2/Http2Reader;->nextFrame(ZLokhttp3/internal/http2/Http2Reader$Handler;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	if-eqz p1, :cond_0</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	new-array p1, v1, [Ljava/lang/Object;</span>
@@ -806,12 +811,12 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="missed">	move-result-object p1</span>
 <span class="">	throw p1</span>
 <span class="">	:cond_1</span>
-<span class="missed">	iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lgx;</span>
-<span class="missed">	sget-object v0, Lokhttp3/internal/http2/Http2;->CONNECTION_PREFACE:Lhx;</span>
-<span class="">	invoke-virtual {v0}, Lhx;->l()I</span>
+<span class="missed">	iget-object p1, p0, Lokhttp3/internal/http2/Http2Reader;->source:Lyu;</span>
+<span class="missed">	sget-object v0, Lokhttp3/internal/http2/Http2;->CONNECTION_PREFACE:Lyv;</span>
+<span class="">	invoke-virtual {v0}, Lyv;->h()I</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	int-to-long v3, v0</span>
-<span class="">	invoke-interface {p1, v3, v4}, Lgx;->b(J)Lhx;</span>
+<span class="">	invoke-interface {p1, v3, v4}, Lyu;->d(J)Lyv;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="missed">	sget-object v0, Lokhttp3/internal/http2/Http2Reader;->logger:Ljava/util/logging/Logger;</span>
 <span class="missed">	sget-object v3, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;</span>
@@ -820,7 +825,7 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="missed">	if-eqz v0, :cond_2</span>
 <span class="missed">	sget-object v0, Lokhttp3/internal/http2/Http2Reader;->logger:Ljava/util/logging/Logger;</span>
 <span class="missed">	new-array v3, v2, [Ljava/lang/Object;</span>
-<span class="">	invoke-virtual {p1}, Lhx;->g()Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p1}, Lyv;->f()Ljava/lang/String;</span>
 <span class="missed">	move-result-object v4</span>
 <span class="missed">	aput-object v4, v3, v1</span>
 <span class="missed">	const-string v4, "<< CONNECTION %s"</span>
@@ -828,15 +833,15 @@ Lokhttp3/internal/http2/Http2Reader$ContinuationSource;
 <span class="missed">	move-result-object v3</span>
 <span class="missed">	invoke-virtual {v0, v3}, Ljava/util/logging/Logger;->fine(Ljava/lang/String;)V</span>
 <span class="">	:cond_2</span>
-<span class="missed">	sget-object v0, Lokhttp3/internal/http2/Http2;->CONNECTION_PREFACE:Lhx;</span>
-<span class="">	invoke-virtual {v0, p1}, Lhx;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	sget-object v0, Lokhttp3/internal/http2/Http2;->CONNECTION_PREFACE:Lyv;</span>
+<span class="">	invoke-virtual {v0, p1}, Lyv;->equals(Ljava/lang/Object;)Z</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_3</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return-void</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
 <span class="">	:cond_3</span>
 <span class="missed">	new-array v0, v2, [Ljava/lang/Object;</span>
-<span class="">	invoke-virtual {p1}, Lhx;->o()Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p1}, Lyv;->a()Ljava/lang/String;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="missed">	aput-object p1, v0, v1</span>
 <span class="missed">	const-string p1, "Expected a connection header but was %s"</span>

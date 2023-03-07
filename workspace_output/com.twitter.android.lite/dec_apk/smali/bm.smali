@@ -1,42 +1,41 @@
-.class public final Lbm;
-.super Lp5;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-.annotation system Ldalvik/annotation/Signature;
+.class public Lbm;
+.super Ljava/lang/Object;
+.implements Landroid/os/IInterface;
+.field private final a:Landroid/os/IBinder;
+.field private final b:Ljava/lang/String;
+.method protected constructor <init>(Landroid/os/IBinder;Ljava/lang/String;)V
+.locals 0
+invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+iput-object p1, p0, Lbm;->a:Landroid/os/IBinder;
+iput-object p2, p0, Lbm;->b:Ljava/lang/String;
+return-void
+.end method
+.method protected final a(ILandroid/os/Parcel;)Landroid/os/Parcel;
+.locals 3
+.annotation system Ldalvik/annotation/Throws;
 value = {
-"Landroid/os/Parcelable$Creator<",
-"Lbm;",
-">;"
+Landroid/os/RemoteException;
 }
 .end annotation
-.end field
-.field public final a:J
-.field public final b:J
-.field public final c:Z
-.field public final d:Ljava/lang/String;
-.field public final e:Ljava/lang/String;
-.field public final f:Ljava/lang/String;
-.field public final g:Landroid/os/Bundle;
-.method static constructor <clinit>()V
+invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+move-result-object v0
+iget-object v1, p0, Lbm;->a:Landroid/os/IBinder;
+const/4 v2, 0x0
+invoke-interface {v1, p1, p2, v0, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+invoke-virtual {v0}, Landroid/os/Parcel;->readException()V
+invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
+return-object v0
+.end method
+.method protected final a_()Landroid/os/Parcel;
+.locals 2
+invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+move-result-object v0
+iget-object v1, p0, Lbm;->b:Ljava/lang/String;
+invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+return-object v0
+.end method
+.method public asBinder()Landroid/os/IBinder;
 .locals 1
-new-instance v0, Lam;
-invoke-direct {v0}, Lam;-><init>()V
-sput-object v0, Lbm;->CREATOR:Landroid/os/Parcelable$Creator;
-return-void
-.end method
-.method public constructor <init>(JJZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
-.locals 0
-invoke-direct {p0}, Lp5;-><init>()V
-iput-wide p1, p0, Lbm;->a:J
-iput-wide p3, p0, Lbm;->b:J
-iput-boolean p5, p0, Lbm;->c:Z
-iput-object p6, p0, Lbm;->d:Ljava/lang/String;
-iput-object p7, p0, Lbm;->e:Ljava/lang/String;
-iput-object p8, p0, Lbm;->f:Ljava/lang/String;
-iput-object p9, p0, Lbm;->g:Landroid/os/Bundle;
-return-void
-.end method
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-.locals 3
-return-void
+const/4 v0, 0x0
+return-object v0
 .end method

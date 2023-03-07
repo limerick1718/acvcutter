@@ -1,252 +1,186 @@
-.class Lqp;
+.class public final Lqp;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+
+# interfaces
+.implements Lcom/google/android/gms/common/api/a$d$e;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lqp$a;
+    }
+.end annotation
+
+
+# static fields
+.field public static final a:Lqp;
 
 
 # instance fields
-.field private final a:Ljava/io/File;
+.field private final b:Z
+
+.field private final c:Z
+
+.field private final d:Ljava/lang/String;
+
+.field private final e:Z
+
+.field private final f:Ljava/lang/String;
+
+.field private final g:Z
+
+.field private final h:Ljava/lang/Long;
+
+.field private final i:Ljava/lang/Long;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 10
 
-    const-string v0, "UTF-8"
+    .line 19
+    new-instance v0, Lqp$a;
 
-    .line 1
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+    invoke-direct {v0}, Lqp$a;-><init>()V
+
+    .line 20
+    new-instance v0, Lqp;
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    move-object v1, v0
+
+    .line 21
+    invoke-direct/range {v1 .. v9}, Lqp;-><init>(ZZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/Long;Ljava/lang/Long;)V
+
+    .line 22
+    sput-object v0, Lqp;->a:Lqp;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/io/File;)V
+.method private constructor <init>(ZZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/Long;Ljava/lang/Long;)V
     .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const/4 p1, 0x0
+
     .line 2
-    iput-object p1, p0, Lqp;->a:Ljava/io/File;
+    iput-boolean p1, p0, Lqp;->b:Z
+
+    .line 3
+    iput-boolean p1, p0, Lqp;->c:Z
+
+    const/4 p2, 0x0
+
+    .line 4
+    iput-object p2, p0, Lqp;->d:Ljava/lang/String;
+
+    .line 5
+    iput-boolean p1, p0, Lqp;->e:Z
+
+    .line 6
+    iput-boolean p1, p0, Lqp;->g:Z
+
+    .line 7
+    iput-object p2, p0, Lqp;->f:Ljava/lang/String;
+
+    .line 8
+    iput-object p2, p0, Lqp;->h:Ljava/lang/Long;
+
+    .line 9
+    iput-object p2, p0, Lqp;->i:Ljava/lang/Long;
 
     return-void
 .end method
 
-.method private static a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
-
-    .line 2
-    invoke-virtual {p0, p1}, Lorg/json/JSONObject;->isNull(Ljava/lang/String;)Z
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0, p1, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    :cond_0
-    return-object v1
-.end method
-
-.method private static d(Ljava/lang/String;)Lyp;
-    .locals 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lorg/json/JSONException;
-        }
-    .end annotation
-
-    .line 1
-    new-instance v0, Lorg/json/JSONObject;
-
-    invoke-direct {v0, p0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
-
-    .line 2
-    new-instance p0, Lyp;
-
-    invoke-direct {p0}, Lyp;-><init>()V
-
-    const-string v1, "userId"
-
-    .line 3
-    invoke-static {v0, v1}, Lqp;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lyp;->a(Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
 
 # virtual methods
-.method public a(Ljava/lang/String;)Ljava/io/File;
-    .locals 3
+.method public final a()Z
+    .locals 1
 
-    .line 1
-    new-instance v0, Ljava/io/File;
+    .line 11
+    iget-boolean v0, p0, Lqp;->b:Z
 
-    iget-object v1, p0, Lqp;->a:Ljava/io/File;
+    return v0
+.end method
 
-    new-instance v2, Ljava/lang/StringBuilder;
+.method public final b()Z
+    .locals 1
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    .line 12
+    iget-boolean v0, p0, Lqp;->c:Z
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return v0
+.end method
 
-    const-string p1, "keys"
+.method public final c()Ljava/lang/String;
+    .locals 1
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, ".meta"
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v0, v1, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    .line 13
+    iget-object v0, p0, Lqp;->d:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public b(Ljava/lang/String;)Ljava/io/File;
-    .locals 3
+.method public final d()Z
+    .locals 1
 
-    .line 1
-    new-instance v0, Ljava/io/File;
+    .line 14
+    iget-boolean v0, p0, Lqp;->e:Z
 
-    iget-object v1, p0, Lqp;->a:Ljava/io/File;
+    return v0
+.end method
 
-    new-instance v2, Ljava/lang/StringBuilder;
+.method public final e()Ljava/lang/String;
+    .locals 1
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, "user"
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, ".meta"
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v0, v1, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    .line 15
+    iget-object v0, p0, Lqp;->f:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public c(Ljava/lang/String;)Lyp;
-    .locals 4
+.method public final f()Z
+    .locals 1
 
-    const-string v0, "Failed to close user metadata file."
+    .line 16
+    iget-boolean v0, p0, Lqp;->g:Z
 
-    .line 1
-    invoke-virtual {p0, p1}, Lqp;->b(Ljava/lang/String;)Ljava/io/File;
+    return v0
+.end method
 
-    move-result-object p1
+.method public final g()Ljava/lang/Long;
+    .locals 1
 
-    .line 2
-    invoke-virtual {p1}, Ljava/io/File;->exists()Z
+    .line 17
+    iget-object v0, p0, Lqp;->h:Ljava/lang/Long;
 
-    move-result v1
+    return-object v0
+.end method
 
-    if-nez v1, :cond_0
+.method public final h()Ljava/lang/Long;
+    .locals 1
 
-    .line 3
-    new-instance p1, Lyp;
+    .line 18
+    iget-object v0, p0, Lqp;->i:Ljava/lang/Long;
 
-    invoke-direct {p1}, Lyp;-><init>()V
-
-    return-object p1
-
-    :cond_0
-    const/4 v1, 0x0
-
-    .line 4
-    :try_start_0
-    new-instance v2, Ljava/io/FileInputStream;
-
-    invoke-direct {v2, p1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    .line 5
-    :try_start_1
-    invoke-static {v2}, Lzo;->b(Ljava/io/InputStream;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lqp;->d(Ljava/lang/String;)Lyp;
-
-    move-result-object p1
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 6
-    invoke-static {v2, v0}, Lzo;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-
-    return-object p1
-
-    :catchall_0
-    move-exception p1
-
-    move-object v1, v2
-
-    goto :goto_1
-
-    :catch_0
-    move-exception p1
-
-    move-object v1, v2
-
-    goto :goto_0
-
-    :catchall_1
-    move-exception p1
-
-    goto :goto_1
-
-    :catch_1
-    move-exception p1
-
-    .line 7
-    :goto_0
-    :try_start_2
-    invoke-static {}, Lmo;->a()Lmo;
-
-    move-result-object v2
-
-    const-string v3, "Error deserializing user metadata."
-
-    invoke-virtual {v2, v3, p1}, Lmo;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    .line 8
-    invoke-static {v1, v0}, Lzo;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-
-    .line 9
-    new-instance p1, Lyp;
-
-    invoke-direct {p1}, Lyp;-><init>()V
-
-    return-object p1
-
-    .line 10
-    :goto_1
-    invoke-static {v1, v0}, Lzo;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-
-    throw p1
+    return-object v0
 .end method

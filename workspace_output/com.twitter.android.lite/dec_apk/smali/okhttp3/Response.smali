@@ -44,42 +44,14 @@ Lokhttp3/Response$Builder;
 .field final sentRequestAtMillis:J
 .method constructor <init>(Lokhttp3/Response$Builder;)V
 .locals 2
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iget-object v0, p1, Lokhttp3/Response$Builder;->request:Lokhttp3/Request;
-iput-object v0, p0, Lokhttp3/Response;->request:Lokhttp3/Request;
-iget-object v0, p1, Lokhttp3/Response$Builder;->protocol:Lokhttp3/Protocol;
-iput-object v0, p0, Lokhttp3/Response;->protocol:Lokhttp3/Protocol;
-iget v0, p1, Lokhttp3/Response$Builder;->code:I
-iput v0, p0, Lokhttp3/Response;->code:I
-iget-object v0, p1, Lokhttp3/Response$Builder;->message:Ljava/lang/String;
-iput-object v0, p0, Lokhttp3/Response;->message:Ljava/lang/String;
-iget-object v0, p1, Lokhttp3/Response$Builder;->handshake:Lokhttp3/Handshake;
-iput-object v0, p0, Lokhttp3/Response;->handshake:Lokhttp3/Handshake;
-iget-object v0, p1, Lokhttp3/Response$Builder;->headers:Lokhttp3/Headers$Builder;
-invoke-virtual {v0}, Lokhttp3/Headers$Builder;->build()Lokhttp3/Headers;
-move-result-object v0
-iput-object v0, p0, Lokhttp3/Response;->headers:Lokhttp3/Headers;
-iget-object v0, p1, Lokhttp3/Response$Builder;->body:Lokhttp3/ResponseBody;
-iput-object v0, p0, Lokhttp3/Response;->body:Lokhttp3/ResponseBody;
-iget-object v0, p1, Lokhttp3/Response$Builder;->networkResponse:Lokhttp3/Response;
-iput-object v0, p0, Lokhttp3/Response;->networkResponse:Lokhttp3/Response;
-iget-object v0, p1, Lokhttp3/Response$Builder;->cacheResponse:Lokhttp3/Response;
-iput-object v0, p0, Lokhttp3/Response;->cacheResponse:Lokhttp3/Response;
-iget-object v0, p1, Lokhttp3/Response$Builder;->priorResponse:Lokhttp3/Response;
-iput-object v0, p0, Lokhttp3/Response;->priorResponse:Lokhttp3/Response;
-iget-wide v0, p1, Lokhttp3/Response$Builder;->sentRequestAtMillis:J
-iput-wide v0, p0, Lokhttp3/Response;->sentRequestAtMillis:J
-iget-wide v0, p1, Lokhttp3/Response$Builder;->receivedResponseAtMillis:J
-iput-wide v0, p0, Lokhttp3/Response;->receivedResponseAtMillis:J
-iget-object p1, p1, Lokhttp3/Response$Builder;->exchange:Lokhttp3/internal/connection/Exchange;
-iput-object p1, p0, Lokhttp3/Response;->exchange:Lokhttp3/internal/connection/Exchange;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public body()Lokhttp3/ResponseBody;
 .locals 1
 .annotation runtime Ljavax/annotation/Nullable;
 .end annotation
-iget-object v0, p0, Lokhttp3/Response;->body:Lokhttp3/ResponseBody;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public cacheControl()Lokhttp3/CacheControl;
@@ -113,7 +85,7 @@ return-void
 .end method
 .method public code()I
 .locals 1
-iget v0, p0, Lokhttp3/Response;->code:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public handshake()Lokhttp3/Handshake;
@@ -128,9 +100,7 @@ return-object v0
 .annotation runtime Ljavax/annotation/Nullable;
 .end annotation
 const/4 v0, 0x0
-invoke-virtual {p0, p1, v0}, Lokhttp3/Response;->header(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-move-result-object p1
-return-object p1
+return-object v0
 .end method
 .method public header(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 .locals 1
@@ -140,13 +110,8 @@ return-object p1
 .end param
 .annotation runtime Ljavax/annotation/Nullable;
 .end annotation
-iget-object v0, p0, Lokhttp3/Response;->headers:Lokhttp3/Headers;
-invoke-virtual {v0, p1}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
-move-result-object p1
-if-eqz p1, :cond_0
-move-object p2, p1
-:cond_0
-return-object p2
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public headers(Ljava/lang/String;)Ljava/util/List;
 .locals 1
@@ -165,7 +130,7 @@ return-object v0
 .end method
 .method public headers()Lokhttp3/Headers;
 .locals 1
-iget-object v0, p0, Lokhttp3/Response;->headers:Lokhttp3/Headers;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public isRedirect()Z
@@ -192,8 +157,7 @@ return-object v0
 .end method
 .method public newBuilder()Lokhttp3/Response$Builder;
 .locals 1
-new-instance v0, Lokhttp3/Response$Builder;
-invoke-direct {v0, p0}, Lokhttp3/Response$Builder;-><init>(Lokhttp3/Response;)V
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public peekBody(J)Lokhttp3/ResponseBody;
@@ -225,7 +189,7 @@ return-wide v0
 .end method
 .method public request()Lokhttp3/Request;
 .locals 1
-iget-object v0, p0, Lokhttp3/Response;->request:Lokhttp3/Request;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public sentRequestAtMillis()J

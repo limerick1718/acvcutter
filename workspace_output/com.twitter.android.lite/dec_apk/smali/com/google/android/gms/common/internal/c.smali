@@ -36,11 +36,13 @@ value = {
 }
 .end annotation
 .end field
-.field private final e:Ljava/lang/String;
-.field private final f:Ljava/lang/String;
-.field private final g:Lfm;
-.field private h:Ljava/lang/Integer;
-.method public constructor <init>(Landroid/accounts/Account;Ljava/util/Set;Ljava/util/Map;ILandroid/view/View;Ljava/lang/String;Ljava/lang/String;Lfm;Z)V
+.field private final e:I
+.field private final f:Landroid/view/View;
+.field private final g:Ljava/lang/String;
+.field private final h:Ljava/lang/String;
+.field private final i:Lqp;
+.field private j:Ljava/lang/Integer;
+.method public constructor <init>(Landroid/accounts/Account;Ljava/util/Set;Ljava/util/Map;ILandroid/view/View;Ljava/lang/String;Ljava/lang/String;Lqp;)V
 .locals 0
 .annotation system Ldalvik/annotation/Signature;
 value = {
@@ -57,8 +59,8 @@ value = {
 "Landroid/view/View;",
 "Ljava/lang/String;",
 "Ljava/lang/String;",
-"Lfm;",
-"Z)V"
+"Lqp;",
+")V"
 }
 .end annotation
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -93,9 +95,15 @@ value = {
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public final d()Ljava/lang/Integer;
+.method public final d()Ljava/util/Set;
 .locals 1
-.annotation runtime Ljavax/annotation/Nullable;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"()",
+"Ljava/util/Set<",
+"Lcom/google/android/gms/common/api/Scope;",
+">;"
+}
 .end annotation
 const/4 v0, 0x0
 return-object v0
@@ -114,20 +122,14 @@ return-object v0
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public final g()Ljava/util/Set;
+.method public final g()Lqp;
 .locals 1
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"()",
-"Ljava/util/Set<",
-"Lcom/google/android/gms/common/api/Scope;",
-">;"
-}
+.annotation runtime Ljavax/annotation/Nullable;
 .end annotation
 const/4 v0, 0x0
 return-object v0
 .end method
-.method public final h()Lfm;
+.method public final h()Ljava/lang/Integer;
 .locals 1
 .annotation runtime Ljavax/annotation/Nullable;
 .end annotation

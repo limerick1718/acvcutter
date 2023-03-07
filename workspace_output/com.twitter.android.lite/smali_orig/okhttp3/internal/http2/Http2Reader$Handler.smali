@@ -18,10 +18,10 @@
 .method public abstract ackSettings()V
 .end method
 
-.method public abstract alternateService(ILjava/lang/String;Lhx;Ljava/lang/String;IJ)V
+.method public abstract alternateService(ILjava/lang/String;Lyv;Ljava/lang/String;IJ)V
 .end method
 
-.method public abstract data(ZILgx;I)V
+.method public abstract data(ZILyu;I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -29,7 +29,7 @@
     .end annotation
 .end method
 
-.method public abstract goAway(ILokhttp3/internal/http2/ErrorCode;Lhx;)V
+.method public abstract goAway(ILokhttp3/internal/http2/ErrorCode;Lyv;)V
 .end method
 
 .method public abstract headers(ZIILjava/util/List;)V

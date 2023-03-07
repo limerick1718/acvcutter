@@ -1,30 +1,22 @@
-.class final Luf;
+.class public interface abstract Luf;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-.implements Ljava/lang/Iterable;
+.source "PushTokenService.java"
+.method public abstract a(Lcom/twitter/android/lite/model/PushTokenInfo;)Lretrofit2/Call;
+.param p1    # Lcom/twitter/android/lite/model/PushTokenInfo;
+.annotation runtime Lretrofit2/http/Body;
+.end annotation
+.end param
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ljava/lang/Object;",
-"Ljava/lang/Iterable<",
-"Ljava/lang/Object;",
+"(",
+"Lcom/twitter/android/lite/model/PushTokenInfo;",
+")",
+"Lretrofit2/Call<",
+"Ljava/lang/Void;",
 ">;"
 }
 .end annotation
-.method constructor <init>()V
-.locals 0
-invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-return-void
-.end method
-.method public final iterator()Ljava/util/Iterator;
-.locals 1
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"()",
-"Ljava/util/Iterator<",
-"Ljava/lang/Object;",
-">;"
-}
+.annotation runtime Lretrofit2/http/POST;
+value = "/1.1/notifications/settings/checkin.json"
 .end annotation
-const/4 v0, 0x0
-return-object v0
 .end method

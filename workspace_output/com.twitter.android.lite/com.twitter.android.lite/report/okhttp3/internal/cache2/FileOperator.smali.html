@@ -30,7 +30,7 @@
 <span class="">	return-void</span>
 .end method
 
-.method public read(JLex;J)V
+.method public read(JLys;J)V
 <span class="">	.locals 9</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -61,7 +61,7 @@
 <span class="">	throw p1</span>
 .end method
 
-.method public write(JLex;J)V
+.method public write(JLys;J)V
 <span class="">	.locals 13</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -72,24 +72,24 @@
 <span class="missed">	const-wide/16 v0, 0x0</span>
 <span class="missed">	cmp-long v2, p4, v0</span>
 <span class="missed">	if-ltz v2, :cond_1</span>
-<span class="">	invoke-virtual/range {p3 .. p3}, Lex;->v()J</span>
+<span class="">	invoke-virtual/range {p3 .. p3}, Lys;->a()J</span>
 <span class="missed">	move-result-wide v2</span>
 <span class="missed">	cmp-long v4, p4, v2</span>
 <span class="missed">	if-gtz v4, :cond_1</span>
-<span class="missed">	move-wide v2, p1</span>
-<span class="missed">	move-wide/from16 v11, p4</span>
+<span class="missed">	move-wide v11, p1</span>
+<span class="missed">	move-wide/from16 v2, p4</span>
 <span class="">	:goto_0</span>
-<span class="missed">	cmp-long v4, v11, v0</span>
+<span class="missed">	cmp-long v4, v2, v0</span>
 <span class="missed">	if-lez v4, :cond_0</span>
 <span class="missed">	move-object v4, p0</span>
 <span class="missed">	iget-object v5, v4, Lokhttp3/internal/cache2/FileOperator;->fileChannel:Ljava/nio/channels/FileChannel;</span>
 <span class="missed">	move-object/from16 v6, p3</span>
-<span class="missed">	move-wide v7, v2</span>
-<span class="missed">	move-wide v9, v11</span>
+<span class="missed">	move-wide v7, v11</span>
+<span class="missed">	move-wide v9, v2</span>
 <span class="">	invoke-virtual/range {v5 .. v10}, Ljava/nio/channels/FileChannel;->transferFrom(Ljava/nio/channels/ReadableByteChannel;JJ)J</span>
 <span class="missed">	move-result-wide v5</span>
-<span class="missed">	add-long/2addr v2, v5</span>
-<span class="missed">	sub-long/2addr v11, v5</span>
+<span class="missed">	add-long/2addr v11, v5</span>
+<span class="missed">	sub-long/2addr v2, v5</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	move-object v4, p0</span>

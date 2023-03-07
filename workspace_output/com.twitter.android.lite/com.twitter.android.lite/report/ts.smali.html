@@ -14,168 +14,28 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public Lts;
+		<code>.class public interface abstract annotation Lts;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.source "Since.java"
+.implements Ljava/lang/annotation/Annotation;
+
+.annotation runtime Ljava/lang/annotation/Documented;
+.end annotation
+.annotation runtime Ljava/lang/annotation/Retention;
+value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
+.end annotation
+.annotation runtime Ljava/lang/annotation/Target;
+value = {
+.enum Ljava/lang/annotation/ElementType;->FIELD:Ljava/lang/annotation/ElementType;,
+.enum Ljava/lang/annotation/ElementType;->TYPE:Ljava/lang/annotation/ElementType;
+}
+.end annotation
 
 
-.field private final a:Landroid/content/Context;
 
+.method public abstract a()D
+<span class="">	</span>
 
-<span class="cov">.method public constructor &lt;init&gt;(Landroid/content/Context;)V</span>
-<span class="">	.locals 0</span>
-
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	iput-object p1, p0, Lts;->a:Landroid/content/Context;</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method private b()Ljava/io/File;</span>
-<span class="">	.locals 3</span>
-
-<span class="cov">	new-instance v0, Ljava/io/File;</span>
-<span class="cov">	new-instance v1, Las;</span>
-<span class="cov">	iget-object v2, p0, Lts;->a:Landroid/content/Context;</span>
-<span class="cov">	invoke-direct {v1, v2}, Las;-><init>(Landroid/content/Context;)V</span>
-<span class="exec">	invoke-virtual {v1}, Las;->a()Ljava/io/File;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	const-string v2, "com.crashlytics.settings.json"</span>
-<span class="cov">	invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V</span>
-<span class="exec">	return-object v0</span>
-.end method
-
-<span class="cov">.method public a()Lorg/json/JSONObject;</span>
-<span class="">	.locals 6</span>
-
-<span class="cov">	const-string v0, "Error while closing settings cache file."</span>
-<span class="exec">	invoke-static {}, Lmo;->a()Lmo;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	const-string v2, "Reading cached settings..."</span>
-<span class="cov">	invoke-virtual {v1, v2}, Lmo;->a(Ljava/lang/String;)V</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	:try_start_0</span>
-<span class="exec">	invoke-direct {p0}, Lts;->b()Ljava/io/File;</span>
-<span class="cov">	move-result-object v2</span>
-<span class="exec">	invoke-virtual {v2}, Ljava/io/File;->exists()Z</span>
-<span class="cov">	move-result v3</span>
-<span class="missed">	if-eqz v3, :cond_0</span>
-<span class="missed">	new-instance v3, Ljava/io/FileInputStream;</span>
-<span class="missed">	invoke-direct {v3, v2}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1</span>
-<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="">	:try_start_1</span>
-<span class="">	invoke-static {v3}, Lzo;->b(Ljava/io/InputStream;)Ljava/lang/String;</span>
-<span class="missed">	move-result-object v2</span>
-<span class="missed">	new-instance v4, Lorg/json/JSONObject;</span>
-<span class="missed">	invoke-direct {v4, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V</span>
-<span class="">	:try_end_1</span>
-<span class="missed">	.catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0</span>
-<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_1</span>
-<span class="missed">	move-object v1, v3</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception v2</span>
-<span class="">	goto :goto_1</span>
-<span class="cov">	:try_start_2</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-static {}, Lmo;->a()Lmo;</span>
-<span class="cov">	move-result-object v2</span>
-<span class="cov">	const-string v3, "No cached settings found."</span>
-<span class="cov">	invoke-virtual {v2, v3}, Lmo;->a(Ljava/lang/String;)V</span>
-<span class="cov">	:try_end_2</span>
-<span class="cov">	.catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1</span>
-<span class="cov">	.catchall {:try_start_2 .. :try_end_2} :catchall_0</span>
-<span class="cov">	move-object v4, v1</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	invoke-static {v1, v0}, Lzo;->a(Ljava/io/Closeable;Ljava/lang/String;)V</span>
-<span class="cov">	move-object v1, v4</span>
-<span class="">	goto :goto_2</span>
-<span class="">	:catchall_0</span>
-<span class="missed">	move-exception v2</span>
-<span class="missed">	move-object v3, v1</span>
-<span class="missed">	move-object v1, v2</span>
-<span class="">	goto :goto_3</span>
-<span class="">	:catch_1</span>
-<span class="missed">	move-exception v2</span>
-<span class="missed">	move-object v3, v1</span>
-<span class="">	:goto_1</span>
-<span class="">	:try_start_3</span>
-<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
-<span class="missed">	move-result-object v4</span>
-<span class="missed">	const-string v5, "Failed to fetch cached settings"</span>
-<span class="missed">	invoke-virtual {v4, v5, v2}, Lmo;->b(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
-<span class="">	:try_end_3</span>
-<span class="missed">	.catchall {:try_start_3 .. :try_end_3} :catchall_1</span>
-<span class="missed">	invoke-static {v3, v0}, Lzo;->a(Ljava/io/Closeable;Ljava/lang/String;)V</span>
-<span class="cov">	:goto_2</span>
-<span class="exec">	return-object v1</span>
-<span class="">	:catchall_1</span>
-<span class="missed">	move-exception v1</span>
-<span class="">	:goto_3</span>
-<span class="missed">	invoke-static {v3, v0}, Lzo;->a(Ljava/io/Closeable;Ljava/lang/String;)V</span>
-<span class="">	throw v1</span>
-.end method
-
-<span class="cov">.method public a(JLorg/json/JSONObject;)V</span>
-<span class="">	.locals 3</span>
-
-<span class="cov">	const-string v0, "Failed to close settings writer."</span>
-<span class="exec">	invoke-static {}, Lmo;->a()Lmo;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	const-string v2, "Writing settings to cache file..."</span>
-<span class="cov">	invoke-virtual {v1, v2}, Lmo;->a(Ljava/lang/String;)V</span>
-<span class="cov">	if-eqz p3, :cond_0</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	const-string v2, "expires_at"</span>
-<span class="cov">	invoke-virtual {p3, v2, p1, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;</span>
-<span class="cov">	new-instance p1, Ljava/io/FileWriter;</span>
-<span class="exec">	invoke-direct {p0}, Lts;->b()Ljava/io/File;</span>
-<span class="cov">	move-result-object p2</span>
-<span class="cov">	invoke-direct {p1, p2}, Ljava/io/FileWriter;-><init>(Ljava/io/File;)V</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_1</span>
-<span class="cov">	:try_start_1</span>
-<span class="exec">	invoke-virtual {p3}, Lorg/json/JSONObject;->toString()Ljava/lang/String;</span>
-<span class="cov">	move-result-object p2</span>
-<span class="cov">	invoke-virtual {p1, p2}, Ljava/io/FileWriter;->write(Ljava/lang/String;)V</span>
-<span class="cov">	invoke-virtual {p1}, Ljava/io/FileWriter;->flush()V</span>
-<span class="cov">	:try_end_1</span>
-<span class="cov">	.catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0</span>
-<span class="cov">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
-<span class="cov">	invoke-static {p1, v0}, Lzo;->a(Ljava/io/Closeable;Ljava/lang/String;)V</span>
-<span class="">	goto :goto_2</span>
-<span class="">	:catchall_0</span>
-<span class="missed">	move-exception p2</span>
-<span class="missed">	move-object v1, p1</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception p2</span>
-<span class="missed">	move-object v1, p1</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:catchall_1</span>
-<span class="missed">	move-exception p2</span>
-<span class="">	goto :goto_1</span>
-<span class="">	:catch_1</span>
-<span class="missed">	move-exception p2</span>
-<span class="">	:goto_0</span>
-<span class="">	:try_start_2</span>
-<span class="">	invoke-static {}, Lmo;->a()Lmo;</span>
-<span class="missed">	move-result-object p1</span>
-<span class="missed">	const-string p3, "Failed to cache settings"</span>
-<span class="missed">	invoke-virtual {p1, p3, p2}, Lmo;->b(Ljava/lang/String;Ljava/lang/Throwable;)V</span>
-<span class="">	:try_end_2</span>
-<span class="missed">	.catchall {:try_start_2 .. :try_end_2} :catchall_1</span>
-<span class="missed">	invoke-static {v1, v0}, Lzo;->a(Ljava/io/Closeable;Ljava/lang/String;)V</span>
-<span class="">	goto :goto_2</span>
-<span class="">	:goto_1</span>
-<span class="missed">	invoke-static {v1, v0}, Lzo;->a(Ljava/io/Closeable;Ljava/lang/String;)V</span>
-<span class="">	throw p2</span>
-<span class="cov">	:goto_2</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-void</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

@@ -2,6 +2,13 @@
 .super Ljava/lang/Object;
 .source "MediaBrowserCompat.java"
 .implements Landroid/os/Parcelable;
+.annotation system Ldalvik/annotation/EnclosingClass;
+value = Landroid/support/v4/media/MediaBrowserCompat;
+.end annotation
+.annotation system Ldalvik/annotation/InnerClass;
+accessFlags = 0x9
+name = "MediaItem"
+.end annotation
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
 .annotation system Ldalvik/annotation/Signature;
 value = {

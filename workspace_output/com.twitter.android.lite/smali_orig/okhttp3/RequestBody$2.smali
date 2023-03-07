@@ -28,7 +28,7 @@
 .method constructor <init>(Lokhttp3/MediaType;I[BI)V
     .locals 0
 
-    .line 1
+    .line 141
     iput-object p1, p0, Lokhttp3/RequestBody$2;->val$contentType:Lokhttp3/MediaType;
 
     iput p2, p0, Lokhttp3/RequestBody$2;->val$byteCount:I
@@ -47,7 +47,7 @@
 .method public contentLength()J
     .locals 2
 
-    .line 1
+    .line 147
     iget v0, p0, Lokhttp3/RequestBody$2;->val$byteCount:I
 
     int-to-long v0, v0
@@ -60,13 +60,13 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 1
+    .line 143
     iget-object v0, p0, Lokhttp3/RequestBody$2;->val$contentType:Lokhttp3/MediaType;
 
     return-object v0
 .end method
 
-.method public writeTo(Lfx;)V
+.method public writeTo(Lyt;)V
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -74,14 +74,14 @@
         }
     .end annotation
 
-    .line 1
+    .line 151
     iget-object v0, p0, Lokhttp3/RequestBody$2;->val$content:[B
 
     iget v1, p0, Lokhttp3/RequestBody$2;->val$offset:I
 
     iget v2, p0, Lokhttp3/RequestBody$2;->val$byteCount:I
 
-    invoke-interface {p1, v0, v1, v2}, Lfx;->write([BII)Lfx;
+    invoke-interface {p1, v0, v1, v2}, Lyt;->c([BII)Lyt;
 
     return-void
 .end method

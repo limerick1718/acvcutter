@@ -14,56 +14,33 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Luj;
+		<code>.class public Luj;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.implements Lrj;
+.source "LocaleUtils.java"
 
 
-.field private static final a:Lva;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lva<",
-"Ljava/lang/Boolean;",
-">;"
-}
-.end annotation
-.end field
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 3</span>
+<span class="cov">.method public static a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="">	.locals 2</span>
 
-<span class="cov">	new-instance v0, Lbb;</span>
-<span class="cov">	const-string v1, "com.google.android.gms.measurement"</span>
-<span class="exec">	invoke-static {v1}, Lsa;->a(Ljava/lang/String;)Landroid/net/Uri;</span>
+<span class="exec">	invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	invoke-virtual {p0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	iget-object p0, p0, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;</span>
+<span class="cov">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="exec">	invoke-virtual {p0}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;</span>
 <span class="cov">	move-result-object v1</span>
-<span class="cov">	invoke-direct {v0, v1}, Lbb;-><init>(Landroid/net/Uri;)V</span>
-<span class="cov">	const-string v1, "measurement.referrer.enable_logging_install_referrer_cmp_from_apk"</span>
-<span class="cov">	const/4 v2, 0x1</span>
-<span class="exec">	invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	sput-object v0, Luj;->a:Lva;</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public constructor &lt;init&gt;()V</span>
-<span class="">	.locals 0</span>
-
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public final a()Z</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	sget-object v0, Luj;->a:Lva;</span>
-<span class="exec">	invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Ljava/lang/Boolean;</span>
-<span class="exec">	invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
+<span class="cov">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="cov">	invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual {p0}, Ljava/util/Locale;->getCountry()Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="cov">	invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="exec">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	return-object p0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

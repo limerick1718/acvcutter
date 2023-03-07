@@ -1,52 +1,39 @@
-.class final synthetic Lbr;
-.super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
+.class public abstract Lbr;
+.super Lbn;
 
 # interfaces
-.implements Lir$a;
-
-
-# static fields
-.field private static final a:Lbr;
+.implements Lbq;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public static a(Landroid/os/IBinder;)Lbq;
+    .locals 2
 
-    new-instance v0, Lbr;
+    if-nez p0, :cond_0
 
-    invoke-direct {v0}, Lbr;-><init>()V
+    const/4 p0, 0x0
 
-    sput-object v0, Lbr;->a:Lbr;
+    return-object p0
 
-    return-void
-.end method
+    :cond_0
+    const-string v0, "com.google.android.gms.ads.identifier.internal.IAdvertisingIdService"
 
-.method private constructor <init>()V
-    .locals 0
+    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v0
 
-    return-void
-.end method
+    instance-of v1, v0, Lbq;
 
-.method public static a()Lir$a;
-    .locals 1
+    if-eqz v1, :cond_1
 
-    sget-object v0, Lbr;->a:Lbr;
+    check-cast v0, Lbq;
 
     return-object v0
-.end method
 
+    :cond_1
+    new-instance v0, Lbs;
 
-# virtual methods
-.method public a(Landroid/util/JsonReader;)Ljava/lang/Object;
-    .locals 0
+    invoke-direct {v0, p0}, Lbs;-><init>(Landroid/os/IBinder;)V
 
-    invoke-static {p1}, Lir;->a(Landroid/util/JsonReader;)Lzq$d$d;
-
-    move-result-object p1
-
-    return-object p1
+    return-object v0
 .end method

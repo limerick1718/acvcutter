@@ -31,23 +31,23 @@ Lokhttp3/ResponseBody$BomAwareReader;
 .end field
 
 
-<span class="cov">.method private static synthetic $closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V</span>
+.method private static synthetic $closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 <span class="">	.locals 0</span>
 
 <span class="missed">	if-eqz p0, :cond_0</span>
 <span class="">	:try_start_0</span>
 <span class="missed">	invoke-interface {p1}, Ljava/lang/AutoCloseable;->close()V</span>
 <span class="">	:try_end_0</span>
-<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	.catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0</span>
 <span class="">	goto :goto_0</span>
-<span class="">	:catchall_0</span>
+<span class="">	:catch_0</span>
 <span class="missed">	move-exception p1</span>
 <span class="missed">	invoke-virtual {p0, p1}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	invoke-interface {p1}, Ljava/lang/AutoCloseable;->close()V</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return-void</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	invoke-interface {p1}, Ljava/lang/AutoCloseable;->close()V</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
 .end method
 
 <span class="cov">.method public constructor &lt;init&gt;()V</span>
@@ -57,23 +57,23 @@ Lokhttp3/ResponseBody$BomAwareReader;
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method private charset()Ljava/nio/charset/Charset;</span>
+.method private charset()Ljava/nio/charset/Charset;
 <span class="">	.locals 2</span>
 
-<span class="exec">	invoke-virtual {p0}, Lokhttp3/ResponseBody;->contentType()Lokhttp3/MediaType;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	sget-object v1, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;</span>
-<span class="exec">	invoke-virtual {v0, v1}, Lokhttp3/MediaType;->charset(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;</span>
-<span class="cov">	move-result-object v0</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/ResponseBody;->contentType()Lokhttp3/MediaType;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	sget-object v1, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;</span>
+<span class="">	invoke-virtual {v0, v1}, Lokhttp3/MediaType;->charset(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;</span>
+<span class="missed">	move-result-object v0</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	sget-object v0, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return-object v0</span>
+<span class="">	:goto_0</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public static create(Lokhttp3/MediaType;JLgx;)Lokhttp3/ResponseBody;</span>
+<span class="cov">.method public static create(Lokhttp3/MediaType;JLyu;)Lokhttp3/ResponseBody;</span>
 <span class="">	.locals 1</span>
 <span class="">	.param p0    # Lokhttp3/MediaType;</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
@@ -82,7 +82,7 @@ Lokhttp3/ResponseBody$BomAwareReader;
 
 <span class="cov">	if-eqz p3, :cond_0</span>
 <span class="cov">	new-instance v0, Lokhttp3/ResponseBody$1;</span>
-<span class="cov">	invoke-direct {v0, p0, p1, p2, p3}, Lokhttp3/ResponseBody$1;-><init>(Lokhttp3/MediaType;JLgx;)V</span>
+<span class="cov">	invoke-direct {v0, p0, p1, p2, p3}, Lokhttp3/ResponseBody$1;-><init>(Lokhttp3/MediaType;JLyu;)V</span>
 <span class="exec">	return-object v0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	new-instance p0, Ljava/lang/NullPointerException;</span>
@@ -91,26 +91,8 @@ Lokhttp3/ResponseBody$BomAwareReader;
 <span class="">	throw p0</span>
 .end method
 
-.method public static create(Lokhttp3/MediaType;Lhx;)Lokhttp3/ResponseBody;
-<span class="">	.locals 3</span>
-<span class="">	.param p0    # Lokhttp3/MediaType;</span>
-<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
-<span class="">	.end annotation</span>
-<span class="">	.end param</span>
-
-<span class="missed">	new-instance v0, Lex;</span>
-<span class="missed">	invoke-direct {v0}, Lex;-><init>()V</span>
-<span class="missed">	invoke-virtual {v0, p1}, Lex;->a(Lhx;)Lex;</span>
-<span class="">	invoke-virtual {p1}, Lhx;->l()I</span>
-<span class="missed">	move-result p1</span>
-<span class="missed">	int-to-long v1, p1</span>
-<span class="">	invoke-static {p0, v1, v2, v0}, Lokhttp3/ResponseBody;->create(Lokhttp3/MediaType;JLgx;)Lokhttp3/ResponseBody;</span>
-<span class="missed">	move-result-object p0</span>
-<span class="">	return-object p0</span>
-.end method
-
 .method public static create(Lokhttp3/MediaType;Ljava/lang/String;)Lokhttp3/ResponseBody;
-<span class="">	.locals 4</span>
+<span class="">	.locals 2</span>
 <span class="">	.param p0    # Lokhttp3/MediaType;</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
 <span class="">	.end annotation</span>
@@ -132,12 +114,32 @@ Lokhttp3/ResponseBody$BomAwareReader;
 <span class="">	invoke-static {p0}, Lokhttp3/MediaType;->parse(Ljava/lang/String;)Lokhttp3/MediaType;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="">	:cond_0</span>
-<span class="missed">	new-instance v1, Lex;</span>
-<span class="missed">	invoke-direct {v1}, Lex;-><init>()V</span>
-<span class="missed">	invoke-virtual {v1, p1, v0}, Lex;->a(Ljava/lang/String;Ljava/nio/charset/Charset;)Lex;</span>
-<span class="">	invoke-virtual {v1}, Lex;->v()J</span>
-<span class="missed">	move-result-wide v2</span>
-<span class="">	invoke-static {p0, v2, v3, v1}, Lokhttp3/ResponseBody;->create(Lokhttp3/MediaType;JLgx;)Lokhttp3/ResponseBody;</span>
+<span class="missed">	new-instance v1, Lys;</span>
+<span class="missed">	invoke-direct {v1}, Lys;-><init>()V</span>
+<span class="">	invoke-virtual {v1, p1, v0}, Lys;->a(Ljava/lang/String;Ljava/nio/charset/Charset;)Lys;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-virtual {p1}, Lys;->a()J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	invoke-static {p0, v0, v1, p1}, Lokhttp3/ResponseBody;->create(Lokhttp3/MediaType;JLyu;)Lokhttp3/ResponseBody;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public static create(Lokhttp3/MediaType;Lyv;)Lokhttp3/ResponseBody;
+<span class="">	.locals 3</span>
+<span class="">	.param p0    # Lokhttp3/MediaType;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+
+<span class="missed">	new-instance v0, Lys;</span>
+<span class="missed">	invoke-direct {v0}, Lys;-><init>()V</span>
+<span class="">	invoke-virtual {v0, p1}, Lys;->a(Lyv;)Lys;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p1}, Lyv;->h()I</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	int-to-long v1, p1</span>
+<span class="">	invoke-static {p0, v1, v2, v0}, Lokhttp3/ResponseBody;->create(Lokhttp3/MediaType;JLyu;)Lokhttp3/ResponseBody;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="">	return-object p0</span>
 .end method
@@ -149,12 +151,13 @@ Lokhttp3/ResponseBody$BomAwareReader;
 <span class="">	.end annotation</span>
 <span class="">	.end param</span>
 
-<span class="cov">	new-instance v0, Lex;</span>
-<span class="cov">	invoke-direct {v0}, Lex;-><init>()V</span>
-<span class="cov">	invoke-virtual {v0, p1}, Lex;->write([B)Lex;</span>
+<span class="cov">	new-instance v0, Lys;</span>
+<span class="cov">	invoke-direct {v0}, Lys;-><init>()V</span>
+<span class="exec">	invoke-virtual {v0, p1}, Lys;->b([B)Lys;</span>
+<span class="cov">	move-result-object v0</span>
 <span class="cov">	array-length p1, p1</span>
 <span class="cov">	int-to-long v1, p1</span>
-<span class="exec">	invoke-static {p0, v1, v2, v0}, Lokhttp3/ResponseBody;->create(Lokhttp3/MediaType;JLgx;)Lokhttp3/ResponseBody;</span>
+<span class="exec">	invoke-static {p0, v1, v2, v0}, Lokhttp3/ResponseBody;->create(Lokhttp3/MediaType;JLyu;)Lokhttp3/ResponseBody;</span>
 <span class="cov">	move-result-object p0</span>
 <span class="exec">	return-object p0</span>
 .end method
@@ -162,9 +165,9 @@ Lokhttp3/ResponseBody$BomAwareReader;
 .method public final byteStream()Ljava/io/InputStream;
 <span class="">	.locals 1</span>
 
-<span class="">	invoke-virtual {p0}, Lokhttp3/ResponseBody;->source()Lgx;</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/ResponseBody;->source()Lyu;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	invoke-interface {v0}, Lgx;->o()Ljava/io/InputStream;</span>
+<span class="">	invoke-interface {v0}, Lyu;->i()Ljava/io/InputStream;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="">	return-object v0</span>
 .end method
@@ -182,13 +185,14 @@ Lokhttp3/ResponseBody$BomAwareReader;
 <span class="missed">	const-wide/32 v2, 0x7fffffff</span>
 <span class="missed">	cmp-long v4, v0, v2</span>
 <span class="missed">	if-gtz v4, :cond_4</span>
-<span class="">	invoke-virtual {p0}, Lokhttp3/ResponseBody;->source()Lgx;</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/ResponseBody;->source()Lyu;</span>
 <span class="missed">	move-result-object v2</span>
 <span class="missed">	const/4 v3, 0x0</span>
 <span class="">	:try_start_0</span>
-<span class="">	invoke-interface {v2}, Lgx;->j()[B</span>
+<span class="">	invoke-interface {v2}, Lyu;->v()[B</span>
 <span class="missed">	move-result-object v4</span>
 <span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0</span>
 <span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
 <span class="missed">	if-eqz v2, :cond_0</span>
 <span class="missed">	invoke-static {v3, v2}, Lokhttp3/ResponseBody;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V</span>
@@ -223,16 +227,18 @@ Lokhttp3/ResponseBody$BomAwareReader;
 <span class="">	return-object v4</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception v0</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v3</span>
 <span class="">	:try_start_1</span>
-<span class="">	throw v0</span>
+<span class="">	throw v3</span>
 <span class="">	:try_end_1</span>
-<span class="">	.catchall {:try_start_1 .. :try_end_1} :catchall_1</span>
-<span class="">	:catchall_1</span>
-<span class="missed">	move-exception v1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	:goto_1</span>
 <span class="missed">	if-eqz v2, :cond_3</span>
-<span class="missed">	invoke-static {v0, v2}, Lokhttp3/ResponseBody;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V</span>
+<span class="missed">	invoke-static {v3, v2}, Lokhttp3/ResponseBody;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V</span>
 <span class="">	:cond_3</span>
-<span class="">	throw v1</span>
+<span class="">	throw v0</span>
 <span class="">	:cond_4</span>
 <span class="missed">	new-instance v2, Ljava/io/IOException;</span>
 <span class="missed">	new-instance v3, Ljava/lang/StringBuilder;</span>
@@ -254,11 +260,11 @@ Lokhttp3/ResponseBody$BomAwareReader;
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	new-instance v0, Lokhttp3/ResponseBody$BomAwareReader;</span>
-<span class="">	invoke-virtual {p0}, Lokhttp3/ResponseBody;->source()Lgx;</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/ResponseBody;->source()Lyu;</span>
 <span class="missed">	move-result-object v1</span>
 <span class="">	invoke-direct {p0}, Lokhttp3/ResponseBody;->charset()Ljava/nio/charset/Charset;</span>
 <span class="missed">	move-result-object v2</span>
-<span class="missed">	invoke-direct {v0, v1, v2}, Lokhttp3/ResponseBody$BomAwareReader;-><init>(Lgx;Ljava/nio/charset/Charset;)V</span>
+<span class="missed">	invoke-direct {v0, v1, v2}, Lokhttp3/ResponseBody$BomAwareReader;-><init>(Lyu;Ljava/nio/charset/Charset;)V</span>
 <span class="missed">	iput-object v0, p0, Lokhttp3/ResponseBody;->reader:Ljava/io/Reader;</span>
 <span class="">	:goto_0</span>
 <span class="">	return-object v0</span>
@@ -267,7 +273,7 @@ Lokhttp3/ResponseBody$BomAwareReader;
 .method public close()V
 <span class="">	.locals 1</span>
 
-<span class="">	invoke-virtual {p0}, Lokhttp3/ResponseBody;->source()Lgx;</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/ResponseBody;->source()Lyu;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="missed">	invoke-static {v0}, Lokhttp3/internal/Util;->closeQuietly(Ljava/io/Closeable;)V</span>
 <span class="">	return-void</span>
@@ -285,12 +291,12 @@ Lokhttp3/ResponseBody$BomAwareReader;
 
 .end method
 
-.method public abstract source()Lgx;
+.method public abstract source()Lyu;
 <span class="">	</span>
 
 .end method
 
-<span class="cov">.method public final string()Ljava/lang/String;</span>
+.method public final string()Ljava/lang/String;
 <span class="">	.locals 3</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -298,30 +304,33 @@ Lokhttp3/ResponseBody$BomAwareReader;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="exec">	invoke-virtual {p0}, Lokhttp3/ResponseBody;->source()Lgx;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	:try_start_0</span>
-<span class="exec">	invoke-direct {p0}, Lokhttp3/ResponseBody;->charset()Ljava/nio/charset/Charset;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="exec">	invoke-static {v0, v1}, Lokhttp3/internal/Util;->bomAwareCharset(Lgx;Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="exec">	invoke-interface {v0, v1}, Lgx;->a(Ljava/nio/charset/Charset;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	const/4 v2, 0x0</span>
-<span class="cov">	invoke-static {v2, v0}, Lokhttp3/ResponseBody;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-object v1</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/ResponseBody;->source()Lyu;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-direct {p0}, Lokhttp3/ResponseBody;->charset()Ljava/nio/charset/Charset;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-static {v0, v2}, Lokhttp3/internal/Util;->bomAwareCharset(Lyu;Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-interface {v0, v2}, Lyu;->a(Ljava/nio/charset/Charset;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-static {v1, v0}, Lokhttp3/ResponseBody;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object v2</span>
 <span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
 <span class="missed">	move-exception v1</span>
 <span class="">	:try_start_1</span>
 <span class="">	throw v1</span>
 <span class="">	:try_end_1</span>
-<span class="">	.catchall {:try_start_1 .. :try_end_1} :catchall_1</span>
-<span class="">	:catchall_1</span>
-<span class="missed">	move-exception v2</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	:goto_0</span>
 <span class="missed">	if-eqz v0, :cond_1</span>
 <span class="missed">	invoke-static {v1, v0}, Lokhttp3/ResponseBody;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V</span>
 <span class="">	:cond_1</span>

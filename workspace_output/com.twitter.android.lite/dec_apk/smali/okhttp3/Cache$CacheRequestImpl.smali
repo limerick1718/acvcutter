@@ -9,8 +9,8 @@ value = Lokhttp3/Cache;
 accessFlags = 0x12
 name = "CacheRequestImpl"
 .end annotation
-.field private body:Lvx;
-.field private cacheOut:Lvx;
+.field private body:Lzj;
+.field private cacheOut:Lzj;
 .field  done:Z
 .field private final editor:Lokhttp3/internal/cache/DiskLruCache$Editor;
 .field final synthetic this$0:Lokhttp3/Cache;
@@ -23,7 +23,7 @@ return-void
 .locals 4
 return-void
 .end method
-.method public body()Lvx;
+.method public body()Lzj;
 .locals 1
 const/4 v0, 0x0
 return-object v0

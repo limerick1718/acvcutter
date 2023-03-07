@@ -19,22 +19,22 @@
 .source "HttpHeaders.java"
 
 
-.field private static final QUOTED_STRING_DELIMITERS:Lhx;
-.field private static final TOKEN_DELIMITERS:Lhx;
+.field private static final QUOTED_STRING_DELIMITERS:Lyv;
+.field private static final TOKEN_DELIMITERS:Lyv;
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+.method static constructor &lt;clinit&gt;()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	const-string v0, "\"\\"</span>
-<span class="exec">	invoke-static {v0}, Lhx;->d(Ljava/lang/String;)Lhx;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	sput-object v0, Lokhttp3/internal/http/HttpHeaders;->QUOTED_STRING_DELIMITERS:Lhx;</span>
-<span class="cov">	const-string v0, "\t ,="</span>
-<span class="exec">	invoke-static {v0}, Lhx;->d(Ljava/lang/String;)Lhx;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	sput-object v0, Lokhttp3/internal/http/HttpHeaders;->TOKEN_DELIMITERS:Lhx;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	const-string v0, "\"\\"</span>
+<span class="">	invoke-static {v0}, Lyv;->a(Ljava/lang/String;)Lyv;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lokhttp3/internal/http/HttpHeaders;->QUOTED_STRING_DELIMITERS:Lyv;</span>
+<span class="missed">	const-string v0, "\t ,="</span>
+<span class="">	invoke-static {v0}, Lyv;->a(Ljava/lang/String;)Lyv;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lokhttp3/internal/http/HttpHeaders;->TOKEN_DELIMITERS:Lyv;</span>
+<span class="">	return-void</span>
 .end method
 
 .method private constructor &lt;init&gt;()V
@@ -44,54 +44,54 @@
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public static contentLength(Lokhttp3/Headers;)J</span>
+.method public static contentLength(Lokhttp3/Headers;)J
 <span class="">	.locals 2</span>
 
-<span class="cov">	const-string v0, "Content-Length"</span>
-<span class="exec">	invoke-virtual {p0, v0}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	invoke-static {p0}, Lokhttp3/internal/http/HttpHeaders;->stringToLong(Ljava/lang/String;)J</span>
-<span class="cov">	move-result-wide v0</span>
-<span class="exec">	return-wide v0</span>
+<span class="missed">	const-string v0, "Content-Length"</span>
+<span class="">	invoke-virtual {p0, v0}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-static {p0}, Lokhttp3/internal/http/HttpHeaders;->stringToLong(Ljava/lang/String;)J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	return-wide v0</span>
 .end method
 
-<span class="cov">.method public static contentLength(Lokhttp3/Response;)J</span>
+.method public static contentLength(Lokhttp3/Response;)J
 <span class="">	.locals 2</span>
 
-<span class="exec">	invoke-virtual {p0}, Lokhttp3/Response;->headers()Lokhttp3/Headers;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	invoke-static {p0}, Lokhttp3/internal/http/HttpHeaders;->contentLength(Lokhttp3/Headers;)J</span>
-<span class="cov">	move-result-wide v0</span>
-<span class="exec">	return-wide v0</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/Response;->headers()Lokhttp3/Headers;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-static {p0}, Lokhttp3/internal/http/HttpHeaders;->contentLength(Lokhttp3/Headers;)J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	return-wide v0</span>
 .end method
 
-<span class="cov">.method public static hasBody(Lokhttp3/Response;)Z</span>
+.method public static hasBody(Lokhttp3/Response;)Z
 <span class="">	.locals 8</span>
 
-<span class="exec">	invoke-virtual {p0}, Lokhttp3/Response;->request()Lokhttp3/Request;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-virtual {v0}, Lokhttp3/Request;->method()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	const-string v1, "HEAD"</span>
-<span class="exec">	invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	const/4 v1, 0x0</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/Response;->request()Lokhttp3/Request;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Lokhttp3/Request;->method()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "HEAD"</span>
+<span class="">	invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="">	return v1</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-virtual {p0}, Lokhttp3/Response;->code()I</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	const/16 v2, 0x64</span>
-<span class="cov">	const/4 v3, 0x1</span>
-<span class="cov">	if-lt v0, v2, :cond_1</span>
-<span class="cov">	const/16 v2, 0xc8</span>
-<span class="cov">	if-lt v0, v2, :cond_2</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	const/16 v2, 0xcc</span>
-<span class="cov">	if-eq v0, v2, :cond_2</span>
-<span class="cov">	const/16 v2, 0x130</span>
-<span class="cov">	if-eq v0, v2, :cond_2</span>
-<span class="exec">	return v3</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/Response;->code()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/16 v2, 0x64</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	if-lt v0, v2, :cond_1</span>
+<span class="missed">	const/16 v2, 0xc8</span>
+<span class="missed">	if-lt v0, v2, :cond_2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/16 v2, 0xcc</span>
+<span class="missed">	if-eq v0, v2, :cond_2</span>
+<span class="missed">	const/16 v2, 0x130</span>
+<span class="missed">	if-eq v0, v2, :cond_2</span>
+<span class="">	return v3</span>
 <span class="">	:cond_2</span>
 <span class="">	invoke-static {p0}, Lokhttp3/internal/http/HttpHeaders;->contentLength(Lokhttp3/Response;)J</span>
 <span class="missed">	move-result-wide v4</span>
@@ -134,7 +134,7 @@
 <span class="">	return p0</span>
 .end method
 
-.method private static parseChallengeHeader(Ljava/util/List;Lex;)V
+.method private static parseChallengeHeader(Ljava/util/List;Lys;)V
 <span class="">	.locals 8</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -142,7 +142,7 @@
 <span class="">	"Ljava/util/List<",</span>
 <span class="">	"Lokhttp3/Challenge;",</span>
 <span class="">	">;",</span>
-<span class="">	"Lex;",</span>
+<span class="">	"Lys;",</span>
 <span class="">	")V"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
@@ -152,18 +152,18 @@
 <span class="missed">	move-object v1, v0</span>
 <span class="">	:goto_1</span>
 <span class="missed">	if-nez v1, :cond_0</span>
-<span class="missed">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->skipWhitespaceAndCommas(Lex;)Z</span>
-<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->readToken(Lex;)Ljava/lang/String;</span>
+<span class="missed">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->skipWhitespaceAndCommas(Lys;)Z</span>
+<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->readToken(Lys;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v1</span>
 <span class="missed">	if-nez v1, :cond_0</span>
 <span class="">	return-void</span>
 <span class="">	:cond_0</span>
-<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->skipWhitespaceAndCommas(Lex;)Z</span>
+<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->skipWhitespaceAndCommas(Lys;)Z</span>
 <span class="missed">	move-result v2</span>
-<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->readToken(Lex;)Ljava/lang/String;</span>
+<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->readToken(Lys;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v3</span>
 <span class="missed">	if-nez v3, :cond_2</span>
-<span class="">	invoke-virtual {p1}, Lex;->m()Z</span>
+<span class="">	invoke-virtual {p1}, Lys;->g()Z</span>
 <span class="missed">	move-result p1</span>
 <span class="missed">	if-nez p1, :cond_1</span>
 <span class="">	return-void</span>
@@ -176,13 +176,13 @@
 <span class="">	return-void</span>
 <span class="">	:cond_2</span>
 <span class="missed">	const/16 v4, 0x3d</span>
-<span class="">	invoke-static {p1, v4}, Lokhttp3/internal/http/HttpHeaders;->skipAll(Lex;B)I</span>
+<span class="">	invoke-static {p1, v4}, Lokhttp3/internal/http/HttpHeaders;->skipAll(Lys;B)I</span>
 <span class="missed">	move-result v5</span>
-<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->skipWhitespaceAndCommas(Lex;)Z</span>
+<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->skipWhitespaceAndCommas(Lys;)Z</span>
 <span class="missed">	move-result v6</span>
 <span class="missed">	if-nez v2, :cond_4</span>
 <span class="missed">	if-nez v6, :cond_3</span>
-<span class="">	invoke-virtual {p1}, Lex;->m()Z</span>
+<span class="">	invoke-virtual {p1}, Lys;->g()Z</span>
 <span class="missed">	move-result v2</span>
 <span class="missed">	if-eqz v2, :cond_4</span>
 <span class="">	:cond_3</span>
@@ -203,19 +203,19 @@
 <span class="">	:cond_4</span>
 <span class="missed">	new-instance v2, Ljava/util/LinkedHashMap;</span>
 <span class="missed">	invoke-direct {v2}, Ljava/util/LinkedHashMap;-><init>()V</span>
-<span class="">	invoke-static {p1, v4}, Lokhttp3/internal/http/HttpHeaders;->skipAll(Lex;B)I</span>
+<span class="">	invoke-static {p1, v4}, Lokhttp3/internal/http/HttpHeaders;->skipAll(Lys;B)I</span>
 <span class="missed">	move-result v6</span>
 <span class="missed">	add-int/2addr v5, v6</span>
 <span class="">	:goto_2</span>
 <span class="missed">	if-nez v3, :cond_6</span>
-<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->readToken(Lex;)Ljava/lang/String;</span>
+<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->readToken(Lys;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v3</span>
-<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->skipWhitespaceAndCommas(Lex;)Z</span>
+<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->skipWhitespaceAndCommas(Lys;)Z</span>
 <span class="missed">	move-result v5</span>
 <span class="missed">	if-eqz v5, :cond_5</span>
 <span class="">	goto :goto_3</span>
 <span class="">	:cond_5</span>
-<span class="">	invoke-static {p1, v4}, Lokhttp3/internal/http/HttpHeaders;->skipAll(Lex;B)I</span>
+<span class="">	invoke-static {p1, v4}, Lokhttp3/internal/http/HttpHeaders;->skipAll(Lys;B)I</span>
 <span class="missed">	move-result v5</span>
 <span class="">	:cond_6</span>
 <span class="missed">	if-nez v5, :cond_7</span>
@@ -230,24 +230,24 @@
 <span class="missed">	if-le v5, v6, :cond_8</span>
 <span class="">	return-void</span>
 <span class="">	:cond_8</span>
-<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->skipWhitespaceAndCommas(Lex;)Z</span>
+<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->skipWhitespaceAndCommas(Lys;)Z</span>
 <span class="missed">	move-result v6</span>
 <span class="missed">	if-eqz v6, :cond_9</span>
 <span class="">	return-void</span>
 <span class="">	:cond_9</span>
-<span class="">	invoke-virtual {p1}, Lex;->m()Z</span>
+<span class="">	invoke-virtual {p1}, Lys;->g()Z</span>
 <span class="missed">	move-result v6</span>
 <span class="missed">	if-nez v6, :cond_a</span>
 <span class="missed">	const-wide/16 v6, 0x0</span>
-<span class="">	invoke-virtual {p1, v6, v7}, Lex;->h(J)B</span>
+<span class="">	invoke-virtual {p1, v6, v7}, Lys;->c(J)B</span>
 <span class="missed">	move-result v6</span>
 <span class="missed">	const/16 v7, 0x22</span>
 <span class="missed">	if-ne v6, v7, :cond_a</span>
-<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->readQuotedString(Lex;)Ljava/lang/String;</span>
+<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->readQuotedString(Lys;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v6</span>
 <span class="">	goto :goto_4</span>
 <span class="">	:cond_a</span>
-<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->readToken(Lex;)Ljava/lang/String;</span>
+<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->readToken(Lys;)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v6</span>
 <span class="">	:goto_4</span>
 <span class="missed">	if-nez v6, :cond_b</span>
@@ -259,10 +259,10 @@
 <span class="missed">	if-eqz v3, :cond_c</span>
 <span class="">	return-void</span>
 <span class="">	:cond_c</span>
-<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->skipWhitespaceAndCommas(Lex;)Z</span>
+<span class="">	invoke-static {p1}, Lokhttp3/internal/http/HttpHeaders;->skipWhitespaceAndCommas(Lys;)Z</span>
 <span class="missed">	move-result v3</span>
 <span class="missed">	if-nez v3, :cond_d</span>
-<span class="">	invoke-virtual {p1}, Lex;->m()Z</span>
+<span class="">	invoke-virtual {p1}, Lys;->g()Z</span>
 <span class="missed">	move-result v3</span>
 <span class="missed">	if-nez v3, :cond_d</span>
 <span class="">	return-void</span>
@@ -297,12 +297,13 @@
 <span class="">	invoke-virtual {p1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z</span>
 <span class="missed">	move-result v2</span>
 <span class="missed">	if-eqz v2, :cond_0</span>
-<span class="missed">	new-instance v2, Lex;</span>
-<span class="missed">	invoke-direct {v2}, Lex;-><init>()V</span>
+<span class="missed">	new-instance v2, Lys;</span>
+<span class="missed">	invoke-direct {v2}, Lys;-><init>()V</span>
 <span class="">	invoke-virtual {p0, v1}, Lokhttp3/Headers;->value(I)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v3</span>
-<span class="missed">	invoke-virtual {v2, v3}, Lex;->a(Ljava/lang/String;)Lex;</span>
-<span class="missed">	invoke-static {v0, v2}, Lokhttp3/internal/http/HttpHeaders;->parseChallengeHeader(Ljava/util/List;Lex;)V</span>
+<span class="">	invoke-virtual {v2, v3}, Lys;->a(Ljava/lang/String;)Lys;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	invoke-static {v0, v2}, Lokhttp3/internal/http/HttpHeaders;->parseChallengeHeader(Ljava/util/List;Lys;)V</span>
 <span class="">	:cond_0</span>
 <span class="missed">	add-int/lit8 v1, v1, 0x1</span>
 <span class="">	goto :goto_0</span>
@@ -335,18 +336,18 @@
 <span class="">	return p1</span>
 .end method
 
-.method private static readQuotedString(Lex;)Ljava/lang/String;
+.method private static readQuotedString(Lys;)Ljava/lang/String;
 <span class="">	.locals 12</span>
 
-<span class="">	invoke-virtual {p0}, Lex;->readByte()B</span>
+<span class="">	invoke-virtual {p0}, Lys;->k()B</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	const/16 v1, 0x22</span>
 <span class="missed">	if-ne v0, v1, :cond_3</span>
-<span class="missed">	new-instance v0, Lex;</span>
-<span class="missed">	invoke-direct {v0}, Lex;-><init>()V</span>
+<span class="missed">	new-instance v0, Lys;</span>
+<span class="missed">	invoke-direct {v0}, Lys;-><init>()V</span>
 <span class="">	:goto_0</span>
-<span class="missed">	sget-object v2, Lokhttp3/internal/http/HttpHeaders;->QUOTED_STRING_DELIMITERS:Lhx;</span>
-<span class="">	invoke-virtual {p0, v2}, Lex;->b(Lhx;)J</span>
+<span class="missed">	sget-object v2, Lokhttp3/internal/http/HttpHeaders;->QUOTED_STRING_DELIMITERS:Lyv;</span>
+<span class="">	invoke-virtual {p0, v2}, Lys;->b(Lyv;)J</span>
 <span class="missed">	move-result-wide v2</span>
 <span class="missed">	const-wide/16 v4, -0x1</span>
 <span class="missed">	const/4 v6, 0x0</span>
@@ -354,16 +355,16 @@
 <span class="missed">	if-nez v7, :cond_0</span>
 <span class="">	return-object v6</span>
 <span class="">	:cond_0</span>
-<span class="">	invoke-virtual {p0, v2, v3}, Lex;->h(J)B</span>
+<span class="">	invoke-virtual {p0, v2, v3}, Lys;->c(J)B</span>
 <span class="missed">	move-result v4</span>
 <span class="missed">	if-ne v4, v1, :cond_1</span>
-<span class="missed">	invoke-virtual {v0, p0, v2, v3}, Lex;->write(Lex;J)V</span>
-<span class="missed">	invoke-virtual {p0}, Lex;->readByte()B</span>
-<span class="">	invoke-virtual {v0}, Lex;->u()Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {v0, p0, v2, v3}, Lys;->write(Lys;J)V</span>
+<span class="missed">	invoke-virtual {p0}, Lys;->k()B</span>
+<span class="">	invoke-virtual {v0}, Lys;->t()Ljava/lang/String;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="">	return-object p0</span>
 <span class="">	:cond_1</span>
-<span class="">	invoke-virtual {p0}, Lex;->v()J</span>
+<span class="">	invoke-virtual {p0}, Lys;->a()J</span>
 <span class="missed">	move-result-wide v4</span>
 <span class="missed">	const-wide/16 v7, 0x1</span>
 <span class="missed">	add-long v9, v2, v7</span>
@@ -371,9 +372,9 @@
 <span class="missed">	if-nez v11, :cond_2</span>
 <span class="">	return-object v6</span>
 <span class="">	:cond_2</span>
-<span class="missed">	invoke-virtual {v0, p0, v2, v3}, Lex;->write(Lex;J)V</span>
-<span class="missed">	invoke-virtual {p0}, Lex;->readByte()B</span>
-<span class="missed">	invoke-virtual {v0, p0, v7, v8}, Lex;->write(Lex;J)V</span>
+<span class="missed">	invoke-virtual {v0, p0, v2, v3}, Lys;->write(Lys;J)V</span>
+<span class="missed">	invoke-virtual {p0}, Lys;->k()B</span>
+<span class="missed">	invoke-virtual {v0, p0, v7, v8}, Lys;->write(Lys;J)V</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_3</span>
 <span class="missed">	new-instance p0, Ljava/lang/IllegalArgumentException;</span>
@@ -381,23 +382,23 @@
 <span class="">	throw p0</span>
 .end method
 
-.method private static readToken(Lex;)Ljava/lang/String;
+.method private static readToken(Lys;)Ljava/lang/String;
 <span class="">	.locals 5</span>
 
 <span class="">	:try_start_0</span>
-<span class="missed">	sget-object v0, Lokhttp3/internal/http/HttpHeaders;->TOKEN_DELIMITERS:Lhx;</span>
-<span class="">	invoke-virtual {p0, v0}, Lex;->b(Lhx;)J</span>
+<span class="missed">	sget-object v0, Lokhttp3/internal/http/HttpHeaders;->TOKEN_DELIMITERS:Lyv;</span>
+<span class="">	invoke-virtual {p0, v0}, Lys;->b(Lyv;)J</span>
 <span class="missed">	move-result-wide v0</span>
 <span class="missed">	const-wide/16 v2, -0x1</span>
 <span class="missed">	cmp-long v4, v0, v2</span>
 <span class="missed">	if-nez v4, :cond_0</span>
-<span class="">	invoke-virtual {p0}, Lex;->v()J</span>
+<span class="">	invoke-virtual {p0}, Lys;->a()J</span>
 <span class="missed">	move-result-wide v0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	const-wide/16 v2, 0x0</span>
 <span class="missed">	cmp-long v4, v0, v2</span>
 <span class="missed">	if-eqz v4, :cond_1</span>
-<span class="">	invoke-virtual {p0, v0, v1}, Lex;->i(J)Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p0, v0, v1}, Lys;->e(J)Ljava/lang/String;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="">	:try_end_0</span>
 <span class="missed">	.catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0</span>
@@ -412,12 +413,12 @@
 <span class="">	throw p0</span>
 .end method
 
-<span class="cov">.method public static receiveHeaders(Lokhttp3/CookieJar;Lokhttp3/HttpUrl;Lokhttp3/Headers;)V</span>
+.method public static receiveHeaders(Lokhttp3/CookieJar;Lokhttp3/HttpUrl;Lokhttp3/Headers;)V
 <span class="">	.locals 1</span>
 
-<span class="cov">	sget-object v0, Lokhttp3/CookieJar;->NO_COOKIES:Lokhttp3/CookieJar;</span>
-<span class="cov">	if-ne p0, v0, :cond_0</span>
-<span class="exec">	return-void</span>
+<span class="missed">	sget-object v0, Lokhttp3/CookieJar;->NO_COOKIES:Lokhttp3/CookieJar;</span>
+<span class="missed">	if-ne p0, v0, :cond_0</span>
+<span class="">	return-void</span>
 <span class="">	:cond_0</span>
 <span class="">	invoke-static {p1, p2}, Lokhttp3/Cookie;->parseAll(Lokhttp3/HttpUrl;Lokhttp3/Headers;)Ljava/util/List;</span>
 <span class="missed">	move-result-object p2</span>
@@ -440,45 +441,45 @@
 <span class="">	return-object p0</span>
 .end method
 
-.method private static skipAll(Lex;B)I
+.method private static skipAll(Lys;B)I
 <span class="">	.locals 3</span>
 
 <span class="missed">	const/4 v0, 0x0</span>
 <span class="">	:goto_0</span>
-<span class="">	invoke-virtual {p0}, Lex;->m()Z</span>
+<span class="">	invoke-virtual {p0}, Lys;->g()Z</span>
 <span class="missed">	move-result v1</span>
 <span class="missed">	if-nez v1, :cond_0</span>
 <span class="missed">	const-wide/16 v1, 0x0</span>
-<span class="">	invoke-virtual {p0, v1, v2}, Lex;->h(J)B</span>
+<span class="">	invoke-virtual {p0, v1, v2}, Lys;->c(J)B</span>
 <span class="missed">	move-result v1</span>
 <span class="missed">	if-ne v1, p1, :cond_0</span>
 <span class="missed">	add-int/lit8 v0, v0, 0x1</span>
-<span class="missed">	invoke-virtual {p0}, Lex;->readByte()B</span>
+<span class="missed">	invoke-virtual {p0}, Lys;->k()B</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public static skipUntil(Ljava/lang/String;ILjava/lang/String;)I</span>
+.method public static skipUntil(Ljava/lang/String;ILjava/lang/String;)I
 <span class="">	.locals 2</span>
 
-<span class="cov">	:goto_0</span>
-<span class="exec">	invoke-virtual {p0}, Ljava/lang/String;->length()I</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-ge p1, v0, :cond_1</span>
-<span class="exec">	invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	invoke-virtual {p2, v0}, Ljava/lang/String;->indexOf(I)I</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	const/4 v1, -0x1</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-virtual {p0}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-ge p1, v0, :cond_1</span>
+<span class="">	invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-virtual {p2, v0}, Ljava/lang/String;->indexOf(I)I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, -0x1</span>
 <span class="missed">	if-eq v0, v1, :cond_0</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	add-int/lit8 p1, p1, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	add-int/lit8 p1, p1, 0x1</span>
 <span class="">	goto :goto_0</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	:goto_1</span>
-<span class="exec">	return p1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_1</span>
+<span class="">	return p1</span>
 .end method
 
 .method public static skipWhitespace(Ljava/lang/String;I)I
@@ -503,20 +504,20 @@
 <span class="">	return p1</span>
 .end method
 
-.method private static skipWhitespaceAndCommas(Lex;)Z
+.method private static skipWhitespaceAndCommas(Lys;)Z
 <span class="">	.locals 3</span>
 
 <span class="missed">	const/4 v0, 0x0</span>
 <span class="">	:goto_0</span>
-<span class="">	invoke-virtual {p0}, Lex;->m()Z</span>
+<span class="">	invoke-virtual {p0}, Lys;->g()Z</span>
 <span class="missed">	move-result v1</span>
 <span class="missed">	if-nez v1, :cond_2</span>
 <span class="missed">	const-wide/16 v1, 0x0</span>
-<span class="">	invoke-virtual {p0, v1, v2}, Lex;->h(J)B</span>
+<span class="">	invoke-virtual {p0, v1, v2}, Lys;->c(J)B</span>
 <span class="missed">	move-result v1</span>
 <span class="missed">	const/16 v2, 0x2c</span>
 <span class="missed">	if-ne v1, v2, :cond_0</span>
-<span class="missed">	invoke-virtual {p0}, Lex;->readByte()B</span>
+<span class="missed">	invoke-virtual {p0}, Lys;->k()B</span>
 <span class="missed">	const/4 v0, 0x1</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
@@ -525,18 +526,18 @@
 <span class="missed">	const/16 v2, 0x9</span>
 <span class="missed">	if-ne v1, v2, :cond_2</span>
 <span class="">	:cond_1</span>
-<span class="missed">	invoke-virtual {p0}, Lex;->readByte()B</span>
+<span class="missed">	invoke-virtual {p0}, Lys;->k()B</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_2</span>
 <span class="">	return v0</span>
 .end method
 
-<span class="cov">.method private static stringToLong(Ljava/lang/String;)J</span>
+.method private static stringToLong(Ljava/lang/String;)J
 <span class="">	.locals 2</span>
 
-<span class="cov">	const-wide/16 v0, -0x1</span>
-<span class="cov">	if-nez p0, :cond_0</span>
-<span class="exec">	return-wide v0</span>
+<span class="missed">	const-wide/16 v0, -0x1</span>
+<span class="missed">	if-nez p0, :cond_0</span>
+<span class="">	return-wide v0</span>
 <span class="">	:cond_0</span>
 <span class="">	:try_start_0</span>
 <span class="">	invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J</span>
@@ -565,10 +566,11 @@
 <span class="">	invoke-virtual {p0}, Lokhttp3/Headers;->size()I</span>
 <span class="missed">	move-result v1</span>
 <span class="missed">	const/4 v2, 0x0</span>
-<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	move-object v3, v0</span>
+<span class="missed">	const/4 v0, 0x0</span>
 <span class="">	:goto_0</span>
-<span class="missed">	if-ge v3, v1, :cond_3</span>
-<span class="">	invoke-virtual {p0, v3}, Lokhttp3/Headers;->name(I)Ljava/lang/String;</span>
+<span class="missed">	if-ge v0, v1, :cond_3</span>
+<span class="">	invoke-virtual {p0, v0}, Lokhttp3/Headers;->name(I)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v4</span>
 <span class="missed">	const-string v5, "Vary"</span>
 <span class="">	invoke-virtual {v5, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z</span>
@@ -576,14 +578,14 @@
 <span class="missed">	if-nez v4, :cond_0</span>
 <span class="">	goto :goto_2</span>
 <span class="">	:cond_0</span>
-<span class="">	invoke-virtual {p0, v3}, Lokhttp3/Headers;->value(I)Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p0, v0}, Lokhttp3/Headers;->value(I)Ljava/lang/String;</span>
 <span class="missed">	move-result-object v4</span>
-<span class="">	invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z</span>
+<span class="">	invoke-interface {v3}, Ljava/util/Set;->isEmpty()Z</span>
 <span class="missed">	move-result v5</span>
 <span class="missed">	if-eqz v5, :cond_1</span>
-<span class="missed">	new-instance v0, Ljava/util/TreeSet;</span>
+<span class="missed">	new-instance v3, Ljava/util/TreeSet;</span>
 <span class="missed">	sget-object v5, Ljava/lang/String;->CASE_INSENSITIVE_ORDER:Ljava/util/Comparator;</span>
-<span class="missed">	invoke-direct {v0, v5}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V</span>
+<span class="missed">	invoke-direct {v3, v5}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V</span>
 <span class="">	:cond_1</span>
 <span class="missed">	const-string v5, ","</span>
 <span class="">	invoke-virtual {v4, v5}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;</span>
@@ -595,15 +597,15 @@
 <span class="missed">	aget-object v7, v4, v6</span>
 <span class="">	invoke-virtual {v7}, Ljava/lang/String;->trim()Ljava/lang/String;</span>
 <span class="missed">	move-result-object v7</span>
-<span class="missed">	invoke-interface {v0, v7}, Ljava/util/Set;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	invoke-interface {v3, v7}, Ljava/util/Set;->add(Ljava/lang/Object;)Z</span>
 <span class="missed">	add-int/lit8 v6, v6, 0x1</span>
 <span class="">	goto :goto_1</span>
 <span class="">	:goto_2</span>
 <span class="">	:cond_2</span>
-<span class="missed">	add-int/lit8 v3, v3, 0x1</span>
+<span class="missed">	add-int/lit8 v0, v0, 0x1</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_3</span>
-<span class="">	return-object v0</span>
+<span class="">	return-object v3</span>
 .end method
 
 .method private static varyFields(Lokhttp3/Response;)Ljava/util/Set;

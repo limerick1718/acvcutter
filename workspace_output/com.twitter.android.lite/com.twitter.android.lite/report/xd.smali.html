@@ -14,12 +14,50 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final synthetic Lxd;
+		<code>.class public Lxd;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.source "TimeBasedFileRollOverRunnable.java"
+.implements Ljava/lang/Runnable;
 
 
-</code>
+.field private final a:Landroid/content/Context;
+.field private final b:Lwz;
+
+
+.method public constructor &lt;init&gt;(Landroid/content/Context;Lwz;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Lxd;->a:Landroid/content/Context;</span>
+<span class="missed">	iput-object p2, p0, Lxd;->b:Lwz;</span>
+<span class="">	return-void</span>
+.end method
+
+.method public run()V
+<span class="">	.locals 3</span>
+
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lxd;->a:Landroid/content/Context;</span>
+<span class="missed">	const-string v1, "Performing time based file roll over."</span>
+<span class="missed">	invoke-static {v0, v1}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v0, p0, Lxd;->b:Lwz;</span>
+<span class="">	invoke-interface {v0}, Lwz;->rollFileOver()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lxd;->b:Lwz;</span>
+<span class="missed">	invoke-interface {v0}, Lwz;->cancelTimeBasedFileRollOver()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	iget-object v1, p0, Lxd;->a:Landroid/content/Context;</span>
+<span class="missed">	const-string v2, "Failed to roll over file"</span>
+<span class="missed">	invoke-static {v1, v2, v0}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
+.end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
 

@@ -1,5 +1,5 @@
 .class public Landroidx/core/app/f$b;
-.super Landroidx/core/app/f$e;
+.super Landroidx/core/app/f$d;
 .source "NotificationCompat.java"
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Landroidx/core/app/f;
@@ -8,15 +8,13 @@ value = Landroidx/core/app/f;
 accessFlags = 0x9
 name = "b"
 .end annotation
-.field private e:Landroid/graphics/Bitmap;
-.field private f:Landroid/graphics/Bitmap;
-.field private g:Z
+.field private e:Ljava/lang/CharSequence;
 .method public constructor <init>()V
 .locals 0
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public a(Landroid/graphics/Bitmap;)Landroidx/core/app/f$b;
+.method public a(Ljava/lang/CharSequence;)Landroidx/core/app/f$b;
 .locals 0
 const/4 v0, 0x0
 return-object v0
@@ -24,9 +22,4 @@ return-object v0
 .method public a(Landroidx/core/app/e;)V
 .locals 2
 return-void
-.end method
-.method public b(Landroid/graphics/Bitmap;)Landroidx/core/app/f$b;
-.locals 0
-const/4 v0, 0x0
-return-object v0
 .end method

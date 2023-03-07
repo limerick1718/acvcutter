@@ -1,445 +1,661 @@
-.class Ldq;
+.class public Ldq;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-crashlytics@@17.0.0"
-
-# interfaces
-.implements Laq;
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Ldq$b;
-    }
-.end annotation
 
 
 # static fields
-.field private static final d:Ljava/nio/charset/Charset;
+.field public static final a:Landroid/net/Uri;
 
+.field public static final b:Ljava/util/regex/Pattern;
 
-# instance fields
-.field private final a:Ljava/io/File;
+.field public static final c:Ljava/util/regex/Pattern;
 
-.field private final b:I
+.field private static final d:Landroid/net/Uri;
 
-.field private c:Lcq;
+.field private static final e:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field private static f:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final g:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final h:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final i:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final j:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static k:Ljava/lang/Object;
+
+.field private static l:Z
+
+.field private static m:[Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
-    const-string v0, "UTF-8"
+    const-string v0, "content://com.google.android.gsf.gservices"
 
-    .line 1
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+    .line 70
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    sput-object v0, Ldq;->d:Ljava/nio/charset/Charset;
+    sput-object v0, Ldq;->a:Landroid/net/Uri;
+
+    const-string v0, "content://com.google.android.gsf.gservices/prefix"
+
+    .line 72
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Ldq;->d:Landroid/net/Uri;
+
+    const/4 v0, 0x2
+
+    const-string v1, "^(1|true|t|on|yes|y)$"
+
+    .line 74
+    invoke-static {v1, v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
+
+    move-result-object v1
+
+    sput-object v1, Ldq;->b:Ljava/util/regex/Pattern;
+
+    const-string v1, "^(0|false|f|off|no|n)$"
+
+    .line 76
+    invoke-static {v1, v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Ldq;->c:Ljava/util/regex/Pattern;
+
+    .line 77
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+
+    sput-object v0, Ldq;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    .line 78
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v0, Ldq;->g:Ljava/util/HashMap;
+
+    .line 79
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v0, Ldq;->h:Ljava/util/HashMap;
+
+    .line 80
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v0, Ldq;->i:Ljava/util/HashMap;
+
+    .line 81
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v0, Ldq;->j:Ljava/util/HashMap;
+
+    const/4 v0, 0x0
+
+    .line 82
+    new-array v0, v0, [Ljava/lang/String;
+
+    sput-object v0, Ldq;->m:[Ljava/lang/String;
 
     return-void
 .end method
 
-.method constructor <init>(Ljava/io/File;I)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput-object p1, p0, Ldq;->a:Ljava/io/File;
-
-    .line 3
-    iput p2, p0, Ldq;->b:I
-
     return-void
 .end method
 
-.method private b(JLjava/lang/String;)V
-    .locals 4
+.method public static a(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 13
 
-    const-string v0, " "
+    .line 17
+    const-class p2, Ldq;
 
-    .line 3
-    iget-object v1, p0, Ldq;->c:Lcq;
+    monitor-enter p2
 
-    if-nez v1, :cond_0
-
-    return-void
-
-    :cond_0
-    if-nez p3, :cond_1
-
-    const-string p3, "null"
-
-    .line 4
-    :cond_1
+    .line 18
     :try_start_0
-    iget v1, p0, Ldq;->b:I
+    invoke-static {p0}, Ldq;->a(Landroid/content/ContentResolver;)V
 
-    div-int/lit8 v1, v1, 0x4
+    .line 19
+    sget-object v0, Ldq;->k:Ljava/lang/Object;
 
-    .line 5
-    invoke-virtual {p3}, Ljava/lang/String;->length()I
+    .line 20
+    sget-object v1, Ldq;->f:Ljava/util/HashMap;
 
-    move-result v2
+    invoke-virtual {v1, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
-    if-le v2, v1, :cond_2
-
-    .line 6
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "..."
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    sub-int/2addr v3, v1
-
-    invoke-virtual {p3, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object p3
-
-    invoke-virtual {v2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p3
-
-    :cond_2
-    const-string v1, "\r"
-
-    .line 7
-    invoke-virtual {p3, v1, v0}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p3
-
-    const-string v1, "\n"
-
-    .line 8
-    invoke-virtual {p3, v1, v0}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p3
-
-    .line 9
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    const-string v1, "%d %s%n"
-
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p1
-
-    aput-object p1, v2, v3
-
-    const/4 p1, 0x1
-
-    aput-object p3, v2, p1
-
-    invoke-static {v0, v1, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    sget-object p2, Ldq;->d:Ljava/nio/charset/Charset;
-
-    invoke-virtual {p1, p2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
-
-    move-result-object p1
-
-    .line 10
-    iget-object p2, p0, Ldq;->c:Lcq;
-
-    invoke-virtual {p2, p1}, Lcq;->a([B)V
-
-    .line 11
-    :goto_0
-    iget-object p1, p0, Ldq;->c:Lcq;
-
-    invoke-virtual {p1}, Lcq;->f()Z
-
-    move-result p1
-
-    if-nez p1, :cond_3
-
-    iget-object p1, p0, Ldq;->c:Lcq;
-
-    invoke-virtual {p1}, Lcq;->q()I
-
-    move-result p1
-
-    iget p2, p0, Ldq;->b:I
-
-    if-le p1, p2, :cond_3
-
-    .line 12
-    iget-object p1, p0, Ldq;->c:Lcq;
-
-    invoke-virtual {p1}, Lcq;->l()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p1
-
-    .line 13
-    invoke-static {}, Lmo;->a()Lmo;
-
-    move-result-object p2
-
-    const-string p3, "There was a problem writing to the Crashlytics log."
-
-    invoke-virtual {p2, p3, p1}, Lmo;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_3
-    return-void
-.end method
-
-.method private e()Ldq$b;
-    .locals 6
-
-    .line 1
-    iget-object v0, p0, Ldq;->a:Ljava/io/File;
-
-    invoke-virtual {v0}, Ljava/io/File;->exists()Z
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    return-object v1
-
-    .line 2
-    :cond_0
-    invoke-direct {p0}, Ldq;->f()V
-
-    .line 3
-    iget-object v0, p0, Ldq;->c:Lcq;
-
-    if-nez v0, :cond_1
-
-    return-object v1
-
-    :cond_1
-    const/4 v1, 0x1
-
-    new-array v1, v1, [I
+    move-result v1
 
     const/4 v2, 0x0
 
-    aput v2, v1, v2
+    if-eqz v1, :cond_1
 
-    .line 4
-    invoke-virtual {v0}, Lcq;->q()I
+    .line 21
+    sget-object p0, Ldq;->f:Ljava/util/HashMap;
+
+    invoke-virtual {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/String;
+
+    if-eqz p0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    move-object p0, v2
+
+    .line 22
+    :goto_0
+    monitor-exit p2
+
+    return-object p0
+
+    .line 23
+    :cond_1
+    sget-object v1, Ldq;->m:[Ljava/lang/String;
+
+    array-length v3, v1
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    :goto_1
+    const/4 v6, 0x1
+
+    if-ge v5, v3, :cond_6
+
+    aget-object v7, v1, v5
+
+    .line 24
+    invoke-virtual {p1, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_5
+
+    .line 25
+    sget-boolean v0, Ldq;->l:Z
+
+    if-eqz v0, :cond_2
+
+    sget-object v0, Ldq;->f:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
 
     move-result v0
 
-    new-array v0, v0, [B
+    if-eqz v0, :cond_4
 
-    .line 5
-    :try_start_0
-    iget-object v3, p0, Ldq;->c:Lcq;
+    .line 26
+    :cond_2
+    sget-object v0, Ldq;->m:[Ljava/lang/String;
 
-    new-instance v4, Ldq$a;
+    .line 27
+    sget-object v1, Ldq;->f:Ljava/util/HashMap;
 
-    invoke-direct {v4, p0, v0, v1}, Ldq$a;-><init>(Ldq;[B[I)V
+    invoke-static {p0, v0}, Ldq;->a(Landroid/content/ContentResolver;[Ljava/lang/String;)Ljava/util/Map;
 
-    invoke-virtual {v3, v4}, Lcq;->a(Lcq$d;)V
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
+
+    .line 28
+    sput-boolean v6, Ldq;->l:Z
+
+    .line 29
+    sget-object p0, Ldq;->f:Ljava/util/HashMap;
+
+    invoke-virtual {p0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_4
+
+    .line 30
+    sget-object p0, Ldq;->f:Ljava/util/HashMap;
+
+    invoke-virtual {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/String;
+
+    if-eqz p0, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    move-object p0, v2
+
+    .line 31
+    :goto_2
+    monitor-exit p2
+
+    return-object p0
+
+    .line 32
+    :cond_4
+    monitor-exit p2
+
+    return-object v2
+
+    :cond_5
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_1
+
+    .line 34
+    :cond_6
+    monitor-exit p2
     :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    goto :goto_0
+    .line 35
+    sget-object v8, Ldq;->a:Landroid/net/Uri;
 
-    :catch_0
-    move-exception v3
+    const/4 v9, 0x0
 
-    .line 6
-    invoke-static {}, Lmo;->a()Lmo;
+    const/4 v10, 0x0
 
-    move-result-object v4
+    new-array v11, v6, [Ljava/lang/String;
 
-    const-string v5, "A problem occurred while reading the Crashlytics log file."
+    aput-object p1, v11, v4
 
-    invoke-virtual {v4, v5, v3}, Lmo;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
+    const/4 v12, 0x0
 
-    .line 7
-    :goto_0
-    new-instance v3, Ldq$b;
+    move-object v7, p0
 
-    aget v1, v1, v2
+    invoke-virtual/range {v7 .. v12}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
-    invoke-direct {v3, p0, v0, v1}, Ldq$b;-><init>(Ldq;[BI)V
+    move-result-object p0
 
-    return-object v3
+    if-nez p0, :cond_8
+
+    if-eqz p0, :cond_7
+
+    .line 38
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    :cond_7
+    return-object v2
+
+    .line 40
+    :cond_8
+    :try_start_1
+    invoke-interface {p0}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result p2
+
+    if-nez p2, :cond_a
+
+    .line 41
+    invoke-static {v0, p1, v2}, Ldq;->a(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    if-eqz p0, :cond_9
+
+    .line 43
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    :cond_9
+    return-object v2
+
+    .line 45
+    :cond_a
+    :try_start_2
+    invoke-interface {p0, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_b
+
+    .line 46
+    invoke-virtual {p2, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_b
+
+    move-object p2, v2
+
+    .line 48
+    :cond_b
+    invoke-static {v0, p1, p2}, Ldq;->a(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    if-eqz p2, :cond_c
+
+    goto :goto_3
+
+    :cond_c
+    move-object p2, v2
+
+    :goto_3
+    if-eqz p0, :cond_d
+
+    .line 51
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    :cond_d
+    return-object p2
+
+    :catchall_0
+    move-exception p1
+
+    if-eqz p0, :cond_e
+
+    .line 54
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    :cond_e
+    throw p1
+
+    :catchall_1
+    move-exception p0
+
+    .line 34
+    :try_start_3
+    monitor-exit p2
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    throw p0
 .end method
 
-.method private f()V
-    .locals 4
+.method private static varargs a(Landroid/content/ContentResolver;[Ljava/lang/String;)Ljava/util/Map;
+    .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/ContentResolver;",
+            "[",
+            "Ljava/lang/String;",
+            ")",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
 
-    .line 1
-    iget-object v0, p0, Ldq;->c:Lcq;
+    .line 59
+    sget-object v1, Ldq;->d:Landroid/net/Uri;
 
-    if-nez v0, :cond_0
-
-    .line 2
-    :try_start_0
-    new-instance v0, Lcq;
-
-    iget-object v1, p0, Ldq;->a:Ljava/io/File;
-
-    invoke-direct {v0, v1}, Lcq;-><init>(Ljava/io/File;)V
-
-    iput-object v0, p0, Ldq;->c:Lcq;
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    .line 3
-    invoke-static {}, Lmo;->a()Lmo;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Could not open log file: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v3, p0, Ldq;->a:Ljava/io/File;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2, v0}, Lmo;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_0
-    :goto_0
-    return-void
-.end method
-
-
-# virtual methods
-.method public a()V
-    .locals 2
-
-    .line 3
-    iget-object v0, p0, Ldq;->c:Lcq;
-
-    const-string v1, "There was a problem closing the Crashlytics log file."
-
-    invoke-static {v0, v1}, Lzo;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    .line 4
-    iput-object v0, p0, Ldq;->c:Lcq;
-
-    return-void
-.end method
-
-.method public a(JLjava/lang/String;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ldq;->f()V
-
-    .line 2
-    invoke-direct {p0, p1, p2, p3}, Ldq;->b(JLjava/lang/String;)V
-
-    return-void
-.end method
-
-.method public b()V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Ldq;->a()V
-
-    .line 2
-    iget-object v0, p0, Ldq;->a:Ljava/io/File;
-
-    invoke-virtual {v0}, Ljava/io/File;->delete()Z
-
-    return-void
-.end method
-
-.method public c()Ljava/lang/String;
-    .locals 3
-
-    .line 1
-    invoke-virtual {p0}, Ldq;->d()[B
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 2
-    new-instance v1, Ljava/lang/String;
-
-    sget-object v2, Ldq;->d:Ljava/nio/charset/Charset;
-
-    invoke-direct {v1, v0, v2}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    :goto_0
-    return-object v1
-.end method
-
-.method public d()[B
-    .locals 4
-
-    .line 1
-    invoke-direct {p0}, Ldq;->e()Ldq$b;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    return-object v0
-
-    .line 2
-    :cond_0
-    iget v1, v0, Ldq$b;->b:I
-
-    new-array v2, v1, [B
-
-    .line 3
-    iget-object v0, v0, Ldq$b;->a:[B
+    const/4 v2, 0x0
 
     const/4 v3, 0x0
 
-    invoke-static {v0, v3, v2, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    const/4 v5, 0x0
 
-    return-object v2
+    move-object v0, p0
+
+    move-object v4, p1
+
+    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object p0
+
+    .line 60
+    new-instance p1, Ljava/util/TreeMap;
+
+    invoke-direct {p1}, Ljava/util/TreeMap;-><init>()V
+
+    if-nez p0, :cond_0
+
+    return-object p1
+
+    .line 62
+    :cond_0
+    :goto_0
+    :try_start_0
+    invoke-interface {p0}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x0
+
+    .line 63
+    invoke-interface {p0, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-interface {p0, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    .line 64
+    :cond_1
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    .line 66
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    throw p1
+.end method
+
+.method static synthetic a()Ljava/util/concurrent/atomic/AtomicBoolean;
+    .locals 1
+
+    .line 68
+    sget-object v0, Ldq;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    return-object v0
+.end method
+
+.method private static a(Landroid/content/ContentResolver;)V
+    .locals 4
+
+    .line 2
+    sget-object v0, Ldq;->f:Ljava/util/HashMap;
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    .line 3
+    sget-object v0, Ldq;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    .line 4
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v0, Ldq;->f:Ljava/util/HashMap;
+
+    .line 5
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Ldq;->k:Ljava/lang/Object;
+
+    .line 6
+    sput-boolean v1, Ldq;->l:Z
+
+    .line 7
+    sget-object v0, Ldq;->a:Landroid/net/Uri;
+
+    const/4 v1, 0x1
+
+    new-instance v2, Ldr;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v3}, Ldr;-><init>(Landroid/os/Handler;)V
+
+    invoke-virtual {p0, v0, v1, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
+
+    return-void
+
+    .line 8
+    :cond_0
+    sget-object p0, Ldq;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {p0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    .line 9
+    sget-object p0, Ldq;->f:Ljava/util/HashMap;
+
+    invoke-virtual {p0}, Ljava/util/HashMap;->clear()V
+
+    .line 10
+    sget-object p0, Ldq;->g:Ljava/util/HashMap;
+
+    invoke-virtual {p0}, Ljava/util/HashMap;->clear()V
+
+    .line 11
+    sget-object p0, Ldq;->h:Ljava/util/HashMap;
+
+    invoke-virtual {p0}, Ljava/util/HashMap;->clear()V
+
+    .line 12
+    sget-object p0, Ldq;->i:Ljava/util/HashMap;
+
+    invoke-virtual {p0}, Ljava/util/HashMap;->clear()V
+
+    .line 13
+    sget-object p0, Ldq;->j:Ljava/util/HashMap;
+
+    invoke-virtual {p0}, Ljava/util/HashMap;->clear()V
+
+    .line 14
+    new-instance p0, Ljava/lang/Object;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    sput-object p0, Ldq;->k:Ljava/lang/Object;
+
+    .line 15
+    sput-boolean v1, Ldq;->l:Z
+
+    :cond_1
+    return-void
+.end method
+
+.method private static a(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+
+    .line 55
+    const-class v0, Ldq;
+
+    monitor-enter v0
+
+    .line 56
+    :try_start_0
+    sget-object v1, Ldq;->k:Ljava/lang/Object;
+
+    if-ne p0, v1, :cond_0
+
+    .line 57
+    sget-object p0, Ldq;->f:Ljava/util/HashMap;
+
+    invoke-virtual {p0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 58
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
 .end method

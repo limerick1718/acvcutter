@@ -1,6 +1,19 @@
 .class public final Lqa;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
+
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator<",
+        "Lpz;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
@@ -13,483 +26,274 @@
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;)Leb;
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            ")",
-            "Leb<",
-            "Lra;",
-            ">;"
-        }
-    .end annotation
 
-    .line 1
-    sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;
+# virtual methods
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 33
 
-    sget-object v1, Landroid/os/Build;->TAGS:Ljava/lang/String;
-
-    sget-object v2, Landroid/os/Build;->HARDWARE:Ljava/lang/String;
-
-    const-string v3, "eng"
-
-    .line 2
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    const/4 v4, 0x0
-
-    if-nez v3, :cond_0
-
-    const-string v3, "userdebug"
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const-string v0, "goldfish"
-
-    .line 3
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    const-string v0, "ranchu"
-
-    .line 4
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    const-string v0, "robolectric"
-
-    .line 5
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const-string v0, "dev-keys"
-
-    .line 6
-    invoke-virtual {v1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    const-string v0, "test-keys"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v4, 0x1
-
-    :goto_0
-    if-nez v4, :cond_3
+    move-object/from16 v0, p1
 
     .line 7
-    invoke-static {}, Leb;->c()Leb;
+    invoke-static/range {p1 .. p1}, Lbb;->b(Landroid/os/Parcel;)I
 
-    move-result-object p0
+    move-result v1
 
-    return-object p0
-
-    .line 8
-    :cond_3
-    invoke-static {}, Lda;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    .line 9
-    invoke-virtual {p0}, Landroid/content/Context;->isDeviceProtectedStorage()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    goto :goto_1
-
-    .line 10
-    :cond_4
-    invoke-virtual {p0}, Landroid/content/Context;->createDeviceProtectedStorageContext()Landroid/content/Context;
-
-    move-result-object p0
-
-    .line 11
-    :cond_5
-    :goto_1
-    invoke-static {p0}, Lqa;->b(Landroid/content/Context;)Leb;
-
-    move-result-object p0
-
-    .line 12
-    invoke-virtual {p0}, Leb;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    .line 13
-    invoke-virtual {p0}, Leb;->b()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/io/File;
-
-    invoke-static {p0}, Lqa;->a(Ljava/io/File;)Lra;
-
-    move-result-object p0
-
-    invoke-static {p0}, Leb;->a(Ljava/lang/Object;)Leb;
-
-    move-result-object p0
-
-    return-object p0
-
-    .line 14
-    :cond_6
-    invoke-static {}, Leb;->c()Leb;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method private static a(Ljava/io/File;)Lra;
-    .locals 7
-
-    .line 15
-    :try_start_0
-    new-instance v0, Ljava/io/BufferedReader;
-
-    new-instance v1, Ljava/io/InputStreamReader;
-
-    new-instance v2, Ljava/io/FileInputStream;
-
-    invoke-direct {v2, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-
-    invoke-direct {v1, v2}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
-
-    invoke-direct {v0, v1}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 16
-    :try_start_1
-    new-instance v1, Ljava/util/HashMap;
-
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
-
-    .line 17
-    :goto_0
-    invoke-virtual {v0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
-
-    move-result-object v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    const-string v3, "HermeticFileOverrides"
-
-    if-eqz v2, :cond_3
-
-    :try_start_2
-    const-string v4, " "
-
-    const/4 v5, 0x3
-
-    .line 18
-    invoke-virtual {v2, v4, v5}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 19
-    array-length v6, v4
-
-    if-eq v6, v5, :cond_1
-
-    const-string v4, "Invalid: "
-
-    .line 20
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    if-eqz v5, :cond_0
-
-    invoke-virtual {v4, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto :goto_1
-
-    :cond_0
-    new-instance v2, Ljava/lang/String;
-
-    invoke-direct {v2, v4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    :goto_1
-    invoke-static {v3, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-
-    :cond_1
     const/4 v2, 0x0
-
-    .line 21
-    aget-object v2, v4, v2
 
     const/4 v3, 0x1
 
-    .line 22
-    aget-object v3, v4, v3
+    const-wide/16 v4, 0x0
 
-    invoke-static {v3}, Landroid/net/Uri;->decode(Ljava/lang/String;)Ljava/lang/String;
+    const/4 v6, 0x0
 
-    move-result-object v3
+    const-wide/32 v7, -0x80000000
 
-    const/4 v5, 0x2
+    move-wide v14, v4
 
-    .line 23
-    aget-object v4, v4, v5
+    move-wide/from16 v16, v14
 
-    invoke-static {v4}, Landroid/net/Uri;->decode(Ljava/lang/String;)Ljava/lang/String;
+    move-wide/from16 v24, v16
 
-    move-result-object v4
+    move-wide/from16 v26, v24
 
-    .line 24
-    invoke-interface {v1, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    move-object v10, v6
 
-    move-result v5
+    move-object v11, v10
 
-    if-nez v5, :cond_2
+    move-object v12, v11
 
-    .line 25
-    new-instance v5, Ljava/util/HashMap;
+    move-object v13, v12
 
-    invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
+    move-object/from16 v18, v13
 
-    invoke-interface {v1, v2, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-object/from16 v23, v18
+
+    move-object/from16 v32, v23
+
+    move-wide/from16 v21, v7
+
+    const/16 v19, 0x1
+
+    const/16 v20, 0x0
+
+    const/16 v28, 0x0
+
+    const/16 v29, 0x1
+
+    const/16 v30, 0x1
+
+    const/16 v31, 0x0
 
     .line 26
-    :cond_2
-    invoke-interface {v1, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/Map;
-
-    invoke-interface {v2, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    .line 27
-    :cond_3
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    :goto_0
+    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v2
 
-    add-int/lit8 v2, v2, 0x7
+    if-ge v2, v1, :cond_0
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    .line 27
+    invoke-static/range {p1 .. p1}, Lbb;->a(Landroid/os/Parcel;)I
 
-    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "Parsed "
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {v3, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    move-result v2
 
     .line 28
-    new-instance p0, Lra;
+    invoke-static {v2}, Lbb;->a(I)I
 
-    invoke-direct {p0, v1}, Lra;-><init>(Ljava/util/Map;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    move-result v3
 
-    .line 29
-    :try_start_3
-    invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
+    packed-switch v3, :pswitch_data_0
 
-    return-object p0
-
-    :catchall_0
-    move-exception p0
-
-    .line 30
-    :try_start_4
-    invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    goto :goto_2
-
-    :catchall_1
-    move-exception v0
-
-    :try_start_5
-    invoke-static {p0, v0}, Lnb;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-
-    :goto_2
-    throw p0
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_0
-
-    :catch_0
-    move-exception p0
-
-    .line 31
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v0
-.end method
-
-.method private static b(Landroid/content/Context;)Leb;
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            ")",
-            "Leb<",
-            "Ljava/io/File;",
-            ">;"
-        }
-    .end annotation
-
-    .line 1
-    invoke-static {}, Landroid/os/StrictMode;->allowThreadDiskReads()Landroid/os/StrictMode$ThreadPolicy;
-
-    move-result-object v0
-
-    .line 2
-    :try_start_0
-    invoke-static {}, Landroid/os/StrictMode;->allowThreadDiskWrites()Landroid/os/StrictMode$ThreadPolicy;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 3
-    :try_start_1
-    new-instance v1, Ljava/io/File;
-
-    const-string v2, "phenotype_hermetic"
-
-    const/4 v3, 0x0
-
-    invoke-virtual {p0, v2, v3}, Landroid/content/Context;->getDir(Ljava/lang/String;I)Ljava/io/File;
-
-    move-result-object p0
-
-    const-string v2, "overrides.txt"
-
-    invoke-direct {v1, p0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-    :try_end_1
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 4
-    :try_start_2
-    invoke-virtual {v1}, Ljava/io/File;->exists()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    invoke-static {v1}, Leb;->a(Ljava/lang/Object;)Leb;
-
-    move-result-object p0
+    .line 83
+    invoke-static {v0, v2}, Lbb;->b(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
+    .line 81
+    :pswitch_0
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v32
+
+    goto :goto_0
+
+    .line 78
+    :pswitch_1
+    invoke-static {v0, v2}, Lbb;->c(Landroid/os/Parcel;I)Z
+
+    move-result v31
+
+    goto :goto_0
+
+    .line 75
+    :pswitch_2
+    invoke-static {v0, v2}, Lbb;->c(Landroid/os/Parcel;I)Z
+
+    move-result v30
+
+    goto :goto_0
+
+    .line 72
+    :pswitch_3
+    invoke-static {v0, v2}, Lbb;->c(Landroid/os/Parcel;I)Z
+
+    move-result v29
+
+    goto :goto_0
+
+    .line 69
+    :pswitch_4
+    invoke-static {v0, v2}, Lbb;->d(Landroid/os/Parcel;I)I
+
+    move-result v28
+
+    goto :goto_0
+
+    .line 66
+    :pswitch_5
+    invoke-static {v0, v2}, Lbb;->e(Landroid/os/Parcel;I)J
+
+    move-result-wide v26
+
+    goto :goto_0
+
+    .line 63
+    :pswitch_6
+    invoke-static {v0, v2}, Lbb;->e(Landroid/os/Parcel;I)J
+
+    move-result-wide v24
+
+    goto :goto_0
+
+    .line 60
+    :pswitch_7
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v23
+
+    goto :goto_0
+
+    .line 57
+    :pswitch_8
+    invoke-static {v0, v2}, Lbb;->e(Landroid/os/Parcel;I)J
+
+    move-result-wide v21
+
+    goto :goto_0
+
+    .line 54
+    :pswitch_9
+    invoke-static {v0, v2}, Lbb;->c(Landroid/os/Parcel;I)Z
+
+    move-result v20
+
+    goto :goto_0
+
+    .line 51
+    :pswitch_a
+    invoke-static {v0, v2}, Lbb;->c(Landroid/os/Parcel;I)Z
+
+    move-result v19
+
+    goto :goto_0
+
+    .line 48
+    :pswitch_b
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v18
+
+    goto :goto_0
+
+    .line 45
+    :pswitch_c
+    invoke-static {v0, v2}, Lbb;->e(Landroid/os/Parcel;I)J
+
+    move-result-wide v16
+
+    goto :goto_0
+
+    .line 42
+    :pswitch_d
+    invoke-static {v0, v2}, Lbb;->e(Landroid/os/Parcel;I)J
+
+    move-result-wide v14
+
+    goto :goto_0
+
+    .line 39
+    :pswitch_e
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v13
+
+    goto :goto_0
+
+    .line 36
+    :pswitch_f
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v12
+
+    goto :goto_0
+
+    .line 33
+    :pswitch_10
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v11
+
+    goto :goto_0
+
+    .line 30
+    :pswitch_11
+    invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v10
+
+    goto :goto_0
+
+    .line 85
     :cond_0
-    invoke-static {}, Leb;->c()Leb;
+    invoke-static {v0, v1}, Lbb;->l(Landroid/os/Parcel;I)V
 
-    move-result-object p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    .line 86
+    new-instance v0, Lpz;
 
-    .line 5
-    :goto_0
-    invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
+    move-object v9, v0
 
-    return-object p0
+    invoke-direct/range {v9 .. v32}, Lpz;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJLjava/lang/String;ZZJLjava/lang/String;JJIZZZLjava/lang/String;)V
 
-    :catch_0
-    move-exception p0
+    return-object v0
 
-    :try_start_3
-    const-string v1, "HermeticFileOverrides"
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    const-string v2, "no data dir"
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 0
 
-    .line 6
-    invoke-static {v1, v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    .line 4
+    new-array p1, p1, [Lpz;
 
-    .line 7
-    invoke-static {}, Leb;->c()Leb;
-
-    move-result-object p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    .line 8
-    invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
-
-    return-object p0
-
-    :catchall_0
-    move-exception p0
-
-    .line 9
-    invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
-
-    .line 10
-    throw p0
+    return-object p1
 .end method

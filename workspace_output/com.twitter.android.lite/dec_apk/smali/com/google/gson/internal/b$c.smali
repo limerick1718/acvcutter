@@ -1,8 +1,8 @@
 .class final Lcom/google/gson/internal/b$c;
 .super Ljava/lang/Object;
 .source "$Gson$Types.java"
-.implements Ljava/lang/reflect/WildcardType;
 .implements Ljava/io/Serializable;
+.implements Ljava/lang/reflect/WildcardType;
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lcom/google/gson/internal/b;
 .end annotation
@@ -13,7 +13,7 @@ name = "c"
 .field private final a:Ljava/lang/reflect/Type;
 .field private final b:Ljava/lang/reflect/Type;
 .method public constructor <init>([Ljava/lang/reflect/Type;[Ljava/lang/reflect/Type;)V
-.locals 4
+.locals 3
 invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

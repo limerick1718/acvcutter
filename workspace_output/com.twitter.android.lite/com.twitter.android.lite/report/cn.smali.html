@@ -14,15 +14,227 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public interface abstract Lcn;
+		<code>.class public final Lcn;
 .super Ljava/lang/Object;
 
+.annotation build Landroid/annotation/TargetApi;
+value = 0x18
+.end annotation
+
+.field private static final b:Ljava/lang/reflect/Method;
+.field private static final c:Ljava/lang/reflect/Method;
+.field private static volatile d:Lcp;
+.field private final a:Landroid/app/job/JobScheduler;
 
 
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
 
-.method public abstract a(Ljava/lang/Exception;)V
-<span class="">	</span>
+<span class="">	invoke-static {}, Lcn;->b()Ljava/lang/reflect/Method;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lcn;->b:Ljava/lang/reflect/Method;</span>
+<span class="">	invoke-static {}, Lcn;->c()Ljava/lang/reflect/Method;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lcn;->c:Ljava/lang/reflect/Method;</span>
+<span class="missed">	sget-object v0, Lco;->a:Lcp;</span>
+<span class="missed">	sput-object v0, Lcn;->d:Lcp;</span>
+<span class="">	return-void</span>
+.end method
 
+.method private constructor &lt;init&gt;(Landroid/app/job/JobScheduler;)V
+<span class="">	.locals 0</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Lcn;->a:Landroid/app/job/JobScheduler;</span>
+<span class="">	return-void</span>
+.end method
+
+.method private final a(Landroid/app/job/JobInfo;Ljava/lang/String;ILjava/lang/String;)I
+<span class="">	.locals 4</span>
+
+<span class="missed">	sget-object v0, Lcn;->b:Ljava/lang/reflect/Method;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v1, p0, Lcn;->a:Landroid/app/job/JobScheduler;</span>
+<span class="missed">	const/4 v2, 0x4</span>
+<span class="missed">	new-array v2, v2, [Ljava/lang/Object;</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	aput-object p1, v2, v3</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	aput-object p2, v2, v3</span>
+<span class="missed">	const/4 p2, 0x2</span>
+<span class="">	invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
+<span class="missed">	move-result-object p3</span>
+<span class="missed">	aput-object p3, v2, p2</span>
+<span class="missed">	const/4 p2, 0x3</span>
+<span class="missed">	aput-object p4, v2, p2</span>
+<span class="">	invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	check-cast p2, Ljava/lang/Integer;</span>
+<span class="">	invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1</span>
+<span class="missed">	.catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return p1</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception p2</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const-string p3, "error calling scheduleAsPackage"</span>
+<span class="missed">	invoke-static {p4, p3, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object p2, p0, Lcn;->a:Landroid/app/job/JobScheduler;</span>
+<span class="">	invoke-virtual {p2, p1}, Landroid/app/job/JobScheduler;->schedule(Landroid/app/job/JobInfo;)I</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+.end method
+
+.method public static a(Landroid/content/Context;Landroid/app/job/JobInfo;Ljava/lang/String;Ljava/lang/String;)I
+<span class="">	.locals 2</span>
+
+<span class="missed">	const-string v0, "jobscheduler"</span>
+<span class="">	invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Landroid/app/job/JobScheduler;</span>
+<span class="missed">	sget-object v1, Lcn;->b:Ljava/lang/reflect/Method;</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="missed">	sget-object v1, Lcn;->d:Lcp;</span>
+<span class="">	invoke-interface {v1}, Lcp;->a()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_1</span>
+<span class="missed">	const-string v1, "android.permission.UPDATE_DEVICE_STATS"</span>
+<span class="">	invoke-virtual {p0, v1}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p0, Lcn;</span>
+<span class="missed">	invoke-direct {p0, v0}, Lcn;-><init>(Landroid/app/job/JobScheduler;)V</span>
+<span class="">	invoke-static {}, Lcn;->d()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-direct {p0, p1, p2, v0, p3}, Lcn;->a(Landroid/app/job/JobInfo;Ljava/lang/String;ILjava/lang/String;)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-virtual {v0, p1}, Landroid/app/job/JobScheduler;->schedule(Landroid/app/job/JobInfo;)I</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+.end method
+
+.method static final synthetic a()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
+.end method
+
+.method private static b()Ljava/lang/reflect/Method;
+<span class="">	.locals 5</span>
+
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x18</span>
+<span class="missed">	if-lt v0, v1, :cond_0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-class v0, Landroid/app/job/JobScheduler;</span>
+<span class="missed">	const-string v1, "scheduleAsPackage"</span>
+<span class="missed">	const/4 v2, 0x4</span>
+<span class="missed">	new-array v2, v2, [Ljava/lang/Class;</span>
+<span class="missed">	const/4 v3, 0x0</span>
+<span class="missed">	const-class v4, Landroid/app/job/JobInfo;</span>
+<span class="missed">	aput-object v4, v2, v3</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	const-class v4, Ljava/lang/String;</span>
+<span class="missed">	aput-object v4, v2, v3</span>
+<span class="missed">	const/4 v3, 0x2</span>
+<span class="missed">	sget-object v4, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;</span>
+<span class="missed">	aput-object v4, v2, v3</span>
+<span class="missed">	const/4 v3, 0x3</span>
+<span class="missed">	const-class v4, Ljava/lang/String;</span>
+<span class="missed">	aput-object v4, v2, v3</span>
+<span class="">	invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object v0</span>
+<span class="">	:catch_0</span>
+<span class="">	nop</span>
+<span class="missed">	const/4 v0, 0x6</span>
+<span class="missed">	const-string v1, "JobSchedulerCompat"</span>
+<span class="">	invoke-static {v1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string v0, "No scheduleAsPackage method available, falling back to schedule"</span>
+<span class="missed">	invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method private static c()Ljava/lang/reflect/Method;
+<span class="">	.locals 3</span>
+
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	const/16 v2, 0x18</span>
+<span class="missed">	if-lt v0, v2, :cond_0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	const-class v0, Landroid/os/UserHandle;</span>
+<span class="missed">	const-string v2, "myUserId"</span>
+<span class="">	invoke-virtual {v0, v2, v1}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-object v0</span>
+<span class="">	:catch_0</span>
+<span class="">	nop</span>
+<span class="missed">	const/4 v0, 0x6</span>
+<span class="missed">	const-string v2, "JobSchedulerCompat"</span>
+<span class="">	invoke-static {v2, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string v0, "No myUserId method available"</span>
+<span class="missed">	invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object v1</span>
+.end method
+
+.method private static d()I
+<span class="">	.locals 4</span>
+
+<span class="missed">	sget-object v0, Lcn;->c:Ljava/lang/reflect/Method;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	new-array v3, v1, [Ljava/lang/Object;</span>
+<span class="">	invoke-virtual {v0, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Ljava/lang/Integer;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1</span>
+<span class="missed">	.catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return v0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_1</span>
+<span class="missed">	move-exception v0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 v2, 0x6</span>
+<span class="missed">	const-string v3, "JobSchedulerCompat"</span>
+<span class="">	invoke-static {v3, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="missed">	const-string v2, "myUserId invocation illegal"</span>
+<span class="missed">	invoke-static {v3, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
+<span class="">	:cond_0</span>
+<span class="">	return v1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

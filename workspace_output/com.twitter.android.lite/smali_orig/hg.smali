@@ -1,223 +1,149 @@
 .class final Lhg;
-.super Lfg;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lho;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lfg<",
-        "Leg;",
-        "Leg;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private a:[Lho;
 
 
 # direct methods
-.method constructor <init>()V
+.method varargs constructor <init>([Lho;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lfg;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method private static a(Ljava/lang/Object;Leg;)V
-    .locals 0
-
-    .line 1
-    check-cast p0, Lmd;
-
-    iput-object p1, p0, Lmd;->zzb:Leg;
+    .line 2
+    iput-object p1, p0, Lhg;->a:[Lho;
 
     return-void
 .end method
 
 
 # virtual methods
-.method final synthetic a()Ljava/lang/Object;
-    .locals 1
-
-    .line 6
-    invoke-static {}, Leg;->e()Leg;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 4
-    check-cast p1, Lmd;
-
-    iget-object p1, p1, Lmd;->zzb:Leg;
-
-    return-object p1
-.end method
-
-.method final synthetic a(Ljava/lang/Object;IJ)V
-    .locals 0
-
-    .line 9
-    check-cast p1, Leg;
-
-    shl-int/lit8 p2, p2, 0x3
-
-    .line 10
-    invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p3
-
-    invoke-virtual {p1, p2, p3}, Leg;->a(ILjava/lang/Object;)V
-
-    return-void
-.end method
-
-.method final synthetic a(Ljava/lang/Object;ILfc;)V
-    .locals 0
-
-    .line 7
-    check-cast p1, Leg;
-
-    shl-int/lit8 p2, p2, 0x3
-
-    or-int/lit8 p2, p2, 0x2
-
-    .line 8
-    invoke-virtual {p1, p2, p3}, Leg;->a(ILjava/lang/Object;)V
-
-    return-void
-.end method
-
-.method final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
-
-    .line 5
-    check-cast p2, Leg;
-
-    invoke-static {p1, p2}, Lhg;->a(Ljava/lang/Object;Leg;)V
-
-    return-void
-.end method
-
-.method final synthetic a(Ljava/lang/Object;Lyg;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Throws;
+.method public final a(Ljava/lang/Class;)Z
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
         value = {
-            Ljava/io/IOException;
+            "(",
+            "Ljava/lang/Class<",
+            "*>;)Z"
         }
     .end annotation
 
-    .line 2
-    check-cast p1, Leg;
+    .line 4
+    iget-object v0, p0, Lhg;->a:[Lho;
 
-    .line 3
-    invoke-virtual {p1, p2}, Leg;->b(Lyg;)V
+    array-length v1, v0
 
-    return-void
-.end method
+    const/4 v2, 0x0
 
-.method final b(Ljava/lang/Object;)V
-    .locals 0
+    const/4 v3, 0x0
 
-    .line 1
-    check-cast p1, Lmd;
+    :goto_0
+    if-ge v3, v1, :cond_1
 
-    iget-object p1, p1, Lmd;->zzb:Leg;
-
-    .line 2
-    invoke-virtual {p1}, Leg;->a()V
-
-    return-void
-.end method
-
-.method final synthetic b(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
+    aget-object v4, v0, v3
 
     .line 5
-    check-cast p2, Leg;
+    invoke-interface {v4, p1}, Lho;->a(Ljava/lang/Class;)Z
 
-    .line 6
-    invoke-static {p1, p2}, Lhg;->a(Ljava/lang/Object;Leg;)V
+    move-result v4
 
-    return-void
-.end method
+    if-eqz v4, :cond_0
 
-.method final synthetic b(Ljava/lang/Object;Lyg;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .line 3
-    check-cast p1, Leg;
-
-    .line 4
-    invoke-virtual {p1, p2}, Leg;->a(Lyg;)V
-
-    return-void
-.end method
-
-.method final synthetic c(Ljava/lang/Object;)I
-    .locals 0
-
-    .line 1
-    check-cast p1, Leg;
-
-    .line 2
-    invoke-virtual {p1}, Leg;->b()I
-
-    move-result p1
+    const/4 p1, 0x1
 
     return p1
+
+    :cond_0
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return v2
 .end method
 
-.method final synthetic c(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final b(Ljava/lang/Class;)Lhn;
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class<",
+            "*>;)",
+            "Lhn;"
+        }
+    .end annotation
 
-    .line 3
-    check-cast p1, Leg;
+    .line 9
+    iget-object v0, p0, Lhg;->a:[Lho;
 
-    check-cast p2, Leg;
+    array-length v1, v0
 
-    .line 4
-    invoke-static {}, Leg;->d()Leg;
+    const/4 v2, 0x0
 
-    move-result-object v0
+    :goto_0
+    if-ge v2, v1, :cond_1
 
-    invoke-virtual {p2, v0}, Leg;->equals(Ljava/lang/Object;)Z
+    aget-object v3, v0, v2
 
-    move-result v0
+    .line 10
+    invoke-interface {v3, p1}, Lho;->a(Ljava/lang/Class;)Z
 
-    if-eqz v0, :cond_0
+    move-result v4
 
-    return-object p1
+    if-eqz v4, :cond_0
 
-    .line 5
-    :cond_0
-    invoke-static {p1, p2}, Leg;->a(Leg;Leg;)Leg;
+    .line 11
+    invoke-interface {v3, p1}, Lho;->b(Ljava/lang/Class;)Lhn;
 
     move-result-object p1
 
     return-object p1
-.end method
 
-.method final synthetic d(Ljava/lang/Object;)I
-    .locals 0
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
 
-    .line 1
-    check-cast p1, Leg;
+    goto :goto_0
 
-    .line 2
-    invoke-virtual {p1}, Leg;->c()I
+    .line 13
+    :cond_1
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    move-result p1
+    const-string v1, "No factory is available for message type: "
 
-    return p1
+    .line 14
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_1
+
+    :cond_2
+    new-instance p1, Ljava/lang/String;
+
+    invoke-direct {p1, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_1
+    invoke-direct {v0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

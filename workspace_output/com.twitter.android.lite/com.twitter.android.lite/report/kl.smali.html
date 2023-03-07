@@ -15,89 +15,149 @@
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
 		<code>.class public final Lkl;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.implements Lkb;
+.super Lba;
+.implements Ljava/lang/Iterable;
 
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Ljava/lang/Object;",
-"Lkb<",
-"Lol;",
+"Lba;",
+"Ljava/lang/Iterable<",
+"Ljava/lang/String;",
 ">;"
 }
 .end annotation
 
-.field private static b:Lkl;
-.field private final a:Lkb;
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 .annotation system Ldalvik/annotation/Signature;
 value = {
-"Lkb<",
-"Lol;",
+"Landroid/os/Parcelable$Creator<",
+"Lkl;",
 ">;"
 }
 .end annotation
 .end field
+.field private final a:Landroid/os/Bundle;
 
 
 <span class="cov">.method static constructor &lt;clinit&gt;()V</span>
 <span class="">	.locals 1</span>
 
-<span class="cov">	new-instance v0, Lkl;</span>
-<span class="cov">	invoke-direct {v0}, Lkl;-><init>()V</span>
-<span class="cov">	sput-object v0, Lkl;->b:Lkl;</span>
+<span class="cov">	new-instance v0, Lkn;</span>
+<span class="cov">	invoke-direct {v0}, Lkn;-><init>()V</span>
+<span class="cov">	sput-object v0, Lkl;->CREATOR:Landroid/os/Parcelable$Creator;</span>
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public constructor &lt;init&gt;()V</span>
+<span class="cov">.method constructor &lt;init&gt;(Landroid/os/Bundle;)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Lba;-><init>()V</span>
+<span class="cov">	iput-object p1, p0, Lkl;->a:Landroid/os/Bundle;</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method static synthetic a(Lkl;)Landroid/os/Bundle;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iget-object p0, p0, Lkl;->a:Landroid/os/Bundle;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method public final a()I
 <span class="">	.locals 1</span>
 
-<span class="cov">	new-instance v0, Lnl;</span>
-<span class="cov">	invoke-direct {v0}, Lnl;-><init>()V</span>
-<span class="exec">	invoke-static {v0}, Ljb;->a(Ljava/lang/Object;)Lkb;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	invoke-direct {p0, v0}, Lkl;-><init>(Lkb;)V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iget-object v0, p0, Lkl;->a:Landroid/os/Bundle;</span>
+<span class="">	invoke-virtual {v0}, Landroid/os/Bundle;->size()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
 .end method
 
-<span class="cov">.method private constructor &lt;init&gt;(Lkb;)V</span>
-<span class="">	.locals 0</span>
+.method final a(Ljava/lang/String;)Ljava/lang/Object;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lkl;->a:Landroid/os/Bundle;</span>
+<span class="">	invoke-virtual {v0, p1}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+<span class="cov">.method public final b()Landroid/os/Bundle;</span>
+<span class="">	.locals 2</span>
+
+<span class="cov">	new-instance v0, Landroid/os/Bundle;</span>
+<span class="cov">	iget-object v1, p0, Lkl;->a:Landroid/os/Bundle;</span>
+<span class="cov">	invoke-direct {v0, v1}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method final b(Ljava/lang/String;)Ljava/lang/Long;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lkl;->a:Landroid/os/Bundle;</span>
+<span class="">	invoke-virtual {v0, p1}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method final c(Ljava/lang/String;)Ljava/lang/Double;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lkl;->a:Landroid/os/Bundle;</span>
+<span class="">	invoke-virtual {v0, p1}, Landroid/os/Bundle;->getDouble(Ljava/lang/String;)D</span>
+<span class="missed">	move-result-wide v0</span>
+<span class="">	invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method final d(Ljava/lang/String;)Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lkl;->a:Landroid/os/Bundle;</span>
+<span class="">	invoke-virtual {v0, p1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+<span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Lkb<",</span>
-<span class="">	"Lol;",</span>
-<span class="">	">;)V"</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/util/Iterator<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;"</span>
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="exec">	invoke-static {p1}, Ljb;->a(Lkb;)Lkb;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	iput-object p1, p0, Lkl;->a:Lkb;</span>
+<span class="missed">	new-instance v0, Lkm;</span>
+<span class="missed">	invoke-direct {v0, p0}, Lkm;-><init>(Lkl;)V</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method public final toString()Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lkl;->a:Landroid/os/Bundle;</span>
+<span class="">	invoke-virtual {v0}, Landroid/os/Bundle;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
+.end method
+
+<span class="cov">.method public final writeToParcel(Landroid/os/Parcel;I)V</span>
+<span class="">	.locals 3</span>
+
+<span class="exec">	invoke-static {p1}, Lbc;->a(Landroid/os/Parcel;)I</span>
+<span class="cov">	move-result p2</span>
+<span class="exec">	invoke-virtual {p0}, Lkl;->b()Landroid/os/Bundle;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	const/4 v1, 0x2</span>
+<span class="cov">	const/4 v2, 0x0</span>
+<span class="cov">	invoke-static {p1, v1, v0, v2}, Lbc;->a(Landroid/os/Parcel;ILandroid/os/Bundle;Z)V</span>
+<span class="cov">	invoke-static {p1, p2}, Lbc;->a(Landroid/os/Parcel;I)V</span>
 <span class="exec">	return-void</span>
-.end method
-
-<span class="cov">.method public static b()Z</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	sget-object v0, Lkl;->b:Lkl;</span>
-<span class="exec">	invoke-virtual {v0}, Lkl;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lol;</span>
-<span class="exec">	invoke-interface {v0}, Lol;->a()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
-.end method
-
-<span class="cov">.method public final synthetic a()Ljava/lang/Object;</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	iget-object v0, p0, Lkl;->a:Lkb;</span>
-<span class="exec">	invoke-interface {v0}, Lkb;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lol;</span>
-<span class="exec">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

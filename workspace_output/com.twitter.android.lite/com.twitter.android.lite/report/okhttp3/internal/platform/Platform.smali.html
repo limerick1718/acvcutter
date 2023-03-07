@@ -18,19 +18,30 @@
 .super Ljava/lang/Object;
 .source "Platform.java"
 
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lokhttp3/internal/platform/Platform$DefaultPlatformProvider;
+}
+.end annotation
 
+.field private static final DEFAULT_PLATFORM:Lokhttp3/internal/platform/PlatformProvider;
 .field public static final INFO:I = 0x4
-.field private static final PLATFORM:Lokhttp3/internal/platform/Platform;
 .field public static final WARN:I = 0x5
 .field private static final logger:Ljava/util/logging/Logger;
+.field private static platform:Lokhttp3/internal/platform/Platform;
+.field private static platformProvider:Lokhttp3/internal/platform/PlatformProvider;
 
 
 <span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 1</span>
+<span class="">	.locals 2</span>
 
-<span class="exec">	invoke-static {}, Lokhttp3/internal/platform/Platform;->findPlatform()Lokhttp3/internal/platform/Platform;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	sput-object v0, Lokhttp3/internal/platform/Platform;->PLATFORM:Lokhttp3/internal/platform/Platform;</span>
+<span class="cov">	new-instance v0, Lokhttp3/internal/platform/Platform$DefaultPlatformProvider;</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	invoke-direct {v0, v1}, Lokhttp3/internal/platform/Platform$DefaultPlatformProvider;-><init>(Lokhttp3/internal/platform/Platform$1;)V</span>
+<span class="cov">	sput-object v0, Lokhttp3/internal/platform/Platform;->DEFAULT_PLATFORM:Lokhttp3/internal/platform/PlatformProvider;</span>
+<span class="cov">	sget-object v0, Lokhttp3/internal/platform/Platform;->DEFAULT_PLATFORM:Lokhttp3/internal/platform/PlatformProvider;</span>
+<span class="cov">	sput-object v0, Lokhttp3/internal/platform/Platform;->platformProvider:Lokhttp3/internal/platform/PlatformProvider;</span>
+<span class="cov">	sput-object v1, Lokhttp3/internal/platform/Platform;->platform:Lokhttp3/internal/platform/Platform;</span>
 <span class="cov">	const-class v0, Lokhttp3/OkHttpClient;</span>
 <span class="exec">	invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;</span>
 <span class="cov">	move-result-object v0</span>
@@ -45,6 +56,14 @@
 
 <span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
 <span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method static synthetic access$100()Lokhttp3/internal/platform/Platform;</span>
+<span class="">	.locals 1</span>
+
+<span class="exec">	invoke-static {}, Lokhttp3/internal/platform/Platform;->findPlatform()Lokhttp3/internal/platform/Platform;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	return-object v0</span>
 .end method
 
 .method public static alpnProtocolNames(Ljava/util/List;)Ljava/util/List;
@@ -87,7 +106,7 @@
 <span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method static concatLengthPrefixed(Ljava/util/List;)[B</span>
+.method static concatLengthPrefixed(Ljava/util/List;)[B
 <span class="">	.locals 5</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -98,35 +117,35 @@
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	new-instance v0, Lex;</span>
-<span class="cov">	invoke-direct {v0}, Lex;-><init>()V</span>
-<span class="exec">	invoke-interface {p0}, Ljava/util/List;->size()I</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	const/4 v2, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	if-ge v2, v1, :cond_1</span>
-<span class="exec">	invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v3</span>
-<span class="cov">	check-cast v3, Lokhttp3/Protocol;</span>
-<span class="cov">	sget-object v4, Lokhttp3/Protocol;->HTTP_1_0:Lokhttp3/Protocol;</span>
+<span class="missed">	new-instance v0, Lys;</span>
+<span class="missed">	invoke-direct {v0}, Lys;-><init>()V</span>
+<span class="">	invoke-interface {p0}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v2, v1, :cond_1</span>
+<span class="">	invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	check-cast v3, Lokhttp3/Protocol;</span>
+<span class="missed">	sget-object v4, Lokhttp3/Protocol;->HTTP_1_0:Lokhttp3/Protocol;</span>
 <span class="missed">	if-ne v3, v4, :cond_0</span>
 <span class="">	goto :goto_1</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-virtual {v3}, Lokhttp3/Protocol;->toString()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v4</span>
-<span class="exec">	invoke-virtual {v4}, Ljava/lang/String;->length()I</span>
-<span class="cov">	move-result v4</span>
-<span class="cov">	invoke-virtual {v0, v4}, Lex;->writeByte(I)Lex;</span>
-<span class="exec">	invoke-virtual {v3}, Lokhttp3/Protocol;->toString()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v3</span>
-<span class="cov">	invoke-virtual {v0, v3}, Lex;->a(Ljava/lang/String;)Lex;</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	add-int/lit8 v2, v2, 0x1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {v3}, Lokhttp3/Protocol;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v4</span>
+<span class="">	invoke-virtual {v4}, Ljava/lang/String;->length()I</span>
+<span class="missed">	move-result v4</span>
+<span class="missed">	invoke-virtual {v0, v4}, Lys;->b(I)Lys;</span>
+<span class="">	invoke-virtual {v3}, Lokhttp3/Protocol;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-virtual {v0, v3}, Lys;->a(Ljava/lang/String;)Lys;</span>
+<span class="">	:goto_1</span>
+<span class="missed">	add-int/lit8 v2, v2, 0x1</span>
 <span class="">	goto :goto_0</span>
-<span class="cov">	:cond_1</span>
-<span class="exec">	invoke-virtual {v0}, Lex;->j()[B</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	return-object p0</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {v0}, Lys;->v()[B</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	return-object p0</span>
 .end method
 
 <span class="cov">.method private static findPlatform()Lokhttp3/internal/platform/Platform;</span>
@@ -161,9 +180,31 @@
 .end method
 
 <span class="cov">.method public static get()Lokhttp3/internal/platform/Platform;</span>
-<span class="">	.locals 1</span>
+<span class="">	.locals 2</span>
 
-<span class="cov">	sget-object v0, Lokhttp3/internal/platform/Platform;->PLATFORM:Lokhttp3/internal/platform/Platform;</span>
+<span class="cov">	sget-object v0, Lokhttp3/internal/platform/Platform;->platform:Lokhttp3/internal/platform/Platform;</span>
+<span class="cov">	if-nez v0, :cond_1</span>
+<span class="cov">	const-class v0, Lokhttp3/internal/platform/Platform;</span>
+<span class="cov">	monitor-enter v0</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	sget-object v1, Lokhttp3/internal/platform/Platform;->platform:Lokhttp3/internal/platform/Platform;</span>
+<span class="cov">	if-nez v1, :cond_0</span>
+<span class="cov">	sget-object v1, Lokhttp3/internal/platform/Platform;->platformProvider:Lokhttp3/internal/platform/PlatformProvider;</span>
+<span class="exec">	invoke-interface {v1}, Lokhttp3/internal/platform/PlatformProvider;->getPlatform()Lokhttp3/internal/platform/Platform;</span>
+<span class="cov">	move-result-object v1</span>
+<span class="cov">	sput-object v1, Lokhttp3/internal/platform/Platform;->platform:Lokhttp3/internal/platform/Platform;</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	monitor-exit v0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw v1</span>
+<span class="cov">	:goto_0</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	sget-object v0, Lokhttp3/internal/platform/Platform;->platform:Lokhttp3/internal/platform/Platform;</span>
 <span class="exec">	return-object v0</span>
 .end method
 
@@ -194,7 +235,7 @@
 .end method
 
 .method static readFieldOrNull(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-<span class="">	.locals 5</span>
+<span class="">	.locals 4</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
 <span class="">	.end annotation</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
@@ -210,25 +251,25 @@
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="missed">	const-class v0, Ljava/lang/Object;</span>
 <span class="">	invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
-<span class="missed">	move-result-object v1</span>
+<span class="missed">	move-result-object v0</span>
 <span class="">	:goto_0</span>
+<span class="missed">	const-class v1, Ljava/lang/Object;</span>
 <span class="missed">	const/4 v2, 0x0</span>
-<span class="missed">	if-eq v1, v0, :cond_1</span>
+<span class="missed">	if-eq v0, v1, :cond_1</span>
 <span class="">	:try_start_0</span>
-<span class="">	invoke-virtual {v1, p2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="missed">	const/4 v4, 0x1</span>
-<span class="missed">	invoke-virtual {v3, v4}, Ljava/lang/reflect/Field;->setAccessible(Z)V</span>
-<span class="">	invoke-virtual {v3, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v3</span>
-<span class="">	invoke-virtual {p1, v3}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result v4</span>
-<span class="missed">	if-nez v4, :cond_0</span>
+<span class="">	invoke-virtual {v0, p2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const/4 v3, 0x1</span>
+<span class="missed">	invoke-virtual {v1, v3}, Ljava/lang/reflect/Field;->setAccessible(Z)V</span>
+<span class="">	invoke-virtual {v1, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {p1, v1}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	if-nez v3, :cond_0</span>
 <span class="">	return-object v2</span>
 <span class="">	:cond_0</span>
-<span class="">	invoke-virtual {p1, v3}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	invoke-virtual {p1, v1}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="">	:try_end_0</span>
 <span class="missed">	.catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_1</span>
@@ -239,15 +280,16 @@
 <span class="missed">	invoke-direct {p0}, Ljava/lang/AssertionError;-><init>()V</span>
 <span class="">	throw p0</span>
 <span class="">	:catch_1</span>
-<span class="">	invoke-virtual {v1}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;</span>
-<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;</span>
+<span class="missed">	move-result-object v0</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_1</span>
-<span class="missed">	const-string v1, "delegate"</span>
-<span class="">	invoke-virtual {p2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
-<span class="missed">	move-result v3</span>
-<span class="missed">	if-nez v3, :cond_2</span>
-<span class="">	invoke-static {p0, v0, v1}, Lokhttp3/internal/platform/Platform;->readFieldOrNull(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;</span>
+<span class="missed">	const-string v0, "delegate"</span>
+<span class="">	invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_2</span>
+<span class="missed">	const-class v1, Ljava/lang/Object;</span>
+<span class="">	invoke-static {p0, v1, v0}, Lokhttp3/internal/platform/Platform;->readFieldOrNull(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="missed">	if-eqz p0, :cond_2</span>
 <span class="">	invoke-static {p0, p1, p2}, Lokhttp3/internal/platform/Platform;->readFieldOrNull(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;</span>
@@ -257,7 +299,30 @@
 <span class="">	return-object v2</span>
 .end method
 
-<span class="cov">.method public afterHandshake(Ljavax/net/ssl/SSLSocket;)V</span>
+.method public static setPlatformProvider(Lokhttp3/internal/platform/PlatformProvider;)V
+<span class="">	.locals 2</span>
+<span class="">	.param p0    # Lokhttp3/internal/platform/PlatformProvider;</span>
+<span class="">	.annotation runtime Ljavax/annotation/Nonnull;</span>
+<span class="">	.end annotation</span>
+<span class="">	.end param</span>
+
+<span class="missed">	const-class v0, Lokhttp3/internal/platform/Platform;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	sput-object v1, Lokhttp3/internal/platform/Platform;->platform:Lokhttp3/internal/platform/Platform;</span>
+<span class="missed">	sput-object p0, Lokhttp3/internal/platform/Platform;->platformProvider:Lokhttp3/internal/platform/PlatformProvider;</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p0</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="">	throw p0</span>
+.end method
+
+.method public afterHandshake(Ljavax/net/ssl/SSLSocket;)V
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>

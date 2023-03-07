@@ -1,42 +1,25 @@
-.class final synthetic Ljo;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-api@@17.4.0"
-
-# interfaces
-.implements Ljava/util/concurrent/Executor;
-
-
-# static fields
-.field static final a:Ljava/util/concurrent/Executor;
+.class final enum Ljo;
+.super Ljn;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>(Ljava/lang/String;ILjs;I)V
+    .locals 6
 
-    new-instance v0, Ljo;
+    const/16 v2, 0x8
 
-    invoke-direct {v0}, Ljo;-><init>()V
+    const/4 v4, 0x2
 
-    sput-object v0, Ljo;->a:Ljava/util/concurrent/Executor;
+    const/4 v5, 0x0
 
-    return-void
-.end method
+    move-object v0, p0
 
-.method private constructor <init>()V
-    .locals 0
+    move-object v1, p1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v3, p3
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 0
-
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+    .line 1
+    invoke-direct/range {v0 .. v5}, Ljn;-><init>(Ljava/lang/String;ILjs;ILjm;)V
 
     return-void
 .end method

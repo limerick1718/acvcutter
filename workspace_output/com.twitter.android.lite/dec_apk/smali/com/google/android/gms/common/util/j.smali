@@ -1,3 +1,4 @@
-.class public Lcom/google/android/gms/common/util/j;
+.class public final Lcom/google/android/gms/common/util/j;
 .super Ljava/lang/Object;
-.field private static final a:[C
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation

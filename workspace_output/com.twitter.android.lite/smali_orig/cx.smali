@@ -1,594 +1,1062 @@
-.class public Lcx;
-.super Lxx;
-.source "AsyncTimeout.java"
+.class public final Lcx;
+.super Ljx;
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
+.annotation system Ldalvik/annotation/Signature;
     value = {
-        Lcx$c;
+        "Ljx<",
+        "Lcx;",
+        ">;"
     }
 .end annotation
 
 
 # static fields
-.field private static final IDLE_TIMEOUT_MILLIS:J
-
-.field private static final IDLE_TIMEOUT_NANOS:J
-
-.field private static final TIMEOUT_WRITE_SIZE:I = 0x10000
-
-.field static head:Lcx;
-    .annotation runtime Ljavax/annotation/Nullable;
-    .end annotation
-.end field
+.field private static volatile g:[Lcx;
 
 
 # instance fields
-.field private inQueue:Z
+.field public a:Ljava/lang/Integer;
 
-.field private next:Lcx;
-    .annotation runtime Ljavax/annotation/Nullable;
-    .end annotation
-.end field
+.field public b:Ljava/lang/String;
 
-.field private timeoutAt:J
+.field public c:[Lcy;
+
+.field public d:Lcz;
+
+.field public e:Ljava/lang/Boolean;
+
+.field public f:Ljava/lang/Boolean;
+
+.field private h:Ljava/lang/Boolean;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>()V
+    .locals 2
+
+    .line 7
+    invoke-direct {p0}, Ljx;-><init>()V
+
+    const/4 v0, 0x0
+
+    .line 9
+    iput-object v0, p0, Lcx;->a:Ljava/lang/Integer;
+
+    .line 10
+    iput-object v0, p0, Lcx;->b:Ljava/lang/String;
+
+    .line 11
+    invoke-static {}, Lcy;->a()[Lcy;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcx;->c:[Lcy;
+
+    .line 12
+    iput-object v0, p0, Lcx;->h:Ljava/lang/Boolean;
+
+    .line 13
+    iput-object v0, p0, Lcx;->d:Lcz;
+
+    .line 14
+    iput-object v0, p0, Lcx;->e:Ljava/lang/Boolean;
+
+    .line 15
+    iput-object v0, p0, Lcx;->f:Ljava/lang/Boolean;
+
+    .line 16
+    iput-object v0, p0, Lcx;->L:Ljz;
+
+    const/4 v0, -0x1
+
+    .line 17
+    iput v0, p0, Lcx;->M:I
+
+    return-void
+.end method
+
+.method public static a()[Lcx;
+    .locals 2
 
     .line 1
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v0, Lcx;->g:[Lcx;
 
-    const-wide/16 v1, 0x3c
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
-
-    move-result-wide v0
-
-    sput-wide v0, Lcx;->IDLE_TIMEOUT_MILLIS:J
+    if-nez v0, :cond_1
 
     .line 2
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v0, Lkb;->b:Ljava/lang/Object;
 
-    sget-wide v1, Lcx;->IDLE_TIMEOUT_MILLIS:J
+    monitor-enter v0
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+    .line 3
+    :try_start_0
+    sget-object v1, Lcx;->g:[Lcx;
 
-    move-result-wide v0
+    if-nez v1, :cond_0
 
-    sput-wide v0, Lcx;->IDLE_TIMEOUT_NANOS:J
+    const/4 v1, 0x0
 
-    return-void
+    .line 4
+    new-array v1, v1, [Lcx;
+
+    sput-object v1, Lcx;->g:[Lcx;
+
+    .line 5
+    :cond_0
+    monitor-exit v0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+
+    .line 6
+    :cond_1
+    :goto_0
+    sget-object v0, Lcx;->g:[Lcx;
+
+    return-object v0
 .end method
 
-.method public constructor <init>()V
-    .locals 0
 
-    .line 1
-    invoke-direct {p0}, Lxx;-><init>()V
-
-    return-void
-.end method
-
-.method static awaitTimeout()Lcx;
-    .locals 9
+# virtual methods
+.method public final synthetic a(Lju;)Lkd;
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .annotation runtime Ljavax/annotation/Nullable;
+    .line 133
+    :cond_0
+    :goto_0
+    invoke-virtual {p1}, Lju;->a()I
+
+    move-result v0
+
+    if-eqz v0, :cond_c
+
+    const/16 v1, 0x8
+
+    if-eq v0, v1, :cond_b
+
+    const/16 v1, 0x12
+
+    if-eq v0, v1, :cond_a
+
+    const/16 v1, 0x1a
+
+    if-eq v0, v1, :cond_6
+
+    const/16 v1, 0x20
+
+    if-eq v0, v1, :cond_5
+
+    const/16 v1, 0x2a
+
+    if-eq v0, v1, :cond_3
+
+    const/16 v1, 0x30
+
+    if-eq v0, v1, :cond_2
+
+    const/16 v1, 0x38
+
+    if-eq v0, v1, :cond_1
+
+    .line 136
+    invoke-super {p0, p1, v0}, Ljx;->a(Lju;I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-object p0
+
+    .line 167
+    :cond_1
+    invoke-virtual {p1}, Lju;->b()Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcx;->f:Ljava/lang/Boolean;
+
+    goto :goto_0
+
+    .line 165
+    :cond_2
+    invoke-virtual {p1}, Lju;->b()Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcx;->e:Ljava/lang/Boolean;
+
+    goto :goto_0
+
+    .line 161
+    :cond_3
+    iget-object v0, p0, Lcx;->d:Lcz;
+
+    if-nez v0, :cond_4
+
+    .line 162
+    new-instance v0, Lcz;
+
+    invoke-direct {v0}, Lcz;-><init>()V
+
+    iput-object v0, p0, Lcx;->d:Lcz;
+
+    .line 163
+    :cond_4
+    iget-object v0, p0, Lcx;->d:Lcz;
+
+    invoke-virtual {p1, v0}, Lju;->a(Lkd;)V
+
+    goto :goto_0
+
+    .line 159
+    :cond_5
+    invoke-virtual {p1}, Lju;->b()Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcx;->h:Ljava/lang/Boolean;
+
+    goto :goto_0
+
+    .line 145
+    :cond_6
+    invoke-static {p1, v1}, Lkg;->a(Lju;I)I
+
+    move-result v0
+
+    .line 146
+    iget-object v1, p0, Lcx;->c:[Lcy;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_7
+
+    const/4 v1, 0x0
+
+    goto :goto_1
+
+    :cond_7
+    array-length v1, v1
+
+    :goto_1
+    add-int/2addr v0, v1
+
+    .line 147
+    new-array v0, v0, [Lcy;
+
+    if-eqz v1, :cond_8
+
+    .line 149
+    iget-object v3, p0, Lcx;->c:[Lcy;
+
+    invoke-static {v3, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 150
+    :cond_8
+    :goto_2
+    array-length v2, v0
+
+    add-int/lit8 v2, v2, -0x1
+
+    if-ge v1, v2, :cond_9
+
+    .line 151
+    new-instance v2, Lcy;
+
+    invoke-direct {v2}, Lcy;-><init>()V
+
+    aput-object v2, v0, v1
+
+    .line 152
+    aget-object v2, v0, v1
+
+    invoke-virtual {p1, v2}, Lju;->a(Lkd;)V
+
+    .line 153
+    invoke-virtual {p1}, Lju;->a()I
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2
+
+    .line 155
+    :cond_9
+    new-instance v2, Lcy;
+
+    invoke-direct {v2}, Lcy;-><init>()V
+
+    aput-object v2, v0, v1
+
+    .line 156
+    aget-object v1, v0, v1
+
+    invoke-virtual {p1, v1}, Lju;->a(Lkd;)V
+
+    .line 157
+    iput-object v0, p0, Lcx;->c:[Lcy;
+
+    goto/16 :goto_0
+
+    .line 142
+    :cond_a
+    invoke-virtual {p1}, Lju;->c()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcx;->b:Ljava/lang/String;
+
+    goto/16 :goto_0
+
+    .line 139
+    :cond_b
+    invoke-virtual {p1}, Lju;->d()I
+
+    move-result v0
+
+    .line 140
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcx;->a:Ljava/lang/Integer;
+
+    goto/16 :goto_0
+
+    :cond_c
+    return-object p0
+.end method
+
+.method public final a(Ljv;)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
     .end annotation
 
-    .line 1
-    const-class v0, Lcx;
+    .line 79
+    iget-object v0, p0, Lcx;->a:Ljava/lang/Integer;
 
-    sget-object v1, Lcx;->head:Lcx;
+    if-eqz v0, :cond_0
 
-    iget-object v1, v1, Lcx;->next:Lcx;
+    .line 80
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p1, v1, v0}, Ljv;->a(II)V
+
+    .line 81
+    :cond_0
+    iget-object v0, p0, Lcx;->b:Ljava/lang/String;
+
+    if-eqz v0, :cond_1
+
+    const/4 v1, 0x2
+
+    .line 82
+    invoke-virtual {p1, v1, v0}, Ljv;->a(ILjava/lang/String;)V
+
+    .line 83
+    :cond_1
+    iget-object v0, p0, Lcx;->c:[Lcy;
+
+    if-eqz v0, :cond_3
+
+    array-length v0, v0
+
+    if-lez v0, :cond_3
+
+    const/4 v0, 0x0
+
+    .line 84
+    :goto_0
+    iget-object v1, p0, Lcx;->c:[Lcy;
+
+    array-length v2, v1
+
+    if-ge v0, v2, :cond_3
+
+    .line 85
+    aget-object v1, v1, v0
+
+    if-eqz v1, :cond_2
+
+    const/4 v2, 0x3
+
+    .line 87
+    invoke-virtual {p1, v2, v1}, Ljv;->a(ILkd;)V
+
+    :cond_2
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 89
+    :cond_3
+    iget-object v0, p0, Lcx;->h:Ljava/lang/Boolean;
+
+    if-eqz v0, :cond_4
+
+    const/4 v1, 0x4
+
+    .line 90
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    invoke-virtual {p1, v1, v0}, Ljv;->a(IZ)V
+
+    .line 91
+    :cond_4
+    iget-object v0, p0, Lcx;->d:Lcz;
+
+    if-eqz v0, :cond_5
+
+    const/4 v1, 0x5
+
+    .line 92
+    invoke-virtual {p1, v1, v0}, Ljv;->a(ILkd;)V
+
+    .line 93
+    :cond_5
+    iget-object v0, p0, Lcx;->e:Ljava/lang/Boolean;
+
+    if-eqz v0, :cond_6
+
+    const/4 v1, 0x6
+
+    .line 94
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    invoke-virtual {p1, v1, v0}, Ljv;->a(IZ)V
+
+    .line 95
+    :cond_6
+    iget-object v0, p0, Lcx;->f:Ljava/lang/Boolean;
+
+    if-eqz v0, :cond_7
+
+    const/4 v1, 0x7
+
+    .line 96
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    invoke-virtual {p1, v1, v0}, Ljv;->a(IZ)V
+
+    .line 97
+    :cond_7
+    invoke-super {p0, p1}, Ljx;->a(Ljv;)V
+
+    return-void
+.end method
+
+.method protected final b()I
+    .locals 5
+
+    .line 99
+    invoke-super {p0}, Ljx;->b()I
+
+    move-result v0
+
+    .line 100
+    iget-object v1, p0, Lcx;->a:Ljava/lang/Integer;
+
+    const/4 v2, 0x1
+
+    if-eqz v1, :cond_0
+
+    .line 102
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    invoke-static {v2, v1}, Ljv;->b(II)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 103
+    :cond_0
+    iget-object v1, p0, Lcx;->b:Ljava/lang/String;
+
+    if-eqz v1, :cond_1
+
+    const/4 v3, 0x2
+
+    .line 105
+    invoke-static {v3, v1}, Ljv;->b(ILjava/lang/String;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 106
+    :cond_1
+    iget-object v1, p0, Lcx;->c:[Lcy;
+
+    if-eqz v1, :cond_3
+
+    array-length v1, v1
+
+    if-lez v1, :cond_3
+
+    const/4 v1, 0x0
+
+    .line 107
+    :goto_0
+    iget-object v3, p0, Lcx;->c:[Lcy;
+
+    array-length v4, v3
+
+    if-ge v1, v4, :cond_3
+
+    .line 108
+    aget-object v3, v3, v1
+
+    if-eqz v3, :cond_2
+
+    const/4 v4, 0x3
+
+    .line 111
+    invoke-static {v4, v3}, Ljv;->b(ILkd;)I
+
+    move-result v3
+
+    add-int/2addr v0, v3
+
+    :cond_2
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 113
+    :cond_3
+    iget-object v1, p0, Lcx;->h:Ljava/lang/Boolean;
+
+    if-eqz v1, :cond_4
+
+    const/4 v3, 0x4
+
+    .line 115
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 116
+    invoke-static {v3}, Ljv;->b(I)I
+
+    move-result v1
+
+    add-int/2addr v1, v2
+
+    add-int/2addr v0, v1
+
+    .line 118
+    :cond_4
+    iget-object v1, p0, Lcx;->d:Lcz;
+
+    if-eqz v1, :cond_5
+
+    const/4 v3, 0x5
+
+    .line 120
+    invoke-static {v3, v1}, Ljv;->b(ILkd;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 121
+    :cond_5
+    iget-object v1, p0, Lcx;->e:Ljava/lang/Boolean;
+
+    if-eqz v1, :cond_6
+
+    const/4 v3, 0x6
+
+    .line 123
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 124
+    invoke-static {v3}, Ljv;->b(I)I
+
+    move-result v1
+
+    add-int/2addr v1, v2
+
+    add-int/2addr v0, v1
+
+    .line 126
+    :cond_6
+    iget-object v1, p0, Lcx;->f:Ljava/lang/Boolean;
+
+    if-eqz v1, :cond_7
+
+    const/4 v3, 0x7
+
+    .line 128
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 129
+    invoke-static {v3}, Ljv;->b(I)I
+
+    move-result v1
+
+    add-int/2addr v1, v2
+
+    add-int/2addr v0, v1
+
+    :cond_7
+    return v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p1, p0, :cond_0
+
+    return v0
+
+    .line 21
+    :cond_0
+    instance-of v1, p1, Lcx;
 
     const/4 v2, 0x0
 
     if-nez v1, :cond_1
 
-    .line 2
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
+    return v2
 
-    move-result-wide v3
-
-    .line 3
-    sget-wide v5, Lcx;->IDLE_TIMEOUT_MILLIS:J
-
-    invoke-virtual {v0, v5, v6}, Ljava/lang/Object;->wait(J)V
-
-    .line 4
-    sget-object v0, Lcx;->head:Lcx;
-
-    iget-object v0, v0, Lcx;->next:Lcx;
-
-    if-nez v0, :cond_0
-
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
-
-    move-result-wide v0
-
-    sub-long/2addr v0, v3
-
-    sget-wide v3, Lcx;->IDLE_TIMEOUT_NANOS:J
-
-    cmp-long v5, v0, v3
-
-    if-ltz v5, :cond_0
-
-    .line 5
-    sget-object v2, Lcx;->head:Lcx;
-
-    :cond_0
-    return-object v2
-
-    .line 6
+    .line 23
     :cond_1
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
+    check-cast p1, Lcx;
 
-    move-result-wide v3
+    .line 24
+    iget-object v1, p0, Lcx;->a:Ljava/lang/Integer;
 
-    invoke-direct {v1, v3, v4}, Lcx;->remainingNanos(J)J
+    if-nez v1, :cond_2
 
-    move-result-wide v3
+    .line 25
+    iget-object v1, p1, Lcx;->a:Ljava/lang/Integer;
 
-    const-wide/16 v5, 0x0
+    if-eqz v1, :cond_3
 
-    cmp-long v7, v3, v5
+    return v2
 
-    if-lez v7, :cond_2
-
-    const-wide/32 v5, 0xf4240
-
-    .line 7
-    div-long v7, v3, v5
-
-    mul-long v5, v5, v7
-
-    sub-long/2addr v3, v5
-
-    long-to-int v1, v3
-
-    .line 8
-    invoke-virtual {v0, v7, v8, v1}, Ljava/lang/Object;->wait(JI)V
-
-    return-object v2
-
-    .line 9
+    .line 27
     :cond_2
-    sget-object v0, Lcx;->head:Lcx;
+    iget-object v3, p1, Lcx;->a:Ljava/lang/Integer;
 
-    iget-object v3, v1, Lcx;->next:Lcx;
+    invoke-virtual {v1, v3}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
 
-    iput-object v3, v0, Lcx;->next:Lcx;
+    move-result v1
 
-    .line 10
-    iput-object v2, v1, Lcx;->next:Lcx;
+    if-nez v1, :cond_3
 
-    return-object v1
-.end method
+    return v2
 
-.method private static declared-synchronized cancelScheduledTimeout(Lcx;)Z
-    .locals 3
-
-    const-class v0, Lcx;
-
-    monitor-enter v0
-
-    .line 1
-    :try_start_0
-    sget-object v1, Lcx;->head:Lcx;
-
-    :goto_0
-    if-eqz v1, :cond_1
-
-    .line 2
-    iget-object v2, v1, Lcx;->next:Lcx;
-
-    if-ne v2, p0, :cond_0
-
-    .line 3
-    iget-object v2, p0, Lcx;->next:Lcx;
-
-    iput-object v2, v1, Lcx;->next:Lcx;
-
-    const/4 v1, 0x0
-
-    .line 4
-    iput-object v1, p0, Lcx;->next:Lcx;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const/4 p0, 0x0
-
-    .line 5
-    monitor-exit v0
-
-    return p0
-
-    .line 6
-    :cond_0
-    :try_start_1
-    iget-object v1, v1, Lcx;->next:Lcx;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p0, 0x1
-
-    .line 7
-    monitor-exit v0
-
-    return p0
-
-    :catchall_0
-    move-exception p0
-
-    monitor-exit v0
-
-    throw p0
-.end method
-
-.method private remainingNanos(J)J
-    .locals 2
-
-    .line 1
-    iget-wide v0, p0, Lcx;->timeoutAt:J
-
-    sub-long/2addr v0, p1
-
-    return-wide v0
-.end method
-
-.method private static declared-synchronized scheduleTimeout(Lcx;JZ)V
-    .locals 6
-
-    const-class v0, Lcx;
-
-    monitor-enter v0
-
-    .line 1
-    :try_start_0
-    sget-object v1, Lcx;->head:Lcx;
-
-    if-nez v1, :cond_0
-
-    .line 2
-    new-instance v1, Lcx;
-
-    invoke-direct {v1}, Lcx;-><init>()V
-
-    sput-object v1, Lcx;->head:Lcx;
-
-    .line 3
-    new-instance v1, Lcx$c;
-
-    invoke-direct {v1}, Lcx$c;-><init>()V
-
-    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
-
-    .line 4
-    :cond_0
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
-
-    move-result-wide v1
-
-    const-wide/16 v3, 0x0
-
-    cmp-long v5, p1, v3
-
-    if-eqz v5, :cond_1
-
-    if-eqz p3, :cond_1
-
-    .line 5
-    invoke-virtual {p0}, Lxx;->deadlineNanoTime()J
-
-    move-result-wide v3
-
-    sub-long/2addr v3, v1
-
-    invoke-static {p1, p2, v3, v4}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide p1
-
-    add-long/2addr p1, v1
-
-    iput-wide p1, p0, Lcx;->timeoutAt:J
-
-    goto :goto_0
-
-    :cond_1
-    if-eqz v5, :cond_2
-
-    add-long/2addr p1, v1
-
-    .line 6
-    iput-wide p1, p0, Lcx;->timeoutAt:J
-
-    goto :goto_0
-
-    :cond_2
-    if-eqz p3, :cond_6
-
-    .line 7
-    invoke-virtual {p0}, Lxx;->deadlineNanoTime()J
-
-    move-result-wide p1
-
-    iput-wide p1, p0, Lcx;->timeoutAt:J
-
-    .line 8
-    :goto_0
-    invoke-direct {p0, v1, v2}, Lcx;->remainingNanos(J)J
-
-    move-result-wide p1
-
-    .line 9
-    sget-object p3, Lcx;->head:Lcx;
-
-    .line 10
-    :goto_1
-    iget-object v3, p3, Lcx;->next:Lcx;
-
-    if-eqz v3, :cond_4
-
-    iget-object v3, p3, Lcx;->next:Lcx;
-
-    invoke-direct {v3, v1, v2}, Lcx;->remainingNanos(J)J
-
-    move-result-wide v3
-
-    cmp-long v5, p1, v3
-
-    if-gez v5, :cond_3
-
-    goto :goto_2
-
-    .line 11
+    .line 29
     :cond_3
-    iget-object p3, p3, Lcx;->next:Lcx;
+    iget-object v1, p0, Lcx;->b:Ljava/lang/String;
+
+    if-nez v1, :cond_4
+
+    .line 30
+    iget-object v1, p1, Lcx;->b:Ljava/lang/String;
+
+    if-eqz v1, :cond_5
+
+    return v2
+
+    .line 32
+    :cond_4
+    iget-object v3, p1, Lcx;->b:Ljava/lang/String;
+
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    return v2
+
+    .line 34
+    :cond_5
+    iget-object v1, p0, Lcx;->c:[Lcy;
+
+    iget-object v3, p1, Lcx;->c:[Lcy;
+
+    invoke-static {v1, v3}, Lkb;->a([Ljava/lang/Object;[Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    return v2
+
+    .line 36
+    :cond_6
+    iget-object v1, p0, Lcx;->h:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_7
+
+    .line 37
+    iget-object v1, p1, Lcx;->h:Ljava/lang/Boolean;
+
+    if-eqz v1, :cond_8
+
+    return v2
+
+    .line 39
+    :cond_7
+    iget-object v3, p1, Lcx;->h:Ljava/lang/Boolean;
+
+    invoke-virtual {v1, v3}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_8
+
+    return v2
+
+    .line 41
+    :cond_8
+    iget-object v1, p0, Lcx;->d:Lcz;
+
+    if-nez v1, :cond_9
+
+    .line 42
+    iget-object v1, p1, Lcx;->d:Lcz;
+
+    if-eqz v1, :cond_a
+
+    return v2
+
+    .line 44
+    :cond_9
+    iget-object v3, p1, Lcx;->d:Lcz;
+
+    invoke-virtual {v1, v3}, Lcz;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_a
+
+    return v2
+
+    .line 46
+    :cond_a
+    iget-object v1, p0, Lcx;->e:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_b
+
+    .line 47
+    iget-object v1, p1, Lcx;->e:Ljava/lang/Boolean;
+
+    if-eqz v1, :cond_c
+
+    return v2
+
+    .line 49
+    :cond_b
+    iget-object v3, p1, Lcx;->e:Ljava/lang/Boolean;
+
+    invoke-virtual {v1, v3}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_c
+
+    return v2
+
+    .line 51
+    :cond_c
+    iget-object v1, p0, Lcx;->f:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_d
+
+    .line 52
+    iget-object v1, p1, Lcx;->f:Ljava/lang/Boolean;
+
+    if-eqz v1, :cond_e
+
+    return v2
+
+    .line 54
+    :cond_d
+    iget-object v3, p1, Lcx;->f:Ljava/lang/Boolean;
+
+    invoke-virtual {v1, v3}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_e
+
+    return v2
+
+    .line 56
+    :cond_e
+    iget-object v1, p0, Lcx;->L:Ljz;
+
+    if-eqz v1, :cond_10
+
+    iget-object v1, p0, Lcx;->L:Ljz;
+
+    invoke-virtual {v1}, Ljz;->b()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_f
+
+    goto :goto_0
+
+    .line 58
+    :cond_f
+    iget-object v0, p0, Lcx;->L:Ljz;
+
+    iget-object p1, p1, Lcx;->L:Ljz;
+
+    invoke-virtual {v0, p1}, Ljz;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    .line 57
+    :cond_10
+    :goto_0
+    iget-object v1, p1, Lcx;->L:Ljz;
+
+    if-eqz v1, :cond_12
+
+    iget-object p1, p1, Lcx;->L:Ljz;
+
+    invoke-virtual {p1}, Ljz;->b()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_11
 
     goto :goto_1
 
-    .line 12
-    :cond_4
-    :goto_2
-    iget-object p1, p3, Lcx;->next:Lcx;
+    :cond_11
+    return v2
 
-    iput-object p1, p0, Lcx;->next:Lcx;
-
-    .line 13
-    iput-object p0, p3, Lcx;->next:Lcx;
-
-    .line 14
-    sget-object p0, Lcx;->head:Lcx;
-
-    if-ne p3, p0, :cond_5
-
-    .line 15
-    invoke-virtual {v0}, Ljava/lang/Object;->notify()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 16
-    :cond_5
-    monitor-exit v0
-
-    return-void
-
-    .line 17
-    :cond_6
-    :try_start_1
-    new-instance p0, Ljava/lang/AssertionError;
-
-    invoke-direct {p0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :catchall_0
-    move-exception p0
-
-    monitor-exit v0
-
-    throw p0
+    :cond_12
+    :goto_1
+    return v0
 .end method
 
+.method public final hashCode()I
+    .locals 3
 
-# virtual methods
-.method public final enter()V
-    .locals 6
+    .line 59
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 1
-    iget-boolean v0, p0, Lcx;->inQueue:Z
+    move-result-object v0
 
-    if-nez v0, :cond_1
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    .line 2
-    invoke-virtual {p0}, Lxx;->timeoutNanos()J
+    move-result-object v0
 
-    move-result-wide v0
-
-    .line 3
-    invoke-virtual {p0}, Lxx;->hasDeadline()Z
-
-    move-result v2
-
-    const-wide/16 v3, 0x0
-
-    cmp-long v5, v0, v3
-
-    if-nez v5, :cond_0
-
-    if-nez v2, :cond_0
-
-    return-void
-
-    :cond_0
-    const/4 v3, 0x1
-
-    .line 4
-    iput-boolean v3, p0, Lcx;->inQueue:Z
-
-    .line 5
-    invoke-static {p0, v0, v1, v2}, Lcx;->scheduleTimeout(Lcx;JZ)V
-
-    return-void
-
-    .line 6
-    :cond_1
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Unbalanced enter/exit"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method final exit(Ljava/io/IOException;)Ljava/io/IOException;
-    .locals 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .line 6
-    invoke-virtual {p0}, Lcx;->exit()Z
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    if-nez v0, :cond_0
+    add-int/lit16 v0, v0, 0x20f
 
-    return-object p1
+    mul-int/lit8 v0, v0, 0x1f
 
-    .line 7
-    :cond_0
-    invoke-virtual {p0, p1}, Lcx;->newTimeoutException(Ljava/io/IOException;)Ljava/io/IOException;
+    .line 61
+    iget-object v1, p0, Lcx;->a:Ljava/lang/Integer;
 
-    move-result-object p1
+    const/4 v2, 0x0
 
-    return-object p1
-.end method
+    if-nez v1, :cond_0
 
-.method final exit(Z)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .line 4
-    invoke-virtual {p0}, Lcx;->exit()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    if-nez p1, :cond_0
+    const/4 v1, 0x0
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    invoke-virtual {v1}, Ljava/lang/Integer;->hashCode()I
 
-    .line 5
-    invoke-virtual {p0, p1}, Lcx;->newTimeoutException(Ljava/io/IOException;)Ljava/io/IOException;
+    move-result v1
 
-    move-result-object p1
-
-    throw p1
-
-    :cond_1
     :goto_0
-    return-void
-.end method
+    add-int/2addr v0, v1
 
-.method public final exit()Z
-    .locals 2
+    mul-int/lit8 v0, v0, 0x1f
 
-    .line 1
-    iget-boolean v0, p0, Lcx;->inQueue:Z
+    .line 63
+    iget-object v1, p0, Lcx;->b:Ljava/lang/String;
+
+    if-nez v1, :cond_1
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_0
+    goto :goto_1
 
-    return v1
+    :cond_1
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
-    .line 2
-    :cond_0
-    iput-boolean v1, p0, Lcx;->inQueue:Z
+    move-result v1
 
-    .line 3
-    invoke-static {p0}, Lcx;->cancelScheduledTimeout(Lcx;)Z
+    :goto_1
+    add-int/2addr v0, v1
 
-    move-result v0
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 64
+    iget-object v1, p0, Lcx;->c:[Lcy;
+
+    .line 65
+    invoke-static {v1}, Lkb;->a([Ljava/lang/Object;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 67
+    iget-object v1, p0, Lcx;->h:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_2
+
+    const/4 v1, 0x0
+
+    goto :goto_2
+
+    :cond_2
+    invoke-virtual {v1}, Ljava/lang/Boolean;->hashCode()I
+
+    move-result v1
+
+    :goto_2
+    add-int/2addr v0, v1
+
+    .line 68
+    iget-object v1, p0, Lcx;->d:Lcz;
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    if-nez v1, :cond_3
+
+    const/4 v1, 0x0
+
+    goto :goto_3
+
+    .line 70
+    :cond_3
+    invoke-virtual {v1}, Lcz;->hashCode()I
+
+    move-result v1
+
+    :goto_3
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 72
+    iget-object v1, p0, Lcx;->e:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_4
+
+    const/4 v1, 0x0
+
+    goto :goto_4
+
+    :cond_4
+    invoke-virtual {v1}, Ljava/lang/Boolean;->hashCode()I
+
+    move-result v1
+
+    :goto_4
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 74
+    iget-object v1, p0, Lcx;->f:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_5
+
+    const/4 v1, 0x0
+
+    goto :goto_5
+
+    :cond_5
+    invoke-virtual {v1}, Ljava/lang/Boolean;->hashCode()I
+
+    move-result v1
+
+    :goto_5
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 76
+    iget-object v1, p0, Lcx;->L:Ljz;
+
+    if-eqz v1, :cond_7
+
+    iget-object v1, p0, Lcx;->L:Ljz;
+
+    invoke-virtual {v1}, Ljz;->b()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_6
+
+    goto :goto_6
+
+    .line 77
+    :cond_6
+    iget-object v1, p0, Lcx;->L:Ljz;
+
+    invoke-virtual {v1}, Ljz;->hashCode()I
+
+    move-result v2
+
+    :cond_7
+    :goto_6
+    add-int/2addr v0, v2
 
     return v0
-.end method
-
-.method protected newTimeoutException(Ljava/io/IOException;)Ljava/io/IOException;
-    .locals 2
-    .param p1    # Ljava/io/IOException;
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end param
-
-    .line 1
-    new-instance v0, Ljava/io/InterruptedIOException;
-
-    const-string v1, "timeout"
-
-    invoke-direct {v0, v1}, Ljava/io/InterruptedIOException;-><init>(Ljava/lang/String;)V
-
-    if-eqz p1, :cond_0
-
-    .line 2
-    invoke-virtual {v0, p1}, Ljava/io/InterruptedIOException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-
-    :cond_0
-    return-object v0
-.end method
-
-.method public final sink(Lvx;)Lvx;
-    .locals 1
-
-    .line 1
-    new-instance v0, Lcx$a;
-
-    invoke-direct {v0, p0, p1}, Lcx$a;-><init>(Lcx;Lvx;)V
-
-    return-object v0
-.end method
-
-.method public final source(Lwx;)Lwx;
-    .locals 1
-
-    .line 1
-    new-instance v0, Lcx$b;
-
-    invoke-direct {v0, p0, p1}, Lcx$b;-><init>(Lcx;Lwx;)V
-
-    return-object v0
-.end method
-
-.method protected timedOut()V
-    .locals 0
-
-    return-void
 .end method

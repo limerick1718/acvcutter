@@ -26,14 +26,14 @@ Landroidx/core/app/CoreComponentFactory$a;
 
 
 
-<span class="cov">.method public constructor &lt;init&gt;()V</span>
+.method public constructor &lt;init&gt;()V
 <span class="">	.locals 0</span>
 
-<span class="cov">	invoke-direct {p0}, Landroid/app/AppComponentFactory;-><init>()V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct {p0}, Landroid/app/AppComponentFactory;-><init>()V</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method static a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+.method static a(Ljava/lang/Object;)Ljava/lang/Object;
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -43,7 +43,7 @@ Landroidx/core/app/CoreComponentFactory$a;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	instance-of v0, p0, Landroidx/core/app/CoreComponentFactory$a;</span>
+<span class="missed">	instance-of v0, p0, Landroidx/core/app/CoreComponentFactory$a;</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	move-object v0, p0</span>
 <span class="missed">	check-cast v0, Landroidx/core/app/CoreComponentFactory$a;</span>
@@ -51,11 +51,11 @@ Landroidx/core/app/CoreComponentFactory$a;
 <span class="missed">	move-result-object v0</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="">	return-object v0</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object p0</span>
 .end method
 
-<span class="cov">.method public instantiateActivity(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;</span>
+.method public instantiateActivity(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;
 <span class="">	.locals 0</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -65,15 +65,15 @@ Landroidx/core/app/CoreComponentFactory$a;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="exec">	invoke-super {p0, p1, p2, p3}, Landroid/app/AppComponentFactory;->instantiateActivity(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	invoke-static {p1}, Landroidx/core/app/CoreComponentFactory;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	check-cast p1, Landroid/app/Activity;</span>
-<span class="exec">	return-object p1</span>
+<span class="">	invoke-super {p0, p1, p2, p3}, Landroid/app/AppComponentFactory;->instantiateActivity(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1}, Landroidx/core/app/CoreComponentFactory;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Landroid/app/Activity;</span>
+<span class="">	return-object p1</span>
 .end method
 
-<span class="cov">.method public instantiateApplication(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/app/Application;</span>
+.method public instantiateApplication(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/app/Application;
 <span class="">	.locals 0</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -83,15 +83,15 @@ Landroidx/core/app/CoreComponentFactory$a;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="exec">	invoke-super {p0, p1, p2}, Landroid/app/AppComponentFactory;->instantiateApplication(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/app/Application;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	invoke-static {p1}, Landroidx/core/app/CoreComponentFactory;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	check-cast p1, Landroid/app/Application;</span>
-<span class="exec">	return-object p1</span>
+<span class="">	invoke-super {p0, p1, p2}, Landroid/app/AppComponentFactory;->instantiateApplication(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/app/Application;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1}, Landroidx/core/app/CoreComponentFactory;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Landroid/app/Application;</span>
+<span class="">	return-object p1</span>
 .end method
 
-<span class="cov">.method public instantiateProvider(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/content/ContentProvider;</span>
+.method public instantiateProvider(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/content/ContentProvider;
 <span class="">	.locals 0</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -101,15 +101,15 @@ Landroidx/core/app/CoreComponentFactory$a;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="exec">	invoke-super {p0, p1, p2}, Landroid/app/AppComponentFactory;->instantiateProvider(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/content/ContentProvider;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	invoke-static {p1}, Landroidx/core/app/CoreComponentFactory;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	check-cast p1, Landroid/content/ContentProvider;</span>
-<span class="exec">	return-object p1</span>
+<span class="">	invoke-super {p0, p1, p2}, Landroid/app/AppComponentFactory;->instantiateProvider(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/content/ContentProvider;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1}, Landroidx/core/app/CoreComponentFactory;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Landroid/content/ContentProvider;</span>
+<span class="">	return-object p1</span>
 .end method
 
-<span class="cov">.method public instantiateReceiver(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/content/BroadcastReceiver;</span>
+.method public instantiateReceiver(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/content/BroadcastReceiver;
 <span class="">	.locals 0</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -119,15 +119,15 @@ Landroidx/core/app/CoreComponentFactory$a;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="exec">	invoke-super {p0, p1, p2, p3}, Landroid/app/AppComponentFactory;->instantiateReceiver(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/content/BroadcastReceiver;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	invoke-static {p1}, Landroidx/core/app/CoreComponentFactory;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	check-cast p1, Landroid/content/BroadcastReceiver;</span>
-<span class="exec">	return-object p1</span>
+<span class="">	invoke-super {p0, p1, p2, p3}, Landroid/app/AppComponentFactory;->instantiateReceiver(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/content/BroadcastReceiver;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1}, Landroidx/core/app/CoreComponentFactory;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Landroid/content/BroadcastReceiver;</span>
+<span class="">	return-object p1</span>
 .end method
 
-<span class="cov">.method public instantiateService(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Service;</span>
+.method public instantiateService(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Service;
 <span class="">	.locals 0</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -137,12 +137,12 @@ Landroidx/core/app/CoreComponentFactory$a;
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="exec">	invoke-super {p0, p1, p2, p3}, Landroid/app/AppComponentFactory;->instantiateService(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Service;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="exec">	invoke-static {p1}, Landroidx/core/app/CoreComponentFactory;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	check-cast p1, Landroid/app/Service;</span>
-<span class="exec">	return-object p1</span>
+<span class="">	invoke-super {p0, p1, p2, p3}, Landroid/app/AppComponentFactory;->instantiateService(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Service;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	invoke-static {p1}, Landroidx/core/app/CoreComponentFactory;->a(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	check-cast p1, Landroid/app/Service;</span>
+<span class="">	return-object p1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

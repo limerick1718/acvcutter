@@ -29,7 +29,7 @@ value = {
 .end annotation
 
 .field private final a:Lcom/twitter/android/lite/model/PushTokenInfo;
-.field private final b:Lnw;
+.field private final b:Luf;
 .field private final c:Ljava/lang/ref/WeakReference;
 .annotation system Ldalvik/annotation/Signature;
 value = {
@@ -48,12 +48,12 @@ value = {
 <span class="cov">	new-instance v0, Ljava/lang/ref/WeakReference;</span>
 <span class="cov">	invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V</span>
 <span class="cov">	iput-object v0, p0, Lcom/twitter/android/lite/notification/c;->c:Ljava/lang/ref/WeakReference;</span>
-<span class="exec">	invoke-static {p1}, Luw;->b(Landroid/content/Context;)Lcom/twitter/android/lite/model/PushTokenInfo;</span>
+<span class="exec">	invoke-static {p1}, Lul;->a(Landroid/content/Context;)Lcom/twitter/android/lite/model/PushTokenInfo;</span>
 <span class="cov">	move-result-object v0</span>
 <span class="cov">	iput-object v0, p0, Lcom/twitter/android/lite/notification/c;->a:Lcom/twitter/android/lite/model/PushTokenInfo;</span>
-<span class="exec">	invoke-static {p1}, Lmw;->c(Landroid/content/Context;)Lnw;</span>
+<span class="exec">	invoke-static {p1}, Lue;->b(Landroid/content/Context;)Luf;</span>
 <span class="cov">	move-result-object p1</span>
-<span class="cov">	iput-object p1, p0, Lcom/twitter/android/lite/notification/c;->b:Lnw;</span>
+<span class="cov">	iput-object p1, p0, Lcom/twitter/android/lite/notification/c;->b:Luf;</span>
 <span class="exec">	return-void</span>
 .end method
 
@@ -65,17 +65,17 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="">	invoke-static {p0}, Llw;->a(Landroid/content/Context;)Llw;</span>
+<span class="">	invoke-static {p0}, Lud;->a(Landroid/content/Context;)Lud;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	invoke-virtual {v0}, Llw;->c()Z</span>
+<span class="">	invoke-virtual {v0}, Lud;->b()Z</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-nez v0, :cond_0</span>
-<span class="">	invoke-static {p0}, Lmw;->a(Landroid/content/Context;)Ljw;</span>
+<span class="">	invoke-static {p0}, Lue;->a(Landroid/content/Context;)Lub;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	invoke-static {}, Liw;->a()Ljava/lang/String;</span>
+<span class="">	invoke-static {}, Lua;->a()Ljava/lang/String;</span>
 <span class="missed">	move-result-object v1</span>
 <span class="missed">	const-string v2, "client_credentials"</span>
-<span class="">	invoke-interface {v0, v1, v2}, Ljw;->a(Ljava/lang/String;Ljava/lang/String;)Lretrofit2/Call;</span>
+<span class="">	invoke-interface {v0, v1, v2}, Lub;->a(Ljava/lang/String;Ljava/lang/String;)Lretrofit2/Call;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="">	invoke-interface {v0}, Lretrofit2/Call;->execute()Lretrofit2/Response;</span>
 <span class="missed">	move-result-object v0</span>
@@ -86,10 +86,10 @@ value = {
 <span class="missed">	move-result-object v0</span>
 <span class="missed">	check-cast v0, Lcom/twitter/android/lite/model/AccessToken;</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
-<span class="">	invoke-static {p0}, Llw;->a(Landroid/content/Context;)Llw;</span>
+<span class="">	invoke-static {p0}, Lud;->a(Landroid/content/Context;)Lud;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="missed">	iget-object v0, v0, Lcom/twitter/android/lite/model/AccessToken;->accessToken:Ljava/lang/String;</span>
-<span class="missed">	invoke-virtual {p0, v0}, Llw;->a(Ljava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {p0, v0}, Lud;->a(Ljava/lang/String;)V</span>
 <span class="">	:cond_0</span>
 <span class="">	return-void</span>
 .end method
@@ -103,40 +103,40 @@ value = {
 <span class="cov">	check-cast p1, Landroid/content/Context;</span>
 <span class="cov">	const/4 v0, 0x0</span>
 <span class="cov">	if-eqz p1, :cond_3</span>
-<span class="exec">	invoke-static {p1}, Low;->c(Landroid/content/Context;)Z</span>
+<span class="exec">	invoke-static {p1}, Lug;->c(Landroid/content/Context;)Z</span>
 <span class="cov">	move-result v1</span>
 <span class="cov">	if-nez v1, :cond_3</span>
-<span class="exec">	invoke-static {p1}, Low;->b(Landroid/content/Context;)Ljava/lang/String;</span>
+<span class="exec">	invoke-static {p1}, Lug;->a(Landroid/content/Context;)Ljava/lang/String;</span>
 <span class="cov">	move-result-object v1</span>
 <span class="exec">	invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z</span>
 <span class="cov">	move-result v1</span>
 <span class="missed">	if-eqz v1, :cond_0</span>
 <span class="exec">	goto :goto_0</span>
 <span class="cov">	:cond_0</span>
-<span class="cov">	new-instance v1, Lkw;</span>
+<span class="cov">	new-instance v1, Luc;</span>
 <span class="exec">	invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;</span>
 <span class="cov">	move-result-object v2</span>
-<span class="cov">	invoke-direct {v1, v2}, Lkw;-><init>(Landroid/webkit/CookieManager;)V</span>
-<span class="exec">	invoke-virtual {v1}, Lkw;->c()Z</span>
+<span class="cov">	invoke-direct {v1, v2}, Luc;-><init>(Landroid/webkit/CookieManager;)V</span>
+<span class="exec">	invoke-virtual {v1}, Luc;->c()Z</span>
 <span class="cov">	move-result v1</span>
 <span class="missed">	if-eqz v1, :cond_3</span>
 <span class="">	:try_start_0</span>
 <span class="missed">	invoke-static {p1}, Lcom/twitter/android/lite/notification/c;->a(Landroid/content/Context;)V</span>
-<span class="">	invoke-static {p1}, Llw;->a(Landroid/content/Context;)Llw;</span>
+<span class="">	invoke-static {p1}, Lud;->a(Landroid/content/Context;)Lud;</span>
 <span class="missed">	move-result-object v1</span>
-<span class="">	invoke-virtual {v1}, Llw;->c()Z</span>
+<span class="">	invoke-virtual {v1}, Lud;->b()Z</span>
 <span class="missed">	move-result v1</span>
 <span class="missed">	if-eqz v1, :cond_3</span>
-<span class="missed">	iget-object v1, p0, Lcom/twitter/android/lite/notification/c;->b:Lnw;</span>
+<span class="missed">	iget-object v1, p0, Lcom/twitter/android/lite/notification/c;->b:Luf;</span>
 <span class="missed">	iget-object v2, p0, Lcom/twitter/android/lite/notification/c;->a:Lcom/twitter/android/lite/model/PushTokenInfo;</span>
-<span class="">	invoke-interface {v1, v2}, Lnw;->a(Lcom/twitter/android/lite/model/PushTokenInfo;)Lretrofit2/Call;</span>
+<span class="">	invoke-interface {v1, v2}, Luf;->a(Lcom/twitter/android/lite/model/PushTokenInfo;)Lretrofit2/Call;</span>
 <span class="missed">	move-result-object v1</span>
 <span class="">	invoke-interface {v1}, Lretrofit2/Call;->execute()Lretrofit2/Response;</span>
 <span class="missed">	move-result-object v1</span>
 <span class="">	invoke-virtual {v1}, Lretrofit2/Response;->isSuccessful()Z</span>
 <span class="missed">	move-result v2</span>
 <span class="missed">	if-eqz v2, :cond_1</span>
-<span class="missed">	invoke-static {p1}, Low;->d(Landroid/content/Context;)V</span>
+<span class="missed">	invoke-static {p1}, Lug;->b(Landroid/content/Context;)V</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_1</span>
 <span class="">	invoke-virtual {v1}, Lretrofit2/Response;->code()I</span>
@@ -148,9 +148,9 @@ value = {
 <span class="missed">	const/16 v2, 0x193</span>
 <span class="missed">	if-ne v1, v2, :cond_3</span>
 <span class="">	:cond_2</span>
-<span class="">	invoke-static {p1}, Llw;->a(Landroid/content/Context;)Llw;</span>
+<span class="">	invoke-static {p1}, Lud;->a(Landroid/content/Context;)Lud;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="missed">	invoke-virtual {p1}, Llw;->a()V</span>
+<span class="missed">	invoke-virtual {p1}, Lud;->a()V</span>
 <span class="">	:try_end_0</span>
 <span class="missed">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
 <span class="cov">	:goto_0</span>
@@ -159,7 +159,7 @@ value = {
 <span class="exec">	return-object v0</span>
 .end method
 
-<span class="cov">.method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">.method protected synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;</span>
 <span class="">	.locals 0</span>
 
 <span class="cov">	check-cast p1, [Ljava/lang/Void;</span>

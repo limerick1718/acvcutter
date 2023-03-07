@@ -1,27 +1,43 @@
-.class public interface abstract Lee;
+.class public final Lee;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
-
-# interfaces
-.implements Ljava/util/List;
 
 
-# virtual methods
-.method public abstract a(Lfc;)V
-.end method
+# direct methods
+.method public static a(Ljava/lang/String;)Landroid/net/Uri;
+    .locals 2
 
-.method public abstract b(I)Ljava/lang/Object;
-.end method
+    .line 1
+    invoke-static {p0}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
 
-.method public abstract d()Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "*>;"
-        }
-    .end annotation
-.end method
+    move-result-object p0
 
-.method public abstract e()Lee;
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    const-string v1, "content://com.google.android.gms.phenotype/"
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/String;
+
+    invoke-direct {p0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -11,8 +11,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1
-    sget-object v0, Lokhttp3/a;->a:Lokhttp3/a;
+    .line 100
+    sget-object v0, Lokhttp3/-$$Lambda$Authenticator$xBBU2iHkJpDKH0vhaB2vteUyEoc;->INSTANCE:Lokhttp3/-$$Lambda$Authenticator$xBBU2iHkJpDKH0vhaB2vteUyEoc;
 
     sput-object v0, Lokhttp3/Authenticator;->NONE:Lokhttp3/Authenticator;
 

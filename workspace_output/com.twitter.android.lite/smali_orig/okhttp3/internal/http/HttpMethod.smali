@@ -7,7 +7,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -18,7 +18,7 @@
 
     const-string v0, "POST"
 
-    .line 1
+    .line 20
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -27,7 +27,7 @@
 
     const-string v0, "PATCH"
 
-    .line 2
+    .line 21
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -36,7 +36,7 @@
 
     const-string v0, "PUT"
 
-    .line 3
+    .line 22
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -45,7 +45,7 @@
 
     const-string v0, "DELETE"
 
-    .line 4
+    .line 23
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -54,7 +54,7 @@
 
     const-string v0, "MOVE"
 
-    .line 5
+    .line 24
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -81,7 +81,7 @@
 
     const-string v0, "GET"
 
-    .line 1
+    .line 36
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -112,7 +112,7 @@
 
     const-string v0, "PROPFIND"
 
-    .line 1
+    .line 45
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -127,7 +127,7 @@
 
     const-string v0, "PROPFIND"
 
-    .line 1
+    .line 40
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -140,7 +140,7 @@
 
     const-string v0, "POST"
 
-    .line 1
+    .line 28
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -149,7 +149,7 @@
 
     const-string v0, "PUT"
 
-    .line 2
+    .line 29
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -158,7 +158,7 @@
 
     const-string v0, "PATCH"
 
-    .line 3
+    .line 30
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -167,7 +167,7 @@
 
     const-string v0, "PROPPATCH"
 
-    .line 4
+    .line 31
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -176,7 +176,7 @@
 
     const-string v0, "REPORT"
 
-    .line 5
+    .line 32
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0

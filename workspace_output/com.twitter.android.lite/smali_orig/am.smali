@@ -1,177 +1,157 @@
-.class public final Lam;
+.class final Lam;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-base@@17.4.0"
+.source "FragmentManager.java"
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
+.implements Landroid/os/Parcelable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator<",
-        "Lbm;",
-        ">;"
-    }
-.end annotation
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lam;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# instance fields
+.field a:[Lan;
+
+.field b:[I
+
+.field c:[Lac;
+
+.field d:I
+
+.field e:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    .line 1
+    .line 646
+    new-instance v0, Lam$1;
+
+    invoke-direct {v0}, Lam$1;-><init>()V
+
+    sput-object v0, Lam;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
+
+    .line 621
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, -0x1
+
+    .line 618
+    iput v0, p0, Lam;->d:I
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .locals 1
+
+    .line 624
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, -0x1
+
+    .line 618
+    iput v0, p0, Lam;->d:I
+
+    .line 625
+    sget-object v0, Lan;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lan;
+
+    iput-object v0, p0, Lam;->a:[Lan;
+
+    .line 626
+    invoke-virtual {p1}, Landroid/os/Parcel;->createIntArray()[I
+
+    move-result-object v0
+
+    iput-object v0, p0, Lam;->b:[I
+
+    .line 627
+    sget-object v0, Lac;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lac;
+
+    iput-object v0, p0, Lam;->c:[Lac;
+
+    .line 628
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lam;->d:I
+
+    .line 629
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result p1
+
+    iput p1, p0, Lam;->e:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 16
+.method public describeContents()I
+    .locals 1
 
-    move-object/from16 v0, p1
+    const/4 v0, 0x0
 
-    .line 1
-    invoke-static/range {p1 .. p1}, Lq5;->b(Landroid/os/Parcel;)I
-
-    move-result v1
-
-    const-wide/16 v2, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    move-wide v7, v2
-
-    move-wide v9, v7
-
-    move-object v12, v4
-
-    move-object v13, v12
-
-    move-object v14, v13
-
-    move-object v15, v14
-
-    const/4 v11, 0x0
-
-    .line 2
-    :goto_0
-    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v2
-
-    if-ge v2, v1, :cond_0
-
-    .line 3
-    invoke-static/range {p1 .. p1}, Lq5;->a(Landroid/os/Parcel;)I
-
-    move-result v2
-
-    .line 4
-    invoke-static {v2}, Lq5;->a(I)I
-
-    move-result v3
-
-    packed-switch v3, :pswitch_data_0
-
-    .line 5
-    invoke-static {v0, v2}, Lq5;->o(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    .line 6
-    :pswitch_0
-    invoke-static {v0, v2}, Lq5;->a(Landroid/os/Parcel;I)Landroid/os/Bundle;
-
-    move-result-object v15
-
-    goto :goto_0
-
-    .line 7
-    :pswitch_1
-    invoke-static {v0, v2}, Lq5;->b(Landroid/os/Parcel;I)Ljava/lang/String;
-
-    move-result-object v14
-
-    goto :goto_0
-
-    .line 8
-    :pswitch_2
-    invoke-static {v0, v2}, Lq5;->b(Landroid/os/Parcel;I)Ljava/lang/String;
-
-    move-result-object v13
-
-    goto :goto_0
-
-    .line 9
-    :pswitch_3
-    invoke-static {v0, v2}, Lq5;->b(Landroid/os/Parcel;I)Ljava/lang/String;
-
-    move-result-object v12
-
-    goto :goto_0
-
-    .line 10
-    :pswitch_4
-    invoke-static {v0, v2}, Lq5;->e(Landroid/os/Parcel;I)Z
-
-    move-result v11
-
-    goto :goto_0
-
-    .line 11
-    :pswitch_5
-    invoke-static {v0, v2}, Lq5;->l(Landroid/os/Parcel;I)J
-
-    move-result-wide v9
-
-    goto :goto_0
-
-    .line 12
-    :pswitch_6
-    invoke-static {v0, v2}, Lq5;->l(Landroid/os/Parcel;I)J
-
-    move-result-wide v7
-
-    goto :goto_0
-
-    .line 13
-    :cond_0
-    invoke-static {v0, v1}, Lq5;->d(Landroid/os/Parcel;I)V
-
-    .line 14
-    new-instance v0, Lbm;
-
-    move-object v6, v0
-
-    invoke-direct/range {v6 .. v15}, Lbm;-><init>(JJZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return v0
 .end method
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 0
+.method public writeToParcel(Landroid/os/Parcel;I)V
+    .locals 1
 
-    .line 1
-    new-array p1, p1, [Lbm;
+    .line 639
+    iget-object v0, p0, Lam;->a:[Lan;
 
-    return-object p1
+    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
+
+    .line 640
+    iget-object v0, p0, Lam;->b:[I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeIntArray([I)V
+
+    .line 641
+    iget-object v0, p0, Lam;->c:[Lac;
+
+    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
+
+    .line 642
+    iget p2, p0, Lam;->d:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 643
+    iget p2, p0, Lam;->e:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    return-void
 .end method

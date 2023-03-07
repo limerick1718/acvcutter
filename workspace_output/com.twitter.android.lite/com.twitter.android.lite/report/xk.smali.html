@@ -14,90 +14,31 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lxk;
+		<code>.class public interface abstract Lxk;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.implements Lkb;
-
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Ljava/lang/Object;",
-"Lkb<",
-"Lwk;",
-">;"
-}
-.end annotation
-
-.field private static b:Lxk;
-.field private final a:Lkb;
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"Lkb<",
-"Lwk;",
-">;"
-}
-.end annotation
-.end field
+.source "PinningInfoProvider.java"
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 1</span>
 
-<span class="cov">	new-instance v0, Lxk;</span>
-<span class="cov">	invoke-direct {v0}, Lxk;-><init>()V</span>
-<span class="cov">	sput-object v0, Lxk;->b:Lxk;</span>
-<span class="exec">	return-void</span>
+
+.method public abstract getKeyStorePassword()Ljava/lang/String;
+<span class="">	</span>
+
 .end method
 
-<span class="cov">.method public constructor &lt;init&gt;()V</span>
-<span class="">	.locals 1</span>
+.method public abstract getKeyStoreStream()Ljava/io/InputStream;
+<span class="">	</span>
 
-<span class="cov">	new-instance v0, Lzk;</span>
-<span class="cov">	invoke-direct {v0}, Lzk;-><init>()V</span>
-<span class="exec">	invoke-static {v0}, Ljb;->a(Ljava/lang/Object;)Lkb;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	invoke-direct {p0, v0}, Lxk;-><init>(Lkb;)V</span>
-<span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method private constructor &lt;init&gt;(Lkb;)V</span>
-<span class="">	.locals 0</span>
-<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
-<span class="">	value = {</span>
-<span class="">	"(",</span>
-<span class="">	"Lkb<",</span>
-<span class="">	"Lwk;",</span>
-<span class="">	">;)V"</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
+.method public abstract getPinCreationTimeInMillis()J
+<span class="">	</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="exec">	invoke-static {p1}, Ljb;->a(Lkb;)Lkb;</span>
-<span class="cov">	move-result-object p1</span>
-<span class="cov">	iput-object p1, p0, Lxk;->a:Lkb;</span>
-<span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public static b()Z</span>
-<span class="">	.locals 1</span>
+.method public abstract getPins()[Ljava/lang/String;
+<span class="">	</span>
 
-<span class="cov">	sget-object v0, Lxk;->b:Lxk;</span>
-<span class="exec">	invoke-virtual {v0}, Lxk;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lwk;</span>
-<span class="exec">	invoke-interface {v0}, Lwk;->a()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
-.end method
-
-<span class="cov">.method public final synthetic a()Ljava/lang/Object;</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	iget-object v0, p0, Lxk;->a:Lkb;</span>
-<span class="exec">	invoke-interface {v0}, Lkb;->a()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Lwk;</span>
-<span class="exec">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

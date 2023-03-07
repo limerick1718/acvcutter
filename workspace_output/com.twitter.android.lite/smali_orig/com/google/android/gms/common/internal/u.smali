@@ -1,74 +1,48 @@
-.class public Lcom/google/android/gms/common/internal/u;
-.super Ljava/lang/Object;
+.class final Lcom/google/android/gms/common/internal/u;
+.super Lcom/google/android/gms/common/internal/e;
 
 
 # instance fields
-.field private final a:Landroid/content/res/Resources;
+.field private final synthetic a:Landroid/content/Intent;
 
-.field private final b:Ljava/lang/String;
+.field private final synthetic b:Lae;
+
+.field private final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
+.method constructor <init>(Landroid/content/Intent;Lae;I)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/u;->a:Landroid/content/Intent;
 
-    .line 2
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/q;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-object p2, p0, Lcom/google/android/gms/common/internal/u;->b:Lae;
 
-    .line 3
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    iput p3, p0, Lcom/google/android/gms/common/internal/u;->c:I
 
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/u;->a:Landroid/content/res/Resources;
-
-    .line 4
-    sget v0, Lm5;->common_google_play_services_unknown_issue:I
-
-    .line 5
-    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getResourcePackageName(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/u;->b:Ljava/lang/String;
+    invoke-direct {p0}, Lcom/google/android/gms/common/internal/e;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/String;)Ljava/lang/String;
+.method public final a()V
     .locals 3
-    .annotation runtime Ljavax/annotation/Nullable;
-    .end annotation
-
-    .line 1
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/u;->a:Landroid/content/res/Resources;
-
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/u;->b:Ljava/lang/String;
-
-    const-string v2, "string"
-
-    invoke-virtual {v0, p1, v2, v1}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    return-object p1
 
     .line 2
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/u;->a:Landroid/content/Intent;
+
+    if-eqz v0, :cond_0
+
+    .line 3
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/u;->b:Lae;
+
+    iget v2, p0, Lcom/google/android/gms/common/internal/u;->c:I
+
+    invoke-virtual {v1, v0, v2}, Lae;->a(Landroid/content/Intent;I)V
+
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/u;->a:Landroid/content/res/Resources;
-
-    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method

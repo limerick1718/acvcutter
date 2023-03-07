@@ -16,16 +16,18 @@
 	<pre class="source lang-smali" id='source'>
 		<code>.class public Lcom/google/firebase/messaging/a;
 .super Ljava/lang/Object;
-.source "com.google.firebase:firebase-messaging@@20.0.0"
 
 
+.field private static final a:Ljava/util/regex/Pattern;
 
 
 <span class="cov">.method static constructor &lt;clinit&gt;()V</span>
 <span class="">	.locals 1</span>
 
 <span class="cov">	const-string v0, "[a-zA-Z0-9-_.~%]{1,900}"</span>
-<span class="cov">	invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;</span>
+<span class="exec">	invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lcom/google/firebase/messaging/a;->a:Ljava/util/regex/Pattern;</span>
 <span class="exec">	return-void</span>
 .end method</code>
 	</pre>

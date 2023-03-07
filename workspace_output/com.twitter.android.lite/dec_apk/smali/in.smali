@@ -1,19 +1,20 @@
-.class public final Lin;
+.class final Lin;
 .super Ljava/lang/Object;
-.annotation system Ldalvik/annotation/MemberClasses;
+.field private static final a:Ljava/util/Iterator;
+.annotation system Ldalvik/annotation/Signature;
 value = {
-Lin$a;
+"Ljava/util/Iterator<",
+"Ljava/lang/Object;",
+">;"
 }
 .end annotation
-.field public static final a:Ljava/util/concurrent/Executor;
-.field static final b:Ljava/util/concurrent/Executor;
-.method static constructor <clinit>()V
-.locals 1
-new-instance v0, Lin$a;
-invoke-direct {v0}, Lin$a;-><init>()V
-sput-object v0, Lin;->a:Ljava/util/concurrent/Executor;
-new-instance v0, Lao;
-invoke-direct {v0}, Lao;-><init>()V
-sput-object v0, Lin;->b:Ljava/util/concurrent/Executor;
-return-void
-.end method
+.end field
+.field private static final b:Ljava/lang/Iterable;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/Iterable<",
+"Ljava/lang/Object;",
+">;"
+}
+.end annotation
+.end field

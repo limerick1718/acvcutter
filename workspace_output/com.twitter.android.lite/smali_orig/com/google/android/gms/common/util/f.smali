@@ -2,105 +2,111 @@
 .super Ljava/lang/Object;
 
 
+# static fields
+.field private static final a:[Ljava/lang/String;
+
+.field private static b:Landroid/os/DropBoxManager;
+
+.field private static c:Z
+
+.field private static d:I
+
+.field private static e:I
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "CrashUtils.class"
+    .end annotation
+.end field
+
+.field private static f:I
+    .annotation build Ljavax/annotation/concurrent/GuardedBy;
+        value = "CrashUtils.class"
+    .end annotation
+.end field
+
+
 # direct methods
-.method public static a()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">()",
-            "Ljava/util/List<",
-            "TT;>;"
-        }
-    .end annotation
+.method static constructor <clinit>()V
+    .locals 5
 
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+    const-string v0, "android."
 
-    .line 1
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    const-string v1, "com.android."
+
+    const-string v2, "dalvik."
+
+    const-string v3, "java."
+
+    const-string v4, "javax."
+
+    .line 9
+    filled-new-array {v0, v1, v2, v3, v4}, [Ljava/lang/String;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    sput-object v0, Lcom/google/android/gms/common/util/f;->a:[Ljava/lang/String;
 
-.method public static a(Ljava/lang/Object;)Ljava/util/List;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(TT;)",
-            "Ljava/util/List<",
-            "TT;>;"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .line 2
-    invoke-static {p0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static varargs a([Ljava/lang/Object;)Ljava/util/List;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">([TT;)",
-            "Ljava/util/List<",
-            "TT;>;"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .line 3
-    array-length v0, p0
-
-    if-eqz v0, :cond_1
-
-    const/4 v1, 0x1
-
-    if-eq v0, v1, :cond_0
-
-    .line 4
-    invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
     const/4 v0, 0x0
 
-    .line 5
-    aget-object p0, p0, v0
+    .line 10
+    sput-object v0, Lcom/google/android/gms/common/util/f;->b:Landroid/os/DropBoxManager;
 
-    invoke-static {p0}, Lcom/google/android/gms/common/util/f;->a(Ljava/lang/Object;)Ljava/util/List;
+    const/4 v0, 0x0
 
-    move-result-object p0
+    .line 11
+    sput-boolean v0, Lcom/google/android/gms/common/util/f;->c:Z
 
-    return-object p0
+    const/4 v1, -0x1
 
-    .line 6
-    :cond_1
-    invoke-static {}, Lcom/google/android/gms/common/util/f;->a()Ljava/util/List;
+    .line 12
+    sput v1, Lcom/google/android/gms/common/util/f;->d:I
 
-    move-result-object p0
+    .line 13
+    sput v0, Lcom/google/android/gms/common/util/f;->e:I
 
-    return-object p0
+    .line 14
+    sput v0, Lcom/google/android/gms/common/util/f;->f:I
+
+    return-void
+.end method
+
+.method public static a(Landroid/content/Context;Ljava/lang/Throwable;)Z
+    .locals 1
+
+    const/high16 v0, 0x20000000
+
+    .line 2
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/util/f;->a(Landroid/content/Context;Ljava/lang/Throwable;I)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method private static a(Landroid/content/Context;Ljava/lang/Throwable;I)Z
+    .locals 1
+
+    const/4 p2, 0x0
+
+    .line 3
+    :try_start_0
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 4
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return p2
+
+    :catch_0
+    move-exception p0
+
+    const-string p1, "CrashUtils"
+
+    const-string v0, "Error adding exception to DropBox!"
+
+    .line 7
+    invoke-static {p1, v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    return p2
 .end method

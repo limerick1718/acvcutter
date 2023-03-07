@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">com.crashlytics.android.core</a></li>
+        <li><i class="ico ico-class"></i> ReportUploader.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class  Lcom/crashlytics/android/core/ReportUploader;
+.super Ljava/lang/Object;
+.source "ReportUploader.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lcom/crashlytics/android/core/ReportUploader$Worker;,
+Lcom/crashlytics/android/core/ReportUploader$AlwaysSendCheck;,
+Lcom/crashlytics/android/core/ReportUploader$ReportFilesProvider;,
+Lcom/crashlytics/android/core/ReportUploader$HandlingExceptionCheck;,
+Lcom/crashlytics/android/core/ReportUploader$SendCheck;
+}
+.end annotation
+
+.field static final HEADER_INVALID_CLS_FILE:Ljava/util/Map;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/Map<",
+"Ljava/lang/String;",
+"Ljava/lang/String;",
+">;"
+}
+.end annotation
+.end field
+.field private static final RETRY_INTERVALS:[S
+.field private final apiKey:Ljava/lang/String;
+.field private final createReportCall:Lcom/crashlytics/android/core/CreateReportSpiCall;
+.field private final fileAccessLock:Ljava/lang/Object;
+.field private final handlingExceptionCheck:Lcom/crashlytics/android/core/ReportUploader$HandlingExceptionCheck;
+.field private final reportFilesProvider:Lcom/crashlytics/android/core/ReportUploader$ReportFilesProvider;
+.field private uploadThread:Ljava/lang/Thread;
+
+
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 2</span>
+
+<span class="missed">	const-string v0, "X-CRASHLYTICS-INVALID-SESSION"</span>
+<span class="missed">	const-string v1, "1"</span>
+<span class="">	invoke-static {v0, v1}, Ljava/util/Collections;->singletonMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	sput-object v0, Lcom/crashlytics/android/core/ReportUploader;->HEADER_INVALID_CLS_FILE:Ljava/util/Map;</span>
+<span class="missed">	const/4 v0, 0x6</span>
+<span class="missed">	new-array v0, v0, [S</span>
+<span class="missed">	fill-array-data v0, :array_0</span>
+<span class="missed">	sput-object v0, Lcom/crashlytics/android/core/ReportUploader;->RETRY_INTERVALS:[S</span>
+<span class="">	return-void</span>
+<span class="">	nop</span>
+<span class="">	:array_0</span>
+<span class="">	.array-data 2</span>
+<span class="">	0xas</span>
+<span class="">	0x14s</span>
+<span class="">	0x1es</span>
+<span class="">	0x3cs</span>
+<span class="">	0x78s</span>
+<span class="">	0x12cs</span>
+<span class="">	.end array-data</span>
+.end method
+
+.method public constructor &lt;init&gt;(Ljava/lang/String;Lcom/crashlytics/android/core/CreateReportSpiCall;Lcom/crashlytics/android/core/ReportUploader$ReportFilesProvider;Lcom/crashlytics/android/core/ReportUploader$HandlingExceptionCheck;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	new-instance v0, Ljava/lang/Object;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Lcom/crashlytics/android/core/ReportUploader;->fileAccessLock:Ljava/lang/Object;</span>
+<span class="missed">	if-eqz p2, :cond_0</span>
+<span class="missed">	iput-object p2, p0, Lcom/crashlytics/android/core/ReportUploader;->createReportCall:Lcom/crashlytics/android/core/CreateReportSpiCall;</span>
+<span class="missed">	iput-object p1, p0, Lcom/crashlytics/android/core/ReportUploader;->apiKey:Ljava/lang/String;</span>
+<span class="missed">	iput-object p3, p0, Lcom/crashlytics/android/core/ReportUploader;->reportFilesProvider:Lcom/crashlytics/android/core/ReportUploader$ReportFilesProvider;</span>
+<span class="missed">	iput-object p4, p0, Lcom/crashlytics/android/core/ReportUploader;->handlingExceptionCheck:Lcom/crashlytics/android/core/ReportUploader$HandlingExceptionCheck;</span>
+<span class="">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	const-string p2, "createReportCall must not be null."</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method static synthetic access$002(Lcom/crashlytics/android/core/ReportUploader;Ljava/lang/Thread;)Ljava/lang/Thread;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iput-object p1, p0, Lcom/crashlytics/android/core/ReportUploader;->uploadThread:Ljava/lang/Thread;</span>
+<span class="">	return-object p1</span>
+.end method
+
+.method static synthetic access$100(Lcom/crashlytics/android/core/ReportUploader;)Lcom/crashlytics/android/core/ReportUploader$HandlingExceptionCheck;
+<span class="">	.locals 0</span>
+
+<span class="missed">	iget-object p0, p0, Lcom/crashlytics/android/core/ReportUploader;->handlingExceptionCheck:Lcom/crashlytics/android/core/ReportUploader$HandlingExceptionCheck;</span>
+<span class="">	return-object p0</span>
+.end method
+
+.method static synthetic access$200()[S
+<span class="">	.locals 1</span>
+
+<span class="missed">	sget-object v0, Lcom/crashlytics/android/core/ReportUploader;->RETRY_INTERVALS:[S</span>
+<span class="">	return-object v0</span>
+.end method
+
+.method  findReports()Ljava/util/List;
+<span class="">	.locals 11</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"()",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Lcom/crashlytics/android/core/Report;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const-string v1, "CrashlyticsCore"</span>
+<span class="missed">	const-string v2, "Checking for crash reports..."</span>
+<span class="missed">	invoke-interface {v0, v1, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/ReportUploader;->fileAccessLock:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v1, p0, Lcom/crashlytics/android/core/ReportUploader;->reportFilesProvider:Lcom/crashlytics/android/core/ReportUploader$ReportFilesProvider;</span>
+<span class="">	invoke-interface {v1}, Lcom/crashlytics/android/core/ReportUploader$ReportFilesProvider;->getCompleteSessionFiles()[Ljava/io/File;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	iget-object v2, p0, Lcom/crashlytics/android/core/ReportUploader;->reportFilesProvider:Lcom/crashlytics/android/core/ReportUploader$ReportFilesProvider;</span>
+<span class="">	invoke-interface {v2}, Lcom/crashlytics/android/core/ReportUploader$ReportFilesProvider;->getInvalidSessionFiles()[Ljava/io/File;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	iget-object v3, p0, Lcom/crashlytics/android/core/ReportUploader;->reportFilesProvider:Lcom/crashlytics/android/core/ReportUploader$ReportFilesProvider;</span>
+<span class="">	invoke-interface {v3}, Lcom/crashlytics/android/core/ReportUploader$ReportFilesProvider;->getNativeReportFiles()[Ljava/io/File;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	new-instance v0, Ljava/util/LinkedList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="missed">	if-eqz v1, :cond_0</span>
+<span class="missed">	array-length v5, v1</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-ge v6, v5, :cond_0</span>
+<span class="missed">	aget-object v7, v1, v6</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v8</span>
+<span class="missed">	new-instance v9, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v10, "Found crash report "</span>
+<span class="missed">	invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v7}, Ljava/io/File;->getPath()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v10</span>
+<span class="missed">	invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v9</span>
+<span class="missed">	const-string v10, "CrashlyticsCore"</span>
+<span class="missed">	invoke-interface {v8, v10, v9}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	new-instance v8, Lcom/crashlytics/android/core/SessionReport;</span>
+<span class="missed">	invoke-direct {v8, v7}, Lcom/crashlytics/android/core/SessionReport;-><init>(Ljava/io/File;)V</span>
+<span class="missed">	invoke-interface {v0, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	add-int/lit8 v6, v6, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v1, Ljava/util/HashMap;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/util/HashMap;-><init>()V</span>
+<span class="missed">	if-eqz v2, :cond_2</span>
+<span class="missed">	array-length v5, v2</span>
+<span class="missed">	const/4 v6, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	if-ge v6, v5, :cond_2</span>
+<span class="missed">	aget-object v7, v2, v6</span>
+<span class="">	invoke-static {v7}, Lcom/crashlytics/android/core/CrashlyticsController;->getSessionIdFromSessionFile(Ljava/io/File;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object v8</span>
+<span class="">	invoke-interface {v1, v8}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v9</span>
+<span class="missed">	if-nez v9, :cond_1</span>
+<span class="missed">	new-instance v9, Ljava/util/LinkedList;</span>
+<span class="missed">	invoke-direct {v9}, Ljava/util/LinkedList;-><init>()V</span>
+<span class="missed">	invoke-interface {v1, v8, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-interface {v1, v8}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v8</span>
+<span class="missed">	check-cast v8, Ljava/util/List;</span>
+<span class="missed">	invoke-interface {v8, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	add-int/lit8 v6, v6, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	:goto_2</span>
+<span class="">	invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v5</span>
+<span class="missed">	if-eqz v5, :cond_3</span>
+<span class="">	invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="missed">	check-cast v5, Ljava/lang/String;</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	new-instance v7, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v8, "Found invalid session: "</span>
+<span class="missed">	invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v7</span>
+<span class="missed">	const-string v8, "CrashlyticsCore"</span>
+<span class="missed">	invoke-interface {v6, v8, v7}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	invoke-interface {v1, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	check-cast v6, Ljava/util/List;</span>
+<span class="missed">	new-instance v7, Lcom/crashlytics/android/core/InvalidSessionReport;</span>
+<span class="">	invoke-interface {v6}, Ljava/util/List;->size()I</span>
+<span class="missed">	move-result v8</span>
+<span class="missed">	new-array v8, v8, [Ljava/io/File;</span>
+<span class="">	invoke-interface {v6, v8}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	check-cast v6, [Ljava/io/File;</span>
+<span class="missed">	invoke-direct {v7, v5, v6}, Lcom/crashlytics/android/core/InvalidSessionReport;-><init>(Ljava/lang/String;[Ljava/io/File;)V</span>
+<span class="missed">	invoke-interface {v0, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	if-eqz v3, :cond_4</span>
+<span class="missed">	array-length v1, v3</span>
+<span class="">	:goto_3</span>
+<span class="missed">	if-ge v4, v1, :cond_4</span>
+<span class="missed">	aget-object v2, v3, v4</span>
+<span class="missed">	new-instance v5, Lcom/crashlytics/android/core/NativeSessionReport;</span>
+<span class="missed">	invoke-direct {v5, v2}, Lcom/crashlytics/android/core/NativeSessionReport;-><init>(Ljava/io/File;)V</span>
+<span class="missed">	invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="missed">	add-int/lit8 v4, v4, 0x1</span>
+<span class="">	goto :goto_3</span>
+<span class="">	:cond_4</span>
+<span class="">	invoke-interface {v0}, Ljava/util/List;->isEmpty()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_5</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "CrashlyticsCore"</span>
+<span class="missed">	const-string v3, "No reports found."</span>
+<span class="missed">	invoke-interface {v1, v2, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	:cond_5</span>
+<span class="">	return-object v0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v1</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	throw v1</span>
+.end method
+
+.method  forceUpload(Lcom/crashlytics/android/core/Report;)Z
+<span class="">	.locals 7</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/ReportUploader;->fileAccessLock:Ljava/lang/Object;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	new-instance v2, Lcom/crashlytics/android/core/CreateReportRequest;</span>
+<span class="missed">	iget-object v3, p0, Lcom/crashlytics/android/core/ReportUploader;->apiKey:Ljava/lang/String;</span>
+<span class="missed">	invoke-direct {v2, v3, p1}, Lcom/crashlytics/android/core/CreateReportRequest;-><init>(Ljava/lang/String;Lcom/crashlytics/android/core/Report;)V</span>
+<span class="missed">	iget-object v3, p0, Lcom/crashlytics/android/core/ReportUploader;->createReportCall:Lcom/crashlytics/android/core/CreateReportSpiCall;</span>
+<span class="">	invoke-interface {v3, v2}, Lcom/crashlytics/android/core/CreateReportSpiCall;->invoke(Lcom/crashlytics/android/core/CreateReportRequest;)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	const-string v4, "CrashlyticsCore"</span>
+<span class="missed">	new-instance v5, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v6, "Crashlytics report upload "</span>
+<span class="missed">	invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="missed">	const-string v6, "complete: "</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const-string v6, "FAILED: "</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-interface {p1}, Lcom/crashlytics/android/core/Report;->getIdentifier()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v6</span>
+<span class="missed">	invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v5</span>
+<span class="missed">	invoke-interface {v3, v4, v5}, Luz;->c(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="missed">	if-eqz v2, :cond_1</span>
+<span class="missed">	invoke-interface {p1}, Lcom/crashlytics/android/core/Report;->remove()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	const/4 p1, 0x1</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="">	:try_start_1</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	const-string v4, "CrashlyticsCore"</span>
+<span class="missed">	new-instance v5, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v6, "Error occurred sending report "</span>
+<span class="missed">	invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	invoke-interface {v3, v4, p1, v2}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	return v1</span>
+<span class="">	:goto_2</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	throw p1</span>
+.end method
+
+.method  isUploading()Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/ReportUploader;->uploadThread:Ljava/lang/Thread;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return v0</span>
+.end method
+
+.method public declared-synchronized uploadReports(FLcom/crashlytics/android/core/ReportUploader$SendCheck;)V
+<span class="">	.locals 1</span>
+
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/crashlytics/android/core/ReportUploader;->uploadThread:Ljava/lang/Thread;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-static {}, Luq;->g()Luz;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const-string p2, "CrashlyticsCore"</span>
+<span class="missed">	const-string v0, "Report upload has already been started."</span>
+<span class="missed">	invoke-interface {p1, p2, v0}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return-void</span>
+<span class="">	:try_start_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Lcom/crashlytics/android/core/ReportUploader$Worker;</span>
+<span class="missed">	invoke-direct {v0, p0, p1, p2}, Lcom/crashlytics/android/core/ReportUploader$Worker;-><init>(Lcom/crashlytics/android/core/ReportUploader;FLcom/crashlytics/android/core/ReportUploader$SendCheck;)V</span>
+<span class="missed">	new-instance p1, Ljava/lang/Thread;</span>
+<span class="missed">	const-string p2, "Crashlytics Report Uploader"</span>
+<span class="missed">	invoke-direct {p1, v0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V</span>
+<span class="missed">	iput-object p1, p0, Lcom/crashlytics/android/core/ReportUploader;->uploadThread:Ljava/lang/Thread;</span>
+<span class="missed">	iget-object p1, p0, Lcom/crashlytics/android/core/ReportUploader;->uploadThread:Ljava/lang/Thread;</span>
+<span class="missed">	invoke-virtual {p1}, Ljava/lang/Thread;->start()V</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	throw p1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../../../.resources/report.js"></script>
+</body>
+</html>

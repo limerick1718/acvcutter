@@ -43,21 +43,21 @@ Lokhttp3/EventListener$Factory;
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method static synthetic a(Lokhttp3/EventListener;Lokhttp3/Call;)Lokhttp3/EventListener;</span>
+<span class="cov">.method static factory(Lokhttp3/EventListener;)Lokhttp3/EventListener$Factory;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	new-instance v0, Lokhttp3/-$$Lambda$EventListener$ahubxrUJKWnWohQgQKQidD9cuoA;</span>
+<span class="cov">	invoke-direct {v0, p0}, Lokhttp3/-$$Lambda$EventListener$ahubxrUJKWnWohQgQKQidD9cuoA;-><init>(Lokhttp3/EventListener;)V</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+.method static synthetic lambda$factory$0(Lokhttp3/EventListener;Lokhttp3/Call;)Lokhttp3/EventListener;
 <span class="">	.locals 0</span>
 
 <span class="">	return-object p0</span>
 .end method
 
-<span class="cov">.method static factory(Lokhttp3/EventListener;)Lokhttp3/EventListener$Factory;</span>
-<span class="">	.locals 1</span>
-
-<span class="cov">	new-instance v0, Lokhttp3/d;</span>
-<span class="cov">	invoke-direct {v0, p0}, Lokhttp3/d;-><init>(Lokhttp3/EventListener;)V</span>
-<span class="exec">	return-object v0</span>
-.end method
-
-<span class="cov">.method public callEnd(Lokhttp3/Call;)V</span>
+.method public callEnd(Lokhttp3/Call;)V
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>
@@ -69,13 +69,13 @@ Lokhttp3/EventListener$Factory;
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public callStart(Lokhttp3/Call;)V</span>
+.method public callStart(Lokhttp3/Call;)V
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public connectEnd(Lokhttp3/Call;Ljava/net/InetSocketAddress;Ljava/net/Proxy;Lokhttp3/Protocol;)V</span>
+.method public connectEnd(Lokhttp3/Call;Ljava/net/InetSocketAddress;Ljava/net/Proxy;Lokhttp3/Protocol;)V
 <span class="">	.locals 0</span>
 <span class="">	.param p4    # Lokhttp3/Protocol;</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
@@ -95,25 +95,25 @@ Lokhttp3/EventListener$Factory;
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public connectStart(Lokhttp3/Call;Ljava/net/InetSocketAddress;Ljava/net/Proxy;)V</span>
+.method public connectStart(Lokhttp3/Call;Ljava/net/InetSocketAddress;Ljava/net/Proxy;)V
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public connectionAcquired(Lokhttp3/Call;Lokhttp3/Connection;)V</span>
+.method public connectionAcquired(Lokhttp3/Call;Lokhttp3/Connection;)V
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public connectionReleased(Lokhttp3/Call;Lokhttp3/Connection;)V</span>
+.method public connectionReleased(Lokhttp3/Call;Lokhttp3/Connection;)V
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public dnsEnd(Lokhttp3/Call;Ljava/lang/String;Ljava/util/List;)V</span>
+.method public dnsEnd(Lokhttp3/Call;Ljava/lang/String;Ljava/util/List;)V
 <span class="">	.locals 0</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -129,7 +129,7 @@ Lokhttp3/EventListener$Factory;
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public dnsStart(Lokhttp3/Call;Ljava/lang/String;)V</span>
+.method public dnsStart(Lokhttp3/Call;Ljava/lang/String;)V
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>
@@ -153,25 +153,25 @@ Lokhttp3/EventListener$Factory;
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public requestHeadersEnd(Lokhttp3/Call;Lokhttp3/Request;)V</span>
+.method public requestHeadersEnd(Lokhttp3/Call;Lokhttp3/Request;)V
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public requestHeadersStart(Lokhttp3/Call;)V</span>
+.method public requestHeadersStart(Lokhttp3/Call;)V
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public responseBodyEnd(Lokhttp3/Call;J)V</span>
+.method public responseBodyEnd(Lokhttp3/Call;J)V
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public responseBodyStart(Lokhttp3/Call;)V</span>
+.method public responseBodyStart(Lokhttp3/Call;)V
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>
@@ -183,19 +183,19 @@ Lokhttp3/EventListener$Factory;
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public responseHeadersEnd(Lokhttp3/Call;Lokhttp3/Response;)V</span>
+.method public responseHeadersEnd(Lokhttp3/Call;Lokhttp3/Response;)V
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public responseHeadersStart(Lokhttp3/Call;)V</span>
+.method public responseHeadersStart(Lokhttp3/Call;)V
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public secureConnectEnd(Lokhttp3/Call;Lokhttp3/Handshake;)V</span>
+.method public secureConnectEnd(Lokhttp3/Call;Lokhttp3/Handshake;)V
 <span class="">	.locals 0</span>
 <span class="">	.param p2    # Lokhttp3/Handshake;</span>
 <span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
@@ -205,7 +205,7 @@ Lokhttp3/EventListener$Factory;
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public secureConnectStart(Lokhttp3/Call;)V</span>
+.method public secureConnectStart(Lokhttp3/Call;)V
 <span class="">	.locals 0</span>
 
 <span class="">	return-void</span>

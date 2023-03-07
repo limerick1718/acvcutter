@@ -14,238 +14,807 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class final Lsx;
+		<code>.class public final Lsx;
 .super Ljava/lang/Object;
-.source "Segment.java"
+.source "Gson.java"
+
+.annotation system Ldalvik/annotation/MemberClasses;
+value = {
+Lsx$a;
+}
+.end annotation
+
+.field private static final a:Ltv;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ltv<",
+"*>;"
+}
+.end annotation
+.end field
+.field private final b:Ljava/lang/ThreadLocal;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/ThreadLocal<",
+"Ljava/util/Map<",
+"Ltv<",
+"*>;",
+"Lsx$a<",
+"*>;>;>;"
+}
+.end annotation
+.end field
+.field private final c:Ljava/util/Map;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/Map<",
+"Ltv<",
+"*>;",
+"Ltn<",
+"*>;>;"
+}
+.end annotation
+.end field
+.field private final d:Ljava/util/List;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/util/List<",
+"Lto;",
+">;"
+}
+.end annotation
+.end field
+.field private final e:Lcom/google/gson/internal/c;
+.field private final f:Lcom/google/gson/internal/Excluder;
+.field private final g:Lsw;
+.field private final h:Z
+.field private final i:Z
+.field private final j:Z
+.field private final k:Z
+.field private final l:Z
+.field private final m:Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;
 
 
-.field final a:[B
-.field  b:I
-.field  c:I
-.field  d:Z
-.field  e:Z
-.field  f:Lsx;
-.field  g:Lsx;
-
-
-<span class="cov">.method constructor &lt;init&gt;()V</span>
+<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
 <span class="">	.locals 1</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	const/16 v0, 0x2000</span>
-<span class="cov">	new-array v0, v0, [B</span>
-<span class="cov">	iput-object v0, p0, Lsx;->a:[B</span>
-<span class="cov">	const/4 v0, 0x1</span>
-<span class="cov">	iput-boolean v0, p0, Lsx;->e:Z</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	iput-boolean v0, p0, Lsx;->d:Z</span>
+<span class="cov">	const-class v0, Ljava/lang/Object;</span>
+<span class="exec">	invoke-static {v0}, Ltv;->b(Ljava/lang/Class;)Ltv;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	sput-object v0, Lsx;->a:Ltv;</span>
 <span class="exec">	return-void</span>
 .end method
 
-.method constructor &lt;init&gt;([BIIZZ)V
-<span class="">	.locals 0</span>
+<span class="cov">.method public constructor &lt;init&gt;()V</span>
+<span class="">	.locals 13</span>
 
-<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="missed">	iput-object p1, p0, Lsx;->a:[B</span>
-<span class="missed">	iput p2, p0, Lsx;->b:I</span>
-<span class="missed">	iput p3, p0, Lsx;->c:I</span>
-<span class="missed">	iput-boolean p4, p0, Lsx;->d:Z</span>
-<span class="missed">	iput-boolean p5, p0, Lsx;->e:Z</span>
-<span class="">	return-void</span>
-.end method
-
-<span class="cov">.method public final a(I)Lsx;</span>
-<span class="">	.locals 5</span>
-
-<span class="cov">	if-lez p1, :cond_1</span>
-<span class="cov">	iget v0, p0, Lsx;->c:I</span>
-<span class="cov">	iget v1, p0, Lsx;->b:I</span>
-<span class="cov">	sub-int/2addr v0, v1</span>
-<span class="cov">	if-gt p1, v0, :cond_1</span>
-<span class="cov">	const/16 v0, 0x400</span>
-<span class="missed">	if-lt p1, v0, :cond_0</span>
-<span class="">	invoke-virtual {p0}, Lsx;->c()Lsx;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-static {}, Ltx;->a()Lsx;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	iget-object v1, p0, Lsx;->a:[B</span>
-<span class="cov">	iget v2, p0, Lsx;->b:I</span>
-<span class="cov">	iget-object v3, v0, Lsx;->a:[B</span>
+<span class="cov">	sget-object v1, Lcom/google/gson/internal/Excluder;->a:Lcom/google/gson/internal/Excluder;</span>
+<span class="cov">	sget-object v2, Lsv;->a:Lsv;</span>
+<span class="exec">	invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	sget-object v11, Ltm;->a:Ltm;</span>
+<span class="exec">	invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;</span>
+<span class="cov">	move-result-object v12</span>
 <span class="cov">	const/4 v4, 0x0</span>
-<span class="cov">	invoke-static {v1, v2, v3, v4, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	iget v1, v0, Lsx;->b:I</span>
-<span class="cov">	add-int/2addr v1, p1</span>
-<span class="cov">	iput v1, v0, Lsx;->c:I</span>
-<span class="cov">	iget v1, p0, Lsx;->b:I</span>
-<span class="cov">	add-int/2addr v1, p1</span>
-<span class="cov">	iput v1, p0, Lsx;->b:I</span>
-<span class="cov">	iget-object p1, p0, Lsx;->g:Lsx;</span>
-<span class="cov">	invoke-virtual {p1, v0}, Lsx;->a(Lsx;)Lsx;</span>
-<span class="exec">	return-object v0</span>
-<span class="">	:cond_1</span>
-<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
-<span class="missed">	invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V</span>
-<span class="">	throw p1</span>
+<span class="cov">	const/4 v5, 0x0</span>
+<span class="cov">	const/4 v6, 0x0</span>
+<span class="cov">	const/4 v7, 0x1</span>
+<span class="cov">	const/4 v8, 0x0</span>
+<span class="cov">	const/4 v9, 0x0</span>
+<span class="cov">	const/4 v10, 0x0</span>
+<span class="cov">	move-object v0, p0</span>
+<span class="cov">	invoke-direct/range {v0 .. v12}, Lsx;-><init>(Lcom/google/gson/internal/Excluder;Lsw;Ljava/util/Map;ZZZZZZZLtm;Ljava/util/List;)V</span>
+<span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public final a(Lsx;)Lsx;</span>
+<span class="cov">.method constructor &lt;init&gt;(Lcom/google/gson/internal/Excluder;Lsw;Ljava/util/Map;ZZZZZZZLtm;Ljava/util/List;)V</span>
 <span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Lcom/google/gson/internal/Excluder;",</span>
+<span class="">	"Lsw;",</span>
+<span class="">	"Ljava/util/Map<",</span>
+<span class="">	"Ljava/lang/reflect/Type;",</span>
+<span class="">	"Lsz<",</span>
+<span class="">	"*>;>;ZZZZZZZ",</span>
+<span class="">	"Ltm;",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Lto;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="cov">	iput-object p0, p1, Lsx;->g:Lsx;</span>
-<span class="cov">	iget-object v0, p0, Lsx;->f:Lsx;</span>
-<span class="cov">	iput-object v0, p1, Lsx;->f:Lsx;</span>
-<span class="cov">	iget-object v0, p0, Lsx;->f:Lsx;</span>
-<span class="cov">	iput-object p1, v0, Lsx;->g:Lsx;</span>
-<span class="cov">	iput-object p1, p0, Lsx;->f:Lsx;</span>
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	new-instance v0, Ljava/lang/ThreadLocal;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Lsx;->b:Ljava/lang/ThreadLocal;</span>
+<span class="cov">	new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V</span>
+<span class="cov">	iput-object v0, p0, Lsx;->c:Ljava/util/Map;</span>
+<span class="cov">	new-instance v0, Lcom/google/gson/internal/c;</span>
+<span class="cov">	invoke-direct {v0, p3}, Lcom/google/gson/internal/c;-><init>(Ljava/util/Map;)V</span>
+<span class="cov">	iput-object v0, p0, Lsx;->e:Lcom/google/gson/internal/c;</span>
+<span class="cov">	iput-object p1, p0, Lsx;->f:Lcom/google/gson/internal/Excluder;</span>
+<span class="cov">	iput-object p2, p0, Lsx;->g:Lsw;</span>
+<span class="cov">	iput-boolean p4, p0, Lsx;->h:Z</span>
+<span class="cov">	iput-boolean p6, p0, Lsx;->j:Z</span>
+<span class="cov">	iput-boolean p7, p0, Lsx;->i:Z</span>
+<span class="cov">	iput-boolean p8, p0, Lsx;->k:Z</span>
+<span class="cov">	iput-boolean p9, p0, Lsx;->l:Z</span>
+<span class="cov">	new-instance p3, Ljava/util/ArrayList;</span>
+<span class="cov">	invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->Y:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/e;->a:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	invoke-interface {p3, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	invoke-interface {p3, p12}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->D:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->m:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->g:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->i:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->k:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="exec">	invoke-static {p11}, Lsx;->a(Ltm;)Ltn;</span>
+<span class="cov">	move-result-object p4</span>
+<span class="cov">	sget-object p6, Ljava/lang/Long;->TYPE:Ljava/lang/Class;</span>
+<span class="cov">	const-class p7, Ljava/lang/Long;</span>
+<span class="exec">	invoke-static {p6, p7, p4}, Lcom/google/gson/internal/bind/i;->a(Ljava/lang/Class;Ljava/lang/Class;Ltn;)Lto;</span>
+<span class="cov">	move-result-object p6</span>
+<span class="cov">	invoke-interface {p3, p6}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p6, Ljava/lang/Double;->TYPE:Ljava/lang/Class;</span>
+<span class="cov">	const-class p7, Ljava/lang/Double;</span>
+<span class="exec">	invoke-direct {p0, p10}, Lsx;->a(Z)Ltn;</span>
+<span class="cov">	move-result-object p8</span>
+<span class="exec">	invoke-static {p6, p7, p8}, Lcom/google/gson/internal/bind/i;->a(Ljava/lang/Class;Ljava/lang/Class;Ltn;)Lto;</span>
+<span class="cov">	move-result-object p6</span>
+<span class="cov">	invoke-interface {p3, p6}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p6, Ljava/lang/Float;->TYPE:Ljava/lang/Class;</span>
+<span class="cov">	const-class p7, Ljava/lang/Float;</span>
+<span class="exec">	invoke-direct {p0, p10}, Lsx;->b(Z)Ltn;</span>
+<span class="cov">	move-result-object p8</span>
+<span class="exec">	invoke-static {p6, p7, p8}, Lcom/google/gson/internal/bind/i;->a(Ljava/lang/Class;Ljava/lang/Class;Ltn;)Lto;</span>
+<span class="cov">	move-result-object p6</span>
+<span class="cov">	invoke-interface {p3, p6}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p6, Lcom/google/gson/internal/bind/i;->x:Lto;</span>
+<span class="cov">	invoke-interface {p3, p6}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p6, Lcom/google/gson/internal/bind/i;->o:Lto;</span>
+<span class="cov">	invoke-interface {p3, p6}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p6, Lcom/google/gson/internal/bind/i;->q:Lto;</span>
+<span class="cov">	invoke-interface {p3, p6}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	const-class p6, Ljava/util/concurrent/atomic/AtomicLong;</span>
+<span class="exec">	invoke-static {p4}, Lsx;->a(Ltn;)Ltn;</span>
+<span class="cov">	move-result-object p7</span>
+<span class="exec">	invoke-static {p6, p7}, Lcom/google/gson/internal/bind/i;->a(Ljava/lang/Class;Ltn;)Lto;</span>
+<span class="cov">	move-result-object p6</span>
+<span class="cov">	invoke-interface {p3, p6}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	const-class p6, Ljava/util/concurrent/atomic/AtomicLongArray;</span>
+<span class="exec">	invoke-static {p4}, Lsx;->b(Ltn;)Ltn;</span>
+<span class="cov">	move-result-object p4</span>
+<span class="exec">	invoke-static {p6, p4}, Lcom/google/gson/internal/bind/i;->a(Ljava/lang/Class;Ltn;)Lto;</span>
+<span class="cov">	move-result-object p4</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->s:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->z:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->F:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->H:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	const-class p4, Ljava/math/BigDecimal;</span>
+<span class="cov">	sget-object p6, Lcom/google/gson/internal/bind/i;->B:Ltn;</span>
+<span class="exec">	invoke-static {p4, p6}, Lcom/google/gson/internal/bind/i;->a(Ljava/lang/Class;Ltn;)Lto;</span>
+<span class="cov">	move-result-object p4</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	const-class p4, Ljava/math/BigInteger;</span>
+<span class="cov">	sget-object p6, Lcom/google/gson/internal/bind/i;->C:Ltn;</span>
+<span class="exec">	invoke-static {p4, p6}, Lcom/google/gson/internal/bind/i;->a(Ljava/lang/Class;Ltn;)Lto;</span>
+<span class="cov">	move-result-object p4</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->J:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->L:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->P:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->R:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->W:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->N:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->d:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/b;->a:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->U:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/g;->a:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/f;->a:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->S:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/a;->a:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->b:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	new-instance p4, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory;</span>
+<span class="cov">	iget-object p6, p0, Lsx;->e:Lcom/google/gson/internal/c;</span>
+<span class="cov">	invoke-direct {p4, p6}, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory;-><init>(Lcom/google/gson/internal/c;)V</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	new-instance p4, Lcom/google/gson/internal/bind/MapTypeAdapterFactory;</span>
+<span class="cov">	iget-object p6, p0, Lsx;->e:Lcom/google/gson/internal/c;</span>
+<span class="cov">	invoke-direct {p4, p6, p5}, Lcom/google/gson/internal/bind/MapTypeAdapterFactory;-><init>(Lcom/google/gson/internal/c;Z)V</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	new-instance p4, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;</span>
+<span class="cov">	iget-object p5, p0, Lsx;->e:Lcom/google/gson/internal/c;</span>
+<span class="cov">	invoke-direct {p4, p5}, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;-><init>(Lcom/google/gson/internal/c;)V</span>
+<span class="cov">	iput-object p4, p0, Lsx;->m:Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;</span>
+<span class="cov">	iget-object p4, p0, Lsx;->m:Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	sget-object p4, Lcom/google/gson/internal/bind/i;->Z:Lto;</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="cov">	new-instance p4, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;</span>
+<span class="cov">	iget-object p5, p0, Lsx;->e:Lcom/google/gson/internal/c;</span>
+<span class="cov">	iget-object p6, p0, Lsx;->m:Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;</span>
+<span class="cov">	invoke-direct {p4, p5, p2, p1, p6}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;-><init>(Lcom/google/gson/internal/c;Lsw;Lcom/google/gson/internal/Excluder;Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;)V</span>
+<span class="cov">	invoke-interface {p3, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z</span>
+<span class="exec">	invoke-static {p3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="cov">	iput-object p1, p0, Lsx;->d:Ljava/util/List;</span>
+<span class="exec">	return-void</span>
+.end method
+
+<span class="cov">.method private static a(Ltm;)Ltn;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ltm;",</span>
+<span class="">	")",</span>
+<span class="">	"Ltn<",</span>
+<span class="">	"Ljava/lang/Number;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	sget-object v0, Ltm;->a:Ltm;</span>
+<span class="cov">	if-ne p0, v0, :cond_0</span>
+<span class="cov">	sget-object p0, Lcom/google/gson/internal/bind/i;->t:Ltn;</span>
+<span class="exec">	return-object p0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p0, Lsx$3;</span>
+<span class="missed">	invoke-direct {p0}, Lsx$3;-><init>()V</span>
+<span class="">	return-object p0</span>
+.end method
+
+<span class="cov">.method private static a(Ltn;)Ltn;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ltn<",</span>
+<span class="">	"Ljava/lang/Number;",</span>
+<span class="">	">;)",</span>
+<span class="">	"Ltn<",</span>
+<span class="">	"Ljava/util/concurrent/atomic/AtomicLong;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	new-instance v0, Lsx$4;</span>
+<span class="cov">	invoke-direct {v0, p0}, Lsx$4;-><init>(Ltn;)V</span>
+<span class="exec">	invoke-virtual {v0}, Lsx$4;->a()Ltn;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	return-object p0</span>
+.end method
+
+<span class="cov">.method private a(Z)Ltn;</span>
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(Z)",</span>
+<span class="">	"Ltn<",</span>
+<span class="">	"Ljava/lang/Number;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	sget-object p1, Lcom/google/gson/internal/bind/i;->v:Ltn;</span>
+<span class="">	return-object p1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	new-instance p1, Lsx$1;</span>
+<span class="cov">	invoke-direct {p1, p0}, Lsx$1;-><init>(Lsx;)V</span>
 <span class="exec">	return-object p1</span>
 .end method
 
-<span class="cov">.method public final a()V</span>
-<span class="">	.locals 4</span>
+.method static a(D)V
+<span class="">	.locals 2</span>
 
-<span class="cov">	iget-object v0, p0, Lsx;->g:Lsx;</span>
-<span class="cov">	if-eq v0, p0, :cond_3</span>
-<span class="cov">	iget-boolean v1, v0, Lsx;->e:Z</span>
-<span class="missed">	if-nez v1, :cond_0</span>
+<span class="">	invoke-static {p0, p1}, Ljava/lang/Double;->isNaN(D)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	invoke-static {p0, p1}, Ljava/lang/Double;->isInfinite(D)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
 <span class="">	return-void</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	iget v1, p0, Lsx;->c:I</span>
-<span class="cov">	iget v2, p0, Lsx;->b:I</span>
-<span class="cov">	sub-int/2addr v1, v2</span>
-<span class="cov">	iget v2, v0, Lsx;->c:I</span>
-<span class="cov">	rsub-int v2, v2, 0x2000</span>
-<span class="cov">	iget-boolean v3, v0, Lsx;->d:Z</span>
-<span class="missed">	if-eqz v3, :cond_1</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	iget v0, v0, Lsx;->b:I</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	add-int/2addr v2, v0</span>
-<span class="missed">	if-le v1, v2, :cond_2</span>
-<span class="">	return-void</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	iget-object v0, p0, Lsx;->g:Lsx;</span>
-<span class="cov">	invoke-virtual {p0, v0, v1}, Lsx;->a(Lsx;I)V</span>
-<span class="cov">	invoke-virtual {p0}, Lsx;->b()Lsx;</span>
-<span class="cov">	invoke-static {p0}, Ltx;->a(Lsx;)V</span>
-<span class="exec">	return-void</span>
-<span class="">	:cond_3</span>
-<span class="missed">	new-instance v0, Ljava/lang/IllegalStateException;</span>
-<span class="missed">	invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	invoke-virtual {v1, p0, p1}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string p0, " is not a valid double value as per JSON specification. To override this"</span>
+<span class="missed">	invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string p0, " behavior, use GsonBuilder.serializeSpecialFloatingPointValues() method."</span>
+<span class="missed">	invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
 <span class="">	throw v0</span>
 .end method
 
-<span class="cov">.method public final a(Lsx;I)V</span>
-<span class="">	.locals 4</span>
-
-<span class="cov">	iget-boolean v0, p1, Lsx;->e:Z</span>
-<span class="cov">	if-eqz v0, :cond_3</span>
-<span class="cov">	iget v0, p1, Lsx;->c:I</span>
-<span class="cov">	add-int v1, v0, p2</span>
-<span class="cov">	const/16 v2, 0x2000</span>
-<span class="missed">	if-le v1, v2, :cond_2</span>
-<span class="missed">	iget-boolean v1, p1, Lsx;->d:Z</span>
-<span class="missed">	if-nez v1, :cond_1</span>
-<span class="missed">	add-int v1, v0, p2</span>
-<span class="missed">	iget v3, p1, Lsx;->b:I</span>
-<span class="missed">	sub-int/2addr v1, v3</span>
-<span class="missed">	if-gt v1, v2, :cond_0</span>
-<span class="missed">	iget-object v1, p1, Lsx;->a:[B</span>
-<span class="missed">	sub-int/2addr v0, v3</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="missed">	invoke-static {v1, v3, v1, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
-<span class="missed">	iget v0, p1, Lsx;->c:I</span>
-<span class="missed">	iget v1, p1, Lsx;->b:I</span>
-<span class="missed">	sub-int/2addr v0, v1</span>
-<span class="missed">	iput v0, p1, Lsx;->c:I</span>
-<span class="missed">	iput v2, p1, Lsx;->b:I</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
-<span class="missed">	invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V</span>
-<span class="">	throw p1</span>
-<span class="">	:cond_1</span>
-<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
-<span class="missed">	invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V</span>
-<span class="">	throw p1</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	iget-object v0, p0, Lsx;->a:[B</span>
-<span class="cov">	iget v1, p0, Lsx;->b:I</span>
-<span class="cov">	iget-object v2, p1, Lsx;->a:[B</span>
-<span class="cov">	iget v3, p1, Lsx;->c:I</span>
-<span class="cov">	invoke-static {v0, v1, v2, v3, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V</span>
-<span class="cov">	iget v0, p1, Lsx;->c:I</span>
-<span class="cov">	add-int/2addr v0, p2</span>
-<span class="cov">	iput v0, p1, Lsx;->c:I</span>
-<span class="cov">	iget p1, p0, Lsx;->b:I</span>
-<span class="cov">	add-int/2addr p1, p2</span>
-<span class="cov">	iput p1, p0, Lsx;->b:I</span>
-<span class="exec">	return-void</span>
-<span class="">	:cond_3</span>
-<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
-<span class="missed">	invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V</span>
-<span class="">	throw p1</span>
-.end method
-
-<span class="cov">.method public final b()Lsx;</span>
-<span class="">	.locals 4</span>
-<span class="">	.annotation runtime Ljavax/annotation/Nullable;</span>
+<span class="cov">.method private static b(Ltn;)Ltn;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ltn<",</span>
+<span class="">	"Ljava/lang/Number;",</span>
+<span class="">	">;)",</span>
+<span class="">	"Ltn<",</span>
+<span class="">	"Ljava/util/concurrent/atomic/AtomicLongArray;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lsx;->f:Lsx;</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	if-eq v0, p0, :cond_0</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	move-object v0, v1</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	iget-object v2, p0, Lsx;->g:Lsx;</span>
-<span class="cov">	iget-object v3, p0, Lsx;->f:Lsx;</span>
-<span class="cov">	iput-object v3, v2, Lsx;->f:Lsx;</span>
-<span class="cov">	iget-object v3, p0, Lsx;->f:Lsx;</span>
-<span class="cov">	iput-object v2, v3, Lsx;->g:Lsx;</span>
-<span class="cov">	iput-object v1, p0, Lsx;->f:Lsx;</span>
-<span class="cov">	iput-object v1, p0, Lsx;->g:Lsx;</span>
-<span class="exec">	return-object v0</span>
+<span class="cov">	new-instance v0, Lsx$5;</span>
+<span class="cov">	invoke-direct {v0, p0}, Lsx$5;-><init>(Ltn;)V</span>
+<span class="exec">	invoke-virtual {v0}, Lsx$5;->a()Ltn;</span>
+<span class="cov">	move-result-object p0</span>
+<span class="exec">	return-object p0</span>
 .end method
 
-.method final c()Lsx;
-<span class="">	.locals 7</span>
+<span class="cov">.method private b(Z)Ltn;</span>
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(Z)",</span>
+<span class="">	"Ltn<",</span>
+<span class="">	"Ljava/lang/Number;",</span>
+<span class="">	">;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	sget-object p1, Lcom/google/gson/internal/bind/i;->u:Ltn;</span>
+<span class="">	return-object p1</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	new-instance p1, Lsx$2;</span>
+<span class="cov">	invoke-direct {p1, p0}, Lsx$2;-><init>(Lsx;)V</span>
+<span class="exec">	return-object p1</span>
+.end method
+
+<span class="cov">.method public a(Ljava/lang/Object;)Ljava/lang/String;</span>
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="missed">	sget-object p1, Ltf;->a:Ltf;</span>
+<span class="">	invoke-virtual {p0, p1}, Lsx;->a(Ltd;)Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+<span class="cov">	:cond_0</span>
+<span class="exec">	invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="exec">	invoke-virtual {p0, p1, v0}, Lsx;->a(Ljava/lang/Object;Ljava/lang/reflect/Type;)Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	return-object p1</span>
+.end method
+
+<span class="cov">.method public a(Ljava/lang/Object;Ljava/lang/reflect/Type;)Ljava/lang/String;</span>
+<span class="">	.locals 1</span>
+
+<span class="cov">	new-instance v0, Ljava/io/StringWriter;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V</span>
+<span class="cov">	invoke-virtual {p0, p1, p2, v0}, Lsx;->a(Ljava/lang/Object;Ljava/lang/reflect/Type;Ljava/lang/Appendable;)V</span>
+<span class="exec">	invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	return-object p1</span>
+.end method
+
+.method public a(Ltd;)Ljava/lang/String;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Ljava/io/StringWriter;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V</span>
+<span class="missed">	invoke-virtual {p0, p1, v0}, Lsx;->a(Ltd;Ljava/lang/Appendable;)V</span>
+<span class="">	invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method
+
+<span class="cov">.method public a(Ljava/lang/Class;)Ltn;</span>
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<T:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Ljava/lang/Class<",</span>
+<span class="">	"TT;>;)",</span>
+<span class="">	"Ltn<",</span>
+<span class="">	"TT;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="exec">	invoke-static {p1}, Ltv;->b(Ljava/lang/Class;)Ltv;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	invoke-virtual {p0, p1}, Lsx;->a(Ltv;)Ltn;</span>
+<span class="cov">	move-result-object p1</span>
+<span class="exec">	return-object p1</span>
+.end method
+
+.method public a(Lto;Ltv;)Ltn;
+<span class="">	.locals 3</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<T:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Lto;",</span>
+<span class="">	"Ltv<",</span>
+<span class="">	"TT;>;)",</span>
+<span class="">	"Ltn<",</span>
+<span class="">	"TT;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lsx;->d:Ljava/util/List;</span>
+<span class="">	invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	iget-object p1, p0, Lsx;->m:Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iget-object v1, p0, Lsx;->d:Ljava/util/List;</span>
+<span class="">	invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	:cond_1</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_3</span>
+<span class="">	invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Lto;</span>
+<span class="missed">	if-nez v0, :cond_2</span>
+<span class="missed">	if-ne v2, p1, :cond_1</span>
 <span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	iput-boolean v0, p0, Lsx;->d:Z</span>
-<span class="missed">	new-instance v0, Lsx;</span>
-<span class="missed">	iget-object v2, p0, Lsx;->a:[B</span>
-<span class="missed">	iget v3, p0, Lsx;->b:I</span>
-<span class="missed">	iget v4, p0, Lsx;->c:I</span>
-<span class="missed">	const/4 v5, 0x1</span>
-<span class="missed">	const/4 v6, 0x0</span>
-<span class="missed">	move-object v1, v0</span>
-<span class="missed">	invoke-direct/range {v1 .. v6}, Lsx;-><init>([BIIZZ)V</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-interface {v2, p0, p2}, Lto;->a(Lsx;Ltv;)Ltn;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	if-eqz v2, :cond_1</span>
+<span class="">	return-object v2</span>
+<span class="">	:cond_3</span>
+<span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v1, "GSON cannot serialize "</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+<span class="cov">.method public a(Ltv;)Ltn;</span>
+<span class="">	.locals 5</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<T:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Ltv<",</span>
+<span class="">	"TT;>;)",</span>
+<span class="">	"Ltn<",</span>
+<span class="">	"TT;>;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	iget-object v0, p0, Lsx;->c:Ljava/util/Map;</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="missed">	sget-object v1, Lsx;->a:Ltv;</span>
+<span class="exec">	goto :goto_0</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	move-object v1, p1</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	check-cast v0, Ltn;</span>
+<span class="cov">	if-eqz v0, :cond_1</span>
+<span class="exec">	return-object v0</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	iget-object v0, p0, Lsx;->b:Ljava/lang/ThreadLocal;</span>
+<span class="exec">	invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v0</span>
+<span class="cov">	check-cast v0, Ljava/util/Map;</span>
+<span class="cov">	const/4 v1, 0x0</span>
+<span class="cov">	if-nez v0, :cond_2</span>
+<span class="cov">	new-instance v0, Ljava/util/HashMap;</span>
+<span class="cov">	invoke-direct {v0}, Ljava/util/HashMap;-><init>()V</span>
+<span class="cov">	iget-object v1, p0, Lsx;->b:Ljava/lang/ThreadLocal;</span>
+<span class="cov">	invoke-virtual {v1, v0}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	:cond_2</span>
+<span class="exec">	invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v2</span>
+<span class="cov">	check-cast v2, Lsx$a;</span>
+<span class="missed">	if-eqz v2, :cond_3</span>
+<span class="">	return-object v2</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	:cond_3</span>
+<span class="cov">	new-instance v2, Lsx$a;</span>
+<span class="cov">	invoke-direct {v2}, Lsx$a;-><init>()V</span>
+<span class="cov">	invoke-interface {v0, p1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	iget-object v3, p0, Lsx;->d:Ljava/util/List;</span>
+<span class="exec">	invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;</span>
+<span class="cov">	move-result-object v3</span>
+<span class="cov">	:cond_4</span>
+<span class="exec">	invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="cov">	move-result v4</span>
+<span class="cov">	if-eqz v4, :cond_6</span>
+<span class="exec">	invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	check-cast v4, Lto;</span>
+<span class="exec">	invoke-interface {v4, p0, p1}, Lto;->a(Lsx;Ltv;)Ltn;</span>
+<span class="cov">	move-result-object v4</span>
+<span class="cov">	if-eqz v4, :cond_4</span>
+<span class="cov">	invoke-virtual {v2, v4}, Lsx$a;->a(Ltn;)V</span>
+<span class="cov">	iget-object v2, p0, Lsx;->c:Ljava/util/Map;</span>
+<span class="cov">	invoke-interface {v2, p1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="cov">	invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="cov">	if-eqz v1, :cond_5</span>
+<span class="cov">	iget-object p1, p0, Lsx;->b:Ljava/lang/ThreadLocal;</span>
+<span class="cov">	invoke-virtual {p1}, Ljava/lang/ThreadLocal;->remove()V</span>
+<span class="cov">	:cond_5</span>
+<span class="exec">	return-object v4</span>
+<span class="">	:try_start_1</span>
+<span class="">	:cond_6</span>
+<span class="missed">	new-instance v2, Ljava/lang/IllegalArgumentException;</span>
+<span class="missed">	new-instance v3, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	const-string v4, "GSON cannot handle "</span>
+<span class="missed">	invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw v2</span>
+<span class="">	:try_end_1</span>
+<span class="">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception v2</span>
+<span class="missed">	invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;</span>
+<span class="missed">	if-eqz v1, :cond_7</span>
+<span class="missed">	iget-object p1, p0, Lsx;->b:Ljava/lang/ThreadLocal;</span>
+<span class="missed">	invoke-virtual {p1}, Ljava/lang/ThreadLocal;->remove()V</span>
+<span class="">	:cond_7</span>
+<span class="">	throw v2</span>
+.end method
+
+.method public a(Ljava/io/Reader;)Ltw;
+<span class="">	.locals 1</span>
+
+<span class="missed">	new-instance v0, Ltw;</span>
+<span class="missed">	invoke-direct {v0, p1}, Ltw;-><init>(Ljava/io/Reader;)V</span>
+<span class="missed">	iget-boolean p1, p0, Lsx;->l:Z</span>
+<span class="missed">	invoke-virtual {v0, p1}, Ltw;->a(Z)V</span>
 <span class="">	return-object v0</span>
 .end method
 
-.method final d()Lsx;
-<span class="">	.locals 7</span>
+<span class="cov">.method public a(Ljava/io/Writer;)Lty;</span>
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="missed">	new-instance v6, Lsx;</span>
-<span class="missed">	iget-object v0, p0, Lsx;->a:[B</span>
-<span class="">	invoke-virtual {v0}, [B->clone()Ljava/lang/Object;</span>
+<span class="cov">	iget-boolean v0, p0, Lsx;->j:Z</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	const-string v0, ")]}\'\n"</span>
+<span class="missed">	invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V</span>
+<span class="cov">	:cond_0</span>
+<span class="cov">	new-instance v0, Lty;</span>
+<span class="cov">	invoke-direct {v0, p1}, Lty;-><init>(Ljava/io/Writer;)V</span>
+<span class="cov">	iget-boolean p1, p0, Lsx;->k:Z</span>
+<span class="missed">	if-eqz p1, :cond_1</span>
+<span class="missed">	const-string p1, "  "</span>
+<span class="missed">	invoke-virtual {v0, p1}, Lty;->c(Ljava/lang/String;)V</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	iget-boolean p1, p0, Lsx;->h:Z</span>
+<span class="cov">	invoke-virtual {v0, p1}, Lty;->d(Z)V</span>
+<span class="exec">	return-object v0</span>
+.end method
+
+<span class="cov">.method public a(Ljava/lang/Object;Ljava/lang/reflect/Type;Ljava/lang/Appendable;)V</span>
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Lte;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="cov">	:try_start_0</span>
+<span class="exec">	invoke-static {p3}, Lcom/google/gson/internal/i;->a(Ljava/lang/Appendable;)Ljava/io/Writer;</span>
+<span class="cov">	move-result-object p3</span>
+<span class="exec">	invoke-virtual {p0, p3}, Lsx;->a(Ljava/io/Writer;)Lty;</span>
+<span class="cov">	move-result-object p3</span>
+<span class="cov">	invoke-virtual {p0, p1, p2, p3}, Lsx;->a(Ljava/lang/Object;Ljava/lang/reflect/Type;Lty;)V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="exec">	return-void</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	new-instance p2, Lte;</span>
+<span class="missed">	invoke-direct {p2, p1}, Lte;-><init>(Ljava/lang/Throwable;)V</span>
+<span class="">	throw p2</span>
+.end method
+
+<span class="cov">.method public a(Ljava/lang/Object;Ljava/lang/reflect/Type;Lty;)V</span>
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Lte;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="exec">	invoke-static {p2}, Ltv;->a(Ljava/lang/reflect/Type;)Ltv;</span>
+<span class="cov">	move-result-object p2</span>
+<span class="exec">	invoke-virtual {p0, p2}, Lsx;->a(Ltv;)Ltn;</span>
+<span class="cov">	move-result-object p2</span>
+<span class="exec">	invoke-virtual {p3}, Lty;->g()Z</span>
+<span class="cov">	move-result v0</span>
+<span class="cov">	const/4 v1, 0x1</span>
+<span class="cov">	invoke-virtual {p3, v1}, Lty;->b(Z)V</span>
+<span class="exec">	invoke-virtual {p3}, Lty;->h()Z</span>
+<span class="cov">	move-result v1</span>
+<span class="cov">	iget-boolean v2, p0, Lsx;->i:Z</span>
+<span class="cov">	invoke-virtual {p3, v2}, Lty;->c(Z)V</span>
+<span class="exec">	invoke-virtual {p3}, Lty;->i()Z</span>
+<span class="cov">	move-result v2</span>
+<span class="cov">	iget-boolean v3, p0, Lsx;->h:Z</span>
+<span class="cov">	invoke-virtual {p3, v3}, Lty;->d(Z)V</span>
+<span class="cov">	:try_start_0</span>
+<span class="cov">	invoke-virtual {p2, p3, p1}, Ltn;->a(Lty;Ljava/lang/Object;)V</span>
+<span class="cov">	:try_end_0</span>
+<span class="cov">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="cov">	invoke-virtual {p3, v0}, Lty;->b(Z)V</span>
+<span class="cov">	invoke-virtual {p3, v1}, Lty;->c(Z)V</span>
+<span class="cov">	invoke-virtual {p3, v2}, Lty;->d(Z)V</span>
+<span class="exec">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	new-instance p2, Lte;</span>
+<span class="missed">	invoke-direct {p2, p1}, Lte;-><init>(Ljava/lang/Throwable;)V</span>
+<span class="">	throw p2</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {p3, v0}, Lty;->b(Z)V</span>
+<span class="missed">	invoke-virtual {p3, v1}, Lty;->c(Z)V</span>
+<span class="missed">	invoke-virtual {p3, v2}, Lty;->d(Z)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public a(Ltd;Ljava/lang/Appendable;)V
+<span class="">	.locals 0</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Lte;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	:try_start_0</span>
+<span class="">	invoke-static {p2}, Lcom/google/gson/internal/i;->a(Ljava/lang/Appendable;)Ljava/io/Writer;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="">	invoke-virtual {p0, p2}, Lsx;->a(Ljava/io/Writer;)Lty;</span>
+<span class="missed">	move-result-object p2</span>
+<span class="missed">	invoke-virtual {p0, p1, p2}, Lsx;->a(Ltd;Lty;)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	return-void</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="missed">	new-instance p2, Lte;</span>
+<span class="missed">	invoke-direct {p2, p1}, Lte;-><init>(Ljava/lang/Throwable;)V</span>
+<span class="">	throw p2</span>
+.end method
+
+.method public a(Ltd;Lty;)V
+<span class="">	.locals 4</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Lte;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="">	invoke-virtual {p2}, Lty;->g()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	invoke-virtual {p2, v1}, Lty;->b(Z)V</span>
+<span class="">	invoke-virtual {p2}, Lty;->h()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	iget-boolean v2, p0, Lsx;->i:Z</span>
+<span class="missed">	invoke-virtual {p2, v2}, Lty;->c(Z)V</span>
+<span class="">	invoke-virtual {p2}, Lty;->i()Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	iget-boolean v3, p0, Lsx;->h:Z</span>
+<span class="missed">	invoke-virtual {p2, v3}, Lty;->d(Z)V</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	invoke-static {p1, p2}, Lcom/google/gson/internal/i;->a(Ltd;Lty;)V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	invoke-virtual {p2, v0}, Lty;->b(Z)V</span>
+<span class="missed">	invoke-virtual {p2, v1}, Lty;->c(Z)V</span>
+<span class="missed">	invoke-virtual {p2, v2}, Lty;->d(Z)V</span>
+<span class="">	return-void</span>
+<span class="">	:catchall_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception p1</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	new-instance v3, Lte;</span>
+<span class="missed">	invoke-direct {v3, p1}, Lte;-><init>(Ljava/lang/Throwable;)V</span>
+<span class="">	throw v3</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	invoke-virtual {p2, v0}, Lty;->b(Z)V</span>
+<span class="missed">	invoke-virtual {p2, v1}, Lty;->c(Z)V</span>
+<span class="missed">	invoke-virtual {p2, v2}, Lty;->d(Z)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public toString()Ljava/lang/String;
+<span class="">	.locals 2</span>
+
+<span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v1, "{serializeNulls:"</span>
+<span class="missed">	invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V</span>
+<span class="missed">	iget-boolean v1, p0, Lsx;->h:Z</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v1, ",factories:"</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v1, p0, Lsx;->d:Ljava/util/List;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v1, ",instanceCreators:"</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	iget-object v1, p0, Lsx;->e:Lcom/google/gson/internal/c;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const-string v1, "}"</span>
+<span class="missed">	invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	move-object v1, v0</span>
-<span class="missed">	check-cast v1, [B</span>
-<span class="missed">	iget v2, p0, Lsx;->b:I</span>
-<span class="missed">	iget v3, p0, Lsx;->c:I</span>
-<span class="missed">	const/4 v4, 0x0</span>
-<span class="missed">	const/4 v5, 0x1</span>
-<span class="missed">	move-object v0, v6</span>
-<span class="missed">	invoke-direct/range {v0 .. v5}, Lsx;-><init>([BIIZZ)V</span>
-<span class="">	return-object v6</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

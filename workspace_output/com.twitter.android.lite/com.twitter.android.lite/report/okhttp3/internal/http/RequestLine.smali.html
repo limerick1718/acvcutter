@@ -75,24 +75,24 @@
 <span class="">	return p0</span>
 .end method
 
-<span class="cov">.method public static requestPath(Lokhttp3/HttpUrl;)Ljava/lang/String;</span>
+.method public static requestPath(Lokhttp3/HttpUrl;)Ljava/lang/String;
 <span class="">	.locals 2</span>
 
-<span class="exec">	invoke-virtual {p0}, Lokhttp3/HttpUrl;->encodedPath()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-virtual {p0}, Lokhttp3/HttpUrl;->encodedQuery()Ljava/lang/String;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="cov">	if-eqz p0, :cond_0</span>
-<span class="cov">	new-instance v1, Ljava/lang/StringBuilder;</span>
-<span class="cov">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
-<span class="cov">	invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="cov">	const/16 v0, 0x3f</span>
-<span class="cov">	invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
-<span class="cov">	invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
-<span class="exec">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-object v0</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/HttpUrl;->encodedPath()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/HttpUrl;->encodedQuery()Ljava/lang/String;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	if-eqz p0, :cond_0</span>
+<span class="missed">	new-instance v1, Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V</span>
+<span class="missed">	invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="missed">	const/16 v0, 0x3f</span>
+<span class="missed">	invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;</span>
+<span class="missed">	invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

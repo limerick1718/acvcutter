@@ -17,7 +17,7 @@
 		<code>.class final Lokhttp3/internal/http2/Http2Stream$FramingSource;
 .super Ljava/lang/Object;
 .source "Http2Stream.java"
-.implements Lwx;
+.implements Lzk;
 
 .annotation system Ldalvik/annotation/EnclosingClass;
 value = Lokhttp3/internal/http2/Http2Stream;
@@ -31,44 +31,47 @@ name = "FramingSource"
 .field  closed:Z
 .field  finished:Z
 .field private final maxByteCount:J
-.field private final readBuffer:Lex;
-.field private final receiveBuffer:Lex;
+.field private final readBuffer:Lys;
+.field private final receiveBuffer:Lys;
 .field final synthetic this$0:Lokhttp3/internal/http2/Http2Stream;
 .field private trailers:Lokhttp3/Headers;
+.field private final twitterMCI1986Fix:Z
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 0</span>
+.method static constructor &lt;clinit&gt;()V
+<span class="">	.locals 1</span>
 
+<span class="missed">	const-class v0, Lokhttp3/internal/http2/Http2Stream;</span>
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method constructor &lt;init&gt;(Lokhttp3/internal/http2/Http2Stream;J)V</span>
+.method constructor &lt;init&gt;(Lokhttp3/internal/http2/Http2Stream;JZ)V
 <span class="">	.locals 0</span>
 
-<span class="cov">	iput-object p1, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	new-instance p1, Lex;</span>
-<span class="cov">	invoke-direct {p1}, Lex;-><init>()V</span>
-<span class="cov">	iput-object p1, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->receiveBuffer:Lex;</span>
-<span class="cov">	new-instance p1, Lex;</span>
-<span class="cov">	invoke-direct {p1}, Lex;-><init>()V</span>
-<span class="cov">	iput-object p1, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lex;</span>
-<span class="cov">	iput-wide p2, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->maxByteCount:J</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	new-instance p1, Lys;</span>
+<span class="missed">	invoke-direct {p1}, Lys;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->receiveBuffer:Lys;</span>
+<span class="missed">	new-instance p1, Lys;</span>
+<span class="missed">	invoke-direct {p1}, Lys;-><init>()V</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lys;</span>
+<span class="missed">	iput-wide p2, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->maxByteCount:J</span>
+<span class="missed">	iput-boolean p4, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->twitterMCI1986Fix:Z</span>
+<span class="">	return-void</span>
 .end method
 
-.method static synthetic access$000(Lokhttp3/internal/http2/Http2Stream$FramingSource;)Lex;
+.method static synthetic access$000(Lokhttp3/internal/http2/Http2Stream$FramingSource;)Lys;
 <span class="">	.locals 0</span>
 
-<span class="missed">	iget-object p0, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->receiveBuffer:Lex;</span>
+<span class="missed">	iget-object p0, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->receiveBuffer:Lys;</span>
 <span class="">	return-object p0</span>
 .end method
 
-.method static synthetic access$100(Lokhttp3/internal/http2/Http2Stream$FramingSource;)Lex;
+.method static synthetic access$100(Lokhttp3/internal/http2/Http2Stream$FramingSource;)Lys;
 <span class="">	.locals 0</span>
 
-<span class="missed">	iget-object p0, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lex;</span>
+<span class="missed">	iget-object p0, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lys;</span>
 <span class="">	return-object p0</span>
 .end method
 
@@ -79,23 +82,23 @@ name = "FramingSource"
 <span class="">	return-object p0</span>
 .end method
 
-<span class="cov">.method static synthetic access$202(Lokhttp3/internal/http2/Http2Stream$FramingSource;Lokhttp3/Headers;)Lokhttp3/Headers;</span>
+.method static synthetic access$202(Lokhttp3/internal/http2/Http2Stream$FramingSource;Lokhttp3/Headers;)Lokhttp3/Headers;
 <span class="">	.locals 0</span>
 
-<span class="cov">	iput-object p1, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->trailers:Lokhttp3/Headers;</span>
-<span class="exec">	return-object p1</span>
+<span class="missed">	iput-object p1, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->trailers:Lokhttp3/Headers;</span>
+<span class="">	return-object p1</span>
 .end method
 
-<span class="cov">.method private updateConnectionFlowControl(J)V</span>
+.method private updateConnectionFlowControl(J)V
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
-<span class="cov">	iget-object v0, v0, Lokhttp3/internal/http2/Http2Stream;->connection:Lokhttp3/internal/http2/Http2Connection;</span>
-<span class="cov">	invoke-virtual {v0, p1, p2}, Lokhttp3/internal/http2/Http2Connection;->updateConnectionFlowControl(J)V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
+<span class="missed">	iget-object v0, v0, Lokhttp3/internal/http2/Http2Stream;->connection:Lokhttp3/internal/http2/Http2Connection;</span>
+<span class="missed">	invoke-virtual {v0, p1, p2}, Lokhttp3/internal/http2/Http2Connection;->updateConnectionFlowControl(J)V</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public close()V</span>
+.method public close()V
 <span class="">	.locals 5</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -103,29 +106,29 @@ name = "FramingSource"
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
-<span class="cov">	monitor-enter v0</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	iput-boolean v1, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->closed:Z</span>
-<span class="cov">	iget-object v1, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lex;</span>
-<span class="exec">	invoke-virtual {v1}, Lex;->v()J</span>
-<span class="cov">	move-result-wide v1</span>
-<span class="cov">	iget-object v3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lex;</span>
-<span class="cov">	invoke-virtual {v3}, Lex;->q()V</span>
-<span class="cov">	iget-object v3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
-<span class="cov">	invoke-virtual {v3}, Ljava/lang/Object;->notifyAll()V</span>
-<span class="cov">	monitor-exit v0</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="cov">	const-wide/16 v3, 0x0</span>
-<span class="cov">	cmp-long v0, v1, v3</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
+<span class="missed">	monitor-enter v0</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iput-boolean v1, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->closed:Z</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lys;</span>
+<span class="">	invoke-virtual {v1}, Lys;->a()J</span>
+<span class="missed">	move-result-wide v1</span>
+<span class="missed">	iget-object v3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lys;</span>
+<span class="missed">	invoke-virtual {v3}, Lys;->w()V</span>
+<span class="missed">	iget-object v3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
+<span class="missed">	invoke-virtual {v3}, Ljava/lang/Object;->notifyAll()V</span>
+<span class="missed">	monitor-exit v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	const-wide/16 v3, 0x0</span>
+<span class="missed">	cmp-long v0, v1, v3</span>
 <span class="missed">	if-lez v0, :cond_0</span>
 <span class="missed">	invoke-direct {p0, v1, v2}, Lokhttp3/internal/http2/Http2Stream$FramingSource;->updateConnectionFlowControl(J)V</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
-<span class="cov">	invoke-virtual {v0}, Lokhttp3/internal/http2/Http2Stream;->cancelStreamIfNecessary()V</span>
-<span class="exec">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
+<span class="missed">	invoke-virtual {v0}, Lokhttp3/internal/http2/Http2Stream;->cancelStreamIfNecessary()V</span>
+<span class="">	return-void</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception v1</span>
 <span class="">	:try_start_1</span>
@@ -135,7 +138,7 @@ name = "FramingSource"
 <span class="">	throw v1</span>
 .end method
 
-<span class="cov">.method public read(Lex;J)J</span>
+.method public read(Lys;J)J
 <span class="">	.locals 10</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -143,22 +146,22 @@ name = "FramingSource"
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	const-wide/16 v0, 0x0</span>
-<span class="cov">	cmp-long v2, p2, v0</span>
-<span class="cov">	if-ltz v2, :cond_8</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	const/4 v2, 0x0</span>
-<span class="cov">	iget-object v3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
-<span class="cov">	monitor-enter v3</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	iget-object v4, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
-<span class="cov">	iget-object v4, v4, Lokhttp3/internal/http2/Http2Stream;->readTimeout:Lokhttp3/internal/http2/Http2Stream$StreamTimeout;</span>
-<span class="cov">	invoke-virtual {v4}, Lcx;->enter()V</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_1</span>
-<span class="cov">	:try_start_1</span>
-<span class="cov">	iget-object v4, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
-<span class="cov">	iget-object v4, v4, Lokhttp3/internal/http2/Http2Stream;->errorCode:Lokhttp3/internal/http2/ErrorCode;</span>
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	cmp-long v2, p2, v0</span>
+<span class="missed">	if-ltz v2, :cond_9</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="missed">	iget-object v3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
+<span class="missed">	monitor-enter v3</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v4, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
+<span class="missed">	iget-object v4, v4, Lokhttp3/internal/http2/Http2Stream;->readTimeout:Lokhttp3/internal/http2/Http2Stream$StreamTimeout;</span>
+<span class="missed">	invoke-virtual {v4}, Lokhttp3/internal/http2/Http2Stream$StreamTimeout;->enter()V</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_1</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	iget-object v4, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
+<span class="missed">	iget-object v4, v4, Lokhttp3/internal/http2/Http2Stream;->errorCode:Lokhttp3/internal/http2/ErrorCode;</span>
 <span class="missed">	if-eqz v4, :cond_1</span>
 <span class="missed">	iget-object v2, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
 <span class="missed">	iget-object v2, v2, Lokhttp3/internal/http2/Http2Stream;->errorException:Ljava/io/IOException;</span>
@@ -171,39 +174,39 @@ name = "FramingSource"
 <span class="missed">	iget-object v4, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
 <span class="missed">	iget-object v4, v4, Lokhttp3/internal/http2/Http2Stream;->errorCode:Lokhttp3/internal/http2/ErrorCode;</span>
 <span class="missed">	invoke-direct {v2, v4}, Lokhttp3/internal/http2/StreamResetException;-><init>(Lokhttp3/internal/http2/ErrorCode;)V</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	iget-boolean v4, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->closed:Z</span>
-<span class="cov">	if-nez v4, :cond_7</span>
-<span class="cov">	iget-object v4, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lex;</span>
-<span class="exec">	invoke-virtual {v4}, Lex;->v()J</span>
-<span class="cov">	move-result-wide v4</span>
-<span class="cov">	const-wide/16 v6, -0x1</span>
-<span class="cov">	cmp-long v8, v4, v0</span>
-<span class="cov">	if-lez v8, :cond_2</span>
-<span class="cov">	iget-object v4, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lex;</span>
-<span class="cov">	iget-object v5, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lex;</span>
-<span class="exec">	invoke-virtual {v5}, Lex;->v()J</span>
-<span class="cov">	move-result-wide v8</span>
-<span class="exec">	invoke-static {p2, p3, v8, v9}, Ljava/lang/Math;->min(JJ)J</span>
-<span class="cov">	move-result-wide p2</span>
-<span class="exec">	invoke-virtual {v4, p1, p2, p3}, Lex;->read(Lex;J)J</span>
-<span class="cov">	move-result-wide p1</span>
-<span class="cov">	iget-object p3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
-<span class="cov">	iget-wide v4, p3, Lokhttp3/internal/http2/Http2Stream;->unacknowledgedBytesRead:J</span>
-<span class="cov">	add-long/2addr v4, p1</span>
-<span class="cov">	iput-wide v4, p3, Lokhttp3/internal/http2/Http2Stream;->unacknowledgedBytesRead:J</span>
-<span class="cov">	if-nez v2, :cond_4</span>
-<span class="cov">	iget-object p3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
-<span class="cov">	iget-wide v4, p3, Lokhttp3/internal/http2/Http2Stream;->unacknowledgedBytesRead:J</span>
-<span class="cov">	iget-object p3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
-<span class="cov">	iget-object p3, p3, Lokhttp3/internal/http2/Http2Stream;->connection:Lokhttp3/internal/http2/Http2Connection;</span>
-<span class="cov">	iget-object p3, p3, Lokhttp3/internal/http2/Http2Connection;->okHttpSettings:Lokhttp3/internal/http2/Settings;</span>
-<span class="exec">	invoke-virtual {p3}, Lokhttp3/internal/http2/Settings;->getInitialWindowSize()I</span>
-<span class="cov">	move-result p3</span>
-<span class="cov">	div-int/lit8 p3, p3, 0x2</span>
-<span class="cov">	int-to-long v8, p3</span>
-<span class="cov">	cmp-long p3, v4, v8</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-boolean v4, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->closed:Z</span>
+<span class="missed">	if-nez v4, :cond_8</span>
+<span class="missed">	iget-object v4, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lys;</span>
+<span class="">	invoke-virtual {v4}, Lys;->a()J</span>
+<span class="missed">	move-result-wide v4</span>
+<span class="missed">	const-wide/16 v6, -0x1</span>
+<span class="missed">	cmp-long v8, v4, v0</span>
+<span class="missed">	if-lez v8, :cond_2</span>
+<span class="missed">	iget-object v4, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lys;</span>
+<span class="missed">	iget-object v5, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lys;</span>
+<span class="">	invoke-virtual {v5}, Lys;->a()J</span>
+<span class="missed">	move-result-wide v8</span>
+<span class="">	invoke-static {p2, p3, v8, v9}, Ljava/lang/Math;->min(JJ)J</span>
+<span class="missed">	move-result-wide p2</span>
+<span class="">	invoke-virtual {v4, p1, p2, p3}, Lys;->read(Lys;J)J</span>
+<span class="missed">	move-result-wide p1</span>
+<span class="missed">	iget-object p3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
+<span class="missed">	iget-wide v4, p3, Lokhttp3/internal/http2/Http2Stream;->unacknowledgedBytesRead:J</span>
+<span class="missed">	add-long/2addr v4, p1</span>
+<span class="missed">	iput-wide v4, p3, Lokhttp3/internal/http2/Http2Stream;->unacknowledgedBytesRead:J</span>
+<span class="missed">	if-nez v2, :cond_4</span>
+<span class="missed">	iget-object p3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
+<span class="missed">	iget-wide v4, p3, Lokhttp3/internal/http2/Http2Stream;->unacknowledgedBytesRead:J</span>
+<span class="missed">	iget-object p3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
+<span class="missed">	iget-object p3, p3, Lokhttp3/internal/http2/Http2Stream;->connection:Lokhttp3/internal/http2/Http2Connection;</span>
+<span class="missed">	iget-object p3, p3, Lokhttp3/internal/http2/Http2Connection;->okHttpSettings:Lokhttp3/internal/http2/Settings;</span>
+<span class="">	invoke-virtual {p3}, Lokhttp3/internal/http2/Settings;->getInitialWindowSize()I</span>
+<span class="missed">	move-result p3</span>
+<span class="missed">	div-int/lit8 p3, p3, 0x2</span>
+<span class="missed">	int-to-long v8, p3</span>
+<span class="missed">	cmp-long p3, v4, v8</span>
 <span class="missed">	if-ltz p3, :cond_4</span>
 <span class="missed">	iget-object p3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
 <span class="missed">	iget-object p3, p3, Lokhttp3/internal/http2/Http2Stream;->connection:Lokhttp3/internal/http2/Http2Connection;</span>
@@ -214,42 +217,45 @@ name = "FramingSource"
 <span class="missed">	invoke-virtual {p3, v4, v8, v9}, Lokhttp3/internal/http2/Http2Connection;->writeWindowUpdateLater(IJ)V</span>
 <span class="missed">	iget-object p3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
 <span class="missed">	iput-wide v0, p3, Lokhttp3/internal/http2/Http2Stream;->unacknowledgedBytesRead:J</span>
-<span class="exec">	goto :goto_2</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	iget-boolean v4, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->finished:Z</span>
-<span class="cov">	if-nez v4, :cond_3</span>
-<span class="cov">	if-nez v2, :cond_3</span>
-<span class="cov">	iget-object v2, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
-<span class="cov">	invoke-virtual {v2}, Lokhttp3/internal/http2/Http2Stream;->waitForIo()V</span>
-<span class="cov">	:try_end_1</span>
-<span class="cov">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
-<span class="cov">	:try_start_2</span>
-<span class="cov">	iget-object v2, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
-<span class="cov">	iget-object v2, v2, Lokhttp3/internal/http2/Http2Stream;->readTimeout:Lokhttp3/internal/http2/Http2Stream$StreamTimeout;</span>
-<span class="cov">	invoke-virtual {v2}, Lokhttp3/internal/http2/Http2Stream$StreamTimeout;->exitAndThrowIfTimedOut()V</span>
-<span class="cov">	monitor-exit v3</span>
-<span class="exec">	goto/16 :goto_0</span>
-<span class="cov">	:cond_3</span>
-<span class="cov">	move-wide p1, v6</span>
-<span class="cov">	:goto_2</span>
-<span class="cov">	:cond_4</span>
-<span class="cov">	iget-object p3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
-<span class="cov">	iget-object p3, p3, Lokhttp3/internal/http2/Http2Stream;->readTimeout:Lokhttp3/internal/http2/Http2Stream$StreamTimeout;</span>
-<span class="cov">	invoke-virtual {p3}, Lokhttp3/internal/http2/Http2Stream$StreamTimeout;->exitAndThrowIfTimedOut()V</span>
-<span class="cov">	monitor-exit v3</span>
-<span class="cov">	:try_end_2</span>
-<span class="cov">	.catchall {:try_start_2 .. :try_end_2} :catchall_1</span>
-<span class="cov">	cmp-long p3, p1, v6</span>
-<span class="cov">	if-eqz p3, :cond_5</span>
-<span class="cov">	invoke-direct {p0, p1, p2}, Lokhttp3/internal/http2/Http2Stream$FramingSource;->updateConnectionFlowControl(J)V</span>
-<span class="exec">	return-wide p1</span>
-<span class="cov">	:cond_5</span>
-<span class="cov">	if-nez v2, :cond_6</span>
-<span class="exec">	return-wide v6</span>
+<span class="">	goto :goto_2</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-boolean v4, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->finished:Z</span>
+<span class="missed">	if-nez v4, :cond_3</span>
+<span class="missed">	if-nez v2, :cond_3</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
+<span class="missed">	invoke-virtual {v2}, Lokhttp3/internal/http2/Http2Stream;->waitForIo()V</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
+<span class="">	:try_start_2</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
+<span class="missed">	iget-object v2, v2, Lokhttp3/internal/http2/Http2Stream;->readTimeout:Lokhttp3/internal/http2/Http2Stream$StreamTimeout;</span>
+<span class="missed">	invoke-virtual {v2}, Lokhttp3/internal/http2/Http2Stream$StreamTimeout;->exitAndThrowIfTimedOut()V</span>
+<span class="missed">	monitor-exit v3</span>
+<span class="">	goto/16 :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	move-wide p1, v6</span>
+<span class="">	:goto_2</span>
+<span class="">	:cond_4</span>
+<span class="missed">	iget-object p3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
+<span class="missed">	iget-object p3, p3, Lokhttp3/internal/http2/Http2Stream;->readTimeout:Lokhttp3/internal/http2/Http2Stream$StreamTimeout;</span>
+<span class="missed">	invoke-virtual {p3}, Lokhttp3/internal/http2/Http2Stream$StreamTimeout;->exitAndThrowIfTimedOut()V</span>
+<span class="missed">	monitor-exit v3</span>
+<span class="">	:try_end_2</span>
+<span class="missed">	.catchall {:try_start_2 .. :try_end_2} :catchall_1</span>
+<span class="missed">	cmp-long p3, p1, v6</span>
+<span class="missed">	if-eqz p3, :cond_6</span>
+<span class="missed">	iget-boolean p3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->twitterMCI1986Fix:Z</span>
+<span class="missed">	if-nez p3, :cond_5</span>
+<span class="missed">	invoke-direct {p0, p1, p2}, Lokhttp3/internal/http2/Http2Stream$FramingSource;->updateConnectionFlowControl(J)V</span>
+<span class="">	:cond_5</span>
+<span class="">	return-wide p1</span>
 <span class="">	:cond_6</span>
+<span class="missed">	if-nez v2, :cond_7</span>
+<span class="">	return-wide v6</span>
+<span class="">	:cond_7</span>
 <span class="">	throw v2</span>
 <span class="">	:try_start_3</span>
-<span class="">	:cond_7</span>
+<span class="">	:cond_8</span>
 <span class="missed">	new-instance p1, Ljava/io/IOException;</span>
 <span class="missed">	const-string p2, "stream closed"</span>
 <span class="missed">	invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V</span>
@@ -269,7 +275,7 @@ name = "FramingSource"
 <span class="">	:try_end_4</span>
 <span class="missed">	.catchall {:try_start_4 .. :try_end_4} :catchall_1</span>
 <span class="">	throw p1</span>
-<span class="">	:cond_8</span>
+<span class="">	:cond_9</span>
 <span class="missed">	new-instance p1, Ljava/lang/IllegalArgumentException;</span>
 <span class="missed">	new-instance v0, Ljava/lang/StringBuilder;</span>
 <span class="missed">	invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V</span>
@@ -282,7 +288,7 @@ name = "FramingSource"
 <span class="">	throw p1</span>
 .end method
 
-<span class="cov">.method  receive(Lgx;J)V</span>
+.method  receive(Lyu;J)V
 <span class="">	.locals 11</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
@@ -290,110 +296,92 @@ name = "FramingSource"
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	:goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const-wide/16 v0, 0x0</span>
-<span class="cov">	cmp-long v2, p2, v0</span>
-<span class="cov">	if-lez v2, :cond_8</span>
-<span class="cov">	iget-object v2, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
-<span class="cov">	monitor-enter v2</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	iget-boolean v3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->finished:Z</span>
-<span class="cov">	iget-object v4, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lex;</span>
-<span class="exec">	invoke-virtual {v4}, Lex;->v()J</span>
-<span class="cov">	move-result-wide v4</span>
-<span class="cov">	add-long/2addr v4, p2</span>
-<span class="cov">	iget-wide v6, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->maxByteCount:J</span>
-<span class="cov">	const/4 v8, 0x1</span>
-<span class="cov">	const/4 v9, 0x0</span>
-<span class="cov">	cmp-long v10, v4, v6</span>
-<span class="missed">	if-lez v10, :cond_1</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const-wide/16 v0, 0x0</span>
+<span class="missed">	cmp-long v2, p2, v0</span>
+<span class="missed">	if-lez v2, :cond_6</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
+<span class="missed">	monitor-enter v2</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-boolean v3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->finished:Z</span>
+<span class="missed">	iget-object v4, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lys;</span>
+<span class="">	invoke-virtual {v4}, Lys;->a()J</span>
+<span class="missed">	move-result-wide v4</span>
+<span class="missed">	add-long/2addr v4, p2</span>
+<span class="missed">	iget-wide v6, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->maxByteCount:J</span>
+<span class="missed">	const/4 v8, 0x1</span>
+<span class="missed">	const/4 v9, 0x0</span>
+<span class="missed">	cmp-long v10, v4, v6</span>
+<span class="missed">	if-lez v10, :cond_0</span>
 <span class="missed">	const/4 v4, 0x1</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	const/4 v4, 0x0</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	monitor-exit v2</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_1</span>
-<span class="missed">	if-eqz v4, :cond_2</span>
-<span class="missed">	invoke-interface {p1, p2, p3}, Lgx;->skip(J)V</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v4, 0x0</span>
+<span class="">	:goto_1</span>
+<span class="missed">	monitor-exit v2</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_1</span>
+<span class="missed">	if-eqz v4, :cond_1</span>
+<span class="missed">	invoke-interface {p1, p2, p3}, Lyu;->i(J)V</span>
 <span class="missed">	iget-object p1, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
 <span class="missed">	sget-object p2, Lokhttp3/internal/http2/ErrorCode;->FLOW_CONTROL_ERROR:Lokhttp3/internal/http2/ErrorCode;</span>
 <span class="missed">	invoke-virtual {p1, p2}, Lokhttp3/internal/http2/Http2Stream;->closeLater(Lokhttp3/internal/http2/ErrorCode;)V</span>
 <span class="">	return-void</span>
-<span class="cov">	:cond_2</span>
-<span class="missed">	if-eqz v3, :cond_3</span>
-<span class="missed">	invoke-interface {p1, p2, p3}, Lgx;->skip(J)V</span>
+<span class="">	:cond_1</span>
+<span class="missed">	if-eqz v3, :cond_2</span>
+<span class="missed">	invoke-interface {p1, p2, p3}, Lyu;->i(J)V</span>
 <span class="">	return-void</span>
-<span class="cov">	:cond_3</span>
-<span class="cov">	iget-object v2, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->receiveBuffer:Lex;</span>
-<span class="exec">	invoke-interface {p1, v2, p2, p3}, Lwx;->read(Lex;J)J</span>
-<span class="cov">	move-result-wide v2</span>
-<span class="cov">	const-wide/16 v4, -0x1</span>
-<span class="cov">	cmp-long v6, v2, v4</span>
-<span class="cov">	if-eqz v6, :cond_7</span>
-<span class="cov">	sub-long/2addr p2, v2</span>
-<span class="cov">	iget-object v2, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
-<span class="cov">	monitor-enter v2</span>
-<span class="cov">	:try_start_1</span>
-<span class="cov">	iget-boolean v3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->closed:Z</span>
-<span class="missed">	if-eqz v3, :cond_4</span>
-<span class="missed">	iget-object v3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->receiveBuffer:Lex;</span>
-<span class="">	invoke-virtual {v3}, Lex;->v()J</span>
+<span class="">	:cond_2</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->receiveBuffer:Lys;</span>
+<span class="">	invoke-interface {p1, v2, p2, p3}, Lyu;->read(Lys;J)J</span>
+<span class="missed">	move-result-wide v2</span>
+<span class="missed">	const-wide/16 v4, -0x1</span>
+<span class="missed">	cmp-long v6, v2, v4</span>
+<span class="missed">	if-eqz v6, :cond_5</span>
+<span class="missed">	sub-long/2addr p2, v2</span>
+<span class="missed">	iget-object v2, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
+<span class="missed">	monitor-enter v2</span>
+<span class="">	:try_start_1</span>
+<span class="missed">	iget-object v3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lys;</span>
+<span class="">	invoke-virtual {v3}, Lys;->a()J</span>
 <span class="missed">	move-result-wide v3</span>
-<span class="missed">	iget-object v5, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->receiveBuffer:Lex;</span>
-<span class="missed">	invoke-virtual {v5}, Lex;->q()V</span>
-<span class="exec">	goto :goto_3</span>
-<span class="cov">	:cond_4</span>
-<span class="cov">	iget-object v3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lex;</span>
-<span class="exec">	invoke-virtual {v3}, Lex;->v()J</span>
-<span class="cov">	move-result-wide v3</span>
-<span class="cov">	cmp-long v5, v3, v0</span>
-<span class="cov">	if-nez v5, :cond_5</span>
+<span class="missed">	cmp-long v5, v3, v0</span>
+<span class="missed">	if-nez v5, :cond_3</span>
 <span class="">	goto :goto_2</span>
-<span class="">	:cond_5</span>
+<span class="">	:cond_3</span>
 <span class="missed">	const/4 v8, 0x0</span>
-<span class="cov">	:goto_2</span>
-<span class="cov">	iget-object v3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lex;</span>
-<span class="cov">	iget-object v4, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->receiveBuffer:Lex;</span>
-<span class="cov">	invoke-virtual {v3, v4}, Lex;->a(Lwx;)J</span>
-<span class="cov">	if-eqz v8, :cond_6</span>
-<span class="cov">	iget-object v3, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
-<span class="cov">	invoke-virtual {v3}, Ljava/lang/Object;->notifyAll()V</span>
-<span class="cov">	:cond_6</span>
-<span class="cov">	move-wide v3, v0</span>
-<span class="cov">	:goto_3</span>
-<span class="cov">	monitor-exit v2</span>
-<span class="cov">	:try_end_1</span>
-<span class="cov">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
-<span class="cov">	cmp-long v2, v3, v0</span>
-<span class="missed">	if-lez v2, :cond_0</span>
-<span class="missed">	invoke-direct {p0, v3, v4}, Lokhttp3/internal/http2/Http2Stream$FramingSource;->updateConnectionFlowControl(J)V</span>
+<span class="">	:goto_2</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->readBuffer:Lys;</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->receiveBuffer:Lys;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Lys;->a(Lzk;)J</span>
+<span class="missed">	if-eqz v8, :cond_4</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>
+<span class="missed">	invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V</span>
+<span class="">	:cond_4</span>
+<span class="missed">	monitor-exit v2</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception p1</span>
-<span class="">	:try_start_2</span>
 <span class="missed">	monitor-exit v2</span>
-<span class="">	:try_end_2</span>
-<span class="missed">	.catchall {:try_start_2 .. :try_end_2} :catchall_0</span>
+<span class="">	:try_end_1</span>
+<span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
 <span class="">	throw p1</span>
-<span class="">	:cond_7</span>
+<span class="">	:cond_5</span>
 <span class="missed">	new-instance p1, Ljava/io/EOFException;</span>
 <span class="missed">	invoke-direct {p1}, Ljava/io/EOFException;-><init>()V</span>
 <span class="">	throw p1</span>
 <span class="">	:catchall_1</span>
 <span class="missed">	move-exception p1</span>
-<span class="">	:try_start_3</span>
+<span class="">	:try_start_2</span>
 <span class="missed">	monitor-exit v2</span>
-<span class="">	:try_end_3</span>
-<span class="missed">	.catchall {:try_start_3 .. :try_end_3} :catchall_1</span>
+<span class="">	:try_end_2</span>
+<span class="missed">	.catchall {:try_start_2 .. :try_end_2} :catchall_1</span>
 <span class="">	throw p1</span>
-<span class="cov">	:cond_8</span>
-<span class="exec">	return-void</span>
+<span class="">	:cond_6</span>
+<span class="">	return-void</span>
 .end method
 
-.method public timeout()Lxx;
+.method public timeout()Lzl;
 <span class="">	.locals 1</span>
 
 <span class="missed">	iget-object v0, p0, Lokhttp3/internal/http2/Http2Stream$FramingSource;->this$0:Lokhttp3/internal/http2/Http2Stream;</span>

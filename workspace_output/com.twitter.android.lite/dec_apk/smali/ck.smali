@@ -1,9 +1,34 @@
-.class public interface abstract Lck;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-.method public abstract a()Z
+.class final Lck;
+.super Ljava/lang/ref/WeakReference;
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"Ljava/lang/ref/WeakReference<",
+"Ljava/lang/Throwable;",
+">;"
+}
+.end annotation
+.field private final a:I
+.method public constructor <init>(Ljava/lang/Throwable;Ljava/lang/ref/ReferenceQueue;)V
+.locals 0
+.annotation system Ldalvik/annotation/Signature;
+value = {
+"(",
+"Ljava/lang/Throwable;",
+"Ljava/lang/ref/ReferenceQueue<",
+"Ljava/lang/Throwable;",
+">;)V"
+}
+.end annotation
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+return-void
 .end method
-.method public abstract b()Z
+.method public final equals(Ljava/lang/Object;)Z
+.locals 4
+const/4 v0, 0x0
+return v0
 .end method
-.method public abstract c()Z
+.method public final hashCode()I
+.locals 1
+const/4 v0, 0x0
+return v0
 .end method

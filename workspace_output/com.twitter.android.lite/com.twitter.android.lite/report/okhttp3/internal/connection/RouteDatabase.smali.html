@@ -40,17 +40,17 @@ value = {
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public declared-synchronized connected(Lokhttp3/Route;)V</span>
+.method public declared-synchronized connected(Lokhttp3/Route;)V
 <span class="">	.locals 1</span>
 
-<span class="cov">	monitor-enter p0</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/RouteDatabase;->failedRoutes:Ljava/util/Set;</span>
-<span class="cov">	invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="cov">	monitor-exit p0</span>
-<span class="exec">	return-void</span>
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/RouteDatabase;->failedRoutes:Ljava/util/Set;</span>
+<span class="missed">	invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return-void</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception p1</span>
 <span class="missed">	monitor-exit p0</span>
@@ -74,18 +74,18 @@ value = {
 <span class="">	throw p1</span>
 .end method
 
-<span class="cov">.method public declared-synchronized shouldPostpone(Lokhttp3/Route;)Z</span>
+.method public declared-synchronized shouldPostpone(Lokhttp3/Route;)Z
 <span class="">	.locals 1</span>
 
-<span class="cov">	monitor-enter p0</span>
-<span class="cov">	:try_start_0</span>
-<span class="cov">	iget-object v0, p0, Lokhttp3/internal/connection/RouteDatabase;->failedRoutes:Ljava/util/Set;</span>
-<span class="exec">	invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result p1</span>
-<span class="cov">	:try_end_0</span>
-<span class="cov">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
-<span class="cov">	monitor-exit p0</span>
-<span class="exec">	return p1</span>
+<span class="missed">	monitor-enter p0</span>
+<span class="">	:try_start_0</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/connection/RouteDatabase;->failedRoutes:Ljava/util/Set;</span>
+<span class="">	invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
+<span class="missed">	monitor-exit p0</span>
+<span class="">	return p1</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception p1</span>
 <span class="missed">	monitor-exit p0</span>

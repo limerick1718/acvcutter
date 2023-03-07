@@ -14,213 +14,628 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public final Lif;
+		<code>.class interface abstract Lif;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement@@17.4.0"
-
-.annotation build Landroid/annotation/TargetApi;
-value = 0x18
-.end annotation
-
-.field private static final b:Ljava/lang/reflect/Method;
-.field private static final c:Ljava/lang/reflect/Method;
-.field private final a:Landroid/app/job/JobScheduler;
 
 
-.method static constructor &lt;clinit&gt;()V
-<span class="">	.locals 1</span>
 
-<span class="">	invoke-static {}, Lif;->a()Ljava/lang/reflect/Method;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	sput-object v0, Lif;->b:Ljava/lang/reflect/Method;</span>
-<span class="">	invoke-static {}, Lif;->b()Ljava/lang/reflect/Method;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	sput-object v0, Lif;->c:Ljava/lang/reflect/Method;</span>
-<span class="">	return-void</span>
+
+.method public abstract a()I
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
 .end method
 
-.method private constructor &lt;init&gt;(Landroid/app/job/JobScheduler;)V
-<span class="">	.locals 0</span>
+.method public abstract a(Lig;Lfu;)Ljava/lang/Object;
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<T:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Lig<",</span>
+<span class="">	"TT;>;",</span>
+<span class="">	"Lfu;",</span>
+<span class="">	")TT;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="missed">	iput-object p1, p0, Lif;->a:Landroid/app/job/JobScheduler;</span>
-<span class="">	return-void</span>
 .end method
 
-.method private final a(Landroid/app/job/JobInfo;Ljava/lang/String;ILjava/lang/String;)I
-<span class="">	.locals 4</span>
+.method public abstract a(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/Double;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="missed">	sget-object v0, Lif;->b:Ljava/lang/reflect/Method;</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="">	:try_start_0</span>
-<span class="missed">	iget-object v1, p0, Lif;->a:Landroid/app/job/JobScheduler;</span>
-<span class="missed">	const/4 v2, 0x4</span>
-<span class="missed">	new-array v2, v2, [Ljava/lang/Object;</span>
-<span class="missed">	const/4 v3, 0x0</span>
-<span class="missed">	aput-object p1, v2, v3</span>
-<span class="missed">	const/4 v3, 0x1</span>
-<span class="missed">	aput-object p2, v2, v3</span>
-<span class="missed">	const/4 p2, 0x2</span>
-<span class="">	invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;</span>
-<span class="missed">	move-result-object p3</span>
-<span class="missed">	aput-object p3, v2, p2</span>
-<span class="missed">	const/4 p2, 0x3</span>
-<span class="missed">	aput-object p4, v2, p2</span>
-<span class="">	invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object p2</span>
-<span class="missed">	check-cast p2, Ljava/lang/Integer;</span>
-<span class="">	invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I</span>
-<span class="missed">	move-result p1</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1</span>
-<span class="missed">	.catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="">	return p1</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception p2</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:catch_1</span>
-<span class="missed">	move-exception p2</span>
-<span class="">	:goto_0</span>
-<span class="missed">	const-string p3, "error calling scheduleAsPackage"</span>
-<span class="missed">	invoke-static {p4, p3, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
-<span class="">	:cond_0</span>
-<span class="missed">	iget-object p2, p0, Lif;->a:Landroid/app/job/JobScheduler;</span>
-<span class="">	invoke-virtual {p2, p1}, Landroid/app/job/JobScheduler;->schedule(Landroid/app/job/JobInfo;)I</span>
-<span class="missed">	move-result p1</span>
-<span class="">	return p1</span>
 .end method
 
-.method public static a(Landroid/content/Context;Landroid/app/job/JobInfo;Ljava/lang/String;Ljava/lang/String;)I
-<span class="">	.locals 2</span>
+.method public abstract a(Ljava/util/List;Lig;Lfu;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<T:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"TT;>;",</span>
+<span class="">	"Lig<",</span>
+<span class="">	"TT;>;",</span>
+<span class="">	"Lfu;",</span>
+<span class="">	")V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="missed">	const-string v0, "jobscheduler"</span>
-<span class="">	invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Landroid/app/job/JobScheduler;</span>
-<span class="missed">	sget-object v1, Lif;->b:Ljava/lang/reflect/Method;</span>
-<span class="missed">	if-eqz v1, :cond_1</span>
-<span class="missed">	const-string v1, "android.permission.UPDATE_DEVICE_STATS"</span>
-<span class="">	invoke-virtual {p0, v1}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I</span>
-<span class="missed">	move-result p0</span>
-<span class="missed">	if-eqz p0, :cond_0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-instance p0, Lif;</span>
-<span class="missed">	invoke-direct {p0, v0}, Lif;-><init>(Landroid/app/job/JobScheduler;)V</span>
-<span class="">	invoke-static {}, Lif;->c()I</span>
-<span class="missed">	move-result v0</span>
-<span class="">	invoke-direct {p0, p1, p2, v0, p3}, Lif;->a(Landroid/app/job/JobInfo;Ljava/lang/String;ILjava/lang/String;)I</span>
-<span class="missed">	move-result p0</span>
-<span class="">	return p0</span>
-<span class="">	:cond_1</span>
-<span class="">	:goto_0</span>
-<span class="">	invoke-virtual {v0, p1}, Landroid/app/job/JobScheduler;->schedule(Landroid/app/job/JobInfo;)I</span>
-<span class="missed">	move-result p0</span>
-<span class="">	return p0</span>
 .end method
 
-.method private static a()Ljava/lang/reflect/Method;
-<span class="">	.locals 6</span>
+.method public abstract a(Ljava/util/Map;Lhi;Lfu;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<K:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	"V:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Ljava/util/Map<",</span>
+<span class="">	"TK;TV;>;",</span>
+<span class="">	"Lhi<",</span>
+<span class="">	"TK;TV;>;",</span>
+<span class="">	"Lfu;",</span>
+<span class="">	")V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="missed">	const-class v0, Ljava/lang/String;</span>
-<span class="missed">	sget v1, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="missed">	const/16 v2, 0x18</span>
-<span class="missed">	if-lt v1, v2, :cond_0</span>
-<span class="">	:try_start_0</span>
-<span class="missed">	const-class v1, Landroid/app/job/JobScheduler;</span>
-<span class="missed">	const-string v2, "scheduleAsPackage"</span>
-<span class="missed">	const/4 v3, 0x4</span>
-<span class="missed">	new-array v3, v3, [Ljava/lang/Class;</span>
-<span class="missed">	const/4 v4, 0x0</span>
-<span class="missed">	const-class v5, Landroid/app/job/JobInfo;</span>
-<span class="missed">	aput-object v5, v3, v4</span>
-<span class="missed">	const/4 v4, 0x1</span>
-<span class="missed">	aput-object v0, v3, v4</span>
-<span class="missed">	const/4 v4, 0x2</span>
-<span class="missed">	sget-object v5, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;</span>
-<span class="missed">	aput-object v5, v3, v4</span>
-<span class="missed">	const/4 v4, 0x3</span>
-<span class="missed">	aput-object v0, v3, v4</span>
-<span class="">	invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="">	return-object v0</span>
-<span class="">	:catch_0</span>
-<span class="">	nop</span>
-<span class="missed">	const/4 v0, 0x6</span>
-<span class="missed">	const-string v1, "JobSchedulerCompat"</span>
-<span class="">	invoke-static {v1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	const-string v0, "No scheduleAsPackage method available, falling back to schedule"</span>
-<span class="missed">	invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
-<span class="">	:cond_0</span>
-<span class="missed">	const/4 v0, 0x0</span>
-<span class="">	return-object v0</span>
 .end method
 
-.method private static b()Ljava/lang/reflect/Method;
-<span class="">	.locals 3</span>
+.method public abstract b()I
+<span class="">	</span>
 
-<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="missed">	const/16 v2, 0x18</span>
-<span class="missed">	if-lt v0, v2, :cond_0</span>
-<span class="">	:try_start_0</span>
-<span class="missed">	const-class v0, Landroid/os/UserHandle;</span>
-<span class="missed">	const-string v2, "myUserId"</span>
-<span class="">	invoke-virtual {v0, v2, v1}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="">	return-object v0</span>
-<span class="">	:catch_0</span>
-<span class="">	nop</span>
-<span class="missed">	const/4 v0, 0x6</span>
-<span class="missed">	const-string v2, "JobSchedulerCompat"</span>
-<span class="">	invoke-static {v2, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z</span>
-<span class="missed">	move-result v0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	const-string v0, "No myUserId method available"</span>
-<span class="missed">	invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I</span>
-<span class="">	:cond_0</span>
-<span class="">	return-object v1</span>
 .end method
 
-.method private static c()I
-<span class="">	.locals 4</span>
+.method public abstract b(Lig;Lfu;)Ljava/lang/Object;
+<span class="">	</span>
+<span class="">	.annotation runtime Ljava/lang/Deprecated;</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<T:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Lig<",</span>
+<span class="">	"TT;>;",</span>
+<span class="">	"Lfu;",</span>
+<span class="">	")TT;"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
 
-<span class="missed">	sget-object v0, Lif;->c:Ljava/lang/reflect/Method;</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="">	:try_start_0</span>
-<span class="missed">	new-array v3, v1, [Ljava/lang/Object;</span>
-<span class="">	invoke-virtual {v0, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</span>
-<span class="missed">	move-result-object v0</span>
-<span class="missed">	check-cast v0, Ljava/lang/Integer;</span>
-<span class="">	invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I</span>
-<span class="missed">	move-result v0</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1</span>
-<span class="missed">	.catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="">	return v0</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception v0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:catch_1</span>
-<span class="missed">	move-exception v0</span>
-<span class="">	:goto_0</span>
-<span class="missed">	const/4 v2, 0x6</span>
-<span class="missed">	const-string v3, "JobSchedulerCompat"</span>
-<span class="">	invoke-static {v3, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z</span>
-<span class="missed">	move-result v2</span>
-<span class="missed">	if-eqz v2, :cond_0</span>
-<span class="missed">	const-string v2, "myUserId invocation illegal"</span>
-<span class="missed">	invoke-static {v3, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I</span>
-<span class="">	:cond_0</span>
-<span class="">	return v1</span>
+.end method
+
+.method public abstract b(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/Float;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract b(Ljava/util/List;Lig;Lfu;)V
+<span class="">	</span>
+<span class="">	.annotation runtime Ljava/lang/Deprecated;</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"<T:",</span>
+<span class="">	"Ljava/lang/Object;",</span>
+<span class="">	">(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"TT;>;",</span>
+<span class="">	"Lig<",</span>
+<span class="">	"TT;>;",</span>
+<span class="">	"Lfu;",</span>
+<span class="">	")V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract c(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/Long;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract c()Z
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract d()D
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract d(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/Long;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract e()F
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract e(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/Integer;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract f()J
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract f(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/Long;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract g()J
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract g(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/Integer;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract h()I
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract h(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/Boolean;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract i()J
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract i(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract j()I
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract j(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/String;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract k(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Lew;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract k()Z
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract l()Ljava/lang/String;
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract l(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/Integer;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract m()Ljava/lang/String;
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract m(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/Integer;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract n()Lew;
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract n(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/Integer;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract o()I
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract o(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/Long;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract p()I
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract p(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/Integer;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract q()I
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract q(Ljava/util/List;)V
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+<span class="">	.annotation system Ldalvik/annotation/Signature;</span>
+<span class="">	value = {</span>
+<span class="">	"(",</span>
+<span class="">	"Ljava/util/List<",</span>
+<span class="">	"Ljava/lang/Long;",</span>
+<span class="">	">;)V"</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract r()J
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract s()I
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+.end method
+
+.method public abstract t()J
+<span class="">	</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

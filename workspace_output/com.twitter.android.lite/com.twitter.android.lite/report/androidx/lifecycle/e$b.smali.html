@@ -42,7 +42,7 @@ value = {
 
 
 .method static constructor &lt;clinit&gt;()V
-<span class="">	.locals 8</span>
+<span class="">	.locals 7</span>
 
 <span class="missed">	new-instance v0, Landroidx/lifecycle/e$b;</span>
 <span class="missed">	const/4 v1, 0x0</span>
@@ -69,18 +69,19 @@ value = {
 <span class="missed">	const-string v6, "RESUMED"</span>
 <span class="missed">	invoke-direct {v0, v6, v5}, Landroidx/lifecycle/e$b;-><init>(Ljava/lang/String;I)V</span>
 <span class="missed">	sput-object v0, Landroidx/lifecycle/e$b;->e:Landroidx/lifecycle/e$b;</span>
-<span class="missed">	const/4 v6, 0x5</span>
-<span class="missed">	new-array v6, v6, [Landroidx/lifecycle/e$b;</span>
-<span class="missed">	sget-object v7, Landroidx/lifecycle/e$b;->a:Landroidx/lifecycle/e$b;</span>
-<span class="missed">	aput-object v7, v6, v1</span>
+<span class="missed">	const/4 v0, 0x5</span>
+<span class="missed">	new-array v0, v0, [Landroidx/lifecycle/e$b;</span>
+<span class="missed">	sget-object v6, Landroidx/lifecycle/e$b;->a:Landroidx/lifecycle/e$b;</span>
+<span class="missed">	aput-object v6, v0, v1</span>
 <span class="missed">	sget-object v1, Landroidx/lifecycle/e$b;->b:Landroidx/lifecycle/e$b;</span>
-<span class="missed">	aput-object v1, v6, v2</span>
+<span class="missed">	aput-object v1, v0, v2</span>
 <span class="missed">	sget-object v1, Landroidx/lifecycle/e$b;->c:Landroidx/lifecycle/e$b;</span>
-<span class="missed">	aput-object v1, v6, v3</span>
+<span class="missed">	aput-object v1, v0, v3</span>
 <span class="missed">	sget-object v1, Landroidx/lifecycle/e$b;->d:Landroidx/lifecycle/e$b;</span>
-<span class="missed">	aput-object v1, v6, v4</span>
-<span class="missed">	aput-object v0, v6, v5</span>
-<span class="missed">	sput-object v6, Landroidx/lifecycle/e$b;->f:[Landroidx/lifecycle/e$b;</span>
+<span class="missed">	aput-object v1, v0, v4</span>
+<span class="missed">	sget-object v1, Landroidx/lifecycle/e$b;->e:Landroidx/lifecycle/e$b;</span>
+<span class="missed">	aput-object v1, v0, v5</span>
+<span class="missed">	sput-object v0, Landroidx/lifecycle/e$b;->f:[Landroidx/lifecycle/e$b;</span>
 <span class="">	return-void</span>
 .end method
 
@@ -119,7 +120,7 @@ value = {
 .method public a(Landroidx/lifecycle/e$b;)Z
 <span class="">	.locals 0</span>
 
-<span class="">	invoke-virtual {p0, p1}, Ljava/lang/Enum;->compareTo(Ljava/lang/Enum;)I</span>
+<span class="">	invoke-virtual {p0, p1}, Landroidx/lifecycle/e$b;->compareTo(Ljava/lang/Enum;)I</span>
 <span class="missed">	move-result p1</span>
 <span class="missed">	if-ltz p1, :cond_0</span>
 <span class="missed">	const/4 p1, 0x1</span>

@@ -1,87 +1,275 @@
-.class public final Lwi;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
+.class public abstract Lwi;
+.super Lwd;
+.source "PriorityAsyncTask.java"
 
 # interfaces
-.implements Lxi;
+.implements Lwe;
+.implements Lwl;
+.implements Lwo;
 
 
-# static fields
-.field private static final a:Lva;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lva<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lwi$a;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<Params:",
+        "Ljava/lang/Object;",
+        "Progress:",
+        "Ljava/lang/Object;",
+        "Result:",
+        "Ljava/lang/Object;",
+        ">",
+        "Lwd<",
+        "TParams;TProgress;TResult;>;",
+        "Lwe<",
+        "Lwo;",
+        ">;",
+        "Lwl;",
+        "Lwo;"
+    }
+.end annotation
+
+
+# instance fields
+.field private final a:Lwm;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    .line 1
-    new-instance v0, Lbb;
-
-    const-string v1, "com.google.android.gms.measurement"
-
-    .line 2
-    invoke-static {v1}, Lsa;->a(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lbb;-><init>(Landroid/net/Uri;)V
-
-    const-string v1, "measurement.service.use_appinfo_modified"
-
-    const/4 v2, 0x0
-
-    .line 3
-    invoke-virtual {v0, v1, v2}, Lbb;->a(Ljava/lang/String;Z)Lva;
-
-    move-result-object v0
-
-    sput-object v0, Lwi;->a:Lva;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 36
+    invoke-direct {p0}, Lwd;-><init>()V
+
+    .line 37
+    new-instance v0, Lwm;
+
+    invoke-direct {v0}, Lwm;-><init>()V
+
+    iput-object v0, p0, Lwi;->a:Lwm;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
+.method public final varargs a(Ljava/util/concurrent/ExecutorService;[Ljava/lang/Object;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/concurrent/ExecutorService;",
+            "[TParams;)V"
+        }
+    .end annotation
 
-    const/4 v0, 0x1
+    .line 42
+    new-instance v0, Lwi$a;
 
-    return v0
+    invoke-direct {v0, p1, p0}, Lwi$a;-><init>(Ljava/util/concurrent/Executor;Lwi;)V
+
+    .line 43
+    invoke-super {p0, v0, p2}, Lwd;->a(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Lwd;
+
+    return-void
 .end method
 
-.method public final b()Z
-    .locals 1
+.method public a(Lwo;)V
+    .locals 2
 
-    .line 1
-    sget-object v0, Lwi;->a:Lva;
-
-    invoke-virtual {v0}, Lva;->b()Ljava/lang/Object;
+    .line 58
+    invoke-virtual {p0}, Lwi;->b()Lwd$d;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Boolean;
+    sget-object v1, Lwd$d;->a:Lwd$d;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    if-ne v0, v1, :cond_0
+
+    .line 61
+    invoke-virtual {p0}, Lwi;->e()Lwe;
+
+    move-result-object v0
+
+    check-cast v0, Lwl;
+
+    check-cast v0, Lwe;
+
+    invoke-interface {v0, p1}, Lwe;->addDependency(Ljava/lang/Object;)V
+
+    return-void
+
+    .line 59
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v0, "Must not add Dependency after task is running"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public synthetic addDependency(Ljava/lang/Object;)V
+    .locals 0
+
+    .line 27
+    check-cast p1, Lwo;
+
+    invoke-virtual {p0, p1}, Lwi;->a(Lwo;)V
+
+    return-void
+.end method
+
+.method public areDependenciesMet()Z
+    .locals 1
+
+    .line 71
+    invoke-virtual {p0}, Lwi;->e()Lwe;
+
+    move-result-object v0
+
+    check-cast v0, Lwl;
+
+    check-cast v0, Lwe;
+
+    invoke-interface {v0}, Lwe;->areDependenciesMet()Z
 
     move-result v0
 
     return v0
+.end method
+
+.method public compareTo(Ljava/lang/Object;)I
+    .locals 0
+
+    .line 48
+    invoke-static {p0, p1}, Lwh;->a(Lwl;Ljava/lang/Object;)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public e()Lwe;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Lwe<",
+            "Lwo;",
+            ">;:",
+            "Lwl;",
+            ":",
+            "Lwo;",
+            ">()TT;"
+        }
+    .end annotation
+
+    .line 101
+    iget-object v0, p0, Lwi;->a:Lwm;
+
+    return-object v0
+.end method
+
+.method public getDependencies()Ljava/util/Collection;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Collection<",
+            "Lwo;",
+            ">;"
+        }
+    .end annotation
+
+    .line 66
+    invoke-virtual {p0}, Lwi;->e()Lwe;
+
+    move-result-object v0
+
+    check-cast v0, Lwl;
+
+    check-cast v0, Lwe;
+
+    invoke-interface {v0}, Lwe;->getDependencies()Ljava/util/Collection;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getPriority()Lwh;
+    .locals 1
+
+    .line 76
+    invoke-virtual {p0}, Lwi;->e()Lwe;
+
+    move-result-object v0
+
+    check-cast v0, Lwl;
+
+    invoke-interface {v0}, Lwl;->getPriority()Lwh;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public isFinished()Z
+    .locals 1
+
+    .line 86
+    invoke-virtual {p0}, Lwi;->e()Lwe;
+
+    move-result-object v0
+
+    check-cast v0, Lwl;
+
+    check-cast v0, Lwo;
+
+    invoke-interface {v0}, Lwo;->isFinished()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public setError(Ljava/lang/Throwable;)V
+    .locals 1
+
+    .line 91
+    invoke-virtual {p0}, Lwi;->e()Lwe;
+
+    move-result-object v0
+
+    check-cast v0, Lwl;
+
+    check-cast v0, Lwo;
+
+    invoke-interface {v0, p1}, Lwo;->setError(Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public setFinished(Z)V
+    .locals 1
+
+    .line 81
+    invoke-virtual {p0}, Lwi;->e()Lwe;
+
+    move-result-object v0
+
+    check-cast v0, Lwl;
+
+    check-cast v0, Lwo;
+
+    invoke-interface {v0, p1}, Lwo;->setFinished(Z)V
+
+    return-void
 .end method

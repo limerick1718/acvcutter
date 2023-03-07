@@ -28,8 +28,8 @@
 .method public abstract request()Lokhttp3/Request;
 .end method
 
-.method public abstract send(Lhx;)Z
+.method public abstract send(Ljava/lang/String;)Z
 .end method
 
-.method public abstract send(Ljava/lang/String;)Z
+.method public abstract send(Lyv;)Z
 .end method

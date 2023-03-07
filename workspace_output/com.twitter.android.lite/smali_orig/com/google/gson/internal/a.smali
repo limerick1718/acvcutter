@@ -18,10 +18,12 @@
 
     return-object p0
 
+    .line 39
     :cond_0
-    const/4 p0, 0x0
+    new-instance p0, Ljava/lang/NullPointerException;
 
-    .line 1
+    invoke-direct {p0}, Ljava/lang/NullPointerException;-><init>()V
+
     throw p0
 .end method
 
@@ -32,7 +34,7 @@
 
     return-void
 
-    .line 2
+    .line 46
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 

@@ -72,7 +72,7 @@ value = {
 .annotation system Ldalvik/annotation/Signature;
 value = {
 "Ljava/util/ArrayDeque<",
-"Lhx;",
+"Lyv;",
 ">;"
 }
 .end annotation
@@ -125,13 +125,13 @@ value = {
 <span class="missed">	const/16 p1, 0x10</span>
 <span class="missed">	new-array p1, p1, [B</span>
 <span class="missed">	invoke-virtual {p3, p1}, Ljava/util/Random;->nextBytes([B)V</span>
-<span class="">	invoke-static {p1}, Lhx;->a([B)Lhx;</span>
+<span class="">	invoke-static {p1}, Lyv;->a([B)Lyv;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="">	invoke-virtual {p1}, Lhx;->f()Ljava/lang/String;</span>
+<span class="">	invoke-virtual {p1}, Lyv;->b()Ljava/lang/String;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="missed">	iput-object p1, p0, Lokhttp3/internal/ws/RealWebSocket;->key:Ljava/lang/String;</span>
-<span class="missed">	new-instance p1, Lokhttp3/internal/ws/a;</span>
-<span class="missed">	invoke-direct {p1, p0}, Lokhttp3/internal/ws/a;-><init>(Lokhttp3/internal/ws/RealWebSocket;)V</span>
+<span class="missed">	new-instance p1, Lokhttp3/internal/ws/-$$Lambda$RealWebSocket$vImgSP5IPT4ir3b3bHxPQ53ps8k;</span>
+<span class="missed">	invoke-direct {p1, p0}, Lokhttp3/internal/ws/-$$Lambda$RealWebSocket$vImgSP5IPT4ir3b3bHxPQ53ps8k;-><init>(Lokhttp3/internal/ws/RealWebSocket;)V</span>
 <span class="missed">	iput-object p1, p0, Lokhttp3/internal/ws/RealWebSocket;->writerRunnable:Ljava/lang/Runnable;</span>
 <span class="">	return-void</span>
 <span class="">	:cond_0</span>
@@ -160,7 +160,7 @@ value = {
 <span class="">	return-void</span>
 .end method
 
-.method private declared-synchronized send(Lhx;I)Z
+.method private declared-synchronized send(Lyv;I)Z
 <span class="">	.locals 6</span>
 
 <span class="missed">	monitor-enter p0</span>
@@ -173,7 +173,7 @@ value = {
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	iget-wide v2, p0, Lokhttp3/internal/ws/RealWebSocket;->queueSize:J</span>
-<span class="">	invoke-virtual {p1}, Lhx;->l()I</span>
+<span class="">	invoke-virtual {p1}, Lyv;->h()I</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	int-to-long v4, v0</span>
 <span class="missed">	add-long/2addr v2, v4</span>
@@ -190,14 +190,14 @@ value = {
 <span class="">	:try_start_1</span>
 <span class="">	:cond_1</span>
 <span class="missed">	iget-wide v0, p0, Lokhttp3/internal/ws/RealWebSocket;->queueSize:J</span>
-<span class="">	invoke-virtual {p1}, Lhx;->l()I</span>
+<span class="">	invoke-virtual {p1}, Lyv;->h()I</span>
 <span class="missed">	move-result v2</span>
 <span class="missed">	int-to-long v2, v2</span>
 <span class="missed">	add-long/2addr v0, v2</span>
 <span class="missed">	iput-wide v0, p0, Lokhttp3/internal/ws/RealWebSocket;->queueSize:J</span>
 <span class="missed">	iget-object v0, p0, Lokhttp3/internal/ws/RealWebSocket;->messageAndCloseQueue:Ljava/util/ArrayDeque;</span>
 <span class="missed">	new-instance v1, Lokhttp3/internal/ws/RealWebSocket$Message;</span>
-<span class="missed">	invoke-direct {v1, p2, p1}, Lokhttp3/internal/ws/RealWebSocket$Message;-><init>(ILhx;)V</span>
+<span class="missed">	invoke-direct {v1, p2, p1}, Lokhttp3/internal/ws/RealWebSocket$Message;-><init>(ILyv;)V</span>
 <span class="missed">	invoke-virtual {v0, v1}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z</span>
 <span class="missed">	invoke-direct {p0}, Lokhttp3/internal/ws/RealWebSocket;->runWriter()V</span>
 <span class="">	:try_end_1</span>
@@ -213,25 +213,6 @@ value = {
 <span class="missed">	move-exception p1</span>
 <span class="missed">	monitor-exit p0</span>
 <span class="">	throw p1</span>
-.end method
-
-.method public synthetic a()V
-<span class="">	.locals 2</span>
-
-<span class="">	:goto_0</span>
-<span class="">	:try_start_0</span>
-<span class="">	invoke-virtual {p0}, Lokhttp3/internal/ws/RealWebSocket;->writeOneFrame()Z</span>
-<span class="missed">	move-result v0</span>
-<span class="">	:try_end_0</span>
-<span class="missed">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
-<span class="missed">	if-eqz v0, :cond_0</span>
-<span class="">	goto :goto_0</span>
-<span class="">	:catch_0</span>
-<span class="missed">	move-exception v0</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="missed">	invoke-virtual {p0, v0, v1}, Lokhttp3/internal/ws/RealWebSocket;->failWebSocket(Ljava/lang/Exception;Lokhttp3/Response;)V</span>
-<span class="">	:cond_0</span>
-<span class="">	return-void</span>
 .end method
 
 .method  awaitTermination(ILjava/util/concurrent/TimeUnit;)V
@@ -297,11 +278,11 @@ value = {
 <span class="missed">	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;</span>
 <span class="">	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	invoke-static {v0}, Lhx;->d(Ljava/lang/String;)Lhx;</span>
+<span class="">	invoke-static {v0}, Lyv;->a(Ljava/lang/String;)Lyv;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	invoke-virtual {v0}, Lhx;->j()Lhx;</span>
+<span class="">	invoke-virtual {v0}, Lyv;->d()Lyv;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	invoke-virtual {v0}, Lhx;->f()Ljava/lang/String;</span>
+<span class="">	invoke-virtual {v0}, Lyv;->b()Ljava/lang/String;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="">	invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z</span>
 <span class="missed">	move-result v2</span>
@@ -390,9 +371,9 @@ value = {
 <span class="missed">	invoke-static {p1}, Lokhttp3/internal/ws/WebSocketProtocol;->validateCloseCode(I)V</span>
 <span class="missed">	const/4 v0, 0x0</span>
 <span class="missed">	if-eqz p2, :cond_1</span>
-<span class="">	invoke-static {p2}, Lhx;->d(Ljava/lang/String;)Lhx;</span>
+<span class="">	invoke-static {p2}, Lyv;->a(Ljava/lang/String;)Lyv;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	invoke-virtual {v0}, Lhx;->l()I</span>
+<span class="">	invoke-virtual {v0}, Lyv;->h()I</span>
 <span class="missed">	move-result v1</span>
 <span class="missed">	int-to-long v1, v1</span>
 <span class="missed">	const-wide/16 v3, 0x7b</span>
@@ -422,7 +403,7 @@ value = {
 <span class="missed">	iput-boolean p2, p0, Lokhttp3/internal/ws/RealWebSocket;->enqueuedClose:Z</span>
 <span class="missed">	iget-object v1, p0, Lokhttp3/internal/ws/RealWebSocket;->messageAndCloseQueue:Ljava/util/ArrayDeque;</span>
 <span class="missed">	new-instance v2, Lokhttp3/internal/ws/RealWebSocket$Close;</span>
-<span class="missed">	invoke-direct {v2, p1, v0, p3, p4}, Lokhttp3/internal/ws/RealWebSocket$Close;-><init>(ILhx;J)V</span>
+<span class="missed">	invoke-direct {v2, p1, v0, p3, p4}, Lokhttp3/internal/ws/RealWebSocket$Close;-><init>(ILyv;J)V</span>
 <span class="missed">	invoke-virtual {v1, v2}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z</span>
 <span class="missed">	invoke-direct {p0}, Lokhttp3/internal/ws/RealWebSocket;->runWriter()V</span>
 <span class="">	:try_end_0</span>
@@ -477,6 +458,7 @@ value = {
 <span class="">	invoke-virtual {v1, p1, v0}, Lokhttp3/internal/Internal;->newWebSocketCall(Lokhttp3/OkHttpClient;Lokhttp3/Request;)Lokhttp3/Call;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="missed">	iput-object p1, p0, Lokhttp3/internal/ws/RealWebSocket;->call:Lokhttp3/Call;</span>
+<span class="missed">	iget-object p1, p0, Lokhttp3/internal/ws/RealWebSocket;->call:Lokhttp3/Call;</span>
 <span class="missed">	new-instance v1, Lokhttp3/internal/ws/RealWebSocket$1;</span>
 <span class="missed">	invoke-direct {v1, p0, v0}, Lokhttp3/internal/ws/RealWebSocket$1;-><init>(Lokhttp3/internal/ws/RealWebSocket;Lokhttp3/Request;)V</span>
 <span class="missed">	invoke-interface {p1, v1}, Lokhttp3/Call;->enqueue(Lokhttp3/Callback;)V</span>
@@ -537,7 +519,7 @@ value = {
 .end method
 
 .method public initReaderAndWriter(Ljava/lang/String;Lokhttp3/internal/ws/RealWebSocket$Streams;)V
-<span class="">	.locals 11</span>
+<span class="">	.locals 7</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
 <span class="">	Ljava/io/IOException;</span>
@@ -549,27 +531,28 @@ value = {
 <span class="missed">	iput-object p2, p0, Lokhttp3/internal/ws/RealWebSocket;->streams:Lokhttp3/internal/ws/RealWebSocket$Streams;</span>
 <span class="missed">	new-instance v0, Lokhttp3/internal/ws/WebSocketWriter;</span>
 <span class="missed">	iget-boolean v1, p2, Lokhttp3/internal/ws/RealWebSocket$Streams;->client:Z</span>
-<span class="missed">	iget-object v2, p2, Lokhttp3/internal/ws/RealWebSocket$Streams;->sink:Lfx;</span>
+<span class="missed">	iget-object v2, p2, Lokhttp3/internal/ws/RealWebSocket$Streams;->sink:Lyt;</span>
 <span class="missed">	iget-object v3, p0, Lokhttp3/internal/ws/RealWebSocket;->random:Ljava/util/Random;</span>
-<span class="missed">	invoke-direct {v0, v1, v2, v3}, Lokhttp3/internal/ws/WebSocketWriter;-><init>(ZLfx;Ljava/util/Random;)V</span>
+<span class="missed">	invoke-direct {v0, v1, v2, v3}, Lokhttp3/internal/ws/WebSocketWriter;-><init>(ZLyt;Ljava/util/Random;)V</span>
 <span class="missed">	iput-object v0, p0, Lokhttp3/internal/ws/RealWebSocket;->writer:Lokhttp3/internal/ws/WebSocketWriter;</span>
-<span class="missed">	new-instance v4, Ljava/util/concurrent/ScheduledThreadPoolExecutor;</span>
-<span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	const/4 v1, 0x0</span>
-<span class="">	invoke-static {p1, v1}, Lokhttp3/internal/Util;->threadFactory(Ljava/lang/String;Z)Ljava/util/concurrent/ThreadFactory;</span>
+<span class="missed">	new-instance v0, Ljava/util/concurrent/ScheduledThreadPoolExecutor;</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	invoke-static {p1, v2}, Lokhttp3/internal/Util;->threadFactory(Ljava/lang/String;Z)Ljava/util/concurrent/ThreadFactory;</span>
 <span class="missed">	move-result-object p1</span>
-<span class="missed">	invoke-direct {v4, v0, p1}, Ljava/util/concurrent/ScheduledThreadPoolExecutor;-><init>(ILjava/util/concurrent/ThreadFactory;)V</span>
-<span class="missed">	iput-object v4, p0, Lokhttp3/internal/ws/RealWebSocket;->executor:Ljava/util/concurrent/ScheduledExecutorService;</span>
+<span class="missed">	invoke-direct {v0, v1, p1}, Ljava/util/concurrent/ScheduledThreadPoolExecutor;-><init>(ILjava/util/concurrent/ThreadFactory;)V</span>
+<span class="missed">	iput-object v0, p0, Lokhttp3/internal/ws/RealWebSocket;->executor:Ljava/util/concurrent/ScheduledExecutorService;</span>
 <span class="missed">	iget-wide v0, p0, Lokhttp3/internal/ws/RealWebSocket;->pingIntervalMillis:J</span>
 <span class="missed">	const-wide/16 v2, 0x0</span>
 <span class="missed">	cmp-long p1, v0, v2</span>
 <span class="missed">	if-eqz p1, :cond_0</span>
-<span class="missed">	new-instance v5, Lokhttp3/internal/ws/RealWebSocket$PingRunnable;</span>
-<span class="missed">	invoke-direct {v5, p0}, Lokhttp3/internal/ws/RealWebSocket$PingRunnable;-><init>(Lokhttp3/internal/ws/RealWebSocket;)V</span>
-<span class="missed">	iget-wide v6, p0, Lokhttp3/internal/ws/RealWebSocket;->pingIntervalMillis:J</span>
-<span class="missed">	iget-wide v8, p0, Lokhttp3/internal/ws/RealWebSocket;->pingIntervalMillis:J</span>
-<span class="missed">	sget-object v10, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;</span>
-<span class="missed">	invoke-interface/range {v4 .. v10}, Ljava/util/concurrent/ScheduledExecutorService;->scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;</span>
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/ws/RealWebSocket;->executor:Ljava/util/concurrent/ScheduledExecutorService;</span>
+<span class="missed">	new-instance v1, Lokhttp3/internal/ws/RealWebSocket$PingRunnable;</span>
+<span class="missed">	invoke-direct {v1, p0}, Lokhttp3/internal/ws/RealWebSocket$PingRunnable;-><init>(Lokhttp3/internal/ws/RealWebSocket;)V</span>
+<span class="missed">	iget-wide v2, p0, Lokhttp3/internal/ws/RealWebSocket;->pingIntervalMillis:J</span>
+<span class="missed">	iget-wide v4, p0, Lokhttp3/internal/ws/RealWebSocket;->pingIntervalMillis:J</span>
+<span class="missed">	sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;</span>
+<span class="missed">	invoke-interface/range {v0 .. v6}, Ljava/util/concurrent/ScheduledExecutorService;->scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;</span>
 <span class="">	:cond_0</span>
 <span class="missed">	iget-object p1, p0, Lokhttp3/internal/ws/RealWebSocket;->messageAndCloseQueue:Ljava/util/ArrayDeque;</span>
 <span class="">	invoke-virtual {p1}, Ljava/util/ArrayDeque;->isEmpty()Z</span>
@@ -582,8 +565,8 @@ value = {
 <span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_0</span>
 <span class="missed">	new-instance p1, Lokhttp3/internal/ws/WebSocketReader;</span>
 <span class="missed">	iget-boolean v0, p2, Lokhttp3/internal/ws/RealWebSocket$Streams;->client:Z</span>
-<span class="missed">	iget-object p2, p2, Lokhttp3/internal/ws/RealWebSocket$Streams;->source:Lgx;</span>
-<span class="missed">	invoke-direct {p1, v0, p2, p0}, Lokhttp3/internal/ws/WebSocketReader;-><init>(ZLgx;Lokhttp3/internal/ws/WebSocketReader$FrameCallback;)V</span>
+<span class="missed">	iget-object p2, p2, Lokhttp3/internal/ws/RealWebSocket$Streams;->source:Lyu;</span>
+<span class="missed">	invoke-direct {p1, v0, p2, p0}, Lokhttp3/internal/ws/WebSocketReader;-><init>(ZLyu;Lokhttp3/internal/ws/WebSocketReader$FrameCallback;)V</span>
 <span class="missed">	iput-object p1, p0, Lokhttp3/internal/ws/RealWebSocket;->reader:Lokhttp3/internal/ws/WebSocketReader;</span>
 <span class="">	return-void</span>
 <span class="">	:catchall_0</span>
@@ -593,6 +576,25 @@ value = {
 <span class="">	:try_end_1</span>
 <span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
 <span class="">	throw p1</span>
+.end method
+
+.method public synthetic lambda$new$0$RealWebSocket()V
+<span class="">	.locals 2</span>
+
+<span class="">	:goto_0</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-virtual {p0}, Lokhttp3/internal/ws/RealWebSocket;->writeOneFrame()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	move-exception v0</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	invoke-virtual {p0, v0, v1}, Lokhttp3/internal/ws/RealWebSocket;->failWebSocket(Ljava/lang/Exception;Lokhttp3/Response;)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
 .end method
 
 .method public loopReader()V
@@ -642,25 +644,27 @@ value = {
 <span class="">	:cond_0</span>
 <span class="missed">	iget-object v1, p0, Lokhttp3/internal/ws/RealWebSocket;->executor:Ljava/util/concurrent/ScheduledExecutorService;</span>
 <span class="missed">	invoke-interface {v1}, Ljava/util/concurrent/ScheduledExecutorService;->shutdown()V</span>
-<span class="missed">	move-object v1, v0</span>
+<span class="">	goto :goto_0</span>
 <span class="">	:cond_1</span>
+<span class="missed">	move-object v0, v1</span>
+<span class="">	:goto_0</span>
 <span class="missed">	monitor-exit p0</span>
 <span class="">	:try_end_0</span>
 <span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_1</span>
 <span class="">	:try_start_1</span>
-<span class="missed">	iget-object v0, p0, Lokhttp3/internal/ws/RealWebSocket;->listener:Lokhttp3/WebSocketListener;</span>
-<span class="missed">	invoke-virtual {v0, p0, p1, p2}, Lokhttp3/WebSocketListener;->onClosing(Lokhttp3/WebSocket;ILjava/lang/String;)V</span>
-<span class="missed">	if-eqz v1, :cond_2</span>
-<span class="missed">	iget-object v0, p0, Lokhttp3/internal/ws/RealWebSocket;->listener:Lokhttp3/WebSocketListener;</span>
-<span class="missed">	invoke-virtual {v0, p0, p1, p2}, Lokhttp3/WebSocketListener;->onClosed(Lokhttp3/WebSocket;ILjava/lang/String;)V</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/ws/RealWebSocket;->listener:Lokhttp3/WebSocketListener;</span>
+<span class="missed">	invoke-virtual {v1, p0, p1, p2}, Lokhttp3/WebSocketListener;->onClosing(Lokhttp3/WebSocket;ILjava/lang/String;)V</span>
+<span class="missed">	if-eqz v0, :cond_2</span>
+<span class="missed">	iget-object v1, p0, Lokhttp3/internal/ws/RealWebSocket;->listener:Lokhttp3/WebSocketListener;</span>
+<span class="missed">	invoke-virtual {v1, p0, p1, p2}, Lokhttp3/WebSocketListener;->onClosed(Lokhttp3/WebSocket;ILjava/lang/String;)V</span>
 <span class="">	:try_end_1</span>
 <span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_0</span>
 <span class="">	:cond_2</span>
-<span class="missed">	invoke-static {v1}, Lokhttp3/internal/Util;->closeQuietly(Ljava/io/Closeable;)V</span>
+<span class="missed">	invoke-static {v0}, Lokhttp3/internal/Util;->closeQuietly(Ljava/io/Closeable;)V</span>
 <span class="">	return-void</span>
 <span class="">	:catchall_0</span>
 <span class="missed">	move-exception p1</span>
-<span class="missed">	invoke-static {v1}, Lokhttp3/internal/Util;->closeQuietly(Ljava/io/Closeable;)V</span>
+<span class="missed">	invoke-static {v0}, Lokhttp3/internal/Util;->closeQuietly(Ljava/io/Closeable;)V</span>
 <span class="">	throw p1</span>
 <span class="">	:try_start_2</span>
 <span class="">	:cond_3</span>
@@ -680,19 +684,6 @@ value = {
 <span class="">	throw p1</span>
 .end method
 
-.method public onReadMessage(Lhx;)V
-<span class="">	.locals 1</span>
-<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
-<span class="">	value = {</span>
-<span class="">	Ljava/io/IOException;</span>
-<span class="">	}</span>
-<span class="">	.end annotation</span>
-
-<span class="missed">	iget-object v0, p0, Lokhttp3/internal/ws/RealWebSocket;->listener:Lokhttp3/WebSocketListener;</span>
-<span class="missed">	invoke-virtual {v0, p0, p1}, Lokhttp3/WebSocketListener;->onMessage(Lokhttp3/WebSocket;Lhx;)V</span>
-<span class="">	return-void</span>
-.end method
-
 .method public onReadMessage(Ljava/lang/String;)V
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
@@ -706,7 +697,20 @@ value = {
 <span class="">	return-void</span>
 .end method
 
-.method public declared-synchronized onReadPing(Lhx;)V
+.method public onReadMessage(Lyv;)V
+<span class="">	.locals 1</span>
+<span class="">	.annotation system Ldalvik/annotation/Throws;</span>
+<span class="">	value = {</span>
+<span class="">	Ljava/io/IOException;</span>
+<span class="">	}</span>
+<span class="">	.end annotation</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/ws/RealWebSocket;->listener:Lokhttp3/WebSocketListener;</span>
+<span class="missed">	invoke-virtual {v0, p0, p1}, Lokhttp3/WebSocketListener;->onMessage(Lokhttp3/WebSocket;Lyv;)V</span>
+<span class="">	return-void</span>
+.end method
+
+.method public declared-synchronized onReadPing(Lyv;)V
 <span class="">	.locals 1</span>
 
 <span class="missed">	monitor-enter p0</span>
@@ -741,7 +745,7 @@ value = {
 <span class="">	throw p1</span>
 .end method
 
-.method public declared-synchronized onReadPong(Lhx;)V
+.method public declared-synchronized onReadPong(Lyv;)V
 <span class="">	.locals 0</span>
 
 <span class="missed">	monitor-enter p0</span>
@@ -761,7 +765,7 @@ value = {
 <span class="">	throw p1</span>
 .end method
 
-.method declared-synchronized pong(Lhx;)Z
+.method declared-synchronized pong(Lyv;)Z
 <span class="">	.locals 1</span>
 
 <span class="missed">	monitor-enter p0</span>
@@ -877,34 +881,34 @@ value = {
 <span class="">	return-object v0</span>
 .end method
 
-.method public send(Lhx;)Z
-<span class="">	.locals 1</span>
-
-<span class="missed">	if-eqz p1, :cond_0</span>
-<span class="missed">	const/4 v0, 0x2</span>
-<span class="">	invoke-direct {p0, p1, v0}, Lokhttp3/internal/ws/RealWebSocket;->send(Lhx;I)Z</span>
-<span class="missed">	move-result p1</span>
-<span class="">	return p1</span>
-<span class="">	:cond_0</span>
-<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
-<span class="missed">	const-string v0, "bytes == null"</span>
-<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
-<span class="">	throw p1</span>
-.end method
-
 .method public send(Ljava/lang/String;)Z
 <span class="">	.locals 1</span>
 
 <span class="missed">	if-eqz p1, :cond_0</span>
-<span class="">	invoke-static {p1}, Lhx;->d(Ljava/lang/String;)Lhx;</span>
+<span class="">	invoke-static {p1}, Lyv;->a(Ljava/lang/String;)Lyv;</span>
 <span class="missed">	move-result-object p1</span>
 <span class="missed">	const/4 v0, 0x1</span>
-<span class="">	invoke-direct {p0, p1, v0}, Lokhttp3/internal/ws/RealWebSocket;->send(Lhx;I)Z</span>
+<span class="">	invoke-direct {p0, p1, v0}, Lokhttp3/internal/ws/RealWebSocket;->send(Lyv;I)Z</span>
 <span class="missed">	move-result p1</span>
 <span class="">	return p1</span>
 <span class="">	:cond_0</span>
 <span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
 <span class="missed">	const-string v0, "text == null"</span>
+<span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
+<span class="">	throw p1</span>
+.end method
+
+.method public send(Lyv;)Z
+<span class="">	.locals 1</span>
+
+<span class="missed">	if-eqz p1, :cond_0</span>
+<span class="missed">	const/4 v0, 0x2</span>
+<span class="">	invoke-direct {p0, p1, v0}, Lokhttp3/internal/ws/RealWebSocket;->send(Lyv;I)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="">	return p1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance p1, Ljava/lang/NullPointerException;</span>
+<span class="missed">	const-string v0, "bytes == null"</span>
 <span class="missed">	invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V</span>
 <span class="">	throw p1</span>
 .end method
@@ -948,7 +952,7 @@ value = {
 .end method
 
 .method  writeOneFrame()Z
-<span class="">	.locals 12</span>
+<span class="">	.locals 11</span>
 <span class="">	.annotation system Ldalvik/annotation/Throws;</span>
 <span class="">	value = {</span>
 <span class="">	Ljava/io/IOException;</span>
@@ -967,7 +971,7 @@ value = {
 <span class="missed">	iget-object v2, p0, Lokhttp3/internal/ws/RealWebSocket;->pongQueue:Ljava/util/ArrayDeque;</span>
 <span class="">	invoke-virtual {v2}, Ljava/util/ArrayDeque;->poll()Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v2</span>
-<span class="missed">	check-cast v2, Lhx;</span>
+<span class="missed">	check-cast v2, Lyv;</span>
 <span class="missed">	const/4 v3, -0x1</span>
 <span class="missed">	const/4 v4, 0x0</span>
 <span class="missed">	if-nez v2, :cond_4</span>
@@ -983,10 +987,7 @@ value = {
 <span class="missed">	iput-object v4, p0, Lokhttp3/internal/ws/RealWebSocket;->streams:Lokhttp3/internal/ws/RealWebSocket$Streams;</span>
 <span class="missed">	iget-object v4, p0, Lokhttp3/internal/ws/RealWebSocket;->executor:Ljava/util/concurrent/ScheduledExecutorService;</span>
 <span class="missed">	invoke-interface {v4}, Ljava/util/concurrent/ScheduledExecutorService;->shutdown()V</span>
-<span class="missed">	move-object v4, v5</span>
-<span class="missed">	move-object v11, v3</span>
-<span class="missed">	move v3, v1</span>
-<span class="missed">	move-object v1, v11</span>
+<span class="missed">	move-object v4, v3</span>
 <span class="">	goto :goto_1</span>
 <span class="">	:cond_1</span>
 <span class="missed">	iget-object v3, p0, Lokhttp3/internal/ws/RealWebSocket;->executor:Ljava/util/concurrent/ScheduledExecutorService;</span>
@@ -999,57 +1000,54 @@ value = {
 <span class="">	invoke-interface {v3, v7, v8, v9, v10}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;</span>
 <span class="missed">	move-result-object v3</span>
 <span class="missed">	iput-object v3, p0, Lokhttp3/internal/ws/RealWebSocket;->cancelFuture:Ljava/util/concurrent/ScheduledFuture;</span>
-<span class="missed">	move v3, v1</span>
-<span class="missed">	move-object v1, v4</span>
-<span class="">	goto :goto_0</span>
+<span class="">	goto :goto_1</span>
 <span class="">	:cond_2</span>
 <span class="missed">	if-nez v5, :cond_3</span>
 <span class="missed">	monitor-exit p0</span>
 <span class="">	return v1</span>
 <span class="">	:cond_3</span>
-<span class="missed">	move-object v1, v4</span>
-<span class="missed">	move-object v6, v1</span>
-<span class="">	:goto_0</span>
-<span class="missed">	move-object v4, v5</span>
-<span class="">	goto :goto_1</span>
+<span class="missed">	move-object v6, v4</span>
+<span class="">	goto :goto_0</span>
 <span class="">	:cond_4</span>
-<span class="missed">	move-object v1, v4</span>
-<span class="missed">	move-object v6, v1</span>
+<span class="missed">	move-object v5, v4</span>
+<span class="missed">	move-object v6, v5</span>
+<span class="">	:goto_0</span>
+<span class="missed">	const/4 v1, -0x1</span>
 <span class="">	:goto_1</span>
 <span class="missed">	monitor-exit p0</span>
 <span class="">	:try_end_0</span>
 <span class="missed">	.catchall {:try_start_0 .. :try_end_0} :catchall_2</span>
 <span class="missed">	if-eqz v2, :cond_5</span>
 <span class="">	:try_start_1</span>
-<span class="missed">	invoke-virtual {v0, v2}, Lokhttp3/internal/ws/WebSocketWriter;->writePong(Lhx;)V</span>
+<span class="missed">	invoke-virtual {v0, v2}, Lokhttp3/internal/ws/WebSocketWriter;->writePong(Lyv;)V</span>
 <span class="">	goto :goto_2</span>
 <span class="">	:cond_5</span>
-<span class="missed">	instance-of v2, v4, Lokhttp3/internal/ws/RealWebSocket$Message;</span>
+<span class="missed">	instance-of v2, v5, Lokhttp3/internal/ws/RealWebSocket$Message;</span>
 <span class="missed">	if-eqz v2, :cond_6</span>
-<span class="missed">	move-object v2, v4</span>
-<span class="missed">	check-cast v2, Lokhttp3/internal/ws/RealWebSocket$Message;</span>
-<span class="missed">	iget-object v2, v2, Lokhttp3/internal/ws/RealWebSocket$Message;->data:Lhx;</span>
-<span class="missed">	check-cast v4, Lokhttp3/internal/ws/RealWebSocket$Message;</span>
-<span class="missed">	iget v3, v4, Lokhttp3/internal/ws/RealWebSocket$Message;->formatOpcode:I</span>
-<span class="">	invoke-virtual {v2}, Lhx;->l()I</span>
-<span class="missed">	move-result v4</span>
-<span class="missed">	int-to-long v4, v4</span>
-<span class="">	invoke-virtual {v0, v3, v4, v5}, Lokhttp3/internal/ws/WebSocketWriter;->newMessageSink(IJ)Lvx;</span>
+<span class="missed">	move-object v1, v5</span>
+<span class="missed">	check-cast v1, Lokhttp3/internal/ws/RealWebSocket$Message;</span>
+<span class="missed">	iget-object v1, v1, Lokhttp3/internal/ws/RealWebSocket$Message;->data:Lyv;</span>
+<span class="missed">	check-cast v5, Lokhttp3/internal/ws/RealWebSocket$Message;</span>
+<span class="missed">	iget v2, v5, Lokhttp3/internal/ws/RealWebSocket$Message;->formatOpcode:I</span>
+<span class="">	invoke-virtual {v1}, Lyv;->h()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	int-to-long v5, v3</span>
+<span class="">	invoke-virtual {v0, v2, v5, v6}, Lokhttp3/internal/ws/WebSocketWriter;->newMessageSink(IJ)Lzj;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="">	invoke-static {v0}, Lnx;->a(Lvx;)Lfx;</span>
+<span class="">	invoke-static {v0}, Lzb;->a(Lzj;)Lyt;</span>
 <span class="missed">	move-result-object v0</span>
-<span class="missed">	invoke-interface {v0, v2}, Lfx;->a(Lhx;)Lfx;</span>
-<span class="missed">	invoke-interface {v0}, Lvx;->close()V</span>
+<span class="missed">	invoke-interface {v0, v1}, Lyt;->c(Lyv;)Lyt;</span>
+<span class="missed">	invoke-interface {v0}, Lyt;->close()V</span>
 <span class="">	monitor-enter p0</span>
 <span class="">	:try_end_1</span>
 <span class="missed">	.catchall {:try_start_1 .. :try_end_1} :catchall_1</span>
 <span class="">	:try_start_2</span>
-<span class="missed">	iget-wide v3, p0, Lokhttp3/internal/ws/RealWebSocket;->queueSize:J</span>
-<span class="">	invoke-virtual {v2}, Lhx;->l()I</span>
+<span class="missed">	iget-wide v2, p0, Lokhttp3/internal/ws/RealWebSocket;->queueSize:J</span>
+<span class="">	invoke-virtual {v1}, Lyv;->h()I</span>
 <span class="missed">	move-result v0</span>
-<span class="missed">	int-to-long v5, v0</span>
-<span class="missed">	sub-long/2addr v3, v5</span>
-<span class="missed">	iput-wide v3, p0, Lokhttp3/internal/ws/RealWebSocket;->queueSize:J</span>
+<span class="missed">	int-to-long v0, v0</span>
+<span class="missed">	sub-long/2addr v2, v0</span>
+<span class="missed">	iput-wide v2, p0, Lokhttp3/internal/ws/RealWebSocket;->queueSize:J</span>
 <span class="missed">	monitor-exit p0</span>
 <span class="">	goto :goto_2</span>
 <span class="">	:catchall_0</span>
@@ -1060,21 +1058,21 @@ value = {
 <span class="">	:try_start_3</span>
 <span class="">	throw v0</span>
 <span class="">	:cond_6</span>
-<span class="missed">	instance-of v2, v4, Lokhttp3/internal/ws/RealWebSocket$Close;</span>
+<span class="missed">	instance-of v2, v5, Lokhttp3/internal/ws/RealWebSocket$Close;</span>
 <span class="missed">	if-eqz v2, :cond_8</span>
-<span class="missed">	check-cast v4, Lokhttp3/internal/ws/RealWebSocket$Close;</span>
-<span class="missed">	iget v2, v4, Lokhttp3/internal/ws/RealWebSocket$Close;->code:I</span>
-<span class="missed">	iget-object v4, v4, Lokhttp3/internal/ws/RealWebSocket$Close;->reason:Lhx;</span>
-<span class="missed">	invoke-virtual {v0, v2, v4}, Lokhttp3/internal/ws/WebSocketWriter;->writeClose(ILhx;)V</span>
-<span class="missed">	if-eqz v1, :cond_7</span>
+<span class="missed">	check-cast v5, Lokhttp3/internal/ws/RealWebSocket$Close;</span>
+<span class="missed">	iget v2, v5, Lokhttp3/internal/ws/RealWebSocket$Close;->code:I</span>
+<span class="missed">	iget-object v3, v5, Lokhttp3/internal/ws/RealWebSocket$Close;->reason:Lyv;</span>
+<span class="missed">	invoke-virtual {v0, v2, v3}, Lokhttp3/internal/ws/WebSocketWriter;->writeClose(ILyv;)V</span>
+<span class="missed">	if-eqz v4, :cond_7</span>
 <span class="missed">	iget-object v0, p0, Lokhttp3/internal/ws/RealWebSocket;->listener:Lokhttp3/WebSocketListener;</span>
-<span class="missed">	invoke-virtual {v0, p0, v3, v6}, Lokhttp3/WebSocketListener;->onClosed(Lokhttp3/WebSocket;ILjava/lang/String;)V</span>
+<span class="missed">	invoke-virtual {v0, p0, v1, v6}, Lokhttp3/WebSocketListener;->onClosed(Lokhttp3/WebSocket;ILjava/lang/String;)V</span>
 <span class="">	:try_end_3</span>
 <span class="missed">	.catchall {:try_start_3 .. :try_end_3} :catchall_1</span>
 <span class="">	:goto_2</span>
 <span class="">	:cond_7</span>
 <span class="missed">	const/4 v0, 0x1</span>
-<span class="missed">	invoke-static {v1}, Lokhttp3/internal/Util;->closeQuietly(Ljava/io/Closeable;)V</span>
+<span class="missed">	invoke-static {v4}, Lokhttp3/internal/Util;->closeQuietly(Ljava/io/Closeable;)V</span>
 <span class="">	return v0</span>
 <span class="">	:try_start_4</span>
 <span class="">	:cond_8</span>
@@ -1085,7 +1083,7 @@ value = {
 <span class="">	.catchall {:try_start_4 .. :try_end_4} :catchall_1</span>
 <span class="">	:catchall_1</span>
 <span class="missed">	move-exception v0</span>
-<span class="missed">	invoke-static {v1}, Lokhttp3/internal/Util;->closeQuietly(Ljava/io/Closeable;)V</span>
+<span class="missed">	invoke-static {v4}, Lokhttp3/internal/Util;->closeQuietly(Ljava/io/Closeable;)V</span>
 <span class="">	throw v0</span>
 <span class="">	:catchall_2</span>
 <span class="missed">	move-exception v0</span>
@@ -1145,8 +1143,8 @@ value = {
 <span class="">	return-void</span>
 <span class="">	:try_start_1</span>
 <span class="">	:cond_2</span>
-<span class="missed">	sget-object v1, Lhx;->e:Lhx;</span>
-<span class="missed">	invoke-virtual {v0, v1}, Lokhttp3/internal/ws/WebSocketWriter;->writePing(Lhx;)V</span>
+<span class="missed">	sget-object v1, Lyv;->b:Lyv;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Lokhttp3/internal/ws/WebSocketWriter;->writePing(Lyv;)V</span>
 <span class="">	:try_end_1</span>
 <span class="missed">	.catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0</span>
 <span class="">	goto :goto_1</span>

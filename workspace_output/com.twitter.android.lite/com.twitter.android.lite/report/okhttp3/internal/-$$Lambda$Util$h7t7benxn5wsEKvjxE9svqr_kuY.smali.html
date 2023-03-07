@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="../../.resources/highlight/styles/default.css" />
+	<link rel="stylesheet" href="../../.resources/report.css" />
+</head>
+<body>
+    <ul class="breadcrumb">
+		<li><i class="ico ico-android"></i><a href="../../main_index.html">com.twitter.android.lite</a></li>
+		<li><i class="ico ico-package"></i><a href="index.html">okhttp3.internal</a></li>
+        <li><i class="ico ico-class"></i> -$$Lambda$Util$h7t7benxn5wsEKvjxE9svqr_kuY.smali</li>
+    </ul>
+    <p class="left-margin">granularity level: instruction</p>
+	<pre class="source lang-smali" id='source'>
+		<code>.class public final synthetic Lokhttp3/internal/-$$Lambda$Util$h7t7benxn5wsEKvjxE9svqr_kuY;
+.super Ljava/lang/Object;
+.source "lambda"
+.implements Ljava/util/concurrent/ThreadFactory;
+
+
+.field private final synthetic f$0:Ljava/lang/String;
+.field private final synthetic f$1:Z
+
+
+<span class="cov">.method public synthetic constructor &lt;init&gt;(Ljava/lang/String;Z)V</span>
+<span class="">	.locals 0</span>
+
+<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="cov">	iput-object p1, p0, Lokhttp3/internal/-$$Lambda$Util$h7t7benxn5wsEKvjxE9svqr_kuY;->f$0:Ljava/lang/String;</span>
+<span class="cov">	iput-boolean p2, p0, Lokhttp3/internal/-$$Lambda$Util$h7t7benxn5wsEKvjxE9svqr_kuY;->f$1:Z</span>
+<span class="exec">	return-void</span>
+.end method
+
+.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+<span class="">	.locals 2</span>
+
+<span class="missed">	iget-object v0, p0, Lokhttp3/internal/-$$Lambda$Util$h7t7benxn5wsEKvjxE9svqr_kuY;->f$0:Ljava/lang/String;</span>
+<span class="missed">	iget-boolean v1, p0, Lokhttp3/internal/-$$Lambda$Util$h7t7benxn5wsEKvjxE9svqr_kuY;->f$1:Z</span>
+<span class="">	invoke-static {v0, v1, p1}, Lokhttp3/internal/Util;->lambda$threadFactory$0(Ljava/lang/String;ZLjava/lang/Runnable;)Ljava/lang/Thread;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	return-object p1</span>
+.end method</code>
+	</pre>
+    <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>
+
+	<script type="text/javascript" src="../../.resources/highlight/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../.resources/report.js"></script>
+</body>
+</html>

@@ -26,7 +26,7 @@
 .method public final run()V
     .locals 1
 
-    .line 1
+    .line 2
     iget-object v0, p0, Lcom/google/android/gms/common/api/internal/q;->a:Lcom/google/android/gms/common/api/internal/p;
 
     iget-object v0, v0, Lcom/google/android/gms/common/api/internal/p;->a:Lcom/google/android/gms/common/api/internal/b$a;
@@ -35,7 +35,7 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->f()V
+    invoke-interface {v0}, Lcom/google/android/gms/common/api/a$f;->a()V
 
     return-void
 .end method

@@ -15,23 +15,23 @@
 
 
 # instance fields
-.field final data:Lhx;
+.field final data:Lyv;
 
 .field final formatOpcode:I
 
 
 # direct methods
-.method constructor <init>(ILhx;)V
+.method constructor <init>(ILyv;)V
     .locals 0
 
-    .line 1
+    .line 580
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
+    .line 581
     iput p1, p0, Lokhttp3/internal/ws/RealWebSocket$Message;->formatOpcode:I
 
-    .line 3
-    iput-object p2, p0, Lokhttp3/internal/ws/RealWebSocket$Message;->data:Lhx;
+    .line 582
+    iput-object p2, p0, Lokhttp3/internal/ws/RealWebSocket$Message;->data:Lyv;
 
     return-void
 .end method

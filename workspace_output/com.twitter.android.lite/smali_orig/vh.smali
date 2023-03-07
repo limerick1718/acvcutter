@@ -1,239 +1,357 @@
-.class public final Lvh;
+.class Lvh;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-measurement-impl@@17.4.0"
-
-# interfaces
-.implements Lkb;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lkb<",
-        "Lyh;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field private static b:Lvh;
+.source "AdvertisingInfoProvider.java"
 
 
 # instance fields
-.field private final a:Lkb;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkb<",
-            "Lyh;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final a:Landroid/content/Context;
+
+.field private final b:Lxp;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 2
 
-    .line 1
-    new-instance v0, Lvh;
+    .line 35
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lvh;-><init>()V
-
-    sput-object v0, Lvh;->b:Lvh;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    .line 3
-    new-instance v0, Lxh;
-
-    invoke-direct {v0}, Lxh;-><init>()V
-
-    invoke-static {v0}, Ljb;->a(Ljava/lang/Object;)Lkb;
+    .line 36
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lvh;-><init>(Lkb;)V
+    iput-object v0, p0, Lvh;->a:Landroid/content/Context;
+
+    .line 37
+    new-instance v0, Lxq;
+
+    const-string v1, "TwitterAdvertisingInfoPreferences"
+
+    invoke-direct {v0, p1, v1}, Lxq;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+
+    iput-object v0, p0, Lvh;->b:Lxp;
 
     return-void
 .end method
 
-.method private constructor <init>(Lkb;)V
+.method static synthetic a(Lvh;)Lvg;
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
+
+    .line 28
+    invoke-direct {p0}, Lvh;->e()Lvg;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private a(Lvg;)V
+    .locals 2
+
+    .line 68
+    new-instance v0, Ljava/lang/Thread;
+
+    new-instance v1, Lvh$1;
+
+    invoke-direct {v1, p0, p1}, Lvh$1;-><init>(Lvh;Lvg;)V
+
+    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+
+    .line 77
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+
+    return-void
+.end method
+
+.method static synthetic a(Lvh;Lvg;)V
+    .locals 0
+
+    .line 28
+    invoke-direct {p0, p1}, Lvh;->b(Lvg;)V
+
+    return-void
+.end method
+
+.method private b(Lvg;)V
+    .locals 5
+    .annotation build Landroid/annotation/SuppressLint;
         value = {
-            "(",
-            "Lkb<",
-            "Lyh;",
-            ">;)V"
+            "CommitPrefEdits"
         }
     .end annotation
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 82
+    invoke-direct {p0, p1}, Lvh;->c(Lvg;)Z
 
-    .line 2
-    invoke-static {p1}, Ljb;->a(Lkb;)Lkb;
+    move-result v0
+
+    const-string v1, "limit_ad_tracking_enabled"
+
+    const-string v2, "advertising_id"
+
+    if-eqz v0, :cond_0
+
+    .line 83
+    iget-object v0, p0, Lvh;->b:Lxp;
+
+    invoke-interface {v0}, Lxp;->b()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v3
+
+    iget-object v4, p1, Lvg;->a:Ljava/lang/String;
+
+    .line 84
+    invoke-interface {v3, v2, v4}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v2
+
+    iget-boolean p1, p1, Lvg;->b:Z
+
+    .line 85
+    invoke-interface {v2, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p1
 
-    iput-object p1, p0, Lvh;->a:Lkb;
+    .line 83
+    invoke-interface {v0, p1}, Lxp;->a(Landroid/content/SharedPreferences$Editor;)Z
 
+    goto :goto_0
+
+    .line 89
+    :cond_0
+    iget-object p1, p0, Lvh;->b:Lxp;
+
+    invoke-interface {p1}, Lxp;->b()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    .line 90
+    invoke-interface {v0, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    .line 91
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    .line 89
+    invoke-interface {p1, v0}, Lxp;->a(Landroid/content/SharedPreferences$Editor;)Z
+
+    :goto_0
     return-void
 .end method
 
-.method public static b()Z
-    .locals 1
+.method private c(Lvg;)Z
+    .locals 0
 
-    .line 1
-    sget-object v0, Lvh;->b:Lvh;
+    if-eqz p1, :cond_0
 
-    invoke-virtual {v0}, Lvh;->a()Ljava/lang/Object;
+    .line 111
+    iget-object p1, p1, Lvg;->a:Ljava/lang/String;
 
-    move-result-object v0
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    check-cast v0, Lyh;
+    move-result p1
 
-    invoke-interface {v0}, Lyh;->a()Z
+    if-nez p1, :cond_0
 
-    move-result v0
+    const/4 p1, 0x1
 
-    return v0
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
 .end method
 
-.method public static c()Z
-    .locals 1
+.method private e()Lvg;
+    .locals 4
 
-    .line 1
-    sget-object v0, Lvh;->b:Lvh;
-
-    invoke-virtual {v0}, Lvh;->a()Ljava/lang/Object;
+    .line 117
+    invoke-virtual {p0}, Lvh;->c()Lvk;
 
     move-result-object v0
 
-    check-cast v0, Lyh;
-
-    invoke-interface {v0}, Lyh;->b()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static d()Z
-    .locals 1
-
-    .line 1
-    sget-object v0, Lvh;->b:Lvh;
-
-    invoke-virtual {v0}, Lvh;->a()Ljava/lang/Object;
+    .line 118
+    invoke-interface {v0}, Lvk;->a()Lvg;
 
     move-result-object v0
 
-    check-cast v0, Lyh;
+    .line 120
+    invoke-direct {p0, v0}, Lvh;->c(Lvg;)Z
 
-    invoke-interface {v0}, Lyh;->c()Z
+    move-result v1
 
-    move-result v0
+    const-string v2, "Fabric"
 
-    return v0
-.end method
+    if-nez v1, :cond_1
 
-.method public static e()Z
-    .locals 1
-
-    .line 1
-    sget-object v0, Lvh;->b:Lvh;
-
-    invoke-virtual {v0}, Lvh;->a()Ljava/lang/Object;
+    .line 121
+    invoke-virtual {p0}, Lvh;->d()Lvk;
 
     move-result-object v0
 
-    check-cast v0, Lyh;
-
-    invoke-interface {v0}, Lyh;->d()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static f()Z
-    .locals 1
-
-    .line 1
-    sget-object v0, Lvh;->b:Lvh;
-
-    invoke-virtual {v0}, Lvh;->a()Ljava/lang/Object;
+    .line 122
+    invoke-interface {v0}, Lvk;->a()Lvg;
 
     move-result-object v0
 
-    check-cast v0, Lyh;
+    .line 124
+    invoke-direct {p0, v0}, Lvh;->c(Lvg;)Z
 
-    invoke-interface {v0}, Lyh;->e()Z
+    move-result v1
 
-    move-result v0
+    if-nez v1, :cond_0
 
-    return v0
-.end method
+    .line 125
+    invoke-static {}, Luq;->g()Luz;
 
-.method public static g()Z
-    .locals 1
+    move-result-object v1
 
-    .line 1
-    sget-object v0, Lvh;->b:Lvh;
+    const-string v3, "AdvertisingInfo not present"
 
-    invoke-virtual {v0}, Lvh;->a()Ljava/lang/Object;
+    invoke-interface {v1, v2, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v0
+    goto :goto_0
 
-    check-cast v0, Lyh;
+    .line 127
+    :cond_0
+    invoke-static {}, Luq;->g()Luz;
 
-    invoke-interface {v0}, Lyh;->h()Z
+    move-result-object v1
 
-    move-result v0
+    const-string v3, "Using AdvertisingInfo from Service Provider"
 
-    return v0
-.end method
+    invoke-interface {v1, v2, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-.method public static h()Z
-    .locals 1
+    goto :goto_0
 
-    .line 1
-    sget-object v0, Lvh;->b:Lvh;
+    .line 130
+    :cond_1
+    invoke-static {}, Luq;->g()Luz;
 
-    invoke-virtual {v0}, Lvh;->a()Ljava/lang/Object;
+    move-result-object v1
 
-    move-result-object v0
+    const-string v3, "Using AdvertisingInfo from Reflection Provider"
 
-    check-cast v0, Lyh;
+    invoke-interface {v1, v2, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-interface {v0}, Lyh;->k()Z
-
-    move-result v0
-
-    return v0
+    :goto_0
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public a()Lvg;
+    .locals 4
 
-    .line 1
-    iget-object v0, p0, Lvh;->a:Lkb;
-
-    invoke-interface {v0}, Lkb;->a()Ljava/lang/Object;
+    .line 50
+    invoke-virtual {p0}, Lvh;->b()Lvg;
 
     move-result-object v0
 
-    check-cast v0, Lyh;
+    .line 51
+    invoke-direct {p0, v0}, Lvh;->c(Lvg;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 52
+    invoke-static {}, Luq;->g()Luz;
+
+    move-result-object v1
+
+    const-string v2, "Fabric"
+
+    const-string v3, "Using AdvertisingInfo from Preference Store"
+
+    invoke-interface {v1, v2, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 53
+    invoke-direct {p0, v0}, Lvh;->a(Lvg;)V
+
+    return-object v0
+
+    .line 57
+    :cond_0
+    invoke-direct {p0}, Lvh;->e()Lvg;
+
+    move-result-object v0
+
+    .line 58
+    invoke-direct {p0, v0}, Lvh;->b(Lvg;)V
+
+    return-object v0
+.end method
+
+.method protected b()Lvg;
+    .locals 4
+
+    .line 97
+    iget-object v0, p0, Lvh;->b:Lxp;
+
+    invoke-interface {v0}, Lxp;->a()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "advertising_id"
+
+    const-string v2, ""
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 98
+    iget-object v1, p0, Lvh;->b:Lxp;
+
+    invoke-interface {v1}, Lxp;->a()Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    const-string v2, "limit_ad_tracking_enabled"
+
+    const/4 v3, 0x0
+
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    .line 99
+    new-instance v2, Lvg;
+
+    invoke-direct {v2, v0, v1}, Lvg;-><init>(Ljava/lang/String;Z)V
+
+    return-object v2
+.end method
+
+.method public c()Lvk;
+    .locals 2
+
+    .line 103
+    new-instance v0, Lvi;
+
+    iget-object v1, p0, Lvh;->a:Landroid/content/Context;
+
+    invoke-direct {v0, v1}, Lvi;-><init>(Landroid/content/Context;)V
+
+    return-object v0
+.end method
+
+.method public d()Lvk;
+    .locals 2
+
+    .line 107
+    new-instance v0, Lvj;
+
+    iget-object v1, p0, Lvh;->a:Landroid/content/Context;
+
+    invoke-direct {v0, v1}, Lvj;-><init>(Landroid/content/Context;)V
 
     return-object v0
 .end method

@@ -110,6 +110,7 @@ Lretrofit2/RequestBuilder$ContentTypeOverridingRequestBody;
 <span class="missed">	iput-object p5, p0, Lretrofit2/RequestBuilder;->contentType:Lokhttp3/MediaType;</span>
 <span class="missed">	iput-boolean p6, p0, Lretrofit2/RequestBuilder;->hasBody:Z</span>
 <span class="missed">	if-eqz p4, :cond_0</span>
+<span class="missed">	iget-object p1, p0, Lretrofit2/RequestBuilder;->requestBuilder:Lokhttp3/Request$Builder;</span>
 <span class="missed">	invoke-virtual {p1, p4}, Lokhttp3/Request$Builder;->headers(Lokhttp3/Headers;)Lokhttp3/Request$Builder;</span>
 <span class="">	:cond_0</span>
 <span class="missed">	if-eqz p7, :cond_1</span>
@@ -122,6 +123,7 @@ Lretrofit2/RequestBuilder$ContentTypeOverridingRequestBody;
 <span class="missed">	new-instance p1, Lokhttp3/MultipartBody$Builder;</span>
 <span class="missed">	invoke-direct {p1}, Lokhttp3/MultipartBody$Builder;-><init>()V</span>
 <span class="missed">	iput-object p1, p0, Lretrofit2/RequestBuilder;->multipartBuilder:Lokhttp3/MultipartBody$Builder;</span>
+<span class="missed">	iget-object p1, p0, Lretrofit2/RequestBuilder;->multipartBuilder:Lokhttp3/MultipartBody$Builder;</span>
 <span class="missed">	sget-object p2, Lokhttp3/MultipartBody;->FORM:Lokhttp3/MediaType;</span>
 <span class="missed">	invoke-virtual {p1, p2}, Lokhttp3/MultipartBody$Builder;->setType(Lokhttp3/MediaType;)Lokhttp3/MultipartBody$Builder;</span>
 <span class="">	:cond_2</span>
@@ -162,17 +164,17 @@ Lretrofit2/RequestBuilder$ContentTypeOverridingRequestBody;
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_1</span>
 <span class="">	:goto_1</span>
-<span class="missed">	new-instance v3, Lex;</span>
-<span class="missed">	invoke-direct {v3}, Lex;-><init>()V</span>
-<span class="missed">	invoke-virtual {v3, p0, v1, v2}, Lex;->a(Ljava/lang/String;II)Lex;</span>
-<span class="missed">	invoke-static {v3, p0, v2, v0, p1}, Lretrofit2/RequestBuilder;->canonicalizeForPath(Lex;Ljava/lang/String;IIZ)V</span>
-<span class="">	invoke-virtual {v3}, Lex;->u()Ljava/lang/String;</span>
+<span class="missed">	new-instance v3, Lys;</span>
+<span class="missed">	invoke-direct {v3}, Lys;-><init>()V</span>
+<span class="missed">	invoke-virtual {v3, p0, v1, v2}, Lys;->a(Ljava/lang/String;II)Lys;</span>
+<span class="missed">	invoke-static {v3, p0, v2, v0, p1}, Lretrofit2/RequestBuilder;->canonicalizeForPath(Lys;Ljava/lang/String;IIZ)V</span>
+<span class="">	invoke-virtual {v3}, Lys;->t()Ljava/lang/String;</span>
 <span class="missed">	move-result-object p0</span>
 <span class="">	:cond_2</span>
 <span class="">	return-object p0</span>
 .end method
 
-.method private static canonicalizeForPath(Lex;Ljava/lang/String;IIZ)V
+.method private static canonicalizeForPath(Lys;Ljava/lang/String;IIZ)V
 <span class="">	.locals 6</span>
 
 <span class="missed">	const/4 v0, 0x0</span>
@@ -207,32 +209,32 @@ Lretrofit2/RequestBuilder$ContentTypeOverridingRequestBody;
 <span class="missed">	if-ne v1, v3, :cond_1</span>
 <span class="">	goto :goto_1</span>
 <span class="">	:cond_1</span>
-<span class="missed">	invoke-virtual {p0, v1}, Lex;->c(I)Lex;</span>
+<span class="missed">	invoke-virtual {p0, v1}, Lys;->a(I)Lys;</span>
 <span class="">	goto :goto_3</span>
 <span class="">	:goto_1</span>
 <span class="">	:cond_2</span>
 <span class="missed">	if-nez v0, :cond_3</span>
-<span class="missed">	new-instance v0, Lex;</span>
-<span class="missed">	invoke-direct {v0}, Lex;-><init>()V</span>
+<span class="missed">	new-instance v0, Lys;</span>
+<span class="missed">	invoke-direct {v0}, Lys;-><init>()V</span>
 <span class="">	:cond_3</span>
-<span class="missed">	invoke-virtual {v0, v1}, Lex;->c(I)Lex;</span>
+<span class="missed">	invoke-virtual {v0, v1}, Lys;->a(I)Lys;</span>
 <span class="">	:goto_2</span>
-<span class="">	invoke-virtual {v0}, Lex;->m()Z</span>
+<span class="">	invoke-virtual {v0}, Lys;->g()Z</span>
 <span class="missed">	move-result v2</span>
 <span class="missed">	if-nez v2, :cond_4</span>
-<span class="">	invoke-virtual {v0}, Lex;->readByte()B</span>
+<span class="">	invoke-virtual {v0}, Lys;->k()B</span>
 <span class="missed">	move-result v2</span>
 <span class="missed">	and-int/lit16 v2, v2, 0xff</span>
-<span class="missed">	invoke-virtual {p0, v3}, Lex;->writeByte(I)Lex;</span>
+<span class="missed">	invoke-virtual {p0, v3}, Lys;->b(I)Lys;</span>
 <span class="missed">	sget-object v4, Lretrofit2/RequestBuilder;->HEX_DIGITS:[C</span>
 <span class="missed">	shr-int/lit8 v5, v2, 0x4</span>
 <span class="missed">	and-int/lit8 v5, v5, 0xf</span>
 <span class="missed">	aget-char v4, v4, v5</span>
-<span class="missed">	invoke-virtual {p0, v4}, Lex;->writeByte(I)Lex;</span>
+<span class="missed">	invoke-virtual {p0, v4}, Lys;->b(I)Lys;</span>
 <span class="missed">	sget-object v4, Lretrofit2/RequestBuilder;->HEX_DIGITS:[C</span>
 <span class="missed">	and-int/lit8 v2, v2, 0xf</span>
 <span class="missed">	aget-char v2, v4, v2</span>
-<span class="missed">	invoke-virtual {p0, v2}, Lex;->writeByte(I)Lex;</span>
+<span class="missed">	invoke-virtual {p0, v2}, Lys;->b(I)Lys;</span>
 <span class="">	goto :goto_2</span>
 <span class="">	:goto_3</span>
 <span class="">	:cond_4</span>
@@ -343,6 +345,7 @@ Lretrofit2/RequestBuilder$ContentTypeOverridingRequestBody;
 <span class="">	invoke-virtual {v1, v0}, Lokhttp3/HttpUrl;->newBuilder(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="missed">	iput-object v0, p0, Lretrofit2/RequestBuilder;->urlBuilder:Lokhttp3/HttpUrl$Builder;</span>
+<span class="missed">	iget-object v0, p0, Lretrofit2/RequestBuilder;->urlBuilder:Lokhttp3/HttpUrl$Builder;</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	const/4 v0, 0x0</span>
 <span class="missed">	iput-object v0, p0, Lretrofit2/RequestBuilder;->relativeUrl:Ljava/lang/String;</span>

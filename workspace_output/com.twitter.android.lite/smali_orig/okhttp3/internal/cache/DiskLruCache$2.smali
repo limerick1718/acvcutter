@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lokhttp3/internal/cache/DiskLruCache;->newJournalWriter()Lfx;
+    value = Lokhttp3/internal/cache/DiskLruCache;->newJournalWriter()Lyt;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,19 +26,19 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1
+    .line 313
     const-class v0, Lokhttp3/internal/cache/DiskLruCache;
 
     return-void
 .end method
 
-.method constructor <init>(Lokhttp3/internal/cache/DiskLruCache;Lvx;)V
+.method constructor <init>(Lokhttp3/internal/cache/DiskLruCache;Lzj;)V
     .locals 0
 
-    .line 1
+    .line 313
     iput-object p1, p0, Lokhttp3/internal/cache/DiskLruCache$2;->this$0:Lokhttp3/internal/cache/DiskLruCache;
 
-    invoke-direct {p0, p2}, Lokhttp3/internal/cache/FaultHidingSink;-><init>(Lvx;)V
+    invoke-direct {p0, p2}, Lokhttp3/internal/cache/FaultHidingSink;-><init>(Lzj;)V
 
     return-void
 .end method
@@ -48,7 +48,7 @@
 .method protected onException(Ljava/io/IOException;)V
     .locals 1
 
-    .line 1
+    .line 316
     iget-object p1, p0, Lokhttp3/internal/cache/DiskLruCache$2;->this$0:Lokhttp3/internal/cache/DiskLruCache;
 
     const/4 v0, 0x1

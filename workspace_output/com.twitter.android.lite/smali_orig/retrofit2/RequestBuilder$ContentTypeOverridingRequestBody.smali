@@ -24,13 +24,13 @@
 .method constructor <init>(Lokhttp3/RequestBody;Lokhttp3/MediaType;)V
     .locals 0
 
-    .line 1
+    .line 236
     invoke-direct {p0}, Lokhttp3/RequestBody;-><init>()V
 
-    .line 2
+    .line 237
     iput-object p1, p0, Lretrofit2/RequestBuilder$ContentTypeOverridingRequestBody;->delegate:Lokhttp3/RequestBody;
 
-    .line 3
+    .line 238
     iput-object p2, p0, Lretrofit2/RequestBuilder$ContentTypeOverridingRequestBody;->contentType:Lokhttp3/MediaType;
 
     return-void
@@ -46,7 +46,7 @@
         }
     .end annotation
 
-    .line 1
+    .line 246
     iget-object v0, p0, Lretrofit2/RequestBuilder$ContentTypeOverridingRequestBody;->delegate:Lokhttp3/RequestBody;
 
     invoke-virtual {v0}, Lokhttp3/RequestBody;->contentLength()J
@@ -59,13 +59,13 @@
 .method public contentType()Lokhttp3/MediaType;
     .locals 1
 
-    .line 1
+    .line 242
     iget-object v0, p0, Lretrofit2/RequestBuilder$ContentTypeOverridingRequestBody;->contentType:Lokhttp3/MediaType;
 
     return-object v0
 .end method
 
-.method public writeTo(Lfx;)V
+.method public writeTo(Lyt;)V
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -73,10 +73,10 @@
         }
     .end annotation
 
-    .line 1
+    .line 250
     iget-object v0, p0, Lretrofit2/RequestBuilder$ContentTypeOverridingRequestBody;->delegate:Lokhttp3/RequestBody;
 
-    invoke-virtual {v0, p1}, Lokhttp3/RequestBody;->writeTo(Lfx;)V
+    invoke-virtual {v0, p1}, Lokhttp3/RequestBody;->writeTo(Lyt;)V
 
     return-void
 .end method

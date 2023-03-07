@@ -22,6 +22,7 @@
 .field private static final a:Ljava/lang/Object;
 .field private static b:Ljava/lang/reflect/Field;
 .field private static c:Z
+.field private static final d:Ljava/lang/Object;
 
 
 .method static constructor &lt;clinit&gt;()V
@@ -30,17 +31,20 @@
 <span class="missed">	new-instance v0, Ljava/lang/Object;</span>
 <span class="missed">	invoke-direct {v0}, Ljava/lang/Object;-><init>()V</span>
 <span class="missed">	sput-object v0, Landroidx/core/app/h;->a:Ljava/lang/Object;</span>
+<span class="missed">	new-instance v0, Ljava/lang/Object;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	sput-object v0, Landroidx/core/app/h;->d:Ljava/lang/Object;</span>
 <span class="">	return-void</span>
 .end method
 
 .method public static a(Landroid/app/Notification$Builder;Landroidx/core/app/f$a;)Landroid/os/Bundle;
 <span class="">	.locals 3</span>
 
-<span class="">	invoke-virtual {p1}, Landroidx/core/app/f$a;->e()I</span>
+<span class="">	invoke-virtual {p1}, Landroidx/core/app/f$a;->a()I</span>
 <span class="missed">	move-result v0</span>
-<span class="">	invoke-virtual {p1}, Landroidx/core/app/f$a;->i()Ljava/lang/CharSequence;</span>
+<span class="">	invoke-virtual {p1}, Landroidx/core/app/f$a;->b()Ljava/lang/CharSequence;</span>
 <span class="missed">	move-result-object v1</span>
-<span class="">	invoke-virtual {p1}, Landroidx/core/app/f$a;->a()Landroid/app/PendingIntent;</span>
+<span class="">	invoke-virtual {p1}, Landroidx/core/app/f$a;->c()Landroid/app/PendingIntent;</span>
 <span class="missed">	move-result-object v2</span>
 <span class="missed">	invoke-virtual {p0, v0, v1, v2}, Landroid/app/Notification$Builder;->addAction(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;</span>
 <span class="missed">	new-instance p0, Landroid/os/Bundle;</span>
@@ -57,17 +61,17 @@
 <span class="missed">	const-string v1, "android.support.remoteInputs"</span>
 <span class="missed">	invoke-virtual {p0, v1, v0}, Landroid/os/Bundle;->putParcelableArray(Ljava/lang/String;[Landroid/os/Parcelable;)V</span>
 <span class="">	:cond_0</span>
-<span class="">	invoke-virtual {p1}, Landroidx/core/app/f$a;->c()[Landroidx/core/app/j;</span>
+<span class="">	invoke-virtual {p1}, Landroidx/core/app/f$a;->h()[Landroidx/core/app/j;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="missed">	if-eqz v0, :cond_1</span>
-<span class="">	invoke-virtual {p1}, Landroidx/core/app/f$a;->c()[Landroidx/core/app/j;</span>
+<span class="">	invoke-virtual {p1}, Landroidx/core/app/f$a;->h()[Landroidx/core/app/j;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="">	invoke-static {v0}, Landroidx/core/app/h;->a([Landroidx/core/app/j;)[Landroid/os/Bundle;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="missed">	const-string v1, "android.support.dataRemoteInputs"</span>
 <span class="missed">	invoke-virtual {p0, v1, v0}, Landroid/os/Bundle;->putParcelableArray(Ljava/lang/String;[Landroid/os/Parcelable;)V</span>
 <span class="">	:cond_1</span>
-<span class="">	invoke-virtual {p1}, Landroidx/core/app/f$a;->b()Z</span>
+<span class="">	invoke-virtual {p1}, Landroidx/core/app/f$a;->e()Z</span>
 <span class="missed">	move-result p1</span>
 <span class="missed">	const-string v0, "android.support.allowGeneratedReplies"</span>
 <span class="missed">	invoke-virtual {p0, v0, p1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V</span>
@@ -165,15 +169,15 @@
 
 <span class="missed">	new-instance v0, Landroid/os/Bundle;</span>
 <span class="missed">	invoke-direct {v0}, Landroid/os/Bundle;-><init>()V</span>
-<span class="">	invoke-virtual {p0}, Landroidx/core/app/f$a;->e()I</span>
+<span class="">	invoke-virtual {p0}, Landroidx/core/app/f$a;->a()I</span>
 <span class="missed">	move-result v1</span>
 <span class="missed">	const-string v2, "icon"</span>
 <span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V</span>
-<span class="">	invoke-virtual {p0}, Landroidx/core/app/f$a;->i()Ljava/lang/CharSequence;</span>
+<span class="">	invoke-virtual {p0}, Landroidx/core/app/f$a;->b()Ljava/lang/CharSequence;</span>
 <span class="missed">	move-result-object v1</span>
 <span class="missed">	const-string v2, "title"</span>
 <span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V</span>
-<span class="">	invoke-virtual {p0}, Landroidx/core/app/f$a;->a()Landroid/app/PendingIntent;</span>
+<span class="">	invoke-virtual {p0}, Landroidx/core/app/f$a;->c()Landroid/app/PendingIntent;</span>
 <span class="missed">	move-result-object v1</span>
 <span class="missed">	const-string v2, "actionIntent"</span>
 <span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V</span>
@@ -189,7 +193,7 @@
 <span class="missed">	new-instance v1, Landroid/os/Bundle;</span>
 <span class="missed">	invoke-direct {v1}, Landroid/os/Bundle;-><init>()V</span>
 <span class="">	:goto_0</span>
-<span class="">	invoke-virtual {p0}, Landroidx/core/app/f$a;->b()Z</span>
+<span class="">	invoke-virtual {p0}, Landroidx/core/app/f$a;->e()Z</span>
 <span class="missed">	move-result v2</span>
 <span class="missed">	const-string v3, "android.support.allowGeneratedReplies"</span>
 <span class="missed">	invoke-virtual {v1, v3, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V</span>
@@ -201,7 +205,7 @@
 <span class="missed">	move-result-object v1</span>
 <span class="missed">	const-string v2, "remoteInputs"</span>
 <span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putParcelableArray(Ljava/lang/String;[Landroid/os/Parcelable;)V</span>
-<span class="">	invoke-virtual {p0}, Landroidx/core/app/f$a;->h()Z</span>
+<span class="">	invoke-virtual {p0}, Landroidx/core/app/f$a;->i()Z</span>
 <span class="missed">	move-result v1</span>
 <span class="missed">	const-string v2, "showsUserInterface"</span>
 <span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V</span>
@@ -213,13 +217,56 @@
 .end method
 
 .method private static a(Landroidx/core/app/j;)Landroid/os/Bundle;
-<span class="">	.locals 1</span>
+<span class="">	.locals 3</span>
 
 <span class="missed">	new-instance v0, Landroid/os/Bundle;</span>
 <span class="missed">	invoke-direct {v0}, Landroid/os/Bundle;-><init>()V</span>
-<span class="missed">	invoke-virtual {p0}, Landroidx/core/app/j;->a()Ljava/lang/String;</span>
-<span class="missed">	const/4 p0, 0x0</span>
-<span class="">	throw p0</span>
+<span class="">	invoke-virtual {p0}, Landroidx/core/app/j;->a()Ljava/lang/String;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "resultKey"</span>
+<span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V</span>
+<span class="">	invoke-virtual {p0}, Landroidx/core/app/j;->b()Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "label"</span>
+<span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V</span>
+<span class="">	invoke-virtual {p0}, Landroidx/core/app/j;->c()[Ljava/lang/CharSequence;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "choices"</span>
+<span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putCharSequenceArray(Ljava/lang/String;[Ljava/lang/CharSequence;)V</span>
+<span class="">	invoke-virtual {p0}, Landroidx/core/app/j;->e()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const-string v2, "allowFreeFormInput"</span>
+<span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V</span>
+<span class="">	invoke-virtual {p0}, Landroidx/core/app/j;->f()Landroid/os/Bundle;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const-string v2, "extras"</span>
+<span class="missed">	invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V</span>
+<span class="">	invoke-virtual {p0}, Landroidx/core/app/j;->d()Ljava/util/Set;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="missed">	if-eqz p0, :cond_1</span>
+<span class="">	invoke-interface {p0}, Ljava/util/Set;->isEmpty()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_1</span>
+<span class="missed">	new-instance v1, Ljava/util/ArrayList;</span>
+<span class="">	invoke-interface {p0}, Ljava/util/Set;->size()I</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V</span>
+<span class="">	invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v2</span>
+<span class="missed">	if-eqz v2, :cond_0</span>
+<span class="">	invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Ljava/lang/String;</span>
+<span class="missed">	invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const-string p0, "allowedDataTypes"</span>
+<span class="missed">	invoke-virtual {v0, p0, v1}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V</span>
+<span class="">	:cond_1</span>
+<span class="">	return-object v0</span>
 .end method
 
 .method public static a(Ljava/util/List;)Landroid/util/SparseArray;
@@ -259,22 +306,26 @@
 .end method
 
 .method private static a([Landroidx/core/app/j;)[Landroid/os/Bundle;
-<span class="">	.locals 4</span>
+<span class="">	.locals 3</span>
 
-<span class="missed">	const/4 v0, 0x0</span>
 <span class="missed">	if-nez p0, :cond_0</span>
-<span class="">	return-object v0</span>
+<span class="missed">	const/4 p0, 0x0</span>
+<span class="">	return-object p0</span>
 <span class="">	:cond_0</span>
-<span class="missed">	array-length v1, p0</span>
-<span class="missed">	new-array v1, v1, [Landroid/os/Bundle;</span>
-<span class="missed">	const/4 v2, 0x0</span>
-<span class="missed">	array-length v3, p0</span>
-<span class="missed">	if-gtz v3, :cond_1</span>
-<span class="">	return-object v1</span>
+<span class="missed">	array-length v0, p0</span>
+<span class="missed">	new-array v0, v0, [Landroid/os/Bundle;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	array-length v2, p0</span>
+<span class="missed">	if-ge v1, v2, :cond_1</span>
+<span class="missed">	aget-object v2, p0, v1</span>
+<span class="">	invoke-static {v2}, Landroidx/core/app/h;->a(Landroidx/core/app/j;)Landroid/os/Bundle;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	aput-object v2, v0, v1</span>
+<span class="missed">	add-int/lit8 v1, v1, 0x1</span>
+<span class="">	goto :goto_0</span>
 <span class="">	:cond_1</span>
-<span class="missed">	aget-object p0, p0, v2</span>
-<span class="missed">	invoke-static {p0}, Landroidx/core/app/h;->a(Landroidx/core/app/j;)Landroid/os/Bundle;</span>
-<span class="">	throw v0</span>
+<span class="">	return-object v0</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

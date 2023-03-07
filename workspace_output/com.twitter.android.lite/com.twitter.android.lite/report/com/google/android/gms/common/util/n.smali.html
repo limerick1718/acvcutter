@@ -14,36 +14,57 @@
     </ul>
     <p class="left-margin">granularity level: instruction</p>
 	<pre class="source lang-smali" id='source'>
-		<code>.class public Lcom/google/android/gms/common/util/n;
+		<code>.class public final Lcom/google/android/gms/common/util/n;
 .super Ljava/lang/Object;
 
 
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
-<span class="">	.locals 1</span>
+.method public static a(Landroid/content/Context;I)Z
+<span class="">	.locals 3</span>
 
-<span class="cov">	const-string v0, "\\$\\{(.*?)\\}"</span>
-<span class="cov">	invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	const-string v0, "com.google.android.gms"</span>
+<span class="">	invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/util/n;->a(Landroid/content/Context;ILjava/lang/String;)Z</span>
+<span class="missed">	move-result p1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	if-nez p1, :cond_0</span>
+<span class="">	return v1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="missed">	const/16 v2, 0x40</span>
+<span class="">	:try_start_0</span>
+<span class="">	invoke-virtual {p1, v0, v2}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;</span>
+<span class="missed">	move-result-object p1</span>
+<span class="">	:try_end_0</span>
+<span class="missed">	.catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0</span>
+<span class="">	invoke-static {p0}, Lcom/google/android/gms/common/j;->a(Landroid/content/Context;)Lcom/google/android/gms/common/j;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-virtual {p0, p1}, Lcom/google/android/gms/common/j;->a(Landroid/content/pm/PackageInfo;)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="">	return p0</span>
+<span class="">	:catch_0</span>
+<span class="missed">	const/4 p0, 0x3</span>
+<span class="missed">	const-string p1, "UidVerifier"</span>
+<span class="">	invoke-static {p1, p0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z</span>
+<span class="missed">	move-result p0</span>
+<span class="missed">	if-eqz p0, :cond_1</span>
+<span class="missed">	const-string p0, "Package manager can\'t find google play services package, defaulting to false"</span>
+<span class="missed">	invoke-static {p1, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I</span>
+<span class="">	:cond_1</span>
+<span class="">	return v1</span>
 .end method
 
-<span class="cov">.method public static a(Ljava/lang/String;)Z</span>
+.method public static a(Landroid/content/Context;ILjava/lang/String;)Z
 <span class="">	.locals 0</span>
+<span class="">	.annotation build Landroid/annotation/TargetApi;</span>
+<span class="">	value = 0x13</span>
+<span class="">	.end annotation</span>
 
-<span class="cov">	if-eqz p0, :cond_1</span>
-<span class="exec">	invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;</span>
-<span class="cov">	move-result-object p0</span>
-<span class="exec">	invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z</span>
-<span class="cov">	move-result p0</span>
-<span class="missed">	if-eqz p0, :cond_0</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 p0, 0x0</span>
-<span class="exec">	return p0</span>
-<span class="">	:cond_1</span>
-<span class="">	:goto_0</span>
-<span class="missed">	const/4 p0, 0x1</span>
+<span class="">	invoke-static {p0}, Lbj;->a(Landroid/content/Context;)Lbi;</span>
+<span class="missed">	move-result-object p0</span>
+<span class="">	invoke-virtual {p0, p1, p2}, Lbi;->a(ILjava/lang/String;)Z</span>
+<span class="missed">	move-result p0</span>
 <span class="">	return p0</span>
 .end method</code>
 	</pre>
