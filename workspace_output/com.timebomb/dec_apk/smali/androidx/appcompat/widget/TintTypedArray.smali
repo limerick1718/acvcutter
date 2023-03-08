@@ -59,50 +59,27 @@ return v0
 .end method
 .method public getChangingConfigurations()I
 .locals 1
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-invoke-virtual {v0}, Landroid/content/res/TypedArray;->getChangingConfigurations()I
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public getColor(II)I
 .locals 1
 .param p1, "index"    # I
 .param p2, "defValue"    # I
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-invoke-virtual {v0, p1, p2}, Landroid/content/res/TypedArray;->getColor(II)I
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public getColorStateList(I)Landroid/content/res/ColorStateList;
 .locals 2
 .param p1, "index"    # I
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
-move-result v0
-if-eqz v0, :cond_0
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-const/4 v1, 0x0
-invoke-virtual {v0, p1, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
-move-result v0
-if-eqz v0, :cond_0
-iget-object v1, p0, Landroidx/appcompat/widget/TintTypedArray;->mContext:Landroid/content/Context;
-invoke-static {v1, v0}, Landroidx/appcompat/content/res/AppCompatResources;->getColorStateList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
-move-result-object v1
-if-eqz v1, :cond_0
-return-object v1
-:cond_0
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getDimension(IF)F
 .locals 1
 .param p1, "index"    # I
 .param p2, "defValue"    # F
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-invoke-virtual {v0, p1, p2}, Landroid/content/res/TypedArray;->getDimension(IF)F
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public getDimensionPixelOffset(II)I
@@ -151,12 +128,10 @@ return-object v0
 iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
 invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 move-result v0
-if-eqz v0, :cond_0
 iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
 const/4 v1, 0x0
 invoke-virtual {v0, p1, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 move-result v0
-if-eqz v0, :cond_0
 invoke-static {}, Landroidx/appcompat/widget/AppCompatDrawableManager;->get()Landroidx/appcompat/widget/AppCompatDrawableManager;
 move-result-object v1
 iget-object v2, p0, Landroidx/appcompat/widget/TintTypedArray;->mContext:Landroid/content/Context;
@@ -164,9 +139,6 @@ const/4 v3, 0x1
 invoke-virtual {v1, v2, v0, v3}, Landroidx/appcompat/widget/AppCompatDrawableManager;->getDrawable(Landroid/content/Context;IZ)Landroid/graphics/drawable/Drawable;
 move-result-object v1
 return-object v1
-:cond_0
-const/4 v0, 0x0
-return-object v0
 .end method
 .method public getFloat(IF)F
 .locals 1
@@ -186,10 +158,6 @@ iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroi
 const/4 v1, 0x0
 invoke-virtual {v0, p1, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 move-result v0
-if-nez v0, :cond_0
-const/4 v1, 0x0
-return-object v1
-:cond_0
 iget-object v1, p0, Landroidx/appcompat/widget/TintTypedArray;->mTypedValue:Landroid/util/TypedValue;
 if-nez v1, :cond_1
 new-instance v1, Landroid/util/TypedValue;
@@ -208,24 +176,18 @@ return-object v1
 .param p2, "base"    # I
 .param p3, "pbase"    # I
 .param p4, "defValue"    # F
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-invoke-virtual {v0, p1, p2, p3, p4}, Landroid/content/res/TypedArray;->getFraction(IIIF)F
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public getIndex(I)I
 .locals 1
 .param p1, "at"    # I
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->getIndex(I)I
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public getIndexCount()I
 .locals 1
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-invoke-virtual {v0}, Landroid/content/res/TypedArray;->getIndexCount()I
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public getInt(II)I
@@ -259,24 +221,18 @@ return v0
 .locals 1
 .param p1, "index"    # I
 .param p2, "name"    # Ljava/lang/String;
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-invoke-virtual {v0, p1, p2}, Landroid/content/res/TypedArray;->getLayoutDimension(ILjava/lang/String;)I
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public getNonResourceString(I)Ljava/lang/String;
 .locals 1
 .param p1, "index"    # I
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->getNonResourceString(I)Ljava/lang/String;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getPositionDescription()Ljava/lang/String;
 .locals 1
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-invoke-virtual {v0}, Landroid/content/res/TypedArray;->getPositionDescription()Ljava/lang/String;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getResourceId(II)I
@@ -290,9 +246,7 @@ return v0
 .end method
 .method public getResources()Landroid/content/res/Resources;
 .locals 1
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-invoke-virtual {v0}, Landroid/content/res/TypedArray;->getResources()Landroid/content/res/Resources;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getString(I)Ljava/lang/String;
@@ -314,42 +268,20 @@ return-object v0
 .method public getTextArray(I)[Ljava/lang/CharSequence;
 .locals 1
 .param p1, "index"    # I
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->getTextArray(I)[Ljava/lang/CharSequence;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getType(I)I
 .locals 2
 .param p1, "index"    # I
-sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-const/16 v1, 0x15
-if-lt v0, v1, :cond_0
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->getType(I)I
-move-result v0
-return v0
-:cond_0
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mTypedValue:Landroid/util/TypedValue;
-if-nez v0, :cond_1
-new-instance v0, Landroid/util/TypedValue;
-invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
-iput-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mTypedValue:Landroid/util/TypedValue;
-:cond_1
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-iget-object v1, p0, Landroidx/appcompat/widget/TintTypedArray;->mTypedValue:Landroid/util/TypedValue;
-invoke-virtual {v0, p1, v1}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mTypedValue:Landroid/util/TypedValue;
-iget v0, v0, Landroid/util/TypedValue;->type:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public getValue(ILandroid/util/TypedValue;)Z
 .locals 1
 .param p1, "index"    # I
 .param p2, "outValue"    # Landroid/util/TypedValue;
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-invoke-virtual {v0, p1, p2}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public hasValue(I)Z
@@ -362,17 +294,13 @@ return v0
 .end method
 .method public length()I
 .locals 1
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-invoke-virtual {v0}, Landroid/content/res/TypedArray;->length()I
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public peekValue(I)Landroid/util/TypedValue;
 .locals 1
 .param p1, "index"    # I
-iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
-invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public recycle()V

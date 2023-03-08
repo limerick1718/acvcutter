@@ -14,8 +14,6 @@ name = "TypefaceResult"
 .locals 0
 .param p1, "typeface"    # Landroid/graphics/Typeface;
 .param p2, "result"    # I
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Landroidx/core/provider/FontsContractCompat$TypefaceResult;->mTypeface:Landroid/graphics/Typeface;
-iput p2, p0, Landroidx/core/provider/FontsContractCompat$TypefaceResult;->mResult:I
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

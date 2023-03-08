@@ -729,21 +729,21 @@ value = {
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public collapseActionView()Z</span>
+.method public collapseActionView()Z
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/app/WindowDecorActionBar;->mDecorToolbar:Landroidx/appcompat/widget/DecorToolbar;</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="exec">	invoke-interface {v0}, Landroidx/appcompat/widget/DecorToolbar;->hasExpandedActionView()Z</span>
-<span class="cov">	move-result v0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/WindowDecorActionBar;->mDecorToolbar:Landroidx/appcompat/widget/DecorToolbar;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-interface {v0}, Landroidx/appcompat/widget/DecorToolbar;->hasExpandedActionView()Z</span>
+<span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/WindowDecorActionBar;->mDecorToolbar:Landroidx/appcompat/widget/DecorToolbar;</span>
 <span class="missed">	invoke-interface {v0}, Landroidx/appcompat/widget/DecorToolbar;->collapseActionView()V</span>
 <span class="missed">	const/4 v0, 0x1</span>
 <span class="">	return v0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="exec">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
 .end method
 
 .method  completeDeferredDestroyActionMode()V

@@ -19,29 +19,26 @@ value = {
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public a(Landroid/os/Parcel;)Lc;
 .locals 1
-new-instance v0, Lc;
-invoke-direct {v0, p1}, Lc;-><init>(Landroid/os/Parcel;)V
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public a(I)[Lc;
 .locals 0
-new-array p1, p1, [Lc;
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 .locals 0
-invoke-virtual {p0, p1}, Lc$1;->a(Landroid/os/Parcel;)Lc;
-move-result-object p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public synthetic newArray(I)[Ljava/lang/Object;
 .locals 0
-invoke-virtual {p0, p1}, Lc$1;->a(I)[Lc;
-move-result-object p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method

@@ -23,7 +23,7 @@ Landroidx/core/provider/FontsContractCompat$FontRequestCallback$FontRequestFailR
 .field public static final RESULT_OK:I
 .method public constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onTypefaceRequestFailed(I)V

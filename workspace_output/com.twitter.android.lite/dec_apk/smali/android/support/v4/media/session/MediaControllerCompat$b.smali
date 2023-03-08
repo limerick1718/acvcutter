@@ -15,11 +15,6 @@ name = "b"
 .field private final e:I
 .method constructor <init>(IIIII)V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput p1, p0, Landroid/support/v4/media/session/MediaControllerCompat$b;->a:I
-iput p2, p0, Landroid/support/v4/media/session/MediaControllerCompat$b;->b:I
-iput p3, p0, Landroid/support/v4/media/session/MediaControllerCompat$b;->c:I
-iput p4, p0, Landroid/support/v4/media/session/MediaControllerCompat$b;->d:I
-iput p5, p0, Landroid/support/v4/media/session/MediaControllerCompat$b;->e:I
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

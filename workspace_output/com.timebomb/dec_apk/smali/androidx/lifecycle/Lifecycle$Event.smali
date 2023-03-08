@@ -89,15 +89,6 @@ value = {
 invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 return-void
 .end method
-.method public static valueOf(Ljava/lang/String;)Landroidx/lifecycle/Lifecycle$Event;
-.locals 1
-.param p0, "name"    # Ljava/lang/String;
-const-class v0, Landroidx/lifecycle/Lifecycle$Event;
-invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-move-result-object v0
-check-cast v0, Landroidx/lifecycle/Lifecycle$Event;
-return-object v0
-.end method
 .method public static values()[Landroidx/lifecycle/Lifecycle$Event;
 .locals 1
 sget-object v0, Landroidx/lifecycle/Lifecycle$Event;->$VALUES:[Landroidx/lifecycle/Lifecycle$Event;

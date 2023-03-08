@@ -15,18 +15,7 @@ value = {
 .field final validator:Lcom/crashlytics/android/answers/AnswersEventValidator;
 .method public constructor <init>()V
 .locals 4
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-new-instance v0, Lcom/crashlytics/android/answers/AnswersEventValidator;
-invoke-static {}, Luq;->h()Z
-move-result v1
-const/16 v2, 0x14
-const/16 v3, 0x64
-invoke-direct {v0, v2, v3, v1}, Lcom/crashlytics/android/answers/AnswersEventValidator;-><init>(IIZ)V
-iput-object v0, p0, Lcom/crashlytics/android/answers/AnswersEvent;->validator:Lcom/crashlytics/android/answers/AnswersEventValidator;
-new-instance v0, Lcom/crashlytics/android/answers/AnswersAttributes;
-iget-object v1, p0, Lcom/crashlytics/android/answers/AnswersEvent;->validator:Lcom/crashlytics/android/answers/AnswersEventValidator;
-invoke-direct {v0, v1}, Lcom/crashlytics/android/answers/AnswersAttributes;-><init>(Lcom/crashlytics/android/answers/AnswersEventValidator;)V
-iput-object v0, p0, Lcom/crashlytics/android/answers/AnswersEvent;->customAttributes:Lcom/crashlytics/android/answers/AnswersAttributes;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method  getCustomAttributes()Ljava/util/Map;
@@ -40,8 +29,7 @@ value = {
 ">;"
 }
 .end annotation
-iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersEvent;->customAttributes:Lcom/crashlytics/android/answers/AnswersAttributes;
-iget-object v0, v0, Lcom/crashlytics/android/answers/AnswersAttributes;->attributes:Ljava/util/Map;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public putCustomAttribute(Ljava/lang/String;Ljava/lang/Number;)Lcom/crashlytics/android/answers/AnswersEvent;
@@ -54,9 +42,8 @@ value = {
 ")TT;"
 }
 .end annotation
-iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersEvent;->customAttributes:Lcom/crashlytics/android/answers/AnswersAttributes;
-invoke-virtual {v0, p1, p2}, Lcom/crashlytics/android/answers/AnswersAttributes;->put(Ljava/lang/String;Ljava/lang/Number;)V
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public putCustomAttribute(Ljava/lang/String;Ljava/lang/String;)Lcom/crashlytics/android/answers/AnswersEvent;
 .locals 1
@@ -68,7 +55,6 @@ value = {
 ")TT;"
 }
 .end annotation
-iget-object v0, p0, Lcom/crashlytics/android/answers/AnswersEvent;->customAttributes:Lcom/crashlytics/android/answers/AnswersAttributes;
-invoke-virtual {v0, p1, p2}, Lcom/crashlytics/android/answers/AnswersAttributes;->put(Ljava/lang/String;Ljava/lang/String;)V
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method

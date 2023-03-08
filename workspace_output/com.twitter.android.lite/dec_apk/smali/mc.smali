@@ -13,21 +13,5 @@ return-void
 .end method
 .method public final declared-synchronized uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
 .locals 1
-monitor-enter p0
-:try_start_0
-iget-object p1, p0, Lmc;->b:Lma;
-invoke-virtual {p1}, Lnb;->r()Lla;
-move-result-object p1
-invoke-virtual {p1}, Lla;->c_()Llc;
-move-result-object p1
-iget-object v0, p0, Lmc;->a:Ljava/lang/String;
-invoke-virtual {p1, v0, p2}, Llc;->a(Ljava/lang/String;Ljava/lang/Object;)V
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_0
-monitor-exit p0
 return-void
-:catchall_0
-move-exception p1
-monitor-exit p0
-throw p1
 .end method

@@ -19,23 +19,18 @@ value = {
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public compare(Landroidx/viewpager/widget/ViewPager$ItemInfo;Landroidx/viewpager/widget/ViewPager$ItemInfo;)I
 .locals 2
 .param p1, "lhs"    # Landroidx/viewpager/widget/ViewPager$ItemInfo;
 .param p2, "rhs"    # Landroidx/viewpager/widget/ViewPager$ItemInfo;
-iget v0, p1, Landroidx/viewpager/widget/ViewPager$ItemInfo;->position:I
-iget v1, p2, Landroidx/viewpager/widget/ViewPager$ItemInfo;->position:I
-sub-int/2addr v0, v1
+const/4 v0, 0x0
 return v0
 .end method
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
 .locals 0
-check-cast p1, Landroidx/viewpager/widget/ViewPager$ItemInfo;
-check-cast p2, Landroidx/viewpager/widget/ViewPager$ItemInfo;
-invoke-virtual {p0, p1, p2}, Landroidx/viewpager/widget/ViewPager$1;->compare(Landroidx/viewpager/widget/ViewPager$ItemInfo;Landroidx/viewpager/widget/ViewPager$ItemInfo;)I
-move-result p1
-return p1
+const/4 v0, 0x0
+return v0
 .end method

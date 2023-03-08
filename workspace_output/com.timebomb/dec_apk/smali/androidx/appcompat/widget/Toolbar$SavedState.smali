@@ -29,27 +29,14 @@ return-void
 .method public constructor <init>(Landroid/os/Parcel;)V
 .locals 1
 .param p1, "source"    # Landroid/os/Parcel;
-const/4 v0, 0x0
-invoke-direct {p0, p1, v0}, Landroidx/appcompat/widget/Toolbar$SavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 .locals 1
 .param p1, "source"    # Landroid/os/Parcel;
 .param p2, "loader"    # Ljava/lang/ClassLoader;
-invoke-direct {p0, p1, p2}, Landroidx/customview/view/AbsSavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-move-result v0
-iput v0, p0, Landroidx/appcompat/widget/Toolbar$SavedState;->expandedMenuItemId:I
-invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-move-result v0
-if-eqz v0, :cond_0
-const/4 v0, 0x1
-goto :goto_0
-:cond_0
-const/4 v0, 0x0
-:goto_0
-iput-boolean v0, p0, Landroidx/appcompat/widget/Toolbar$SavedState;->isOverflowOpen:Z
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public constructor <init>(Landroid/os/Parcelable;)V

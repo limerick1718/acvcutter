@@ -19,43 +19,18 @@ value = {
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public compare(Landroidx/core/text/util/LinkifyCompat$LinkSpec;Landroidx/core/text/util/LinkifyCompat$LinkSpec;)I
 .locals 4
 .param p1, "a"    # Landroidx/core/text/util/LinkifyCompat$LinkSpec;
 .param p2, "b"    # Landroidx/core/text/util/LinkifyCompat$LinkSpec;
-iget v0, p1, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->start:I
-iget v1, p2, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->start:I
-const/4 v2, -0x1
-if-ge v0, v1, :cond_0
-return v2
-:cond_0
-iget v0, p1, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->start:I
-iget v1, p2, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->start:I
-const/4 v3, 0x1
-if-le v0, v1, :cond_1
-return v3
-:cond_1
-iget v0, p1, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->end:I
-iget v1, p2, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->end:I
-if-ge v0, v1, :cond_2
-return v3
-:cond_2
-iget v0, p1, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->end:I
-iget v1, p2, Landroidx/core/text/util/LinkifyCompat$LinkSpec;->end:I
-if-le v0, v1, :cond_3
-return v2
-:cond_3
 const/4 v0, 0x0
 return v0
 .end method
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
 .locals 0
-check-cast p1, Landroidx/core/text/util/LinkifyCompat$LinkSpec;
-check-cast p2, Landroidx/core/text/util/LinkifyCompat$LinkSpec;
-invoke-virtual {p0, p1, p2}, Landroidx/core/text/util/LinkifyCompat$1;->compare(Landroidx/core/text/util/LinkifyCompat$LinkSpec;Landroidx/core/text/util/LinkifyCompat$LinkSpec;)I
-move-result p1
-return p1
+const/4 v0, 0x0
+return v0
 .end method

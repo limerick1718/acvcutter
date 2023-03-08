@@ -19,29 +19,12 @@ Landroid/os/RemoteException;
 .end annotation
 invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 move-result-object v0
-:try_start_0
 iget-object v1, p0, Lbm;->a:Landroid/os/IBinder;
 const/4 v2, 0x0
 invoke-interface {v1, p1, p2, v0, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 invoke-virtual {v0}, Landroid/os/Parcel;->readException()V
-:try_end_0
-.catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_0
 invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
 return-object v0
-:catchall_0
-move-exception p1
-goto :goto_0
-:catch_0
-move-exception p1
-:try_start_1
-invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-throw p1
-:try_end_1
-.catchall {:try_start_1 .. :try_end_1} :catchall_0
-:goto_0
-invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
-throw p1
 .end method
 .method protected final a_()Landroid/os/Parcel;
 .locals 2
@@ -53,6 +36,6 @@ return-object v0
 .end method
 .method public asBinder()Landroid/os/IBinder;
 .locals 1
-iget-object v0, p0, Lbm;->a:Landroid/os/IBinder;
+const/4 v0, 0x0
 return-object v0
 .end method

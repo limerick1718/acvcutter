@@ -147,15 +147,6 @@ return-void
 sget-object v0, Landroid/os/Build;->CPU_ABI:Ljava/lang/String;
 invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 move-result v1
-if-eqz v1, :cond_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object v0
-const-string v1, "Fabric"
-const-string v2, "Architecture#getValue()::Build.CPU_ABI returned null or empty"
-invoke-interface {v0, v1, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-sget-object v0, Lvn$a;->h:Lvn$a;
-return-object v0
-:cond_0
 sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
 invoke-virtual {v0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 move-result-object v0
@@ -166,21 +157,5 @@ check-cast v0, Lvn$a;
 if-nez v0, :cond_1
 sget-object v0, Lvn$a;->h:Lvn$a;
 :cond_1
-return-object v0
-.end method
-.method public static valueOf(Ljava/lang/String;)Lvn$a;
-.locals 1
-const-class v0, Lvn$a;
-invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-move-result-object p0
-check-cast p0, Lvn$a;
-return-object p0
-.end method
-.method public static values()[Lvn$a;
-.locals 1
-sget-object v0, Lvn$a;->l:[Lvn$a;
-invoke-virtual {v0}, [Lvn$a;->clone()Ljava/lang/Object;
-move-result-object v0
-check-cast v0, [Lvn$a;
 return-object v0
 .end method

@@ -14,38 +14,26 @@ value = {
 .field static final TYPE:Ljava/lang/String; = "levelEnd"
 .method public constructor <init>()V
 .locals 0
-invoke-direct {p0}, Lcom/crashlytics/android/answers/PredefinedEvent;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method  getPredefinedType()Ljava/lang/String;
 .locals 1
-const-string v0, "levelEnd"
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public putLevelName(Ljava/lang/String;)Lcom/crashlytics/android/answers/LevelEndEvent;
 .locals 2
-iget-object v0, p0, Lcom/crashlytics/android/answers/LevelEndEvent;->predefinedAttributes:Lcom/crashlytics/android/answers/AnswersAttributes;
-const-string v1, "levelName"
-invoke-virtual {v0, v1, p1}, Lcom/crashlytics/android/answers/AnswersAttributes;->put(Ljava/lang/String;Ljava/lang/String;)V
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public putScore(Ljava/lang/Number;)Lcom/crashlytics/android/answers/LevelEndEvent;
 .locals 2
-iget-object v0, p0, Lcom/crashlytics/android/answers/LevelEndEvent;->predefinedAttributes:Lcom/crashlytics/android/answers/AnswersAttributes;
-const-string v1, "score"
-invoke-virtual {v0, v1, p1}, Lcom/crashlytics/android/answers/AnswersAttributes;->put(Ljava/lang/String;Ljava/lang/Number;)V
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public putSuccess(Z)Lcom/crashlytics/android/answers/LevelEndEvent;
 .locals 2
-iget-object v0, p0, Lcom/crashlytics/android/answers/LevelEndEvent;->predefinedAttributes:Lcom/crashlytics/android/answers/AnswersAttributes;
-if-eqz p1, :cond_0
-const-string p1, "true"
-goto :goto_0
-:cond_0
-const-string p1, "false"
-:goto_0
-const-string v1, "success"
-invoke-virtual {v0, v1, p1}, Lcom/crashlytics/android/answers/AnswersAttributes;->put(Ljava/lang/String;Ljava/lang/String;)V
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method

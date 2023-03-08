@@ -12,8 +12,6 @@ name = "a"
 .field final b:J
 .method public constructor <init>(Ljava/io/File;J)V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Lww$a;->a:Ljava/io/File;
-iput-wide p2, p0, Lww$a;->b:J
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

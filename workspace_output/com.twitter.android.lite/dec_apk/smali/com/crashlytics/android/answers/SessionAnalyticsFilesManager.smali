@@ -54,29 +54,16 @@ return-object v0
 .method protected getMaxByteSizePerFile()I
 .locals 1
 iget-object v0, p0, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->analyticsSettingsData:Lxs;
-if-nez v0, :cond_0
 invoke-super {p0}, Lww;->getMaxByteSizePerFile()I
 move-result v0
-goto :goto_0
-:cond_0
-iget v0, v0, Lxs;->c:I
-:goto_0
 return v0
 .end method
 .method protected getMaxFilesToKeep()I
 .locals 1
-iget-object v0, p0, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->analyticsSettingsData:Lxs;
-if-nez v0, :cond_0
-invoke-super {p0}, Lww;->getMaxFilesToKeep()I
-move-result v0
-goto :goto_0
-:cond_0
-iget v0, v0, Lxs;->e:I
-:goto_0
+const/4 v0, 0x0
 return v0
 .end method
 .method  setAnalyticsSettingsData(Lxs;)V
 .locals 0
-iput-object p1, p0, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->analyticsSettingsData:Lxs;
 return-void
 .end method

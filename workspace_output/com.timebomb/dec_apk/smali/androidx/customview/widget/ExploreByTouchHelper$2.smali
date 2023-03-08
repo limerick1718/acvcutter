@@ -22,7 +22,7 @@ value = {
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public get(Landroidx/collection/SparseArrayCompat;I)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
@@ -37,17 +37,13 @@ value = {
 "Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;"
 }
 .end annotation
-invoke-virtual {p1, p2}, Landroidx/collection/SparseArrayCompat;->valueAt(I)Ljava/lang/Object;
-move-result-object v0
-check-cast v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public bridge synthetic get(Ljava/lang/Object;I)Ljava/lang/Object;
 .locals 0
-check-cast p1, Landroidx/collection/SparseArrayCompat;
-invoke-virtual {p0, p1, p2}, Landroidx/customview/widget/ExploreByTouchHelper$2;->get(Landroidx/collection/SparseArrayCompat;I)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
-move-result-object p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public size(Landroidx/collection/SparseArrayCompat;)I
 .locals 1
@@ -59,14 +55,11 @@ value = {
 ">;)I"
 }
 .end annotation
-invoke-virtual {p1}, Landroidx/collection/SparseArrayCompat;->size()I
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public bridge synthetic size(Ljava/lang/Object;)I
 .locals 0
-check-cast p1, Landroidx/collection/SparseArrayCompat;
-invoke-virtual {p0, p1}, Landroidx/customview/widget/ExploreByTouchHelper$2;->size(Landroidx/collection/SparseArrayCompat;)I
-move-result p1
-return p1
+const/4 v0, 0x0
+return v0
 .end method

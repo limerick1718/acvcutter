@@ -60,15 +60,9 @@ return p1
 invoke-virtual {p0, p1}, Luw;->containsAnnotatedDependency(Luw;)Z
 move-result v0
 const/4 v1, 0x1
-if-eqz v0, :cond_0
-return v1
-:cond_0
 invoke-virtual {p1, p0}, Luw;->containsAnnotatedDependency(Luw;)Z
 move-result v0
 const/4 v2, -0x1
-if-eqz v0, :cond_1
-return v2
-:cond_1
 invoke-virtual {p0}, Luw;->hasAnnotatedDependency()Z
 move-result v0
 if-eqz v0, :cond_2
@@ -106,10 +100,6 @@ invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 move-result-object v5
 invoke-virtual {v4, v5}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 move-result v4
-if-eqz v4, :cond_0
-const/4 p1, 0x1
-return p1
-:cond_0
 add-int/lit8 v3, v3, 0x1
 goto :goto_0
 :cond_1
@@ -137,14 +127,12 @@ value = {
 ">;"
 }
 .end annotation
-iget-object v0, p0, Luw;->initializationTask:Luv;
-invoke-virtual {v0}, Luv;->getDependencies()Ljava/util/Collection;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getFabric()Luq;
 .locals 1
-iget-object v0, p0, Luw;->fabric:Luq;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method protected getIdManager()Lvx;

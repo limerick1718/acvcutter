@@ -13,9 +13,6 @@ return-void
 .end method
 .method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
 .locals 2
-iget-object v0, p0, Lokhttp3/internal/-$$Lambda$Util$h7t7benxn5wsEKvjxE9svqr_kuY;->f$0:Ljava/lang/String;
-iget-boolean v1, p0, Lokhttp3/internal/-$$Lambda$Util$h7t7benxn5wsEKvjxE9svqr_kuY;->f$1:Z
-invoke-static {v0, v1, p1}, Lokhttp3/internal/Util;->lambda$threadFactory$0(Ljava/lang/String;ZLjava/lang/Runnable;)Ljava/lang/Thread;
-move-result-object p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method

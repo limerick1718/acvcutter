@@ -33,7 +33,6 @@ return-wide v0
 .end method
 .method public c()J
 .locals 2
-invoke-static {}, Ljava/lang/System;->nanoTime()J
-move-result-wide v0
+const-wide v0, 0x0
 return-wide v0
 .end method

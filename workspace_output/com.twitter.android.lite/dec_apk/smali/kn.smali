@@ -28,10 +28,6 @@ move-result v2
 invoke-static {v2}, Lbb;->a(I)I
 move-result v3
 const/4 v4, 0x2
-if-eq v3, v4, :cond_0
-invoke-static {p1, v2}, Lbb;->b(Landroid/os/Parcel;I)V
-goto :goto_0
-:cond_0
 invoke-static {p1, v2}, Lbb;->k(Landroid/os/Parcel;I)Landroid/os/Bundle;
 move-result-object v1
 goto :goto_0
@@ -43,6 +39,6 @@ return-object p1
 .end method
 .method public final synthetic newArray(I)[Ljava/lang/Object;
 .locals 0
-new-array p1, p1, [Lkl;
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method

@@ -10,7 +10,7 @@ Landroidx/appcompat/view/ActionMode$Callback;
 .field private mTitleOptionalHint:Z
 .method public constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public abstract finish()V
@@ -25,14 +25,14 @@ return-void
 .end method
 .method public getTag()Ljava/lang/Object;
 .locals 1
-iget-object v0, p0, Landroidx/appcompat/view/ActionMode;->mTag:Ljava/lang/Object;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public abstract getTitle()Ljava/lang/CharSequence;
 .end method
 .method public getTitleOptionalHint()Z
 .locals 1
-iget-boolean v0, p0, Landroidx/appcompat/view/ActionMode;->mTitleOptionalHint:Z
+const/4 v0, 0x0
 return v0
 .end method
 .method public abstract invalidate()V
@@ -44,7 +44,7 @@ return v0
 .end method
 .method public isUiFocusable()Z
 .locals 1
-const/4 v0, 0x1
+const/4 v0, 0x0
 return v0
 .end method
 .method public abstract setCustomView(Landroid/view/View;)V
@@ -56,7 +56,6 @@ return v0
 .method public setTag(Ljava/lang/Object;)V
 .locals 0
 .param p1, "tag"    # Ljava/lang/Object;
-iput-object p1, p0, Landroidx/appcompat/view/ActionMode;->mTag:Ljava/lang/Object;
 return-void
 .end method
 .method public abstract setTitle(I)V
@@ -66,6 +65,5 @@ return-void
 .method public setTitleOptionalHint(Z)V
 .locals 0
 .param p1, "titleOptional"    # Z
-iput-boolean p1, p0, Landroidx/appcompat/view/ActionMode;->mTitleOptionalHint:Z
 return-void
 .end method

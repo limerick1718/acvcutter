@@ -38,14 +38,14 @@ name = "ActionMenuPresenterCallback"
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V</span>
+.method public onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V
 <span class="">	.locals 1</span>
 <span class="">	.param p1, "menu"    # Landroidx/appcompat/view/menu/MenuBuilder;</span>
 <span class="">	.param p2, "allMenusAreClosing"    # Z</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionMenuPresenterCallback;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;</span>
-<span class="cov">	invoke-virtual {v0, p1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->checkCloseActionMenu(Landroidx/appcompat/view/menu/MenuBuilder;)V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionMenuPresenterCallback;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;</span>
+<span class="missed">	invoke-virtual {v0, p1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->checkCloseActionMenu(Landroidx/appcompat/view/menu/MenuBuilder;)V</span>
+<span class="">	return-void</span>
 .end method
 
 .method public onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z

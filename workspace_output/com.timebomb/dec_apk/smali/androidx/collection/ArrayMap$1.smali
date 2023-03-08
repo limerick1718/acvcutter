@@ -18,25 +18,18 @@ value = {
 .method constructor <init>(Landroidx/collection/ArrayMap;)V
 .locals 0
 .param p1, "this$0"    # Landroidx/collection/ArrayMap;
-iput-object p1, p0, Landroidx/collection/ArrayMap$1;->this$0:Landroidx/collection/ArrayMap;
-invoke-direct {p0}, Landroidx/collection/MapCollections;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method protected colClear()V
 .locals 1
-iget-object v0, p0, Landroidx/collection/ArrayMap$1;->this$0:Landroidx/collection/ArrayMap;
-invoke-virtual {v0}, Landroidx/collection/ArrayMap;->clear()V
 return-void
 .end method
 .method protected colGetEntry(II)Ljava/lang/Object;
 .locals 2
 .param p1, "index"    # I
 .param p2, "offset"    # I
-iget-object v0, p0, Landroidx/collection/ArrayMap$1;->this$0:Landroidx/collection/ArrayMap;
-iget-object v0, v0, Landroidx/collection/ArrayMap;->mArray:[Ljava/lang/Object;
-shl-int/lit8 v1, p1, 0x1
-add-int/2addr v1, p2
-aget-object v0, v0, v1
+const/4 v0, 0x0
 return-object v0
 .end method
 .method protected colGetMap()Ljava/util/Map;
@@ -48,29 +41,24 @@ value = {
 "TK;TV;>;"
 }
 .end annotation
-iget-object v0, p0, Landroidx/collection/ArrayMap$1;->this$0:Landroidx/collection/ArrayMap;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method protected colGetSize()I
 .locals 1
-iget-object v0, p0, Landroidx/collection/ArrayMap$1;->this$0:Landroidx/collection/ArrayMap;
-iget v0, v0, Landroidx/collection/ArrayMap;->mSize:I
+const/4 v0, 0x0
 return v0
 .end method
 .method protected colIndexOfKey(Ljava/lang/Object;)I
 .locals 1
 .param p1, "key"    # Ljava/lang/Object;
-iget-object v0, p0, Landroidx/collection/ArrayMap$1;->this$0:Landroidx/collection/ArrayMap;
-invoke-virtual {v0, p1}, Landroidx/collection/ArrayMap;->indexOfKey(Ljava/lang/Object;)I
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method protected colIndexOfValue(Ljava/lang/Object;)I
 .locals 1
 .param p1, "value"    # Ljava/lang/Object;
-iget-object v0, p0, Landroidx/collection/ArrayMap$1;->this$0:Landroidx/collection/ArrayMap;
-invoke-virtual {v0, p1}, Landroidx/collection/ArrayMap;->indexOfValue(Ljava/lang/Object;)I
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method protected colPut(Ljava/lang/Object;Ljava/lang/Object;)V
@@ -80,15 +68,11 @@ value = {
 "(TK;TV;)V"
 }
 .end annotation
-iget-object v0, p0, Landroidx/collection/ArrayMap$1;->this$0:Landroidx/collection/ArrayMap;
-invoke-virtual {v0, p1, p2}, Landroidx/collection/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 return-void
 .end method
 .method protected colRemoveAt(I)V
 .locals 1
 .param p1, "index"    # I
-iget-object v0, p0, Landroidx/collection/ArrayMap$1;->this$0:Landroidx/collection/ArrayMap;
-invoke-virtual {v0, p1}, Landroidx/collection/ArrayMap;->removeAt(I)Ljava/lang/Object;
 return-void
 .end method
 .method protected colSetValue(ILjava/lang/Object;)Ljava/lang/Object;
@@ -99,8 +83,6 @@ value = {
 "(ITV;)TV;"
 }
 .end annotation
-iget-object v0, p0, Landroidx/collection/ArrayMap$1;->this$0:Landroidx/collection/ArrayMap;
-invoke-virtual {v0, p1, p2}, Landroidx/collection/ArrayMap;->setValueAt(ILjava/lang/Object;)Ljava/lang/Object;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method

@@ -16,14 +16,6 @@ value = {
 invoke-direct {p0}, Luw;-><init>()V
 return-void
 .end method
-.method public static getInstance()Lcom/crashlytics/android/beta/Beta;
-.locals 1
-const-class v0, Lcom/crashlytics/android/beta/Beta;
-invoke-static {v0}, Luq;->a(Ljava/lang/Class;)Luw;
-move-result-object v0
-check-cast v0, Lcom/crashlytics/android/beta/Beta;
-return-object v0
-.end method
 .method protected doInBackground()Ljava/lang/Boolean;
 .locals 3
 invoke-static {}, Luq;->g()Luz;
@@ -64,6 +56,6 @@ return-object v0
 .end method
 .method public getVersion()Ljava/lang/String;
 .locals 1
-const-string v0, "1.2.10.27"
+const/4 v0, 0x0
 return-object v0
 .end method

@@ -12,15 +12,12 @@ name = null
 .method constructor <init>(Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;)V
 .locals 0
 .param p1, "this$1"    # Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;
-iput-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager$1;->this$1:Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;
-invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
 .locals 1
 .param p1, "context"    # Landroid/content/Context;
 .param p2, "intent"    # Landroid/content/Intent;
-iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager$1;->this$1:Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;
-invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->dispatchTimeChanged()V
 return-void
 .end method

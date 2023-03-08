@@ -14,8 +14,6 @@ name = "FragmentLifecycleCallbacksHolder"
 .locals 0
 .param p1, "callback"    # Landroidx/fragment/app/FragmentManager$FragmentLifecycleCallbacks;
 .param p2, "recursive"    # Z
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Landroidx/fragment/app/FragmentManagerImpl$FragmentLifecycleCallbacksHolder;->mCallback:Landroidx/fragment/app/FragmentManager$FragmentLifecycleCallbacks;
-iput-boolean p2, p0, Landroidx/fragment/app/FragmentManagerImpl$FragmentLifecycleCallbacksHolder;->mRecursive:Z
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

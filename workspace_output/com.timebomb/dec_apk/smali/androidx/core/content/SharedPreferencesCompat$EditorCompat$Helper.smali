@@ -10,20 +10,11 @@ name = "Helper"
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public apply(Landroid/content/SharedPreferences$Editor;)V
 .locals 1
 .param p1, "editor"    # Landroid/content/SharedPreferences$Editor;
-:try_start_0
-invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
-:try_end_0
-.catch Ljava/lang/AbstractMethodError; {:try_start_0 .. :try_end_0} :catch_0
-goto :goto_0
-:catch_0
-move-exception v0
-invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->commit()Z
-:goto_0
 return-void
 .end method

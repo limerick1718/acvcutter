@@ -22,13 +22,30 @@ def remove_blocks_from_selected_method(smalitree):
                 #if not m.synchronized:
                 #if m.descriptor == "d(Landroid/content/Intent;)V":#"onStartCommand(Landroid/content/Intent;II)I":
                 #if m.synchronized:
-                remove_blocks(m)
+                # remove_blocks(m)
+                remove_blocks_original(m)
                 # if m.synchronized and not is_monitor_enter_covered(m):
                 #     remove_blocks(m)
                 #     m.tries = []
 
 
 def remove_blocks(method):
+    #if method.descriptor == "a(I[B)Z":
+    #  clean_tries(method)
+    # if method.synchronized:
+    #     remove_single_not_called_try(method)
+    #remove_not_called_tries(method)
+    # align_tries(method)
+    # select_covered_l_blocks(method)
+    remove_ifs(method)
+    # update_tries(method)
+    # remove_extra_tries(method)
+    #remove_catchs(method
+    remove_array_data(method)
+    merge_goto(method)
+    clean_switch(method)
+
+def remove_blocks_original(method):
     #if method.descriptor == "a(I[B)Z":
     #  clean_tries(method)
     if method.synchronized:

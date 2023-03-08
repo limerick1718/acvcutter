@@ -64,21 +64,12 @@ return-void
 iget-object p0, p0, Lrs;->b:Lrg;
 return-object p0
 .end method
-.method static synthetic b(Lrs;)Lsf;
-.locals 0
-iget-object p0, p0, Lrs;->c:Lsf;
-return-object p0
-.end method
 .method public final a()V
 .locals 1
-iget-object v0, p0, Lrs;->c:Lsf;
-invoke-virtual {v0}, Lsf;->f()Z
 return-void
 .end method
 .method public final a(Ljava/lang/Exception;)V
 .locals 1
-iget-object v0, p0, Lrs;->c:Lsf;
-invoke-virtual {v0, p1}, Lsf;->a(Ljava/lang/Exception;)V
 return-void
 .end method
 .method public final a(Ljava/lang/Object;)V

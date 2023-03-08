@@ -12,8 +12,7 @@ name = null
 .field final synthetic this$0:Lokhttp3/Cache;
 .method constructor <init>(Lokhttp3/Cache;)V
 .locals 0
-iput-object p1, p0, Lokhttp3/Cache$1;->this$0:Lokhttp3/Cache;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public get(Lokhttp3/Request;)Lokhttp3/Response;
@@ -25,10 +24,8 @@ Ljava/io/IOException;
 .end annotation
 .annotation runtime Ljavax/annotation/Nullable;
 .end annotation
-iget-object v0, p0, Lokhttp3/Cache$1;->this$0:Lokhttp3/Cache;
-invoke-virtual {v0, p1}, Lokhttp3/Cache;->get(Lokhttp3/Request;)Lokhttp3/Response;
-move-result-object p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public put(Lokhttp3/Response;)Lokhttp3/internal/cache/CacheRequest;
 .locals 1
@@ -39,10 +36,8 @@ Ljava/io/IOException;
 .end annotation
 .annotation runtime Ljavax/annotation/Nullable;
 .end annotation
-iget-object v0, p0, Lokhttp3/Cache$1;->this$0:Lokhttp3/Cache;
-invoke-virtual {v0, p1}, Lokhttp3/Cache;->put(Lokhttp3/Response;)Lokhttp3/internal/cache/CacheRequest;
-move-result-object p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public remove(Lokhttp3/Request;)V
 .locals 1
@@ -51,25 +46,17 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-iget-object v0, p0, Lokhttp3/Cache$1;->this$0:Lokhttp3/Cache;
-invoke-virtual {v0, p1}, Lokhttp3/Cache;->remove(Lokhttp3/Request;)V
 return-void
 .end method
 .method public trackConditionalCacheHit()V
 .locals 1
-iget-object v0, p0, Lokhttp3/Cache$1;->this$0:Lokhttp3/Cache;
-invoke-virtual {v0}, Lokhttp3/Cache;->trackConditionalCacheHit()V
 return-void
 .end method
 .method public trackResponse(Lokhttp3/internal/cache/CacheStrategy;)V
 .locals 1
-iget-object v0, p0, Lokhttp3/Cache$1;->this$0:Lokhttp3/Cache;
-invoke-virtual {v0, p1}, Lokhttp3/Cache;->trackResponse(Lokhttp3/internal/cache/CacheStrategy;)V
 return-void
 .end method
 .method public update(Lokhttp3/Response;Lokhttp3/Response;)V
 .locals 1
-iget-object v0, p0, Lokhttp3/Cache$1;->this$0:Lokhttp3/Cache;
-invoke-virtual {v0, p1, p2}, Lokhttp3/Cache;->update(Lokhttp3/Response;Lokhttp3/Response;)V
 return-void
 .end method

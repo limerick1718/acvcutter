@@ -23,11 +23,7 @@ value = {
 .field final synthetic val$style:I
 .method constructor <init>(Landroid/content/Context;Landroidx/core/provider/FontRequest;ILjava/lang/String;)V
 .locals 0
-iput-object p1, p0, Landroidx/core/provider/FontsContractCompat$1;->val$context:Landroid/content/Context;
-iput-object p2, p0, Landroidx/core/provider/FontsContractCompat$1;->val$request:Landroidx/core/provider/FontRequest;
-iput p3, p0, Landroidx/core/provider/FontsContractCompat$1;->val$style:I
-iput-object p4, p0, Landroidx/core/provider/FontsContractCompat$1;->val$id:Ljava/lang/String;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public call()Landroidx/core/provider/FontsContractCompat$TypefaceResult;
@@ -37,18 +33,7 @@ value = {
 Ljava/lang/Exception;
 }
 .end annotation
-iget-object v0, p0, Landroidx/core/provider/FontsContractCompat$1;->val$context:Landroid/content/Context;
-iget-object v1, p0, Landroidx/core/provider/FontsContractCompat$1;->val$request:Landroidx/core/provider/FontRequest;
-iget v2, p0, Landroidx/core/provider/FontsContractCompat$1;->val$style:I
-invoke-static {v0, v1, v2}, Landroidx/core/provider/FontsContractCompat;->getFontInternal(Landroid/content/Context;Landroidx/core/provider/FontRequest;I)Landroidx/core/provider/FontsContractCompat$TypefaceResult;
-move-result-object v0
-iget-object v1, v0, Landroidx/core/provider/FontsContractCompat$TypefaceResult;->mTypeface:Landroid/graphics/Typeface;
-if-eqz v1, :cond_0
-sget-object v1, Landroidx/core/provider/FontsContractCompat;->sTypefaceCache:Landroidx/collection/LruCache;
-iget-object v2, p0, Landroidx/core/provider/FontsContractCompat$1;->val$id:Ljava/lang/String;
-iget-object v3, v0, Landroidx/core/provider/FontsContractCompat$TypefaceResult;->mTypeface:Landroid/graphics/Typeface;
-invoke-virtual {v1, v2, v3}, Landroidx/collection/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-:cond_0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public bridge synthetic call()Ljava/lang/Object;
@@ -58,7 +43,6 @@ value = {
 Ljava/lang/Exception;
 }
 .end annotation
-invoke-virtual {p0}, Landroidx/core/provider/FontsContractCompat$1;->call()Landroidx/core/provider/FontsContractCompat$TypefaceResult;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method

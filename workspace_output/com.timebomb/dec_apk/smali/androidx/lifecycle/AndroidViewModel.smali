@@ -5,8 +5,7 @@
 .method public constructor <init>(Landroid/app/Application;)V
 .locals 0
 .param p1, "application"    # Landroid/app/Application;
-invoke-direct {p0}, Landroidx/lifecycle/ViewModel;-><init>()V
-iput-object p1, p0, Landroidx/lifecycle/AndroidViewModel;->mApplication:Landroid/app/Application;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public getApplication()Landroid/app/Application;
@@ -18,6 +17,6 @@ value = {
 ">()TT;"
 }
 .end annotation
-iget-object v0, p0, Landroidx/lifecycle/AndroidViewModel;->mApplication:Landroid/app/Application;
+const/4 v0, 0x0
 return-object v0
 .end method

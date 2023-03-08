@@ -14,15 +14,11 @@ name = null
 .method constructor <init>(Landroidx/appcompat/widget/ActionBarContextView;Landroidx/appcompat/view/ActionMode;)V
 .locals 0
 .param p1, "this$0"    # Landroidx/appcompat/widget/ActionBarContextView;
-iput-object p1, p0, Landroidx/appcompat/widget/ActionBarContextView$1;->this$0:Landroidx/appcompat/widget/ActionBarContextView;
-iput-object p2, p0, Landroidx/appcompat/widget/ActionBarContextView$1;->val$mode:Landroidx/appcompat/view/ActionMode;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onClick(Landroid/view/View;)V
 .locals 1
 .param p1, "v"    # Landroid/view/View;
-iget-object v0, p0, Landroidx/appcompat/widget/ActionBarContextView$1;->val$mode:Landroidx/appcompat/view/ActionMode;
-invoke-virtual {v0}, Landroidx/appcompat/view/ActionMode;->finish()V
 return-void
 .end method

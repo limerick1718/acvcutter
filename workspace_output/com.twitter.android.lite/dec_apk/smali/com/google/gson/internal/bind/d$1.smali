@@ -10,7 +10,7 @@ name = null
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/io/Writer;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public close()V
@@ -20,9 +20,7 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-new-instance v0, Ljava/lang/AssertionError;
-invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-throw v0
+return-void
 .end method
 .method public flush()V
 .locals 1
@@ -31,13 +29,9 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-new-instance v0, Ljava/lang/AssertionError;
-invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-throw v0
+return-void
 .end method
 .method public write([CII)V
 .locals 0
-new-instance p1, Ljava/lang/AssertionError;
-invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V
-throw p1
+return-void
 .end method

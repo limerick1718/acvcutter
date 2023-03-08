@@ -26,46 +26,33 @@ return-void
 .locals 1
 .param p1, "in"    # Landroid/os/Parcel;
 const/4 v0, 0x0
-invoke-virtual {p0, p1, v0}, Landroidx/customview/view/AbsSavedState$2;->createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroidx/customview/view/AbsSavedState;
-move-result-object v0
 return-object v0
 .end method
 .method public createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroidx/customview/view/AbsSavedState;
 .locals 3
 .param p1, "in"    # Landroid/os/Parcel;
 .param p2, "loader"    # Ljava/lang/ClassLoader;
-invoke-virtual {p1, p2}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
-move-result-object v0
-if-nez v0, :cond_0
-sget-object v1, Landroidx/customview/view/AbsSavedState;->EMPTY_STATE:Landroidx/customview/view/AbsSavedState;
-return-object v1
-:cond_0
-new-instance v1, Ljava/lang/IllegalStateException;
-const-string v2, "superState must be null"
-invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-throw v1
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 .locals 0
-invoke-virtual {p0, p1}, Landroidx/customview/view/AbsSavedState$2;->createFromParcel(Landroid/os/Parcel;)Landroidx/customview/view/AbsSavedState;
-move-result-object p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
 .locals 0
-invoke-virtual {p0, p1, p2}, Landroidx/customview/view/AbsSavedState$2;->createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroidx/customview/view/AbsSavedState;
-move-result-object p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public newArray(I)[Landroidx/customview/view/AbsSavedState;
 .locals 1
 .param p1, "size"    # I
-new-array v0, p1, [Landroidx/customview/view/AbsSavedState;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
 .locals 0
-invoke-virtual {p0, p1}, Landroidx/customview/view/AbsSavedState$2;->newArray(I)[Landroidx/customview/view/AbsSavedState;
-move-result-object p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method

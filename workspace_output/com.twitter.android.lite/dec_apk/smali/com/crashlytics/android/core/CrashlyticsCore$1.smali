@@ -18,8 +18,7 @@ value = {
 .field final synthetic this$0:Lcom/crashlytics/android/core/CrashlyticsCore;
 .method constructor <init>(Lcom/crashlytics/android/core/CrashlyticsCore;)V
 .locals 0
-iput-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsCore$1;->this$0:Lcom/crashlytics/android/core/CrashlyticsCore;
-invoke-direct {p0}, Lwj;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public bridge synthetic call()Ljava/lang/Object;
@@ -29,8 +28,7 @@ value = {
 Ljava/lang/Exception;
 }
 .end annotation
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsCore$1;->call()Ljava/lang/Void;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public call()Ljava/lang/Void;
@@ -40,13 +38,11 @@ value = {
 Ljava/lang/Exception;
 }
 .end annotation
-iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsCore$1;->this$0:Lcom/crashlytics/android/core/CrashlyticsCore;
-invoke-virtual {v0}, Lcom/crashlytics/android/core/CrashlyticsCore;->doInBackground()Ljava/lang/Void;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getPriority()Lwh;
 .locals 1
-sget-object v0, Lwh;->d:Lwh;
+const/4 v0, 0x0
 return-object v0
 .end method

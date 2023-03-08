@@ -39,10 +39,6 @@ if-eq v2, v3, :cond_2
 const/4 v3, 0x4
 if-eq v2, v3, :cond_1
 const/4 v3, 0x5
-if-eq v2, v3, :cond_0
-invoke-static {p1, v1}, Lbb;->b(Landroid/os/Parcel;I)V
-goto :goto_0
-:cond_0
 invoke-static {p1, v1}, Lbb;->e(Landroid/os/Parcel;I)J
 move-result-wide v8
 goto :goto_0
@@ -70,6 +66,6 @@ return-object p1
 .end method
 .method public final synthetic newArray(I)[Ljava/lang/Object;
 .locals 0
-new-array p1, p1, [Lko;
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method

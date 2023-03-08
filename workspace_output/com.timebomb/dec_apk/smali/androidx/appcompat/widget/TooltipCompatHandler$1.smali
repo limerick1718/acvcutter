@@ -19,8 +19,5 @@ return-void
 .end method
 .method public run()V
 .locals 2
-iget-object v0, p0, Landroidx/appcompat/widget/TooltipCompatHandler$1;->this$0:Landroidx/appcompat/widget/TooltipCompatHandler;
-const/4 v1, 0x0
-invoke-virtual {v0, v1}, Landroidx/appcompat/widget/TooltipCompatHandler;->show(Z)V
 return-void
 .end method

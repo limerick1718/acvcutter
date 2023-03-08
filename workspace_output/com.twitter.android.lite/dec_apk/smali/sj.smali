@@ -16,6 +16,5 @@ return-void
 .end method
 .method public final execute(Ljava/lang/Runnable;)V
 .locals 0
-invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 return-void
 .end method

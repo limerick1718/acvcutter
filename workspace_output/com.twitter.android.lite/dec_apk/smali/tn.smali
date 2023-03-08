@@ -22,20 +22,8 @@ value = {
 "Ltd;"
 }
 .end annotation
-:try_start_0
-new-instance v0, Lcom/google/gson/internal/bind/d;
-invoke-direct {v0}, Lcom/google/gson/internal/bind/d;-><init>()V
-invoke-virtual {p0, v0, p1}, Ltn;->a(Lty;Ljava/lang/Object;)V
-invoke-virtual {v0}, Lcom/google/gson/internal/bind/d;->a()Ltd;
-move-result-object p1
-:try_end_0
-.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-return-object p1
-:catch_0
-move-exception p1
-new-instance v0, Lte;
-invoke-direct {v0, p1}, Lte;-><init>(Ljava/lang/Throwable;)V
-throw v0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public final a()Ltn;
 .locals 1

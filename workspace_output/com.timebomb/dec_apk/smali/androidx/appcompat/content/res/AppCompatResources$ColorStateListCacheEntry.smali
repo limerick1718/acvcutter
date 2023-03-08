@@ -14,8 +14,6 @@ name = "ColorStateListCacheEntry"
 .locals 0
 .param p1, "value"    # Landroid/content/res/ColorStateList;
 .param p2, "configuration"    # Landroid/content/res/Configuration;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Landroidx/appcompat/content/res/AppCompatResources$ColorStateListCacheEntry;->value:Landroid/content/res/ColorStateList;
-iput-object p2, p0, Landroidx/appcompat/content/res/AppCompatResources$ColorStateListCacheEntry;->configuration:Landroid/content/res/Configuration;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

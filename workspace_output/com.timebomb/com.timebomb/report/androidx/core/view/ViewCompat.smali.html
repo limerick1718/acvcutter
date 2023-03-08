@@ -643,40 +643,40 @@ value = {
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method static dispatchUnhandledKeyEventBeforeCallback(Landroid/view/View;Landroid/view/KeyEvent;)Z</span>
+.method static dispatchUnhandledKeyEventBeforeCallback(Landroid/view/View;Landroid/view/KeyEvent;)Z
 <span class="">	.locals 2</span>
 <span class="">	.param p0, "root"    # Landroid/view/View;</span>
 <span class="">	.param p1, "evt"    # Landroid/view/KeyEvent;</span>
 
-<span class="cov">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="cov">	const/16 v1, 0x1c</span>
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x1c</span>
 <span class="missed">	if-lt v0, v1, :cond_0</span>
 <span class="missed">	const/4 v0, 0x0</span>
 <span class="">	return v0</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-static {p0}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->at(Landroid/view/View;)Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-virtual {v0, p0, p1}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->dispatch(Landroid/view/View;Landroid/view/KeyEvent;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {p0}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->at(Landroid/view/View;)Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0, p0, p1}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->dispatch(Landroid/view/View;Landroid/view/KeyEvent;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
 .end method
 
-<span class="cov">.method static dispatchUnhandledKeyEventBeforeHierarchy(Landroid/view/View;Landroid/view/KeyEvent;)Z</span>
+.method static dispatchUnhandledKeyEventBeforeHierarchy(Landroid/view/View;Landroid/view/KeyEvent;)Z
 <span class="">	.locals 2</span>
 <span class="">	.param p0, "root"    # Landroid/view/View;</span>
 <span class="">	.param p1, "evt"    # Landroid/view/KeyEvent;</span>
 
-<span class="cov">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="cov">	const/16 v1, 0x1c</span>
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x1c</span>
 <span class="missed">	if-lt v0, v1, :cond_0</span>
 <span class="missed">	const/4 v0, 0x0</span>
 <span class="">	return v0</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-static {p0}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->at(Landroid/view/View;)Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-virtual {v0, p1}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->preDispatch(Landroid/view/KeyEvent;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {p0}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->at(Landroid/view/View;)Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0, p1}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->preDispatch(Landroid/view/KeyEvent;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
 .end method
 
 .method public static generateViewId()I

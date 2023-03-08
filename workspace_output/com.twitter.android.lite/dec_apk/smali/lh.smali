@@ -34,29 +34,15 @@ value = {
 ">;>;)V"
 }
 .end annotation
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-invoke-static {p2}, Lcom/google/android/gms/common/internal/o;->a(Ljava/lang/Object;)Ljava/lang/Object;
-iput-object p2, p0, Llh;->a:Llg;
-iput p3, p0, Llh;->b:I
-iput-object p4, p0, Llh;->c:Ljava/lang/Throwable;
-iput-object p5, p0, Llh;->d:[B
-iput-object p1, p0, Llh;->e:Ljava/lang/String;
-iput-object p6, p0, Llh;->f:Ljava/util/Map;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method synthetic constructor <init>(Ljava/lang/String;Llg;ILjava/lang/Throwable;[BLjava/util/Map;Llf;)V
 .locals 0
-invoke-direct/range {p0 .. p6}, Llh;-><init>(Ljava/lang/String;Llg;ILjava/lang/Throwable;[BLjava/util/Map;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public final run()V
 .locals 6
-iget-object v0, p0, Llh;->a:Llg;
-iget-object v1, p0, Llh;->e:Ljava/lang/String;
-iget v2, p0, Llh;->b:I
-iget-object v3, p0, Llh;->c:Ljava/lang/Throwable;
-iget-object v4, p0, Llh;->d:[B
-iget-object v5, p0, Llh;->f:Ljava/util/Map;
-invoke-interface/range {v0 .. v5}, Llg;->a(Ljava/lang/String;ILjava/lang/Throwable;[BLjava/util/Map;)V
 return-void
 .end method

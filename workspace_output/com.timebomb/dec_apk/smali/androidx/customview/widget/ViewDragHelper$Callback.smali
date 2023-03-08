@@ -10,7 +10,7 @@ name = "Callback"
 .end annotation
 .method public constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public clampViewPositionHorizontal(Landroid/view/View;II)I
@@ -32,7 +32,8 @@ return v0
 .method public getOrderedChildIndex(I)I
 .locals 0
 .param p1, "index"    # I
-return p1
+const/4 v0, 0x0
+return v0
 .end method
 .method public getViewHorizontalDragRange(Landroid/view/View;)I
 .locals 1

@@ -17,20 +17,17 @@ name = "InputContentInfoCompatBaseImpl"
 .param p1, "contentUri"    # Landroid/net/Uri;
 .param p2, "description"    # Landroid/content/ClipDescription;
 .param p3, "linkUri"    # Landroid/net/Uri;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatBaseImpl;->mContentUri:Landroid/net/Uri;
-iput-object p2, p0, Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatBaseImpl;->mDescription:Landroid/content/ClipDescription;
-iput-object p3, p0, Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatBaseImpl;->mLinkUri:Landroid/net/Uri;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public getContentUri()Landroid/net/Uri;
 .locals 1
-iget-object v0, p0, Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatBaseImpl;->mContentUri:Landroid/net/Uri;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getDescription()Landroid/content/ClipDescription;
 .locals 1
-iget-object v0, p0, Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatBaseImpl;->mDescription:Landroid/content/ClipDescription;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getInputContentInfo()Ljava/lang/Object;
@@ -40,7 +37,7 @@ return-object v0
 .end method
 .method public getLinkUri()Landroid/net/Uri;
 .locals 1
-iget-object v0, p0, Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatBaseImpl;->mLinkUri:Landroid/net/Uri;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public releasePermission()V

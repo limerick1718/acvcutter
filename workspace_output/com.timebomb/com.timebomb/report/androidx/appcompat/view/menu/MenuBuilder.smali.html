@@ -827,49 +827,49 @@ value = {
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public close()V</span>
+.method public close()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	const/4 v0, 0x1</span>
-<span class="cov">	invoke-virtual {p0, v0}, Landroidx/appcompat/view/menu/MenuBuilder;->close(Z)V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	invoke-virtual {p0, v0}, Landroidx/appcompat/view/menu/MenuBuilder;->close(Z)V</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public final close(Z)V</span>
+.method public final close(Z)V
 <span class="">	.locals 4</span>
 <span class="">	.param p1, "closeAllMenus"    # Z</span>
 
-<span class="cov">	iget-boolean v0, p0, Landroidx/appcompat/view/menu/MenuBuilder;->mIsClosing:Z</span>
+<span class="missed">	iget-boolean v0, p0, Landroidx/appcompat/view/menu/MenuBuilder;->mIsClosing:Z</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="">	return-void</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 v0, 0x1</span>
-<span class="cov">	iput-boolean v0, p0, Landroidx/appcompat/view/menu/MenuBuilder;->mIsClosing:Z</span>
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;</span>
-<span class="exec">	invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	if-eqz v1, :cond_2</span>
-<span class="exec">	invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	check-cast v1, Ljava/lang/ref/WeakReference;</span>
-<span class="exec">	invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v2</span>
-<span class="cov">	check-cast v2, Landroidx/appcompat/view/menu/MenuPresenter;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	iput-boolean v0, p0, Landroidx/appcompat/view/menu/MenuBuilder;->mIsClosing:Z</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;</span>
+<span class="">	invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-eqz v1, :cond_2</span>
+<span class="">	invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	check-cast v1, Ljava/lang/ref/WeakReference;</span>
+<span class="">	invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="missed">	check-cast v2, Landroidx/appcompat/view/menu/MenuPresenter;</span>
 <span class="missed">	if-nez v2, :cond_1</span>
 <span class="missed">	iget-object v3, p0, Landroidx/appcompat/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;</span>
 <span class="missed">	invoke-virtual {v3, v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z</span>
-<span class="exec">	goto :goto_1</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	invoke-interface {v2, p0, p1}, Landroidx/appcompat/view/menu/MenuPresenter;->onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V</span>
-<span class="cov">	:goto_1</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	iput-boolean v0, p0, Landroidx/appcompat/view/menu/MenuBuilder;->mIsClosing:Z</span>
-<span class="exec">	return-void</span>
+<span class="">	goto :goto_1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	invoke-interface {v2, p0, p1}, Landroidx/appcompat/view/menu/MenuPresenter;->onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V</span>
+<span class="">	:goto_1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-boolean v0, p0, Landroidx/appcompat/view/menu/MenuBuilder;->mIsClosing:Z</span>
+<span class="">	return-void</span>
 .end method
 
 .method public collapseItemActionView(Landroidx/appcompat/view/menu/MenuItemImpl;)Z

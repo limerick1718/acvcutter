@@ -5,18 +5,16 @@
 .field private final eventParams:Landroid/os/Bundle;
 .method constructor <init>(Ljava/lang/String;Landroid/os/Bundle;)V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Lcom/crashlytics/android/answers/FirebaseAnalyticsEvent;->eventName:Ljava/lang/String;
-iput-object p2, p0, Lcom/crashlytics/android/answers/FirebaseAnalyticsEvent;->eventParams:Landroid/os/Bundle;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public getEventName()Ljava/lang/String;
 .locals 1
-iget-object v0, p0, Lcom/crashlytics/android/answers/FirebaseAnalyticsEvent;->eventName:Ljava/lang/String;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getEventParams()Landroid/os/Bundle;
 .locals 1
-iget-object v0, p0, Lcom/crashlytics/android/answers/FirebaseAnalyticsEvent;->eventParams:Landroid/os/Bundle;
+const/4 v0, 0x0
 return-object v0
 .end method

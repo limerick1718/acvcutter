@@ -11,7 +11,5 @@ return-void
 .end method
 .method public final run()V
 .locals 1
-iget-object v0, p0, Lokhttp3/internal/connection/-$$Lambda$RealConnectionPool$Cy61BJKpsrwSB_hQmB_R9MngVNU;->f$0:Lokhttp3/internal/connection/RealConnectionPool;
-invoke-virtual {v0}, Lokhttp3/internal/connection/RealConnectionPool;->lambda$new$0$RealConnectionPool()V
 return-void
 .end method

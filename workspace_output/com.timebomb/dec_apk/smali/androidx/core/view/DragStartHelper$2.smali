@@ -13,16 +13,13 @@ name = null
 .method constructor <init>(Landroidx/core/view/DragStartHelper;)V
 .locals 0
 .param p1, "this$0"    # Landroidx/core/view/DragStartHelper;
-iput-object p1, p0, Landroidx/core/view/DragStartHelper$2;->this$0:Landroidx/core/view/DragStartHelper;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
 .locals 1
 .param p1, "v"    # Landroid/view/View;
 .param p2, "event"    # Landroid/view/MotionEvent;
-iget-object v0, p0, Landroidx/core/view/DragStartHelper$2;->this$0:Landroidx/core/view/DragStartHelper;
-invoke-virtual {v0, p1, p2}, Landroidx/core/view/DragStartHelper;->onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method

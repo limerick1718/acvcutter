@@ -68,11 +68,3 @@ move-result-object v0
 sput-object v0, Lne;->b:[Ljava/lang/String;
 return-void
 .end method
-.method public static a(Ljava/lang/String;)Ljava/lang/String;
-.locals 2
-sget-object v0, Lne;->a:[Ljava/lang/String;
-sget-object v1, Lne;->b:[Ljava/lang/String;
-invoke-static {p0, v0, v1}, Lnw;->a(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
-move-result-object p0
-return-object p0
-.end method

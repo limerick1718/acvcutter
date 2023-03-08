@@ -1520,29 +1520,29 @@ Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method  checkCloseActionMenu(Landroidx/appcompat/view/menu/MenuBuilder;)V</span>
+.method  checkCloseActionMenu(Landroidx/appcompat/view/menu/MenuBuilder;)V
 <span class="">	.locals 2</span>
 <span class="">	.param p1, "menu"    # Landroidx/appcompat/view/menu/MenuBuilder;</span>
 
-<span class="cov">	iget-boolean v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mClosingActionMenu:Z</span>
+<span class="missed">	iget-boolean v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mClosingActionMenu:Z</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="">	return-void</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 v0, 0x1</span>
-<span class="cov">	iput-boolean v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mClosingActionMenu:Z</span>
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mDecorContentParent:Landroidx/appcompat/widget/DecorContentParent;</span>
-<span class="cov">	invoke-interface {v0}, Landroidx/appcompat/widget/DecorContentParent;->dismissPopups()V</span>
-<span class="exec">	invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->getWindowCallback()Landroid/view/Window$Callback;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	if-eqz v0, :cond_1</span>
-<span class="cov">	iget-boolean v1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mIsDestroyed:Z</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	iput-boolean v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mClosingActionMenu:Z</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mDecorContentParent:Landroidx/appcompat/widget/DecorContentParent;</span>
+<span class="missed">	invoke-interface {v0}, Landroidx/appcompat/widget/DecorContentParent;->dismissPopups()V</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->getWindowCallback()Landroid/view/Window$Callback;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	iget-boolean v1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mIsDestroyed:Z</span>
 <span class="missed">	if-nez v1, :cond_1</span>
 <span class="missed">	const/16 v1, 0x6c</span>
 <span class="missed">	invoke-interface {v0, v1, p1}, Landroid/view/Window$Callback;->onPanelClosed(ILandroid/view/Menu;)V</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	iput-boolean v1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mClosingActionMenu:Z</span>
-<span class="exec">	return-void</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	iput-boolean v1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mClosingActionMenu:Z</span>
+<span class="">	return-void</span>
 .end method
 
 .method  closePanel(I)V
@@ -1705,14 +1705,14 @@ Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
 <span class="exec">	return-object v1</span>
 .end method
 
-<span class="cov">.method  dismissPopups()V</span>
+.method  dismissPopups()V
 <span class="">	.locals 2</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mDecorContentParent:Landroidx/appcompat/widget/DecorContentParent;</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	invoke-interface {v0}, Landroidx/appcompat/widget/DecorContentParent;->dismissPopups()V</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModePopup:Landroid/widget/PopupWindow;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mDecorContentParent:Landroidx/appcompat/widget/DecorContentParent;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-interface {v0}, Landroidx/appcompat/widget/DecorContentParent;->dismissPopups()V</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModePopup:Landroid/widget/PopupWindow;</span>
 <span class="missed">	if-eqz v0, :cond_2</span>
 <span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mWindow:Landroid/view/Window;</span>
 <span class="">	invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;</span>
@@ -1735,68 +1735,68 @@ Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
 <span class="">	:cond_1</span>
 <span class="missed">	const/4 v0, 0x0</span>
 <span class="missed">	iput-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionModePopup:Landroid/widget/PopupWindow;</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->endOnGoingFadeAnimation()V</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="exec">	invoke-virtual {p0, v0, v0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->getPanelState(IZ)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	if-eqz v0, :cond_3</span>
-<span class="cov">	iget-object v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu:Landroidx/appcompat/view/menu/MenuBuilder;</span>
-<span class="cov">	if-eqz v1, :cond_3</span>
-<span class="cov">	iget-object v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu:Landroidx/appcompat/view/menu/MenuBuilder;</span>
-<span class="cov">	invoke-virtual {v1}, Landroidx/appcompat/view/menu/MenuBuilder;->close()V</span>
-<span class="cov">	:cond_3</span>
-<span class="exec">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->endOnGoingFadeAnimation()V</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	invoke-virtual {p0, v0, v0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->getPanelState(IZ)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_3</span>
+<span class="missed">	iget-object v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu:Landroidx/appcompat/view/menu/MenuBuilder;</span>
+<span class="missed">	if-eqz v1, :cond_3</span>
+<span class="missed">	iget-object v1, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->menu:Landroidx/appcompat/view/menu/MenuBuilder;</span>
+<span class="missed">	invoke-virtual {v1}, Landroidx/appcompat/view/menu/MenuBuilder;->close()V</span>
+<span class="">	:cond_3</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method  dispatchKeyEvent(Landroid/view/KeyEvent;)Z</span>
+.method  dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 <span class="">	.locals 4</span>
 <span class="">	.param p1, "event"    # Landroid/view/KeyEvent;</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mOriginalWindowCallback:Landroid/view/Window$Callback;</span>
-<span class="cov">	instance-of v1, v0, Landroidx/core/view/KeyEventDispatcher$Component;</span>
-<span class="cov">	const/4 v2, 0x1</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mOriginalWindowCallback:Landroid/view/Window$Callback;</span>
+<span class="missed">	instance-of v1, v0, Landroidx/core/view/KeyEventDispatcher$Component;</span>
+<span class="missed">	const/4 v2, 0x1</span>
 <span class="missed">	if-nez v1, :cond_0</span>
 <span class="missed">	instance-of v0, v0, Landroidx/appcompat/app/AppCompatDialog;</span>
 <span class="missed">	if-eqz v0, :cond_1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mWindow:Landroid/view/Window;</span>
-<span class="exec">	invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	if-eqz v0, :cond_1</span>
-<span class="exec">	invoke-static {v0, p1}, Landroidx/core/view/KeyEventDispatcher;->dispatchBeforeHierarchy(Landroid/view/View;Landroid/view/KeyEvent;)Z</span>
-<span class="cov">	move-result v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mWindow:Landroid/view/Window;</span>
+<span class="">	invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-static {v0, p1}, Landroidx/core/view/KeyEventDispatcher;->dispatchBeforeHierarchy(Landroid/view/View;Landroid/view/KeyEvent;)Z</span>
+<span class="missed">	move-result v1</span>
 <span class="missed">	if-eqz v1, :cond_1</span>
 <span class="">	return v2</span>
-<span class="cov">	:cond_1</span>
-<span class="exec">	invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	const/16 v1, 0x52</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	const/16 v1, 0x52</span>
 <span class="missed">	if-ne v0, v1, :cond_2</span>
 <span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mOriginalWindowCallback:Landroid/view/Window$Callback;</span>
 <span class="">	invoke-interface {v0, p1}, Landroid/view/Window$Callback;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z</span>
 <span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_2</span>
 <span class="">	return v2</span>
-<span class="cov">	:cond_2</span>
-<span class="exec">	invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	if-nez v1, :cond_3</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_3</span>
-<span class="cov">	const/4 v2, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	if-eqz v2, :cond_4</span>
-<span class="exec">	invoke-virtual {p0, v0, p1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->onKeyDown(ILandroid/view/KeyEvent;)Z</span>
-<span class="cov">	move-result v3</span>
+<span class="">	:cond_2</span>
+<span class="">	invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_3</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_3</span>
+<span class="missed">	const/4 v2, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="missed">	if-eqz v2, :cond_4</span>
+<span class="">	invoke-virtual {p0, v0, p1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->onKeyDown(ILandroid/view/KeyEvent;)Z</span>
+<span class="missed">	move-result v3</span>
 <span class="">	goto :goto_1</span>
-<span class="cov">	:cond_4</span>
-<span class="exec">	invoke-virtual {p0, v0, p1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->onKeyUp(ILandroid/view/KeyEvent;)Z</span>
-<span class="cov">	move-result v3</span>
-<span class="cov">	:goto_1</span>
-<span class="exec">	return v3</span>
+<span class="">	:cond_4</span>
+<span class="">	invoke-virtual {p0, v0, p1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->onKeyUp(ILandroid/view/KeyEvent;)Z</span>
+<span class="missed">	move-result v3</span>
+<span class="">	:goto_1</span>
+<span class="">	return v3</span>
 .end method
 
 <span class="cov">.method  doInvalidatePanelMenu(I)V</span>
@@ -1843,14 +1843,14 @@ Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method  endOnGoingFadeAnimation()V</span>
+.method  endOnGoingFadeAnimation()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mFadeAnim:Landroidx/core/view/ViewPropertyAnimatorCompat;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mFadeAnim:Landroidx/core/view/ViewPropertyAnimatorCompat;</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	invoke-virtual {v0}, Landroidx/core/view/ViewPropertyAnimatorCompat;->cancel()V</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
 .end method
 
 .method  findMenuPanel(Landroid/view/Menu;)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
@@ -2152,25 +2152,25 @@ Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
 <span class="">	return v1</span>
 .end method
 
-<span class="cov">.method  onBackPressed()Z</span>
+.method  onBackPressed()Z
 <span class="">	.locals 3</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode:Landroidx/appcompat/view/ActionMode;</span>
-<span class="cov">	const/4 v1, 0x1</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionMode:Landroidx/appcompat/view/ActionMode;</span>
+<span class="missed">	const/4 v1, 0x1</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	invoke-virtual {v0}, Landroidx/appcompat/view/ActionMode;->finish()V</span>
 <span class="">	return v1</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	if-eqz v0, :cond_1</span>
-<span class="exec">	invoke-virtual {v0}, Landroidx/appcompat/app/ActionBar;->collapseActionView()Z</span>
-<span class="cov">	move-result v2</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	invoke-virtual {v0}, Landroidx/appcompat/app/ActionBar;->collapseActionView()Z</span>
+<span class="missed">	move-result v2</span>
 <span class="missed">	if-eqz v2, :cond_1</span>
 <span class="">	return v1</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="exec">	return v1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	return v1</span>
 .end method
 
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
@@ -2260,38 +2260,38 @@ Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
 <span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public onDestroy()V</span>
+.method public onDestroy()V
 <span class="">	.locals 2</span>
 
-<span class="cov">	iget-boolean v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mInvalidatePanelMenuPosted:Z</span>
+<span class="missed">	iget-boolean v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mInvalidatePanelMenuPosted:Z</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mWindow:Landroid/view/Window;</span>
 <span class="">	invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;</span>
 <span class="missed">	move-result-object v0</span>
 <span class="missed">	iget-object v1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mInvalidatePanelMenuRunnable:Ljava/lang/Runnable;</span>
 <span class="missed">	invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 v0, 0x1</span>
-<span class="cov">	iput-boolean v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mIsDestroyed:Z</span>
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionBar:Landroidx/appcompat/app/ActionBar;</span>
-<span class="cov">	if-eqz v0, :cond_1</span>
-<span class="cov">	invoke-virtual {v0}, Landroidx/appcompat/app/ActionBar;->onDestroy()V</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAutoNightModeManager:Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x1</span>
+<span class="missed">	iput-boolean v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mIsDestroyed:Z</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mActionBar:Landroidx/appcompat/app/ActionBar;</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="missed">	invoke-virtual {v0}, Landroidx/appcompat/app/ActionBar;->onDestroy()V</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mAutoNightModeManager:Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;</span>
 <span class="missed">	if-eqz v0, :cond_2</span>
 <span class="missed">	invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoNightModeManager;->cleanup()V</span>
-<span class="cov">	:cond_2</span>
-<span class="exec">	return-void</span>
+<span class="">	:cond_2</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method  onKeyDown(ILandroid/view/KeyEvent;)Z</span>
+.method  onKeyDown(ILandroid/view/KeyEvent;)Z
 <span class="">	.locals 3</span>
 <span class="">	.param p1, "keyCode"    # I</span>
 <span class="">	.param p2, "event"    # Landroid/view/KeyEvent;</span>
 
-<span class="cov">	const/4 v0, 0x4</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="cov">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v0, 0x4</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	const/4 v2, 0x0</span>
 <span class="missed">	if-eq p1, v0, :cond_1</span>
 <span class="missed">	const/16 v0, 0x52</span>
 <span class="missed">	if-eq p1, v0, :cond_0</span>
@@ -2299,18 +2299,18 @@ Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
 <span class="">	:cond_0</span>
 <span class="missed">	invoke-direct {p0, v2, p2}, Landroidx/appcompat/app/AppCompatDelegateImpl;->onKeyDownPanel(ILandroid/view/KeyEvent;)Z</span>
 <span class="">	return v1</span>
-<span class="cov">	:cond_1</span>
-<span class="exec">	invoke-virtual {p2}, Landroid/view/KeyEvent;->getFlags()I</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	and-int/lit16 v0, v0, 0x80</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {p2}, Landroid/view/KeyEvent;->getFlags()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	and-int/lit16 v0, v0, 0x80</span>
 <span class="missed">	if-eqz v0, :cond_2</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	move v1, v2</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	iput-boolean v1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mLongPressBackDown:Z</span>
-<span class="cov">	:goto_1</span>
-<span class="exec">	return v2</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	move v1, v2</span>
+<span class="">	:goto_0</span>
+<span class="missed">	iput-boolean v1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mLongPressBackDown:Z</span>
+<span class="">	:goto_1</span>
+<span class="">	return v2</span>
 .end method
 
 .method  onKeyShortcut(ILandroid/view/KeyEvent;)Z
@@ -2357,14 +2357,14 @@ Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
 <span class="">	return v3</span>
 .end method
 
-<span class="cov">.method  onKeyUp(ILandroid/view/KeyEvent;)Z</span>
+.method  onKeyUp(ILandroid/view/KeyEvent;)Z
 <span class="">	.locals 5</span>
 <span class="">	.param p1, "keyCode"    # I</span>
 <span class="">	.param p2, "event"    # Landroid/view/KeyEvent;</span>
 
-<span class="cov">	const/4 v0, 0x4</span>
-<span class="cov">	const/4 v1, 0x1</span>
-<span class="cov">	const/4 v2, 0x0</span>
+<span class="missed">	const/4 v0, 0x4</span>
+<span class="missed">	const/4 v1, 0x1</span>
+<span class="missed">	const/4 v2, 0x0</span>
 <span class="missed">	if-eq p1, v0, :cond_1</span>
 <span class="missed">	const/16 v0, 0x52</span>
 <span class="missed">	if-eq p1, v0, :cond_0</span>
@@ -2372,26 +2372,26 @@ Landroidx/appcompat/app/AppCompatDelegateImpl$ActionModeCallbackWrapperV9;
 <span class="">	:cond_0</span>
 <span class="missed">	invoke-direct {p0, v2, p2}, Landroidx/appcompat/app/AppCompatDelegateImpl;->onKeyUpPanel(ILandroid/view/KeyEvent;)Z</span>
 <span class="">	return v1</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	iget-boolean v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mLongPressBackDown:Z</span>
-<span class="cov">	iput-boolean v2, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mLongPressBackDown:Z</span>
-<span class="exec">	invoke-virtual {p0, v2, v2}, Landroidx/appcompat/app/AppCompatDelegateImpl;->getPanelState(IZ)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;</span>
-<span class="cov">	move-result-object v3</span>
-<span class="cov">	if-eqz v3, :cond_3</span>
-<span class="cov">	iget-boolean v4, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->isOpen:Z</span>
+<span class="">	:cond_1</span>
+<span class="missed">	iget-boolean v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mLongPressBackDown:Z</span>
+<span class="missed">	iput-boolean v2, p0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mLongPressBackDown:Z</span>
+<span class="">	invoke-virtual {p0, v2, v2}, Landroidx/appcompat/app/AppCompatDelegateImpl;->getPanelState(IZ)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	if-eqz v3, :cond_3</span>
+<span class="missed">	iget-boolean v4, v3, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;->isOpen:Z</span>
 <span class="missed">	if-eqz v4, :cond_3</span>
 <span class="missed">	if-nez v0, :cond_2</span>
 <span class="missed">	invoke-virtual {p0, v3, v1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->closePanel(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;Z)V</span>
 <span class="">	:cond_2</span>
 <span class="">	return v1</span>
-<span class="cov">	:cond_3</span>
-<span class="exec">	invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->onBackPressed()Z</span>
-<span class="cov">	move-result v4</span>
+<span class="">	:cond_3</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->onBackPressed()Z</span>
+<span class="missed">	move-result v4</span>
 <span class="missed">	if-eqz v4, :cond_4</span>
 <span class="">	return v1</span>
-<span class="cov">	:goto_0</span>
-<span class="cov">	:cond_4</span>
-<span class="exec">	return v2</span>
+<span class="">	:goto_0</span>
+<span class="">	:cond_4</span>
+<span class="">	return v2</span>
 .end method
 
 .method public onMenuItemSelected(Landroidx/appcompat/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z

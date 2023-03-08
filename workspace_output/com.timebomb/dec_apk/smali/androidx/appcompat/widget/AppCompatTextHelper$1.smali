@@ -26,8 +26,5 @@ return-void
 .method public onFontRetrieved(Landroid/graphics/Typeface;)V
 .locals 2
 .param p1, "typeface"    # Landroid/graphics/Typeface;
-iget-object v0, p0, Landroidx/appcompat/widget/AppCompatTextHelper$1;->this$0:Landroidx/appcompat/widget/AppCompatTextHelper;
-iget-object v1, p0, Landroidx/appcompat/widget/AppCompatTextHelper$1;->val$textViewWeak:Ljava/lang/ref/WeakReference;
-invoke-virtual {v0, v1, p1}, Landroidx/appcompat/widget/AppCompatTextHelper;->onAsyncTypefaceReceived(Ljava/lang/ref/WeakReference;Landroid/graphics/Typeface;)V
 return-void
 .end method

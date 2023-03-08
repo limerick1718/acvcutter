@@ -13,14 +13,10 @@ name = null
 .field final synthetic val$dialog:Lcom/crashlytics/android/core/CrashPromptDialog;
 .method constructor <init>(Lcom/crashlytics/android/core/CrashlyticsController$PrivacyDialogCheck;Lcom/crashlytics/android/core/CrashPromptDialog;)V
 .locals 0
-iput-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsController$PrivacyDialogCheck$2;->this$0:Lcom/crashlytics/android/core/CrashlyticsController$PrivacyDialogCheck;
-iput-object p2, p0, Lcom/crashlytics/android/core/CrashlyticsController$PrivacyDialogCheck$2;->val$dialog:Lcom/crashlytics/android/core/CrashPromptDialog;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public run()V
 .locals 1
-iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController$PrivacyDialogCheck$2;->val$dialog:Lcom/crashlytics/android/core/CrashPromptDialog;
-invoke-virtual {v0}, Lcom/crashlytics/android/core/CrashPromptDialog;->show()V
 return-void
 .end method

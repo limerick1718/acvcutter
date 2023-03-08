@@ -40,13 +40,8 @@ value = {
 }
 .end annotation
 iget-object v0, p0, Lsx$a;->a:Ltn;
-if-nez v0, :cond_0
 iput-object p1, p0, Lsx$a;->a:Ltn;
 return-void
-:cond_0
-new-instance p1, Ljava/lang/AssertionError;
-invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V
-throw p1
 .end method
 .method public a(Lty;Ljava/lang/Object;)V
 .locals 1
@@ -62,14 +57,7 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-iget-object v0, p0, Lsx$a;->a:Ltn;
-if-eqz v0, :cond_0
-invoke-virtual {v0, p1, p2}, Ltn;->a(Lty;Ljava/lang/Object;)V
 return-void
-:cond_0
-new-instance p1, Ljava/lang/IllegalStateException;
-invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
-throw p1
 .end method
 .method public b(Ltw;)Ljava/lang/Object;
 .locals 1
@@ -85,13 +73,6 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-iget-object v0, p0, Lsx$a;->a:Ltn;
-if-eqz v0, :cond_0
-invoke-virtual {v0, p1}, Ltn;->b(Ltw;)Ljava/lang/Object;
-move-result-object p1
-return-object p1
-:cond_0
-new-instance p1, Ljava/lang/IllegalStateException;
-invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
-throw p1
+const/4 v0, 0x0
+return-object v0
 .end method

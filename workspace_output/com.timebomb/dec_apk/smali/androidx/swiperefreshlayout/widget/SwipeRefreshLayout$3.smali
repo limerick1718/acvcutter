@@ -12,17 +12,12 @@ name = null
 .method constructor <init>(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;)V
 .locals 0
 .param p1, "this$0"    # Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
-iput-object p1, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$3;->this$0:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
-invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public applyTransformation(FLandroid/view/animation/Transformation;)V
 .locals 2
 .param p1, "interpolatedTime"    # F
 .param p2, "t"    # Landroid/view/animation/Transformation;
-iget-object v0, p0, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$3;->this$0:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
-const/high16 v1, 0x3f800000    # 1.0f
-sub-float/2addr v1, p1
-invoke-virtual {v0, v1}, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->setAnimationProgress(F)V
 return-void
 .end method

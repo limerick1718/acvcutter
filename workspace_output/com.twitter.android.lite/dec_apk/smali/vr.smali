@@ -65,32 +65,8 @@ return-void
 const-string v0, "io.crash.air"
 invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 move-result v0
-if-eqz v0, :cond_0
-sget-object p0, Lvr;->c:Lvr;
-return-object p0
-:cond_0
-if-eqz p0, :cond_1
-sget-object p0, Lvr;->d:Lvr;
-return-object p0
-:cond_1
 sget-object p0, Lvr;->a:Lvr;
 return-object p0
-.end method
-.method public static valueOf(Ljava/lang/String;)Lvr;
-.locals 1
-const-class v0, Lvr;
-invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-move-result-object p0
-check-cast p0, Lvr;
-return-object p0
-.end method
-.method public static values()[Lvr;
-.locals 1
-sget-object v0, Lvr;->f:[Lvr;
-invoke-virtual {v0}, [Lvr;->clone()Ljava/lang/Object;
-move-result-object v0
-check-cast v0, [Lvr;
-return-object v0
 .end method
 .method public a()I
 .locals 1
@@ -99,8 +75,6 @@ return v0
 .end method
 .method public toString()Ljava/lang/String;
 .locals 1
-iget v0, p0, Lvr;->e:I
-invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method

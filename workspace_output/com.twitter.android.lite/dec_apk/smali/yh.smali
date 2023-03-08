@@ -56,15 +56,7 @@ return-void
 move-object/from16 v1, p0
 move-object/from16 v0, p1
 monitor-enter p0
-:try_start_0
 iget-boolean v2, v1, Lyh;->d:Z
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_0
-if-eqz v2, :cond_0
-monitor-exit p0
-return-object v1
-:cond_0
-:try_start_1
 iget-object v2, v1, Lyh;->c:Lyj;
 const/4 v10, 0x1
 if-nez v2, :cond_1
@@ -129,8 +121,6 @@ invoke-direct/range {v2 .. v9}, Lya;-><init>(Luw;Lyn;Lvp;Lym;Lxx;Lyo;Lvq;)V
 iput-object v11, v1, Lyh;->c:Lyj;
 :cond_1
 iput-boolean v10, v1, Lyh;->d:Z
-:try_end_1
-.catchall {:try_start_1 .. :try_end_1} :catchall_0
 monitor-exit p0
 return-object v1
 :catchall_0
@@ -140,39 +130,21 @@ throw v0
 .end method
 .method public b()Lyk;
 .locals 3
-:try_start_0
 iget-object v0, p0, Lyh;->b:Ljava/util/concurrent/CountDownLatch;
 invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->await()V
 iget-object v0, p0, Lyh;->a:Ljava/util/concurrent/atomic/AtomicReference;
 invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 move-result-object v0
 check-cast v0, Lyk;
-:try_end_0
-.catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-return-object v0
-:catch_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object v0
-const-string v1, "Fabric"
-const-string v2, "Interrupted while waiting for settings data."
-invoke-interface {v0, v1, v2}, Luz;->e(Ljava/lang/String;Ljava/lang/String;)V
-const/4 v0, 0x0
 return-object v0
 .end method
 .method public declared-synchronized c()Z
 .locals 1
 monitor-enter p0
-:try_start_0
 iget-object v0, p0, Lyh;->c:Lyj;
 invoke-interface {v0}, Lyj;->a()Lyk;
 move-result-object v0
 invoke-direct {p0, v0}, Lyh;->a(Lyk;)V
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_0
-if-eqz v0, :cond_0
-const/4 v0, 0x1
-goto :goto_0
-:cond_0
 const/4 v0, 0x0
 :goto_0
 monitor-exit p0
@@ -184,33 +156,6 @@ throw v0
 .end method
 .method public declared-synchronized d()Z
 .locals 5
-monitor-enter p0
-:try_start_0
-iget-object v0, p0, Lyh;->c:Lyj;
-sget-object v1, Lyi;->b:Lyi;
-invoke-interface {v0, v1}, Lyj;->a(Lyi;)Lyk;
-move-result-object v0
-invoke-direct {p0, v0}, Lyh;->a(Lyk;)V
-if-nez v0, :cond_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object v1
-const-string v2, "Fabric"
-const-string v3, "Failed to force reload of settings from Crashlytics."
-const/4 v4, 0x0
-invoke-interface {v1, v2, v3, v4}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_0
-:cond_0
-if-eqz v0, :cond_1
-const/4 v0, 0x1
-goto :goto_0
-:cond_1
 const/4 v0, 0x0
-:goto_0
-monitor-exit p0
 return v0
-:catchall_0
-move-exception v0
-monitor-exit p0
-throw v0
 .end method

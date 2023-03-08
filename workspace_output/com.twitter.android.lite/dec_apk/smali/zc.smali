@@ -32,15 +32,6 @@ return p0
 .locals 10
 array-length v0, p0
 const/4 v1, 0x0
-if-nez v0, :cond_0
-new-instance p0, Lzc;
-new-array v0, v1, [Lyv;
-const/4 v1, 0x2
-new-array v1, v1, [I
-fill-array-data v1, :array_0
-invoke-direct {p0, v0, v1}, Lzc;-><init>([Lyv;[I)V
-return-object p0
-:cond_0
 new-instance v6, Ljava/util/ArrayList;
 invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 move-result-object v0
@@ -79,7 +70,6 @@ move-result-object v0
 check-cast v0, Lyv;
 invoke-virtual {v0}, Lyv;->h()I
 move-result v0
-if-eqz v0, :cond_a
 const/4 v0, 0x0
 :goto_2
 invoke-interface {v6}, Ljava/util/List;->size()I
@@ -99,44 +89,7 @@ move-result-object v5
 check-cast v5, Lyv;
 invoke-virtual {v5, v2}, Lyv;->a(Lyv;)Z
 move-result v7
-if-nez v7, :cond_3
-goto :goto_4
-:cond_3
-invoke-virtual {v5}, Lyv;->h()I
-move-result v7
-invoke-virtual {v2}, Lyv;->h()I
-move-result v8
-if-eq v7, v8, :cond_5
-invoke-interface {v9, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
-move-result-object v5
-check-cast v5, Ljava/lang/Integer;
-invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
-move-result v5
-invoke-interface {v9, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-move-result-object v7
-check-cast v7, Ljava/lang/Integer;
-invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
-move-result v7
-if-le v5, v7, :cond_4
-invoke-interface {v6, v4}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-invoke-interface {v9, v4}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-goto :goto_3
-:cond_4
-add-int/lit8 v4, v4, 0x1
-goto :goto_3
-:cond_5
-new-instance p0, Ljava/lang/IllegalArgumentException;
-new-instance v0, Ljava/lang/StringBuilder;
-invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-const-string v1, "duplicate option: "
-invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v0
-invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-throw p0
 :cond_6
-:goto_4
 move v0, v3
 goto :goto_2
 :cond_7
@@ -163,28 +116,12 @@ goto :goto_5
 :cond_8
 invoke-virtual {v0}, Lys;->g()Z
 move-result v0
-if-eqz v0, :cond_9
 new-instance v0, Lzc;
 invoke-virtual {p0}, [Lyv;->clone()Ljava/lang/Object;
 move-result-object p0
 check-cast p0, [Lyv;
 invoke-direct {v0, p0, v2}, Lzc;-><init>([Lyv;[I)V
 return-object v0
-:cond_9
-new-instance p0, Ljava/lang/AssertionError;
-invoke-direct {p0}, Ljava/lang/AssertionError;-><init>()V
-throw p0
-:cond_a
-new-instance p0, Ljava/lang/IllegalArgumentException;
-const-string v0, "the empty byte string is not a supported option"
-invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-throw p0
-nop
-:array_0
-.array-data 4
-0x0
--0x1
-.end array-data
 .end method
 .method private static a(JLys;ILjava/util/List;IILjava/util/List;)V
 .locals 17
@@ -207,7 +144,6 @@ move-object/from16 v10, p4
 move/from16 v2, p5
 move/from16 v11, p6
 move-object/from16 v12, p7
-if-ge v2, v11, :cond_11
 move v3, v2
 :goto_0
 if-ge v3, v11, :cond_1
@@ -216,13 +152,8 @@ move-result-object v4
 check-cast v4, Lyv;
 invoke-virtual {v4}, Lyv;->h()I
 move-result v4
-if-lt v4, v1, :cond_0
 add-int/lit8 v3, v3, 0x1
 goto :goto_0
-:cond_0
-new-instance v0, Ljava/lang/AssertionError;
-invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-throw v0
 :cond_1
 invoke-interface/range {p4 .. p5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 move-result-object v3
@@ -234,17 +165,6 @@ check-cast v4, Lyv;
 const/4 v5, -0x1
 invoke-virtual {v3}, Lyv;->h()I
 move-result v6
-if-ne v1, v6, :cond_2
-invoke-interface {v12, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-move-result-object v3
-check-cast v3, Ljava/lang/Integer;
-invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-move-result v5
-add-int/lit8 v2, v2, 0x1
-invoke-interface {v10, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-move-result-object v3
-check-cast v3, Lyv;
-:cond_2
 move v6, v2
 invoke-virtual {v3, v1}, Lyv;->a(I)B
 move-result v2
@@ -424,66 +344,32 @@ add-int/lit8 v2, v2, 0x1
 goto :goto_8
 :cond_e
 add-int/lit8 v1, v6, 0x1
-if-ne v1, v11, :cond_10
 invoke-interface {v10, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
 move-result-object v1
 check-cast v1, Lyv;
 invoke-virtual {v1}, Lyv;->h()I
 move-result v1
-if-ne v4, v1, :cond_f
 invoke-interface {v12, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
 move-result-object v1
 check-cast v1, Ljava/lang/Integer;
 invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 move-result v1
 invoke-virtual {v0, v1}, Lys;->d(I)Lys;
-goto :goto_9
-:cond_f
-new-instance v0, Ljava/lang/AssertionError;
-invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-throw v0
-:cond_10
-new-instance v9, Lys;
-invoke-direct {v9}, Lys;-><init>()V
-invoke-static {v9}, Lzc;->a(Lys;)I
-move-result v1
-int-to-long v1, v1
-add-long/2addr v1, v7
-const-wide/16 v13, -0x1
-mul-long v1, v1, v13
-long-to-int v2, v1
-invoke-virtual {v0, v2}, Lys;->d(I)Lys;
-move-wide v1, v7
-move-object v3, v9
-move-object/from16 v5, p4
-move/from16 v7, p6
-move-object/from16 v8, p7
-invoke-static/range {v1 .. v8}, Lzc;->a(JLys;ILjava/util/List;IILjava/util/List;)V
-invoke-virtual {v9}, Lys;->a()J
-move-result-wide v1
-invoke-virtual {v0, v9, v1, v2}, Lys;->write(Lys;J)V
 :goto_9
 return-void
-:cond_11
-new-instance v0, Ljava/lang/AssertionError;
-invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-throw v0
 .end method
 .method public a(I)Lyv;
 .locals 1
-iget-object v0, p0, Lzc;->a:[Lyv;
-aget-object p1, v0, p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public synthetic get(I)Ljava/lang/Object;
 .locals 0
-invoke-virtual {p0, p1}, Lzc;->a(I)Lyv;
-move-result-object p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public final size()I
 .locals 1
-iget-object v0, p0, Lzc;->a:[Lyv;
-array-length v0, v0
+const/4 v0, 0x0
 return v0
 .end method

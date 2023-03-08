@@ -30,16 +30,16 @@ Landroidx/core/view/KeyEventDispatcher$Component;
 .field private static sDialogKeyListenerField:Ljava/lang/reflect/Field;
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+.method static constructor &lt;clinit&gt;()V
 <span class="">	.locals 2</span>
 
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	sput-boolean v0, Landroidx/core/view/KeyEventDispatcher;->sActionBarFieldsFetched:Z</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	sput-object v1, Landroidx/core/view/KeyEventDispatcher;->sActionBarOnMenuKeyMethod:Ljava/lang/reflect/Method;</span>
-<span class="cov">	sput-boolean v0, Landroidx/core/view/KeyEventDispatcher;->sDialogFieldsFetched:Z</span>
-<span class="cov">	sput-object v1, Landroidx/core/view/KeyEventDispatcher;->sDialogKeyListenerField:Ljava/lang/reflect/Field;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	sput-boolean v0, Landroidx/core/view/KeyEventDispatcher;->sActionBarFieldsFetched:Z</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	sput-object v1, Landroidx/core/view/KeyEventDispatcher;->sActionBarOnMenuKeyMethod:Ljava/lang/reflect/Method;</span>
+<span class="missed">	sput-boolean v0, Landroidx/core/view/KeyEventDispatcher;->sDialogFieldsFetched:Z</span>
+<span class="missed">	sput-object v1, Landroidx/core/view/KeyEventDispatcher;->sDialogKeyListenerField:Ljava/lang/reflect/Field;</span>
+<span class="">	return-void</span>
 .end method
 
 .method private constructor &lt;init&gt;()V
@@ -101,18 +101,18 @@ Landroidx/core/view/KeyEventDispatcher$Component;
 <span class="">	return v2</span>
 .end method
 
-<span class="cov">.method private static activitySuperDispatchKeyEventPre28(Landroid/app/Activity;Landroid/view/KeyEvent;)Z</span>
+.method private static activitySuperDispatchKeyEventPre28(Landroid/app/Activity;Landroid/view/KeyEvent;)Z
 <span class="">	.locals 5</span>
 <span class="">	.param p0, "activity"    # Landroid/app/Activity;</span>
 <span class="">	.param p1, "event"    # Landroid/view/KeyEvent;</span>
 
-<span class="cov">	invoke-virtual {p0}, Landroid/app/Activity;->onUserInteraction()V</span>
-<span class="exec">	invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	const/16 v1, 0x8</span>
-<span class="exec">	invoke-virtual {v0, v1}, Landroid/view/Window;->hasFeature(I)Z</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	const/4 v2, 0x1</span>
+<span class="missed">	invoke-virtual {p0}, Landroid/app/Activity;->onUserInteraction()V</span>
+<span class="">	invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	const/16 v1, 0x8</span>
+<span class="">	invoke-virtual {v0, v1}, Landroid/view/Window;->hasFeature(I)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	const/4 v2, 0x1</span>
 <span class="missed">	if-eqz v1, :cond_0</span>
 <span class="">	invoke-virtual {p0}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;</span>
 <span class="missed">	move-result-object v1</span>
@@ -125,29 +125,29 @@ Landroidx/core/view/KeyEventDispatcher$Component;
 <span class="missed">	move-result v4</span>
 <span class="missed">	if-eqz v4, :cond_0</span>
 <span class="">	return v2</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-virtual {v0, p1}, Landroid/view/Window;->superDispatchKeyEvent(Landroid/view/KeyEvent;)Z</span>
-<span class="cov">	move-result v1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-virtual {v0, p1}, Landroid/view/Window;->superDispatchKeyEvent(Landroid/view/KeyEvent;)Z</span>
+<span class="missed">	move-result v1</span>
 <span class="missed">	if-eqz v1, :cond_1</span>
 <span class="">	return v2</span>
-<span class="cov">	:cond_1</span>
-<span class="exec">	invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="exec">	invoke-static {v1, p1}, Landroidx/core/view/ViewCompat;->dispatchUnhandledKeyEventBeforeCallback(Landroid/view/View;Landroid/view/KeyEvent;)Z</span>
-<span class="cov">	move-result v3</span>
+<span class="">	:cond_1</span>
+<span class="">	invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="">	invoke-static {v1, p1}, Landroidx/core/view/ViewCompat;->dispatchUnhandledKeyEventBeforeCallback(Landroid/view/View;Landroid/view/KeyEvent;)Z</span>
+<span class="missed">	move-result v3</span>
 <span class="missed">	if-eqz v3, :cond_2</span>
 <span class="">	return v2</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	if-eqz v1, :cond_3</span>
-<span class="exec">	invoke-virtual {v1}, Landroid/view/View;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;</span>
-<span class="cov">	move-result-object v2</span>
+<span class="">	:cond_2</span>
+<span class="missed">	if-eqz v1, :cond_3</span>
+<span class="">	invoke-virtual {v1}, Landroid/view/View;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;</span>
+<span class="missed">	move-result-object v2</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_3</span>
 <span class="missed">	const/4 v2, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	invoke-virtual {p1, p0, v2, p0}, Landroid/view/KeyEvent;->dispatch(Landroid/view/KeyEvent$Callback;Landroid/view/KeyEvent$DispatcherState;Ljava/lang/Object;)Z</span>
-<span class="cov">	move-result v2</span>
-<span class="exec">	return v2</span>
+<span class="">	:goto_0</span>
+<span class="">	invoke-virtual {p1, p0, v2, p0}, Landroid/view/KeyEvent;->dispatch(Landroid/view/KeyEvent$Callback;Landroid/view/KeyEvent$DispatcherState;Ljava/lang/Object;)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="">	return v2</span>
 .end method
 
 .method private static dialogSuperDispatchKeyEventPre28(Landroid/app/Dialog;Landroid/view/KeyEvent;)Z
@@ -192,41 +192,41 @@ Landroidx/core/view/KeyEventDispatcher$Component;
 <span class="">	return v1</span>
 .end method
 
-<span class="cov">.method public static dispatchBeforeHierarchy(Landroid/view/View;Landroid/view/KeyEvent;)Z</span>
+.method public static dispatchBeforeHierarchy(Landroid/view/View;Landroid/view/KeyEvent;)Z
 <span class="">	.locals 1</span>
 <span class="">	.param p0, "root"    # Landroid/view/View;</span>
 <span class="">	.param p1, "event"    # Landroid/view/KeyEvent;</span>
 
-<span class="exec">	invoke-static {p0, p1}, Landroidx/core/view/ViewCompat;->dispatchUnhandledKeyEventBeforeHierarchy(Landroid/view/View;Landroid/view/KeyEvent;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
+<span class="">	invoke-static {p0, p1}, Landroidx/core/view/ViewCompat;->dispatchUnhandledKeyEventBeforeHierarchy(Landroid/view/View;Landroid/view/KeyEvent;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public static dispatchKeyEvent(Landroidx/core/view/KeyEventDispatcher$Component;Landroid/view/View;Landroid/view/Window$Callback;Landroid/view/KeyEvent;)Z</span>
+.method public static dispatchKeyEvent(Landroidx/core/view/KeyEventDispatcher$Component;Landroid/view/View;Landroid/view/Window$Callback;Landroid/view/KeyEvent;)Z
 <span class="">	.locals 3</span>
 <span class="">	.param p0, "component"    # Landroidx/core/view/KeyEventDispatcher$Component;</span>
 <span class="">	.param p1, "root"    # Landroid/view/View;</span>
 <span class="">	.param p2, "callback"    # Landroid/view/Window$Callback;</span>
 <span class="">	.param p3, "event"    # Landroid/view/KeyEvent;</span>
 
-<span class="cov">	const/4 v0, 0x0</span>
+<span class="missed">	const/4 v0, 0x0</span>
 <span class="missed">	if-nez p0, :cond_0</span>
 <span class="">	return v0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	sget v1, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="cov">	const/16 v2, 0x1c</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sget v1, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v2, 0x1c</span>
 <span class="missed">	if-lt v1, v2, :cond_1</span>
 <span class="">	invoke-interface {p0, p3}, Landroidx/core/view/KeyEventDispatcher$Component;->superDispatchKeyEvent(Landroid/view/KeyEvent;)Z</span>
 <span class="missed">	move-result v0</span>
 <span class="">	return v0</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	instance-of v1, p2, Landroid/app/Activity;</span>
-<span class="cov">	if-eqz v1, :cond_2</span>
-<span class="cov">	move-object v0, p2</span>
-<span class="cov">	check-cast v0, Landroid/app/Activity;</span>
-<span class="exec">	invoke-static {v0, p3}, Landroidx/core/view/KeyEventDispatcher;->activitySuperDispatchKeyEventPre28(Landroid/app/Activity;Landroid/view/KeyEvent;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
+<span class="">	:cond_1</span>
+<span class="missed">	instance-of v1, p2, Landroid/app/Activity;</span>
+<span class="missed">	if-eqz v1, :cond_2</span>
+<span class="missed">	move-object v0, p2</span>
+<span class="missed">	check-cast v0, Landroid/app/Activity;</span>
+<span class="">	invoke-static {v0, p3}, Landroidx/core/view/KeyEventDispatcher;->activitySuperDispatchKeyEventPre28(Landroid/app/Activity;Landroid/view/KeyEvent;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
 <span class="">	:cond_2</span>
 <span class="missed">	instance-of v1, p2, Landroid/app/Dialog;</span>
 <span class="missed">	if-eqz v1, :cond_3</span>

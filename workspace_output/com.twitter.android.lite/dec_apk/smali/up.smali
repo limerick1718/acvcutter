@@ -12,25 +12,15 @@ return-void
 .end method
 .method public constructor <init>(I)V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput p1, p0, Lup;->a:I
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public a(ILjava/lang/String;Ljava/lang/String;)V
 .locals 1
-const/4 v0, 0x0
-invoke-virtual {p0, p1, p2, p3, v0}, Lup;->a(ILjava/lang/String;Ljava/lang/String;Z)V
 return-void
 .end method
 .method public a(ILjava/lang/String;Ljava/lang/String;Z)V
 .locals 0
-if-nez p4, :cond_0
-invoke-virtual {p0, p2, p1}, Lup;->a(Ljava/lang/String;I)Z
-move-result p4
-if-eqz p4, :cond_1
-:cond_0
-invoke-static {p1, p2, p3}, Landroid/util/Log;->println(ILjava/lang/String;Ljava/lang/String;)I
-:cond_1
 return-void
 .end method
 .method public a(Ljava/lang/String;Ljava/lang/String;)V
@@ -44,9 +34,6 @@ return-void
 const/4 v0, 0x3
 invoke-virtual {p0, p1, v0}, Lup;->a(Ljava/lang/String;I)Z
 move-result v0
-if-eqz v0, :cond_0
-invoke-static {p1, p2, p3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-:cond_0
 return-void
 .end method
 .method public a(Ljava/lang/String;I)Z
@@ -55,9 +42,6 @@ iget v0, p0, Lup;->a:I
 if-le v0, p2, :cond_1
 invoke-static {p1, p2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 move-result p1
-if-eqz p1, :cond_0
-goto :goto_0
-:cond_0
 const/4 p1, 0x0
 goto :goto_1
 :cond_1
@@ -77,9 +61,6 @@ return-void
 const/4 v0, 0x2
 invoke-virtual {p0, p1, v0}, Lup;->a(Ljava/lang/String;I)Z
 move-result v0
-if-eqz v0, :cond_0
-invoke-static {p1, p2, p3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-:cond_0
 return-void
 .end method
 .method public c(Ljava/lang/String;Ljava/lang/String;)V

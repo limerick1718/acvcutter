@@ -20,15 +20,6 @@ return-void
 .method public onMenuItemClick(Landroid/view/MenuItem;)Z
 .locals 1
 .param p1, "item"    # Landroid/view/MenuItem;
-iget-object v0, p0, Landroidx/appcompat/widget/Toolbar$1;->this$0:Landroidx/appcompat/widget/Toolbar;
-iget-object v0, v0, Landroidx/appcompat/widget/Toolbar;->mOnMenuItemClickListener:Landroidx/appcompat/widget/Toolbar$OnMenuItemClickListener;
-if-eqz v0, :cond_0
-iget-object v0, p0, Landroidx/appcompat/widget/Toolbar$1;->this$0:Landroidx/appcompat/widget/Toolbar;
-iget-object v0, v0, Landroidx/appcompat/widget/Toolbar;->mOnMenuItemClickListener:Landroidx/appcompat/widget/Toolbar$OnMenuItemClickListener;
-invoke-interface {v0, p1}, Landroidx/appcompat/widget/Toolbar$OnMenuItemClickListener;->onMenuItemClick(Landroid/view/MenuItem;)Z
-move-result v0
-return v0
-:cond_0
 const/4 v0, 0x0
 return v0
 .end method

@@ -26,7 +26,7 @@ value = {
 "*>;"
 }
 .end annotation
-iget-object v0, p0, Lcom/google/android/gms/common/api/internal/k;->a:Lcom/google/android/gms/common/api/internal/af;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public final b()Lrn;
@@ -39,6 +39,6 @@ value = {
 ">;"
 }
 .end annotation
-iget-object v0, p0, Lcom/google/android/gms/common/api/internal/k;->b:Lrn;
+const/4 v0, 0x0
 return-object v0
 .end method

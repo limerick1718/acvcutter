@@ -35,7 +35,6 @@ sget-object v0, Lsi;->b:Lsh;
 if-nez v0, :cond_2
 const-class v0, Lsi;
 monitor-enter v0
-:try_start_0
 sget-object v1, Lsi;->b:Lsh;
 if-nez v1, :cond_1
 new-instance v1, Landroid/os/Bundle;
@@ -68,74 +67,17 @@ goto :goto_0
 :catchall_0
 move-exception p0
 monitor-exit v0
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_0
 throw p0
 :cond_2
 :goto_0
 sget-object p0, Lsi;->b:Lsh;
 return-object p0
 .end method
-.method static final synthetic a(Lsl;)V
-.locals 2
-invoke-virtual {p0}, Lsl;->b()Ljava/lang/Object;
-move-result-object p0
-check-cast p0, Lcom/google/firebase/a;
-iget-boolean p0, p0, Lcom/google/firebase/a;->a:Z
-const-class v0, Lsi;
-monitor-enter v0
-:try_start_0
-sget-object v1, Lsi;->b:Lsh;
-check-cast v1, Lsi;
-iget-object v1, v1, Lsi;->c:Lcom/google/android/gms/measurement/AppMeasurement;
-invoke-virtual {v1, p0}, Lcom/google/android/gms/measurement/AppMeasurement;->a(Z)V
-monitor-exit v0
-return-void
-:catchall_0
-move-exception p0
-monitor-exit v0
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_0
-throw p0
-.end method
 .method public a(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
 .locals 1
-if-nez p3, :cond_0
-new-instance p3, Landroid/os/Bundle;
-invoke-direct {p3}, Landroid/os/Bundle;-><init>()V
-:cond_0
-invoke-static {p1}, Lcom/google/firebase/analytics/connector/internal/b;->a(Ljava/lang/String;)Z
-move-result v0
-if-nez v0, :cond_1
-return-void
-:cond_1
-invoke-static {p2, p3}, Lcom/google/firebase/analytics/connector/internal/b;->a(Ljava/lang/String;Landroid/os/Bundle;)Z
-move-result v0
-if-nez v0, :cond_2
-return-void
-:cond_2
-invoke-static {p1, p2, p3}, Lcom/google/firebase/analytics/connector/internal/b;->a(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Z
-move-result v0
-if-nez v0, :cond_3
-return-void
-:cond_3
-iget-object v0, p0, Lsi;->c:Lcom/google/android/gms/measurement/AppMeasurement;
-invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/gms/measurement/AppMeasurement;->logEventInternal(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
 return-void
 .end method
 .method public a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 .locals 1
-invoke-static {p1}, Lcom/google/firebase/analytics/connector/internal/b;->a(Ljava/lang/String;)Z
-move-result v0
-if-nez v0, :cond_0
-return-void
-:cond_0
-invoke-static {p1, p2}, Lcom/google/firebase/analytics/connector/internal/b;->a(Ljava/lang/String;Ljava/lang/String;)Z
-move-result v0
-if-nez v0, :cond_1
-return-void
-:cond_1
-iget-object v0, p0, Lsi;->c:Lcom/google/android/gms/measurement/AppMeasurement;
-invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/gms/measurement/AppMeasurement;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 return-void
 .end method

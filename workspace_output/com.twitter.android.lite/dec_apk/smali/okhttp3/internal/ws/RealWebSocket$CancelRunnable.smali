@@ -12,13 +12,10 @@ name = "CancelRunnable"
 .field final synthetic this$0:Lokhttp3/internal/ws/RealWebSocket;
 .method constructor <init>(Lokhttp3/internal/ws/RealWebSocket;)V
 .locals 0
-iput-object p1, p0, Lokhttp3/internal/ws/RealWebSocket$CancelRunnable;->this$0:Lokhttp3/internal/ws/RealWebSocket;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public run()V
 .locals 1
-iget-object v0, p0, Lokhttp3/internal/ws/RealWebSocket$CancelRunnable;->this$0:Lokhttp3/internal/ws/RealWebSocket;
-invoke-virtual {v0}, Lokhttp3/internal/ws/RealWebSocket;->cancel()V
 return-void
 .end method

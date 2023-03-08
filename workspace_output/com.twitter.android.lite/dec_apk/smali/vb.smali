@@ -42,13 +42,8 @@ value = {
 "TT;)V"
 }
 .end annotation
-if-eqz p2, :cond_0
 invoke-virtual {p0, p1, p2}, Lvb;->a(Landroid/content/Context;Ljava/lang/Object;)V
 return-void
-:cond_0
-new-instance p1, Ljava/lang/NullPointerException;
-invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
-throw p1
 .end method
 .method protected abstract a(Landroid/content/Context;)Ljava/lang/Object;
 .annotation system Ldalvik/annotation/Signature;
@@ -75,24 +70,15 @@ Ljava/lang/Exception;
 }
 .end annotation
 monitor-enter p0
-:try_start_0
 invoke-virtual {p0, p1}, Lvb;->a(Landroid/content/Context;)Ljava/lang/Object;
 move-result-object v0
 if-nez v0, :cond_1
 iget-object v0, p0, Lvb;->a:Lvd;
-if-eqz v0, :cond_0
-iget-object v0, p0, Lvb;->a:Lvd;
-invoke-interface {v0, p1, p2}, Lvd;->a(Landroid/content/Context;Lve;)Ljava/lang/Object;
-move-result-object p2
-goto :goto_0
-:cond_0
 invoke-interface {p2, p1}, Lve;->load(Landroid/content/Context;)Ljava/lang/Object;
 move-result-object p2
 :goto_0
 move-object v0, p2
 invoke-direct {p0, p1, v0}, Lvb;->b(Landroid/content/Context;Ljava/lang/Object;)V
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_0
 :cond_1
 monitor-exit p0
 return-object v0

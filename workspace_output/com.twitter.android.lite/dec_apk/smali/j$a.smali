@@ -48,22 +48,8 @@ iput-object v0, p0, Lj$a;->c:Landroid/os/Bundle;
 iput-object v0, p0, Lj$a;->d:Ljava/util/ArrayList;
 const/4 v1, 0x1
 iput-boolean v1, p0, Lj$a;->e:Z
-if-eqz p1, :cond_0
-iget-object v1, p0, Lj$a;->a:Landroid/content/Intent;
-invoke-virtual {p1}, Lk;->b()Landroid/content/ComponentName;
-move-result-object v2
-invoke-virtual {v2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
-move-result-object v2
-invoke-virtual {v1, v2}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
-:cond_0
 new-instance v1, Landroid/os/Bundle;
 invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
-if-nez p1, :cond_1
-goto :goto_0
-:cond_1
-invoke-virtual {p1}, Lk;->a()Landroid/os/IBinder;
-move-result-object v0
-:goto_0
 const-string p1, "android.support.customtabs.extra.SESSION"
 invoke-static {v1, p1, v0}, Landroidx/core/app/c;->a(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/IBinder;)V
 iget-object p1, p0, Lj$a;->a:Landroid/content/Intent;
@@ -87,17 +73,7 @@ return-object p0
 .method public a()Lj;
 .locals 3
 iget-object v0, p0, Lj$a;->b:Ljava/util/ArrayList;
-if-eqz v0, :cond_0
-iget-object v1, p0, Lj$a;->a:Landroid/content/Intent;
-const-string v2, "android.support.customtabs.extra.MENU_ITEMS"
-invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putParcelableArrayListExtra(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;
-:cond_0
 iget-object v0, p0, Lj$a;->d:Ljava/util/ArrayList;
-if-eqz v0, :cond_1
-iget-object v1, p0, Lj$a;->a:Landroid/content/Intent;
-const-string v2, "android.support.customtabs.extra.TOOLBAR_ITEMS"
-invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putParcelableArrayListExtra(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;
-:cond_1
 iget-object v0, p0, Lj$a;->a:Landroid/content/Intent;
 iget-boolean v1, p0, Lj$a;->e:Z
 const-string v2, "android.support.customtabs.extra.EXTRA_ENABLE_INSTANT_APPS"

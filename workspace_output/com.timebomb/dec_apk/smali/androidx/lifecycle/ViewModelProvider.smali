@@ -15,18 +15,14 @@ Landroidx/lifecycle/ViewModelProvider$Factory;
 .locals 0
 .param p1, "store"    # Landroidx/lifecycle/ViewModelStore;
 .param p2, "factory"    # Landroidx/lifecycle/ViewModelProvider$Factory;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p2, p0, Landroidx/lifecycle/ViewModelProvider;->mFactory:Landroidx/lifecycle/ViewModelProvider$Factory;
-iput-object p1, p0, Landroidx/lifecycle/ViewModelProvider;->mViewModelStore:Landroidx/lifecycle/ViewModelStore;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public constructor <init>(Landroidx/lifecycle/ViewModelStoreOwner;Landroidx/lifecycle/ViewModelProvider$Factory;)V
 .locals 1
 .param p1, "owner"    # Landroidx/lifecycle/ViewModelStoreOwner;
 .param p2, "factory"    # Landroidx/lifecycle/ViewModelProvider$Factory;
-invoke-interface {p1}, Landroidx/lifecycle/ViewModelStoreOwner;->getViewModelStore()Landroidx/lifecycle/ViewModelStore;
-move-result-object v0
-invoke-direct {p0, v0, p2}, Landroidx/lifecycle/ViewModelProvider;-><init>(Landroidx/lifecycle/ViewModelStore;Landroidx/lifecycle/ViewModelProvider$Factory;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public get(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
@@ -40,24 +36,8 @@ value = {
 "TT;>;)TT;"
 }
 .end annotation
-invoke-virtual {p1}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
-move-result-object v0
-if-eqz v0, :cond_0
-new-instance v1, Ljava/lang/StringBuilder;
-invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-const-string v2, "androidx.lifecycle.ViewModelProvider.DefaultKey:"
-invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v1
-invoke-virtual {p0, v1, p1}, Landroidx/lifecycle/ViewModelProvider;->get(Ljava/lang/String;Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
-move-result-object v1
-return-object v1
-:cond_0
-new-instance v1, Ljava/lang/IllegalArgumentException;
-const-string v2, "Local and anonymous classes can not be ViewModels"
-invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-throw v1
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public get(Ljava/lang/String;Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
 .locals 2
@@ -72,19 +52,6 @@ value = {
 "TT;>;)TT;"
 }
 .end annotation
-iget-object v0, p0, Landroidx/lifecycle/ViewModelProvider;->mViewModelStore:Landroidx/lifecycle/ViewModelStore;
-invoke-virtual {v0, p1}, Landroidx/lifecycle/ViewModelStore;->get(Ljava/lang/String;)Landroidx/lifecycle/ViewModel;
-move-result-object v0
-invoke-virtual {p2, v0}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
-move-result v1
-if-eqz v1, :cond_0
-return-object v0
-:cond_0
-nop
-iget-object v1, p0, Landroidx/lifecycle/ViewModelProvider;->mFactory:Landroidx/lifecycle/ViewModelProvider$Factory;
-invoke-interface {v1, p2}, Landroidx/lifecycle/ViewModelProvider$Factory;->create(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
-move-result-object v0
-iget-object v1, p0, Landroidx/lifecycle/ViewModelProvider;->mViewModelStore:Landroidx/lifecycle/ViewModelStore;
-invoke-virtual {v1, p1, v0}, Landroidx/lifecycle/ViewModelStore;->put(Ljava/lang/String;Landroidx/lifecycle/ViewModel;)V
+const/4 v0, 0x0
 return-object v0
 .end method

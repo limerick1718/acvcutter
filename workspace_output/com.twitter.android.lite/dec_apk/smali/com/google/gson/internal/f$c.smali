@@ -39,17 +39,7 @@ value = {
 .field final synthetic e:Lcom/google/gson/internal/f;
 .method constructor <init>(Lcom/google/gson/internal/f;)V
 .locals 0
-iput-object p1, p0, Lcom/google/gson/internal/f$c;->e:Lcom/google/gson/internal/f;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iget-object p1, p0, Lcom/google/gson/internal/f$c;->e:Lcom/google/gson/internal/f;
-iget-object p1, p1, Lcom/google/gson/internal/f;->e:Lcom/google/gson/internal/f$d;
-iget-object p1, p1, Lcom/google/gson/internal/f$d;->d:Lcom/google/gson/internal/f$d;
-iput-object p1, p0, Lcom/google/gson/internal/f$c;->b:Lcom/google/gson/internal/f$d;
-const/4 p1, 0x0
-iput-object p1, p0, Lcom/google/gson/internal/f$c;->c:Lcom/google/gson/internal/f$d;
-iget-object p1, p0, Lcom/google/gson/internal/f$c;->e:Lcom/google/gson/internal/f;
-iget p1, p1, Lcom/google/gson/internal/f;->d:I
-iput p1, p0, Lcom/google/gson/internal/f$c;->d:I
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method final b()Lcom/google/gson/internal/f$d;
@@ -61,55 +51,15 @@ value = {
 "TK;TV;>;"
 }
 .end annotation
-iget-object v0, p0, Lcom/google/gson/internal/f$c;->b:Lcom/google/gson/internal/f$d;
-iget-object v1, p0, Lcom/google/gson/internal/f$c;->e:Lcom/google/gson/internal/f;
-iget-object v1, v1, Lcom/google/gson/internal/f;->e:Lcom/google/gson/internal/f$d;
-if-eq v0, v1, :cond_1
-iget-object v1, p0, Lcom/google/gson/internal/f$c;->e:Lcom/google/gson/internal/f;
-iget v1, v1, Lcom/google/gson/internal/f;->d:I
-iget v2, p0, Lcom/google/gson/internal/f$c;->d:I
-if-ne v1, v2, :cond_0
-iget-object v1, v0, Lcom/google/gson/internal/f$d;->d:Lcom/google/gson/internal/f$d;
-iput-object v1, p0, Lcom/google/gson/internal/f$c;->b:Lcom/google/gson/internal/f$d;
-iput-object v0, p0, Lcom/google/gson/internal/f$c;->c:Lcom/google/gson/internal/f$d;
+const/4 v0, 0x0
 return-object v0
-:cond_0
-new-instance v0, Ljava/util/ConcurrentModificationException;
-invoke-direct {v0}, Ljava/util/ConcurrentModificationException;-><init>()V
-throw v0
-:cond_1
-new-instance v0, Ljava/util/NoSuchElementException;
-invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-throw v0
 .end method
 .method public final hasNext()Z
 .locals 2
-iget-object v0, p0, Lcom/google/gson/internal/f$c;->b:Lcom/google/gson/internal/f$d;
-iget-object v1, p0, Lcom/google/gson/internal/f$c;->e:Lcom/google/gson/internal/f;
-iget-object v1, v1, Lcom/google/gson/internal/f;->e:Lcom/google/gson/internal/f$d;
-if-eq v0, v1, :cond_0
-const/4 v0, 0x1
-goto :goto_0
-:cond_0
 const/4 v0, 0x0
-:goto_0
 return v0
 .end method
 .method public final remove()V
 .locals 3
-iget-object v0, p0, Lcom/google/gson/internal/f$c;->c:Lcom/google/gson/internal/f$d;
-if-eqz v0, :cond_0
-iget-object v1, p0, Lcom/google/gson/internal/f$c;->e:Lcom/google/gson/internal/f;
-const/4 v2, 0x1
-invoke-virtual {v1, v0, v2}, Lcom/google/gson/internal/f;->a(Lcom/google/gson/internal/f$d;Z)V
-const/4 v0, 0x0
-iput-object v0, p0, Lcom/google/gson/internal/f$c;->c:Lcom/google/gson/internal/f$d;
-iget-object v0, p0, Lcom/google/gson/internal/f$c;->e:Lcom/google/gson/internal/f;
-iget v0, v0, Lcom/google/gson/internal/f;->d:I
-iput v0, p0, Lcom/google/gson/internal/f$c;->d:I
 return-void
-:cond_0
-new-instance v0, Ljava/lang/IllegalStateException;
-invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
-throw v0
 .end method

@@ -2,7 +2,7 @@
 .super Ldalvik/system/PathClassLoader;
 .method constructor <init>(Ljava/lang/String;Ljava/lang/ClassLoader;)V
 .locals 0
-invoke-direct {p0, p1, p2}, Ldalvik/system/PathClassLoader;-><init>(Ljava/lang/String;Ljava/lang/ClassLoader;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method protected final loadClass(Ljava/lang/String;Z)Ljava/lang/Class;
@@ -21,23 +21,6 @@ value = {
 Ljava/lang/ClassNotFoundException;
 }
 .end annotation
-const-string v0, "java."
-invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-move-result v0
-if-nez v0, :cond_0
-const-string v0, "android."
-invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-move-result v0
-if-nez v0, :cond_0
-:try_start_0
-invoke-virtual {p0, p1}, Lcom/google/android/gms/dynamite/h;->findClass(Ljava/lang/String;)Ljava/lang/Class;
-move-result-object p1
-:try_end_0
-.catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-return-object p1
-:catch_0
-:cond_0
-invoke-super {p0, p1, p2}, Ldalvik/system/PathClassLoader;->loadClass(Ljava/lang/String;Z)Ljava/lang/Class;
-move-result-object p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method

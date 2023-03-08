@@ -13,17 +13,12 @@ name = null
 .method constructor <init>(Landroidx/appcompat/app/ToolbarActionBar;)V
 .locals 0
 .param p1, "this$0"    # Landroidx/appcompat/app/ToolbarActionBar;
-iput-object p1, p0, Landroidx/appcompat/app/ToolbarActionBar$2;->this$0:Landroidx/appcompat/app/ToolbarActionBar;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onMenuItemClick(Landroid/view/MenuItem;)Z
 .locals 2
 .param p1, "item"    # Landroid/view/MenuItem;
-iget-object v0, p0, Landroidx/appcompat/app/ToolbarActionBar$2;->this$0:Landroidx/appcompat/app/ToolbarActionBar;
-iget-object v0, v0, Landroidx/appcompat/app/ToolbarActionBar;->mWindowCallback:Landroid/view/Window$Callback;
-const/4 v1, 0x0
-invoke-interface {v0, v1, p1}, Landroid/view/Window$Callback;->onMenuItemSelected(ILandroid/view/MenuItem;)Z
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method

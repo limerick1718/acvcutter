@@ -12,7 +12,7 @@ value = {
 .end annotation
 .method public constructor <init>()V
 .locals 0
-invoke-direct {p0}, Landroidx/lifecycle/LiveData;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public a(Ljava/lang/Object;)V
@@ -22,6 +22,5 @@ value = {
 "(TT;)V"
 }
 .end annotation
-invoke-super {p0, p1}, Landroidx/lifecycle/LiveData;->a(Ljava/lang/Object;)V
 return-void
 .end method

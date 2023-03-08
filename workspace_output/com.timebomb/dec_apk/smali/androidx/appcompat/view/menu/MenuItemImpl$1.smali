@@ -13,16 +13,11 @@ name = null
 .method constructor <init>(Landroidx/appcompat/view/menu/MenuItemImpl;)V
 .locals 0
 .param p1, "this$0"    # Landroidx/appcompat/view/menu/MenuItemImpl;
-iput-object p1, p0, Landroidx/appcompat/view/menu/MenuItemImpl$1;->this$0:Landroidx/appcompat/view/menu/MenuItemImpl;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onActionProviderVisibilityChanged(Z)V
 .locals 2
 .param p1, "isVisible"    # Z
-iget-object v0, p0, Landroidx/appcompat/view/menu/MenuItemImpl$1;->this$0:Landroidx/appcompat/view/menu/MenuItemImpl;
-iget-object v0, v0, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;
-iget-object v1, p0, Landroidx/appcompat/view/menu/MenuItemImpl$1;->this$0:Landroidx/appcompat/view/menu/MenuItemImpl;
-invoke-virtual {v0, v1}, Landroidx/appcompat/view/menu/MenuBuilder;->onItemVisibleChanged(Landroidx/appcompat/view/menu/MenuItemImpl;)V
 return-void
 .end method

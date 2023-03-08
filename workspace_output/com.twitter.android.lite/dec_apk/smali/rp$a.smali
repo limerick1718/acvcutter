@@ -25,14 +25,10 @@ return-void
 .end method
 .method public final a()V
 .locals 1
-iget-object v0, p0, Lrp$a;->a:Ljava/util/concurrent/CountDownLatch;
-invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 return-void
 .end method
 .method public final a(Ljava/lang/Exception;)V
 .locals 0
-iget-object p1, p0, Lrp$a;->a:Ljava/util/concurrent/CountDownLatch;
-invoke-virtual {p1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 return-void
 .end method
 .method public final a(Ljava/lang/Object;)V

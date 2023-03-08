@@ -122,13 +122,13 @@ value = {
 <span class="exec">	return v0</span>
 .end method
 
-<span class="cov">.method public dispatchDestroy()V</span>
+.method public dispatchDestroy()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;</span>
-<span class="cov">	iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;</span>
-<span class="cov">	invoke-virtual {v0}, Landroidx/fragment/app/FragmentManagerImpl;->dispatchDestroy()V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;</span>
+<span class="missed">	iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;</span>
+<span class="missed">	invoke-virtual {v0}, Landroidx/fragment/app/FragmentManagerImpl;->dispatchDestroy()V</span>
+<span class="">	return-void</span>
 .end method
 
 .method public dispatchDestroyView()V

@@ -23,9 +23,7 @@ value = {
 .locals 0
 .param p1, "params"    # Landroidx/core/text/PrecomputedTextCompat$Params;
 .param p2, "cs"    # Ljava/lang/CharSequence;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Landroidx/core/text/PrecomputedTextCompat$PrecomputedTextFutureTask$PrecomputedTextCallback;->mParams:Landroidx/core/text/PrecomputedTextCompat$Params;
-iput-object p2, p0, Landroidx/core/text/PrecomputedTextCompat$PrecomputedTextFutureTask$PrecomputedTextCallback;->mText:Ljava/lang/CharSequence;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public call()Landroidx/core/text/PrecomputedTextCompat;
@@ -35,10 +33,7 @@ value = {
 Ljava/lang/Exception;
 }
 .end annotation
-iget-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$PrecomputedTextFutureTask$PrecomputedTextCallback;->mText:Ljava/lang/CharSequence;
-iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$PrecomputedTextFutureTask$PrecomputedTextCallback;->mParams:Landroidx/core/text/PrecomputedTextCompat$Params;
-invoke-static {v0, v1}, Landroidx/core/text/PrecomputedTextCompat;->create(Ljava/lang/CharSequence;Landroidx/core/text/PrecomputedTextCompat$Params;)Landroidx/core/text/PrecomputedTextCompat;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public bridge synthetic call()Ljava/lang/Object;
@@ -48,7 +43,6 @@ value = {
 Ljava/lang/Exception;
 }
 .end annotation
-invoke-virtual {p0}, Landroidx/core/text/PrecomputedTextCompat$PrecomputedTextFutureTask$PrecomputedTextCallback;->call()Landroidx/core/text/PrecomputedTextCompat;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method

@@ -7,10 +7,6 @@
 .field public final size:J
 .method public constructor <init>(JJLjava/lang/String;Ljava/lang/String;)V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-wide p1, p0, Lcom/crashlytics/android/core/ProcMapEntry;->address:J
-iput-wide p3, p0, Lcom/crashlytics/android/core/ProcMapEntry;->size:J
-iput-object p5, p0, Lcom/crashlytics/android/core/ProcMapEntry;->perms:Ljava/lang/String;
-iput-object p6, p0, Lcom/crashlytics/android/core/ProcMapEntry;->path:Ljava/lang/String;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

@@ -20,39 +20,31 @@ name = "FontInfo"
 .param p3, "weight"    # I
 .param p4, "italic"    # Z
 .param p5, "resultCode"    # I
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-invoke-static {p1}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-move-result-object v0
-check-cast v0, Landroid/net/Uri;
-iput-object v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mUri:Landroid/net/Uri;
-iput p2, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mTtcIndex:I
-iput p3, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mWeight:I
-iput-boolean p4, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mItalic:Z
-iput p5, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mResultCode:I
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public getResultCode()I
 .locals 1
-iget v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mResultCode:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public getTtcIndex()I
 .locals 1
-iget v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mTtcIndex:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public getUri()Landroid/net/Uri;
 .locals 1
-iget-object v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mUri:Landroid/net/Uri;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getWeight()I
 .locals 1
-iget v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mWeight:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public isItalic()Z
 .locals 1
-iget-boolean v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mItalic:Z
+const/4 v0, 0x0
 return v0
 .end method

@@ -18,11 +18,6 @@ return-void
 .end method
 .method public final a(ILandroid/os/Bundle;)V
 .locals 1
-new-instance p1, Ljava/lang/Exception;
-invoke-direct {p1}, Ljava/lang/Exception;-><init>()V
-const-string p2, "GmsClient"
-const-string v0, "received deprecated onAccountValidationComplete callback, ignoring"
-invoke-static {p2, v0, p1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 return-void
 .end method
 .method public final a(ILandroid/os/IBinder;Landroid/os/Bundle;)V

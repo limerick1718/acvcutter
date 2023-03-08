@@ -39,27 +39,10 @@ move-result v2
 invoke-static {v2}, Lbb;->a(I)I
 move-result v3
 packed-switch v3, :pswitch_data_0
-invoke-static {v0, v2}, Lbb;->b(Landroid/os/Parcel;I)V
-goto :goto_0
-:pswitch_0
-invoke-static {v0, v2}, Lbb;->h(Landroid/os/Parcel;I)Ljava/lang/Double;
-move-result-object v15
 goto :goto_0
 :pswitch_1
 invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
 move-result-object v14
-goto :goto_0
-:pswitch_2
-invoke-static {v0, v2}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
-move-result-object v13
-goto :goto_0
-:pswitch_3
-invoke-static {v0, v2}, Lbb;->g(Landroid/os/Parcel;I)Ljava/lang/Float;
-move-result-object v12
-goto :goto_0
-:pswitch_4
-invoke-static {v0, v2}, Lbb;->f(Landroid/os/Parcel;I)Ljava/lang/Long;
-move-result-object v11
 goto :goto_0
 :pswitch_5
 invoke-static {v0, v2}, Lbb;->e(Landroid/os/Parcel;I)J
@@ -85,15 +68,15 @@ nop
 :pswitch_7
 :pswitch_6
 :pswitch_5
-:pswitch_4
-:pswitch_3
-:pswitch_2
+:pswitch_5
+:pswitch_5
+:pswitch_5
 :pswitch_1
-:pswitch_0
+:pswitch_1
 .end packed-switch
 .end method
 .method public final synthetic newArray(I)[Ljava/lang/Object;
 .locals 0
-new-array p1, p1, [Lps;
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method

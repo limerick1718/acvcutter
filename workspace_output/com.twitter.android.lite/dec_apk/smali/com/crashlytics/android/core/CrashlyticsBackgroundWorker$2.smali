@@ -37,20 +37,8 @@ value = {
 Ljava/lang/Exception;
 }
 .end annotation
-:try_start_0
 iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker$2;->val$callable:Ljava/util/concurrent/Callable;
 invoke-interface {v0}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
 move-result-object v0
-:try_end_0
-.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-return-object v0
-:catch_0
-move-exception v0
-invoke-static {}, Luq;->g()Luz;
-move-result-object v1
-const-string v2, "CrashlyticsCore"
-const-string v3, "Failed to execute task."
-invoke-interface {v1, v2, v3, v0}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-const/4 v0, 0x0
 return-object v0
 .end method

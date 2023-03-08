@@ -12,7 +12,7 @@ return-void
 .end method
 .method public getNestedScrollAxes()I
 .locals 1
-iget v0, p0, Landroidx/core/view/NestedScrollingParentHelper;->mNestedScrollAxes:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;I)V
@@ -20,8 +20,6 @@ return v0
 .param p1, "child"    # Landroid/view/View;
 .param p2, "target"    # Landroid/view/View;
 .param p3, "axes"    # I
-const/4 v0, 0x0
-invoke-virtual {p0, p1, p2, p3, v0}, Landroidx/core/view/NestedScrollingParentHelper;->onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;II)V
 return-void
 .end method
 .method public onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;II)V
@@ -30,21 +28,16 @@ return-void
 .param p2, "target"    # Landroid/view/View;
 .param p3, "axes"    # I
 .param p4, "type"    # I
-iput p3, p0, Landroidx/core/view/NestedScrollingParentHelper;->mNestedScrollAxes:I
 return-void
 .end method
 .method public onStopNestedScroll(Landroid/view/View;)V
 .locals 1
 .param p1, "target"    # Landroid/view/View;
-const/4 v0, 0x0
-invoke-virtual {p0, p1, v0}, Landroidx/core/view/NestedScrollingParentHelper;->onStopNestedScroll(Landroid/view/View;I)V
 return-void
 .end method
 .method public onStopNestedScroll(Landroid/view/View;I)V
 .locals 1
 .param p1, "target"    # Landroid/view/View;
 .param p2, "type"    # I
-const/4 v0, 0x0
-iput v0, p0, Landroidx/core/view/NestedScrollingParentHelper;->mNestedScrollAxes:I
 return-void
 .end method

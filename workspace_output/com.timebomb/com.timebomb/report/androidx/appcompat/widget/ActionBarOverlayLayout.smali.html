@@ -338,13 +338,13 @@ Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;
 <span class="exec">	return v0</span>
 .end method
 
-<span class="cov">.method public dismissPopups()V</span>
+.method public dismissPopups()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->pullChildren()V</span>
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroidx/appcompat/widget/DecorToolbar;</span>
-<span class="cov">	invoke-interface {v0}, Landroidx/appcompat/widget/DecorToolbar;->dismissPopupMenus()V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->pullChildren()V</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroidx/appcompat/widget/DecorToolbar;</span>
+<span class="missed">	invoke-interface {v0}, Landroidx/appcompat/widget/DecorToolbar;->dismissPopupMenus()V</span>
+<span class="">	return-void</span>
 .end method
 
 .method public draw(Landroid/graphics/Canvas;)V
@@ -526,18 +526,18 @@ Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;
 <span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method  haltActionBarHideOffsetAnimations()V</span>
+.method  haltActionBarHideOffsetAnimations()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mRemoveActionBarHideOffset:Ljava/lang/Runnable;</span>
-<span class="cov">	invoke-virtual {p0, v0}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->removeCallbacks(Ljava/lang/Runnable;)Z</span>
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mAddActionBarHideOffset:Ljava/lang/Runnable;</span>
-<span class="cov">	invoke-virtual {p0, v0}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->removeCallbacks(Ljava/lang/Runnable;)Z</span>
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mCurrentActionBarTopAnimator:Landroid/view/ViewPropertyAnimator;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mRemoveActionBarHideOffset:Ljava/lang/Runnable;</span>
+<span class="missed">	invoke-virtual {p0, v0}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->removeCallbacks(Ljava/lang/Runnable;)Z</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mAddActionBarHideOffset:Ljava/lang/Runnable;</span>
+<span class="missed">	invoke-virtual {p0, v0}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->removeCallbacks(Ljava/lang/Runnable;)Z</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mCurrentActionBarTopAnimator:Landroid/view/ViewPropertyAnimator;</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
 .end method
 
 .method public hasIcon()Z
@@ -644,12 +644,12 @@ Landroidx/appcompat/widget/ActionBarOverlayLayout$LayoutParams;
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method protected onDetachedFromWindow()V</span>
+.method protected onDetachedFromWindow()V
 <span class="">	.locals 0</span>
 
-<span class="cov">	invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V</span>
-<span class="cov">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->haltActionBarHideOffsetAnimations()V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->haltActionBarHideOffsetAnimations()V</span>
+<span class="">	return-void</span>
 .end method
 
 <span class="cov">.method protected onLayout(ZIIII)V</span>

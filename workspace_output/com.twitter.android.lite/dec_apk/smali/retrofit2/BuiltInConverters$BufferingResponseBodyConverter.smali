@@ -19,16 +19,9 @@ value = {
 }
 .end annotation
 .field static final INSTANCE:Lretrofit2/BuiltInConverters$BufferingResponseBodyConverter;
-.method static constructor <clinit>()V
-.locals 1
-new-instance v0, Lretrofit2/BuiltInConverters$BufferingResponseBodyConverter;
-invoke-direct {v0}, Lretrofit2/BuiltInConverters$BufferingResponseBodyConverter;-><init>()V
-sput-object v0, Lretrofit2/BuiltInConverters$BufferingResponseBodyConverter;->INSTANCE:Lretrofit2/BuiltInConverters$BufferingResponseBodyConverter;
-return-void
-.end method
 .method constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public bridge synthetic convert(Ljava/lang/Object;)Ljava/lang/Object;
@@ -38,10 +31,8 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-check-cast p1, Lokhttp3/ResponseBody;
-invoke-virtual {p0, p1}, Lretrofit2/BuiltInConverters$BufferingResponseBodyConverter;->convert(Lokhttp3/ResponseBody;)Lokhttp3/ResponseBody;
-move-result-object p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public convert(Lokhttp3/ResponseBody;)Lokhttp3/ResponseBody;
 .locals 1
@@ -50,15 +41,6 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-:try_start_0
-invoke-static {p1}, Lretrofit2/Utils;->buffer(Lokhttp3/ResponseBody;)Lokhttp3/ResponseBody;
-move-result-object v0
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_0
-invoke-virtual {p1}, Lokhttp3/ResponseBody;->close()V
+const/4 v0, 0x0
 return-object v0
-:catchall_0
-move-exception v0
-invoke-virtual {p1}, Lokhttp3/ResponseBody;->close()V
-throw v0
 .end method

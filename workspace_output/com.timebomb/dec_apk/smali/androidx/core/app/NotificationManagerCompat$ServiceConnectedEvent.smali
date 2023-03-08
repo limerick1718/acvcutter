@@ -14,8 +14,6 @@ name = "ServiceConnectedEvent"
 .locals 0
 .param p1, "componentName"    # Landroid/content/ComponentName;
 .param p2, "iBinder"    # Landroid/os/IBinder;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Landroidx/core/app/NotificationManagerCompat$ServiceConnectedEvent;->componentName:Landroid/content/ComponentName;
-iput-object p2, p0, Landroidx/core/app/NotificationManagerCompat$ServiceConnectedEvent;->iBinder:Landroid/os/IBinder;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

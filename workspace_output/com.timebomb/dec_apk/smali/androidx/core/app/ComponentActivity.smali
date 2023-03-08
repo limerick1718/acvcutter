@@ -36,38 +36,14 @@ return-void
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 .locals 2
 .param p1, "event"    # Landroid/view/KeyEvent;
-invoke-virtual {p0}, Landroidx/core/app/ComponentActivity;->getWindow()Landroid/view/Window;
-move-result-object v0
-invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-move-result-object v0
-if-eqz v0, :cond_0
-invoke-static {v0, p1}, Landroidx/core/view/KeyEventDispatcher;->dispatchBeforeHierarchy(Landroid/view/View;Landroid/view/KeyEvent;)Z
-move-result v1
-if-eqz v1, :cond_0
-const/4 v1, 0x1
-return v1
-:cond_0
-invoke-static {p0, v0, p0, p1}, Landroidx/core/view/KeyEventDispatcher;->dispatchKeyEvent(Landroidx/core/view/KeyEventDispatcher$Component;Landroid/view/View;Landroid/view/Window$Callback;Landroid/view/KeyEvent;)Z
-move-result v1
-return v1
+const/4 v0, 0x0
+return v0
 .end method
 .method public dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z
 .locals 2
 .param p1, "event"    # Landroid/view/KeyEvent;
-invoke-virtual {p0}, Landroidx/core/app/ComponentActivity;->getWindow()Landroid/view/Window;
-move-result-object v0
-invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-move-result-object v0
-if-eqz v0, :cond_0
-invoke-static {v0, p1}, Landroidx/core/view/KeyEventDispatcher;->dispatchBeforeHierarchy(Landroid/view/View;Landroid/view/KeyEvent;)Z
-move-result v1
-if-eqz v1, :cond_0
-const/4 v1, 0x1
-return v1
-:cond_0
-invoke-super {p0, p1}, Landroid/app/Activity;->dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z
-move-result v1
-return v1
+const/4 v0, 0x0
+return v0
 .end method
 .method public getExtraData(Ljava/lang/Class;)Landroidx/core/app/ComponentActivity$ExtraData;
 .locals 1
@@ -80,10 +56,7 @@ value = {
 "TT;>;)TT;"
 }
 .end annotation
-iget-object v0, p0, Landroidx/core/app/ComponentActivity;->mExtraDataMap:Landroidx/collection/SimpleArrayMap;
-invoke-virtual {v0, p1}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-move-result-object v0
-check-cast v0, Landroidx/core/app/ComponentActivity$ExtraData;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getLifecycle()Landroidx/lifecycle/Lifecycle;
@@ -110,16 +83,11 @@ return-void
 .method public putExtraData(Landroidx/core/app/ComponentActivity$ExtraData;)V
 .locals 2
 .param p1, "extraData"    # Landroidx/core/app/ComponentActivity$ExtraData;
-iget-object v0, p0, Landroidx/core/app/ComponentActivity;->mExtraDataMap:Landroidx/collection/SimpleArrayMap;
-invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-move-result-object v1
-invoke-virtual {v0, v1, p1}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 return-void
 .end method
 .method public superDispatchKeyEvent(Landroid/view/KeyEvent;)Z
 .locals 1
 .param p1, "event"    # Landroid/view/KeyEvent;
-invoke-super {p0, p1}, Landroid/app/Activity;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method

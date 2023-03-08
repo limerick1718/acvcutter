@@ -13,15 +13,12 @@ name = null
 .method constructor <init>(Landroidx/appcompat/app/AppCompatDialog;)V
 .locals 0
 .param p1, "this$0"    # Landroidx/appcompat/app/AppCompatDialog;
-iput-object p1, p0, Landroidx/appcompat/app/AppCompatDialog$1;->this$0:Landroidx/appcompat/app/AppCompatDialog;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public superDispatchKeyEvent(Landroid/view/KeyEvent;)Z
 .locals 1
 .param p1, "event"    # Landroid/view/KeyEvent;
-iget-object v0, p0, Landroidx/appcompat/app/AppCompatDialog$1;->this$0:Landroidx/appcompat/app/AppCompatDialog;
-invoke-virtual {v0, p1}, Landroidx/appcompat/app/AppCompatDialog;->superDispatchKeyEvent(Landroid/view/KeyEvent;)Z
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method

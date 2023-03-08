@@ -9,7 +9,7 @@ name = "a"
 .end annotation
 .method public constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/ClassLoader;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method protected final loadClass(Ljava/lang/String;Z)Ljava/lang/Class;
@@ -28,21 +28,6 @@ value = {
 Ljava/lang/ClassNotFoundException;
 }
 .end annotation
-const-string v0, "com.google.android.gms.iid.MessengerCompat"
-invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-move-result v0
-if-eqz v0, :cond_1
-invoke-static {}, Lcom/google/firebase/iid/FirebaseInstanceId;->g()Z
-move-result p1
-if-eqz p1, :cond_0
-const-string p1, "FirebaseInstanceId"
-const-string p2, "Using renamed FirebaseIidMessengerCompat class"
-invoke-static {p1, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-:cond_0
-const-class p1, Lcom/google/firebase/iid/ao;
-return-object p1
-:cond_1
-invoke-super {p0, p1, p2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;Z)Ljava/lang/Class;
-move-result-object p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method

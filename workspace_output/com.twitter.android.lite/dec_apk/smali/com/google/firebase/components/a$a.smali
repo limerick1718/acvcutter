@@ -106,12 +106,7 @@ value = {
 }
 .end annotation
 iget v0, p0, Lcom/google/firebase/components/a$a;->c:I
-if-nez v0, :cond_0
 const/4 v0, 0x1
-goto :goto_0
-:cond_0
-const/4 v0, 0x0
-:goto_0
 const-string v1, "Instantiation type has already been set."
 invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/o;->a(ZLjava/lang/Object;)V
 iput p1, p0, Lcom/google/firebase/components/a$a;->c:I
@@ -198,12 +193,7 @@ value = {
 }
 .end annotation
 iget-object v0, p0, Lcom/google/firebase/components/a$a;->d:Lcom/google/firebase/components/c;
-if-eqz v0, :cond_0
 const/4 v0, 0x1
-goto :goto_0
-:cond_0
-const/4 v0, 0x0
-:goto_0
 const-string v1, "Missing required property: factory."
 invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/o;->a(ZLjava/lang/Object;)V
 new-instance v0, Lcom/google/firebase/components/a;

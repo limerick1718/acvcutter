@@ -20,8 +20,7 @@ value = {
 .method constructor <init>(Landroidx/lifecycle/Transformations$2;)V
 .locals 0
 .param p1, "this$0"    # Landroidx/lifecycle/Transformations$2;
-iput-object p1, p0, Landroidx/lifecycle/Transformations$2$1;->this$0:Landroidx/lifecycle/Transformations$2;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onChanged(Ljava/lang/Object;)V
@@ -31,8 +30,5 @@ value = {
 "(TY;)V"
 }
 .end annotation
-iget-object v0, p0, Landroidx/lifecycle/Transformations$2$1;->this$0:Landroidx/lifecycle/Transformations$2;
-iget-object v0, v0, Landroidx/lifecycle/Transformations$2;->val$result:Landroidx/lifecycle/MediatorLiveData;
-invoke-virtual {v0, p1}, Landroidx/lifecycle/MediatorLiveData;->setValue(Ljava/lang/Object;)V
 return-void
 .end method

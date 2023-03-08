@@ -55,18 +55,12 @@ return-void
 .method public dispatchConfigurationChanged(Landroid/content/res/Configuration;)V
 .locals 1
 .param p1, "newConfig"    # Landroid/content/res/Configuration;
-iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;
-invoke-virtual {v0, p1}, Landroidx/fragment/app/FragmentManagerImpl;->dispatchConfigurationChanged(Landroid/content/res/Configuration;)V
 return-void
 .end method
 .method public dispatchContextItemSelected(Landroid/view/MenuItem;)Z
 .locals 1
 .param p1, "item"    # Landroid/view/MenuItem;
-iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;
-invoke-virtual {v0, p1}, Landroidx/fragment/app/FragmentManagerImpl;->dispatchContextItemSelected(Landroid/view/MenuItem;)Z
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public dispatchCreate()V
@@ -88,48 +82,30 @@ return v0
 .end method
 .method public dispatchDestroy()V
 .locals 1
-iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;
-invoke-virtual {v0}, Landroidx/fragment/app/FragmentManagerImpl;->dispatchDestroy()V
 return-void
 .end method
 .method public dispatchDestroyView()V
 .locals 1
-iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;
-invoke-virtual {v0}, Landroidx/fragment/app/FragmentManagerImpl;->dispatchDestroyView()V
 return-void
 .end method
 .method public dispatchLowMemory()V
 .locals 1
-iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;
-invoke-virtual {v0}, Landroidx/fragment/app/FragmentManagerImpl;->dispatchLowMemory()V
 return-void
 .end method
 .method public dispatchMultiWindowModeChanged(Z)V
 .locals 1
 .param p1, "isInMultiWindowMode"    # Z
-iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;
-invoke-virtual {v0, p1}, Landroidx/fragment/app/FragmentManagerImpl;->dispatchMultiWindowModeChanged(Z)V
 return-void
 .end method
 .method public dispatchOptionsItemSelected(Landroid/view/MenuItem;)Z
 .locals 1
 .param p1, "item"    # Landroid/view/MenuItem;
-iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;
-invoke-virtual {v0, p1}, Landroidx/fragment/app/FragmentManagerImpl;->dispatchOptionsItemSelected(Landroid/view/MenuItem;)Z
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public dispatchOptionsMenuClosed(Landroid/view/Menu;)V
 .locals 1
 .param p1, "menu"    # Landroid/view/Menu;
-iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;
-invoke-virtual {v0, p1}, Landroidx/fragment/app/FragmentManagerImpl;->dispatchOptionsMenuClosed(Landroid/view/Menu;)V
 return-void
 .end method
 .method public dispatchPause()V
@@ -142,9 +118,6 @@ return-void
 .method public dispatchPictureInPictureModeChanged(Z)V
 .locals 1
 .param p1, "isInPictureInPictureMode"    # Z
-iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;
-invoke-virtual {v0, p1}, Landroidx/fragment/app/FragmentManagerImpl;->dispatchPictureInPictureModeChanged(Z)V
 return-void
 .end method
 .method public dispatchPrepareOptionsMenu(Landroid/view/Menu;)Z
@@ -229,10 +202,7 @@ return v0
 .method public findFragmentByWho(Ljava/lang/String;)Landroidx/fragment/app/Fragment;
 .locals 1
 .param p1, "who"    # Ljava/lang/String;
-iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;
-invoke-virtual {v0, p1}, Landroidx/fragment/app/FragmentManagerImpl;->findFragmentByWho(Ljava/lang/String;)Landroidx/fragment/app/Fragment;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getActiveFragments(Ljava/util/List;)Ljava/util/List;
@@ -248,18 +218,12 @@ value = {
 ">;"
 }
 .end annotation
-iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;
-invoke-virtual {v0}, Landroidx/fragment/app/FragmentManagerImpl;->getActiveFragments()Ljava/util/List;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getActiveFragmentsCount()I
 .locals 1
-iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;
-invoke-virtual {v0}, Landroidx/fragment/app/FragmentManagerImpl;->getActiveFragmentCount()I
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
@@ -273,10 +237,8 @@ return-object v0
 .locals 2
 .annotation runtime Ljava/lang/Deprecated;
 .end annotation
-new-instance v0, Ljava/lang/UnsupportedOperationException;
-const-string v1, "Loaders are managed separately from FragmentController, use LoaderManager.getInstance() to obtain a LoaderManager."
-invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-throw v0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public noteStateNotSaved()V
 .locals 1
@@ -307,9 +269,6 @@ return-void
 .locals 1
 .param p1, "state"    # Landroid/os/Parcelable;
 .param p2, "nonConfig"    # Landroidx/fragment/app/FragmentManagerNonConfig;
-iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;
-invoke-virtual {v0, p1, p2}, Landroidx/fragment/app/FragmentManagerImpl;->restoreAllState(Landroid/os/Parcelable;Landroidx/fragment/app/FragmentManagerNonConfig;)V
 return-void
 .end method
 .method public restoreAllState(Landroid/os/Parcelable;Ljava/util/List;)V
@@ -326,12 +285,6 @@ value = {
 .end annotation
 .annotation runtime Ljava/lang/Deprecated;
 .end annotation
-iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;
-new-instance v1, Landroidx/fragment/app/FragmentManagerNonConfig;
-const/4 v2, 0x0
-invoke-direct {v1, p2, v2, v2}, Landroidx/fragment/app/FragmentManagerNonConfig;-><init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
-invoke-virtual {v0, p1, v1}, Landroidx/fragment/app/FragmentManagerImpl;->restoreAllState(Landroid/os/Parcelable;Landroidx/fragment/app/FragmentManagerNonConfig;)V
 return-void
 .end method
 .method public restoreLoaderNonConfig(Landroidx/collection/SimpleArrayMap;)V
@@ -367,10 +320,7 @@ return-object v0
 .end method
 .method public retainNestedNonConfig()Landroidx/fragment/app/FragmentManagerNonConfig;
 .locals 1
-iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;
-invoke-virtual {v0}, Landroidx/fragment/app/FragmentManagerImpl;->retainNonConfig()Landroidx/fragment/app/FragmentManagerNonConfig;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public retainNonConfig()Ljava/util/List;
@@ -385,18 +335,8 @@ value = {
 .end annotation
 .annotation runtime Ljava/lang/Deprecated;
 .end annotation
-iget-object v0, p0, Landroidx/fragment/app/FragmentController;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mFragmentManager:Landroidx/fragment/app/FragmentManagerImpl;
-invoke-virtual {v0}, Landroidx/fragment/app/FragmentManagerImpl;->retainNonConfig()Landroidx/fragment/app/FragmentManagerNonConfig;
-move-result-object v0
-if-eqz v0, :cond_0
-invoke-virtual {v0}, Landroidx/fragment/app/FragmentManagerNonConfig;->getFragments()Ljava/util/List;
-move-result-object v1
-goto :goto_0
-:cond_0
-const/4 v1, 0x0
-:goto_0
-return-object v1
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public saveAllState()Landroid/os/Parcelable;
 .locals 1

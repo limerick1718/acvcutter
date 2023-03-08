@@ -13,14 +13,10 @@ name = null
 .method constructor <init>(Landroidx/customview/widget/ViewDragHelper;)V
 .locals 0
 .param p1, "this$0"    # Landroidx/customview/widget/ViewDragHelper;
-iput-object p1, p0, Landroidx/customview/widget/ViewDragHelper$2;->this$0:Landroidx/customview/widget/ViewDragHelper;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public run()V
 .locals 2
-iget-object v0, p0, Landroidx/customview/widget/ViewDragHelper$2;->this$0:Landroidx/customview/widget/ViewDragHelper;
-const/4 v1, 0x0
-invoke-virtual {v0, v1}, Landroidx/customview/widget/ViewDragHelper;->setDragState(I)V
 return-void
 .end method

@@ -190,16 +190,16 @@
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V</span>
+.method public onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V
 <span class="">	.locals 1</span>
 <span class="">	.param p1, "menu"    # Landroidx/appcompat/view/menu/MenuBuilder;</span>
 <span class="">	.param p2, "allMenusAreClosing"    # Z</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mCallback:Landroidx/appcompat/view/menu/MenuPresenter$Callback;</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	invoke-interface {v0, p1, p2}, Landroidx/appcompat/view/menu/MenuPresenter$Callback;->onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mCallback:Landroidx/appcompat/view/menu/MenuPresenter$Callback;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-interface {v0, p1, p2}, Landroidx/appcompat/view/menu/MenuPresenter$Callback;->onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
 .end method
 
 .method public onSubMenuSelected(Landroidx/appcompat/view/menu/SubMenuBuilder;)Z

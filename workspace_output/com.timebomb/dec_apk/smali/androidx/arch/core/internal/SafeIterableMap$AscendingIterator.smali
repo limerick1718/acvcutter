@@ -30,7 +30,7 @@ value = {
 "TK;TV;>;)V"
 }
 .end annotation
-invoke-direct {p0, p1, p2}, Landroidx/arch/core/internal/SafeIterableMap$ListIterator;-><init>(Landroidx/arch/core/internal/SafeIterableMap$Entry;Landroidx/arch/core/internal/SafeIterableMap$Entry;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method  backward(Landroidx/arch/core/internal/SafeIterableMap$Entry;)Landroidx/arch/core/internal/SafeIterableMap$Entry;
@@ -44,7 +44,7 @@ value = {
 "TK;TV;>;"
 }
 .end annotation
-iget-object v0, p1, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mPrevious:Landroidx/arch/core/internal/SafeIterableMap$Entry;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method  forward(Landroidx/arch/core/internal/SafeIterableMap$Entry;)Landroidx/arch/core/internal/SafeIterableMap$Entry;
@@ -58,6 +58,6 @@ value = {
 "TK;TV;>;"
 }
 .end annotation
-iget-object v0, p1, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mNext:Landroidx/arch/core/internal/SafeIterableMap$Entry;
+const/4 v0, 0x0
 return-object v0
 .end method

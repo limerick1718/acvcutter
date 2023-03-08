@@ -5,19 +5,10 @@
 .field private final synthetic c:I
 .method constructor <init>(Landroid/content/Intent;Lcom/google/android/gms/common/api/internal/e;I)V
 .locals 0
-iput-object p1, p0, Lcom/google/android/gms/common/internal/v;->a:Landroid/content/Intent;
-iput-object p2, p0, Lcom/google/android/gms/common/internal/v;->b:Lcom/google/android/gms/common/api/internal/e;
-iput p3, p0, Lcom/google/android/gms/common/internal/v;->c:I
-invoke-direct {p0}, Lcom/google/android/gms/common/internal/e;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public final a()V
 .locals 3
-iget-object v0, p0, Lcom/google/android/gms/common/internal/v;->a:Landroid/content/Intent;
-if-eqz v0, :cond_0
-iget-object v1, p0, Lcom/google/android/gms/common/internal/v;->b:Lcom/google/android/gms/common/api/internal/e;
-iget v2, p0, Lcom/google/android/gms/common/internal/v;->c:I
-invoke-interface {v1, v0, v2}, Lcom/google/android/gms/common/api/internal/e;->a(Landroid/content/Intent;I)V
-:cond_0
 return-void
 .end method

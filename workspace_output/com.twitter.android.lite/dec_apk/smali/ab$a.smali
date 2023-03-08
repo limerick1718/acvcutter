@@ -16,13 +16,11 @@ name = "a"
 .field  f:I
 .method constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method constructor <init>(ILae;)V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput p1, p0, Lab$a;->a:I
-iput-object p2, p0, Lab$a;->b:Lae;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

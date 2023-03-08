@@ -34,7 +34,6 @@ return-void
 .method final c()[B
 .locals 2
 monitor-enter p0
-:try_start_0
 iget-object v0, p0, Lcom/google/android/gms/common/t;->a:Ljava/lang/ref/WeakReference;
 invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 move-result-object v0
@@ -51,8 +50,6 @@ return-object v0
 :catchall_0
 move-exception v0
 monitor-exit p0
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_0
 throw v0
 .end method
 .method protected abstract d()[B

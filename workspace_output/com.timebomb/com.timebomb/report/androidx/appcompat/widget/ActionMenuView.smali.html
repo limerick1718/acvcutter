@@ -637,14 +637,14 @@ Landroidx/appcompat/widget/ActionMenuView$OnMenuItemClickListener;
 <span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public dismissPopupMenus()V</span>
+.method public dismissPopupMenus()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	invoke-virtual {v0}, Landroidx/appcompat/widget/ActionMenuPresenter;->dismissPopupMenus()Z</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->mPresenter:Landroidx/appcompat/widget/ActionMenuPresenter;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-virtual {v0}, Landroidx/appcompat/widget/ActionMenuPresenter;->dismissPopupMenus()Z</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
 .end method
 
 .method public dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
@@ -959,12 +959,12 @@ Landroidx/appcompat/widget/ActionMenuView$OnMenuItemClickListener;
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public onDetachedFromWindow()V</span>
+.method public onDetachedFromWindow()V
 <span class="">	.locals 0</span>
 
-<span class="cov">	invoke-super {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->onDetachedFromWindow()V</span>
-<span class="cov">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuView;->dismissPopupMenus()V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-super {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->onDetachedFromWindow()V</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuView;->dismissPopupMenus()V</span>
+<span class="">	return-void</span>
 .end method
 
 <span class="cov">.method protected onLayout(ZIIII)V</span>

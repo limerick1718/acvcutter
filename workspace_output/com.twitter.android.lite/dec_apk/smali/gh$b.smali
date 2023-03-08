@@ -30,8 +30,7 @@ value = {
 "(TT;)V"
 }
 .end annotation
-invoke-direct {p0}, Leq;-><init>()V
-iput-object p1, p0, Lgh$b;->a:Lgh;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public final synthetic a(Lfi;Lfu;)Ljava/lang/Object;
@@ -41,8 +40,6 @@ value = {
 Lgo;
 }
 .end annotation
-iget-object v0, p0, Lgh$b;->a:Lgh;
-invoke-static {v0, p1, p2}, Lgh;->a(Lgh;Lfi;Lfu;)Lgh;
-move-result-object p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method

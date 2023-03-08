@@ -19,18 +19,5 @@ return-void
 .method public handleMessage(Landroid/os/Message;)V
 .locals 2
 .param p1, "msg"    # Landroid/os/Message;
-iget v0, p1, Landroid/os/Message;->what:I
-const/4 v1, 0x2
-if-eq v0, v1, :cond_0
-invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
-goto :goto_0
-:cond_0
-iget-object v0, p0, Landroidx/fragment/app/FragmentActivity$1;->this$0:Landroidx/fragment/app/FragmentActivity;
-invoke-virtual {v0}, Landroidx/fragment/app/FragmentActivity;->onResumeFragments()V
-iget-object v0, p0, Landroidx/fragment/app/FragmentActivity$1;->this$0:Landroidx/fragment/app/FragmentActivity;
-iget-object v0, v0, Landroidx/fragment/app/FragmentActivity;->mFragments:Landroidx/fragment/app/FragmentController;
-invoke-virtual {v0}, Landroidx/fragment/app/FragmentController;->execPendingActions()Z
-nop
-:goto_0
 return-void
 .end method

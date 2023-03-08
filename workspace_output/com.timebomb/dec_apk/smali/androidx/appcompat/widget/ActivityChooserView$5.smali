@@ -12,14 +12,10 @@ name = null
 .method constructor <init>(Landroidx/appcompat/widget/ActivityChooserView;)V
 .locals 0
 .param p1, "this$0"    # Landroidx/appcompat/widget/ActivityChooserView;
-iput-object p1, p0, Landroidx/appcompat/widget/ActivityChooserView$5;->this$0:Landroidx/appcompat/widget/ActivityChooserView;
-invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onChanged()V
 .locals 1
-invoke-super {p0}, Landroid/database/DataSetObserver;->onChanged()V
-iget-object v0, p0, Landroidx/appcompat/widget/ActivityChooserView$5;->this$0:Landroidx/appcompat/widget/ActivityChooserView;
-invoke-virtual {v0}, Landroidx/appcompat/widget/ActivityChooserView;->updateAppearance()V
 return-void
 .end method

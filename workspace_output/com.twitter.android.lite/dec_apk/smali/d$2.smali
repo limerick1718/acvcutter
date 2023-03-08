@@ -11,13 +11,10 @@ name = null
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public execute(Ljava/lang/Runnable;)V
 .locals 1
-invoke-static {}, Ld;->a()Ld;
-move-result-object v0
-invoke-virtual {v0, p1}, Ld;->a(Ljava/lang/Runnable;)V
 return-void
 .end method

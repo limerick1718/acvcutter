@@ -19,20 +19,10 @@ return-void
 .method public onAnimationCancel(Landroid/animation/Animator;)V
 .locals 2
 .param p1, "animator"    # Landroid/animation/Animator;
-iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout$1;->this$0:Landroidx/appcompat/widget/ActionBarOverlayLayout;
-const/4 v1, 0x0
-iput-object v1, v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mCurrentActionBarTopAnimator:Landroid/view/ViewPropertyAnimator;
-const/4 v1, 0x0
-iput-boolean v1, v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mAnimatingForFling:Z
 return-void
 .end method
 .method public onAnimationEnd(Landroid/animation/Animator;)V
 .locals 2
 .param p1, "animator"    # Landroid/animation/Animator;
-iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout$1;->this$0:Landroidx/appcompat/widget/ActionBarOverlayLayout;
-const/4 v1, 0x0
-iput-object v1, v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mCurrentActionBarTopAnimator:Landroid/view/ViewPropertyAnimator;
-const/4 v1, 0x0
-iput-boolean v1, v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mAnimatingForFling:Z
 return-void
 .end method

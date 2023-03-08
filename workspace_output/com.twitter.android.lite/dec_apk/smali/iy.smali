@@ -12,7 +12,7 @@ value = {
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method abstract a()Ljava/lang/Object;
@@ -98,72 +98,8 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-invoke-interface {p2}, Lif;->b()I
-move-result v0
-ushr-int/lit8 v1, v0, 0x3
-and-int/lit8 v0, v0, 0x7
-const/4 v2, 0x1
-if-eqz v0, :cond_8
-if-eq v0, v2, :cond_7
-const/4 v3, 0x2
-if-eq v0, v3, :cond_6
-const/4 v3, 0x4
-const/4 v4, 0x3
-if-eq v0, v4, :cond_2
-if-eq v0, v3, :cond_1
-const/4 v3, 0x5
-if-ne v0, v3, :cond_0
-invoke-interface {p2}, Lif;->j()I
-move-result p2
-invoke-virtual {p0, p1, v1, p2}, Liy;->a(Ljava/lang/Object;II)V
-return v2
-:cond_0
-invoke-static {}, Lgo;->e()Lgp;
-move-result-object p1
-throw p1
-:cond_1
-const/4 p1, 0x0
-return p1
-:cond_2
-invoke-virtual {p0}, Liy;->a()Ljava/lang/Object;
-move-result-object v0
-shl-int/lit8 v4, v1, 0x3
-or-int/2addr v3, v4
-:cond_3
-invoke-interface {p2}, Lif;->a()I
-move-result v4
-const v5, 0x7fffffff
-if-eq v4, v5, :cond_4
-invoke-virtual {p0, v0, p2}, Liy;->a(Ljava/lang/Object;Lif;)Z
-move-result v4
-if-nez v4, :cond_3
-:cond_4
-invoke-interface {p2}, Lif;->b()I
-move-result p2
-if-ne v3, p2, :cond_5
-invoke-virtual {p0, v0}, Liy;->a(Ljava/lang/Object;)Ljava/lang/Object;
-move-result-object p2
-invoke-virtual {p0, p1, v1, p2}, Liy;->a(Ljava/lang/Object;ILjava/lang/Object;)V
-return v2
-:cond_5
-invoke-static {}, Lgo;->d()Lgo;
-move-result-object p1
-throw p1
-:cond_6
-invoke-interface {p2}, Lif;->n()Lew;
-move-result-object p2
-invoke-virtual {p0, p1, v1, p2}, Liy;->a(Ljava/lang/Object;ILew;)V
-return v2
-:cond_7
-invoke-interface {p2}, Lif;->i()J
-move-result-wide v3
-invoke-virtual {p0, p1, v1, v3, v4}, Liy;->b(Ljava/lang/Object;IJ)V
-return v2
-:cond_8
-invoke-interface {p2}, Lif;->g()J
-move-result-wide v3
-invoke-virtual {p0, p1, v1, v3, v4}, Liy;->a(Ljava/lang/Object;IJ)V
-return v2
+const/4 v0, 0x0
+return v0
 .end method
 .method abstract b(Ljava/lang/Object;)Ljava/lang/Object;
 .annotation system Ldalvik/annotation/Signature;

@@ -27,16 +27,6 @@ value = {
 "**>;"
 }
 .end annotation
-invoke-static {p1}, Lretrofit2/ExecutorCallAdapterFactory;->getRawType(Ljava/lang/reflect/Type;)Ljava/lang/Class;
-move-result-object p2
-const-class p3, Lretrofit2/Call;
-if-eq p2, p3, :cond_0
-const/4 p1, 0x0
-return-object p1
-:cond_0
-invoke-static {p1}, Lretrofit2/Utils;->getCallResponseType(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
-move-result-object p1
-new-instance p2, Lretrofit2/ExecutorCallAdapterFactory$1;
-invoke-direct {p2, p0, p1}, Lretrofit2/ExecutorCallAdapterFactory$1;-><init>(Lretrofit2/ExecutorCallAdapterFactory;Ljava/lang/reflect/Type;)V
-return-object p2
+const/4 v0, 0x0
+return-object v0
 .end method

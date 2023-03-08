@@ -1135,14 +1135,14 @@ value = {
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public dismissPopupMenus()V</span>
+.method public dismissPopupMenus()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/widget/Toolbar;->mMenuView:Landroidx/appcompat/widget/ActionMenuView;</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	invoke-virtual {v0}, Landroidx/appcompat/widget/ActionMenuView;->dismissPopupMenus()V</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/Toolbar;->mMenuView:Landroidx/appcompat/widget/ActionMenuView;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-virtual {v0}, Landroidx/appcompat/widget/ActionMenuView;->dismissPopupMenus()V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
 .end method
 
 .method  ensureCollapseButtonView()V
@@ -1588,19 +1588,19 @@ value = {
 <span class="exec">	return-object v0</span>
 .end method
 
-<span class="cov">.method public hasExpandedActionView()Z</span>
+.method public hasExpandedActionView()Z
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/widget/Toolbar;->mExpandedMenuPresenter:Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	iget-object v0, v0, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mCurrentExpandedItem:Landroidx/appcompat/view/menu/MenuItemImpl;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/Toolbar;->mExpandedMenuPresenter:Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, v0, Landroidx/appcompat/widget/Toolbar$ExpandedActionViewMenuPresenter;->mCurrentExpandedItem:Landroidx/appcompat/view/menu/MenuItemImpl;</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	const/4 v0, 0x1</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return v0</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return v0</span>
 .end method
 
 .method public hideOverflowMenu()Z
@@ -1693,13 +1693,13 @@ value = {
 <span class="">	return v1</span>
 .end method
 
-<span class="cov">.method protected onDetachedFromWindow()V</span>
+.method protected onDetachedFromWindow()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V</span>
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/widget/Toolbar;->mShowOverflowMenuRunnable:Ljava/lang/Runnable;</span>
-<span class="cov">	invoke-virtual {p0, v0}, Landroidx/appcompat/widget/Toolbar;->removeCallbacks(Ljava/lang/Runnable;)Z</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/Toolbar;->mShowOverflowMenuRunnable:Ljava/lang/Runnable;</span>
+<span class="missed">	invoke-virtual {p0, v0}, Landroidx/appcompat/widget/Toolbar;->removeCallbacks(Ljava/lang/Runnable;)Z</span>
+<span class="">	return-void</span>
 .end method
 
 .method public onHoverEvent(Landroid/view/MotionEvent;)Z

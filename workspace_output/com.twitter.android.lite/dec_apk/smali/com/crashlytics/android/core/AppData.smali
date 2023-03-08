@@ -38,10 +38,6 @@ iget p1, p0, Landroid/content/pm/PackageInfo;->versionCode:I
 invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 move-result-object v5
 iget-object p1, p0, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
-if-nez p1, :cond_0
-const-string p0, "0.0"
-goto :goto_0
-:cond_0
 iget-object p0, p0, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
 :goto_0
 move-object v6, p0

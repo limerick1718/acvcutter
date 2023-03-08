@@ -6,7 +6,7 @@
 # static fields
 .field public static final APPLICATION_ID:Ljava/lang/String; = "com.timebomb"
 
-.field public static final BUILD_DATE:Ljava/lang/String; = "1678178496320"
+.field public static final BUILD_DATE:Ljava/lang/String; = "1678242755318"
 
 .field public static final BUILD_TYPE:Ljava/lang/String; = "debug"
 

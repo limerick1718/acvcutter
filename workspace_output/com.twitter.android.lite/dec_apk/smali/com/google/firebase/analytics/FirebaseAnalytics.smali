@@ -21,7 +21,6 @@ sget-object v0, Lcom/google/firebase/analytics/FirebaseAnalytics;->a:Lcom/google
 if-nez v0, :cond_1
 const-class v0, Lcom/google/firebase/analytics/FirebaseAnalytics;
 monitor-enter v0
-:try_start_0
 sget-object v1, Lcom/google/firebase/analytics/FirebaseAnalytics;->a:Lcom/google/firebase/analytics/FirebaseAnalytics;
 if-nez v1, :cond_0
 const/4 v1, 0x0
@@ -36,8 +35,6 @@ goto :goto_0
 :catchall_0
 move-exception p0
 monitor-exit v0
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_0
 throw p0
 :cond_1
 :goto_0
@@ -58,21 +55,5 @@ return-object v0
 .locals 1
 .annotation build Landroidx/annotation/Keep;
 .end annotation
-invoke-static {}, Lqc;->a()Z
-move-result v0
-if-nez v0, :cond_0
-iget-object p1, p0, Lcom/google/firebase/analytics/FirebaseAnalytics;->b:Lmf;
-invoke-virtual {p1}, Lmf;->r()Lla;
-move-result-object p1
-invoke-virtual {p1}, Lla;->i()Llc;
-move-result-object p1
-const-string p2, "setCurrentScreen must be called from the main thread"
-invoke-virtual {p1, p2}, Llc;->a(Ljava/lang/String;)V
-return-void
-:cond_0
-iget-object v0, p0, Lcom/google/firebase/analytics/FirebaseAnalytics;->b:Lmf;
-invoke-virtual {v0}, Lmf;->w()Lny;
-move-result-object v0
-invoke-virtual {v0, p1, p2, p3}, Lny;->a(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;)V
 return-void
 .end method

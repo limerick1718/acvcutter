@@ -14,16 +14,10 @@ name = null
 .method constructor <init>(Landroidx/core/provider/FontsContractCompat$4;I)V
 .locals 0
 .param p1, "this$0"    # Landroidx/core/provider/FontsContractCompat$4;
-iput-object p1, p0, Landroidx/core/provider/FontsContractCompat$4$7;->this$0:Landroidx/core/provider/FontsContractCompat$4;
-iput p2, p0, Landroidx/core/provider/FontsContractCompat$4$7;->val$resultCode:I
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public run()V
 .locals 2
-iget-object v0, p0, Landroidx/core/provider/FontsContractCompat$4$7;->this$0:Landroidx/core/provider/FontsContractCompat$4;
-iget-object v0, v0, Landroidx/core/provider/FontsContractCompat$4;->val$callback:Landroidx/core/provider/FontsContractCompat$FontRequestCallback;
-iget v1, p0, Landroidx/core/provider/FontsContractCompat$4$7;->val$resultCode:I
-invoke-virtual {v0, v1}, Landroidx/core/provider/FontsContractCompat$FontRequestCallback;->onTypefaceRequestFailed(I)V
 return-void
 .end method

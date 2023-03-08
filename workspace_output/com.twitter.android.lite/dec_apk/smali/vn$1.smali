@@ -24,19 +24,11 @@ return-void
 .end method
 .method public a(Ljava/io/File;Ljava/io/File;)I
 .locals 2
-invoke-virtual {p1}, Ljava/io/File;->lastModified()J
-move-result-wide v0
-invoke-virtual {p2}, Ljava/io/File;->lastModified()J
-move-result-wide p1
-sub-long/2addr v0, p1
-long-to-int p1, v0
-return p1
+const/4 v0, 0x0
+return v0
 .end method
 .method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
 .locals 0
-check-cast p1, Ljava/io/File;
-check-cast p2, Ljava/io/File;
-invoke-virtual {p0, p1, p2}, Lvn$1;->a(Ljava/io/File;Ljava/io/File;)I
-move-result p1
-return p1
+const/4 v0, 0x0
+return v0
 .end method

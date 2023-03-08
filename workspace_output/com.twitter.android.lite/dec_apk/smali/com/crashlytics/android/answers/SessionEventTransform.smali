@@ -42,7 +42,6 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-:try_start_0
 new-instance v0, Lorg/json/JSONObject;
 invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 iget-object v1, p1, Lcom/crashlytics/android/answers/SessionEvent;->sessionEventMetadata:Lcom/crashlytics/android/answers/SessionEventMetadata;
@@ -96,43 +95,11 @@ const-string v1, "customType"
 iget-object v2, p1, Lcom/crashlytics/android/answers/SessionEvent;->customType:Ljava/lang/String;
 invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 iget-object v1, p1, Lcom/crashlytics/android/answers/SessionEvent;->customAttributes:Ljava/util/Map;
-if-eqz v1, :cond_1
-const-string v1, "customAttributes"
-new-instance v2, Lorg/json/JSONObject;
-iget-object v3, p1, Lcom/crashlytics/android/answers/SessionEvent;->customAttributes:Ljava/util/Map;
-invoke-direct {v2, v3}, Lorg/json/JSONObject;-><init>(Ljava/util/Map;)V
-invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-:cond_1
 const-string v1, "predefinedType"
 iget-object v2, p1, Lcom/crashlytics/android/answers/SessionEvent;->predefinedType:Ljava/lang/String;
 invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 iget-object v1, p1, Lcom/crashlytics/android/answers/SessionEvent;->predefinedAttributes:Ljava/util/Map;
-if-eqz v1, :cond_2
-const-string v1, "predefinedAttributes"
-new-instance v2, Lorg/json/JSONObject;
-iget-object p1, p1, Lcom/crashlytics/android/answers/SessionEvent;->predefinedAttributes:Ljava/util/Map;
-invoke-direct {v2, p1}, Lorg/json/JSONObject;-><init>(Ljava/util/Map;)V
-invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-:try_end_0
-.catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
-:cond_2
 return-object v0
-:catch_0
-move-exception p1
-sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-const/16 v1, 0x9
-if-lt v0, v1, :cond_3
-new-instance v0, Ljava/io/IOException;
-invoke-virtual {p1}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
-move-result-object v1
-invoke-direct {v0, v1, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-throw v0
-:cond_3
-new-instance v0, Ljava/io/IOException;
-invoke-virtual {p1}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
-move-result-object p1
-invoke-direct {v0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-throw v0
 .end method
 .method public toBytes(Lcom/crashlytics/android/answers/SessionEvent;)[B
 .locals 1

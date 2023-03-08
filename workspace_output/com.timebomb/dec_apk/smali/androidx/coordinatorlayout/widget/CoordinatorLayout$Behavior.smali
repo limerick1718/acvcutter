@@ -18,33 +18,14 @@ value = {
 .end annotation
 .method public constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 .locals 0
 .param p1, "context"    # Landroid/content/Context;
 .param p2, "attrs"    # Landroid/util/AttributeSet;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-return-void
-.end method
-.method public static getTag(Landroid/view/View;)Ljava/lang/Object;
-.locals 2
-.param p0, "child"    # Landroid/view/View;
-invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-move-result-object v0
-check-cast v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;
-iget-object v1, v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->mBehaviorTag:Ljava/lang/Object;
-return-object v1
-.end method
-.method public static setTag(Landroid/view/View;Ljava/lang/Object;)V
-.locals 1
-.param p0, "child"    # Landroid/view/View;
-.param p1, "tag"    # Ljava/lang/Object;
-invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-move-result-object v0
-check-cast v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;
-iput-object p1, v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->mBehaviorTag:Ljava/lang/Object;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public blocksInteractionBelow(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;)Z
@@ -57,16 +38,7 @@ value = {
 "TV;)Z"
 }
 .end annotation
-invoke-virtual {p0, p1, p2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;->getScrimOpacity(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;)F
-move-result v0
-const/4 v1, 0x0
-cmpl-float v0, v0, v1
-if-lez v0, :cond_0
-const/4 v0, 0x1
-goto :goto_0
-:cond_0
 const/4 v0, 0x0
-:goto_0
 return v0
 .end method
 .method public getInsetDodgeRect(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/graphics/Rect;)Z
@@ -95,7 +67,7 @@ value = {
 "TV;)I"
 }
 .end annotation
-const/high16 v0, -0x1000000
+const/4 v0, 0x0
 return v0
 .end method
 .method public getScrimOpacity(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;)F
@@ -141,7 +113,8 @@ value = {
 "Landroidx/core/view/WindowInsetsCompat;"
 }
 .end annotation
-return-object p3
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public onAttachedToLayoutParams(Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;)V
 .locals 0
@@ -304,9 +277,6 @@ value = {
 "II[II)V"
 }
 .end annotation
-if-nez p7, :cond_0
-invoke-virtual/range {p0 .. p6}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;->onNestedPreScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;II[I)V
-:cond_0
 return-void
 .end method
 .method public onNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;IIII)V
@@ -348,9 +318,6 @@ value = {
 "IIIII)V"
 }
 .end annotation
-if-nez p8, :cond_0
-invoke-virtual/range {p0 .. p7}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;->onNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;IIII)V
-:cond_0
 return-void
 .end method
 .method public onNestedScrollAccepted(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;I)V
@@ -390,9 +357,6 @@ value = {
 "II)V"
 }
 .end annotation
-if-nez p6, :cond_0
-invoke-virtual/range {p0 .. p5}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;->onNestedScrollAccepted(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;I)V
-:cond_0
 return-void
 .end method
 .method public onRequestChildRectangleOnScreen(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/graphics/Rect;Z)Z
@@ -438,7 +402,7 @@ value = {
 "Landroid/os/Parcelable;"
 }
 .end annotation
-sget-object v0, Landroid/view/View$BaseSavedState;->EMPTY_STATE:Landroid/view/AbsSavedState;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public onStartNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;I)Z
@@ -479,11 +443,6 @@ value = {
 "II)Z"
 }
 .end annotation
-if-nez p6, :cond_0
-invoke-virtual/range {p0 .. p5}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;->onStartNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;I)Z
-move-result v0
-return v0
-:cond_0
 const/4 v0, 0x0
 return v0
 .end method
@@ -518,9 +477,6 @@ value = {
 "I)V"
 }
 .end annotation
-if-nez p4, :cond_0
-invoke-virtual {p0, p1, p2, p3}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;->onStopNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)V
-:cond_0
 return-void
 .end method
 .method public onTouchEvent(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/MotionEvent;)Z

@@ -31,7 +31,5 @@ return-void
 .end method
 .method public final execute(Ljava/lang/Runnable;)V
 .locals 1
-sget-object v0, Lcom/google/firebase/FirebaseApp$d;->a:Landroid/os/Handler;
-invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 return-void
 .end method

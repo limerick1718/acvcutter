@@ -9,9 +9,6 @@ return-void
 .end method
 .method public isCrashlyticsEnabled(Landroid/content/Context;)Z
 .locals 0
-invoke-static {p1}, Lvq;->a(Landroid/content/Context;)Lvq;
-move-result-object p1
-invoke-virtual {p1}, Lvq;->b()Z
-move-result p1
-return p1
+const/4 v0, 0x0
+return v0
 .end method

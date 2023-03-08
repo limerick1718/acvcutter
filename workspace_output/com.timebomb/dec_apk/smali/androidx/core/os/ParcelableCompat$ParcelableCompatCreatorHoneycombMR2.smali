@@ -36,8 +36,7 @@ value = {
 "TT;>;)V"
 }
 .end annotation
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Landroidx/core/os/ParcelableCompat$ParcelableCompatCreatorHoneycombMR2;->mCallbacks:Landroidx/core/os/ParcelableCompatCreatorCallbacks;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -50,10 +49,7 @@ value = {
 ")TT;"
 }
 .end annotation
-iget-object v0, p0, Landroidx/core/os/ParcelableCompat$ParcelableCompatCreatorHoneycombMR2;->mCallbacks:Landroidx/core/os/ParcelableCompatCreatorCallbacks;
-const/4 v1, 0x0
-invoke-interface {v0, p1, v1}, Landroidx/core/os/ParcelableCompatCreatorCallbacks;->createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
@@ -68,9 +64,7 @@ value = {
 ")TT;"
 }
 .end annotation
-iget-object v0, p0, Landroidx/core/os/ParcelableCompat$ParcelableCompatCreatorHoneycombMR2;->mCallbacks:Landroidx/core/os/ParcelableCompatCreatorCallbacks;
-invoke-interface {v0, p1, p2}, Landroidx/core/os/ParcelableCompatCreatorCallbacks;->createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public newArray(I)[Ljava/lang/Object;
@@ -81,8 +75,6 @@ value = {
 "(I)[TT;"
 }
 .end annotation
-iget-object v0, p0, Landroidx/core/os/ParcelableCompat$ParcelableCompatCreatorHoneycombMR2;->mCallbacks:Landroidx/core/os/ParcelableCompatCreatorCallbacks;
-invoke-interface {v0, p1}, Landroidx/core/os/ParcelableCompatCreatorCallbacks;->newArray(I)[Ljava/lang/Object;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method

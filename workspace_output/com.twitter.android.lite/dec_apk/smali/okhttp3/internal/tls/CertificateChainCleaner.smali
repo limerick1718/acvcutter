@@ -14,14 +14,6 @@ invoke-virtual {v0, p0}, Lokhttp3/internal/platform/Platform;->buildCertificateC
 move-result-object p0
 return-object p0
 .end method
-.method public static varargs get([Ljava/security/cert/X509Certificate;)Lokhttp3/internal/tls/CertificateChainCleaner;
-.locals 2
-new-instance v0, Lokhttp3/internal/tls/BasicCertificateChainCleaner;
-new-instance v1, Lokhttp3/internal/tls/BasicTrustRootIndex;
-invoke-direct {v1, p0}, Lokhttp3/internal/tls/BasicTrustRootIndex;-><init>([Ljava/security/cert/X509Certificate;)V
-invoke-direct {v0, v1}, Lokhttp3/internal/tls/BasicCertificateChainCleaner;-><init>(Lokhttp3/internal/tls/TrustRootIndex;)V
-return-object v0
-.end method
 .method public abstract clean(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
 .annotation system Ldalvik/annotation/Signature;
 value = {

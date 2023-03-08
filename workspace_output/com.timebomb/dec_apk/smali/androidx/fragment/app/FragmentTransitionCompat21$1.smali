@@ -13,14 +13,12 @@ name = null
 .method constructor <init>(Landroidx/fragment/app/FragmentTransitionCompat21;Landroid/graphics/Rect;)V
 .locals 0
 .param p1, "this$0"    # Landroidx/fragment/app/FragmentTransitionCompat21;
-iput-object p1, p0, Landroidx/fragment/app/FragmentTransitionCompat21$1;->this$0:Landroidx/fragment/app/FragmentTransitionCompat21;
-iput-object p2, p0, Landroidx/fragment/app/FragmentTransitionCompat21$1;->val$epicenter:Landroid/graphics/Rect;
-invoke-direct {p0}, Landroid/transition/Transition$EpicenterCallback;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onGetEpicenter(Landroid/transition/Transition;)Landroid/graphics/Rect;
 .locals 1
 .param p1, "transition"    # Landroid/transition/Transition;
-iget-object v0, p0, Landroidx/fragment/app/FragmentTransitionCompat21$1;->val$epicenter:Landroid/graphics/Rect;
+const/4 v0, 0x0
 return-object v0
 .end method

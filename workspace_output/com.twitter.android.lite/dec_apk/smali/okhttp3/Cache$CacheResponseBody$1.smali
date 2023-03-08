@@ -12,9 +12,7 @@ name = null
 .field final synthetic val$snapshot:Lokhttp3/internal/cache/DiskLruCache$Snapshot;
 .method constructor <init>(Lokhttp3/Cache$CacheResponseBody;Lzk;Lokhttp3/internal/cache/DiskLruCache$Snapshot;)V
 .locals 0
-iput-object p1, p0, Lokhttp3/Cache$CacheResponseBody$1;->this$0:Lokhttp3/Cache$CacheResponseBody;
-iput-object p3, p0, Lokhttp3/Cache$CacheResponseBody$1;->val$snapshot:Lokhttp3/internal/cache/DiskLruCache$Snapshot;
-invoke-direct {p0, p2}, Lyx;-><init>(Lzk;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public close()V
@@ -24,8 +22,5 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-iget-object v0, p0, Lokhttp3/Cache$CacheResponseBody$1;->val$snapshot:Lokhttp3/internal/cache/DiskLruCache$Snapshot;
-invoke-virtual {v0}, Lokhttp3/internal/cache/DiskLruCache$Snapshot;->close()V
-invoke-super {p0}, Lyx;->close()V
 return-void
 .end method

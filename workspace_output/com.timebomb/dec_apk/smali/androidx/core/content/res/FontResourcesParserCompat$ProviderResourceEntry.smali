@@ -17,24 +17,21 @@ name = "ProviderResourceEntry"
 .param p1, "request"    # Landroidx/core/provider/FontRequest;
 .param p2, "strategy"    # I
 .param p3, "timeoutMs"    # I
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Landroidx/core/content/res/FontResourcesParserCompat$ProviderResourceEntry;->mRequest:Landroidx/core/provider/FontRequest;
-iput p2, p0, Landroidx/core/content/res/FontResourcesParserCompat$ProviderResourceEntry;->mStrategy:I
-iput p3, p0, Landroidx/core/content/res/FontResourcesParserCompat$ProviderResourceEntry;->mTimeoutMs:I
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public getFetchStrategy()I
 .locals 1
-iget v0, p0, Landroidx/core/content/res/FontResourcesParserCompat$ProviderResourceEntry;->mStrategy:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public getRequest()Landroidx/core/provider/FontRequest;
 .locals 1
-iget-object v0, p0, Landroidx/core/content/res/FontResourcesParserCompat$ProviderResourceEntry;->mRequest:Landroidx/core/provider/FontRequest;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getTimeout()I
 .locals 1
-iget v0, p0, Landroidx/core/content/res/FontResourcesParserCompat$ProviderResourceEntry;->mTimeoutMs:I
+const/4 v0, 0x0
 return v0
 .end method

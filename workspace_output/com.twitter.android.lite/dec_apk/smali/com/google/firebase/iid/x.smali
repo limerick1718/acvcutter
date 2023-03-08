@@ -9,7 +9,5 @@ return-void
 .end method
 .method public final handleMessage(Landroid/os/Message;)V
 .locals 1
-iget-object v0, p0, Lcom/google/firebase/iid/x;->a:Lcom/google/firebase/iid/w;
-invoke-static {v0, p1}, Lcom/google/firebase/iid/w;->a(Lcom/google/firebase/iid/w;Landroid/os/Message;)V
 return-void
 .end method

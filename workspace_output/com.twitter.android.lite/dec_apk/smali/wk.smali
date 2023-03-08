@@ -85,27 +85,16 @@ value = {
 .end annotation
 invoke-static {p1}, Lwm;->isProperDelegate(Ljava/lang/Object;)Z
 move-result v0
-if-eqz v0, :cond_0
-check-cast p1, Lwe;
-return-object p1
-:cond_0
 new-instance p1, Lwm;
 invoke-direct {p1}, Lwm;-><init>()V
 return-object p1
 .end method
 .method public a(Lwo;)V
 .locals 1
-invoke-virtual {p0}, Lwk;->a()Lwe;
-move-result-object v0
-check-cast v0, Lwl;
-check-cast v0, Lwe;
-invoke-interface {v0, p1}, Lwe;->addDependency(Ljava/lang/Object;)V
 return-void
 .end method
 .method public synthetic addDependency(Ljava/lang/Object;)V
 .locals 0
-check-cast p1, Lwo;
-invoke-virtual {p0, p1}, Lwk;->a(Lwo;)V
 return-void
 .end method
 .method public areDependenciesMet()Z
@@ -137,12 +126,7 @@ value = {
 ">;"
 }
 .end annotation
-invoke-virtual {p0}, Lwk;->a()Lwe;
-move-result-object v0
-check-cast v0, Lwl;
-check-cast v0, Lwe;
-invoke-interface {v0}, Lwe;->getDependencies()Ljava/util/Collection;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getPriority()Lwh;
@@ -156,12 +140,7 @@ return-object v0
 .end method
 .method public isFinished()Z
 .locals 1
-invoke-virtual {p0}, Lwk;->a()Lwe;
-move-result-object v0
-check-cast v0, Lwl;
-check-cast v0, Lwo;
-invoke-interface {v0}, Lwo;->isFinished()Z
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public setError(Ljava/lang/Throwable;)V

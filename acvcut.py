@@ -18,17 +18,17 @@ from cutter import basic_block
 from cutter import methods
 from cutter import invokes
 
-apk_path = "exampleAPKs/timeBomb.apk"
-package = smiler.get_apk_properties(apk_path).package
-wd_path = "./workspace_output/" + package + "/"
-
-# parser = argparse.ArgumentParser(description='Runs the shrinking routine.')
-# parser.add_argument("apk_path", metavar="apk_path", help="path to the original apk")
-#
-# args = parser.parse_args()
-# apk_path = args.apk_path # acvcut.apk_path
+# apk_path = "exampleAPKs/com.twitter.android.lite.apk"
 # package = smiler.get_apk_properties(apk_path).package
 # wd_path = "./workspace_output/" + package + "/"
+
+parser = argparse.ArgumentParser(description='Runs the shrinking routine.')
+parser.add_argument("apk_path", metavar="apk_path", help="path to the original apk")
+
+args = parser.parse_args()
+apk_path = args.apk_path # acvcut.apk_path
+package = smiler.get_apk_properties(apk_path).package
+wd_path = "./workspace_output/" + package + "/"
 
 # parser = argparse.ArgumentParser(description='Runs the shrinking routine.')
 # parser.add_argument("apk_path", metavar="apk_path", help="path to the original apk")
@@ -95,8 +95,8 @@ def main():
     ec = get_ec_file(ec_dir)
     for ec_file in ec:
         coverage = reporter.read_ec(ec_file)
-        # reporter.cover_smalitree(smalitree, coverage)
-        reporter.cover_smalitree_all(smalitree, coverage)
+        reporter.cover_smalitree(smalitree, coverage)
+        # reporter.cover_smalitree_all(smalitree, coverage)
     orig_invokes = invokes.get_invoke_direct_methods(smalitree)
     insns_stats(smalitree)
 

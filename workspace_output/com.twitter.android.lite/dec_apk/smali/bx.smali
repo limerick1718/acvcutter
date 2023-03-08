@@ -1,22 +1,18 @@
 .class public Lbx;
 .super Landroid/os/Handler;
 .field private static volatile a:Lby;
-.method static constructor <clinit>()V
-.locals 0
-return-void
-.end method
 .method public constructor <init>()V
 .locals 0
-invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public constructor <init>(Landroid/os/Looper;)V
 .locals 0
-invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public constructor <init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
 .locals 0
-invoke-direct {p0, p1, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

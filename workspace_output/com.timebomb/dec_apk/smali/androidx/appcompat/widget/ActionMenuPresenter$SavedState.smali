@@ -19,25 +19,15 @@ value = {
 .end annotation
 .end field
 .field public openSubMenuId:I
-.method static constructor <clinit>()V
-.locals 1
-new-instance v0, Landroidx/appcompat/widget/ActionMenuPresenter$SavedState$1;
-invoke-direct {v0}, Landroidx/appcompat/widget/ActionMenuPresenter$SavedState$1;-><init>()V
-sput-object v0, Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;->CREATOR:Landroid/os/Parcelable$Creator;
-return-void
-.end method
 .method constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method constructor <init>(Landroid/os/Parcel;)V
 .locals 1
 .param p1, "in"    # Landroid/os/Parcel;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-move-result v0
-iput v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;->openSubMenuId:I
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public describeContents()I
@@ -49,7 +39,5 @@ return v0
 .locals 1
 .param p1, "dest"    # Landroid/os/Parcel;
 .param p2, "flags"    # I
-iget v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;->openSubMenuId:I
-invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 return-void
 .end method

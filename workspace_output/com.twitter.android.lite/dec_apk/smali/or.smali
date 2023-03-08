@@ -14,7 +14,6 @@ return-void
 .locals 3
 iget-object v0, p0, Lor;->b:Loo;
 monitor-enter v0
-:try_start_0
 iget-object v1, p0, Lor;->b:Loo;
 const/4 v2, 0x0
 invoke-static {v1, v2}, Loo;->a(Loo;Z)Z
@@ -41,7 +40,5 @@ return-void
 :catchall_0
 move-exception v1
 monitor-exit v0
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_0
 throw v1
 .end method

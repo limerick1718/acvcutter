@@ -7,12 +7,6 @@
 invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public static initializeInstanceForTests()V
-.locals 1
-new-instance v0, Lokhttp3/OkHttpClient;
-invoke-direct {v0}, Lokhttp3/OkHttpClient;-><init>()V
-return-void
-.end method
 .method public abstract addLenient(Lokhttp3/Headers$Builder;Ljava/lang/String;)V
 .end method
 .method public abstract addLenient(Lokhttp3/Headers$Builder;Ljava/lang/String;Ljava/lang/String;)V

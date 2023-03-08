@@ -36,21 +36,21 @@
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method private performMenuItemShortcut(ILandroid/view/KeyEvent;)Z</span>
+.method private performMenuItemShortcut(ILandroid/view/KeyEvent;)Z
 <span class="">	.locals 3</span>
 <span class="">	.param p1, "keycode"    # I</span>
 <span class="">	.param p2, "event"    # Landroid/view/KeyEvent;</span>
 
-<span class="cov">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
-<span class="cov">	const/16 v1, 0x1a</span>
-<span class="cov">	if-ge v0, v1, :cond_0</span>
-<span class="exec">	invoke-virtual {p2}, Landroid/view/KeyEvent;->isCtrlPressed()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-nez v0, :cond_0</span>
-<span class="exec">	invoke-virtual {p2}, Landroid/view/KeyEvent;->getMetaState()I</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	invoke-static {v0}, Landroid/view/KeyEvent;->metaStateHasNoModifiers(I)Z</span>
-<span class="cov">	move-result v0</span>
+<span class="missed">	sget v0, Landroid/os/Build$VERSION;->SDK_INT:I</span>
+<span class="missed">	const/16 v1, 0x1a</span>
+<span class="missed">	if-ge v0, v1, :cond_0</span>
+<span class="">	invoke-virtual {p2}, Landroid/view/KeyEvent;->isCtrlPressed()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="">	invoke-virtual {p2}, Landroid/view/KeyEvent;->getMetaState()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-static {v0}, Landroid/view/KeyEvent;->metaStateHasNoModifiers(I)Z</span>
+<span class="missed">	move-result v0</span>
 <span class="missed">	if-nez v0, :cond_0</span>
 <span class="">	invoke-virtual {p2}, Landroid/view/KeyEvent;->getRepeatCount()I</span>
 <span class="missed">	move-result v0</span>
@@ -73,9 +73,9 @@
 <span class="missed">	if-eqz v2, :cond_0</span>
 <span class="missed">	const/4 v2, 0x1</span>
 <span class="">	return v2</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="exec">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
 .end method
 
 .method public addContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
@@ -110,15 +110,15 @@
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z</span>
+.method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 <span class="">	.locals 3</span>
 <span class="">	.param p1, "event"    # Landroid/view/KeyEvent;</span>
 
-<span class="exec">	invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatActivity;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;</span>
-<span class="cov">	move-result-object v1</span>
-<span class="cov">	const/16 v2, 0x52</span>
+<span class="">	invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatActivity;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;</span>
+<span class="missed">	move-result-object v1</span>
+<span class="missed">	const/16 v2, 0x52</span>
 <span class="missed">	if-ne v0, v2, :cond_0</span>
 <span class="missed">	if-eqz v1, :cond_0</span>
 <span class="">	invoke-virtual {v1, p1}, Landroidx/appcompat/app/ActionBar;->onMenuKeyEvent(Landroid/view/KeyEvent;)Z</span>
@@ -126,10 +126,10 @@
 <span class="missed">	if-eqz v2, :cond_0</span>
 <span class="missed">	const/4 v2, 0x1</span>
 <span class="">	return v2</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-super {p0, p1}, Landroidx/fragment/app/FragmentActivity;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z</span>
-<span class="cov">	move-result v2</span>
-<span class="exec">	return v2</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-super {p0, p1}, Landroidx/fragment/app/FragmentActivity;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z</span>
+<span class="missed">	move-result v2</span>
+<span class="">	return v2</span>
 .end method
 
 <span class="cov">.method public findViewById(I)Landroid/view/View;</span>
@@ -205,14 +205,14 @@
 <span class="exec">	return-object v0</span>
 .end method
 
-<span class="cov">.method public getSupportActionBar()Landroidx/appcompat/app/ActionBar;</span>
+.method public getSupportActionBar()Landroidx/appcompat/app/ActionBar;
 <span class="">	.locals 1</span>
 
-<span class="exec">	invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatActivity;->getDelegate()Landroidx/appcompat/app/AppCompatDelegate;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegate;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	return-object v0</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatActivity;->getDelegate()Landroidx/appcompat/app/AppCompatDelegate;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegate;->getSupportActionBar()Landroidx/appcompat/app/ActionBar;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	return-object v0</span>
 .end method
 
 .method public getSupportParentActivityIntent()Landroid/content/Intent;
@@ -298,30 +298,30 @@
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method protected onDestroy()V</span>
+.method protected onDestroy()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	invoke-super {p0}, Landroidx/fragment/app/FragmentActivity;->onDestroy()V</span>
-<span class="exec">	invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatActivity;->getDelegate()Landroidx/appcompat/app/AppCompatDelegate;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegate;->onDestroy()V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-super {p0}, Landroidx/fragment/app/FragmentActivity;->onDestroy()V</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatActivity;->getDelegate()Landroidx/appcompat/app/AppCompatDelegate;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegate;->onDestroy()V</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public onKeyDown(ILandroid/view/KeyEvent;)Z</span>
+.method public onKeyDown(ILandroid/view/KeyEvent;)Z
 <span class="">	.locals 1</span>
 <span class="">	.param p1, "keyCode"    # I</span>
 <span class="">	.param p2, "event"    # Landroid/view/KeyEvent;</span>
 
-<span class="exec">	invoke-direct {p0, p1, p2}, Landroidx/appcompat/app/AppCompatActivity;->performMenuItemShortcut(ILandroid/view/KeyEvent;)Z</span>
-<span class="cov">	move-result v0</span>
+<span class="">	invoke-direct {p0, p1, p2}, Landroidx/appcompat/app/AppCompatActivity;->performMenuItemShortcut(ILandroid/view/KeyEvent;)Z</span>
+<span class="missed">	move-result v0</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	const/4 v0, 0x1</span>
 <span class="">	return v0</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-super {p0, p1, p2}, Landroidx/fragment/app/FragmentActivity;->onKeyDown(ILandroid/view/KeyEvent;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-super {p0, p1, p2}, Landroidx/fragment/app/FragmentActivity;->onKeyDown(ILandroid/view/KeyEvent;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
 .end method
 
 .method public final onMenuItemSelected(ILandroid/view/MenuItem;)Z

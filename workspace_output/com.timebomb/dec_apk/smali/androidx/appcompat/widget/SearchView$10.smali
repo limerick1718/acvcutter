@@ -13,8 +13,7 @@ name = null
 .method constructor <init>(Landroidx/appcompat/widget/SearchView;)V
 .locals 0
 .param p1, "this$0"    # Landroidx/appcompat/widget/SearchView;
-iput-object p1, p0, Landroidx/appcompat/widget/SearchView$10;->this$0:Landroidx/appcompat/widget/SearchView;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public afterTextChanged(Landroid/text/Editable;)V
@@ -36,7 +35,5 @@ return-void
 .param p2, "start"    # I
 .param p3, "before"    # I
 .param p4, "after"    # I
-iget-object v0, p0, Landroidx/appcompat/widget/SearchView$10;->this$0:Landroidx/appcompat/widget/SearchView;
-invoke-virtual {v0, p1}, Landroidx/appcompat/widget/SearchView;->onTextChanged(Ljava/lang/CharSequence;)V
 return-void
 .end method

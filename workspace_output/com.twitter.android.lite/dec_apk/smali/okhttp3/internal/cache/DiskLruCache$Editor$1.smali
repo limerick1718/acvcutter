@@ -11,24 +11,10 @@ name = null
 .field final synthetic this$1:Lokhttp3/internal/cache/DiskLruCache$Editor;
 .method constructor <init>(Lokhttp3/internal/cache/DiskLruCache$Editor;Lzj;)V
 .locals 0
-iput-object p1, p0, Lokhttp3/internal/cache/DiskLruCache$Editor$1;->this$1:Lokhttp3/internal/cache/DiskLruCache$Editor;
-invoke-direct {p0, p2}, Lokhttp3/internal/cache/FaultHidingSink;-><init>(Lzj;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method protected onException(Ljava/io/IOException;)V
 .locals 1
-iget-object p1, p0, Lokhttp3/internal/cache/DiskLruCache$Editor$1;->this$1:Lokhttp3/internal/cache/DiskLruCache$Editor;
-iget-object p1, p1, Lokhttp3/internal/cache/DiskLruCache$Editor;->this$0:Lokhttp3/internal/cache/DiskLruCache;
-monitor-enter p1
-:try_start_0
-iget-object v0, p0, Lokhttp3/internal/cache/DiskLruCache$Editor$1;->this$1:Lokhttp3/internal/cache/DiskLruCache$Editor;
-invoke-virtual {v0}, Lokhttp3/internal/cache/DiskLruCache$Editor;->detach()V
-monitor-exit p1
 return-void
-:catchall_0
-move-exception v0
-monitor-exit p1
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_0
-throw v0
 .end method

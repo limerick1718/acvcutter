@@ -20,27 +20,19 @@ return-void
 .end method
 .method public connectionCount()I
 .locals 1
-iget-object v0, p0, Lokhttp3/ConnectionPool;->delegate:Lokhttp3/internal/connection/RealConnectionPool;
-invoke-virtual {v0}, Lokhttp3/internal/connection/RealConnectionPool;->connectionCount()I
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public evictAll()V
 .locals 1
-iget-object v0, p0, Lokhttp3/ConnectionPool;->delegate:Lokhttp3/internal/connection/RealConnectionPool;
-invoke-virtual {v0}, Lokhttp3/internal/connection/RealConnectionPool;->evictAll()V
 return-void
 .end method
 .method public idleConnectionCount()I
 .locals 1
-iget-object v0, p0, Lokhttp3/ConnectionPool;->delegate:Lokhttp3/internal/connection/RealConnectionPool;
-invoke-virtual {v0}, Lokhttp3/internal/connection/RealConnectionPool;->idleConnectionCount()I
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public markConnectionsStale()V
 .locals 1
-iget-object v0, p0, Lokhttp3/ConnectionPool;->delegate:Lokhttp3/internal/connection/RealConnectionPool;
-invoke-virtual {v0}, Lokhttp3/internal/connection/RealConnectionPool;->markConnectionsStale()V
 return-void
 .end method

@@ -16,7 +16,6 @@ return-void
 .end method
 .method public a(Ljava/lang/reflect/Field;)Ljava/lang/String;
 .locals 0
-invoke-virtual {p1}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
-move-result-object p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method

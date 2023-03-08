@@ -11,8 +11,7 @@ return-void
 .param p1, "context"    # Landroid/content/Context;
 .param p2, "className"    # Ljava/lang/String;
 .param p3, "arguments"    # Landroid/os/Bundle;
-invoke-static {p1, p2, p3}, Landroidx/fragment/app/Fragment;->instantiate(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Landroidx/fragment/app/Fragment;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public abstract onFindViewById(I)Landroid/view/View;

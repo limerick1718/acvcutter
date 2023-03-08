@@ -174,15 +174,15 @@ Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public dismissPopupMenus()Z</span>
+.method public dismissPopupMenus()Z
 <span class="">	.locals 2</span>
 
-<span class="exec">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuPresenter;->hideOverflowMenu()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuPresenter;->hideSubMenus()Z</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	or-int/2addr v0, v1</span>
-<span class="exec">	return v0</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuPresenter;->hideOverflowMenu()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuPresenter;->hideSubMenus()Z</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	or-int/2addr v0, v1</span>
+<span class="">	return v0</span>
 .end method
 
 .method public filterLeftoverView(Landroid/view/ViewGroup;I)Z
@@ -558,11 +558,11 @@ Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;
 <span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method public hideOverflowMenu()Z</span>
+.method public hideOverflowMenu()Z
 <span class="">	.locals 3</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter;->mPostedOpenRunnable:Landroidx/appcompat/widget/ActionMenuPresenter$OpenOverflowRunnable;</span>
-<span class="cov">	const/4 v1, 0x1</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter;->mPostedOpenRunnable:Landroidx/appcompat/widget/ActionMenuPresenter$OpenOverflowRunnable;</span>
+<span class="missed">	const/4 v1, 0x1</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter;->mMenuView:Landroidx/appcompat/view/menu/MenuView;</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
@@ -573,27 +573,27 @@ Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;
 <span class="missed">	const/4 v0, 0x0</span>
 <span class="missed">	iput-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter;->mPostedOpenRunnable:Landroidx/appcompat/widget/ActionMenuPresenter$OpenOverflowRunnable;</span>
 <span class="">	return v1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowPopup:Landroidx/appcompat/widget/ActionMenuPresenter$OverflowPopup;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowPopup:Landroidx/appcompat/widget/ActionMenuPresenter$OverflowPopup;</span>
 <span class="missed">	if-eqz v0, :cond_1</span>
 <span class="missed">	invoke-virtual {v0}, Landroidx/appcompat/view/menu/MenuPopupHelper;->dismiss()V</span>
 <span class="">	return v1</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="exec">	return v1</span>
+<span class="">	:cond_1</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	return v1</span>
 .end method
 
-<span class="cov">.method public hideSubMenus()Z</span>
+.method public hideSubMenus()Z
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter;->mActionButtonPopup:Landroidx/appcompat/widget/ActionMenuPresenter$ActionButtonSubmenu;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter;->mActionButtonPopup:Landroidx/appcompat/widget/ActionMenuPresenter$ActionButtonSubmenu;</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	invoke-virtual {v0}, Landroidx/appcompat/widget/ActionMenuPresenter$ActionButtonSubmenu;->dismiss()V</span>
 <span class="missed">	const/4 v0, 0x1</span>
 <span class="">	return v0</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="exec">	return v0</span>
+<span class="">	:cond_0</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	return v0</span>
 .end method
 
 <span class="cov">.method public initForMenu(Landroid/content/Context;Landroidx/appcompat/view/menu/MenuBuilder;)V</span>
@@ -710,14 +710,14 @@ Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;
 <span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V</span>
+.method public onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V
 <span class="">	.locals 0</span>
 <span class="">	.param p1, "menu"    # Landroidx/appcompat/view/menu/MenuBuilder;</span>
 <span class="">	.param p2, "allMenusAreClosing"    # Z</span>
 
-<span class="cov">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuPresenter;->dismissPopupMenus()Z</span>
-<span class="cov">	invoke-super {p0, p1, p2}, Landroidx/appcompat/view/menu/BaseMenuPresenter;->onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuPresenter;->dismissPopupMenus()Z</span>
+<span class="missed">	invoke-super {p0, p1, p2}, Landroidx/appcompat/view/menu/BaseMenuPresenter;->onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V</span>
+<span class="">	return-void</span>
 .end method
 
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V

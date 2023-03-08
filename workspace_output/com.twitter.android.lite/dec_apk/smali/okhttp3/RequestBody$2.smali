@@ -23,15 +23,14 @@ return-void
 .end method
 .method public contentLength()J
 .locals 2
-iget v0, p0, Lokhttp3/RequestBody$2;->val$byteCount:I
-int-to-long v0, v0
+const-wide v0, 0x0
 return-wide v0
 .end method
 .method public contentType()Lokhttp3/MediaType;
 .locals 1
 .annotation runtime Ljavax/annotation/Nullable;
 .end annotation
-iget-object v0, p0, Lokhttp3/RequestBody$2;->val$contentType:Lokhttp3/MediaType;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public writeTo(Lyt;)V
@@ -41,9 +40,5 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-iget-object v0, p0, Lokhttp3/RequestBody$2;->val$content:[B
-iget v1, p0, Lokhttp3/RequestBody$2;->val$offset:I
-iget v2, p0, Lokhttp3/RequestBody$2;->val$byteCount:I
-invoke-interface {p1, v0, v1, v2}, Lyt;->c([BII)Lyt;
 return-void
 .end method

@@ -163,15 +163,15 @@ Landroidx/appcompat/widget/ContentFrameLayout$OnAttachListener;
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method protected onDetachedFromWindow()V</span>
+.method protected onDetachedFromWindow()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V</span>
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/widget/ContentFrameLayout;->mAttachListener:Landroidx/appcompat/widget/ContentFrameLayout$OnAttachListener;</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	invoke-interface {v0}, Landroidx/appcompat/widget/ContentFrameLayout$OnAttachListener;->onDetachedFromWindow()V</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/widget/ContentFrameLayout;->mAttachListener:Landroidx/appcompat/widget/ContentFrameLayout$OnAttachListener;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	invoke-interface {v0}, Landroidx/appcompat/widget/ContentFrameLayout$OnAttachListener;->onDetachedFromWindow()V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-void</span>
 .end method
 
 <span class="cov">.method protected onMeasure(II)V</span>

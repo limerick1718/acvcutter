@@ -17,9 +17,7 @@ value = {
 .field final synthetic a:Lcom/google/gson/internal/f$b;
 .method constructor <init>(Lcom/google/gson/internal/f$b;)V
 .locals 0
-iput-object p1, p0, Lcom/google/gson/internal/f$b$1;->a:Lcom/google/gson/internal/f$b;
-iget-object p1, p1, Lcom/google/gson/internal/f$b;->a:Lcom/google/gson/internal/f;
-invoke-direct {p0, p1}, Lcom/google/gson/internal/f$c;-><init>(Lcom/google/gson/internal/f;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public next()Ljava/lang/Object;
@@ -29,8 +27,6 @@ value = {
 "()TK;"
 }
 .end annotation
-invoke-virtual {p0}, Lcom/google/gson/internal/f$b$1;->b()Lcom/google/gson/internal/f$d;
-move-result-object v0
-iget-object v0, v0, Lcom/google/gson/internal/f$d;->f:Ljava/lang/Object;
+const/4 v0, 0x0
 return-object v0
 .end method

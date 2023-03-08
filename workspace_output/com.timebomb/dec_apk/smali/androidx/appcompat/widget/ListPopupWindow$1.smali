@@ -13,18 +13,16 @@ name = null
 .locals 0
 .param p1, "this$0"    # Landroidx/appcompat/widget/ListPopupWindow;
 .param p2, "src"    # Landroid/view/View;
-iput-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$1;->this$0:Landroidx/appcompat/widget/ListPopupWindow;
-invoke-direct {p0, p2}, Landroidx/appcompat/widget/ForwardingListener;-><init>(Landroid/view/View;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public bridge synthetic getPopup()Landroidx/appcompat/view/menu/ShowableListMenu;
 .locals 1
-invoke-virtual {p0}, Landroidx/appcompat/widget/ListPopupWindow$1;->getPopup()Landroidx/appcompat/widget/ListPopupWindow;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getPopup()Landroidx/appcompat/widget/ListPopupWindow;
 .locals 1
-iget-object v0, p0, Landroidx/appcompat/widget/ListPopupWindow$1;->this$0:Landroidx/appcompat/widget/ListPopupWindow;
+const/4 v0, 0x0
 return-object v0
 .end method

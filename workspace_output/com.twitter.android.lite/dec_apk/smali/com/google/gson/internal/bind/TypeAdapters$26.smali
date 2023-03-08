@@ -31,14 +31,6 @@ value = {
 invoke-virtual {p2}, Ltv;->a()Ljava/lang/Class;
 move-result-object p2
 const-class v0, Ljava/sql/Timestamp;
-if-eq p2, v0, :cond_0
 const/4 p1, 0x0
 return-object p1
-:cond_0
-const-class p2, Ljava/util/Date;
-invoke-virtual {p1, p2}, Lsx;->a(Ljava/lang/Class;)Ltn;
-move-result-object p1
-new-instance p2, Lcom/google/gson/internal/bind/TypeAdapters$26$1;
-invoke-direct {p2, p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$26$1;-><init>(Lcom/google/gson/internal/bind/TypeAdapters$26;Ltn;)V
-return-object p2
 .end method

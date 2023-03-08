@@ -20,10 +20,7 @@ value = {
 .field final synthetic c:Lxh;
 .method constructor <init>(Lxh;Ljava/io/Closeable;ZLjava/io/InputStream;Ljava/io/OutputStream;)V
 .locals 0
-iput-object p1, p0, Lxh$1;->c:Lxh;
-iput-object p4, p0, Lxh$1;->a:Ljava/io/InputStream;
-iput-object p5, p0, Lxh$1;->b:Ljava/io/OutputStream;
-invoke-direct {p0, p2, p3}, Lxh$a;-><init>(Ljava/io/Closeable;Z)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public a()Lxh;
@@ -33,22 +30,7 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-iget-object v0, p0, Lxh$1;->c:Lxh;
-invoke-static {v0}, Lxh;->a(Lxh;)I
-move-result v0
-new-array v0, v0, [B
-:goto_0
-iget-object v1, p0, Lxh$1;->a:Ljava/io/InputStream;
-invoke-virtual {v1, v0}, Ljava/io/InputStream;->read([B)I
-move-result v1
-const/4 v2, -0x1
-if-eq v1, v2, :cond_0
-iget-object v2, p0, Lxh$1;->b:Ljava/io/OutputStream;
-const/4 v3, 0x0
-invoke-virtual {v2, v0, v3, v1}, Ljava/io/OutputStream;->write([BII)V
-goto :goto_0
-:cond_0
-iget-object v0, p0, Lxh$1;->c:Lxh;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public synthetic b()Ljava/lang/Object;
@@ -59,7 +41,6 @@ Lxh$c;,
 Ljava/io/IOException;
 }
 .end annotation
-invoke-virtual {p0}, Lxh$1;->a()Lxh;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method

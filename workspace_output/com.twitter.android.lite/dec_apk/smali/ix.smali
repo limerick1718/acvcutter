@@ -11,9 +11,6 @@ value = {
 .end field
 .method public constructor <init>(Lhp;)V
 .locals 0
-const-string p1, "Message was missing required fields.  (Lite runtime could not determine which fields were missing)."
-invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-const/4 p1, 0x0
-iput-object p1, p0, Lix;->a:Ljava/util/List;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

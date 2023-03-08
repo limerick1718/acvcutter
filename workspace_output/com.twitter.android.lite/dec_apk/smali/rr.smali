@@ -15,53 +15,15 @@ return-void
 iget-object v0, p0, Lrr;->a:Lrm;
 invoke-virtual {v0}, Lrm;->c()Z
 move-result v0
-if-eqz v0, :cond_0
-iget-object v0, p0, Lrr;->b:Lrq;
-invoke-static {v0}, Lrq;->a(Lrq;)Lsf;
-move-result-object v0
-invoke-virtual {v0}, Lsf;->f()Z
-return-void
-:cond_0
-:try_start_0
 iget-object v0, p0, Lrr;->b:Lrq;
 invoke-static {v0}, Lrq;->b(Lrq;)Lrg;
 move-result-object v0
 iget-object v1, p0, Lrr;->a:Lrm;
 invoke-interface {v0, v1}, Lrg;->a(Lrm;)Ljava/lang/Object;
 move-result-object v0
-:try_end_0
-.catch Lrl; {:try_start_0 .. :try_end_0} :catch_1
-.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 iget-object v1, p0, Lrr;->b:Lrq;
 invoke-static {v1}, Lrq;->a(Lrq;)Lsf;
 move-result-object v1
 invoke-virtual {v1, v0}, Lsf;->a(Ljava/lang/Object;)V
-return-void
-:catch_0
-move-exception v0
-iget-object v1, p0, Lrr;->b:Lrq;
-invoke-static {v1}, Lrq;->a(Lrq;)Lsf;
-move-result-object v1
-invoke-virtual {v1, v0}, Lsf;->a(Ljava/lang/Exception;)V
-return-void
-:catch_1
-move-exception v0
-invoke-virtual {v0}, Lrl;->getCause()Ljava/lang/Throwable;
-move-result-object v1
-instance-of v1, v1, Ljava/lang/Exception;
-if-eqz v1, :cond_1
-iget-object v1, p0, Lrr;->b:Lrq;
-invoke-static {v1}, Lrq;->a(Lrq;)Lsf;
-move-result-object v1
-invoke-virtual {v0}, Lrl;->getCause()Ljava/lang/Throwable;
-move-result-object v0
-check-cast v0, Ljava/lang/Exception;
-invoke-virtual {v1, v0}, Lsf;->a(Ljava/lang/Exception;)V
-return-void
-:cond_1
-iget-object v1, p0, Lrr;->b:Lrq;
-invoke-static {v1}, Lrq;->a(Lrq;)Lsf;
-move-result-object v1
-invoke-virtual {v1, v0}, Lsf;->a(Ljava/lang/Exception;)V
 return-void
 .end method

@@ -26,8 +26,6 @@ return-void
 .end method
 .method public onActivityDestroyed(Landroid/app/Activity;)V
 .locals 1
-iget-object v0, p0, Luo$a$1;->a:Luo$b;
-invoke-virtual {v0, p1}, Luo$b;->onActivityDestroyed(Landroid/app/Activity;)V
 return-void
 .end method
 .method public onActivityPaused(Landroid/app/Activity;)V

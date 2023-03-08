@@ -29,20 +29,11 @@ value = {
 }
 .end annotation
 sget-object v0, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
-if-eq p2, v0, :cond_1
 const-class v0, Ljava/lang/Boolean;
-if-ne p2, v0, :cond_0
-goto :goto_0
-:cond_0
 invoke-static {p2}, Ltv;->a(Ljava/lang/reflect/Type;)Ltv;
 move-result-object p2
 invoke-virtual {p1, p2}, Lsx;->a(Ltv;)Ltn;
 move-result-object p1
-goto :goto_1
-:cond_1
-:goto_0
-sget-object p1, Lcom/google/gson/internal/bind/i;->f:Ltn;
-:goto_1
 return-object p1
 .end method
 .method public a(Lsx;Ltv;)Ltn;

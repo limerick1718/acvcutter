@@ -41,26 +41,8 @@ invoke-direct {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 iput-object p1, p0, Lcom/crashlytics/android/core/DevicePowerStateListener;->receiversRegistered:Ljava/util/concurrent/atomic/AtomicBoolean;
 return-void
 .end method
-.method static synthetic access$002(Lcom/crashlytics/android/core/DevicePowerStateListener;Z)Z
-.locals 0
-iput-boolean p1, p0, Lcom/crashlytics/android/core/DevicePowerStateListener;->isPowerConnected:Z
-return p1
-.end method
 .method public dispose()V
 .locals 2
-iget-object v0, p0, Lcom/crashlytics/android/core/DevicePowerStateListener;->receiversRegistered:Ljava/util/concurrent/atomic/AtomicBoolean;
-const/4 v1, 0x0
-invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
-move-result v0
-if-nez v0, :cond_0
-return-void
-:cond_0
-iget-object v0, p0, Lcom/crashlytics/android/core/DevicePowerStateListener;->context:Landroid/content/Context;
-iget-object v1, p0, Lcom/crashlytics/android/core/DevicePowerStateListener;->powerConnectedReceiver:Landroid/content/BroadcastReceiver;
-invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-iget-object v0, p0, Lcom/crashlytics/android/core/DevicePowerStateListener;->context:Landroid/content/Context;
-iget-object v1, p0, Lcom/crashlytics/android/core/DevicePowerStateListener;->powerDisconnectedReceiver:Landroid/content/BroadcastReceiver;
-invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 return-void
 .end method
 .method public initialize()V
@@ -69,9 +51,6 @@ iget-object v0, p0, Lcom/crashlytics/android/core/DevicePowerStateListener;->rec
 const/4 v1, 0x1
 invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 move-result v0
-if-eqz v0, :cond_0
-return-void
-:cond_0
 iget-object v0, p0, Lcom/crashlytics/android/core/DevicePowerStateListener;->context:Landroid/content/Context;
 const/4 v2, 0x0
 sget-object v3, Lcom/crashlytics/android/core/DevicePowerStateListener;->FILTER_BATTERY_CHANGED:Landroid/content/IntentFilter;
@@ -84,13 +63,6 @@ invoke-virtual {v0, v3, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/St
 move-result v2
 :cond_1
 const/4 v0, 0x2
-if-eq v2, v0, :cond_3
-const/4 v0, 0x5
-if-ne v2, v0, :cond_2
-goto :goto_0
-:cond_2
-const/4 v1, 0x0
-:cond_3
 :goto_0
 iput-boolean v1, p0, Lcom/crashlytics/android/core/DevicePowerStateListener;->isPowerConnected:Z
 iget-object v0, p0, Lcom/crashlytics/android/core/DevicePowerStateListener;->context:Landroid/content/Context;
@@ -105,6 +77,6 @@ return-void
 .end method
 .method public isPowerConnected()Z
 .locals 1
-iget-boolean v0, p0, Lcom/crashlytics/android/core/DevicePowerStateListener;->isPowerConnected:Z
+const/4 v0, 0x0
 return v0
 .end method

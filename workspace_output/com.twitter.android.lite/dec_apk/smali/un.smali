@@ -73,82 +73,76 @@ a = "mat_click_id"
 .end field
 .method private constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
-.end method
-.method public static a()Lun;
-.locals 1
-new-instance v0, Lun;
-invoke-direct {v0}, Lun;-><init>()V
-return-object v0
 .end method
 .method public a(I)Lun;
 .locals 0
-iput p1, p0, Lun;->h:I
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public a(J)Lun;
 .locals 0
-iput-wide p1, p0, Lun;->i:J
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public a(Ljava/lang/String;)Lun;
 .locals 0
-iput-object p1, p0, Lun;->a:Ljava/lang/String;
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public a(Z)Lun;
 .locals 0
-iput p1, p0, Lun;->b:I
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public b(Ljava/lang/String;)Lun;
 .locals 0
-iput-object p1, p0, Lun;->c:Ljava/lang/String;
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public c(Ljava/lang/String;)Lun;
 .locals 0
-iput-object p1, p0, Lun;->d:Ljava/lang/String;
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public d(Ljava/lang/String;)Lun;
 .locals 0
-iput-object p1, p0, Lun;->e:Ljava/lang/String;
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public e(Ljava/lang/String;)Lun;
 .locals 0
-iput-object p1, p0, Lun;->f:Ljava/lang/String;
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public f(Ljava/lang/String;)Lun;
 .locals 0
-iput-object p1, p0, Lun;->g:Ljava/lang/String;
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public g(Ljava/lang/String;)Lun;
 .locals 0
-iput-object p1, p0, Lun;->j:Ljava/lang/String;
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public h(Ljava/lang/String;)Lun;
 .locals 0
-iput-object p1, p0, Lun;->k:Ljava/lang/String;
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public i(Ljava/lang/String;)Lun;
 .locals 0
-iput-object p1, p0, Lun;->l:Ljava/lang/String;
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public j(Ljava/lang/String;)Lun;
 .locals 0
-iput-object p1, p0, Lun;->m:Ljava/lang/String;
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public k(Ljava/lang/String;)Lun;
 .locals 0
-iput-object p1, p0, Lun;->n:Ljava/lang/String;
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method

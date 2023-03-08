@@ -105,8 +105,6 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-iget-object v0, p0, Lcom/google/gson/internal/bind/h;->b:Ltn;
-invoke-virtual {v0, p1}, Ltn;->b(Ltw;)Ljava/lang/Object;
-move-result-object p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method

@@ -10,6 +10,6 @@ name = "a"
 .end annotation
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
 .locals 0
-invoke-direct {p0, p1, p2}, Lvo;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

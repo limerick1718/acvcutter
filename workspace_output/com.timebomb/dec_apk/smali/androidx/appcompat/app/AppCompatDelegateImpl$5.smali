@@ -23,7 +23,5 @@ return-void
 .end method
 .method public onDetachedFromWindow()V
 .locals 1
-iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$5;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
-invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->dismissPopups()V
 return-void
 .end method

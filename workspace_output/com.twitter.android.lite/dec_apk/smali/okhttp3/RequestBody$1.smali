@@ -12,9 +12,7 @@ name = null
 .field final synthetic val$contentType:Lokhttp3/MediaType;
 .method constructor <init>(Lokhttp3/MediaType;Lyv;)V
 .locals 0
-iput-object p1, p0, Lokhttp3/RequestBody$1;->val$contentType:Lokhttp3/MediaType;
-iput-object p2, p0, Lokhttp3/RequestBody$1;->val$content:Lyv;
-invoke-direct {p0}, Lokhttp3/RequestBody;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public contentLength()J
@@ -24,17 +22,14 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-iget-object v0, p0, Lokhttp3/RequestBody$1;->val$content:Lyv;
-invoke-virtual {v0}, Lyv;->h()I
-move-result v0
-int-to-long v0, v0
+const-wide v0, 0x0
 return-wide v0
 .end method
 .method public contentType()Lokhttp3/MediaType;
 .locals 1
 .annotation runtime Ljavax/annotation/Nullable;
 .end annotation
-iget-object v0, p0, Lokhttp3/RequestBody$1;->val$contentType:Lokhttp3/MediaType;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public writeTo(Lyt;)V
@@ -44,7 +39,5 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-iget-object v0, p0, Lokhttp3/RequestBody$1;->val$content:Lyv;
-invoke-interface {p1, v0}, Lyt;->c(Lyv;)Lyt;
 return-void
 .end method

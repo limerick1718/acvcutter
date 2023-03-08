@@ -22,42 +22,36 @@ name = "FontFileResourceEntry"
 .param p4, "variationSettings"    # Ljava/lang/String;
 .param p5, "ttcIndex"    # I
 .param p6, "resourceId"    # I
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mFileName:Ljava/lang/String;
-iput p2, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mWeight:I
-iput-boolean p3, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mItalic:Z
-iput-object p4, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mVariationSettings:Ljava/lang/String;
-iput p5, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mTtcIndex:I
-iput p6, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mResourceId:I
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public getFileName()Ljava/lang/String;
 .locals 1
-iget-object v0, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mFileName:Ljava/lang/String;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getResourceId()I
 .locals 1
-iget v0, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mResourceId:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public getTtcIndex()I
 .locals 1
-iget v0, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mTtcIndex:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public getVariationSettings()Ljava/lang/String;
 .locals 1
-iget-object v0, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mVariationSettings:Ljava/lang/String;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getWeight()I
 .locals 1
-iget v0, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mWeight:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public isItalic()Z
 .locals 1
-iget-boolean v0, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mItalic:Z
+const/4 v0, 0x0
 return v0
 .end method

@@ -231,30 +231,6 @@ return v0
 .end method
 .method public final toString()Ljava/lang/String;
 .locals 2
-new-instance v0, Ljava/lang/StringBuilder;
-const-string v1, "Component<"
-invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-iget-object v1, p0, Lcom/google/firebase/components/a;->a:Ljava/util/Set;
-invoke-interface {v1}, Ljava/util/Set;->toArray()[Ljava/lang/Object;
-move-result-object v1
-invoke-static {v1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
-move-result-object v1
-invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-const-string v1, ">{"
-invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-iget v1, p0, Lcom/google/firebase/components/a;->c:I
-invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-const-string v1, ", deps="
-invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-iget-object v1, p0, Lcom/google/firebase/components/a;->b:Ljava/util/Set;
-invoke-interface {v1}, Ljava/util/Set;->toArray()[Ljava/lang/Object;
-move-result-object v1
-invoke-static {v1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
-move-result-object v1
-invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-const-string v1, "}"
-invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method

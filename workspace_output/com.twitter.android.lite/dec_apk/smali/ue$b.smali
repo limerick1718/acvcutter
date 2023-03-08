@@ -26,17 +26,6 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-:try_start_0
-invoke-interface {p1}, Lokhttp3/Interceptor$Chain;->request()Lokhttp3/Request;
-move-result-object v0
-invoke-interface {p1, v0}, Lokhttp3/Interceptor$Chain;->proceed(Lokhttp3/Request;)Lokhttp3/Response;
-move-result-object p1
-:try_end_0
-.catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
-return-object p1
-:catch_0
-move-exception p1
-new-instance v0, Ljava/io/IOException;
-invoke-direct {v0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
-throw v0
+const/4 v0, 0x0
+return-object v0
 .end method

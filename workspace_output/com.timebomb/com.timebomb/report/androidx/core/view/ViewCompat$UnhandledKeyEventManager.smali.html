@@ -67,51 +67,51 @@ value = {
 .end field
 
 
-<span class="cov">.method static constructor &lt;clinit&gt;()V</span>
+.method static constructor &lt;clinit&gt;()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	new-instance v0, Ljava/util/ArrayList;</span>
-<span class="cov">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
-<span class="cov">	sput-object v0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->sViewsWithListeners:Ljava/util/ArrayList;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	new-instance v0, Ljava/util/ArrayList;</span>
+<span class="missed">	invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V</span>
+<span class="missed">	sput-object v0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->sViewsWithListeners:Ljava/util/ArrayList;</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method constructor &lt;init&gt;()V</span>
+.method constructor &lt;init&gt;()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="cov">	iput-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mViewsContainingListeners:Ljava/util/WeakHashMap;</span>
-<span class="cov">	iput-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mCapturedKeys:Landroid/util/SparseArray;</span>
-<span class="cov">	iput-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mLastDispatchedPreViewKeyEvent:Ljava/lang/ref/WeakReference;</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-direct {p0}, Ljava/lang/Object;-><init>()V</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="missed">	iput-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mViewsContainingListeners:Ljava/util/WeakHashMap;</span>
+<span class="missed">	iput-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mCapturedKeys:Landroid/util/SparseArray;</span>
+<span class="missed">	iput-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mLastDispatchedPreViewKeyEvent:Ljava/lang/ref/WeakReference;</span>
+<span class="">	return-void</span>
 .end method
 
-<span class="cov">.method static at(Landroid/view/View;)Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;</span>
+.method static at(Landroid/view/View;)Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;
 <span class="">	.locals 2</span>
 <span class="">	.param p0, "root"    # Landroid/view/View;</span>
 
-<span class="cov">	sget v0, Landroidx/core/R$id;->tag_unhandled_key_event_manager:I</span>
-<span class="exec">	invoke-virtual {p0, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	check-cast v0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;</span>
-<span class="cov">	if-nez v0, :cond_0</span>
-<span class="cov">	new-instance v1, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;</span>
-<span class="cov">	invoke-direct {v1}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;-><init>()V</span>
-<span class="cov">	move-object v0, v1</span>
-<span class="cov">	sget v1, Landroidx/core/R$id;->tag_unhandled_key_event_manager:I</span>
-<span class="cov">	invoke-virtual {p0, v1, v0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	sget v0, Landroidx/core/R$id;->tag_unhandled_key_event_manager:I</span>
+<span class="">	invoke-virtual {p0, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	check-cast v0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	new-instance v1, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;</span>
+<span class="missed">	invoke-direct {v1}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;-><init>()V</span>
+<span class="missed">	move-object v0, v1</span>
+<span class="missed">	sget v1, Landroidx/core/R$id;->tag_unhandled_key_event_manager:I</span>
+<span class="missed">	invoke-virtual {p0, v1, v0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V</span>
+<span class="">	:cond_0</span>
+<span class="">	return-object v0</span>
 .end method
 
-<span class="cov">.method private dispatchInOrder(Landroid/view/View;Landroid/view/KeyEvent;)Landroid/view/View;</span>
+.method private dispatchInOrder(Landroid/view/View;Landroid/view/KeyEvent;)Landroid/view/View;
 <span class="">	.locals 5</span>
 <span class="">	.param p1, "view"    # Landroid/view/View;</span>
 <span class="">	.param p2, "event"    # Landroid/view/KeyEvent;</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mViewsContainingListeners:Ljava/util/WeakHashMap;</span>
-<span class="cov">	const/4 v1, 0x0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mViewsContainingListeners:Ljava/util/WeakHashMap;</span>
+<span class="missed">	const/4 v1, 0x0</span>
 <span class="missed">	if-eqz v0, :cond_4</span>
 <span class="">	invoke-virtual {v0, p1}, Ljava/util/WeakHashMap;->containsKey(Ljava/lang/Object;)Z</span>
 <span class="missed">	move-result v0</span>
@@ -143,12 +143,12 @@ value = {
 <span class="">	return-object p1</span>
 <span class="">	:cond_3</span>
 <span class="">	return-object v1</span>
-<span class="cov">	:goto_1</span>
-<span class="cov">	:cond_4</span>
-<span class="exec">	return-object v1</span>
+<span class="">	:goto_1</span>
+<span class="">	:cond_4</span>
+<span class="">	return-object v1</span>
 .end method
 
-<span class="cov">.method private getCapturedKeys()Landroid/util/SparseArray;</span>
+.method private getCapturedKeys()Landroid/util/SparseArray;
 <span class="">	.locals 1</span>
 <span class="">	.annotation system Ldalvik/annotation/Signature;</span>
 <span class="">	value = {</span>
@@ -160,14 +160,14 @@ value = {
 <span class="">	}</span>
 <span class="">	.end annotation</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mCapturedKeys:Landroid/util/SparseArray;</span>
-<span class="cov">	if-nez v0, :cond_0</span>
-<span class="cov">	new-instance v0, Landroid/util/SparseArray;</span>
-<span class="cov">	invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V</span>
-<span class="cov">	iput-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mCapturedKeys:Landroid/util/SparseArray;</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	iget-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mCapturedKeys:Landroid/util/SparseArray;</span>
-<span class="exec">	return-object v0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mCapturedKeys:Landroid/util/SparseArray;</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	new-instance v0, Landroid/util/SparseArray;</span>
+<span class="missed">	invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mCapturedKeys:Landroid/util/SparseArray;</span>
+<span class="">	:cond_0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mCapturedKeys:Landroid/util/SparseArray;</span>
+<span class="">	return-object v0</span>
 .end method
 
 .method private onUnhandledKeyEvent(Landroid/view/View;Landroid/view/KeyEvent;)Z
@@ -201,18 +201,18 @@ value = {
 <span class="">	return v1</span>
 .end method
 
-<span class="cov">.method private recalcViewsWithUnhandled()V</span>
+.method private recalcViewsWithUnhandled()V
 <span class="">	.locals 8</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mViewsContainingListeners:Ljava/util/WeakHashMap;</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mViewsContainingListeners:Ljava/util/WeakHashMap;</span>
 <span class="missed">	if-eqz v0, :cond_0</span>
 <span class="missed">	invoke-virtual {v0}, Ljava/util/WeakHashMap;->clear()V</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	sget-object v0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->sViewsWithListeners:Ljava/util/ArrayList;</span>
-<span class="exec">	invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-eqz v0, :cond_1</span>
-<span class="exec">	return-void</span>
+<span class="">	:cond_0</span>
+<span class="missed">	sget-object v0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->sViewsWithListeners:Ljava/util/ArrayList;</span>
+<span class="">	invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_1</span>
+<span class="">	return-void</span>
 <span class="">	:cond_1</span>
 <span class="missed">	sget-object v0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->sViewsWithListeners:Ljava/util/ArrayList;</span>
 <span class="missed">	monitor-enter v0</span>
@@ -350,23 +350,23 @@ value = {
 <span class="">	throw v1</span>
 .end method
 
-<span class="cov">.method  dispatch(Landroid/view/View;Landroid/view/KeyEvent;)Z</span>
+.method  dispatch(Landroid/view/View;Landroid/view/KeyEvent;)Z
 <span class="">	.locals 4</span>
 <span class="">	.param p1, "root"    # Landroid/view/View;</span>
 <span class="">	.param p2, "event"    # Landroid/view/KeyEvent;</span>
 
-<span class="exec">	invoke-virtual {p2}, Landroid/view/KeyEvent;->getAction()I</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-nez v0, :cond_0</span>
-<span class="cov">	invoke-direct {p0}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->recalcViewsWithUnhandled()V</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-direct {p0, p1, p2}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->dispatchInOrder(Landroid/view/View;Landroid/view/KeyEvent;)Landroid/view/View;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-virtual {p2}, Landroid/view/KeyEvent;->getAction()I</span>
-<span class="cov">	move-result v1</span>
-<span class="cov">	if-nez v1, :cond_1</span>
-<span class="exec">	invoke-virtual {p2}, Landroid/view/KeyEvent;->getKeyCode()I</span>
-<span class="cov">	move-result v1</span>
+<span class="">	invoke-virtual {p2}, Landroid/view/KeyEvent;->getAction()I</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-nez v0, :cond_0</span>
+<span class="missed">	invoke-direct {p0}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->recalcViewsWithUnhandled()V</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-direct {p0, p1, p2}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->dispatchInOrder(Landroid/view/View;Landroid/view/KeyEvent;)Landroid/view/View;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {p2}, Landroid/view/KeyEvent;->getAction()I</span>
+<span class="missed">	move-result v1</span>
+<span class="missed">	if-nez v1, :cond_1</span>
+<span class="">	invoke-virtual {p2}, Landroid/view/KeyEvent;->getKeyCode()I</span>
+<span class="missed">	move-result v1</span>
 <span class="missed">	if-eqz v0, :cond_1</span>
 <span class="">	invoke-static {v1}, Landroid/view/KeyEvent;->isModifierKey(I)Z</span>
 <span class="missed">	move-result v2</span>
@@ -376,57 +376,57 @@ value = {
 <span class="missed">	new-instance v3, Ljava/lang/ref/WeakReference;</span>
 <span class="missed">	invoke-direct {v3, v0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V</span>
 <span class="missed">	invoke-virtual {v2, v1, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V</span>
-<span class="cov">	:cond_1</span>
+<span class="">	:cond_1</span>
 <span class="missed">	if-eqz v0, :cond_2</span>
 <span class="missed">	const/4 v1, 0x1</span>
-<span class="exec">	goto :goto_0</span>
-<span class="cov">	:cond_2</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return v1</span>
+<span class="">	goto :goto_0</span>
+<span class="">	:cond_2</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="">	:goto_0</span>
+<span class="">	return v1</span>
 .end method
 
-<span class="cov">.method  preDispatch(Landroid/view/KeyEvent;)Z</span>
+.method  preDispatch(Landroid/view/KeyEvent;)Z
 <span class="">	.locals 6</span>
 <span class="">	.param p1, "event"    # Landroid/view/KeyEvent;</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mLastDispatchedPreViewKeyEvent:Ljava/lang/ref/WeakReference;</span>
-<span class="cov">	const/4 v1, 0x0</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="exec">	invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	if-ne v0, p1, :cond_0</span>
-<span class="exec">	return v1</span>
-<span class="cov">	:cond_0</span>
-<span class="cov">	new-instance v0, Ljava/lang/ref/WeakReference;</span>
-<span class="cov">	invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V</span>
-<span class="cov">	iput-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mLastDispatchedPreViewKeyEvent:Ljava/lang/ref/WeakReference;</span>
-<span class="cov">	const/4 v0, 0x0</span>
-<span class="exec">	invoke-direct {p0}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->getCapturedKeys()Landroid/util/SparseArray;</span>
-<span class="cov">	move-result-object v2</span>
-<span class="exec">	invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I</span>
-<span class="cov">	move-result v3</span>
-<span class="cov">	const/4 v4, 0x1</span>
-<span class="cov">	if-ne v3, v4, :cond_1</span>
-<span class="exec">	invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I</span>
-<span class="cov">	move-result v3</span>
-<span class="exec">	invoke-virtual {v2, v3}, Landroid/util/SparseArray;->indexOfKey(I)I</span>
-<span class="cov">	move-result v3</span>
+<span class="missed">	iget-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mLastDispatchedPreViewKeyEvent:Ljava/lang/ref/WeakReference;</span>
+<span class="missed">	const/4 v1, 0x0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-ne v0, p1, :cond_0</span>
+<span class="">	return v1</span>
+<span class="">	:cond_0</span>
+<span class="missed">	new-instance v0, Ljava/lang/ref/WeakReference;</span>
+<span class="missed">	invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V</span>
+<span class="missed">	iput-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mLastDispatchedPreViewKeyEvent:Ljava/lang/ref/WeakReference;</span>
+<span class="missed">	const/4 v0, 0x0</span>
+<span class="">	invoke-direct {p0}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->getCapturedKeys()Landroid/util/SparseArray;</span>
+<span class="missed">	move-result-object v2</span>
+<span class="">	invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I</span>
+<span class="missed">	move-result v3</span>
+<span class="missed">	const/4 v4, 0x1</span>
+<span class="missed">	if-ne v3, v4, :cond_1</span>
+<span class="">	invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I</span>
+<span class="missed">	move-result v3</span>
+<span class="">	invoke-virtual {v2, v3}, Landroid/util/SparseArray;->indexOfKey(I)I</span>
+<span class="missed">	move-result v3</span>
 <span class="missed">	if-ltz v3, :cond_1</span>
 <span class="">	invoke-virtual {v2, v3}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v5</span>
 <span class="missed">	move-object v0, v5</span>
 <span class="missed">	check-cast v0, Ljava/lang/ref/WeakReference;</span>
 <span class="missed">	invoke-virtual {v2, v3}, Landroid/util/SparseArray;->removeAt(I)V</span>
-<span class="cov">	:cond_1</span>
-<span class="cov">	if-nez v0, :cond_2</span>
-<span class="exec">	invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I</span>
-<span class="cov">	move-result v3</span>
-<span class="exec">	invoke-virtual {v2, v3}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;</span>
-<span class="cov">	move-result-object v3</span>
-<span class="cov">	move-object v0, v3</span>
-<span class="cov">	check-cast v0, Ljava/lang/ref/WeakReference;</span>
-<span class="cov">	:cond_2</span>
+<span class="">	:cond_1</span>
+<span class="missed">	if-nez v0, :cond_2</span>
+<span class="">	invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I</span>
+<span class="missed">	move-result v3</span>
+<span class="">	invoke-virtual {v2, v3}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;</span>
+<span class="missed">	move-result-object v3</span>
+<span class="missed">	move-object v0, v3</span>
+<span class="missed">	check-cast v0, Ljava/lang/ref/WeakReference;</span>
+<span class="">	:cond_2</span>
 <span class="missed">	if-eqz v0, :cond_4</span>
 <span class="">	invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;</span>
 <span class="missed">	move-result-object v1</span>
@@ -438,8 +438,8 @@ value = {
 <span class="missed">	invoke-direct {p0, v1, p1}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->onUnhandledKeyEvent(Landroid/view/View;Landroid/view/KeyEvent;)Z</span>
 <span class="">	:cond_3</span>
 <span class="">	return v4</span>
-<span class="cov">	:cond_4</span>
-<span class="exec">	return v1</span>
+<span class="">	:cond_4</span>
+<span class="">	return v1</span>
 .end method</code>
 	</pre>
     <div class="footer"><span class="right">Created with <a href="https://github.com/pilgun/acvtool">ACVTool</a> 0.1</span></div>

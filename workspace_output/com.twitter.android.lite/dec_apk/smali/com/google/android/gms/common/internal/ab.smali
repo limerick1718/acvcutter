@@ -29,7 +29,6 @@ move-result v3
 invoke-static {v3}, Lbb;->a(I)I
 move-result v4
 const/4 v5, 0x1
-if-eq v4, v5, :cond_1
 const/4 v5, 0x2
 if-eq v4, v5, :cond_0
 invoke-static {p1, v3}, Lbb;->b(Landroid/os/Parcel;I)V
@@ -40,10 +39,6 @@ invoke-static {p1, v3, v2}, Lbb;->b(Landroid/os/Parcel;ILandroid/os/Parcelable$C
 move-result-object v2
 check-cast v2, [Lcom/google/android/gms/common/d;
 goto :goto_0
-:cond_1
-invoke-static {p1, v3}, Lbb;->k(Landroid/os/Parcel;I)Landroid/os/Bundle;
-move-result-object v1
-goto :goto_0
 :cond_2
 invoke-static {p1, v0}, Lbb;->l(Landroid/os/Parcel;I)V
 new-instance p1, Lcom/google/android/gms/common/internal/aa;
@@ -52,6 +47,6 @@ return-object p1
 .end method
 .method public final synthetic newArray(I)[Ljava/lang/Object;
 .locals 0
-new-array p1, p1, [Lcom/google/android/gms/common/internal/aa;
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method

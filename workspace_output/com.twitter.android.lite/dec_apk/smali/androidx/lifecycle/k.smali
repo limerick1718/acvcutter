@@ -13,9 +13,6 @@ value = {
 .end field
 .method public constructor <init>()V
 .locals 1
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-new-instance v0, Ljava/util/HashMap;
-invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-iput-object v0, p0, Landroidx/lifecycle/k;->a:Ljava/util/Map;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

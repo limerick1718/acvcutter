@@ -81,128 +81,46 @@ return-void
 .end method
 .method public final a()Lcom/google/android/gms/common/api/Status;
 .locals 0
-return-object p0
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public final b()Ljava/lang/String;
 .locals 1
-iget-object v0, p0, Lcom/google/android/gms/common/api/Status;->j:Ljava/lang/String;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public final c()Z
 .locals 1
 iget v0, p0, Lcom/google/android/gms/common/api/Status;->i:I
-if-gtz v0, :cond_0
 const/4 v0, 0x1
-return v0
-:cond_0
-const/4 v0, 0x0
 return v0
 .end method
 .method public final d()I
 .locals 1
-iget v0, p0, Lcom/google/android/gms/common/api/Status;->i:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public final e()Ljava/lang/String;
 .locals 1
-iget-object v0, p0, Lcom/google/android/gms/common/api/Status;->j:Ljava/lang/String;
-if-eqz v0, :cond_0
-return-object v0
-:cond_0
-iget v0, p0, Lcom/google/android/gms/common/api/Status;->i:I
-invoke-static {v0}, Lcom/google/android/gms/common/api/d;->a(I)Ljava/lang/String;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public final equals(Ljava/lang/Object;)Z
 .locals 3
-instance-of v0, p1, Lcom/google/android/gms/common/api/Status;
-const/4 v1, 0x0
-if-nez v0, :cond_0
-return v1
-:cond_0
-check-cast p1, Lcom/google/android/gms/common/api/Status;
-iget v0, p0, Lcom/google/android/gms/common/api/Status;->h:I
-iget v2, p1, Lcom/google/android/gms/common/api/Status;->h:I
-if-ne v0, v2, :cond_1
-iget v0, p0, Lcom/google/android/gms/common/api/Status;->i:I
-iget v2, p1, Lcom/google/android/gms/common/api/Status;->i:I
-if-ne v0, v2, :cond_1
-iget-object v0, p0, Lcom/google/android/gms/common/api/Status;->j:Ljava/lang/String;
-iget-object v2, p1, Lcom/google/android/gms/common/api/Status;->j:Ljava/lang/String;
-invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-move-result v0
-if-eqz v0, :cond_1
-iget-object v0, p0, Lcom/google/android/gms/common/api/Status;->k:Landroid/app/PendingIntent;
-iget-object p1, p1, Lcom/google/android/gms/common/api/Status;->k:Landroid/app/PendingIntent;
-invoke-static {v0, p1}, Lcom/google/android/gms/common/internal/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-move-result p1
-if-eqz p1, :cond_1
-const/4 p1, 0x1
-return p1
-:cond_1
-return v1
+const/4 v0, 0x0
+return v0
 .end method
 .method public final hashCode()I
 .locals 3
-const/4 v0, 0x4
-new-array v0, v0, [Ljava/lang/Object;
-iget v1, p0, Lcom/google/android/gms/common/api/Status;->h:I
-invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-move-result-object v1
-const/4 v2, 0x0
-aput-object v1, v0, v2
-iget v1, p0, Lcom/google/android/gms/common/api/Status;->i:I
-invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-move-result-object v1
-const/4 v2, 0x1
-aput-object v1, v0, v2
-iget-object v1, p0, Lcom/google/android/gms/common/api/Status;->j:Ljava/lang/String;
-const/4 v2, 0x2
-aput-object v1, v0, v2
-iget-object v1, p0, Lcom/google/android/gms/common/api/Status;->k:Landroid/app/PendingIntent;
-const/4 v2, 0x3
-aput-object v1, v0, v2
-invoke-static {v0}, Lcom/google/android/gms/common/internal/n;->a([Ljava/lang/Object;)I
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public final toString()Ljava/lang/String;
 .locals 3
-invoke-static {p0}, Lcom/google/android/gms/common/internal/n;->a(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n$a;
-move-result-object v0
-invoke-virtual {p0}, Lcom/google/android/gms/common/api/Status;->e()Ljava/lang/String;
-move-result-object v1
-const-string v2, "statusCode"
-invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n$a;
-move-result-object v0
-iget-object v1, p0, Lcom/google/android/gms/common/api/Status;->k:Landroid/app/PendingIntent;
-const-string v2, "resolution"
-invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n$a;
-move-result-object v0
-invoke-virtual {v0}, Lcom/google/android/gms/common/internal/n$a;->toString()Ljava/lang/String;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public final writeToParcel(Landroid/os/Parcel;I)V
 .locals 4
-invoke-static {p1}, Lbc;->a(Landroid/os/Parcel;)I
-move-result v0
-invoke-virtual {p0}, Lcom/google/android/gms/common/api/Status;->d()I
-move-result v1
-const/4 v2, 0x1
-invoke-static {p1, v2, v1}, Lbc;->a(Landroid/os/Parcel;II)V
-invoke-virtual {p0}, Lcom/google/android/gms/common/api/Status;->b()Ljava/lang/String;
-move-result-object v1
-const/4 v2, 0x0
-const/4 v3, 0x2
-invoke-static {p1, v3, v1, v2}, Lbc;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
-iget-object v1, p0, Lcom/google/android/gms/common/api/Status;->k:Landroid/app/PendingIntent;
-const/4 v3, 0x3
-invoke-static {p1, v3, v1, p2, v2}, Lbc;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
-iget p2, p0, Lcom/google/android/gms/common/api/Status;->h:I
-const/16 v1, 0x3e8
-invoke-static {p1, v1, p2}, Lbc;->a(Landroid/os/Parcel;II)V
-invoke-static {p1, v0}, Lbc;->a(Landroid/os/Parcel;I)V
 return-void
 .end method

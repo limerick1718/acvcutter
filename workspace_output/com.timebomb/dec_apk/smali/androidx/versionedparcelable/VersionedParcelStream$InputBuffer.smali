@@ -21,16 +21,6 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput p2, p0, Landroidx/versionedparcelable/VersionedParcelStream$InputBuffer;->mSize:I
-iput p1, p0, Landroidx/versionedparcelable/VersionedParcelStream$InputBuffer;->mFieldId:I
-iget v0, p0, Landroidx/versionedparcelable/VersionedParcelStream$InputBuffer;->mSize:I
-new-array v0, v0, [B
-invoke-virtual {p3, v0}, Ljava/io/DataInputStream;->readFully([B)V
-new-instance v1, Ljava/io/DataInputStream;
-new-instance v2, Ljava/io/ByteArrayInputStream;
-invoke-direct {v2, v0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
-invoke-direct {v1, v2}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
-iput-object v1, p0, Landroidx/versionedparcelable/VersionedParcelStream$InputBuffer;->mInputStream:Ljava/io/DataInputStream;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

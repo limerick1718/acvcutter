@@ -20,20 +20,11 @@ return-void
 .locals 1
 .param p1, "menu"    # Landroidx/appcompat/view/menu/MenuBuilder;
 .param p2, "allMenusAreClosing"    # Z
-iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionMenuPresenterCallback;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
-invoke-virtual {v0, p1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->checkCloseActionMenu(Landroidx/appcompat/view/menu/MenuBuilder;)V
 return-void
 .end method
 .method public onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z
 .locals 2
 .param p1, "subMenu"    # Landroidx/appcompat/view/menu/MenuBuilder;
-iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$ActionMenuPresenterCallback;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
-invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatDelegateImpl;->getWindowCallback()Landroid/view/Window$Callback;
-move-result-object v0
-if-eqz v0, :cond_0
-const/16 v1, 0x6c
-invoke-interface {v0, v1, p1}, Landroid/view/Window$Callback;->onMenuOpened(ILandroid/view/Menu;)Z
-:cond_0
-const/4 v1, 0x1
-return v1
+const/4 v0, 0x0
+return v0
 .end method

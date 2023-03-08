@@ -22,16 +22,13 @@ value = {
 .field final synthetic val$responseType:Ljava/lang/reflect/Type;
 .method constructor <init>(Lretrofit2/DefaultCallAdapterFactory;Ljava/lang/reflect/Type;)V
 .locals 0
-iput-object p1, p0, Lretrofit2/DefaultCallAdapterFactory$1;->this$0:Lretrofit2/DefaultCallAdapterFactory;
-iput-object p2, p0, Lretrofit2/DefaultCallAdapterFactory$1;->val$responseType:Ljava/lang/reflect/Type;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public bridge synthetic adapt(Lretrofit2/Call;)Ljava/lang/Object;
 .locals 0
-invoke-virtual {p0, p1}, Lretrofit2/DefaultCallAdapterFactory$1;->adapt(Lretrofit2/Call;)Lretrofit2/Call;
-move-result-object p1
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public adapt(Lretrofit2/Call;)Lretrofit2/Call;
 .locals 0
@@ -46,10 +43,11 @@ value = {
 ">;"
 }
 .end annotation
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public responseType()Ljava/lang/reflect/Type;
 .locals 1
-iget-object v0, p0, Lretrofit2/DefaultCallAdapterFactory$1;->val$responseType:Ljava/lang/reflect/Type;
+const/4 v0, 0x0
 return-object v0
 .end method

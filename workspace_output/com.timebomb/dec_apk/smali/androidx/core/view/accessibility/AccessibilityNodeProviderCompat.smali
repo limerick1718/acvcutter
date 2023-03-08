@@ -11,33 +11,13 @@ Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityN
 .field private final mProvider:Ljava/lang/Object;
 .method public constructor <init>()V
 .locals 2
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-const/16 v1, 0x13
-if-lt v0, v1, :cond_0
-new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderApi19;
-invoke-direct {v0, p0}, Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderApi19;-><init>(Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;)V
-iput-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;->mProvider:Ljava/lang/Object;
-goto :goto_0
-:cond_0
-sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-const/16 v1, 0x10
-if-lt v0, v1, :cond_1
-new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderApi16;
-invoke-direct {v0, p0}, Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderApi16;-><init>(Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;)V
-iput-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;->mProvider:Ljava/lang/Object;
-goto :goto_0
-:cond_1
-const/4 v0, 0x0
-iput-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;->mProvider:Ljava/lang/Object;
-:goto_0
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public constructor <init>(Ljava/lang/Object;)V
 .locals 0
 .param p1, "provider"    # Ljava/lang/Object;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;->mProvider:Ljava/lang/Object;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public createAccessibilityNodeInfo(I)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
@@ -71,7 +51,7 @@ return-object v0
 .end method
 .method public getProvider()Ljava/lang/Object;
 .locals 1
-iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;->mProvider:Ljava/lang/Object;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public performAction(IILandroid/os/Bundle;)Z

@@ -22,11 +22,6 @@ return-void
 .end method
 .method protected final a(Lcom/google/android/gms/common/b;)V
 .locals 1
-iget-object v0, p0, Lcom/google/android/gms/common/internal/b$l;->a:Lcom/google/android/gms/common/internal/b;
-iget-object v0, v0, Lcom/google/android/gms/common/internal/b;->b:Lcom/google/android/gms/common/internal/b$c;
-invoke-interface {v0, p1}, Lcom/google/android/gms/common/internal/b$c;->a(Lcom/google/android/gms/common/b;)V
-iget-object v0, p0, Lcom/google/android/gms/common/internal/b$l;->a:Lcom/google/android/gms/common/internal/b;
-invoke-virtual {v0, p1}, Lcom/google/android/gms/common/internal/b;->a(Lcom/google/android/gms/common/b;)V
 return-void
 .end method
 .method protected final a()Z

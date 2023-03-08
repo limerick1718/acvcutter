@@ -16,15 +16,13 @@ name = "Op"
 .field  popExitAnim:I
 .method constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method constructor <init>(ILandroidx/fragment/app/Fragment;)V
 .locals 0
 .param p1, "cmd"    # I
 .param p2, "fragment"    # Landroidx/fragment/app/Fragment;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput p1, p0, Landroidx/fragment/app/BackStackRecord$Op;->cmd:I
-iput-object p2, p0, Landroidx/fragment/app/BackStackRecord$Op;->fragment:Landroidx/fragment/app/Fragment;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

@@ -11,7 +11,7 @@ name = null
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public create(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
@@ -25,7 +25,6 @@ value = {
 "TT;>;)TT;"
 }
 .end annotation
-new-instance v0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;
-invoke-direct {v0}, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;-><init>()V
+const/4 v0, 0x0
 return-object v0
 .end method

@@ -185,63 +185,11 @@ invoke-direct {p1, p3, p2}, Lcom/crashlytics/android/core/MiddleOutFallbackStrat
 iput-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsController;->stackTraceTrimmingStrategy:Lcom/crashlytics/android/core/StackTraceTrimmingStrategy;
 return-void
 .end method
-.method static synthetic access$000()Ljava/util/regex/Pattern;
-.locals 1
-sget-object v0, Lcom/crashlytics/android/core/CrashlyticsController;->SESSION_FILE_PATTERN:Ljava/util/regex/Pattern;
-return-object v0
-.end method
-.method static synthetic access$1000(Lcom/crashlytics/android/core/CrashlyticsController;)Lcom/crashlytics/android/core/LogFileManager;
-.locals 0
-iget-object p0, p0, Lcom/crashlytics/android/core/CrashlyticsController;->logFileManager:Lcom/crashlytics/android/core/LogFileManager;
-return-object p0
-.end method
-.method static synthetic access$1100(Lcom/crashlytics/android/core/CrashlyticsController;Ljava/util/Date;Ljava/lang/Thread;Ljava/lang/Throwable;)V
-.locals 0
-invoke-direct {p0, p1, p2, p3}, Lcom/crashlytics/android/core/CrashlyticsController;->doWriteNonFatal(Ljava/util/Date;Ljava/lang/Thread;Ljava/lang/Throwable;)V
-return-void
-.end method
-.method static synthetic access$1200(Lcom/crashlytics/android/core/CrashlyticsController;)Ljava/lang/String;
-.locals 0
-invoke-direct {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getCurrentSessionId()Ljava/lang/String;
-move-result-object p0
-return-object p0
-.end method
-.method static synthetic access$1300(Lcom/crashlytics/android/core/CrashlyticsController;Lyg;Z)V
-.locals 0
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/lang/Exception;
-}
-.end annotation
-invoke-direct {p0, p1, p2}, Lcom/crashlytics/android/core/CrashlyticsController;->doCloseSessions(Lyg;Z)V
-return-void
-.end method
 .method static synthetic access$1500(Lcom/crashlytics/android/core/CrashlyticsController;Ljava/io/FilenameFilter;)[Ljava/io/File;
 .locals 0
 invoke-direct {p0, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->listFilesMatching(Ljava/io/FilenameFilter;)[Ljava/io/File;
 move-result-object p0
 return-object p0
-.end method
-.method static synthetic access$1600(Lcom/crashlytics/android/core/CrashlyticsController;)Ljava/lang/String;
-.locals 0
-invoke-direct {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getPreviousSessionId()Ljava/lang/String;
-move-result-object p0
-return-object p0
-.end method
-.method static synthetic access$1700(Lcom/crashlytics/android/core/CrashlyticsController;Landroid/content/Context;Ljava/io/File;Ljava/lang/String;)V
-.locals 0
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-invoke-direct {p0, p1, p2, p3}, Lcom/crashlytics/android/core/CrashlyticsController;->finalizeMostRecentNativeCrash(Landroid/content/Context;Ljava/io/File;Ljava/lang/String;)V
-return-void
-.end method
-.method static synthetic access$1800(Lcom/crashlytics/android/core/CrashlyticsController;Ljava/util/Set;)V
-.locals 0
-invoke-direct {p0, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->recursiveDelete(Ljava/util/Set;)V
-return-void
 .end method
 .method static synthetic access$1900(Lcom/crashlytics/android/core/CrashlyticsController;)Lcom/crashlytics/android/core/AppData;
 .locals 0
@@ -253,21 +201,6 @@ return-object p0
 iget-object p0, p0, Lcom/crashlytics/android/core/CrashlyticsController;->unityVersion:Ljava/lang/String;
 return-object p0
 .end method
-.method static synthetic access$400(Lcom/crashlytics/android/core/CrashlyticsController;)Lcom/crashlytics/android/core/CrashlyticsCore;
-.locals 0
-iget-object p0, p0, Lcom/crashlytics/android/core/CrashlyticsController;->crashlyticsCore:Lcom/crashlytics/android/core/CrashlyticsCore;
-return-object p0
-.end method
-.method static synthetic access$500(Lcom/crashlytics/android/core/CrashlyticsController;Ljava/util/Date;Ljava/lang/Thread;Ljava/lang/Throwable;)V
-.locals 0
-invoke-direct {p0, p1, p2, p3}, Lcom/crashlytics/android/core/CrashlyticsController;->writeFatal(Ljava/util/Date;Ljava/lang/Thread;Ljava/lang/Throwable;)V
-return-void
-.end method
-.method static synthetic access$600(Lcom/crashlytics/android/core/CrashlyticsController;J)V
-.locals 0
-invoke-direct {p0, p1, p2}, Lcom/crashlytics/android/core/CrashlyticsController;->recordFatalFirebaseEvent(J)V
-return-void
-.end method
 .method static synthetic access$700(Lcom/crashlytics/android/core/CrashlyticsController;)V
 .locals 0
 .annotation system Ldalvik/annotation/Throws;
@@ -276,139 +209,6 @@ Ljava/lang/Exception;
 }
 .end annotation
 invoke-direct {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->doOpenSession()V
-return-void
-.end method
-.method static synthetic access$800(Lcom/crashlytics/android/core/CrashlyticsController;Lyk;)Z
-.locals 0
-invoke-direct {p0, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->shouldPromptUserBeforeSendingCrashReports(Lyk;)Z
-move-result p0
-return p0
-.end method
-.method static synthetic access$900(Lcom/crashlytics/android/core/CrashlyticsController;Lyk;)V
-.locals 0
-invoke-direct {p0, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->sendSessionReports(Lyk;)V
-return-void
-.end method
-.method private closeOpenSessions([Ljava/io/File;II)V
-.locals 6
-invoke-static {}, Luq;->g()Luz;
-move-result-object v0
-const-string v1, "CrashlyticsCore"
-const-string v2, "Closing open sessions."
-invoke-interface {v0, v1, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-:goto_0
-array-length v0, p1
-if-ge p2, v0, :cond_0
-aget-object v0, p1, p2
-invoke-static {v0}, Lcom/crashlytics/android/core/CrashlyticsController;->getSessionIdFromSessionFile(Ljava/io/File;)Ljava/lang/String;
-move-result-object v2
-invoke-static {}, Luq;->g()Luz;
-move-result-object v3
-new-instance v4, Ljava/lang/StringBuilder;
-invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-const-string v5, "Closing session: "
-invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v4
-invoke-interface {v3, v1, v4}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-invoke-direct {p0, v0, v2, p3}, Lcom/crashlytics/android/core/CrashlyticsController;->writeSessionPartsToSessionFile(Ljava/io/File;Ljava/lang/String;I)V
-add-int/lit8 p2, p2, 0x1
-goto :goto_0
-:cond_0
-return-void
-.end method
-.method private closeWithoutRenamingOrLog(Lcom/crashlytics/android/core/ClsFileOutputStream;)V
-.locals 3
-if-nez p1, :cond_0
-return-void
-:cond_0
-:try_start_0
-invoke-virtual {p1}, Lcom/crashlytics/android/core/ClsFileOutputStream;->closeInProgressStream()V
-:try_end_0
-.catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-goto :goto_0
-:catch_0
-move-exception p1
-invoke-static {}, Luq;->g()Luz;
-move-result-object v0
-const-string v1, "CrashlyticsCore"
-const-string v2, "Error closing session file stream in the presence of an exception"
-invoke-interface {v0, v1, v2, p1}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-:goto_0
-return-void
-.end method
-.method private static copyToCodedOutputStream(Ljava/io/InputStream;Lcom/crashlytics/android/core/CodedOutputStream;I)V
-.locals 2
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-new-array p2, p2, [B
-const/4 v0, 0x0
-:goto_0
-array-length v1, p2
-if-ge v0, v1, :cond_0
-array-length v1, p2
-sub-int/2addr v1, v0
-invoke-virtual {p0, p2, v0, v1}, Ljava/io/InputStream;->read([BII)I
-move-result v1
-if-ltz v1, :cond_0
-add-int/2addr v0, v1
-goto :goto_0
-:cond_0
-invoke-virtual {p1, p2}, Lcom/crashlytics/android/core/CodedOutputStream;->writeRawBytes([B)V
-return-void
-.end method
-.method private deleteSessionPartFilesFor(Ljava/lang/String;)V
-.locals 3
-invoke-direct {p0, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->listSessionPartFilesFor(Ljava/lang/String;)[Ljava/io/File;
-move-result-object p1
-array-length v0, p1
-const/4 v1, 0x0
-:goto_0
-if-ge v1, v0, :cond_0
-aget-object v2, p1, v1
-invoke-virtual {v2}, Ljava/io/File;->delete()Z
-add-int/lit8 v1, v1, 0x1
-goto :goto_0
-:cond_0
-return-void
-.end method
-.method private doCloseSessions(Lyg;Z)V
-.locals 3
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/lang/Exception;
-}
-.end annotation
-add-int/lit8 v0, p2, 0x8
-invoke-direct {p0, v0}, Lcom/crashlytics/android/core/CrashlyticsController;->trimOpenSessions(I)V
-invoke-direct {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->listSortedSessionBeginFiles()[Ljava/io/File;
-move-result-object v0
-array-length v1, v0
-const-string v2, "CrashlyticsCore"
-if-gt v1, p2, :cond_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object p1
-const-string p2, "No open sessions to be closed."
-invoke-interface {p1, v2, p2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-return-void
-:cond_0
-aget-object v1, v0, p2
-invoke-static {v1}, Lcom/crashlytics/android/core/CrashlyticsController;->getSessionIdFromSessionFile(Ljava/io/File;)Ljava/lang/String;
-move-result-object v1
-invoke-direct {p0, v1}, Lcom/crashlytics/android/core/CrashlyticsController;->writeSessionUser(Ljava/lang/String;)V
-if-nez p1, :cond_1
-invoke-static {}, Luq;->g()Luz;
-move-result-object p1
-const-string p2, "Unable to close session. Settings are not loaded."
-invoke-interface {p1, v2, p2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-return-void
-:cond_1
-iget p1, p1, Lyg;->c:I
-invoke-direct {p0, v0, p2, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->closeOpenSessions([Ljava/io/File;II)V
 return-void
 .end method
 .method private doOpenSession()V
@@ -444,472 +244,14 @@ iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController;->logFil
 invoke-virtual {v0, v1}, Lcom/crashlytics/android/core/LogFileManager;->setCurrentSession(Ljava/lang/String;)V
 return-void
 .end method
-.method private doWriteNonFatal(Ljava/util/Date;Ljava/lang/Thread;Ljava/lang/Throwable;)V
-.locals 15
-move-object v8, p0
-const-string v9, "Failed to close non-fatal file output stream."
-const-string v10, "Failed to flush to non-fatal file."
-invoke-direct {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getCurrentSessionId()Ljava/lang/String;
-move-result-object v11
-const/4 v1, 0x0
-const-string v12, "CrashlyticsCore"
-if-nez v11, :cond_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object v0
-const-string v2, "Tried to write a non-fatal exception while no session was open."
-invoke-interface {v0, v12, v2, v1}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-return-void
-:cond_0
-invoke-virtual/range {p3 .. p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-move-result-object v0
-invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-move-result-object v0
-invoke-static {v11, v0}, Lcom/crashlytics/android/core/CrashlyticsController;->recordLoggedExceptionAnswersEvent(Ljava/lang/String;Ljava/lang/String;)V
-:try_start_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object v0
-new-instance v2, Ljava/lang/StringBuilder;
-invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-const-string v3, "Crashlytics is logging non-fatal exception \""
-invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-move-object/from16 v5, p3
-invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-const-string v3, "\" from thread "
-invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual/range {p2 .. p2}, Ljava/lang/Thread;->getName()Ljava/lang/String;
-move-result-object v3
-invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v2
-invoke-interface {v0, v12, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-iget-object v0, v8, Lcom/crashlytics/android/core/CrashlyticsController;->eventCounter:Ljava/util/concurrent/atomic/AtomicInteger;
-invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
-move-result v0
-invoke-static {v0}, Lvn;->a(I)Ljava/lang/String;
-move-result-object v0
-new-instance v2, Ljava/lang/StringBuilder;
-invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-const-string v3, "SessionEvent"
-invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v0
-new-instance v13, Lcom/crashlytics/android/core/ClsFileOutputStream;
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFilesDir()Ljava/io/File;
-move-result-object v2
-invoke-direct {v13, v2, v0}, Lcom/crashlytics/android/core/ClsFileOutputStream;-><init>(Ljava/io/File;Ljava/lang/String;)V
-:try_end_0
-.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
-.catchall {:try_start_0 .. :try_end_0} :catchall_1
-:try_start_1
-invoke-static {v13}, Lcom/crashlytics/android/core/CodedOutputStream;->newInstance(Ljava/io/OutputStream;)Lcom/crashlytics/android/core/CodedOutputStream;
-move-result-object v14
-:try_end_1
-.catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-.catchall {:try_start_1 .. :try_end_1} :catchall_2
-:try_start_2
-const-string v6, "error"
-const/4 v7, 0x0
-move-object v1, p0
-move-object v2, v14
-move-object/from16 v3, p1
-move-object/from16 v4, p2
-move-object/from16 v5, p3
-invoke-direct/range {v1 .. v7}, Lcom/crashlytics/android/core/CrashlyticsController;->writeSessionEvent(Lcom/crashlytics/android/core/CodedOutputStream;Ljava/util/Date;Ljava/lang/Thread;Ljava/lang/Throwable;Ljava/lang/String;Z)V
-:try_end_2
-.catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
-.catchall {:try_start_2 .. :try_end_2} :catchall_0
-invoke-static {v14, v10}, Lvn;->a(Ljava/io/Flushable;Ljava/lang/String;)V
-goto :goto_1
-:catchall_0
-move-exception v0
-move-object v1, v14
-goto :goto_3
-:catch_0
-move-exception v0
-move-object v1, v14
-goto :goto_0
-:catch_1
-move-exception v0
-goto :goto_0
-:catchall_1
-move-exception v0
-move-object v13, v1
-goto :goto_3
-:catch_2
-move-exception v0
-move-object v13, v1
-:goto_0
-:try_start_3
-invoke-static {}, Luq;->g()Luz;
-move-result-object v2
-const-string v3, "An error occurred in the non-fatal exception logger"
-invoke-interface {v2, v12, v3, v0}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-:try_end_3
-.catchall {:try_start_3 .. :try_end_3} :catchall_2
-invoke-static {v1, v10}, Lvn;->a(Ljava/io/Flushable;Ljava/lang/String;)V
-:goto_1
-invoke-static {v13, v9}, Lvn;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-const/16 v0, 0x40
-:try_start_4
-invoke-direct {p0, v11, v0}, Lcom/crashlytics/android/core/CrashlyticsController;->trimSessionEventFiles(Ljava/lang/String;I)V
-:try_end_4
-.catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_3
-goto :goto_2
-:catch_3
-move-exception v0
-move-object v1, v0
-invoke-static {}, Luq;->g()Luz;
-move-result-object v0
-const-string v2, "An error occurred when trimming non-fatal files."
-invoke-interface {v0, v12, v2, v1}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-:goto_2
-return-void
-:catchall_2
-move-exception v0
-:goto_3
-invoke-static {v1, v10}, Lvn;->a(Ljava/io/Flushable;Ljava/lang/String;)V
-invoke-static {v13, v9}, Lvn;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-throw v0
-.end method
 .method private ensureFileArrayNotNull([Ljava/io/File;)[Ljava/io/File;
 .locals 0
-if-nez p1, :cond_0
-const/4 p1, 0x0
-new-array p1, p1, [Ljava/io/File;
 :cond_0
-return-object p1
-.end method
-.method private finalizeMostRecentNativeCrash(Landroid/content/Context;Ljava/io/File;Ljava/lang/String;)V
-.locals 11
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-invoke-static {p2}, Lcom/crashlytics/android/core/NativeFileUtils;->minidumpFromDirectory(Ljava/io/File;)[B
-move-result-object v0
-invoke-static {p2}, Lcom/crashlytics/android/core/NativeFileUtils;->metadataJsonFromDirectory(Ljava/io/File;)[B
-move-result-object v1
-invoke-static {p2, p1}, Lcom/crashlytics/android/core/NativeFileUtils;->binaryImagesJsonFromDirectory(Ljava/io/File;Landroid/content/Context;)[B
-move-result-object p1
-const-string v2, "CrashlyticsCore"
-if-eqz v0, :cond_2
-array-length v3, v0
-if-nez v3, :cond_0
-goto/16 :goto_0
-:cond_0
-const-string p2, "<native-crash: minidump>"
-invoke-static {p3, p2}, Lcom/crashlytics/android/core/CrashlyticsController;->recordFatalExceptionAnswersEvent(Ljava/lang/String;Ljava/lang/String;)V
-const-string p2, "BeginSession.json"
-invoke-direct {p0, p3, p2}, Lcom/crashlytics/android/core/CrashlyticsController;->readFile(Ljava/lang/String;Ljava/lang/String;)[B
-move-result-object p2
-const-string v3, "SessionApp.json"
-invoke-direct {p0, p3, v3}, Lcom/crashlytics/android/core/CrashlyticsController;->readFile(Ljava/lang/String;Ljava/lang/String;)[B
-move-result-object v3
-const-string v4, "SessionDevice.json"
-invoke-direct {p0, p3, v4}, Lcom/crashlytics/android/core/CrashlyticsController;->readFile(Ljava/lang/String;Ljava/lang/String;)[B
-move-result-object v4
-const-string v5, "SessionOS.json"
-invoke-direct {p0, p3, v5}, Lcom/crashlytics/android/core/CrashlyticsController;->readFile(Ljava/lang/String;Ljava/lang/String;)[B
-move-result-object v5
-new-instance v6, Lcom/crashlytics/android/core/MetaDataStore;
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFilesDir()Ljava/io/File;
-move-result-object v7
-invoke-direct {v6, v7}, Lcom/crashlytics/android/core/MetaDataStore;-><init>(Ljava/io/File;)V
-invoke-virtual {v6, p3}, Lcom/crashlytics/android/core/MetaDataStore;->getUserDataFileForSession(Ljava/lang/String;)Ljava/io/File;
-move-result-object v6
-invoke-static {v6}, Lcom/crashlytics/android/core/NativeFileUtils;->readFile(Ljava/io/File;)[B
-move-result-object v6
-new-instance v7, Lcom/crashlytics/android/core/LogFileManager;
-iget-object v8, p0, Lcom/crashlytics/android/core/CrashlyticsController;->crashlyticsCore:Lcom/crashlytics/android/core/CrashlyticsCore;
-invoke-virtual {v8}, Lcom/crashlytics/android/core/CrashlyticsCore;->getContext()Landroid/content/Context;
-move-result-object v8
-iget-object v9, p0, Lcom/crashlytics/android/core/CrashlyticsController;->logFileDirectoryProvider:Lcom/crashlytics/android/core/CrashlyticsController$LogFileDirectoryProvider;
-invoke-direct {v7, v8, v9, p3}, Lcom/crashlytics/android/core/LogFileManager;-><init>(Landroid/content/Context;Lcom/crashlytics/android/core/LogFileManager$DirectoryProvider;Ljava/lang/String;)V
-invoke-virtual {v7}, Lcom/crashlytics/android/core/LogFileManager;->getBytesForLog()[B
-move-result-object v8
-invoke-virtual {v7}, Lcom/crashlytics/android/core/LogFileManager;->clearLog()V
-new-instance v7, Lcom/crashlytics/android/core/MetaDataStore;
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFilesDir()Ljava/io/File;
-move-result-object v9
-invoke-direct {v7, v9}, Lcom/crashlytics/android/core/MetaDataStore;-><init>(Ljava/io/File;)V
-invoke-virtual {v7, p3}, Lcom/crashlytics/android/core/MetaDataStore;->getKeysFileForSession(Ljava/lang/String;)Ljava/io/File;
-move-result-object v7
-invoke-static {v7}, Lcom/crashlytics/android/core/NativeFileUtils;->readFile(Ljava/io/File;)[B
-move-result-object v7
-new-instance v9, Ljava/io/File;
-iget-object v10, p0, Lcom/crashlytics/android/core/CrashlyticsController;->fileStore:Lxn;
-invoke-interface {v10}, Lxn;->a()Ljava/io/File;
-move-result-object v10
-invoke-direct {v9, v10, p3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-invoke-virtual {v9}, Ljava/io/File;->mkdir()Z
-move-result p3
-if-nez p3, :cond_1
-invoke-static {}, Luq;->g()Luz;
-move-result-object p1
-const-string p2, "Couldn\'t create native sessions directory"
-invoke-interface {p1, v2, p2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-return-void
-:cond_1
-new-instance p3, Ljava/io/File;
-const-string v2, "minidump"
-invoke-direct {p3, v9, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-invoke-direct {p0, v0, p3}, Lcom/crashlytics/android/core/CrashlyticsController;->gzipIfNotEmpty([BLjava/io/File;)V
-new-instance p3, Ljava/io/File;
-const-string v0, "metadata"
-invoke-direct {p3, v9, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-invoke-direct {p0, v1, p3}, Lcom/crashlytics/android/core/CrashlyticsController;->gzipIfNotEmpty([BLjava/io/File;)V
-new-instance p3, Ljava/io/File;
-const-string v0, "binaryImages"
-invoke-direct {p3, v9, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-invoke-direct {p0, p1, p3}, Lcom/crashlytics/android/core/CrashlyticsController;->gzipIfNotEmpty([BLjava/io/File;)V
-new-instance p1, Ljava/io/File;
-const-string p3, "session"
-invoke-direct {p1, v9, p3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-invoke-direct {p0, p2, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->gzipIfNotEmpty([BLjava/io/File;)V
-new-instance p1, Ljava/io/File;
-const-string p2, "app"
-invoke-direct {p1, v9, p2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-invoke-direct {p0, v3, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->gzipIfNotEmpty([BLjava/io/File;)V
-new-instance p1, Ljava/io/File;
-const-string p2, "device"
-invoke-direct {p1, v9, p2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-invoke-direct {p0, v4, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->gzipIfNotEmpty([BLjava/io/File;)V
-new-instance p1, Ljava/io/File;
-const-string p2, "os"
-invoke-direct {p1, v9, p2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-invoke-direct {p0, v5, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->gzipIfNotEmpty([BLjava/io/File;)V
-new-instance p1, Ljava/io/File;
-const-string p2, "user"
-invoke-direct {p1, v9, p2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-invoke-direct {p0, v6, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->gzipIfNotEmpty([BLjava/io/File;)V
-new-instance p1, Ljava/io/File;
-const-string p2, "logs"
-invoke-direct {p1, v9, p2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-invoke-direct {p0, v8, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->gzipIfNotEmpty([BLjava/io/File;)V
-new-instance p1, Ljava/io/File;
-const-string p2, "keys"
-invoke-direct {p1, v9, p2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-invoke-direct {p0, v7, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->gzipIfNotEmpty([BLjava/io/File;)V
-return-void
-:cond_2
-:goto_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object p1
-new-instance p3, Ljava/lang/StringBuilder;
-invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-const-string v0, "No minidump data found in directory "
-invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object p2
-invoke-interface {p1, v2, p2}, Luz;->d(Ljava/lang/String;Ljava/lang/String;)V
-return-void
-.end method
-.method private firebaseCrashExists()Z
-.locals 1
-:try_start_0
-const-string v0, "com.google.firebase.crash.FirebaseCrash"
-invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-:try_end_0
-.catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-const/4 v0, 0x1
-return v0
-:catch_0
-const/4 v0, 0x0
-return v0
-.end method
-.method private getCreateReportSpiCall(Ljava/lang/String;Ljava/lang/String;)Lcom/crashlytics/android/core/CreateReportSpiCall;
-.locals 4
-iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController;->crashlyticsCore:Lcom/crashlytics/android/core/CrashlyticsCore;
-invoke-virtual {v0}, Lcom/crashlytics/android/core/CrashlyticsCore;->getContext()Landroid/content/Context;
-move-result-object v0
-const-string v1, "com.crashlytics.ApiEndpoint"
-invoke-static {v0, v1}, Lvn;->b(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-move-result-object v0
-new-instance v1, Lcom/crashlytics/android/core/DefaultCreateReportSpiCall;
-iget-object v2, p0, Lcom/crashlytics/android/core/CrashlyticsController;->crashlyticsCore:Lcom/crashlytics/android/core/CrashlyticsCore;
-iget-object v3, p0, Lcom/crashlytics/android/core/CrashlyticsController;->httpRequestFactory:Lxi;
-invoke-direct {v1, v2, v0, p1, v3}, Lcom/crashlytics/android/core/DefaultCreateReportSpiCall;-><init>(Luw;Ljava/lang/String;Ljava/lang/String;Lxi;)V
-new-instance p1, Lcom/crashlytics/android/core/NativeCreateReportSpiCall;
-iget-object v2, p0, Lcom/crashlytics/android/core/CrashlyticsController;->crashlyticsCore:Lcom/crashlytics/android/core/CrashlyticsCore;
-iget-object v3, p0, Lcom/crashlytics/android/core/CrashlyticsController;->httpRequestFactory:Lxi;
-invoke-direct {p1, v2, v0, p2, v3}, Lcom/crashlytics/android/core/NativeCreateReportSpiCall;-><init>(Luw;Ljava/lang/String;Ljava/lang/String;Lxi;)V
-new-instance p2, Lcom/crashlytics/android/core/CompositeCreateReportSpiCall;
-invoke-direct {p2, v1, p1}, Lcom/crashlytics/android/core/CompositeCreateReportSpiCall;-><init>(Lcom/crashlytics/android/core/DefaultCreateReportSpiCall;Lcom/crashlytics/android/core/NativeCreateReportSpiCall;)V
-return-object p2
-.end method
-.method private getCurrentSessionId()Ljava/lang/String;
-.locals 2
-invoke-direct {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->listSortedSessionBeginFiles()[Ljava/io/File;
-move-result-object v0
-array-length v1, v0
-if-lez v1, :cond_0
-const/4 v1, 0x0
-aget-object v0, v0, v1
-invoke-static {v0}, Lcom/crashlytics/android/core/CrashlyticsController;->getSessionIdFromSessionFile(Ljava/io/File;)Ljava/lang/String;
-move-result-object v0
-goto :goto_0
-:cond_0
-const/4 v0, 0x0
-:goto_0
-return-object v0
-.end method
-.method private getPreviousSessionId()Ljava/lang/String;
-.locals 3
-invoke-direct {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->listSortedSessionBeginFiles()[Ljava/io/File;
-move-result-object v0
-array-length v1, v0
-const/4 v2, 0x1
-if-le v1, v2, :cond_0
-aget-object v0, v0, v2
-invoke-static {v0}, Lcom/crashlytics/android/core/CrashlyticsController;->getSessionIdFromSessionFile(Ljava/io/File;)Ljava/lang/String;
-move-result-object v0
-goto :goto_0
-:cond_0
-const/4 v0, 0x0
-:goto_0
-return-object v0
-.end method
-.method static getSessionIdFromSessionFile(Ljava/io/File;)Ljava/lang/String;
-.locals 2
-invoke-virtual {p0}, Ljava/io/File;->getName()Ljava/lang/String;
-move-result-object p0
-const/4 v0, 0x0
-const/16 v1, 0x23
-invoke-virtual {p0, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-move-result-object p0
-return-object p0
-.end method
-.method private getTrimmedNonFatalFiles(Ljava/lang/String;[Ljava/io/File;I)[Ljava/io/File;
-.locals 4
-array-length v0, p2
-if-le v0, p3, :cond_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object p2
-sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
-const/4 v1, 0x1
-new-array v1, v1, [Ljava/lang/Object;
-const/4 v2, 0x0
-invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-move-result-object v3
-aput-object v3, v1, v2
-const-string v2, "Trimming down to %d logged exceptions."
-invoke-static {v0, v2, v1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-move-result-object v0
-const-string v1, "CrashlyticsCore"
-invoke-interface {p2, v1, v0}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-invoke-direct {p0, p1, p3}, Lcom/crashlytics/android/core/CrashlyticsController;->trimSessionEventFiles(Ljava/lang/String;I)V
-new-instance p2, Lcom/crashlytics/android/core/CrashlyticsController$FileNameContainsFilter;
-new-instance p3, Ljava/lang/StringBuilder;
-invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-const-string p1, "SessionEvent"
-invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object p1
-invoke-direct {p2, p1}, Lcom/crashlytics/android/core/CrashlyticsController$FileNameContainsFilter;-><init>(Ljava/lang/String;)V
-invoke-direct {p0, p2}, Lcom/crashlytics/android/core/CrashlyticsController;->listFilesMatching(Ljava/io/FilenameFilter;)[Ljava/io/File;
-move-result-object p2
-:cond_0
-return-object p2
-.end method
-.method private getUserMetaData(Ljava/lang/String;)Lcom/crashlytics/android/core/UserMetaData;
-.locals 3
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->isHandlingException()Z
-move-result v0
-if-eqz v0, :cond_0
-new-instance p1, Lcom/crashlytics/android/core/UserMetaData;
-iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController;->crashlyticsCore:Lcom/crashlytics/android/core/CrashlyticsCore;
-invoke-virtual {v0}, Lcom/crashlytics/android/core/CrashlyticsCore;->getUserIdentifier()Ljava/lang/String;
-move-result-object v0
-iget-object v1, p0, Lcom/crashlytics/android/core/CrashlyticsController;->crashlyticsCore:Lcom/crashlytics/android/core/CrashlyticsCore;
-invoke-virtual {v1}, Lcom/crashlytics/android/core/CrashlyticsCore;->getUserName()Ljava/lang/String;
-move-result-object v1
-iget-object v2, p0, Lcom/crashlytics/android/core/CrashlyticsController;->crashlyticsCore:Lcom/crashlytics/android/core/CrashlyticsCore;
-invoke-virtual {v2}, Lcom/crashlytics/android/core/CrashlyticsCore;->getUserEmail()Ljava/lang/String;
-move-result-object v2
-invoke-direct {p1, v0, v1, v2}, Lcom/crashlytics/android/core/UserMetaData;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-goto :goto_0
-:cond_0
-new-instance v0, Lcom/crashlytics/android/core/MetaDataStore;
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFilesDir()Ljava/io/File;
-move-result-object v1
-invoke-direct {v0, v1}, Lcom/crashlytics/android/core/MetaDataStore;-><init>(Ljava/io/File;)V
-invoke-virtual {v0, p1}, Lcom/crashlytics/android/core/MetaDataStore;->readUserData(Ljava/lang/String;)Lcom/crashlytics/android/core/UserMetaData;
-move-result-object p1
-:goto_0
-return-object p1
-.end method
-.method private gzip([BLjava/io/File;)V
-.locals 3
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-const/4 v0, 0x0
-:try_start_0
-new-instance v1, Ljava/util/zip/GZIPOutputStream;
-new-instance v2, Ljava/io/FileOutputStream;
-invoke-direct {v2, p2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
-invoke-direct {v1, v2}, Ljava/util/zip/GZIPOutputStream;-><init>(Ljava/io/OutputStream;)V
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_1
-:try_start_1
-invoke-virtual {v1, p1}, Ljava/util/zip/GZIPOutputStream;->write([B)V
-invoke-virtual {v1}, Ljava/util/zip/GZIPOutputStream;->finish()V
-:try_end_1
-.catchall {:try_start_1 .. :try_end_1} :catchall_0
-invoke-static {v1}, Lvn;->a(Ljava/io/Closeable;)V
-return-void
-:catchall_0
-move-exception p1
-move-object v0, v1
-goto :goto_0
-:catchall_1
-move-exception p1
-:goto_0
-invoke-static {v0}, Lvn;->a(Ljava/io/Closeable;)V
-throw p1
-.end method
-.method private gzipIfNotEmpty([BLjava/io/File;)V
-.locals 1
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-if-eqz p1, :cond_0
-array-length v0, p1
-if-lez v0, :cond_0
-invoke-direct {p0, p1, p2}, Lcom/crashlytics/android/core/CrashlyticsController;->gzip([BLjava/io/File;)V
-:cond_0
-return-void
-.end method
-.method private listFiles(Ljava/io/File;)[Ljava/io/File;
-.locals 0
-invoke-virtual {p1}, Ljava/io/File;->listFiles()[Ljava/io/File;
-move-result-object p1
-invoke-direct {p0, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->ensureFileArrayNotNull([Ljava/io/File;)[Ljava/io/File;
-move-result-object p1
 return-object p1
 .end method
 .method private listFilesMatching(Ljava/io/File;Ljava/io/FilenameFilter;)[Ljava/io/File;
 .locals 0
 invoke-virtual {p1, p2}, Ljava/io/File;->listFiles(Ljava/io/FilenameFilter;)[Ljava/io/File;
-move-result-object p1
-invoke-direct {p0, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->ensureFileArrayNotNull([Ljava/io/File;)[Ljava/io/File;
-move-result-object p1
-return-object p1
-.end method
-.method private listFilesMatching(Ljava/io/FileFilter;)[Ljava/io/File;
-.locals 1
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFilesDir()Ljava/io/File;
-move-result-object v0
-invoke-virtual {v0, p1}, Ljava/io/File;->listFiles(Ljava/io/FileFilter;)[Ljava/io/File;
 move-result-object p1
 invoke-direct {p0, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->ensureFileArrayNotNull([Ljava/io/File;)[Ljava/io/File;
 move-result-object p1
@@ -922,478 +264,6 @@ move-result-object v0
 invoke-direct {p0, v0, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->listFilesMatching(Ljava/io/File;Ljava/io/FilenameFilter;)[Ljava/io/File;
 move-result-object p1
 return-object p1
-.end method
-.method private listSessionPartFilesFor(Ljava/lang/String;)[Ljava/io/File;
-.locals 1
-new-instance v0, Lcom/crashlytics/android/core/CrashlyticsController$SessionPartFileFilter;
-invoke-direct {v0, p1}, Lcom/crashlytics/android/core/CrashlyticsController$SessionPartFileFilter;-><init>(Ljava/lang/String;)V
-invoke-direct {p0, v0}, Lcom/crashlytics/android/core/CrashlyticsController;->listFilesMatching(Ljava/io/FilenameFilter;)[Ljava/io/File;
-move-result-object p1
-return-object p1
-.end method
-.method private listSortedSessionBeginFiles()[Ljava/io/File;
-.locals 2
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->listSessionBeginFiles()[Ljava/io/File;
-move-result-object v0
-sget-object v1, Lcom/crashlytics/android/core/CrashlyticsController;->LARGEST_FILE_NAME_FIRST:Ljava/util/Comparator;
-invoke-static {v0, v1}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
-return-object v0
-.end method
-.method private readFile(Ljava/lang/String;Ljava/lang/String;)[B
-.locals 3
-new-instance v0, Ljava/io/File;
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFilesDir()Ljava/io/File;
-move-result-object v1
-new-instance v2, Ljava/lang/StringBuilder;
-invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object p1
-invoke-direct {v0, v1, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-invoke-static {v0}, Lcom/crashlytics/android/core/NativeFileUtils;->readFile(Ljava/io/File;)[B
-move-result-object p1
-return-object p1
-.end method
-.method private static recordFatalExceptionAnswersEvent(Ljava/lang/String;Ljava/lang/String;)V
-.locals 2
-const-class v0, Lcom/crashlytics/android/answers/Answers;
-invoke-static {v0}, Luq;->a(Ljava/lang/Class;)Luw;
-move-result-object v0
-check-cast v0, Lcom/crashlytics/android/answers/Answers;
-if-nez v0, :cond_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object p0
-const-string p1, "CrashlyticsCore"
-const-string v0, "Answers is not available"
-invoke-interface {p0, p1, v0}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-return-void
-:cond_0
-new-instance v1, Lvo$a;
-invoke-direct {v1, p0, p1}, Lvo$a;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-invoke-virtual {v0, v1}, Lcom/crashlytics/android/answers/Answers;->onException(Lvo$a;)V
-return-void
-.end method
-.method private recordFatalFirebaseEvent(J)V
-.locals 3
-invoke-direct {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->firebaseCrashExists()Z
-move-result v0
-const-string v1, "CrashlyticsCore"
-if-eqz v0, :cond_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object p1
-const-string p2, "Skipping logging Crashlytics event to Firebase, FirebaseCrash exists"
-invoke-interface {p1, v1, p2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-return-void
-:cond_0
-iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController;->firebaseAnalyticsLogger:Lcom/crashlytics/android/answers/EventLogger;
-if-eqz v0, :cond_1
-invoke-static {}, Luq;->g()Luz;
-move-result-object v0
-const-string v2, "Logging Crashlytics event to Firebase"
-invoke-interface {v0, v1, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-new-instance v0, Landroid/os/Bundle;
-invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-const/4 v1, 0x1
-const-string v2, "_r"
-invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
-const-string v2, "fatal"
-invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
-const-string v1, "timestamp"
-invoke-virtual {v0, v1, p1, p2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
-iget-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsController;->firebaseAnalyticsLogger:Lcom/crashlytics/android/answers/EventLogger;
-const-string p2, "clx"
-const-string v1, "_ae"
-invoke-interface {p1, p2, v1, v0}, Lcom/crashlytics/android/answers/EventLogger;->logEvent(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
-goto :goto_0
-:cond_1
-invoke-static {}, Luq;->g()Luz;
-move-result-object p1
-const-string p2, "Skipping logging Crashlytics event to Firebase, no Firebase Analytics"
-invoke-interface {p1, v1, p2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-:goto_0
-return-void
-.end method
-.method private static recordLoggedExceptionAnswersEvent(Ljava/lang/String;Ljava/lang/String;)V
-.locals 2
-const-class v0, Lcom/crashlytics/android/answers/Answers;
-invoke-static {v0}, Luq;->a(Ljava/lang/Class;)Luw;
-move-result-object v0
-check-cast v0, Lcom/crashlytics/android/answers/Answers;
-if-nez v0, :cond_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object p0
-const-string p1, "CrashlyticsCore"
-const-string v0, "Answers is not available"
-invoke-interface {p0, p1, v0}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-return-void
-:cond_0
-new-instance v1, Lvo$b;
-invoke-direct {v1, p0, p1}, Lvo$b;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-invoke-virtual {v0, v1}, Lcom/crashlytics/android/answers/Answers;->onException(Lvo$b;)V
-return-void
-.end method
-.method private recursiveDelete(Ljava/io/File;)V
-.locals 4
-invoke-virtual {p1}, Ljava/io/File;->isDirectory()Z
-move-result v0
-if-eqz v0, :cond_0
-invoke-virtual {p1}, Ljava/io/File;->listFiles()[Ljava/io/File;
-move-result-object v0
-array-length v1, v0
-const/4 v2, 0x0
-:goto_0
-if-ge v2, v1, :cond_0
-aget-object v3, v0, v2
-invoke-direct {p0, v3}, Lcom/crashlytics/android/core/CrashlyticsController;->recursiveDelete(Ljava/io/File;)V
-add-int/lit8 v2, v2, 0x1
-goto :goto_0
-:cond_0
-invoke-virtual {p1}, Ljava/io/File;->delete()Z
-return-void
-.end method
-.method private recursiveDelete(Ljava/util/Set;)V
-.locals 1
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"(",
-"Ljava/util/Set<",
-"Ljava/io/File;",
-">;)V"
-}
-.end annotation
-invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-move-result-object p1
-:goto_0
-invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-move-result v0
-if-eqz v0, :cond_0
-invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-move-result-object v0
-check-cast v0, Ljava/io/File;
-invoke-direct {p0, v0}, Lcom/crashlytics/android/core/CrashlyticsController;->recursiveDelete(Ljava/io/File;)V
-goto :goto_0
-:cond_0
-return-void
-.end method
-.method private retainSessions([Ljava/io/File;Ljava/util/Set;)V
-.locals 8
-.annotation system Ldalvik/annotation/Signature;
-value = {
-"([",
-"Ljava/io/File;",
-"Ljava/util/Set<",
-"Ljava/lang/String;",
-">;)V"
-}
-.end annotation
-array-length v0, p1
-const/4 v1, 0x0
-:goto_0
-if-ge v1, v0, :cond_2
-aget-object v2, p1, v1
-invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
-move-result-object v3
-sget-object v4, Lcom/crashlytics/android/core/CrashlyticsController;->SESSION_FILE_PATTERN:Ljava/util/regex/Pattern;
-invoke-virtual {v4, v3}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-move-result-object v4
-invoke-virtual {v4}, Ljava/util/regex/Matcher;->matches()Z
-move-result v5
-const-string v6, "CrashlyticsCore"
-if-nez v5, :cond_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object v4
-new-instance v5, Ljava/lang/StringBuilder;
-invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-const-string v7, "Deleting unknown file: "
-invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v3
-invoke-interface {v4, v6, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-invoke-virtual {v2}, Ljava/io/File;->delete()Z
-goto :goto_1
-:cond_0
-const/4 v5, 0x1
-invoke-virtual {v4, v5}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-move-result-object v4
-invoke-interface {p2, v4}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-move-result v4
-if-nez v4, :cond_1
-invoke-static {}, Luq;->g()Luz;
-move-result-object v4
-new-instance v5, Ljava/lang/StringBuilder;
-invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-const-string v7, "Trimming session file: "
-invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v3
-invoke-interface {v4, v6, v3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-invoke-virtual {v2}, Ljava/io/File;->delete()Z
-:cond_1
-:goto_1
-add-int/lit8 v1, v1, 0x1
-goto :goto_0
-:cond_2
-return-void
-.end method
-.method private sendSessionReports(Lyk;)V
-.locals 7
-if-nez p1, :cond_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object p1
-const-string v0, "CrashlyticsCore"
-const-string v1, "Cannot send reports. Settings are unavailable."
-invoke-interface {p1, v0, v1}, Luz;->d(Ljava/lang/String;Ljava/lang/String;)V
-return-void
-:cond_0
-iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController;->crashlyticsCore:Lcom/crashlytics/android/core/CrashlyticsCore;
-invoke-virtual {v0}, Lcom/crashlytics/android/core/CrashlyticsCore;->getContext()Landroid/content/Context;
-move-result-object v0
-iget-object v1, p1, Lyk;->a:Lxv;
-iget-object v1, v1, Lxv;->d:Ljava/lang/String;
-iget-object p1, p1, Lyk;->a:Lxv;
-iget-object p1, p1, Lxv;->e:Ljava/lang/String;
-invoke-direct {p0, v1, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->getCreateReportSpiCall(Ljava/lang/String;Ljava/lang/String;)Lcom/crashlytics/android/core/CreateReportSpiCall;
-move-result-object p1
-new-instance v1, Lcom/crashlytics/android/core/ReportUploader;
-iget-object v2, p0, Lcom/crashlytics/android/core/CrashlyticsController;->appData:Lcom/crashlytics/android/core/AppData;
-iget-object v2, v2, Lcom/crashlytics/android/core/AppData;->apiKey:Ljava/lang/String;
-iget-object v3, p0, Lcom/crashlytics/android/core/CrashlyticsController;->reportFilesProvider:Lcom/crashlytics/android/core/ReportUploader$ReportFilesProvider;
-iget-object v4, p0, Lcom/crashlytics/android/core/CrashlyticsController;->handlingExceptionCheck:Lcom/crashlytics/android/core/ReportUploader$HandlingExceptionCheck;
-invoke-direct {v1, v2, p1, v3, v4}, Lcom/crashlytics/android/core/ReportUploader;-><init>(Ljava/lang/String;Lcom/crashlytics/android/core/CreateReportSpiCall;Lcom/crashlytics/android/core/ReportUploader$ReportFilesProvider;Lcom/crashlytics/android/core/ReportUploader$HandlingExceptionCheck;)V
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->listCompleteSessionFiles()[Ljava/io/File;
-move-result-object p1
-array-length v2, p1
-const/4 v3, 0x0
-:goto_0
-if-ge v3, v2, :cond_1
-aget-object v4, p1, v3
-new-instance v5, Lcom/crashlytics/android/core/SessionReport;
-sget-object v6, Lcom/crashlytics/android/core/CrashlyticsController;->SEND_AT_CRASHTIME_HEADER:Ljava/util/Map;
-invoke-direct {v5, v4, v6}, Lcom/crashlytics/android/core/SessionReport;-><init>(Ljava/io/File;Ljava/util/Map;)V
-iget-object v4, p0, Lcom/crashlytics/android/core/CrashlyticsController;->backgroundWorker:Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;
-new-instance v6, Lcom/crashlytics/android/core/CrashlyticsController$SendReportRunnable;
-invoke-direct {v6, v0, v5, v1}, Lcom/crashlytics/android/core/CrashlyticsController$SendReportRunnable;-><init>(Landroid/content/Context;Lcom/crashlytics/android/core/Report;Lcom/crashlytics/android/core/ReportUploader;)V
-invoke-virtual {v4, v6}, Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
-add-int/lit8 v3, v3, 0x1
-goto :goto_0
-:cond_1
-return-void
-.end method
-.method private shouldPromptUserBeforeSendingCrashReports(Lyk;)Z
-.locals 1
-const/4 v0, 0x0
-if-nez p1, :cond_0
-return v0
-:cond_0
-iget-object p1, p1, Lyk;->d:Lyd;
-iget-boolean p1, p1, Lyd;->a:Z
-if-eqz p1, :cond_1
-iget-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsController;->preferenceManager:Lcom/crashlytics/android/core/PreferenceManager;
-invoke-virtual {p1}, Lcom/crashlytics/android/core/PreferenceManager;->shouldAlwaysSendReports()Z
-move-result p1
-if-nez p1, :cond_1
-const/4 v0, 0x1
-:cond_1
-return v0
-.end method
-.method private synthesizeSessionFile(Ljava/io/File;Ljava/lang/String;[Ljava/io/File;Ljava/io/File;)V
-.locals 15
-move-object v1, p0
-move-object/from16 v2, p2
-move-object/from16 v0, p4
-const-string v3, "Failed to close CLS file"
-const-string v4, "CrashlyticsCore"
-const-string v5, "Error flushing session file stream"
-const/4 v6, 0x1
-if-eqz v0, :cond_0
-const/4 v7, 0x1
-goto :goto_0
-:cond_0
-const/4 v7, 0x0
-:goto_0
-if-eqz v7, :cond_1
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFatalSessionFilesDir()Ljava/io/File;
-move-result-object v8
-goto :goto_1
-:cond_1
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getNonFatalSessionFilesDir()Ljava/io/File;
-move-result-object v8
-:goto_1
-invoke-virtual {v8}, Ljava/io/File;->exists()Z
-move-result v9
-if-nez v9, :cond_2
-invoke-virtual {v8}, Ljava/io/File;->mkdirs()Z
-:cond_2
-const/4 v9, 0x0
-:try_start_0
-new-instance v10, Lcom/crashlytics/android/core/ClsFileOutputStream;
-invoke-direct {v10, v8, v2}, Lcom/crashlytics/android/core/ClsFileOutputStream;-><init>(Ljava/io/File;Ljava/lang/String;)V
-:try_end_0
-.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
-.catchall {:try_start_0 .. :try_end_0} :catchall_0
-:try_start_1
-invoke-static {v10}, Lcom/crashlytics/android/core/CodedOutputStream;->newInstance(Ljava/io/OutputStream;)Lcom/crashlytics/android/core/CodedOutputStream;
-move-result-object v9
-invoke-static {}, Luq;->g()Luz;
-move-result-object v8
-new-instance v11, Ljava/lang/StringBuilder;
-invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-const-string v12, "Collecting SessionStart data for session ID "
-invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v11, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v11
-invoke-interface {v8, v4, v11}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-move-object/from16 v8, p1
-invoke-static {v9, v8}, Lcom/crashlytics/android/core/CrashlyticsController;->writeToCosFromFile(Lcom/crashlytics/android/core/CodedOutputStream;Ljava/io/File;)V
-const/4 v8, 0x4
-new-instance v11, Ljava/util/Date;
-invoke-direct {v11}, Ljava/util/Date;-><init>()V
-invoke-virtual {v11}, Ljava/util/Date;->getTime()J
-move-result-wide v11
-const-wide/16 v13, 0x3e8
-div-long/2addr v11, v13
-invoke-virtual {v9, v8, v11, v12}, Lcom/crashlytics/android/core/CodedOutputStream;->writeUInt64(IJ)V
-const/4 v8, 0x5
-invoke-virtual {v9, v8, v7}, Lcom/crashlytics/android/core/CodedOutputStream;->writeBool(IZ)V
-const/16 v8, 0xb
-invoke-virtual {v9, v8, v6}, Lcom/crashlytics/android/core/CodedOutputStream;->writeUInt32(II)V
-const/16 v6, 0xc
-const/4 v8, 0x3
-invoke-virtual {v9, v6, v8}, Lcom/crashlytics/android/core/CodedOutputStream;->writeEnum(II)V
-invoke-direct {p0, v9, v2}, Lcom/crashlytics/android/core/CrashlyticsController;->writeInitialPartsTo(Lcom/crashlytics/android/core/CodedOutputStream;Ljava/lang/String;)V
-move-object/from16 v6, p3
-invoke-static {v9, v6, v2}, Lcom/crashlytics/android/core/CrashlyticsController;->writeNonFatalEventsTo(Lcom/crashlytics/android/core/CodedOutputStream;[Ljava/io/File;Ljava/lang/String;)V
-if-eqz v7, :cond_3
-invoke-static {v9, v0}, Lcom/crashlytics/android/core/CrashlyticsController;->writeToCosFromFile(Lcom/crashlytics/android/core/CodedOutputStream;Ljava/io/File;)V
-:try_end_1
-.catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-.catchall {:try_start_1 .. :try_end_1} :catchall_1
-:cond_3
-invoke-static {v9, v5}, Lvn;->a(Ljava/io/Flushable;Ljava/lang/String;)V
-invoke-static {v10, v3}, Lvn;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-goto :goto_3
-:catch_0
-move-exception v0
-goto :goto_2
-:catchall_0
-move-exception v0
-move-object v10, v9
-goto :goto_4
-:catch_1
-move-exception v0
-move-object v10, v9
-:goto_2
-:try_start_2
-invoke-static {}, Luq;->g()Luz;
-move-result-object v6
-new-instance v7, Ljava/lang/StringBuilder;
-invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-const-string v8, "Failed to write session file for session ID: "
-invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v2
-invoke-interface {v6, v4, v2, v0}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-:try_end_2
-.catchall {:try_start_2 .. :try_end_2} :catchall_1
-invoke-static {v9, v5}, Lvn;->a(Ljava/io/Flushable;Ljava/lang/String;)V
-invoke-direct {p0, v10}, Lcom/crashlytics/android/core/CrashlyticsController;->closeWithoutRenamingOrLog(Lcom/crashlytics/android/core/ClsFileOutputStream;)V
-:goto_3
-return-void
-:catchall_1
-move-exception v0
-:goto_4
-invoke-static {v9, v5}, Lvn;->a(Ljava/io/Flushable;Ljava/lang/String;)V
-invoke-static {v10, v3}, Lvn;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-throw v0
-.end method
-.method private trimInvalidSessionFiles()V
-.locals 6
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getInvalidFilesDir()Ljava/io/File;
-move-result-object v0
-invoke-virtual {v0}, Ljava/io/File;->exists()Z
-move-result v1
-if-nez v1, :cond_0
-return-void
-:cond_0
-new-instance v1, Lcom/crashlytics/android/core/CrashlyticsController$InvalidPartFileFilter;
-invoke-direct {v1}, Lcom/crashlytics/android/core/CrashlyticsController$InvalidPartFileFilter;-><init>()V
-invoke-direct {p0, v0, v1}, Lcom/crashlytics/android/core/CrashlyticsController;->listFilesMatching(Ljava/io/File;Ljava/io/FilenameFilter;)[Ljava/io/File;
-move-result-object v1
-invoke-static {}, Ljava/util/Collections;->reverseOrder()Ljava/util/Comparator;
-move-result-object v2
-invoke-static {v1, v2}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
-new-instance v2, Ljava/util/HashSet;
-invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
-const/4 v3, 0x0
-:goto_0
-array-length v4, v1
-if-ge v3, v4, :cond_1
-invoke-interface {v2}, Ljava/util/Set;->size()I
-move-result v4
-const/4 v5, 0x4
-if-ge v4, v5, :cond_1
-aget-object v4, v1, v3
-invoke-static {v4}, Lcom/crashlytics/android/core/CrashlyticsController;->getSessionIdFromSessionFile(Ljava/io/File;)Ljava/lang/String;
-move-result-object v4
-invoke-interface {v2, v4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-add-int/lit8 v3, v3, 0x1
-goto :goto_0
-:cond_1
-invoke-direct {p0, v0}, Lcom/crashlytics/android/core/CrashlyticsController;->listFiles(Ljava/io/File;)[Ljava/io/File;
-move-result-object v0
-invoke-direct {p0, v0, v2}, Lcom/crashlytics/android/core/CrashlyticsController;->retainSessions([Ljava/io/File;Ljava/util/Set;)V
-return-void
-.end method
-.method private trimOpenSessions(I)V
-.locals 4
-new-instance v0, Ljava/util/HashSet;
-invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
-invoke-direct {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->listSortedSessionBeginFiles()[Ljava/io/File;
-move-result-object v1
-array-length v2, v1
-invoke-static {p1, v2}, Ljava/lang/Math;->min(II)I
-move-result p1
-const/4 v2, 0x0
-:goto_0
-if-ge v2, p1, :cond_0
-aget-object v3, v1, v2
-invoke-static {v3}, Lcom/crashlytics/android/core/CrashlyticsController;->getSessionIdFromSessionFile(Ljava/io/File;)Ljava/lang/String;
-move-result-object v3
-invoke-interface {v0, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-add-int/lit8 v2, v2, 0x1
-goto :goto_0
-:cond_0
-iget-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsController;->logFileManager:Lcom/crashlytics/android/core/LogFileManager;
-invoke-virtual {p1, v0}, Lcom/crashlytics/android/core/LogFileManager;->discardOldLogFiles(Ljava/util/Set;)V
-new-instance p1, Lcom/crashlytics/android/core/CrashlyticsController$AnySessionPartFileFilter;
-const/4 v1, 0x0
-invoke-direct {p1, v1}, Lcom/crashlytics/android/core/CrashlyticsController$AnySessionPartFileFilter;-><init>(Lcom/crashlytics/android/core/CrashlyticsController$1;)V
-invoke-direct {p0, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->listFilesMatching(Ljava/io/FilenameFilter;)[Ljava/io/File;
-move-result-object p1
-invoke-direct {p0, p1, v0}, Lcom/crashlytics/android/core/CrashlyticsController;->retainSessions([Ljava/io/File;Ljava/util/Set;)V
-return-void
-.end method
-.method private trimSessionEventFiles(Ljava/lang/String;I)V
-.locals 3
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFilesDir()Ljava/io/File;
-move-result-object v0
-new-instance v1, Lcom/crashlytics/android/core/CrashlyticsController$FileNameContainsFilter;
-new-instance v2, Ljava/lang/StringBuilder;
-invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-const-string p1, "SessionEvent"
-invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object p1
-invoke-direct {v1, p1}, Lcom/crashlytics/android/core/CrashlyticsController$FileNameContainsFilter;-><init>(Ljava/lang/String;)V
-sget-object p1, Lcom/crashlytics/android/core/CrashlyticsController;->SMALLEST_FILE_NAME_FIRST:Ljava/util/Comparator;
-invoke-static {v0, v1, p2, p1}, Lcom/crashlytics/android/core/Utils;->capFileCount(Ljava/io/File;Ljava/io/FilenameFilter;ILjava/util/Comparator;)I
-return-void
 .end method
 .method private writeBeginSession(Ljava/lang/String;Ljava/util/Date;)V
 .locals 9
@@ -1433,91 +303,6 @@ const-string v0, "BeginSession.json"
 invoke-direct {p0, p1, v0, p2}, Lcom/crashlytics/android/core/CrashlyticsController;->writeFile(Ljava/lang/String;Ljava/lang/String;Lcom/crashlytics/android/core/CrashlyticsController$FileOutputStreamWriteAction;)V
 return-void
 .end method
-.method private writeFatal(Ljava/util/Date;Ljava/lang/Thread;Ljava/lang/Throwable;)V
-.locals 14
-const-string v1, "CrashlyticsCore"
-const-string v2, "Failed to close fatal exception file output stream."
-const-string v3, "Failed to flush to session begin file."
-const/4 v4, 0x0
-:try_start_0
-invoke-direct {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getCurrentSessionId()Ljava/lang/String;
-move-result-object v0
-if-nez v0, :cond_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object v0
-const-string v5, "Tried to write a fatal exception while no session was open."
-invoke-interface {v0, v1, v5, v4}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-:try_end_0
-.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
-.catchall {:try_start_0 .. :try_end_0} :catchall_0
-invoke-static {v4, v3}, Lvn;->a(Ljava/io/Flushable;Ljava/lang/String;)V
-invoke-static {v4, v2}, Lvn;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-return-void
-:cond_0
-:try_start_1
-invoke-virtual/range {p3 .. p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-move-result-object v5
-invoke-virtual {v5}, Ljava/lang/Class;->getName()Ljava/lang/String;
-move-result-object v5
-invoke-static {v0, v5}, Lcom/crashlytics/android/core/CrashlyticsController;->recordFatalExceptionAnswersEvent(Ljava/lang/String;Ljava/lang/String;)V
-new-instance v5, Lcom/crashlytics/android/core/ClsFileOutputStream;
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFilesDir()Ljava/io/File;
-move-result-object v6
-new-instance v7, Ljava/lang/StringBuilder;
-invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-const-string v0, "SessionCrash"
-invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v0
-invoke-direct {v5, v6, v0}, Lcom/crashlytics/android/core/ClsFileOutputStream;-><init>(Ljava/io/File;Ljava/lang/String;)V
-:try_end_1
-.catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-.catchall {:try_start_1 .. :try_end_1} :catchall_0
-:try_start_2
-invoke-static {v5}, Lcom/crashlytics/android/core/CodedOutputStream;->newInstance(Ljava/io/OutputStream;)Lcom/crashlytics/android/core/CodedOutputStream;
-move-result-object v4
-const-string v12, "crash"
-const/4 v13, 0x1
-move-object v7, p0
-move-object v8, v4
-move-object v9, p1
-move-object/from16 v10, p2
-move-object/from16 v11, p3
-invoke-direct/range {v7 .. v13}, Lcom/crashlytics/android/core/CrashlyticsController;->writeSessionEvent(Lcom/crashlytics/android/core/CodedOutputStream;Ljava/util/Date;Ljava/lang/Thread;Ljava/lang/Throwable;Ljava/lang/String;Z)V
-:try_end_2
-.catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
-.catchall {:try_start_2 .. :try_end_2} :catchall_1
-goto :goto_1
-:catch_0
-move-exception v0
-goto :goto_0
-:catchall_0
-move-exception v0
-move-object v5, v4
-goto :goto_2
-:catch_1
-move-exception v0
-move-object v5, v4
-:goto_0
-:try_start_3
-invoke-static {}, Luq;->g()Luz;
-move-result-object v6
-const-string v7, "An error occurred in the fatal exception logger"
-invoke-interface {v6, v1, v7, v0}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-:try_end_3
-.catchall {:try_start_3 .. :try_end_3} :catchall_1
-:goto_1
-invoke-static {v4, v3}, Lvn;->a(Ljava/io/Flushable;Ljava/lang/String;)V
-invoke-static {v5, v2}, Lvn;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-return-void
-:catchall_1
-move-exception v0
-:goto_2
-invoke-static {v4, v3}, Lvn;->a(Ljava/io/Flushable;Ljava/lang/String;)V
-invoke-static {v5, v2}, Lvn;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-throw v0
-.end method
 .method private writeFile(Ljava/lang/String;Ljava/lang/String;Lcom/crashlytics/android/core/CrashlyticsController$FileOutputStreamWriteAction;)V
 .locals 7
 .annotation system Ldalvik/annotation/Throws;
@@ -1528,7 +313,6 @@ Ljava/lang/Exception;
 const-string v0, " file."
 const-string v1, "Failed to close "
 const/4 v2, 0x0
-:try_start_0
 new-instance v3, Ljava/io/FileOutputStream;
 new-instance v4, Ljava/io/File;
 invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFilesDir()Ljava/io/File;
@@ -1541,12 +325,7 @@ invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 move-result-object p1
 invoke-direct {v4, v5, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 invoke-direct {v3, v4}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_1
-:try_start_1
 invoke-interface {p3, v3}, Lcom/crashlytics/android/core/CrashlyticsController$FileOutputStreamWriteAction;->writeTo(Ljava/io/FileOutputStream;)V
-:try_end_1
-.catchall {:try_start_1 .. :try_end_1} :catchall_0
 new-instance p1, Ljava/lang/StringBuilder;
 invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1555,129 +334,6 @@ invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Lj
 invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 move-result-object p1
 invoke-static {v3, p1}, Lvn;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-return-void
-:catchall_0
-move-exception p1
-move-object v2, v3
-goto :goto_0
-:catchall_1
-move-exception p1
-:goto_0
-new-instance p3, Ljava/lang/StringBuilder;
-invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object p2
-invoke-static {v2, p2}, Lvn;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-throw p1
-.end method
-.method private writeInitialPartsTo(Lcom/crashlytics/android/core/CodedOutputStream;Ljava/lang/String;)V
-.locals 11
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-sget-object v0, Lcom/crashlytics/android/core/CrashlyticsController;->INITIAL_SESSION_PART_TAGS:[Ljava/lang/String;
-array-length v1, v0
-const/4 v2, 0x0
-const/4 v3, 0x0
-:goto_0
-if-ge v3, v1, :cond_1
-aget-object v4, v0, v3
-new-instance v5, Lcom/crashlytics/android/core/CrashlyticsController$FileNameContainsFilter;
-new-instance v6, Ljava/lang/StringBuilder;
-invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-invoke-virtual {v6, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-const-string v7, ".cls"
-invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v6
-invoke-direct {v5, v6}, Lcom/crashlytics/android/core/CrashlyticsController$FileNameContainsFilter;-><init>(Ljava/lang/String;)V
-invoke-direct {p0, v5}, Lcom/crashlytics/android/core/CrashlyticsController;->listFilesMatching(Ljava/io/FilenameFilter;)[Ljava/io/File;
-move-result-object v5
-array-length v6, v5
-const-string v7, " data for session ID "
-const-string v8, "CrashlyticsCore"
-if-nez v6, :cond_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object v5
-new-instance v6, Ljava/lang/StringBuilder;
-invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-const-string v9, "Can\'t find "
-invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v6, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v4
-const/4 v6, 0x0
-invoke-interface {v5, v8, v4, v6}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-goto :goto_1
-:cond_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object v6
-new-instance v9, Ljava/lang/StringBuilder;
-invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-const-string v10, "Collecting "
-invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v9, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v4
-invoke-interface {v6, v8, v4}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-aget-object v4, v5, v2
-invoke-static {p1, v4}, Lcom/crashlytics/android/core/CrashlyticsController;->writeToCosFromFile(Lcom/crashlytics/android/core/CodedOutputStream;Ljava/io/File;)V
-:goto_1
-add-int/lit8 v3, v3, 0x1
-goto :goto_0
-:cond_1
-return-void
-.end method
-.method private static writeNonFatalEventsTo(Lcom/crashlytics/android/core/CodedOutputStream;[Ljava/io/File;Ljava/lang/String;)V
-.locals 11
-const-string v0, "CrashlyticsCore"
-sget-object v1, Lvn;->a:Ljava/util/Comparator;
-invoke-static {p1, v1}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
-array-length v1, p1
-const/4 v2, 0x0
-const/4 v3, 0x0
-:goto_0
-if-ge v3, v1, :cond_0
-aget-object v4, p1, v3
-:try_start_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object v5
-sget-object v6, Ljava/util/Locale;->US:Ljava/util/Locale;
-const-string v7, "Found Non Fatal for session ID %s in %s "
-const/4 v8, 0x2
-new-array v8, v8, [Ljava/lang/Object;
-aput-object p2, v8, v2
-invoke-virtual {v4}, Ljava/io/File;->getName()Ljava/lang/String;
-move-result-object v9
-const/4 v10, 0x1
-aput-object v9, v8, v10
-invoke-static {v6, v7, v8}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-move-result-object v6
-invoke-interface {v5, v0, v6}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-invoke-static {p0, v4}, Lcom/crashlytics/android/core/CrashlyticsController;->writeToCosFromFile(Lcom/crashlytics/android/core/CodedOutputStream;Ljava/io/File;)V
-:try_end_0
-.catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-goto :goto_1
-:catch_0
-move-exception v4
-invoke-static {}, Luq;->g()Luz;
-move-result-object v5
-const-string v6, "Error writting non-fatal to session."
-invoke-interface {v5, v0, v6, v4}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-:goto_1
-add-int/lit8 v3, v3, 0x1
-goto :goto_0
-:cond_0
 return-void
 .end method
 .method private writeSessionApp(Ljava/lang/String;)V
@@ -1784,133 +440,6 @@ const-string v0, "SessionDevice.json"
 invoke-direct {v11, v12, v0, v15}, Lcom/crashlytics/android/core/CrashlyticsController;->writeFile(Ljava/lang/String;Ljava/lang/String;Lcom/crashlytics/android/core/CrashlyticsController$FileOutputStreamWriteAction;)V
 return-void
 .end method
-.method private writeSessionEvent(Lcom/crashlytics/android/core/CodedOutputStream;Ljava/util/Date;Ljava/lang/Thread;Ljava/lang/Throwable;Ljava/lang/String;Z)V
-.locals 24
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/lang/Exception;
-}
-.end annotation
-move-object/from16 v0, p0
-new-instance v5, Lcom/crashlytics/android/core/TrimmedThrowableData;
-iget-object v1, v0, Lcom/crashlytics/android/core/CrashlyticsController;->stackTraceTrimmingStrategy:Lcom/crashlytics/android/core/StackTraceTrimmingStrategy;
-move-object/from16 v2, p4
-invoke-direct {v5, v2, v1}, Lcom/crashlytics/android/core/TrimmedThrowableData;-><init>(Ljava/lang/Throwable;Lcom/crashlytics/android/core/StackTraceTrimmingStrategy;)V
-iget-object v1, v0, Lcom/crashlytics/android/core/CrashlyticsController;->crashlyticsCore:Lcom/crashlytics/android/core/CrashlyticsCore;
-invoke-virtual {v1}, Lcom/crashlytics/android/core/CrashlyticsCore;->getContext()Landroid/content/Context;
-move-result-object v1
-invoke-virtual/range {p2 .. p2}, Ljava/util/Date;->getTime()J
-move-result-wide v2
-const-wide/16 v6, 0x3e8
-div-long/2addr v2, v6
-invoke-static {v1}, Lvn;->c(Landroid/content/Context;)Ljava/lang/Float;
-move-result-object v16
-iget-object v4, v0, Lcom/crashlytics/android/core/CrashlyticsController;->devicePowerStateListener:Lcom/crashlytics/android/core/DevicePowerStateListener;
-invoke-virtual {v4}, Lcom/crashlytics/android/core/DevicePowerStateListener;->isPowerConnected()Z
-move-result v4
-invoke-static {v1, v4}, Lvn;->a(Landroid/content/Context;Z)I
-move-result v17
-invoke-static {v1}, Lvn;->d(Landroid/content/Context;)Z
-move-result v18
-invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-move-result-object v4
-invoke-virtual {v4}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-move-result-object v4
-iget v13, v4, Landroid/content/res/Configuration;->orientation:I
-invoke-static {}, Lvn;->b()J
-move-result-wide v6
-invoke-static {v1}, Lvn;->b(Landroid/content/Context;)J
-move-result-wide v8
-sub-long v19, v6, v8
-invoke-static {}, Landroid/os/Environment;->getDataDirectory()Ljava/io/File;
-move-result-object v4
-invoke-virtual {v4}, Ljava/io/File;->getPath()Ljava/lang/String;
-move-result-object v4
-invoke-static {v4}, Lvn;->c(Ljava/lang/String;)J
-move-result-wide v21
-invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-move-result-object v4
-invoke-static {v4, v1}, Lvn;->a(Ljava/lang/String;Landroid/content/Context;)Landroid/app/ActivityManager$RunningAppProcessInfo;
-move-result-object v12
-new-instance v9, Ljava/util/LinkedList;
-invoke-direct {v9}, Ljava/util/LinkedList;-><init>()V
-iget-object v7, v5, Lcom/crashlytics/android/core/TrimmedThrowableData;->stacktrace:[Ljava/lang/StackTraceElement;
-iget-object v4, v0, Lcom/crashlytics/android/core/CrashlyticsController;->appData:Lcom/crashlytics/android/core/AppData;
-iget-object v15, v4, Lcom/crashlytics/android/core/AppData;->buildId:Ljava/lang/String;
-iget-object v4, v0, Lcom/crashlytics/android/core/CrashlyticsController;->idManager:Lvx;
-invoke-virtual {v4}, Lvx;->c()Ljava/lang/String;
-move-result-object v14
-const/4 v4, 0x0
-if-eqz p6, :cond_1
-invoke-static {}, Ljava/lang/Thread;->getAllStackTraces()Ljava/util/Map;
-move-result-object v8
-invoke-interface {v8}, Ljava/util/Map;->size()I
-move-result v10
-new-array v10, v10, [Ljava/lang/Thread;
-invoke-interface {v8}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-move-result-object v8
-invoke-interface {v8}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-move-result-object v8
-:goto_0
-invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
-move-result v11
-if-eqz v11, :cond_0
-invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-move-result-object v11
-check-cast v11, Ljava/util/Map$Entry;
-invoke-interface {v11}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-move-result-object v23
-check-cast v23, Ljava/lang/Thread;
-aput-object v23, v10, v4
-iget-object v6, v0, Lcom/crashlytics/android/core/CrashlyticsController;->stackTraceTrimmingStrategy:Lcom/crashlytics/android/core/StackTraceTrimmingStrategy;
-invoke-interface {v11}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-move-result-object v11
-check-cast v11, [Ljava/lang/StackTraceElement;
-invoke-interface {v6, v11}, Lcom/crashlytics/android/core/StackTraceTrimmingStrategy;->getTrimmedStackTrace([Ljava/lang/StackTraceElement;)[Ljava/lang/StackTraceElement;
-move-result-object v6
-invoke-interface {v9, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-const/4 v6, 0x1
-add-int/2addr v4, v6
-goto :goto_0
-:cond_0
-const/4 v6, 0x1
-move-object v8, v10
-goto :goto_1
-:cond_1
-const/4 v6, 0x1
-new-array v4, v4, [Ljava/lang/Thread;
-move-object v8, v4
-:goto_1
-const-string v4, "com.crashlytics.CollectCustomKeys"
-invoke-static {v1, v4, v6}, Lvn;->a(Landroid/content/Context;Ljava/lang/String;Z)Z
-move-result v1
-if-nez v1, :cond_2
-new-instance v1, Ljava/util/TreeMap;
-invoke-direct {v1}, Ljava/util/TreeMap;-><init>()V
-goto :goto_2
-:cond_2
-iget-object v1, v0, Lcom/crashlytics/android/core/CrashlyticsController;->crashlyticsCore:Lcom/crashlytics/android/core/CrashlyticsCore;
-invoke-virtual {v1}, Lcom/crashlytics/android/core/CrashlyticsCore;->getAttributes()Ljava/util/Map;
-move-result-object v1
-if-eqz v1, :cond_3
-invoke-interface {v1}, Ljava/util/Map;->size()I
-move-result v4
-if-le v4, v6, :cond_3
-new-instance v4, Ljava/util/TreeMap;
-invoke-direct {v4, v1}, Ljava/util/TreeMap;-><init>(Ljava/util/Map;)V
-move-object v10, v4
-goto :goto_3
-:cond_3
-:goto_2
-move-object v10, v1
-:goto_3
-iget-object v11, v0, Lcom/crashlytics/android/core/CrashlyticsController;->logFileManager:Lcom/crashlytics/android/core/LogFileManager;
-move-object/from16 v1, p1
-move-object/from16 v4, p5
-move-object/from16 v6, p3
-invoke-static/range {v1 .. v22}, Lcom/crashlytics/android/core/SessionProtobufHelper;->writeSessionEvent(Lcom/crashlytics/android/core/CodedOutputStream;JLjava/lang/String;Lcom/crashlytics/android/core/TrimmedThrowableData;Ljava/lang/Thread;[Ljava/lang/StackTraceElement;[Ljava/lang/Thread;Ljava/util/List;Ljava/util/Map;Lcom/crashlytics/android/core/LogFileManager;Landroid/app/ActivityManager$RunningAppProcessInfo;ILjava/lang/String;Ljava/lang/String;Ljava/lang/Float;IZJJ)V
-return-void
-.end method
 .method private writeSessionOS(Ljava/lang/String;)V
 .locals 3
 .annotation system Ldalvik/annotation/Throws;
@@ -1944,7 +473,6 @@ const-string v0, "Failed to close session "
 const-string v1, "Failed to flush to session "
 const-string v2, " file."
 const/4 v3, 0x0
-:try_start_0
 new-instance v4, Lcom/crashlytics/android/core/ClsFileOutputStream;
 invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFilesDir()Ljava/io/File;
 move-result-object v5
@@ -1955,14 +483,9 @@ invoke-virtual {v6, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Lj
 invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 move-result-object p1
 invoke-direct {v4, v5, p1}, Lcom/crashlytics/android/core/ClsFileOutputStream;-><init>(Ljava/io/File;Ljava/lang/String;)V
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_1
-:try_start_1
 invoke-static {v4}, Lcom/crashlytics/android/core/CodedOutputStream;->newInstance(Ljava/io/OutputStream;)Lcom/crashlytics/android/core/CodedOutputStream;
 move-result-object v3
 invoke-interface {p3, v3}, Lcom/crashlytics/android/core/CrashlyticsController$CodedOutputStreamWriteAction;->writeTo(Lcom/crashlytics/android/core/CodedOutputStream;)V
-:try_end_1
-.catchall {:try_start_1 .. :try_end_1} :catchall_0
 new-instance p1, Ljava/lang/StringBuilder;
 invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1980,214 +503,6 @@ invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 move-result-object p1
 invoke-static {v4, p1}, Lvn;->a(Ljava/io/Closeable;Ljava/lang/String;)V
 return-void
-:catchall_0
-move-exception p1
-goto :goto_0
-:catchall_1
-move-exception p1
-move-object v4, v3
-:goto_0
-new-instance p3, Ljava/lang/StringBuilder;
-invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object p3
-invoke-static {v3, p3}, Lvn;->a(Ljava/io/Flushable;Ljava/lang/String;)V
-new-instance p3, Ljava/lang/StringBuilder;
-invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object p2
-invoke-static {v4, p2}, Lvn;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-throw p1
-.end method
-.method private writeSessionPartsToSessionFile(Ljava/io/File;Ljava/lang/String;I)V
-.locals 11
-invoke-static {}, Luq;->g()Luz;
-move-result-object v0
-new-instance v1, Ljava/lang/StringBuilder;
-invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-const-string v2, "Collecting session parts for ID "
-invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v1
-const-string v2, "CrashlyticsCore"
-invoke-interface {v0, v2, v1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-new-instance v0, Lcom/crashlytics/android/core/CrashlyticsController$FileNameContainsFilter;
-new-instance v1, Ljava/lang/StringBuilder;
-invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-const-string v3, "SessionCrash"
-invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v1
-invoke-direct {v0, v1}, Lcom/crashlytics/android/core/CrashlyticsController$FileNameContainsFilter;-><init>(Ljava/lang/String;)V
-invoke-direct {p0, v0}, Lcom/crashlytics/android/core/CrashlyticsController;->listFilesMatching(Ljava/io/FilenameFilter;)[Ljava/io/File;
-move-result-object v0
-const/4 v1, 0x1
-const/4 v3, 0x0
-if-eqz v0, :cond_0
-array-length v4, v0
-if-lez v4, :cond_0
-const/4 v4, 0x1
-goto :goto_0
-:cond_0
-const/4 v4, 0x0
-:goto_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object v5
-sget-object v6, Ljava/util/Locale;->US:Ljava/util/Locale;
-const/4 v7, 0x2
-new-array v8, v7, [Ljava/lang/Object;
-aput-object p2, v8, v3
-invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-move-result-object v9
-aput-object v9, v8, v1
-const-string v9, "Session %s has fatal exception: %s"
-invoke-static {v6, v9, v8}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-move-result-object v6
-invoke-interface {v5, v2, v6}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-new-instance v5, Lcom/crashlytics/android/core/CrashlyticsController$FileNameContainsFilter;
-new-instance v6, Ljava/lang/StringBuilder;
-invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-invoke-virtual {v6, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-const-string v8, "SessionEvent"
-invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v6
-invoke-direct {v5, v6}, Lcom/crashlytics/android/core/CrashlyticsController$FileNameContainsFilter;-><init>(Ljava/lang/String;)V
-invoke-direct {p0, v5}, Lcom/crashlytics/android/core/CrashlyticsController;->listFilesMatching(Ljava/io/FilenameFilter;)[Ljava/io/File;
-move-result-object v5
-if-eqz v5, :cond_1
-array-length v6, v5
-if-lez v6, :cond_1
-const/4 v6, 0x1
-goto :goto_1
-:cond_1
-const/4 v6, 0x0
-:goto_1
-invoke-static {}, Luq;->g()Luz;
-move-result-object v8
-sget-object v9, Ljava/util/Locale;->US:Ljava/util/Locale;
-new-array v7, v7, [Ljava/lang/Object;
-aput-object p2, v7, v3
-invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-move-result-object v10
-aput-object v10, v7, v1
-const-string v1, "Session %s has non-fatal exceptions: %s"
-invoke-static {v9, v1, v7}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-move-result-object v1
-invoke-interface {v8, v2, v1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-if-nez v4, :cond_3
-if-eqz v6, :cond_2
-goto :goto_2
-:cond_2
-invoke-static {}, Luq;->g()Luz;
-move-result-object p1
-new-instance p3, Ljava/lang/StringBuilder;
-invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-const-string v0, "No events present for session ID "
-invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object p3
-invoke-interface {p1, v2, p3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-goto :goto_4
-:cond_3
-:goto_2
-invoke-direct {p0, p2, v5, p3}, Lcom/crashlytics/android/core/CrashlyticsController;->getTrimmedNonFatalFiles(Ljava/lang/String;[Ljava/io/File;I)[Ljava/io/File;
-move-result-object p3
-if-eqz v4, :cond_4
-aget-object v0, v0, v3
-goto :goto_3
-:cond_4
-const/4 v0, 0x0
-:goto_3
-invoke-direct {p0, p1, p2, p3, v0}, Lcom/crashlytics/android/core/CrashlyticsController;->synthesizeSessionFile(Ljava/io/File;Ljava/lang/String;[Ljava/io/File;Ljava/io/File;)V
-:goto_4
-invoke-static {}, Luq;->g()Luz;
-move-result-object p1
-new-instance p3, Ljava/lang/StringBuilder;
-invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-const-string v0, "Removing session part files for ID "
-invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object p3
-invoke-interface {p1, v2, p3}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-invoke-direct {p0, p2}, Lcom/crashlytics/android/core/CrashlyticsController;->deleteSessionPartFilesFor(Ljava/lang/String;)V
-return-void
-.end method
-.method private writeSessionUser(Ljava/lang/String;)V
-.locals 2
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/lang/Exception;
-}
-.end annotation
-invoke-direct {p0, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->getUserMetaData(Ljava/lang/String;)Lcom/crashlytics/android/core/UserMetaData;
-move-result-object v0
-new-instance v1, Lcom/crashlytics/android/core/CrashlyticsController$25;
-invoke-direct {v1, p0, v0}, Lcom/crashlytics/android/core/CrashlyticsController$25;-><init>(Lcom/crashlytics/android/core/CrashlyticsController;Lcom/crashlytics/android/core/UserMetaData;)V
-const-string v0, "SessionUser"
-invoke-direct {p0, p1, v0, v1}, Lcom/crashlytics/android/core/CrashlyticsController;->writeSessionPartFile(Ljava/lang/String;Ljava/lang/String;Lcom/crashlytics/android/core/CrashlyticsController$CodedOutputStreamWriteAction;)V
-return-void
-.end method
-.method private static writeToCosFromFile(Lcom/crashlytics/android/core/CodedOutputStream;Ljava/io/File;)V
-.locals 4
-.annotation system Ldalvik/annotation/Throws;
-value = {
-Ljava/io/IOException;
-}
-.end annotation
-const-string v0, "Failed to close file input stream."
-invoke-virtual {p1}, Ljava/io/File;->exists()Z
-move-result v1
-const/4 v2, 0x0
-if-nez v1, :cond_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object p0
-new-instance v0, Ljava/lang/StringBuilder;
-invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-const-string v1, "Tried to include a file that doesn\'t exist: "
-invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
-move-result-object p1
-invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object p1
-const-string v0, "CrashlyticsCore"
-invoke-interface {p0, v0, p1, v2}, Luz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-return-void
-:cond_0
-:try_start_0
-new-instance v1, Ljava/io/FileInputStream;
-invoke-direct {v1, p1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_1
-:try_start_1
-invoke-virtual {p1}, Ljava/io/File;->length()J
-move-result-wide v2
-long-to-int p1, v2
-invoke-static {v1, p0, p1}, Lcom/crashlytics/android/core/CrashlyticsController;->copyToCodedOutputStream(Ljava/io/InputStream;Lcom/crashlytics/android/core/CodedOutputStream;I)V
-:try_end_1
-.catchall {:try_start_1 .. :try_end_1} :catchall_0
-invoke-static {v1, v0}, Lvn;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-return-void
-:catchall_0
-move-exception p0
-goto :goto_0
-:catchall_1
-move-exception p0
-move-object v1, v2
-:goto_0
-invoke-static {v1, v0}, Lvn;->a(Ljava/io/Closeable;Ljava/lang/String;)V
-throw p0
 .end method
 .method  cacheKeyData(Ljava/util/Map;)V
 .locals 2
@@ -2200,18 +515,10 @@ value = {
 ">;)V"
 }
 .end annotation
-iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController;->backgroundWorker:Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;
-new-instance v1, Lcom/crashlytics/android/core/CrashlyticsController$11;
-invoke-direct {v1, p0, p1}, Lcom/crashlytics/android/core/CrashlyticsController$11;-><init>(Lcom/crashlytics/android/core/CrashlyticsController;Ljava/util/Map;)V
-invoke-virtual {v0, v1}, Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
 return-void
 .end method
 .method  cacheUserData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .locals 2
-iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController;->backgroundWorker:Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;
-new-instance v1, Lcom/crashlytics/android/core/CrashlyticsController$10;
-invoke-direct {v1, p0, p1, p2, p3}, Lcom/crashlytics/android/core/CrashlyticsController$10;-><init>(Lcom/crashlytics/android/core/CrashlyticsController;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-invoke-virtual {v0, v1}, Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
 return-void
 .end method
 .method  cleanInvalidTempFiles()V
@@ -2231,77 +538,8 @@ const/4 v2, 0x0
 const/4 v3, 0x0
 :goto_0
 const-string v4, "CrashlyticsCore"
-if-ge v3, v1, :cond_0
-aget-object v5, p1, v3
-invoke-static {}, Luq;->g()Luz;
-move-result-object v6
-new-instance v7, Ljava/lang/StringBuilder;
-invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-const-string v8, "Found invalid session part file: "
-invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v7
-invoke-interface {v6, v4, v7}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-invoke-static {v5}, Lcom/crashlytics/android/core/CrashlyticsController;->getSessionIdFromSessionFile(Ljava/io/File;)Ljava/lang/String;
-move-result-object v4
-invoke-interface {v0, v4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-add-int/lit8 v3, v3, 0x1
-goto :goto_0
-:cond_0
 invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 move-result p1
-if-eqz p1, :cond_1
-return-void
-:cond_1
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getInvalidFilesDir()Ljava/io/File;
-move-result-object p1
-invoke-virtual {p1}, Ljava/io/File;->exists()Z
-move-result v1
-if-nez v1, :cond_2
-invoke-virtual {p1}, Ljava/io/File;->mkdir()Z
-:cond_2
-new-instance v1, Lcom/crashlytics/android/core/CrashlyticsController$15;
-invoke-direct {v1, p0, v0}, Lcom/crashlytics/android/core/CrashlyticsController$15;-><init>(Lcom/crashlytics/android/core/CrashlyticsController;Ljava/util/Set;)V
-invoke-direct {p0, v1}, Lcom/crashlytics/android/core/CrashlyticsController;->listFilesMatching(Ljava/io/FilenameFilter;)[Ljava/io/File;
-move-result-object v0
-array-length v1, v0
-:goto_1
-if-ge v2, v1, :cond_4
-aget-object v3, v0, v2
-invoke-static {}, Luq;->g()Luz;
-move-result-object v5
-new-instance v6, Ljava/lang/StringBuilder;
-invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-const-string v7, "Moving session file: "
-invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v6
-invoke-interface {v5, v4, v6}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-new-instance v5, Ljava/io/File;
-invoke-virtual {v3}, Ljava/io/File;->getName()Ljava/lang/String;
-move-result-object v6
-invoke-direct {v5, p1, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-invoke-virtual {v3, v5}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
-move-result v5
-if-nez v5, :cond_3
-invoke-static {}, Luq;->g()Luz;
-move-result-object v5
-new-instance v6, Ljava/lang/StringBuilder;
-invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-const-string v7, "Could not move session file. Deleting "
-invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v6
-invoke-interface {v5, v4, v6}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-invoke-virtual {v3}, Ljava/io/File;->delete()Z
-:cond_3
-add-int/lit8 v2, v2, 0x1
-goto :goto_1
-:cond_4
-invoke-direct {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->trimInvalidSessionFiles()V
 return-void
 .end method
 .method  doCloseSessions(Lyg;)V
@@ -2311,8 +549,6 @@ value = {
 Ljava/lang/Exception;
 }
 .end annotation
-const/4 v0, 0x0
-invoke-direct {p0, p1, v0}, Lcom/crashlytics/android/core/CrashlyticsController;->doCloseSessions(Lyg;Z)V
 return-void
 .end method
 .method  enableExceptionHandling(Ljava/lang/Thread$UncaughtExceptionHandler;Z)V
@@ -2332,39 +568,17 @@ return-void
 .end method
 .method  finalizeNativeReport(Lcom/crashlytics/android/core/CrashlyticsNdkData;)Z
 .locals 2
-if-nez p1, :cond_0
-const/4 p1, 0x1
-return p1
-:cond_0
-iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController;->backgroundWorker:Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;
-new-instance v1, Lcom/crashlytics/android/core/CrashlyticsController$16;
-invoke-direct {v1, p0, p1}, Lcom/crashlytics/android/core/CrashlyticsController$16;-><init>(Lcom/crashlytics/android/core/CrashlyticsController;Lcom/crashlytics/android/core/CrashlyticsNdkData;)V
-invoke-virtual {v0, v1}, Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;->submitAndWait(Ljava/util/concurrent/Callable;)Ljava/lang/Object;
-move-result-object p1
-check-cast p1, Ljava/lang/Boolean;
-invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-move-result p1
-return p1
+const/4 v0, 0x0
+return v0
 .end method
 .method  finalizeSessions(Lyg;)Z
 .locals 2
-iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController;->backgroundWorker:Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;
-new-instance v1, Lcom/crashlytics/android/core/CrashlyticsController$13;
-invoke-direct {v1, p0, p1}, Lcom/crashlytics/android/core/CrashlyticsController$13;-><init>(Lcom/crashlytics/android/core/CrashlyticsController;Lyg;)V
-invoke-virtual {v0, v1}, Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;->submitAndWait(Ljava/util/concurrent/Callable;)Ljava/lang/Object;
-move-result-object p1
-check-cast p1, Ljava/lang/Boolean;
-invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-move-result p1
-return p1
+const/4 v0, 0x0
+return v0
 .end method
 .method  getFatalSessionFilesDir()Ljava/io/File;
 .locals 3
-new-instance v0, Ljava/io/File;
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFilesDir()Ljava/io/File;
-move-result-object v1
-const-string v2, "fatal-sessions"
-invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+const/4 v0, 0x0
 return-object v0
 .end method
 .method  getFilesDir()Ljava/io/File;
@@ -2376,134 +590,41 @@ return-object v0
 .end method
 .method  getInvalidFilesDir()Ljava/io/File;
 .locals 3
-new-instance v0, Ljava/io/File;
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFilesDir()Ljava/io/File;
-move-result-object v1
-const-string v2, "invalidClsFiles"
-invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+const/4 v0, 0x0
 return-object v0
 .end method
 .method  getNonFatalSessionFilesDir()Ljava/io/File;
 .locals 3
-new-instance v0, Ljava/io/File;
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFilesDir()Ljava/io/File;
-move-result-object v1
-const-string v2, "nonfatal-sessions"
-invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+const/4 v0, 0x0
 return-object v0
 .end method
 .method declared-synchronized handleUncaughtException(Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler$SettingsDataProvider;Ljava/lang/Thread;Ljava/lang/Throwable;Z)V
 .locals 9
-monitor-enter p0
-:try_start_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object v0
-const-string v1, "CrashlyticsCore"
-new-instance v2, Ljava/lang/StringBuilder;
-invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-const-string v3, "Crashlytics is handling uncaught exception \""
-invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-const-string v3, "\" from thread "
-invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {p2}, Ljava/lang/Thread;->getName()Ljava/lang/String;
-move-result-object v3
-invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v2
-invoke-interface {v0, v1, v2}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController;->devicePowerStateListener:Lcom/crashlytics/android/core/DevicePowerStateListener;
-invoke-virtual {v0}, Lcom/crashlytics/android/core/DevicePowerStateListener;->dispose()V
-new-instance v3, Ljava/util/Date;
-invoke-direct {v3}, Ljava/util/Date;-><init>()V
-iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController;->backgroundWorker:Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;
-new-instance v8, Lcom/crashlytics/android/core/CrashlyticsController$7;
-move-object v1, v8
-move-object v2, p0
-move-object v4, p2
-move-object v5, p3
-move-object v6, p1
-move v7, p4
-invoke-direct/range {v1 .. v7}, Lcom/crashlytics/android/core/CrashlyticsController$7;-><init>(Lcom/crashlytics/android/core/CrashlyticsController;Ljava/util/Date;Ljava/lang/Thread;Ljava/lang/Throwable;Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler$SettingsDataProvider;Z)V
-invoke-virtual {v0, v8}, Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;->submitAndWait(Ljava/util/concurrent/Callable;)Ljava/lang/Object;
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_0
-monitor-exit p0
 return-void
-:catchall_0
-move-exception p1
-monitor-exit p0
-throw p1
 .end method
 .method  hasOpenSession()Z
 .locals 1
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->listSessionBeginFiles()[Ljava/io/File;
-move-result-object v0
-array-length v0, v0
-if-lez v0, :cond_0
-const/4 v0, 0x1
-goto :goto_0
-:cond_0
 const/4 v0, 0x0
-:goto_0
 return v0
 .end method
 .method  isHandlingException()Z
 .locals 1
-iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController;->crashHandler:Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;
-if-eqz v0, :cond_0
-invoke-virtual {v0}, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->isHandlingException()Z
-move-result v0
-if-eqz v0, :cond_0
-const/4 v0, 0x1
-goto :goto_0
-:cond_0
 const/4 v0, 0x0
-:goto_0
 return v0
 .end method
 .method  listCompleteSessionFiles()[Ljava/io/File;
 .locals 3
-new-instance v0, Ljava/util/LinkedList;
-invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFatalSessionFilesDir()Ljava/io/File;
-move-result-object v1
-sget-object v2, Lcom/crashlytics/android/core/CrashlyticsController;->SESSION_FILE_FILTER:Ljava/io/FilenameFilter;
-invoke-direct {p0, v1, v2}, Lcom/crashlytics/android/core/CrashlyticsController;->listFilesMatching(Ljava/io/File;Ljava/io/FilenameFilter;)[Ljava/io/File;
-move-result-object v1
-invoke-static {v0, v1}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getNonFatalSessionFilesDir()Ljava/io/File;
-move-result-object v1
-sget-object v2, Lcom/crashlytics/android/core/CrashlyticsController;->SESSION_FILE_FILTER:Ljava/io/FilenameFilter;
-invoke-direct {p0, v1, v2}, Lcom/crashlytics/android/core/CrashlyticsController;->listFilesMatching(Ljava/io/File;Ljava/io/FilenameFilter;)[Ljava/io/File;
-move-result-object v1
-invoke-static {v0, v1}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFilesDir()Ljava/io/File;
-move-result-object v1
-sget-object v2, Lcom/crashlytics/android/core/CrashlyticsController;->SESSION_FILE_FILTER:Ljava/io/FilenameFilter;
-invoke-direct {p0, v1, v2}, Lcom/crashlytics/android/core/CrashlyticsController;->listFilesMatching(Ljava/io/File;Ljava/io/FilenameFilter;)[Ljava/io/File;
-move-result-object v1
-invoke-static {v0, v1}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
-invoke-interface {v0}, Ljava/util/List;->size()I
-move-result v1
-new-array v1, v1, [Ljava/io/File;
-invoke-interface {v0, v1}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-move-result-object v0
-check-cast v0, [Ljava/io/File;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method  listNativeSessionFileDirectories()[Ljava/io/File;
 .locals 1
-sget-object v0, Lcom/crashlytics/android/core/CrashlyticsController;->SESSION_DIRECTORY_FILTER:Ljava/io/FileFilter;
-invoke-direct {p0, v0}, Lcom/crashlytics/android/core/CrashlyticsController;->listFilesMatching(Ljava/io/FileFilter;)[Ljava/io/File;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method  listSessionBeginFiles()[Ljava/io/File;
 .locals 1
-sget-object v0, Lcom/crashlytics/android/core/CrashlyticsController;->SESSION_BEGIN_FILE_FILTER:Ljava/io/FilenameFilter;
-invoke-direct {p0, v0}, Lcom/crashlytics/android/core/CrashlyticsController;->listFilesMatching(Ljava/io/FilenameFilter;)[Ljava/io/File;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method  openSession()V
@@ -2516,24 +637,6 @@ return-void
 .end method
 .method  registerAnalyticsEventListener(Lyk;)V
 .locals 3
-iget-object p1, p1, Lyk;->d:Lyd;
-iget-boolean p1, p1, Lyd;->e:Z
-if-eqz p1, :cond_0
-iget-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsController;->appMeasurementEventListenerRegistrar:Lcom/crashlytics/android/core/AppMeasurementEventListenerRegistrar;
-invoke-interface {p1}, Lcom/crashlytics/android/core/AppMeasurementEventListenerRegistrar;->register()Z
-move-result p1
-invoke-static {}, Luq;->g()Luz;
-move-result-object v0
-new-instance v1, Ljava/lang/StringBuilder;
-invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-const-string v2, "Registered Firebase Analytics event listener for breadcrumbs: "
-invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object p1
-const-string v1, "CrashlyticsCore"
-invoke-interface {v0, v1, p1}, Luz;->a(Ljava/lang/String;Ljava/lang/String;)V
-:cond_0
 return-void
 .end method
 .method  registerDevicePowerStateListener()V
@@ -2544,78 +647,17 @@ return-void
 .end method
 .method  submitAllReports(FLyk;)V
 .locals 5
-if-nez p2, :cond_0
-invoke-static {}, Luq;->g()Luz;
-move-result-object p1
-const-string p2, "CrashlyticsCore"
-const-string v0, "Could not send reports. Settings are not available."
-invoke-interface {p1, p2, v0}, Luz;->d(Ljava/lang/String;Ljava/lang/String;)V
-return-void
-:cond_0
-iget-object v0, p2, Lyk;->a:Lxv;
-iget-object v0, v0, Lxv;->d:Ljava/lang/String;
-iget-object v1, p2, Lyk;->a:Lxv;
-iget-object v1, v1, Lxv;->e:Ljava/lang/String;
-invoke-direct {p0, v0, v1}, Lcom/crashlytics/android/core/CrashlyticsController;->getCreateReportSpiCall(Ljava/lang/String;Ljava/lang/String;)Lcom/crashlytics/android/core/CreateReportSpiCall;
-move-result-object v0
-invoke-direct {p0, p2}, Lcom/crashlytics/android/core/CrashlyticsController;->shouldPromptUserBeforeSendingCrashReports(Lyk;)Z
-move-result v1
-if-eqz v1, :cond_1
-new-instance v1, Lcom/crashlytics/android/core/CrashlyticsController$PrivacyDialogCheck;
-iget-object v2, p0, Lcom/crashlytics/android/core/CrashlyticsController;->crashlyticsCore:Lcom/crashlytics/android/core/CrashlyticsCore;
-iget-object v3, p0, Lcom/crashlytics/android/core/CrashlyticsController;->preferenceManager:Lcom/crashlytics/android/core/PreferenceManager;
-iget-object p2, p2, Lyk;->c:Lyf;
-invoke-direct {v1, v2, v3, p2}, Lcom/crashlytics/android/core/CrashlyticsController$PrivacyDialogCheck;-><init>(Luw;Lcom/crashlytics/android/core/PreferenceManager;Lyf;)V
-goto :goto_0
-:cond_1
-new-instance v1, Lcom/crashlytics/android/core/ReportUploader$AlwaysSendCheck;
-invoke-direct {v1}, Lcom/crashlytics/android/core/ReportUploader$AlwaysSendCheck;-><init>()V
-:goto_0
-new-instance p2, Lcom/crashlytics/android/core/ReportUploader;
-iget-object v2, p0, Lcom/crashlytics/android/core/CrashlyticsController;->appData:Lcom/crashlytics/android/core/AppData;
-iget-object v2, v2, Lcom/crashlytics/android/core/AppData;->apiKey:Ljava/lang/String;
-iget-object v3, p0, Lcom/crashlytics/android/core/CrashlyticsController;->reportFilesProvider:Lcom/crashlytics/android/core/ReportUploader$ReportFilesProvider;
-iget-object v4, p0, Lcom/crashlytics/android/core/CrashlyticsController;->handlingExceptionCheck:Lcom/crashlytics/android/core/ReportUploader$HandlingExceptionCheck;
-invoke-direct {p2, v2, v0, v3, v4}, Lcom/crashlytics/android/core/ReportUploader;-><init>(Ljava/lang/String;Lcom/crashlytics/android/core/CreateReportSpiCall;Lcom/crashlytics/android/core/ReportUploader$ReportFilesProvider;Lcom/crashlytics/android/core/ReportUploader$HandlingExceptionCheck;)V
-invoke-virtual {p2, p1, v1}, Lcom/crashlytics/android/core/ReportUploader;->uploadReports(FLcom/crashlytics/android/core/ReportUploader$SendCheck;)V
 return-void
 .end method
 .method  trimSessionFiles(I)V
 .locals 3
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFatalSessionFilesDir()Ljava/io/File;
-move-result-object v0
-sget-object v1, Lcom/crashlytics/android/core/CrashlyticsController;->SMALLEST_FILE_NAME_FIRST:Ljava/util/Comparator;
-invoke-static {v0, p1, v1}, Lcom/crashlytics/android/core/Utils;->capFileCount(Ljava/io/File;ILjava/util/Comparator;)I
-move-result v0
-sub-int/2addr p1, v0
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getNonFatalSessionFilesDir()Ljava/io/File;
-move-result-object v0
-sget-object v1, Lcom/crashlytics/android/core/CrashlyticsController;->SMALLEST_FILE_NAME_FIRST:Ljava/util/Comparator;
-invoke-static {v0, p1, v1}, Lcom/crashlytics/android/core/Utils;->capFileCount(Ljava/io/File;ILjava/util/Comparator;)I
-move-result v0
-sub-int/2addr p1, v0
-invoke-virtual {p0}, Lcom/crashlytics/android/core/CrashlyticsController;->getFilesDir()Ljava/io/File;
-move-result-object v0
-sget-object v1, Lcom/crashlytics/android/core/CrashlyticsController;->SESSION_FILE_FILTER:Ljava/io/FilenameFilter;
-sget-object v2, Lcom/crashlytics/android/core/CrashlyticsController;->SMALLEST_FILE_NAME_FIRST:Ljava/util/Comparator;
-invoke-static {v0, v1, p1, v2}, Lcom/crashlytics/android/core/Utils;->capFileCount(Ljava/io/File;Ljava/io/FilenameFilter;ILjava/util/Comparator;)I
 return-void
 .end method
 .method  writeNonFatalException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
 .locals 3
-new-instance v0, Ljava/util/Date;
-invoke-direct {v0}, Ljava/util/Date;-><init>()V
-iget-object v1, p0, Lcom/crashlytics/android/core/CrashlyticsController;->backgroundWorker:Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;
-new-instance v2, Lcom/crashlytics/android/core/CrashlyticsController$9;
-invoke-direct {v2, p0, v0, p1, p2}, Lcom/crashlytics/android/core/CrashlyticsController$9;-><init>(Lcom/crashlytics/android/core/CrashlyticsController;Ljava/util/Date;Ljava/lang/Thread;Ljava/lang/Throwable;)V
-invoke-virtual {v1, v2}, Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
 return-void
 .end method
 .method  writeToLog(JLjava/lang/String;)V
 .locals 2
-iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController;->backgroundWorker:Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;
-new-instance v1, Lcom/crashlytics/android/core/CrashlyticsController$8;
-invoke-direct {v1, p0, p1, p2, p3}, Lcom/crashlytics/android/core/CrashlyticsController$8;-><init>(Lcom/crashlytics/android/core/CrashlyticsController;JLjava/lang/String;)V
-invoke-virtual {v0, v1}, Lcom/crashlytics/android/core/CrashlyticsBackgroundWorker;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
 return-void
 .end method

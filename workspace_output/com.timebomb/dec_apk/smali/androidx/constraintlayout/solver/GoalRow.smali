@@ -10,9 +10,5 @@ return-void
 .method public addError(Landroidx/constraintlayout/solver/SolverVariable;)V
 .locals 1
 .param p1, "error"    # Landroidx/constraintlayout/solver/SolverVariable;
-invoke-super {p0, p1}, Landroidx/constraintlayout/solver/ArrayRow;->addError(Landroidx/constraintlayout/solver/SolverVariable;)V
-iget v0, p1, Landroidx/constraintlayout/solver/SolverVariable;->usageInRowCount:I
-add-int/lit8 v0, v0, -0x1
-iput v0, p1, Landroidx/constraintlayout/solver/SolverVariable;->usageInRowCount:I
 return-void
 .end method

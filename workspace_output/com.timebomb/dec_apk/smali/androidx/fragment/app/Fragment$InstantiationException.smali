@@ -12,6 +12,6 @@ name = "InstantiationException"
 .locals 0
 .param p1, "msg"    # Ljava/lang/String;
 .param p2, "cause"    # Ljava/lang/Exception;
-invoke-direct {p0, p1, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

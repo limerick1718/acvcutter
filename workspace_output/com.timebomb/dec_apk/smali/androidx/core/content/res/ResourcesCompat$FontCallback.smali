@@ -33,16 +33,6 @@ return-void
 .locals 2
 .param p1, "typeface"    # Landroid/graphics/Typeface;
 .param p2, "handler"    # Landroid/os/Handler;
-if-nez p2, :cond_0
-new-instance v0, Landroid/os/Handler;
-invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-move-result-object v1
-invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-move-object p2, v0
-:cond_0
-new-instance v0, Landroidx/core/content/res/ResourcesCompat$FontCallback$1;
-invoke-direct {v0, p0, p1}, Landroidx/core/content/res/ResourcesCompat$FontCallback$1;-><init>(Landroidx/core/content/res/ResourcesCompat$FontCallback;Landroid/graphics/Typeface;)V
-invoke-virtual {p2, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 return-void
 .end method
 .method public abstract onFontRetrievalFailed(I)V

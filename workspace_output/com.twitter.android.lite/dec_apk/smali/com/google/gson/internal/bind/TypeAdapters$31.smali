@@ -25,14 +25,6 @@ value = {
 "TT;>;"
 }
 .end annotation
-iget-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$31;->a:Ltv;
-invoke-virtual {p2, p1}, Ltv;->equals(Ljava/lang/Object;)Z
-move-result p1
-if-eqz p1, :cond_0
-iget-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$31;->b:Ltn;
-goto :goto_0
-:cond_0
-const/4 p1, 0x0
-:goto_0
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method

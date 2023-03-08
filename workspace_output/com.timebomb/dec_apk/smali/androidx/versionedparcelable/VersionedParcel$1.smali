@@ -13,8 +13,7 @@ name = null
 .locals 0
 .param p1, "this$0"    # Landroidx/versionedparcelable/VersionedParcel;
 .param p2, "x0"    # Ljava/io/InputStream;
-iput-object p1, p0, Landroidx/versionedparcelable/VersionedParcel$1;->this$0:Landroidx/versionedparcelable/VersionedParcel;
-invoke-direct {p0, p2}, Ljava/io/ObjectInputStream;-><init>(Ljava/io/InputStream;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method protected resolveClass(Ljava/io/ObjectStreamClass;)Ljava/lang/Class;
@@ -35,19 +34,6 @@ Ljava/io/IOException;,
 Ljava/lang/ClassNotFoundException;
 }
 .end annotation
-invoke-virtual {p1}, Ljava/io/ObjectStreamClass;->getName()Ljava/lang/String;
-move-result-object v0
-invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-move-result-object v1
-invoke-virtual {v1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
-move-result-object v1
-const/4 v2, 0x0
-invoke-static {v0, v2, v1}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
-move-result-object v0
-if-eqz v0, :cond_0
+const/4 v0, 0x0
 return-object v0
-:cond_0
-invoke-super {p0, p1}, Ljava/io/ObjectInputStream;->resolveClass(Ljava/io/ObjectStreamClass;)Ljava/lang/Class;
-move-result-object v1
-return-object v1
 .end method

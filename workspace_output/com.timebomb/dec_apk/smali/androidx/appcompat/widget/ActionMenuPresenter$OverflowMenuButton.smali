@@ -47,17 +47,8 @@ return v0
 .end method
 .method public performClick()Z
 .locals 2
-invoke-super {p0}, Landroidx/appcompat/widget/AppCompatImageView;->performClick()Z
-move-result v0
-const/4 v1, 0x1
-if-eqz v0, :cond_0
-return v1
-:cond_0
 const/4 v0, 0x0
-invoke-virtual {p0, v0}, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->playSoundEffect(I)V
-iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->this$0:Landroidx/appcompat/widget/ActionMenuPresenter;
-invoke-virtual {v0}, Landroidx/appcompat/widget/ActionMenuPresenter;->showOverflowMenu()Z
-return v1
+return v0
 .end method
 .method protected setFrame(IIII)Z
 .locals 14
@@ -65,40 +56,6 @@ return v1
 .param p2, "t"    # I
 .param p3, "r"    # I
 .param p4, "b"    # I
-invoke-super/range {p0 .. p4}, Landroidx/appcompat/widget/AppCompatImageView;->setFrame(IIII)Z
-move-result v0
-invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->getDrawable()Landroid/graphics/drawable/Drawable;
-move-result-object v1
-invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->getBackground()Landroid/graphics/drawable/Drawable;
-move-result-object v2
-if-eqz v1, :cond_0
-if-eqz v2, :cond_0
-invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->getWidth()I
-move-result v3
-invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->getHeight()I
-move-result v4
-invoke-static {v3, v4}, Ljava/lang/Math;->max(II)I
-move-result v5
-div-int/lit8 v5, v5, 0x2
-invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->getPaddingLeft()I
-move-result v6
-invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->getPaddingRight()I
-move-result v7
-sub-int/2addr v6, v7
-invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->getPaddingTop()I
-move-result v7
-invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->getPaddingBottom()I
-move-result v8
-sub-int/2addr v7, v8
-add-int v8, v3, v6
-div-int/lit8 v8, v8, 0x2
-add-int v9, v4, v7
-div-int/lit8 v9, v9, 0x2
-sub-int v10, v8, v5
-sub-int v11, v9, v5
-add-int v12, v8, v5
-add-int v13, v9, v5
-invoke-static {v2, v10, v11, v12, v13}, Landroidx/core/graphics/drawable/DrawableCompat;->setHotspotBounds(Landroid/graphics/drawable/Drawable;IIII)V
-:cond_0
+const/4 v0, 0x0
 return v0
 .end method

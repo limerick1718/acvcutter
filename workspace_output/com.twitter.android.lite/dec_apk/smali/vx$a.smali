@@ -96,19 +96,3 @@ invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 iput p3, p0, Lvx$a;->h:I
 return-void
 .end method
-.method public static valueOf(Ljava/lang/String;)Lvx$a;
-.locals 1
-const-class v0, Lvx$a;
-invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-move-result-object p0
-check-cast p0, Lvx$a;
-return-object p0
-.end method
-.method public static values()[Lvx$a;
-.locals 1
-sget-object v0, Lvx$a;->i:[Lvx$a;
-invoke-virtual {v0}, [Lvx$a;->clone()Ljava/lang/Object;
-move-result-object v0
-check-cast v0, [Lvx$a;
-return-object v0
-.end method

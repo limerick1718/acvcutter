@@ -24,12 +24,11 @@ value = {
 "-TT;>;)V"
 }
 .end annotation
-iput-object p1, p0, Landroidx/lifecycle/LiveData$AlwaysActiveObserver;->this$0:Landroidx/lifecycle/LiveData;
-invoke-direct {p0, p1, p2}, Landroidx/lifecycle/LiveData$ObserverWrapper;-><init>(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method  shouldBeActive()Z
 .locals 1
-const/4 v0, 0x1
+const/4 v0, 0x0
 return v0
 .end method

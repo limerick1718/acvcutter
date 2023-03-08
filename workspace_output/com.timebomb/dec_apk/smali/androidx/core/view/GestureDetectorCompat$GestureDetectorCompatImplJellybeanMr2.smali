@@ -15,38 +15,27 @@ name = "GestureDetectorCompatImplJellybeanMr2"
 .param p1, "context"    # Landroid/content/Context;
 .param p2, "listener"    # Landroid/view/GestureDetector$OnGestureListener;
 .param p3, "handler"    # Landroid/os/Handler;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-new-instance v0, Landroid/view/GestureDetector;
-invoke-direct {v0, p1, p2, p3}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;Landroid/os/Handler;)V
-iput-object v0, p0, Landroidx/core/view/GestureDetectorCompat$GestureDetectorCompatImplJellybeanMr2;->mDetector:Landroid/view/GestureDetector;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public isLongpressEnabled()Z
 .locals 1
-iget-object v0, p0, Landroidx/core/view/GestureDetectorCompat$GestureDetectorCompatImplJellybeanMr2;->mDetector:Landroid/view/GestureDetector;
-invoke-virtual {v0}, Landroid/view/GestureDetector;->isLongpressEnabled()Z
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
 .locals 1
 .param p1, "ev"    # Landroid/view/MotionEvent;
-iget-object v0, p0, Landroidx/core/view/GestureDetectorCompat$GestureDetectorCompatImplJellybeanMr2;->mDetector:Landroid/view/GestureDetector;
-invoke-virtual {v0, p1}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
-move-result v0
+const/4 v0, 0x0
 return v0
 .end method
 .method public setIsLongpressEnabled(Z)V
 .locals 1
 .param p1, "enabled"    # Z
-iget-object v0, p0, Landroidx/core/view/GestureDetectorCompat$GestureDetectorCompatImplJellybeanMr2;->mDetector:Landroid/view/GestureDetector;
-invoke-virtual {v0, p1}, Landroid/view/GestureDetector;->setIsLongpressEnabled(Z)V
 return-void
 .end method
 .method public setOnDoubleTapListener(Landroid/view/GestureDetector$OnDoubleTapListener;)V
 .locals 1
 .param p1, "listener"    # Landroid/view/GestureDetector$OnDoubleTapListener;
-iget-object v0, p0, Landroidx/core/view/GestureDetectorCompat$GestureDetectorCompatImplJellybeanMr2;->mDetector:Landroid/view/GestureDetector;
-invoke-virtual {v0, p1}, Landroid/view/GestureDetector;->setOnDoubleTapListener(Landroid/view/GestureDetector$OnDoubleTapListener;)V
 return-void
 .end method

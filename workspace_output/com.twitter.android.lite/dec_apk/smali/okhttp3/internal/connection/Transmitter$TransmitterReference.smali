@@ -18,7 +18,6 @@ value = {
 .field final callStackTrace:Ljava/lang/Object;
 .method constructor <init>(Lokhttp3/internal/connection/Transmitter;Ljava/lang/Object;)V
 .locals 0
-invoke-direct {p0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-iput-object p2, p0, Lokhttp3/internal/connection/Transmitter$TransmitterReference;->callStackTrace:Ljava/lang/Object;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

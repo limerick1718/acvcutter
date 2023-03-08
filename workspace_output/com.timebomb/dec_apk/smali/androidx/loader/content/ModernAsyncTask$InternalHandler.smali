@@ -10,34 +10,11 @@ name = "InternalHandler"
 .end annotation
 .method constructor <init>()V
 .locals 1
-invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-move-result-object v0
-invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public handleMessage(Landroid/os/Message;)V
 .locals 4
 .param p1, "msg"    # Landroid/os/Message;
-iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-check-cast v0, Landroidx/loader/content/ModernAsyncTask$AsyncTaskResult;
-iget v1, p1, Landroid/os/Message;->what:I
-const/4 v2, 0x1
-if-eq v1, v2, :cond_1
-const/4 v2, 0x2
-if-eq v1, v2, :cond_0
-goto :goto_0
-:cond_0
-iget-object v1, v0, Landroidx/loader/content/ModernAsyncTask$AsyncTaskResult;->mTask:Landroidx/loader/content/ModernAsyncTask;
-iget-object v2, v0, Landroidx/loader/content/ModernAsyncTask$AsyncTaskResult;->mData:[Ljava/lang/Object;
-invoke-virtual {v1, v2}, Landroidx/loader/content/ModernAsyncTask;->onProgressUpdate([Ljava/lang/Object;)V
-goto :goto_0
-:cond_1
-iget-object v1, v0, Landroidx/loader/content/ModernAsyncTask$AsyncTaskResult;->mTask:Landroidx/loader/content/ModernAsyncTask;
-iget-object v2, v0, Landroidx/loader/content/ModernAsyncTask$AsyncTaskResult;->mData:[Ljava/lang/Object;
-const/4 v3, 0x0
-aget-object v2, v2, v3
-invoke-virtual {v1, v2}, Landroidx/loader/content/ModernAsyncTask;->finish(Ljava/lang/Object;)V
-nop
-:goto_0
 return-void
 .end method

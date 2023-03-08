@@ -23,24 +23,16 @@ return-void
 .end method
 .method public getCompleteSessionFiles()[Ljava/io/File;
 .locals 1
-iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController$ReportUploaderFilesProvider;->this$0:Lcom/crashlytics/android/core/CrashlyticsController;
-invoke-virtual {v0}, Lcom/crashlytics/android/core/CrashlyticsController;->listCompleteSessionFiles()[Ljava/io/File;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getInvalidSessionFiles()[Ljava/io/File;
 .locals 1
-iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController$ReportUploaderFilesProvider;->this$0:Lcom/crashlytics/android/core/CrashlyticsController;
-invoke-virtual {v0}, Lcom/crashlytics/android/core/CrashlyticsController;->getInvalidFilesDir()Ljava/io/File;
-move-result-object v0
-invoke-virtual {v0}, Ljava/io/File;->listFiles()[Ljava/io/File;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getNativeReportFiles()[Ljava/io/File;
 .locals 1
-iget-object v0, p0, Lcom/crashlytics/android/core/CrashlyticsController$ReportUploaderFilesProvider;->this$0:Lcom/crashlytics/android/core/CrashlyticsController;
-invoke-virtual {v0}, Lcom/crashlytics/android/core/CrashlyticsController;->listNativeSessionFileDirectories()[Ljava/io/File;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method

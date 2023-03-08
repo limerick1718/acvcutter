@@ -14,12 +14,6 @@ Landroidx/fragment/app/FragmentManager$BackStackEntry;
 invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
-.method public static enableDebugLogging(Z)V
-.locals 0
-.param p0, "enabled"    # Z
-sput-boolean p0, Landroidx/fragment/app/FragmentManagerImpl;->DEBUG:Z
-return-void
-.end method
 .method public abstract addOnBackStackChangedListener(Landroidx/fragment/app/FragmentManager$OnBackStackChangedListener;)V
 .end method
 .method public abstract beginTransaction()Landroidx/fragment/app/FragmentTransaction;
@@ -58,8 +52,7 @@ value = {
 .locals 1
 .annotation runtime Ljava/lang/Deprecated;
 .end annotation
-invoke-virtual {p0}, Landroidx/fragment/app/FragmentManager;->beginTransaction()Landroidx/fragment/app/FragmentTransaction;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public abstract popBackStack()V

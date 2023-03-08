@@ -35,17 +35,5 @@ return-void
 .method public onClick(Landroid/view/View;)V
 .locals 3
 .param p1, "v"    # Landroid/view/View;
-iget-object v0, p0, Landroidx/appcompat/widget/ToolbarWidgetWrapper$1;->this$0:Landroidx/appcompat/widget/ToolbarWidgetWrapper;
-iget-object v0, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mWindowCallback:Landroid/view/Window$Callback;
-if-eqz v0, :cond_0
-iget-object v0, p0, Landroidx/appcompat/widget/ToolbarWidgetWrapper$1;->this$0:Landroidx/appcompat/widget/ToolbarWidgetWrapper;
-iget-boolean v0, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mMenuPrepared:Z
-if-eqz v0, :cond_0
-iget-object v0, p0, Landroidx/appcompat/widget/ToolbarWidgetWrapper$1;->this$0:Landroidx/appcompat/widget/ToolbarWidgetWrapper;
-iget-object v0, v0, Landroidx/appcompat/widget/ToolbarWidgetWrapper;->mWindowCallback:Landroid/view/Window$Callback;
-const/4 v1, 0x0
-iget-object v2, p0, Landroidx/appcompat/widget/ToolbarWidgetWrapper$1;->mNavItem:Landroidx/appcompat/view/menu/ActionMenuItem;
-invoke-interface {v0, v1, v2}, Landroid/view/Window$Callback;->onMenuItemSelected(ILandroid/view/MenuItem;)Z
-:cond_0
 return-void
 .end method

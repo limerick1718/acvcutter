@@ -48,14 +48,14 @@
 <span class="">	return v0</span>
 .end method
 
-<span class="cov">.method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z</span>
+.method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 <span class="">	.locals 1</span>
 <span class="">	.param p1, "event"    # Landroid/view/KeyEvent;</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/view/WindowCallbackWrapper;->mWrapped:Landroid/view/Window$Callback;</span>
-<span class="exec">	invoke-interface {v0, p1}, Landroid/view/Window$Callback;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z</span>
-<span class="cov">	move-result v0</span>
-<span class="exec">	return v0</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/WindowCallbackWrapper;->mWrapped:Landroid/view/Window$Callback;</span>
+<span class="">	invoke-interface {v0, p1}, Landroid/view/Window$Callback;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z</span>
+<span class="missed">	move-result v0</span>
+<span class="">	return v0</span>
 .end method
 
 .method public dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z
@@ -153,12 +153,12 @@
 <span class="exec">	return-object v0</span>
 .end method
 
-<span class="cov">.method public onDetachedFromWindow()V</span>
+.method public onDetachedFromWindow()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Landroidx/appcompat/view/WindowCallbackWrapper;->mWrapped:Landroid/view/Window$Callback;</span>
-<span class="cov">	invoke-interface {v0}, Landroid/view/Window$Callback;->onDetachedFromWindow()V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	iget-object v0, p0, Landroidx/appcompat/view/WindowCallbackWrapper;->mWrapped:Landroid/view/Window$Callback;</span>
+<span class="missed">	invoke-interface {v0}, Landroid/view/Window$Callback;->onDetachedFromWindow()V</span>
+<span class="">	return-void</span>
 .end method
 
 .method public onMenuItemSelected(ILandroid/view/MenuItem;)Z

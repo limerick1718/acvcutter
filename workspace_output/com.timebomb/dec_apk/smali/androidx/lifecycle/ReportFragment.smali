@@ -19,14 +19,6 @@ return-void
 invoke-virtual {p0}, Landroidx/lifecycle/ReportFragment;->getActivity()Landroid/app/Activity;
 move-result-object v0
 instance-of v1, v0, Landroidx/lifecycle/LifecycleRegistryOwner;
-if-eqz v1, :cond_0
-move-object v1, v0
-check-cast v1, Landroidx/lifecycle/LifecycleRegistryOwner;
-invoke-interface {v1}, Landroidx/lifecycle/LifecycleRegistryOwner;->getLifecycle()Landroidx/lifecycle/LifecycleRegistry;
-move-result-object v1
-invoke-virtual {v1, p1}, Landroidx/lifecycle/LifecycleRegistry;->handleLifecycleEvent(Landroidx/lifecycle/Lifecycle$Event;)V
-return-void
-:cond_0
 instance-of v1, v0, Landroidx/lifecycle/LifecycleOwner;
 if-eqz v1, :cond_1
 move-object v1, v0
@@ -44,37 +36,20 @@ return-void
 .method private dispatchCreate(Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;)V
 .locals 0
 .param p1, "listener"    # Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;
-if-eqz p1, :cond_0
-invoke-interface {p1}, Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;->onCreate()V
 :cond_0
 return-void
 .end method
 .method private dispatchResume(Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;)V
 .locals 0
 .param p1, "listener"    # Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;
-if-eqz p1, :cond_0
-invoke-interface {p1}, Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;->onResume()V
 :cond_0
 return-void
 .end method
 .method private dispatchStart(Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;)V
 .locals 0
 .param p1, "listener"    # Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;
-if-eqz p1, :cond_0
-invoke-interface {p1}, Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;->onStart()V
 :cond_0
 return-void
-.end method
-.method static get(Landroid/app/Activity;)Landroidx/lifecycle/ReportFragment;
-.locals 2
-.param p0, "activity"    # Landroid/app/Activity;
-invoke-virtual {p0}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
-move-result-object v0
-const-string v1, "androidx.lifecycle.LifecycleDispatcher.report_fragment_tag"
-invoke-virtual {v0, v1}, Landroid/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/app/Fragment;
-move-result-object v0
-check-cast v0, Landroidx/lifecycle/ReportFragment;
-return-object v0
 .end method
 .method public static injectIfNeededIn(Landroid/app/Activity;)V
 .locals 4
@@ -108,11 +83,6 @@ return-void
 .end method
 .method public onDestroy()V
 .locals 1
-invoke-super {p0}, Landroid/app/Fragment;->onDestroy()V
-sget-object v0, Landroidx/lifecycle/Lifecycle$Event;->ON_DESTROY:Landroidx/lifecycle/Lifecycle$Event;
-invoke-direct {p0, v0}, Landroidx/lifecycle/ReportFragment;->dispatch(Landroidx/lifecycle/Lifecycle$Event;)V
-const/4 v0, 0x0
-iput-object v0, p0, Landroidx/lifecycle/ReportFragment;->mProcessListener:Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;
 return-void
 .end method
 .method public onPause()V
@@ -150,6 +120,5 @@ return-void
 .method  setProcessListener(Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;)V
 .locals 0
 .param p1, "processListener"    # Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;
-iput-object p1, p0, Landroidx/lifecycle/ReportFragment;->mProcessListener:Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;
 return-void
 .end method

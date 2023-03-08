@@ -12,13 +12,11 @@ name = null
 .field final synthetic b:Laq;
 .method constructor <init>(Laq;Landroid/graphics/Rect;)V
 .locals 0
-iput-object p1, p0, Laq$1;->b:Laq;
-iput-object p2, p0, Laq$1;->a:Landroid/graphics/Rect;
-invoke-direct {p0}, Landroid/transition/Transition$EpicenterCallback;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onGetEpicenter(Landroid/transition/Transition;)Landroid/graphics/Rect;
 .locals 0
-iget-object p1, p0, Laq$1;->a:Landroid/graphics/Rect;
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method

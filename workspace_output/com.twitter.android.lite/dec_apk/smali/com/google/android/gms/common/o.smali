@@ -16,44 +16,8 @@ return-void
 .end method
 .method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 .locals 8
-invoke-static {p1}, Lbb;->b(Landroid/os/Parcel;)I
-move-result v0
-const/4 v1, 0x0
-const/4 v2, 0x0
-const-wide/16 v3, -0x1
-:goto_0
-invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
-move-result v5
-if-ge v5, v0, :cond_3
-invoke-static {p1}, Lbb;->a(Landroid/os/Parcel;)I
-move-result v5
-invoke-static {v5}, Lbb;->a(I)I
-move-result v6
-const/4 v7, 0x1
-if-eq v6, v7, :cond_2
-const/4 v7, 0x2
-if-eq v6, v7, :cond_1
-const/4 v7, 0x3
-if-eq v6, v7, :cond_0
-invoke-static {p1, v5}, Lbb;->b(Landroid/os/Parcel;I)V
-goto :goto_0
-:cond_0
-invoke-static {p1, v5}, Lbb;->e(Landroid/os/Parcel;I)J
-move-result-wide v3
-goto :goto_0
-:cond_1
-invoke-static {p1, v5}, Lbb;->d(Landroid/os/Parcel;I)I
-move-result v2
-goto :goto_0
-:cond_2
-invoke-static {p1, v5}, Lbb;->i(Landroid/os/Parcel;I)Ljava/lang/String;
-move-result-object v1
-goto :goto_0
-:cond_3
-invoke-static {p1, v0}, Lbb;->l(Landroid/os/Parcel;I)V
-new-instance p1, Lcom/google/android/gms/common/d;
-invoke-direct {p1, v1, v2, v3, v4}, Lcom/google/android/gms/common/d;-><init>(Ljava/lang/String;IJ)V
-return-object p1
+const/4 v0, 0x0
+return-object v0
 .end method
 .method public final synthetic newArray(I)[Ljava/lang/Object;
 .locals 0

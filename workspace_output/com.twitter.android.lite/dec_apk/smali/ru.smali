@@ -28,43 +28,14 @@ iput-object p1, p0, Lru;->a:Ljava/util/concurrent/Executor;
 iput-object p2, p0, Lru;->c:Lrh;
 return-void
 .end method
-.method static synthetic a(Lru;)Ljava/lang/Object;
-.locals 0
-iget-object p0, p0, Lru;->b:Ljava/lang/Object;
-return-object p0
-.end method
-.method static synthetic b(Lru;)Lrh;
-.locals 0
-iget-object p0, p0, Lru;->c:Lrh;
-return-object p0
-.end method
 .method public final a(Lrm;)V
 .locals 1
 invoke-virtual {p1}, Lrm;->c()Z
 move-result p1
-if-eqz p1, :cond_1
-iget-object p1, p0, Lru;->b:Ljava/lang/Object;
-monitor-enter p1
-:try_start_0
-iget-object v0, p0, Lru;->c:Lrh;
-if-nez v0, :cond_0
-monitor-exit p1
-return-void
-:cond_0
-monitor-exit p1
-:try_end_0
-.catchall {:try_start_0 .. :try_end_0} :catchall_0
-iget-object p1, p0, Lru;->a:Ljava/util/concurrent/Executor;
-new-instance v0, Lrv;
-invoke-direct {v0, p0}, Lrv;-><init>(Lru;)V
-invoke-interface {p1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-goto :goto_0
+goto/32 :cond_1
 :catchall_0
 move-exception v0
-:try_start_1
 monitor-exit p1
-:try_end_1
-.catchall {:try_start_1 .. :try_end_1} :catchall_0
 throw v0
 :cond_1
 :goto_0

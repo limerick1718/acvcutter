@@ -33,7 +33,7 @@
     invoke-static {v0}, Lcom/timebomb/TimeBomb;->enableLogging(Z)V
 
     .line 16
-    const-string v0, "1678178496320"
+    const-string v0, "1678242755318"
 
     const/4 v1, 0x1
 

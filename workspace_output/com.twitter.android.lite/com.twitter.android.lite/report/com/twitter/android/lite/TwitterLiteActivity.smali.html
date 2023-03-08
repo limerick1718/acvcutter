@@ -343,21 +343,21 @@
 <span class="">	return-void</span>
 .end method
 
-<span class="cov">.method public onBackPressed()V</span>
+.method public onBackPressed()V
 <span class="">	.locals 1</span>
 
-<span class="cov">	iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="exec">	invoke-virtual {v0}, Landroid/webkit/WebView;->canGoBack()Z</span>
-<span class="cov">	move-result v0</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="cov">	iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
-<span class="cov">	invoke-virtual {v0}, Landroid/webkit/WebView;->goBack()V</span>
+<span class="missed">	iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-virtual {v0}, Landroid/webkit/WebView;->canGoBack()Z</span>
+<span class="missed">	move-result v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="missed">	iget-object v0, p0, Lcom/twitter/android/lite/TwitterLiteActivity;->a:Landroid/webkit/WebView;</span>
+<span class="missed">	invoke-virtual {v0}, Landroid/webkit/WebView;->goBack()V</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="missed">	invoke-super {p0}, Landroid/app/Activity;->onBackPressed()V</span>
-<span class="cov">	:goto_0</span>
-<span class="exec">	return-void</span>
+<span class="">	:goto_0</span>
+<span class="">	return-void</span>
 .end method
 
 .method public onContextItemSelected(Landroid/view/MenuItem;)Z
@@ -415,24 +415,24 @@
 <span class="exec">	return-void</span>
 .end method
 
-.method public onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V
+<span class="cov">.method public onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V</span>
 <span class="">	.locals 1</span>
 
-<span class="missed">	invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V</span>
-<span class="missed">	instance-of p3, p2, Landroid/webkit/WebView;</span>
-<span class="missed">	if-eqz p3, :cond_1</span>
-<span class="missed">	check-cast p2, Landroid/webkit/WebView;</span>
-<span class="">	invoke-virtual {p2}, Landroid/webkit/WebView;->getHitTestResult()Landroid/webkit/WebView$HitTestResult;</span>
-<span class="missed">	move-result-object p2</span>
-<span class="missed">	if-eqz p2, :cond_1</span>
-<span class="">	invoke-virtual {p2}, Landroid/webkit/WebView$HitTestResult;->getType()I</span>
-<span class="missed">	move-result p3</span>
-<span class="missed">	const/4 v0, 0x5</span>
-<span class="missed">	if-eq p3, v0, :cond_0</span>
-<span class="missed">	const/4 v0, 0x6</span>
-<span class="missed">	if-eq p3, v0, :cond_0</span>
-<span class="missed">	const/16 v0, 0x8</span>
-<span class="missed">	if-eq p3, v0, :cond_0</span>
+<span class="cov">	invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V</span>
+<span class="cov">	instance-of p3, p2, Landroid/webkit/WebView;</span>
+<span class="cov">	if-eqz p3, :cond_1</span>
+<span class="cov">	check-cast p2, Landroid/webkit/WebView;</span>
+<span class="exec">	invoke-virtual {p2}, Landroid/webkit/WebView;->getHitTestResult()Landroid/webkit/WebView$HitTestResult;</span>
+<span class="cov">	move-result-object p2</span>
+<span class="cov">	if-eqz p2, :cond_1</span>
+<span class="exec">	invoke-virtual {p2}, Landroid/webkit/WebView$HitTestResult;->getType()I</span>
+<span class="cov">	move-result p3</span>
+<span class="cov">	const/4 v0, 0x5</span>
+<span class="cov">	if-eq p3, v0, :cond_0</span>
+<span class="cov">	const/4 v0, 0x6</span>
+<span class="cov">	if-eq p3, v0, :cond_0</span>
+<span class="cov">	const/16 v0, 0x8</span>
+<span class="cov">	if-eq p3, v0, :cond_0</span>
 <span class="">	goto :goto_0</span>
 <span class="">	:cond_0</span>
 <span class="">	invoke-virtual {p2}, Landroid/webkit/WebView$HitTestResult;->getExtra()Ljava/lang/String;</span>
@@ -448,19 +448,19 @@
 <span class="missed">	move-result-object p2</span>
 <span class="missed">	const/high16 p3, 0x7f080000</span>
 <span class="missed">	invoke-virtual {p2, p3, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V</span>
-<span class="">	:cond_1</span>
-<span class="">	:goto_0</span>
-<span class="">	return-void</span>
+<span class="cov">	:cond_1</span>
+<span class="cov">	:goto_0</span>
+<span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method protected onNewIntent(Landroid/content/Intent;)V</span>
+.method protected onNewIntent(Landroid/content/Intent;)V
 <span class="">	.locals 0</span>
 
-<span class="cov">	invoke-super {p0, p1}, Landroid/app/Activity;->onNewIntent(Landroid/content/Intent;)V</span>
-<span class="cov">	invoke-virtual {p0, p1}, Lcom/twitter/android/lite/TwitterLiteActivity;->setIntent(Landroid/content/Intent;)V</span>
-<span class="cov">	invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->e()V</span>
-<span class="cov">	invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->g()V</span>
-<span class="exec">	return-void</span>
+<span class="missed">	invoke-super {p0, p1}, Landroid/app/Activity;->onNewIntent(Landroid/content/Intent;)V</span>
+<span class="missed">	invoke-virtual {p0, p1}, Lcom/twitter/android/lite/TwitterLiteActivity;->setIntent(Landroid/content/Intent;)V</span>
+<span class="missed">	invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->e()V</span>
+<span class="missed">	invoke-direct {p0}, Lcom/twitter/android/lite/TwitterLiteActivity;->g()V</span>
+<span class="">	return-void</span>
 .end method
 
 <span class="cov">.method protected onPause()V</span>

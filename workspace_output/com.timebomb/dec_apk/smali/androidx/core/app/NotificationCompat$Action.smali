@@ -43,18 +43,7 @@ Landroidx/core/app/NotificationCompat$Action$Builder;
 .param p1, "icon"    # I
 .param p2, "title"    # Ljava/lang/CharSequence;
 .param p3, "intent"    # Landroid/app/PendingIntent;
-new-instance v4, Landroid/os/Bundle;
-invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
-const/4 v5, 0x0
-const/4 v6, 0x0
-const/4 v7, 0x1
-const/4 v8, 0x0
-const/4 v9, 0x1
-move-object v0, p0
-move v1, p1
-move-object v2, p2
-move-object v3, p3
-invoke-direct/range {v0 .. v9}, Landroidx/core/app/NotificationCompat$Action;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;[Landroidx/core/app/RemoteInput;[Landroidx/core/app/RemoteInput;ZIZ)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method constructor <init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;[Landroidx/core/app/RemoteInput;[Landroidx/core/app/RemoteInput;ZIZ)V
@@ -68,71 +57,51 @@ return-void
 .param p7, "allowGeneratedReplies"    # Z
 .param p8, "semanticAction"    # I
 .param p9, "showsUserInterface"    # Z
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-const/4 v0, 0x1
-iput-boolean v0, p0, Landroidx/core/app/NotificationCompat$Action;->mShowsUserInterface:Z
-iput p1, p0, Landroidx/core/app/NotificationCompat$Action;->icon:I
-invoke-static {p2}, Landroidx/core/app/NotificationCompat$Builder;->limitCharSequenceLength(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-move-result-object v0
-iput-object v0, p0, Landroidx/core/app/NotificationCompat$Action;->title:Ljava/lang/CharSequence;
-iput-object p3, p0, Landroidx/core/app/NotificationCompat$Action;->actionIntent:Landroid/app/PendingIntent;
-if-eqz p4, :cond_0
-move-object v0, p4
-goto :goto_0
-:cond_0
-new-instance v0, Landroid/os/Bundle;
-invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-:goto_0
-iput-object v0, p0, Landroidx/core/app/NotificationCompat$Action;->mExtras:Landroid/os/Bundle;
-iput-object p5, p0, Landroidx/core/app/NotificationCompat$Action;->mRemoteInputs:[Landroidx/core/app/RemoteInput;
-iput-object p6, p0, Landroidx/core/app/NotificationCompat$Action;->mDataOnlyRemoteInputs:[Landroidx/core/app/RemoteInput;
-iput-boolean p7, p0, Landroidx/core/app/NotificationCompat$Action;->mAllowGeneratedReplies:Z
-iput p8, p0, Landroidx/core/app/NotificationCompat$Action;->mSemanticAction:I
-iput-boolean p9, p0, Landroidx/core/app/NotificationCompat$Action;->mShowsUserInterface:Z
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public getActionIntent()Landroid/app/PendingIntent;
 .locals 1
-iget-object v0, p0, Landroidx/core/app/NotificationCompat$Action;->actionIntent:Landroid/app/PendingIntent;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getAllowGeneratedReplies()Z
 .locals 1
-iget-boolean v0, p0, Landroidx/core/app/NotificationCompat$Action;->mAllowGeneratedReplies:Z
+const/4 v0, 0x0
 return v0
 .end method
 .method public getDataOnlyRemoteInputs()[Landroidx/core/app/RemoteInput;
 .locals 1
-iget-object v0, p0, Landroidx/core/app/NotificationCompat$Action;->mDataOnlyRemoteInputs:[Landroidx/core/app/RemoteInput;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getExtras()Landroid/os/Bundle;
 .locals 1
-iget-object v0, p0, Landroidx/core/app/NotificationCompat$Action;->mExtras:Landroid/os/Bundle;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getIcon()I
 .locals 1
-iget v0, p0, Landroidx/core/app/NotificationCompat$Action;->icon:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public getRemoteInputs()[Landroidx/core/app/RemoteInput;
 .locals 1
-iget-object v0, p0, Landroidx/core/app/NotificationCompat$Action;->mRemoteInputs:[Landroidx/core/app/RemoteInput;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public getSemanticAction()I
 .locals 1
-iget v0, p0, Landroidx/core/app/NotificationCompat$Action;->mSemanticAction:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public getShowsUserInterface()Z
 .locals 1
-iget-boolean v0, p0, Landroidx/core/app/NotificationCompat$Action;->mShowsUserInterface:Z
+const/4 v0, 0x0
 return v0
 .end method
 .method public getTitle()Ljava/lang/CharSequence;
 .locals 1
-iget-object v0, p0, Landroidx/core/app/NotificationCompat$Action;->title:Ljava/lang/CharSequence;
+const/4 v0, 0x0
 return-object v0
 .end method

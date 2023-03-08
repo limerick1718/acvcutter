@@ -11,7 +11,7 @@ name = null
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public close()V
@@ -34,7 +34,7 @@ return-void
 .end method
 .method public timeout()Lzl;
 .locals 1
-sget-object v0, Lzl;->NONE:Lzl;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public write(Lys;J)V
@@ -44,6 +44,5 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-invoke-virtual {p1, p2, p3}, Lys;->i(J)V
 return-void
 .end method

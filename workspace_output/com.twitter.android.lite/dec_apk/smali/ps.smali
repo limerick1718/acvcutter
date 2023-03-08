@@ -34,16 +34,6 @@ iput-object p5, p0, Lps;->c:Ljava/lang/Long;
 const/4 p2, 0x0
 iput-object p2, p0, Lps;->h:Ljava/lang/Float;
 const/4 p3, 0x1
-if-ne p1, p3, :cond_1
-if-eqz p6, :cond_0
-invoke-virtual {p6}, Ljava/lang/Float;->doubleValue()D
-move-result-wide p1
-invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-move-result-object p2
-:cond_0
-iput-object p2, p0, Lps;->f:Ljava/lang/Double;
-goto :goto_0
-:cond_1
 iput-object p9, p0, Lps;->f:Ljava/lang/Double;
 :goto_0
 iput-object p7, p0, Lps;->d:Ljava/lang/String;
@@ -60,69 +50,19 @@ iput-object p1, p0, Lps;->a:Ljava/lang/String;
 iput-wide p2, p0, Lps;->b:J
 iput-object p5, p0, Lps;->e:Ljava/lang/String;
 const/4 p1, 0x0
-if-nez p4, :cond_0
 iput-object p1, p0, Lps;->c:Ljava/lang/Long;
 iput-object p1, p0, Lps;->h:Ljava/lang/Float;
 iput-object p1, p0, Lps;->f:Ljava/lang/Double;
 iput-object p1, p0, Lps;->d:Ljava/lang/String;
 return-void
-:cond_0
-instance-of p2, p4, Ljava/lang/Long;
-if-eqz p2, :cond_1
-check-cast p4, Ljava/lang/Long;
-iput-object p4, p0, Lps;->c:Ljava/lang/Long;
-iput-object p1, p0, Lps;->h:Ljava/lang/Float;
-iput-object p1, p0, Lps;->f:Ljava/lang/Double;
-iput-object p1, p0, Lps;->d:Ljava/lang/String;
-return-void
-:cond_1
-instance-of p2, p4, Ljava/lang/String;
-if-eqz p2, :cond_2
-iput-object p1, p0, Lps;->c:Ljava/lang/Long;
-iput-object p1, p0, Lps;->h:Ljava/lang/Float;
-iput-object p1, p0, Lps;->f:Ljava/lang/Double;
-check-cast p4, Ljava/lang/String;
-iput-object p4, p0, Lps;->d:Ljava/lang/String;
-return-void
-:cond_2
-instance-of p2, p4, Ljava/lang/Double;
-if-eqz p2, :cond_3
-iput-object p1, p0, Lps;->c:Ljava/lang/Long;
-iput-object p1, p0, Lps;->h:Ljava/lang/Float;
-check-cast p4, Ljava/lang/Double;
-iput-object p4, p0, Lps;->f:Ljava/lang/Double;
-iput-object p1, p0, Lps;->d:Ljava/lang/String;
-return-void
-:cond_3
-new-instance p1, Ljava/lang/IllegalArgumentException;
-const-string p2, "User attribute given of un-supported type"
-invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-throw p1
 .end method
 .method constructor <init>(Lpu;)V
 .locals 6
-iget-object v1, p1, Lpu;->c:Ljava/lang/String;
-iget-wide v2, p1, Lpu;->d:J
-iget-object v4, p1, Lpu;->e:Ljava/lang/Object;
-iget-object v5, p1, Lpu;->b:Ljava/lang/String;
-move-object v0, p0
-invoke-direct/range {v0 .. v5}, Lps;-><init>(Ljava/lang/String;JLjava/lang/Object;Ljava/lang/String;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public final a()Ljava/lang/Object;
 .locals 1
-iget-object v0, p0, Lps;->c:Ljava/lang/Long;
-if-eqz v0, :cond_0
-return-object v0
-:cond_0
-iget-object v0, p0, Lps;->f:Ljava/lang/Double;
-if-eqz v0, :cond_1
-return-object v0
-:cond_1
-iget-object v0, p0, Lps;->d:Ljava/lang/String;
-if-eqz v0, :cond_2
-return-object v0
-:cond_2
 const/4 v0, 0x0
 return-object v0
 .end method

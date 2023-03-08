@@ -14,9 +14,6 @@ name = "Streams"
 .field public final source:Lyu;
 .method public constructor <init>(ZLyu;Lyt;)V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-boolean p1, p0, Lokhttp3/internal/ws/RealWebSocket$Streams;->client:Z
-iput-object p2, p0, Lokhttp3/internal/ws/RealWebSocket$Streams;->source:Lyu;
-iput-object p3, p0, Lokhttp3/internal/ws/RealWebSocket$Streams;->sink:Lyt;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

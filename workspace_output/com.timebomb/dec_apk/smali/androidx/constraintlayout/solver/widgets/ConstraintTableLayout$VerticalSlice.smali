@@ -16,9 +16,6 @@ name = "VerticalSlice"
 .method constructor <init>(Landroidx/constraintlayout/solver/widgets/ConstraintTableLayout;)V
 .locals 1
 .param p1, "this$0"    # Landroidx/constraintlayout/solver/widgets/ConstraintTableLayout;
-iput-object p1, p0, Landroidx/constraintlayout/solver/widgets/ConstraintTableLayout$VerticalSlice;->this$0:Landroidx/constraintlayout/solver/widgets/ConstraintTableLayout;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-const/4 v0, 0x1
-iput v0, p0, Landroidx/constraintlayout/solver/widgets/ConstraintTableLayout$VerticalSlice;->alignment:I
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

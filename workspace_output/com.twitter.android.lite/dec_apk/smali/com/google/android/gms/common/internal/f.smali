@@ -41,39 +41,7 @@ return-void
 .end method
 .method constructor <init>(IIILjava/lang/String;Landroid/os/IBinder;[Lcom/google/android/gms/common/api/Scope;Landroid/os/Bundle;Landroid/accounts/Account;[Lcom/google/android/gms/common/d;[Lcom/google/android/gms/common/d;Z)V
 .locals 0
-invoke-direct {p0}, Lba;-><init>()V
-iput p1, p0, Lcom/google/android/gms/common/internal/f;->h:I
-iput p2, p0, Lcom/google/android/gms/common/internal/f;->i:I
-iput p3, p0, Lcom/google/android/gms/common/internal/f;->j:I
-const-string p2, "com.google.android.gms"
-invoke-virtual {p2, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-move-result p3
-if-eqz p3, :cond_0
-iput-object p2, p0, Lcom/google/android/gms/common/internal/f;->a:Ljava/lang/String;
-goto :goto_0
-:cond_0
-iput-object p4, p0, Lcom/google/android/gms/common/internal/f;->a:Ljava/lang/String;
-:goto_0
-const/4 p2, 0x2
-if-ge p1, p2, :cond_2
-const/4 p1, 0x0
-if-eqz p5, :cond_1
-invoke-static {p5}, Lcom/google/android/gms/common/internal/j$a;->a(Landroid/os/IBinder;)Lcom/google/android/gms/common/internal/j;
-move-result-object p1
-invoke-static {p1}, Lcom/google/android/gms/common/internal/a;->a(Lcom/google/android/gms/common/internal/j;)Landroid/accounts/Account;
-move-result-object p1
-:cond_1
-iput-object p1, p0, Lcom/google/android/gms/common/internal/f;->e:Landroid/accounts/Account;
-goto :goto_1
-:cond_2
-iput-object p5, p0, Lcom/google/android/gms/common/internal/f;->b:Landroid/os/IBinder;
-iput-object p8, p0, Lcom/google/android/gms/common/internal/f;->e:Landroid/accounts/Account;
-:goto_1
-iput-object p6, p0, Lcom/google/android/gms/common/internal/f;->c:[Lcom/google/android/gms/common/api/Scope;
-iput-object p7, p0, Lcom/google/android/gms/common/internal/f;->d:Landroid/os/Bundle;
-iput-object p9, p0, Lcom/google/android/gms/common/internal/f;->f:[Lcom/google/android/gms/common/d;
-iput-object p10, p0, Lcom/google/android/gms/common/internal/f;->g:[Lcom/google/android/gms/common/d;
-iput-boolean p11, p0, Lcom/google/android/gms/common/internal/f;->k:Z
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public writeToParcel(Landroid/os/Parcel;I)V

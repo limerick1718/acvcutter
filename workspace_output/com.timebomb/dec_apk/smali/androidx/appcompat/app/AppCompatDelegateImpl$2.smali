@@ -23,10 +23,6 @@ iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$2;->this$0:Lan
 iget v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mInvalidatePanelMenuFeatures:I
 and-int/lit8 v0, v0, 0x1
 const/4 v1, 0x0
-if-eqz v0, :cond_0
-iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$2;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
-invoke-virtual {v0, v1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->doInvalidatePanelMenu(I)V
-:cond_0
 iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$2;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
 iget v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mInvalidatePanelMenuFeatures:I
 and-int/lit16 v0, v0, 0x1000

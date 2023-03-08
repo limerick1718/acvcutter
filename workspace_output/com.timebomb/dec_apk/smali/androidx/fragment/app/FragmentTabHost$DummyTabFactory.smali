@@ -13,18 +13,12 @@ name = "DummyTabFactory"
 .method public constructor <init>(Landroid/content/Context;)V
 .locals 0
 .param p1, "context"    # Landroid/content/Context;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Landroidx/fragment/app/FragmentTabHost$DummyTabFactory;->mContext:Landroid/content/Context;
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public createTabContent(Ljava/lang/String;)Landroid/view/View;
 .locals 2
 .param p1, "tag"    # Ljava/lang/String;
-new-instance v0, Landroid/view/View;
-iget-object v1, p0, Landroidx/fragment/app/FragmentTabHost$DummyTabFactory;->mContext:Landroid/content/Context;
-invoke-direct {v0, v1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
-const/4 v1, 0x0
-invoke-virtual {v0, v1}, Landroid/view/View;->setMinimumWidth(I)V
-invoke-virtual {v0, v1}, Landroid/view/View;->setMinimumHeight(I)V
+const/4 v0, 0x0
 return-object v0
 .end method

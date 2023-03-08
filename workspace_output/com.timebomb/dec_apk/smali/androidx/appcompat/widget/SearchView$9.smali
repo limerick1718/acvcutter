@@ -13,8 +13,7 @@ name = null
 .method constructor <init>(Landroidx/appcompat/widget/SearchView;)V
 .locals 0
 .param p1, "this$0"    # Landroidx/appcompat/widget/SearchView;
-iput-object p1, p0, Landroidx/appcompat/widget/SearchView$9;->this$0:Landroidx/appcompat/widget/SearchView;
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
@@ -31,8 +30,6 @@ value = {
 "IJ)V"
 }
 .end annotation
-iget-object v0, p0, Landroidx/appcompat/widget/SearchView$9;->this$0:Landroidx/appcompat/widget/SearchView;
-invoke-virtual {v0, p3}, Landroidx/appcompat/widget/SearchView;->onItemSelected(I)Z
 return-void
 .end method
 .method public onNothingSelected(Landroid/widget/AdapterView;)V

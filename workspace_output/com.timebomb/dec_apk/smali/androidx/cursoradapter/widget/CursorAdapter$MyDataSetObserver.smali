@@ -11,23 +11,14 @@ name = "MyDataSetObserver"
 .field final synthetic this$0:Landroidx/cursoradapter/widget/CursorAdapter;
 .method constructor <init>(Landroidx/cursoradapter/widget/CursorAdapter;)V
 .locals 0
-iput-object p1, p0, Landroidx/cursoradapter/widget/CursorAdapter$MyDataSetObserver;->this$0:Landroidx/cursoradapter/widget/CursorAdapter;
-invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onChanged()V
 .locals 2
-iget-object v0, p0, Landroidx/cursoradapter/widget/CursorAdapter$MyDataSetObserver;->this$0:Landroidx/cursoradapter/widget/CursorAdapter;
-const/4 v1, 0x1
-iput-boolean v1, v0, Landroidx/cursoradapter/widget/CursorAdapter;->mDataValid:Z
-invoke-virtual {v0}, Landroidx/cursoradapter/widget/CursorAdapter;->notifyDataSetChanged()V
 return-void
 .end method
 .method public onInvalidated()V
 .locals 2
-iget-object v0, p0, Landroidx/cursoradapter/widget/CursorAdapter$MyDataSetObserver;->this$0:Landroidx/cursoradapter/widget/CursorAdapter;
-const/4 v1, 0x0
-iput-boolean v1, v0, Landroidx/cursoradapter/widget/CursorAdapter;->mDataValid:Z
-invoke-virtual {v0}, Landroidx/cursoradapter/widget/CursorAdapter;->notifyDataSetInvalidated()V
 return-void
 .end method

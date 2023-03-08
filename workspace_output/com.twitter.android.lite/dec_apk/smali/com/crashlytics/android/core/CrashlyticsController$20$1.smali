@@ -56,15 +56,7 @@ invoke-static {p1}, Lcom/crashlytics/android/core/CrashlyticsController;->access
 move-result-object p1
 invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 move-result p1
-if-eqz p1, :cond_0
 const-string p1, ""
-goto :goto_0
-:cond_0
-iget-object p1, p0, Lcom/crashlytics/android/core/CrashlyticsController$20$1;->this$1:Lcom/crashlytics/android/core/CrashlyticsController$20;
-iget-object p1, p1, Lcom/crashlytics/android/core/CrashlyticsController$20;->this$0:Lcom/crashlytics/android/core/CrashlyticsController;
-invoke-static {p1}, Lcom/crashlytics/android/core/CrashlyticsController;->access$2000(Lcom/crashlytics/android/core/CrashlyticsController;)Ljava/lang/String;
-move-result-object p1
-:goto_0
 const-string v0, "unity_version"
 invoke-virtual {p0, v0, p1}, Lcom/crashlytics/android/core/CrashlyticsController$20$1;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 return-void

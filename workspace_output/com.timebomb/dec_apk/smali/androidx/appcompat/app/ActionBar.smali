@@ -219,37 +219,17 @@ return-void
 .method public setElevation(F)V
 .locals 2
 .param p1, "elevation"    # F
-const/4 v0, 0x0
-cmpl-float v0, p1, v0
-if-nez v0, :cond_0
 return-void
-:cond_0
-new-instance v0, Ljava/lang/UnsupportedOperationException;
-const-string v1, "Setting a non-zero elevation is not supported in this action bar configuration."
-invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-throw v0
 .end method
 .method public setHideOffset(I)V
 .locals 2
 .param p1, "offset"    # I
-if-nez p1, :cond_0
 return-void
-:cond_0
-new-instance v0, Ljava/lang/UnsupportedOperationException;
-const-string v1, "Setting an explicit action bar hide offset is not supported in this action bar configuration."
-invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-throw v0
 .end method
 .method public setHideOnContentScrollEnabled(Z)V
 .locals 2
 .param p1, "hideOnContentScroll"    # Z
-if-nez p1, :cond_0
 return-void
-:cond_0
-new-instance v0, Ljava/lang/UnsupportedOperationException;
-const-string v1, "Hide on content scroll is not supported in this action bar configuration."
-invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-throw v0
 .end method
 .method public setHomeActionContentDescription(I)V
 .locals 0

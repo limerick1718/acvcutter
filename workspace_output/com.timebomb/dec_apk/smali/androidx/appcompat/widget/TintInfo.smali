@@ -7,16 +7,10 @@
 .field public mTintMode:Landroid/graphics/PorterDuff$Mode;
 .method constructor <init>()V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method  clear()V
 .locals 2
-const/4 v0, 0x0
-iput-object v0, p0, Landroidx/appcompat/widget/TintInfo;->mTintList:Landroid/content/res/ColorStateList;
-const/4 v1, 0x0
-iput-boolean v1, p0, Landroidx/appcompat/widget/TintInfo;->mHasTintList:Z
-iput-object v0, p0, Landroidx/appcompat/widget/TintInfo;->mTintMode:Landroid/graphics/PorterDuff$Mode;
-iput-boolean v1, p0, Landroidx/appcompat/widget/TintInfo;->mHasTintMode:Z
 return-void
 .end method

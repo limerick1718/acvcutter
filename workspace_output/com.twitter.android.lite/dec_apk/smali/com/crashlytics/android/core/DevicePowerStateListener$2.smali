@@ -17,8 +17,5 @@ return-void
 .end method
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
 .locals 0
-iget-object p1, p0, Lcom/crashlytics/android/core/DevicePowerStateListener$2;->this$0:Lcom/crashlytics/android/core/DevicePowerStateListener;
-const/4 p2, 0x0
-invoke-static {p1, p2}, Lcom/crashlytics/android/core/DevicePowerStateListener;->access$002(Lcom/crashlytics/android/core/DevicePowerStateListener;Z)Z
 return-void
 .end method

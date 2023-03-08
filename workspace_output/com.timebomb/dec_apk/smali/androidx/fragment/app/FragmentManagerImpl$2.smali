@@ -15,19 +15,11 @@ name = null
 .locals 0
 .param p1, "this$0"    # Landroidx/fragment/app/FragmentManagerImpl;
 .param p2, "wrapped"    # Landroid/view/animation/Animation$AnimationListener;
-iput-object p1, p0, Landroidx/fragment/app/FragmentManagerImpl$2;->this$0:Landroidx/fragment/app/FragmentManagerImpl;
-iput-object p3, p0, Landroidx/fragment/app/FragmentManagerImpl$2;->val$container:Landroid/view/ViewGroup;
-iput-object p4, p0, Landroidx/fragment/app/FragmentManagerImpl$2;->val$fragment:Landroidx/fragment/app/Fragment;
-invoke-direct {p0, p2}, Landroidx/fragment/app/FragmentManagerImpl$AnimationListenerWrapper;-><init>(Landroid/view/animation/Animation$AnimationListener;)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
 .locals 2
 .param p1, "animation"    # Landroid/view/animation/Animation;
-invoke-super {p0, p1}, Landroidx/fragment/app/FragmentManagerImpl$AnimationListenerWrapper;->onAnimationEnd(Landroid/view/animation/Animation;)V
-iget-object v0, p0, Landroidx/fragment/app/FragmentManagerImpl$2;->val$container:Landroid/view/ViewGroup;
-new-instance v1, Landroidx/fragment/app/FragmentManagerImpl$2$1;
-invoke-direct {v1, p0}, Landroidx/fragment/app/FragmentManagerImpl$2$1;-><init>(Landroidx/fragment/app/FragmentManagerImpl$2;)V
-invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->post(Ljava/lang/Runnable;)Z
 return-void
 .end method

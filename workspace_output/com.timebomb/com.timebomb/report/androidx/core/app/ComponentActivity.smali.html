@@ -55,24 +55,24 @@ value = {
 <span class="exec">	return-void</span>
 .end method
 
-<span class="cov">.method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z</span>
+.method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 <span class="">	.locals 2</span>
 <span class="">	.param p1, "event"    # Landroid/view/KeyEvent;</span>
 
-<span class="exec">	invoke-virtual {p0}, Landroidx/core/app/ComponentActivity;->getWindow()Landroid/view/Window;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="exec">	invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;</span>
-<span class="cov">	move-result-object v0</span>
-<span class="cov">	if-eqz v0, :cond_0</span>
-<span class="exec">	invoke-static {v0, p1}, Landroidx/core/view/KeyEventDispatcher;->dispatchBeforeHierarchy(Landroid/view/View;Landroid/view/KeyEvent;)Z</span>
-<span class="cov">	move-result v1</span>
+<span class="">	invoke-virtual {p0}, Landroidx/core/app/ComponentActivity;->getWindow()Landroid/view/Window;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="">	invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;</span>
+<span class="missed">	move-result-object v0</span>
+<span class="missed">	if-eqz v0, :cond_0</span>
+<span class="">	invoke-static {v0, p1}, Landroidx/core/view/KeyEventDispatcher;->dispatchBeforeHierarchy(Landroid/view/View;Landroid/view/KeyEvent;)Z</span>
+<span class="missed">	move-result v1</span>
 <span class="missed">	if-eqz v1, :cond_0</span>
 <span class="missed">	const/4 v1, 0x1</span>
 <span class="">	return v1</span>
-<span class="cov">	:cond_0</span>
-<span class="exec">	invoke-static {p0, v0, p0, p1}, Landroidx/core/view/KeyEventDispatcher;->dispatchKeyEvent(Landroidx/core/view/KeyEventDispatcher$Component;Landroid/view/View;Landroid/view/Window$Callback;Landroid/view/KeyEvent;)Z</span>
-<span class="cov">	move-result v1</span>
-<span class="exec">	return v1</span>
+<span class="">	:cond_0</span>
+<span class="">	invoke-static {p0, v0, p0, p1}, Landroidx/core/view/KeyEventDispatcher;->dispatchKeyEvent(Landroidx/core/view/KeyEventDispatcher$Component;Landroid/view/View;Landroid/view/Window$Callback;Landroid/view/KeyEvent;)Z</span>
+<span class="missed">	move-result v1</span>
+<span class="">	return v1</span>
 .end method
 
 .method public dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z

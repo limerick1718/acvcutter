@@ -12,25 +12,21 @@ name = "NoContentResponseBody"
 .field private final contentType:Lokhttp3/MediaType;
 .method constructor <init>(Lokhttp3/MediaType;J)V
 .locals 0
-invoke-direct {p0}, Lokhttp3/ResponseBody;-><init>()V
-iput-object p1, p0, Lretrofit2/OkHttpCall$NoContentResponseBody;->contentType:Lokhttp3/MediaType;
-iput-wide p2, p0, Lretrofit2/OkHttpCall$NoContentResponseBody;->contentLength:J
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public contentLength()J
 .locals 2
-iget-wide v0, p0, Lretrofit2/OkHttpCall$NoContentResponseBody;->contentLength:J
+const-wide v0, 0x0
 return-wide v0
 .end method
 .method public contentType()Lokhttp3/MediaType;
 .locals 1
-iget-object v0, p0, Lretrofit2/OkHttpCall$NoContentResponseBody;->contentType:Lokhttp3/MediaType;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public source()Lyu;
 .locals 2
-new-instance v0, Ljava/lang/IllegalStateException;
-const-string v1, "Cannot read raw response body of a converted body."
-invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-throw v0
+const/4 v0, 0x0
+return-object v0
 .end method

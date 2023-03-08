@@ -6,9 +6,6 @@
 .field public final c:I
 .method public constructor <init>(Ljava/lang/String;II)V
 .locals 0
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iput-object p1, p0, Lxt;->a:Ljava/lang/String;
-iput p2, p0, Lxt;->b:I
-iput p3, p0, Lxt;->c:I
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method

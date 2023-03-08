@@ -43,15 +43,7 @@ return-void
 .param p1, "context"    # Landroid/content/Context;
 .param p2, "handler"    # Landroid/os/Handler;
 .param p3, "windowAnimations"    # I
-instance-of v0, p1, Landroid/app/Activity;
-if-eqz v0, :cond_0
-move-object v0, p1
-check-cast v0, Landroid/app/Activity;
-goto :goto_0
-:cond_0
-const/4 v0, 0x0
-:goto_0
-invoke-direct {p0, v0, p1, p2, p3}, Landroidx/fragment/app/FragmentHostCallback;-><init>(Landroid/app/Activity;Landroid/content/Context;Landroid/os/Handler;I)V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method constructor <init>(Landroidx/fragment/app/FragmentActivity;)V
@@ -64,12 +56,12 @@ return-void
 .end method
 .method  getActivity()Landroid/app/Activity;
 .locals 1
-iget-object v0, p0, Landroidx/fragment/app/FragmentHostCallback;->mActivity:Landroid/app/Activity;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method  getContext()Landroid/content/Context;
 .locals 1
-iget-object v0, p0, Landroidx/fragment/app/FragmentHostCallback;->mContext:Landroid/content/Context;
+const/4 v0, 0x0
 return-object v0
 .end method
 .method  getFragmentManagerImpl()Landroidx/fragment/app/FragmentManagerImpl;
@@ -110,24 +102,22 @@ value = {
 .end method
 .method public onGetLayoutInflater()Landroid/view/LayoutInflater;
 .locals 1
-iget-object v0, p0, Landroidx/fragment/app/FragmentHostCallback;->mContext:Landroid/content/Context;
-invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-move-result-object v0
+const/4 v0, 0x0
 return-object v0
 .end method
 .method public onGetWindowAnimations()I
 .locals 1
-iget v0, p0, Landroidx/fragment/app/FragmentHostCallback;->mWindowAnimations:I
+const/4 v0, 0x0
 return v0
 .end method
 .method public onHasView()Z
 .locals 1
-const/4 v0, 0x1
+const/4 v0, 0x0
 return v0
 .end method
 .method public onHasWindowAnimations()Z
 .locals 1
-const/4 v0, 0x1
+const/4 v0, 0x0
 return v0
 .end method
 .method public onRequestPermissionsFromFragment(Landroidx/fragment/app/Fragment;[Ljava/lang/String;I)V
@@ -140,7 +130,7 @@ return-void
 .method public onShouldSaveFragmentState(Landroidx/fragment/app/Fragment;)Z
 .locals 1
 .param p1, "fragment"    # Landroidx/fragment/app/Fragment;
-const/4 v0, 0x1
+const/4 v0, 0x0
 return v0
 .end method
 .method public onShouldShowRequestPermissionRationale(Ljava/lang/String;)Z
@@ -154,8 +144,6 @@ return v0
 .param p1, "fragment"    # Landroidx/fragment/app/Fragment;
 .param p2, "intent"    # Landroid/content/Intent;
 .param p3, "requestCode"    # I
-const/4 v0, 0x0
-invoke-virtual {p0, p1, p2, p3, v0}, Landroidx/fragment/app/FragmentHostCallback;->onStartActivityFromFragment(Landroidx/fragment/app/Fragment;Landroid/content/Intent;ILandroid/os/Bundle;)V
 return-void
 .end method
 .method public onStartActivityFromFragment(Landroidx/fragment/app/Fragment;Landroid/content/Intent;ILandroid/os/Bundle;)V
@@ -164,16 +152,7 @@ return-void
 .param p2, "intent"    # Landroid/content/Intent;
 .param p3, "requestCode"    # I
 .param p4, "options"    # Landroid/os/Bundle;
-const/4 v0, -0x1
-if-ne p3, v0, :cond_0
-iget-object v0, p0, Landroidx/fragment/app/FragmentHostCallback;->mContext:Landroid/content/Context;
-invoke-virtual {v0, p2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 return-void
-:cond_0
-new-instance v0, Ljava/lang/IllegalStateException;
-const-string v1, "Starting activity with a requestCode requires a FragmentActivity host"
-invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-throw v0
 .end method
 .method public onStartIntentSenderFromFragment(Landroidx/fragment/app/Fragment;Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
 .locals 10
@@ -190,26 +169,7 @@ value = {
 Landroid/content/IntentSender$SendIntentException;
 }
 .end annotation
-const/4 v0, -0x1
-move v9, p3
-if-ne v9, v0, :cond_0
-move-object v0, p0
-iget-object v1, v0, Landroidx/fragment/app/FragmentHostCallback;->mActivity:Landroid/app/Activity;
-move-object v2, p2
-move v3, p3
-move-object v4, p4
-move v5, p5
-move/from16 v6, p6
-move/from16 v7, p7
-move-object/from16 v8, p8
-invoke-static/range {v1 .. v8}, Landroidx/core/app/ActivityCompat;->startIntentSenderForResult(Landroid/app/Activity;Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
 return-void
-:cond_0
-move-object v0, p0
-new-instance v1, Ljava/lang/IllegalStateException;
-const-string v2, "Starting intent sender with a requestCode requires a FragmentActivity host"
-invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-throw v1
 .end method
 .method public onSupportInvalidateOptionsMenu()V
 .locals 0

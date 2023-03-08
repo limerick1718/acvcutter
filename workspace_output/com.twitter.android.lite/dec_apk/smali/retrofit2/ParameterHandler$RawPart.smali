@@ -16,16 +16,9 @@ value = {
 }
 .end annotation
 .field static final INSTANCE:Lretrofit2/ParameterHandler$RawPart;
-.method static constructor <clinit>()V
-.locals 1
-new-instance v0, Lretrofit2/ParameterHandler$RawPart;
-invoke-direct {v0}, Lretrofit2/ParameterHandler$RawPart;-><init>()V
-sput-object v0, Lretrofit2/ParameterHandler$RawPart;->INSTANCE:Lretrofit2/ParameterHandler$RawPart;
-return-void
-.end method
 .method private constructor <init>()V
 .locals 0
-invoke-direct {p0}, Lretrofit2/ParameterHandler;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method bridge synthetic apply(Lretrofit2/RequestBuilder;Ljava/lang/Object;)V
@@ -39,8 +32,6 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-check-cast p2, Lokhttp3/MultipartBody$Part;
-invoke-virtual {p0, p1, p2}, Lretrofit2/ParameterHandler$RawPart;->apply(Lretrofit2/RequestBuilder;Lokhttp3/MultipartBody$Part;)V
 return-void
 .end method
 .method  apply(Lretrofit2/RequestBuilder;Lokhttp3/MultipartBody$Part;)V
@@ -54,8 +45,5 @@ value = {
 Ljava/io/IOException;
 }
 .end annotation
-if-eqz p2, :cond_0
-invoke-virtual {p1, p2}, Lretrofit2/RequestBuilder;->addPart(Lokhttp3/MultipartBody$Part;)V
-:cond_0
 return-void
 .end method

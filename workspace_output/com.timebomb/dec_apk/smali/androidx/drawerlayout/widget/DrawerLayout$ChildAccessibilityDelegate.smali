@@ -10,19 +10,12 @@ name = "ChildAccessibilityDelegate"
 .end annotation
 .method constructor <init>()V
 .locals 0
-invoke-direct {p0}, Landroidx/core/view/AccessibilityDelegateCompat;-><init>()V
+invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 return-void
 .end method
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
 .locals 1
 .param p1, "child"    # Landroid/view/View;
 .param p2, "info"    # Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
-invoke-super {p0, p1, p2}, Landroidx/core/view/AccessibilityDelegateCompat;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
-invoke-static {p1}, Landroidx/drawerlayout/widget/DrawerLayout;->includeChildForAccessibility(Landroid/view/View;)Z
-move-result v0
-if-nez v0, :cond_0
-const/4 v0, 0x0
-invoke-virtual {p2, v0}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setParent(Landroid/view/View;)V
-:cond_0
 return-void
 .end method
